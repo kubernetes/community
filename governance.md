@@ -69,9 +69,9 @@ Each SIG must have a charter that specifies its scope (topics,
 subsystems, code repos and directories), responsibilities, areas of
 authority, how members and roles of authority/leadership are
 selected/granted, how decisions are made, and how conflicts are
-resolved. See the [SIG charter process] for details on how charters are managed. 
-SIGs should be relatively free to customize or change how they operate, 
-within some broad guidelines and constraints imposed by cross-SIG processes 
+resolved. See the [SIG charter process] for details on how charters are managed.
+SIGs should be relatively free to customize or change how they operate,
+within some broad guidelines and constraints imposed by cross-SIG processes
 (e.g., the release process) and assets (e.g., the kubernetes repo).
 
 A primary reason that SIGs exist is as forums for collaboration.
@@ -162,6 +162,15 @@ User Groups.
 To facilitate discoverability and engagement,
 user groups are documented in [sigs.yaml]
 
+## Community Group Annual Reports   
+As you can see in the descriptions above, the project is robust with diverse
+groups of contributors and their varying degrees of expected communications.     
+
+The annual community group health check will establish an opportunity for deeper
+ dialogue and broader communication across the chairs of each group and the
+ Steering Committee. By including this reporting with the existing community
+ meeting structure, we can focus on the goals outlined in the [Annual Report] doc.  
+
 ## Cross-project Communication and Coordination
 
 While most work shouldn’t require expensive coordination with other
@@ -214,4 +223,6 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [working group governance]: /committee-steering/governance/wg-governance.md
 [user group governance]: /committee-steering/governance/ug-governance.md
 [SIG Governance Requirements]: /committee-steering/governance/sig-governance-requirements.md
+[Annual Report]: /committee-steering/governance/annual-reports.md
+[monthly community meeting]: /events/community-meeting.md
 [![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/governance.md?pixel)]()

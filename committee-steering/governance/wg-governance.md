@@ -44,7 +44,10 @@ Working Groups are distinct from SIGs in that they are intend to:
 
 Working Groups will typically have stake holders whose participation is in the
 context of one or more SIGs.  These SIGs should be documented as stake holders of the Working Group
-(see Creation Process).
+(see Creation Process). Working Group Chairs are required to give yearly updates
+, at minimum, to their respective sponsoring SIG Chairs. SIG Chairs are
+responsible for presenting the Steering Committee with the yearly [group health
+check].
 
 ## Is it a Working Group? Yes, if...
 - It does not own any code
@@ -72,7 +75,8 @@ should eventually be reflected in a pull request on sigs.yaml:
 1. Who will chair the group, and ensure it continues to meet these requirements?
 1. Is diversity well-represented in the Working Group?
 
-Please note that all working group organizers and holders of other leadership roles must be [community members].
+Please note that all working group organizers and holders of other leadership
+roles must be [community members].
 
 Once the above questions have been answered, complete the rest of the checklist in the [SIG / WG Lifecycle] document
 
@@ -108,3 +112,4 @@ References
 [SIG / WG Lifecycle]: /sig-wg-lifecycle.md
 [repositories document]: https://github.com/kubernetes/community/blob/master/github-management/kubernetes-repositories.md
 [community members]: /community-membership.md
+[group health check]: ./annual-reports.md
