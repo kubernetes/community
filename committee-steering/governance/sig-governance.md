@@ -252,4 +252,4 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [Kubernetes Community YouTube playlist]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
 [contributor guide]: /contributors/guide/README.md
 [devel]: /contributors/devel/README.md
-[#tech-lead]: (#Tech-Lead)
+[#tech-lead]: #Tech-Lead
