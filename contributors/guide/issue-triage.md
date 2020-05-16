@@ -33,7 +33,7 @@ slug: "issue-triage"
  - [Step Four: Find and Set the Right SIG(s) to Own an Issue](#step-four-find-and-set-the-right-sigs-to-own-an-issue)
    - [Self-Assigning](#self-assigning)
  - [Step Five: Follow Up](#step-five-follow-up)
-   - [If No PR Is Created for an Issue Within the Current Release Cycle](#if-no-pr-is-created-for-an-issue-within-the-current release cycle)
+   - [If No PR Is Created for an Issue Within the Current Release Cycle](#if-no-pr-is-created-for-an-issue-within-the-current-release-cycle)
    - [If a SIG Label Is Assigned, but No Action Is Taken Within 30 Days](#if-a-sig-label-is-assigned-but-no-action-is-taken-within-30-days)
    - [If an Issue Has No Activity After 90 Days](#if-an-issue-has-no-activity-after-90-days)
  - [Footnotes](#footnotes)
