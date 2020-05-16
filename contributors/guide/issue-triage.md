@@ -226,7 +226,7 @@ If you see any issue which is owned by a developer but a PR is not created in 30
 If you find an issue with a SIG label assigned, but there's no evidence of movement or discussion within 30 days, then gently poke the SIG about this pending issue. Also, consider attending one of their meetings to bring up the issue, if you feel this is appropriate.
 
 ### If an Issue Has No Activity After 90 Days
-When this happens, the `fejta-bot` adds the `lifecycle/stale` label to that issue. You can block the bot by applying the `/lifecycle frozen` label preemptively, or remove the bale with the `/remove-lifecycle stale` label. The `fejta-bot` adds comments in the issue that include additional details. If you take neither step, the issue will eventually be auto-closed. 
+When this happens, the `fejta-bot` adds the `lifecycle/stale` label to that issue. You can block the bot by applying the `/lifecycle frozen` label preemptively, or remove the label with the `/remove-lifecycle stale` command. The `fejta-bot` adds comments in the issue that include additional details. If you take neither step, the issue will eventually be auto-closed. 
 
 ## Footnotes 
 ### Support Requests: Channels
