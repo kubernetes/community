@@ -145,7 +145,7 @@ GitHub allows you to filter out types of issues and pull requests, which helps y
 We suggest preparing your triage by filtering out the oldest, unlabelled issues and/or pull requests first.
 
 ## Step Two: Triage Issues by Type
-Use [these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%93&q=triage%2F+kind%2Fsupport+is%3Aopen) to find open issues that can be quickly closed. A triage engineer can add the appropriate labels.
+Use [these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%93&q=triage%2F+kind%2Fsupport) to find open issues that can be quickly closed. A triage engineer can add the appropriate labels.
 
 Depending on your permissions, either close or comment on any issues that are identified as support requests, duplicates, or not-reproducible bugs, or that lack enough information from the reporter.
  
