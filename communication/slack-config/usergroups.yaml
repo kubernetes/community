@@ -49,7 +49,6 @@ usergroups:
       - carlisia
       - nrb
       - skriss
-      - stephbman
 
   - name: youtube-admins
     long_name: YouTube Admins
