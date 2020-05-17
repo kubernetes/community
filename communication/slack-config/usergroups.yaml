@@ -39,6 +39,18 @@ usergroups:
   - name: test-infra-oncall
     external: true
 
+  - name: velero-maintainers
+    long_name: Velero Maintainers
+    description: Velero Maintainers group.
+    channels:
+      - velero 
+    members:
+      - ashish-amarnath
+      - carlisia
+      - nrb
+      - skriss
+      - stephbman
+
   - name: youtube-admins
     long_name: YouTube Admins
     description: YouTube Admin group. Ping for a YouTube-specific issue
