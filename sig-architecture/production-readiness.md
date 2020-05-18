@@ -5,7 +5,7 @@ Kubernetes are observable, scalable and supportable, can be safely operated in
 production environments, and can be disabled or rolled back in the event they
 cause increased failures in production.
 
-More details may be found in the [PRR KEP][].
+More details may be found in the [PRR KEP].
 
 ## Status
 
