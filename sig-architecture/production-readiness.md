@@ -13,7 +13,7 @@ As of 1.19, production readiness reviews are required, and are part of the KEP
 process. The PRR questionnaire previously found here has been incorporated into
 the [KEP template]. The template details the specific questions that must be
 answered, depending on the stage of the feature. As of 1.19, PRRs are
-non-blocking; that is, _approval_ is not required for the feature to be part of
+non-blocking; that is, _approval_ is not required for the enhancement to be part of
 the release. This is to provide some time for the community to adapt to the
 process.
 
