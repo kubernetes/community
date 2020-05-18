@@ -51,6 +51,8 @@ usergroups:
       - ashish-amarnath
       - carlisia
       - nrb
+      - stephbman
+      - zubron
 
   - name: youtube-admins
     long_name: YouTube Admins
