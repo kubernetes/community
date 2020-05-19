@@ -2086,8 +2086,8 @@ sigs:
   label: testing
   leadership:
     chairs:
-    - github: fejta
-      name: Erick Fejta
+    - github: BenTheElder
+      name: Benjamin Elder
       company: Google
     - github: spiffxp
       name: Aaron Crickenberger
@@ -2096,6 +2096,8 @@ sigs:
       name: Steve Kuznetsov
       company: Red Hat
     emeritus_leads:
+    - github: fejta
+      name: Erick Fejta
     - github: timothysc
       name: Timothy St. Clair
   meetings:

@@ -22,12 +22,13 @@ The [charter](charter.md) defines the scope and governance of the Testing Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Erick Fejta (**[@fejta](https://github.com/fejta)**), Google
+* Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
 
 ## Emeritus Leads
 
+* Erick Fejta (**[@fejta](https://github.com/fejta)**)
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**)
 
 ## Contact
