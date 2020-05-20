@@ -1019,11 +1019,6 @@ sigs:
       slack: kube-aws
     owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
-  - name: kube-deploy
-    contact:
-      slack: kube-deploy
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
   - name: kube-up
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS

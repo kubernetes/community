@@ -149,6 +149,7 @@ channels:
   - name: krex
   - name: kube-aws
   - name: kube-deploy
+    archived: true
   - name: kube-monkey
   - name: kube-oidc-proxy
   - name: kube-router
