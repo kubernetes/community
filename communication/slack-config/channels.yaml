@@ -73,6 +73,10 @@ channels:
   - name: events
   - name: external-dns
   - name: falco
+  - name: falco-projects
+  - name: falco-maintainers
+  - name: falco-drivers
+  - name: falco-maintainers-pvt
   - name: fiaas
   - name: fi-users
   - name: flink-operator
