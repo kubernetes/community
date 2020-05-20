@@ -135,11 +135,6 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
   - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
 - **Contact:**
   - Slack: [#kube-aws](https://kubernetes.slack.com/messages/kube-aws)
-### kube-deploy
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
-- **Contact:**
-  - Slack: [#kube-deploy](https://kubernetes.slack.com/messages/kube-deploy)
 ### kube-up
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
