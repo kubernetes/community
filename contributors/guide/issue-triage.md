@@ -23,7 +23,6 @@ slug: "issue-triage"
    - [Conducting Searches](#conducting-searches)
  - [Step Two: Triage Issues by Type](#step-two-triage-issues-by-type)
    - [Support Requests](#support-requests)
-   - [Duplicates](#duplicates)
    - [Abandoned or Wrongly Placed Issues](#abandoned-or-wrongly-placed-issues)
    - [Needs More Information](#needs-more-information)
    - [Bugs](#bugs)
@@ -37,7 +36,7 @@ slug: "issue-triage"
    - [If a SIG Label Is Assigned, but No Action Is Taken Within 30 Days](#if-a-sig-label-is-assigned-but-no-action-is-taken-within-30-days)
    - [If an Issue Has No Activity After 90 Days](#if-an-issue-has-no-activity-after-90-days)
  - [Footnotes](#footnotes)
-   - [Support Requests: Channels](##support-requests-channels)
+   - [Support Requests: Channels](#support-requests-channels)
    - [User Support Response: Example](#user-support-response-example)
   
 ## Scope
@@ -67,7 +66,7 @@ People who enjoy product management and iterating on processes tend to enjoy tri
 This aims to walk you through a standard triaging process, first covering tools and tips. 
 
 ## Triage-Related Tools
-These  tools that your SIG can use to make the process simpler, more efficient and faster.
+These tools that your SIG can use to make the process simpler, more efficient and faster.
 
 ### Permissions and the Bot
 Opening new issues and leaving comments on other people's issues are possible for all contributors. However, permission to assign specific labels (e.g. `triage`), change milestones, or close other contributors issues is only granted to the author of an issue, assignees, and organization members. For this reason, we use a bot to manage labelling and triaging. For a full list of commands and permissions, see the [Prow command reference page](https://go.k8s.io/bot-commands).
@@ -121,10 +120,10 @@ api-machinery has found that consistently meeting on a regular, fixed schedule i
 - We skip issues that are closed
 - We also skip cherrypicks, because we consider that the code change was reviewed in the original PR
 - We ensure participation from the entire SIG and support company diversity. 
-- We use this opportunity to mark ["help needed", "good first issue"](#help-wantedgood-first-issues).
+- We use this opportunity to mark ["help needed", "good first issue"](#help-wantedgood-first-issues)
 
 ### Triage Guide by cluster-lifecycle
-has developed a [triaging page](/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
+The SIG has developed a [triaging page](/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
 
 ## Step One: Review Newly Created Open Issues
 Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). New, untriaged issues come without labels attached. SIG leads should identify at least one SIG member to serve as a first point of contact for new issues.
@@ -136,10 +135,10 @@ GitHub allows you to filter out types of issues and pull requests, which helps y
 
 |  Search | What it sorts  |
 |---|---|
-| [created-asc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc)  | untriaged issues by age |
-|  [needs-sig](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aneeds-sig) | issues that need to be assigned to a SIG  |
+| [created-asc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc)  | Untriaged issues by age |
+|  [needs-sig](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aneeds-sig) | Issues that need to be assigned to a SIG  |
 | [`is:open is:issue`](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue)   | Newest incoming issues  |
-| [comments-desc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc)   | busiest untriaged issues, sorted by # of comments  |
+| [comments-desc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc)   | Busiest untriaged issues, sorted by # of comments  |
 | [comments-asc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-asc)   | Issues that need more attention, based on # of comments  |
 
 We suggest preparing your triage by filtering out the oldest, unlabelled issues and/or pull requests first.
@@ -155,9 +154,6 @@ Some people mistakenly use GitHub issues to file support requests. Usually they'
 * Then, apply the `triage/support` label, which is directed to our support structures (see below), and apply the `close` label
 
 Please find more detailed information about Support Requests in the [Footnotes section](#footnotes).
-
-### Duplicates
-* Duplicates of other open issues should be left with a comment referencing the original issue and closed.
 
 ### Abandoned or Wrongly Placed Issues
 Depending on your permissions, either close or comment on it.
@@ -177,14 +173,14 @@ If you can't reproduce it:
 * Close the issue if both the parties agree that it could not be reproduced.
 
 If you need more information to further work on the issue:
-* let the reporter know it by adding an issue comment followed by label `lifecycle/needs-information`.
+* Let the reporter know it by adding an issue comment followed by label `lifecycle/needs-information`.
 
 In all cases, if you do not get a response in 20 days then close the issue with an appropriate comment. If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, please leave a comment describing your findings.
 
 ### Help Wanted/Good First Issues
 To identify issues that are specifically groomed for new contributors, we use the [help wanted](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
 and [good first issue](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) labels. To use these labels:
-* review our specific [guidelines](/contributors/guide/help-wanted.md) for how to use them.
+* Review our specific [guidelines](/contributors/guide/help-wanted.md) for how to use them.
 * If the issue satisfies these guidelines, you can add the `help wanted` label with the `/help` command
 and the `good first issue` label with the `/good-first-issue` command. Please note that adding the `good first issue` label will also automatically add the `help wanted` label.
 * If an issue has these labels but does not satisfy the guidelines, please ask for more details to be added to the issue or remove the labels using the `/remove-help` or `/remove-good-first-issue` commands.
@@ -213,7 +209,7 @@ Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [Th
 * Keep in mind that these commands must be on their own lines, and at the front of the comment.
 * If you are not sure about who should own an issue, defer to the SIG label only. 
 * If you feel an issue should warrant a notification, ping a team with an @ mention, in this format: `@kubernetes/sig-<group-name>-<group-suffix>`. 
- - Here, the `<group-suffix>` can be one of `bugs, feature-requests, pr-reviews, test-failures, proposals`. For example, `@kubernetes/sig-cluster-lifecycle-bugs, can you have a look at this?`
+   - Here, the `<group-suffix>` can be one of `bugs, feature-requests, pr-reviews, test-failures, proposals`. For example, `@kubernetes/sig-cluster-lifecycle-bugs, can you have a look at this?`
 
 ### Self-Assigning
 If you think you can fix the issue, assign it to yourself with *just* the `/assign` label. If you cannot self-assign for permissions-related reasons, leave a comment that you'd like to claim it and work on creating a PR.
