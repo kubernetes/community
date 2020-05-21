@@ -154,7 +154,7 @@ Some people mistakenly use GitHub issues to file support requests. Usually they'
 Please find more detailed information about Support Requests in the [Footnotes section](#footnotes).
 
 ### Abandoned or Wrongly Placed Issues
-Depending on your permissions, either close or comment on it.
+Either close or comment on it.
 
 ### Needs More Information
 * The `triage/needs-information` label indicates an issue needs more information in order to work on it; comment on or close it.
