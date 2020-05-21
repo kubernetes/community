@@ -14,6 +14,7 @@ slug: "issue-triage"
    - [Triage-Related Tools](#triage-related-tools)
       - [Permissions and the Bot](#permissions-and-the-bot)
       - [Gubernator](#gubernator)
+      - [Triage Party](#triage-party)
       - [GitHub Project Boards](#github-project-boards)
       - [DevStats](#devstats)
    - [Process Pointers and Advice from SIGs](#process-pointers-and-advice-from-sigs)
