@@ -48,7 +48,7 @@ Blog and Social Media Guidelines: https://git.k8s.io/community/communication/mar
 - [ ] Other (fill this out)
 
 **Where is your first draft available?**
-<!-- Please provide a first draft of your message for all channels requested. Take your best shot and we are here to support you through getting it ready for publication (it's appreciated). 
+<!-- Please provide a first draft of your message for all channels requested. Take your best shot and we are here to support you through getting it ready for publication (it's appreciated). Links to Google Docs or Hackmd.io pages are best for easy editing.
 
 Also, include any social media tags of relevant people (e.g. Twitter handles of people you want to give a shout out on Twitter)-->
 
