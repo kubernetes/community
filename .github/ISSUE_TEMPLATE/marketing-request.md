@@ -23,7 +23,7 @@ Filling out this form to the best of your ability will speed up the team's abili
 <!-- What SIG or group is this message on behalf of? What is the best way to contact them? -->
 
 **Is this time-sensitive?** 
-<!-- You can delete or skip this if it's not relevant -->
+<!-- You can delete or skip this if it's not relevant. -->
 
 - [ ] Yes, it is **due by** <$DATE> <$TIME>
 - [ ] Yes, it **must be sent** <$DATE> <$TIME>
