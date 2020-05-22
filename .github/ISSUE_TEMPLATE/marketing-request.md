@@ -1,6 +1,6 @@
 ---
 name: Contributor Comms Request
-about: Get help getting a message out to our community through coordinated outreach on email, social media, and other public channels.
+about: Get support on sending a message out to our community through coordinated outreach on email, Slack, social media, and other public channels.
 title: 'REQUEST: New communication about <topic>'
 labels: area/contributor-comms, sig/contributor-experience
 assignees: 
@@ -54,5 +54,4 @@ Also, include any social media tags of relevant people (e.g. Twitter handles of 
 
 **Lastly, who's the best point of contact?** 
 <!-- If you are the point of contact, please confirm it's you. Please include both GitHub username and Slack username. -->
-
 
