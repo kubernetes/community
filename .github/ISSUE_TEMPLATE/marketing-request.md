@@ -12,7 +12,7 @@ Filling out this form to the best of your ability will speed up the team's abili
 -->
 
 **What do you want send out?** 
-<!-- Please include a link whenever possible, logos, artwork, pics, diagrams, or any other assets with public links. -->
+<!-- Include logos, artwork, pics, diagrams, or any other assets with public links whenever possible. -->
 
 
 **What’s the intended outcome?**
@@ -54,4 +54,3 @@ Also, include any social media tags of relevant people (e.g. Twitter handles of 
 
 **Lastly, who's the best point of contact?** 
 <!-- If you are the point of contact, please confirm it's you. Please include both GitHub username and Slack username. -->
-
