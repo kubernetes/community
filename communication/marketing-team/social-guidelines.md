@@ -17,6 +17,7 @@ Ideally, no individuals outside of the contributor community, with the possible 
 Other CNCF projects, unless there is a common contributor cause, are out of scope for coverage by this team's social media accounts.
 
 Kubernetes Organization Members with access to account are:
+
 - @parispittman
 - @mrbobbytables
 - @chris-short
@@ -31,14 +32,32 @@ Kubernetes Organization Members with access to account are:
 - Significant historical events as related to the project (Kubernetes birthday, previous events, etc.)
 - Steering Committee Announcements
 
+### Example Social Media
+
+- Weekly on Sunday: Link with community calendar and "This week in upstream community group meetings..."
+- As they come in:
+  - Emails from k-dev
+  - #Shoutouts (as requested; please include social handles)
+  - Requests from issue templates
+- Scheduled launches
+  - Your upcoming blog posts
+  - Requests from issue templates
+- Every Wednesday (example)
+  - New contributor Wednesday - tweet a bunch of good-first-issue label GitHub issues (TODO: Automate)
+- Event support:
+  - (Based on issue template)
+  - Examples: Steering Committee voting will need a reminder weekly for at least a month
+  - Meet our contributors should have a reminder 3 days before the event and then 30 minutes before on the day of
+
 ## KEPs
+
 ([Kubernetes Enhancement Proposals])
 
-### Ground Rules  
+### Ground Rules
+
 - The social media team cannot tweet KEPs at this time.
 - This may change if we can get a few owner(s)/group who can approve them
 - This guideline can only change with Steering, SIG-Arch, and SIG-Release approval  
-
 
 ### Frequently Asked Questions (FAQ)
 
@@ -51,7 +70,6 @@ Q: Do we engage with hostile messages?
 A: No. Don't feed the trolls. Mute them is the correct response. Block them as a last resort and only after discussing with team members. Reasons to block include verbal abuse, violating the platform's terms, or violating the [Code of Conduct](https://github.com/kubernetes/community/blob/master/code-of-conduct.md). The community is focused on openness and our accounts should be too, but there are times when we should reduce harmful people's visibility through blocking.
 
 Credit: [Fedora Community](https://fedoraproject.org/wiki/Marketing)
-
 
 [#KEPs]: (#KEPs)
 [Kubernetes Enhancement Proposals]: https://github.com/kubernetes/enhancements/tree/master/keps
