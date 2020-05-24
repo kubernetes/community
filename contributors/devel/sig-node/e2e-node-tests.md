@@ -51,6 +51,7 @@ Prerequisites:
   - *This provides read access to the node test images.*
 - Setup a [Google Cloud Platform](https://cloud.google.com/) account and project with Google Compute Engine enabled
 - Install and setup the [gcloud sdk](https://cloud.google.com/sdk/downloads)
+  - Set your project and a zone by running `gcloud config set project $PROJECT` and `gcloud config set compute/zone $zone`
   - Verify the sdk is setup correctly by running `gcloud compute instances list` and `gcloud compute images list --project kubernetes-node-e2e-images`
 
 Run:
@@ -62,7 +63,7 @@ make test-e2e-node REMOTE=true
 This will:
 - Build the Kubernetes source code
 - Create a new GCE instance using the default test image
-  - Instance will be called **test-e2e-node-containervm-v20160321-image**
+  - Instance will be called something like **test-cos-beta-81-12871-44-0**
 - Lookup the instance public ip address
 - Copy a compressed archive file to the host containing the following binaries:
   - ginkgo
