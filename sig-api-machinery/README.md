@@ -105,7 +105,9 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
 ### server-frameworks
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/apiserver/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/controller-manager/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/controller-manager/OWNERS
 ### server-sdk
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-builder-alpha/master/OWNERS
