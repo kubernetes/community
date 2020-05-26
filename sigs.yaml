@@ -113,7 +113,9 @@ sigs:
   - name: server-frameworks
     owners:
     - https://raw.githubusercontent.com/kubernetes/apiserver/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/controller-manager/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/controller-manager/OWNERS
   - name: server-sdk
     contact:
       mailing_list: https://groups.google.com/forum/#!forum/kubebuilder
