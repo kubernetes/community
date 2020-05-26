@@ -1202,13 +1202,21 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
     meetings:
-    - description: sig-contribex mentoring subproject meeting
-      day: Friday
-      time: "10:00"
+    - description: sig-contribex mentoring subproject meeting (APAC Friendly Time)
+      day: Monday
+      time: "20:30"
       tz: PT
       frequency: biweekly
-      url: https://zoom.us/j/739807514
-      archive_url: https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit
+      url: https://zoom.us/j/94884623370
+      archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r
+      recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
+    - description: sig-contribex mentoring subproject meeting (EU/NA Friendly Time)
+      day: Tuesday
+      time: "08:30"
+      tz: PT
+      frequency: biweekly
+      url: https://zoom.us/j/94884623370
+      archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r
       recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: repo-infra
     description: Creates and maintains tools and templates for kubernetes-namespace
