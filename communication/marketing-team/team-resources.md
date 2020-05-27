@@ -1,4 +1,5 @@
 # Resources for the team
+
 [Entire community repo]  - tons of contributor documentation and how we operate  
 [contributor site]  (future home)  
 [project board] for contributor site  
@@ -10,10 +11,8 @@
 [Community Groups List] - main list of SIGs, WGs, and Committees  
 [Values] and [principles]
 
-
-
 [contributor site]: https://sigs.k8s.io/contributor-site
-[project board]: https://github.com/orgs/kubernetes-sigs/projects
+[project board]: https://github.com/orgs/kubernetes-sigs/projects/3
 [surveys]: /sig-contributor-experience/surveys
 [Communication]: /communication/README.md
 [style guide]: /contributors/guide/style-guide.md
