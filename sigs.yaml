@@ -2237,12 +2237,11 @@ sigs:
     - github: tashimi
       name: Tasha Drew
       company: VMware
-    - github: vllry
-      name: Vallery Lancey
-      company: Lyft
     emeritus_leads:
     - github: Rajakavitha1
       name: Rajakavitha Kodhandapani
+    - github: vllry
+      name: Vallery Lancey
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday

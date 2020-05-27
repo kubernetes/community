@@ -24,11 +24,11 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Himanshu Pandey (**[@hpandeycodeit](https://github.com/hpandeycodeit)**), VMware
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
-* Vallery Lancey (**[@vllry](https://github.com/vllry)**), Lyft
 
 ## Emeritus Leads
 
 * Rajakavitha Kodhandapani (**[@Rajakavitha1](https://github.com/Rajakavitha1)**)
+* Vallery Lancey (**[@vllry](https://github.com/vllry)**)
 
 ## Contact
 - Slack: [#sig-usability](https://kubernetes.slack.com/messages/sig-usability)
