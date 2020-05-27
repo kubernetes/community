@@ -1,12 +1,12 @@
 # Kubernetes Upstream Marketing Team Charter
 
-## Summary 
+## Summary
 
 The mission of the Kubernetes Upstream Marketing Team is to elevate the hard work being done throughout the Kubernetes community by its contributors. Promoting the work and helping fill the needs of the Kubernetes community is the driving force behind the Kubernetes Upstream Marketing Team. The goal of this work is to improve the overall sustainability of the project by giving or elevating information to contributors so they stay well informed.
 
 ## Ethos/Vision
 
-This group's work is in support of the upstream Kubernetes community (the open source project). As such it will adhere to the [Kubernetes Community Values](https://github.com/kubernetes/community/blob/master/values.md#kubernetes-community-values). The core value we feel strongest about is [Community over product or company](https://github.com/kubernetes/community/blob/master/values.md#community-over-product-or-company). The makeup of this team will be from all walks of life including vendors. The work of the Kubernetes community should always be prioritized over vendor created works. Kubernetes Upstream Marketing Team members are expected to act in the interest of the community and not their employers.
+This group's work is in support of the upstream Kubernetes community (the open source project). As such it will adhere to the [Kubernetes Community Values](/values.md#kubernetes-community-values). The core value we feel strongest about is [Community over product or company](/values.md#community-over-product-or-company). The makeup of this team will be from all walks of life including vendors. The work of the Kubernetes community should always be prioritized over vendor created works. Kubernetes Upstream Marketing Team members are expected to act in the interest of the community and not their employers.
 
 ## Goals
 

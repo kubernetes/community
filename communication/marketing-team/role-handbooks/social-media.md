@@ -20,7 +20,6 @@ TODO
 - Most of this information can be found in our [social guidelines]
 - Be welcoming, be yourself
 
-
 ## Associates Overview (Shadow)
 
 TODO  
