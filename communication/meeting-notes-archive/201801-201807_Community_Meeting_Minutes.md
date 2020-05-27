@@ -2198,7 +2198,7 @@
     *   **Important:** to contribute your insight and experiences to the process, answer these questions [https://goo.gl/Zm81Ly](https://goo.gl/Zm81Ly)
 *   [ 0:39 ] **Announcements**
     *   GSoC [Ihor D]
-        *   [https://github.com/cncf/soc](https://github.com/cncf/soc); [k8s gh](https://github.com/kubernetes/community/blob/master/mentoring/google-summer-of-code.md)
+        *   [https://github.com/cncf/mentoring](https://github.com/cncf/mentoring); 
         *   nikhita has volunteered to drive this program for Kubernetes
     *   SIG Intros & Deep Dives sessions registration at KubeCon/CloudNativeCon & CloudNativeCon will be announced shortly (stay tuned!)
     *   Changes to this meeting's format [Jorge Castro]
