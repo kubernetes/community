@@ -113,8 +113,11 @@ Oversees and develops programs for helping contributors ascend the contributor l
   - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
 - **Meetings:**
-  - sig-contribex mentoring subproject meeting: [Fridays at 10:00 PT](https://zoom.us/j/739807514) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit).
+  - sig-contribex mentoring subproject meeting (APAC Friendly Time): [Mondays at 20:30 PT](https://zoom.us/j/94884623370) (2nd and 4th Tuesday of each month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:30&tz=PT).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r).
+    - [Meeting recordings](https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
+  - sig-contribex mentoring subproject meeting (EU/NA Friendly Time): [Tuesdays at 08:30 PT](https://zoom.us/j/98162537924) (2nd and 4th Tuesday of each month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r).
     - [Meeting recordings](https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### repo-infra
 Creates and maintains tools and templates for kubernetes-namespace repositories.
