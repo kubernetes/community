@@ -78,6 +78,7 @@ channels:
   - name: flink-operator
   - name: fr-events
   - name: fr-users
+  - name: fury
   - name: garden
   - name: garden-dev
   - name: gardener
