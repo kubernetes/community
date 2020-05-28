@@ -2071,6 +2071,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/csi-translation-lib/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-translation-lib/OWNERS
+  - name: mount-utils
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/mount-utils/OWNERS
   - name: nfs-provisioner
     owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS

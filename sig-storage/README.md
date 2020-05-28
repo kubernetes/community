@@ -94,6 +94,9 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - https://raw.githubusercontent.com/kubernetes/csi-translation-lib/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-translation-lib/OWNERS
+### mount-utils
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/mount-utils/OWNERS
 ### nfs-provisioner
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
