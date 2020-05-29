@@ -37,7 +37,7 @@ Kubernetes Organization Members with access to account are:
 - Weekly on Sunday: Link with community calendar and "This week in upstream community group meetings..."
 - As they come in:
   - Emails from k-dev
-  - #Shoutouts (as requested; please include social handles)
+  - #Shoutouts (from #shoutouts slack channel; try to include social handles or github handles if possible)
   - Requests from issue templates
 - Scheduled launches
   - Your upcoming blog posts
