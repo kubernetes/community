@@ -1076,18 +1076,11 @@ sigs:
     - github: parispittman
       name: Paris Pittman
   meetings:
-  - description: Biweekly Issue Triage
-    day: Wednesday
-    time: "10:30"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/308291410
-    recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - description: Regular SIG Meeting
     day: Wednesday
     time: "9:30"
     tz: PT (Pacific Time)
-    frequency: biweekly
+    frequency: weekly
     url: https://zoom.us/j/397264241
     archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
     recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
