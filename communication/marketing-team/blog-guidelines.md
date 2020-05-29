@@ -6,30 +6,30 @@ We are looking for Kubernetes-curious community members who are **interested in 
 
 ## Requested Content
 
-We are looking for: 
+We are looking for:
 
 * TODO << Request specific types of content
 
-Other types of content, like Kubernetes capabilities and tutorials, are better suited for the [SIG-Docs blogging initiative](https://github.com/kubernetes/community/blob/77aa44ba8a506b2d8a7110ff96f545c36db906f3/sig-docs/blog-subproject/README.md).
+Other types of content, like Kubernetes capabilities and tutorials, are better suited for the [SIG-Docs blogging initiative](/sig-docs/blog-subproject/README.md).
 
 ## Submit a Post
 
 The quickest way to get involved is to let the team in [#sig-contribex](https://kubernetes.slack.com/archives/C1TU9EB9S) know that you have an idea for an article.
 
-For now, our official process is to use [SIG-Doc's system](https://github.com/kubernetes/community/blob/77aa44ba8a506b2d8a7110ff96f545c36db906f3/sig-docs/blog-subproject/README.md).
+For now, our official process is to use [SIG-Doc's system](/sig-docs/blog-subproject/README.md).
 
 ## Blogger Expectations, Responsibilities, and Info
 
-Anyone is welcome to contribute when they have time. 
+Anyone is welcome to contribute when they have time.
 
 If you would like to be listed as a member of the team, here are the expectations:
 
 1. Be prepared to write one blog a quarter and participate in edits to other articles. The time commitment is typically 5-10 hours per quarter depending on the number of blog posts in the review queue.
-2. Bloggers are expected to attend at least one upstream marketing team meeting a month or check-in to remain active. 
+2. Bloggers are expected to attend at least one upstream marketing team meeting a month or check-in to remain active.
 3. Remain non-partial: if you receive a request to write about a project, an individual, or a group of people from your employer, you should ask an impartial blogger to write it.
 4. As with all contribution to Kubernetes, adhere to the [code of conduct](/code-of-conduct.md), values, and principles of the project.
 
-## How to Write an Effective Blog: 
+## How to Write an Effective Blog
 
 Keep the following points in mind as you write in order to speed up the review process:
 
@@ -49,19 +49,17 @@ Keep the following points in mind as you write in order to speed up the review p
   * Find images on sites like [Creative Commons](https://search.creativecommons.org/), [Pexels](https://www.pexels.com/public-domain-images/), and [Unsplash](https://unsplash.com/images/stock/public-domain))
 * Be accountable and honest as an author
   * Remove anything that lacks adequate evidence
-  * Avoid interjecting personal reactions 
+  * Avoid interjecting personal reactions
   * Ensure that the blog post is reviewed by the anyone being mentioned in the piece
   * As the author, never talk about your employer, sell, promote, or pitch; this is about upstream community endeavours and the individuals and groups that create it
 
-## Further Recommendations 
+## Further Recommendations
 
-The following are helpful resources for authoring articles: 
+The following are helpful resources for authoring articles:
 
-- [Creating Quality Content (For Search Engines and People)](https://moz.com/blog/quality-blog-content)
-- [How to write effective documentation for your open source project](https://opensource.com/article/20/3/documentation)
-
+* [Creating Quality Content (For Search Engines and People)](https://moz.com/blog/quality-blog-content)
+* [How to write effective documentation for your open source project](https://opensource.com/article/20/3/documentation)
 
 ## Review Process
 
-This process is bootstrapped from the sig-docs blog [subproject](https://github.com/kubernetes/community/blob/77aa44ba8a506b2d8a7110ff96f545c36db906f3/sig-docs/blog-subproject/README.md). Please ask for review from community liaisons on the sig-docs-blog team or let the team in [#sig-contribex](https://kubernetes.slack.com/archives/C1TU9EB9S) know you need help. 
-
+This process is bootstrapped from the sig-docs blog [subproject](/sig-docs/blog-subproject/README.md). Please ask for review from community liaisons on the sig-docs-blog team or let the team in [#sig-contribex](https://kubernetes.slack.com/archives/C1TU9EB9S) know you need help.

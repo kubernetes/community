@@ -17,11 +17,13 @@ collaborative doc tool and the sig-docs-liaison or Editor will start the PR
 process
 
 ## Minimum Skills and Experience
+
 - Have a passion for telling stories, technical writing, journalism, and painting pictures with words
 - Desire to be a Kubernetes Org Member and if not already, work your way towards membership
 - Comfortable with working with GitHub workflows or working in a collaborative doc tool with the Editor  
 
 ## Expectations
+
 Anyone is welcome to contribute when they have time. The core expectation of storytelling is taking responsibility for getting the story from inception to published.
 
 If you would like to be listed as a member of the team, here are the expectations:
