@@ -13,7 +13,7 @@ SIG Scalability is responsible for defining and driving scalability goals for Ku
 The [charter](charter.md) defines the scope and governance of the Scalability Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Thursdays at 17:30 UTC](https://zoom.us/j/989573207) (weekly/bi-weekly as per demand ([upcoming meeting dates](#upcoming-meeting-dates))). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 17:30 UTC](https://zoom.us/j/989573207) (bi-weekly ([upcoming meeting dates](#upcoming-meeting-dates))). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
   * [Meeting recordings](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
 
@@ -95,18 +95,10 @@ Also do not hesitate to contact those SIG members for status update:
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 
 ## Upcoming Meeting Dates
-   * Jan - 30
-   * Feb - 13, 27
-   * Mar - 12, 26
-   * Apr - 02, 09, 16, 23 (weekly)
-   * May - 07, 21
-   * Jun - 04, 18
-   * Jul - 02, 16, 30
-   * Aug - 13, 27
-   * Sep - 10, 24
-   * Oct - 08, 22
-   * Nov - 05, 19
-   * Dec - 03, 17
+
+Check out [this calendar](https://calendar.google.com/calendar/embed?src=90g85fajsmubf5vp02uhpbvcq8%40group.calendar.google.com) for upcoming meeting dates.
+
+You can use [this link](https://calendar.google.com/calendar?cid=OTBnODVmYWpzbXViZjV2cDAydWhwYnZjcThAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) to add it to your personal Google calendar.
 
 # Scalability Regressions and Bugs
 The following document lists regressions and bugs that SIG Scalability has been working on.
