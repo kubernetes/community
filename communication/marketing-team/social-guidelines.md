@@ -45,7 +45,7 @@ Kubernetes Organization Members with access to account are:
 - Every Wednesday (example)
   - New contributor Wednesday - tweet a bunch of good-first-issue label GitHub issues (TODO: Automate)
 - Event support:
-  - (Based on issue template)
+  -  (with information from the issue template)
   - Examples: Steering Committee voting will need a reminder weekly for at least a month
   - Meet our contributors should have a reminder 3 days before the event and then 30 minutes before on the day of
 
