@@ -96,7 +96,7 @@ Please don't use `git pull` instead of the above `fetch` / `rebase`. `git pull`
 does a merge, which leaves merge commits. These make the commit history messy
 and violate the principle that commits ought to be individually understandable
 and useful (see below). You can also consider changing your `.git/config` file via
-`git config branch.autoSetupRebase always` to change the behavior of `git pull`.
+`git config branch.autoSetupRebase always` to change the behavior of `git pull`, or another non-merge option such as `git pull --rebase`.
 
 ### 5 Commit
 
@@ -159,26 +159,26 @@ To squash your commits, perform an [interactive
 rebase](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History):
 
 1. Check your git branch:
-  
+
   ```
   git status
   ```
-  
+
   Output is similar to:
-  
+
   ```
   On branch your-contribution
   Your branch is up to date with 'origin/your-contribution'.
   ```
-  
-2. Start an interactive rebase using a specific commit hash, or count backwards from your last commit using `HEAD~<n>`, where `<n>` represents the number of commits to include in the rebase. 
+
+2. Start an interactive rebase using a specific commit hash, or count backwards from your last commit using `HEAD~<n>`, where `<n>` represents the number of commits to include in the rebase.
 
   ```
   git rebase -i HEAD~3
   ```
-  
-  Output is similar to: 
-  
+
+  Output is similar to:
+
   ```
   pick 2ebe926 Original commit
   pick 31f33e9 Address feedback
@@ -192,31 +192,31 @@ rebase](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History):
   # e, edit <commit> = use commit, but stop for amending
   # s, squash <commit> = use commit, but meld into previous commit
   # f, fixup <commit> = like "squash", but discard this commit's log message
-  
+
   ...
-  
+
   ```
 
-3. Use a command line text editor to change the word `pick` to `fixup` for the commits you want to squash, then save your changes and continue the rebase: 
+3. Use a command line text editor to change the word `pick` to `fixup` for the commits you want to squash, then save your changes and continue the rebase:
 
   ```
   pick 2ebe926 Original commit
   squash 31f33e9 Address feedback
   pick b0315fe Second unit of work
-  
+
   ...
-  
+
   ```
-  
-  Output (after saving changes) is similar to: 
-  
+
+  Output (after saving changes) is similar to:
+
   ```
   [detached HEAD 61fdded] Second unit of work
    Date: Thu Mar 5 19:01:32 2020 +0100
    2 files changed, 15 insertions(+), 1 deletion(-)
-   
+
    ...
-   
+
   Successfully rebased and updated refs/heads/master.
   ```
 4. Force push your changes to your remote branch:
@@ -231,7 +231,7 @@ masse. This makes reviews easier.
 
 ### Merging a commit
 
-Once you've received review and approval, your commits are squashed, your PR is ready for merging. 
+Once you've received review and approval, your commits are squashed, your PR is ready for merging.
 
 Merging happens automatically after both a  Reviewer and Approver have approved the PR. If you haven't squashed your commits, they may ask you to do so before approving a PR.
 
