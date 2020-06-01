@@ -23,22 +23,23 @@ appeals to our mission
 between the groups
 - Helping to recruit other members of the team, ensuring onboarding but delegating to proper lead; fall back when no lead present is the Editor
 - Has the ability to modify the team charter and seeks consensus with Contributor Experience communication [OWNERS] when considering any major changes.
-- If time allows, market the team; blog about the team and it's progress, encourage team to blog about their work   
+- If time allows, market the team; blog about the team and it's progress, encourage team to blog about their work
 
 ### Minimum Skills and Requirements
 
 Skills:
+
 - Be comfortable with general GitHub workflows. We can teach you ours but a foundation for this role is necessary. You'll be working inside of multiple repositories with different experiences and helping others on the team with troubleshooting.
 - Strong written and verbal skills
 - Be ok with saying no, but with a reason to back it up; be empathetic.
 - Have existing relationships with the contributor community either through other work or as an Associate Editor
 - Patience
 
-Requirements:  
+Requirements:
+
 - Member of the [Kubernetes GitHub Org]
 - [Reviewer] in the marketing team folder
 - Shadowed under a lead in any role on the team for 6 months total (could be a combination of roles during that time period
-
 
 #### Expected Time Investment
 
@@ -50,7 +51,7 @@ Here is a checklist of items we will work to get access when you accept the role
 
 - Access to send and respond to email from community@kubernetes.io
 - Access to community and website repositories, all relevant calendars, and project boards
-- Other items listed in [team-resources.md]
+- Other items listed in [team-resources]
 
 ### Duration  
 
@@ -65,17 +66,13 @@ The Associate Editor should be able to achieve the above list of skills by the t
 
 Collaborate closely with the lead Editor toward the responsibilities outlined above. Be ready to backfill for them when they are unable to attend a meeting or represent the working group.
 
-
-
 TODO  
-
-
 
 [editorial calendar]: https://github.com/orgs/kubernetes/projects/41
 [marketing project]: https://github.com/orgs/kubernetes/projects/39
-[team resources]: /team-resources.md
+[team-resources]: ../team-resources.md
 [Kubernetes GitHub Org]: https://git.k8s.io/community/community-membership.md
-[Reviewer]: ./OWNERS
+[Reviewer]: ../OWNERS
 [OWNERS]: /communication/OWNERS
-[blogging]: /blog-guidelines.md
-[ethos]: /CHARTER.md#ethos/vision
+[blogging]: ../blog-guidelines.md
+[ethos]: ../CHARTER.md#ethosvision

@@ -4,7 +4,7 @@
 
 ## General guidelines
 
-All messaging must be consistent with the values and principles of the project and the [ethos/vision of the team](https://github.com/kubernetes/community/blob/master/communication/marketing-team/CHARTER.md#ethosvision). Messaging should be positive and uplifting. Be aware that sarcasm and/or jokes are generally hard to read over a medium such as social media.
+All messaging must be consistent with the values and principles of the project and the [ethos/vision of the team](./CHARTER.md#ethosvision). Messaging should be positive and uplifting. Be aware that sarcasm and/or jokes are generally hard to read over a medium such as social media.
 
 Original messages should come out of this teams' accounts at least twice a week (if not more). However, there should be no more than three tweets per hour (including retweets). Retweets, likes, and responses are unlimited, but they should be used thoughtfully to encourage inclusive and kind participation. Use scheduling software as needed to space out messages. All messages should serve a purpose: have an action and/or thumbnail image ("click link for details," "register today," etc. are example actions). Never include photos, user handles, or other personally identifiable information without explicit permission.
 
@@ -53,7 +53,7 @@ Kubernetes Organization Members with access to account are:
 
 ([Kubernetes Enhancement Proposals])
 
-### Ground Rules
+### Ground Rules  
 
 - The social media team cannot tweet KEPs at this time.
 - This may change if we can get a few owner(s)/group who can approve them
@@ -67,9 +67,10 @@ A: TODO (Y/N). The account is designed for information dissemination, so we will
 
 Q: Do we engage with hostile messages?  
 
-A: No. Don't feed the trolls. Mute them is the correct response. Block them as a last resort and only after discussing with team members. Reasons to block include verbal abuse, violating the platform's terms, or violating the [Code of Conduct](https://github.com/kubernetes/community/blob/master/code-of-conduct.md). The community is focused on openness and our accounts should be too, but there are times when we should reduce harmful people's visibility through blocking.
+A: No. Don't feed the trolls. Mute them is the correct response. Block them as a last resort and only after discussing with team members. Reasons to block include verbal abuse, violating the platform's terms, or violating the [Code of Conduct](/code-of-conduct.md). The community is focused on openness and our accounts should be too, but there are times when we should reduce harmful people's visibility through blocking.
 
 Credit: [Fedora Community](https://fedoraproject.org/wiki/Marketing)
+
 
 [#KEPs]: (#KEPs)
 [Kubernetes Enhancement Proposals]: https://github.com/kubernetes/enhancements/tree/master/keps

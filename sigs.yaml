@@ -113,7 +113,9 @@ sigs:
   - name: server-frameworks
     owners:
     - https://raw.githubusercontent.com/kubernetes/apiserver/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/controller-manager/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/controller-manager/OWNERS
   - name: server-sdk
     contact:
       mailing_list: https://groups.google.com/forum/#!forum/kubebuilder
@@ -1019,11 +1021,6 @@ sigs:
       slack: kube-aws
     owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
-  - name: kube-deploy
-    contact:
-      slack: kube-deploy
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/kube-deploy/master/OWNERS
   - name: kube-up
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
@@ -1079,18 +1076,11 @@ sigs:
     - github: parispittman
       name: Paris Pittman
   meetings:
-  - description: Biweekly Issue Triage
-    day: Wednesday
-    time: "10:30"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/308291410
-    recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - description: Regular SIG Meeting
     day: Wednesday
     time: "9:30"
     tz: PT (Pacific Time)
-    frequency: biweekly
+    frequency: weekly
     url: https://zoom.us/j/397264241
     archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
     recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
@@ -1207,13 +1197,21 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
     meetings:
-    - description: sig-contribex mentoring subproject meeting
-      day: Friday
-      time: "10:00"
+    - description: sig-contribex mentoring subproject meeting (APAC Friendly Time)
+      day: Monday
+      time: "20:30"
       tz: PT
-      frequency: biweekly
-      url: https://zoom.us/j/739807514
-      archive_url: https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit
+      frequency: 2nd and 4th Tuesday of each month
+      url: https://zoom.us/j/94884623370
+      archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r
+      recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
+    - description: sig-contribex mentoring subproject meeting (EU/NA Friendly Time)
+      day: Tuesday
+      time: "08:30"
+      tz: PT
+      frequency: 2nd and 4th Tuesday of each month
+      url: https://zoom.us/j/98162537924
+      archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r
       recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: repo-infra
     description: Creates and maintains tools and templates for kubernetes-namespace
@@ -1452,7 +1450,7 @@ sigs:
     frequency: biweekly
     url: https://zoom.us/my/k8s.mc
     archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
-    recordings_url: https://www.youtube.com/watch?v=iWKC3FsNHWg&list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
   contact:
     slack: sig-multicluster
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster
@@ -1774,7 +1772,7 @@ sigs:
     day: Thursday
     time: "17:30"
     tz: UTC
-    frequency: weekly/bi-weekly as per demand ([upcoming meeting dates](#upcoming-meeting-dates))
+    frequency: bi-weekly ([upcoming meeting dates](#upcoming-meeting-dates))
     url: https://zoom.us/j/989573207
     archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
     recordings_url: https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL
@@ -2066,6 +2064,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/csi-translation-lib/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-translation-lib/OWNERS
+  - name: mount-utils
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/mount-utils/OWNERS
   - name: nfs-provisioner
     owners:
     - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
@@ -2086,8 +2087,8 @@ sigs:
   label: testing
   leadership:
     chairs:
-    - github: fejta
-      name: Erick Fejta
+    - github: BenTheElder
+      name: Benjamin Elder
       company: Google
     - github: spiffxp
       name: Aaron Crickenberger
@@ -2096,6 +2097,8 @@ sigs:
       name: Steve Kuznetsov
       company: Red Hat
     emeritus_leads:
+    - github: fejta
+      name: Erick Fejta
     - github: timothysc
       name: Timothy St. Clair
   meetings:

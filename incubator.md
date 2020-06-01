@@ -129,13 +129,11 @@ These are grandfathered in as full projects:
 These projects are young but have significant user facing docs pointing at their current github.com/kubernetes location. Lets put them through incubation process but leave them at github.com/kubernetes.
 
 - github.com/kubernetes/charts
- 
+
 **Projects to Move to Incubator**
 
 - github.com/kubernetes/kube2consul
 - github.com/kubernetes/frakti
-- github.com/kubernetes/kube-deploy
-- github.com/kubernetes/kubernetes-anywhere
 - github.com/kubernetes/application-images
 - github.com/kubernetes/rktlet
 - github.com/kubernetes/horizontal-self-scaler
