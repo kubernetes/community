@@ -57,6 +57,9 @@ The following [subprojects][subproject-definition] are owned by sig-instrumentat
 ### heapster
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
+### instrumentation-tools
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/instrumentation-tools/master/OWNERS
 ### klog
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/klog/master/OWNERS
