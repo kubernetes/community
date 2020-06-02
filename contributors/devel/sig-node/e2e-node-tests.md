@@ -40,6 +40,12 @@ This will: run the *ginkgo* binary against the subdirectory *test/e2e_node*, whi
 - Output the test results to STDOUT
 - Stop *kubelet*, *kube-apiserver*, and *etcd*
 
+To view the settings and print help, run:
+
+```sh
+make test-e2e-node PRINT_HELP=y
+```
+
 ## Remotely
 
 Why Run tests *Remotely*?  Tests will be run in a customized pristine environment.  Closely mimics what will be done
@@ -84,7 +90,7 @@ provisioning a new one.  To delete the GCE instance after each test see
 *[DELETE_INSTANCE](#delete-instance-after-tests-run)*.**
 
 
-# Additional Remote Options
+## Additional Remote Options
 
 ## Run tests using different images
 
@@ -189,6 +195,13 @@ To run tests NOT matching a regex:
 make test-e2e-node REMOTE=true SKIP="<regex-to-match>"
 ```
 
+These are often configured in the CI environment.
+For example, the [`ci-kubernetes-node-kubelet`](https://github.com/kubernetes/test-infra/blob/05eeaff67cc936181c18a63fdc9d5847c55ef258/config/jobs/kubernetes/sig-node/node-kubelet.yaml#L31) uses `--focus="\[NodeConformance\]" --skip="\[Flaky\]|\[Serial\]"`, this can be specified to the make target as:
+
+```sh
+make test-e2e-node REMOTE=true FOCUS="\[NodeConformance\]" SKIP="\[Flaky\]|\[Serial\]"
+```
+
 ## Run tests continually until they fail
 
 This is useful if you are trying to debug a flaky test failure.  This will cause ginkgo to continually
@@ -243,15 +256,24 @@ make test_e2e_node TEST_ARGS="--cgroups-per-qos=true"
 
 # Notes on tests run by the Kubernetes project during pre-, post- submit.
 
-The node e2e tests are run by the PR builder for each Pull Request and the results published at
-the bottom of the comments section.  To re-run just the node e2e tests from the PR builder add the comment
-`@k8s-bot node e2e test this issue: #<Flake-Issue-Number or IGNORE>` and **include a link to the test
+The node e2e tests are run by the [Prow](https://prow.k8s.io/) for each Pull Request and the results published 
+in the status checks box at
+the bottom of the Pull Request below all comments. To have prow re-run the node e2e tests against a PR add the comment
+`/test pull-kubernetes-node-e2e` and **include a link to the test
 failure logs if caused by a flake.**
+Note that [commands to prow](https://prow.k8s.io/command-help#test) must be on separate lines from any commentary.
 
-The PR builder runs tests against the images listed in [jenkins-pull.properties](https://git.k8s.io/kubernetes/test/e2e_node/jenkins/jenkins-pull.properties)
+For example, 
 
-The post submit tests run against the images listed in [jenkins-ci.properties](https://git.k8s.io/kubernetes/test/e2e_node/jenkins/jenkins-ci.properties)
+    /test pull-kubernetes-node-e2e
+    flake due to #12345
 
+The PR builder runs tests against the images listed in [image-config.yaml](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/image-config.yaml).
+
+Other [node e2e prow jobs](https://github.com/kubernetes/test-infra/tree/master/config/jobs/kubernetes/sig-node)
+run against different images depending on the configuration chosen in the
+[test-infra repo](https://github.com/kubernetes/test-infra/tree/master/jobs/e2e_node).
+The source code for these tests comes from the [kubernetes/kubernetes repo](https://github.com/kubernetes/kubernetes/tree/master/test/e2e_node).
 
 # Notes on the Topology Manager tests
 
