@@ -41,7 +41,7 @@ addition of [gsuite], this practice may change soon.
 3. [Configure access permissions and sharing:]
   - Make all event details publicly accessible.
   - Share it with full rights ("make changes and manage sharing”) to your SIG/WG
-    lead mailing list and community@kubernetes.io.
+    lead mailing list and contributors@kubernetes.io.
   - Let your other chairs and leads know they can accidentally delete a calendar
     while trying to delete it from theirs.
   - Share with view permissions only (“see all event details”) to your SIG/WG
@@ -106,8 +106,8 @@ the project or no longer at an employer that holds the invite"_
 If the calendar was created as a shared calendar with edit rights granted to
 other chairs and leads they should be able to edit the invite and migrate
 ownership without issue. If you do not have permissions, check first by sending
-an email to community@kubernetes.io. Permissions may have been granted that team
-and they will be able to facilitate the change in ownership.
+an email to contributors@kubernetes.io. Permissions may have been granted that
+team and they will be able to facilitate the change in ownership.
 
 If there is no shared calendar and still one owner, ask the person to transfer
 it to a shared calendar or you'll need to create a new one. In these cases it
