@@ -250,6 +250,7 @@ channels:
   - name: okteto
   - name: opencontainers
   - name: openebs
+  - name: openebs-dev
   - name: openshift-dev
   - name: openshift-users
   - name: openstack-helm
