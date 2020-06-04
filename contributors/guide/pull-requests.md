@@ -10,7 +10,7 @@ This doc explains the process and best practices for submitting a pull request t
   - [Run Local Verifications](#run-local-verifications)
 - [The Pull Request Submit Process](#the-pull-request-submit-process)
   - [The Testing and Merge Workflow](#the-testing-and-merge-workflow)
-  - [More About Ok-To-Test](#more-about-ok-to-test)
+  - [More About `Ok-To-Test`](#more-about-ok-to-test)
   - [Marking Unfinished Pull Requests](#marking-unfinished-pull-requests)
   - [Pull Requests and the Release Cycle](#pull-requests-and-the-release-cycle)
   - [Comment Commands Reference](#comment-commands-reference)
@@ -25,11 +25,12 @@ This doc explains the process and best practices for submitting a pull request t
   - [3. Open a Different Pull Request for Fixes and Generic Features](#3-open-a-different-pull-request-for-fixes-and-generic-features)
   - [4. Comments Matter](#4-comments-matter)
   - [5. Test](#5-test)
-  - [6. Squashing and Commit Titles](#6-squashing-and-commit-titles)
-  - [7. KISS, YAGNI, MVP, etc.](#7-kiss-yagni-mvp-etc)
-  - [8. It's OK to Push Back](#8-its-ok-to-push-back)
-  - [9. Common Sense and Courtesy](#9-common-sense-and-courtesy)
-  - [10. Trivial Edits](#10-trivial-edits)
+  - [6. Squashing](#6-squashing)
+  - [7. Commit Message Guidelines](#7-commit-message-guidelines)
+  - [8. KISS, YAGNI, MVP, etc.](#8-kiss-yagni-mvp-etc)
+  - [9. It's OK to Push Back](#9-its-ok-to-push-back)
+  - [10. Common Sense and Courtesy](#10-common-sense-and-courtesy)
+  - [11. Trivial Edits](#11-trivial-edits)
 
 # Before You Submit a Pull Request
 
@@ -280,7 +281,7 @@ Nothing is more frustrating than starting a review, only to find that the tests 
 
 If you don't know how to test Feature-X, please ask!  We'll be happy to help you design things for easy testing or to suggest appropriate test cases.
 
-## 6. Squashing and Commit Titles
+## 6. Squashing
 
 Your reviewer has finally sent you feedback on Feature-X.
 
@@ -302,34 +303,260 @@ For more information, see [squash commits](./github-workflow.md#squash-commits).
 
  Don't squash when there are independent changes layered to achieve a single goal. For instance, writing a code munger could be one commit, applying it could be another, and adding a precommit check could be a third. One could argue they should be separate pull requests, but there's really no way to test/review the munger without seeing it applied, and there needs to be a precommit check to ensure the munged output doesn't immediately get out of date.
 
-A commit, as much as possible, should be a single logical change.
+## 7. Commit Message Guidelines
 
-## 7. KISS, YAGNI, MVP, etc.
+PR comments are not represented in the commit history. Commits and their commit
+messages are the _"permanent record"_ of the changes being done in your PR and
+their commit messages should accurately describe both _what_ and _why_ it is
+being done.
 
-Sometimes we need to remind each other of core tenets of software design - Keep It Simple, You Aren't Gonna Need It, Minimum Viable Product, and so on. Adding a feature "because we might need it later" is antithetical to software that ships. Add the things you need NOW and (ideally) leave room for things you might need later - but don't implement them now.
+Commit messages are comprised of two parts; the subject and the body.
 
-## 8. It's OK to Push Back
+The subject is the first line of the commit message and is often the only part
+that is needed for small or trivial changes. Those may be done as "one liners"
+with the `git commit -m` or the `--message` flag, but only if the what and
+especially why can be fully described in that few words. 
 
-Sometimes reviewers make mistakes. It's OK to push back on changes your reviewer requested. If you have a good reason for doing something a certain way, you are absolutely allowed to debate the merits of a requested change. Both the reviewer and reviewee should strive to discuss these issues in a polite and respectful manner.
+The commit message body is the portion of text below the subject when you run 
+`git commit` without the `-m` flag which will open the commit message for editing
+in your [preferred editor]. Typing a few further sentences of clarification is
+a useful investment in time both for your reviews and overall later project
+maintenance.
 
-You might be overruled, but you might also prevail. We're pretty reasonable people. Mostly.
+```
+This is the commit message subject
 
-Another phenomenon of open-source projects (where anyone can comment on any issue) is the dog-pile - your pull request gets so many comments from so many people it becomes hard to follow. In this situation, you can ask the primary reviewer (assignee) whether they want you to fork a new pull request to clear out all the comments. You don't HAVE to fix every issue raised by every person who feels like commenting, but you should answer reasonable comments with an explanation.
+Any text here is the commit message body
+Some text
+Some more text
+...
 
-## 9. Common Sense and Courtesy
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch example
+# Changes to be committed:
+#   ...
+#
+```
 
-No document can take the place of common sense and good taste. Use your best judgment, while you put
-a bit of thought into how your work can be made easier to review. If you do these things your pull requests will get merged with less friction.
+Use these guidelines below to help craft a well formatted commit message. These
+can be largely attributed to the previous work of [Chris Beams], [Tim Pope],
+[Scott Chacon] and [Ben Straub].
 
-## 10. Trivial Edits
+- [Try to keep the subject line to 50 characters or less; do not exceed 72 characters](#try-to-keep-the-subject-line-to-50-characters-or-less-do-not-exceed-72-characters)
+- [The first word in the commit message subject should be capitalized unless it starts with a lowercase symbol or other identifier](#the-first-word-in-the-commit-message-subject-should-be-capitalized-unless-it-starts-with-a-lowercase-symbol-or-other-identifier)
+- [Do not end the commit message subject with a period](#do-not-end-the-commit-message-subject-with-a-period)
+- [Use imperative mood in your commit message subject](#use-imperative-mood-in-your-commit-message-subject)
+- [Add a single blank line before the commit message body](#add-a-single-blank-line-before-the-commit-message-body)
+- [Wrap the commit message body at 72 characters](#wrap-the-commit-message-body-at-72-characters)
+- [Do not use GitHub keywords or (@)mentions within your commit message](#do-not-use-github-keywords-or-mentions-within-your-commit-message)
+- [Use the commit message body to explain the _what_ and _why_ of the commit](#use-the-commit-message-body-to-explain-the-what-and-why-of-the-commit)
+
+<!-- omit in toc -->
+### Try to keep the subject line to 50 characters or less; do not exceed 72 characters
+
+The 50 character limit for the commit message subject line acts as a focus to
+keep the message summary as concise as possible. It should be just enough to
+describe what is being done.
+
+The hard limit of 72 characters is to align with the max body size. When viewing
+the history of a repository with `git log`, git will pad the body text with
+additional blank spaces. Wrapping the width at 72 characters ensures the body
+text will be centered and easily viewable on an 80-column terminal.
+
+<!-- omit in toc -->
+#### Providing additional context
+
+You can provide additional context with fewer characters by prefixing your
+commit message with the [kind] or [area] that your PR is impacting. These are
+commonly used labels that other members of the Kubernetes community will
+understand.
+
+**Examples:**
+- `cleanup: remove unused portion of script foo`
+- `deprecation: add notice for bar feature removal in future release`
+- `etcd: update default server to 3.4.7`
+- `kube-proxy: add a test case for HostnameOverride`
+
+These can serve as a good subject before expanding further on the what and why
+within the commit message body.
+
+
+<!-- omit in toc -->
+### The first word in the commit message subject should be capitalized unless it starts with a lowercase symbol or other identifier
+
+The commit message subject is like an abbreviated sentence. The first word should
+be capitalized unless the message begins with symbol, acronym or other identifier
+such as [kind] or [area] that would regularly be lowercase.
+
+
+<!-- omit in toc -->
+### Do not end the commit message subject with a period
+
+This is primary intended to serve as a space saving measure, but also aids in
+driving the subject line to be as short and concise as possible.
+
+
+<!-- omit in toc -->
+### Use imperative mood in your commit message subject
+
+Imperative mood can be be thought of as a _"giving a command"_; it is a
+**present-tense** statement that explicitly describes what is being done.
+
+**Good Examples:**
+- Fix x error in y
+- Add foo to bar
+- Revert commit "baz"
+- Update pull request guidelines
+
+**Bad Examples**
+- Fixed x error in y
+- Added foo to bar
+- Reverting bad commit "baz"
+- Updating the pull request guidelines
+- Fixing more things
+
+A general guideline from [Chris Beams] on forming an imperative commit subject
+is it should complete this sentence:
+```
+If applied, this commit will <your subject line here>
+```
+
+**Examples:**
+- _If applied, this commit will_ **Fix x error in y**
+- _If applied, this commit will_ **Add foo to bar**
+- _If applied, this commit will_ **Revert commit "baz"**
+- _If applied, this commit will_ **Update the pull request guidelines**
+
+
+<!-- omit in toc -->
+### Add a single blank line before the commit message body
+
+Git uses the blank line to determine which portion of the commit message is the
+subject and body. Text preceding the blank line is the subject, and text
+following is considered the body.
+
+<!-- omit in toc -->
+### Wrap the commit message body at 72 characters
+
+The default column width for git is 80 characters. Git will pad the text of the
+message body with an additional 4 spaces when viewing the git log. This would
+leave you with 76 available spaces for text, however the text would be "lop-sided".
+To center the text for better viewing, the other side is artificially padded
+with the same amount of spaces, resulting in 72 usable characters per line. Think
+of them as the margins in a word doc.
+
+
+<!-- omit in toc -->
+### Do not use GitHub keywords or (@)mentions within your commit message
+
+<!-- omit in toc -->
+#### GitHub Keywords
+
+Using [GitHub keywords] followed by a `#<issue number>` reference within your
+commit message will automatically apply the `do-not-merge/invalid-commit-message`
+label to your PR preventing it from being merged. 
+
+[GitHub keywords] in a PR to close issues is considered a convenience item, but
+can have unexpected side-effects; often closing something they  shouldn't. 
+
+**Blocked Keywords:**
+- close
+- closes
+- closed
+- fix
+- fixes
+- fixed
+- resolve
+- resolves
+- resolved
+
+
+<!-- omit in toc -->
+#### (@)Mentions
+
+(@)mentions within the commit message will send a notification to that user, and
+will continually do so each time the PR is updated.
+
+
+<!-- omit in toc -->
+### Use the commit message body to explain the _what_ and _why_ of the commit
+
+Commits and their commit messages are the _"permanent record"_ of the changes
+being done in your PR. Describing why something has changed and what effects it
+may have. You are providing context to both your reviewer and the next person
+that has to touch your code.
+
+If something is resolving a bug, or is in response to a specific issue, you can
+link to it as a reference with the message body itself. These sorts of
+breadcrumbs become essential when tracking down future bugs or regressions and
+further help explain the _"why"_ the commit was made.
+
+
+**Additional Resources:**
+- [How to Write a Git Commit Message - Chris Beams](https://chris.beams.io/posts/git-commit/)
+- [Distributed Git - Contributing to a Project (Commit Guidelines)](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project)
+- [What’s with the 50/72 rule? - Preslav Rachev](https://preslav.me/2015/02/21/what-s-with-the-50-72-rule/)
+- [A Note About Git Commit Messages - Tim Pope](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+
+
+## 8. KISS, YAGNI, MVP, etc.
+
+Sometimes we need to remind each other of core tenets of software design - Keep
+It Simple, You Aren't Gonna Need It, Minimum Viable Product, and so on. Adding a 
+feature "because we might need it later" is antithetical to software that ships. 
+Add the things you need NOW and (ideally) leave room for things you might need 
+later - but don't implement them now.
+
+## 9. It's OK to Push Back
+
+Sometimes reviewers make mistakes. It's OK to push back on changes your reviewer
+requested. If you have a good reason for doing something a certain way, you are
+absolutely allowed to debate the merits of a requested change. Both the reviewer
+and reviewee should strive to discuss these issues in a polite and respectful manner.
+
+You might be overruled, but you might also prevail. We're pretty reasonable people.
+
+Another phenomenon of open-source projects (where anyone can comment on any issue)
+is the dog-pile - your pull request gets so many comments from so many people it
+becomes hard to follow. In this situation, you can ask the primary reviewer
+(assignee) whether they want you to fork a new pull request to clear out all the
+comments. You don't HAVE to fix every issue raised by every person who feels 
+like commenting, but you should answer reasonable comments with an explanation.
+
+## 10. Common Sense and Courtesy
+
+No document can take the place of common sense and good taste. Use your best
+judgment, while you put
+a bit of thought into how your work can be made easier to review. If you do
+these things your pull requests will get merged with less friction.
+
+## 11. Trivial Edits
 
 Each incoming Pull Request needs to be reviewed, checked, and then merged.
 
-While automation helps with this, each contribution also has an engineering cost. Therefore it is appreciated if you do NOT make trivial edits and fixes, but instead focus on giving the entire file a review.
+While automation helps with this, each contribution also has an engineering cost.
+Therefore it is appreciated if you do NOT make trivial edits and fixes, but
+instead focus on giving the entire file a review.
 
-If you find one grammatical or spelling error, it is likely there are more in that file, you can really make your Pull Request count by checking the formatting, checking for broken links, and fixing errors and then submitting all the fixes at once to that file.
+If you find one grammatical or spelling error, it is likely there are more in
+that file, you can really make your Pull Request count by checking the formatting,
+checking for broken links, and fixing errors and then submitting all the fixes
+at once to that file.
 
 **Some questions to consider:**
 
 * Can the file be improved further?
 * Does the trivial edit greatly improve the quality of the content?
+
+
+[Chris Beams]: https://chris.beams.io/
+[Tim Pope]: https://tpo.pe/
+[Scott Chacon]: https://scottchacon.com/
+[Ben Straub]: https://ben.straub.cc/
+[kind]: https://github.com/kubernetes/kubernetes/labels?q=kind
+[area]: https://github.com/kubernetes/kubernetes/labels?q=area
+[preferred editor]: https://help.github.com/en/github/using-git/associating-text-editors-with-git
+[imperative mood]: https://www.grammar-monster.com/glossary/imperative_mood.htm
+[GitHub keywords]: https://help.github.com/articles/closing-issues-using-keywords
