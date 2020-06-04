@@ -27,16 +27,6 @@ This doc explains the process and best practices for submitting a pull request t
   - [5. Test](#5-test)
   - [6. Squashing](#6-squashing)
   - [7. Commit Message Guidelines](#7-commit-message-guidelines)
-    - [Try to keep the subject line to 50 characters or less; do not exceed 72 characters](#try-to-keep-the-subject-line-to-50-characters-or-less-do-not-exceed-72-characters)
-    - [The first word in the commit message subject should be capitalized unless it starts with a lowercase symbol or other identifier](#the-first-word-in-the-commit-message-subject-should-be-capitalized-unless-it-starts-with-a-lowercase-symbol-or-other-identifier)
-    - [Do not end the commit message subject with a period](#do-not-end-the-commit-message-subject-with-a-period)
-    - [Use imperative mood in your commit message subject](#use-imperative-mood-in-your-commit-message-subject)
-    - [Add a single blank line before the commit message body](#add-a-single-blank-line-before-the-commit-message-body)
-    - [Wrap the commit message body at 72 characters](#wrap-the-commit-message-body-at-72-characters)
-    - [Do not use GitHub keywords or (@)mentions within your commit message](#do-not-use-github-keywords-or-mentions-within-your-commit-message)
-      - [GitHub Keywords](#github-keywords)
-      - [(@)Mentions](#mentions)
-    - [Use the commit message body to explain the _what_ and _why_ of the commit](#use-the-commit-message-body-to-explain-the-what-and-why-of-the-commit)
   - [8. KISS, YAGNI, MVP, etc.](#8-kiss-yagni-mvp-etc)
   - [9. It's OK to Push Back](#9-its-ok-to-push-back)
   - [10. Common Sense and Courtesy](#10-common-sense-and-courtesy)
@@ -323,12 +313,15 @@ being done.
 Commit messages are comprised of two parts; the subject and the body.
 
 The subject is the first line of the commit message and is often the only part
-of the commit message needed for small changes. These are often done as "one
-liners "with the `-m` or `--message` flag.
+that is needed for small or trivial changes. Those may be done as "one liners"
+with the `git commit -m` or the `--message` flag, but only if the what and
+especially why can be fully described in that few words. 
 
 The commit message body is the portion of text below the subject when you run 
 `git commit` without the `-m` flag which will open the commit message for editing
-in your [preferred editor].
+in your [preferred editor]. Typing a few further sentences of clarification is
+a useful investment in time both for your reviews and overall later project
+maintenance.
 
 ```
 This is the commit message subject
@@ -360,6 +353,7 @@ can be largely attributed to the previous work of [Chris Beams], [Tim Pope],
 - [Do not use GitHub keywords or (@)mentions within your commit message](#do-not-use-github-keywords-or-mentions-within-your-commit-message)
 - [Use the commit message body to explain the _what_ and _why_ of the commit](#use-the-commit-message-body-to-explain-the-what-and-why-of-the-commit)
 
+<!-- omit in toc -->
 ### Try to keep the subject line to 50 characters or less; do not exceed 72 characters
 
 The 50 character limit for the commit message subject line acts as a focus to
@@ -371,20 +365,40 @@ the history of a repository with `git log`, git will pad the body text with
 additional blank spaces. Wrapping the width at 72 characters ensures the body
 text will be centered and easily viewable on an 80-column terminal.
 
+<!-- omit in toc -->
+#### Providing additional context
 
+You can provide additional context with fewer characters by prefixing your
+commit message with the [kind] or [area] that your PR is impacting. These are
+commonly used labels that other members of the Kubernetes community will
+understand.
+
+**Examples:**
+- `cleanup: remove unused portion of script foo`
+- `deprecation: add notice for bar feature removal in future release`
+- `etcd: update default server to 3.4.7`
+- `kube-proxy: add a test case for HostnameOverride`
+
+These can serve as a good subject before expanding further on the what and why
+within the commit message body.
+
+
+<!-- omit in toc -->
 ### The first word in the commit message subject should be capitalized unless it starts with a lowercase symbol or other identifier
 
 The commit message subject is like an abbreviated sentence. The first word should
 be capitalized unless the message begins with symbol, acronym or other identifier
-that would regularly be lowercase.
+such as [kind] or [area] that would regularly be lowercase.
 
 
+<!-- omit in toc -->
 ### Do not end the commit message subject with a period
 
 This is primary intended to serve as a space saving measure, but also aids in
 driving the subject line to be as short and concise as possible.
 
 
+<!-- omit in toc -->
 ### Use imperative mood in your commit message subject
 
 Imperative mood can be be thought of as a _"giving a command"_; it is a
@@ -416,12 +430,14 @@ If applied, this commit will <your subject line here>
 - _If applied, this commit will_ **Update the pull request guidelines**
 
 
+<!-- omit in toc -->
 ### Add a single blank line before the commit message body
 
 Git uses the blank line to determine which portion of the commit message is the
 subject and body. Text preceding the blank line is the subject, and text
 following is considered the body.
 
+<!-- omit in toc -->
 ### Wrap the commit message body at 72 characters
 
 The default column width for git is 80 characters. Git will pad the text of the
@@ -432,8 +448,10 @@ with the same amount of spaces, resulting in 72 usable characters per line. Thin
 of them as the margins in a word doc.
 
 
+<!-- omit in toc -->
 ### Do not use GitHub keywords or (@)mentions within your commit message
 
+<!-- omit in toc -->
 #### GitHub Keywords
 
 Using [GitHub keywords] followed by a `#<issue number>` reference within your
@@ -455,12 +473,14 @@ can have unexpected side-effects; often closing something they  shouldn't.
 - resolved
 
 
+<!-- omit in toc -->
 #### (@)Mentions
 
 (@)mentions within the commit message will send a notification to that user, and
 will continually do so each time the PR is updated.
 
 
+<!-- omit in toc -->
 ### Use the commit message body to explain the _what_ and _why_ of the commit
 
 Commits and their commit messages are the _"permanent record"_ of the changes
@@ -535,6 +555,8 @@ at once to that file.
 [Tim Pope]: https://tpo.pe/
 [Scott Chacon]: https://scottchacon.com/
 [Ben Straub]: https://ben.straub.cc/
+[kind]: https://github.com/kubernetes/kubernetes/labels?q=kind
+[area]: https://github.com/kubernetes/kubernetes/labels?q=area
 [preferred editor]: https://help.github.com/en/github/using-git/associating-text-editors-with-git
 [imperative mood]: https://www.grammar-monster.com/glossary/imperative_mood.htm
 [GitHub keywords]: https://help.github.com/articles/closing-issues-using-keywords
