@@ -59,10 +59,9 @@ should also read [Writing Good e2e Tests](writing-good-e2e-tests.md)
 There are a variety of ways to run e2e tests, but we aim to decrease the number
 of ways to run e2e tests to a canonical way: `kubetest`.
 
-You can install `kubetest` as follows (If you face a download issue, please see issue [#14712](https://github.com/kubernetes/test-infra/issues/14712#issuecomment-541560441)):
-```sh
-go get -u k8s.io/test-infra/kubetest
-```
+For information on installing `kubetest`, please see the
+[installation section](https://github.com/kubernetes/test-infra/tree/master/kubetest#installation) of the
+[Kubetest project documentation](https://github.com/kubernetes/test-infra/tree/master/kubetest).
 
 You can run an end-to-end test which will bring up a master and nodes, perform
 some tests, and then tear everything down. Make sure you have followed the
