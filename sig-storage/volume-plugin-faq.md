@@ -66,9 +66,6 @@ For more information about CSI, see:
 *   [Kubernetes CSI Beta Announcement Blog Post](https://kubernetes.io/blog/2018/04/10/container-storage-interface-beta/)
 *   [Kubernetes CSI GA Announcement Blog Post](https://kubernetes.io/blog/2019/01/15/container-storage-interface-ga/)
 
-**What are the limitations of CSI?**
-*   CSI implementation in Kubernetes is not yet stable/GA (currently in alpha).
-
 **How do I write a CSI Driver?**
 
 For more information on how to write and deploy a CSI Driver on Kubernetes, see https://kubernetes-csi.github.io/docs/developing.html
