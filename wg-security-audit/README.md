@@ -14,7 +14,7 @@ Perform a security audit on k8s with a vendor and produce as artifacts a threat 
 * SIG Auth
 
 ## Meetings
-* Regular WG Meeting: [Mondays at 13:00 PT (Pacific Time)](https://docs.google.com/document/d/1RbC4SBZBlKth7IjYv_NaEpnmLGwMJ0ElpUOmsG-bdRA/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Mondays at 12:00 PT (Pacific Time)](https://docs.google.com/document/d/1RbC4SBZBlKth7IjYv_NaEpnmLGwMJ0ElpUOmsG-bdRA/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
 
 ## Organizers
 
