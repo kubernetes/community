@@ -32,6 +32,23 @@ Kubernetes Organization Members with access to account are:
 - Significant historical events as related to the project (Kubernetes birthday, previous events, etc.)
 - Steering Committee Announcements
 
+### Example Social Media
+
+- Weekly on Sunday: Link with community calendar and "This week in upstream community group meetings..."
+- As they come in:
+  - Emails from k-dev
+  - #Shoutouts (from #shoutouts slack channel; try to include social handles or github handles if possible)
+  - Requests from issue templates
+- Scheduled launches
+  - Your upcoming blog posts
+  - Requests from issue templates
+- Every Wednesday (example)
+  - New contributor Wednesday - tweet a bunch of good-first-issue label GitHub issues (TODO: Automate)
+- Event support:
+  -  (with information from the issue template)
+  - Examples: Steering Committee voting will need a reminder weekly for at least a month
+  - Meet our contributors should have a reminder 3 days before the event and then 30 minutes before on the day of
+
 ## KEPs
 
 ([Kubernetes Enhancement Proposals])
@@ -54,4 +71,6 @@ A: No. Don't feed the trolls. Mute them is the correct response. Block them as a
 
 Credit: [Fedora Community](https://fedoraproject.org/wiki/Marketing)
 
+
+[#KEPs]: (#KEPs)
 [Kubernetes Enhancement Proposals]: https://github.com/kubernetes/enhancements/tree/master/keps
