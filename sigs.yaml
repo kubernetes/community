@@ -2703,7 +2703,7 @@ workinggroups:
   meetings:
   - description: Regular WG Meeting
     day: Monday
-    time: "13:00"
+    time: "12:00"
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1RbC4SBZBlKth7IjYv_NaEpnmLGwMJ0ElpUOmsG-bdRA/edit
