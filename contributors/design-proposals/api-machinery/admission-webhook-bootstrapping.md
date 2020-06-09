@@ -32,7 +32,7 @@ type ExternalAdmissionHook struct {
     FailurePolicy *FailurePolicyType
     // Only objects in matching namespaces are subjected to this webhook.
     // LabelSelector.MatchExpressions allows exclusive as well as inclusive
-    // matching, so you can use this // selector as a whitelist or a blacklist.
+    // matching, so you can use this // selector as a whitelist or a blocklist.
     // For example, to apply the webhook to all namespaces except for those have
     // labels with key "runlevel" and value equal to "0" or "1": 
     // metav1.LabelSelctor{MatchExpressions: []LabelSelectorRequirement{
