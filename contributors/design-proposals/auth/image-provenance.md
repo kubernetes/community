@@ -290,9 +290,9 @@ Image policy may depend on the Dockerfile, the source code, the source repo, the
 vulnerability databases, and so on.  Kubernetes does not have these as built-in concepts or have plans to add
 them anytime soon.
 
-### Registry whitelist/blacklist
+### Registry allowlist/blocklist
 
-We considered a whitelist/blacklist of registries and/or repositories. Basically, a prefix match on image strings.
+We considered a allowlist/blocklist of registries and/or repositories. Basically, a prefix match on image strings.
  The problem of approving images would be then pushed to a problem of controlling who has access to push to a
 trusted registry/repository.  That approach is simple for kubernetes.  Problems with it are:
 
