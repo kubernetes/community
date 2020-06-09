@@ -1358,7 +1358,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   I think the author should have final say on when this PR merges
     *   Notes:
         *   Anybody can add or remove a hold (don't even need to be an org member)
-        *   Can we blacklist?  We can, from the org
+        *   Can we blocklist?  We can, from the org
             *   We'd have to restrict hold to org members if it was a problem
 *   [ 0:20 ] ?**SIG Updates**?
     *   SIG Leads, check out this set of [recommended topics to cover](https://github.com/kubernetes/community/blob/master/events/community-meeting.md#sig-updates) during your update
