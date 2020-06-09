@@ -122,9 +122,9 @@ Implementation details:
 
 * [docker/17989](https://github.com/moby/moby/pull/17989): initial
   implementation
-* [docker/18780](https://github.com/moby/moby/pull/18780): default blacklist
+* [docker/18780](https://github.com/moby/moby/pull/18780): default blocklist
   profile
-* [docker/18979](https://github.com/moby/moby/pull/18979): default whitelist
+* [docker/18979](https://github.com/moby/moby/pull/18979): default allowlist
   profile
 
 ### rkt / appcontainers
