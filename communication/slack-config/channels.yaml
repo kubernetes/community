@@ -143,6 +143,7 @@ channels:
   - name: kops-users
   - name: kots
     id: CFFKXV0JZ
+  - name: kpt
   - name: kr-dev
   - name: kr-users
   - name: kraken
