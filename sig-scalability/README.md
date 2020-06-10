@@ -87,9 +87,9 @@ on https://go.k8s.io/oncall .
 
 Also do not hesitate to contact those SIG members for status update:
 
+* Antoni Zawody (**[@tosi3k](https://github.com/tosi3k)**), Google
 * Jacek Kaniuk (**[@jkaniuk](https://github.com/jkaniuk)**), Google
 * Jakub Przychodzeń (**[@jprzychodzen](https://github.com/jprzychodzen)**), Google
-* Janek Lukasiewicz (**[@oxddr](https://github.com/oxddr)**), Google
 * Maciej Borsz (**[@mborsz](https://github.com/mborsz)**), Google
 * Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
@@ -99,11 +99,6 @@ Also do not hesitate to contact those SIG members for status update:
 Check out [this calendar](https://calendar.google.com/calendar/embed?src=90g85fajsmubf5vp02uhpbvcq8%40group.calendar.google.com) for upcoming meeting dates.
 
 You can use [this link](https://calendar.google.com/calendar?cid=OTBnODVmYWpzbXViZjV2cDAydWhwYnZjcThAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ) to add it to your personal Google calendar.
-
-# Scalability Regressions and Bugs
-The following document lists regressions and bugs that SIG Scalability has been working on.
-
-[Scalability Regressions and Bugs](https://docs.google.com/document/d/1_mqv_T7i5k7_HgcQihEuFdq7ZCIf3AAGyAo9axzdAGI/edit)
 
 # Details about SIG-Scalability sub-projects
 
@@ -127,6 +122,16 @@ Kubernetes features in scalable and performance way.
 Educating contributors and ensuring best practises are widely used.
 
 * [Regressions case study](./governance/scalability-regressions-case-studies.md)
+* [Scalability Regressions and Bugs](https://docs.google.com/document/d/1_mqv_T7i5k7_HgcQihEuFdq7ZCIf3AAGyAo9axzdAGI/edit)
+
+## Kubernetes scalability bottlenecks detection
+
+Detecting scalability bottlenecks and limitations, documenting them and
+driving architectural changes to eliminate those (if such are required) in
+collaboration with other SIGs or directly delegating non cross-cutting
+improvements to individual SIGs.
+
+* [Scalability issues with Services](.blogs/k8s-services-scalability-issues.md)
 
 ## Kubernetes scalability test frameworks
 
@@ -143,7 +148,7 @@ more generalized benchmarking scenarios.
 
 Ensuring that all tests necessary to validate Kubernetes scalability and
 performance exists (ideally by providing easy-to-use frameworks and working
-with SIGs to provide them), having engironment and resources to run them.
+with SIGs to provide them), having environment and resources to run them.
 
 Ensuring that tests are being executed according to calendar and ensuring that
 each official Kubernetes release satisfies all scalability and performance
@@ -157,14 +162,5 @@ We are in progress to migrating tests to new framework:
 
 * [Still official tests](https://github.com/kubernetes/kubernetes/tree/master/test/e2e/scalability)
 * [Soon to be official tests](https://github.com/kubernetes/perf-tests/tree/master/clusterloader2/testing)
-
-## Kubernetes scalability bottlenecks detection
-
-Detecting scalability bottlenecks and limitations, documenting them and
-driving architectural changes to eliminate those (if such are required) in
-collaboration with other SIGs or directly delegating improvements to
-individual SIGs, of bottlenecks aren't cross-cutting the whole system.
-
-* [Scalability issues with Services](.blogs/k8s-services-scalability-issues.md)
 
 <!-- END CUSTOM CONTENT -->
