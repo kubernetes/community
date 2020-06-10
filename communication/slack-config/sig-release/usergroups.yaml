@@ -27,3 +27,24 @@ usergroups:
       - tpepper # subproject owner / Release Manager
       - Verolop # Release Manager Associate
       - xmudrii # Release Manager Associate
+
+  # Should match the Release Team Leads of the current cycle and SIG Chairs at all times
+  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.19/release_team.md
+  - name: release-team-leads
+    long_name: Release Team Leads
+    description: Release Team Leads. Ping for questions on the current Kubernetes release cycle.
+    channels:
+      - release-bug-triage
+      - release-ci-signal
+      - release-comms
+      - release-docs
+      - release-management
+      - release-notes
+      - sig-release
+    members:
+      - calebamiles # SIG Chair
+      - jeremyrickard # 1.19 Release Team Lead Shadow
+      - justaugustus # SIG Chair
+      - mrbobbytables # 1.19 Release Team Lead Shadow
+      - onlydole # 1.19 Release Team Lead
+      - tpepper # SIG Chair
