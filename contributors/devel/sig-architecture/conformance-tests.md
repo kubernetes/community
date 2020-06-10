@@ -249,8 +249,9 @@ To promote a test to the conformance test suite, open a PR as follows:
     than the `framework.It()` function
   - adds a comment immediately before the `ConformanceIt()` call that includes
     all of the required [conformance test comment metadata]
-  - `go run test/conformance/walk.go test/e2e > test/conformance/testdata/conformance.txt` 
-    adds the test name to the [conformance.txt] file 
+  - run `bazel build //test/conformance:list_conformance_tests` then
+    `cp bazel-bin/test/conformance/conformance.yaml test/conformance/testdata`
+    which adds the test name to the [conformance.yaml] file
 - add the PR to SIG Architecture's [Conformance Test Review board] in the To
   Triage column
 
@@ -319,4 +320,4 @@ for your provider, please see the [testgrid conformance README]
 [testgrid conformance dashboard]: https://testgrid.k8s.io/conformance-all
 [testgrid conformance README]: https://github.com/kubernetes/test-infra/blob/master/testgrid/conformance/README.md
 [v1.9 conformance doc]: https://github.com/cncf/k8s-conformance/blob/master/docs/KubeConformance-1.9.md
-[conformance.txt]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.txt
+[conformance.yaml]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.yaml
