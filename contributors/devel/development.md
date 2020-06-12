@@ -180,7 +180,7 @@ images.
   The `VERSION` file and `Dockerfile`.
 - The cross tag `KUBE_BUILD_IMAGE_CROSS_TAG` in [build/common.sh].
 - The `go_version` in the [`go_register_toolchains`](https://git.k8s.io/kubernetes/build/root/WORKSPACE) bazel rule.
-- The desired Go verion in
+- The desired Go version in
   [test/images/Makefile](https://git.k8s.io/kubernetes/test/images/Makefile).
 
 ### PyYAML
