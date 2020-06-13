@@ -32,9 +32,9 @@ You can also use the gsutil tool to explore the Google Cloud Storage release
 buckets. Here are some examples:
 
 ```sh
-gsutil cat gs://kubernetes-release-dev/ci/latest.txt          # output the latest ci version number
-gsutil ls gs://kubernetes-release-dev/ci/v0.20.0-29-g29a55cc/ # list the contents of a ci release
-gsutil ls gs://kubernetes-release/release                 # list all official releases and rcs
+gsutil cat gs://kubernetes-release-dev/ci/latest.txt           # output the latest ci version number
+gsutil ls gs://kubernetes-release-dev/ci/v0.20.0-29-g29a55cc/  # list the contents of a ci release
+gsutil ls gs://kubernetes-release/release                      # list all official releases and rcs
 ```
 
 ## Install `gsutil`
@@ -42,6 +42,6 @@ gsutil ls gs://kubernetes-release/release                 # list all official re
 Example installation:
 
 ```console
-$ curl -sSL https://storage.googleapis.com/pub/gsutil.tar.gz | sudo tar -xz -C /usr/local/src
-$ sudo ln -s /usr/local/src/gsutil/gsutil /usr/bin/gsutil
+curl -sSL https://storage.googleapis.com/pub/gsutil.tar.gz | sudo tar -xz -C /usr/local/src
+sudo ln -s /usr/local/src/gsutil/gsutil /usr/bin/gsutil
 ```
