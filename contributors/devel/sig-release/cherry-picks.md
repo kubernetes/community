@@ -19,7 +19,7 @@ branches.
    considered implicit for all code within cherry-pick pull requests,
    **unless there is a large conflict**.
 - A pull request merged against the master branch.
-- [Release branch](https://git.k8s.io/release/docs/branching.md) exists.
+- The release branch exists (example: [`release-1.18`](https://github.com/kubernetes/kubernetes/tree/release-1.18))
 - The normal git and GitHub configured shell environment for pushing to your
    kubernetes `origin` fork on GitHub and making a pull request against a
    configured remote `upstream` that tracks
@@ -71,14 +71,18 @@ continue, bolster your case by supplementing your PR with e.g.,
 ## Initiate a Cherry-pick
 
 - Run the [cherry-pick script](https://git.k8s.io/kubernetes/hack/cherry_pick_pull.sh)
+
   This example applies a master branch PR #98765 to the remote branch
-  `upstream/release-3.14`: `hack/cherry_pick_pull.sh upstream/release-3.14
-  98765`
+  `upstream/release-3.14`:
+
+  ```shell
+  hack/cherry_pick_pull.sh upstream/release-3.14 98765
+  ```
 
   - Be aware the cherry-pick script assumes you have a git remote called
     `upstream` that points at the Kubernetes github org.
 
-    Please see our [recommended Git workflow](https://git.k8s.io/community/contributors/guide/github-workflow.md#workflow).
+    Please see our [recommended Git workflow](/contributors/guide/github-workflow.md#workflow).
 
   - You will need to run the cherry-pick script separately for each patch
     release you want to cherry-pick to.
@@ -86,7 +90,7 @@ continue, bolster your case by supplementing your PR with e.g.,
 - Your cherry-pick PR will immediately get the
   `do-not-merge/cherry-pick-not-approved` label.
 
-  [Normal rules apply for code merge](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-release/release.md#tldr),
+  [Normal rules apply for code merge](/contributors/devel/sig-release/release.md#tldr),
   with some additional caveats outlined in the next section of this document.
 
 ## Cherry-pick Review
@@ -99,7 +103,7 @@ except the release note stanza will auto-populate from the master
 branch pull request from which the cherry-pick originated.  If this
 is unsuccessful the `do-not-merge/release-note-label-needed` label
 will be applied and the cherry-pick author must edit the pull request
-description to [add a release note](https://git.k8s.io/community/contributors/guide/release-notes.md)
+description to [add a release note](/contributors/guide/release-notes.md)
 or include in a comment the `/release-note-none` command.
 
 Cherry-pick pull requests are reviewed slightly differently than normal
@@ -114,15 +118,12 @@ pull requests on the master branch in that they:
 - Have one additional level of review in that they must be approved
   specifically for cherry-pick by branch approvers.
 
-  The [Branch Manager](https://git.k8s.io/sig-release/release-team/role-handbooks/branch-manager)
-  will triage PRs targeted to the next .0 minor release branch up until the
-  release, while the [Patch Release Team](https://git.k8s.io/sig-release/release-team/role-handbooks/patch-release-manager)
-  will handle all cherry-picks to patch releases.
+  The [Release Managers][release-managers] are the final approvers on release
+  branches.
 
-  The [Branch Manager](https://git.k8s.io/sig-release/release-team/role-handbooks/branch-manager)
-  or the [Patch Release Team](https://git.k8s.io/sig-release/release-team/role-handbooks/patch-release-manager)
-  are the final authority on branch approval by removing the
-  `do-not-merge/cherry-pick-not-approved` label and triggering a merge into the
+  Approval is signified by a Release Manager manually applying the
+  `cherry-pick-approved` label. This action removes the
+  `do-not-merge/cherry-pick-not-approved` label and triggers a merge into the
   target branch.
 
   The team scrubs through incoming cherry-picks on at least a weekly basis,
@@ -150,9 +151,10 @@ pull requests on the master branch in that they:
 
 ## Searching for Cherry-picks
 
-- [A sample search on kubernetes/kubernetes pull requests that are labeled as `cherry-pick-approved`](https://github.com/kubernetes/kubernetes/pulls?q=is%3Aopen+is%3Apr+label%3Acherry-pick-approved)
+Examples (based on cherry picks targeting the `release-1.18` branch):
 
-- [A sample search on kubernetes/kubernetes pull requests that are labeled as `do-not-merge/cherry-pick-not-approved`](https://github.com/kubernetes/kubernetes/pulls?q=is%3Aopen+is%3Apr+label%3Ado-not-merge%2Fcherry-pick-not-approved)
+- [`cherry-pick-approved`](https://github.com/kubernetes/kubernetes/pulls?q=is%3Aopen+is%3Apr+label%3Acherry-pick-approved+base%3Arelease-1.18)
+- [`do-not-merge/cherry-pick-not-approved`](https://github.com/kubernetes/kubernetes/pulls?q=is%3Aopen+is%3Apr+label%3Ado-not-merge%2Fcherry-pick-not-approved+base%3Arelease-1.18)
 
 ## Troubleshooting Cherry-picks
 
@@ -177,7 +179,7 @@ longer supported.
 As discussed in a sig-release meeting on 2019-01-15, a fix was backported to
 the non supported version.
 
-Reference PR: [#72860](https://github.com/kubernetes/kubernetes/pull/72860#issuecomment-454072746)
+Reference PR: [#72860](https://github.com/kubernetes/kubernetes/pull/72860)
 
 The specific criteria driving the decision was:
 
@@ -193,3 +195,5 @@ A note about the specific case in [#72860](https://github.com/kubernetes/kuberne
 - The patch was exceedingly tiny and very unlikely to introduce new problems
 - Luckily, it was caught shortly after the release was supposed to be
   unsupported
+
+[release-managers]: https://git.k8s.io/sig-release/release-managers.md

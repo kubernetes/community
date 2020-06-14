@@ -66,14 +66,13 @@ Return to 'Normal Dev' phase requirements:
 - /lgtm
 - /approved
 
-Merges into the 1.y branch are now [via cherrypicks](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-release/cherry-picks.md),
+Merges into the 1.y branch are now [via cherry picks](/contributors/devel/sig-release/cherry-picks.md),
 approved by release branch manager.
 
 In the past there was a requirement for a milestone targeted pull request to
 have an associated GitHub issue opened, but this is no longer the case.
-Features are effectively GitHub issues or [KEPs](https://git.k8s.io/community/keps)
-which lead to subsequent PRs. The general labeling process should be consistent
-across artifact types.
+Features are effectively GitHub issues or [KEPs][keps] which lead to subsequent
+PRs. The general labeling process should be consistent across artifact types.
 
 ---
 
@@ -101,9 +100,9 @@ across artifact types.
   The process of removing an Enhancement from a release milestone if it is not
   fully implemented or is otherwise considered not stable.
 - *release milestone*: semantic version string or
-  [GitHub milestone](https://help.github.com/articles/associating-milestones-with-issues-and-pull-requests/)
+  [GitHub milestone](https://help.github.com/en/github/managing-your-work-on-github/associating-milestones-with-issues-and-pull-requests)
   referring to a release MAJOR.MINOR vX.Y version. See also
-  [release versioning](http://git.k8s.io/community/contributors/design-proposals/release/versioning.md)
+  [release versioning](/contributors/design-proposals/release/versioning.md)
 - *release branch*: Git branch "release-X.Y" created for the vX.Y milestone.
   Created at the time of the vX.Y-beta.0 release and maintained after the
   release for approximately 9 months with vX.Y.Z patch releases.
@@ -172,10 +171,7 @@ general development and work begins there for the next release milestone. Any
 remaining modifications for the current release are cherry picked from master
 back to the release branch. The release is built from the release branch.
 
-Following release, the [Release Branch Manager](https://git.k8s.io/sig-release/release-team/role-handbooks/branch-manager/README.md)
-cherry picks additional critical fixes from the master branch for a period of
-around 9 months, leaving an overlap of three release versions forward support.
-Thus, each release is part of a broader Kubernetes lifecycle:
+Each release is part of a broader Kubernetes lifecycle:
 
 ![Image of Kubernetes release lifecycle spanning three releases](release-lifecycle.png)
 
@@ -212,32 +208,31 @@ will be made by the release team through the following channels:
   the issue type
 - Emailing the SIG mailing list
   - bootstrapped with group email addresses from the
-    [community sig list](/sig-list.md)
+    [community sig list][sig-list]
   - optionally also directly addressing SIG leadership or other SIG members
 - Messaging the SIG's Slack channel
   - bootstrapped with the slackchannel and SIG leadership from the
-    [community sig list](/sig-list.md)
+    [community sig list][sig-list]
   - optionally directly "@" mentioning SIG leadership or others by handle
 
 ## Adding An Item To The Milestone
 
 ### Milestone Maintainers
 
-The members of the GitHub
-[“kubernetes-milestone-maintainers” team](https://github.com/orgs/kubernetes/teams/kubernetes-milestone-maintainers/members)
-are entrusted with the responsibility of specifying the release milestone on
-GitHub artifacts. This group is [maintained by
-SIG Release](https://git.k8s.io/sig-release/release-team/README.md#milestone-maintainers)
-and has representation from the various SIGs' leadership.
+The members of the [`milestone-maintainers`](https://github.com/orgs/kubernetes/teams/milestone-maintainers/members)
+GitHub team are entrusted with the responsibility of specifying the release
+milestone on GitHub artifacts.
+
+This group is [maintained](https://git.k8s.io/sig-release/release-team/README.md#milestone-maintainers)
+by SIG Release and has representation from the various SIGs' leadership.
 
 ### Feature additions
 
 Feature planning and definition takes many forms today, but a typical example
-might be a large piece of work described in a
-[KEP](https://git.k8s.io/community/keps), with associated task issues in
-GitHub. When the plan has reached an implementable state and work is underway,
-the feature or parts thereof are targeted for an upcoming milestone by creating
-GitHub issues and marking them with the Prow "/milestone" command.
+might be a large piece of work described in a [KEP][keps], with associated task
+issues in GitHub. When the plan has reached an implementable state and work is
+underway, the feature or parts thereof are targeted for an upcoming milestone
+by creating GitHub issues and marking them with the Prow "/milestone" command.
 
 For the first ~4 weeks into the release cycle, the release team's Enhancements
 Lead will interact with SIGs and feature owners via GitHub, Slack, and SIG
@@ -327,3 +322,6 @@ issue kind labels must be set:
 - `kind/failing-test`: CI test case is failing consistently.
 - `kind/feature`: New functionality.
 - `kind/flake`: CI test case is showing intermittent failures.
+
+[keps]: https://git.k8s.io/enhancements/keps
+[sig-list]: /sig-list.md
