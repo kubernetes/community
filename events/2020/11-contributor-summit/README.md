@@ -39,7 +39,7 @@ so make sure you plan travel accordingly.
 
 | Role | Lead | Shadow | Notes |
 |---|---|---|---|
-| Roles| TBD | | |
+| Event Lead | Bob [@mrbobbytables](https://github.com/mrbobbytables) | | |
 
 ## Code of Conduct
 
