@@ -57,32 +57,28 @@ Within this section "Lead" refers to someone who is a member of the union
 of the acceptance of that SIG or Subproject.
 
 #### Activity Expectations  
+
 - Leads *SHOULD* remain active and responsive in their Roles.
-- Leads taking an extended leave of 1 or more months *SHOULD*
-  coordinate with other leads to ensure the
-  role is adequately staffed during the leave.
-- Leads going on leave for 1-3 months *MAY* work with other
-  Leads to identify a temporary replacement.
-- Leads of a role *SHOULD* remove any other leads or roles that have not
-communicated a leave of absence and either cannot be reached for more than 1
-month or are not fulfilling their documented responsibilities for more than 1 month.
-  This may be done through a [super-majority] vote of Leads, or if there are
-  not enough *active* Leads to get a super-majority of votes cast, then
-  removal may occur through a [super-majority] vote between Chairs, Tech Leads
-  and Subproject Owners.
+- Leads taking an extended leave of 1 or more months *SHOULD* coordinate with other leads to ensure the role is adequately staffed during the leave.
+- Leads going on leave for 1-3 months *MAY* work with other Leads to identify a temporary replacement.
+- Leads of a role *SHOULD* remove any other leads or roles that have not communicated a leave of absence and either cannot be reached for more than 1 month or are not fulfilling their documented responsibilities for more than 1 month.
+  - This may be done through a [super-majority] vote of Leads. If there are not enough *active* Leads, then a [super-majority] vote between Chairs, Tech Leads and Subproject Owners may decide the removal of the Lead.
 
 #### Requirements
+
 - Leads *MUST* be at least a ["member" on our contributor ladder] to
 be eligible to hold a leadership role within a SIG.
 - SIGs *MAY* prefer various levels of domain knowledge depending on the
 role. This should be documented.  
-- People management interests - there's a lot of us!    
+- People management interests - there's a lot of us!
 
 #### Escalations
+
 - Lead membership disagreements *MAY* be escalated to the SIG Chairs. SIG Chair
 membership disagreements may be escalated to the Steering Committee.
 
 #### On-boarding and Off-boarding Leads
+
 - Leads *MAY* decide to step down at anytime and propose a replacement.  Use
 lazy consensus amongst other Leads with fallback on majority vote to accept
 proposal.  The candidate *SHOULD* be supported by a majority of SIG contributors
@@ -95,15 +91,13 @@ Subproject contributors (as applicable).
 
 - Number: 2-3
 - Membership tracked in [sigs.yaml]  
-  - If no tech lead role is present, Chair assumes responsibilities from [#tech-lead]
-section in addition    
+  - If no tech lead role is present, Chair assumes responsibilities from [#tech-lead] section.
+  
+  In addition, run operations and processes governing the SIG:
 
-Run operations and processes governing the SIG:
-  - *SHOULD* define how priorities and commitments are managed and delegate to
-  other leads as needed  
-  - *SHOULD* drive charter changes (including creation) to get community buy-in
-  but *MAY* delegate content creation to SIG contributors
-  - *SHOULD* identify, track, and maintain the SIGs enhancements for current
+- *SHOULD* define how priorities and commitments are managed and delegate to other leads as needed
+- *SHOULD* drive charter changes (including creation) to get community buy-in but *MAY* delegate content creation to SIG contributors
+- *SHOULD* identify, track, and maintain the SIGs enhancements for current
   release and serve as point of contact for the release team, but *MAY* delegate
    to another Lead to fulfill these responsibilities
   - *MAY* delegate the creation of a SIG roadmap to other Leads
@@ -156,15 +150,15 @@ curation from other SIG participants
 
 ### All Leads
 
-  - *SHOULD* maintain health of at least one subproject or the health of the SIG
-  - *SHOULD* show sustained contributions to at least one subproject or to the
+- *SHOULD* maintain health of at least one subproject or the health of the SIG
+- *SHOULD* show sustained contributions to at least one subproject or to the
   SIG
-  - *SHOULD* hold some documented role or responsibility in the SIG and / or at
+- *SHOULD* hold some documented role or responsibility in the SIG and / or at
   least one subproject
     (e.g. reviewer, approver, etc)
-  - *MAY* build new functionality for subprojects
-  - *MAY* participate in decision making for the subprojects they hold roles in
-  - Includes all reviewers and approvers in [OWNERS] files for subprojects
+- *MAY* build new functionality for subprojects
+- *MAY* participate in decision making for the subprojects they hold roles in
+- Includes all reviewers and approvers in [OWNERS] files for subprojects
 
 ### Security Contact
 
@@ -205,8 +199,7 @@ Subprojects may create repos under *github.com/kubernetes-sigs* through [lazy-co
 
 > - Release milestones
 >   - Follows the kubernetes/kubernetes release milestones and schedule
->   - Priorities for upcoming release are discussed during the SIG meeting following the preceding release and
->     shared through a PR.  Priorities are finalized before feature freeze.
+>   - Priorities for upcoming release are discussed during the SIG meeting following the preceding release and shared through a PR. Priorities are finalized before feature freeze.
 > - Code and artifacts are published as part of the kubernetes/kubernetes release
 
 ### Technical processes
@@ -219,12 +212,10 @@ they have defined.
   - Follow [KEP] decision making process
 
 - Test health
-  - Canonical health of code published to <link to dashboard>
-  - Consistently broken tests automatically send an alert to <link to google group>
-  - SIG contributors are responsible for responding to broken tests alert.  PRs that break tests should be rolled back
-    if not fixed within 24 hours (business hours).
-  - Test dashboard checked and reviewed at start of each SIG meeting.  Owners assigned for any broken tests.
-    and followed up during the next SIG meeting.
+  - Canonical health of code published to [dashboard]
+  - Consistently broken tests automatically send an alert to their google group.
+  - SIG contributors are responsible for responding to broken tests alert. PRs that break tests should be rolled back if not fixed within 24 hours (business hours).
+  - Test dashboard checked and reviewed at start of each SIG meeting.  Owners assigned for any broken tests and followed up during the next SIG meeting.
 
 Issues impacting multiple subprojects in the SIG should be resolved by either:
 
@@ -256,3 +247,5 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [contributor guide]: /contributors/guide/README.md
 [devel]: /contributors/devel/README.md
 [#tech-lead]: #Tech-Lead
+[Google group]: https://groups.google.com/forum/#!forum/kubernetes-sig-config
+[dashboard]: https://testgrid.k8s.io/
