@@ -1678,6 +1678,13 @@ sigs:
     - github: tpepper
       name: Tim Pepper
       company: VMware
+    tech_leads:
+    - github: alejandrox1
+      name: Jorge Alarcon Ochoa
+      company: Searchable AI
+    - github: saschagrunert
+      name: Sascha Grunert
+      company: SUSE
     emeritus_leads:
     - github: jdumars
       name: Jaice Singer DuMars
