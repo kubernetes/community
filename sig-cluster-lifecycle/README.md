@@ -110,6 +110,9 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-openstack
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
+### cluster-api-provider-packet
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-packet/master/OWNERS
 ### cluster-api-provider-vsphere
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
