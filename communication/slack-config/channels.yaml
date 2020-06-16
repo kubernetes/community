@@ -86,6 +86,7 @@ channels:
   - name: gimbal
   - name: github
     archived: true
+  - name: github-management
   - name: gitkube
   - name: gitops
   - name: gke
