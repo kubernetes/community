@@ -14,8 +14,8 @@ The Kubernetes Product Security Committee is the body that is responsible for re
 ## Members
 
 * CJ Cullen (**[@cjcullen](https://github.com/cjcullen)**), Google
+* Craig Ingram (**[@cji](https://github.com/cji)**), Salesforce
 * Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
-* Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google
 * Luke Hinds (**[@lukehinds](https://github.com/lukehinds)**), Red Hat
 * Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
