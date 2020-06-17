@@ -1175,6 +1175,8 @@ sigs:
   - name: github-management
     description: Manages and controls Github permissions, repos, and groups, including
       Org Membership.
+    contact:
+      slack: github-management
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
     - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS

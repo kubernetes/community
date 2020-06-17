@@ -13,7 +13,8 @@ If you need help with the following:
 - Other repository and configuration issues
 
 Please open an issue against the [kubernetes/org] repository describing your
-issue. If your request is urgent, please escalate to **[@kubernetes/owners]**.
+issue. If your request is urgent, please escalate to **[@kubernetes/owners]**
+or reach out on `#github-management` in Slack.
 
 To create a new team, add a member to a team or rename a team, please
 create a PR against the [kubernetes/org] repository according to
