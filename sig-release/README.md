@@ -26,6 +26,13 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
 * Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
 
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Jorge Alarcon Ochoa (**[@alejandrox1](https://github.com/alejandrox1)**), Searchable AI
+* Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**), SUSE
+
 ## Emeritus Leads
 
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**)
