@@ -1,7 +1,10 @@
 ---
 title: "GitHub Workflow"
 weight: 6
-slug: "github-workflow"
+description: |
+  An overview of the GitHub workflow used by the Kubernetes project. It includes
+  some tips and suggestions on things such as keeping your local environment in
+  sync with upstream and commit hygiene.
 ---
 
 ![Git workflow](git_workflow.png)

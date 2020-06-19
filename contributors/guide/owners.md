@@ -1,7 +1,10 @@
 ---
 title: "OWNERS Files"
 weight: 15
-slug: "owners" 
+description: |
+  OWNERS files are used to designate responsibility over different parts of the
+  Kubernetes codebase and serve as the implementation mechanism for the two-phase
+  code review process used by the project.
 ---
 
 ## Overview

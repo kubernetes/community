@@ -1,7 +1,10 @@
 ---
 title: "Help Wanted and Good First Issue Labels"
 weight: 9
-slug: "help-wanted"
+description: |
+  Provides guidance on how and when to use the help wanted and good first issue
+  labels. These are used to identify issues that have been specially groomed for
+  new contributors.
 ---
 
 # Overview

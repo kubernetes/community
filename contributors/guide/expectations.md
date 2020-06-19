@@ -1,7 +1,9 @@
 ---
 title: "Community Expectations"
 weight: 17
-slug: "expectations"
+description: |
+  Expectations of conduct and code review that govern all members of the
+  community.
 ---
 
 Kubernetes is a community project. Consequently, it is wholly dependent on

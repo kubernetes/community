@@ -1,7 +1,8 @@
 ---
 title: "Contributing to Kubernetes"
 weight: 4
-slug: "contributing" 
+description: |
+  An entrypoint to getting started with contributing to the Kubernetes project.
 ---
 
 # Contributing

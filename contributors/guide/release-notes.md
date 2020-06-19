@@ -1,7 +1,9 @@
 ---
 title: "Adding Release Notes"
 weight: 12
-slug: "release-notes"
+description: |
+  Guidance on providing release notes for changes made to the main Kubernetes
+  project repo.
 ---
 
 On the kubernetes/kubernetes repository, release notes are required for any pull
