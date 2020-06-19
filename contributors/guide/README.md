@@ -1,14 +1,3 @@
----
-title: "Contributors Guide"
-weight: 1
-slug: "guide" 
----
-
-<!-- 
-Contributing to this document? 
-Please use semantic line feeds for readability: http://rhodesmill.org/brandon/2012/one-sentence-per-line/ 
--->
-
 This document is the single source of truth for how to contribute to the code base.
 Feel free to browse the [open issues](https://github.com/kubernetes/community/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fcontributor-guide) and file new ones, all feedback welcome!
 

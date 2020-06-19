@@ -1,7 +1,9 @@
 ---
 title: "Making your First Contribution"
 weight: 3
-slug: "first-contribution" 
+description: |
+  Not sure where to make your first contribution? This doc has some tips and
+  ideas to help get you started.
 ---
 
 # Your First Contribution

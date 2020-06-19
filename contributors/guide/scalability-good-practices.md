@@ -1,8 +1,3 @@
----
-title: "Scalability Good Practices"
-weight: 13
-slug: "scalability-good-practices" 
----
 
 *This document is written for contributors who would like to avoid their code being reverted for performance reasons*
 
