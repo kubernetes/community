@@ -1,7 +1,9 @@
 ---
 title: "Coding Conventions"
 weight: 8
-slug: "coding-conventions"
+description: |
+  A collection of guidelines, style suggestions, and tips for writing code in
+  the different programming languages used throughout the project.
 ---
 
 **Table of Contents**

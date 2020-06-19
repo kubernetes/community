@@ -1,7 +1,9 @@
 ---
 title: "Pull Request Review Guidelines"
 weight: 13
-slug: "review-guidelines"
+description: |
+  A collection of of tips to help both those looking to get their PR reviewed
+  and the code reviewers themselves.
 ---
 - [Tips for getting your PR reviewed](#tips-for-getting-your-pr-reviewed)
   - [Use Tokens to signal the state of your PR](#use-tokens-to-signal-the-state-of-your-pr)

@@ -1,7 +1,8 @@
 ---
 title: "Documentation Style Guide"
 weight: 14
-slug: "style-guide"
+description: |
+  A comprehensive collection of guidelines for writing contributor documentation.
 ---
 
 This style guide is for content in the Kubernetes github [community repository].

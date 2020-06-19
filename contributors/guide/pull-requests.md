@@ -1,7 +1,11 @@
 ---
 title: "Pull Request Process"
 weight: 5
-slug: "pull-requests"
+description: |
+  Explains the process and best practices for submitting a pull request
+  to the Kubernetes project and its associated sub-repositories. It should serve
+  as a reference for all contributors, and be useful especially to new or
+  infrequent submitters.
 ---
 
 This doc explains the process and best practices for submitting a pull request to the [Kubernetes project](https://github.com/kubernetes/kubernetes) and its associated sub-repositories. It should serve as a reference for all contributors, and be useful especially to new and infrequent submitters.

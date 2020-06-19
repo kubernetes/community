@@ -1,7 +1,10 @@
 ---
 title: "Issue Triage Guidelines"
 weight: 10
-slug: "issue-triage"
+description: |
+  These guidelines serve as a primary document for triaging incoming issues to
+  Kubernetes. SIGs and projects are encouraged to use this guidance as a
+  starting point, and customize to address specific triaging needs.
 ---
 
 # Issue Triage: A Primer
