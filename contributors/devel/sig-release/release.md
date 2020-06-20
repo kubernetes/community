@@ -119,6 +119,9 @@ The general labeling process should be consistent across artifact types.
   Created at the time of the `vX.Y-rc.0` release and maintained after the
   release for approximately 12 months with `vX.Y.Z` patch releases.
 
+  Note: releases 1.19 and newer receive 1 year of patch release support, and
+  releases 1.18 and earlier received 9 months of patch release support.
+
 ## The Release Cycle
 
 ![Image of one Kubernetes release cycle](release-cycle.png)

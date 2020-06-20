@@ -166,13 +166,20 @@ cherry pick.
 
 ## Cherry Picks for Unsupported Releases
 
-The release team only supports & patches `n-3` releases (`n` being the latest
-release of Kubernetes). In January of 2019 the community discovered a
-regression, that was introduced in a post-release patch, but was currently no
-longer supported.
+The community supports & patches releases for approximately 1 year
+for releases 1.19 and newer.  For releases 1.18 and older the patch
+support extended for approximately 9 months, which was derived from
+keeping `n-3` releases (`n` being the latest -release of Kubernetes)
+in support and a quarterly release cycle.
 
-As discussed in a SIG Release meeting on 2019-01-15, a fix was backported to
-the non supported version.
+The community makes no guarantees, but in the event of a high
+severity issue with a patch that is backportable and can be proved
+with CI signal, this extra support may occasionally be given.
+
+For example, in January of 2019 the community discovered a regression, that was
+introduced in a post-release patch, but was currently no longer
+supported.  As discussed in a SIG Release meeting on 2019-01-15, a
+fix was backported to the non supported version.
 
 Reference PR: [#72860](https://github.com/kubernetes/kubernetes/pull/72860)
 
