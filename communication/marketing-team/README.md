@@ -13,7 +13,7 @@ the broader ecosystem
 | [Editorial] | editor: @parispittman (to bootstrap)| assoc editor: @mbbroberg |  |
 | [Internal Communications] | @jonasrosland | @rajula96reddy |  |
 | [Social Media] | @chris-short | @kaslin (paris to help bootstrap) | |
-| [Storytellers] | liaison to sig-docs-blog team @onlydole |  @celanthe, @vonguard, @boluisa, @kaslin, and [Could be you!] |  |
+| [Storytellers] | liaison to sig-docs-blog team @onlydole |  @celanthe, @vonguard, @boluisa, @kaslin, @divya-mohan0209, and [Could be you!] |  |
 | [Designer] | [Could be you!] |  | help us with digital assets, infographics, contributor site |  
 
 ## Contact Us!
