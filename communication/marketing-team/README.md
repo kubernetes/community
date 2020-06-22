@@ -10,9 +10,9 @@ the broader ecosystem
 
 | Area & Handbook Link | Lead | Team | Notes |
 | --- | --- | --- | --- |
-| [Editorial] | editor: @parispittman (to bootstrap)| assoc editor: @mbbroberg |  |
+| [Editorial] | editor: @mbbroberg | assoc editor: [Could be you!] | advisor: @parispittman |
 | [Internal Communications] | @jonasrosland | @rajula96reddy |  |
-| [Social Media] | @chris-short | @kaslin (paris to help bootstrap) | |
+| [Social Media] | @chris-short @kaslin | n/a | |
 | [Storytellers] | liaison to sig-docs-blog team @onlydole |  @celanthe, @vonguard, @boluisa, @kaslin, @divya-mohan0209, and [Could be you!] |  |
 | [Designer] | [Could be you!] |  | help us with digital assets, infographics, contributor site |  
 
@@ -21,6 +21,8 @@ the broader ecosystem
 - Reach out to an individual above via slack
 - Whole group - @contributor-comms in #sig-contribex on slack
 - Tag us in an issue in [kubernetes/community] with the label [area/contributor-comms]
+- Set a marketing issue template in [kubernets/community]
+- Follow us on @K8sContributors on Twitter
 
 ## Focus Areas
 
