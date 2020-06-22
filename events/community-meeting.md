@@ -60,8 +60,8 @@ General speaking the meeting is structured as follows:
   - Older stable releases and point releases
 - Contributor Tip of the Week (~2 minutes, Optional)
   - These can be a variety of topics, including [devstats graphs]
-- SIG Updates
-  - Three SIGs per meeting, 10 minutes per SIG, if time allows 4 SIGs may present 
+- Community Group Updates
+  - Three SIGs per meeting, 10 minutes per SIG, if time allows 4 SIGs may present. This includes committees and working groups. 
 - Announcements (~5 minutes)
   - Any other community announcements should go here
   - Shoutouts, an aggregation of thanks from community members to other
@@ -104,10 +104,10 @@ completing within the allotted time box.
   enthusiastic support, the community team will help schedule a continuation.
 
 
-## SIG Updates
+## Community Group Updates
 
-SIGs will give a community update at least once per release cycle per the [schedule].
-The SIG Update should mention:
+SIGs and other community groups like committees and WGs (Working Groups) will give an update at least once a year.
+The update should mention:
 
 - Topics where input is being sought from other SIGs
 - Topics that could affect other SIGs
