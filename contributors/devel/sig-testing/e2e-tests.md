@@ -7,7 +7,7 @@
   - [Building Kubernetes and Running the Tests](#building-kubernetes-and-running-the-tests)
     - [Cleaning up](#cleaning-up)
   - [Advanced testing](#advanced-testing)
-    - [Extracting a specific version of kubernetes](#extracting-a-specific-version-of-kubernetes)
+    - [Extracting a specific version of Kubernetes](#extracting-a-specific-version-of-kubernetes)
     - [Bringing up a cluster for testing](#bringing-up-a-cluster-for-testing)
     - [Debugging clusters](#debugging-clusters)
     - [Local clusters](#local-clusters)
@@ -38,10 +38,10 @@ minor change may pass all unit and integration tests, but cause unforeseen
 changes at the system level.
 
 The primary objectives of the e2e tests are to ensure a consistent and reliable
-behavior of the kubernetes code base, and to catch hard-to-test bugs before
+behavior of the Kubernetes code base, and to catch hard-to-test bugs before
 users do, when unit and integration tests are insufficient.
 
-The e2e tests in kubernetes are built atop of
+The e2e tests in Kubernetes are built atop of
 [Ginkgo](http://onsi.github.io/ginkgo/) and
 [Gomega](http://onsi.github.io/gomega/). There are a host of features that this
 Behavior-Driven Development (BDD) testing framework provides, and it is
@@ -129,9 +129,9 @@ kubetest --down
 
 ## Advanced testing
 
-### Extracting a specific version of kubernetes
+### Extracting a specific version of Kubernetes
 
-The `kubetest` binary can download and extract a specific version of kubernetes,
+The `kubetest` binary can download and extract a specific version of Kubernetes,
 both the server, client and test binaries. The `--extract=E` flag enables this
 functionality.
 
@@ -200,7 +200,7 @@ when a failure occurs
 --provider="": The name of the Kubernetes provider (gce, gke, local, vagrant,
 etc.)
 
---repo-root="../../": Root directory of kubernetes repository, for finding test
+--repo-root="../../": Root directory of Kubernetes repository, for finding test
 files.
 ```
 
@@ -401,10 +401,8 @@ where `->` means upgrading; container_vm (cvm) and gci are image names.
 
 ## Kinds of tests
 
-We are working on implementing clearer partitioning of our e2e tests to make
-running a known set of tests easier (#10548). Tests can be labeled with any of
-the following labels, in order of increasing precedence (that is, each label
-listed below supersedes the previous ones):
+Tests can be labeled with any of the following labels, in order of increasing
+precedence (that is, each label listed below supersedes the previous ones):
 
   - If a test has no labels, it is expected to run fast (under five minutes), be
 able to be run in parallel, and be consistent.
@@ -478,7 +476,7 @@ To use viper, rather than flags, to configure your tests:
 
 Note that advanced testing parameters, and hierarchichally defined parameters, are only defined in viper, to see what they are, you can dive into [TestContextType](https://git.k8s.io/kubernetes/test/e2e/framework/test_context.go).
 
-In time, it is our intent to add or autogenerate a sample viper configuration that includes all e2e parameters, to ship with kubernetes.
+In time, it is our intent to add or autogenerate a sample viper configuration that includes all e2e parameters, to ship with Kubernetes.
 
 ### Conformance tests
 
@@ -548,9 +546,6 @@ the existing suite as a guide.
 **NOTE:** To build/run with tests in a new directory within ./test/e2e, add the 
 directory to import list in ./test/e2e/e2e_test.go
 
-TODO(#20357): Create a self-documented example which has been disabled, but can
-be copied to create new tests and outlines the capabilities and libraries used.
-
 When writing a test, consult #kinds-of-tests above to determine how your test
 should be marked, (e.g. `[Slow]`, `[Serial]`; remember, by default we assume a
 test can run in parallel with other tests!).
@@ -604,7 +599,7 @@ Containers for all of these components can be found
 [here](https://hub.docker.com/u/prom/).
 
 For more accurate measurements, you may wish to set up prometheus external to
-kubernetes in an environment where it can access the major system components
+Kubernetes in an environment where it can access the major system components
 (api-server, controller-manager, scheduler). This is especially useful when
 attempting to gather metrics in a load-balanced api-server environment, because
 all api-servers can be analyzed independently as well as collectively. On
@@ -627,9 +622,10 @@ job: {
 }
 ```
 
-Once prometheus is scraping the kubernetes endpoints, that data can then be
-plotted using promdash, and alerts can be created against the assortment of
-metrics that kubernetes provides.
+Once prometheus is scraping the Kubernetes endpoints, that data can then be
+plotted using [grafana](https://prometheus.io/docs/visualization/grafana/),
+and alerts can be created against the assortment of metrics that Kubernetes
+provides.
 
 ## One More Thing
 
