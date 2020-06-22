@@ -43,7 +43,7 @@ To check out code to work on, please refer to [the GitHub Workflow Guide](./gith
 
 ## Open a Pull Request
 
-Pull requests are often called simply "PR".
+Pull requests are often called a "PR".
 Kubernetes generally follows the standard [github pull request](https://help.github.com/articles/about-pull-requests/) process, but there is a layer of additional kubernetes specific (and sometimes SIG specific) differences:
 
 - [Kubernetes-specific github workflow](pull-requests.md#the-testing-and-merge-workflow).
@@ -56,7 +56,7 @@ Refer to its [command reference documentation](https://go.k8s.io/bot-commands).
 
 Common new contributor PR issues are:
 
-* not having correctly signed the CLA ahead of your first PR (see [Sign the CLA](/contributors/guide/getting-started.md#sign-the-cla) section)
+* not having correctly signed the CLA ahead of your first PR. See the [CLA page](/CLA.md) for troubleshooting help, in some cases you might need to file a ticket with the CNCF to resolve a CLA problem.  
 * finding the right SIG or reviewer(s) for the PR (see [Code Review](#code-review) section) and following any SIG or repository specific contributing guidelines (see [Learn about SIGs](#learn-about-sigs) section)
 * dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](http://velodrome.k8s.io/dashboard/db/bigquery-metrics?orgId=1))
 * Not following [scalability good practices](scalability-good-practices.md)
