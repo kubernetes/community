@@ -14,7 +14,6 @@ The [charter](charter.md) defines the scope and governance of the Scheduling Spe
 
 ## Meetings
 * 10AM PT Meeting: [Thursdays at 17:00 UTC](https://zoom.us/j/841218129) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
-* 5PM PT Meeting: [Thursdays at 24:00 UTC](https://zoom.us/j/350635606) (biweekly starting Thursday June 14, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=24:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
 
