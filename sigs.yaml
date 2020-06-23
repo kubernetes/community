@@ -1671,9 +1671,6 @@ sigs:
   label: release
   leadership:
     chairs:
-    - github: calebamiles
-      name: Caleb Miles
-      company: Google
     - github: justaugustus
       name: Stephen Augustus
       company: VMware
@@ -1688,6 +1685,8 @@ sigs:
       name: Sascha Grunert
       company: SUSE
     emeritus_leads:
+    - github: calebamiles
+      name: Caleb Miles
     - github: jdumars
       name: Jaice Singer DuMars
   meetings:
