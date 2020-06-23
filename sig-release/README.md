@@ -22,7 +22,6 @@ The [charter](charter.md) defines the scope and governance of the Release Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**), Google
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
 * Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
 
@@ -35,6 +34,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Emeritus Leads
 
+* Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**)
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**)
 
 ## Contact
