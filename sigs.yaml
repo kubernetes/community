@@ -2650,6 +2650,31 @@ workinggroups:
   contact:
     slack: wg-multitenancy
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy
+- dir: wg-naming
+  name: Naming
+  stakeholder_sigs:
+  - Architecture
+  - Contributor Experience
+  - Docs
+  label: naming
+  leadership:
+    chairs:
+    - github: celestehorgan
+      name: Celeste Horgan
+      company: CNCF
+    - github: jdumars
+      name: Jaice Singer DuMars
+      company: Apple
+    - github: justaugustus
+      name: Stephen Augustus
+      company: VMware
+    - github: zacharysarah
+      name: Zach Corleissen
+      company: Linux Foundation
+  meetings: []
+  contact:
+    slack: wg-naming
+    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-naming
 - dir: wg-policy
   name: Policy
   mission_statement: >
@@ -2809,7 +2834,7 @@ committees:
       company: Microsoft
     - github: jdumars
       name: Jaice Singer DuMars
-      company: Google
+      company: Apple
     - github: tashimi
       name: Tasha Drew
       company: VMware
