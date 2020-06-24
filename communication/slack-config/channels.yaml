@@ -27,8 +27,9 @@ channels:
   - name: cert-manager
   - name: cert-manager-dev
   - name: chairs-and-techleads
+  - name: chartcenter
   - name: chartmuseum
-  - name: charts
+  - name: charts 
   - name: cka-exam-prep
   - name: ckad-exam-prep
   - name: client-go-docs
