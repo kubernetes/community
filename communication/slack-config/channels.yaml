@@ -370,6 +370,7 @@ channels:
   - name: wg-lts
   - name: wg-machine-learning
   - name: wg-multitenancy
+  - name: wg-naming
   - name: wg-onprem
     archived: true
   - name: wg-policy
