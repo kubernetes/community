@@ -998,10 +998,10 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
     meetings:
     - description: Cluster API vSphere meeting
-      day: Tuesday
-      time: "11:00"
+      day: Thursday
+      time: "10:00"
       tz: PT (Pacific Time)
-      frequency: biweekly starting Wednesday March 31st, 2020
+      frequency: biweekly starting Thursday June 25th, 2020
       url: https://zoom.us/j/875399243
       archive_url: https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu
