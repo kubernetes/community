@@ -152,6 +152,7 @@ channels:
   - name: krane
   - name: krew
   - name: krex
+  - name: krustlet  
   - name: kube-aws
   - name: kube-deploy
     archived: true
