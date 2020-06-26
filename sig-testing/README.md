@@ -47,14 +47,6 @@ Boskos is a resource manager service that handles different kinds of resources a
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/boskos/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
-### gopherage
-Gopherage is a tool for manipulating Go coverage files. We use it on the Kubernetes project to report on code coverage due to e2e tests
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/test-infra/master/gopherage/OWNERS
-### gubernator
-Gubernator is a frontend for displaying Kubernetes test results stored in GCS. See gubernator.k8s.io to see it in action for the Kubernetes project.
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/test-infra/master/gubernator/OWNERS
 ### kind
 Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
 - **Owners:**
@@ -65,6 +57,11 @@ Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using D
   - sigs.k8s.io/kind bi-weekly meeting: [Mondays at 11:00 PT (Pacific Time)](https://zoom.us/j/960461819) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit).
     - [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
+### kubetest2
+Kubetest2 is the next significant iteration of kubetest. We will be deprecating kubetest going forward
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/test-infra/master/kubetest/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/test-infra/master/kubetest2/OWNERS
 ### prow
 Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action for the Kubernetes project
 - **Owners:**
