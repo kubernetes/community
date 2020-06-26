@@ -32,9 +32,9 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 **The following section will be reworked and formalized as a charter once the
 Working Group has been approved by the Steering Committee.**
 
-### Goals
+## Goals
 
-- Evaluate language and naming choices within the Kubernetes organization, with
+- Evaluate language and naming choices within the Kubernetes project, with
   a specific initial focus of:
   - Removing barriers to contribution and adoption by replacing harmful language with neutral terms whenever possible, including but not limited to language linked to racism, sexism, homophobia, transphobia, ableism, or discrimination against any protected or historically underrepresented group.
   - Improving clarity of codebases and documentation by replacing idioms,
@@ -44,7 +44,8 @@ Working Group has been approved by the Steering Committee.**
   recommend language, how others can evaluate that proposal, and how to 
   implement replacements across all codebases.
   - Provide an easily findable location for language recommendations and
-    follow-up issues, similar to an architectural decision record.
+    follow-up issues, similar to an architectural decision record
+  - Define long-term ownership of this process
 - Work with stakeholder SIGs to implement the changes recommended. We
   anticipate the following:
   - Provide stakeholder SIGs with guidance on naming, language conventions, and
@@ -56,13 +57,16 @@ Working Group has been approved by the Steering Committee.**
     language recommendations and processes
   - Work with the Code of Conduct Committee to add code architecture to the COC
 
-### Dissolution Criteria
+## Dissolution Criteria
 
-When this WG dissolves, the Kubernetes community should have:
+Once the Kubernetes community has:
 
 - A process in place to evaluate language changes on an ongoing basis
-- A binding list of terms to avoid in codebases across the organization
+- A binding list of terms to avoid in codebases across the project
 - A timeline on which to replace component names in the kubernetes/kubernetes
   codebase
+- Defined long-term ownership of the policies and processes this WG creates
+
+this WG will dissolve.
 
 <!-- END CUSTOM CONTENT -->
