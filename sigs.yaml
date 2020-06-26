@@ -999,6 +999,9 @@ sigs:
   - name: cluster-api-provider-openstack
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
+  - name: cluster-api-provider-packet
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-packet/master/OWNERS
   - name: cluster-api-provider-vsphere
     contact:
       slack: cluster-api-vsphere
