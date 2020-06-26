@@ -322,8 +322,9 @@ controller.
 Objects may report multiple conditions, and new types of conditions may be
 added in the future or by 3rd party controllers. Therefore, conditions are
 represented using a list/slice of objects, where each condition has a similar
-structure. Conditions are most useful when they follow some consistent
-conventions:
+structure. This collected should be treated as a map with a key of `type`.
+
+Conditions are most useful when they follow some consistent conventions:
 
 * Conditions should be added to explicitly convey properties that users and
   components care about rather than requiring those properties to be inferred
@@ -331,20 +332,37 @@ conventions:
   changed arbitrarily - it becomes part of the API, and has the same backwards-
   and forwards-compatibility concerns of any other part of the API.
 
-* Within a resource, Conditions should have a consistent polarity. **A
-  "positive" polarity where "True" indicates normal operation and "False"
-  indicates a failure is recommended if there is not an established polarity.**
-  (Note that this is an explicit reversal from earlier recommendations of
-  "abnormal-true" polarity. Experience indicates that humans are better at
-  interpreting the "positive" polarity.)
+* Controllers should apply their conditions to a resource the first time they
+  visit the resource, even if the `status` is Unknown. This allows other
+  components in the system to know that the condition exists and the controller
+  is making progress on reconciling that resource.
 
-   * Condition names should clearly indicate what "True" and "False" mean. This
-     may require adjusting condition type names, for example changing the type
-     name from "QuotaExhausted" to "ResourcesAvailable".
+   * Not all controllers will observe the previous advice about reporting
+     "Unknown" or "False" values. For known conditions, the absence of a
+     condition status should be interpreted the same as `Unknown`, and
+     typically indicates that reconciliation has not yet finished (or that the
+     resource state may not yet be observable).
 
-   * The absence of a condition status should be interpreted the same as
-     `Unknown`, and typically indicates that reconciliation has not yet finished
-     (or that the resource state may not yet be observable).
+* For some conditions, `True` represents normal operation, and for some
+  conditions, `False` represents normal operation. ("Normal-true" conditions
+  are sometimes said to have "positive polarity", and "normal-false" conditions
+  are said to have "negative polarity".) Without further knowledge of the
+  conditions, it is not possible to compute a generic summary of the conditions
+  on a resource.
+
+* Condition type names should make sense for humans; neither positive nor
+  negative polarity can be recommended as a general rule. A negative condition
+  like "MemoryExhausted" may be easier for humans to understand than
+  "SufficientMemory". Conversely, "Ready" or "Succeeded" may be easier to
+  understand than "Failed", because "Failed=Unknown" or "Failed=False" may
+  cause double-negative confusion.
+
+* Condition type names should describe the current observed state of the
+  resource, rather than describing the current state transitions. This
+  typically means that the name should be an adjective ("Ready", "OutOfDisk")
+  or a past-tense verb ("Succeeded", "Failed") rather than a present-tense verb
+  ("Deploying"). Intermediate states may be indicated by setting the status of
+  the condition to `Unknown`.
 
 * When designing Conditions for a resource, it's helpful to have a common
   top-level condition which summarizes more detailed conditions. Simple
@@ -379,6 +397,9 @@ Use of the `Reason` field is encouraged.
 Use the `LastHeartbeatTime` with great caution - frequent changes to this field
 can cause a large fan-out effect for some resources.
 
+Condition types should be named in PascalCase. Short condition names are
+preferred (e.g. "Ready" over "MyResourceReady").
+
 Condition status values may be `True`, `False`, or `Unknown`. The absence of a
 condition should be interpreted the same as `Unknown`.  How controllers handle
 `Unknown` depends on the Condition in question.
@@ -397,8 +418,8 @@ An example of an oscillating condition type is `Ready`, which indicates the
 object was believed to be fully operational at the time it was last probed. A
 possible monotonic condition could be `Succeeded`. A `True` status for
 `Succeeded` would imply completion and that the resource was no longer
-active. An object that was still active would generally not have a `Succeeded`
-condition.
+active. An object that was still active would generally have a `Succeeded`
+condition with status `Unknown`.
 
 Some resources in the v1 API contain fields called **`phase`**, and associated
 `message`, `reason`, and other status fields. The pattern of using `phase` is
