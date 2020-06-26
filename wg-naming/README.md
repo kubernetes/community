@@ -36,15 +36,13 @@ Working Group has been approved by the Steering Committee.**
 
 - Evaluate language and naming choices within the Kubernetes organization, with
   a specific initial focus of:
-  - Removing language which cannot be fully separated from racist, sexist or
-    homophobic connotations in cultural contexts outside of computer
-    programming
+  - Removing barriers to contribution and adoption by replacing harmful language with neutral terms whenever possible, including but not limited to language linked to racism, sexism, homophobia, transphobia, ableism, or discrimination against any protected or historically underrepresented group.
   - Improving clarity of codebases and documentation by replacing idioms,
     metaphors and slang specific to the English language
-- Create a list of terms to avoid and propose alternatives
-- Define a process by which any member of the Kubernetes organization can
-  propose a language recommendation, have them evaluated based on a rubric, and
-  see them implemented across all codebases.
+- Create a list of harmful terms with proposed replacements
+- Define how any member of the Kubernetes project can
+  recommend language, how others can evaluate that proposal, and how to 
+  implement replacements across all codebases.
   - Provide an easily findable location for language recommendations and
     follow-up issues, similar to an architectural decision record.
 - Work with stakeholder SIGs to implement the changes recommended. We
@@ -63,9 +61,8 @@ Working Group has been approved by the Steering Committee.**
 When this WG dissolves, the Kubernetes community should have:
 
 - A process in place to evaluate language changes on an ongoing basis
-- A list of terms to avoid in codebases across the organization
+- A binding list of terms to avoid in codebases across the organization
 - A timeline on which to replace component names in the kubernetes/kubernetes
   codebase
-- A revised Code of Conduct including the list of terms to avoid
 
 <!-- END CUSTOM CONTENT -->
