@@ -26,31 +26,41 @@ ensure that reports are complete, accurate, and submitted to the Steering
 Committee.
 
 ### 2020:
-Due to playing catch up with 40 community groups, we will have a slightly
+Due to playing catch up with 37 community groups, we will have a slightly
 modified timeline bootstrap process this year and then will follow the process
-outlined in 2021. This means that Chairs will be reporting twice in n months and
-not a year. A yearly cadence will be followed post 2021.
+outlined for 2021. Working Groups, due to their temporary nature, will be the only group 
+to submit for 2020.   
 
-TODO outline time line for 2020  
-
-### 2021 and on:
-1. Chairs create one report and send it to steering-private@kubernetes.io for
-review; reports are due at the end of February and will use a template with the
-questions listed below TODO: to be created
-2. Steering Committee will assign one member as a liaison to each community group before the
-reports are submitted so there is an established point of contact for any help or
-guidance needed
-3. The March SIG Chairs and Tech Leads meetings will be used as follow up for
-the community groups that have questions from/to Steering and report
-retrospectives
-4. Steering will schedule private meetings to follow up on anything denoted as
+1. Steering Committee will assign one member as a liaison to each community group for kick 
+off, help, or guidance needed throughout the process during the first week of July
+2. Working Group Organizers create one report and send it to/share it with steering-private@kubernetes.io
+for review; reports should take ~30 days to complete (work with your liaison on timeline)
+3. Steering will schedule private meetings to follow up on anything denoted as
 a private matter on the report; reports are not made public until all private
 comments have been addressed
-5. Once reviewed and follow ups are completed, Steering will ask the chair(s)
+4. Once reviewed and follow ups are completed, the liaison will ask the organizer(s)
 of the group to submit a pull request to that groups documentation in the
-community repo.
-6. The Steering Committee liaison will work directly with groups that have follow
+community repo
+5. The Steering Committee liaison will work directly with groups that have follow
 up items and update Steering during regular monthly meetings
+6. The September Chairs, Tech Leads, and Organizers meetings will be used as follow up for 
+the working groups that have questions from/to Steering and a retrospective
+
+### 2021 and on:
+1. Steering Committee will assign one member as a liaison to each community group for kick 
+off, help, or guidance needed throughout the process
+2. Chairs/Organizers create one report and send it to/share it with steering-private@kubernetes.io
+ for review; reports are due at the end of February 
+3. Steering will schedule private meetings to follow up on anything denoted as
+a private matter on the report; reports are not made public until all comments have 
+been addressed
+4. Once reviewed and follow ups are completed, the liaison will ask the chair(s)/organizer(s)
+of the group to submit a pull request to that groups documentation in the
+community repo
+5. The Steering Committee liaison will work directly with groups that have follow
+up items and update Steering during regular monthly meetings
+6. The March Chairs, Tech Leads, and Organizers meetings will be used as follow up for
+the community groups that have questions from/to Steering and a retrospective
 
 ### Tips for Chairs and Working Group Organizers:      
 - Work together with your groups roles and community members to complete;
@@ -64,11 +74,9 @@ private matters between [private] tags [/private]. We will absolutely not
 release information between private tags. If Chairs and/or Organizers would like
  to do the *Your Role* section individually and privately, please send to us at
  steering-private@kubernetes.io    
-- [insert a google doc template here for the questions] //TODO
+- Use this [question template]
 
 ## Questions for report:
-
-//A copy of these questions will be provided in a template
 
 #### You and your role:  
 When did you become a chair and do you enjoy the role?  
@@ -132,3 +140,4 @@ https://www.apache.org/foundation/board/reporting
 [WG]: https://git.k8s.io/community/committee-steering/governance/wg-governance.md
 [UG]: https://git.k8s.io/community/committee-steering/governance/ug-governance.md
 [governance]: https://git.k8s.io/community/governance.md
+[question template]: https://docs.google.com/document/d/1HeABRzhgF9NNpM0xGKLDhhc6bRfQuulsIsb59AjyS9M/edit#
