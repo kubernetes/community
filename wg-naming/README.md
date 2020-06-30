@@ -69,4 +69,12 @@ Once the Kubernetes community has:
 
 this WG will dissolve.
 
+## Post-formation Discussion Points
+
+- Discuss appropriate process for branch renaming with GitHub Administration
+  subproject (SIG ContribEx)
+- Work with the Code of Conduct Committee to add code architecture to the COC
+- A timeline on which to replace component names in the kubernetes/kubernetes
+- Clarify that WG should not dissolve until after changes have been made
+
 <!-- END CUSTOM CONTENT -->
