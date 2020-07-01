@@ -2187,12 +2187,12 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
     meetings:
     - description: Testing Commons
-      day: Monday
-      time: "10:00"
+      day: Friday
+      time: "13:00"
       tz: PT (Pacific Time)
       frequency: bi-weekly
       url: https://zoom.us/j/790505720
-      archive_url: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit#heading=h.tnoevy5f439o
+      archive_url: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit
 - dir: sig-ui
   name: UI
   mission_statement: >
