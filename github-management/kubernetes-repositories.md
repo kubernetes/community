@@ -1,4 +1,4 @@
-# Kubernetes Repository Guidelines
+# Kubernetes Repository Guidelines For prometheus container automation
 
 This document attempts to outline a structure for creating and associating
 GitHub repositories with the Kubernetes project. It also describes how and when
