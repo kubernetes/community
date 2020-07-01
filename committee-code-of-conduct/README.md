@@ -17,7 +17,7 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 * Aeva van der Veen (**[@AevaOnline](https://github.com/AevaOnline)**), Microsoft
 * Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**), Stripe
 * Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**), Microsoft
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Google
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Apple
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
 
 ## Contact
