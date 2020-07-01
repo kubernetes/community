@@ -41,17 +41,6 @@ $ bazel test //pkg/kubectl/...
 [gazelle]: https://github.com/bazelbuild/rules_go/tree/master/go/tools/gazelle
 [bazel-python-faq]: https://github.com/bazelbuild/bazel/issues/7899
 
-## Planter
-If you don't want to install Bazel, you can instead try using the unofficial
-[Planter](https://git.k8s.io/test-infra/planter) tool,
-which runs Bazel inside a Docker container.
-
-For example, you can run
-```console
-$ ../test-infra/planter/planter.sh make bazel-test
-$ ../test-infra/planter/planter.sh bazel build //cmd/kubectl
-```
-
 ## Continuous Integration
 
 There are several bazel CI jobs:
