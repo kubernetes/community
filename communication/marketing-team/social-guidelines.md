@@ -21,8 +21,10 @@ Kubernetes Organization Members with access to account are:
 - @parispittman
 - @mrbobbytables
 - @chris-short
+- @kaslin
 
 ## Themes/Topics
+The focus should be on topics that will be of interest to upstream contributors.
 
 - Contributor/SIG blog posts
 - Contributor events
@@ -31,6 +33,14 @@ Kubernetes Organization Members with access to account are:
 - Accomplishments (reaching 100,000 GitHub stars for example)
 - Significant historical events as related to the project (Kubernetes birthday, previous events, etc.)
 - Steering Committee Announcements
+- Contributor guide/dev guide updates
+- Work coming out of SIG-Contributor Experience
+
+Examples of topics that this group does NOT focus on include:
+
+- Content targeted at downstream users such as:
+  - Getting started with Kubernetes
+  - Best practices for running in production
 
 ### Example Social Media
 
