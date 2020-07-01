@@ -10,7 +10,7 @@ Out of scope for this document: [subproject] creation.
 ### Prerequisites for a SIG
 - [ ] Read [sig-governance.md]
 - [ ] Ensure all SIG Chairs, Technical Leads, and other leadership roles are [community members]
-- [ ] Send an email to the Steering Committee <steering@kubernetes.io> to scope the SIG and get provisional approval.
+- [ ] Send an email to the Steering Committee <steering@kubernetes.io> to scope the SIG and get provisional approval
 - [ ] Look at the checklist below for processes and tips that you will need to do while this is going on. It's best to collect this information upfront so you have a smoother process to launch
 - [ ] Follow the [SIG charter process] to propose and obtain approval for a charter
 - [ ] Announce new SIG on kubernetes-dev@googlegroups.com
@@ -35,8 +35,8 @@ Out of scope for this document: [subproject] creation.
   - [ ] What is the meeting cadence?
   - [ ] Who will chair the group, and ensure it continues to meet the requirements?
 - [ ] Do the first checklist item in the [GitHub] section below and add a row to the UG section:
-  - [ ] Label with committee/steering and place a `/hold` on it.
-- [ ] Send an email to the steering committee with the [sigs.yaml] pull request.
+  - [ ] Label with committee/steering and place a `/hold` on it
+- [ ] Send an email to the steering committee with the [sigs.yaml] pull request
 
 
 ### [GitHub]
@@ -56,13 +56,13 @@ Out of scope for this document: [subproject] creation.
 ### Communicate:
 Each one of these has a linked canonical source guideline from set up to moderation and your role and responsibilities for each. We are all responsible for enforcing our [code of conduct].
 - [ ] Read [moderation.md] and understand your role in keeping our community safe
-- [ ] Create your mailing lists - One for your members and another for your chairs/leads
-- Either [GoogleGroups] OR [discuss.kubernetes.io]
+- [ ] Create your mailing lists. [mailing-list-guidelines.md]
+- Create one mailing list for your members and another for your chairs/leads 
 - Example: kubernetes-[sig/wg/ug]-foo@googlegroups.com and kubernetes-[sig/wg/ug]-foo-leads@googlegroups.com
 - The chairs/leads email will be used for activation of certain platforms (eg zoom)
 - [ ] Request a slack channel. [slack-guidelines.md]
-- [ ] Request a YouTube playlist link [youtube-guidelines.md]
-- [ ] Request a zoom account [zoom-guidelines.md]
+- [ ] Request a YouTube playlist link. [youtube-guidelines.md]
+- [ ] Request a zoom account. [zoom-guidelines.md]
 
 ### Engage:
 ...as a chair/tech lead with other chairs/tech leads
@@ -109,7 +109,6 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 
 
 [steering committee repo]: https://github.com/kubernetes/steering
-[discuss.kubernetes.io]: https://discuss.kubernetes.io
 [subproject]: /governance.md#subprojects
 [Creation]: #Creation
 [Retirement]: #Retirement
@@ -123,12 +122,11 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 [GitHub management]: /github-management
 [code of conduct]: /code-of-conduct.md
 [moderation.md]: /communication/moderation.md
-[GoogleGroups]: /communication/mailing-list-guidelines.md
 [slack-guidelines.md]: /communication/slack-guidelines.md
 [youtube-guidelines.md]: /communication/youtube/youtube-guidelines.md
 [zoom-guidelines.md]: /communication/zoom-guidelines.md
-[discuss-guidelines.md]: /communication/discuss-guidelines.md
 [Thursday community updates]: /events/community-meeting.md
 [example]: https://docs.google.com/document/d/1qZcAvuWBznR_oEaPWtwm7U4JNT91m8r9YOUvInU-src/edit#heading=h.jsw0l2t0ra8
 [update meetings]: /communication/calendar-guidelines.md
 [community members]: /community-membership.md
+[mailing-list-guidelines.md]: /communication/mailing-list-guidelines.md
