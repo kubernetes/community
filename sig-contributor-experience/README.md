@@ -58,6 +58,7 @@ Owns and manages overall community repo, including community group documentation
 ### community-management
 Manages operations and policy for upstream community group communication platforms.
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/contributor-tweets/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/discuss-theme/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
 - **Meetings:**
