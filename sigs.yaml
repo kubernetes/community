@@ -2159,8 +2159,10 @@ sigs:
       recordings_url: https://bit.ly/k8s-sig-testing-videos
   - name: kubetest2
     description: |
-      Kubetest2 is the next significant iteration of kubetest. We will be deprecating kubetest going forward
+      Kubetest2 is the framework for launching and running end-to-end tests on kubernetes.
+      It is the next significant iteration of kubetest. We will be deprecating kubetest going forward.
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kubetest2/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/kubetest/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/kubetest2/OWNERS
   - name: prow
