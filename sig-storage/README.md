@@ -64,6 +64,10 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/gluster-block-external-provisioner/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/gluster-file-external-provisioner/master/OWNERS
+### kubernetes-cosi
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-csi-adapter/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-spec/master/OWNERS
 ### kubernetes-csi
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
