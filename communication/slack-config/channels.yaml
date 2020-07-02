@@ -192,6 +192,7 @@ channels:
   - name: kubernetes-users
   - name: kubespray
   - name: kubespray-dev
+  - name: kubevirt-dev
   - name: kubicorn
   - name: kudo
   - name: kurl
