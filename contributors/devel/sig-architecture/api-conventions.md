@@ -322,7 +322,7 @@ controller.
 Objects may report multiple conditions, and new types of conditions may be
 added in the future or by 3rd party controllers. Therefore, conditions are
 represented using a list/slice of objects, where each condition has a similar
-structure. This collected should be treated as a map with a key of `type`.
+structure. This collection should be treated as a map with a key of `type`.
 
 Conditions are most useful when they follow some consistent conventions:
 
