@@ -71,8 +71,10 @@ We are currently working on automation that would transfer membership in the
 Kubernetes organization to any related orgs automatically, but such is not the
 case currently. If you are a Kubernetes org member, you are implicitly eligible
 for membership in related orgs, and can request membership when it becomes
-relevant, by [opening an issue][membership request] against the kubernetes/org
-repo, as above. However, if you are a member of any of the related
+relevant, by creating a PR directly or [opening an issue][membership request]
+against the kubernetes/org repo, as above.
+
+However, if you are a member of any of the related
 [Kubernetes GitHub organizations] but not of the [Kubernetes org],
 you will need explicit sponsorship for your membership request.
 
