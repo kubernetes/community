@@ -16,3 +16,11 @@ channels:
   - name: kubernetes-docs-be
   - name: kubernetes-docs-pl
   - name: kubernetes-docs-uk
+  - name: sig-docs
+  - name: sig-docs-blog
+  - name: sig-docs-maintainers
+  - name: sig-docs-modeling
+  - name: sig-docs-release
+  - name: sig-docs-security
+    archived: true
+  - name: sig-docs-tools

@@ -304,14 +304,7 @@ channels:
     archived: true
   - name: sig-contribex
   - name: sig-contribex-triage
-  - name: sig-docs
-  - name: sig-docs-blog
-  - name: sig-docs-maintainers
-  - name: sig-docs-modeling
-  - name: sig-docs-release
-  - name: sig-docs-security
-    archived: true
-  - name: sig-docs-tools
+  # sig-docs* channels are defined in sig-docs/
   - name: sig-high-availability
     archived: true
   - name: sig-instrumentation
