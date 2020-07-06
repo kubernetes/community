@@ -11,6 +11,7 @@ approvers:
   - parispitmann
   - coderanger
   - idvoretskyi
+  - rlenferink
   - idealhack
 labels:
   - area/slack-management

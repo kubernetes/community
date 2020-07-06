@@ -164,6 +164,7 @@ Moderators seats: 10
 | Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Noah Kantrowitz     | @coderanger         | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
+| Roy Lenferink       | @rlenferink         | EMEA     | [CET - Central European Time](https://time.is/CET)         |
 | Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
 | Josh Berkus         | @jberkus            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Marky Jackson       | @markyjackson       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
@@ -179,7 +180,6 @@ Moderators pro tempore seats: 10
 | Aditya Konarde          | @aditya-konarde     | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
 | Manjunath Kumatagi      | @mkumatag           | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
 | Pandiyaraja Ramamoorthy | @pontiya            | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
-| Roy Lenferink           | @rlenferink         | EMEA   | [CET - Central European Time](https://time.is/CET)         |
 | Puja Abbassi            | @puja108            | EMEA   | [CET - Central European Time](https://time.is/CET)         |
 | James Munnelly          | @munnerz            | EMEA   | [GMT - Greenwich Mean Time](https://time.is/GMT)           |
 | Joel Speed              | @JoelSpeed          | EMEA   | [GMT - Greenwich Mean Time](https://time.is/GMT)           |
