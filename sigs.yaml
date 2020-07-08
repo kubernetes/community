@@ -2875,6 +2875,9 @@ committees:
     - github: micahhausler
       name: Micah Hausler
       company: Amazon
+    - github: swamymsft
+      name: Swamy Shivaganga Nagaraju
+      company: Microsoft
     - github: tallclair
       name: Tim Allclair
       company: Google
