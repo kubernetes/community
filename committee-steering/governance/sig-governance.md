@@ -13,20 +13,13 @@ December
 - Keep up-to-date meeting notes, linked from the SIG's page in the community
 repo
 - Record meetings and make them publicly available on the
-[Kubernetes Community YouTube playlist]
-- Report activity with the community via the kubernetes-dev mailing list at
-least once a quarter. Whichever format the SIG uses should _always_ be reported
-to the kubernetes-dev mailing list as this is the list the community depends on
-for SIG updates.  
-  - Each SIG is assigned an update during the monthly community meeting
-  throughout the year. The meeting host will publish the notes to the
+[Kubernetes Community YouTube playlist]  
+- Report activity with the community via the kubernetes-dev@ mailing list at
+least once a year. 
+  - Each SIG is assigned an update during the [monthly community meeting]
+  throughout the year from sig-contributor-experience. The meeting host will publish the notes to the
   kubernetes-dev mailing list with the update.  
-  - Due to limited opportunities (twice a year) at the community meeting to
-  present, your SIG will need to figure out two other options to deliver on SIG
-  updates to meet the quarterly reporting requirement:
-    a. During KubeCon + CloudNativeCon or  
-    b. A presentation or summary update sent to the kubernetes-dev
-  mailing list.
+  - This is separate from the [annual report]. 
 - Participate in release planning meetings and retrospectives, and burndown
 meetings, as needed
 - Ensure related work happens in a project-owned github org and repository, with
@@ -122,9 +115,7 @@ Subproject contributors (as applicable).
  groups like SIGs and the Steering Committee but *MAY* delegate the actual
  communication and creation of content to other contributors where
  appropriate  
-- *MUST* provide quarterly updates through our community channels: twice a year
-to kubernetes-dev@googlegroups.com mailing list and twice a year presenting at
-the monthly community meeting  
+- *MUST* provide updates through the [monthly community meeting]
 - *MUST* present yearly [annual report] for the group but *SHOULD* get help with
 curation from other SIG participants
 
@@ -249,3 +240,4 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [#tech-lead]: #Tech-Lead
 [Google group]: https://groups.google.com/forum/#!forum/kubernetes-sig-config
 [dashboard]: https://testgrid.k8s.io/
+[monthly community meeting]: /events/community-meeting.md
