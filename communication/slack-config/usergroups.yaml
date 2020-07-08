@@ -48,7 +48,6 @@ usergroups:
       - ashish-amarnath
       - carlisia
       - nrb
-      - skriss
 
   - name: youtube-admins
     long_name: YouTube Admins
