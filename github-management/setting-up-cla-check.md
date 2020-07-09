@@ -1,3 +1,4 @@
+$*
 # Setting up the CNCF CLA check
 
 If you are trying to sign the CLA so your PR's can be merged, please [read the
