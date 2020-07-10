@@ -1,7 +1,7 @@
-# The Kubernetes Scheduler
+# Understanding the Kubernetes Scheduler
 
 The Kubernetes scheduler runs as a process alongside the other master components such as the API server.
-Its interface to the API server is to watch for Pods with an empty PodSpec.NodeName,
+Its interface to the API server is to watch for Pods with an empty `PodSpec.NodeName`,
 and for each Pod, it posts a binding indicating where the Pod should be scheduled.
 
 ## Exploring the code

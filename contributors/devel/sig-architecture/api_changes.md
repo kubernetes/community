@@ -1,36 +1,37 @@
-*This document is oriented at developers who want to change existing APIs.
+# Changing the API
+
+This document is oriented at developers who want to change existing APIs.
 A set of API conventions, which applies to new APIs and to changes, can be
 found at [API Conventions](api-conventions.md).
 
 **Table of Contents**
 
 - [So you want to change the API?](#so-you-want-to-change-the-api)
-  - [Operational overview](#operational-overview)
-  - [On compatibility](#on-compatibility)
-  - [Backward compatibility gotchas](#backward-compatibility-gotchas)
-  - [Incompatible API changes](#incompatible-api-changes)
-  - [Changing versioned APIs](#changing-versioned-apis)
-    - [Edit types.go](#edit-typesgo)
-    - [Edit defaults.go](#edit-defaultsgo)
-    - [Edit conversion.go](#edit-conversiongo)
-  - [Changing the internal structures](#changing-the-internal-structures)
-    - [Edit types.go](#edit-typesgo-1)
-  - [Edit validation.go](#edit-validationgo)
-  - [Edit version conversions](#edit-version-conversions)
-  - [Generate protobuf objects](#generate-protobuf-objects)
-  - [Edit json (un)marshaling code](#edit-json-unmarshaling-code)
-  - [Making a new API Version](#making-a-new-api-version)
-  - [Making a new API Group](#making-a-new-api-group)
-  - [Update the fuzzer](#update-the-fuzzer)
-  - [Update the semantic comparisons](#update-the-semantic-comparisons)
-  - [Implement your change](#implement-your-change)
-  - [Write end-to-end tests](#write-end-to-end-tests)
-  - [Examples and docs](#examples-and-docs)
-  - [Alpha, Beta, and Stable Versions](#alpha-beta-and-stable-versions)
-    - [Adding Unstable Features to Stable Versions](#adding-unstable-features-to-stable-versions)
+- [Operational overview](#operational-overview)
+- [On compatibility](#on-compatibility)
+- [Backward compatibility gotchas](#backward-compatibility-gotchas)
+- [Incompatible API changes](#incompatible-api-changes)
+- [Changing versioned APIs](#changing-versioned-apis)
+  - [Edit types.go](#edit-typesgo)
+  - [Edit defaults.go](#edit-defaultsgo)
+  - [Edit conversion.go](#edit-conversiongo)
+- [Changing the internal structures](#changing-the-internal-structures)
+  - [Edit types.go](#edit-typesgo-1)
+- [Edit validation.go](#edit-validationgo)
+- [Edit version conversions](#edit-version-conversions)
+- [Generate protobuf objects](#generate-protobuf-objects)
+- [Edit json (un)marshaling code](#edit-json-unmarshaling-code)
+- [Making a new API Version](#making-a-new-api-version)
+- [Making a new API Group](#making-a-new-api-group)
+- [Update the fuzzer](#update-the-fuzzer)
+- [Update the semantic comparisons](#update-the-semantic-comparisons)
+- [Implement your change](#implement-your-change)
+- [Write end-to-end tests](#write-end-to-end-tests)
+- [Examples and docs](#examples-and-docs)
+- [Alpha, Beta, and Stable Versions](#alpha-beta-and-stable-versions)
+  - [Adding Unstable Features to Stable Versions](#adding-unstable-features-to-stable-versions)
 
-
-# So you want to change the API?
+## So you want to change the API?
 
 Before attempting a change to the API, you should familiarize yourself with a
 number of existing API types and with the [API conventions](api-conventions.md).
