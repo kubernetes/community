@@ -223,11 +223,39 @@ The following apply to the subproject for which one would be an owner.
 - Ensure a healthy process for discussion and decision making is in place.
 - Work with other subproject owners to maintain the project's overall health and success holistically
 
-## ~~Maintainer~~
+## Inactive members
 
-**Status:** Removed
+_Members are continuously active contributors in the community._
 
-The Maintainer role has been removed and replaced with a greater focus on [OWNERS].
+A core principal in maintaining a healthy community is encouraging active
+participation. It is inevitable that people's focuses will change over time and
+they are not expected to be actively contributing forever.
+
+However, being a member of one of the Kubernetes GitHub organizations comes with
+an [elevated set of permissions]. These capabilities should not be used by those
+that are not familiar with the current state of the Kubernetes project.
+
+Therefor members with an extended period away from the project with no activity
+will be removed from the Kubernetes Github Organizations and will be required to
+go through the org membership process again after re-familiarizing themselves
+with the current state.
+
+
+### How inactivity is measured
+
+Inactive members are defined as members of one of the Kubernetes Organizations
+with **no** contributions across any organization within 18 months. This is
+measured by the CNCF [DevStats project].
+
+**Note:** Devstats does not take into account non-code contributions. If a
+non-code contributing member is accidentally removed this way, they may open an
+issue to quickly be re-instated. 
+
+
+After an extended period away from the project with no activity
+those members would need to re-familiarize themselves with the current state
+before being able to contribute effectively. 
+
 
 [code reviews]: /contributors/guide/expectations.md#code-review
 [community expectations]: /contributors/guide/expectations.md
@@ -244,3 +272,5 @@ The Maintainer role has been removed and replaced with a greater focus on [OWNER
 [sigs.yaml]: /sigs.yaml
 [SLO]: /github-management/org-owners-guide.md#slos
 [two-factor authentication]: https://help.github.com/articles/about-two-factor-authentication
+[elevated set of permissions]: #Responsibilities-and-privileges
+[Devstats project]: https://k8s.devstats.cncf.io/
