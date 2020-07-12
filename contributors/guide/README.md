@@ -1,3 +1,11 @@
+title: "Getting Started"
+weight: 1
+description:
+  A small list of things that you should read and be familiar with before you
+  get started with contributing. This includes such things as signing the
+  Contributor License Agreement, familiarizing yourself with our Code of Conduct
+  and more.
+
 # Welcome
 
 Have you ever wanted to contribute to the coolest cloud technology?
