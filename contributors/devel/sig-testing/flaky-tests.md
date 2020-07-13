@@ -72,7 +72,10 @@ We offer the following tools to aid in finding or troubleshooting flakes
 - [go.k8s.io/triage] - an interactive test failure report providing filtering and drill-down by job name, test name, failure text for failures in the last two weeks
   - https://storage.googleapis.com/k8s-gubernator/triage/index.html?pr=1&job=pull-kubernetes-e2e-gce%24 - all failures that happened in the `pull-kubernetes-e2e-gce` job
   - https://storage.googleapis.com/k8s-gubernator/triage/index.html?text=timed%20out - all failures containing the text `timed out`
-  - https://storage.googleapis.com/k8s-gubernator/triage/index.html?test=%5C%5Bsig-apps%5C%5D - all failures that happened in tests with `[sig-apps]` in their name
+  - ~~https://storage.googleapis.com/k8s-gubernator/triage/index.html?test=%5C%5Bsig-apps%5C%5D - all failures that happened in tests with `[sig-apps]` in their name~~ (broken now, may be restored later)
+  - this web page presents output from a periodic batch job, so does not have the very latest data.  Look for the line that says something like `3 clusters of 114 failures (3 in last day) out of 168104 builds from 6/28/2020, 8:00:16 PM to 7/13/2020, 3:20:44 PM` to see the range of times last analyzed
+  - timestamps in that message and the tables of "Latest Failures" are in your local time zone
+  - timestamps quoted from logs are in UTC
 - [testgrid.k8s.io] - display test results in a grid for visual identififcation of flakes
   - https://testgrid.k8s.io/presubmits-kubernetes-blocking - all merge-blocking jobs
   - https://testgrid.k8s.io/presubmits-kubernetes-blocking#pull-kubernetes-e2e-gce&exclude-filter-by-regex=BeforeSuite&sort-by-flakiness= - results for the pull-kubernetes-e2e-gce job sorted by flakiness
