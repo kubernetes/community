@@ -227,7 +227,7 @@ The following apply to the subproject for which one would be an owner.
 
 _Members are continuously active contributors in the community._
 
-A core principal in maintaining a healthy community is encouraging active
+A core principle in maintaining a healthy community is encouraging active
 participation. It is inevitable that people's focuses will change over time and
 they are not expected to be actively contributing forever.
 
