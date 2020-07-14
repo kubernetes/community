@@ -2185,6 +2185,11 @@ sigs:
   - name: repo-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
+  - name: secret-sync-rotation
+    description: |
+      Controllers to sync and rotate kubernetes secrets with google cloud secret manager
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/secret-sync-rotation/master/OWNERS
   - name: test-infra
     description: |
       Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
