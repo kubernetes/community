@@ -889,8 +889,8 @@ sigs:
     url: https://zoom.us/j/130096731
     archive_url: https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit
   - description: Image Builder office hours
-    day: Wednesday
-    time: "11:00"
+    day: Thursday
+    time: "8:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/807524571
