@@ -21,7 +21,7 @@ The [charter](charter.md) defines the scope and governance of the Cluster Lifecy
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 * Cluster Addons meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/130096731) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit).
-* Image Builder office hours: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/807524571) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+* Image Builder office hours: [Thursdays at 8:00 PT (Pacific Time)](https://zoom.us/j/807524571) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 * Kubespray Office Hours: [Wednesdays at 08:00 PT (Pacific Time)](https://zoom.us/j/532465189) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
