@@ -1671,6 +1671,11 @@ sigs:
       slack: node-problem-detector
     owners:
     - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
+  - name: seccomp-operator
+    contact:
+      slack: seccomp-operator
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/seccomp-operator/master/OWNERS
 - dir: sig-release
   name: Release
   mission_statement: >
