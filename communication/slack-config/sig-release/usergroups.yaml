@@ -12,7 +12,6 @@ usergroups:
       - release-management
       - sig-release
     members:
-      - calebamiles # subproject owner
       - cpanato # Release Manager
       - dougm # Release Manager
       - feiskyer # Release Manager
@@ -42,9 +41,10 @@ usergroups:
       - release-notes
       - sig-release
     members:
-      - calebamiles # SIG Chair
+      - alejandrox1 # SIG Technical Lead
       - jeremyrickard # 1.19 Release Team Lead Shadow
       - justaugustus # SIG Chair
       - mrbobbytables # 1.19 Release Team Lead Shadow
       - onlydole # 1.19 Release Team Lead
+      - saschagrunert # SIG Technical Lead
       - tpepper # SIG Chair
