@@ -235,7 +235,7 @@ However, being a member of one of the Kubernetes GitHub organizations comes with
 an [elevated set of permissions]. These capabilities should not be used by those
 that are not familiar with the current state of the Kubernetes project.
 
-Therefor members with an extended period away from the project with no activity
+Therefore members with an extended period away from the project with no activity
 will be removed from the Kubernetes Github Organizations and will be required to
 go through the org membership process again after re-familiarizing themselves
 with the current state.
