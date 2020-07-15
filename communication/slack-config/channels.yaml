@@ -74,6 +74,7 @@ channels:
   - name: etcdadm
   - name: events
   - name: external-dns
+  - name: external-secrets
   - name: falco
   - name: fiaas
   - name: fi-users
