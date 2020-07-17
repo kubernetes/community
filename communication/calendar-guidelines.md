@@ -143,9 +143,9 @@ Google group: <optional>
 > 
 > **Zoom link**:
 >
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; App: https://zoom.us/j/596959769
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; App: https://zoom.us/j/XXXXXXXXX
 >
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Web Client: https://zoom.us/wc/join/596959769
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Web Client: https://zoom.us/wc/join/XXXXXXXXX
 
 ## Troubleshooting
 
