@@ -309,6 +309,7 @@ channels:
   - name: sig-docs-modeling
   - name: sig-docs-release
   - name: sig-docs-security
+    archived: true
   - name: sig-docs-tools
   - name: sig-high-availability
     archived: true
