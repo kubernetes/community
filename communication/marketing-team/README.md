@@ -14,7 +14,8 @@ the broader ecosystem
 | [Internal Communications] | @jonasrosland | @rajula96reddy |  |
 | [Social Media] | @chris-short @kaslin | n/a | |
 | [Storytellers] | liaison to sig-docs-blog team @onlydole |  @celanthe, @vonguard, @boluisa, @kaslin, @divya-mohan0209, and [Could be you!] |  |
-| [Designer] | [Could be you!] |  | help us with digital assets, infographics, contributor site |  
+| [Designer] | [Could be you!] |  | help us with digital assets, infographics, contributor site | 
+| APAC Liaison | @pensu91 | [Could be you!] | | 
 
 ## Contact Us!
 
