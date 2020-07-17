@@ -47,6 +47,10 @@ Boskos is a resource manager service that handles different kinds of resources a
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/boskos/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
+### k8s-gsm-tools
+Controllers to sync and rotate kubernetes secrets with google cloud secret manager
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/k8s-gsm-tools/master/OWNERS
 ### kind
 Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
 - **Owners:**
@@ -73,10 +77,6 @@ Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action 
 ### repo-infra
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
-### secret-sync-rotation
-Controllers to sync and rotate kubernetes secrets with google cloud secret manager
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/secret-sync-rotation/master/OWNERS
 ### test-infra
 Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
 - **Owners:**
