@@ -5,3 +5,4 @@ channels:
     id: CG04EL876
   - name: csi-windows
   - name: sig-storage
+  - name: sig-storage-cosi
