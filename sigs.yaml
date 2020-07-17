@@ -2166,6 +2166,11 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/boskos/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
+  - name: k8s-gsm-tools
+    description: |
+      Controllers to sync and rotate kubernetes secrets with google cloud secret manager
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/k8s-gsm-tools/master/OWNERS
   - name: kind
     description: |
       Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
@@ -2200,11 +2205,6 @@ sigs:
   - name: repo-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
-  - name: secret-sync-rotation
-    description: |
-      Controllers to sync and rotate kubernetes secrets with google cloud secret manager
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/secret-sync-rotation/master/OWNERS
   - name: test-infra
     description: |
       Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
