@@ -1211,6 +1211,14 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
     meetings:
+    - description: New Contributor Workshop Development Meeting
+      day: Monday
+      time: "4:00"
+      tz: PT
+      frequency: Biweekly
+      url: https://zoom.us/j/95894431386
+      archive_url: https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit
+      recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
     - description: sig-contribex mentoring subproject meeting (APAC Friendly Time)
       day: Monday
       time: "20:30"
