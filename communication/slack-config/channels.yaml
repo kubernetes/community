@@ -255,6 +255,7 @@ channels:
   - name: octant
   - name: office-hours
   - name: okteto
+  - name: olm-dev
   - name: opencontainers
   - name: openebs
   - name: openebs-dev
@@ -262,6 +263,7 @@ channels:
   - name: openshift-users
   - name: openstack-helm
   - name: openstack-kolla
+  - name: operator-sdk-dev
   - name: ops-status
     archived: true
   - name: osbkit
