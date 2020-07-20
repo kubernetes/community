@@ -36,6 +36,7 @@ restrictions:
   - path: "sig-storage/*.yaml"
     channels:
       - "^sig-storage$"
+      - "^sig-storage-"
       - "^csi$"
       - "^csi-"
   - path: "sig-cloud-provider/*.yaml"
