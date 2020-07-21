@@ -75,6 +75,7 @@ Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action 
 - **Contact:**
   - Slack: [#prow](https://kubernetes.slack.com/messages/prow)
 ### repo-infra
+Creates and maintains tools and templates for kubernetes-namespace repositories.
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
 ### test-infra
