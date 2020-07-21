@@ -134,7 +134,6 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 * **Using Go Modules to Manage Dependencies (for Kubernetes 1.14.x and earlier)** [godep.md](sig-architecture/godep.md)
   See [current documentation for working with dependencies](sig-architecture/vendor.md) for master branch development.
 
-### SIG Architecture
 * **Conformance Testing in Kubernetes** [conformance-tests.md](sig-architecture/conformance-tests.md)
 
 ### SIG API Machinery
