@@ -2,6 +2,7 @@ channels:
   - name: kubernetes-docs-ar
   - name: kubernetes-docs-de
   - name: kubernetes-docs-es
+  - name: kubernetes-docs-fa
   - name: kubernetes-docs-fr
   - name: kubernetes-docs-hi
   - name: kubernetes-docs-id
