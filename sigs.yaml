@@ -1235,11 +1235,6 @@ sigs:
       url: https://zoom.us/j/98162537924
       archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r
       recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
-  - name: repo-infra
-    description: Creates and maintains tools and templates for kubernetes-namespace
-      repositories.
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: slack-infra
     description: Creates and maintains tools and automation for Kubernetes Slack.
     contact:
@@ -2203,6 +2198,8 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
   - name: repo-infra
+    description: Creates and maintains tools and templates for kubernetes-namespace
+      repositories.
     owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: test-infra
