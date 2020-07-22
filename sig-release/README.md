@@ -77,6 +77,12 @@ The Release Engineering subproject is responsible for the [process/procedures](h
 The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
+### repo-infra
+Creates and maintains tools and templates for Kubernetes org repositories.
+Includes bazel tooling for managing dependencies for kubernetes/kubernetes
+and kubernetes/test-infra.
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
 ### sig-release
 Documents and processes related to SIG Release
 - **Owners:**
