@@ -1762,6 +1762,13 @@ sigs:
       The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
+  - name: repo-infra
+    description: |
+      Creates and maintains tools and templates for Kubernetes org repositories.
+      Includes bazel tooling for managing dependencies for kubernetes/kubernetes
+      and kubernetes/test-infra.
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: sig-release
     description: |
       Documents and processes related to SIG Release
@@ -2193,11 +2200,6 @@ sigs:
       slack: prow
     owners:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
-  - name: repo-infra
-    description: Creates and maintains tools and templates for kubernetes-namespace
-      repositories.
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: test-infra
     description: |
       Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
