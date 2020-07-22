@@ -13,7 +13,7 @@ Ensure quality Kubernetes releases
 The [charter](charter.md) defines the scope and governance of the Release Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Mondays at 15:00 UTC](https://zoom.us/j/327142148) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+* Regular SIG Meeting: [Tuesdays at 14:30 UTC](https://zoom.us/j/327142148) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-release-meeting).
   * [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 
@@ -50,16 +50,11 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-release:
-### hyperkube
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
-### licensing
+### Licensing
 The Licensing subproject is responsible for analyzing/reporting/remediating licensing concerns within the Kubernetes project orgs.
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
-### release-engineering
+### Release Engineering
 The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
@@ -70,23 +65,28 @@ The Release Engineering subproject is responsible for the [process/procedures](h
 - **Contact:**
   - Slack: [#release-management](https://kubernetes.slack.com/messages/release-management)
 - **Meetings:**
-  - Regular SIG Meeting: [Mondays at 15:00 UTC](https://zoom.us/j/240812475) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+  - Release Engineering: [Tuesdays at 14:30 UTC](https://zoom.us/j/240812475) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
     - [Meeting notes and Agenda](https://bit.ly/k8s-releng-meeting).
     - [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
-### release-team
+### Release Team
 The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
-### repo-infra
+### SIG Release Process Documentation
+Documents and processes related to SIG Release
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
+### hyperkube
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
+### kubernetes/repo-infra
 Creates and maintains tools and templates for Kubernetes org repositories.
 Includes bazel tooling for managing dependencies for kubernetes/kubernetes
 and kubernetes/test-infra.
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
-### sig-release
-Documents and processes related to SIG Release
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

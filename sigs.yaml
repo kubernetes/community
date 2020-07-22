@@ -1707,8 +1707,8 @@ sigs:
       name: Jaice Singer DuMars
   meetings:
   - description: Regular SIG Meeting
-    day: Monday
-    time: "15:00"
+    day: Tuesday
+    time: "14:30"
     tz: UTC
     frequency: biweekly
     url: https://zoom.us/j/327142148
@@ -1727,17 +1727,12 @@ sigs:
     - name: sig-release-admins
       description: Admins for SIG Release repositories
   subprojects:
-  - name: hyperkube
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
-  - name: licensing
+  - name: Licensing
     description: |
       The Licensing subproject is responsible for analyzing/reporting/remediating licensing concerns within the Kubernetes project orgs.
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
-  - name: release-engineering
+  - name: Release Engineering
     description: |
       The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
     contact:
@@ -1749,31 +1744,36 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
     meetings:
-    - description: Regular SIG Meeting
-      day: Monday
-      time: "15:00"
+    - description: Release Engineering
+      day: Tuesday
+      time: "14:30"
       tz: UTC
       frequency: biweekly
       url: https://zoom.us/j/240812475
       archive_url: https://bit.ly/k8s-releng-meeting
       recordings_url: https://bit.ly/k8s-sig-release-videos
-  - name: release-team
+  - name: Release Team
     description: |
       The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
-  - name: repo-infra
+  - name: SIG Release Process Documentation
+    description: |
+      Documents and processes related to SIG Release
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
+  - name: hyperkube
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
+  - name: kubernetes/repo-infra
     description: |
       Creates and maintains tools and templates for Kubernetes org repositories.
       Includes bazel tooling for managing dependencies for kubernetes/kubernetes
       and kubernetes/test-infra.
     owners:
     - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
-  - name: sig-release
-    description: |
-      Documents and processes related to SIG Release
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
 - dir: sig-scalability
   name: Scalability
   mission_statement: >
