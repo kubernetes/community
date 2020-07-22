@@ -18,6 +18,9 @@ We understand that everyone has different learning styles and we want to support
 ## Current mentoring activities:
 Please reach out to #sig-contribex on slack or come to a mentoring meeting to get involved in planning //TODO add contribex README when this is updated
 
+SIG's office hours / mentoring
+* [Office hours / mentoring](/mentoring/programs/office-hours.md)
+
 Mentors On Demand  
 * [Meet Our Contributors](/mentoring/programs/meet-our-contributors.md)
 
