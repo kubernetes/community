@@ -216,4 +216,4 @@ detailed information about streaming, see our [Streaming Config]
 [Office Hours]: /events/office-hours.md
 [Meet our Contributors]: /mentoring/meet-our-contributors.md
 [Streaming Config]: ./youtube/streaming-config.md
-[Subprojects]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[Subprojects]: ./governance.md#subprojects
