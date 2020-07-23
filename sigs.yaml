@@ -1455,21 +1455,13 @@ sigs:
       name: Quinton Hoole
       company: Huawei
   meetings:
-  - description: Cluster Federation (KubeFed) Working Group
-    day: Wednesday
-    time: "7:30"
-    tz: PT (Pacific Time)
-    frequency: weekly
-    url: https://zoom.us/my/k8s.mc
-    archive_url: https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY/edit
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3iKP5EzMbtNT2zOZv6RCrX
   - description: Regular SIG Meeting
     day: Tuesday
     time: "9:30"
     tz: PT (Pacific Time)
-    frequency: biweekly
+    frequency: weekly
     url: https://zoom.us/my/k8s.mc
-    archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
+    archive_url: https://tinyurl.com/sig-multicluster-notes
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
   contact:
     slack: sig-multicluster
