@@ -35,6 +35,9 @@ meeting recordings, as well as recordings of other recurring events such as the
 Kubernetes [Community meeting], [Office Hours], [Meet our Contributors] and
 others.
 
+[Subprojects], in addition to SIGs, WGs, UGs may request their own playlists
+to better target their contributors and increase general discoverability.
+
 To better serve the community, [collaboration] has been enabled to share the
 management of the playlists. Anyone with the appropriate link to the particular
 playlist can upload videos _to that particular playlist_ (links & playlists are
@@ -213,3 +216,4 @@ detailed information about streaming, see our [Streaming Config]
 [Office Hours]: /events/office-hours.md
 [Meet our Contributors]: /mentoring/meet-our-contributors.md
 [Streaming Config]: ./youtube/streaming-config.md
+[Subprojects]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
