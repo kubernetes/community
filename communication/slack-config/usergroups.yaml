@@ -39,6 +39,9 @@ usergroups:
   - name: test-infra-oncall
     external: true
 
+  - name: google-build-admin
+    external: true
+
   - name: velero-maintainers
     long_name: Velero Maintainers
     description: Velero Maintainers group.
