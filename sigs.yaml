@@ -2350,7 +2350,7 @@ sigs:
   - description: Regular SIG Meeting
     day: Tuesday
     time: "12:30"
-    tz: Eastern Standard Time (EST)
+    tz: Eastern Time (ET)
     frequency: weekly
     url: https://zoom.us/j/297282383
     archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
