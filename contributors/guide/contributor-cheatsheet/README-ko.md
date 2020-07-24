@@ -360,7 +360,7 @@ PR을 검토하고 승인하도록 지정된 다른 참여자의 판단에 맡�
 [gitHub 레이블]: https://go.k8s.io/github-labels
 [쿠버네티스 코드 검색]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[달력]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[달력]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [Slack 채널]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
