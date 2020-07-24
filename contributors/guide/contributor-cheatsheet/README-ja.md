@@ -302,7 +302,7 @@ git checkout -b myfeature
 [GitHubラベル]: https://go.k8s.io/github-labels
 [Kubernetes Code Search]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[カレンダー]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[カレンダー]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [slackチャンネル]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes

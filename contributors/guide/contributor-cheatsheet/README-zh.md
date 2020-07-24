@@ -292,7 +292,7 @@ git checkout -b myfeature
 [GitHub 标签]: https://go.k8s.io/github-labels
 [Kubernetes 代码搜索]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[日历]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[日历]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [Slack 频道]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes

@@ -287,7 +287,7 @@ git checkout -b myfeature
 [GitHub мітки]: https://go.k8s.io/github-labels
 [Пошук у коді Kubernetes]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[Календар]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[Календар]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [Канали Slack]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes

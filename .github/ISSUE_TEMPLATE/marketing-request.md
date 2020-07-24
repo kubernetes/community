@@ -44,7 +44,7 @@ Blog and Social Media Guidelines: https://git.k8s.io/community/communication/mar
 - [ ] Twitter (via [@k8scontributors](https://twitter.com/k8scontributors))
 - [ ] YouTube ([Kubernetes](https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg))
 - [ ] Slack (assumes `#kubernetes-dev` unless otherwise mentioned)
-- [ ] Contributor Calendar event entry (available [here](https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles))
+- [ ] Contributor Calendar event entry (available [here](https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io))
 - [ ] Other (fill this out)
 
 **Where is your first draft available?**

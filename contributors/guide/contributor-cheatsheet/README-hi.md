@@ -285,7 +285,7 @@ PR संशोधन का चरण। यदि आप अनिश्चि
 [Github लेबल]: https://go.k8s.io/github-labels
 [कुबरनेट्स Code Search]: https://cs.kubs.io/
 [@dims]: https://github.com/dims
-[कैलेंडर]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[कैलेंडर]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [Slack चैनल]: http://slack.k8s.io/
 [stackOverflow]: https://stackoverflow.com/questions/tagged/kubernetes
