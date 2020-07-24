@@ -173,7 +173,7 @@ place!
 
 
 [Kubernetes Blog]: https://kubernetes.io/blog/
-[shared calendar]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
+[shared calendar]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [Kubernetes code of conduct]: /code-of-conduct.md
 [events]: https://www.cncf.io/events/
 [file an issue]: https://github.com/kubernetes/kubernetes/issues/new

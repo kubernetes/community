@@ -341,7 +341,7 @@ fase de uma revisão do PR. Se você não tem certeza se deve efetuar o squashin
 [gitHub labels]: https://go.k8s.io/github-labels
 [Pesquisa no código do Kubernetes]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[Calendário]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[Calendário]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [slack]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
