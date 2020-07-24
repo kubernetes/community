@@ -55,8 +55,6 @@ addition of [gsuite], this practice may change soon.
     will need to be set to "public".
   - In the calendar invite body - include your meeting notes, zoom information,
     and any other pertinent information that you want your group to know.
-  - Invite your SIG/WG mailing list and the Kubernetes Community Public
-    Calendar address: `cgnt364vd8s86hr2phapfjc6uk@group.calendar.google.com`
 
 
 ### Testing Permissions
@@ -122,5 +120,5 @@ to refresh invites sent to the group.
 [new shared calendar]: https://support.google.com/calendar/answer/37095?hl=en
 [configure access permissions and sharing:]: https://support.google.com/calendar/answer/37082?hl=en
 [SIG/WG list]: /sig-list.md
-[Public Community Calendar]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America%2FLos_Angeles
+[Public Community Calendar]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io&ctz=America%2FLos_Angeles
 [contributor mailing list]: https://groups.google.com/forum/#!forum/kubernetes-dev
