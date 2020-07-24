@@ -32,6 +32,7 @@ The [charter](charter.md) defines the scope and governance of the Cluster Lifecy
 * Regular SIG Meeting in China: [Tuesdays at 20:00 Beijing](https://zoom.us/j/179916854) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=Beijing).
   * [Meeting notes and Agenda](https://shimo.im/docs/YcoaYlvRmIYcrwnd).
 * etcdadm Office Hours: [Mondays at 09:00 PT (Pacific Time)](https://zoom.us/j/612375927) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit).
 * kops Office Hours: [Fridays at 09:00 PT (Pacific Time)](https://zoom.us/my/k8ssigaws) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit).
 * kubeadm Office Hours: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/179916854) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
