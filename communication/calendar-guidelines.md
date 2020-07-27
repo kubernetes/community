@@ -120,7 +120,7 @@ Time: <Weekly/ biweekly/... or is the meeting for a fixed time and till when?>
 
 Meeting notes & agenda: <Hyperlink to the meeting notes doc>
 
-Zoom link: <Zoom invite link. Preferably include app client link, web client link, and dial in information>
+Zoom link: <Zoom invite link. Preferably include app client link, web client link, and dial in information page link>
 
 Additional info: <Any extra info/ links can be provided here>
 
@@ -146,6 +146,8 @@ Google group: <optional>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; App: https://zoom.us/j/XXXXXXXXX
 >
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Web Client: https://zoom.us/wc/join/XXXXXXXXX
+> 
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dial in numbers: https://zoom.us/u/bacaZSMhA
 
 ## Troubleshooting
 
