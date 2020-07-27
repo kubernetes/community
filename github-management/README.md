@@ -10,7 +10,7 @@ and organizations. We have also created a number of tools to automate setup and
 enforcement of these policies.
 
 These polices are overseen by the
-[GitHub Management subproject](subproject-responsibilites.md) of the Contributor
+[GitHub Management subproject](subproject-responsibilities.md) of the Contributor
 Experience Special Interest Group.
 
 ## Guides
