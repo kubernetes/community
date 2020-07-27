@@ -120,7 +120,7 @@ Time: <Weekly/ biweekly/... or is the meeting for a fixed time and till when?>
 
 Meeting notes & agenda: <Hyperlink to the meeting notes doc>
 
-Zoom link: <Zoom invite link. Preferably both app and web client links>
+Zoom link: <Zoom invite link. Preferably include app client link, web client link, and dial in information>
 
 Additional info: <Any extra info/ links can be provided here>
 
