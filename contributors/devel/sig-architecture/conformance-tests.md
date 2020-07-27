@@ -17,29 +17,30 @@ NB: This should be viewed as a living document in a few key areas:
   current set of e2e tests, as such this document is currently intended to
   guide us in the addition of new e2e tests than can fill this gap
 - This document currently focuses solely on the requirements for GA,
-  non-optional features or APIs. The list of requirements will be refined over
-  time to the point where it as concrete and complete as possible.
-- There are currently conformance tests that violate some of the requirements
-  (e.g., require privileged access), we will be categorizing these tests and
-  deciding what to do once we have a better understanding of the situation
-- Once we resolve the above issues, we plan on identifying the appropriate areas
-  to relax requirements to allow for the concept of conformance Profiles that
-  cover optional or additional behaviors
+  non-optional features or APIs. Upcoming profiles will cover optional features
+  and require some modifications to these rules.
 
-## Conformance Test Requirements
+## Conformance Profiles
 
-Conformance tests currently test only GA, non-optional features or APIs. More
-specifically, a test is eligible for promotion to conformance if:
+Conformance tests are grouped into [profiles], which allow for testing
+conformance of optional features that every cluster need
+not provide. Profiles are _additive_, meaning that supporting one profile cannot
+"take away" tests from another profile.
 
-- it tests only GA, non-optional features or APIs (e.g., no alpha or beta
-  endpoints, no feature flags required, no deprecated features)
+Starting in 1.19, there are two profiles defined:
+Base and Privileged. All conforming Kubernetes clusters must meet the Base
+profile, but the Privileged profile is optional. Most tests in versions prior to
+1.19 have been categorized as Base, but some are privileged, sorted according to
+the definitions below.
+
+### General Conformance Test Requirements
+
+Regardless of profile, any conformance test must meet the following criteria:
 - it does not require direct access to kubelet's API to pass (nor does it
   require indirect access via the API server node proxy endpoint); it MAY
   use the kubelet API for debugging purposes upon failure
 - it works for all providers (e.g., no `SkipIfProviderIs`/`SkipUnlessProviderIs`
   calls)
-- it is non-privileged (e.g., does not require root on nodes, access to raw
-  network interfaces, or cluster admin permissions)
 - it works without access to the public internet (short of whatever is required
   to pre-pull images for conformance tests)
 - it works without non-standard filesystem permissions granted to pods
@@ -59,6 +60,32 @@ specifically, a test is eligible for promotion to conformance if:
   are robust
 - it has a name that is a literal string
 
+### Base Profile Requirements
+
+The Base profile contains only conformance tests for GA, non-optional features or APIs. More
+specifically, a test is eligible for the Base profile if:
+
+- it tests only GA, non-optional features or APIs (e.g., no alpha or beta
+  endpoints, no feature flags required, no deprecated features)
+- it is non-privileged (e.g., does not require root on nodes, access to raw
+  network interfaces, or cluster admin permissions)
+
+### Privileged Profile Requirements
+
+Tests are eligible for the Privileged profile if:
+
+- it tests only GA, non-optional features or APIs (e.g., no alpha or beta
+  endpoints, no feature flags required, no deprecated features)
+- it tests privileged features
+- it incidentally requires special privileges in order to execute the test
+
+That is, it would be eligible for Base, except that it either tests a privileged
+feature (host network/ports/IPC/etc., Node updating/patching/tainting, admission
+webhook configuration, etc.), or requires those privileges incidentally in the
+test setup.
+
+### Additional Notes on Eligibility
+
 Examples of features which are not currently eligible for conformance tests:
 
 - node/platform-reliant features, eg: multiple disk mounts, GPUs, high density,
@@ -68,21 +95,21 @@ Examples of features which are not currently eligible for conformance tests:
 - anything that requires a non-default admission plugin
 - features that are pending deprecation, eg: componentstatus
 
-Conformance tests are intended to be stable and backwards compatible according to 
-the standard API deprecation policies. Therefore any test that relies on specific 
-output that is not subject to the deprecation policy cannot be promoted to conformance. 
+Conformance tests are intended to be stable and backwards compatible according to
+the standard API deprecation policies. Therefore any test that relies on specific
+output that is not subject to the deprecation policy cannot be promoted to conformance.
 Examples of tests which are not eligible to conformance:
 - anything that checks specific Events are generated, as we make no guarantees
   about the contents of events, nor their delivery
-    - If a test depends on events it is recommended to change the test to 
+    - If a test depends on events it is recommended to change the test to
       use an informer pattern and watch specific resource changes instead.
-    - An exception to this is tests that generates synthetic events themselves 
+    - An exception to this is tests that generates synthetic events themselves
       to verify that the API is capable of being exercised
 - anything that checks optional Condition fields, such as Reason or Message, as
   these may change over time (however it is reasonable to verify these fields
   exist or are non-empty)
-    - If the test is checking for specific conditions or reasons, it is considered 
-      overly specific and it is recommended to simply look for pass/failure criteria 
+    - If the test is checking for specific conditions or reasons, it is considered
+      overly specific and it is recommended to simply look for pass/failure criteria
       where possible, and output the condition/reason for debugging purposes only.
 
 Examples of areas we may want to relax these requirements once we have a
@@ -321,3 +348,4 @@ for your provider, please see the [testgrid conformance README]
 [testgrid conformance README]: https://github.com/kubernetes/test-infra/blob/master/testgrid/conformance/README.md
 [v1.9 conformance doc]: https://github.com/cncf/k8s-conformance/blob/master/docs/KubeConformance-1.9.md
 [conformance.yaml]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.yaml
+[profiles]: (http://git.k8s.io/enhancements/keps/sig-architecture/1618-conformance-profiles)
