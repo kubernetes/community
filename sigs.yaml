@@ -2428,9 +2428,6 @@ workinggroups:
     - github: stealthybox
       name: Leigh Capili
       company: Weaveworks
-    - github: sttts
-      name: Dr. Stefan Schimanski
-      company: Red Hat
   meetings:
   - description: Regular WG Meeting (please join kubernetes-dev@googlegroups.com or
       kubernetes-wg-component-standard@googlegroups.com to access the notes)
