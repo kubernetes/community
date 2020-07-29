@@ -286,7 +286,7 @@ The following snippet of code shows a sample conformance test's metadata:
 
 ```
 /*
-  Release : v1.9
+  Release: v1.9
   Testname: Kubelet: log output
   Description: By default the stdout and stderr from the process being
   executed in a pod MUST be sent to the pod's logs.
