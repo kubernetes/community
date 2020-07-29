@@ -8,14 +8,19 @@ practices.
 
 Please feel free to PR in your favorite tips and tricks that may help others.
 
-- [Establishing a New Meeting](#establishing-a-new-meeting)
-  - [Testing Permissions](#testing-permissions)
-- [Transferring Ownership](#transferring-ownership)
-- [Tips](#tips)
-  - [Viewing Kubernetes Project Calendars](#viewing-kubernetes-project-calendars)
-  - [Adding Events to Your own Calendar](#adding-events-to-your-own-calendar)
-- [Troubleshooting](#troubleshooting)
-  - [Permissions Impacted After Changing Positions or Role](#permissions-impacted-after-changing-positions-or-role)
+- [Calendar Guidelines](#calendar-guidelines)
+  - [Establishing a New Meeting](#establishing-a-new-meeting)
+    - [Testing Permissions](#testing-permissions)
+  - [Transferring Ownership](#transferring-ownership)
+  - [Tips](#tips)
+    - [Viewing Kubernetes Project Calendars](#viewing-kubernetes-project-calendars)
+    - [Adding Events to Your own Calendar](#adding-events-to-your-own-calendar)
+    - [Calendar Event Template](#calendar-event-template)
+      - [Title](#title)
+      - [Description](#description)
+      - [Example](#example)
+  - [Troubleshooting](#troubleshooting)
+    - [Permissions Impacted After Changing Positions or Role](#permissions-impacted-after-changing-positions-or-role)
 
 
 ## Establishing a New Meeting
@@ -93,6 +98,56 @@ will prevent you from getting updates like a canceled meeting. Join the main
 
 Accept the invite from the sender and you'll have the updates.
 
+### Calendar Event Template
+
+In case you are creating a calendar event and wondering what to include in it, here is a recommended template.
+
+#### Title
+
+```
+[SIG-<name>] <meeting title>
+or
+[WG-<name>] <meeting title>
+or
+[User Group-<name>]
+```
+#### Description
+
+```
+<One line intro about the SIG/ WG. Can include github links>
+
+Time: <Weekly/ biweekly/... or is the meeting for a fixed time and till when?>
+
+Meeting notes & agenda: <Hyperlink to the meeting notes doc>
+
+Zoom link: <Zoom invite link. Preferably include app client link, web client link, and dial in information page link>
+
+Additional info: <Any extra info/ links can be provided here>
+
+Livestream link: <optional>
+
+YouTube playlist: <optional>
+
+Google group: <optional>
+```
+
+#### Example
+
+> SIG-Contribex: Weekly Marketing Meeting
+> 
+> https://github.com/kubernetes/community/tree/master/communication/marketing-team
+> 
+> **Time**: Weekly on Friday from 8-9am PT
+> 
+> **Meeting Notes & Agenda**: https://docs.google.com/document/d/1IlHAJ131akGhI5ffF4OoVW0PrsVY4C0BB8l-UyQaQVo/edit
+> 
+> **Zoom link**:
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; App: https://zoom.us/j/XXXXXXXXX
+>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Web Client: https://zoom.us/wc/join/XXXXXXXXX
+> 
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dial in numbers: https://zoom.us/u/bacaZSMhA
 
 ## Troubleshooting
 
