@@ -5,7 +5,9 @@ in documentation here in the form of canonical links.
 
 ## Resources for community group leads:    
 
-operations  
+### Operations  
+- In case you are not sure what to include in a meeting invite, here is a [Calendar template](https://github.com/kubernetes/community/blob/master/communication/calendar-guidelines.md#calendar-event-template).
+ 
 TODO
 //add meeting agenda templates    
 
