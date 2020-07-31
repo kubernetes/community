@@ -11,7 +11,7 @@ the broader ecosystem
 | Area & Handbook Link | Lead | Team | Notes |
 | --- | --- | --- | --- |
 | [Editorial] | editor: @mbbroberg | assoc editor: [Could be you!] | advisor: @parispittman |
-| [Internal Communications] | @jonasrosland | @rajula96reddy |  |
+| [Internal Communications] | @rajula96reddy | [Could be you!] |  |
 | [Social Media] | @chris-short @kaslin | n/a | |
 | [Storytellers] | liaison to sig-docs-blog team @onlydole |  @celanthe, @vonguard, @boluisa, @kaslin, @divya-mohan0209, and [Could be you!] |  |
 | [Designer] | [Could be you!] |  | help us with digital assets, infographics, contributor site | 
@@ -43,7 +43,7 @@ Let us know you are interested and if you have any questions.
 
 [meetings]: /sig-contributor-experience#community-management
 [charter]: ./CHARTER.md
-[Could be you!]: #Could-be-you!
+[Could be you!]: #could-be-you
 [Contributor Experience]: /sig-contributor-experience
 [Editorial]: ./role-handbooks/editor.md
 [Internal Communications]: ./role-handbooks/internal-marketing.md
