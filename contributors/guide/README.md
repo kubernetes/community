@@ -1,3 +1,4 @@
+---
 title: "Getting Started"
 weight: 1
 description:
@@ -5,6 +6,7 @@ description:
   get started with contributing. This includes such things as signing the
   Contributor License Agreement, familiarizing yourself with our Code of Conduct
   and more.
+---
 
 # Welcome
 
