@@ -238,7 +238,7 @@ If this fails, check the [rsync download instructions page](https://rsync.samba.
 
 #### jq
 
-The Kubernetes API server requires `jq`, a command-line JSON processor, to be
+Some of the Kubernetes helper scripts require `jq`, a command-line JSON processor, to be
 installed in your development environment. The
 [jq installation guide](https://stedolan.github.io/jq/download/)
 provides detailed instructions for supported platforms.
@@ -306,6 +306,13 @@ To test Kubernetes, you will need to install etcd, a consistent and highly-avail
 
 ```sh
 ./hack/install-etcd.sh
+```
+
+This script will instruct you to make a change to your `PATH`. To make
+this permanent, add this to your `.bashrc` or login script:
+
+```sh
+export PATH="$GOPATH/src/k8s.io/kubernetes/third_party/etcd:${PATH}"
 ```
 
 Once you have installed all required software, you can proceed to the
