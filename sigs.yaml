@@ -1072,7 +1072,7 @@ sigs:
       company: VMware
     - github: mrbobbytables
       name: Bob Killen
-      company: University of Michigan
+      company: Google
     tech_leads:
     - github: cblecker
       name: Christoph Blecker
