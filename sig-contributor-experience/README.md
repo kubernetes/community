@@ -23,7 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Jorge Castro (**[@castrojo](https://github.com/castrojo)**), VMware
-* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), University of Michigan
+* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
