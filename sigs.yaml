@@ -2855,18 +2855,27 @@ committees:
     - github: AevaOnline
       name: Aeva van der Veen
       company: Microsoft
-    - github: Bradamant3
-      name: Jennifer Rondeau
-      company: Stripe
-    - github: carolynvs
-      name: Carolyn Van Slyck
+    - github: celestehorgan
+      name: Celeste Horgan
+      company: CNCF
+    - github: karenhchu
+      name: Karen Chu
       company: Microsoft
-    - github: jdumars
-      name: Jaice Singer DuMars
-      company: Apple
     - github: tashimi
       name: Tasha Drew
       company: VMware
+    - github: tpepper
+      name: Tim Pepper
+      company: VMware
+    emeritus_leads:
+    - github: Bradamant3
+      name: Jennifer Rondeau
+    - github: carolynvs
+      name: Carolyn Van Slyck
+    - github: jdumars
+      name: Jaice Singer DuMars
+    - github: parispittman
+      name: Paris Pittman
   meetings: []
   contact:
     private_mailing_list: conduct@kubernetes.io
