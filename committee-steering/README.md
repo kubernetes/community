@@ -41,10 +41,6 @@ The following [subprojects][subproject-definition] are owned by the Steering Com
 Funding requests for project infrastructure, events, and consulting
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/funding/master/OWNERS
-### kubernetes-template-project
-Template for starting new projects in the GitHub organizations owned by Kubernetes.
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
 ### steering
 Steering Committee policy and documentation
 - **Owners:**

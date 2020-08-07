@@ -97,6 +97,7 @@ Creates and runs contributor-focused events, such as the Contributor Summit.  Ev
 Manages and controls Github permissions, repos, and groups, including Org Membership.
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
 - **Contact:**
   - Slack: [#github-management](https://kubernetes.slack.com/messages/github-management)
