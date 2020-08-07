@@ -51,6 +51,9 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-service-catalog:
+### mcs-api
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
 ### minibroker
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/minibroker/master/OWNERS

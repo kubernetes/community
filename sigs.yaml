@@ -1989,6 +1989,9 @@ sigs:
     - name: sig-service-catalog-test-failures
       description: Test Failures and Triage
   subprojects:
+  - name: mcs-api
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
   - name: minibroker
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/minibroker/master/OWNERS
