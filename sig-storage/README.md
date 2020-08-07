@@ -54,7 +54,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 The following [subprojects][subproject-definition] are owned by sig-storage:
 ### external-storage
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-local-static-provisioner/master/OWNERS
 ### git-sync
@@ -107,7 +106,6 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/mount-utils/OWNERS
 ### nfs-provisioner
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/OWNERS
 ### volumes
