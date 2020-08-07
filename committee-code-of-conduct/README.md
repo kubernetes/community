@@ -15,10 +15,10 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 ## Members
 
 * Aeva van der Veen (**[@AevaOnline](https://github.com/AevaOnline)**), Microsoft
-* Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**), Stripe
-* Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**), Microsoft
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Apple
+* Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), CNCF
+* Karen Chu (**[@karenhchu](https://github.com/karenhchu)**), Microsoft
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
+* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
 
 ## Contact
 - Private Mailing List: conduct@kubernetes.io
