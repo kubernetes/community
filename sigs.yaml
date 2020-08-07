@@ -2058,7 +2058,6 @@ sigs:
   subprojects:
   - name: external-storage
     owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-local-static-provisioner/master/OWNERS
   - name: git-sync
@@ -2111,7 +2110,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/mount-utils/OWNERS
   - name: nfs-provisioner
     owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/OWNERS
   - name: volumes
