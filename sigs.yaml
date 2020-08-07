@@ -1189,6 +1189,7 @@ sigs:
       slack: github-management
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
     meetings:
     - description: GitHub Administration Subproject
@@ -2964,11 +2965,6 @@ committees:
     description: Funding requests for project infrastructure, events, and consulting
     owners:
     - https://raw.githubusercontent.com/kubernetes/funding/master/OWNERS
-  - name: kubernetes-template-project
-    description: Template for starting new projects in the GitHub organizations owned
-      by Kubernetes.
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
   - name: steering
     description: Steering Committee policy and documentation
     owners:
