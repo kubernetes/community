@@ -56,9 +56,9 @@ Further, SIG Security’s scope does not include:
 
 - Kubernetes authentication, authorization, audit and security policy features.  (SIG Auth)
 - Private vulnerability response (belongs to the PSC), including:
-- Embargoed vulnerability management
-- Bug bounty submission triage and management
-- Non-public vulnerability collection, triage, and disclosure
+    - Embargoed vulnerability management
+    - Bug bounty submission triage and management
+    - Non-public vulnerability collection, triage, and disclosure
 - The mechanisms to protect confidentiality/integrity of API data (belongs to SIG API Machinery, SIG Auth or others)
 - Security audit for all other CNCF projects (e.g., etcd, CoreDNS, CRI-O, containerd)  (Belongs to the CNCF’s SIG Security.) 
 - Any projects outside of the Kubernetes project
