@@ -1496,6 +1496,9 @@ sigs:
   - name: kubemci
     owners:
     - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
+  - name: mcs-api
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
 - dir: sig-network
   name: Network
   mission_statement: >
