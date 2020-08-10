@@ -28,7 +28,7 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jim Angel (**[@jimangel](https://github.com/jimangel)**), General Motors
+* Jim Angel (**[@jimangel](https://github.com/jimangel)**), Google
 * Kaitlyn Barnard (**[@kbarnard10](https://github.com/kbarnard10)**), Kong
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
 
