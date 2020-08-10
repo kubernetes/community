@@ -96,6 +96,10 @@ Creates and runs contributor-focused events, such as the Contributor Summit.  Ev
 ### github-management
 Manages and controls Github permissions, repos, and groups, including Org Membership.
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-client/.github/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-csi/.github/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/.github/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/.github/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
