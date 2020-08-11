@@ -86,7 +86,9 @@ yourself, you count as one of the three. Endorsements from non-voting members do
 
 [Eligible voters] may endorse candidates of their choosing by replying to the
 candidate's nomination email saying something like "I endorse this nominee, and I work for <COMPANY>"
-or "+1". Please specify your github ID, state that you are in voters.md, and include your employer's name so that we can which candidates have sufficient endorsements.
+or "+1". Please specify your github ID, state that you are in voters.md, and include your employer's name so that we see can which candidates have sufficient endorsements.
+
+When a candidate has reached the necessary three endorsements, one of the Election Officers will announce that on the email thread.  After that, please do not endorse the candidate further.
 
 **Running**
 
