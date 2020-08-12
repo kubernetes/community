@@ -9,12 +9,12 @@ The eligible voter process can be found in the [2020 elections folder].
 ---
 
 ### GitHub IDs
-
 - 27149chen
 - 44past4
 - aaroniscode
 - aaron-prindle
 - adelina-t
+- Adirio
 - adisky
 - adohe
 - adrianludwin
@@ -51,13 +51,17 @@ The eligible voter process can be found in the [2020 elections folder].
 - aoxn
 - apelisse
 - aramase
+- Arvinderpal
 - ashish-amarnath
 - ashish-amarnath
 - ashish-amarnath
 - astrieanna
 - atoato88
+- Atoms
 - aveshagarwal
+- avidLearnerInProgress
 - awesomenix
+- AWKIF
 - awly
 - balopat
 - barney-s
@@ -67,12 +71,15 @@ The eligible voter process can be found in the [2020 elections folder].
 - bells17
 - bene2k1
 - benmoss
+- BenTheElder
 - bertinatto
 - bg-chun
 - bgrant0607
 - blueelvis
+- BobyMCbobs
 - boddumanohar
 - bowei
+- Bradamant3
 - bradtopol
 - brahmaroutu
 - brancz
@@ -80,6 +87,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - bsalamat
 - bskiba
 - bswartz
+- Bubblemelon
 - butuzov
 - bzub
 - cadmuxe
@@ -92,6 +100,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - cblecker
 - ccojocar
 - cdrage
+- CecileRobertMichon
 - celestehorgan
 - chardch
 - charleszheng44
@@ -114,6 +123,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - cjwagner
 - clarketm
 - clarklee92
+- ClaudiaJKang
 - claudiubelu
 - claurence
 - clyang82
@@ -123,17 +133,20 @@ The eligible voter process can be found in the [2020 elections folder].
 - coffeepac
 - cofyc
 - cofyc
+- ConnorDoyle
 - corneliusweig
 - cpanato
 - craiglpeters
 - cstoku
 - cwdsuzhou
+- DaiHao
 - damemi
 - daminisatya
 - danehans
 - danielqsj
 - danninov
 - danwinship
+- DanyC97
 - dashpole
 - davidewatson
 - davidz627
@@ -151,6 +164,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - dholbach
 - dims
 - dims
+- DirectXMan12
 - divyenpatel
 - dixudx
 - dlipovetsky
@@ -168,20 +182,24 @@ The eligible voter process can be found in the [2020 elections folder].
 - ehashman
 - electrocucaracha
 - eloyekunle
+- ElvinEfendi
 - emedina
 - emedina
 - enj
 - entro-pi
 - enxebre
+- EppO
 - ereslibre
 - erictune
 - errordeveloper
 - estroz
+- Ethyling
 - everpeace
 - evillgenius75
 - fabriziopandini
 - fabriziopandini
 - fedebongio
+- Fei-Guo
 - feiskyer
 - fejta
 - feloy
@@ -242,6 +260,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - hpandeycodeit
 - hpandeycodeit
 - hprateek43
+- Huang-Wei
 - huffmanca
 - humblec
 - huynguyennovem
@@ -253,6 +272,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - idealhack
 - idvoretskyi
 - imkin
+- immutableT
 - imroc
 - inductor
 - ingvagabund
@@ -273,6 +293,8 @@ The eligible voter process can be found in the [2020 elections folder].
 - jdumars
 - jeefy
 - jeefy
+- Jefftree
+- Jeffwan
 - jennybuckley
 - jeremyrickard
 - jfbai
@@ -280,7 +302,9 @@ The eligible voter process can be found in the [2020 elections folder].
 - jiatongw
 - jiayingz
 - jichenjc
+- JieJhih
 - jimangel
+- JimBugwadia
 - jimmidyson
 - jingxu97
 - jkaniuk
@@ -288,15 +312,18 @@ The eligible voter process can be found in the [2020 elections folder].
 - jmyung
 - joelanford
 - joelsmith
+- JoelSpeed
 - johnbelamaric
 - johngmyers
 - johnharris85
+- johnSchnake
 - johnsonj
 - johscheuer
 - jonasrosland
 - joonas
 - josedonizetti
 - josephburnett
+- Joseph-Irving
 - joshbranham
 - josiahbjorgaard
 - jpbetz
@@ -311,6 +338,8 @@ The eligible voter process can be found in the [2020 elections folder].
 - kad
 - kakts
 - kargakis
+- KashifSaadat
+- Katharine
 - kawych
 - kbarnard10
 - kbarnard10
@@ -320,6 +349,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - khenidak
 - kikisdeliveryservice
 - kkmsft
+- Klaven
 - klueska
 - knight42
 - kow3ns
@@ -338,11 +368,13 @@ The eligible voter process can be found in the [2020 elections folder].
 - leakingtapan
 - lex111
 - liggitt
+- LiliC
 - lingxiankong
 - linki
 - liranp
 - listx
 - liu-cong
+- Liujingfang1
 - liyinan926
 - liztio
 - lledru
@@ -351,10 +383,13 @@ The eligible voter process can be found in the [2020 elections folder].
 - losipiuk
 - lpabon
 - lubinsz
+- LuckySB
 - luxas
+- M00nF1sh
 - m1093782566
 - m3ngyang
 - maciaszczykm
+- MaciekPytel
 - makocchi-git
 - makoscafee
 - mariantalla
@@ -365,6 +400,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - mars1024
 - marun
 - marwanad
+- MasayaAoyama
 - mattfarina
 - matthyx
 - mattjmcnaughton
@@ -380,13 +416,17 @@ The eligible voter process can be found in the [2020 elections folder].
 - mfojtik
 - mgdevstack
 - mhamdisemah
+- MHBauer
 - micahhausler
 - michaelgugino
 - michelle192837
+- michelleN
 - michmike
 - micw523
 - mikedanese
 - mikesplain
+- MikeSpreitzer
+- Miouge1
 - mirandachrist
 - mirwan
 - misterikkit
@@ -400,12 +440,15 @@ The eligible voter process can be found in the [2020 elections folder].
 - mm4tt
 - monopole
 - monotek
+- Moriadry
+- MorrisLaw
 - mortent
 - morvencao
 - moshloop
 - moshloop
 - mrbobbytables
 - mrhillsman
+- MrHohn
 - mrkm4ntr
 - mrunalp
 - msau42
@@ -423,6 +466,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - ncdc
 - nckturner
 - neolit123
+- NickrenREN
 - nikhita
 - nikhita
 - nikopen
@@ -447,6 +491,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - p0lyn0mial
 - palnabarun
 - parispittman
+- PatrickLang
 - petr-muller
 - phanama
 - phanimarupaka
@@ -455,6 +500,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - pierewoj
 - pigletfly
 - ping035627
+- Pingan2017
 - piotrmiskiewicz
 - pires
 - pjbgf
@@ -462,6 +508,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - pmorie
 - pohly
 - pontiyaraja
+- Potapy4
 - prameshj
 - prankul88
 - priyawadhwa
@@ -470,11 +517,18 @@ The eligible voter process can be found in the [2020 elections folder].
 - pswica
 - puerco
 - pwittrock
+- qingsenLi
+- RA489
 - raelga
+- Raffo
+- RainbowMango
+- Rajakavitha1
 - rajansandeep
 - rajeshdeshpande02
 - ramineni
+- Random-Liu
 - randomvariable
+- RaunakShah
 - ravisantoshgudimetla
 - rbenzair
 - rdrgmnzs
@@ -489,6 +543,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - rjbez17
 - rlenferink
 - rmenn
+- RobertKrawitz
 - robscott
 - rojkov
 - rosti
@@ -501,7 +556,9 @@ The eligible voter process can be found in the [2020 elections folder].
 - sallyom
 - sambdavidson
 - sanchezl
+- SandeepPissay
 - saschagrunert
+- SataQiu
 - savitharaghunathan
 - sbezverk
 - sbueringer
@@ -515,6 +572,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - sethpollack
 - sflxn
 - sftim
+- Sh4d1
 - sharifelgamal
 - shashidharatd
 - shavidissa
@@ -566,6 +624,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - tnozicka
 - tnqn
 - tombarron
+- TommyLike
 - towca
 - tpepper
 - truongnh1992
@@ -578,11 +637,13 @@ The eligible voter process can be found in the [2020 elections folder].
 - verult
 - vikaschoudhary16
 - vincepri
+- VineethReddy02
 - vishakhanihore
 - vivekbagade
 - vladimirvivien
 - vllry
 - wangzhen127
+- WanLinghao
 - warmchang
 - wawa0210
 - wenjiaswe
@@ -605,14 +666,17 @@ The eligible voter process can be found in the [2020 elections folder].
 - xueweiz
 - xunpan
 - yagonobre
+- YangLu1031
 - yastij
 - yguo0905
 - yiqigao217
 - yliaog
 - yoonian
+- YoubingLi
 - youngnick
 - ysyukr
 - yue9944882
+- YuikoTakada
 - yujuhong
 - yujunz
 - yuwenma
@@ -620,6 +684,8 @@ The eligible voter process can be found in the [2020 elections folder].
 - yuxiaobo96
 - yuzhiquan
 - zacharysarah
+- zehuaiWANG
+- ZeroMagic
 - zetaab
 - zhangqx2010
 - zhangxiaoyu-zidif
@@ -628,10 +694,9 @@ The eligible voter process can be found in the [2020 elections folder].
 - zhuangqh
 - zhucan
 - zouyee
+- ZP-AlwaysWin
 - zparnold
 - zvonkok
-
-
 
 
 [2020 elections folder]: https://git.k8s.io/community/events/2020/README.md
