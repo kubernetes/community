@@ -12,8 +12,7 @@ the broader ecosystem.
 | --- | --- | --- | --- |
 | [Editorial] | editor: @mbbroberg | assoc editor: [Could be you!] | advisor: @parispittman |
 | [Internal Communications] | @rajula96reddy | [Could be you!] |  |
-| [Social Media] | @kaslin | [Could be you!] | advisors: @parispittman,
-@chris-short |
+| [Social Media] | @kaslin | [Could be you!] | advisors: @parispittman,@chris-short |
 | [Storytellers] | liaison to sig-docs-blog team @onlydole |  @celanthe, @vonguard, @boluisa, @kaslin, @divya-mohan0209, and [Could be you!] |  |
 | [Designer] | [Could be you!] |  | help us with digital assets, infographics, contributor site | 
 | APAC Liaison | @pensu91 | [Could be you!] | | 
