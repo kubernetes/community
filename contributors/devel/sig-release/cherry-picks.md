@@ -61,7 +61,15 @@ If the change is in cloud provider-specific platform code (which is in the
 process of being moved out of core Kubernetes), describe the customer impact,
 how the issue escaped initial testing, remediation taken to prevent similar
 future escapes, and why the change cannot be carried in your downstream fork of
-the Kubernetes project branches.
+the Kubernetes project branches. The changes are only allowable when:
+
+- No new features are introduced (e.g. changing Kubernetes API or supporting new
+  Kubernetes features)
+- Serious bugs or broken scenarios (because of cloud platform changes) are fixed, e.g.
+  - new machine types are added
+  - new properties are required from Cloud API, which break existing features
+- If new annotations are added, they should be limited to cloud provider only,
+  and shouldn't be exposed explicitly in Kubernetes API
 
 It is critical that our full community is actively engaged on enhancements in
 the project. If a released feature was not enabled on a particular provider's
