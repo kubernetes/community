@@ -41,7 +41,7 @@ Eligibility for voting in 2020 is defined as:
   reviewing PR's, commenting on issues, etc. For full details see
   [the SQL query used by devstats for developer activity counts][devstats-sql].
 
-* People who have submitted the [voting exception form] and are accepted by
+* People who have submitted the [voter exemption form] and are accepted by
   the election committee. We *explicitly* believe the above heuristic will be
   inaccurate and not represent the entire community. Thus we provide the form
   for those who have contributed to the project but may not meet the above
@@ -49,7 +49,7 @@ Eligibility for voting in 2020 is defined as:
   majority vote, and the criteria used during this process will be used to
   help refine further elections.
 
-The requirement to be an [Org Member] is new this year, added by the Steering Committee to ensure that voters are following community issues.  If you otherwise qualify to vote but have not yet applied for Org Membership, then please [request an exception][voting exception form] (and please apply for Org Membership as well).
+The requirement to be an [Org Member] is new this year, added by the Steering Committee to ensure that voters are following community issues.  If you otherwise qualify to vote but have not yet applied for Org Membership, then please [request an exception][voter exemption form] (and please apply for Org Membership as well).
 
 Corporate affiliation is applied after the election. If an organization finds itself with too many representatives it is up to those individuals to come to a consensus on who should serve on the committee.
 
