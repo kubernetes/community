@@ -873,6 +873,14 @@ sigs:
     url: https://zoom.us/j/423312508
     archive_url: https://docs.google.com/document/d/1ojR0jooQaHEuz3gGW6DxcZlsws9ZX7jHPC8walm1G3A/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+  - description: Cluster API Provider Azure office hours
+    day: Thursday
+    time: "08:00"
+    tz: PT (Pacific Time)
+    frequency: bi-weekly
+    url: https://zoom.us/j/566930821
+    archive_url: http://bit.ly/k8s-capz-agenda
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API office hours
     day: Wednesday
     time: "10:00"
@@ -890,7 +898,7 @@ sigs:
     archive_url: https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit
   - description: Image Builder office hours
     day: Thursday
-    time: "8:00"
+    time: "08:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/807524571
@@ -978,13 +986,6 @@ sigs:
   - name: cluster-api-provider-azure
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
-    meetings:
-    - description: Cluster API Azure meeting
-      day: Thursday
-      time: "13:30"
-      tz: PT (Pacific Time)
-      frequency: bi-weekly
-      url: https://docs.google.com/document/d/1P2FrRjuCZjGy0Yh72lwWCwmXekSEkqliUVTmJy_ETIk/edit?usp=sharing
   - name: cluster-api-provider-digitalocean
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
