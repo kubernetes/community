@@ -32,16 +32,27 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 The members and their terms are as follows:
 
-### Term ends on August 7, 2020
-- Jaice Singer Dumars (Google)
-- Jennifer Rondeau (Stripe)
-- Carolyn Van Slyck (Microsoft)
-
 ### Term ends on August 7, 2021
+
 - Aeva van der Veen (Microsoft)
 - Tasha Drew (VMWare)
 
+### Term ends on August 7, 2022
+
+- Karen Chu (Microsoft)
+- Celeste Horgan (CNCF)
+- Tim Pepper (VMWare)
+
 Please see the [bootstrapping document](./bootstrapping-process.md) for more information on how members are picked, their responsibilities, and how the committee will initially function.
+
+## Emeritus Committee Members
+
+The Code of Conduct Committee sincerely thanks our emeritus committee members for their contributions.
+
+- Jaice Singer Dumars (Google)
+- Jennifer Rondeau (Stripe)
+- Carolyn Van Slyck (Microsoft)
+- Paris Pittman (Apple)
 
 _More information on conflict resolution process to come in the near future. For now, any Code of Conduct or Code of Conduct Committee concerns can be directed to <conduct@kubernetes.io>_.
 <!-- END CUSTOM CONTENT -->
