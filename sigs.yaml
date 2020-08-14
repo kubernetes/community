@@ -2601,7 +2601,7 @@ workinggroups:
       company: VMware
     - github: youngnick
       name: Nick Young
-      company: VMWare
+      company: VMware
   meetings:
   - description: Regular WG Meeting
     day: Tuesday
