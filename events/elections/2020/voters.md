@@ -128,6 +128,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - claurence
 - clyang82
 - cmluciano
+- coderanger
 - codenrhoden
 - cody-clark
 - coffeepac
@@ -567,6 +568,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - sebastienvas
 - seokho-son
 - serathius
+- SergeyKanzhelev
 - sethmccombs
 - sethp-nr
 - sethpollack
