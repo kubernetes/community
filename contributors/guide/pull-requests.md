@@ -22,18 +22,18 @@ It should serve as a reference for all contributors, and be useful especially to
 - [Why was my pull request closed?](#why-was-my-pull-request-closed)
 - [Why is my pull request not getting reviewed?](#why-is-my-pull-request-not-getting-reviewed)
 - [Best Practices for Faster Reviews](#best-practices-for-faster-reviews)
-  - [Familiarize yourself with project conventions](familiarize-yourself-with-project-conventions)
-  - [Is the feature wanted? File a Kubernetes Enhancement Proposal](is-the-feature-wanted-file-a-kubernetes-enhancement-proposal)
-  - [Smaller Is Better: Small Commits, Small Pull Requests](smaller-is-better-small-commits-small-pull-requests)
-  - [Open a Different Pull Request for Fixes and Generic Features](open-a-different-pull-request-for-fixes-and-generic-features)
-  - [Comments Matter](comments-matter)
-  - [Test](test)
-  - [Squashing](squashing)
-  - [Commit Message Guidelines](commit-message-guidelines)
-  - [KISS, YAGNI, MVP, etc.](kiss-yagni-mvp-etc)
-  - [It's OK to Push Back](its-ok-to-push-back)
-  - [Common Sense and Courtesy](common-sense-and-courtesy)
-  - [Trivial Edits](trivial-edits)
+  - [Familiarize yourself with project conventions](#familiarize-yourself-with-project-conventions)
+  - [Is the feature wanted? File a Kubernetes Enhancement Proposal](#is-the-feature-wanted-file-a-kubernetes-enhancement-proposal)
+  - [Smaller Is Better: Small Commits, Small Pull Requests](#smaller-is-better-small-commits-small-pull-requests)
+  - [Open a Different Pull Request for Fixes and Generic Features](#open-a-different-pull-request-for-fixes-and-generic-features)
+  - [Comments Matter](#comments-matter)
+  - [Test](#test)
+  - [Squashing](#squashing)
+  - [Commit Message Guidelines](#commit-message-guidelines)
+  - [KISS, YAGNI, MVP, etc.](#kiss-yagni-mvp-etc)
+  - [It's OK to Push Back](#its-ok-to-push-back)
+  - [Common Sense and Courtesy](#common-sense-and-courtesy)
+  - [Trivial Edits](#trivial-edits)
 - [The Testing and Merge Workflow](#the-testing-and-merge-workflow)
   - [More About `Ok-To-Test`](#more-about-ok-to-test)
 
@@ -182,6 +182,13 @@ When you want to make a large or otherwise significant change, you should follow
 
 Even for small changes, it is often a good idea to gather feedback on an issue you filed, or even simply ask in the appropriate SIG's Slack channel to invite discussion and feedback from code owners. 
 Here's a [list of SIGs](/sig-list.md), this includes their public meetings.
+
+## KISS, YAGNI, MVP, etc.
+
+Sometimes we need to remind each other of core tenets of software design - Keep It Simple, You Aren't Gonna Need It, Minimum Viable Product, and so on.
+Adding a feature "because we might need it later" is antithetical to software that ships. 
+Add the things you need NOW and (ideally) leave room for things you might need 
+later - but don't implement them now.
 
 ## Smaller Is Better: Small Commits, Small Pull Requests
 
@@ -474,15 +481,6 @@ These sorts of breadcrumbs become essential when tracking down future bugs or re
 - [Distributed Git - Contributing to a Project (Commit Guidelines)](https://git-scm.com/book/en/v2/Distributed-Git-Contributing-to-a-Project)
 - [What’s with the 50/72 rule? - Preslav Rachev](https://preslav.me/2015/02/21/what-s-with-the-50-72-rule/)
 - [A Note About Git Commit Messages - Tim Pope](https://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
-
-
-## KISS, YAGNI, MVP, etc.
-
-Sometimes we need to remind each other of core tenets of software design - Keep
-It Simple, You Aren't Gonna Need It, Minimum Viable Product, and so on.
-Adding a feature "because we might need it later" is antithetical to software that ships. 
-Add the things you need NOW and (ideally) leave room for things you might need 
-later - but don't implement them now.
 
 ## It's OK to Push Back
 
