@@ -35,13 +35,13 @@ The members and their terms are as follows:
 ### Term ends on August 7, 2021
 
 - Aeva van der Veen (Microsoft)
-- Tasha Drew (VMWare)
+- Tasha Drew (VMware)
 
 ### Term ends on August 7, 2022
 
 - Karen Chu (Microsoft)
 - Celeste Horgan (CNCF)
-- Tim Pepper (VMWare)
+- Tim Pepper (VMware)
 
 Please see the [bootstrapping document](./bootstrapping-process.md) for more information on how members are picked, their responsibilities, and how the committee will initially function.
 
