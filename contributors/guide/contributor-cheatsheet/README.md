@@ -1,6 +1,7 @@
 ---
 title: Contributor Cheatsheet
 weight: 2
+aliases: [ "/cheatsheet" ]
 description: |
   A list of common resources when contributing to Kubernetes, tips, tricks, and
   common best practices used within the Kubernetes project. It is a "TL;DR" or

@@ -1,6 +1,7 @@
 ---
 title: "Getting Started"
 weight: 1
+aliases: [ "/guide" ]
 description:
   A small list of things that you should read and be familiar with before you
   get started with contributing. This includes such things as signing the
