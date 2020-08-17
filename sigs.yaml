@@ -2760,7 +2760,7 @@ workinggroups:
       company: Google
     - github: cji
       name: Craig Ingram
-      company: Salesforce
+      company: Stripe
     - github: jaybeale
       name: Jay Beale
       company: InGuardians
@@ -2900,7 +2900,7 @@ committees:
       company: Google
     - github: cji
       name: Craig Ingram
-      company: Salesforce
+      company: Stripe
     - github: joelsmith
       name: Joel Smith
       company: Red Hat
