@@ -41,12 +41,16 @@ For general questions and troubleshooting, use the [standard lines of communicat
 
 To check out code to work on, please refer to [the GitHub Workflow Guide](./github-workflow.md).
 
-## Open a Pull Request
+The full workflow for a pull request is documented here: 
+
+- [Kubernetes-specific github workflow](pull-requests.md#the-testing-and-merge-workflow).
+
+That document is comprehensive and detailed, for purposes of a typical pull request we will cover the initial and simple use case here:
+
+## Opening a Pull Request
 
 Pull requests are often called a "PR".
 Kubernetes generally follows the standard [github pull request](https://help.github.com/articles/about-pull-requests/) process, but there is a layer of additional kubernetes specific (and sometimes SIG specific) differences:
-
-- [Kubernetes-specific github workflow](pull-requests.md#the-testing-and-merge-workflow).
 
 The first difference you'll see is that a bot will begin applying structured labels to your PR.
 
@@ -127,5 +131,6 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 ## Issues Management or Triage
 
 Have you ever noticed the total number of [open issues](https://issues.k8s.io)?
-Helping to manage or triage these open issues can be a great contribution and a great opportunity to learn about the various areas of the project. Triaging is the word we use to describe the process of adding multiple types of descriptive labels to GitHub issues, in order to speed up routing issues to the right folks.
+Helping to manage or triage these open issues can be a great contribution and a great opportunity to learn about the various areas of the project.
+Triaging is the word we use to describe the process of adding multiple types of descriptive labels to GitHub issues, in order to speed up routing issues to the right folks.
 Refer to the [Issue Triage Guidelines](/contributors/guide/issue-triage.md) for more information.
