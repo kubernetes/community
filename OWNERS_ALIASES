@@ -72,6 +72,11 @@ aliases:
   sig-scheduling-leads:
     - Huang-Wei
     - ahg-g
+  sig-security-leads:
+    - aasmall
+    - cji
+    - jaybeale
+    - joelsmith
   sig-service-catalog-leads:
     - jberkhahn
     - mszostok
