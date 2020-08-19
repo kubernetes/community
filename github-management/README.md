@@ -10,7 +10,7 @@ and organizations. We have also created a number of tools to automate setup and
 enforcement of these policies.
 
 These polices are overseen by the
-[GitHub Management subproject](subproject-responsibilites.md) of the Contributor
+[GitHub Management subproject](subproject-responsibilities.md) of the Contributor
 Experience Special Interest Group.
 
 ## Guides
@@ -56,9 +56,9 @@ GitHub organization.
 They also have approval privileges for adding new members to the GitHub config.
 
 Our current coordinators are:
-* Naeil Ezzoueidi (**[@nzoueidi](https://github.com/nzoueidi)**, Central European)
-* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**, US Eastern)
-* Yang Li (**[@idealhack](https://github.com/idealhack)**, Japan Standard Time)
+* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**, Central European)
+* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**, Indian Standard Time)
+* Savitha Raghunathan (**[@savitharaghunathan](https://github.com/savitharaghunathan)**, US Eastern)
 
 ## Project Owned Organizations
 

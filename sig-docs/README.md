@@ -13,7 +13,7 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
 The [charter](charter.md) defines the scope and governance of the Docs Special Interest Group.
 
 ## Meetings
-* APAC SIG Meeting: [Wednesdays at 02:00 UTC](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit) (monthly - Wednesday, after the fourth Tuesday, every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=02:00&tz=UTC).
+* APAC SIG Meeting: [Wednesdays at 01:00 UTC](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit) (monthly - Wednesday, after the fourth Tuesday, every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=01:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 * Korean Team Meeting: [Thursdays at 13:00 UTC](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=UTC).
@@ -28,7 +28,7 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jim Angel (**[@jimangel](https://github.com/jimangel)**), General Motors
+* Jim Angel (**[@jimangel](https://github.com/jimangel)**), Google
 * Kaitlyn Barnard (**[@kbarnard10](https://github.com/kbarnard10)**), Kong
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
 

@@ -21,117 +21,125 @@ Getting started locally
     - [kubectl claims to start a container but `get pods` and `docker ps` don't show it.](#kubectl-claims-to-start-a-container-but-get-pods-and-docker-ps-dont-show-it)
     - [The pods fail to connect to the services by host names](#the-pods-fail-to-connect-to-the-services-by-host-names)
 
-### Requirements
+## Requirements
 
-#### Linux
+### Linux
 
-Not running Linux? Consider running [Minikube](http://kubernetes.io/docs/getting-started-guides/minikube/), or on a cloud provider like [Google Compute Engine](https://kubernetes.io/docs/getting-started-guides/gce/).
+Not running Linux? Consider running [Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/), or on a cloud provider like [Google Compute Engine](https://kubernetes.io/docs/setup/production-environment/turnkey/gce/).
 
-#### Docker
+### Docker
 
-At least [Docker](https://docs.docker.com/installation/#installation)
-1.10+. Ensure the Docker daemon is running and can be contacted (try `docker
-ps`).  Some of the Kubernetes components need to run as root, which normally
-works fine with docker.
+You will need [Docker](https://docs.docker.com/get-docker/) installed, at least version 17.03. Check the [Kubernetes release notes](https://kubernetes.io/docs/setup/release/notes/) for information about supported Docker versions.
 
-#### etcd
+Ensure the Docker daemon is running and can be contacted with `docker ps`. Some of the Kubernetes components need to run as root, which normally works fine with docker.
 
-You need an [etcd](https://github.com/coreos/etcd/releases) in your path, please make sure it is installed and in your ``$PATH``.
+### etcd
 
-#### go
+You need [etcd](https://github.com/coreos/etcd/releases) installed and in your `$PATH`. [Check here](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#install-etcd) for instructions on installing a local copy.
 
-You need [go](https://golang.org/doc/install) in your path (see [here](development.md#go-versions) for supported versions), please make sure it is installed and in your ``$PATH``.
+### go
 
-#### OpenSSL
+You need [go](https://golang.org/doc/install) in your path (see [Development Guide](development.md#go) for supported versions), please make sure it is installed and in your ``$PATH``.
+
+### OpenSSL
 
 You need [OpenSSL](https://www.openssl.org/) installed.  If you do not have the `openssl` command available, the script will print an appropriate error.
 
-#### CFSSL
+### CFSSL
 
 The [CFSSL](https://cfssl.org/) binaries (cfssl, cfssljson) must be installed and available on your ``$PATH``.
 
-The easiest way to get it is something similar to the following:
+The easiest way to get it is to run these shell commands:
 
-```
-$ go get -u github.com/cloudflare/cfssl/cmd/...
-$ PATH=$PATH:$GOPATH/bin
+```sh
+go get -u github.com/cloudflare/cfssl/cmd/...
+PATH=$PATH:$GOPATH/bin
 ```
 
-### Clone the repository
+## Clone the repository
 
 In order to run kubernetes you must have the kubernetes code on the local machine. Cloning this repository is sufficient.
 
-```$ git clone --depth=1 https://github.com/kubernetes/kubernetes.git```
+```sh
+git clone --depth=1 https://github.com/kubernetes/kubernetes.git
+```
 
 The `--depth=1` parameter is optional and will ensure a smaller download.
 
-### Starting the cluster
+## Starting the cluster
 
-In a separate tab of your terminal, run the following (since one needs sudo access to start/stop Kubernetes daemons, it is easier to run the entire script as root):
+In a separate tab of your terminal, run the following:
 
 ```sh
 cd kubernetes
-hack/local-up-cluster.sh
+./hack/local-up-cluster.sh
 ```
 
-This will build and start a lightweight local cluster, consisting of a master
-and a single node. Type Control-C to shut it down.
+Since root access is sometimes needed to start/stop Kubernetes daemons, `./hack/local-up-cluster.sh` may need to be run as root. If it reports failures, try this instead:
 
-If you've already compiled the Kubernetes components, then you can avoid rebuilding them with this script by using the `-O` flag.
+```sh
+sudo ./hack/local-up-cluster.sh
+```
+
+This will build and start a lightweight local cluster, consisting of a master and a single node. Press Control+C to shut it down.
+
+**Note:** If you've already compiled the Kubernetes components, you can avoid rebuilding them with the `-O` flag.
 
 ```sh
 ./hack/local-up-cluster.sh -O
 ```
 
-You can use the cluster/kubectl.sh script to interact with the local cluster. hack/local-up-cluster.sh will
+You can use the `./cluster/kubectl.sh` script to interact with the local cluster. `./hack/local-up-cluster.sh` will
 print the commands to run to point kubectl at the local cluster.
 
 
-### Running a container
+## Running a container
 
 Your cluster is running, and you want to start running containers!
 
 You can now use any of the cluster/kubectl.sh commands to interact with your local setup.
 
 ```sh
-cluster/kubectl.sh get pods
-cluster/kubectl.sh get services
-cluster/kubectl.sh get replicationcontrollers
-cluster/kubectl.sh run my-nginx --image=nginx --port=80
-
-
-## begin wait for provision to complete, you can monitor the docker pull by opening a new terminal
-  sudo docker images
-  ## you should see it pulling the nginx image, once the above command returns it
-  sudo docker ps
-  ## you should see your container running!
-  exit
-## end wait
-
-## introspect Kubernetes!
-cluster/kubectl.sh get pods
-cluster/kubectl.sh get services
-cluster/kubectl.sh get replicationcontrollers
+./cluster/kubectl.sh get pods
+./cluster/kubectl.sh get services
+./cluster/kubectl.sh get replicationcontrollers
+./cluster/kubectl.sh run my-nginx --image=nginx --port=80
 ```
 
+While waiting for the provisioning to complete, you can monitor progress in another terminal with these commands.
 
-### Running a user defined pod
+```sh
+docker images
+# To watch the process pull the nginx image
+docker ps
+# To watch all Docker processes.
+```
+
+Once provisioning is complete, you can use the following commands for Kubernetes introspection.
+
+```sh
+./cluster/kubectl.sh get pods
+./cluster/kubectl.sh get services
+./cluster/kubectl.sh get replicationcontrollers
+```
+
+## Running a user defined pod
 
 Note the difference between a [container](https://kubernetes.io/docs/user-guide/containers/)
 and a [pod](https://kubernetes.io/docs/user-guide/pods/). Since you only asked for the former, Kubernetes will create a wrapper pod for you.
-However you cannot view the nginx start page on localhost. To verify that nginx is running you need to run `curl` within the docker container (try `docker exec`).
+However, you cannot view the nginx start page on localhost. To verify that nginx is running, you need to run `curl` within the Docker container (try `docker exec`).
 
 You can control the specifications of a pod via a user defined manifest, and reach nginx through your browser on the port specified therein:
 
 ```sh
-cluster/kubectl.sh create -f test/fixtures/doc-yaml/user-guide/pod.yaml
+./cluster/kubectl.sh create -f test/fixtures/doc-yaml/user-guide/pod.yaml
 ```
 
 Congratulations!
 
-### Troubleshooting
+## Troubleshooting
 
-#### I cannot reach service IPs on the network.
+### I cannot reach service IPs on the network.
 
 Some firewall software that uses iptables may not interact well with
 kubernetes.  If you have trouble around networking, try disabling any
@@ -143,23 +151,23 @@ docker installation, this may conflict with IPs for containers.  If you find
 containers running with IPs in this range, edit hack/local-cluster-up.sh and
 change the service-cluster-ip-range flag to something else.
 
-#### I cannot create a replication controller with replica size greater than 1!  What gives?
+### I cannot create a replication controller with replica size greater than 1!  What gives?
 
 You are running a single node setup.  This has the limitation of only supporting a single replica of a given pod.  If you are interested in running with larger replica sizes, we encourage you to try the local vagrant setup or one of the cloud providers.
 
-#### I changed Kubernetes code, how do I run it?
+### I changed Kubernetes code, how do I run it?
 
 ```sh
 cd kubernetes
 make
-hack/local-up-cluster.sh
+./hack/local-up-cluster.sh
 ```
 
-#### kubectl claims to start a container but `get pods` and `docker ps` don't show it.
+### kubectl claims to start a container but `get pods` and `docker ps` don't show it.
 
 One or more of the Kubernetes daemons might've crashed. Tail the logs of each in /tmp.
 
-#### The pods fail to connect to the services by host names
+### The pods fail to connect to the services by host names
 
 To start the DNS service, you need to set the following variables:
 

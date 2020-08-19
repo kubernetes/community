@@ -5,16 +5,7 @@ description: |
   A collection of of tips to help both those looking to get their PR reviewed
   and the code reviewers themselves.
 ---
-- [Tips for getting your PR reviewed](#tips-for-getting-your-pr-reviewed)
-  - [Use Tokens to signal the state of your PR](#use-tokens-to-signal-the-state-of-your-pr)
-  - [Reduce the scope of your PR](#reduce-the-scope-of-your-pr)
-  - [Split your PR into logical smaller commits](#split-your-pr-into-logical-smaller-commits)
-  - [Squash or remove unnecessary commits](#squash-or-remove-unnecessary-commits)
-  - [Explain your changes (comments)](#explain-your-changes-comments)
-  - [Ensure you properly test your changes](#ensure-you-properly-test-your-changes)
-  - [Commit messages should be thorough and detailed](#commit-messages-should-be-thorough-and-detailed)
-  - [Pull Request comments should summarize the PR](#pull-request-comments-should-summarize-the-pr)
-  - [Minor changes (typos / link fixes)](#minor-changes-typos--link-fixes)
+
 - [Tips for code reviewers](#tips-for-code-reviewers)
   - [Managing time](#managing-time)
     - [Block time off to review](#block-time-off-to-review)
@@ -27,126 +18,9 @@ description: |
   - [Checking out a PR](#checking-out-a-pr)
 - [Additional Resources](#additional-resources)
 
-
-## Tips for getting your PR reviewed
-
-
-### Use Tokens to signal the state of your PR
-
-Token phrases like `WIP` or `do not merge` signal to reviewers that the PR is
-potentially in a state that is not complete. This can save significant time for
-reviewers on prioritizing which PR should be reviewed. They can either hold off
-on reviewing altogether or will review the PR with the knowledge that it is not
-complete.
-
-
-### Reduce the scope of your PR
-
-Extremely large PRs take significant amounts of time to both review and evaluate
-for potential upstream/downstream impacts. If it is possible to achieve the
-desired goal over multiple smaller, more concise PR ("Pre-factor"), it decreases
-risk and will have a greater chance of being accepted.
-
-
-### Split your PR into logical smaller commits
-
-Multiple smaller commits that contain the logical pieces of work simplify the
-review process for others to review your code. These commits should be able to
-stand on their own and not necessarily depend on other things.
-
-**Example: Markdown**
-
-A PR that applies both formatting changes and content changes. If taken together
-in a single commit, it will appear to your reviewer that the entire document has
-changed and will require more time to compare and separate the actual content
-changes from the style changes.
-
-If content and style changes were made in separate commits, they could be reviewed
-independently for their changes.
-
-**Example: Generated code**
-
-A PR that has both authored code and generated code can be difficult to parse.
-If the authored code and generated code are in separate commits, the generated
-code can largely be ignored by the reviewer, and they can focus their time on
-the authored code.
-
-### Squash or remove unnecessary commits
-
-Often you may rapidly commit small changes or fixes. These are even more common
-when accepting suggestions through the GitHub UI where each change is done as an
-independent small commit. [Squashing] these down into a logical commit will both
-help your reviewer when performing a final pass, and provide for a clean git
-commit history.
-
-
-### Explain your changes (comments)
-
-Comments should be used for **ANY** non-obvious changes. They should explain why
-something was done and the intent behind it; leave no surprises for the next
-person to view or touch your code. If you spent time debugging, testing, or 
-searching for prior art on a means to do something - document it in the comments.
-
-If you leave a `TODO`, it should explain why it needs to be revisited along with
-any relevant information that could help the next person looking to update that
-part of the code. Consider following insertion of a `TODO` with creating a new
-_help wanted_ issue, if appropriate.
-
-This is also true for things that should **NOT** be updated or updated with great
-care. It should document why it cannot be further reduced or changed. For an
-example of this, see the _"[KEEP THE SPACE SHUTTLE FLYING]"_ portion of the
-persistent volume controller as an example.
-
-
-### Ensure you properly test your changes
-
-Code submitted without tests will almost always be rejected at first pass. If an
-area you're updating did not previously have them, adding them in your PR will
-be appreciated and helps improve the overall health of the project.
-
-If something you change has the potential to impact the performance or scalability
-of the project, include a benchmark. These are essential to demonstrate the 
-efficacy of your change and will help in preventing potential regressions.
-
-
-### Commit messages should be thorough and detailed
-
-PR comments are not represented in the commit history. Important details
-regarding your changes should be kept in your commit message.
-
-The commit message subject line should be no more than 72 characters and
-summarize the changes being made.
-
-Use the body of the commit message to describe **WHY** the change is being made.
-Describing why something has changed is more important than how. You are
-providing context to both your reviewer and the next person that has to touch
-your code.
-
-For more guidance on commit messages, see our [commit message guidelines].
-
-
-### Pull Request comments should summarize the PR
-
-The GitHub pull request should contain a summary of the changes being made as
-well as links to all the relevant information related to the PR itself. These
-are things such as issues it closes, KEPs, and any other relevant documentation.
-
-Accurately filling out the issue template and applying the necessary labels
-will greatly speed up the initial triage of your PR.
-
-If there is a portion of your PR that should be explained or linked that is not
-committed as a comment, you can review your own PR, applying additional context
-or links.
-
-
-### Minor changes (typos / link fixes)
-
-While these sort of fixes are appreciated, try and fix multiple instances at the
-same time if possible, instead of issuing subsequent individual PRs for each fix.
-
----
-
 ## Tips for code reviewers
+
+If you're looking for tips for preparing your PR for review check out the [Pull Requests] page, this page is for reviewers. 
 
 ### Managing time
 
@@ -266,6 +140,7 @@ git checkout foo
 
 
 
+[Pull Requests]: ./pull-requests.md
 [squashing]: ./github-workflow.md#squash-commits
 [KEEP THE SPACE SHUTTLE FLYING]: https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/volume/persistentvolume/pv_controller.go#L57-L117
 [commit message guidelines]: ./pull-requests.md#7-commit-message-guidelines

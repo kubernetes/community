@@ -25,7 +25,6 @@ Develop a standard foundation (philosophy and libraries) for core Kubernetes com
 
 * Michael Taufen (**[@mtaufen](https://github.com/mtaufen)**), Google
 * Leigh Capili (**[@stealthybox](https://github.com/stealthybox)**), Weaveworks
-* Dr. Stefan Schimanski (**[@sttts](https://github.com/sttts)**), Red Hat
 
 ## Contact
 - Slack: [#wg-component-standard](https://kubernetes.slack.com/messages/wg-component-standard)

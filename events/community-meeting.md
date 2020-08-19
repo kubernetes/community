@@ -149,8 +149,8 @@ The document gets slow as we add notes, so it is archived regularly into the
 
 [community-meeting]: https://zoom.us/my/kubernetescommunity
 [10am PT]: http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29
-[calendar.google.com]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
-[iCal url]: https://calendar.google.com/calendar/ical/cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com/public/basic.ics
+[calendar.google.com]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
+[iCal url]: https://calendar.google.com/calendar/ical/calendar%40kubernetes.io/public/basic.ics
 [iCal client]: https://en.wikipedia.org/wiki/ICalendar
 [YouTube Channel]: https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ
 [agenda]: http://bit.ly/k8scommunity

@@ -873,6 +873,14 @@ sigs:
     url: https://zoom.us/j/423312508
     archive_url: https://docs.google.com/document/d/1ojR0jooQaHEuz3gGW6DxcZlsws9ZX7jHPC8walm1G3A/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+  - description: Cluster API Provider Azure office hours
+    day: Thursday
+    time: "08:00"
+    tz: PT (Pacific Time)
+    frequency: bi-weekly
+    url: https://zoom.us/j/566930821
+    archive_url: http://bit.ly/k8s-capz-agenda
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API office hours
     day: Wednesday
     time: "10:00"
@@ -889,8 +897,8 @@ sigs:
     url: https://zoom.us/j/130096731
     archive_url: https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit
   - description: Image Builder office hours
-    day: Wednesday
-    time: "11:00"
+    day: Thursday
+    time: "08:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/807524571
@@ -924,6 +932,7 @@ sigs:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/612375927
+    archive_url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit
   - description: kops Office Hours
     day: Friday
     time: "09:00"
@@ -935,7 +944,7 @@ sigs:
     day: Wednesday
     time: "09:00"
     tz: PT (Pacific Time)
-    frequency: weekly
+    frequency: biweekly
     url: https://zoom.us/j/179916854
     archive_url: https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
@@ -944,7 +953,7 @@ sigs:
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/905156508
+    url: https://zoom.us/j/97017029363
     archive_url: https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit
   contact:
     slack: sig-cluster-lifecycle
@@ -977,13 +986,6 @@ sigs:
   - name: cluster-api-provider-azure
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
-    meetings:
-    - description: Cluster API Azure meeting
-      day: Thursday
-      time: "13:30"
-      tz: PT (Pacific Time)
-      frequency: bi-weekly
-      url: https://docs.google.com/document/d/1P2FrRjuCZjGy0Yh72lwWCwmXekSEkqliUVTmJy_ETIk/edit?usp=sharing
   - name: cluster-api-provider-digitalocean
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
@@ -1071,7 +1073,7 @@ sigs:
       company: VMware
     - github: mrbobbytables
       name: Bob Killen
-      company: University of Michigan
+      company: Google
     tech_leads:
     - github: cblecker
       name: Christoph Blecker
@@ -1187,7 +1189,12 @@ sigs:
     contact:
       slack: github-management
     owners:
+    - https://raw.githubusercontent.com/kubernetes-client/.github/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/.github/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/.github/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/.github/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
     meetings:
     - description: GitHub Administration Subproject
@@ -1211,6 +1218,14 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
     meetings:
+    - description: New Contributor Workshop Development Meeting
+      day: Monday
+      time: "4:00"
+      tz: PT
+      frequency: Biweekly
+      url: https://zoom.us/j/95894431386
+      archive_url: https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit
+      recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
     - description: sig-contribex mentoring subproject meeting (APAC Friendly Time)
       day: Monday
       time: "20:30"
@@ -1227,11 +1242,6 @@ sigs:
       url: https://zoom.us/j/98162537924
       archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r
       recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
-  - name: repo-infra
-    description: Creates and maintains tools and templates for kubernetes-namespace
-      repositories.
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: slack-infra
     description: Creates and maintains tools and automation for Kubernetes Slack.
     contact:
@@ -1249,7 +1259,7 @@ sigs:
     chairs:
     - github: jimangel
       name: Jim Angel
-      company: General Motors
+      company: Google
     - github: kbarnard10
       name: Kaitlyn Barnard
       company: Kong
@@ -1276,7 +1286,7 @@ sigs:
   meetings:
   - description: APAC SIG Meeting
     day: Wednesday
-    time: "02:00"
+    time: "01:00"
     tz: UTC
     frequency: monthly - Wednesday, after the fourth Tuesday, every month
     url: https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit
@@ -1452,21 +1462,13 @@ sigs:
       name: Quinton Hoole
       company: Huawei
   meetings:
-  - description: Cluster Federation (KubeFed) Working Group
-    day: Wednesday
-    time: "7:30"
-    tz: PT (Pacific Time)
-    frequency: weekly
-    url: https://zoom.us/my/k8s.mc
-    archive_url: https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY/edit
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3iKP5EzMbtNT2zOZv6RCrX
   - description: Regular SIG Meeting
     day: Tuesday
     time: "9:30"
     tz: PT (Pacific Time)
-    frequency: biweekly
+    frequency: weekly
     url: https://zoom.us/my/k8s.mc
-    archive_url: https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit
+    archive_url: https://tinyurl.com/sig-multicluster-notes
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
   contact:
     slack: sig-multicluster
@@ -1499,6 +1501,9 @@ sigs:
   - name: kubemci
     owners:
     - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
+  - name: mcs-api
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
 - dir: sig-network
   name: Network
   mission_statement: >
@@ -1518,6 +1523,13 @@ sigs:
       name: Tim Hockin
       company: Google
   meetings:
+  - description: Network Policy API Meeting
+    day: Monday
+    time: "13:00"
+    tz: PT (Pacific Time)
+    frequency: weekly
+    url: https://zoom.us/j/96264742248
+    archive_url: https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs
   - description: SIG Network Meeting
     day: Thursday
     time: "14:00"
@@ -1671,6 +1683,11 @@ sigs:
       slack: node-problem-detector
     owners:
     - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
+  - name: seccomp-operator
+    contact:
+      slack: seccomp-operator
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/seccomp-operator/master/OWNERS
 - dir: sig-release
   name: Release
   mission_statement: >
@@ -1700,8 +1717,8 @@ sigs:
       name: Jaice Singer DuMars
   meetings:
   - description: Regular SIG Meeting
-    day: Monday
-    time: "15:00"
+    day: Tuesday
+    time: "14:30"
     tz: UTC
     frequency: biweekly
     url: https://zoom.us/j/327142148
@@ -1720,46 +1737,54 @@ sigs:
     - name: sig-release-admins
       description: Admins for SIG Release repositories
   subprojects:
-  - name: hyperkube
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
-  - name: licensing
+  - name: Licensing
     description: |
       The Licensing subproject is responsible for analyzing/reporting/remediating licensing concerns within the Kubernetes project orgs.
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
-  - name: release-engineering
+  - name: Release Engineering
     description: |
       The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
     contact:
       slack: release-management
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/mdtoc/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
     meetings:
-    - description: Regular SIG Meeting
-      day: Monday
-      time: "15:00"
+    - description: Release Engineering
+      day: Tuesday
+      time: "14:30"
       tz: UTC
       frequency: biweekly
       url: https://zoom.us/j/240812475
       archive_url: https://bit.ly/k8s-releng-meeting
       recordings_url: https://bit.ly/k8s-sig-release-videos
-  - name: release-team
+  - name: Release Team
     description: |
       The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
-  - name: sig-release
+  - name: SIG Release Process Documentation
     description: |
       Documents and processes related to SIG Release
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
+  - name: hyperkube
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
+  - name: kubernetes/repo-infra
+    description: |
+      Creates and maintains tools and templates for Kubernetes org repositories.
+      Includes bazel tooling for managing dependencies for kubernetes/kubernetes
+      and kubernetes/test-infra.
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
 - dir: sig-scalability
   name: Scalability
   mission_statement: >
@@ -2089,7 +2114,6 @@ sigs:
   subprojects:
   - name: external-storage
     owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-local-static-provisioner/master/OWNERS
   - name: git-sync
@@ -2100,8 +2124,12 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/gluster-block-external-provisioner/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/gluster-file-external-provisioner/master/OWNERS
   - name: kubernetes-cosi
+    contact:
+      slack: sig-storage-cosi
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-controller/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-csi-adapter/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-spec/master/OWNERS
   - name: kubernetes-csi
     owners:
@@ -2138,7 +2166,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/mount-utils/OWNERS
   - name: nfs-provisioner
     owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/OWNERS
   - name: volumes
@@ -2194,6 +2221,11 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/boskos/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
+  - name: k8s-gsm-tools
+    description: |
+      Controllers to sync and rotate kubernetes secrets with google cloud secret manager
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/k8s-gsm-tools/master/OWNERS
   - name: kind
     description: |
       Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
@@ -2225,9 +2257,6 @@ sigs:
       slack: prow
     owners:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
-  - name: repo-infra
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
   - name: test-infra
     description: |
       Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
@@ -2372,7 +2401,7 @@ sigs:
   - description: Regular SIG Meeting
     day: Tuesday
     time: "12:30"
-    tz: Eastern Standard Time (EST)
+    tz: Eastern Time (ET)
     frequency: weekly
     url: https://zoom.us/j/297282383
     archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
@@ -2454,9 +2483,6 @@ workinggroups:
     - github: stealthybox
       name: Leigh Capili
       company: Weaveworks
-    - github: sttts
-      name: Dr. Stefan Schimanski
-      company: Red Hat
   meetings:
   - description: Regular WG Meeting (please join kubernetes-dev@googlegroups.com or
       kubernetes-wg-component-standard@googlegroups.com to access the notes)
@@ -2623,7 +2649,7 @@ workinggroups:
       company: VMware
     - github: youngnick
       name: Nick Young
-      company: VMWare
+      company: VMware
   meetings:
   - description: Regular WG Meeting
     day: Tuesday
@@ -2658,10 +2684,10 @@ workinggroups:
   meetings:
   - description: Regular WG Meeting
     day: Thursday
-    time: "13:00"
+    time: "17:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.com.cn/j/103404077
+    url: https://zoom.us/j/103404077
     archive_url: https://goo.gl/gBCdt1
   contact:
     slack: wg-machine-learning
@@ -2881,18 +2907,27 @@ committees:
     - github: AevaOnline
       name: Aeva van der Veen
       company: Microsoft
-    - github: Bradamant3
-      name: Jennifer Rondeau
-      company: Stripe
-    - github: carolynvs
-      name: Carolyn Van Slyck
+    - github: celestehorgan
+      name: Celeste Horgan
+      company: CNCF
+    - github: karenhchu
+      name: Karen Chu
       company: Microsoft
-    - github: jdumars
-      name: Jaice Singer DuMars
-      company: Apple
     - github: tashimi
       name: Tasha Drew
       company: VMware
+    - github: tpepper
+      name: Tim Pepper
+      company: VMware
+    emeritus_leads:
+    - github: Bradamant3
+      name: Jennifer Rondeau
+    - github: carolynvs
+      name: Carolyn Van Slyck
+    - github: jdumars
+      name: Jaice Singer DuMars
+    - github: parispittman
+      name: Paris Pittman
   meetings: []
   contact:
     private_mailing_list: conduct@kubernetes.io
@@ -2993,11 +3028,6 @@ committees:
     description: Funding requests for project infrastructure, events, and consulting
     owners:
     - https://raw.githubusercontent.com/kubernetes/funding/master/OWNERS
-  - name: kubernetes-template-project
-    description: Template for starting new projects in the GitHub organizations owned
-      by Kubernetes.
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
   - name: steering
     description: Steering Committee policy and documentation
     owners:

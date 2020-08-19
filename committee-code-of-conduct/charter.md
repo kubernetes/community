@@ -65,7 +65,8 @@ authority and enforcement to this committee. The committee can, at its
 discretion, delegate some authority to those tasked with enforcement.*
 
 ## Election
-TODO: Our election processes will be outlined in a separate document, coming soon.
+
+See [elections](https://github.com/kubernetes/community/blob/master/committee-code-of-conduct/election.md)
 
 ## Committee Operation
 The committee strives to respond quickly to reports, as well as initiate
@@ -118,7 +119,7 @@ person they are replacing.
 If committee members believe that the committee is no longer able to act in
 accordance with the above Mission/Purpose the committee may vote to dissolve.
 The committee should specify a date of dissolution. Dissolution requires an
-affirmative vote of more than 75% of committee members, and must be unamimous
+affirmative vote of more than 75% of committee members, and must be unanimous
 when the committee has only 4 or fewer members. If the committee is dissolved,
 all seats are vacated on the date specified.
 

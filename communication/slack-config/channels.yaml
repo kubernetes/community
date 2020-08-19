@@ -74,6 +74,7 @@ channels:
   - name: etcdadm
   - name: events
   - name: external-dns
+  - name: external-secrets
   - name: falco
   - name: fiaas
   - name: fi-users
@@ -202,6 +203,7 @@ channels:
     archived: true
   - name: linode
   - name: litmus
+  - name: litmus-dev
   - name: lokomotive
   - name: malaysia-users
   - name: malta-users
@@ -253,6 +255,7 @@ channels:
   - name: octant
   - name: office-hours
   - name: okteto
+  - name: olm-dev
   - name: opencontainers
   - name: openebs
   - name: openebs-dev
@@ -260,6 +263,7 @@ channels:
   - name: openshift-users
   - name: openstack-helm
   - name: openstack-kolla
+  - name: operator-sdk-dev
   - name: ops-status
     archived: true
   - name: osbkit
@@ -302,13 +306,7 @@ channels:
     archived: true
   - name: sig-contribex
   - name: sig-contribex-triage
-  - name: sig-docs
-  - name: sig-docs-blog
-  - name: sig-docs-maintainers
-  - name: sig-docs-modeling
-  - name: sig-docs-release
-  - name: sig-docs-security
-  - name: sig-docs-tools
+  # sig-docs* channels are defined in sig-docs/
   - name: sig-high-availability
     archived: true
   - name: sig-instrumentation

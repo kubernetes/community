@@ -54,7 +54,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 The following [subprojects][subproject-definition] are owned by sig-storage:
 ### external-storage
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/external-storage/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-local-static-provisioner/master/OWNERS
 ### git-sync
@@ -66,8 +65,12 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - https://raw.githubusercontent.com/kubernetes-sigs/gluster-file-external-provisioner/master/OWNERS
 ### kubernetes-cosi
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-controller/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-csi-adapter/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-spec/master/OWNERS
+- **Contact:**
+  - Slack: [#sig-storage-cosi](https://kubernetes.slack.com/messages/sig-storage-cosi)
 ### kubernetes-csi
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
@@ -103,7 +106,6 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/mount-utils/OWNERS
 ### nfs-provisioner
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/nfs-provisioner/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/OWNERS
 ### volumes
