@@ -22,8 +22,12 @@ The [charter](charter.md) defines the scope and governance of the Multicluster S
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Jeremy Olmsted-Thompson (**[@jeremyot](https://github.com/jeremyot)**), Google
 * Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
-* Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
+
+## Emeritus Leads
+
+* Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**)
 
 ## Contact
 - Slack: [#sig-multicluster](https://kubernetes.slack.com/messages/sig-multicluster)

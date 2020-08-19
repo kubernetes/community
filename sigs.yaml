@@ -1455,12 +1455,15 @@ sigs:
   label: multicluster
   leadership:
     chairs:
+    - github: jeremyot
+      name: Jeremy Olmsted-Thompson
+      company: Google
     - github: pmorie
       name: Paul Morie
       company: Red Hat
+    emeritus_leads:
     - github: quinton-hoole
       name: Quinton Hoole
-      company: Huawei
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
