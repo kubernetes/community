@@ -6,11 +6,11 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 --->
-# security Special Interest Group
+# Security Special Interest Group
 
 Covers horizontal security initiatives for the Kubernetes project, including  regular security audits, the vulnerability management process, cross-cutting  security documentation, and security community management.
 
-The [charter](charter.md) defines the scope and governance of the security Special Interest Group.
+The [charter](charter.md) defines the scope and governance of the Security Special Interest Group.
 
 ## Meetings
 * Regular SIG Meeting: [Mondays at 12:00 PT (Pacific Time)](https://zoom.us/j/8416212023) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=PT%20%28Pacific%20Time%29).
