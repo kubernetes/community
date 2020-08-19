@@ -18,7 +18,7 @@ Perform a security audit on k8s with a vendor and produce as artifacts a threat 
 
 ## Organizers
 
-* Aaron Small (**[@aasmall](https://github.com/aasmall)**), Google
+* Aaron Small (**[@aasmall](https://github.com/aasmall)**), Invitae
 * Craig Ingram (**[@cji](https://github.com/cji)**), Stripe
 * Jay Beale (**[@jaybeale](https://github.com/jaybeale)**), InGuardians
 * Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
