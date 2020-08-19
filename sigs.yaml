@@ -1938,7 +1938,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-plugins/master/OWNERS
 - dir: sig-security
-  name: security
+  name: Security
   mission_statement: >
     Covers horizontal security initiatives for the Kubernetes project, including 
     regular security audits, the vulnerability management process, cross-cutting 
