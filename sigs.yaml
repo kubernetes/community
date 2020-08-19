@@ -1937,6 +1937,54 @@ sigs:
   - name: scheduler-plugins
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-plugins/master/OWNERS
+- dir: sig-security
+  name: Security
+  mission_statement: >
+    Covers horizontal security initiatives for the Kubernetes project, including 
+    regular security audits, the vulnerability management process, cross-cutting 
+    security documentation, and security community management.
+
+  charter_link: charter.md
+  label: security
+  leadership:
+    chairs:
+    - github: aasmall
+      name: Aaron Small
+      company: Invitae
+    - github: cji
+      name: Craig Ingram
+      company: Stripe
+    - github: jaybeale
+      name: Jay Beale
+      company: InGuardians
+    - github: joelsmith
+      name: Joel Smith
+      company: Red Hat
+  meetings:
+  - description: Regular SIG Meeting
+    day: Monday
+    time: "12:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/8416212023
+    archive_url: tba
+    recordings_url: tba
+  contact:
+    slack: sig-security
+    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-security
+  subprojects:
+  - name: community-discussion-groups
+    description: "Community Discussion Groups \n"
+    owners: []
+  - name: security-audit
+    description: |
+      Third Party Security Audit
+    owners:
+    - https://github.com/kubernetes/community/blob/master/wg-security-audit/OWNERS
+  - name: security-documents
+    description: |
+      Security Documents and Documentation.
+    owners: []
 - dir: sig-service-catalog
   name: Service Catalog
   mission_statement: >
@@ -2757,7 +2805,7 @@ workinggroups:
     chairs:
     - github: aasmall
       name: Aaron Small
-      company: Google
+      company: Invitae
     - github: cji
       name: Craig Ingram
       company: Stripe
