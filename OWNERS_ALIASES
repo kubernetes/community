@@ -51,8 +51,8 @@ aliases:
     - ehashman
     - logicalhan
   sig-multicluster-leads:
+    - jeremyot
     - pmorie
-    - quinton-hoole
   sig-network-leads:
     - caseydavenport
     - dcbw
