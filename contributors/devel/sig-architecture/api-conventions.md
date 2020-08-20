@@ -830,6 +830,13 @@ no body.
 
 #### Error codes
 
+Before seeing all the error codes, notice that in some rare cases a request
+might fail because of multiple errors that have different codes. In such
+cases, only one error code will be returned; clients should not make assumptions
+about which error code (among those that apply) is returned, even if one seems
+more important than the others. See [this](https://github.com/kubernetes/kubernetes/issues/89985)
+issue for an example.
+
 * `307 StatusTemporaryRedirect`
   * Indicates that the address for the requested resource has changed.
   * Suggested client recovery behavior:
