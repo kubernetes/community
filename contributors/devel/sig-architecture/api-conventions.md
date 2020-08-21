@@ -830,12 +830,12 @@ no body.
 
 #### Error codes
 
-Before seeing all the error codes, notice that in some rare cases a request
-might fail because of multiple errors that have different codes. In such
-cases, only one error code will be returned; clients should not make assumptions
-about which error code (among those that apply) is returned, even if one seems
-more important than the others. See [this](https://github.com/kubernetes/kubernetes/issues/89985)
-issue for an example.
+Note: in some rare cases a request might fail because of multiple errors that
+have different codes. In such cases, only one error code will be returned;
+clients should not make assumptions about which error code (among those that
+apply) is returned, even if one seems more important than the others. See [this](https://github.com/kubernetes/kubernetes/issues/89985)
+issue for an example. Errors that occur early in the server's processing may
+prevent the server from being able to see errors that would occur later.
 
 * `307 StatusTemporaryRedirect`
   * Indicates that the address for the requested resource has changed.
@@ -955,11 +955,16 @@ A `Status` kind will be returned by the API in two cases:
 
 The status object is encoded as JSON and provided as the body of the response.
 The status object contains fields for humans and machine consumers of the API to
-get more detailed information for the cause of the failure. The information in
-the status object supplements, but does not override, the HTTP status code's
-meaning. When fields in the status object have the same meaning as generally
-defined HTTP headers and that header is returned with the response, the header
-should be considered as having higher priority.
+get more detailed information for the cause of the failure. There are cases
+where multiple errors concur to the failure, in such cases the server is
+**not** expected to attempt to identify all errors. An exception to this is in
+routines that validate API objects, which, as a courtesy to the user, should
+attempt to note all invalid fields.
+
+The information in the status object supplements, but does not override, the
+HTTP status code's meaning. When fields in the status object have the same
+meaning as generally defined HTTP headers and that header is returned with the
+response, the header should be considered as having higher priority.
 
 **Example:**
 
