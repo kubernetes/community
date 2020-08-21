@@ -292,6 +292,7 @@ channels:
   - name: seccomp-operator
   - name: shippable
   - name: shipper
+  - name: shipwright
   - name: shoutouts
   - name: sig-api-machinery
   - name: sig-apps
