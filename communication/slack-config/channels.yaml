@@ -93,6 +93,7 @@ channels:
   - name: gitops
   - name: gke
   - name: gloo
+  - name: grafana-operator
   - name: helm-chart-testing
   - name: helm-deprecated
     archived: true
