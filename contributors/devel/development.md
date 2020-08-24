@@ -172,7 +172,9 @@ done
 export PATH
 ```
 
-This ensures that the GNU tools are found first in your path.
+This ensures that the GNU tools are found first in your path. Note
+that shell init scripts work a little differently for
+macOS. [This article can help you figure out what changes to make.](https://scriptingosx.com/2017/04/about-bash_profile-and-bashrc-on-macos/)
 
 ### Installing Required Software
 
