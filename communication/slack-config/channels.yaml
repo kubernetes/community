@@ -372,6 +372,7 @@ channels:
   - name: wg-k8s-infra
   - name: wg-lts
   - name: wg-machine-learning
+    archived: true
   - name: wg-multitenancy
   - name: wg-naming
   - name: wg-onprem
