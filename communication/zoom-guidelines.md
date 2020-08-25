@@ -86,7 +86,7 @@ and training.
 #### Related moderation documentation
 
 - Zoom has [documentation on how to use their moderation tools].
-- Members of the _kubernetes-sig-leads@_ group have access to an extensive
+- Members of the _leads@_ group have access to an extensive
   [best practices doc] with screenshots going over the community Zoom best
   practices.
 

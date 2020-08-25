@@ -25,7 +25,7 @@ Communication and feedback loops:
 [Need to Know email archive]  
 [Monthly meeting]  
 Slack: #chairs-and-techleads, #sig-contribex  
-Mailing list: kubernetes-sig-leads@googlegroups.com  
+Mailing list: leads@googlegroups.com  
 Github: File issues against kubernetes/community  
 
 [values]  
