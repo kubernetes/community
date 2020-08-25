@@ -37,6 +37,7 @@ channels:
   - name: cluster-addons
   - name: cluster-api
   - name: cluster-api-aws
+  - name: cluster-api-aws-alerts
   - name: cluster-api-azure
   - name: cluster-api-baremetal
   - name: cluster-api-digitalocean
