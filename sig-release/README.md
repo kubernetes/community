@@ -57,6 +57,7 @@ The Licensing subproject is responsible for analyzing/reporting/remediating lice
 ### Release Engineering
 The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/downloadkubernetes/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/mdtoc/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
