@@ -6,7 +6,17 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 --->
-# SIGs and Working Groups
+
+---
+title: Community Groups
+linkTitle: Community Groups
+description:  |
+  A list of our community groups: Special Interest Groups, Working Groups, User Groups and Committees.
+weight: 99
+type: docs
+aliases: [ "/groups", "/sigs" ]
+slug: community-groups
+---
 
 Most community activity is organized into Special Interest Groups (SIGs),
 time bounded Working Groups, and the [community meeting](communication/README.md#weekly-meeting).
