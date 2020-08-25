@@ -32,6 +32,7 @@ channels:
   - name: charts 
   - name: cka-exam-prep
   - name: ckad-exam-prep
+  - name: cks-exam-prep
   - name: client-go-docs
   - name: cluster-addons
   - name: cluster-api
