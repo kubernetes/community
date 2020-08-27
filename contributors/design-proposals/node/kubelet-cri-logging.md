@@ -117,7 +117,7 @@ This proposal intends to satisfy the requirements by
 **Log directories and structures**
 
 Kubelet will be configured with a root directory (e.g., `/var/log/pods` or
-`/var/lib/kubelet/logs/) to store all container logs. Below is an example of a
+`/var/lib/kubelet/logs/`) to store all container logs. Below is an example of a
 path to the log of a container in a pod.
 
 ```
@@ -202,13 +202,13 @@ considered as a mid-term solution.
 For rkt, implementation will rely on providing external file-descriptors for
 stdout/stderr to applications via systemd [4]. Those streams are currently
 managed by a journald sidecar, which collects stream outputs and store them
-in the journal file of the pod. This will replaced by a custom sidecar which
+in the journal file of the pod. This will be replaced by a custom sidecar which
 can produce logs in the format expected by this specification and can handle
 clients attaching as well.
 
 ## Alternatives
 
-There are ad-hoc solutions/discussions that addresses one or two of the
+There are ad-hoc solutions/discussions that adress one or two of the
 requirements, but no comprehensive solution for CRI specifically has been
 proposed so far (with the exception of @tmrtfs's proposal
 [#33111](https://github.com/kubernetes/kubernetes/pull/33111), which has a much
