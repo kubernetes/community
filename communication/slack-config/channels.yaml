@@ -211,6 +211,7 @@ channels:
   - name: malta-users
   - name: meet-our-contributors
   - name: meetup-athens
+  - name: meetup-atlanta
   - name: meetup-austin
   - name: meetup-bayarea
   - name: meetup-bordeaux

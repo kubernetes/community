@@ -84,3 +84,12 @@ usergroups:
       - nzoueidi
       - onlydole
       - paris
+
+  - name: k8satl-hosts
+    long_name: Kubernetes Atlanta Meetup Hosts
+    description: Kubernetes Atlanta Meetup Hosts group
+    channels:
+      - meetup-atlanta
+    members:
+      - phenixblue
+      - AlexB138
