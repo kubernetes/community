@@ -66,36 +66,29 @@ In order to successfully build Kubernetes tests, you will need to
 install Bazel.
 [Follow the instructions for your development environment.](https://docs.bazel.build/versions/3.4.0/install.html)
 
-Next, you need to download, build, and install the `kubetest2`
-binary. Run these commands to do that:
+Next, you need to install the `kubetest2` binary and plugins. Run
+these commands to do that:
 
 ```sh
-cd $GOPATH/src/k8s.io/
-git clone git@github.com:kubernetes-sigs/kubetest2.git
-cd kubetest2
-make install
+cd
+GO111MODULE=on go get sigs.k8s.io/kubetest2/...@latest
 ```
 
-After building and installing `kubetest2`, you need to install
-and configure the plugin for your cloud provider. Current available
-plugins are:
+The currently available plugins for cloud providers are:
 
 - Google Cloud Compute Engine (kubetest2-gce)
 - Google Cloud Kubernetes Engine (kubetest2-gke)
 - [KIND](https://kind.sigs.k8s.io/) (kubetest2-kind)
 
-You can install these via `go get`, but since you are already in the
-`kubetest2` directory, you can also just use a command like this:
+## Building Kubernetes
+
+To reliably and repeatedly test changes locally, it is important to
+minimize the number of steps the developer needs to take. To
+facilitate this, you can use `kubetest2` to build Kubernetes using the
+following command: 
 
 ```sh
-make install-deployer-gce INSTALL_DIR=$GOPATH/bin
-```
-
-Next, install the interface between `kubetest2` and Ginkgo. While
-remaining in the `kubetest2` directory, run this command:
-
-```sh
-make install-tester-ginkgo INSTALL_DIR=$GOPATH/bin
+kubetest2 gce --build --legacy-mode
 ```
 
 ## Running the Tests
