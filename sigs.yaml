@@ -1971,7 +1971,7 @@ sigs:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/8416212023
-    archive_url: tba
+    archive_url: https://docs.google.com/document/d/1GgmmNYN88IZ2v2NBiO3gdU8Riomm0upge_XNVxEYXp0/edit?usp=sharing
     recordings_url: tba
   contact:
     slack: sig-security
