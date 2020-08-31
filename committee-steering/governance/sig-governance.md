@@ -226,7 +226,7 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [forums provided]: /communication/README.md
 [lazy-consensus]: http://en.osswiki.info/concepts/lazy_consensus
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
-[KEP]: https://github.com/kubernetes/enhancements/tree/master/keps/NNNN-kep-template/README.md
+[KEP]: https://git.k8s.io/enhancements/keps/NNNN-kep-template/README.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
 [OWNERS]: contributors/devel/owners.md
 [SIG Charter process]: https://git.k8s.io/community/committee-steering/governance/README.md
