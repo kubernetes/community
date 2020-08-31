@@ -51,7 +51,7 @@ Out of scope for this document: [subproject] creation.
   - Any SIG Stakeholders
   - Any Subproject Stakeholders
 - [ ] Add SIG-related docs like charter.md, schedules, roadmaps, etc. to your new kubernetes/community/SIG-foo directory once the above PR is merged.
-- [ ] File a [Kubernetes/Org] Issue for a label; read about our [GitHub management] services
+- [ ] Use the process in [labels.md] to obtain a label; read about our [GitHub management] services
 
 ### Communicate:
 Each one of these has a linked canonical source guideline from set up to moderation and your role and responsibilities for each. We are all responsible for enforcing our [code of conduct].
@@ -103,16 +103,16 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
    - [ ] Each subproject a SIG owns must transfer ownership to a new SIG, outside the project, or be retired
    - [ ] File an issue with kubernetes/org if there are multiple repos
    - [ ] Retire or transfer any test-infra jobs or testgrid dashboards, if applicable, owned by the SIG. Work with SIG-Testing on this.
-   - [ ] Migrate/Remove/Deprecate any SIG/WG labels in labels.yaml
+   - [ ] Migrate/Remove/Deprecate any SIG/WG labels in labels.yaml - instructions in [labels.md]
    - [ ] Remove or rename any GitHub teams that refer to the SIG
    - [ ] Update sigs.yaml to remove or rename
-
 
 [steering committee repo]: https://github.com/kubernetes/steering
 [subproject]: /governance.md#subprojects
 [Creation]: #Creation
 [Retirement]: #Retirement
 [GitHub]: #GitHub
+[labels.md] /kubernetes/test-infra/blob/master/label_sync/labels.md
 [sig-governance.md]: /committee-steering/governance/sig-governance.md
 [SIG charter process]: /committee-steering/governance
 [wg-governance.md]: /committee-steering/governance/wg-governance.md
