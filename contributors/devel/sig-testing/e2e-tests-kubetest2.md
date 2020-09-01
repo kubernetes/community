@@ -91,6 +91,26 @@ following command:
 kubetest2 gce --build --legacy-mode
 ```
 
+To build without the `--legacy-mode` option, you will need to clone
+the
+[`gcp-cloud-provider` repository](https://github.com/kubernetes/cloud-provider-gcp). 
+This repository is part of the
+[cloud provider extraction effort](https://github.com/kubernetes/community/tree/master/sig-cloud-provider#cloud-provider-extraction-migration)
+and the eventual home of some of the build scripts in the Kubernetes
+source tree. Use this command to clone:
+
+```sh
+git clone https://github.com/kubernetes/cloud-provider-gcp.git
+```
+
+You can now use the following command to build using the
+`gcp-cloud-provider` repository. Replace `<path to
+cloud-provider-gcp>` with the path to your cloned repository:
+
+```sh
+kubetest2 gce --build --repo-root <path to cloud-provider-gcp>
+```
+
 ## Running the Tests
 
 The examples below all use the Google Cloud Compute Engine plugin
