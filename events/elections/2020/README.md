@@ -58,7 +58,7 @@ Corporate affiliation is applied after the election. If an organization finds it
 | Date         | Event                    |
 | ------------ | ------------------------ |
 | August 12    | Announcement of Election and publication of Voters.md |
-| August TBD    | Steering Committee Meeting with Q+A with the candidates and community |
+| August 31    | Steering Committee Meeting with Q+A with the candidates and community |
 | September 08 | All candidate bios and voting exception forms due by 0000 UTC (5pm PST) |
 | ~1 week      | Election prep week (voters.md validation and CIVS setup and testing)
 | September 14 | Election Begins via email ballots |
