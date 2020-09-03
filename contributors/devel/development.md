@@ -245,6 +245,12 @@ installed in your development environment. The
 [jq installation guide](https://stedolan.github.io/jq/download/)
 provides detailed instructions for supported platforms.
 
+#### gcloud
+
+If you plan to build remotely or run end-to-end (e2e) tests, you will
+need to install the command line interface to the Google Cloud
+Platform. [Follow the `gcloud` installation instructions for your operating system.](https://cloud.google.com/sdk/downloads)
+
 #### Go
 
 Kubernetes is written in [Go](http://golang.org). If you don't have a Go
@@ -275,18 +281,14 @@ different versions of Kubernetes.
 | 1.12           | 1.10.4      |
 | 1.13           | 1.11.13     |
 | 1.14 - 1.16    | 1.12.9      |
-| 1.17 - 1.18    | 1.13.9      |
-| 1.18+          | 1.14.4      |
+| 1.17 - 1.18    | 1.13.15     |
+| 1.18+          | 1.15        |
 
 ##### A Note on Changing Go Versions
 
 If you have already compiled Kubernetes but are now trying with a
-different version of Go, you will need to make some modifications to
-your source tree. Update the Go version in the following locations:
-
-- The `VERSION` file for cross compiling in [build/build-image/cross].
-- The `go_version` in the [`go_register_toolchains`](https://git.k8s.io/kubernetes/build/root/WORKSPACE) bazel rule.
-- The desired Go version in [test/images/Makefile](https://git.k8s.io/kubernetes/test/images/Makefile).
+different version of Go, please refer to the
+[SIG Release documentation](https://github.com/kubernetes/sig-release).
 
 #### PyYAML
 
@@ -304,7 +306,7 @@ You are now ready to clone the Kubernetes git repository. See the [GitHub Workfl
 
 #### etcd
 
-To test Kubernetes, you will need to install etcd, a consistent and highly-available key value store. As of Kubernetes 1.18, the required etcd version is at least 3.2.10. To install a local version of etcd, run the following command in your Kubernetes working directory.
+To test Kubernetes, you will need to install a recent version of [etcd](https://etcd.io/), a consistent and highly-available key value store. To install a local version of etcd, run the following command in your Kubernetes working directory.
 
 ```sh
 ./hack/install-etcd.sh
@@ -468,7 +470,8 @@ make test-e2e
 
 For more information on E2E tests, including methods for saving time
 by just running specific tests, read
-[End-to-End Testing in Kubernetes](./sig-testing/e2e-tests.md). 
+[End-to-End Testing in Kubernetes](./sig-testing/e2e-tests.md) and the
+[getting started guide for `kubetest2`](./sig-testing/e2e-tests-kubetest2.md).
 
 ## Dependency management
 
