@@ -138,4 +138,30 @@ Creates and maintains tools and automation for Kubernetes Slack.
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
+## Relevant Presentations
+
+This is a collection of presentations from our SIG members around contributing to Kubernetes, feel free to PR in content here: 
+
+## Current Status
+
+This is the work we've done this past cycle and plan to work on in the future:
+
+- [Contributor Experience Community Update](https://youtu.be/J3O8fXTm3HE?t=148) (July 2020)
+  - [Slides](https://docs.google.com/presentation/d/1BS7liUs1WDSPnpNXIHRtRSKhGzK9usS5qzpry_9YU-I/edit?usp=sharing) 
+
+## General Presentations
+
+- [How to Contribute to Kubernetes](https://www.youtube.com/watch?v=yVOCRrK6Fh0) - Nikhita Raghunath
+- [Practical git for Kubernetes Contributors](https://www.youtube.com/watch?v=K5qI9bTG9Ik)- Christoph Blecker
+- [State of the Kubernetes Contributor Community](https://www.youtube.com/watch?v=a17FLjVDUOc) - Paris Pittman
+- [A peek behind the curtain: Managing the Kubernetes Contributor Community](https://www.youtube.com/watch?v=DrCPEq3HpwY)
+
+### KubeCon + CloudNativeCon
+
+We give our SIG status at every KubeCon, here are our most current talks:
+
+- [Introdution to Contributor Experience 2020](https://docs.google.com/presentation/d/15CaNvfNRDjAaJ1gRmPq2thti5so5m7x5XTCN-NFlPOc/edit?usp=sharing) (Slides only, video will be added once it's published)
+- [Introduction to Contributor Experience 2019](https://www.youtube.com/watch?v=U1YJlgRLbKk) - Elsie Phillips, Paris Pittman
+- [Contributor Experience Deep Dive 2019](https://www.youtube.com/watch?v=0d97Wna4qOs) - Christoph Blecker, Nikhita Raghunath
+
 <!-- END CUSTOM CONTENT -->
