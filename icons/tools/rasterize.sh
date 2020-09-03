@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 SIZES=(128 256)
 
