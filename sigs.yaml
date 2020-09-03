@@ -2665,37 +2665,6 @@ workinggroups:
   contact:
     slack: wg-lts
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-lts
-- dir: wg-machine-learning
-  name: Machine Learning
-  mission_statement: >
-    Identify and fix gaps in Kubernetes to better support Machine Learning applications
-
-  stakeholder_sigs:
-  - Apps
-  - Node
-  label: machine-learning
-  leadership:
-    chairs:
-    - github: k82cn
-      name: Klaus Ma
-      company: Huawei
-    - github: kow3ns
-      name: Kenneth Owens
-      company: Google
-    - github: vishh
-      name: Vishnu Kannan
-      company: Google
-  meetings:
-  - description: Regular WG Meeting
-    day: Thursday
-    time: "17:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/103404077
-    archive_url: https://goo.gl/gBCdt1
-  contact:
-    slack: wg-machine-learning
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-machine-learning
 - dir: wg-multitenancy
   name: Multitenancy
   mission_statement: >
