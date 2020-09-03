@@ -555,6 +555,7 @@ Because of having IDs appear with different upper casing in different sources, G
 - phenixblue
 - philips
 - php-coder
+- phumberdroz
 - pierewoj
 - pigletfly
 - ping035627
@@ -618,6 +619,7 @@ Because of having IDs appear with different upper casing in different sources, G
 - rudoi
 - saad-ali
 - saikat-royc
+- saiyam1814
 - saiyan86
 - sallyom
 - sambdavidson
@@ -674,6 +676,7 @@ Because of having IDs appear with different upper casing in different sources, G
 - superbrothers
 - s-urbaniak
 - szuecs
+- tabbysable
 - tahsinrahman
 - tallclair
 - tamalsaha
