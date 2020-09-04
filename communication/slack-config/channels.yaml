@@ -255,6 +255,7 @@ channels:
     archived: true
   - name: ncw-staff
   - name: nl-users
+  - name: node-feature-discovery
   - name: node-problem-detector
   - name: norw-users
   - name: octant
