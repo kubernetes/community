@@ -294,7 +294,8 @@ channels:
   - name: schemahero
   - name: se-users
   - name: sealed-secrets
-  - name: seccomp-operator
+  - name: security-operator
+    id: C013FQNB0A2
   - name: service-binding-operator
   - name: shippable
   - name: shipper
