@@ -128,6 +128,7 @@ channels:
   - name: jp-users-novice
   - name: jsonnet
   - name: k14s
+  - name: kalm
   - name: kaniko
   - name: k8s-dual-stack
   - name: k8s-infra-alerts
