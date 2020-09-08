@@ -282,6 +282,7 @@ channels:
   - name: pr-reviews
   - name: prometheus
   - name: prometheus-operator
+  - name: prometheus-operator-dev
   - name: prow
   - name: prow-alerts
   - name: pt_br-users
