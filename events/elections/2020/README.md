@@ -163,6 +163,7 @@ the [Steering Committee Election Charter]
 | [Stephen Augustus](./stephenaugustus.md)   |        VMware        | [@justaugustus](https://github.com/justaugustus)     |
 | [Davanum Srinivas](./davanumsrinivas.md)   |      VMware          | [@dims](https://github.com/dims)                     |
 | [Ian Coldwater](./iancoldwater.md)         |      Salesforce      | [@IanColdwater](https://github.com/IanColdwater)     |
+| [Lachlan Evenson](./lachlanevenson.md)     |      Microsoft       | [@lachie83](https://github.com/lachie83)             |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
