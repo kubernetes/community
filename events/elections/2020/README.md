@@ -157,10 +157,10 @@ the [Steering Committee Election Charter]
 
 ## Nominees
 
-
 |                    Name                    | Organization/Company |                        GitHub                        |
 |:------------------------------------------:|:--------------------:|:----------------------------------------------------:|
 | [Carlos Panato](./carlos-panato.md)        |      Independent     | [@cpanato](https://github.com/cpanato)               |
+| [Stephen Augustus](./stephenaugustus.md)   |        VMware        | [@justaugustus](https://github.com/justaugustus)     |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
