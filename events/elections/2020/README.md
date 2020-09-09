@@ -157,13 +157,16 @@ the [Steering Committee Election Charter]
 
 ## Nominees
 
-|                    Name                    | Organization/Company |                        GitHub                        |
-|:------------------------------------------:|:--------------------:|:----------------------------------------------------:|
-| [Carlos Panato](./carlos-panato.md)        |      Independent     | [@cpanato](https://github.com/cpanato)               |
-| [Stephen Augustus](./stephenaugustus.md)   |        VMware        | [@justaugustus](https://github.com/justaugustus)     |
-| [Davanum Srinivas](./davanumsrinivas.md)   |      VMware          | [@dims](https://github.com/dims)                     |
-| [Ian Coldwater](./iancoldwater.md)         |      Salesforce      | [@IanColdwater](https://github.com/IanColdwater)     |
-| [Lachlan Evenson](./lachlanevenson.md)     |      Microsoft       | [@lachie83](https://github.com/lachie83)             |
+|                    Name                    | Organization/Company |                        GitHub                          |
+|:------------------------------------------:|:--------------------:|:------------------------------------------------------:|
+| [Bob Killen](./bobkillen.md)               |      Google          | [@mrbobbytables](https://github.com/mrbobbytables)     |
+| [Carlos Panato](./carlos-panato.md)        |      Independent     | [@cpanato](https://github.com/cpanato)                 |
+| [Davanum Srinivas](./davanumsrinivas.md)   |      VMware          | [@dims](https://github.com/dims)                       |
+| [Divya Mohan](./divya-mohan.md)            |      HSBC            | [@divya-mohan0209](https://github.com/divya-mohan0209) |
+| [Ian Coldwater](./iancoldwater.md)         |      Salesforce      | [@IanColdwater](https://github.com/IanColdwater)       |
+| [Jordan Liggitt](./jordanliggitt.md)       |      Google          | [@liggitt](https://github.com/liggitt)                 |
+| [Lachlan Evenson](./lachlanevenson.md)     |      Microsoft       | [@lachie83](https://github.com/lachie83)               |
+| [Stephen Augustus](./stephenaugustus.md)   |      VMware          | [@justaugustus](https://github.com/justaugustus)       |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
