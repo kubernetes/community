@@ -53,6 +53,7 @@ channels:
   - name: compliance-hipaa
   - name: contour
   - name: contributor-summit
+  - name: craft
   - name: crash-diagnostics
   - name: crd-installation
   - name: crio
