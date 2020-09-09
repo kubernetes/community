@@ -160,7 +160,7 @@ the [Steering Committee Election Charter]
 
 |                    Name                    | Organization/Company |                        GitHub                        |
 |:------------------------------------------:|:--------------------:|:----------------------------------------------------:|
-| [Jane Containerface](./biotemplate.md)     |      ExampleCo       | [@github](https://github.com)                        |
+| [Carlos Panato](./carlos-panato.md)        |      Independent     | [@cpanato](https://github.com/cpanato)               |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
