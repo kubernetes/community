@@ -160,7 +160,7 @@ the [Steering Committee Election Charter]
 
 |                    Name                    | Organization/Company |                        GitHub                        |
 |:------------------------------------------:|:--------------------:|:----------------------------------------------------:|
-| [Jane Containerface](./biotemplate.md)     |      ExampleCo       | [@github](https://github.com)                        |
+| [Ian Coldwater](./iancoldwater.md)     |      Salesforce       | [@IanColdwater](https://github.com/IanColdwater)                        |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
