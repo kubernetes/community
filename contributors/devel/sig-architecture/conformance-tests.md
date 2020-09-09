@@ -84,6 +84,7 @@ Examples of tests which are not eligible to conformance:
     - If the test is checking for specific conditions or reasons, it is considered
       overly specific and it is recommended to simply look for pass/failure criteria
       where possible, and output the condition/reason for debugging purposes only.
+- a cluster MUST have > 1 node, to be defined as Conformant.
 
 Examples of areas we may want to relax these requirements once we have a
 sufficient corpus of tests that define out of the box functionality in all
