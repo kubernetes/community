@@ -162,6 +162,7 @@ the [Steering Committee Election Charter]
 | [Carlos Panato](./carlos-panato.md)        |      Independent     | [@cpanato](https://github.com/cpanato)               |
 | [Stephen Augustus](./stephenaugustus.md)   |        VMware        | [@justaugustus](https://github.com/justaugustus)     |
 | [Davanum Srinivas](./davanumsrinivas.md)   |      VMware          | [@dims](https://github.com/dims)                     |
+| [Ian Coldwater](./iancoldwater.md)         |      Salesforce      | [@IanColdwater](https://github.com/IanColdwater)     |
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
