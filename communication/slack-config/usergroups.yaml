@@ -35,6 +35,7 @@ usergroups:
       - simplytunde
       - Tunde
       - kaslin
+      - rajula96reddy
 
   - name: test-infra-oncall
     external: true
