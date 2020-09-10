@@ -1253,15 +1253,15 @@ sigs:
   label: docs
   leadership:
     chairs:
+    - github: irvifa
+      name: Irvi Aini
+      company: Traveloka
     - github: jimangel
       name: Jim Angel
       company: Google
     - github: kbarnard10
       name: Kaitlyn Barnard
       company: Kong
-    - github: zacharysarah
-      name: Zach Corleissen
-      company: Linux Foundation
     tech_leads:
     - github: kbhawkey
       name: Karen Bradshaw
