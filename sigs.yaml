@@ -26,10 +26,10 @@ sigs:
       company: Google
   meetings:
   - description: Kubebuilder and Controller Runtime Meeting
-    day: Wednesday
-    time: "10:00"
+    day: Thursday
+    time: "09:00"
     tz: PT (Pacific Time)
-    frequency: monthly - second Wednesday every month
+    frequency: biweekly
     archive_url: https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing
   - description: Regular SIG Meeting
     day: Wednesday
