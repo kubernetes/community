@@ -8,6 +8,8 @@ The eligible voter process can be found in the [2020 elections folder](/events/e
 - **2020-08-03** - 68 voters who were excluded due to upper casing mismatches added to voters file
 - **2020-08-10** - 2 voters who filed exception requests added
 - **2020-08-22** - 84 additional voters added per [Issue 5059](https://github.com/kubernetes/community/issues/5059)
+- **2020-09-03** - 3 more voters added per exception requests
+- **2020-09-09** - 2 more voters who filed exception requests added
 
 ---
 
@@ -17,7 +19,6 @@ The following voters are members with sufficient contributions to vote, but have
 
 - vpickard
 - riaankl
-- mbbroberg
 - msedzins
 - kumarvin123
 - pancernik
@@ -211,6 +212,7 @@ Because of having IDs appear with different upper casing in different sources, G
 - droslean
 - drubin
 - dvonthenen
+- dylangraham
 - easeway
 - eddiezane
 - eddycharly
@@ -310,6 +312,7 @@ Because of having IDs appear with different upper casing in different sources, G
 - ianychoi
 - idealhack
 - idvoretskyi
+- iancoldwater
 - imkin
 - immutablet
 - imroc
@@ -461,6 +464,7 @@ Because of having IDs appear with different upper casing in different sources, G
 - maxymvlasov
 - mbohlool
 - mborsz
+- mbbroberg
 - mcrute
 - medmedchiheb
 - medyagh
