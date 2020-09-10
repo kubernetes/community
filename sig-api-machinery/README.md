@@ -13,7 +13,7 @@ Covers all aspects of API server, API registration and discovery, generic API CR
 The [charter](charter.md) defines the scope and governance of the API Machinery Special Interest Group.
 
 ## Meetings
-* Kubebuilder and Controller Runtime Meeting: [Wednesdays at 10:00 PT (Pacific Time)]() (monthly - second Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+* Kubebuilder and Controller Runtime Meeting: [Thursdays at 09:00 PT (Pacific Time)]() (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing).
 * Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/my/apimachinery) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://goo.gl/0lbiM9).
