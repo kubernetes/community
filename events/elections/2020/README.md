@@ -167,6 +167,8 @@ the [Steering Committee Election Charter]
 | [Jordan Liggitt](./jordanliggitt.md)       |      Google          | [@liggitt](https://github.com/liggitt)                 |
 | [Lachlan Evenson](./lachlanevenson.md)     |      Microsoft       | [@lachie83](https://github.com/lachie83)               |
 | [Stephen Augustus](./stephenaugustus.md)   |      VMware          | [@justaugustus](https://github.com/justaugustus)       |
+| [Federico Bongiovanni](./fedebongio.md)    |      Google          | [@fedebongio](https://github.com/fedebongio)           |
+
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
