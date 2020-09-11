@@ -134,6 +134,10 @@ aliases:
   wg-policy-leads:
     - ericavonb
     - hannibalhuang
+  wg-reliability-leads:
+    - deads2k
+    - stevekuznetsov
+    - wojtek-t
   wg-security-audit-leads:
     - aasmall
     - cji
