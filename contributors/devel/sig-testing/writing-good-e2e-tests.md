@@ -180,7 +180,7 @@ Here are a few pointers:
    others.  A few examples of well-written tests include:
    [Replication Controllers](https://git.k8s.io/kubernetes/test/e2e/apps/rc.go),
    [Services](https://git.k8s.io/kubernetes/test/e2e/network/service.go),
-   [Reboot](https://git.k8s.io/kubernetes/test/e2e/lifecycle/reboot.go).
+   [Reboot](https://git.k8s.io/kubernetes/test/e2e/cloud/gcp/reboot.go).
 + [Ginkgo Test Framework](https://github.com/onsi/ginkgo): This is the
    test library and runner upon which our e2e tests are built.  Before
    you write or refactor a test, read the docs and make sure that you
