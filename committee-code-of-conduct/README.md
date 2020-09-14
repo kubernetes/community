@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 ## Members
 
-* Aeva van der Veen (**[@AevaOnline](https://github.com/AevaOnline)**), Microsoft
+* Aeva Black (**[@AevaOnline](https://github.com/AevaOnline)**), Microsoft
 * Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), CNCF
 * Karen Chu (**[@karenhchu](https://github.com/karenhchu)**), Microsoft
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
@@ -34,7 +34,7 @@ The members and their terms are as follows:
 
 ### Term ends on August 7, 2021
 
-- Aeva van der Veen (Microsoft)
+- Aeva Black (Microsoft)
 - Tasha Drew (VMware)
 
 ### Term ends on August 7, 2022
