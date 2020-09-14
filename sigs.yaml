@@ -2717,7 +2717,15 @@ workinggroups:
     - github: zacharysarah
       name: Zach Corleissen
       company: Linux Foundation
-  meetings: []
+  meetings:
+  - description: Regular WG Meeting
+    day: Monday
+    time: "10:30"
+    tz: PT (Pacific Time)
+    frequency: monthly - second Monday of month
+    url: https://zoom.us/j/91522666403?pwd=WnRSNlNhNXhDWkR2ZU9ydGpsNWxtZz09
+    archive_url: https://bit.ly/k8s-wg-naming-agenda
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3BrAtDHyr8KTUfhBhCG7CD
   contact:
     slack: wg-naming
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-naming
