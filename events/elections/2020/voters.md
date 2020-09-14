@@ -10,6 +10,7 @@ The eligible voter process can be found in the [2020 elections folder].
 - **2020-08-22** - 84 additional voters added per [Issue 5059](https://github.com/kubernetes/community/issues/5059)
 - **2020-09-03** - 3 more voters added per exception requests
 - **2020-09-09** - 2 more voters who filed exception requests added
+- **2020-09-14** - Re-added voter approved on 9/3 who was omitted in error
 
 ---
 
@@ -169,6 +170,7 @@ Because of having IDs appear with different upper casing in different sources, G
 - copejon
 - corneliusweig
 - cpanato
+- craigbox
 - craiglpeters
 - cstoku
 - cwdsuzhou
