@@ -881,6 +881,14 @@ sigs:
     url: https://zoom.us/j/566930821
     archive_url: http://bit.ly/k8s-capz-agenda
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+  - description: Cluster API Provider DigitalOcean office hours
+    day: Thursday
+    time: "09:00"
+    tz: PT (Pacific Time)
+    frequency: monthly, second Thursday of the month
+    url: https://zoom.us/j/91312171751?pwd=dFRsM3pvV3BKQUM0WXhyd2twZUlnZz09
+    archive_url: http://bit.ly/k8s-capdo-agenda
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API office hours
     day: Wednesday
     time: "10:00"
