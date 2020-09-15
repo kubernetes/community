@@ -870,7 +870,7 @@ sigs:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/423312508
+    url: https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09
     archive_url: https://docs.google.com/document/d/1ojR0jooQaHEuz3gGW6DxcZlsws9ZX7jHPC8walm1G3A/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API Provider Azure office hours
@@ -878,7 +878,7 @@ sigs:
     time: "08:00"
     tz: PT (Pacific Time)
     frequency: bi-weekly
-    url: https://zoom.us/j/566930821
+    url: https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09
     archive_url: http://bit.ly/k8s-capz-agenda
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API Provider DigitalOcean office hours
@@ -886,7 +886,7 @@ sigs:
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: monthly, second Thursday of the month
-    url: https://zoom.us/j/91312171751?pwd=dFRsM3pvV3BKQUM0WXhyd2twZUlnZz09
+    url: https://zoom.us/j/91312171751?pwd=bndnMDdJMkhySDVncjZoR1VhdFBTZz09
     archive_url: http://bit.ly/k8s-capdo-agenda
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster API office hours
@@ -894,7 +894,7 @@ sigs:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://zoom.us/j/861487554
+    url: https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09
     archive_url: https://docs.google.com/document/d/1fQNlqsDkvEggWFi51GVxOglL2P1Bvo2JhZlMhm2d-Co/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Cluster Addons meeting
@@ -902,14 +902,14 @@ sigs:
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/130096731
+    url: https://zoom.us/j/130096731?pwd=U3pzWloxZ0lpbEtadTZGSERRdENrZz09
     archive_url: https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit
   - description: Image Builder office hours
     day: Thursday
     time: "08:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/807524571
+    url: https://zoom.us/j/807524571?pwd=WEFTeDJzeWU3bVFkcWQ0UEdZRkRCdz09
     archive_url: https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Kubespray Office Hours
@@ -917,14 +917,14 @@ sigs:
     time: "08:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/532465189
+    url: https://zoom.us/j/532465189?pwd=THMvL2MzdjZXWG55eHpJMkU2dkI1dz09
     archive_url: https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit
   - description: Regular SIG Meeting
     day: Tuesday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/916523531
+    url: https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09
     archive_url: https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Regular SIG Meeting in China
@@ -932,36 +932,36 @@ sigs:
     time: "20:00"
     tz: Beijing
     frequency: biweekly
-    url: https://zoom.us/j/179916854
+    url: https://zoom.us/j/179916854?pwd=dzRhbjFnRGVQRDVUVHY1a29JV2JxUT09
     archive_url: https://shimo.im/docs/YcoaYlvRmIYcrwnd
   - description: etcdadm Office Hours
     day: Monday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/612375927
+    url: https://zoom.us/j/612375927?pwd=MldxRnRSOExCVW1rbjM4ZzBSc3MvUT09
     archive_url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit
   - description: kops Office Hours
     day: Friday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/my/k8ssigaws
+    url: https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09
     archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
   - description: kubeadm Office Hours
     day: Wednesday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/179916854
-    archive_url: https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit
+    url: https://zoom.us/j/179916854?pwd=dzRhbjFnRGVQRDVUVHY1a29JV2JxUT09
+    archive_url: https://docs.google.com/document/d/1ONcoy8bOw8SWPUwXxnKeRZST3lnUxYpUv4Y6466h9Ek/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: minikube Office Hours
     day: Monday
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/97017029363
+    url: https://zoom.us/j/97017029363?pwd=U3MvZ3pMMHM5eWorSjgzUnd5OEFtUT09
     archive_url: https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit
   contact:
     slack: sig-cluster-lifecycle
@@ -1023,7 +1023,7 @@ sigs:
       time: "10:00"
       tz: PT (Pacific Time)
       frequency: biweekly starting Thursday June 25th, 2020
-      url: https://zoom.us/j/875399243
+      url: https://zoom.us/j/92253194848?pwd=cVVVNDMxeTl1QVJPUlpvLzNSVU1JZz09
       archive_url: https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu
   - name: etcdadm
