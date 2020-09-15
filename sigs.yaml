@@ -154,13 +154,13 @@ sigs:
       company: Google
     - github: kow3ns
       name: Kenneth Owens
-      company: Google
+      company: Brex
     - github: mattfarina
       name: Matt Farina
-      company: Samsung SDS
+      company: Rancher Labs
     - github: prydonius
       name: Adnan Abdulhussein
-      company: VMware
+      company: Brex
   meetings:
   - description: Regular SIG Meeting
     day: Monday
