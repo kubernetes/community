@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Security Special Interest Group
 
-Covers horizontal security initiatives for the Kubernetes project, including  regular security audits, the vulnerability management process, cross-cutting  security documentation, and security community management.
+Covers horizontal security initiatives for the Kubernetes project, including regular security audits, the vulnerability management process, cross-cutting security documentation, and security community management.
 
 The [charter](charter.md) defines the scope and governance of the Security Special Interest Group.
 
