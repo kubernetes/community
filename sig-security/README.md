@@ -25,7 +25,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Aaron Small (**[@aasmall](https://github.com/aasmall)**), Invitae
 * Craig Ingram (**[@cji](https://github.com/cji)**), Stripe
 * Jay Beale (**[@jaybeale](https://github.com/jaybeale)**), InGuardians
-* Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
 
 ## Contact
 - Slack: [#sig-security](https://kubernetes.slack.com/messages/sig-security)

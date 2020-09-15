@@ -1970,9 +1970,6 @@ sigs:
     - github: jaybeale
       name: Jay Beale
       company: InGuardians
-    - github: joelsmith
-      name: Joel Smith
-      company: Red Hat
   meetings:
   - description: Regular SIG Meeting
     day: Monday
