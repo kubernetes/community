@@ -8,12 +8,12 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Windows Special Interest Group
 
-Focuses on supporting Windows Node and scheduling Windows Server containers on Kubernetes.
+Focuses on supporting Windows Node and scheduling Windows containers on Kubernetes.
 
 The [charter](charter.md) defines the scope and governance of the Windows Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 12:30 Eastern Time (ET)](https://zoom.us/j/297282383) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Time%20%28ET%29).
+* Regular SIG Meeting: [Tuesdays at 12:30 Eastern Time (ET)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Time%20%28ET%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4).
 
