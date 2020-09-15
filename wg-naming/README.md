@@ -14,7 +14,10 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 * SIG Contributor Experience
 * SIG Docs
 
-
+## Meetings
+* Regular WG Meeting: [Mondays at 10:30 PT (Pacific Time)](https://zoom.us/j/91522666403?pwd=WnRSNlNhNXhDWkR2ZU9ydGpsNWxtZz09) (monthly - second Monday of month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://bit.ly/k8s-wg-naming-agenda).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3BrAtDHyr8KTUfhBhCG7CD).
 
 ## Organizers
 

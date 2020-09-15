@@ -14,11 +14,11 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 ## Members
 
-* Aeva van der Veen (**[@AevaOnline](https://github.com/AevaOnline)**), Microsoft
-* Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**), Stripe
-* Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**), Microsoft
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Apple
+* Aeva Black (**[@AevaOnline](https://github.com/AevaOnline)**), Microsoft
+* Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), CNCF
+* Karen Chu (**[@karenhchu](https://github.com/karenhchu)**), Microsoft
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
+* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
 
 ## Contact
 - Private Mailing List: conduct@kubernetes.io
@@ -32,16 +32,27 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 The members and their terms are as follows:
 
-### Term ends on August 7, 2020
+### Term ends on August 7, 2021
+
+- Aeva Black (Microsoft)
+- Tasha Drew (VMware)
+
+### Term ends on August 7, 2022
+
+- Karen Chu (Microsoft)
+- Celeste Horgan (CNCF)
+- Tim Pepper (VMware)
+
+Please see the [bootstrapping document](./bootstrapping-process.md) for more information on how members are picked, their responsibilities, and how the committee will initially function.
+
+## Emeritus Committee Members
+
+The Code of Conduct Committee sincerely thanks our emeritus committee members for their contributions.
+
 - Jaice Singer Dumars (Google)
 - Jennifer Rondeau (Stripe)
 - Carolyn Van Slyck (Microsoft)
-
-### Term ends on August 7, 2021
-- Aeva van der Veen (Microsoft)
-- Tasha Drew (VMWare)
-
-Please see the [bootstrapping document](./bootstrapping-process.md) for more information on how members are picked, their responsibilities, and how the committee will initially function.
+- Paris Pittman (Apple)
 
 _More information on conflict resolution process to come in the near future. For now, any Code of Conduct or Code of Conduct Committee concerns can be directed to <conduct@kubernetes.io>_.
 <!-- END CUSTOM CONTENT -->

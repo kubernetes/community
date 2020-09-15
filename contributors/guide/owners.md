@@ -142,8 +142,7 @@ GitHub usernames and aliases listed in OWNERS files are case-insensitive.
 
 ## Code Review using OWNERS files
 
-This is a simplified description of our [full PR testing and merge
-workflow](/contributors/guide/pull-requests.md#the-testing-and-merge-workflow)
+This is a simplified description of our [full PR testing and merge workflow][pr-workflow]
 that conveniently forgets about the existence of tests, to focus solely on the roles driven by
 OWNERS files.  Please see [below](#automation-using-owners-files) for details on how specific
 aspects of this process may be configured on a per-repo basis.
@@ -317,3 +316,4 @@ Good examples of OWNERS usage:
 [community membership doc]: https://git.k8s.io/community/community-membership.md
 [chromium-owners]: https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md
 [github-codeowners]: https://help.github.com/articles/about-codeowners/
+[pr-workflow]: /contributors/guide/pull-requests.md#the-testing-and-merge-workflow

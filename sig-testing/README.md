@@ -13,7 +13,7 @@ Interested in how we can most effectively test Kubernetes. We're interested spec
 The [charter](charter.md) defines the scope and governance of the Testing Special Interest Group.
 
 ## Meetings
-* SIG Testing Office Hours: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/135450138) (bi-weekly starting Tuesday August 13, 2019). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+* SIG Testing Bi-Weekly Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/135450138?pwd=WGJyaVZzekJCWFBTMGJGTXVjUFJaUT09) (bi-weekly starting Tuesday August 13, 2019). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-testing-notes).
   * [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
 
@@ -57,10 +57,6 @@ Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using D
   - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
 - **Contact:**
   - Slack: [#kind](https://kubernetes.slack.com/messages/kind)
-- **Meetings:**
-  - sigs.k8s.io/kind bi-weekly meeting: [Mondays at 11:00 PT (Pacific Time)](https://zoom.us/j/960461819) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1b9Ppm7ZT_tMWRs5Ph1zGJJKb5nF9c3ZHzMwg1olJIrc/edit).
-    - [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
 ### kubetest2
 Kubetest2 is the framework for launching and running end-to-end tests on kubernetes.
 It is the next significant iteration of kubetest. We will be deprecating kubetest going forward.
@@ -85,7 +81,7 @@ The Testing Commons is a subproject within the Kubernetes sig-testing community 
 - **Contact:**
   - Slack: [#testing-commons](https://kubernetes.slack.com/messages/testing-commons)
 - **Meetings:**
-  - Testing Commons: [Fridays at 13:00 PT (Pacific Time)](https://zoom.us/j/790505720) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+  - Testing Commons: [Fridays at 13:00 PT (Pacific Time)](https://zoom.us/j/790505720?pwd=VThEeVJqTnFPY0o1bDFZQk1ZRjJLQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit).
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects

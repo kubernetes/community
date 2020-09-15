@@ -29,19 +29,22 @@ channels:
   - name: chairs-and-techleads
   - name: chartcenter
   - name: chartmuseum
-  - name: charts 
+  - name: charts
   - name: cka-exam-prep
   - name: ckad-exam-prep
+  - name: cks-exam-prep
   - name: client-go-docs
   - name: cluster-addons
   - name: cluster-api
   - name: cluster-api-aws
+  - name: cluster-api-aws-alerts
   - name: cluster-api-azure
   - name: cluster-api-baremetal
   - name: cluster-api-digitalocean
   - name: cluster-api-docker
     archived: true
   - name: cluster-api-openstack
+  - name: cluster-api-packet
   - name: cluster-api-vsphere
   - name: cn-dev
   - name: cn-events
@@ -50,6 +53,7 @@ channels:
   - name: compliance-hipaa
   - name: contour
   - name: contributor-summit
+  - name: craft
   - name: crash-diagnostics
   - name: crd-installation
   - name: crio
@@ -93,6 +97,7 @@ channels:
   - name: gitops
   - name: gke
   - name: gloo
+  - name: grafana-operator
   - name: helm-chart-testing
   - name: helm-deprecated
     archived: true
@@ -124,6 +129,7 @@ channels:
   - name: jp-users-novice
   - name: jsonnet
   - name: k14s
+  - name: kalm
   - name: kaniko
   - name: k8s-dual-stack
   - name: k8s-infra-alerts
@@ -209,6 +215,7 @@ channels:
   - name: malta-users
   - name: meet-our-contributors
   - name: meetup-athens
+  - name: meetup-atlanta
   - name: meetup-austin
   - name: meetup-bayarea
   - name: meetup-bordeaux
@@ -250,6 +257,7 @@ channels:
     archived: true
   - name: ncw-staff
   - name: nl-users
+  - name: node-feature-discovery
   - name: node-problem-detector
   - name: norw-users
   - name: octant
@@ -274,6 +282,7 @@ channels:
   - name: pr-reviews
   - name: prometheus
   - name: prometheus-operator
+  - name: prometheus-operator-dev
   - name: prow
   - name: prow-alerts
   - name: pt_br-users
@@ -290,8 +299,10 @@ channels:
   - name: se-users
   - name: sealed-secrets
   - name: seccomp-operator
+  - name: service-binding-operator
   - name: shippable
   - name: shipper
+  - name: shipwright
   - name: shoutouts
   - name: sig-api-machinery
   - name: sig-apps
@@ -316,6 +327,7 @@ channels:
   - name: sig-node-rkt
   - name: sig-scalability
   - name: sig-scheduling
+  - name: sig-security
   - name: sig-service-catalog
   - name: sig-testing
   - name: sig-ui
@@ -369,6 +381,7 @@ channels:
   - name: wg-k8s-infra
   - name: wg-lts
   - name: wg-machine-learning
+    archived: true
   - name: wg-multitenancy
   - name: wg-naming
   - name: wg-onprem

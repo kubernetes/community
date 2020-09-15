@@ -65,7 +65,8 @@ authority and enforcement to this committee. The committee can, at its
 discretion, delegate some authority to those tasked with enforcement.*
 
 ## Election
-TODO: Our election processes will be outlined in a separate document, coming soon.
+
+See [elections](https://github.com/kubernetes/community/blob/master/committee-code-of-conduct/election.md)
 
 ## Committee Operation
 The committee strives to respond quickly to reports, as well as initiate

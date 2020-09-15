@@ -1,6 +1,7 @@
 ---
 title: "Getting Started"
 weight: 1
+aliases: [ "/guide" ]
 description:
   A small list of things that you should read and be familiar with before you
   get started with contributing. This includes such things as signing the
@@ -88,8 +89,8 @@ Information about these and other community events is available on the CNCF [eve
 
 ### Meetups
 
-We follow the general [Cloud Native Computing Foundation guidelines](https://github.com/cncf/meetups) for Meetups.
-You may also contact Paris Pittman via direct message on Kubernetes Slack (@paris) or by email (parispittman@google.com)
+We follow the general [Cloud Native Computing Foundation guidelines](https://github.com/cncf/communitygroups) for Meetups.
+You may also contact CNCF Staff driving the Community Groups (previously known as Meetups) program by email (meetups@cncf.io)
 
 ## Mentorship
 

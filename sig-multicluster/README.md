@@ -22,8 +22,12 @@ The [charter](charter.md) defines the scope and governance of the Multicluster S
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Jeremy Olmsted-Thompson (**[@jeremyot](https://github.com/jeremyot)**), Google
 * Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
-* Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
+
+## Emeritus Leads
+
+* Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**)
 
 ## Contact
 - Slack: [#sig-multicluster](https://kubernetes.slack.com/messages/sig-multicluster)
@@ -53,6 +57,9 @@ The following [subprojects][subproject-definition] are owned by sig-multicluster
 ### kubemci
 - **Owners:**
   - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
+### mcs-api
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

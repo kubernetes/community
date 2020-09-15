@@ -85,33 +85,124 @@ additions.
 
 ## Mailing list creation
 
-Create a Google Group at https://groups.google.com/forum/#!creategroup,
-following the below procedure:
-- Each SIG must have two discussion groups with the following settings.
-  - `kubernetes-sig-<foo>` (the discussion group):
-    - Group type: Email list
-    - Group visibility: Anyone on the web
-    - View topics: Anyone on the web
-    - Post: Owners of the group, Managers of the group, All members of the group. Ensure that "Anyone on the web" is NOT selected here. 
-    - Join the group: Anyone on the web
-  - `kubernetes-sig-<foo>-leads` (list for the leads, to be used with Zoom and
-    Calendars)
-    - Group type: Email list
-    - Group visibility: All members of the group
-    - View topics: All members of the group
-    - Post: Owners of the group, Managers of the group, All members of the group. Ensure that "Anyone on the web" is NOT selected here. 
-    - Join the group: Only invited users
-    
-- Groups should be created as e-mail lists with at least three owners and must
-  include the [Mailing list owners](#mailing-list-owners).
--  To add the owners, visit the **Group Settings** (drop-down menu on the right
-   side), select **Members**, then **Direct Add Members** on the left side and add them via their email address (with a suitable welcome message). Do NOT forget to invite contributors@kubernetes.io in addition to your leads.
-- In **Members/All Members** select the [Mailing list owners] and assign them
-  to the **owner role**.
-- Set the following permissions to **Public**:
-  - **View topics**
-  - **Post**
-  - **Join the Group**
+All SIGs and WGs need two discussion groups: one for leads/chairs, and one for members. 
+
+### Prerequisites
+
+- An email account that can create google groups and add members external to your organization to a google group mailing list. **This might not be possible with your employer's email account**. You might need to use a personal email account.
+- At least 3 mailing list owners (leads), in addition to contributors@kubernetes.io
+- Familiarity with the [moderation guidelines] for the project and [moderation queue]s. Chairs should be cognizant that a new group will require
+an initial time investment moderation-wise as the group establishes itself.
+
+
+### Create the leads and members mailing lists
+
+> **Note:** You will need follow these steps twice! Once for the leads mailing list, and again for the members mailing list.
+
+1. Navigate to https://groups.google.com/forum/#!creategroup and fill out the **Enter group info** form as follows:
+
+  | Field | Leads ML value | Members ML value | 
+  | --- | --- | --- |
+  | **Group name** | `kubernetes-sig-<foo>-leads` | `kubernetes-sig-<foo>` | 
+  | **Group email address** | Leave as-is | Leave as-is
+  | **Group description** | Leads ML for Kubernetes SIG Foo | Members ML for Kubernetes SIG Foo |
+
+  Click **Next**. 
+2. Fill out the the **Choose privacy settings** with these options: 
+  
+  | Field | Leads ML value | Members ML value | 
+  | --- | --- | --- |
+  | **Who can see the group** | Group members | Anyone on the web | 
+  | **Who can join group** | Invited users only | Anyone on the web | 
+  | **Who can view conversations** | Group members | Anyone on the web | 
+  | **Who can post** | Anyone on the web | Anyone on the web |
+  | **Who can view members** | Group members | Group members | 
+
+  Click **Next**. 
+  
+3. Fill out the **Add members** form as follows:
+
+  | Field | Leads ML value | Members ML value | 
+  | --- | --- | --- |
+  | **Group owners** | All SIG/WG leads and contributors@kubernetes.io | All SIG/WG leads and contributors@kubernetes.io | 
+  
+  > **Note:** You can add new owners to a mailing list at any time in the **People > Members** screen.
+  
+  Leave all other fields as-is. Click **Next.**
+  
+4. Once the group is created, navigate to your group in the Google Groups UI and go to **Group settings** to continue setting up permissions. Set the following settings:
+  
+  **Member Privacy**
+  
+  | Field | Leads ML value | Members ML value | 
+  | --- | --- | --- |
+  | **Identification required for new members** | Either display name or Google profile | Either display name or Google profile |
+  | **Who can view the member's email addresses?** | Group managers | Group managers |
+  
+  **Posting policies** 
+  
+  | Field | Leads ML value | Members ML value | 
+  | --- | --- | --- |
+  | **Conversation history** | On | On |
+  | **Who can moderate content** | Group managers | Group managers | 
+  | **Who can moderate metadata** | Group members | Group members |
+  | **Who can post as the group** | Group owners | Group owners | 
+  | **Message moderation** | No moderation | Moderate messages from non-members | 
+  | **New member restrictions** | No posting restriction for new members | New member posts are moderated |
+
+  **Email options** 
+  
+  | Field | Leads ML value | Members ML value | 
+  | --- | --- | --- |
+  | **Subject prefix** | `[k8s-sig-<foo>-leads]` | `[k8s-sig-<foo>]` |
+  | **Email footer** | Include the standard Groups footer | Include the standard Groups footer |
+  | **Group email language** | English (or your group's default language) | English (or your group's default language) |
+  
+  **Member moderation** 
+  
+  | Field | Leads ML value | Members ML value | 
+  | --- | --- | --- |
+  | **Who can manage members** | Group managers | Group managers |
+  | **Who can adjust roles** | Group managers | Group managers
+
+5.  Click **Save changes**. 
+
+
+
+
+  
+## Set up shared calendars and meeting with a mailing list  
+
+Once you've set up your SIG/WG mailing list, you'll need to: 
+- Share a calendar with meeting invites on it with the mailing list 
+- Share a meeting notes google doc with the mailing list 
+
+### Prerequisites 
+
+- A member's google group.
+- A shared calendar.
+  > **Note:** Like with mailing lists, your organization's permissions might not let you share calendars with the correct permissions. You might need to use a personal email address.
+  
+### Sharing the calendar with the google group
+
+You must share the meeting calendar with the following people:
+- All leads (individually)
+- The kubernetes-sig-foo-leads mailing list
+- contributors@kubernetes.io 
+- The kubernetes-sig-foo (members) mailing list
+
+1. In Google Calendar, click on the calendar's **...** menu and select **Settings and sharing**.
+2. In **Access permissions**, check **Make available to public**.
+3. Under **Share with specific people, do the following:**
+  - For each lead, contributors@kubernetes.io, and kubernetes-sig-foo-leads@googlegroups.com:
+    1. Add their email
+    2. Give them the permission **Make changes and manage sharing**. 
+  - For kubernetes-sig-foo@googlegroups.com, add them and give them the permission **See all event details**.
+
+> **Note:** You need to add the member's mailing list as a guest to any meeting invites on the shared calendar for an invite to be sent to members of the group.
+
+## Sharing the meeting notes with the google group
+
 - Create and share your _"meeting notes"_ Google doc with the following
   permissions settings:
   - **Can edit** for members of the newly created Mailing List.
@@ -120,32 +211,6 @@ following the below procedure:
     employer organization policy, this may not be possible to configure. The
     document should be copied over to an account without the restriction and 
     include the owner reference at the top of the document.
-
-Familiarize yourself with the [moderation guidelines] for the project and create
-a [moderation queue]. Chairs should be cognizant that a new group will require
-an initial time investment moderation-wise as the group establishes itself.
-
-### Visibility
-
-If you need to ensure that an existing group is visible to the internet. 
-
-Near the top right, click **Manage group**.
-- **Information** -> **Group Visibility** -> **Edit the setting to set the desired visibility for your group.** -> **Save**.
-
-### Create moderation queue
-
-The moderation queue will direct all new user messages to the a moderation
-queue before being posted to the Mailing List.
-
-- From the Google Groups management page goto **Settings** -> **Moderation**.
-- Configure the following settings:
-  - Leave "Moderate all messages to the group" off
-  - New member restrictions: New member posts are moderated
-  - Rejected author notification: Checked, use this text:
-      ```
-      Since you're a new subscriber you're in a moderation queue, sorry for the inconvenience, a moderator will check your message shortly.
-      ```
-  - Spam messages: Send them to moderation queue and send notification to moderators.
 
 ### Archive a mailing list
 

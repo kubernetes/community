@@ -1,4 +1,4 @@
-# Kubernetes Resource Management
+# The Kubernetes Resource Model (KRM)
 
 > This article was authored by Brian Grant (bgrant0607) on 2/20/2018. The original Google Doc can be found [here](https://docs.google.com/document/d/1RmHXdLhNbyOWPW_AtnnowaRfGejw-qlKQIuLKQWlwzs/edit#).
 
@@ -8,7 +8,7 @@ At the center of the Kubernetes control plane is the [apiserver](https://kuberne
 
 ![apiserver](./images/apiserver.png)
 
-With the growth in functionality over the past four years, the number of built-in APIs grown by more than an order of magnitude. Moreover, Kubernetes now supports multiple API extension mechanisms that are not only used to add new functionality to Kubernetes itself, but provide frameworks for constructing an ecosystem of components, such as [Operators](https://coreos.com/operators/), for managing applications, platforms, infrastructure, and other things beyond the scope of Kubernetes itself. In addition to providing an overview of the common behaviors of built-in Kubernetes API resources, this document attempts to explain the assumptions, expectations, principles, conventions, and goals of the **Kubernetes Resource Model** so as to foster consistency and interoperability within that ecosystem as the uses of its API mechanisms and patterns expand. Any API using the same mechanisms and patterns will automatically work with any libraries and tools (e.g., CLIs, UIs, configuration, deployment, workflow) that have already integrated support for the model, which means that integrating support for N APIs implemented using the model in M tools is merely O(M) work rather than O(NM) work.
+With the growth in functionality over the past four years, the number of built-in APIs grown by more than an order of magnitude. Moreover, Kubernetes now supports multiple API extension mechanisms that are not only used to add new functionality to Kubernetes itself, but provide frameworks for constructing an ecosystem of components, such as [Operators](https://coreos.com/operators/), for managing applications, platforms, infrastructure, and other things beyond the scope of Kubernetes itself. In addition to providing an overview of the common behaviors of built-in Kubernetes API resources, this document attempts to explain the assumptions, expectations, principles, conventions, and goals of the **Kubernetes Resource Model (KRM)** so as to foster consistency and interoperability within that ecosystem as the uses of its API mechanisms and patterns expand. Any API using the same mechanisms and patterns will automatically work with any libraries and tools (e.g., CLIs, UIs, configuration, deployment, workflow) that have already integrated support for the model, which means that integrating support for N APIs implemented using the model in M tools is merely O(M) work rather than O(NM) work.
 
 ## Declarative control
 

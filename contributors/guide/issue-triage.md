@@ -232,9 +232,6 @@ These should be directed to the following:
 * [User documentation](https://kubernetes.io/docs/home/) and
 [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
 
-* [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes) and
-[ServerFault](http://serverfault.com/questions/tagged/kubernetes)
-
 * [Slack](https://kubernetes.slack.com) ([registration](http://slack.k8s.io))
 
 * [Discussion forums](https://discuss.kubernetes.io)
@@ -242,11 +239,10 @@ These should be directed to the following:
 ### User Support Response: Example
 
 If you see support questions on kubernetes-dev@googlegroups.com or issues asking for
-support, try to redirect them to Stack Overflow. Example response:
+support, try to redirect them to Discuss. Example response:
 
 ```code
-Please re-post your question to [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
-or our [Discussion Forums](https://discuss.kubernetes.io).
+Please re-post your question to our [Discussion Forums](https://discuss.kubernetes.io).
 
 We are trying to consolidate the channels to which questions for help/support
 are posted so that we can improve our efficiency in responding to your requests,
@@ -258,7 +254,7 @@ thread only in one place or, worse, spread across multiple forums. Also, the
 large volume of support issues on GitHub is making it difficult for us to use
 issues to identify real bugs.
 
-Members of the Kubernetes community use Stack Overflow and Discussion Forums to field
+Members of the Kubernetes community use Discussion Forums to field
 support requests. Before posting a new question, please search these for answers
 to similar questions, and also familiarize yourself with:
 
