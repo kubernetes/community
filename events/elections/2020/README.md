@@ -133,7 +133,9 @@ to the address on file at the start of the election from "Kubernetes (CIVS Poll
 Supervisor) `<civs@cs.cornell.edu>`, please add to the list of addresses you don't spam filter. Detailed
 voting instructions will be addressed in email and the CIVS polling page. Please
 note that email ballots might be unreliable, so you are encouraged to contact
-the election officials if you do not receive a ballot by September 29.
+the election officials if you do not receive a ballot by September 17.
+
+If you do not receive your ballot, request a new one via the [Ballot Replacement Form].
 
 ### Officers
 
@@ -196,3 +198,4 @@ the [Steering Committee Election Charter]
 [devstats-sql]: https://github.com/cncf/devstats/blob/master/metrics/shared/project_developer_stats.sql
 [devstats-dashboard]: https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All
 [Org Member]: https://github.com/kubernetes/community/blob/master/community-membership.md
+[Ballot Replacement Form]: https://www.surveymonkey.com/r/kubernetes-sc-2020-ballot
