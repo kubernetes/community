@@ -2623,7 +2623,7 @@ workinggroups:
     time: "8:30"
     tz: PT (Pacific Time)
     frequency: bi-weekly
-    url: https://zoom.us/j/8152322659
+    url: https://zoom.us/j/8152322659?pwd=UWc3UFdoT0xlMTRQTEZFNzZBSE4rdz09
     archive_url: http://bit.ly/wg-k8s-infra-notes
     recordings_url: http://bit.ly/wg-k8s-infra-playlist
   contact:
