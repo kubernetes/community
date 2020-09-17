@@ -111,6 +111,7 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
 ### server-sdk
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-builder-alpha/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-runtime/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder-declarative-pattern/master/OWNERS
