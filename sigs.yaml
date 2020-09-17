@@ -121,6 +121,7 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubebuilder
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-builder-alpha/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-runtime/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder-declarative-pattern/master/OWNERS
