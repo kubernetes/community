@@ -364,6 +364,14 @@ Conditions are most useful when they follow some consistent conventions:
   ("Deploying"). Intermediate states may be indicated by setting the status of
   the condition to `Unknown`.
 
+  * For state transitions which take a long period of time, use a condition
+    which indicates that the transition succeeded ("Provisioned" or
+    "SizeAllocated") with an intermediate state of `Unknown`. Note that this
+    pattern makes an explicit distinction between "condition not set" (which
+    means the reconciler hasn't seen the latest state) and "condition set to
+    Unknown" (which means that the reconciler has seen the state but hasn't
+    finished the reconciliation).
+
 * When designing Conditions for a resource, it's helpful to have a common
   top-level condition which summarizes more detailed conditions. Simple
   consumers may simply query the top-level condition. Although they are not a
