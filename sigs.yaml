@@ -121,6 +121,7 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubebuilder
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-builder-alpha/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-runtime/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder-declarative-pattern/master/OWNERS
@@ -1407,7 +1408,14 @@ sigs:
     time: "9:30"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/5342565819
+    url: https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09
+    archive_url: https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing
+  - description: Regular Triage Meeting
+    day: Wednesday
+    time: "9:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09
     archive_url: https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing
   contact:
     slack: sig-instrumentation
