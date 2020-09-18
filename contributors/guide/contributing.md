@@ -9,7 +9,7 @@ description: |
 
 - [Communication](#communication)
 - [GitHub workflow](#github-workflow)
-- [Open a Pull Request](#open-a-pull-request)
+- [Open a Pull Request](#opening-a-pull-request)
 - [Code Review](#code-review)
 - [Best Practices](#best-practices)
 - [Testing](#testing)
