@@ -11,6 +11,7 @@ The eligible voter process can be found in the [2020 elections folder](/events/e
 - **2020-09-03** - 3 more voters added per exception requests
 - **2020-09-09** - 2 more voters who filed exception requests added
 - **2020-09-14** - Re-added voter approved on 9/3 who was omitted in error
+- **2020-09-18** - Fixed one more voter who should have been included
 
 ---
 
@@ -38,6 +39,7 @@ Because of having IDs appear with different upper casing in different sources, G
 - adisky
 - adohe
 - adrianludwin
+- aevaonline
 - afbjorklund
 - ahg-g
 - ahmad-diaa
