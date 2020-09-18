@@ -2000,7 +2000,8 @@ sigs:
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-security
   subprojects:
   - name: community-discussion-groups
-    description: "Community Discussion Groups \n"
+    description: |
+      Community Discussion Groups
     owners: []
   - name: security-audit
     description: |
