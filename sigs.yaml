@@ -1980,15 +1980,12 @@ sigs:
   label: security
   leadership:
     chairs:
-    - github: aasmall
-      name: Aaron Small
-      company: Invitae
-    - github: cji
-      name: Craig Ingram
-      company: Stripe
-    - github: jaybeale
-      name: Jay Beale
-      company: InGuardians
+    - github: iancoldwater
+      name: Ian Coldwater
+      company: Salesforce
+    - github: tabbysable
+      name: Tabitha Sable
+      company: Datadog
   meetings:
   - description: Regular SIG Meeting
     day: Monday
@@ -1997,19 +1994,19 @@ sigs:
     frequency: biweekly
     url: https://zoom.us/j/8416212023
     archive_url: https://docs.google.com/document/d/1GgmmNYN88IZ2v2NBiO3gdU8Riomm0upge_XNVxEYXp0/edit?usp=sharing
-    recordings_url: tba
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1mXOLAc9ti0oX8s_ookQCi
   contact:
     slack: sig-security
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-security
   subprojects:
   - name: community-discussion-groups
-    description: "Community Discussion Groups \n"
+    description: |
+      Community Discussion Groups
     owners: []
   - name: security-audit
     description: |
       Third Party Security Audit
-    owners:
-    - https://github.com/kubernetes/community/blob/master/wg-security-audit/OWNERS
+    owners: []
   - name: security-documents
     description: |
       Security Documents and Documentation.
