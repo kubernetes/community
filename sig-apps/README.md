@@ -23,9 +23,9 @@ The [charter](charter.md) defines the scope and governance of the Apps Special I
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
-* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Google
-* Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Samsung SDS
-* Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), VMware
+* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Brex
+* Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Rancher Labs
+* Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), Brex
 
 ## Contact
 - Slack: [#sig-apps](https://kubernetes.slack.com/messages/sig-apps)

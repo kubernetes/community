@@ -8,24 +8,22 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Security Special Interest Group
 
-Covers horizontal security initiatives for the Kubernetes project, including  regular security audits, the vulnerability management process, cross-cutting  security documentation, and security community management.
+Covers horizontal security initiatives for the Kubernetes project, including regular security audits, the vulnerability management process, cross-cutting security documentation, and security community management.
 
 The [charter](charter.md) defines the scope and governance of the Security Special Interest Group.
 
 ## Meetings
 * Regular SIG Meeting: [Mondays at 12:00 PT (Pacific Time)](https://zoom.us/j/8416212023) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1GgmmNYN88IZ2v2NBiO3gdU8Riomm0upge_XNVxEYXp0/edit?usp=sharing).
-  * [Meeting recordings](tba).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1mXOLAc9ti0oX8s_ookQCi).
 
 ## Leadership
 
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Aaron Small (**[@aasmall](https://github.com/aasmall)**), Invitae
-* Craig Ingram (**[@cji](https://github.com/cji)**), Stripe
-* Jay Beale (**[@jaybeale](https://github.com/jaybeale)**), InGuardians
-* Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
+* Ian Coldwater (**[@iancoldwater](https://github.com/iancoldwater)**), Salesforce
+* Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
 
 ## Contact
 - Slack: [#sig-security](https://kubernetes.slack.com/messages/sig-security)
@@ -41,7 +39,6 @@ Community Discussion Groups
 ### security-audit
 Third Party Security Audit
 - **Owners:**
-  - https://github.com/kubernetes/community/blob/master/wg-security-audit/OWNERS
 ### security-documents
 Security Documents and Documentation.
 - **Owners:**

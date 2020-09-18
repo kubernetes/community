@@ -26,10 +26,10 @@ sigs:
       company: Google
   meetings:
   - description: Kubebuilder and Controller Runtime Meeting
-    day: Wednesday
-    time: "10:00"
+    day: Thursday
+    time: "09:00"
     tz: PT (Pacific Time)
-    frequency: monthly - second Wednesday every month
+    frequency: biweekly
     archive_url: https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing
   - description: Regular SIG Meeting
     day: Wednesday
@@ -121,6 +121,7 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubebuilder
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-builder-alpha/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-runtime/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/controller-runtime/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/controller-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/kubebuilder-declarative-pattern/master/OWNERS
@@ -154,13 +155,13 @@ sigs:
       company: Google
     - github: kow3ns
       name: Kenneth Owens
-      company: Google
+      company: Brex
     - github: mattfarina
       name: Matt Farina
-      company: Samsung SDS
+      company: Rancher Labs
     - github: prydonius
       name: Adnan Abdulhussein
-      company: VMware
+      company: Brex
   meetings:
   - description: Regular SIG Meeting
     day: Monday
@@ -608,7 +609,7 @@ sigs:
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/288426795
+    url: https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09
     archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
   contact:
@@ -690,7 +691,7 @@ sigs:
     time: "13:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/508079177
+    url: https://zoom.us/j/508079177?pwd=ZmEvMksxdTFTc0N1eXFLRm91QUlyUT09
     archive_url: https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3dXLcYbRKCbpPCN-8CDFAB
   contact:
@@ -865,66 +866,12 @@ sigs:
     - github: roberthbailey
       name: Robert Bailey
   meetings:
-  - description: Cluster API (AWS implementation) office hours
-    day: Monday
-    time: "10:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/423312508
-    archive_url: https://docs.google.com/document/d/1ojR0jooQaHEuz3gGW6DxcZlsws9ZX7jHPC8walm1G3A/edit
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
-  - description: Cluster API Provider Azure office hours
-    day: Thursday
-    time: "08:00"
-    tz: PT (Pacific Time)
-    frequency: bi-weekly
-    url: https://zoom.us/j/566930821
-    archive_url: http://bit.ly/k8s-capz-agenda
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
-  - description: Cluster API Provider DigitalOcean office hours
-    day: Thursday
-    time: "09:00"
-    tz: PT (Pacific Time)
-    frequency: monthly, second Thursday of the month
-    url: https://zoom.us/j/91312171751?pwd=dFRsM3pvV3BKQUM0WXhyd2twZUlnZz09
-    archive_url: http://bit.ly/k8s-capdo-agenda
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
-  - description: Cluster API office hours
-    day: Wednesday
-    time: "10:00"
-    tz: PT (Pacific Time)
-    frequency: weekly
-    url: https://zoom.us/j/861487554
-    archive_url: https://docs.google.com/document/d/1fQNlqsDkvEggWFi51GVxOglL2P1Bvo2JhZlMhm2d-Co/edit
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
-  - description: Cluster Addons meeting
-    day: Tuesday
-    time: "09:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/130096731
-    archive_url: https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit
-  - description: Image Builder office hours
-    day: Thursday
-    time: "08:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/807524571
-    archive_url: https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
-  - description: Kubespray Office Hours
-    day: Wednesday
-    time: "08:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/532465189
-    archive_url: https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit
   - description: Regular SIG Meeting
     day: Tuesday
     time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/916523531
+    url: https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09
     archive_url: https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - description: Regular SIG Meeting in China
@@ -932,37 +879,8 @@ sigs:
     time: "20:00"
     tz: Beijing
     frequency: biweekly
-    url: https://zoom.us/j/179916854
+    url: https://zoom.us/j/179916854?pwd=dzRhbjFnRGVQRDVUVHY1a29JV2JxUT09
     archive_url: https://shimo.im/docs/YcoaYlvRmIYcrwnd
-  - description: etcdadm Office Hours
-    day: Monday
-    time: "09:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/612375927
-    archive_url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit
-  - description: kops Office Hours
-    day: Friday
-    time: "09:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/my/k8ssigaws
-    archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
-  - description: kubeadm Office Hours
-    day: Wednesday
-    time: "09:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/179916854
-    archive_url: https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
-  - description: minikube Office Hours
-    day: Monday
-    time: "11:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/97017029363
-    archive_url: https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit
   contact:
     slack: sig-cluster-lifecycle
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
@@ -982,21 +900,65 @@ sigs:
       slack: cluster-addons
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-addons/master/OWNERS
+    meetings:
+    - description: Cluster Addons meeting
+      day: Tuesday
+      time: "09:00"
+      tz: PT (Pacific Time)
+      frequency: biweekly
+      url: https://zoom.us/j/130096731?pwd=U3pzWloxZ0lpbEtadTZGSERRdENrZz09
+      archive_url: https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit
   - name: cluster-api
     contact:
       slack: cluster-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-bootstrap-provider-kubeadm/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
+    meetings:
+    - description: Cluster API office hours
+      day: Wednesday
+      time: "10:00"
+      tz: PT (Pacific Time)
+      frequency: weekly
+      url: https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09
+      archive_url: https://docs.google.com/document/d/1fQNlqsDkvEggWFi51GVxOglL2P1Bvo2JhZlMhm2d-Co/edit
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-aws
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
+    meetings:
+    - description: Cluster API (AWS implementation) office hours
+      day: Monday
+      time: "10:00"
+      tz: PT (Pacific Time)
+      frequency: biweekly
+      url: https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09
+      archive_url: https://docs.google.com/document/d/1ojR0jooQaHEuz3gGW6DxcZlsws9ZX7jHPC8walm1G3A/edit
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-azure
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
+    meetings:
+    - description: Cluster API Provider Azure office hours
+      day: Thursday
+      time: "08:00"
+      tz: PT (Pacific Time)
+      frequency: bi-weekly
+      url: https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09
+      archive_url: http://bit.ly/k8s-capz-agenda
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-digitalocean
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
+    meetings:
+    - description: Cluster API Provider DigitalOcean office hours
+      day: Thursday
+      time: "09:00"
+      tz: PT (Pacific Time)
+      frequency: monthly, second Thursday of the month
+      url: https://zoom.us/j/91312171751?pwd=bndnMDdJMkhySDVncjZoR1VhdFBTZz09
+      archive_url: http://bit.ly/k8s-capdo-agenda
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-docker
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-docker/master/OWNERS
@@ -1023,7 +985,7 @@ sigs:
       time: "10:00"
       tz: PT (Pacific Time)
       frequency: biweekly starting Thursday June 25th, 2020
-      url: https://zoom.us/j/875399243
+      url: https://zoom.us/j/92253194848?pwd=cVVVNDMxeTl1QVJPUlpvLzNSVU1JZz09
       archive_url: https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu
   - name: etcdadm
@@ -1031,12 +993,37 @@ sigs:
       slack: etcdadm
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
+    meetings:
+    - description: etcdadm Office Hours
+      day: Monday
+      time: "09:00"
+      tz: PT (Pacific Time)
+      frequency: biweekly
+      url: https://zoom.us/j/612375927?pwd=MldxRnRSOExCVW1rbjM4ZzBSc3MvUT09
+      archive_url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit
   - name: image-builder
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/image-builder/master/OWNERS
+    meetings:
+    - description: Image Builder office hours
+      day: Thursday
+      time: "08:00"
+      tz: PT (Pacific Time)
+      frequency: biweekly
+      url: https://zoom.us/j/807524571?pwd=WEFTeDJzeWU3bVFkcWQ0UEdZRkRCdz09
+      archive_url: https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: kops
     owners:
     - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
+    meetings:
+    - description: kops Office Hours
+      day: Friday
+      time: "09:00"
+      tz: PT (Pacific Time)
+      frequency: biweekly
+      url: https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09
+      archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
   - name: kube-aws
     contact:
       slack: kube-aws
@@ -1053,16 +1040,41 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
     - https://raw.githubusercontent.com/kubernetes/system-validators/master/OWNERS
+    meetings:
+    - description: kubeadm Office Hours
+      day: Wednesday
+      time: "09:00"
+      tz: PT (Pacific Time)
+      frequency: biweekly
+      url: https://zoom.us/j/179916854?pwd=dzRhbjFnRGVQRDVUVHY1a29JV2JxUT09
+      archive_url: https://docs.google.com/document/d/1ONcoy8bOw8SWPUwXxnKeRZST3lnUxYpUv4Y6466h9Ek/edit
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: kubespray
     contact:
       slack: kubespray
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
+    meetings:
+    - description: Kubespray Office Hours
+      day: Wednesday
+      time: "08:00"
+      tz: PT (Pacific Time)
+      frequency: biweekly
+      url: https://zoom.us/j/532465189?pwd=THMvL2MzdjZXWG55eHpJMkU2dkI1dz09
+      archive_url: https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit
   - name: minikube
     contact:
       slack: minikube
     owners:
     - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
+    meetings:
+    - description: minikube office hours
+      day: Monday
+      time: "11:00"
+      tz: PT (Pacific Time)
+      frequency: biweekly
+      url: https://zoom.us/j/97017029363?pwd=U3MvZ3pMMHM5eWorSjgzUnd5OEFtUT09
+      archive_url: https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit
 - dir: sig-contributor-experience
   name: Contributor Experience
   mission_statement: >
@@ -1396,7 +1408,14 @@ sigs:
     time: "9:30"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/5342565819
+    url: https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09
+    archive_url: https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing
+  - description: Regular Triage Meeting
+    day: Wednesday
+    time: "9:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09
     archive_url: https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing
   contact:
     slack: sig-instrumentation
@@ -1953,26 +1972,20 @@ sigs:
 - dir: sig-security
   name: Security
   mission_statement: >
-    Covers horizontal security initiatives for the Kubernetes project, including 
-    regular security audits, the vulnerability management process, cross-cutting 
-    security documentation, and security community management.
+    Covers horizontal security initiatives for the Kubernetes project, including regular
+    security audits, the vulnerability management process, cross-cutting security
+    documentation, and security community management.
 
   charter_link: charter.md
   label: security
   leadership:
     chairs:
-    - github: aasmall
-      name: Aaron Small
-      company: Invitae
-    - github: cji
-      name: Craig Ingram
-      company: Stripe
-    - github: jaybeale
-      name: Jay Beale
-      company: InGuardians
-    - github: joelsmith
-      name: Joel Smith
-      company: Red Hat
+    - github: iancoldwater
+      name: Ian Coldwater
+      company: Salesforce
+    - github: tabbysable
+      name: Tabitha Sable
+      company: Datadog
   meetings:
   - description: Regular SIG Meeting
     day: Monday
@@ -1981,19 +1994,19 @@ sigs:
     frequency: biweekly
     url: https://zoom.us/j/8416212023
     archive_url: https://docs.google.com/document/d/1GgmmNYN88IZ2v2NBiO3gdU8Riomm0upge_XNVxEYXp0/edit?usp=sharing
-    recordings_url: tba
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1mXOLAc9ti0oX8s_ookQCi
   contact:
     slack: sig-security
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-security
   subprojects:
   - name: community-discussion-groups
-    description: "Community Discussion Groups \n"
+    description: |
+      Community Discussion Groups
     owners: []
   - name: security-audit
     description: |
       Third Party Security Audit
-    owners:
-    - https://github.com/kubernetes/community/blob/master/wg-security-audit/OWNERS
+    owners: []
   - name: security-documents
     description: |
       Security Documents and Documentation.
@@ -2378,8 +2391,7 @@ sigs:
 - dir: sig-windows
   name: Windows
   mission_statement: >
-    Focuses on supporting Windows Node and scheduling Windows Server containers on
-    Kubernetes.
+    Focuses on supporting Windows Node and scheduling Windows containers on Kubernetes.
 
   charter_link: charter.md
   label: windows
@@ -2407,7 +2419,7 @@ sigs:
     time: "12:30"
     tz: Eastern Time (ET)
     frequency: weekly
-    url: https://zoom.us/j/297282383
+    url: https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09
     archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4
   contact:
@@ -2616,7 +2628,7 @@ workinggroups:
     time: "8:30"
     tz: PT (Pacific Time)
     frequency: bi-weekly
-    url: https://zoom.us/j/8152322659
+    url: https://zoom.us/j/8152322659?pwd=UWc3UFdoT0xlMTRQTEZFNzZBSE4rdz09
     archive_url: http://bit.ly/wg-k8s-infra-notes
     recordings_url: http://bit.ly/wg-k8s-infra-playlist
   contact:

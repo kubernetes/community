@@ -73,10 +73,8 @@ aliases:
     - Huang-Wei
     - ahg-g
   sig-security-leads:
-    - aasmall
-    - cji
-    - jaybeale
-    - joelsmith
+    - iancoldwater
+    - tabbysable
   sig-service-catalog-leads:
     - jberkhahn
     - mszostok

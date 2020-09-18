@@ -23,6 +23,7 @@ channels:
   - name: sig-docs-maintainers
   - name: sig-docs-modeling
   - name: sig-docs-release
+    archived: true
   - name: sig-docs-security
     archived: true
   - name: sig-docs-tools

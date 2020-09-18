@@ -1,11 +1,11 @@
 title: Office Hours/ Mentoring
 
-* API Machinery - 
-    * [Kubebuilder and Controller Runtime Meeting - Second Wednesday every month at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing)
-* Architecture - 
+* API Machinery -
+    * [Kubebuilder and Controller Runtime Meeting - Biweekly Thursday at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing)
+* Architecture -
     * [Production Readiness Office Hours - Biweekly Wednesday at 12:00 PT (Pacific Time)](https://docs.google.com/document/d/10QkXwiZfBL7wBKHHFslooXvGDKHA75jkkgiIXuKFryM/edit?usp=sharing)
     * [Code organization Office Hours - Biweekly Thursday at 14:00 PT (Pacific Time)](https://docs.google.com/document/d/1HtTI0rJEGP_MSf6eO87aCmx_tzpovPAAg7U2Zxwm8FE/edit#)
-* Cluster Lifecycle - 
+* Cluster Lifecycle -
     * [Cluster API (AWS implementation) office hours - Biweekly Monday at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1ojR0jooQaHEuz3gGW6DxcZlsws9ZX7jHPC8walm1G3A/edit)
     * [Cluster API office hours - Biweekly Wednesday at 10:00 PT (Pacific Time)](https://docs.google.com/document/d/1fQNlqsDkvEggWFi51GVxOglL2P1Bvo2JhZlMhm2d-Co/edit)
     * [Image Builder office hours - Biweekly Wednesday at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit)
@@ -14,7 +14,7 @@ title: Office Hours/ Mentoring
     * [kops Office Hours - Biweekly Friday at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit)
     * [kubeadm Office Hours - Biweekly Wednesday at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit)
     * [minikube Office Hours - Biweekly Monday at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit)
-* Network - 
+* Network -
     * [Service APIs Office Hours - Biweekly Wednesday at 15:00 PT (Pacific Time)](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit)
 * Testing -
     * [SIG Testing Office Hours - Biweekly Tuesday at 10:00 PT (Pacific Time)](https://bit.ly/k8s-sig-testing-notes)

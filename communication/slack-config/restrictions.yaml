@@ -29,6 +29,7 @@ restrictions:
       - "^sig-release$"
       - "^release-"
     usergroups:
+      - "^sig-release-"
       - "^release-"
   - path: "sig-network/*.yaml"
     channels:
