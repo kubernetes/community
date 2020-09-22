@@ -103,7 +103,7 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
    - [ ] Each subproject a SIG owns must transfer ownership to a new SIG, outside the project, or be retired
    - [ ] File an issue with kubernetes/org if there are multiple repos
    - [ ] Retire or transfer any test-infra jobs or testgrid dashboards, if applicable, owned by the SIG. Work with SIG-Testing on this.
-   - [ ] Migrate/Remove/Deprecate any SIG/WG labels in labels.yaml - instructions in [labels.md]
+   - [ ] Migrate/Remove/Deprecate any SIG/WG labels in labels.yaml; find instructions in [labels.md]
    - [ ] Remove or rename any GitHub teams that refer to the SIG
    - [ ] Update sigs.yaml to remove or rename
 
@@ -112,7 +112,7 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 [Creation]: #Creation
 [Retirement]: #Retirement
 [GitHub]: #GitHub
-[labels.md] /kubernetes/test-infra/blob/master/label_sync/labels.md
+[labels.md]: /kubernetes/test-infra/blob/master/label_sync/labels.md
 [sig-governance.md]: /committee-steering/governance/sig-governance.md
 [SIG charter process]: /committee-steering/governance
 [wg-governance.md]: /committee-steering/governance/wg-governance.md
