@@ -2584,14 +2584,14 @@ workinggroups:
     time: "5:00"
     tz: UTC
     frequency: every four weeks
-    url: https://zoom.us/j/760932414
+    url: https://zoom.us/j/91251176046?pwd=cmdqclovM3R3eDB1VlpuL1ZGU1hnZz09
     archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
   - description: Regular WG Meeting (Pacific Time)
     day: Wednesday
     time: "09:00"
     tz: PT
     frequency: every four weeks
-    url: https://zoom.us/j/760932414
+    url: https://zoom.us/j/92778512626?pwd=MXhlemwvYnhkQmkxeXllQ0Z5VGs4Zz09
     archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
   contact:
     slack: wg-iot-edge
