@@ -222,7 +222,7 @@ If the [Prow e2e job configuration](https://github.com/kubernetes/test-infra/blo
 
 To run a particular e2e test, simply pass the Grinkgo `It` string to the `--focus` argument.
 
-For example, suppose we have the following [test case](https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L175). We could select this test case by adding the arguement:
+For example, suppose we have the following [test case](https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L175). We could select this test case by adding the argument:
 
 ```sh
 --focus="should not show its pid in the non-hostpid containers \[NodeFeature:HostAccess\]" --skip="\[Flaky\]|\[Serial\]"
