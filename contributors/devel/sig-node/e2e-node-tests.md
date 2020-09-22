@@ -173,6 +173,26 @@ Finally, run the tests with your custom config:
 make test-e2e-node REMOTE=true IMAGE_CONFIG_FILE="<local file>" [...]
 ```
 
+Image configuration files can further influence how FOCUS and SKIP match test cases.
+
+For example:
+
+```sh
+--focus="\[NodeFeature:.+\]" --skip="\[Flaky\]|\[Serial\]"
+```
+
+runs all e2e tests labeled `"[NodeFeature:*]"` and will skip any tests labeled `"[Flaky]"` or `"[Serial]"`.
+
+Two example e2e tests that match this expression are:
+  * https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L155
+  * https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L175
+
+However, image configuration files select test cases based on the `tests` field.
+
+See https://github.com/kubernetes/test-infra/blob/4572dc3bf92e70f572e55e7ac1be643bdf6b2566/jobs/e2e_node/benchmark-config.yaml#L22-23 for an example configuration. 
+
+If the [Prow e2e job configuration](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/image-config.yaml) does **not** specify the `tests` field, FOCUS and SKIP will run as expected.
+
 # Additional test options for both remote and local execution
 
 ## Only run a subset of the tests
@@ -196,36 +216,16 @@ For example, the [`ci-kubernetes-node-kubelet`](https://github.com/kubernetes/te
 make test-e2e-node REMOTE=true FOCUS="\[NodeConformance\]" SKIP="\[Flaky\]|\[Serial\]"
 ```
 
-See [The Spec Runner](http://onsi.github.io/ginkgo/#the-spec-runner) in the Grinkgo documentation to learn more about how FOCUS and SKIP work.
-
-## Run a subset of tests using image configuration files
-
-Image configuration files can further influence FOCUS and SKIP match test cases.
-
-For example:
-
-```sh
---focus="\[NodeFeature:.+\]" --skip="\[Flaky\]|\[Serial\]"
-```
-
-runs all e2e tests labeled `"[NodeFeature:*]"` and will skip any tests labeled `"[Flaky]"` or `"[Serial]"`.
-
-Two example e2e tests that would match this expression are:
-  * https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L155
-  * https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L175
-
-However, image configuration files select test cases based on the `tests` field. See [this](https://github.com/kubernetes/test-infra/blob/4572dc3bf92e70f572e55e7ac1be643bdf6b2566/jobs/e2e_node/benchmark-config.yaml#L22-23) for an example configuration.
-
-If the [Prow e2e job configuration](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/image-config.yaml) does **not** specify the `tests` field, FOCUS and SKIP will run as expected.
+See http://onsi.github.io/ginkgo/#focused-specs in the Grinkgo documentation to learn more about how FOCUS and SKIP work.
 
 ## Run a single test
 
 To run a particular e2e test, simply pass the Grinkgo `It` string to the `--focus` argument.
 
-For example, suppose we have the following [test case](https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L175). We could select this test case by adding the argument:
+For example, suppose we have the following test case: https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L175. We could select this test case by adding the argument:
 
 ```sh
---focus="should not show its pid in the non-hostpid containers \[NodeFeature:HostAccess\]" --skip="\[Flaky\]|\[Serial\]"
+--focus="should not show its pid in the non-hostpid containers \[NodeFeature:HostAccess\]"
 ```
 
 ## Run all tests related to a feature
@@ -233,7 +233,7 @@ For example, suppose we have the following [test case](https://github.com/kubern
 In contrast, to run all node e2e tests related to the "HostAccess" feature one could run:
 
 ```sh
---focus="\[NodeFeature:HostAccess\]" --skip="\[Flaky\]|\[Serial\]"
+--focus="\[NodeFeature:HostAccess\]"
 ```
 
 ## Run tests continually until they fail
@@ -289,9 +289,9 @@ make test_e2e_node TEST_ARGS="--cgroups-per-qos=true"
 ```
 ## Testgrid
 
-TestGrid is a [publicly hosted](https://testgrid.k8s.io) and configured automated testing framework developed by Google.
+TestGrid (https://testgrid.k8s.io) is a publicly hosted and configured automated testing framework developed by Google.
 
-[Here](https://testgrid.k8s.io/sig-node-containerd#containerd-node-features) we see an example of an e2e Prow job running e2e tests. Each gray row in the grid corresponds
+Here (https://testgrid.k8s.io/sig-node-containerd#containerd-node-features) we see an example of an e2e Prow job running e2e tests. Each gray row in the grid corresponds
 to an e2e test or a stage of the job (i.e. created a VM, downloaded some files). Passed tests are colored green and failed tests are colored red.
 
 # Notes on tests run by the Kubernetes project during pre-, post- submit.
