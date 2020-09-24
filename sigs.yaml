@@ -2785,6 +2785,41 @@ workinggroups:
   contact:
     slack: wg-policy
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-policy
+- dir: wg-reliability
+  name: Reliability
+  mission_statement: >
+    Allow users to safely use Kubernetes for managing production workloads by ensuring
+    Kubernetes is stable and reliable.
+
+  stakeholder_sigs:
+  - Architecture
+  - Cluster Lifecycle
+  - Release
+  - Scalability
+  - Testing
+  label: reliability
+  leadership:
+    chairs:
+    - github: deads2k
+      name: David Eads
+      company: Red Hat
+    - github: stevekuznetsov
+      name: Steve Kuznetsov
+      company: Red Hat
+    - github: wojtek-t
+      name: Wojciech Tyczynski
+      company: Google
+  meetings:
+  - description: Regular WG Meeting
+    day: TODO
+    time: TODO
+    tz: TODO
+    frequency: biweekly
+    url: TODO
+    archive_url: TODO
+  contact:
+    slack: wg-reliability
+    mailing_list: TODO
 - dir: wg-security-audit
   name: Security Audit
   mission_statement: >
