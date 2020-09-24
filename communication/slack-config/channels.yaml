@@ -387,6 +387,7 @@ channels:
   - name: wg-onprem
     archived: true
   - name: wg-policy
+  - name: wg-reliability
   - name: wg-resource-mgmt
     archived: true
   - name: wg-security-audit
