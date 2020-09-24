@@ -364,13 +364,15 @@ Conditions are most useful when they follow some consistent conventions:
   ("Deploying"). Intermediate states may be indicated by setting the status of
   the condition to `Unknown`.
 
-  * For state transitions which take a long period of time, use a condition
-    which indicates that the transition succeeded ("Provisioned" or
-    "SizeAllocated") with an intermediate state of `Unknown`. Note that this
-    pattern makes an explicit distinction between "condition not set" (which
-    means the reconciler hasn't seen the latest state) and "condition set to
-    Unknown" (which means that the reconciler has seen the state but hasn't
-    finished the reconciliation).
+  * For state transitions which take a long period of time (rule of thumb: > 1
+    minute), it is reasonable to treat the transition itself as an observed
+    state. In these cases, the Condition (such as "Resizing") itself should not
+    be transient, and should instead be signalled using the
+    `True`/`False`/`Unknown` pattern. This allows other observers to determine
+    the last update from the controller, whether successful or failed. In cases
+    where the state transition is unable to complete and continued
+    reconciliation is not feasible, the Reason and Message should be used to
+    indicate that the transition failed.
 
 * When designing Conditions for a resource, it's helpful to have a common
   top-level condition which summarizes more detailed conditions. Simple
