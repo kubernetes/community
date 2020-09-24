@@ -91,7 +91,7 @@ format.
 
 
 Resource collections should be all lowercase and plural, whereas kinds are
-CamelCase and singular. Group names must be lower case and be valid DNS
+PascalCase and singular. Group names must be lower case and be valid DNS
 subdomains.
 
 
