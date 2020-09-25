@@ -136,11 +136,6 @@ aliases:
     - deads2k
     - stevekuznetsov
     - wojtek-t
-  wg-security-audit-leads:
-    - aasmall
-    - cji
-    - jaybeale
-    - joelsmith
   ug-big-data-leads:
     - erikerlandson
     - foxish
