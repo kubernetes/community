@@ -23,6 +23,8 @@ channels:
   - name: bindings-discuss
   - name: bootkube
   - name: brigade
+  - name: carvel
+    id: CH8KCCKA5
   - name: cdk
   - name: cert-manager
   - name: cert-manager-dev
@@ -128,8 +130,7 @@ channels:
   - name: jp-users
   - name: jp-users-novice
   - name: jsonnet
-  - name: carvel
-    id: CH8KCCKA5
+  - name: k14s
   - name: kalm
   - name: kaniko
   - name: k8s-dual-stack
