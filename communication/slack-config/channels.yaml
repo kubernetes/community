@@ -128,7 +128,8 @@ channels:
   - name: jp-users
   - name: jp-users-novice
   - name: jsonnet
-  - name: k14s
+  - name: carvel
+    id: CH8KCCKA5
   - name: kalm
   - name: kaniko
   - name: k8s-dual-stack
