@@ -1114,7 +1114,7 @@ sigs:
     time: "9:30"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://zoom.us/j/397264241
+    url: https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09
     archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
     recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   contact:
@@ -1148,7 +1148,7 @@ sigs:
       time: "5:00"
       tz: UTC
       frequency: biweekly
-      url: https://zoom.us/j/144440337
+      url: https://zoom.us/j/144440337?pwd=VEVBejdPYkE2MGdUSDZZZnVlNFdrdz09
       archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
     - description: Marketing Team Meeting
@@ -1156,7 +1156,7 @@ sigs:
       time: "8:00"
       tz: PT (Pacific Time)
       frequency: weekly
-      url: https://zoom.us/j/596959769
+      url: https://zoom.us/j/596959769?pwd=TURBNlZPb3BEWVFmbWlCYXlMVVJiUT09
       archive_url: https://docs.google.com/document/d/1KDoqbw2A6W7rLSbIRuOlqH8gkoOnp2IHHuV9KyJDD2c/edit
       recordings_url: https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: contributors-documentation
@@ -1180,14 +1180,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
     meetings:
-    - description: Events Planning Subproject
-      day: Monday
-      time: "10:00"
-      tz: PT (Pacific Time)
-      frequency: weekly
-      url: https://zoom.us/j/702991595
-      archive_url: https://docs.google.com/document/d/1oLXv5_rM4f645jlXym_Vd7AUq7x6DV-O87E6tcW1sjU/edit
-      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3SLsQMQT8Pglu1JSmxZwgk
     - description: Office Hours European Edition (Open Q&A for end-user kubernetes
         related questions)
       day: Wednesday
@@ -1221,8 +1213,8 @@ sigs:
       day: Thursday
       time: "09:30"
       tz: PT (Pacific Time)
-      frequency: monthly on 4th Thursday
-      url: https://zoom.us/j/442435463
+      frequency: Monthly on 4th Thursday
+      url: https://zoom.us/j/442435463?pwd=Rk1PWWpSSTJDaWJKdzRYb2EyTlkvZz09
       archive_url: https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: k8s.io
@@ -1238,29 +1230,13 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
     meetings:
-    - description: New Contributor Workshop Development Meeting
+    - description: Mentoring Subproject Meeting (NA/APAC)
       day: Monday
       time: "4:00"
       tz: PT
       frequency: Biweekly
-      url: https://zoom.us/j/95894431386
+      url: https://zoom.us/j/95894431386?pwd=RFdmQzlZeVZDVWJzcFVXZXR5djNwUT09
       archive_url: https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit
-      recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
-    - description: sig-contribex mentoring subproject meeting (APAC Friendly Time)
-      day: Monday
-      time: "20:30"
-      tz: PT
-      frequency: 2nd and 4th Tuesday of each month
-      url: https://zoom.us/j/94884623370
-      archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r
-      recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
-    - description: sig-contribex mentoring subproject meeting (EU/NA Friendly Time)
-      day: Tuesday
-      time: "08:30"
-      tz: PT
-      frequency: 2nd and 4th Tuesday of each month
-      url: https://zoom.us/j/98162537924
-      archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r
       recordings_url: https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: slack-infra
     description: Creates and maintains tools and automation for Kubernetes Slack.
