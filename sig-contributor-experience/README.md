@@ -13,7 +13,7 @@ Developing and sustaining a healthy community of contributors is critical to sca
 The [charter](charter.md) defines the scope and governance of the Contributor Experience Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 9:30 PT (Pacific Time)](https://zoom.us/j/397264241) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 9:30 PT (Pacific Time)](https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
   * [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 
@@ -62,10 +62,10 @@ Manages operations and policy for upstream community group communication platfor
   - https://raw.githubusercontent.com/kubernetes-sigs/discuss-theme/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
 - **Meetings:**
-  - APAC Coordinator Meeting: [Thursdays at 5:00 UTC](https://zoom.us/j/144440337) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
+  - APAC Coordinator Meeting: [Thursdays at 5:00 UTC](https://zoom.us/j/144440337?pwd=VEVBejdPYkE2MGdUSDZZZnVlNFdrdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
-  - Marketing Team Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/596959769) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
+  - Marketing Team Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/596959769?pwd=TURBNlZPb3BEWVFmbWlCYXlMVVJiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1KDoqbw2A6W7rLSbIRuOlqH8gkoOnp2IHHuV9KyJDD2c/edit).
     - [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### contributors-documentation
@@ -86,9 +86,6 @@ Creates and runs contributor-focused events, such as the Contributor Summit.  Ev
 - **Contact:**
   - Slack: [#events](https://kubernetes.slack.com/messages/events)
 - **Meetings:**
-  - Events Planning Subproject: [Mondays at 10:00 PT (Pacific Time)](https://zoom.us/j/702991595) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1oLXv5_rM4f645jlXym_Vd7AUq7x6DV-O87E6tcW1sjU/edit).
-    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3SLsQMQT8Pglu1JSmxZwgk).
   - Office Hours European Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 09:00 ET (Eastern Time)](https://hackmd.io/@k8s/office-hours) (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=ET%20%28Eastern%20Time%29).
   - Office Hours Western Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 12:00 ET (Eastern Time)]() (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=ET%20%28Eastern%20Time%29).
     - [Meeting notes and Agenda](https://hackmd.io/@k8s/office-hours).
@@ -106,7 +103,7 @@ Manages and controls Github permissions, repos, and groups, including Org Member
 - **Contact:**
   - Slack: [#github-management](https://kubernetes.slack.com/messages/github-management)
 - **Meetings:**
-  - GitHub Administration Subproject: [Thursdays at 09:30 PT (Pacific Time)](https://zoom.us/j/442435463) (monthly on 4th Thursday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:30&tz=PT%20%28Pacific%20Time%29).
+  - GitHub Administration Subproject: [Thursdays at 09:30 PT (Pacific Time)](https://zoom.us/j/442435463?pwd=Rk1PWWpSSTJDaWJKdzRYb2EyTlkvZz09) (Monthly on 4th Thursday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:30&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### k8s.io
@@ -119,14 +116,8 @@ Oversees and develops programs for helping contributors ascend the contributor l
   - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
 - **Meetings:**
-  - New Contributor Workshop Development Meeting: [Mondays at 4:00 PT](https://zoom.us/j/95894431386) (Biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=4:00&tz=PT).
+  - Mentoring Subproject Meeting (NA/APAC): [Mondays at 4:00 PT](https://zoom.us/j/95894431386?pwd=RFdmQzlZeVZDVWJzcFVXZXR5djNwUT09) (Biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=4:00&tz=PT).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit).
-    - [Meeting recordings](https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
-  - sig-contribex mentoring subproject meeting (APAC Friendly Time): [Mondays at 20:30 PT](https://zoom.us/j/94884623370) (2nd and 4th Tuesday of each month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:30&tz=PT).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r).
-    - [Meeting recordings](https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
-  - sig-contribex mentoring subproject meeting (EU/NA Friendly Time): [Tuesdays at 08:30 PT](https://zoom.us/j/98162537924) (2nd and 4th Tuesday of each month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit#heading=h.o9thwxp2o68r).
     - [Meeting recordings](https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### slack-infra
 Creates and maintains tools and automation for Kubernetes Slack.
