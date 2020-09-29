@@ -62,6 +62,7 @@ Corporate affiliation is applied after the election. If an organization finds it
 | September 08 | All candidate bios and voting exception forms due by 0000 UTC (5pm PST) |
 | ~1 week      | Election prep week (voters.md validation and CIVS setup and testing)
 | September 14 | Election Begins via email ballots |
+| October 03   | Deadline to request a replacement ballot |
 | October 06   | Election Closes by 0000 UTC (5pm PST) |
 | October 12   | Announcement of Results at Public Steering Committee meeting |
 
