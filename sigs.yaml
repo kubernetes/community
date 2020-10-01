@@ -1024,11 +1024,6 @@ sigs:
       frequency: biweekly
       url: https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09
       archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
-  - name: kube-aws
-    contact:
-      slack: kube-aws
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
   - name: kube-up
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS

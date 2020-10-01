@@ -72,7 +72,6 @@ project
 | [kubernetes](https://github.com/kubernetes) | Core |
 | [kubernetes-client](https://github.com/kubernetes-client) | API Client Libraries |
 | [kubernetes-csi](https://github.com/kubernetes-csi) | Container Storage Interface Components |
-| [kubernetes-incubator](https://github.com/kubernetes-incubator) | Legacy Incubator Projects |
 | [kubernetes-retired](https://github.com/kubernetes-retired) | Retired/Archived Projects |
 | [kubernetes-security](https://github.com/kubernetes-security) | Private Security Fix Mirror |
 | [kubernetes-sigs](https://github.com/kubernetes-sigs) | SIG-related Projects |
@@ -86,6 +85,7 @@ project
 | [kubernetes-extensions](https://github.com/kubernetes-extensions) |  |
 | [kubernetes-federation](https://github.com/kubernetes-federation) |  |
 | [kubernetes-graveyard](https://github.com/kubernetes-graveyard) | kubernetes-retired should be used instead going forward |
+| [kubernetes-incubator](https://github.com/kubernetes-incubator) | Earlier used for legacy incubator projects |
 | [kubernetes-incubator-retired](https://github.com/kubernetes-incubator-retired) | kubernetes-retired should be used instead going forward |
 | [kubernetes-providers](https://github.com/kubernetes-providers) |  |
 | [kubernetes-sidecars](https://github.com/kubernetes-sidecars) |  |
