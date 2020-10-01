@@ -19,57 +19,96 @@ description: |
 
 ## Find something to work on
 
-Help is always welcome! For example, documentation (like the text you are reading now) can always use improvement. 
-There's always code that can be clarified and variables or functions that can be renamed or commented.
-There's always a need for more test coverage.
-You get the idea - if you ever see something you think should be fixed, you should own it.
-Here is how you get started.
-If you have no idea what to start on, you can browse the [Contributor Role Board] to see who is looking for help.
-Those interested in contributing without writing code may also find ideas in the [Non-Code Contributions Guide].
+The first step to getting starting contributing to Kubernetes is to find something
+to work on. Help is always welcome, and no contribution is too small! 
+
+Here are some things you can do today to get started contributing:
+
+* Help improve the Kubernetes documentation
+* Clarify code, variables, or functions that can be renamed or commented on
+* Write test coverage
+* Help triage issues
+
+If the above suggestions don't appeal to you, you can browse the 
+[Contributor Role Board] to see who is looking for help.
+
+Those interested in contributing without writing code can also find ideas in the 
+[Non-Code Contributions Guide].
 
 ### Find a good first topic
 
 There are [multiple repositories] within the Kubernetes organization.
-Each repository has beginner-friendly issues that provide a good first issue.
-For example, [kubernetes/kubernetes] has [help wanted] and [good first issue] labels for issues that should not need deep knowledge of the system.
-The `good first issue` label indicates that members have committed to providing [extra assistance] for new contributors.
+Each repository has beginner-friendly issues that are a great place to 
+get started on your contributor journey.
 
-Another good strategy is to find a documentation improvement, such as a missing/broken link, which will give you exposure to the code submission/review process without the added complication of technical depth. 
+For example, [kubernetes/kubernetes] has [help wanted] and [good first issue] 
+labels for issues that don't need high-level Kubernetes knowledge to contribute to.
+
+The `good first issue` label also indicates that Kubernetes Members have 
+committed to providing [extra assistance] for new contributors.
+
+Another way to get started is to find a documentation improvement, such as a 
+missing/broken link, which will give you exposure to the code submission/review 
+process without the added complication of technical depth. 
 
 ### Issue Assignment in Github
 
-When you are willing to take on an issue, you can assign it to yourself. Just reply with `/assign` or `/assign @yourself` on an issue, 
-then the robot will assign the issue to you and your name will present at `Assignees` list.
+When you've found an issue to work on, you can assign it to yourself.
+
+* Reply with `/assign` or `/assign @yourself` on the issue you'd like to work on 
+* The [K8s-ci-robot] will automatically assign the issue to you. 
+* Your your name will then be listed under, `Assignees`.
 
 ### Learn about SIGs
 
-You may have noticed that some repositories in the Kubernetes Organization are owned by [Special Interest Groups], or SIGs.
-We organize the community into SIGs in order to improve our workflow and more easily manage what is a very large community project.
-The developers within each SIG have autonomy and ownership over that SIG's part of Kubernetes. Check out the [list of SIGs] for contact information.
+Some repositories in the Kubernetes Organization are owned by 
+[Special Interest Groups], or SIGs.
 
-Understanding how to interact with SIGs is an important part of contributing. 
+The Kubernetes community is broken out into SIGs in order to improve its workflow,
+and more easily manage what is a very large community project.
+
+The developers within each SIG have autonomy and ownership over that SIG's part 
+of Kubernetes. 
+
+Check out the [list of SIGs] for contact information.
+
+Understanding how to interact with SIGs is an important part of contributing 
+to Kubernetes. 
 
 ### SIG structure
 
 A SIG is an open, community effort.
-Anybody is welcome to jump into a SIG and begin fixing issues, critiquing design proposals and reviewing code.
-SIGs have regular [video meetings] which everyone is welcome to.
-Each SIG has a slack channel, meeting notes, and their own documentation that is useful to read and understand.
 
-There is an entire SIG ([sig-contributor-experience] devoted to improving your experience as a contributor.
-Contributing to Kubernetes should be easy.
-If you find a rough edge, let us know! Better yet, help us fix it by joining the SIG; just
-show up to one of the [bi-weekly meetings].
+Anybody is welcome to jump into a SIG and begin fixing issues, critiqe design 
+proposals, and review code.
+
+SIGs have regular [video meetings] which everyone is welcome to attend.
+
+Each SIG has a Slack channel, meeting notes, and their own documentation that 
+is useful to read and understand.
+
+There is an entire SIG ([sig-contributor-experience] devoted to 
+improving your experience as a contributor.
+
+If you have an idea for improving the contributor experience, please consider
+attending one of the Contributor Experience SIG's [bi-weekly meetings].
 
 ### Find a SIG that is related to your contribution
 
-Finding the appropriate SIG for your contribution and adding a SIG label will help you ask questions in the correct place and give your contribution higher visibility and a faster community response.
+Finding the appropriate SIG for your contribution and adding a SIG label will 
+help you ask questions in the correct place and give your contribution higher 
+visibility and a faster community response.
 
-For Pull Requests, the automatically assigned reviewer will add a SIG label if you haven't done so. 
+For Pull Requests, the automatically assigned reviewer will add a SIG label 
+if you haven't already done so. 
 
-For Issues, we are still working on a more automated workflow.
-Since SIGs do not directly map onto Kubernetes subrepositories, it may be difficult to find which SIG your contribution belongs in.
-Here is the [list of SIGs](/sig-list.md) so that you can determine which is most likely related to your contribution.
+For Issues, please note that the community is working on a more automated workflow.
+
+Since SIGs do not directly map onto Kubernetes subrepositories, it may be 
+difficult to find which SIG your contribution belongs in.
+
+Review [list of SIGs](/sig-list.md) to determine which SIG is most likely related 
+to your contribution.
 
 *Example:* if you are filing a CNI issue (that's [Container Networking Interface](https://github.com/containernetworking/cni)), you should choose the [Network SIG](http://git.k8s.io/community/sig-network). Add the SIG label in a comment like so:
 ```
@@ -102,6 +141,7 @@ Check the [issue triage guide](./issue-triage.md) for more information.
 Make sure to adhere to the prompted submission guidelines while opening an issue.
 
 [Contributor Role Board]: https://discuss.kubernetes.io/c/contributors/role-board
+[k8s-ci-robot]: https://github.com/k8s-ci-robot
 [Non-Code Contributions Guide]: ./non-code-contributions.md
 [multiple repositories]: https://github.com/kubernetes/
 [kubernetes/kubernetes]: https://git.k8s.io/kubernetes
