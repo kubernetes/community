@@ -25,8 +25,8 @@ This SIG’s main goals are:
 
 ### Code, Binaries and services
 
-- [Source Repository](https://github.com/kubernetes-incubator/service-catalog)
-  - See [OWNERS](https://raw.githubusercontent.com/kubernetes-incubator/service-catalog/master/OWNERS) for who has access.
+- [Source Repository](https://github.com/kubernetes-sigs/service-catalog)
+  - See [OWNERS](https://raw.githubusercontent.com/kubernetes-sigs/service-catalog/master/OWNERS) for who has access.
 - [Image Repository](https://quay.io/organization/kubernetes-service-catalog)
   - Canary builds are published on pushes to master.
   - Release builds (and latest) are published on tags.
@@ -44,7 +44,7 @@ This SIG’s main goals are:
   - Files hosted on Azure blob storage.
   - Azure account managed by Carolyn Van Slyck (Microsoft) and Aaron Schlesinger
     (Microsoft).
-- [Travis](https://travis-ci.org/kubernetes-incubator/service-catalog)
+- [Travis](https://travis-ci.org/kubernetes-sigs/service-catalog)
   - Runs the CI builds.
   - Maintainers have access.
 - [Jenkins](https://service-catalog-jenkins.appspot.com/)
@@ -61,7 +61,7 @@ This SIG's charter deviates from the
 [sig-governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md)
 roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair role.
 
-- [Maintainers](https://github.com/orgs/kubernetes-incubator/teams/maintainers-service-catalog/members)
+- [Maintainers](https://github.com/orgs/kubernetes-sigs/teams/service-catalog-maintainers/members)
   - Maintainer is equivalent to the standard [Kubernetes definition of
     Approver](https://github.com/kubernetes/community/blob/master/community-membership.md#approver).
   - Responsible for reviewing pull requests, and approving pull requests for merge.
@@ -115,7 +115,7 @@ roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair rol
   - Must accept and adhere to the Kubernetes [Embargo
     Policy](https://git.k8s.io/security/private-distributors-list.md#embargo-policy).
   - Defined in
-    [SECURITY_CONTACTS](https://github.com/kubernetes-incubator/service-catalog/blob/master/SECURITY_CONTACTS)
+    [SECURITY_CONTACTS](https://github.com/kubernetes-sigs/service-catalog/blob/master/SECURITY_CONTACTS)
     file.
 
 ## Organizational management
@@ -129,7 +129,7 @@ roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair rol
   reports, deep dives, etc.) should make their slides available for perusal and
   feedback at least 2 week in advance.
 - [Working
-  groups](https://github.com/kubernetes-incubator/service-catalog/wiki/Working-Groups)
+  groups](https://github.com/kubernetes-sigs/service-catalog/wiki/Working-Groups)
   can be initiated by any member. To create a new one, add the topic to the
   weekly call’s agenda for discussion.
   - These are not the same as cross-SIG working groups.
@@ -137,7 +137,7 @@ roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair rol
     members can meet to discuss and solve problems for our SIG.
 
 ### Project management
-- [Milestones](https://github.com/kubernetes-incubator/service-catalog/milestones)
+- [Milestones](https://github.com/kubernetes-sigs/service-catalog/milestones)
   are defined by SIG maintainers.
 - Anyone is free to request a discussion of the milestones/plans during
   a weekly call.
@@ -147,7 +147,7 @@ roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair rol
 - Major releases are planned and discussed among the SIG members during regular
   weekly calls.
 - The release process is defined
-  [here](https://github.com/kubernetes-incubator/service-catalog/wiki/Release-Process).
+  [here](https://github.com/kubernetes-sigs/service-catalog/wiki/Release-Process).
 - Anyone can request to work on an issue by commenting on it with `#dibs`.
 
 
