@@ -117,24 +117,24 @@ Kubernentes project. However it is useful for developers and users to have a
 strong ecosystem of channels for related things. Here are some guidelines for
 determining if you should request a channel:
 
-- The channel MUST be Kubernetes related in some way
-  - Related cloud native projects might be more appropriate on the [CNCF Slack]
-- The project MUST be open source 
-  - If you are open sourcing a project DO THAT first, we cannot accomodate every
-    organization's open sourcing launch plans
-  - The purpose of our to organize an existing community, not seed new ones
+- The channel MUST be Kubernetes related in some way.
+  - Related cloud native projects might be more appropriate on the [CNCF Slack].
+- The project MUST be open source. 
+  - If you are open sourcing a project DO THAT FIRST, we cannot accomodate every
+    organization's open sourcing launch plans.
+  - The purpose of Slack is to organize an existing community, not seed new ones.
   - Moderators look at contributor activity, adoption and community concensus
     around a project, otherwise Slack becomes a vehicle for promotion instead of
-    promulgation
+    promulgation.
   - Establishing and maintaining a Slack channel should be an inflection point
-    in a project's adoption
+    in a project's adoption.
   - Requesting a channel means maintaining it on behalf of the project filing
     the issue, you will be expected to participate and foster a healthy
-    discourse
-- Channels around commercial services built on OSS projects are allowed
-  - Users love the value of being able to collaborate around various services
-  - Keep it classy, on the Kubernetes Slack we're all on the same team
-- Ask in #slack-admins if you're unsure, it never hurts to ask 
+    discourse.
+- Channels around commercial services built on OSS projects are allowed.
+  - Users love the value of being able to collaborate around various services.
+  - Keep it classy, on the Kubernetes Slack we're all on the same team.
+- Ask in #slack-admins or file an issue if you're unsure, it never hurts to ask.
 
 ## Requesting a Channel
 
