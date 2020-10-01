@@ -58,12 +58,12 @@ proposals. We are working on adding more documentation for the API.
   - [Exec/attach/port-forward streaming requests](https://docs.google.com/document/d/1OE_QoInPlVCK9rMAx9aybRmgFiVjHpJCHI9LrfdNM_s/edit?usp=sharing)
   - [Container stdout/stderr logs](https://github.com/kubernetes/kubernetes/blob/release-1.5/docs/proposals/kubelet-cri-logging.md)
 
-## Work-In-Progress CRI runtimes
+## CRI runtimes
 
- - [cri-o](https://github.com/kubernetes-incubator/cri-o)
- - [rktlet](https://github.com/kubernetes-incubator/rktlet)
+ - [cri-o](https://github.com/cri-o/cri-o)
+ - [rktlet](https://github.com/kubernetes-retired/rktlet)
  - [frakti](https://github.com/kubernetes/frakti)
- - [cri-containerd](https://github.com/kubernetes-incubator/cri-containerd)
+ - [cri-containerd](https://github.com/containerd/cri)
  - [singularity-cri](https://github.com/sylabs/singularity-cri)
 
 ## [Status update](#status-update)
