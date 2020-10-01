@@ -63,7 +63,9 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
 ### code-organization
 [Described below](#code-organization)
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/component-helpers/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-helpers/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
   - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
