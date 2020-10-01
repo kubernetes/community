@@ -24,48 +24,48 @@ There's always code that can be clarified and variables or functions that can be
 There's always a need for more test coverage.
 You get the idea - if you ever see something you think should be fixed, you should own it.
 Here is how you get started.
-If you have no idea what to start on, you can browse the [Contributor Role Board](https://discuss.kubernetes.io/c/contributors/role-board) to see who is looking for help.
-Those interested in contributing without writing code may also find ideas in the [Non-Code Contributions Guide](non-code-contributions.md).
+If you have no idea what to start on, you can browse the [Contributor Role Board] to see who is looking for help.
+Those interested in contributing without writing code may also find ideas in the [Non-Code Contributions Guide].
 
 ### Find a good first topic
 
-There are [multiple repositories](https://github.com/kubernetes/) within the Kubernetes organization.
+There are [multiple repositories] within the Kubernetes organization.
 Each repository has beginner-friendly issues that provide a good first issue.
-For example, [kubernetes/kubernetes](https://git.k8s.io/kubernetes) has [help wanted](https://go.k8s.io/help-wanted) and [good first issue](https://go.k8s.io/good-first-issue) labels for issues that should not need deep knowledge of the system.
-The `good first issue` label indicates that members have committed to providing [extra assistance](/contributors/guide/help-wanted.md) for new contributors.
+For example, [kubernetes/kubernetes] has [help wanted] and [good first issue] labels for issues that should not need deep knowledge of the system.
+The `good first issue` label indicates that members have committed to providing [extra assistance] for new contributors.
 
-Another good strategy is to find a documentation improvement, such as a missing/broken link, which will give you exposure to the code submission/review process without the added complication of technical depth. Please see [Contributing](#contributing) below for the workflow.
+Another good strategy is to find a documentation improvement, such as a missing/broken link, which will give you exposure to the code submission/review process without the added complication of technical depth. 
 
-#### Issue Assignment in Github
+### Issue Assignment in Github
 
 When you are willing to take on an issue, you can assign it to yourself. Just reply with `/assign` or `/assign @yourself` on an issue, 
 then the robot will assign the issue to you and your name will present at `Assignees` list.
 
 ### Learn about SIGs
 
-You may have noticed that some repositories in the Kubernetes Organization are owned by [Special Interest Groups](/sig-list.md), or SIGs.
+You may have noticed that some repositories in the Kubernetes Organization are owned by [Special Interest Groups], or SIGs.
 We organize the community into SIGs in order to improve our workflow and more easily manage what is a very large community project.
-The developers within each SIG have autonomy and ownership over that SIG's part of Kubernetes. Check out the [list of SIGs](/sig-list.md) for contact information.
+The developers within each SIG have autonomy and ownership over that SIG's part of Kubernetes. Check out the [list of SIGs] for contact information.
 
 Understanding how to interact with SIGs is an important part of contributing. 
 
-#### SIG structure
+### SIG structure
 
 A SIG is an open, community effort.
 Anybody is welcome to jump into a SIG and begin fixing issues, critiquing design proposals and reviewing code.
-SIGs have regular [video meetings](https://kubernetes.io/community/) which everyone is welcome to.
+SIGs have regular [video meetings] which everyone is welcome to.
 Each SIG has a slack channel, meeting notes, and their own documentation that is useful to read and understand.
 
-There is an entire SIG ([sig-contributor-experience](/sig-contributor-experience/README.md)) devoted to improving your experience as a contributor.
+There is an entire SIG ([sig-contributor-experience] devoted to improving your experience as a contributor.
 Contributing to Kubernetes should be easy.
 If you find a rough edge, let us know! Better yet, help us fix it by joining the SIG; just
-show up to one of the [bi-weekly meetings](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit).
+show up to one of the [bi-weekly meetings].
 
-#### Find a SIG that is related to your contribution
+### Find a SIG that is related to your contribution
 
 Finding the appropriate SIG for your contribution and adding a SIG label will help you ask questions in the correct place and give your contribution higher visibility and a faster community response.
 
-For Pull Requests, the automatically assigned reviewer will add a SIG label if you haven't done so. See [Open A Pull Request](#open-a-pull-request) below.
+For Pull Requests, the automatically assigned reviewer will add a SIG label if you haven't done so. 
 
 For Issues, we are still working on a more automated workflow.
 Since SIGs do not directly map onto Kubernetes subrepositories, it may be difficult to find which SIG your contribution belongs in.
@@ -100,3 +100,20 @@ Check the [issue triage guide](./issue-triage.md) for more information.
 *Example:* a documentation issue should be opened to [kubernetes/website](https://github.com/kubernetes/website/issues).
 
 Make sure to adhere to the prompted submission guidelines while opening an issue.
+
+[Contributor Role Board]: https://discuss.kubernetes.io/c/contributors/role-board
+[Non-Code Contributions Guide]: ./non-code-contributions.md
+[multiple repositories]: https://github.com/kubernetes/
+[kubernetes/kubernetes]: https://git.k8s.io/kubernetes
+[help wanted]: https://go.k8s.io/help-wanted
+[good first issue]: https://go.k8s.io/good-first-issue
+[extra assistance]:./help-wanted.md
+[Special Interest Groups]: ./sig-list.md
+[list of SIGs]: ./sig-list.md
+[video meetings]: https://kubernetes.io/community/
+[sig-contributor-experience]: ./sig-contributor-experience/README.md
+[bi-weekly metings]: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit
+
+
+
+
