@@ -401,4 +401,4 @@ Report any actions taken to the other slack admins, and if needed the
 [default message pinned]: ./slack-config/template.yaml
 [Slack’s policy on inactivated accounts]: https://get.Slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account
 [moderation guidelines]: ./moderation.md
-[CNCF Slack](https://slack.cncf.io/)
+[CNCF Slack]: (https://slack.cncf.io/)
