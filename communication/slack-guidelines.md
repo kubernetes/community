@@ -134,6 +134,13 @@ determining if you should request a channel:
 - Channels around commercial services built on OSS projects are allowed.
   - Users love the value of being able to collaborate around various services.
   - Keep it classy, on the Kubernetes Slack we're all on the same team.
+- The channel MUST be public.
+  - In order to ensure all channels adhere to our Code of Conduct, we heavily
+    restrict private channels.
+  - We do allow `#...-dev` channels for established projects where a single
+    project channel is too noisy, but please don't create both at the start.
+  - If you need private discussion areas for security-sensitive topics, a
+    project-specific Slack or the [CNCF Slack] may be a better fit.
 - Ask in #slack-admins or file an issue if you're unsure, it never hurts to ask.
 
 ## Requesting a Channel
