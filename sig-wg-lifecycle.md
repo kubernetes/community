@@ -112,7 +112,7 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 [Creation]: #Creation
 [Retirement]: #Retirement
 [GitHub]: #GitHub
-[labels.md]: /kubernetes/test-infra/blob/master/label_sync/labels.md
+[labels.md]: https://git.k8s.io/test-infra/label_sync/labels.md
 [sig-governance.md]: /committee-steering/governance/sig-governance.md
 [SIG charter process]: /committee-steering/governance
 [wg-governance.md]: /committee-steering/governance/wg-governance.md
