@@ -29,6 +29,8 @@ The following conventions for the klog levels to use.
     * Context to understand the steps leading up to errors and warnings
     * More information for troubleshooting reported issues
 
+* klog.InfoS() - structured logs to the INFO log
+
 As per the comments, the practical default level is V(2). Developers and QE
 environments may wish to run at V(3) or V(4). If you wish to change the log
 level, you can pass in `-v=X` where X is the desired maximum level to log.
