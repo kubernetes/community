@@ -59,7 +59,7 @@ When you've found an issue to work on, you can assign it to yourself.
 * The [K8s-ci-robot] will automatically assign the issue to you. 
 * Your your name will then be listed under, `Assignees`.
 
-### Learn about SIGs
+## Learn about SIGs
 
 Some repositories in the Kubernetes Organization are owned by 
 [Special Interest Groups], or SIGs.
@@ -81,14 +81,13 @@ A SIG is an open, community effort.
 
 Anybody is welcome to jump into a SIG and begin fixing issues, critiqe design 
 proposals, and review code.
-
 SIGs have regular [video meetings] which everyone is welcome to attend.
 
 Each SIG has a Slack channel, meeting notes, and their own documentation that 
 is useful to read and understand.
 
-There is an entire SIG ([sig-contributor-experience] devoted to 
-improving your experience as a contributor.
+There is an entire SIG ([sig-contributor-experience]) devoted to improving your 
+experience as a contributor.
 
 If you have an idea for improving the contributor experience, please consider
 attending one of the Contributor Experience SIG's [bi-weekly meetings].
@@ -107,20 +106,26 @@ For Issues, please note that the community is working on a more automated workfl
 Since SIGs do not directly map onto Kubernetes subrepositories, it may be 
 difficult to find which SIG your contribution belongs in.
 
-Review [list of SIGs](/sig-list.md) to determine which SIG is most likely related 
-to your contribution.
+Review the [list of SIGs][sl]] to determine which SIG is most likely related to your 
+contribution.
 
-*Example:* if you are filing a CNI issue (that's [Container Networking Interface](https://github.com/containernetworking/cni)), you should choose the [Network SIG](http://git.k8s.io/community/sig-network). Add the SIG label in a comment like so:
+*Example:* if you are filing a CNI issue (that's [Container Networking Interface]) 
+you'd choose the [Network SIG]. Add the SIG label in a new comment on GitHub 
+by typing the following:
 ```
 /sig network
 ```
 
-Follow the link in the SIG name column to reach each SIGs README. 
-Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a comment on issues and pull requests for higher visibility. 
-If you are not sure about the correct SIG for an issue, you can try SIG-contributor-experience [here](/sig-contributor-experience#github-teams), or [ask in Slack](http://slack.k8s.io/).
+Follow the link in the SIG name column to reach each SIG'ss README. 
+
+Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a 
+comment on issues and pull requests for higher visibility. 
+If you are not sure about the correct SIG for an issue, you can try 
+SIG-contributor-experience [here], or [ask in Slack].
 
 ### SIG-specific contributing guidelines
-Some SIGs have their own `CONTRIBUTING.md` files, which may contain extra information or guidelines in addition to these general ones.
+Some SIGs have their own `CONTRIBUTING.md` files, which may contain extra information 
+or guidelines in addition to these general ones.
 These are located in the SIG-specific community directories:
 
 - [`/sig-apps/CONTRIBUTING.md`](/sig-apps/CONTRIBUTING.md)
@@ -132,11 +137,12 @@ These are located in the SIG-specific community directories:
 ### File an Issue
 
 Not ready to contribute code, but see something that needs work?
-While the community encourages everyone to contribute code, it is also appreciated when someone reports an issue (aka problem).
+While the community encourages everyone to contribute code, it is also appreciated 
+when someone reports an issue.
 Issues should be filed under the appropriate Kubernetes subrepository.
-Check the [issue triage guide](./issue-triage.md) for more information.
+Check the [issue triage guide] for more information.
 
-*Example:* a documentation issue should be opened to [kubernetes/website](https://github.com/kubernetes/website/issues).
+For example, a documentation issue should be opened in [kubernetes/website].
 
 Make sure to adhere to the prompted submission guidelines while opening an issue.
 
@@ -148,11 +154,18 @@ Make sure to adhere to the prompted submission guidelines while opening an issue
 [help wanted]: https://go.k8s.io/help-wanted
 [good first issue]: https://go.k8s.io/good-first-issue
 [extra assistance]:./help-wanted.md
-[Special Interest Groups]: ./sig-list.md
-[list of SIGs]: ./sig-list.md
+[sl]: /sig-list.md
 [video meetings]: https://kubernetes.io/community/
-[sig-contributor-experience]: ./sig-contributor-experience/README.md
-[bi-weekly metings]: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit
+[sig-contributor-experience]: /sig-contributor-experience/README.md
+[bi-weekly meetings]: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit
+[container networking interface]: https://github.com/containernetworking/cni
+[network SIG]: http://git.k8s.io/community/sig-network
+[here]: /sig-contributor-experience#github-teams
+[ask in Slack]: http://slack.k8s.io/
+[issue triage guide]: ./issue-triage.md
+[kubernetes/website]: https://github.com/kubernetes/website/issues
+
+
 
 
 
