@@ -120,7 +120,7 @@ determining if you should request a channel:
 - The channel MUST be Kubernetes related in some way.
   - Related cloud native projects might be more appropriate on the [CNCF Slack].
 - The project MUST be open source. 
-  - If you are open sourcing a project DO THAT FIRST, we cannot accomodate every
+  - If you are open sourcing a project DO THAT FIRST, we cannot accommodate every
     organization's open sourcing launch plans.
   - The purpose of Slack is to organize an existing community, not seed new ones.
   - Moderators look at contributor activity, adoption and community concensus
