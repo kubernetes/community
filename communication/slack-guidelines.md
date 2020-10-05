@@ -123,7 +123,7 @@ determining if you should request a channel:
   - If you are open sourcing a project DO THAT FIRST, we cannot accommodate every
     organization's open sourcing launch plans.
   - The purpose of Slack is to organize an existing community, not seed new ones.
-  - Moderators look at contributor activity, adoption and community concensus
+  - Moderators look at contributor activity, adoption and community consensus
     around a project, otherwise Slack becomes a vehicle for promotion instead of
     promulgation.
   - Establishing and maintaining a Slack channel should be an inflection point
