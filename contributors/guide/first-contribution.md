@@ -63,7 +63,7 @@ The Kubernetes community is broken out into SIGs in order to improve its workflo
 and more easily manage what is a very large community project. The developers 
 within each SIG have autonomy and ownership over that SIG's part of Kubernetes. 
 Understanding how to interact with SIGs is an important part of contributing 
-to Kubernetes. Check out the [list of SIGs] for contact information.
+to Kubernetes. Check out the [list of SIGs][sl] for contact information.
 
 ### SIG structure
 
@@ -89,7 +89,7 @@ if you haven't already done so.
 For Issues, please note that the community is working on a more automated workflow.
 Since SIGs do not directly map onto Kubernetes subrepositories, it may be 
 difficult to find which SIG your contribution belongs in. Review the 
-[list of SIGs][sl]]  to determine which SIG is most likely related to your 
+[list of SIGs][sl] to determine which SIG is most likely related to your 
 contribution.
 
 *Example:* if you are filing a CNI issue (that's [Container Networking Interface]) 
@@ -141,7 +141,6 @@ while opening an issue. Check the [issue triage guide] for more information.
 [weekly meetings]: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit
 [container networking interface]: https://github.com/containernetworking/cni
 [network SIG]: http://git.k8s.io/community/sig-network
-[here]: /sig-contributor-experience#github-teams
 [ask in Slack]: http://slack.k8s.io/
 [issue triage guide]: ./issue-triage.md
 [kubernetes/website]: https://github.com/kubernetes/website/issues
