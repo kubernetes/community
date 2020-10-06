@@ -279,6 +279,7 @@ channels:
   - name: outreachy-apps
     id: CDH610735
   - name: pharmer
+  - name: pinniped
   - name: pl-users
   - name: pr-reviews
   - name: prometheus
