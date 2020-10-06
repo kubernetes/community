@@ -27,7 +27,7 @@ health of the project.
   contributors who wish to provide additional test results not generated
   by the project's CI
 - Extraction, display and analysis of test artifacts via tools like
-  [gubernator], [kettle], [testgrid], [triage] and [velodrome]
+  [gubernator], [kettle], [testgrid], and [triage]
 - Configuration management of jobs and ensuring they use a consistent
   process via tools such as [job configs], [kubetest]
 - Tools that facilitate configuration management of github such as
@@ -131,7 +131,6 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 [testgrid]: https://testgrid.k8s.io
 [tide]: https://prow.k8s.io/tide
 [triage]: https://go.k8s.io/triage
-[velodrome]: https://velodrome.k8s.io
 
 [Release Team test-infra role]: https://git.k8s.io/sig-release/release-team/role-handbooks/test-infra
 [kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev
