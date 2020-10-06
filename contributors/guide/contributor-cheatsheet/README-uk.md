@@ -70,7 +70,6 @@
 - [Prow] - Kubernetes CI/CD система.
 - [Test Grid] - Перегляд історії тестів та дотичної до них інформації.
 - [Triage Dashboard] - Агрегування схожих помилок для їх кращого виправлення.
-- [Velodrome] - Дашборд для відстеження статусу виконання задач і тестів.
 
 ### Важливі поштові адреси
 
@@ -294,7 +293,6 @@ git checkout -b myfeature
 [youtube канал]: https://www.youtube.com/c/KubernetesCommunity/
 [triage dashboard]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [developer statistics]: https://k8s.devstats.cncf.io
 [Кодексом поведінки Спільноти]: /code-of-conduct.md
 [підтримки користувачів]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request
