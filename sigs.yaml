@@ -2986,11 +2986,18 @@ committees:
       name: Aaron Crickenberger
       company: Google
   meetings:
-  - description: Public Steering Committee Meeting
-    day: Monday
+  - description: Private Steering Committee Meeting
+    day: third Monday
     time: "11:00"
     tz: PT (Pacific Time)
-    frequency: biweekly
+    frequency: monthly
+    url: https://bit.ly/k8s-steering-wd
+    recordings_url: https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM
+  - description: Public Steering Committee Meeting
+    day: first Monday
+    time: "11:00"
+    tz: PT (Pacific Time)
+    frequency: monthly
     url: https://bit.ly/k8s-steering-wd
     recordings_url: https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM
   contact:
