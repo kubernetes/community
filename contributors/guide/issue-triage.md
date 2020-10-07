@@ -153,7 +153,7 @@ Use [these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%9
 Depending on your permissions, either close or comment on any issues that are identified as support requests, duplicates, or not-reproducible bugs, or that lack enough information from the reporter.
  
 ### Support Requests
-Some people mistakenly use GitHub issues to file support requests. Usually they're asking for help configuring some aspect of Kubernetes. To handle such an issue, direct the author to use our [support request channels](#support-requests-channels). Then apply the `triage/support` label, which is directed to our support structures, and apply the `close` label.
+Some people mistakenly use GitHub issues to file support requests. Usually they're asking for help configuring some aspect of Kubernetes. To handle such an issue, direct the author to use our [support request channels](#support-requests-channels). Then apply the `kind/support` label, which is directed to our support structures, and apply the `close` label.
 
 Please find more detailed information about Support Requests in the [Footnotes section](#footnotes).
 
