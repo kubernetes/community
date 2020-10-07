@@ -66,11 +66,11 @@ The following [subprojects][subproject-definition] are owned by sig-node:
   - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
 - **Contact:**
   - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
-### seccomp-operator
+### security-profiles-operator
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/seccomp-operator/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/security-profiles-operator/master/OWNERS
 - **Contact:**
-  - Slack: [#seccomp-operator](https://kubernetes.slack.com/messages/seccomp-operator)
+  - Slack: [#security-profiles-operator](https://kubernetes.slack.com/messages/security-profiles-operator)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
