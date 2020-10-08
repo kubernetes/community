@@ -70,7 +70,6 @@
 - [Prow] - Kubernetes CI/CD 系统
 - [Test Grid] - 查看过往的测试以及相关信息
 - [Triage 仪表盘] - 把相似的失败聚合在一起以便排除故障
-- [Velodrome] - 追踪任务和测试健康度的仪表盘
 
 
 ### 重要的 Email 地址
@@ -299,7 +298,6 @@ git checkout -b myfeature
 [YouTube 频道]: https://www.youtube.com/c/KubernetesCommunity/
 [triage 仪表盘]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [开发者统计]: https://k8s.devstats.cncf.io
 [行为守则]: /code-of-conduct.md
 [用户支持请求]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

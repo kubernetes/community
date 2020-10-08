@@ -79,7 +79,6 @@
 - [테스트 그리드] - 테스트 기록과 관련된 정보 확인
 - [Triage 대시보드] - 더 나은 문제 해결을 위해 유사한 오류를
   수집
-- [Velodrome] - 작업과 테스트 상태를 추적하는 대시보드
 
 
 ### 중요한 이메일 별칭
@@ -367,7 +366,6 @@ PR을 검토하고 승인하도록 지정된 다른 참여자의 판단에 맡�
 [YouTube 채널]: https://www.youtube.com/c/KubernetesCommunity/
 [triage 대시보드]: https://go.k8s.io/triage
 [테스트 그리드]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [개발자 통계]: https://k8s.devstats.cncf.io
 [행동 강령]: /code-of-conduct.md
 [사용자 지원 요청]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

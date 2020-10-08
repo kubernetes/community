@@ -73,7 +73,6 @@ Melhor.
 - [Prow] - Kubernetes CI/CD System.
 - [Test Grid] - Veja o histórico de testes e suas informações associadas.
 - [Dashboard de Triagem] - Junta falhas semelhantes para melhor solução de problemas.
-- [Velodrome] - Dashboard para rastrear jobs e testar a estabilidade.
 
 
 ### E-mails-Importantes
@@ -348,7 +347,6 @@ fase de uma revisão do PR. Se você não tem certeza se deve efetuar o squashin
 [youtube]: https://www.youtube.com/c/KubernetesCommunity/
 [Dashboard de Triagem]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [Estatísticas do Desenvolvedor]: https://k8s.devstats.cncf.io
 [Código de Conduta]: /code-of-conduct.md
 [solicitações de suporte ao usuário]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request
