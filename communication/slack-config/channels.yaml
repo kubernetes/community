@@ -43,6 +43,7 @@ channels:
   - name: cluster-api-digitalocean
   - name: cluster-api-docker
     archived: true
+  - name: cluster-api-nested
   - name: cluster-api-openstack
   - name: cluster-api-packet
   - name: cluster-api-vsphere
