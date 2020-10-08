@@ -970,6 +970,9 @@ sigs:
   - name: cluster-api-provider-ibmcloud
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
+  - name: cluster-api-provider-nested
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-nested/master/OWNERS
   - name: cluster-api-provider-openstack
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
