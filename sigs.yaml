@@ -372,7 +372,7 @@ sigs:
       company: Google
     - github: tallclair
       name: Tim Allclair
-      company: Google
+      company: Apple
     tech_leads:
     - github: deads2k
       name: David Eads
@@ -2943,7 +2943,7 @@ committees:
       company: Microsoft
     - github: tallclair
       name: Tim Allclair
-      company: Google
+      company: Apple
   meetings: []
   contact:
     private_mailing_list: security@kubernetes.io

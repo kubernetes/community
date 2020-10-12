@@ -26,7 +26,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Mo Khan (**[@enj](https://github.com/enj)**), VMware
 * Mike Danese (**[@mikedanese](https://github.com/mikedanese)**), Google
-* Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
+* Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Apple
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
