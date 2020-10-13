@@ -26,21 +26,36 @@ ensuring Kubernetes is stable and reliable.
   (e.g. test frameworks) to unblock further steps
 - Initiate and drive cross-SIG reliability improvements
 
+For all of the above, we will focus on core Kubernetes components and addons.
+Other SIG subprojects/components (e.g. SIG Scheduling descheduler) are out of
+scope.
+
 ### Out of scope
 
-- Designing and executing improvements clearly falling into individual SIG
+- Designing and executing on improvements clearly falling into individual SIG
   responsibilities.
 
 ## Special Powers
 
-The Reliability WG has a power to block feature-oriented contributions from
-any SIG if requested reliability-related improvements are not being addressed.
-Before it can be exercised, sig-arch must approve the criteria suggested by
-this working group.
+The Reliability WG will create a proposal that will allow blocking
+feature-oriented contributions from any SIG if requested reliability-related
+improvements are not being addressed. The exact criteria will have to be
+approved by SIG Architecture, SIG Release, SIG Testing and automatically
+enforced.
 
-Given WGs are by-definition temporary, on WG Reliability retirement we will
-pass this responsibility to  to SIG Architecture Production Readiness subproject
-or to SIG Architecture generally for reassignment at the leads’ discretion.
+The exact scope of blocking hasn't yet been decided. There are at least two
+high-level options: blocking PRs and blocking graduation of features.
+Conformance vs everything enabled by default has to be explicitly defined).
+As a result, the mechanics of blocking hasn't been decided as they will
+heavily depend on the exact scope. As mentioned above, all of those will have
+to be explicitly approved by SIGs mentioned above.
+
+The blocking criteria (once approved) will be passed to SIG Architecture
+Production Readiness subproject or SIG Architecture generally for reassignment
+at the lead's discretion.
+
+Note that ideally the criteria should be extendable to other areas (e.g.
+security), but that's not the goal by itself.
 
 ## Stakeholders
 
@@ -64,7 +79,8 @@ involved:
   Input on reliability gaps in their areas.
 
 The group will be also reaching out to users and cluster operator
-(e.g. via surveys), to build the full picture.
+(e.g. via surveys), to build the full picture. We will likely leverage
+the CNCF end-user group for this purpose.
 
 In the later phase improving reliability, every single SIG may potentially
 be involved depending on the findings from the initial phase.
