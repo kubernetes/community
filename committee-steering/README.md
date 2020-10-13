@@ -23,10 +23,10 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
-* Lachlan Evenson (**[@lachie83](https://github.com/lachie83)**), Microsoft
+* Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google
+* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
 * Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**), VMware
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Apple
-* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 
 ## Contact
 - Slack: [#steering-committee](https://kubernetes.slack.com/messages/steering-committee)
