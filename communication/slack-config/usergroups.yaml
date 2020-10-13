@@ -96,3 +96,18 @@ usergroups:
     members:
       - phenixblue
       - AlexB138
+
+  - name: skaffold-devs
+    long_name: Skaffold Development Team
+    description: Active developers on #skaffold
+    channels:
+      - skaffold
+    members:
+      - briandealwis
+      - gsquared94
+      - ilya-zuyev
+      - IsaacPD
+      - MarlonGamez
+      - nkubala
+      - tejal29
+      - tstromberg
