@@ -2975,18 +2975,18 @@ committees:
     - github: dims
       name: Davanum Srinivas
       company: VMware
-    - github: lachie83
-      name: Lachlan Evenson
-      company: Microsoft
+    - github: liggitt
+      name: Jordan Liggitt
+      company: Google
+    - github: mrbobbytables
+      name: Bob Killen
+      company: Google
     - github: nikhita
       name: Nikhita Raghunath
       company: VMware
     - github: parispittman
       name: Paris Pittman
       company: Apple
-    - github: spiffxp
-      name: Aaron Crickenberger
-      company: Google
   meetings:
   - description: Private Steering Committee Meeting
     day: third Monday
