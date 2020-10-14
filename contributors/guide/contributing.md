@@ -142,17 +142,17 @@ will have unit tests in [kubernetes/cmd/kubeadm/app/util/version_test.go]. These
 are easily run locally by any developer on any OS.
 * Integration: These tests cover interactions of package components or 
 interactions between kubernetes components and some other non-kubernetes system 
-resource (eg: etcd).  An example would be testing whether a piece of code can 
+resource (eg: etcd). An example would be testing whether a piece of code can 
 correctly store data to or retrieve data from etcd. Integration tests are stored 
 in [kubernetes/test/integration/]. Running these can require the developer set up 
 additional functionality on their development system.
 * End-to-end ("e2e"): These are broad tests of overall system behavior and 
-coherence.  These are more complicated as they require a functional kubernetes 
+coherence. These are more complicated as they require a functional kubernetes 
 cluster built from the sources to be tested. A 
 separate [document detailing e2e testing] and test cases themselves can be found 
 in [kubernetes/test/e2e/].
-* Conformance: These are a set of testcases, currently a subset of the i
-ntegration/e2e tests, that the Architecture SIG has approved to define the core 
+* Conformance: These are a set of testcases, currently a subset of the 
+integration/e2e tests, that the Architecture SIG has approved to define the core 
 set of interoperable features that all Kubernetes deployments must support. For 
 more information on Conformance tests please see the [Conformance Testing] 
 Document.
