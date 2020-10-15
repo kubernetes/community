@@ -14,13 +14,12 @@ description:
 - [Getting Started](#getting-started)
 - [Welcome](#welcome)
 - [Contributor Guide](#contributor-guide)
-- [Resources Available](#resources-available)
 - [Prerequisites](#prerequisites)
-  - [Sign the CLA](#sign-the-CLA)
+  - [Sign the CLA](#sign-the-cla)
   - [Code of Conduct](#code-of-conduct)
-  - [Setting Up Your Developer Environment](#setting-up)
-  - [Community Expectations and Roles](#community-expectations)
-- [Contributor Playground](#contributor-playground)
+  - [Setting Up Your Developer Environment](#setting-up-your-development-environment)
+  - [Community Expectations and Roles](#community-expectations-and-roles)
+- [Contributor Playground](#kubernetes-contributor-playground)
   - [Contributor Workshops](#contributor-workshops)
 - [Community](#community)
   - [Communication](#communication)
@@ -49,9 +48,9 @@ It is recommended that you follow these steps in order:
 - [Welcome](#welcome) - this page 
 - [Prerequisites](#prerequisites) - tasks you need to complete before
   you can start contributing to Kubernetes
-- [Your First Contribution](#first-contribution) - things you'll need to know
+- [Your First Contribution](./first-contribution.md) - things you'll need to know
   before making your first contribution
-- [Contributing](#contributing) - the main reference guide to contributing
+- [Contributing](./contributing.md) - the main reference guide to contributing
   to Kubernetes
 
 ## Prerequisites
