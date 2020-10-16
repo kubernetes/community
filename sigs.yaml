@@ -2010,9 +2010,9 @@ sigs:
     - github: jberkhahn
       name: Jonathan Berkhahn
       company: IBM
-    - github: mszostok
-      name: Mateusz Szostok
-      company: Independent
+    - github: jhvhs
+      name: Konstantin Semenov
+      company: Pivotal
     emeritus_leads:
     - github: arschles
       name: Aaron Schlesinger
@@ -2024,6 +2024,8 @@ sigs:
       name: Jay Boyd
     - github: kibbles-n-bytes
       name: Michael Kibbe
+    - github: mszostok
+      name: Mateusz Szostok
     - github: pmorie
       name: Paul Morie
     - github: vaikas-google
