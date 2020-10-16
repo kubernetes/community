@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Allow users to safely use Kubernetes for managing production workloads by ensuring Kubernetes is stable and reliable.
 
+The [charter](charter.md) defines the scope and governance of the Reliability Working Group.
+
 ## Stakeholder SIGs
 * SIG Architecture
 * SIG Cluster Lifecycle

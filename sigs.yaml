@@ -2775,6 +2775,7 @@ workinggroups:
     Allow users to safely use Kubernetes for managing production workloads by ensuring
     Kubernetes is stable and reliable.
 
+  charter_link: charter.md
   stakeholder_sigs:
   - Architecture
   - Cluster Lifecycle
