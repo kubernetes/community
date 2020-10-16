@@ -23,7 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Service Catalo
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Jonathan Berkhahn (**[@jberkhahn](https://github.com/jberkhahn)**), IBM
-* Mateusz Szostok (**[@mszostok](https://github.com/mszostok)**), Independent
+* Konstantin Semenov (**[@jhvhs](https://github.com/jhvhs)**), Pivotal
 
 ## Emeritus Leads
 
@@ -32,6 +32,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Doug Davis (**[@duglin](https://github.com/duglin)**)
 * Jay Boyd (**[@jboyd01](https://github.com/jboyd01)**)
 * Michael Kibbe (**[@kibbles-n-bytes](https://github.com/kibbles-n-bytes)**)
+* Mateusz Szostok (**[@mszostok](https://github.com/mszostok)**)
 * Paul Morie (**[@pmorie](https://github.com/pmorie)**)
 * Ville Aikas (**[@vaikas-google](https://github.com/vaikas-google)**)
 
