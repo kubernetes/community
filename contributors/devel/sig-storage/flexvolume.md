@@ -1,5 +1,7 @@
 # Flexvolume
 
+**NOTE:** Flexvolume is deprecated. Out-of-tree CSI driver is the recommended way to write volume drivers in Kubernetes. See this doc [here]( https://github.com/kubernetes/community/blob/master/sig-storage/volume-plugin-faq) for more information.
+
 Flexvolume enables users to write their own drivers and add support for their volumes in Kubernetes. Vendor drivers should be installed in the volume plugin path on every node, and on master if the driver requires attach capability (unless `--enable-controller-attach-detach` Kubelet option is set to false, but this is highly discouraged because it is a legacy mode of operation).
 
 Flexvolume is a GA feature from Kubernetes 1.8 release onwards.
