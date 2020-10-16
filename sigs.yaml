@@ -2012,7 +2012,7 @@ sigs:
       company: IBM
     - github: jhvhs
       name: Konstantin Semenov
-      company: Pivotal
+      company: VMware
     emeritus_leads:
     - github: arschles
       name: Aaron Schlesinger
