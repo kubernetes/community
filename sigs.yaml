@@ -2618,49 +2618,6 @@ workinggroups:
   contact:
     slack: wg-k8s-infra
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra
-- dir: wg-lts
-  name: LTS
-  mission_statement: >
-    Answer the question: Does Kubernetes need a longer support term? If yes, figure
-    out what that looks like for Kubernetes and propose this to the rest of the project.
-    If no, figure out how to help end users cope with this and propose that to the
-    rest of the project. If a proposal is accepted, the working group's mission will
-    change to implement it.
-
-    The working group is sponsored by SIG Release, but has the potential to span almost
-    all SIGs.  For more background see the [WG formation proposal](https://docs.google.com/presentation/d/1-Z-mUNIs3mUi7AdP1KwoAVNviwKrCoo3lxMb5wzCWbk/edit?usp=sharing).
-
-  charter_link: charter.md
-  stakeholder_sigs:
-  - API Machinery
-  - CLI
-  - Node
-  label: lts
-  leadership:
-    chairs:
-    - github: imkin
-      name: Dhawal Yogesh Bhanusali
-      company: VMware
-    - github: quinton-hoole
-      name: Quinton Hoole
-      company: Huawei
-    - github: tpepper
-      name: Tim Pepper
-      company: VMware
-    - github: youngnick
-      name: Nick Young
-      company: VMware
-  meetings:
-  - description: Regular WG Meeting
-    day: Tuesday
-    time: "09:00"
-    tz: PT (Pacific Time)
-    frequency: bi-weekly
-    url: https://zoom.us/j/473177294
-    archive_url: https://docs.google.com/document/d/1J2CJ-q9WlvCnIVkoEo9tAo19h08kOgUJAS3HxaSMsLA/edit?usp=sharing
-  contact:
-    slack: wg-lts
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-lts
 - dir: wg-multitenancy
   name: Multitenancy
   mission_statement: >
