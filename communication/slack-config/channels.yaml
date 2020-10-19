@@ -3,6 +3,7 @@
 
 channels:
   - name: airflow-operator
+  - name: akri
   - name: aks-engine-users
   - name: aks-engine-dev
     id: CU1CXUHN0
