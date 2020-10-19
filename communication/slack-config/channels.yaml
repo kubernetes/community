@@ -356,6 +356,7 @@ channels:
   - name: test-failures
   - name: testing-commons
   - name: testing-ops
+  - name: tgik
   - name: tilt
   - name: tn-users
   - name: topology-aware-scheduling
