@@ -1,2 +1,3 @@
 channels:
   - name: sig-network-service-apis
+  - name: sig-network-policy-api
