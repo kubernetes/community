@@ -111,3 +111,24 @@ usergroups:
       - nkubala
       - tejal29
       - tstromberg
+
+  - name: operator-sdk-maintainers
+    long_name: Operator SDK maintainers
+    description: Active developers of the Operator SDK
+    channels:
+      - kubernetes-operators
+      - operator-sdk-dev
+      - kubebuilder
+    members:
+      - estroz
+      - joelanford
+      - jmccormick2001
+      - jmrodri
+      - asmacdo
+      - marc-obrien
+      - theishshah
+      - camilamacedo86
+      - fabianvf
+      - varshaprasad96
+      - rashmigottipati
+      - jberkhahn
