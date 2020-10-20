@@ -2991,14 +2991,14 @@ committees:
   meetings:
   - description: Private Steering Committee Meeting
     day: third Monday
-    time: "11:00"
+    time: "9:30"
     tz: PT (Pacific Time)
     frequency: monthly
     url: https://bit.ly/k8s-steering-wd
     recordings_url: https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM
   - description: Public Steering Committee Meeting
     day: first Monday
-    time: "11:00"
+    time: "9:30"
     tz: PT (Pacific Time)
     frequency: monthly
     url: https://bit.ly/k8s-steering-wd
