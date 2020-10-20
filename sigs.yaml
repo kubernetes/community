@@ -2796,15 +2796,16 @@ workinggroups:
       company: Google
   meetings:
   - description: Regular WG Meeting
-    day: TODO
-    time: TODO
-    tz: TODO
+    day: Monday
+    time: "11:00"
+    tz: PT (Pacific Time)
     frequency: biweekly
     url: TODO
-    archive_url: TODO
+    archive_url: https://docs.google.com/document/d/1KF_kof3rBWzis87wMkwXicetREuutxlPI6dFDSqdWbo/edit
+    recordings_url: TODO
   contact:
     slack: wg-reliability
-    mailing_list: TODO
+    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-reliability
 usergroups:
 - dir: ug-big-data
   name: Big Data

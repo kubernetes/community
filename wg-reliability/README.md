@@ -20,8 +20,9 @@ The [charter](charter.md) defines the scope and governance of the Reliability Wo
 * SIG Testing
 
 ## Meetings
-* Regular WG Meeting: [TODOs at TODO TODO](TODO) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=TODO&tz=TODO).
-  * [Meeting notes and Agenda](TODO).
+* Regular WG Meeting: [Mondays at 11:00 PT (Pacific Time)](TODO) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1KF_kof3rBWzis87wMkwXicetREuutxlPI6dFDSqdWbo/edit).
+  * [Meeting recordings](TODO).
 
 ## Organizers
 
@@ -31,7 +32,7 @@ The [charter](charter.md) defines the scope and governance of the Reliability Wo
 
 ## Contact
 - Slack: [#wg-reliability](https://kubernetes.slack.com/messages/wg-reliability)
-- [Mailing list](TODO)
+- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-reliability)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Freliability)
 <!-- BEGIN CUSTOM CONTENT -->
 
