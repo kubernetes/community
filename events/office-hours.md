@@ -22,7 +22,7 @@ Kubernetes, or to just passively learn by following along.
 Third Wednesday of every month, there are two sessions: 
 
 - European Edition: [9am ET]
-- Western Edition: [9am PT]
+- Western Edition: [5pm PT]
 
 Tune into the [Kubernetes YouTube Channel] to follow along.
 
@@ -170,7 +170,7 @@ more than welcome to pull up a chair and hang out.
 
 [YouTube channel]: https://www.youtube.com/c/KubernetesCommunity/
 [9am ET]: http://www.thetimezoneconverter.com/?t=09:00&tz=ET%20%28Eastern%20Time%29
-[9am PT]: http://www.thetimezoneconverter.com/?t=12:00&tz=ET%20%28Eastern%20Time%29
+[5pm PT]: http://www.thetimezoneconverter.com/?t=17:00&&tz=PT%20(Pacific%20Time)
 [Kubernetes YouTube Channel]: https://www.youtube.com/c/KubernetesCommunity/live
 [#office-hours channel]: https://kubernetes.slack.com/messages/office-hours
 [discuss.kubernetes.io]: https://discuss.kubernetes.io
