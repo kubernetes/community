@@ -14,14 +14,14 @@ Windows specific implementation.
 
 #### Code, Binaries and Services
 
-- Windows specific code in all parts of the codebase.
+- Windows specific code in all parts of the codebase
 - Testing of Windows specific features and clusters
 
 #### Cross-cutting and Externally Facing Processes
 
 - Work with other SIGs on areas where Windows and Linux (and possibly other OSes in the future) deviate from one another in terms of functionality.
-- Providing community guidance for external tools and paradigms necessary for orchestrating the windows stack, including `wins`, `csi-proxy`, and the umbrella (windows privileged containers)[https://github.com/ambguo/enhancements/blob/master/keps/sig-windows/1981-windows-privileged-container-support/20201981-windows-privileged-container-support.md] initiative.
-
+- Providing community guidance for external tools and paradigms necessary for production windows k8s administration
+- Helping to transition from CSI/CNI tooling workarounds to the emerging (windows privileged containers)[https://github.com/ambguo/enhancements/blob/master/keps/sig-windows/1981-windows-privileged-container-support/20201981-windows-privileged-container-support.md] initiative
 
 ## Roles and Organization Management
 
