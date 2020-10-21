@@ -25,7 +25,7 @@ We do this by listening - whether it’s through our roadshows to SIG meetings, 
   - They are expected to escalate to the project's code of conduct committee when issues rise above the level of simple moderation
 - Work with other SIGs and interested parties in the project to execute GitHub tasks where required, see [GitHub Management] for more detail
 - Own and execute events that are targeted to the Kubernetes contributor community, including:
-  - The weekly [Kubernetes Community meeting]
+  - [Kubernetes Community meeting]
   - [Contributor Summit(s)]
   - [Steering Committee elections] (though we do not own policy creation, see 'out of scope' below)
   - Retrospective moderation for other SIGs upon request
@@ -63,7 +63,7 @@ We cross-cut all SIGs and WGs to deliver the following processes:
         - [kubernetes-sig-contribex@]googlegroups.com
         - sig-leads@googlegroups.com
         - [kubernetes-dev@]googlegroups.com with the GitHub issue link including the subject [NOTICE]: $announcement
-        - We will also announce it at the weekly Kubernetes Community Meeting on Thursdays
+        - We will also announce it at the Kubernetes Community Meeting
 - Depending on how wide of an ecosystem change this is, we may also slack, blog, tweet, and use other channels to get the word out.
 - Our standard time box is 72 business hours; however, there may be situations where we need to act quickly but the time period will always be clear and upfront.
 - Encourage automation to improve productivity for contributors where it makes sense and consult with SIG Testing if automation is covering GitHub workflows.
@@ -128,7 +128,7 @@ Chairs and Technical Leads
 [CNCF]: https://cncf.io
 [GitHub issues]: https://github.com/kubernetes/community/issues
 [project list]: https://github.com/orgs/kubernetes/projects/1
-[Kubernetes Community meeting]: https://git.k8s.io/community/communication#weekly-meeting
+[Kubernetes Community meeting]: https://docs.google.com/document/d/1VQDIAB0OqiSjIHI8AWMvSdceWhnz56jNpZrLs6o7NJY/edit
 [mentoring programs]: https://git.k8s.io/community/mentoring
 [Steering Committee elections]: https://git.k8s.io/community/events/elections
 [Slack]: https://git.k8s.io/community/communication/slack-guidelines.md
