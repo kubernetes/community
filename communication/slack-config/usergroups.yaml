@@ -132,3 +132,18 @@ usergroups:
       - varshaprasad96
       - rashmigottipati
       - jberkhahn
+
+  - name: odo-devs
+    long_name: Odo Development Team
+    description: Active developers of odo on #odo
+    channels:
+      - odo
+    members:
+      - adisky
+      - cdrage
+      - dharmit
+      - girishramnani
+      - mohammedzee1000
+      - mik-dass
+      - prietyc123
+      - kadel
