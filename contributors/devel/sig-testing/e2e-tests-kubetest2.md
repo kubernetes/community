@@ -239,3 +239,52 @@ KUBE_GCE_INSTANCE_PREFIX=kubetest2 KUBECONFIG=$PWD/_artifacts/kubetest2-kubeconf
 Note that `kubetest2` also automatically dumps all logs to
 `_artifacts/cluster-logs/` when you bring up your test cluster with
 the `--up` command.
+
+
+## Monitoring
+
+### Prow:
+https://prow.k8s.io/
+https://github.com/kubernetes/test-infra/tree/master/prow
+
+Prow is a Kubernetes based CI/CD system. Jobs can be triggered by various types of events and report their status to many different services. In addition to job execution, Prow provides GitHub automation in the form of policy enforcement, chat-ops via /foo style commands, and automatic PR merging.
+
+### Spyglass
+https://github.com/kubernetes/test-infra/tree/master/prow/spyglass#spyglass
+Spyglass is a pluggable artifact viewer framework for Prow. It collects artifacts (usually files in a storage bucket) from various sources and distributes them to registered viewers, which are responsible for consuming them and rendering a view.
+
+Some examples:
+Spyglass can show CI-Job or PR-job history for jobs that ran against a PR prior to being merged:
+https://prow.k8s.io/pr-history/?org=kubernetes&repo=kubernetes&pr=95503
+https://prow.k8s.io/view/gs/kubernetes-jenkins/logs/ci-kubernetes-kind-e2e-parallel-1-19/1319042366136389632
+
+
+### Testgrid:
+https://testgrid.k8s.io/
+https://github.com/kubernetes/test-infra/tree/master/testgrid
+
+
+Some Examples:
+Test grid show results of induvidual PR's after is was merge. This will show if the test flake
+https://testgrid.k8s.io/google-gce#gci-gce-flaky&include-filter-by-regex=should%20test%20the%20lifecycle%20of%20a%20ReplicationController
+
+
+
+From the old [document](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests)
+@spiffx proposed: rewrite "kinds of tests" to instead be "Test tags", include test tags that aren't yet documented ([DisabledForLargeClusters] i
+
+
+
+
+More topics:
+- I might recommend using kind to run e2e tests (and examples to do so), that may already exist elsewhere @BenTheElder ?
+- the "performance evaluation" content may be stale, I feel like that should move to or reference scalability docs with a link
+
+
+
+
+
+
+
+
+
