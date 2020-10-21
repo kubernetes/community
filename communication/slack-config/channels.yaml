@@ -264,6 +264,7 @@ channels:
   - name: node-problem-detector
   - name: norw-users
   - name: octant
+  - name: odo
   - name: office-hours
   - name: okteto
   - name: olm-dev
