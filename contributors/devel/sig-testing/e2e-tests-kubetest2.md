@@ -241,6 +241,10 @@ Note that `kubetest2` also automatically dumps all logs to
 the `--up` command.
 
 
+
+
+Added info by Riaankl
+
 ## Monitoring
 
 ### Prow:
@@ -270,15 +274,23 @@ https://testgrid.k8s.io/google-gce#gci-gce-flaky&include-filter-by-regex=should%
 
 
 
+
+
+
+Open Points for the PR:
 From the old [document](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests)
-@spiffx proposed: rewrite "kinds of tests" to instead be "Test tags", include test tags that aren't yet documented ([DisabledForLargeClusters] i
-
-
+@spiffx proposed: rewrite "kinds of tests" to instead be "Test tags", include test tags that aren't yet documented ([DisabledForLargeClusters] 
+Riaankl - I did ask in Slack SIG testing for the list and description of labels, no joy yet.
 
 
 More topics:
-- I might recommend using kind to run e2e tests (and examples to do so), that may already exist elsewhere @BenTheElder ?
+- "I might recommend using kind to run e2e tests (and examples to do so), that may already exist elsewhere @BenTheElder ?"
+Ask for documentation is Slack and they shared this:
+"we don't generally use that with kind currently, kubetest2 is still pretty new"
+github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/conformance-tests.md#running-conformance-tests-with-kind
+
 - the "performance evaluation" content may be stale, I feel like that should move to or reference scalability docs with a link
+Here I have not done anything yet.
 
 
 
