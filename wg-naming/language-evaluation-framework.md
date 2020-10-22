@@ -1,33 +1,35 @@
 
-# Language harm evaluation framework
+# A framework for evaluating harmful language
 
 ## About
 
 The language evaluation framework is a guidance document developed by the Kubernetes Naming Working Group. It outlines a structured framework for evaluating language and terminology for harm to the community. This enables the community to navigate divisive conversations with a measure of clarity.
 
-While the document was created for an open source technology project, we feel the principles outlines are applicable to other fields as well.
+The framework was created for an open source technology project. The framework may be applicable to other fields as well.
 
-## The framework
+## Using the framework
 
-### Using the framework
+The framework is divided into three sections: first-, second-, and third-order concerns, ranked in order of potential harm to the community. 
 
-The framework is divided into 3 sections: first-, second-, and third-order concerns, ranked in order of potential for harm the language could cause to the community. 
+First-order concerns are language where harm is egregious, overt, and clearly problematic. Second-order concerns are language which is problematic but with a less definite impact. Third-order concerns indicate language that could use improvement but does no demonstrable harm.
 
-In general, first-order concerns are egregious, overt, and clearly problematic. Second-order concerns are things which indicate problematic language, but are less clearly provable. Third-order concerns indicate language that could use improvement.
-
-For each term under evaluation, answer all questions.
+Answer all questions for each term evaluated.
 
 
-When complete, look at the questions answered in the affirmative: in general, the more questions answered “yes” or “possibly”, the more likely it is that the language in question needs to be erased. If any first-order concerns are a “yes”, replace the language in question. If a significant number of second- or third- order concerns are a “yes”, strongly consider replacing the language in question. 
+When complete, consider questions answered in the affirmative: in general, the more questions answered “yes” or “possibly”, the more likely it is that the language in question needs to be replaced. 
 
-This framework is intentionally non-prescriptive. Bear in mind that your intention in this work is to reduce harm for the community first and foremost, and let that guide your decisions.
+If any first-order concerns are a “yes”, replace the language. 
+
+If a significant number of second- or third- order concerns are a “yes”, strongly consider replacing the language. 
+
+This framework is intentionally non-prescriptive. The intention in this work is to reduce harm for the community; let harm reduction guide your decisions.
 
 ### First-order concerns
 
 First-order concerns are characterized by: 
 
-- Overtness: regardless of its use in the context of code or technology, there is little to no ambiguity outside of technology as to whether the language in question indicates harm.
-- Identity-specificity: language in question specifically unambiguously identifies a group of people.
+- Overtness: regardless of its use in the context of code or technology, there is little to no ambiguity outside of technology as to whether the language in question indicates harm
+- Identity-specificity: language in question specifically unambiguously identifies a group of people
 
 #### Is the term overtly racist?
 
@@ -50,7 +52,7 @@ Examples do not include “homogenizing” or “homogenous” data.
 Second-order concerns are characterized by: 
 
 - Ambiguity: outside the context of code or technology, language might have connotations related to harmful scenarios like war, militarization, or policing, but the actual etymology of the term is not related to harm of a specific identity
-- Lack of identity-specificity: concerns in this category do not target specific identities, or do so in a non-overt way.
+- Lack of specific identity: concerns in this category do not target specific identities, or do so in a non-overt way
 
 #### Is the term violent?
 
@@ -65,7 +67,11 @@ Examples include “marshal/unmarshal”.
 
 Third-order concerns are characterized by:
 
-- Language focus: is the language in use a metaphor that could be described more precisely using different words?
+- Clarity: is the language in use a metaphor that could be described more precisely using different words?
+
+- Anthropomorphism: does language unnecessarily humanize components or processes?
+
+- Idiomatic: Is language unclear to someone outside a specific culture?
 
 
 #### Is the term evocative instead of descriptive?
@@ -78,29 +84,30 @@ Examples include the use of ABORT/STOP/KILL in Unix-like systems, where they map
 
 ## Footnotes 
 
-### The element of time
+### Changes over time
 
 In general, strong democratic societies become more progressive and accepting as time passes. This is a feature, not a bug. 
 
-The result of this, for your work, is that terms that were once deemed acceptable may, at some future point, be deemed unacceptable. 
+As a result, terms that were once deemed acceptable may, at some future point, be deemed unacceptable. 
 
 We recommend:
 
 - Placing a date at the top of any documents/recommendations related to naming, language inclusivity, or harm reduction 
 - Expecting that some of your work will need re-evaluation at a later date
-- An openness to reversing decisions 
+- Openness to updating language as readers and cultures change
 
 
 ### Dealing with trolls
 
-In the handful of months since this work began, both Kubernetes as a whole and WG Naming have dealt with a number of issues and comments from trolls. We anticipate anyone using this document to guide their own work will receive the same kind of attention. 
+In the handful of months since this work began, both Kubernetes as a whole and WG Naming have dealt with a number of issues and comments from trolls. We anticipate that anyone using this document to guide their own work will receive the same kind of attention. 
 
-Kubernetes is a large enough open source project that we mostly see [sea lions](http://wondermark.com/1k62/) (concern trolls), who seek to debate false concerns with us legitimately to use up our energy and time.
+In Kubernetes we mostly encounter [sea lions](http://wondermark.com/1k62/) (concern trolls), who seek to legitimize debate over false concerns in order to use up contributors' energy and time.
 
-When possible, we work with our GitHub and other moderation teams to shut these down at the source and delete issues. 
+We work with our GitHub and other moderation teams to shut down trolling behavior at the source and remove trolling content. 
 
 In cases where it’s unclear whether the poster is a legitimate user or a troll, we direct the work back to them: because they’re clearly “legitimately interested” in this topic, we ask them to join us in the WG Naming mailing list, drafting a formal suggestion (attached to an email address and identity we can track) and suggesting replacement terminology. Most trolls do not want to put in the effort.
 
+Rather than be discouraged by trolls, consider it a heartening sign that you are engaged in meaningful work. 
 
 ### Kudos
 
