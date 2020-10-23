@@ -389,6 +389,7 @@ channels:
   - name: wg-iot-edge
   - name: wg-k8s-infra
   - name: wg-lts
+    archived: true
   - name: wg-machine-learning
     archived: true
   - name: wg-multitenancy
