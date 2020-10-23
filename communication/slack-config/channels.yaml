@@ -74,6 +74,7 @@ channels:
   - name: eks
   - name: elastickube
   - name: elk-charts
+    archived: true
   - name: emea-dev
   - name: emea-users
   - name: es-users
