@@ -101,6 +101,7 @@ channels:
   - name: gke
   - name: gloo
   - name: grafana-operator
+  - name: haproxy-ingress
   - name: helm-chart-testing
   - name: helm-deprecated
     archived: true
