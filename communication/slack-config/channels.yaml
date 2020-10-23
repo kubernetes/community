@@ -389,6 +389,7 @@ channels:
   - name: wg-iot-edge
   - name: wg-k8s-infra
   - name: wg-lts
+    archived: true
   - name: wg-machine-learning
     archived: true
   - name: wg-multitenancy
@@ -400,6 +401,7 @@ channels:
   - name: wg-resource-mgmt
     archived: true
   - name: wg-security-audit
+    archived: true
   - name: wg-virtual-kubelet
     archived: true
   - name: windows-containerd
