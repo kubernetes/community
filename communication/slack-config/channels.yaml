@@ -401,6 +401,7 @@ channels:
   - name: wg-resource-mgmt
     archived: true
   - name: wg-security-audit
+    archived: true
   - name: wg-virtual-kubelet
     archived: true
   - name: windows-containerd
