@@ -5,9 +5,11 @@
 ### About
 
 Target of this document is to define and outline the Technical Lead role within
-the Kubernetes community. The document can be used as guidance for Special
-Interest Groups (SIGs) to onboard new Technical Leads as well as clarifying the
-expectations associated with this role.
+the Kubernetes community in correspondence with the existing [description of SIG
+Governance](/committee-steering/governance/sig-governance.md#tech-lead). The
+document can be used as guidance for Special Interest Groups (SIGs) to onboard
+new Technical Leads as well as clarifying the expectations associated with this
+role.
 
 ### Abstract
 

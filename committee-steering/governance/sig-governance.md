@@ -127,6 +127,7 @@ curation from other SIG participants
   - Resolve X-Subproject technical issues and decisions
   - Number: 2-3
   - Membership tracked in [sigs.yaml]
+  - Role description in [technical-lead.md]
 
 ### Subproject Owner
 
@@ -244,3 +245,4 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [dashboard]: https://testgrid.k8s.io/
 [monthly community meeting]: /events/community-meeting.md
 [inclusive speaker training course]: https://training.linuxfoundation.org/training/inclusive-speaker-orientation/
+[technical-lead.md]: /contributors/chairs-and-techleads/technical-lead.md
