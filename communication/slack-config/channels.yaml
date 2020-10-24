@@ -338,6 +338,7 @@ channels:
   - name: sig-scalability
   - name: sig-scheduling
   - name: sig-security
+  - name: sig-security-docs
   - name: sig-security-tooling
   - name: sig-service-catalog
   - name: sig-testing
