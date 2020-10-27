@@ -5,6 +5,7 @@ reviewers:
   - nikhita
   - markyjackson-taulia
 approvers:
+  - markyjackson-taulia # for community-bridge and meeting bosun
   - parispittman
   - nikhita
   - sig-contributor-experience-leads
