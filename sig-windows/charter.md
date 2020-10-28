@@ -21,7 +21,7 @@ Windows specific implementation.
 
 - Work with other SIGs on areas where Windows and Linux (and possibly other OSes in the future) deviate from one another in terms of functionality.
 - Providing community guidance for external tools and paradigms necessary for production windows k8s administration
-- Helping to transition from CSI/CNI tooling workarounds to the emerging (windows privileged containers)[https://github.com/ambguo/enhancements/blob/master/keps/sig-windows/1981-windows-privileged-container-support/20201981-windows-privileged-container-support.md] initiative
+- Providing a reference implementation(s) of an end-to-end integrated windows cluster that can be used for R&D, prototyping, and testing by other SIGs or companies interested in building k8s windows integrations (this is motivated by the fact that container runtime technologies may change over time and the community benefits from having a canonical example of how to use windows with K8s).
 
 ## Roles and Organization Management
 
