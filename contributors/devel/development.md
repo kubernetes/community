@@ -21,7 +21,7 @@ is a critical component that is too slow for an SLA that we care about) from the
 solution (e.g. make X faster).
 
 Some of these checks were less common in Kubernetes' earlier days. Now that we
-have over 1000 contributors, each issue should be filed with care. No issue
+have over 50000 contributors, each issue should be filed with care. No issue
 should take more than 5 minutes to check for sanity (even the busiest of
 reviewers can spare 5 minutes to review a patch that is thoughtfully justified).
 
