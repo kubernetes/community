@@ -101,6 +101,8 @@ the developers who could not be reached
    * Additions of [the standard Kubernetes header](https://git.k8s.io/kubernetes/hack/boilerplate/boilerplate.go.txt)
      to code created by the contributors can occur post-transfer, but should
      ideally occur shortly thereafter.
+   * Should contain template files as per the
+     [kubernetes-template-project](https://github.com/kubernetes/kubernetes-template-project).
 
 Note that copyright notices should only be modified or removed by the people or
 organizations named in the notice. See [the FAQ below](#faq) for more information
