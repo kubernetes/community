@@ -189,6 +189,9 @@ Below are a good and incorrect example:
 * Incorrect description: `Data Protection WG Bi-Weekly Meeting for 2/26/2020`
 * Correct description: `Data Protection WG Bi-Weekly Meeting for 20200226`
 
+A short video tutorial of the editing of descriptions and playlists can be found here:
+* https://youtu.be/IbZ2wnvu_Zs
+
 ### Thumbnails
 
 TODO - someone help us with better thumbnails to lay over the videos!

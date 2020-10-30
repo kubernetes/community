@@ -93,7 +93,6 @@ better.
 - [Test Grid] - View historical tests and their associated information.
 - [Triage Dashboard] - Aggregates similar failures together for better
   troubleshooting. 
-- [Velodrome] - Dashboard to track job and test health.
 
 
 ### Important Email Aliases
@@ -394,7 +393,6 @@ git push --force
 [youtube channel]: https://www.youtube.com/c/KubernetesCommunity/
 [triage dashboard]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [developer statistics]: https://k8s.devstats.cncf.io
 [code of conduct]: /code-of-conduct.md
 [user support requests]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

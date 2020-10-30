@@ -77,7 +77,7 @@ aliases:
     - tabbysable
   sig-service-catalog-leads:
     - jberkhahn
-    - mszostok
+    - jhvhs
   sig-storage-leads:
     - jsafrane
     - msau42
@@ -116,11 +116,6 @@ aliases:
     - bartsmykla
     - dims
     - spiffxp
-  wg-lts-leads:
-    - imkin
-    - quinton-hoole
-    - tpepper
-    - youngnick
   wg-multitenancy-leads:
     - srampal
     - tashimi
@@ -132,11 +127,10 @@ aliases:
   wg-policy-leads:
     - ericavonb
     - hannibalhuang
-  wg-security-audit-leads:
-    - aasmall
-    - cji
-    - jaybeale
-    - joelsmith
+  wg-reliability-leads:
+    - deads2k
+    - stevekuznetsov
+    - wojtek-t
   ug-big-data-leads:
     - erikerlandson
     - foxish
@@ -164,10 +158,10 @@ aliases:
     - cblecker
     - derekwaynecarr
     - dims
-    - lachie83
+    - liggitt
+    - mrbobbytables
     - nikhita
     - parispittman
-    - spiffxp
 ## BEGIN CUSTOM CONTENT
   provider-aws:
     - d-nishi

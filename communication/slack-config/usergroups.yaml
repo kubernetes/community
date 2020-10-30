@@ -52,6 +52,8 @@ usergroups:
       - ashish-amarnath
       - carlisia
       - nrb
+      - stephbman
+      - zubron
 
   - name: youtube-admins
     long_name: YouTube Admins
@@ -94,3 +96,54 @@ usergroups:
     members:
       - phenixblue
       - AlexB138
+
+  - name: skaffold-devs
+    long_name: Skaffold Development Team
+    description: Active developers on #skaffold
+    channels:
+      - skaffold
+    members:
+      - briandealwis
+      - gsquared94
+      - ilya-zuyev
+      - IsaacPD
+      - MarlonGamez
+      - nkubala
+      - tejal29
+      - tstromberg
+
+  - name: operator-sdk-maintainers
+    long_name: Operator SDK maintainers
+    description: Active developers of the Operator SDK
+    channels:
+      - kubernetes-operators
+      - operator-sdk-dev
+      - kubebuilder
+    members:
+      - estroz
+      - joelanford
+      - jmccormick2001
+      - jmrodri
+      - asmacdo
+      - marc-obrien
+      - theishshah
+      - camilamacedo86
+      - fabianvf
+      - varshaprasad96
+      - rashmigottipati
+      - jberkhahn
+
+  - name: odo-devs
+    long_name: Odo Development Team
+    description: Active developers of odo on #odo
+    channels:
+      - odo
+    members:
+      - adisky
+      - cdrage
+      - dharmit
+      - girishramnani
+      - mohammedzee1000
+      - mik-dass
+      - prietyc123
+      - kadel

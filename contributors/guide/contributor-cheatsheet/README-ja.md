@@ -70,7 +70,6 @@ Kubernetesにコントリビュートする際のtipsや、Kubernetesプロジ�
 - [Prow] - KubernetesのCI/CDシステム
 - [Test Grid] - 歴史的なテストや関連した情報を見る
 - [Triageダッシュボード] - よりよくトラブルシューティングをするために、似たような失敗をまとめる
-- [Velodrome] - ジョブやテスト結果を追跡するためのダッシュボード
 
 
 ### 重要なEメールエイリアス
@@ -309,7 +308,6 @@ git checkout -b myfeature
 [youtubeチャンネル]: https://www.youtube.com/c/KubernetesCommunity/
 [triageダッシュボード]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [開発者統計]: https://k8s.devstats.cncf.io
 [code of conduct]: /code-of-conduct.md
 [ユーザーによるサポート要求]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

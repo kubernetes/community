@@ -103,6 +103,9 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-ibmcloud
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
+### cluster-api-provider-nested
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-nested/master/OWNERS
 ### cluster-api-provider-openstack
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
@@ -139,11 +142,6 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 - **Meetings:**
   - kops Office Hours: [Fridays at 09:00 PT (Pacific Time)](https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit).
-### kube-aws
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
-- **Contact:**
-  - Slack: [#kube-aws](https://kubernetes.slack.com/messages/kube-aws)
 ### kube-up
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS

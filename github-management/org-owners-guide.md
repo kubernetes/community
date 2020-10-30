@@ -75,9 +75,6 @@ for all orgs going forward.  Notable discrepancies at the moment:
   `kubernetes-sig-foo-pr-reviews` teams and are intended mostly as a fallback
   notification mechanism when requested reviewers are being unresponsive.
   Ideally OWNERS files can be used in lieu of these teams.
-- `admins-foo` and `maintainers-foo` teams as used by the kubernetes-incubator
-  org. This was a mistake that swapped the usual convention, and we would like
-  to rename the team
 
 ### Structure and Process
 

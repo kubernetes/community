@@ -101,6 +101,8 @@ the developers who could not be reached
    * Additions of [the standard Kubernetes header](https://git.k8s.io/kubernetes/hack/boilerplate/boilerplate.go.txt)
      to code created by the contributors can occur post-transfer, but should
      ideally occur shortly thereafter.
+   * Should contain template files as per the
+     [kubernetes-template-project](https://github.com/kubernetes/kubernetes-template-project).
 
 Note that copyright notices should only be modified or removed by the people or
 organizations named in the notice. See [the FAQ below](#faq) for more information
@@ -163,25 +165,6 @@ project and are generally not subject to removal, except under exceptional
 circumstances (e.g. a code of conduct violation).
 
 ## FAQ
-
-**My project is currently in kubernetes-incubator, what is going to happen to
-it?**
-
-Nothing. We’ll grandfather existing projects and they can stay in the incubator
-org for as long as they want to. We expect/hope that most projects will either
-move out to ecosystem, or into SIG or Core repositories following the same
-approval process described below.
-
-**My project wants to graduate from incubator, how can it do that?**
-
-Either approval from a SIG to graduate to a SIG repository, or approval from
-SIG-Architecture to graduate into the core repository.
-
-**My incubator project wants to go GA, how can it do that?**
-
-For now, the project determines if and when it is GA. For the future, we may
-define a cross Kubernetes notion of GA for core and sig repositories, but that’s
-not in this proposal.
 
 **My project is currently in core, but doesn’t seem to fit these guidelines,
 what’s going to happen?**

@@ -3,6 +3,7 @@
 
 channels:
   - name: airflow-operator
+  - name: akri
   - name: aks-engine-users
   - name: aks-engine-dev
     id: CU1CXUHN0
@@ -43,6 +44,8 @@ channels:
   - name: cluster-api-digitalocean
   - name: cluster-api-docker
     archived: true
+  - name: cluster-api-gcp
+  - name: cluster-api-nested
   - name: cluster-api-openstack
   - name: cluster-api-packet
   - name: cluster-api-vsphere
@@ -57,6 +60,7 @@ channels:
   - name: crash-diagnostics
   - name: crd-installation
   - name: crio
+  - name: crossplane
   - name: csi-secrets-store #this channel is for secrets-store-csi-driver which is a subproject of sig-auth
   - name: de-events
   - name: de-users
@@ -71,6 +75,7 @@ channels:
   - name: eks
   - name: elastickube
   - name: elk-charts
+    archived: true
   - name: emea-dev
   - name: emea-users
   - name: es-users
@@ -98,6 +103,7 @@ channels:
   - name: gke
   - name: gloo
   - name: grafana-operator
+  - name: haproxy-ingress
   - name: helm-chart-testing
   - name: helm-deprecated
     archived: true
@@ -128,7 +134,8 @@ channels:
   - name: jp-users
   - name: jp-users-novice
   - name: jsonnet
-  - name: k14s
+  - name: carvel
+    id: CH8KCCKA5
   - name: kalm
   - name: kaniko
   - name: k8s-dual-stack
@@ -159,7 +166,7 @@ channels:
   - name: krane
   - name: krew
   - name: krex
-  - name: krustlet  
+  - name: krustlet
   - name: kube-aws
   - name: kube-deploy
     archived: true
@@ -261,6 +268,7 @@ channels:
   - name: node-problem-detector
   - name: norw-users
   - name: octant
+  - name: odo
   - name: office-hours
   - name: okteto
   - name: olm-dev
@@ -278,6 +286,7 @@ channels:
   - name: outreachy-apps
     id: CDH610735
   - name: pharmer
+  - name: pinniped
   - name: pl-users
   - name: pr-reviews
   - name: prometheus
@@ -286,6 +295,7 @@ channels:
   - name: prow
   - name: prow-alerts
   - name: pt_br-users
+  - name: purelb-users
   - name: raksh
   - name: rancher
   - name: random
@@ -298,7 +308,8 @@ channels:
   - name: schemahero
   - name: se-users
   - name: sealed-secrets
-  - name: seccomp-operator
+  - name: security-profiles-operator
+    id: C013FQNB0A2
   - name: service-binding-operator
   - name: shippable
   - name: shipper
@@ -328,6 +339,8 @@ channels:
   - name: sig-scalability
   - name: sig-scheduling
   - name: sig-security
+  - name: sig-security-docs
+  - name: sig-security-tooling
   - name: sig-service-catalog
   - name: sig-testing
   - name: sig-ui
@@ -380,6 +393,7 @@ channels:
   - name: wg-iot-edge
   - name: wg-k8s-infra
   - name: wg-lts
+    archived: true
   - name: wg-machine-learning
     archived: true
   - name: wg-multitenancy
@@ -387,9 +401,11 @@ channels:
   - name: wg-onprem
     archived: true
   - name: wg-policy
+  - name: wg-reliability
   - name: wg-resource-mgmt
     archived: true
   - name: wg-security-audit
+    archived: true
   - name: wg-virtual-kubelet
     archived: true
   - name: windows-containerd

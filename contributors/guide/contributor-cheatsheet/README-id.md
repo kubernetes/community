@@ -76,7 +76,6 @@ di GitHub menjadi lebih baik.
 - [Prow] - Mekanisme CI/CD Kubernetes.
 - [Test Grid] - Melihat data _historical testing_ beserta informasi terkait.
 - [Dasbor Triase] - Melakukan agregasi _failure_ untuk mekanisme _troubleshoot_ yang lebih baik.
-- [Velodrome] - Dasbor untuk melacak _job_ dan _testing_ kesehatan.
 
 
 ### Alamat Email Penting
@@ -362,7 +361,6 @@ _squashing_ perlu dilakukan atau tidak.
 [youtube _channel_]: https://www.youtube.com/c/KubernetesCommunity/
 [dasbor triase]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [Statistik Pengembang]: https://k8s.devstats.cncf.io
 [code of conduct]: /code-of-conduct.md
 [_user support request_]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

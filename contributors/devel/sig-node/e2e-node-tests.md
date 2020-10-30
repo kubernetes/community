@@ -1,10 +1,6 @@
-# Node End-To-End tests
+# Node End-To-End (e2e) tests
 
-Node e2e tests are component tests meant for testing the Kubelet code on a custom host environment.
-
-Tests can be run either locally or against a host running on GCE.
-
-Node e2e tests are run as both pre- and post- submit tests by the Kubernetes project.
+Node e2e tests are component tests meant for testing the Kubelet code on a custom host environment. Tests can be run either locally or against a host running on Google Compute Engine (GCE). Node e2e tests are run as both pre- and post- submit tests by the Kubernetes project.
 
 *Note: Linux only. Mac and Windows unsupported.*
 
@@ -14,13 +10,13 @@ Node e2e tests are run as both pre- and post- submit tests by the Kubernetes pro
 
 ## Locally
 
-Why run tests *Locally*?  Much faster than running tests Remotely.
+Why run tests *locally*? It is much faster than running tests remotely.
 
 Prerequisites:
-- [Install etcd](https://github.com/coreos/etcd/releases) on your PATH
+- [Install etcd](https://github.com/coreos/etcd/releases) and include the path to the installation in your PATH
   - Verify etcd is installed correctly by running `which etcd`
   - Or make etcd binary available and executable at `/tmp/etcd`
-- [Install ginkgo](https://github.com/onsi/ginkgo) on your PATH
+- [Install ginkgo](https://github.com/onsi/ginkgo) and include the path to the installation in your PATH
   - Verify ginkgo is installed correctly by running `which ginkgo`
 
 From the Kubernetes base directory, run:
@@ -29,7 +25,7 @@ From the Kubernetes base directory, run:
 make test-e2e-node
 ```
 
-This will: run the *ginkgo* binary against the subdirectory *test/e2e_node*, which will in turn:
+This will run the *ginkgo* binary against the subdirectory *test/e2e_node*, which will in turn:
 - Ask for sudo access (needed for running some of the processes)
 - Build the Kubernetes source code
 - Pre-pull docker images used by the tests
@@ -48,12 +44,10 @@ make test-e2e-node PRINT_HELP=y
 
 ## Remotely
 
-Why Run tests *Remotely*?  Tests will be run in a customized pristine environment.  Closely mimics what will be done
-as pre- and post- submit testing performed by the project.
+Why run tests *remotely*? Tests will be run in a customized testing environment. This environment closely mimics the pre- and post- submit testing performed by the project.
 
 Prerequisites:
-- [join the googlegroup](https://groups.google.com/forum/#!forum/kubernetes-dev)
-`kubernetes-dev@googlegroups.com`
+- [Join the googlegroup](https://groups.google.com/forum/#!forum/kubernetes-dev) `kubernetes-dev@googlegroups.com`
   - *This provides read access to the node test images.*
 - Setup a [Google Cloud Platform](https://cloud.google.com/) account and project with Google Compute Engine enabled
 - Install and setup the [gcloud sdk](https://cloud.google.com/sdk/downloads)
@@ -69,7 +63,7 @@ make test-e2e-node REMOTE=true
 This will:
 - Build the Kubernetes source code
 - Create a new GCE instance using the default test image
-  - Instance will be called something like **test-cos-beta-81-12871-44-0**
+  - Instance will be named something like **test-cos-beta-81-12871-44-0**
 - Lookup the instance public ip address
 - Copy a compressed archive file to the host containing the following binaries:
   - ginkgo
@@ -86,7 +80,7 @@ This will:
 - **Leave the GCE instance running**
 
 **Note: Subsequent tests run using the same image will *reuse the existing host* instead of deleting it and
-provisioning a new one.  To delete the GCE instance after each test see
+provisioning a new one. To delete the GCE instance after each test see
 *[DELETE_INSTANCE](#delete-instance-after-tests-run)*.**
 
 
@@ -127,7 +121,7 @@ This is useful if you want recreate the instance for each test run to trigger fl
 make test-e2e-node REMOTE=true DELETE_INSTANCES=true
 ```
 
-## Keep instance, test binaries, and *processes* around after tests run
+## Keep instance, test binaries, and processes around after tests run
 
 This is useful if you want to manually inspect or debug the kubelet process run as part of the tests.
 
@@ -155,7 +149,7 @@ test in parallel against different instances of the same image.
 make test-e2e-node REMOTE=true INSTANCE_PREFIX="my-prefix"
 ```
 
-## Run tests using a custom image config
+## Run tests using a custom image configuration
 
 This is useful if you want to test out different runtime configurations. First, make a local
 (temporary) copy of the base image config from the test-infra repo:
@@ -179,7 +173,27 @@ Finally, run the tests with your custom config:
 make test-e2e-node REMOTE=true IMAGE_CONFIG_FILE="<local file>" [...]
 ```
 
-# Additional Test Options for both Remote and Local execution
+Image configuration files can further influence how FOCUS and SKIP match test cases.
+
+For example:
+
+```sh
+--focus="\[NodeFeature:.+\]" --skip="\[Flaky\]|\[Serial\]"
+```
+
+runs all e2e tests labeled `"[NodeFeature:*]"` and will skip any tests labeled `"[Flaky]"` or `"[Serial]"`.
+
+Two example e2e tests that match this expression are:
+  * https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L155
+  * https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L175
+
+However, image configuration files select test cases based on the `tests` field.
+
+See https://github.com/kubernetes/test-infra/blob/4572dc3bf92e70f572e55e7ac1be643bdf6b2566/jobs/e2e_node/benchmark-config.yaml#L22-23 for an example configuration. 
+
+If the [Prow e2e job configuration](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/image-config.yaml) does **not** specify the `tests` field, FOCUS and SKIP will run as expected.
+
+# Additional test options for both remote and local execution
 
 ## Only run a subset of the tests
 
@@ -200,6 +214,26 @@ For example, the [`ci-kubernetes-node-kubelet`](https://github.com/kubernetes/te
 
 ```sh
 make test-e2e-node REMOTE=true FOCUS="\[NodeConformance\]" SKIP="\[Flaky\]|\[Serial\]"
+```
+
+See http://onsi.github.io/ginkgo/#focused-specs in the Grinkgo documentation to learn more about how FOCUS and SKIP work.
+
+## Run a single test
+
+To run a particular e2e test, simply pass the Grinkgo `It` string to the `--focus` argument.
+
+For example, suppose we have the following test case: https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L175. We could select this test case by adding the argument:
+
+```sh
+--focus="should not show its pid in the non-hostpid containers \[NodeFeature:HostAccess\]"
+```
+
+## Run all tests related to a feature
+
+In contrast, to run all node e2e tests related to the "HostAccess" feature one could run:
+
+```sh
+--focus="\[NodeFeature:HostAccess\]"
 ```
 
 ## Run tests continually until they fail
@@ -253,15 +287,19 @@ For testing with the QoS Cgroup Hierarchy enabled, you can pass --cgroups-per-qo
 ```sh
 make test_e2e_node TEST_ARGS="--cgroups-per-qos=true"
 ```
+## Testgrid
+
+TestGrid (https://testgrid.k8s.io) is a publicly hosted and configured automated testing framework developed by Google.
+
+Here (https://testgrid.k8s.io/sig-node-containerd#containerd-node-features) we see an example of an e2e Prow job running e2e tests. Each gray row in the grid corresponds
+to an e2e test or a stage of the job (i.e. created a VM, downloaded some files). Passed tests are colored green and failed tests are colored red.
 
 # Notes on tests run by the Kubernetes project during pre-, post- submit.
 
 The node e2e tests are run by the [Prow](https://prow.k8s.io/) for each Pull Request and the results published 
-in the status checks box at
-the bottom of the Pull Request below all comments. To have prow re-run the node e2e tests against a PR add the comment
-`/test pull-kubernetes-node-e2e` and **include a link to the test
-failure logs if caused by a flake.**
-Note that [commands to prow](https://prow.k8s.io/command-help#test) must be on separate lines from any commentary.
+in the status checks box at the bottom of the Pull Request below all comments. To have Prow re-run the node e2e tests against a PR add the comment
+`/test pull-kubernetes-node-e2e` and **include a link to the test failure logs if caused by a flake.**
+Note that [commands to Prow](https://prow.k8s.io/command-help#test) must be on separate lines from any commentary.
 
 For example, 
 
@@ -270,7 +308,7 @@ For example,
 
 The PR builder runs tests against the images listed in [image-config.yaml](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/image-config.yaml).
 
-Other [node e2e prow jobs](https://github.com/kubernetes/test-infra/tree/master/config/jobs/kubernetes/sig-node)
+Other [node e2e Prow jobs](https://github.com/kubernetes/test-infra/tree/master/config/jobs/kubernetes/sig-node)
 run against different images depending on the configuration chosen in the
 [test-infra repo](https://github.com/kubernetes/test-infra/tree/master/jobs/e2e_node).
 The source code for these tests comes from the [kubernetes/kubernetes repo](https://github.com/kubernetes/kubernetes/tree/master/test/e2e_node).
