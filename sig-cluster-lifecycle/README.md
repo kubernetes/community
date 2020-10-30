@@ -103,6 +103,9 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-ibmcloud
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
+### cluster-api-provider-kubemark
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-kubemark/master/OWNERS
 ### cluster-api-provider-nested
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-nested/master/OWNERS
