@@ -47,6 +47,10 @@ Boskos is a resource manager service that handles different kinds of resources a
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/boskos/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
+### e2e-framework
+An experimental e2e testing framework for Kubernetes clusters.
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/e2e-framework/master/OWNERS
 ### k8s-gsm-tools
 Controllers to sync and rotate kubernetes secrets with google cloud secret manager
 - **Owners:**

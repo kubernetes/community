@@ -2245,6 +2245,11 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/boskos/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
+  - name: e2e-framework
+    description: |
+      An experimental e2e testing framework for Kubernetes clusters.
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/e2e-framework/master/OWNERS
   - name: k8s-gsm-tools
     description: |
       Controllers to sync and rotate kubernetes secrets with google cloud secret manager
