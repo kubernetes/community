@@ -1747,21 +1747,23 @@ sigs:
     - github: justaugustus
       name: Stephen Augustus
       company: VMware
-    - github: tpepper
-      name: Tim Pepper
-      company: VMware
+    - github: saschagrunert
+      name: Sascha Grunert
+      company: SUSE
     tech_leads:
     - github: alejandrox1
       name: Jorge Alarcon Ochoa
       company: Searchable AI
-    - github: saschagrunert
-      name: Sascha Grunert
-      company: SUSE
+    - github: hasheddan
+      name: Daniel Mangum
+      company: Upbound
     emeritus_leads:
     - github: calebamiles
       name: Caleb Miles
     - github: jdumars
       name: Jaice Singer DuMars
+    - github: tpepper
+      name: Tim Pepper
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
