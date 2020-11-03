@@ -31,9 +31,9 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Irvi Aini (**[@irvifa](https://github.com/irvifa)**), Traveloka
 * Jim Angel (**[@jimangel](https://github.com/jimangel)**), Google
 * Kaitlyn Barnard (**[@kbarnard10](https://github.com/kbarnard10)**), Kong
-* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -48,6 +48,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**)
 * Andrew Chen (**[@chenopis](https://github.com/chenopis)**)
 * Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**)
+* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**)
 
 ## Contact
 - Slack: [#sig-docs](https://kubernetes.slack.com/messages/sig-docs)
