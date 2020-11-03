@@ -108,6 +108,10 @@ We use Zoom for all of our community group meetings and contributor programs. -
 We keep a [shared calendar] with all of our community group meetings. If you'd
 like a contributor event published, please reach out to [#sig-contribex] on slack.
 
+### Website
+
+Documentation is published at https://kubernetes.io - [website guidelines]
+
 ### Social Media & Blogs
 
 #### Twitter
@@ -185,6 +189,7 @@ place!
 [10am US Pacific Time]: https://www.google.com/search?q=1000+am+in+pst
 [troubleshooting guide]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
 [@kubernetesio]: https://twitter.com/kubernetesio
+[website guidelines]: ./website-guidelines.md
 [Josh Berkus]: https://github.com/jberkus
 [zoom]: https://zoom.us/my/kubernetescommunity
 [k-dev moderators]: ./moderators.md#kubernetes-dev
