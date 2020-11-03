@@ -878,7 +878,7 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
-    time: "09:00"
+    time: "08:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09
@@ -1018,6 +1018,8 @@ sigs:
       url: https://zoom.us/j/612375927?pwd=MldxRnRSOExCVW1rbjM4ZzBSc3MvUT09
       archive_url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit
   - name: image-builder
+    contact:
+      slack: image-builder
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/image-builder/master/OWNERS
     meetings:
