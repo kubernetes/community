@@ -13,7 +13,7 @@ The Cluster Lifecycle SIG examines how we should change Kubernetes to make it ea
 The [charter](charter.md) defines the scope and governance of the Cluster Lifecycle Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Tuesdays at 08:00 PT (Pacific Time)](https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 * Regular SIG Meeting in China: [Tuesdays at 20:00 Beijing](https://zoom.us/j/179916854?pwd=dzRhbjFnRGVQRDVUVHY1a29JV2JxUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=Beijing).
@@ -135,6 +135,8 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### image-builder
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/image-builder/master/OWNERS
+- **Contact:**
+  - Slack: [#image-builder](https://kubernetes.slack.com/messages/image-builder)
 - **Meetings:**
   - Image Builder office hours: [Thursdays at 08:00 PT (Pacific Time)](https://zoom.us/j/807524571?pwd=WEFTeDJzeWU3bVFkcWQ0UEdZRkRCdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit).
