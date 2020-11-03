@@ -187,6 +187,7 @@ Because of having IDs appear with different upper casing in different sources, G
 - dashpole
 - davidewatson
 - davidz627
+- davivcgarcia
 - dberkov
 - dcbw
 - dchen1107
@@ -391,7 +392,7 @@ Because of having IDs appear with different upper casing in different sources, G
 - kad
 - kakts
 - karan
-- karenchu
+- karenhchu
 - kargakis
 - kashifsaadat
 - katharine
