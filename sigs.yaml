@@ -1716,6 +1716,9 @@ sigs:
       slack: node-problem-detector
     owners:
     - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
+  - name: noderesourcetopology-api
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/noderesourcetopology-api/master/OWNERS
   - name: security-profiles-operator
     contact:
       slack: security-profiles-operator
