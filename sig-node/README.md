@@ -66,6 +66,9 @@ The following [subprojects][subproject-definition] are owned by sig-node:
   - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
 - **Contact:**
   - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
+### noderesourcetopology-api
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/noderesourcetopology-api/master/OWNERS
 ### security-profiles-operator
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/security-profiles-operator/master/OWNERS
