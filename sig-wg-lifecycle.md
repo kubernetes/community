@@ -66,7 +66,7 @@ Each one of these has a linked canonical source guideline from set up to moderat
 
 ### Engage:
 ...as a chair/tech lead with other chairs/tech leads
-- [ ] Subscribe to the kubernetes-sig-leads@googlegroups.com group
+- [ ] Add yourself to the [leads@kubernetes.io group]
 - [ ] Join the #chairs-and-techleads slack channel
 
 ...with the community as part of [sig-governance.md]
@@ -130,3 +130,4 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 [update meetings]: /communication/calendar-guidelines.md
 [community members]: /community-membership.md
 [mailing-list-guidelines.md]: /communication/mailing-list-guidelines.md
+[leads@kubernetes.io group]: https://github.com/kubernetes/k8s.io/blob/master/groups/groups.yaml
