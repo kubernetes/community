@@ -117,8 +117,8 @@ channels:
   - name: id-events
   - name: id-users
   - name: il-users
-  - name: in-dev
   - name: image-builder
+  - name: in-dev
   - name: in-events
   - name: in-users
   - name: ingress-nginx
