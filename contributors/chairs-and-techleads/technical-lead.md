@@ -28,10 +28,14 @@ internal to the SIG and, more significantly, external to the entire Kubernetes
 project. Before being able to align any technical direction, it is necessary to
 establish a technical vision within the SIG. The technical vision should be
 continuously updated and turned into reality, whereas larger features of the
-vision can be outlined in dedicated roadmaps. This means Technical Leads have to
-be involved in the source code base of the SIG to be able to take the right
-decisions, identify risk and maintain a high level of trust with other members
-of the SIG.
+vision can be outlined in dedicated roadmaps.
+
+Expectations of Technical Leads are:
+
+- They're involved in the source code base of the SIG to be able to take the
+  right decisions.
+- They actively identify risk and maintain a high level of trust with other
+  members of the SIG.
 
 Technical Leads have the responsibility to track the technical quality of the
 deliverables of the team if a roadmap exists. They are volunteering to provide
