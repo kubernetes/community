@@ -18,9 +18,9 @@ The [Kubernetes Blog] is a subproject of SIG-Docs and operated by the [blog team
 ## Community statements
 
 Prominent notices on Kubernetes web sites (such as site-wide or front-page banners)
-may be used occasionally to publish statements on behalf of the Kubernetes community.
-The content of those statements must be approved by the [Kubernetes Steering Committee].
-Statements may remain up to 3 weeks, after which they automatically expire
+may be used occasionally to publish information on behalf of the Kubernetes community.
+The content of those notices must be approved by the [Kubernetes Steering Committee].
+Notices may remain up to 3 weeks, after which they automatically expire
 and are removed unless renewed by the steering committee for additional 3 week periods.
 
 [website subproject]: https://github.com/kubernetes/community/tree/master/sig-docs#website
