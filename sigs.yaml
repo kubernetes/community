@@ -1150,7 +1150,6 @@ sigs:
     description: Manages operations and policy for upstream community group communication
       platforms.
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/contributor-tweets/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/discuss-theme/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
     meetings:
@@ -1162,7 +1161,14 @@ sigs:
       url: https://zoom.us/j/144440337?pwd=VEVBejdPYkE2MGdUSDZZZnVlNFdrdz09
       archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
-    - description: Marketing Team Meeting
+  - name: contributor-comms
+    description: |
+      Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/contributor-tweets/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/communication/marketing-team/OWNERS
+    meetings:
+    - description: Contributor Comms - Upstream Marketing Team Meeting
       day: Friday
       time: "8:00"
       tz: PT (Pacific Time)
