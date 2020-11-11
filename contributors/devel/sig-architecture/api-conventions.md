@@ -543,7 +543,23 @@ selectors, annotations, data), as opposed to sets of subobjects.
 
 Some fields will have a list of allowed values (enumerations). These values will
 be strings, and they will be in CamelCase, with an initial uppercase letter.
-Examples: `ClusterFirst`, `Pending`, `ClientIP`.
+Examples: `ClusterFirst`, `Pending`, `ClientIP`. When an acronym or initialism
+each letter in the acronym should be uppercase, such as with `ClientIP` or
+`TCPDelay`. When a proper name or the name of a command-line executable is used
+as a constant the proper name should be represented in consistent casing -
+examples: `systemd`, `iptables`, `IPVS`, `cgroupfs`, `Docker` (as a generic
+concept), `docker` (as the command-line executable). If a proper name is used
+which has mixed capitalization like `eBFP` that should be preserved in a longer
+constant such as `eBPFDelegation`.
+
+All API within Kubernetes must leverage constants in this style, including
+flags and configuration files. Where inconsistent constants were previously used,
+new flags should be CamelCase only, and over time old flags should be updated to
+accept a CamelCase value alongside the inconsistent constant. Example: the
+Kubelet accepts a `--topology-manager-policy` flag that has values `none`,
+`best-effort`, `restricted`, and `single-numa-node`. This flag should accept
+`None`, `BestEffort`, `Restricted`, and `SingleNUMANode` going forward. If new
+values are added to the flag, both forms should be supported.
 
 #### Unions
 
