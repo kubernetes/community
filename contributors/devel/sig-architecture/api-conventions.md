@@ -549,7 +549,7 @@ each letter in the acronym should be uppercase, such as with `ClientIP` or
 as a constant the proper name should be represented in consistent casing -
 examples: `systemd`, `iptables`, `IPVS`, `cgroupfs`, `Docker` (as a generic
 concept), `docker` (as the command-line executable). If a proper name is used
-which has mixed capitalization like `eBFP` that should be preserved in a longer
+which has mixed capitalization like `eBPF` that should be preserved in a longer
 constant such as `eBPFDelegation`.
 
 All API within Kubernetes must leverage constants in this style, including
