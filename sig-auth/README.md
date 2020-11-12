@@ -138,6 +138,9 @@ API validation and policies enforced during admission, such as PodSecurityPolicy
 Integrates secrets stores with Kubernetes via a CSI volume.
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/OWNERS
+- **Contact:**
+  - Slack: [#csi-secrets-store](https://kubernetes.slack.com/messages/csi-secrets-store)
+  - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-secrets-store-csi-driver)
 ### service-accounts
 Infrastructure implementing Kubernetes service account based workload identity.
 - **Owners:**

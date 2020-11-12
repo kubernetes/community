@@ -504,6 +504,9 @@ sigs:
   - name: secrets-store-csi-driver
     description: |
       Integrates secrets stores with Kubernetes via a CSI volume.
+    contact:
+      slack: csi-secrets-store
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-secrets-store-csi-driver
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/OWNERS
   - name: service-accounts
