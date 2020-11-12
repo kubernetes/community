@@ -1858,8 +1858,8 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
-    time: "17:30"
-    tz: UTC
+    time: "10:30"
+    tz: PT (Pacific Time)
     frequency: bi-weekly ([upcoming meeting dates](#upcoming-meeting-dates))
     url: https://zoom.us/j/94252896018?pwd=cTlMMlBoTHZqUEdjRm9VY2NWNUg5dz09
     archive_url: https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web
