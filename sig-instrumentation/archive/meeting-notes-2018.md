@@ -105,7 +105,7 @@
         *   Probably a stable version soon afterwards
 *   [sross] Moving stuff to kubernetes-sigs
     *   Can we have our own org?
-        *   Researched answer: Orgs per sig is currently not managable so currently everything goes into kubernetes-sigs.
+        *   Researched answer: Orgs per sig is currently not manageable so currently everything goes into kubernetes-sigs.
 
 
 ## Agenda 2018-07-26:
