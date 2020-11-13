@@ -9,6 +9,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 # Data Protection Working Group
 
 A Working Group dedicated to promoting data protection support in Kubernetes, identifying missing functionality and working together to design features to enable data protection support. Involves collaboration with multiple SIGs such as Apps and Storage.
+This [work-in-progress doc](https://docs.google.com/document/d/1yHbW0hxHehQzdaL7AWSl81OW4f2OcBoskXTbezx92-U/edit#) tracks missing building blocks we have identified and what we are working on to fill the gaps.
 
 The [charter](charter.md) defines the scope and governance of the Data Protection Working Group.
 
