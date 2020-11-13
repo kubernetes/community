@@ -62,9 +62,9 @@ aliases:
     - derekwaynecarr
   sig-release-leads:
     - alejandrox1
+    - hasheddan
     - justaugustus
     - saschagrunert
-    - tpepper
   sig-scalability-leads:
     - mm4tt
     - shyamjvs

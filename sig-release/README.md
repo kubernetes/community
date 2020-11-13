@@ -23,19 +23,20 @@ The [charter](charter.md) defines the scope and governance of the Release Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
-* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
+* Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**), SUSE
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Jorge Alarcon Ochoa (**[@alejandrox1](https://github.com/alejandrox1)**), Searchable AI
-* Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**), SUSE
+* Daniel Mangum (**[@hasheddan](https://github.com/hasheddan)**), Upbound
 
 ## Emeritus Leads
 
 * Caleb Miles (**[@calebamiles](https://github.com/calebamiles)**)
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**)
+* Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 
 ## Contact
 - Slack: [#sig-release](https://kubernetes.slack.com/messages/sig-release)
