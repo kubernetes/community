@@ -35,6 +35,7 @@ channels:
   - name: ckad-exam-prep
   - name: cks-exam-prep
   - name: client-go-docs
+    archived: true
   - name: cluster-addons
   - name: cluster-api
   - name: cluster-api-aws
