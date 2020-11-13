@@ -2554,6 +2554,10 @@ workinggroups:
     data protection support. Involves collaboration with multiple SIGs such as Apps
     and Storage.
 
+    This [work-in-progress doc](https://docs.google.com/document/d/1yHbW0hxHehQzdaL7AWSl81OW4f2OcBoskXTbezx92-U/edit#)
+    tracks missing building blocks we have identified and what we are working on to
+    fill the gaps.
+
   charter_link: charter.md
   stakeholder_sigs:
   - Apps
