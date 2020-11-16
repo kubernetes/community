@@ -25,6 +25,7 @@ The [charter](charter.md) defines the scope and governance of the CLI Special In
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Amazon
 * Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 
@@ -32,7 +33,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
+* Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Apple
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 
 ## Emeritus Leads

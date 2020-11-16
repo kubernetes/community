@@ -590,6 +590,9 @@ sigs:
   label: cli
   leadership:
     chairs:
+    - github: eddiezane
+      name: Eddie Zaneski
+      company: Amazon
     - github: seans3
       name: Sean Sullivan
       company: Google
@@ -599,7 +602,7 @@ sigs:
     tech_leads:
     - github: pwittrock
       name: Phillip Wittrock
-      company: Google
+      company: Apple
     - github: soltysh
       name: Maciej Szulik
       company: Red Hat
