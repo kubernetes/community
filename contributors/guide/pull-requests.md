@@ -158,7 +158,7 @@ You send your pull request - this is awesome!
 And it sits.
 And sits.
 A week goes by and nobody reviews it.
-Finally, someone offers a few comments, which you fix up and wait for more review.And you wait.
+Finally, someone offers a few comments, which you fix up and wait for more review. And you wait.
 Another week or two go by. This is horrible.
 
 Let's talk about best practices so your pull request gets reviewed quickly.
