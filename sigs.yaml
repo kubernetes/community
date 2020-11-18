@@ -538,9 +538,9 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Monday
-    time: "14:00"
-    tz: UTC
-    frequency: biweekly/triweekly
+    time: "16:00"
+    tz: Poland
+    frequency: weekly
     url: https://zoom.us/j/944410904
     archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
   contact:
