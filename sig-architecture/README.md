@@ -112,6 +112,16 @@ Establishing and documenting conventions for system and user-facing APIs, define
 
 Please see the [API Reviews](https://github.com/orgs/kubernetes/projects/13) tracking board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/OWNERS) file if you are interested in joining this effort.
 
+## Enhancement Proposals
+
+Kubernetes Enhancement proposals (KEPs) are used to propose and communicate changes to sub-projects of SIG-Architecture. Following the KEP process is mandatory for all enhancements since Kubernetes 1.14 release.
+
+* Answers to our FAQs can be found here [FAQs](https://github.com/kubernetes/enhancements/tree/master/keps#faqs) 
+* Full details of the KEP process can be found in [KEP-1](https://github.com/kubernetes/enhancements/blob/master/keps/0001-kubernetes-enhancement-proposal-process.md)
+* Please follow the KEP template available at [KEP Template](https://github.com/kubernetes/enhancements/blob/master/keps/NNNN-kep-template/README.md) for the enhancement proposal.
+* Progress of KEPs can be tracked on our github project board at [Kubernetes Enhancements](https://github.com/kubernetes/enhancements/projects/4) 
+* Please review [OWNERS](https://github.com/kubernetes/enhancements/commit/ed46d6956b616e46cd62ac9a3d98449a0a313c89) to connect with enhancement chairs, approvers, and reviewers
+
 ## Conformance Definition
 
 Reviewing, approving, and driving changes to the conformance test suite; reviewing, guiding, and creating new conformance profiles
