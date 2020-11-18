@@ -151,7 +151,7 @@ curation from other SIG participants
 - *MAY* build new functionality for subprojects
 - *MAY* participate in decision making for the subprojects they hold roles in
 - Includes all reviewers and approvers in [OWNERS] files for subprojects
-- *MUST* take an [inclusive speaker training course] in support of our community values
+- *MUST* take an [Inclusive Open Source Community Orientation course] in support of our community values
 within 30 days from the date of their appointment.
 
 ### Security Contact
@@ -244,5 +244,5 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [Google group]: https://groups.google.com/forum/#!forum/kubernetes-sig-config
 [dashboard]: https://testgrid.k8s.io/
 [monthly community meeting]: /events/community-meeting.md
-[inclusive speaker training course]: https://training.linuxfoundation.org/training/inclusive-speaker-orientation/
+[Inclusive Open Source Community Orientation course]: https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/
 [technical-lead.md]: /contributors/chairs-and-techleads/technical-lead.md
