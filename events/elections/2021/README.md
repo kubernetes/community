@@ -45,46 +45,79 @@ Eligibility for voting in 2021 is defined as:
   [the SQL query used by devstats for developer activity counts][devstats-sql].
 
 * People who have submitted the [voter exemption form] and are accepted by
-  the election committee. We *explicitly* believe the above heuristic will be
-  inaccurate and not represent the entire community. Thus we provide the form
-  for those who have contributed to the project but may not meet the above
-  criteria.  Acceptance of a form submission will be defined by a simple
-  majority vote, and the criteria used during this process will be used to
-  help refine further elections.
-
-If you otherwise qualify to vote but have not yet applied for Org Membership,
-then please [request an exception][voter exemption form] (and please apply for
-Org Membership as well).
+  the election committee.
 
 Corporate affiliation is applied after the election. If an organization finds
 itself with too many representatives it is up to those individuals to come
 to a consensus on who should serve on the committee.
 
+### Voter Exemption
+
+We *explicitly* believe that the above heuristic will be inaccurate
+and not represent the entire community. Thus we provide the form
+for those who have contributed to the project but may not meet the above
+criteria. Acceptance of a form submission will be defined by a simple
+majority vote, and the criteria used during this process will be used to
+help refine further elections.
+
+If you otherwise qualify to vote but have not yet applied for Org Membership,
+then please [request an exception][voter exemption form] (and please apply for
+Org Membership as well).
+
+Only contributions to projects and artifacts that fall under Steering
+Committee's governance will be considered for voter exemption.
+
+Examples of contributions that would be considered:
+* Slack admins who are not active in GitHub
+* Code of Conduct Committee members whose actions are private by default
+
+Examples of contributions that would NOT be considered:
+* Contributions to ecosystem projects and products
+* Organizing meetups or podcasts
+
 ### Schedule
+
+<!-- While finalizing the dates in the schedule, ensure that:
+- The Steering Committee and candidate Q+A occurs at a public SC meeting
+  (usually a Monday).
+- Dealine to submit voter exception forms and request a
+  replacement ballot is ~3 days before voting closes.
+- Private announcement of results to SC members is at least ~2 days
+  before private announcement to all candidates.
+- The interval between private announcement to all candidates and the
+  public announcement is a weekend.
+-->
 
 | Date         | Event                    |
 | ------------ | ------------------------ |
-| August XX    | Announcement of Election and publication of Voters.md |
+| July 1       | Steering Committee selects Election Committee |
+| August XX    | Announcement of Election and publication of voters.md |
 | August XX    | Steering Committee Meeting with Q+A with the candidates and community |
-| September XX | All candidate bios and voting exception forms due by 0000 UTC (5pm PST) |
+| September XX | All candidate bios due by 0000 UTC (5pm PST) |
 | ~1 week      | Election prep week (voters.md validation and CIVS setup and testing)
 | September XX | Election Begins via email ballots |
-| October XX   | Deadline to request a replacement ballot |
+| October XX   | Deadline to submit voter exception forms and request a replacement ballot |
 | October XX   | Election Closes by 0000 UTC (5pm PST) |
-| October XX   | Announcement of Results at Public Steering Committee meeting |
+| October XX   | Private announcement of Results to SC members not up for election |
+| October XX   | Private announcement of Results to all candidates |
+| October XX   | Public announcement of Results at Public Steering Committee Meeting |
+| October XX   | Election Retro |
 
 ## Candidacy Process
 
 **Nomination**
 
-If you want to stand for election, send an email to kubernetes-dev@googlegroups.com
-with the subject line "Steering Committee Nomination: Your Name (@yourgithub)".
+If you want to stand for the election, create an issue in this GitHub repo
+(kubernetes/community) with the title `Steering Committee Nomination: Your Name (@yourgithub)`.
+After creating the issue, send an email to kubernetes-dev@googlegroups.com
+with a link to the issue. The subject line of the email should be same as
+the title of the issue.
 
 If you want to nominate someone else, you may do so, but PLEASE talk to them
 first.
 
 If you wish to accept a nomination from someone else, reply to the nomination
-email saying something like "I accept the nomination".
+**issue** saying something like "I accept the nomination".
 
 **Endorsement**
 
@@ -94,20 +127,25 @@ yourself, you count as one of the three. Endorsements from non-voting members
 does not count towards the final count.
 
 [Eligible voters] may endorse candidates of their choosing by replying to the
-candidate's nomination email saying something like "I endorse this nominee,
-and I work for <COMPANY>" or "+1". Please specify your github ID, state that
-you are in voters.md, and include your employer's name so that we see can
-which candidates have sufficient endorsements.
+candidate's nomination **issue** saying something like "I endorse this nominee,
+and I work for <COMPANY>" or "+1". Please state that you are in voters.md,
+and include your employer's name so that we see can which candidates have
+sufficient endorsements.
+
+Note that **only endorsements on the GitHub issue will be considered**.
+Endorsements on the nomination email will NOT be considered.
 
 When a candidate has reached the necessary three endorsements, one of the
-Election Officers will announce that on the email thread.  After that,
-please do not endorse the candidate further.
+Election Officers will announce that on the GitHub issue.
 
 **Running**
 
 Eligible candidates can submit a pull request with a biography in this
 directory with their platform and intent to run. This statement is
 **limited to 300 words** and must follow the format of `firstnamelastname.md`.
+The word limit applies to the source markdown file and the [`hack/verify-steering-election.sh`]
+script can be used to check the word count.
+
 Please refer to the [2020 candidate bios] for examples. Biography statements are optional.
 
 Missed deadlines by the candidates will be addressed by steering on a per case basis to determine eligibility.
@@ -160,16 +198,23 @@ Please direct any questions via email to <election@k8s.io>.
 
 ### Decision
 
-The newly elected body will be announced in the monthly [Kubernetes Community Meeting]
-on October XX, 2021.
+- First, the results are privately announced to the incumbent Steering Committee
+members (who are not up for election) and all the candidates.
 
-Following the meeting, the raw voting results and winners will be published on the
+- The newly elected body will be publicly announced in the monthly
+[public Steering Committee Meeting] on October XX, 2021.
+
+- Following the meeting, the raw voting results and winners will be published on the
 [Kubernetes Blog].
 
 For more information, definitions, and/or detailed election process, please refer to
 the [Steering Committee Election Charter]
 
 ## Nominees
+
+The nominee list is filled in by the Election Officers after all bios have been
+submitted. Please do not edit the following table.
+
 
 |                    Name                    | Organization/Company |                        GitHub                        |
 |:------------------------------------------:|:--------------------:|:----------------------------------------------------:|
@@ -190,7 +235,8 @@ the [Steering Committee Election Charter]
 [CIVS]: http://civs.cs.cornell.edu/
 [IRV method]: https://www.daneckam.com/?p=374
 
-[2021 candidate bios]: https://github.com/kubernetes/community/tree/master/events/elections/2021
+[`hack/verify-steering-election.sh`]: https://git.k8s.io/community/hack/verify-steering-election.sh
+[2020 candidate bios]: https://github.com/kubernetes/community/tree/master/events/elections/2021
 [election officers]: https://github.com/kubernetes/community/tree/master/events/elections#election-officers
 [Kubernetes Community Meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
 [Kubernetes Blog]: https://kubernetes.io/blog/
@@ -200,5 +246,5 @@ the [Steering Committee Election Charter]
 
 [devstats-sql]: https://github.com/cncf/devstats/blob/master/metrics/shared/project_developer_stats.sql
 [devstats-dashboard]: https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All
-[Org Member]: https://github.com/kubernetes/community/blob/master/community-membership.md
+[Org Members]: https://github.com/kubernetes/community/blob/master/community-membership.md
 [Ballot Replacement Form]: https://www.surveymonkey.com/r/kubernetes-sc-2021-ballot
