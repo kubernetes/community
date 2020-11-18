@@ -58,10 +58,11 @@ The candidates and links to their bios are all available here: https://git.k8s.i
 
 The next deadline is XXX , you have until then to complete your ballot. If you have any questions, let us know.
 
-| September XX | All candidate bios and voting exception forms due by 0000 UTC (5pm PST) |
+| September XX | All candidate bios due by 0000 UTC (5pm PST) |
 | September XX | Election Begins via email ballots |
-| October XX    | Election Closes by 0000 UTC (5pm PST) |
-| October XX    | Announcement of Results at Community Meeting |
+| October XX   | Deadline to submit voter exception forms and request a replacement ballot |
+| October XX   | Election Closes by 0000 UTC (5pm PST) |
+| October XX   | Announcement of Results at Community Meeting |
 
 
 // Resources
