@@ -52,7 +52,7 @@ When you've found an issue to work on, you can assign it to yourself.
 
 * Reply with `/assign` or `/assign @yourself` on the issue you'd like to work on 
 * The [K8s-ci-robot] will automatically assign the issue to you. 
-* Your your name will then be listed under, `Assignees`.
+* Your name will then be listed under, `Assignees`.
 
 ## Learn about SIGs
 
