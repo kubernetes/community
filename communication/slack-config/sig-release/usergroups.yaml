@@ -72,3 +72,32 @@ usergroups:
       - justaugustus # SIG Release Chair
       - LappleApple # SIG Release Program Manager
       - saschagrunert # SIG Release Chair
+
+  # Should match the membership of the following teams at all times:
+  # - https://git.k8s.io/security/#product-security-committee-psc
+  # - https://git.k8s.io/sig-release/release-managers.md#release-managers
+  - name: security-release-team
+    long_name: Security Release Team
+    description: |-
+      Security Release Team is the composite of full-fledged Product Security
+      Committee members and Release Managers. Ping for questions on Kubernetes
+      security releases.
+    channels:
+      - release-management
+      - sig-release
+    members:
+      - cjcullen # Product Security Committee
+      - cji # Product Security Committee
+      - cpanato # Release Manager
+      - feiskyer # Release Manager
+      - hasheddan # subproject owner / Release Manager
+      - idealhack # Release Manager
+      - joelsmith # Product Security Committee
+      - justaugustus # subproject owner / Release Manager
+      - lukehinds # Product Security Committee
+      - micahhausler # Product Security Committee
+      - puerco # Release Manager
+      - saschagrunert # subproject owner / Release Manager
+      - swamymsft # Product Security Committee
+      - tallclair # Product Security Committee
+      - xmudrii # Release Manager
