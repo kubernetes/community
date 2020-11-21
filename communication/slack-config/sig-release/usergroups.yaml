@@ -6,28 +6,28 @@ usergroups:
   # - https://git.k8s.io/sig-release/release-managers.md#associates
   - name: release-managers
     long_name: Release Managers
-    description: Release Managers. Ping for questions on branch cuts and building/packaging Kubernetes.
+    description: |-
+      Release Managers. Ping for questions on branch cuts and building/packaging
+      Kubernetes.
     channels:
       - release-ci-signal
       - release-management
       - sig-release
     members:
+      - ameukam # Release Manager Associate
       - cpanato # Release Manager
-      - dougm # Release Manager
       - feiskyer # Release Manager
       - gianarb # Release Manager Associate
-      - hasheddan # Release Manager
-      - hoegaarden # Release Manager
+      - hasheddan # subproject owner / Release Manager
       - idealhack # Release Manager
       - jimangel # Release Manager Associate
       - justaugustus # subproject owner / Release Manager
       - markyjackson-taulia # Release Manager Associate
       - mkorbi # Release Manager Associate
       - onlydole # Release Manager Associate
-      - puerco # Release Manager Associate
+      - puerco # Release Manager
       - saschagrunert # subproject owner / Release Manager
       - sethmccombs # Release Manager Associate
-      - tpepper # subproject owner / Release Manager
       - Verolop # Release Manager Associate
       - xmudrii # Release Manager
 
@@ -35,7 +35,9 @@ usergroups:
   # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.20/release_team.md
   - name: release-team-leads
     long_name: Release Team Leads
-    description: Release Team Leads. Ping for questions on the current Kubernetes release cycle.
+    description: |-
+      Release Team Leads. Ping for questions on the current Kubernetes release
+      cycle.
     channels:
       - release-bug-triage
       - release-ci-signal
@@ -46,27 +48,56 @@ usergroups:
       - sig-release
     members:
       - alejandrox1 # SIG Release Technical Lead
-      - hasheddan # 1.20 Release Team Lead Shadow
+      - hasheddan # SIG Release Technical Lead / 1.20 Release Team Lead Shadow
       - jeremyrickard # 1.20 Release Team Lead
       - justaugustus # SIG Release Chair
       - LappleApple # SIG Release Program Manager
       - palnabarun # 1.20 Release Team Lead Shadow
-      - saschagrunert # SIG Release Technical Lead
-      - savitharaghunathan # 1.20 Release Team Lead Shadow
-      - tpepper # SIG Release Chair
+      - saschagrunert # SIG Release Chair
+      - savitharaghunathan # 1.20 Release Team Lead Shadows
 
   # Should match SIG Release Leads at all times:
   # https://git.k8s.io/community/sig-release/README.md#leadership
   - name: sig-release-leads
     long_name: SIG Release Leads
-    description: SIG Release Leads. Ping for questions on SIG Release process and escalations.
+    description: |-
+      SIG Release Leads. Ping for questions on SIG Release process and escalations.
     channels:
       - release-ci-signal
       - release-management
       - sig-release
     members:
       - alejandrox1 # SIG Release Technical Lead
+      - hasheddan # SIG Release Technical Lead
       - justaugustus # SIG Release Chair
       - LappleApple # SIG Release Program Manager
-      - saschagrunert # SIG Release Technical Lead
-      - tpepper # SIG Release Chair
+      - saschagrunert # SIG Release Chair
+
+  # Should match the membership of the following teams at all times:
+  # - https://git.k8s.io/security/#product-security-committee-psc
+  # - https://git.k8s.io/sig-release/release-managers.md#release-managers
+  - name: security-release-team
+    long_name: Security Release Team
+    description: |-
+      Security Release Team is the composite of full-fledged Product Security
+      Committee members and Release Managers. Ping for questions on Kubernetes
+      security releases.
+    channels:
+      - release-management
+      - sig-release
+    members:
+      - cjcullen # Product Security Committee
+      - cji # Product Security Committee
+      - cpanato # Release Manager
+      - feiskyer # Release Manager
+      - hasheddan # subproject owner / Release Manager
+      - idealhack # Release Manager
+      - joelsmith # Product Security Committee
+      - justaugustus # subproject owner / Release Manager
+      - lukehinds # Product Security Committee
+      - micahhausler # Product Security Committee
+      - puerco # Release Manager
+      - saschagrunert # subproject owner / Release Manager
+      - swamymsft # Product Security Committee
+      - tallclair # Product Security Committee
+      - xmudrii # Release Manager

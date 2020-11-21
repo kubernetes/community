@@ -43,6 +43,25 @@ usergroups:
   - name: google-build-admin
     external: true
 
+  # Should match the membership of the following teams at all times:
+  # - https://git.k8s.io/security/#product-security-committee-psc
+  - name: product-security-committee
+    long_name: Product Security Committee
+    description: |-
+      The Product Security Committee (PSC) is responsible for triaging and
+      handling the security issues for Kubernetes.
+    channels:
+      - release-management
+      - sig-release
+    members:
+      - cjcullen
+      - cji
+      - joelsmith
+      - lukehinds
+      - micahhausler
+      - swamymsft
+      - tallclair
+
   - name: velero-maintainers
     long_name: Velero Maintainers
     description: Velero Maintainers group.
