@@ -8,6 +8,9 @@ reviewers:
 approvers:
   - parispittman
   - mbbroberg
+  - Pensu
+  - rajula96reddy
+  - kaslin
 labels:
   - sig/contributor-experience
   - area/contributor-comms
