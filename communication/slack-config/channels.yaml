@@ -185,6 +185,7 @@ channels:
   - name: kubecon
   - name: kubectl-trace
   - name: kubedb
+  - name: kubeinit
   - name: kubekhan
     archived: true
   - name: kubeless
