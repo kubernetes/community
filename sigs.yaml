@@ -1588,26 +1588,12 @@ sigs:
     url: https://zoom.us/j/361123509
     archive_url: https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit
     recordings_url: https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb
-  - description: Service APIs Meeting (APAC Friendly Time)
-    day: Thursday
-    time: "16:30"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/441530404
-    archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
-  - description: Service APIs Meeting (EMEA Friendly Time)
-    day: Thursday
-    time: "10:30"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/140577552
-    archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
-  - description: Service APIs Office Hours
+  - description: Service APIs Meeting
     day: Wednesday
-    time: "15:00"
+    time: "11:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://zoom.us/j/289465529
+    url: https://zoom.us/j/441530404
     archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
   contact:
     slack: sig-network
