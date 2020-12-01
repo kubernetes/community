@@ -58,6 +58,7 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
 ### control-plane-features
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/kube-storage-version-migrator/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/kubectl-check-ownerreferences/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/garbagecollector/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/namespace/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/resourcequota/OWNERS
