@@ -66,6 +66,7 @@ sigs:
   - name: control-plane-features
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kube-storage-version-migrator/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/kubectl-check-ownerreferences/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/garbagecollector/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/namespace/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/resourcequota/OWNERS
