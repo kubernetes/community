@@ -51,7 +51,7 @@ There is 2 types of icons
 ![](./png/control_plane_components/labeled/sched-128.png)
 
 ## Infrastructure Components icons
-![](./png/infrastructure_components/labeled/master-128.png)
+![](./png/infrastructure_components/labeled/control-plane-128.png)
 ![](./png/infrastructure_components/labeled/node-128.png)
 ![](./png/infrastructure_components/labeled/etcd-128.png)
 
