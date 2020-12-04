@@ -37,9 +37,8 @@ the broader ecosystem.
 
 We still have many roles available!  
 
-* Come to one of our [meetings] (Every Friday at 8am PT), see the [calendar] to add it to your own calendar.
-* Join our [mailing-list],
-* Reach out to us on the #sig-contribex channel on the Kubernetes slack (slack.k8s.io for invite).
+* Come to one of our [meetings] (Every Friday at 8am PT). See the [calendar] to add it to your own calendar.
+* Join our [mailing-list], and/or reach out to us on the #sig-contribex channel on the Kubernetes slack ([slack.k8s.io](http://slack.k8s.io)).
 
 Let us know you are interested and if you have any questions.
 
