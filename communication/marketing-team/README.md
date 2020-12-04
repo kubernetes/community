@@ -37,11 +37,15 @@ the broader ecosystem.
 
 We still have many roles available!  
 
-Come to one of our [meetings] (join kubernetes-sig-contribex@googlegroups.com for the invite)
-or reach out to us on the #sig-contribex channel on the Kubernetes slack (slack.k8s.io for invite).
+* Come to one of our [meetings] (Every Friday at 8am PT), see the [calendar] to add it to your own calendar.
+* Join our [mailing-list],
+* Reach out to us on the #sig-contribex channel on the Kubernetes slack (slack.k8s.io for invite).
+
 Let us know you are interested and if you have any questions.
 
-[meetings]: /sig-contributor-experience#community-management
+[meetings]: /sig-contributor-experience#contributor-comms
+[calendar]: https://calendar.google.com/calendar/u/0/r/customday?eid=NmU5MjFnYWwwMzIwNjVwamFvNmszZHBuYzhfMjAyMDEyMDRUMTYwMDAwWiBjYWxlbmRhckBrdWJlcm5ldGVzLmlv&ctz=America/Los_Angeles&sf=true
+[mailing-list]: https://groups.google.com/g/kubernetes-sig-contribex
 [charter]: ./CHARTER.md
 [Could be you!]: #could-be-you
 [Contributor Experience]: /sig-contributor-experience
