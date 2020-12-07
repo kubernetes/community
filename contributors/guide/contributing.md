@@ -94,10 +94,11 @@ Note: if your pull request isn't getting enough attention, you can use the [#pr-
 - Make sure you don't include `@mentions` or `fixes` keywords in your git commit messages. These should be included in the PR body instead.
 - When you make a PR for small change (such as fixing a typo, style change, or grammar fix), please squash your commits so that we can maintain a cleaner git history.
 - Make sure you include a clear and detailed PR description explaining the reasons for the changes, and ensuring there is sufficient information for the reviewer to understand your PR.
-- Additional Readings : 
+- Additional Readings: 
     - [chris.beams.io/posts/git-commit/](https://chris.beams.io/posts/git-commit/)
-    - [github.com/blog/1506-closing-issues-via-pull-requests ](https://github.com/blog/1506-closing-issues-via-pull-requests )
-    - [davidwalsh.name/squash-commits-git ](https://davidwalsh.name/squash-commits-git )
+    - [github.com/blog/1506-closing-issues-via-pull-requests ](https://github.com/blog/1506-closing-issues-via-pull-requests)
+    - [davidwalsh.name/squash-commits-git ](https://davidwalsh.name/squash-commits-git)
+    - [https://mtlynch.io/code-review-love/](https://mtlynch.io/code-review-love/)
 
 ## Testing
 
