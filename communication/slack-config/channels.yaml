@@ -9,6 +9,7 @@ channels:
     id: CU1CXUHN0
   - name: announcements
   - name: antrea
+  - name: api-priority-and-fairness
   - name: api-reviews
   - name: apisnoop
   - name: app-troubleshoot
