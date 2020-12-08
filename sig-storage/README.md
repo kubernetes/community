@@ -75,7 +75,6 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
 ### kubernetes-csi
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-flex/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-host-path/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-image-populator/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-iscsi/master/OWNERS
