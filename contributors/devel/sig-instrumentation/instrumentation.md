@@ -116,6 +116,28 @@ requests.
 Resource objects that occur in names should inherit the spelling that is used
 in kubectl, i.e. daemon sets are `daemonset` rather than `daemon_set`.
 
+### Exception for object state metrics
+
+One exception to the component prefix rule is for metrics collected about
+the state of kubernetes objects.  From users' perspective, controllers are an
+implementation detail of object reconciliation.  The collection of controllers
+which comprise a working kuberntes cluster is viewed as a single system which
+drives objects towards their specified desired state.  Metrics concerning a
+given object should be easily discoverable and compareable even when they are
+produced by different controllers.  Metrics describing the state of a built-in
+kubernetes object take the form:
+
+```
+kube_<kind>_<metric>
+```
+
+Metrics describing the state of a custom resource avoids collisions by adding a
+group.  Metrics take the form:
+
+```
+kube_[<group>](https://kubernetes.io/docs/reference/using-api/#api-groups)_<kind>_metric
+```
+
 ## Dimensionality & Cardinality
 
 Metrics can often replace more expensive logging as they are time-aggregated
