@@ -278,6 +278,7 @@ channels:
   - name: office-hours
   - name: okteto
   - name: olm-dev
+  - name: open-cluster-mgmt
   - name: opencontainers
   - name: openebs
   - name: openebs-dev
