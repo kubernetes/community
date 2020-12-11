@@ -2370,6 +2370,9 @@ sigs:
     - github: hpandeycodeit
       name: Himanshu Pandey
       company: VMware
+    - github: morengab
+      name: Gaby Moreno
+      company: IBM
     - github: tashimi
       name: Tasha Drew
       company: VMware
