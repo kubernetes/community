@@ -938,7 +938,7 @@ sigs:
       tz: PT (Pacific Time)
       frequency: weekly
       url: https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09
-      archive_url: https://docs.google.com/document/d/1fQNlqsDkvEggWFi51GVxOglL2P1Bvo2JhZlMhm2d-Co/edit
+      archive_url: https://docs.google.com/document/d/1LW5SDnJGYNRB_TH9ZXjAn2jFin6fERqpC9a0Em0gwPE/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-aws
     owners:
