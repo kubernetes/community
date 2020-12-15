@@ -16,7 +16,7 @@ The problem of securing containers in Kubernetes has come up
 [before](http://issue.k8s.io/398) and the potential problems with container
 security are [well known](http://opensource.com/business/14/7/docker-security-selinux).
 Although it is not possible to completely isolate Docker containers from their
-hosts, new features like [user namespaces](https://github.com/docker/libcontainer/pull/304)
+hosts, new features like [user namespaces](https://github.com/docker-archive/libcontainer/pull/304)
 make it possible to greatly reduce the attack surface.
 
 ## Motivation
