@@ -118,14 +118,14 @@ in kubectl, i.e. daemon sets are `daemonset` rather than `daemon_set`.
 
 ### Exception for object state metrics
 
-One exception to the component prefix rule is for metrics collected about
-the state of kubernetes objects.  From users' perspective, controllers are an
+One exception to the component prefix rule is for metrics derived from
+the state of Kubernetes objects.  From the users' perspective, controllers are an
 implementation detail of object reconciliation.  The collection of controllers
-which comprise a working kuberntes cluster is viewed as a single system which
+which comprise a working Kubernetes cluster is viewed as a single system which
 drives objects towards their specified desired state.  Metrics concerning a
-given object should be easily discoverable and compareable even when they are
+given object should be easily discoverable and comparable even when they are
 produced by different controllers.  Metrics describing the state of a built-in
-kubernetes object take the form:
+Kubernetes object take the form:
 
 ```
 kube_<kind>_<metric>
@@ -235,4 +235,3 @@ metric could look as follows:
 ```
 kube_pod_restarts and on(namespace, pod) kube_pod_info{uuid=”ABC”}
 ```
-
