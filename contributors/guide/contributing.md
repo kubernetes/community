@@ -96,7 +96,7 @@ Note: if your pull request isn't getting enough attention, you can use the [#pr-
 - Make sure you include a clear and detailed PR description explaining the reasons for the changes, and ensuring there is sufficient information for the reviewer to understand your PR.
 - Additional Readings: 
     - [chris.beams.io/posts/git-commit/](https://chris.beams.io/posts/git-commit/)
-    - [github.com/blog/1506-closing-issues-via-pull-requests ](https://github.com/blog/1506-closing-issues-via-pull-requests)
+    - [github.com/blog/1506-closing-issues-via-pull-requests ](https://github.blog/2013-05-14-closing-issues-via-pull-requests/)
     - [davidwalsh.name/squash-commits-git ](https://davidwalsh.name/squash-commits-git)
     - [https://mtlynch.io/code-review-love/](https://mtlynch.io/code-review-love/)
 
