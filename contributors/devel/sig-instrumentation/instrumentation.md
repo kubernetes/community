@@ -138,6 +138,12 @@ group.  Metrics take the form:
 kube_[<group>](https://kubernetes.io/docs/reference/using-api/#api-groups)_<kind>_metric
 ```
 
+The [Kube-State-Metrics](https://github.com/kubernetes/kube-state-metrics) 
+project introduced the original kube_* prefixed metrics.  For examples of
+kube_* prefixed metrics, refer to the list of 
+[Exposed Metrics](https://github.com/kubernetes/kube-state-metrics/tree/master/docs#exposed-metrics)
+in the Kube-State-Metrics documentation.
+
 ## Dimensionality & Cardinality
 
 Metrics can often replace more expensive logging as they are time-aggregated
