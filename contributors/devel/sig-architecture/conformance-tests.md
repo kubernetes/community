@@ -27,10 +27,10 @@ conformance of optional features that every cluster need
 not provide. Profiles are _additive_, meaning that supporting one profile cannot
 "take away" tests from another profile.
 
-Starting in 1.19, there are two profiles defined:
-Base and Privileged. All conforming Kubernetes clusters must meet the Base
-profile, but the Privileged profile is optional. Most tests in versions prior to
-1.19 have been categorized as Base, but some are privileged, sorted according to
+Starting in 1.20, there are two profiles defined:
+_Base_ and _Node Admin_. All conforming Kubernetes clusters must meet the Base
+profile, but the Node Admin profile is optional. Most tests in versions prior to
+1.20 have been categorized as Base, but some are in Node Admin, sorted according to
 the definitions below.
 
 ### General Conformance Test Requirements
@@ -39,6 +39,7 @@ Regardless of profile, any conformance test must meet the following criteria:
 - it does not require direct access to kubelet's API to pass (nor does it
   require indirect access via the API server node proxy endpoint); it MAY
   use the kubelet API for debugging purposes upon failure
+- it does not require write access to the `kube-system` namespace
 - it works for all providers (e.g., no `SkipIfProviderIs`/`SkipUnlessProviderIs`
   calls)
 - it works without access to the public internet (short of whatever is required
@@ -67,12 +68,19 @@ specifically, a test is eligible for the Base profile if:
 
 - it tests only GA, non-optional features or APIs (e.g., no alpha or beta
   endpoints, no feature flags required, no deprecated features)
-- it is non-privileged (e.g., does not require root on nodes, access to raw
-  network interfaces, or cluster admin permissions)
+- it does not require write access to nodes, including tainting and labeling
+- it does not require use of or access to node-level resources such as host network, host
+  port, node ports, host path, host IPC, root-on-node, and similar functions
 
-### Privileged Profile Requirements
+For convenience, the Base profile can be run with two different focuses - one
+for User level workloads and one for ClusterAdmin workloads. While any
+conformant cluster must be able to meet the entire Base profile, this allows
+ordinary users to validate the conformance of their clusters for typical
+workloads.
 
-Tests are eligible for the Privileged profile if:
+### Node Admin Profile Requirements
+
+Tests are eligible for the Node Admin profile if:
 
 - it tests only GA, non-optional features or APIs (e.g., no alpha or beta
   endpoints, no feature flags required, no deprecated features)
@@ -341,7 +349,7 @@ for your provider, please see the [testgrid conformance README]
 [kubernetes versioning policy]: /contributors/design-proposals/release/versioning.md#supported-releases-and-component-skew
 [Conformance Test Review board]: https://github.com/orgs/kubernetes/projects/9
 [Conformance test reviewers]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS
-[conformance test requirements]: #conformance-test-requirements
+[conformance test requirements]: #general-conformance-test-requirements
 [conformance test comment metadata]: #conformance-test-comment-metadata
 [conformance test version skew policy]: #conformance-test-version-skew-policy
 [testgrid conformance dashboard]: https://testgrid.k8s.io/conformance-all
