@@ -45,7 +45,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcluster-lifecycle)
 - GitHub Teams:
     - [@kubernetes/sig-cluster-lifecycle](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle) - Notify group
-    - [@kubernetes/sig-cluster-lifecycle-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-pr-reviews) - PR Reviews
 
 ## Subprojects
 

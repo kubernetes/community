@@ -904,8 +904,6 @@ sigs:
     teams:
     - name: sig-cluster-lifecycle
       description: Notify group
-    - name: sig-cluster-lifecycle-pr-reviews
-      description: PR Reviews
   subprojects:
   - name: bootkube
     contact:
