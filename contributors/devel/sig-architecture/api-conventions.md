@@ -630,11 +630,13 @@ duration in seconds before the object should be deleted. Individual kinds may
 declare fields which provide a default grace period, and different kinds may
 have differing kind-wide default grace periods. A user provided grace period
 overrides a default grace period, including the zero grace period ("now").
+* DELETE /&lt;resourceNamePlural&gt; - Deletes a list of type
+&lt;resourceName&gt;, e.g. DELETE /pods a list of Pods.
 * PUT /&lt;resourceNamePlural&gt;/&lt;name&gt; - Update or create the resource
 with the given name with the JSON object provided by the client.
 * PATCH /&lt;resourceNamePlural&gt;/&lt;name&gt; - Selectively modify the
 specified fields of the resource. See more information [below](#patch-operations).
-* GET /&lt;resourceNamePlural&gt;&amp;watch=true - Receive a stream of JSON
+* GET /&lt;resourceNamePlural&gt;&quest;watch=true - Receive a stream of JSON
 objects corresponding to changes made to any resource of the given kind over
 time.
 
