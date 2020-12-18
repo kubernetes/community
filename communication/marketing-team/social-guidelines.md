@@ -18,10 +18,13 @@ Other CNCF projects, unless there is a common contributor cause, are out of scop
 
 Kubernetes Organization Members with access to account are:
 
+- @kaslin 
 - @parispittman
 - @mrbobbytables
 - @chris-short
-- @kaslin
+- @mbbroberg
+
+The official Social Media Lead is listed on the [team resources page](README.md).
 
 ## Themes/Topics
 The focus should be on topics that will be of interest to upstream contributors.
