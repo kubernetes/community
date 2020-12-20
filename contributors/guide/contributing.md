@@ -50,7 +50,7 @@ That document is comprehensive and detailed, for purposes of a typical pull requ
 ## Opening a Pull Request
 
 Pull requests are often called a "PR".
-Kubernetes generally follows the standard [github pull request](https://help.github.com/articles/about-pull-requests/) process, but there is a layer of additional kubernetes specific (and sometimes SIG specific) differences:
+Kubernetes generally follows the standard [github pull request](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/about-pull-requests/) process, but there is a layer of additional kubernetes specific (and sometimes SIG specific) differences:
 
 The first difference you'll see is that a bot will begin applying structured labels to your PR.
 
@@ -64,7 +64,7 @@ Common new contributor PR issues are:
 * finding the right SIG or reviewer(s) for the PR (see [Code Review](#code-review) section) and following any SIG or repository specific contributing guidelines (see [Learn about SIGs](#learn-about-sigs) section)
 * dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](/contributors/devel/sig-testing/flaky-tests.md))
 * Not following [scalability good practices](scalability-good-practices.md)
-* Include mentions (like @person) and [keywords](https://help.github.com/en/articles/closing-issues-using-keywords) which could close the issue (like fixes #xxxx) in commit messages.
+* Include mentions (like @person) and [keywords](https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue) which could close the issue (like fixes #xxxx) in commit messages.
 
 ## Code Review
 
@@ -96,7 +96,7 @@ Note: if your pull request isn't getting enough attention, you can use the [#pr-
 - Make sure you include a clear and detailed PR description explaining the reasons for the changes, and ensuring there is sufficient information for the reviewer to understand your PR.
 - Additional Readings: 
     - [chris.beams.io/posts/git-commit/](https://chris.beams.io/posts/git-commit/)
-    - [github.com/blog/1506-closing-issues-via-pull-requests ](https://github.com/blog/1506-closing-issues-via-pull-requests)
+    - [github.com/blog/1506-closing-issues-via-pull-requests ](https://github.blog/2013-05-14-closing-issues-via-pull-requests/)
     - [davidwalsh.name/squash-commits-git ](https://davidwalsh.name/squash-commits-git)
     - [https://mtlynch.io/code-review-love/](https://mtlynch.io/code-review-love/)
 
