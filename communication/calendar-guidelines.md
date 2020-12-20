@@ -176,4 +176,4 @@ to refresh invites sent to the group.
 [configure access permissions and sharing:]: https://support.google.com/calendar/answer/37082?hl=en
 [SIG/WG list]: /sig-list.md
 [Public Community Calendar]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io&ctz=America%2FLos_Angeles
-[contributor mailing list]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[contributor mailing list]: https://groups.google.com/g/kubernetes-dev
