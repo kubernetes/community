@@ -52,7 +52,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Contact
 - Slack: [#sig-docs](https://kubernetes.slack.com/messages/sig-docs)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
+- [Mailing list](https://groups.google.com/g/kubernetes-sig-docs)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fdocs)
 - GitHub Teams:
     - [@kubernetes/kubernetes-blog](https://github.com/orgs/kubernetes/teams/kubernetes-blog) - Kubernetes blog maintainers
