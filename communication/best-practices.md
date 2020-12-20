@@ -78,7 +78,7 @@ from:(Kubernetes Prow Robot) OR from:(k8s-ci-robot)))
   - Matches: list:(community.kubernetes.github.com)
     - Do this: Apply label "k8s/community"   
 
-This [thread](https://groups.google.com/forum/#!topic/kubernetes-dev/5qU8irU7_tE/discussion) in kubernetes-dev google group
+This [thread](https://groups.google.com/g/kubernetes-dev/c/5qU8irU7_tE/discussion) in kubernetes-dev google group
 is also useful for setting up filters in Gmail.
  
 [sig-list]: /sig-list.md#master-sig-list
