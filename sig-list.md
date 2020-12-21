@@ -28,7 +28,7 @@ Each group's material is in its subdirectory in this project.
 
 When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 
-### Master SIG List
+### Special Interest Groups
 
 | Name | Label | Chairs | Contact | Meetings |
 |------|-------|--------|---------|----------|
@@ -57,7 +57,7 @@ When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 |[Usability](sig-usability/README.md)|usability|* [Himanshu Pandey](https://github.com/hpandeycodeit), VMware<br>* [Tasha Drew](https://github.com/tashimi), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/sig-usability)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-usability)|* Regular SIG Meeting: [Tuesdays at 9:00 PT (Pacific Time) (every third week)](https://zoom.us/j/3832562240)<br>
 |[Windows](sig-windows/README.md)|windows|* [Mark Rossetti](https://github.com/marosset), Microsoft<br>* [Michael Michael](https://github.com/michmike), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/sig-windows)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-windows)|* Regular SIG Meeting: [Tuesdays at 12:30 Eastern Time (ET) (weekly)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09)<br>
 
-### Master Working Group List
+### Working Groups
 
 | Name | Stakeholder SIGs |Organizers | Contact | Meetings |
 |------|------------------|-----------|---------|----------|
@@ -71,14 +71,14 @@ When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 |[Policy](wg-policy/README.md)|* Architecture<br>* Auth<br>* Multicluster<br>* Network<br>* Node<br>* Scheduling<br>* Storage<br>|* [Erica von Buelow](https://github.com/ericavonb), Red Hat<br>* [Howard Huang](https://github.com/hannibalhuang), Huawei<br>|* [Slack](https://kubernetes.slack.com/messages/wg-policy)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-policy)|* Regular WG Meeting: [Wednesdays at 16:00 PT (Pacific Time) (weekly)](https://zoom.us/j/7375677271)<br>
 |[Reliability](wg-reliability/README.md)|* Architecture<br>* Cluster Lifecycle<br>* Release<br>* Scalability<br>* Testing<br>|* [David Eads](https://github.com/deads2k), Red Hat<br>* [Steve Kuznetsov](https://github.com/stevekuznetsov), Red Hat<br>* [Wojciech Tyczynski](https://github.com/wojtek-t), Google<br>|* [Slack](https://kubernetes.slack.com/messages/wg-reliability)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-reliability)|* Regular WG Meeting: [Mondays at 11:00 PT (Pacific Time) (biweekly)](https://zoom.us/j/97964505804?pwd=R3hzSnArQWJHYmdWUnpSUDh3aXhFUT09)<br>
 
-### Master User Group List
+### User Groups
 
 | Name | Label |Organizers | Contact | Meetings |
 |------|-------|------------|--------|----------|
 |[Big Data](ug-big-data/README.md)|big-data|* [Erik Erlandson](https://github.com/erikerlandson), Red Hat<br>* [Anirudh Ramanathan](https://github.com/foxish), Rockset<br>* [Yinan Li](https://github.com/liyinan926), Google<br>|* [Slack](https://kubernetes.slack.com/messages/ug-big-data)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-ug-big-data)|* Regular User Group Meeting: [Wednesdays at 18:00 UTC (biweekly)](https://zoom.us/my/ug.big.data)<br>
 |[VMware Users](ug-vmware-users/README.md)|vmware-users|* [Steve Wong](https://github.com/cantbewong), VMware<br>* [Myles Gray](https://github.com/mylesagray), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/ug-vmware)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-ug-vmware)|* Regular User Group Meeting: [Thursdays at 11:00 PT (Pacific Time) (monthly)](https://docs.google.com/document/d/1ujpqj4hhcIBrSCK2qn6J1r--3QyD96rfDjXTZQ7n7Mw/edit)<br>
 
-### Master Committee List
+### Committees
 
 | Name |  Label | Members | Contact |
 |------|--------|---------|---------|
