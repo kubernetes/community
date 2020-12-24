@@ -103,7 +103,7 @@ outline of the video content can be found [here].
 ## Community
 
 Kubernetes is a large, lively, friendly open-source community. As many open
-ource projects often do, it depends on new people becoming members and regular
+source projects often do, it depends on new people becoming members and regular
 code contributors. The [Community Membership Document][CM] covers membership
 processes and roles. Please consider joining Kubernetes, and making your way
 up the contributor ladder!
