@@ -1997,9 +1997,9 @@ sigs:
   label: security
   leadership:
     chairs:
-    - github: iancoldwater
+    - github: IanColdwater
       name: Ian Coldwater
-      company: Salesforce
+      company: Twilio
     - github: tabbysable
       name: Tabitha Sable
       company: Datadog
@@ -2015,18 +2015,17 @@ sigs:
   contact:
     slack: sig-security
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-security
+    teams:
+    - name: sig-security-leads
+      description: SIG Security Leads
+    - name: sig-security-pr-reviews
+      description: SIG Security PR review notifications
   subprojects:
-  - name: community-discussion-groups
-    description: |
-      Community Discussion Groups
-    owners: []
   - name: security-audit
-    description: |
-      Third Party Security Audit
+    description: Third Party Security Audit
     owners: []
-  - name: security-documents
-    description: |
-      Security Documents and Documentation.
+  - name: security-docs
+    description: Security Documents and Documentation
     owners: []
 - dir: sig-service-catalog
   name: Service Catalog
