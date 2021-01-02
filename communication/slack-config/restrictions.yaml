@@ -24,6 +24,9 @@ restrictions:
       - "^kubernetes-docs-[a-z]{2}(-maintainers)?$"
       - "^sig-docs$"
       - "^sig-docs-.*$"
+  - path: "sig-network/*.yaml"
+    channels:
+      - "^sig-network-.*$"
   - path: "sig-release/*.yaml"
     channels:
       - "^sig-release$"
@@ -32,9 +35,10 @@ restrictions:
       - "^sig-release-"
       - "^release-"
       - "^security-release-team$"
-  - path: "sig-network/*.yaml"
+  - path: "sig-security/*.yaml"
     channels:
-      - "^sig-network-.*$"
+      - "^sig-security$"
+      - "^sig-security-"
   - path: "sig-storage/*.yaml"
     channels:
       - "^sig-storage$"
