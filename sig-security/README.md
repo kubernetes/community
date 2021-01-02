@@ -22,25 +22,25 @@ The [charter](charter.md) defines the scope and governance of the Security Speci
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Ian Coldwater (**[@iancoldwater](https://github.com/iancoldwater)**), Salesforce
+* Ian Coldwater (**[@IanColdwater](https://github.com/IanColdwater)**), Twilio
 * Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
 
 ## Contact
 - Slack: [#sig-security](https://kubernetes.slack.com/messages/sig-security)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-security)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fsecurity)
+- GitHub Teams:
+    - [@kubernetes/sig-security-leads](https://github.com/orgs/kubernetes/teams/sig-security-leads) - SIG Security Leads
+    - [@kubernetes/sig-security-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-security-pr-reviews) - SIG Security PR review notifications
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-security:
-### community-discussion-groups
-Community Discussion Groups
-- **Owners:**
 ### security-audit
 Third Party Security Audit
 - **Owners:**
-### security-documents
-Security Documents and Documentation.
+### security-docs
+Security Documents and Documentation
 - **Owners:**
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
