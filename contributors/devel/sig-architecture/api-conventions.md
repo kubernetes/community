@@ -123,11 +123,10 @@ defaults) and may not have lists.
 
    In addition, all lists that return objects with labels should support label
 filtering (see [the labels documentation](https://kubernetes.io/docs/user-guide/labels/)), and most
-lists should support filtering by fields.
+lists should support filtering by fields (see 
+[the fields documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/)).
 
-   Examples: `PodLists`, `ServiceLists`, `NodeLists`.
-
-   TODO: Describe field filtering below or in a separate doc.
+   Examples: `PodList`, `ServiceList`, `NodeList`.
 
 3. **Simple** kinds are used for specific actions on objects and for
 non-persistent entities.
