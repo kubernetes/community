@@ -70,14 +70,14 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
   - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
 - **Meetings:**
   - Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1fQNlqsDkvEggWFi51GVxOglL2P1Bvo2JhZlMhm2d-Co/edit).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1LW5SDnJGYNRB_TH9ZXjAn2jFin6fERqpC9a0Em0gwPE/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-aws
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
 - **Meetings:**
   - Cluster API (AWS implementation) office hours: [Mondays at 10:00 PT (Pacific Time)](https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1ojR0jooQaHEuz3gGW6DxcZlsws9ZX7jHPC8walm1G3A/edit).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1kNI09eTQUEm28h0PaaPDNkTv6E5OHKEKzLIJdxaXYV8/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-azure
 - **Owners:**
