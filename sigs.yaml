@@ -2425,19 +2425,23 @@ sigs:
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
-    - github: michmike
-      name: Michael Michael
-      company: VMware
     tech_leads:
-    - github: benmoss
-      name: Ben Moss
-      company: Pivotal
     - github: ddebroy
       name: Deep Debroy
-      company: Docker
+      company: Apple
+    - github: jayunit100
+      name: Jay Vyas
+      company: VMware
+    - github: jsturtevant
+      name: James Sturtevant
+      company: Microsoft
     emeritus_leads:
     - github: PatrickLang
       name: Patrick Lang
+    - github: benmoss
+      name: Ben Moss
+    - github: michmike
+      name: Michael Michael
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
