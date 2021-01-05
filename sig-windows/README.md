@@ -23,18 +23,20 @@ The [charter](charter.md) defines the scope and governance of the Windows Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Mark Rossetti (**[@marosset](https://github.com/marosset)**), Microsoft
-* Michael Michael (**[@michmike](https://github.com/michmike)**), VMware
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Ben Moss (**[@benmoss](https://github.com/benmoss)**), Pivotal
-* Deep Debroy (**[@ddebroy](https://github.com/ddebroy)**), Docker
+* Deep Debroy (**[@ddebroy](https://github.com/ddebroy)**), Apple
+* Jay Vyas (**[@jayunit100](https://github.com/jayunit100)**), VMware
+* James Sturtevant (**[@jsturtevant](https://github.com/jsturtevant)**), Microsoft
 
 ## Emeritus Leads
 
 * Patrick Lang (**[@PatrickLang](https://github.com/PatrickLang)**)
+* Ben Moss (**[@benmoss](https://github.com/benmoss)**)
+* Michael Michael (**[@michmike](https://github.com/michmike)**)
 
 ## Contact
 - Slack: [#sig-windows](https://kubernetes.slack.com/messages/sig-windows)
