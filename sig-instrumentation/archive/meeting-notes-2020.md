@@ -1,4 +1,4 @@
-## _Triage (2020-12-16)_
+## Triage (2020-12-16)
 
 Attendees:
 
@@ -14,7 +14,7 @@ Attendees:
 *   Afrouz Mashayekhi
 
 
-## _Agenda (2020-12-10)_
+## Agenda (2020-12-10)
 
 Issues:
 
@@ -37,7 +37,7 @@ Attendees:
 *   
 
 
-## _Triage (2020-12-02)_
+## Triage (2020-12-02)
 
 Issues:
 
@@ -55,17 +55,17 @@ Attendees:
 *   Joadavis
 
 
-## _(CANCELLED) Agenda (2020-11-25)_
+## (CANCELLED) Agenda (2020-11-25)
 
 Cancelled due to US Thanksgiving.
 
 
-## _(CANCELLED) Triage (2020-11-18)_
+## (CANCELLED) Triage (2020-11-18)
 
 Cancelled due to KubeCon.
 
 
-## _Agenda (2020-11-12)_
+## Agenda (2020-11-12)
 
 Issues:
 
@@ -115,7 +115,7 @@ Attendees:
 *   Damien Grisonnet
 
 
-## _Triage (2020-11-04)_
+## Triage (2020-11-04)
 
 Attendees:
 
@@ -128,12 +128,12 @@ Attendees:
 *   erain
 
 
-## _Agenda (2020-10-29)_
+## Agenda (2020-10-29)
 
 No agenda items, cancelling.
 
 
-## _Triage (2020-10-21)_
+## Triage (2020-10-21)
 
 Attendees:
 
@@ -144,7 +144,7 @@ Attendees:
 *   erain
 
 
-## _Agenda (2020-10-15)_
+## Agenda (2020-10-15)
 
 Issues:
 
@@ -170,7 +170,7 @@ Attendees:
 *   erain
 
 
-## _Triage (2020-10-07)_
+## Triage (2020-10-07)
 
 Attendees:
 
@@ -183,7 +183,7 @@ Attendees:
 *   erain
 
 
-## _Agenda (2020-10-01)_
+## Agenda (2020-10-01)
 
 Issues:
 
@@ -221,7 +221,7 @@ Attendees:
 *   Clayton
 
 
-## _Triage (2020-09-23)_
+## Triage (2020-09-23)
 
 Attendees:
 
@@ -232,7 +232,7 @@ Attendees:
 *   erain
 
 
-## _Agenda (2020-09-17)_
+## Agenda (2020-09-17)
 
 Issues:
 
@@ -267,7 +267,7 @@ Attendees:
 *   44past4
 
 
-## _Triage (2020-09-09)_
+## Triage (2020-09-09)
 
 Attendees:
 
@@ -280,7 +280,7 @@ Attendees:
 *   erain
 
 
-## _Agenda (2020-09-03)_
+## Agenda (2020-09-03)
 
 Issues:
 
@@ -307,7 +307,7 @@ Attendees:
 *   ...
 
 
-## _Agenda (2020-08-20)_
+## Agenda (2020-08-20)
 
 Issues:
 
@@ -339,7 +339,7 @@ Attendees:
 *   ...
 
 
-## _Agenda (2020-08-06)_
+## Agenda (2020-08-06)
 
 Issues:
 
@@ -366,7 +366,7 @@ Attendees:
 *   Leszek
 
 
-## _Agenda (2020-07-09)_
+## Agenda (2020-07-09)
 
 
 ## Issues:
@@ -437,8 +437,7 @@ Issues:
 Attendees:
 
 
-## _ \
-_Agenda (2020-05-28)
+## Agenda (2020-05-28)
 
 Attendees:
 
@@ -583,10 +582,8 @@ Agenda Issues:
 *   [logicalhan] Cardinality discussion
     *   Issues: 
         *   [https://github.com/kubernetes/kubernetes/issues/76302](https://github.com/kubernetes/kubernetes/issues/76302)
-        *   [https://github.com/kubernetes/kubernetes/issues/89378](https://github.com/kubernetes/kubernetes/issues/89378) ¹
-
-        *   [https://github.com/kubernetes/kubernetes/issues/89377 s
-](https://github.com/kubernetes/kubernetes/issues/89377)
+        *   [https://github.com/kubernetes/kubernetes/issues/89378](https://github.com/kubernetes/kubernetes/issues/89378)
+        *   [https://github.com/kubernetes/kubernetes/issues/89377](https://github.com/kubernetes/kubernetes/issues/89377)
     *   Can/should we introduce any mechanisms to protect against unbounded cardinality?
     *   Decision: logicalhan will work on a KEP to address this.  Should be small
 *   Bug scrub
