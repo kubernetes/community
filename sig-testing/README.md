@@ -67,7 +67,6 @@ It is the next significant iteration of kubetest. We will be deprecating kubetes
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/kubetest2/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/test-infra/master/kubetest/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/test-infra/master/kubetest2/OWNERS
 ### prow
 Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action for the Kubernetes project
 - **Owners:**
