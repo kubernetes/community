@@ -48,13 +48,15 @@ usergroups:
       - sig-release
     members:
       - alejandrox1 # SIG Release Technical Lead
-      - hasheddan # SIG Release Technical Lead / 1.20 Release Team Lead Shadow
+      - bai # 1.21 Release Team Lead Shadow
+      - hasheddan # SIG Release Technical Lead
       - jeremyrickard # 1.20 Release Team Lead
       - justaugustus # SIG Release Chair
+      - kikisdeliveryservice # 1.21 Release Team Lead Shadow
       - LappleApple # SIG Release Program Manager
-      - palnabarun # 1.20 Release Team Lead Shadow
+      - palnabarun # 1.21 Release Team Lead
       - saschagrunert # SIG Release Chair
-      - savitharaghunathan # 1.20 Release Team Lead Shadows
+      - savitharaghunathan # 1.21 Release Team Lead Shadow
 
   # Should match SIG Release Leads at all times:
   # https://git.k8s.io/community/sig-release/README.md#leadership
