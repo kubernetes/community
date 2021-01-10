@@ -5,4 +5,4 @@
 *   Implementation Owner: @verb
 
 The Troubleshooting Running Pods proposal has moved to the
-[Ephemeral Containers KEP](https://git.k8s.io/enhancements/keps/sig-node/20190212-ephemeral-containers.md).
+[Ephemeral Containers KEP](https://git.k8s.io/enhancements/keps/sig-node/277-ephemeral-containers/).
