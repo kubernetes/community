@@ -1,3 +1,10 @@
+---
+title: "Kubernetes.io Website Content Guidelines"
+description: |
+  List of the policies and groups responsible for different portions of the
+  Kubernetes website (https://kubernetes.io)
+---
+
 # Website guidelines
 
 ## General content
