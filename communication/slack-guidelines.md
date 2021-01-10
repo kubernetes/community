@@ -1,3 +1,11 @@
+---
+title: "Slack Guidelines"
+description: |
+  The policies, procedures, and escalation mechanisms for the Slack platform,
+  such as requesting channels, tokens, and how to report inappropriate content.
+---
+
+<!-- omit in toc -->
 # Slack Guidelines
 
 Slack serves as the main communication platform for the Kubernetes community
@@ -15,15 +23,17 @@ video recording or in another public space. Please be courteous to others.
   - [DM (Direct Message) Conversations](#dm-direct-message-conversations)
   - [Specific Channel Rules](#specific-channel-rules)
   - [Escalating and/or Reporting a Problem](#escalating-andor-reporting-a-problem)
+- [Should you have a channel on the Kubernetes Slack?](#should-you-have-a-channel-on-the-kubernetes-slack)
 - [Requesting a Channel](#requesting-a-channel)
   - [Delegating Channel Ownership](#delegating-channel-ownership)
 - [Requesting a User Group](#requesting-a-user-group)
 - [Requesting a Bot, Token, or Webhook](#requesting-a-bot-token-or-webhook)
 - [Moderation](#moderation)
-  - [Admin Expectations and Guidelines]()
-  - [Sending Messages to the Channel]()
+  - [Admin Expectations and Guidelines](#admin-expectations-and-guidelines)
+  - [Sending Messages to the Channel](#sending-messages-to-the-channel)
   - [Processing Slack Requests](#processing-slack-requests)
     - [Processing Channel Requests](#processing-channel-requests)
+    - [Processing User Group Requests](#processing-user-group-requests)
     - [Processing Bot, Token, or Webhook Requests](#processing-bot-token-or-webhook-requests)
   - [Inactivating Accounts](#inactivating-accounts)
 
@@ -113,7 +123,7 @@ and describe the situation.
 ## Should you have a channel on the Kubernetes Slack?
 
 The primary purpose of the Kubernetes slack is for the coordination of the
-Kubernentes project. However it is useful for developers and users to have a
+Kubernetes project. However it is useful for developers and users to have a
 strong ecosystem of channels for related things. Here are some guidelines for
 determining if you should request a channel:
 
