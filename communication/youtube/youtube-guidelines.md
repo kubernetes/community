@@ -1,3 +1,9 @@
+---
+title: "YouTube Guidelines"
+description: |
+  Overview of community YouTube practices and admin responsibilities.
+---
+
 <!-- omit in toc -->
 # YouTube Channel Guidelines
 
@@ -24,7 +30,7 @@ project, and includes all communication mediums.
 
 ## Admins
 
-- Check the [centralized list of administrators][admins] for contact information.
+- Check the [centralized list of administrators] for contact information.
 - To contact the admin group in Slack, ping `@youtube-admins` in the `#sig-contribex`
   Slack channel.
 
@@ -210,13 +216,13 @@ detailed information about streaming, see our [Streaming Config]
 [Kubernetes YouTube Channel]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
 [collaboration]: https://support.google.com/youtube/answer/6109639
 [loosen the permissions in your YouTube settings]: https://support.google.com/a/answer/6212415
-[SIG Contributor Experience]: https://git.kubernetes.io/community/sig-contributor-experience
-[centralized list of administrators]: ./moderators.md
-[YouTube admins]: ./moderators.md#YouTube-Channel
+[SIG Contributor Experience]: /sig-contributor-experience
+[centralized list of administrators]: /communication/moderators.md
+[YouTube admins]: /communication/moderators.md#YouTube-Channel
 [trim]: https://support.google.com/youtube/answer/9057455?hl=en
 [edit]: https://support.google.com/youtube/topic/9257530?hl=en&ref_topic=9257610
 [Community Meeting]: /events/community-meeting.md
 [Office Hours]: /events/office-hours.md
-[Meet our Contributors]: /mentoring/meet-our-contributors.md
-[Streaming Config]: ./youtube/streaming-config.md
-[Subprojects]: ./governance.md#subprojects
+[Meet our Contributors]: /mentoring/programs/meet-our-contributors.md
+[Streaming Config]: ./streaming-config.md
+[Subprojects]: /governance.md#subprojects
