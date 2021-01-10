@@ -141,8 +141,8 @@ Integrates secrets stores with Kubernetes via a CSI volume.
 - **Contact:**
   - Slack: [#csi-secrets-store](https://kubernetes.slack.com/messages/csi-secrets-store)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-secrets-store-csi-driver)
-- **Meetings**
-  - Secrets Store CSI Meeting: [Thursday at 08:00 PT (Pacific Time)](https://zoom.us/j/91272289538) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
+- **Meetings:**
+  - Secrets Store CSI Meeting (biweekly): [Thursdays at 8:00 PT (Pacific Time)](https://zoom.us/j/91272289538) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1q74nboAg0GSPcom3kLWCIoWg43Qg3mr306KNL58f2hg/edit#).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0PCFJrlpV6_nR_j_3RtnwI).
 ### service-accounts
