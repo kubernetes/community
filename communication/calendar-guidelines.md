@@ -1,3 +1,10 @@
+---
+title: "Calendar and Meeting Guidelines"
+description: |
+  Calendar and meeting guidelines, best practices, tips and troubleshooting
+  guidance.
+---
+
 # Calendar Guidelines
 
 Project meetings are a life line of the Kubernetes project. Consistent
