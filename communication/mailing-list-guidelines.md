@@ -1,3 +1,11 @@
+---
+title: "Mailing List Guidelines"
+description: |
+  Guidelines for Mailing list (Google Group) creation, sharing, archival and
+  moderation.
+---
+
+<!-- omit in toc -->
 # Mailing list guidelines
 
 The Kubernetes mailing list or Google Groups functions as the primary means of
@@ -5,16 +13,7 @@ asynchronous communication for the project's
 [Special Interest Groups (SIG)][sig-list], [Working Groups (WG)][sig-list], and 
 large subprojects.
 
-### ATTENTION: SIG/WG/Subproject Mailing list owners
 
-If you are currently a moderator of a SIG, WG, or subproject mailing list, 
-see the new policy requirements here:
-
-- [Mailing list annual review](#annual-permissions-review)
-- [Mailing list moderation queue](#new-user-posting-queue)
-  - [Creating moderation queue](#create-moderation-queue)
-
-## Table of Contents
 - [Code of conduct](#code-of-conduct)
 - [Admins](#admins)
   - [Mailing list owners](#mailing-list-owners)
@@ -30,6 +29,8 @@ see the new policy requirements here:
   - [Sharing the calendar with the Google Group](#sharing-the-calendar-with-the-google-group)
   - [Sharing the meeting notes with the Google Group](#sharing-the-meeting-notes-with-the-google-group)
 - [Archive a mailing list](#archive-a-mailing-list)
+
+
 ## Code of conduct
 
 The Kubernetes project adheres to the community [Code of Conduct] throughout all
