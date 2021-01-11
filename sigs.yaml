@@ -398,6 +398,14 @@ sigs:
     url: https://zoom.us/j/264572674
     archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
+  - description: Secrets Store CSI Meeting (biweekly)
+    day: Thursday
+    time: "8:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/91272289538
+    archive_url: https://docs.google.com/document/d/1q74nboAg0GSPcom3kLWCIoWg43Qg3mr306KNL58f2hg/edit#
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0PCFJrlpV6_nR_j_3RtnwI
   contact:
     slack: sig-auth
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-auth
@@ -510,15 +518,6 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-secrets-store-csi-driver
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/OWNERS
-    meetings:
-    - description: Secrets Store CSI Meeting (biweekly)
-      day: Thursday
-      time: "8:00"
-      tz: PT (Pacific Time)
-      frequency: biweekly
-      url: https://zoom.us/j/91272289538
-      archive_url: https://docs.google.com/document/d/1q74nboAg0GSPcom3kLWCIoWg43Qg3mr306KNL58f2hg/edit#
-      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0PCFJrlpV6_nR_j_3RtnwI
   - name: service-accounts
     description: |
       Infrastructure implementing Kubernetes service account based workload identity.

@@ -18,6 +18,9 @@ The [charter](charter.md) defines the scope and governance of the Auth Special I
 * Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/264572674) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw).
+* Secrets Store CSI Meeting (biweekly): [Thursdays at 8:00 PT (Pacific Time)](https://zoom.us/j/91272289538) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1q74nboAg0GSPcom3kLWCIoWg43Qg3mr306KNL58f2hg/edit#).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0PCFJrlpV6_nR_j_3RtnwI).
 
 ## Leadership
 
@@ -141,10 +144,6 @@ Integrates secrets stores with Kubernetes via a CSI volume.
 - **Contact:**
   - Slack: [#csi-secrets-store](https://kubernetes.slack.com/messages/csi-secrets-store)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-secrets-store-csi-driver)
-- **Meetings:**
-  - Secrets Store CSI Meeting (biweekly): [Thursdays at 8:00 PT (Pacific Time)](https://zoom.us/j/91272289538) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1q74nboAg0GSPcom3kLWCIoWg43Qg3mr306KNL58f2hg/edit#).
-    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0PCFJrlpV6_nR_j_3RtnwI).
 ### service-accounts
 Infrastructure implementing Kubernetes service account based workload identity.
 - **Owners:**
