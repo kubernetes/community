@@ -65,8 +65,8 @@ kinds would have different attributes and properties)
 via HTTP to the server. Resources are exposed via:
   * Collections - a list of resources of the same type, which may be queryable
   * Elements - an individual resource, addressable via a URL
-* **API Group** a set of resources that are exposed together. Along
-with the version is exposed in the "apiVersion" field as "GROUP/VERSION", e.g.
+* **API Group** a set of resources that are exposed together, along
+with the version exposed in the "apiVersion" field as "GROUP/VERSION", e.g.
 "policy.k8s.io/v1".
 
 Each resource typically accepts and returns data of a single kind. A kind may be
