@@ -398,7 +398,7 @@ sigs:
     url: https://zoom.us/j/264572674
     archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
-  - description: Secrets Store CSI Meeting (biweekly)
+  - description: Secrets Store CSI Meeting
     day: Thursday
     time: "8:00"
     tz: PT (Pacific Time)
