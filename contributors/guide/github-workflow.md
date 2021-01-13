@@ -1,7 +1,7 @@
 ---
-title: "GitHub Workflow"
-weight: 6
-description: |
+Title: "GitHub Workflow"
+Weight: 6
+Description: |
   An overview of the GitHub workflow used by the Kubernetes project. It includes
   some tips and suggestions on things such as keeping your local environment in
   sync with upstream and commit hygiene.
@@ -9,12 +9,12 @@ description: |
 
 ![Git workflow](git_workflow.png)
 
-### 1 Fork in the cloud
+### 1 - Fork in the cloud
 
-1. Visit https://github.com/kubernetes/kubernetes
+1. Visit https://github.com/kubernetes/kubernetes.
 2. Click `Fork` button (top right) to establish a cloud-based fork.
 
-### 2 Clone fork to local storage
+### 2 - Clone fork to local storage
 
 Per Go's [workspace instructions][go-workspace], place Kubernetes' code on your
 `GOPATH` using the following cloning procedure.
@@ -62,7 +62,7 @@ git remote set-url --push upstream no_push
 git remote -v
 ```
 
-### 3 Branch
+### 3 - Branch
 
 Get your local master up to date:
 
@@ -84,7 +84,7 @@ Then edit code on the `myfeature` branch.
 
 This workflow is process-specific; for quick start build instructions for [kubernetes/kubernetes](https://git.k8s.io/kubernetes) please [see here](/contributors/devel/development.md#building-kubernetes-on-a-local-osshell-environment).
 
-### 4 Keep your branch in sync
+### 4 - Keep your branch in sync
 
 ```sh
 # While on your myfeature branch
