@@ -9,7 +9,7 @@ Guide](http://kubernetes.io/docs/admin/).
 ## The process of developing and contributing code to the Kubernetes project
 
 * **Contributor Guide**
-  ([Please start here](/contributors/guide/README.md)) to learn about how to contribute to Kubernetes
+  ([Please start here](/contributors/guide/README.md)): To learn about how to contribute to Kubernetes.
 
 * **GitHub Issues** ([/contributors/guide/issue-triage.md](/contributors/guide/issue-triage.md)): How incoming issues are triaged.
 
@@ -26,8 +26,7 @@ Guide](http://kubernetes.io/docs/admin/).
 
 * **Testing** ([testing.md](sig-testing/testing.md)): How to run unit, integration, and end-to-end tests in your development sandbox.
 
-* **Conformance Testing** ([conformance-tests.md](sig-architecture/conformance-tests.md))
-  What is conformance testing and how to create/manage them.
+* **Conformance Testing** ([conformance-tests.md](sig-architecture/conformance-tests.md)): What is conformance testing and how to create/manage them.
 
 * **Hunting flaky tests** ([flaky-tests.md](sig-testing/flaky-tests.md)): We have a goal of 99.9% flake free tests.
   Here's how to run your tests many times.
@@ -43,7 +42,7 @@ Guide](http://kubernetes.io/docs/admin/).
 * **Coding Conventions** ([coding-conventions.md](../guide/coding-conventions.md)):
   Coding style advice for contributors.
 
-* **Document Conventions** ([The Kubernetes documentation](https://github.com/kubernetes/website))
+* **Document Conventions** ([The Kubernetes documentation](https://github.com/kubernetes/website)): 
   Document style advice for contributors.
 
 * **Running a cluster locally** ([running-locally.md](running-locally.md)):
