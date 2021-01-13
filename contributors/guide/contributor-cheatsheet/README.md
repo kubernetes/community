@@ -1,8 +1,8 @@
 ---
-title: Contributor Cheatsheet
-weight: 2
-aliases: [ "/cheatsheet" ]
-description: |
+Title: Contributor Cheatsheet
+Weight: 2
+Aliases: [ "/cheatsheet" ]
+Description: |
   A list of common resources when contributing to Kubernetes, tips, tricks, and
   common best practices used within the Kubernetes project. It is a "TL;DR" or
   quick reference of useful information to make your GitHub contribution experience
@@ -67,8 +67,8 @@ better.
 ### Community
 
 - [Calendar] - View all the Kubernetes Community events (SIG/WG meetings,
-  events etc.)
-- [kubernetes-dev] - The Kubernetes development mailing list
+  events, etc.).
+- [kubernetes-dev] - The Kubernetes development mailing list.
 - [Kubernetes Forum] - Official Kubernetes forum.
 - [Slack channels] - Official Kubernetes Slack.
 - [Stack Overflow] - A place to ask your Kubernetes end-user questions.
@@ -81,10 +81,10 @@ better.
   your attention.
 - [Prow] - Kubernetes CI/CD System.
 - [Tide] - Prow plugin that manages merges and tests. [Tide Dashboard]
-- [Bot commands] - Commands used to interact with Kubernetes Bots (examples:
-  `/cc`, `/lgtm`, and `/retest`)
-- [GitHub labels] - List of labels used throughout the Kubernetes Project
-- [Kubernetes Code Search], maintained by [@dims]
+- [Bot Commands] - Commands used to interact with Kubernetes Bots (examples:
+  `/cc`, `/lgtm`, and `/retest`).
+- [GitHub Labels] - List of labels used throughout the Kubernetes Project.
+- [Kubernetes Code Search], maintained by [@dims].
 
 
 ### Tests
@@ -203,9 +203,9 @@ other forms of work that would be stored within a git repository.
 
 **References:**
 - [Labels]
-- [Prow commands][commands]
-- [Pull request process]
-- [GitHub workflow]
+- [Prow Commands][commands]
+- [Pull Request Process]
+- [GitHub Workflow]
 
 
 #### Creating a Pull Request
@@ -249,7 +249,7 @@ What's in that PR:
 - **Line 1** - Reference to other issues or PRs (#3064 #3097).
 - **Line 2** - A brief description of what is being done in the PR.
 - **Line 4** - [SIG][sigs] assignment with the [command][commands]
-  `/sig contributor-experience`..
+  `/sig contributor-experience`.
 - **Line 5** - Reviewers that may have interest on this specific issue or PR are
   specified with the [`/cc`][cc] command.
 - **Line 6** - The [`/kind cleanup`][kind] command add a [label][labels] that
@@ -286,7 +286,7 @@ effectively.
 
 **References:**
 - [Labels]
-- [Prow commands][commands]
+- [Prow Commands][commands]
 
 Frequently used labels:
 - [`/sig <sig name>`][kind] Assign a [SIG][SIGs] to the ownership of the issue
@@ -300,16 +300,16 @@ Frequently used labels:
 ## Working Locally
 
 Before you propose a pull request, you will have to do some level of work
-locally. If you are new to git, the [Atlassian git tutorial] is a good starting
-point. As an alternative, Stanford's [Git magic] tutorial is a good
+locally. If you are new to git, the [Atlassian Git Tutorial] is a good starting
+point. As an alternative, Stanford's [Git Magic] tutorial is a good
 multi-language option.
 
 **References:**
-- [Atlassian git tutorial]
-- [Git magic]
-- [GitHub workflow]
-- [Testing locally]
-- [Developer guide]
+- [Atlassian Git Tutorial]
+- [Git Magic]
+- [GitHub Workflow]
+- [Testing Locally]
+- [Developer Guide]
 
 
 ### Branch Strategy
@@ -377,7 +377,7 @@ git push --force
 
 
 [contributor guide]: /contributors/guide/README.md
-[developer guide]: /contributors/devel/README.md
+[Developer Guide]: /contributors/devel/README.md
 [gubernator dashboard]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
@@ -412,12 +412,12 @@ git push --force
 [testing guide]: /contributors/devel/sig-testing/testing.md
 [labels]: https://git.k8s.io/test-infra/label_sync/labels.md
 [trivial fix]: /contributors/guide/pull-requests.md#10-trivial-edits
-[GitHub workflow]: /contributors/guide/github-workflow.md#3-branch
+[GitHub Workflow]: /contributors/guide/github-workflow.md#3-branch
 [squashing commits]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
 [owners]: /contributors/guide/owners.md
 [testing locally]: /contributors/guide/README.md#testing
-[Atlassian git tutorial]: https://www.atlassian.com/git/tutorials
-[git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
+[Atlassian Git Tutorial]: https://www.atlassian.com/git/tutorials
+[Git Magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [Security and Disclosure Information]: https://kubernetes.io/docs/reference/issues-security/security/
 [approve]: https://prow.k8s.io/command-help#approve
 [GitHub Administration Team]: /github-management#github-administration-team
