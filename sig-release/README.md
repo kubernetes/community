@@ -51,10 +51,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-release:
-### Licensing
-The Licensing subproject is responsible for analyzing/reporting/remediating licensing concerns within the Kubernetes project orgs.
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/sig-release/master/licensing/OWNERS
 ### Release Engineering
 The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
 - **Owners:**

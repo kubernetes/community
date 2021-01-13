@@ -164,10 +164,14 @@ Additionally:
 - If this is all good, approve, but don't LGTM, unless you also do code review
   or unless it is trivial (e.g. moving from k/k/pkg/utils -> k/utils).
 
+Licenses for dependencies are specified by the CNCF [Allowlist Policy].
 All new dependency licenses should be reviewed by @kubernetes/dep-approvers to ensure that they
 are compatible with the Kubernetes project license. It is also important to note
 and flag if a license has changed when updating a dependency, so that these can
 also be reviewed.
 
-For reference, whitelisted licenses as per the CNCF Whitelist Policy are
-mentioned [here](https://git.k8s.io/sig-release/licensing/README.md#licenses-for-dependencies).
+In case of questions or concerns regarding the allowlist policy, please create
+an issue or send an email to the [SIG Architecture] mailing list.
+
+[Allowlist Policy]: https://github.com/cncf/foundation/blob/master/allowed-third-party-license-policy.md
+[SIG Architecture]: https://groups.google.com/forum/#!forum/kubernetes-sig-architecture
