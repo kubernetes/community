@@ -150,6 +150,7 @@ channels:
   - name: k8spin
   - name: kapitan
   - name: keda
+  - name: keda-dev
   - name: keel
   - name: kiam
   - name: kind
