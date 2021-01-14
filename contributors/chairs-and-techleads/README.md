@@ -58,7 +58,7 @@ TODO - Crosslink to sig-gov.md, wg-gov,md, gov.md, steering folder in community,
     - Silly gift practical jokes or anything involving googly eyes that make
       people smile will be given the appropriate level of priority.
 - Resources from the CNCF
-  - [maintainers circle]
+  - [maintainers-circle]
 
 
 [Need to Know email archive]: https://docs.google.com/document/d/1ivmV-ouim7YcTnmv21m0pP6prmj-FFZxcRBuWbT706c/edit
