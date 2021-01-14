@@ -3,17 +3,14 @@ offboarding, operations, and more.
 
 ## Resources for community group leads: 
 
-### Meetings
+### Operations
 
 In case you are not sure what to include in a meeting invite, here is a [Calendar template](https://github.com/kubernetes/community/blob/master/communication/calendar-guidelines.md#calendar-event-template).
 
-Time:
-  * 2nd Tuesday of the Month 12:30pm PT [830pmUTC].
-  * 2nd Thursday of the Month 09:00am PT [5pmUTC].
+TODO - [Meeting agenda templates]
+TODO - Crosslink to sig-gov.md, wg-gov,md, gov.md, steering folder in community, etc.
   
-
-  
-  ## Important Governance Documentation
+## Important Governance Documentation
   
   - [governance.md]
   - [sig-governanace.md]
@@ -31,6 +28,10 @@ Time:
   - [Need to know email archive]
   - [Monthly meeting]
   
+  - Time:
+    * 2nd Tuesday of the Month 12:30pm PT [830pmUTC]
+    * 2nd Thursday of the Month 09:00am PT [5pmUTC]
+   
   Slack: #chairs-and-techleads, #sig-contribex  
   Mailing list: leads@kubernetes.io  
   Github: File issues against kubernetes/community  
@@ -38,27 +39,10 @@ Time:
   ## Community Programs
   
   ### Mentoring
-     - SIG/WG determines need
-     - Consults with sig-contribex; contribex sets up infra (slack channel; TODO build this out)
-     - Posts a note to their mailing list and k-dev that they are looking for more
-       reviewers/approvers/x_role and would like to form a group to mentor who are
-       already in the role below it. (example: already a member and they need more
-       reviewers)
-     - Sets a start date and end date; schedule a kick off meeting so everyone can
-       meet
-       over video/audio (1 and only unless the group establishes other comms). Also set
-       the weekly slack standup days so they are consistent.
-     - Program begins
-     - If the mentors think certain skills will need to be taught/learned, they
-       should be done upfront. (We scattered them for the first cohort and there were
-       things that would be been more valuable to learn in the beginning of the
-       journey)  
-     - Feedback is continuous*
-     - Mentors start PRs for those who graduated
-      *Feedback is continuous but will have a half way check in point. The goal is that
-       mentees should not be surprised by the outcome of the program.
-
-
+     
+   - [group-mentoring.md]
+   - [mentoring-programs]
+    
 - Resources from SIG Contributor Experience
   - Swag
     - The Project can provide you with K8s tshirts, stickers, and other
@@ -73,7 +57,8 @@ Time:
       possible.
     - Silly gift practical jokes or anything involving googly eyes that make
       people smile will be given the appropriate level of priority.
-- Resources from the CNCF - TODO
+- Resources from the CNCF
+  - [maintainers circle]
 
 
 [Need to Know email archive]: https://docs.google.com/document/d/1ivmV-ouim7YcTnmv21m0pP6prmj-FFZxcRBuWbT706c/edit
@@ -86,3 +71,6 @@ Time:
 [governance.md]: https://github.com/kubernetes/community/blob/master/governance.md
 [sig-governanace.md]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [wg-governanace.md]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md
+[group-mentoring.md]: https://github.com/kubernetes/community/blob/master/mentoring/processes/group-mentoring.md
+[mentoring-programs]: https://github.com/kubernetes/community/tree/master/mentoring/programs
+[maintainers circle]: https://github.com/cncf/sig-contributor-strategy/tree/master/maintainers-circle
