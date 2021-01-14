@@ -50,7 +50,7 @@ usergroups:
       - alejandrox1 # SIG Release Technical Lead
       - bai # 1.21 Release Team Lead Shadow
       - hasheddan # SIG Release Technical Lead
-      - jeremyrickard # 1.20 Release Team Lead
+      - jeremyrickard # SIG Release Technical Lead
       - justaugustus # SIG Release Chair
       - kikisdeliveryservice # 1.21 Release Team Lead Shadow
       - LappleApple # SIG Release Program Manager
@@ -71,6 +71,7 @@ usergroups:
     members:
       - alejandrox1 # SIG Release Technical Lead
       - hasheddan # SIG Release Technical Lead
+      - jeremyrickard # SIG Release Technical Lead
       - justaugustus # SIG Release Chair
       - LappleApple # SIG Release Program Manager
       - saschagrunert # SIG Release Chair
