@@ -10,7 +10,7 @@ offboarding, operations, and more.
   
 
   
-  ## Important Governance Documentation.
+  ## Important Governance Documentation
   
   - [governance.md]
   - [sig-governanace.md]
