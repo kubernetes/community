@@ -57,7 +57,7 @@ When you've found an issue to work on, you can assign it to yourself.
 ## Learn about SIGs
 
 Some repositories in the Kubernetes Organization are owned by 
-[Special Interest Groups], or SIGs.
+[Special Interest Groups](./sig-list.md), or SIGs.
 
 The Kubernetes community is broken out into SIGs in order to improve its workflow,
 and more easily manage what is a very large community project. The developers 
