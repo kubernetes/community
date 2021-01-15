@@ -1,8 +1,36 @@
+---
+title: "Moderator list"
+alias: [ "/mods", "/moderators" ]
+description: |
+  A list of the current communication property moderators and the timezones
+  they cover.
+---
+
+<!-- omit in toc -->
 # Community Moderators
 
 The following people are responsible for moderating/administrating Kubernetes
 communication channels and their home time zone. See our
 [moderation guidelines] for policies and recommendations.
+
+- [Mailing Lists](#mailing-lists)
+  - [kubernetes-dev](#kubernetes-dev)
+    - [Administrators](#administrators)
+    - [Primary Moderators](#primary-moderators)
+    - [Moderators Pro Tempore](#moderators-pro-tempore)
+- [GitHub](#github)
+- [Discuss](#discuss)
+  - [Administrators](#administrators-1)
+  - [Regional Category Moderators](#regional-category-moderators)
+- [YouTube Channel](#youtube-channel)
+  - [Owners](#owners)
+  - [Primary Moderators](#primary-moderators-1)
+  - [Moderators Pro Tempore](#moderators-pro-tempore-1)
+- [Slack](#slack)
+  - [Owner](#owner)
+  - [Moderators](#moderators)
+  - [Moderators Pro Tempore](#moderators-pro-tempore-2)
+- [Zoom](#zoom)
 
 ## Mailing Lists
 
@@ -20,14 +48,13 @@ Administrator seats: 3
 
 #### Primary Moderators
 
-Primary moderators seats: 7
+Primary moderators seats: 6
 
 | Name                | Kubernetes Slack ID | Region   | Timezone                                                |
 | ------------------- | ------------------- | -------- | ------------------------------------------------------- |
 | Jorge Castro        | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen          | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Louis Taylor        | @kragniz            | EMEA     | [CET - Central European Time](https://time.is/CET)      |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
 | Nikhita Raghunath   | @nikhita            | APAC     | [IST - Indian Standard Time](https://time.is/India)     |
 | _Open_              | _Open_              |          |                                                         |
@@ -141,7 +168,7 @@ Moderators pro tempore seats: 3
 
 ## Slack
 
-#### Owner
+### Owner
 
 Owners seats (non-admin role): 1
 
@@ -149,7 +176,7 @@ Owners seats (non-admin role): 1
 | --------------- | ------------------- | -------- | ---------------------------------------------------- |
 | Chris Aniszczyk | @caniszczyk         | Americas | [CT - Central Time (US Central)](https://time.is/CT) |
 
-#### Moderators
+### Moderators
 
 Moderators seats: 10
 
@@ -169,7 +196,7 @@ Moderators seats: 10
 | Josh Berkus         | @jberkus            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Marky Jackson       | @markyjackson       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
-#### Moderators Pro Tempore
+### Moderators Pro Tempore
 
 Moderators pro tempore seats: 10
 
