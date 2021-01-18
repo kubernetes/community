@@ -160,8 +160,8 @@ within 30 days from the date of their appointment.
   - *MUST* be a contact point for the Product Security Committee to reach out to
    for triaging and handling of incoming issues
   - *MUST* accept the [Embargo Policy]
-  - Defined in `SECURITY_CONTACTS` files, this is only relevant to the root file
-   in the repository. Template [SECURITY_CONTACTS]
+  - Defined in `security_contacts` field of `OWNERS` files, this is only relevant to the root file
+   in the repository. Template [security_contacts]
 
 #### Subproject Creation
 
@@ -233,7 +233,7 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [SIG Charter process]: https://git.k8s.io/community/committee-steering/governance/README.md
 [Kubernetes Charter README]: https://git.k8s.io/community/committee-steering/governance/README.md
 [Embargo Policy]: https://git.k8s.io/security/private-distributors-list.md#embargo-policy
-[SECURITY_CONTACTS]: https://github.com/kubernetes/kubernetes-template-project/blob/master/SECURITY_CONTACTS
+[security_contacts]: https://github.com/kubernetes/kubernetes-template-project/blob/master/OWNERS
 [sig-wg-lifecycle]: /sig-wg-lifecycle.md
 ["member" on our contributor ladder]: /community-membership.md
 [Kubernetes Community YouTube playlist]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
