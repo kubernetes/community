@@ -12,7 +12,7 @@ If you’d like to vote or run for a seat, all details and next steps are outlin
 
 As mentioned in the process doc, eligibility for voting will be determined by 50 contributions to a Kubernetes project over the past year and Kubernetes Org membership[5], which will result in you getting a ballot emailed to you when the election starts. All contributors who will receive a ballot are listed in voters.md[6]; if your name is not there, you will need an exception to vote.
 
-For those of you doing work within the Kubernetes project/community that is NOT measured in GitHub, or if you have 50 contributions but not Org Membership, you can apply for participation via the voter exemption form[7]. This is to ensure that non-code contributors can participate, so please don’t hesitate to use the form.
+For those of you doing work within the Kubernetes project/community that is NOT measured in GitHub, or if you have 50 contributions but not Org Membership, you can apply for participation via the voter exception form[7]. This is to ensure that non-code contributors can participate, so please don’t hesitate to use the form.
 
 Resources:
 
@@ -23,7 +23,7 @@ Resources:
 [4] Voters Guide: https://github.com/kubernetes/community/tree/master/events/elections/2021 - Updated on a rolling basis. This guide will always have the latest information throughout the election cycle. The complete schedule of events and candidate bios will be housed here.
 [5] Contributor Ladder: https://github.com/kubernetes/community/blob/master/community-membership.md -  explains Org Membership as well as all of the higher levels
 [6] Voters.md: https://github.com/kubernetes/community/blob/master/events/elections/2021/voters.md -  list of contributors who will automatically receive a ballot
-[7] Exemption Form: https://www.surveymonkey.com/r/k8s-sc-election-2021
+[7] exception Form: https://www.surveymonkey.com/r/k8s-sc-election-2021
 
 
 On behalf of the election officers,
