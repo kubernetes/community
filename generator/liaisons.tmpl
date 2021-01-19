@@ -1,0 +1,38 @@
+{{ template "header" }}
+
+# Liaisons
+
+Each community group in Kubernetes is assigned a Steering Committee
+liaison. Liaisons act as a point of contact from steering, engage with
+their respective community groups to ensure they are healthy and
+facilitate communication for [annual reports](committee-steering/governance/annual-reports.md).
+
+Liaisons do not make decisions for the community group or on behalf of
+the Steering Committee.
+
+Liaisons are assigned community groups at random (adjustments can be
+made, if needed) with each member having an (almost) equal distribution
+of SIGs, WGs and UGs.
+
+| Community Group            | Steering Committee Liaison |
+| -------------------------- | -------------------------- |
+{{- range .Sigs}}
+{{- if .Contact.Liaison.Name }}
+| [SIG {{.Name}}]({{.Dir}}/README.md) | {{.Contact.Liaison.Name}} (**[@{{.Contact.Liaison.GitHub}}](https://github.com/{{.Contact.Liaison.GitHub}})**) |
+{{- end }}
+{{- end -}}
+{{- range .WorkingGroups}}
+{{- if .Contact.Liaison.Name }}
+| [WG {{.Name}}]({{.Dir}}/README.md) | {{.Contact.Liaison.Name}} (**[@{{.Contact.Liaison.GitHub}}](https://github.com/{{.Contact.Liaison.GitHub}})**) |
+{{- end -}}
+{{- end }}
+{{- range .UserGroups}}
+{{- if .Contact.Liaison.Name }}
+| [UG {{.Name}}]({{.Dir}}/README.md) | {{.Contact.Liaison.Name}} (**[@{{.Contact.Liaison.GitHub}}](https://github.com/{{.Contact.Liaison.GitHub}})**) |
+{{- end -}}
+{{- end }}
+{{- range .Committees}}
+{{- if .Contact.Liaison.Name }}
+| [Committee {{.Name}}]({{.Dir}}/README.md) | {{.Contact.Liaison.Name}} (**[@{{.Contact.Liaison.GitHub}}](https://github.com/{{.Contact.Liaison.GitHub}})**) |
+{{- end -}}
+{{- end }}
