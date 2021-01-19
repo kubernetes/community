@@ -57,6 +57,9 @@ sigs:
       description: Design Proposals
     - name: sig-api-machinery-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: dims
+      name: Davanum Srinivass
   subprojects:
   - name: component-base
     owners:
@@ -190,6 +193,9 @@ sigs:
       description: Design Proposals
     - name: sig-apps-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: mrbobbytables
+      name: Bob Killen
   subprojects:
   - name: application
     description: Application metadata descriptor CRD
@@ -312,6 +318,9 @@ sigs:
       description: Design Proposals
     - name: sig-architecture-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: liggitt
+      name: Jordan Liggitt
   subprojects:
   - name: architecture-and-api-governance
     description: '[Described below](#architecture-and-api-governance)'
@@ -424,6 +433,9 @@ sigs:
       description: Design Proposals
     - name: sig-auth-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: cblecker
+      name: Christoph Blecker
   subprojects:
   - name: audit-logging
     description: |
@@ -570,6 +582,9 @@ sigs:
       description: Design Proposals
     - name: sig-autoscaling-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: derekwaynecarr
+      name: Derek Carr
   subprojects:
   - name: addon-resizer
     owners:
@@ -657,6 +672,9 @@ sigs:
       description: Design Proposals
     - name: sig-cli-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: derekwaynecarr
+      name: Derek Carr
   subprojects:
   - name: cli-experimental
     owners:
@@ -739,6 +757,9 @@ sigs:
       description: Test Failures and Triage
     - name: sig-cloud-providers-misc
       description: General Discussion
+    liaison:
+      github: nikhita
+      name: Nikhita Raghunath
   subprojects:
   - name: cloud-provider-extraction-migration
     owners:
@@ -912,6 +933,9 @@ sigs:
     teams:
     - name: sig-cluster-lifecycle
       description: Notify group
+    liaison:
+      github: dims
+      name: Davanum Srinivas
   subprojects:
   - name: bootkube
     contact:
@@ -1164,6 +1188,9 @@ sigs:
       description: Chairs and Technical Leads
     - name: sig-contributor-experience-pr-reviews
       description: PR Reviews
+    liaison:
+      github: mrbobbytables
+      name: Bob Killen
   subprojects:
   - name: community
     description: Owns and manages overall community repo, including community group
@@ -1391,6 +1418,9 @@ sigs:
       description: Ukrainian language content
     - name: sig-docs-zh-owners
       description: Chinese language content
+    liaison:
+      github: liggitt
+      name: Jordan Liggitt
   subprojects:
   - name: kubernetes-blog
     owners:
@@ -1462,6 +1492,9 @@ sigs:
       description: Design Proposals
     - name: sig-instrumentation-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: cblecker
+      name: Christoph Blecker
   subprojects:
   - name: custom-metrics-apiserver
     owners:
@@ -1545,6 +1578,9 @@ sigs:
       description: Test Failures and Triage
     - name: sig-mutlicluster-proposals
       description: Design Proposals
+    liaison:
+      github: parispittman
+      name: Paris Pittman
   subprojects:
   - name: Kubefed
     owners:
@@ -1620,6 +1656,9 @@ sigs:
       description: Design Proposals
     - name: sig-network-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: derekwaynecarr
+      name: Derek Carr
   subprojects:
   - name: cluster-proportional-autoscaler
     owners:
@@ -1706,6 +1745,9 @@ sigs:
       description: Design Proposals
     - name: sig-node-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: nikhita
+      name: Nikhita Raghunath
   subprojects:
   - name: cri-api
     owners:
@@ -1791,6 +1833,9 @@ sigs:
       description: SIG Release Members
     - name: sig-release-admins
       description: Admins for SIG Release repositories
+    liaison:
+      github: dims
+      name: Davanum Srinivas
   subprojects:
   - name: Release Engineering
     description: |
@@ -1894,6 +1939,9 @@ sigs:
       description: Design Proposals
     - name: sig-scalability-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: mrbobbytables
+      name: Bob Killen
   subprojects:
   - name: kubernetes-scalability-and-performance-tests-and-validation
     description: '[Described below](#kubernetes-scalability-and-performance-tests-and-validation)'
@@ -1969,6 +2017,9 @@ sigs:
       description: Design Proposals
     - name: sig-scheduling-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: liggitt
+      name: Jordan Liggitt
   subprojects:
   - name: cluster-capacity
     owners:
@@ -2023,6 +2074,9 @@ sigs:
       description: SIG Security Leads
     - name: sig-security-pr-reviews
       description: SIG Security PR review notifications
+    liaison:
+      github: parispittman
+      name: Paris Pittman
   subprojects:
   - name: security-audit
     description: Third Party Security Audit
@@ -2092,6 +2146,9 @@ sigs:
       description: Design Proposals
     - name: sig-service-catalog-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: cblecker
+      name: Christoph Blecker
   subprojects:
   - name: minibroker
     owners:
@@ -2158,6 +2215,9 @@ sigs:
       description: Design Proposals
     - name: sig-storage-test-failures
       description: Test Failures and Triage
+    liaison:
+      github: parispittman
+      name: Paris Pittman
   subprojects:
   - name: external-storage
     owners:
@@ -2261,6 +2321,9 @@ sigs:
       description: General Discussion
     - name: sig-testing-pr-reviews
       description: PR Reviews
+    liaison:
+      github: parispittman
+      name: Paris Pittman
   subprojects:
   - name: boskos
     description: |
@@ -2355,6 +2418,9 @@ sigs:
   contact:
     slack: sig-ui
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
+    liaison:
+      github: nikhita
+      name: Nikhita Raghunath
   subprojects:
   - name: dashboard
     owners:
@@ -2409,6 +2475,9 @@ sigs:
       description: PR Reviews
     - name: sig-usability-proposals
       description: Design Proposals
+    liaison:
+      github: dims
+      name: Davanum Srinivas
   subprojects:
   - name: sig-usability
     owners:
@@ -2461,6 +2530,9 @@ sigs:
       description: Feature Requests
     - name: sig-windows-misc
       description: General Discussion
+    liaison:
+      github: liggitt
+      name: Jordan Liggitt
   subprojects:
   - name: windows-gmsa
     owners:
@@ -2507,6 +2579,9 @@ workinggroups:
   contact:
     slack: wg-api-expression
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-api-expression
+    liaison:
+      github: liggitt
+      name: Jordan Liggitt
 - dir: wg-component-standard
   name: Component Standard
   mission_statement: >
@@ -2550,6 +2625,9 @@ workinggroups:
     teams:
     - name: wg-component-standard
       description: Component Standard Discussion
+    liaison:
+      github: cblecker
+      name: Christoph Blecker
 - dir: wg-data-protection
   name: Data Protection
   mission_statement: >
@@ -2587,6 +2665,9 @@ workinggroups:
   contact:
     slack: wg-data-protection
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-data-protection
+    liaison:
+      github: parispittman
+      name: Paris Pittman
 - dir: wg-iot-edge
   name: IoT Edge
   mission_statement: >
@@ -2629,6 +2710,9 @@ workinggroups:
   contact:
     slack: wg-iot-edge
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge
+    liaison:
+      github: derekwaynecarr
+      name: Derek Carr
 - dir: wg-k8s-infra
   name: K8s Infra
   mission_statement: >
@@ -2667,6 +2751,9 @@ workinggroups:
   contact:
     slack: wg-k8s-infra
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra
+    liaison:
+      github: nikhita
+      name: Nikhita Raghunath
 - dir: wg-multitenancy
   name: Multitenancy
   mission_statement: >
@@ -2706,6 +2793,9 @@ workinggroups:
   contact:
     slack: wg-multitenancy
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy
+    liaison:
+      github: liggitt
+      name: Jordan Liggitt
 - dir: wg-naming
   name: Naming
   stakeholder_sigs:
@@ -2739,6 +2829,9 @@ workinggroups:
   contact:
     slack: wg-naming
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-naming
+    liaison:
+      github: mrbobbytables
+      name: Bob Killen
 - dir: wg-policy
   name: Policy
   mission_statement: >
@@ -2775,6 +2868,9 @@ workinggroups:
   contact:
     slack: wg-policy
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-policy
+    liaison:
+      github: cblecker
+      name: Christoph Blecker
 - dir: wg-reliability
   name: Reliability
   mission_statement: >
@@ -2848,6 +2944,9 @@ usergroups:
     teams:
     - name: ug-big-data
       description: General Discussion
+    liaison:
+      github: derekwaynecarr
+      name: Derek Carr
 - dir: ug-vmware-users
   name: VMware Users
   mission_statement: >
@@ -2880,6 +2979,9 @@ usergroups:
   contact:
     slack: ug-vmware
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-ug-vmware
+    liaison:
+      github: nikhita
+      name: Nikhita Raghunath
 committees:
 - dir: committee-code-of-conduct
   name: Code of Conduct
