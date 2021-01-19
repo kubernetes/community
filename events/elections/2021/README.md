@@ -44,14 +44,14 @@ Eligibility for voting in 2021 is defined as:
   reviewing PRs, commenting on issues, etc. For full details see
   [the SQL query used by devstats for developer activity counts][devstats-sql].
 
-* People who have submitted the [voter exemption form] and are accepted by
+* People who have submitted the [voter exception form] and are accepted by
   the election committee.
 
 Corporate affiliation is applied after the election. If an organization finds
 itself with too many representatives it is up to those individuals to come
 to a consensus on who should serve on the committee.
 
-### Voter Exemption
+### Voter exception
 
 We *explicitly* believe that the above heuristic will be inaccurate
 and not represent the entire community. Thus we provide the form
@@ -61,11 +61,11 @@ majority vote, and the criteria used during this process will be used to
 help refine further elections.
 
 If you otherwise qualify to vote but have not yet applied for Org Membership,
-then please [request an exception][voter exemption form] (and please apply for
+then please [request an exception][voter exception form] (and please apply for
 Org Membership as well).
 
 Only contributions to projects and artifacts that fall under Steering
-Committee's governance will be considered for voter exemption.
+Committee's governance will be considered for voter exception.
 
 Examples of contributions that would be considered:
 * Slack admins who are not active in GitHub
@@ -80,7 +80,7 @@ Examples of contributions that would NOT be considered:
 <!-- While finalizing the dates in the schedule, ensure that:
 - The Steering Committee and candidate Q+A occurs at a public SC meeting
   (usually a Monday).
-- Dealine to submit voter exception forms and request a
+- Deadline to submit voter exception forms and request a
   replacement ballot is ~3 days before voting closes.
 - Private announcement of results to SC members is at least ~2 days
   before private announcement to all candidates.
@@ -107,17 +107,28 @@ Examples of contributions that would NOT be considered:
 
 **Nomination**
 
-If you want to stand for the election, create an issue in this GitHub repo
+1. If you want to stand for the election, create an issue in this GitHub repo
 (kubernetes/community) with the title `Steering Committee Nomination: Your Name (@yourgithub)`.
-After creating the issue, send an email to kubernetes-dev@googlegroups.com
-with a link to the issue. The subject line of the email should be same as
-the title of the issue.
-
 If you want to nominate someone else, you may do so, but PLEASE talk to them
 first.
 
-If you wish to accept a nomination from someone else, reply to the nomination
+2. After creating the issue, send an email to kubernetes-dev@googlegroups.com
+with a link to the issue. The subject line of the email should be same as
+the title of the issue. This email should encourage people to second your
+nomination on GitHub, as +1s via email will not count. Here's an example email:
+
+    Hi! I'm nominating _candidate_ for steering committee this year.
+    If you are an eligible voter and think they should run, please add your +1 as
+    a comment on the issue _link_ and mention the organization you work for.
+    While supportive replies are very nice, only comments on the issue will count
+    towards their eligibility.
+
+3. If you wish to accept a nomination from someone else, reply to the nomination
 **issue** saying something like "I accept the nomination".
+
+4. Finally, the candidate closes the **issue** (`#NNN`) by opening a Pull Request
+to add their bio. The PR body must contain the text `Fixes #NNN` to automatically
+close the issue once the PR is merged.
 
 **Endorsement**
 
@@ -128,7 +139,7 @@ does not count towards the final count.
 
 [Eligible voters] may endorse candidates of their choosing by replying to the
 candidate's nomination **issue** saying something like "I endorse this nominee,
-and I work for <COMPANY>" or "+1". Please state that you are in voters.md,
+and I work for <COMPANY>" or "+1". Please state that you an eligible voter,
 and include your employer's name so that we see can which candidates have
 sufficient endorsements.
 
@@ -163,9 +174,9 @@ roles you may hold.
 
 ## Voting Process
 
-Kubernetes members in [voters.md] will receive a ballot via email. If you are
+Eligible voters will receive a ballot via email. If you are
 not on that list and feel you have worked on Kubernetes in a way that is NOT
-reflected in GitHub contributions, you can use the [voter exemption form] to ask
+reflected in GitHub contributions, you can use the [voter exception form] to ask
 to participate in the election.
 
 Elections will be held using time-limited [Condorcet] ranking on [CIVS]
@@ -236,12 +247,12 @@ submitted. Please do not edit the following table.
 [IRV method]: https://www.daneckam.com/?p=374
 
 [`hack/verify-steering-election.sh`]: https://git.k8s.io/community/hack/verify-steering-election.sh
-[2020 candidate bios]: https://github.com/kubernetes/community/tree/master/events/elections/2021
+[2020 candidate bios]: https://github.com/kubernetes/community/tree/master/events/elections/2020
 [election officers]: https://github.com/kubernetes/community/tree/master/events/elections#election-officers
 [Kubernetes Community Meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
 [Kubernetes Blog]: https://kubernetes.io/blog/
 [eligible voters]: ./voters.md
-[voter exemption form]: https://www.surveymonkey.com/r/k8s-sc-election-2021
+[voter exception form]: https://www.surveymonkey.com/r/k8s-sc-election-2021
 [voters.md]: ./voters.md
 
 [devstats-sql]: https://github.com/cncf/devstats/blob/master/metrics/shared/project_developer_stats.sql
