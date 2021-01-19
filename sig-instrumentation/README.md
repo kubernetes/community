@@ -49,6 +49,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-instrumentation-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-instrumentation-pr-reviews) - PR Reviews
     - [@kubernetes/sig-instrumentation-proposals](https://github.com/orgs/kubernetes/teams/sig-instrumentation-proposals) - Design Proposals
     - [@kubernetes/sig-instrumentation-test-failures](https://github.com/orgs/kubernetes/teams/sig-instrumentation-test-failures) - Test Failures and Triage
+- Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 
 ## Subprojects
 

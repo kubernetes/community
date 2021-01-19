@@ -71,6 +71,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-docs-pt-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) - Portuguese language content
     - [@kubernetes/sig-docs-uk-owners](https://github.com/orgs/kubernetes/teams/sig-docs-uk-owners) - Ukrainian language content
     - [@kubernetes/sig-docs-zh-owners](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) - Chinese language content
+- Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
 
 ## Subprojects
 

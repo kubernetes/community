@@ -43,6 +43,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-scalability-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-scalability-pr-reviews) - PR Reviews
     - [@kubernetes/sig-scalability-proprosals](https://github.com/orgs/kubernetes/teams/sig-scalability-proprosals) - Design Proposals
     - [@kubernetes/sig-scalability-test-failures](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) - Test Failures and Triage
+- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
 ## Subprojects
 

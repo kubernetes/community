@@ -48,6 +48,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-service-catalog-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-service-catalog-pr-reviews) - PR Reviews
     - [@kubernetes/sig-service-catalog-proposals](https://github.com/orgs/kubernetes/teams/sig-service-catalog-proposals) - Design Proposals
     - [@kubernetes/sig-service-catalog-test-failures](https://github.com/orgs/kubernetes/teams/sig-service-catalog-test-failures) - Test Failures and Triage
+- Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 
 ## Subprojects
 

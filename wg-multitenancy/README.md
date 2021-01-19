@@ -36,6 +36,7 @@ Define the models of multitenancy that Kubernetes will support. Discuss and exec
 - Slack: [#wg-multitenancy](https://kubernetes.slack.com/messages/wg-multitenancy)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fmultitenancy)
+- Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
