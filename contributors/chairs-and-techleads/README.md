@@ -8,7 +8,6 @@ offboarding, operations, and more.
 In case you are not sure what to include in a meeting invite, here is a [Calendar template](https://github.com/kubernetes/community/blob/master/communication/calendar-guidelines.md#calendar-event-template).
 
 TODO - [Meeting agenda templates]     
-TODO - Crosslink to sig-gov.md, wg-gov,md, gov.md, steering folder in community, etc.
   
 ## Important Governance Documentation
   
