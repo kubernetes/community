@@ -9,7 +9,7 @@ Production readiness reviews are done by a separate team, apart from the SIG
 leads (although SIG lead approval is needed as well, of course). It is useful to
 have the viewpoint of a team that is not as familiar with the intimate details
 of the SIG, but *is* familiar with Kubernetes and with operating Kubernetes in
-production. Experience through our dry runs in 1.19 and 1.20 have shown that
+production. Experience through our dry runs in 1.17-1.20 have shown that
 this slightly "outsider" view helps identify otherwise missed items.
 
 More background may be found in the [PRR KEP].
@@ -18,8 +18,7 @@ More background may be found in the [PRR KEP].
 
 As of 1.21, PRRs are now blocking. PRR _approval_ is required for the enhancement
 to be part of the release. This means that any KEPs targeting the release for any
-stage, and in - or moving to - `implementable` state, will require production
-readiness approval by the *Enhancements Freeze Date*.
+stage will require production readiness approval by the *Enhancements Freeze Date*.
 
 Note that some of the questions in the [KEP template] should be answered in both
 the KEP's README.md and the `kep.yaml`, in order to support automated checks on
@@ -35,7 +34,8 @@ the PRR answers, the authors may request PRR approval:
 * Assign a PRR approver from the `prod-readiness-approvers` list in the
   [OWNERS_ALIASES] file. This may be done earlier as well, to get early feedback
   or just to let the approver know. Reach out on the `#prod-readiness` Slack
-  channel or just pick someone from the list.
+  channel or just pick someone from the list. The team may rebalance the
+  assignees if necessary.
 * Update the `kep.yaml`, setting the `stage`, `latest-milestone`, and the
   `milestone` struct (which captures per-stage release versions).
 * Create a `prod-readiness/<sig>/<KEP number>.yaml` file, with the PRR
@@ -89,6 +89,6 @@ that need review. For example:
 [PRR KEP]: https://git.k8s.io/enhancements/keps/sig-architecture/1194-prod-readiness
 [KEP template]: https://git.k8s.io/enhancements/keps/NNNN-kep-template
 [OWNERS_ALIASES]: https://git.k8s.io/enhancements/OWNERS_ALIASES
-[example PRR approval request PR]: https://github.com/kubernetes/enhancements/pull/2274/files
+[example PRR approval request PR]: https://github.com/kubernetes/enhancements/pull/2179/files
 [example metrics PR]: https://github.com/kubernetes/kubernetes/pull/97814
 [kepctl query]: https://git.k8s.io/enhancements/cmd/kepctl
