@@ -175,7 +175,7 @@ more than welcome to pull up a chair and hang out.
 [#office-hours channel]: https://kubernetes.slack.com/messages/office-hours
 [discuss.kubernetes.io]: https://discuss.kubernetes.io
 [StackOverflow]: https://stackoverflow.com/questions/tagged/kubernetes
-[Meet our Contributors]: /mentoring/meet-our-contributors.md
+[Meet our Contributors]: /mentoring/programs/meet-our-contributors.md
 [Office Hours playlist]: https://www.youtube.com/watch?v=D0Q7wwljN30&list=PL69nYSiGNLP3azFUvYJjGn45YbF6C-uIg
 [Volunteer working sheet]: http://bit.ly/k8s-office-hours-volunteers
 [@castrojo]: https://github.com/castrojo
