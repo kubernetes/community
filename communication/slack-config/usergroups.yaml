@@ -65,7 +65,7 @@ usergroups:
     long_name: Velero Maintainers
     description: Velero Maintainers group.
     channels:
-      - velero 
+      - velero
     members:
       - ashish-amarnath
       - carlisia
@@ -165,3 +165,16 @@ usergroups:
       - mik-dass
       - prietyc123
       - kadel
+
+  - name: pinniped-dev
+    long_name: Pinniped Development Team
+    description: Active developers of Pinniped @ pinniped.dev
+    channels:
+      - pinniped
+    members:
+      - enj
+      - mattmoyer
+      - ankeesler
+      - cfryanr
+      - margocrawf
+      - microwavables
