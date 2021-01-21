@@ -1,0 +1,121 @@
+# Request for Proposal
+
+## Kubernetes Third-Party Security Audit
+
+The Kubernetes Third-Party Audit Working Group (working group, henceforth) is soliciting proposals from Information Security vendors for a comprehensive security audit of the Kubernetes Project.
+
+### Background
+
+In August of 2019, the Kubernetes Security Audit working group, in concert with the CNCF, Trail of Bits, and Atredis Partners, completed the first comprehensive security audit of the Kubernetes project’s [codebase](https://github.com/kubernetes/kubernetes/), working from version 1.13.
+
+These findings, below, paint a broad picture of Kubernetes security, as of version 1.13, and highlight some areas that warrant further, deeper, research.
+
+* [Kubernetes Security Review](../security-audit-2019/findings/Kubernetes%20Final%20Report.pdf)
+* [Attacking and Defending Kubernetes Installations](../security-audit-2019/findings/AtredisPartners_Attacking_Kubernetes-v1.0.pdf)
+* [Whitepaper](../security-audit-2019/findings/Kubernetes%20White%20Paper.pdf)
+* [Threat Model](../security-audit-2019/findings/Kubernetes%20Threat%20Model.pdf)
+
+### Project Goals and Scope
+
+This subsequent audit is intended to be the second in a series of recurring audits, each focusing on a specific aspect of Kubernetes while maintaining coverage of all aspects that have changed since the previous audit ([1.13](../security-audit-2019/findings/)).
+
+The scope of this audit is the most recent release (1.20) of the core [Kubernetes project](https://github.com/kubernetes/kubernetes).
+
+This audit will focus on the following components of Kubernetes:
+
+* kube-apiserver
+* kube-scheduler
+* etcd, Kubernetes use of
+* kube-controller-manager
+* cloud-controller-manager
+* kubelet
+* kube-proxy
+* secrets-store-csi-driver
+
+Adjacent findings within the scope of the [bug bounty program](https://hackerone.com/kubernetes?type=team#scope) may be included, but are not the primary goal.
+
+This audit is intended to find vulnerabilities or weaknesses in Kubernetes. While Kubernetes relies upon container runtimes such as Docker and CRI-O, we aren't looking for (for example) container escapes that rely upon bugs in the container runtime (unless, for example, the escape is made possible by a defect in the way that Kubernetes sets up the container).
+
+The working group is specifically interested in the following aspects of the in-scope components. Proposals should indicate the specific proposed personnel’s level of expertise in these fields as it relates to Kubernetes.
+
+* Golang analysis and fuzzing
+* Networking
+* Cryptography
+* Evaluation of component privilege
+* Trust relationships and architecture evaluation
+* Authentication & Authorization (including Role Based Access Controls)
+* Secrets management
+* Multi-tenancy isolation: Specifically soft (non-hostile co-tenants)
+
+Personnel written into the proposal must serve on the engagement, unless explicit approvals for staff changes are made by the Security Audit Working Group.
+
+#### Out of Scope
+
+Findings specifically excluded from the [bug bounty program](https://hackerone.com/kubernetes?type=team#scope) scope are out of scope for this audit.
+
+### Eligible Vendors
+
+This RFP is open to proposals from all vendors.
+
+#### Constraints
+
+If your proposal includes subcontractors, please include relevant details from their firms such as CVs, past works, etc. The selected vendor will be wholly responsible for fulfillment of the audit and subcontractors must be wholly managed by the selected vendor.
+
+### Anticipated Selection Schedule
+
+This RFP will be open between 2021/01/25 and 2021/02/26.
+
+The working group will answer questions for the first two weeks of this period.
+
+Questions can be submitted [here](https://docs.google.com/forms/d/e/1FAIpQLScjApMDAJ5o5pIBFKpJ3mUhdY9w5s9VYd_TffcMSvYH_O7-og/viewform). All questions will be answered publicly in this document.
+
+Proposals must include CVs, resumes, and/or example reports from staff that will be working on the project.
+
+Proposals should be submitted to kubernetes-security-audit-2021@googlegroups.com
+
+* 2021/01/25: RFP Open, Question period open
+* 2021/02/08: Question period closes
+* 2021/02/26: RFP Closes
+* 2021/03/09: The working group will announce vendor selection
+
+## Methodology
+
+We are allowing roughly 12 calendar weeks for this audit, start date can be negotiated after vendor selection. 
+
+The working group will establish a 60 minute kick-off meeting to answer any initial questions and discuss the Kubernetes architecture.
+
+This is a comprehensive audit, not a penetration test or red team exercise. The audit does not end with the first successful exploit or critical vulnerability.
+
+The vendor will document the Kubernetes configuration and architecture that they will audit and provide this to the working group. The cluster deployment assessed must not be specific to any public cloud. The working group must approve this configuration before the audit continues. This documented configuration will result in the "audited reference architecture specification" deliverable.
+
+The vendor will perform source code analysis on the Kubernetes code base, finding vulnerabilities and, where possible and making the most judicious use of time, providing proof of concept exploits that the Kubernetes project can use to investigate and fix defects. The vendor will discuss findings on a weekly basis and, at the vendor’s discretion, bring draft write-ups to status meetings.
+
+The working group will be available weekly to meet with the selected vendor and will provide subject matter experts as requested.
+
+The vendor will develop and deliver a draft report, describing their methodology, how much attention the various components received (to inform future work), and the work’s findings. The working group will review and comment on the draft report, either requesting updates or declaring the draft final. This draft-review-comment-draft cycle may repeat several times.
+
+## Expectations
+
+The vendor must report urgent security issues immediately to both the working group and security@kubernetes.io.
+
+## Selection Criteria
+
+To help us combine objective evaluations with the working group members’ individual past experiences and knowledge of the vendors’ work and relevant experience, the vendors will be evaluated against the following criteria. Each member of the working group will measure the RFP against the criteria on a scale of 1 to 5:
+
+* Relevant understanding and experience in code audit, threat modeling, and related work
+* Relevant understanding and experience in Kubernetes, other orchestration systems, containers, Linux, hardening of distributed systems, and related work
+* Strength of the vendor’s proposal and examples of previous work product, redacted as necessary
+
+A writeup which details our process and results of the last RFP is available [here](../security-audit-2019/RFP_Decision.md).
+
+## Confidentiality and Embargo
+
+All information gathered and deliverables created as a part of the audit must not be shared outside the vendor or the working group without the explicit consent of the working group.
+
+## Deliverables
+
+The audit should result in the following deliverables, which will be made public after any sensitive security issues are mitigated.
+
+* Audited reference architecture specification. Should take the form of a summary and associated configuration YAML files.
+* Findings report including an executive summary.
+* Where possible and, in the vendor’s opinion makes the most judicious use of time, proof of concept exploits that the Kubernetes project can use to investigate and fix defects.
