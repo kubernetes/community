@@ -224,6 +224,7 @@ channels:
   - name: linode
   - name: litmus
   - name: litmus-dev
+  - name: loft
   - name: lokomotive
   - name: malaysia-users
   - name: malta-users
