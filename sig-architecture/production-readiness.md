@@ -74,7 +74,7 @@ To become a reviewer:
  * Read/study previous PRR comments and production readiness responses in existing KEPs.
  * Choose some KEPs requiring PRR and perform a review. Put "shadow prod readiness review"
    in your review comments so that the assigned PRR approver knows your intent.
- * After two release cycles, if you have shown good judgement and quality reviews,
+ * After at least one release cycle, if you have shown good judgement and quality reviews,
    you can propose yourself as approver by submitting a PRR to add your GitHub
    handle to the `prod-readiness-approvers` alias in [OWNERS_ALIASES].
 
