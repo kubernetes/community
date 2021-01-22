@@ -131,7 +131,7 @@ driving architectural changes to eliminate those (if such are required) in
 collaboration with other SIGs or directly delegating non cross-cutting
 improvements to individual SIGs.
 
-* [Scalability issues with Services](.blogs/k8s-services-scalability-issues.md)
+* [Scalability issues with Services](./blogs/k8s-services-scalability-issues.md)
 
 ## Kubernetes scalability test frameworks
 
