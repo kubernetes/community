@@ -2,7 +2,7 @@
 
 This contains the historical archives from the SIG Storage meetings.
 
-Current active meeting notes can be found in the working documented used by the
+Current active meeting notes can be found in the working document used by the
 SIG. For links to this document, and for current meeting details, please refer
 to the [SIG Storage README](../README.md) for details.
 
