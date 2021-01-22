@@ -234,7 +234,7 @@ Agenda/Note
     * AWS Attaches issue: Wrong AWS volume can be mounted
       * [https://github.com/kubernetes/kubernetes/issues/29324](https://github.com/kubernetes/kubernetes/issues/29324)
     * Some flaky test
-* v1.5 Prioritie
+* v1.5 Priorities
   * Testing
   * Debuggability
   * Code hardening
@@ -422,7 +422,7 @@ Agenda/Notes:
     * Justin SB
       * AWS
         * Looks good
-* v1.4 prioritie
+* v1.4 priorities
   * Want early in 1.4 (1.3.x release):
     * 1) Dynamic Provisioning/Storage Classes V2 Proposal (Jan Šafránek)
       * [https://github.com/kubernetes/kubernetes/pull/26908](https://github.com/kubernetes/kubernetes/pull/26908)
@@ -437,7 +437,7 @@ Agenda/Notes:
       * Must have for 1.3.1 release
     * 5) Volume Operation Executor Should Generate Event
       * [https://github.com/kubernetes/kubernetes/issues/27590](https://github.com/kubernetes/kubernetes/issues/27590)
-  * Other prioritie
+  * Other priorities
     * 6) Improve Testing
       * Huge item
       * Performance testing
@@ -631,7 +631,7 @@ Agenda/Notes:
     * Mounter pods should be subject to CPU/mem quota limit
     * Consider deamonset vs just scheduling a single pod
       * Only FUSE requires a long running proce
-    * How does mount namespace propogation get triggered for k8s container
+    * How does mount namespace propagation get triggered for k8s container
     * Auth mechanisms (so arbitrary user containers can’t trigger mount/unmount
 * Bind/Provision/Recycler Controller Consolidation PRs - Jan Safranek
   * Existing PR needs review

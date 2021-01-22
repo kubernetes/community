@@ -24,7 +24,7 @@ Agenda/Note
 
 * [Saad Ali] Q4 2018 v1.13 Update
   * [Planning spreadsheet](https://docs.google.com/spreadsheets/d/1t4z5DYKjX2ZDlkTpCnp18icRAQqOE85C1T1r2gqJVck/edit?usp=sharing)
-  * Q4 end of quarter statuse
+  * Q4 end of quarter status
 * PRs to discuss or that need attention:
   * [Please add any PRs that need attention, with your name, below]
   * [pontiyaraja] [#71416](https://github.com/kubernetes/kubernetes/issues/71416) [WIP] inconsistent message in different gke environment.
@@ -179,7 +179,7 @@ Agenda/Notes (Please include your name and estimated time):
     * Proposal: Node shutdown taint
             [https://github.com/kubernetes/kubernetes/issues/58635](https://github.com/kubernetes/kubernetes/issues/58635)[https://github.com/kubernetes/kubernetes/pull/59323](https://github.com/kubernetes/kubernetes/pull/59323)[https://github.com/kubernetes/kubernetes/pull/67254](https://github.com/kubernetes/kubernetes/pull/67254)
 Meeting at 11am Pacific to discuss detach issues related to node being down: meet.google.com/qoi-pknh-bfh
-* Discuss csi-connector library (Move to next / seperate call)
+* Discuss csi-connector library (Move to next / separate call)
 
 ## August 16, 2018
 

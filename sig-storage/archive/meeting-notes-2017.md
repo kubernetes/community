@@ -196,7 +196,7 @@ Agenda/Notes:
 * PRs to discuss or that need attention
   * [Please add any PRs that need attention here]
   * Detach Fix [https://github.com/kubernetes/kubernetes/pull/52221](https://github.com/kubernetes/kubernetes/pull/52221)
-  * Kubelet wierd output fix [https://github.com/kubernetes/kubernetes/pull/52132](https://github.com/kubernetes/kubernetes/pull/52132)
+  * Kubelet weird output fix [https://github.com/kubernetes/kubernetes/pull/52132](https://github.com/kubernetes/kubernetes/pull/52132)
 * Design Review
   * [Please add any design reviews here]
   * 1.7 Local storage: [https://github.com/kubernetes/community/pull/989](https://github.com/kubernetes/community/pull/989)
@@ -516,7 +516,7 @@ Agenda/Notes:
   * [https://www.cncf.io/event/openstack-north-america-2017/](https://www.cncf.io/event/openstack-north-america-2017/)
   * Some focus during the main event on OpenStack storage integration with K8S
   * Luis Pabon (I can attend) I also plan on attending RH Summit.
-  * Chris Hoge (OpenStack Foundation, K8S community liason, chris@openstack.org)
+  * Chris Hoge (OpenStack Foundation, K8S community liaison, chris@openstack.org)
   * Michelle Au (msau42) is going, will be giving a talk about Local Storage
   * Hayley Swimelar&lt;[hayley@linbit.com](mailto:hayley@linbit.com)&gt; is going
   * Yin ding&lt;[yin.ding@huawei.com](mailto:yin.ding@huawei.com)&gt; is going, will give a talk with Ton ([Ngoton@us.ibm.com](mailto:Ngoton@us.ibm.com)) about OpenStack &amp; K8S.
