@@ -79,7 +79,7 @@ We talk a lot, too.
 Our real-time platform with Kubernetes enthusiasts spread across 250+ channels.
 Owned and operated by sig-contributor-experience.
 
-[Join] | [Slack Guidelines] | [slack moderators] | [#kubernetes-dev]
+[Join] | [Slack Guidelines] | [slack moderators] | [#kubernetes-contributors]
 
 Pro-tip: If you want to add a new channel, simply file a request following
 [these instructions].
@@ -219,7 +219,7 @@ place!
 [the doc]: /events/office-hours.md
 [moderators]: ./moderators.md
 [slack moderators]: ./moderators.md#slack
-[#kubernetes-dev]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
+[#kubernetes-contributors]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
 [#sig-contribex]: https://app.slack.com/client/T09NY5SBT/C1TU9EB9S
 [#office-hours]: https://app.slack.com/client/T09NY5SBT/C6RFQ3T5H
 [office-hours]: /events/office-hours.md

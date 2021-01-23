@@ -81,8 +81,8 @@ applicability to the Kubernetes community.
 Some channels have specific rules or guidelines. If they do, they will be listed
 in the purpose or pinned docs of that channel.
 
-- `#kubernetes-dev` - Questions and discourse around upstream contributions and
-development to kubernetes,
+- `#kubernetes-contributors` - Questions and discourse around upstream
+  contributions and development to kubernetes.
 - `#kubernetes-careers` - Job openings for positions working with/on/around
   Kubernetes. Post the job once and pin it. Pins expire after 30 days. Postings
   must include:

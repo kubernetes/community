@@ -45,7 +45,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 2. Announce voting schedule to community
 
 - Should mostly be links to the voter guide and the Steering Committee Charter
-- On kubernetes-dev list, kubernetes-dev slack, and twitter
+- On kubernetes-dev list, kubernetes-contributors slack, and twitter
 
 3. Executing the Election in CIVS
 
