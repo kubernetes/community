@@ -23,7 +23,7 @@ We will attempt to match you with the closest mentor of your area of interested 
 
 ## Mentors
 
-If you are interested in signing up to be a mentor for this, please see the [mentor guidelines](mentor-guide.md).
+If you are interested in signing up to be a mentor for this, please see the [mentor guidelines](../processes/mentor-guide.md).
 
 ## Notes
 
