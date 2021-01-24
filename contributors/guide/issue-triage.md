@@ -130,9 +130,11 @@ api-machinery has found that consistently meeting on a regular, fixed schedule i
 The SIG has developed a [triaging page](/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
 
 ## Step One: Review Newly Created Open Issues
-Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). New, untriaged issues come without labels attached. SIG leads should identify at least one SIG member to serve as a first point of contact for new issues.
+Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). Labels are the primary tools for triaging. [Here's a comprehensive label list](https://github.com/kubernetes/kubernetes/labels).
 
-Labels are the primary tools for triaging. [Here's a comprehensive label list](https://github.com/kubernetes/kubernetes/labels).
+New issues are automatically assigned a `needs-triage` label indicating that these issues are currently awaiting triage. After triaging an issue, the issue owning SIG will apply the `triage/accepted` label using the bot command `/triage accepted` as a comment. This will remove the  `needs-triage` label and add a `triage/accepted` label indicating that an issue is ready to be worked on.
+
+Note that adding labels requires Kubernetes GitHub org membership. If you are not an org member, you should add your triage findings as a comment.
 
 ### Conducting Searches
 GitHub allows you to filter out types of issues and pull requests, which helps you discover items in need of triaging. This table includes some predetermined searches for convenience:
