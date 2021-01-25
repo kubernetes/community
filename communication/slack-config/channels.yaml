@@ -202,7 +202,8 @@ channels:
   - name: kubernetes-batch-jobs
   - name: kubernetes-careers
   - name: kubernetes-client
-  - name: kubernetes-dev
+  - name: kubernetes-contributors
+    id: C09R23FHP
   # kubernetes-docs-* channels are defined in sig-docs/
   - name: kubernetes-novice
   - name: kubernetes-operators
