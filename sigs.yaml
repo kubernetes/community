@@ -1722,8 +1722,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
   - name: node-api
     owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/node-api/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/node-api/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/api/master/node/OWNERS
   - name: node-feature-discovery
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery-operator/master/OWNERS
