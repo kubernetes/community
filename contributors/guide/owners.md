@@ -41,9 +41,9 @@ OWNERS files are in YAML format and support the following keys:
     effect on `a/deep/nested/bit/of/code`
 - `reviewers`: a list of GitHub usernames or aliases that are good candidates to `/lgtm` a PR
 - `security_contacts`: a list of users to contact for security issues
-  - `github`: github username
-  - `email`: desired, but not required. Obfuscation is allowed (e.g. replace '@' with 'at')
-  - `slack`: desired, but not required. Username on kubernetes.slack.com
+  - `github`: GitHub username (required)
+  - `email`: E-mail address (optional)
+  - `slack`: Username on kubernetes.slack.com (optional)
   - NB: the contacts here are for use _by_ the **[Kubernetes PSC][PSC]**, and should not normally include PSC members. The PSC will use the contact information to coordinate security issues.
 
 The above keys constitute a *simple OWNERS configuration*.
