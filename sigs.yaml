@@ -974,13 +974,13 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
     meetings:
-    - description: Cluster API (AWS implementation) office hours
+    - description: Cluster API Provider AWS office hours
       day: Monday
       time: "10:00"
       tz: PT (Pacific Time)
       frequency: biweekly
       url: https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09
-      archive_url: https://docs.google.com/document/d/1kNI09eTQUEm28h0PaaPDNkTv6E5OHKEKzLIJdxaXYV8/edit
+      archive_url: https://docs.google.com/document/d/1iW-kqcX-IhzVGFrRKTSPGBPOc-0aUvygOVoJ5ETfEZU/
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-azure
     owners:
