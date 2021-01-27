@@ -2368,19 +2368,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
   - name: testing-commons
     description: |
-      The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project
-    contact:
-      slack: testing-commons
+      **[best-effort]** The testing-commons subproject focuses on matters of code structure, layout, and execution of kubernetes/kubernetes test code. It is currently staffed on a best-effort basis; please bring discussions to the sig-testing slack channel or meeting. For historical context, please see the [former testing-commons meeting agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit) and [archived testing-commons slack channel](https://kubernetes.slack.com/archives/C9NK9KFFW)
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
-    meetings:
-    - description: Testing Commons
-      day: Friday
-      time: "13:00"
-      tz: PT (Pacific Time)
-      frequency: bi-weekly
-      url: https://zoom.us/j/790505720?pwd=VThEeVJqTnFPY0o1bDFZQk1ZRjJLQT09
-      archive_url: https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit
 - dir: sig-ui
   name: UI
   mission_statement: >
