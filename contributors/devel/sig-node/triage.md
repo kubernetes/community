@@ -1,0 +1,128 @@
+# SIG Node Triage Process
+
+Currently, SIG Node is limiting its triage review to pull requests. In the
+near-future, we hope to expand to issues as well.
+
+This is intended to guide developers through the SIG Node triage process. You
+will learn about the roles of authors, reviewers, and approvers, as well as
+what labels are required for each stage of the PR process.
+
+We track most node PRs on the [SIG Node Triage project board]. All test and
+CI-related PRs are tracked on the [CI subproject board].
+
+[SIG Node Triage project board]: https://github.com/orgs/kubernetes/projects/49
+[CI subproject board]: https://github.com/orgs/kubernetes/projects/43
+
+## Triage
+
+All new PRs added to the board should begin in the **Triage** column.
+
+When a pull request is made against kubernetes/kubernetes, it will typically
+have the following [labels]:
+
+- needs-triage
+- needs-priority
+- needs-ok-to-test (not needed for project members)
+
+In order to be moved out of this column, all of the above labels must be set.
+
+[labels]: https://github.com/kubernetes/test-infra/blob/master/label_sync/labels.md
+
+### needs-ok-to-test
+
+Use your best judgment in determining whether a PR is OK to test. You don't
+have to do a full review: just make sure that the code does not appear to be
+actively malicious, and the PR appears to be doing something useful. Use the
+command `/ok-to-test`.
+
+If the PR is trivial and doesn't provide much value, feel free to close it and
+link the author to the [trivial edits policy].
+
+[trivial edits policy]: https://github.com/kubernetes/community/blob/master/contributors/guide/pull-requests.md#trivial-edits
+
+### needs-priority
+
+You can take a quick look at what the PR is addressing and then apply a
+priority label.
+
+- **priority/critical-urgent:** Urgent bug fix, required ASAP.
+- **priority/important-soon:** Needs to be completed this release. Important
+  bug fixes + KEPs targeted for the current milestone.
+- **priority/important-longterm:** Has an attached issue/KEP, but unclear what
+  the specific priority is.
+- **priority/backlog:** Non-urgent changes such as typo fixes, linters, small
+  comment fixes, etc.
+
+### needs-triage
+
+There are two more things to check before accepting a PR for triage.
+
+The first is whether the SIG is correct. If the PR does not appear to touch SIG
+Node code or require a SIG Node approver, you should remove the SIG Node label,
+and add other SIG labels as appropriate.
+
+The second is verifying the kind of PR. Most will be bug fixes, cleanups, or
+documentation. Feature PRs should generally have an attached KEP. API changes
+and deprecations require special review; those labels may be mistakenly
+applied, so check over the PR to make sure they're accurate.
+
+Once you've quickly looked over a PR, applied the appropriate labels, and it
+looks ready to proceed to review (i.e. it doesn't have any labels that would
+mean it's waiting on more work from the author), you can mark the PR as triaged
+with `/triage accepted`.
+
+## Waiting on Author
+
+This column means that the PR is waiting on some action from the author. A
+reviewer may have requested changes, or a PR may have one of the following
+do-not-merge labels:
+
+- **do-not-merge/hold:** usually set by a reviewer
+- **do-not-merge/work-in-progress:** usually set by an author
+- **do-not-merge/release-note-needed:** needs a release note, override with
+  `/release-note-none`
+- **do-not-merge/contains-merge-commits:** PR needs to be rebased
+- **needs-rebase:** PR needs to be rebased
+
+PRs that do not have any of the above labeled in this column should be
+evaluated occasionally to see if they are ready for review.
+
+## Waiting on Reviewer
+
+This PR needs review! If you're not sure how to review a PR, start by
+familiarizing yourself with the Kubernetes [pull request guidelines] and
+[review guidelines].
+
+PRs in this column must have the following labels set:
+
+- triage-accepted
+- priority
+- kind
+
+TODO: Add some node-specific stuff here.
+
+[pull request guidelines]: https://github.com/kubernetes/community/blob/master/contributors/guide/pull-requests.md
+[review guidelines]: https://github.com/kubernetes/community/blob/master/contributors/guide/review-guidelines.md
+
+## Waiting on Approver
+
+These PRs are waiting on an `approved` label that can only be provided by
+approvers. The bot will always tell you whose approval is needed on what files.
+
+PRs in this column must have the following labels set:
+
+- lgtm
+- triage-accepted
+- priority
+- kind
+
+Check for the bot's comment to see which files still need approvers from the
+appropriate OWNERS. If the PR already has an approval for the node components
+(commonly, anything in `./pkg/kubelet/*`), you can mark the PR as Done manually
+while waiting on other approvers.
+
+## Done
+
+This column is for closed and merged PRs. Huzzah!
+
+TODO: We should archive this column per release.
