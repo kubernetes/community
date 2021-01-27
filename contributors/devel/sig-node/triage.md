@@ -10,15 +10,18 @@ what labels are required for each stage of the PR process.
 We track most node PRs on the [SIG Node Triage project board]. All test and
 CI-related PRs are tracked on the [CI subproject board].
 
+For help with the commands listed in the document below, review the [bot command documentation].
+
 [SIG Node Triage project board]: https://github.com/orgs/kubernetes/projects/49
 [CI subproject board]: https://github.com/orgs/kubernetes/projects/43
+[bot command documentation]: https://go.k8s.io/bot-commands
 
 ## Triage
 
 All new PRs added to the board should begin in the **Triage** column.
 
 When a pull request is made against kubernetes/kubernetes, it will typically
-have the following [labels]:
+have the following [labels], applied by the Prow bot:
 
 - needs-triage
 - needs-priority
@@ -35,9 +38,12 @@ have to do a full review: just make sure that the code does not appear to be
 actively malicious, and the PR appears to be doing something useful. Use the
 command `/ok-to-test`.
 
-If the PR is trivial and doesn't provide much value, feel free to close it and
-link the author to the [trivial edits policy].
+Only [Kubernetes org members] can add this label.
 
+If the PR is trivial and doesn't provide much value, feel free to close it
+using the `/close` command and link the author to the [trivial edits policy].
+
+[Kubernetes org members]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
 [trivial edits policy]: https://github.com/kubernetes/community/blob/master/contributors/guide/pull-requests.md#trivial-edits
 
 ### needs-priority
@@ -45,7 +51,11 @@ link the author to the [trivial edits policy].
 You can take a quick look at what the PR is addressing and then apply a
 priority label.
 
-- **priority/critical-urgent:** Urgent bug fix, required ASAP.
+Anyone can add this label.
+
+- **priority/critical-urgent:** Urgent bug fix, required ASAP. If not
+  addressed, will block a release. These issues should always be discussed in
+  the `#sig-node` channel on Slack.
 - **priority/important-soon:** Needs to be completed this release. Important
   bug fixes + KEPs targeted for the current milestone.
 - **priority/important-longterm:** Has an attached issue/KEP, but unclear what
@@ -71,6 +81,8 @@ looks ready to proceed to review (i.e. it doesn't have any labels that would
 mean it's waiting on more work from the author), you can mark the PR as triaged
 with `/triage accepted`.
 
+Only [Kubernetes org members] can add this label.
+
 ## Waiting on Author
 
 This column means that the PR is waiting on some action from the author. A
@@ -79,8 +91,9 @@ do-not-merge labels:
 
 - **do-not-merge/hold:** usually set by a reviewer
 - **do-not-merge/work-in-progress:** usually set by an author
-- **do-not-merge/release-note-needed:** needs a release note, override with
-  `/release-note-none`
+- **do-not-merge/release-note-needed:** needs a release note to be added by the
+  author, [Kubernetes org members] can override with `/release-note-none` if
+  not required
 - **do-not-merge/contains-merge-commits:** PR needs to be rebased
 - **needs-rebase:** PR needs to be rebased
 
@@ -99,15 +112,22 @@ PRs in this column must have the following labels set:
 - priority
 - kind
 
+Only [Kubernetes org members] can add an `/lgtm`.
+
+If you want to become an official Node reviewer, you should read through the
+[reviewer responsibilities and requirements].
+
 TODO: Add some node-specific stuff here.
 
 [pull request guidelines]: https://github.com/kubernetes/community/blob/master/contributors/guide/pull-requests.md
 [review guidelines]: https://github.com/kubernetes/community/blob/master/contributors/guide/review-guidelines.md
+[reviewer responsibilities and requirements]: https://github.com/kubernetes/community/blob/master/community-membership.md#reviewer
 
 ## Waiting on Approver
 
 These PRs are waiting on an `approved` label that can only be provided by
-approvers. The bot will always tell you whose approval is needed on what files.
+approvers. The bot will always tell you whose approval is needed on which
+directories.
 
 PRs in this column must have the following labels set:
 
@@ -120,6 +140,11 @@ Check for the bot's comment to see which files still need approvers from the
 appropriate OWNERS. If the PR already has an approval for the node components
 (commonly, anything in `./pkg/kubelet/*`), you can mark the PR as Done manually
 while waiting on other approvers.
+
+Anyone can `/approve` a PR, but the bot will only pay attention to the
+approvals from [Kubernetes approvers].
+
+[Kubernetes approvers]: https://github.com/kubernetes/community/blob/master/community-membership.md#approver
 
 ## Done
 
