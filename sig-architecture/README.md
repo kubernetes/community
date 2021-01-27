@@ -50,6 +50,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-architecture-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-architecture-pr-reviews) - PR Reviews
     - [@kubernetes/sig-architecture-proposals](https://github.com/orgs/kubernetes/teams/sig-architecture-proposals) - Design Proposals
     - [@kubernetes/sig-architecture-test-failures](https://github.com/orgs/kubernetes/teams/sig-architecture-test-failures) - Test Failures and Triage
+- Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
 
 ## Subprojects
 

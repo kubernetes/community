@@ -47,6 +47,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/release-managers](https://github.com/orgs/kubernetes/teams/release-managers) - Release Managers
     - [@kubernetes/sig-release](https://github.com/orgs/kubernetes/teams/sig-release) - SIG Release Members
     - [@kubernetes/sig-release-admins](https://github.com/orgs/kubernetes/teams/sig-release-admins) - Admins for SIG Release repositories
+- Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
 
 ## Subprojects
 

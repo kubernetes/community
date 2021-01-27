@@ -30,6 +30,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 - Slack: [#wg-naming](https://kubernetes.slack.com/messages/wg-naming)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-naming)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fnaming)
+- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 **The following section will be reworked and formalized as a charter once the

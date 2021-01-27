@@ -33,6 +33,7 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Work
 - Slack: [#wg-k8s-infra](https://kubernetes.slack.com/messages/wg-k8s-infra)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fk8s-infra)
+- Steering Committee Liaison: Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

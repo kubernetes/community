@@ -29,6 +29,7 @@ Enable API authors to better serve API consumers, by improving and documenting a
 - Slack: [#wg-api-expression](https://kubernetes.slack.com/messages/wg-api-expression)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-api-expression)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fapi-expression)
+- Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Full Mission Statement

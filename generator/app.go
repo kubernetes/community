@@ -31,15 +31,17 @@ import (
 )
 
 const (
-	readmeTemplate  = "readme.tmpl"
-	listTemplate    = "list.tmpl"
-	aliasesTemplate = "aliases.tmpl"
-	headerTemplate  = "header.tmpl"
+	readmeTemplate   = "readme.tmpl"
+	listTemplate     = "list.tmpl"
+	aliasesTemplate  = "aliases.tmpl"
+	liaisonsTemplate = "liaisons.tmpl"
+	headerTemplate   = "header.tmpl"
 
-	sigsYamlFile  = "sigs.yaml"
-	sigListOutput = "sig-list.md"
-	aliasesOutput = "OWNERS_ALIASES"
-	indexFilename = "README.md"
+	sigsYamlFile     = "sigs.yaml"
+	sigListOutput    = "sig-list.md"
+	aliasesOutput    = "OWNERS_ALIASES"
+	indexFilename    = "README.md"
+	liaisonsFilename = "liaisons.md"
 
 	beginCustomMarkdown = "<!-- BEGIN CUSTOM CONTENT -->"
 	endCustomMarkdown   = "<!-- END CUSTOM CONTENT -->"
@@ -89,6 +91,7 @@ type Contact struct {
 	MailingList        string       `yaml:"mailing_list,omitempty"`
 	PrivateMailingList string       `yaml:"private_mailing_list,omitempty"`
 	GithubTeams        []GithubTeam `yaml:"teams,omitempty"`
+	Liaison            Person       `yaml:"liaison,omitempty"`
 }
 
 // GithubTeam represents a specific Github Team.
@@ -523,6 +526,13 @@ func main() {
 	fmt.Println("Generating OWNERS_ALIASES")
 	outputPath = filepath.Join(baseGeneratorDir, aliasesOutput)
 	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, aliasesTemplate), outputPath, "yaml", ctx)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Generating liaisons.md")
+	outputPath = filepath.Join(baseGeneratorDir, liaisonsFilename)
+	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, liaisonsTemplate), outputPath, "markdown", ctx)
 	if err != nil {
 		log.Fatal(err)
 	}

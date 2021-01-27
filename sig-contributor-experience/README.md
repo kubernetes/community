@@ -47,6 +47,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-contributor-experience-apac-coordinators](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-apac-coordinators) - APAC Coordinator Team
     - [@kubernetes/sig-contributor-experience-leads](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-leads) - Chairs and Technical Leads
     - [@kubernetes/sig-contributor-experience-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-pr-reviews) - PR Reviews
+- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
 ## Subprojects
 

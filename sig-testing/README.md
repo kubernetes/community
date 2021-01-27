@@ -38,6 +38,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 - GitHub Teams:
     - [@kubernetes/sig-testing](https://github.com/orgs/kubernetes/teams/sig-testing) - General Discussion
     - [@kubernetes/sig-testing-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-testing-pr-reviews) - PR Reviews
+- Steering Committee Liaison: Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
 
 ## Subprojects
 

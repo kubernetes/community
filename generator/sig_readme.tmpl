@@ -59,6 +59,9 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/{{.Name}}](https://github.com/orgs/kubernetes/teams/{{.Name}}) {{- if .Description }} - {{.Description}} {{- end}}
 {{- end }}
 {{- end }}
+{{- if .Contact.Liaison.Name }}
+- Steering Committee Liaison: {{.Contact.Liaison.Name}} (**[@{{.Contact.Liaison.GitHub}}](https://github.com/{{.Contact.Liaison.GitHub}})**)
+{{- end }}
 
 {{- if .Subprojects }}
 
