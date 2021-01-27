@@ -173,7 +173,7 @@ klog.Infof("delete pod %s with propagation policy %s", ...)
 ```
 should be changed to
 ```go
-klog.Infof("Deleted pod", ...)
+klog.InfoS("Deleted pod", ...)
 ```
 
 Some logs are constructed solely from string formats. In those cases a message needs to be derived from the context of
