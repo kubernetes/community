@@ -153,7 +153,6 @@ channels:
   - name: keda-dev
   - name: keel
   - name: kiam
-  - name: kind
   - name: kiosk
   - name: kcli
   - name: klog
@@ -301,8 +300,6 @@ channels:
   - name: prometheus
   - name: prometheus-operator
   - name: prometheus-operator-dev
-  - name: prow
-  - name: prow-alerts
   - name: pt_br-users
   - name: purelb-users
   - name: raksh
@@ -349,7 +346,7 @@ channels:
   - name: sig-scheduling
   # sig-security* channels are defined in sig-security/
   - name: sig-service-catalog
-  - name: sig-testing
+  # sig-testing channels are defined in sig-testing/
   - name: sig-ui
   - name: sig-usability
   - name: sig-windows
@@ -369,8 +366,6 @@ channels:
   - name: talk-proposals
   - name: terraform-providers
   - name: test-failures
-  - name: testing-commons
-  - name: testing-ops
   - name: tilt
   - name: tn-users
   - name: topology-aware-scheduling

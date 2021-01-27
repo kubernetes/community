@@ -36,12 +36,6 @@ usergroups:
       - kaslin
       - rajula96reddy
 
-  - name: test-infra-oncall
-    external: true
-
-  - name: google-build-admin
-    external: true
-
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
   - name: product-security-committee

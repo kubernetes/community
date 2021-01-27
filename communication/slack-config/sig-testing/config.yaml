@@ -1,0 +1,7 @@
+channels:
+  - name: kind
+  - name: prow
+  - name: prow-alerts
+  - name: sig-testing
+  - name: testing-commons
+  - name: testing-ops
