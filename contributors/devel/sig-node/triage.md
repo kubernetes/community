@@ -23,9 +23,10 @@ All new PRs added to the board should begin in the **Triage** column.
 When a pull request is made against kubernetes/kubernetes, it will typically
 have the following [labels], applied by the Prow bot:
 
-- needs-triage
-- needs-priority
 - needs-ok-to-test (not needed for project members)
+- needs-kind
+- needs-priority
+- needs-triage
 
 In order to be moved out of this column, all of the above labels must be set.
 
@@ -38,7 +39,7 @@ have to do a full review: just make sure that the code does not appear to be
 actively malicious, and the PR appears to be doing something useful. Use the
 command `/ok-to-test`.
 
-Only [Kubernetes org members] can add this label.
+Only [Kubernetes org members] can add this [label][labels].
 
 If the PR is trivial and doesn't provide much value, feel free to close it
 using the `/close` command and link the author to the [trivial edits policy].
@@ -52,12 +53,34 @@ You can use the following message:
 [Kubernetes org members]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
 [trivial edits policy]: https://github.com/kubernetes/community/blob/master/contributors/guide/pull-requests.md#trivial-edits
 
+### needs-kind
+
+Most authors will already set this, as it's part of the PR template, but they
+may not set it correctly. A PR may have multiple "kind" labels, so ensure only
+the correct ones are applied.
+
+Anyone can add these [labels].
+
+- **kind/api-change:** API change, that will require special API review
+- **kind/bug:** related to a bug
+- **kind/cleanup:** cleaning up code, process, or technical debt
+- **kind/deprecation:** deprecation, that will require special API review
+- **kind/design:** related to design. not commonly used
+- **kind/documentation:** related to documentation (including code comments)
+- **kind/failing-test:** related to a consistently or frequently failing test
+- **kind/feature:** related to a new feature or enhancement; should have an
+  associated KEP linked
+- **kind/flake:** related to a flaky test
+- **kind/regression:** related to a regression in performance or functionality
+  from a prior release
+- **kind/support:** not applicable to PRs
+
 ### needs-priority
 
 You can take a quick look at what the PR is addressing and then apply a
 priority label.
 
-Anyone can add this label.
+Anyone can add this [label][labels].
 
 - **priority/critical-urgent:** Urgent bug fix, required ASAP. If not
   addressed, will block a release. These issues should always be discussed in
@@ -88,13 +111,13 @@ looks ready to proceed to review (i.e. it doesn't have any labels that would
 mean it's waiting on more work from the author), you can mark the PR as triaged
 with `/triage accepted`.
 
-Only [Kubernetes org members] can add this label.
+Only [Kubernetes org members] can add this [label][labels].
 
 ## Waiting on Author
 
 This column means that the PR is waiting on some action from the author. A
 reviewer may have requested changes, or a PR may have one of the following
-do-not-merge labels:
+do-not-merge [labels]:
 
 - **do-not-merge/hold:** usually set by a reviewer
 - **do-not-merge/work-in-progress:** usually set by an author
@@ -119,7 +142,7 @@ This PR needs review! If you're not sure how to review a PR, start by
 familiarizing yourself with the Kubernetes [pull request guidelines] and
 [review guidelines].
 
-PRs in this column must have the following labels set:
+PRs in this column must have the following [labels] set:
 
 - triage-accepted
 - priority
@@ -153,7 +176,7 @@ approvers. The bot will always tell you whose approval is needed on which
 directories ([example comment]), and will update its comment as approvals are
 provided.
 
-PRs in this column must have the following labels set:
+PRs in this column must have the following [labels] set:
 
 - lgtm
 - triage-accepted
