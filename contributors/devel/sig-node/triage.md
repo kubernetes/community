@@ -130,8 +130,17 @@ do-not-merge [labels]:
 If [tests are failing] due to an issue with the change (rather than a [flake]), PRs
 should also be assigned to this column.
 
+Authors are encouraged to fix any of the label issues above, resolve or reply
+to all PR feedback, and leave a comment indicating when their PR is ready for
+review.
+
 PRs that do not have any of the above labeled in this column should be
 evaluated occasionally to see if they are ready for review.
+
+If PRs are not updated for a long period (90d), they will be marked as stale.
+After 30d more, they will be marked as rotten, and then closed automatically.
+Reviewers should feel free to close stale PRs (4+ months of no changes) with a
+note that the author can reopen when they are ready to work on it.
 
 [tests are failing]: contributors/devel/sig-testing/testing.md#troubleshooting-a-failure
 [flake]: contributors/devel/sig-testing/flaky-tests.md
