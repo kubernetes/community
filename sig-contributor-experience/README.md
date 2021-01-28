@@ -22,7 +22,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jorge Castro (**[@castrojo](https://github.com/castrojo)**), VMware
+* Alison Dowdney (**[@alisondy](https://github.com/alisondy)**), Weaveworks
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
 
 ### Technical Leads
@@ -35,6 +35,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Emeritus Leads
 
 * Elsie Phillips (**[@Phillels](https://github.com/Phillels)**)
+* Jorge Castro (**[@castrojo](https://github.com/castrojo)**)
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**)
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
 

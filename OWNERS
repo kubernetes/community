@@ -1,7 +1,7 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 approvers:
-  - castrojo
+  - alisondy
   - cblecker
   - idvoretskyi
   - jdumars
@@ -10,5 +10,6 @@ approvers:
   - parispittman
   - committee-steering
 emeritus_approvers:
+  - castrojo
   - calebamiles
   - grodrigues3
