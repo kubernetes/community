@@ -1147,9 +1147,9 @@ sigs:
   label: contributor-experience
   leadership:
     chairs:
-    - github: castrojo
-      name: Jorge Castro
-      company: VMware
+    - github: alisondy
+      name: Alison Dowdney
+      company: Weaveworks
     - github: mrbobbytables
       name: Bob Killen
       company: Google
@@ -1163,6 +1163,8 @@ sigs:
     emeritus_leads:
     - github: Phillels
       name: Elsie Phillips
+    - github: castrojo
+      name: Jorge Castro
     - github: grodrigues3
       name: Garrett Rodrigues
     - github: parispittman
