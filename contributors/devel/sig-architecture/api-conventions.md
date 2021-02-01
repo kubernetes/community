@@ -876,6 +876,26 @@ kind `Foo` by just the name (within the current namespace, if a namespaced
 resource), or should be called `fooRef`, and should contain a subset of the
 fields of the `ObjectReference` type.
 
+Object references on a namespaced type should usually refer only to objects in
+the same namespace.  Because namespaces are a security boundary, cross namespace
+references can have unexpected impacts, including:
+ 1. leaking information about one namespace into another namespace. It's natural to place status messages or even bits of
+    content about the referenced object in the original. This is a problem across namespaces.
+ 2. potential invasions into other namespaces. Often references give access to a piece of referred information, so being
+    able to express "give me that one over there" is dangerous across namespaces without additional work for permission checks
+    or opt-in's from both involved namespaces.
+ 3. referential integrity problems that one party cannot solve. Referencing namespace/B from namespace/A doesn't imply the
+    power to control the other namespace. This means that you can refer to a thing you cannot create or update.
+ 4. unclear semantics on deletion. If a namespaced resource  is referenced by other namespaces, should a delete of the 
+    referenced resource result in removal or should the referenced resource be force to remain.
+ 5. unclear semantics on creation. If a referenced resource is created after its reference, there is no way to know if it
+    is the one that is expected or if it is a different one created with the same name.
+
+Built-in types and ownerReferences do not support cross namespaces references.
+If a non-built-in types chooses to have cross-namespace references the semantics of the edge cases above should be 
+clearly described and the permissions issues should be resolved.
+This could be done with a double opt-in (an opt-in from both the referrer and the refer-ee) or with secondary permissions
+checks performed in admission. 
 
 TODO: Plugins, extensions, nested kinds, headers
 
