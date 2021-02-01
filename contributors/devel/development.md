@@ -50,7 +50,7 @@ resilient behavior.  For example: if your patch causes a controller to better
 handle inconsistent data, make a mock object which returns incorrect data a few
 times and verify the controller's new behaviour.
 
-### Is this a performance improvement ?
+### Is this a performance improvement?
 
 Performance bug reports MUST include data that demonstrates the bug.  Without
 data, the issue will be closed.  You can measure performance using kubemark,
@@ -98,7 +98,7 @@ or all of these before you get started.
 Since performance improvements can be empirically measured, you should follow
 the "scientific method" of creating a hypothesis, collecting data, and then
 revising your hypothesis.  The above issues do this transparently, using figures
-and data rather then conjecture. Notice that the problem is analyzed and a
+and data rather than conjecture. Notice that the problem is analyzed and a
 correct solution is created before a single line of code is reviewed.
 
 ## Building Kubernetes with Docker
@@ -260,7 +260,7 @@ development environment, please follow the instructions in the
 Confirm that your `GOPATH` and `GOBIN` environment variables are
 correctly set as detailed in
 [How to Write Go Code](https://golang.org/doc/code.html) before
-prodeding.
+proceeding.
 
 **Note:** Building and developing Kubernetes requires a very recent
 version of Go. Please install the newest stable version available for
@@ -306,7 +306,7 @@ You are now ready to clone the Kubernetes git repository. See the [GitHub Workfl
 
 #### etcd
 
-To test Kubernetes, you will need to install a recent version of [etcd](https://etcd.io/), a consistent and highly-available key value store. To install a local version of etcd, run the following command in your Kubernetes working directory.
+To test Kubernetes, you will need to install a recent version of [etcd](https://etcd.io/), a consistent and highly-available key-value store. To install a local version of etcd, run the following command in your Kubernetes working directory.
 
 ```sh
 ./hack/install-etcd.sh
@@ -374,9 +374,8 @@ make cross KUBE_BUILD_PLATFORMS=windows/amd64
 
 ## A Quick Start for Testing Kubernetes
 
-Kubernetes only merges pull requests when unit, integration, and e2e tests are
-passing, so it is important that your development environment can
-successfully run all tests. While this quick start will get you going,
+Because kubernetes only merges pull requests when unit, integration, and e2e tests are
+passing, your development environment needs to run all tests successfully. While this quick start will get you going,
 to really understand the testing infrastructure, read the
 [Testing Guide](sig-testing/testing.md) and check out the
 [SIG Architecture developer guide material](README.md#sig-testing).
@@ -391,8 +390,7 @@ mentioned here by running `make help`.
 ### Presubmission Verification
 
 Presubmission verification provides a battery of checks and tests to
-give your pull request the best chance of being accepted. It is
-important for developers to run as many verification tests as posible
+give your pull request the best chance of being accepted. Developers need to run as many verification tests as possible
 locally. 
 
 You can view a list of all verification tests in `hack/verify-*.sh`
@@ -426,7 +424,7 @@ make test
 ```
 
 You can also use the `WHAT` option to control which packages and
-subsystems are testing, and use `GOFLAGS` to change how tests are
+subsystems are testing and use `GOFLAGS` to change how tests are
 run. For example, to run unit tests verbosely against just one
 package, use a command like this:
 
@@ -437,7 +435,7 @@ make test WHAT=./pkg/apis/core/helper GOFLAGS=-v
 ### Integration Tests
 
 All integration tests need to pass for a pull request to be
-accepted. Note that for this stage in particular, it is important that
+accepted. Note that for this stage, in particular, it is important that
 [etcd](#etcd) be properly installed. Without it, integration testing
 will fail.
 
@@ -452,7 +450,7 @@ To learn more about integration testing, read the
 
 ### E2E Tests
 
-End-to-end (E2E) tests provide a mechanism to test end-to-end behavior
+End-to-end (E2E) tests provide a mechanism to test the end-to-end behavior
 of the system. The primary objective of the E2E tests is to ensure
 consistent and reliable behavior of the Kubernetes code base,
 especially in areas where unit and integration tests are insufficient.
