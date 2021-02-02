@@ -145,18 +145,15 @@ Email: contributors@kubernetes.io
 
 Moderators seats: 10
 
-| Name                | Kubernetes Slack ID | Region   | Timezone                                                |
-| ------------------- | ------------------- | -------- | ------------------------------------------------------- |
-| Jorge Castro        | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jeffrey Sica        | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Bob Killen          | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jorge Alarcon       | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Chris Short	      | @chrisshort         | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
-| Naeil Ezzoueidi     | @nzoueidi           | EMEA     | [CST - Central European Time](https://time.is/CET)      |
-| Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
-| Marky Jackson       | @markyjackson       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Taylor Dolezal      | @onlydole           | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Name           | Kubernetes Slack ID | Region   | Timezone                                                |
+|----------------|---------------------|----------|---------------------------------------------------------|
+| Alison Dowdney | @alisondy           | EMEA     | [GMT - Greenwich Mean Time](https://time.is/GMT)        |
+| Jorge Castro   | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Jeffrey Sica   | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Bob Killen     | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Chris Short    | @chrisshort         | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Marky Jackson  | @markyjackson       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Taylor Dolezal | @onlydole           | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 ### Moderators Pro Tempore
 
