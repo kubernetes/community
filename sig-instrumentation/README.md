@@ -83,6 +83,9 @@ The following [subprojects][subproject-definition] are owned by sig-instrumentat
 ### mutating-trace-admission-controller
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
+### prometheus-adapter
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/prometheus-adapter/master/OWNERS
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

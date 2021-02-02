@@ -1147,9 +1147,9 @@ sigs:
   label: contributor-experience
   leadership:
     chairs:
-    - github: castrojo
-      name: Jorge Castro
-      company: VMware
+    - github: alisondy
+      name: Alison Dowdney
+      company: Weaveworks
     - github: mrbobbytables
       name: Bob Killen
       company: Google
@@ -1163,6 +1163,8 @@ sigs:
     emeritus_leads:
     - github: Phillels
       name: Elsie Phillips
+    - github: castrojo
+      name: Jorge Castro
     - github: grodrigues3
       name: Garrett Rodrigues
     - github: parispittman
@@ -1525,6 +1527,9 @@ sigs:
   - name: mutating-trace-admission-controller
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
+  - name: prometheus-adapter
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/prometheus-adapter/master/OWNERS
 - dir: sig-multicluster
   name: Multicluster
   mission_statement: >

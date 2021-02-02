@@ -313,7 +313,7 @@ PRs migrating logs should include examples of outputted logs before and after th
 understand the impact of change.
 
 Example code to compare [httplog.go#168](https://github.com/kubernetes/kubernetes/blob/15c3f1b11/staging/src/k8s.io/apiserver/pkg/server/httplog/httplog.go#L168)
-```
+```go
 package main
 
 import (
