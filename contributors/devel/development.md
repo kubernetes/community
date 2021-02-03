@@ -197,7 +197,7 @@ distributions and commands used to install these tools are below.
 - Fedora/RHEL/CentOS
   ```sh
   sudo yum update
-  sudo groupinstall "Development Tools"
+  sudo yum groupinstall "Development Tools"
   ```
 - OpenSUSE
   ```sh
