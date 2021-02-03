@@ -73,10 +73,10 @@ Proposals must include CVs, resumes, and/or example reports from staff that will
 
 Proposals should be submitted to kubernetes-security-audit-2021@googlegroups.com
 
-* 2021/01/25: RFP Open, Question period open
-* 2021/02/08: Question period closes
-* 2021/02/26: RFP Closes
-* 2021/03/09: The working group will announce vendor selection
+* 2021/02/08: RFP Open, Question period open
+* 2021/02/22: Question period closes
+* 2021/03/12: RFP Closes
+* 2021/03/23: The working group will announce vendor selection
 
 ## Methodology
 
