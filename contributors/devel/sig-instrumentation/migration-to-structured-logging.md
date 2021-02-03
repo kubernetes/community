@@ -122,7 +122,7 @@ func logHTTPRequest(r *http.Request) {
 should be replaced with
 ```go
 func Handle(w http.ReponseWriter, r *http.Request) {
-    klog.Info("Received HTTP request", httpRequestLog(r)...)
+    klog.InfoS("Received HTTP request", httpRequestLog(r)...)
     handle(w, r)
 }
 
