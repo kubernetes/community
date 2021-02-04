@@ -43,7 +43,7 @@ want and add a slice of the label names to the definition.
    ```go
     requestCounter = prometheus.NewCounterVec(
       prometheus.CounterOpts{
-        Name: "apiserver_request_count",
+        Name: "apiserver_request_total",
         Help: "Counter of apiserver requests broken out for each verb, API resource, client, and HTTP response code.",
       },
       []string{"verb", "resource", "client", "code"},
