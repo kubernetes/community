@@ -98,8 +98,11 @@ Simplified mapping between functions:
 * `klog.Infof`, `klog.Info`, `klog.Infoln`, `klog.InfoDepth` -> `klog.InfoS`
 * `klog.V(N).Infof`, `klog.V(N).Info`, `klog.V(N).Infoln` -> `klog.V(N).InfoS`
 * `klog.Warning`, `klog.Warningf`, `klog.Warningln`, `klog.WarningDepth` -> `klog.InfoS`
+* `klog.V(N).Warning`, `klog.V(N).Warningf`, `klog.V(N).Warningln`, `klog.V(N).WarningDepth` -> `klog.V(N).InfoS`
 * `klog.Error`, `klog.Errorf`, `klog.Errorln`, `klog.ErrorDepth` -> `klog.ErrorS`
-* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln`, `klog.FatalDepth` -> `klog.ErrorS`
+* `klog.V(N).Error`, `klog.V(N).Errorf`, `klog.V(N).Errorln`, `klog.V(N).ErrorDepth` -> `klog.ErrorS`
+* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln`, `klog.FatalDepth` -> `klog.ErrorS` followed by `os.Exit(1)` (see below)
+* `klog.V(N).Fatal`, `klog.V(N).Fatalf`, `klog.V(N).Fatalln`, `klog.V(N).FatalDepth` -> `klog.ErrorS` followed by `os.Exit(1)` (see below)
 
 ### Removing Depth
 
