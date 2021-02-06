@@ -63,7 +63,7 @@ If your proposal includes subcontractors, please include relevant details from t
 
 ### Anticipated Selection Schedule
 
-This RFP will be open between 2021/01/25 and 2021/02/26.
+This RFP will be open between 2021/02/08 and 2021/03/12.
 
 The working group will answer questions for the first two weeks of this period.
 
