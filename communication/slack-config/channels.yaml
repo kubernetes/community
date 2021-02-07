@@ -337,6 +337,7 @@ channels:
     archived: true
   - name: sig-contribex
   - name: sig-contribex-triage
+    archived: true
   # sig-docs* channels are defined in sig-docs/
   - name: sig-high-availability
     archived: true
