@@ -1,17 +1,15 @@
 # Community membership
 
-**Note:** This document is in progress
+**Note:** This document is a work in progress
 
-This doc outlines the various responsibilities of contributor roles in
-Kubernetes.  The Kubernetes project is subdivided into subprojects under SIGs.
-Responsibilities for most roles are scoped to these subprojects.
+This document outlines the various responsibilities of contributor roles, divided into SIGs (Special Interest Groups) subprojects for the Kubernetes project.
 
 | Role | Responsibilities | Requirements | Defined by |
 | -----| ---------------- | ------------ | -------|
-| member | active contributor in the community | sponsored by 2 reviewers.  multiple contributions to the project. | Kubernetes GitHub org member. |
-| reviewer | review contributions from other members | history of review and authorship in a subproject | [OWNERS] file reviewer entry. |
-| approver | approve accepting contributions | highly experienced and active reviewer + contributor to a subproject | [OWNERS] file approver entry|
-| subproject owner | set direction and priorities for a subproject | demonstrated responsibility and excellent technical judgement for the subproject | [sigs.yaml] subproject [OWNERS] file *owners* entry |
+| Member | Active contributor in the community | Sponsored by 2 reviewers and multiple contributions to the project | Kubernetes GitHub org member|
+| Reviewer | Review contributions from other members | History of review and authorship in a subproject | [OWNERS] file reviewer entry |
+| Approver | Contributions acceptance approval| Highly experienced active reviewer and contributor to a subproject | [OWNERS] file approver entry|
+| <nobr>Subproject owner</nobr> | Set direction and priorities for a subproject | Demonstrated responsibility and excellent technical judgement for the subproject | [sigs.yaml] subproject [OWNERS] file *owners* entry |
 
 ## New contributors
 
@@ -249,12 +247,12 @@ measured by the CNCF [DevStats project].
 
 **Note:** Devstats does not take into account non-code contributions. If a
 non-code contributing member is accidentally removed this way, they may open an
-issue to quickly be re-instated. 
+issue to quickly be re-instated.
 
 
 After an extended period away from the project with no activity
 those members would need to re-familiarize themselves with the current state
-before being able to contribute effectively. 
+before being able to contribute effectively.
 
 
 [code reviews]: /contributors/guide/expectations.md#code-review
