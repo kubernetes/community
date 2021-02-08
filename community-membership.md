@@ -9,7 +9,7 @@ This document outlines the various responsibilities of contributor roles, divide
 | Member | Active contributor in the community | Sponsored by 2 reviewers and multiple contributions to the project | Kubernetes GitHub org member|
 | Reviewer | Review contributions from other members | History of review and authorship in a subproject | [OWNERS] file reviewer entry |
 | Approver | Contributions acceptance approval| Highly experienced active reviewer and contributor to a subproject | [OWNERS] file approver entry|
-| <nobr>Subproject owner</nobr> | Set direction and priorities for a subproject | Demonstrated responsibility and excellent technical judgement for the subproject | [sigs.yaml] subproject [OWNERS] file *owners* entry |
+| Subproject owner | Set direction and priorities for a subproject | Demonstrated responsibility and excellent technical judgement for the subproject | [sigs.yaml] subproject [OWNERS] file *owners* entry |
 
 ## New contributors
 
