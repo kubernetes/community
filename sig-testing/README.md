@@ -79,14 +79,9 @@ Miscellaneous tools and configuration to run the testing infrastructure for the 
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
 ### testing-commons
-The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project
+**[best-effort]** The testing-commons subproject focuses on matters of code structure, layout, and execution of kubernetes/kubernetes test code. It is currently staffed on a best-effort basis; please bring discussions to the sig-testing slack channel or meeting. For historical context, please see the [former testing-commons meeting agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit) and [archived testing-commons slack channel](https://kubernetes.slack.com/archives/C9NK9KFFW)
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
-- **Contact:**
-  - Slack: [#testing-commons](https://kubernetes.slack.com/messages/testing-commons)
-- **Meetings:**
-  - Testing Commons: [Fridays at 13:00 PT (Pacific Time)](https://zoom.us/j/790505720?pwd=VThEeVJqTnFPY0o1bDFZQk1ZRjJLQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit).
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

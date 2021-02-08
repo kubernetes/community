@@ -51,4 +51,13 @@ restrictions:
       - "^cloud-provider-extraction$"
       - "^provider-"
       - "^apiserver-network-proxy$"
+  - path: "sig-testing/*.yaml"
+    channels:
+      - "^sig-testing"
+      - "^kind"
+      - "^prow"
+      - "^testing"
+    usergroups:
+      - "^test-infra-oncall$"
+      - "^google-build-admin$"
   - path: "**/*" # prevent any other file from containing anything
