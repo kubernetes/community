@@ -23,7 +23,7 @@ of SIGs, WGs and UGs.
 
 | Community Group            | Steering Committee Liaison |
 | -------------------------- | -------------------------- |
-| [SIG API Machinery](sig-api-machinery/README.md) | Davanum Srinivass (**[@dims](https://github.com/dims)**) |
+| [SIG API Machinery](sig-api-machinery/README.md) | Davanum Srinivas (**[@dims](https://github.com/dims)**) |
 | [SIG Apps](sig-apps/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Architecture](sig-architecture/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [SIG Auth](sig-auth/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
