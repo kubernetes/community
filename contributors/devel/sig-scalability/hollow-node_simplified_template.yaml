@@ -33,19 +33,18 @@ spec:
         - containerPort: 10250
         - containerPort: 10255
         env:
-        - name: CONTENT_TYPE
-          valueFrom:
-            configMapKeyRef:
-              name: node-configmap
-              key: content.type
         - name: NODE_NAME
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
         command:
-        - /bin/sh
-        - -c
-        - /kubemark --morph=kubelet --name=$(NODE_NAME) --kubeconfig=/kubeconfig/kubelet.kubeconfig $(CONTENT_TYPE) --alsologtostderr --v=2
+        - /kubemark
+        args:
+        - --morph=kubelet
+        - --name=$(NODE_NAME)
+        - --kubeconfig=/kubeconfig/kubelet.kubeconfig
+        - --alsologtostderr
+        - --v=2
         volumeMounts:
         - name: kubeconfig-volume
           mountPath: /kubeconfig
@@ -61,19 +60,19 @@ spec:
       - name: hollow-proxy
         image: {{kubemark_image_registry}}/kubemark:{{kubemark_image_tag}}
         env:
-        - name: CONTENT_TYPE
-          valueFrom:
-            configMapKeyRef:
-              name: node-configmap
-              key: content.type
         - name: NODE_NAME
           valueFrom:
             fieldRef:
               fieldPath: metadata.name
         command:
-        - /bin/sh
-        - -c
-        - /kubemark --morph=proxy --name=$(NODE_NAME) --use-real-proxier=false --kubeconfig=/kubeconfig/kubeproxy.kubeconfig $(CONTENT_TYPE) --alsologtostderr --v=2
+        - /kubemark
+        args:
+        - --morph=proxy
+        - --name=$(NODE_NAME)
+        - --use-real-proxier=false
+        - --kubeconfig=/kubeconfig/kubeproxy.kubeconfig
+        - --alsologtostderr
+        - --v=2
         volumeMounts:
         - name: kubeconfig-volume
           mountPath: /kubeconfig
