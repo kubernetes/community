@@ -59,7 +59,7 @@ sigs:
       description: Test Failures and Triage
     liaison:
       github: dims
-      name: Davanum Srinivass
+      name: Davanum Srinivas
   subprojects:
   - name: component-base
     owners:
