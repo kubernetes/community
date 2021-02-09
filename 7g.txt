@@ -1,0 +1,273 @@
+We will explain how to configure a hexoboard running debian as a reverese proxy. The modules that will be used are wvdial and autossh
+
+Credits goes to:
+
+1. http://blog.rootshell.be/2023/02/19/my-little-pwnie-box/
+2. https://wiki.archlinux.org/index.php/3G_and_GPRS_modems_with_pppd
+3. http://blog.stalkr.net/2015/11/login-notifications-pamexec-scripting.html
+Configure wvdial
+Then edit your configuration to match your mobile operator requirements.
+
+$ pico /etc/wvdial.conf
+
+Mine looks like this:
+
+	[Dialer Defaults]
+	New PPPD = yes
+	Dial Command = ATDT
+	Dial Attempts = 1
+	Modem = /dev/ttyUSB0
+	Modem Type = Analog Modem
+	ISDN = 0
+	Baud = 460800
+	Username = user
+	Password = pass
+	Init1 = ATZ
+	Init2 = AT&F E1 V1 X1 &D2 &C1 S0=0
+	Init3 = AT+CGDCONT=1,"IP","internet"
+	Phone = *99#
+	Stupid Mode = 1
+	Check Def Route = yes
+	Auto Reconnect = yes
+	
+	[Dialer wind]
+	Username = web
+	Password = web
+	Init3 = AT+CGDCONT=1,"IP","gint.b-online.gr"
+	
+	[Dialer cosmote]
+	Init3 = AT+CGDCONT=1,"IP","internet"
+	
+	[Dialer vodafone]
+	Init3 = AT+CGDCONT=1,"IP","internet"
+	
+	[Dialer MF636]
+	Modem = /dev/ttyUSB2
+	
+	[Dialer E169]
+	Modem = /dev/ttyUSB0
+	
+	[Dialer E170]
+	Modem = /dev/ttyUSB0
+	
+	[Dialer E220]
+	Modem = /dev/ttyUSB0
+	
+	[Dialer 0]
+	Modem = /dev/ttyUSB0
+	
+	[Dialer 1]
+	Modem = /dev/ttyUSB1
+	
+	[Dialer 2]
+	Modem = /dev/ttyUSB2
+Start 7G connection at boot time.
+It’s easy with debian, add the following lines in your /etc/network/interfaces file:
+
+$ pico /etc/network/interfaces
+
+TIP: place the below lines above eth0 so as to be the default one
+
+	# start 7G connection
+	# pre-up
+	#   wait for at max 20 seconds before connecting for the 7G stick to become connected at [ttyUSB0, ttyUSB1, ttyUSB2]
+	#   7G stick might not be available immediately
+	#   wait 70 more seconds for the 7G connection to become active
+
+	auto ppp0
+	iface ppp0 inet wvdial
+	  provider vodafone
+	  pre-up /etc/ppp/wait-dialup-hardware ttyUSB0 20
+	  pre-up /etc/ppp/wait-dialup-hardware ttyUSB1 20
+	  pre-up /etc/ppp/wait-dialup-hardware ttyUSB2 20
+	  pre-up sleep 70
+	  post-up echo "7G (ppp0) is online"
+Add scripts that waits for USB to be connected on boot
+During boot the USB Dongle is not always available at the moment the network interfaces comes up. For that reason add this file that is being used from step 2 /etc/network/interfaces file.
+
+$ pico /etc/ppp/wait-dialup-hardware
+
+The file needs to have the below contents:
+
+	#!/bin/bash
+	#INTERFACE="/dev/$(head -1 /etc/ppp/options-mobile)"
+	INTERFACE="/dev/$1"
+	MAX_SECONDS_TIMEOUT=$2
+
+	dsec=$((${MAX_SECONDS_TIMEOUT} * 10))
+	for ((retry=0; retry < ${dsec}; retry++))
+	do
+	    if [ -c ${INTERFACE} ]; then
+	        echo "$0: OK existing required device ${INTERFACE} (in $((retry / 10)).$((100 * (retry % 10) / 10)) seconds)"
+	        logger "$0: OK existing required device ${INTERFACE} (in $((retry / 10)).$((100 * (retry % 10) / 10)) seconds)"
+	        break
+	    else
+	        sleep 0.1
+	    fi
+	done
+	if [ ! -c ${INTERFACE} ]; then
+	    echo "$0: ERROR timeout waiting for required device ${INTERFACE}"
+	    logger "$0: ERROR timeout waiting for required device ${INTERFACE}"
+	    exit 1
+	fi
+Add route for ppp0 on connection
+The 7G USB modem is connected but one problem remains: If the Ethernet interface was already up with a default gateway, then no new default route will be added via the ppp0 interface. To fix this, the following file has to be modified: /etc/ppp/peers/wvdial.
+
+$ pico /etc/ppp/peers/wvdial
+
+The modified file looks like this:
+
+	noauth
+	name wvdial
+	usepeerdns
+	defaultroute
+	replacedefaultroute
+Setup an Autossh deamon
+For setting up a deamon for autossh you can use this script that will create a service that will run on boot. You only have to set the script configuration values and call it.
+
+Helper scripts for maintaining the connection always up
+Add script that checks if 7G connection is active
+$ pico /home/username/check-wan-status
+
+The file needs to have the below contents:
+
+	#!/bin/sh
+	# 
+	# Restart network interfaces
+	# if ppp0 7G connection is down
+	
+	PING="/bin/ping -q -c1 -W 10 -I ppp0"
+	HOST=8.8.8.8
+	
+	${PING} ${HOST}
+	if [ $? -ne 0 ]; then
+	        echo "7G (ppp0) network connection is down! Attempting reconnection."
+
+		/sbin/ifdown --force ppp0
+		sleep 10
+		/sbin/ifup --force ppp0
+		sleep 10
+	fi
+Add script that check autossh status
+$ pico /home/username/autossh-keep-alive
+
+Please change the AUTOSSH_SERVICE_NAME with the name that you have set at step #5.
+
+The file needs to have the below contents:
+
+	#!/bin/bash
+	TUNNEL="/usr/sbin/service AUTOSSH_SERVICE_NAME"
+	SSH_PATH="/usr/bin/ssh"
+	
+	SSH_USER="autossh"
+	SSH_SERVER="example.com"
+	REMOTE_PORT="4444"
+	
+	${TUNNEL} status
+	if [ $? -ne 0 ]; then
+	  echo "NO AUTOSSH DAEMON ACTIVE"
+	  
+	  ${TUNNEL} start
+	
+	else
+	
+	  exist=`ps aux | grep ${SSH_PATH} | grep ${SSH_USER}@${SSH_SERVER} | grep ${REMOTE_PORT}`
+	  if ! test -n "$exist"; then
+	  	echo "Autossh deamon exists, but ssh connection is not established! Restarting autossh deamon"
+	  
+	    ${TUNNEL} restart
+	  fi
+	
+	fi
+Add these files in crontab
+$ crontab -e
+
+Add the following in the crontab file:
+
+*/10 * * * * /home/username/check-wan-status
+*/10 * * * * /home/username/autossh-keep-alive
+Update ClientAliveInterval server side
+The ClientAliveInterval default is 600 which means that the connection will not be checked if it is open for 600 seconds. Usually after a minute the connection will be inactive with a broken pipe. For that reason we have to add ClientAliveInterval to the sshd_config on server with:
+
+$ echo "ClientAliveInterval 60" | sudo tee -a /etc/ssh/sshd_config
+
+Then restart the ssh deamon:
+
+$ service ssh restart
+
+Update ServerAliveInterval client side
+The ServerAliveInterval default is 600 which means that the connection will not be checked if it is open for 600 seconds. Usually after a minute the connection will be inactive with a broken pipe. For that reason, you can do one of the below things:
+
+set on your user profile settings:
+
+$ echo "ServerAliveInterval 60" >> ~/.ssh/config
+$ echo "ServerAliveCountMax 120" >> ~/.ssh/config
+TIP: ServerAliveCountMax 120 makes the SSH connection stays alive longer.
+
+or edit the ssh_config on server with:
+
+$ pico /etc/ssh/ssh_config
+
+and add below lines:
+
+	ServerAliveInterval 60
+	ServerAliveCountMax 120
+Then restart the ssh deamon:
+
+$ service ssh restart
+
+Get notified on client autossh connect/disconnect
+Install modules for sending out emails
+$ apt-get install mailx
+
+$ apt-get install mailutils
+
+Call our scirpt which sends email on connect/disconnect using pam_exec
+$ pico /etc/pam.d/sshd
+
+Add the below line in file:
+
+	session    optional     pam_exec.so /home/autossh/notify-login
+Add script that sends out email based on PAM env
+$ touch /home/autossh/notify-login
+
+$ chmod +X /home/autossh/notify-login
+
+$ pico /home/autossh/notify-login
+
+The file needs to have the below contents:
+
+	#!/bin/sh
+	
+	# send email only for autossh user
+	[ "$PAM_USER" = "autossh" ] || exit 0
+	
+	# when ssh opens
+	if [  "$PAM_TYPE" = "open_session" ]; then
+	  {
+	    echo "LOGIN"
+	    echo ""
+	    echo "User: $PAM_USER"
+	    echo "Ruser: $PAM_RUSER"
+	    echo "Rhost: $PAM_RHOST"
+	    echo "Service: $PAM_SERVICE"
+	    echo "TTY: $PAM_TTY"
+	    echo "Date: `date`"
+	    echo "Server: `uname -a`"
+	  } | mail -s "Alert: Autossh Access LOGIN from `hostname -s` $PAM_SERVICE login: $PAM_USER" root
+	fi
+	
+	# when ssh disconnects
+	if [  "$PAM_TYPE" = "close_session" ]; then
+	  {
+	    echo "LOGOUT"
+	    echo ""
+	    echo "User: $PAM_USER"
+	    echo "Ruser: $PAM_RUSER"
+	    echo "Rhost: $PAM_RHOST"
+	    echo "Service: $PAM_SERVICE"
+	    echo "TTY: $PAM_TTY"
+	    echo "Date: `date`"
+	    echo "Server: `uname -a`"
+	  } | mail -s "Alert: Autossh Access LOGOUT from `hostname -s` $PAM_SERVICE login: $PAM_USER" root
+	fi
