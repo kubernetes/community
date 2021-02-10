@@ -150,6 +150,8 @@ origin point. For expected errors (`errors` that can happen during routine opera
 Use of Fatal should be discouraged and it's not available in new functions. Instead of depending on the logger to exit
 the process, you should call `os.Exit()` yourself.
 
+Fatal calls use a default exit code of 255. When migrating, please use an exit code of 1 and include an "ACTION REQUIRED:" release note.
+
 ## Remove string formatting from log message
 
 With structured logging, log messages are no longer formatted, leaving argument marshalling up to the logging client
