@@ -10,12 +10,12 @@ milestone.
   - [Post-Release (Weeks 11+)](#post-release-weeks-11)
 - [Definitions](#definitions)
 - [The Release Cycle](#the-release-cycle)
-- [Removal Of Items From The Milestone](#removal-of-items-from-the-milestone)
-- [Adding An Item To The Milestone](#adding-an-item-to-the-milestone)
-  - [Milestone Maintainers](#milestone-maintainers)
-  - [Feature additions](#feature-additions)
-  - [Issue additions](#issue-additions)
-  - [PR Additions](#pr-additions)
+- [Milestone Maintainers](#milestone-maintainers)
+  - [Removal Of Items From The Milestone](#removal-of-items-from-the-milestone)
+  - [Adding An Item To The Milestone](#adding-an-item-to-the-milestone)
+    - [Feature additions](#feature-additions)
+    - [Issue additions](#issue-additions)
+    - [PR Additions](#pr-additions)
 - [Other Required Labels](#other-required-labels)
   - [SIG Owner Label](#sig-owner-label)
   - [Priority Label](#priority-label)
@@ -194,10 +194,87 @@ Each release is part of a broader Kubernetes lifecycle:
 
 ![Image of Kubernetes release lifecycle spanning three releases](release-lifecycle.png)
 
-## Removal Of Items From The Milestone
+# Milestone Maintainers
 
-Before getting too far into the process for adding an item to the milestone,
-please note:
+To maintain up-to-date status on milestone inclusion, we rely on a set of Milestone Maintainers (members of the `kubernetes-milestone-maintainers` GitHub team) to apply the appropriate labels to issues / PRs. This is facilitated by `/milestone` commands and bot automation.
+
+The members of the [`milestone-maintainers`](https://github.com/orgs/kubernetes/teams/milestone-maintainers/members)
+GitHub team are entrusted with the responsibility of specifying the release milestone on GitHub artifacts by assigning a milestone label to an enhancement.
+
+Members of the `kubernetes-milestone-maintainers` GitHub team, called milestone maintainer, can include:
+- SIG leadership (SIG Chairs / Technical Leads) from all SIGs
+- SIG milestone maintainers from all SIGs (in addition to SIG leadership)
+- Special code reviewers, as selected by SIG Release
+
+Milestone maintainers also have write access to [kubernetes/enhancements][k/enhancements], which allows them to keep enhancement tracking issue descriptions up-to-date.
+
+To request membership to `kubernetes-milestone-maintainers` or update the team:
+- File a PR to [kubernetes/org][k/org] making changes to the `kubernetes-milestone-maintainers` team config [here](https://git.k8s.io/org/config/kubernetes/sig-release/teams.yaml). In your PR, include the reason you're requesting access in the description, as well as a comment next to your username in the team config
+  e.g.,
+  ```
+  - justaugustus # Azure / PM / Release
+  - spiffxp # 1.14 RT Lead / Testing
+  ```
+- Assign an approver from the group you'll be maintaining issues/PRs for
+  i.e.,
+  - for SIGs: Request approval from a SIG Chair or Technical Lead
+  - for Release Team: Request approval from the current Release Team Lead or SIG Release Chairs
+  - for Special code reviewers: Request approval from SIG Release Chairs
+
+- Once your request is approved by the appropriate group, you can now assign to the PR to a SIG Release Chair for final approval.
+
+The responsibles for the `kubernetes-milestone-maintainers` GitHub team are defined as follows:
+- [SIG Release Chairs](https://github.com/kubernetes/sig-release/blob/master/release-managers.md#sig-release-leads)
+- Current [Release Team Lead](https://github.com/kubernetes/sig-release/tree/master/releases)
+
+They can, with justification, add or remove members at any time during release cycles of the GitHub team. Members are expected to actively [triage](/contributors/guide/issue-triage.md) issues and PRs to retain membership in `kubernetes-milestone maintainers`. Members not fulfilling the duties of this role should be removed.
+
+## Adding An Item To The Milestone
+
+### Feature additions
+
+Feature planning and definition takes many forms today, but a typical example
+might be a large piece of work described in a [KEP][keps], with associated task
+issues in GitHub. When the plan has reached an implementable state and work is
+underway, the enhancement or parts thereof are targeted for an upcoming milestone
+by creating GitHub issues and marking them with the Prow "/milestone" command.
+
+For the first ~4 weeks into the release cycle, the Release Team's Enhancements
+Lead will interact with SIGs and feature owners via GitHub, Slack, and SIG
+meetings to capture all required planning artifacts.
+
+If you have an enhancement to target for an upcoming release milestone, begin a
+conversation with your SIG leadership and with that release's Enhancements
+Lead.
+
+Under special circumstanses you can fill an [exception](https://github.com/kubernetes/sig-release/blob/master/releases/EXCEPTIONS.md) request, in case you missed the release cycle deadline or an urgently needed enhancement cames up.
+
+### Issue additions
+
+Issues are marked as targeting a milestone via the Prow "/milestone" command.
+
+The Release Team's [Bug Triage Lead](https://git.k8s.io/sig-release/release-team/role-handbooks/bug-triage/README.md)
+and overall community watch incoming issues and triage them, as described in
+the contributor guide section on
+[issue triage](/contributors/guide/issue-triage.md).
+
+Marking issues with the milestone provides the community better visibility
+regarding when an issue was observed and by when the community feels it must be
+resolved. During [Code Freeze][code-freeze], a milestone must be set to merge
+a PR.
+
+An open issue is no longer required for a PR, but open issues and associated
+PRs should have synchronized labels. For example a high priority bug issue
+might not have its associated PR merged if the PR is only marked as lower
+priority.
+
+### PR Additions
+
+PRs are marked as targeting a milestone via the Prow "/milestone" command.
+
+This is a blocking requirement during Code Freeze as described above.
+
+## Removal Of Items From The Milestone
 
 Members of the [Release Team][release-team] may remove issues from the
 milestone if they or the responsible SIG determine that the issue is not
@@ -234,58 +311,6 @@ will be made by the Release Team through the following channels:
   - bootstrapped with the slackchannel and SIG leadership from the
     [community sig list][sig-list]
   - optionally directly "@" mentioning SIG leadership or others by handle
-
-## Adding An Item To The Milestone
-
-### Milestone Maintainers
-
-The members of the [`milestone-maintainers`](https://github.com/orgs/kubernetes/teams/milestone-maintainers/members)
-GitHub team are entrusted with the responsibility of specifying the release
-milestone on GitHub artifacts.
-
-This group is [maintained](https://git.k8s.io/sig-release/release-team/README.md#milestone-maintainers)
-by SIG Release and has representation from the various SIGs' leadership.
-
-### Feature additions
-
-Feature planning and definition takes many forms today, but a typical example
-might be a large piece of work described in a [KEP][keps], with associated task
-issues in GitHub. When the plan has reached an implementable state and work is
-underway, the enhancement or parts thereof are targeted for an upcoming milestone
-by creating GitHub issues and marking them with the Prow "/milestone" command.
-
-For the first ~4 weeks into the release cycle, the Release Team's Enhancements
-Lead will interact with SIGs and feature owners via GitHub, Slack, and SIG
-meetings to capture all required planning artifacts.
-
-If you have an enhancement to target for an upcoming release milestone, begin a
-conversation with your SIG leadership and with that release's Enhancements
-Lead.
-
-### Issue additions
-
-Issues are marked as targeting a milestone via the Prow "/milestone" command.
-
-The Release Team's [Bug Triage Lead](https://git.k8s.io/sig-release/release-team/role-handbooks/bug-triage/README.md)
-and overall community watch incoming issues and triage them, as described in
-the contributor guide section on
-[issue triage](/contributors/guide/issue-triage.md).
-
-Marking issues with the milestone provides the community better visibility
-regarding when an issue was observed and by when the community feels it must be
-resolved. During [Code Freeze][code-freeze], a milestone must be set to merge
-a PR.
-
-An open issue is no longer required for a PR, but open issues and associated
-PRs should have synchronized labels. For example a high priority bug issue
-might not have its associated PR merged if the PR is only marked as lower
-priority.
-
-### PR Additions
-
-PRs are marked as targeting a milestone via the Prow "/milestone" command.
-
-This is a blocking requirement during Code Freeze as described above.
 
 ## Other Required Labels
 
