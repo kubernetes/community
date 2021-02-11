@@ -2,7 +2,9 @@
 
 **Note:** This document is a work in progress
 
-This document outlines the various responsibilities of contributor roles, divided into SIGs (Special Interest Groups) subprojects for the Kubernetes project.
+This doc outlines the various responsibilities of contributor roles in
+Kubernetes.  The Kubernetes project is subdivided into subprojects under SIGs.
+Responsibilities for most roles are scoped to these subprojects.
 
 | Role | Responsibilities | Requirements | Defined by |
 | -----| ---------------- | ------------ | -------|
