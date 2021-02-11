@@ -4,7 +4,7 @@
 
 - [Verification Tests](#verification-tests)
   - [Overview](#overview)
-  - [`verify-govet-leveee`](#verify-govet-levee)
+  - [`verify-govet-levee`](#verify-govet-leve)
 
 ## Overview
 
@@ -15,7 +15,8 @@ All blocking verification tests can be executed via `make verify`.
 Individual verification tests also can be found in vestigial shell scripts at `hack/verify-*.sh`.
 
 Most verification tests are self-explanatory.
-`verify-golint` and `verify-gofmt`, for instance, fail when a contribution does not adhere to lint and formatting conventions.
+`verify-govet`, for instance, performs `go vet` checks, which [defends against common mistakes](https://golang.org/cmd/vet/).
+The verification tests fails when `go vet` produces any findings.
 More complex verification tests are described below.
 
 ### `verify-govet-levee`
@@ -27,7 +28,7 @@ Field tagging was introduced by [KEP-1753](https://github.com/kubernetes/enhance
 Additional credential sources may be identified in analysis configuration (see below).
 
 Taint propagation analysis defends against both direct and indirect logging of credentials.
-For consider the following hypothetical snippet.
+Consider the following hypothetical snippet.
 
 ```golang
 // kubernetes/cmd/kubelet/app/server.go
@@ -68,9 +69,8 @@ The analysis will detect this as well and call the verification test to fail.
 
 When this analysis causes the verification test to fail, a developer has several options.
 In order of decreasing preference:
-* Reconstruct logging calls such that only relevant information is passed.
-* If analysis warning is produced by a tainted value reaching logs, reconstruct the method which caused taint to spread so that it only takes non-credential values.
-* Reconstruct the method which caused taint to spread to return indicators which are not logged directly, e.g. return `value, ok` rather than `value, err`.
+* Reconstruct logging calls such that only non-secret information is passed.
+* Reconstruct a method which caused taint to spread to return indicators which are not logged directly, e.g. return `value, ok` rather than `value, err`.
 * Write a *sanitizer* whose return value is guaranteed to be log-safe.  Add this sanitizer to the analysis configuration (see below).
 * Add the method where the log call occurs to the analysis configuration exclude-list.
 
