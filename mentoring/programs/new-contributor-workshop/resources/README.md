@@ -34,5 +34,5 @@ This workshop differs from the Beginner workshop in that participants are expect
 1. [Kubernetes Orgs Overview](./repo-tour.md)
 1. k/k Walkthrough
 1. [Local Build&Test](./build-and-test.md)
-1. Labels, Bots and Git Workflow
+1. [Labels, Bots and Git Workflow](./labels-and-bots.md)
 1. [Find Your First Issue](./first-issue-help.md)
