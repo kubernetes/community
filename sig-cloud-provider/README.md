@@ -91,7 +91,10 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - https://raw.githubusercontent.com/kubernetes-sigs/blobfuse-csi-driver/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-azure/master/OWNERS
 - **Meetings:**
-  - Azure Subproject Meeting (biweekly): [Mondays at 18:00 PT (Pacific Time)](https://zoom.us/j/586836662) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=PT%20%28Pacific%20Time%29).
+  - Azure Subproject Meeting (every four weeks): [Mondays at 18:00 PT (Pacific Time)](https://zoom.us/j/586836662) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
+    - [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
+  - Azure Subproject Meeting (every four weeks): [Thursdays at 8:30 PT (Pacific Time)](https://zoom.us/j/586836662) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
     - [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
 ### provider-baiducloud
