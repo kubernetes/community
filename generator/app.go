@@ -26,16 +26,18 @@ import (
 	"sort"
 	"strings"
 	"text/template"
+	"time"
 
 	yaml "gopkg.in/yaml.v3"
 )
 
 const (
-	readmeTemplate   = "readme.tmpl"
-	listTemplate     = "list.tmpl"
-	aliasesTemplate  = "aliases.tmpl"
-	liaisonsTemplate = "liaisons.tmpl"
-	headerTemplate   = "header.tmpl"
+	readmeTemplate       = "readme.tmpl"
+	listTemplate         = "list.tmpl"
+	aliasesTemplate      = "aliases.tmpl"
+	liaisonsTemplate     = "liaisons.tmpl"
+	annualReportTemplate = "annual_report.tmpl"
+	headerTemplate       = "header.tmpl"
 
 	sigsYamlFile     = "sigs.yaml"
 	sigListOutput    = "sig-list.md"
@@ -353,6 +355,7 @@ func getExistingContent(path string, fileFormat string) (string, error) {
 var funcMap = template.FuncMap{
 	"tzUrlEncode": tzURLEncode,
 	"trimSpace":   strings.TrimSpace,
+	"now":         time.Now,
 }
 
 // tzUrlEncode returns a url encoded string without the + shortcut. This is
@@ -457,6 +460,41 @@ func createGroupReadme(groups []Group, prefix string) error {
 	return nil
 }
 
+func createAnnualReportIssue(groups []Group, prefix string) error {
+	// figure out if the user wants to generate one group
+	var selectedGroupName *string
+	if envVal, ok := os.LookupEnv("WHAT"); ok {
+		selectedGroupName = &envVal
+	}
+
+	for _, group := range groups {
+		if !strings.HasPrefix(group.Dir, "sig-") {
+			continue
+		}
+
+		// skip generation if the user specified only one group
+		if selectedGroupName != nil && !strings.HasSuffix(group.Dir, *selectedGroupName) {
+			fmt.Printf("Skipping tmp/%s.md\n", group.Dir)
+			continue
+		}
+
+		fmt.Printf("Generating tmp/%s.md\n", group.Dir)
+
+		outputDir := filepath.Join(baseGeneratorDir, "tmp")
+		if err := createDirIfNotExists(outputDir); err != nil {
+			return err
+		}
+
+		outputPath := filepath.Join(outputDir, fmt.Sprintf("%s.md", group.Dir))
+		templatePath := filepath.Join(baseGeneratorDir, templateDir, annualReportTemplate)
+		if err := writeTemplate(templatePath, outputPath, "markdown", group); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
 // readSigsYaml decodes yaml stored in a file at path into the
 // specified yaml.Node
 func readYaml(path string, data interface{}) error {
@@ -513,6 +551,15 @@ func main() {
 		err = createGroupReadme(groups, prefix)
 		if err != nil {
 			log.Fatal(err)
+		}
+	}
+
+	if envVal, ok := os.LookupEnv("ANNUAL_REPORT"); ok && envVal == "true" {
+		for prefix, groups := range ctx.PrefixToGroupMap() {
+			err = createAnnualReportIssue(groups, prefix)
+			if err != nil {
+				log.Fatal(err)
+			}
 		}
 	}
 

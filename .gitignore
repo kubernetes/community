@@ -37,3 +37,6 @@ Session.vim
 
 # direnv .envrc files
 .envrc
+
+# tmp
+/tmp
