@@ -1621,6 +1621,13 @@ sigs:
       name: Tim Hockin
       company: Google
   meetings:
+  - description: Gateway API Meeting
+    day: Wednesday
+    time: "11:00"
+    tz: PT (Pacific Time)
+    frequency: weekly
+    url: https://zoom.us/j/441530404
+    archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
   - description: Network Policy API Meeting
     day: Monday
     time: "13:00"
@@ -1636,13 +1643,6 @@ sigs:
     url: https://zoom.us/j/361123509
     archive_url: https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit
     recordings_url: https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb
-  - description: Service APIs Meeting
-    day: Wednesday
-    time: "11:00"
-    tz: PT (Pacific Time)
-    frequency: weekly
-    url: https://zoom.us/j/441530404
-    archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
   contact:
     slack: sig-network
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-network
@@ -1676,6 +1676,14 @@ sigs:
       slack: external-dns
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/OWNERS
+  - name: gateway-api
+    contact:
+      slack: sig-network-gateway-api
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
   - name: ingress
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
@@ -1694,14 +1702,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
-  - name: service-apis
-    contact:
-      slack: sig-network-service-apis
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/service-apis/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
 - dir: sig-node
   name: Node
   mission_statement: >

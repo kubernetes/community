@@ -13,13 +13,13 @@ Covers networking in Kubernetes.
 The [charter](charter.md) defines the scope and governance of the Network Special Interest Group.
 
 ## Meetings
+* Gateway API Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/441530404) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
 * Network Policy API Meeting: [Mondays at 13:00 PT (Pacific Time)](https://zoom.us/j/96264742248) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs).
 * SIG Network Meeting: [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/361123509) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
-* Service APIs Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/441530404) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
 
 ## Leadership
 
@@ -58,6 +58,14 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/OWNERS
 - **Contact:**
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
+### gateway-api
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
+- **Contact:**
+  - Slack: [#sig-network-gateway-api](https://kubernetes.slack.com/messages/sig-network-gateway-api)
 ### ingress
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
@@ -76,14 +84,6 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
-### service-apis
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/service-apis/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
-- **Contact:**
-  - Slack: [#sig-network-service-apis](https://kubernetes.slack.com/messages/sig-network-service-apis)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
