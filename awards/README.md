@@ -47,7 +47,7 @@ Every year the Kubernetes Contributor Community select awardees for outstanding 
 
 - Tim Bannister
 - Quiming Teng
-- Zach Corleissen
+- Zachary Sarah Corleissen
 
 ### SIG Instrumentation
 
