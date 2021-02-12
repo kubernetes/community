@@ -87,7 +87,7 @@ Our community is spread all over the world, so when choosing a vendor consider i
 ### Awards Ceremony
 
 The Awards Ceremony is typically done as part of the Contributor Summit. 
-There may be cases where the ceremony is seperate or virtual, here are some tips:
+There may be cases where the ceremony is separate or virtual, here are some tips:
 
 - Ceremony should be fun, but taken seriously.
   - Awards team should either be the hosts or select someone appropriate to be the hosts.
