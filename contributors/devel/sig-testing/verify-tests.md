@@ -4,6 +4,7 @@
 
 - [Verification Tests](#verification-tests)
   - [Overview](#overview)
+  - [Note](#note)
   - [`verify-govet-levee`](#verify-govet-leve)
 
 ## Overview
@@ -18,6 +19,10 @@ Most verification tests are self-explanatory.
 `verify-govet`, for instance, performs `go vet` checks, which [defends against common mistakes](https://golang.org/cmd/vet/).
 The verification tests fails when `go vet` produces any findings.
 More complex verification tests are described below.
+
+### Note
+
+This documentation is a work in progress.  This listing is incomplete.
 
 ### `verify-govet-levee`
 
