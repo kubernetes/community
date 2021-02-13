@@ -12,12 +12,14 @@ Go rules are managed by the [`gazelle`][gazelle]
 tool, with some additional rules managed by the [`kazel`][kazel] tool.
 These tools are called via the `hack/update-bazel.sh` script.
 
-Instructions for installing Bazel can be found [here][bazel-install].
-Note that older Bazel versions did not work with Python 3, so we recommend
-using version 0.27.0 or newer. If you still have Python-related problems,
-please take a look at [this FAQ][bazel-python-faq].
+Kubernetes requires [a specific version of Bazel](https://github.com/kubernetes/kubernetes/blob/master/build/root/.bazelversion).
+[Consider using Bazelisk](https://docs.bazel.build/versions/master/install-bazelisk.html)
+which automatically installs the version of Bazel that Kubernetes requires:
 
-Several convenience `make` rules have been created for common operations:
+    go get github.com/bazelbuild/bazelisk
+    bazelisk test //pkg/kubectl/...
+
+If you `alias bazel=bazelisk`, then you can use several convenience `make` rules which have been created for common operations:
 
 * `make bazel-build`: builds all binaries in tree (`bazel build -- //...
   -//vendor/...`)
