@@ -1,6 +1,6 @@
 # Kubernetes Design Documents and Proposals
 
-**The Design Proposal process has been deprecated in favor of [Kubernetes Enhancement Proposals (KEP)][keps]. These documents are here for historical purposes only.**
+**The Design Proposal process has been deprecated in favor of [Kubernetes Enhancement Proposals (KEP)][https://github.com/kubernetes/enhancements/tree/master/keps]. These documents are here for historical purposes only.**
 
 ---
 
