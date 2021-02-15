@@ -928,13 +928,6 @@ sigs:
     url: https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09
     archive_url: https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
-  - description: Regular SIG Meeting in China
-    day: Tuesday
-    time: "20:00"
-    tz: Beijing
-    frequency: biweekly
-    url: https://zoom.us/j/179916854?pwd=dzRhbjFnRGVQRDVUVHY1a29JV2JxUT09
-    archive_url: https://shimo.im/docs/YcoaYlvRmIYcrwnd
   contact:
     slack: sig-cluster-lifecycle
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
