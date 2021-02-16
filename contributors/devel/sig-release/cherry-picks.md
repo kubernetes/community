@@ -86,7 +86,9 @@ patch release branches.
     Please see our [recommended Git workflow](/contributors/guide/github-workflow.md#workflow).
 
   - You will need to run the cherry pick script separately for each patch
-    release you want to cherry pick to.
+    release you want to cherry pick to. Cherry picks should be applied to all
+    [active](https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md#detailed-release-history-for-active-branches)
+    release branches where the fix is applicable.
 
 - Your cherry pick PR will immediately get the
   `do-not-merge/cherry-pick-not-approved` label.
@@ -116,6 +118,12 @@ pull requests on the `master` branch in that they:
 - Milestones must be set on the PR reflecting the milestone for the target
   release branch (for example, milestone v1.11 for a cherry pick onto branch
   `release-1.11`). This is normally done for you by automation.
+
+- A separate cherry pick pull request should be open for every applicable target
+  branch. This ensures that the fix will be present on every active branch for a
+  given set of patch releases. If a fix is only applicable to a subset of active
+  branches, it is helpful to note why that is the case on the parent pull
+  request or on the cherry pick pull requests to the applicable branches.
 
 - Have one additional level of review in that they must be approved
   specifically for cherry pick by branch approvers.
