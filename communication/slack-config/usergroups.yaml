@@ -48,7 +48,6 @@ usergroups:
       - sig-release
     members:
       - cjcullen
-      - cji
       - joelsmith
       - lukehinds
       - micahhausler
