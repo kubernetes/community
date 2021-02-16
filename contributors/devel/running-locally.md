@@ -3,6 +3,7 @@ Getting started locally
 
 **Table of Contents**
 
+- [Overview](#overview)
 - [Requirements](#requirements)
     - [Linux](#linux)
     - [Docker](#docker)
@@ -20,6 +21,10 @@ Getting started locally
     - [I changed Kubernetes code, how do I run it?](#i-changed-kubernetes-code-how-do-i-run-it)
     - [kubectl claims to start a container but `get pods` and `docker ps` don't show it.](#kubectl-claims-to-start-a-container-but-get-pods-and-docker-ps-dont-show-it)
     - [The pods fail to connect to the services by host names](#the-pods-fail-to-connect-to-the-services-by-host-names)
+
+## Overview
+
+It can be much faster to iterate on a local cluster instead of a cloud-based one.
 
 ## Requirements
 
@@ -72,13 +77,14 @@ In a separate tab of your terminal, run the following:
 
 ```sh
 cd kubernetes
-./hack/local-up-cluster.sh
+# The PATH construction is needed because PATH is one of the special-cased
+# environment variables not passed by sudo -E
+PATH=$PATH ./hack/local-up-cluster.sh
 ```
-
 Since root access is sometimes needed to start/stop Kubernetes daemons, `./hack/local-up-cluster.sh` may need to be run as root. If it reports failures, try this instead:
 
 ```sh
-sudo ./hack/local-up-cluster.sh
+sudo PATH=$PATH ./hack/local-up-cluster.sh
 ```
 
 This will build and start a lightweight local cluster, consisting of a master and a single node. Press Control+C to shut it down.
@@ -90,8 +96,7 @@ This will build and start a lightweight local cluster, consisting of a master an
 ```
 
 You can use the `./cluster/kubectl.sh` script to interact with the local cluster. `./hack/local-up-cluster.sh` will
-print the commands to run to point kubectl at the local cluster.
-
+print the commands to run to point kubectl at the local cluster. It will show you how to generate a valid kubeconfig file.
 
 ## Running a container
 

@@ -10,8 +10,7 @@
     - [Extracting a specific version of Kubernetes](#extracting-a-specific-version-of-kubernetes)
     - [Bringing up a cluster for testing](#bringing-up-a-cluster-for-testing)
     - [Debugging clusters](#debugging-clusters)
-    - [Local clusters](#local-clusters)
-      - [Testing against local clusters](#testing-against-local-clusters)
+    - [Testing against local clusters](#testing-against-local-clusters)
     - [Version-skewed and upgrade testing](#version-skewed-and-upgrade-testing)
       - [Test jobs naming convention](#test-jobs-naming-convention)
   - [Kinds of tests](#kinds-of-tests)
@@ -256,24 +255,9 @@ the provided directory (which should already exist).
 The Google-run Jenkins builds automatically collected these logs for every
 build, saving them in the `artifacts` directory uploaded to GCS.
 
-### Local clusters
+### Testing against local clusters
 
-It can be much faster to iterate on a local cluster instead of a cloud-based
-one. To start a local cluster, you can run:
-
-```sh
-# The PATH construction is needed because PATH is one of the special-cased
-# environment variables not passed by sudo -E
-sudo PATH=$PATH hack/local-up-cluster.sh
-```
-
-This will start a single-node Kubernetes cluster than runs pods using the local
-docker daemon. Press Control-C to stop the cluster.
-
-You can generate a valid kubeconfig file by following instructions printed at the
-end of aforementioned script.
-
-#### Testing against local clusters
+For how to set up a local cluster, please refer [running-locally](../../running-locally.md) guide.
 
 In order to run an E2E test against a locally running cluster, first make sure
 to have a local build of the tests:
