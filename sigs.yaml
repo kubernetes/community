@@ -3030,9 +3030,6 @@ committees:
     - github: cjcullen
       name: CJ Cullen
       company: Google
-    - github: cji
-      name: Craig Ingram
-      company: Stripe
     - github: joelsmith
       name: Joel Smith
       company: Red Hat
