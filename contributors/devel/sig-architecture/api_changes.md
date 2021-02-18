@@ -955,7 +955,38 @@ The recommended place to do this is in the REST storage strategy's PrepareForCre
     }
     ```
 
-4. In validation, validate the field if present:
+4. To future-proof your API testing, when testing with feature gate on and off, ensure that the gate is deliberately set as desired. Don't assume that gate is off or on. As your feature
+progresses from `alpha` to `beta` and then `stable` the feature might be turned on or off by default across the entire code base. The below example
+provides some details 
+ 
+   ```go
+   func TestAPI(t *testing.T){
+    testCases:= []struct{
+      // ... test definition ...
+    }{
+       {
+        // .. test case ..
+       },
+       {
+       // ... test case ..
+       },
+   }
+   
+   for _, testCase := range testCases{
+     t.Run("..name...", func(t *testing.T){
+      // run with gate on
+      defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features. Frobber2D, true)()
+       // ... test logic ...
+     })
+     t.Run("..name...", func(t *testing.T){
+      // run with gate off, *do not assume it is off by default*
+      defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features. Frobber2D, false)()
+      // ... test gate-off testing logic logic ...
+     })
+   }
+   ``` 
+
+5. In validation, validate the field if present:
 
     ```go
     func ValidateFrobber(f *api.Frobber, fldPath *field.Path) field.ErrorList {
