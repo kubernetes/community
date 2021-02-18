@@ -975,7 +975,7 @@ provides some details
    for _, testCase := range testCases{
      t.Run("..name...", func(t *testing.T){
       // run with gate on
-      defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.AwesomeFeature, true)()
+      defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features. Frobber2D, true)()
        // ... test logic ...
      })
      t.Run("..name...", func(t *testing.T){
