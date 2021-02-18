@@ -955,7 +955,7 @@ The recommended place to do this is in the REST storage strategy's PrepareForCre
     }
     ```
 
-4. Future proof api testing, when testing with feature gate on and off ensure that the gate is deliberately set as desired. Don't assume that gate is off or on. As your feature
+4. To future-proof your API testing, when testing with feature gate on and off, ensure that the gate is deliberately set as desired. Don't assume that gate is off or on. As your feature
 progress from `alpha` to `beta` and then `stable` the feature might be turned on or off by default across the entire code base. The below example
 provides some details 
  
