@@ -960,7 +960,7 @@ progress from `alpha` to `beta` and then `stable` the feature might be turned on
 provides some details 
  
    ```go
-   func TestApi(t *testing.T){
+   func TestAPI(t *testing.T){
     testCases:= []struct{
       // ... test definition ...
     }{
