@@ -29,7 +29,7 @@ Regular Blog Meeting: Tuesdays at 18:30 UTC (biweekly). [Convert Your Timezone](
 
 Anyone can write a blog post and submit it for review. Blog posts should not be commercial in nature and should consist of content that will apply broadly to the Kubernetes community.
 
-To submit a blog post, you can either submit it using the [Kubernetes blog submission form](https://docs.google.com/forms/d/e/1FAIpQLSch_phFYMTYlrTDuYziURP6nLMijoXx_f7sLABEU5gWBtxJHQ/viewform), or follow the steps below.
+To submit a blog post, follow the steps below.
 
 1. [Sign the CLA](https://kubernetes.io/docs/contribute/start/#sign-the-cla) if you have not yet done so.
 1. Have a look at the Markdown format for existing blog posts in the [website repository](https://github.com/kubernetes/website/tree/master/content/en/blog/_posts).
