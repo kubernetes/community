@@ -980,7 +980,7 @@ provides some details
      })
      t.Run("..name...", func(t *testing.T){
       // run with gate off, *do not assume it is off by default*
-      defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.AwesomeFeature, false)()
+      defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features. Frobber2D, false)()
       // ... test gate-off testing logic logic ...
      })
    }
