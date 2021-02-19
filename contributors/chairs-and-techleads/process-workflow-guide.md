@@ -1,6 +1,6 @@
 # Process and Workflow Guide
 
-Author: (**[@LappleApple](https://github.com/lappleapple)**) || Contributors: **[@annajung](https://github.com/annajung)**, **[@kikisdeliveryservice](https://github.com/kikisdeliveryservice)**, **[@neolit123](https://github.com/neolit123)** 
+Author: **[@LappleApple](https://github.com/lappleapple)** || Contributors: **[@annajung](https://github.com/annajung)**, **[@kikisdeliveryservice](https://github.com/kikisdeliveryservice)**, **[@neolit123](https://github.com/neolit123)** 
 
 ## Who This Is For
 
