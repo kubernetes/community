@@ -175,7 +175,7 @@ SIG Windows Chair Mark Rossetti says this table has helped “especially as a TL
 
 If you prefer tracking work in spreadsheets, here’s an example from Storage: 
 
-[image]
+<img src="Storage tracking sheet.png">
 
 #### Tips for Handling KEPs That Require Cross-SIG Coordination
 
@@ -214,7 +214,7 @@ The KEP planning tools shared above are one way to roadmap a release cycle. But 
 
 Release Manager Adolfo “Puerco” García Veytia and SIG Release Tech Lead Dan Mangum used Miro to brainstorm a roadmap for creating a bill of materials:
 
-[image]
+<img src="BOM board.png">
 
 SIG Release/Release Engineering is using [this template](https://docs.google.com/document/d/1U-SxIQKwEDmlj3QMxmKUl2laFRKaelDwBBBqWtnxPvw/edit) to draft a 2021 North Star vision that tells a coherent story to the project and contributors about what work is important this year, and why.
 
@@ -247,7 +247,7 @@ Across a project the size of Kubernetes, communications can easily be lost or mi
 - When someone pings via DM about work or a question that could be discussed/answered by others, direct them to your public channel.
 - Use 2-3 channels as your main go-to for discussion.
 - Create team handles and use them to draw attention to time-sensitive or workflow-related Slack messages (posted GitHub issues, PRs). This can drive delegation and discussion.
-- 
+
 ### Mailing List and GitHub Notification Best Practices
 
 Visit /community for [documentation on this topic](https://github.com/kubernetes/community/blob/master/communication/best-practices.md).
