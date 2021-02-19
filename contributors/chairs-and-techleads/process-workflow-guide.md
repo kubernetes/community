@@ -1,6 +1,6 @@
 # Process and Workflow Guide
 
-Author: (**[@LappleApple](https://github.com/lappleapple)**) || Contributors: (**[@annajung](https://github.com/annajung)**), (**[@kikisdeliveryservice](https://github.com/kikisdeliveryservice)**), **[@neolit123](https://github.com/neolit123)**) 
+Author: (**[@LappleApple](https://github.com/lappleapple)**) || Contributors: **[@annajung](https://github.com/annajung)**, **[@kikisdeliveryservice](https://github.com/kikisdeliveryservice)**, **[@neolit123](https://github.com/neolit123)** 
 
 ## Who This Is For
 
@@ -102,7 +102,7 @@ SIG Docs rotates the triage facilitator role with its “[wrangler of the week](
 
 [Triage Party](https://github.com/google/triage-party) is an open-source tool that focuses on “reducing response latency for incoming GitHub issues and PR's, and ensure[s] that conversations are not lost in the ether.” Project creator Thomas Strömberg reports that using Triage Party for Minikube and Skaffold workflows has led to dramatic improvements in responsiveness to contributor requests. By “dramatic,” he means *40 times faster*.
 
-[image]
+<img src="triage_party_skaffold.png" width="60%" height="60%">
 
 **Other Uses of Triage Party**:
 - SIG CLI uses it to manage [kubectl](https://tp.kuberneddies.dev/s/daily) workflow, including quarterly bug scrubs and daily/weekly triage
@@ -116,13 +116,13 @@ Many SIGs use GitHub project boards to quickly monitor and triage workflow. SIGs
 
 Project boards enable you to automate your workflow and review the status of work. You can automate board settings to eliminate the manual toil of moving items across the board:
 
-[image]
+<img src="GitHub project board auto.png" width="35%" height="35%">
 
 To set up a project board, create several columns and put the earliest stages of work status at left. An example is Release Engineering’s board:
 
-[image]
+<img src="Rel Eng snapshot.png">
 
-**The column flow here is**:
+**The column flow here is**:<br>
 Issues to Triage ⇒ <br>
 Issues - To Do in [current release] ⇒ <br>
 In Progress (Issues and PRs) ⇒ <br>
@@ -138,11 +138,11 @@ SIG Node uses [this GitHub project board layout](https://github.com/orgs/kuberne
 
 Note the cards at the top, which give direction and context to help new contributors get started with this board. With such guidance in place, even a new contributor can run a triage session for the team—enabling you to delegate.
 
-[image]
+<img src="SIG Node PR triage.png">
 
 #### Example: Board Highlighting Risks (SIG Windows) 
 
-SIG Windows has created columns in [their project board](https://github.com/orgs/kubernetes/projects/8) for highlighting flaky tests and approval needs from other SIGs:
+SIG Windows has created columns in [their project board](https://github.com/orgs/kubernetes/projects/8) for highlighting flaky tests and approval needs from other SIGs.
 
 #### Example: KEP-Specific Issue Triage (SIG Release)
 
@@ -156,7 +156,7 @@ Start planning your SIG’s batch of KEPs for an upcoming release cycle [**how e
 
 [This article](https://productcoalition.com/how-to-prioritize-features-and-projects-heres-the-ultimate-list-of-prioritization-frameworks-6f5b626ae779) provides many examples of prioritization frameworks to help you identify the highest-value work in your backlog and make trade-offs. Here’s a simple framework that enables you to make choices based on the required effort as well as urgency:
 
-[image]
+<img src="Prioritization framework.png" height="60%" width="60%">
 
 The above framework image was created with [Miro](http://miro.com), a digital whiteboard tool that your SIG can use for free (up to three boards). A recommendation is to run a planning meeting in which your SIG members use Miro PostIts to place KEPs along this matrix. From the resulting discussion you can come up with your KEPs for the upcoming release cycle and also spark a useful discussion about which KEPs are more urgent than others. Running such an exercise also gives you leverage in saying “no” or “not yet” to KEPs that require more time or are judged to be lower-priority from the group.
 
