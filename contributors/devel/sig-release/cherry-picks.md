@@ -27,6 +27,7 @@ branches.
 - Have `hub` installed, which is most easily installed via
   `go get github.com/github/hub` assuming you have a standard golang
   development environment.
+- A github token which has permissions to create a PR in an upstream branch.
 
 ## What Kind of PRs are Good for Cherry Picks
 
@@ -89,6 +90,11 @@ patch release branches.
     release you want to cherry pick to. Cherry picks should be applied to all
     [active](https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md#detailed-release-history-for-active-branches)
     release branches where the fix is applicable.
+  
+  - When asked for your github password, provide the created github token 
+    rather than your actual github password. 
+    Refer [https://github.com/github/hub/issues/2655#issuecomment-735836048](https://github.com/github/hub/issues/2655#issuecomment-735836048)
+
 
 - Your cherry pick PR will immediately get the
   `do-not-merge/cherry-pick-not-approved` label.
