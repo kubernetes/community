@@ -64,7 +64,7 @@ Approvers:
   Deployment rollout state and history, and possibly also corruption or loss of
   StatefulSet application data.
 
-* ControllerRef is not intended to replace [selector generation](selector-generation.md),
+* ControllerRef is not intended to replace [selector generation](../apps/selector-generation.md),
   used by some controllers like Job to ensure all selectors are unique
   and prevent overlapping selectors from occurring in the first place.
 
