@@ -201,7 +201,7 @@ has different meaning for variadic arguments. Instead of just passing arguments,
 argument name and argument value. This means when migrating a log call we need to add an additional string before each
 argument, that will be used as it's name.
 
-How variadic arguments to should be used:
+How variable arguments should be used:
 
 ```go
 klog.InfoS("message", "key1", value1, "key2", "value2")
@@ -222,19 +222,19 @@ func LogHTTP(r *http.Request) {
 
 When deciding on names of arguments you should:
 * Always use [lowerCamelCase], for example use `containerName` and not `container name` or `container_name`.
-* Use [alphanumeric] characters and not should not any special characters like `%$*`, non-latin or unicode characters.
+* Use [alphanumeric] characters: no special characters like `%$*`, non-latin, or unicode characters.
 * Use object kind when referencing Kubernetes objects, for example `deployment`, `pod` and `node`.
-* Describe the type of value stored under they key and avoid to:
+* Describe the type of value stored under the key and use normalized labels:
   * Include any of value properties, for example instead of `directory` use `path`.
-  * Describe context how value is used, for example instead of `podIP` use `IP`.
-  * Shorten the name (except acronyms), for example instead of `addr` use `address`
+  * Do not provide additional context for how value is used. Don't use `podIP`, do use `IP`.
+  * With the exception of acronyms like "IP" and the standard "err", don't shorten names. Don't use `addr`, do use `address`.
   * Use ambiguous names, that require falling back on message to undestand what value it is. For example instead of
     `key` use `cacheKey` or instead of `version` use `dockerVersion`.
 * Be consistent, for example when logging file path we should always use `path` and not switch between
   `hostPath`, `path`, `file`.
 
-Exemptions (some cases are temporary workarounds that may change if we settle on better solution):
-* `err` is one case where short for error should be used, reason is to match key used by `klog.ErrorS`
+Here are a few exceptions to the rules above---some cases are temporary workarounds that may change if we settle on better solution:
+* Do use `err` rather than `error` to match the key used by `klog.ErrorS`
 * Context in name is acceptable to distinguish between values that normally go under same key. For example using both
   `status` and `oldStatus` in log that needs to show the change between statuses.
 * When Kubernetes object kind is unknown without runtime checking we should use `object` key. To provide information
