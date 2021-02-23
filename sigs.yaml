@@ -2367,6 +2367,11 @@ sigs:
       slack: prow
     owners:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
+  - name: sig-testing
+    description: |
+      Home for SIG Testing discussion and documents.
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/sig-testing/master/OWNERS
   - name: test-infra
     description: |
       Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
