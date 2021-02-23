@@ -225,7 +225,7 @@ When deciding on names of arguments you should:
 * Use [alphanumeric] characters: no special characters like `%$*`, non-latin, or unicode characters.
 * Use object kind when referencing Kubernetes objects, for example `deployment`, `pod` and `node`.
 * Describe the type of value stored under the key and use normalized labels:
-  * Include any of value properties, for example instead of `directory` use `path`.
+  * Don't include implementation-specific details in the labels. Don't use `directory`, do use `path`.
   * Do not provide additional context for how value is used. Don't use `podIP`, do use `IP`.
   * With the exception of acronyms like "IP" and the standard "err", don't shorten names. Don't use `addr`, do use `address`.
   * Use ambiguous names, that require falling back on message to undestand what value it is. For example instead of
