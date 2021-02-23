@@ -228,7 +228,7 @@ When deciding on names of arguments you should:
   * Don't include implementation-specific details in the labels. Don't use `directory`, do use `path`.
   * Do not provide additional context for how value is used. Don't use `podIP`, do use `IP`.
   * With the exception of acronyms like "IP" and the standard "err", don't shorten names. Don't use `addr`, do use `address`.
-  * Use ambiguous names, that require falling back on message to undestand what value it is. For example instead of
+  * When names are very ambiguous, try to include context in the label. For example, instead of
     `key` use `cacheKey` or instead of `version` use `dockerVersion`.
 * Be consistent, for example when logging file path we should always use `path` and not switch between
   `hostPath`, `path`, `file`.
