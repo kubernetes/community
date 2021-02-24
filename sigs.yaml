@@ -261,8 +261,8 @@ sigs:
       company: Google
   meetings:
   - description: Enhancements Subproject Meeting
-    day: Tuesday
-    time: "8:30"
+    day: Thursday
+    time: "10:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/95357819945
@@ -1813,6 +1813,9 @@ sigs:
     - github: hasheddan
       name: Daniel Mangum
       company: Upbound
+    - github: jeremyrickard
+      name: Jeremy Rickard
+      company: Apple
     emeritus_leads:
     - github: calebamiles
       name: Caleb Miles

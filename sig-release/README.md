@@ -31,6 +31,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Jorge Alarcon Ochoa (**[@alejandrox1](https://github.com/alejandrox1)**), Searchable AI
 * Daniel Mangum (**[@hasheddan](https://github.com/hasheddan)**), Upbound
+* Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Apple
 
 ## Emeritus Leads
 
