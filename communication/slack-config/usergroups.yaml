@@ -169,7 +169,7 @@ usergroups:
       - microwavables
       - pabloschuhmacher
 
-  - name: steering-committee
+  - name: steering
     long_name: Kubernetes Steering Committee
     description: Members of the Kubernetes Steering Committee
     channels:
