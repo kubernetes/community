@@ -1603,6 +1603,9 @@ sigs:
   - name: mcs-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
+  - name: work-api
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/work-api/master/OWNERS
 - dir: sig-network
   name: Network
   mission_statement: >
