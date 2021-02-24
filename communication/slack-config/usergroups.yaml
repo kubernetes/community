@@ -168,3 +168,17 @@ usergroups:
       - margocrawf
       - microwavables
       - pabloschuhmacher
+
+  - name: steering-committee
+    long_name: Kubernetes Steering Committee
+    description: Members of the Kubernetes Steering Committee
+    channels:
+      - steering-committee
+    members:
+      - cblecker
+      - derekwaynecarr
+      - dims
+      - liggitt
+      - mrbobbytables
+      - nikhita
+      - paris
