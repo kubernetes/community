@@ -1385,6 +1385,14 @@ sigs:
     url: https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit
     archive_url: https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
+  - description: Spanish Team Meeting
+    day: Tuesday
+    time: "15:30"
+    tz: UTC
+    frequency: weekly
+    url: https://zoom.us/j/95918289494?pwd=Wk9Oa0xZUkFXSDV5OTFoZEZsTURCZz09
+    archive_url: https://docs.google.com/document/d/1jOTK1tqBRwlNQJUB88wfDnGxpdInxMJ7lIFDZy9cMGY
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
   contact:
     slack: sig-docs
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
