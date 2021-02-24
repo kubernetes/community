@@ -4,6 +4,9 @@ The following conventions for the klog levels to use.
 [klog](http://godoc.org/github.com/kubernetes/klog) is globally preferred to
 [log](http://golang.org/pkg/log/) for better runtime control.
 
+Shared libraries, such as `client-go`, should not use `klog.Errorf()` and `klog.Warningf()`,
+but just return `error`, because client libraries may be used in CLI UIs that wish to control output.
+
 * klog.Errorf() - Always an error
 
 * klog.Warningf() - Something unexpected, but probably not an error
