@@ -7,6 +7,8 @@ This folder contains the [handbook for the New Contributor Workshop Content Lead
 
 This workshop is held periodically by the Kubernetes Community, but materials and processes may be used at contributor focused summits and events anywhere.
 
+Slides from previous New Contributor Workshops can be found [here](https://github.com/cncf/presentations/blob/master/kubernetes/README.md#kubernetes-new-contributor-workshops).
+
 ## Sample Track for Beginner Workshop
 
 This workshop is meant for folks who have never contributed to opensource before and/or need help setting up a Kubernetes developer environment.
