@@ -38,7 +38,7 @@ on these platforms.
 
 ### Appropriate Content for Community Resources
 
-All communications properties are under the [Kubernetes code of conduct]. 
+All communications properties are under the [Kubernetes code of conduct].
 Additionally, these resources are for the contributors and users of Kubernetes; commercial usage of these properties is heavily moderated.
 Note that commercial content is allowed, unsolicited commercial content mostly is NOT:
 
@@ -50,7 +50,7 @@ Examples of inappropriate content:
 Examples of appropriate content:
 - Asking about commercial products in an appropriate channel. For example most clouds have a channel in Slack, asking how to use GKE on the GKE channel or AKS on the Azure channels is fine.
 - "Does anyone have experience with project foo?" is fine
-- Some OSS projects are also hosted on the Kubernetes Slack that also have a commercial offering, these are allowed. 
+- Some OSS projects are also hosted on the Kubernetes Slack that also have a commercial offering, these are allowed.
 
 ## Decisions Are Made Here
 
@@ -154,6 +154,8 @@ resources.
 - [kubeweekly] - owned by cncf and curated by community members listed on the site.
 Collection of news, blogs, talks, and events for all things Kubernetes.
 send submissions to kubeweekly@cncf.io
+- [LWKD] - weekly newsletter that summarizes changes to Kubernetes code, development,
+ and release schedules.  Written by two members of SIG-Contribex.
 
 ### Conferences, Meetups, Summits, and Face to Face Meetings
 
@@ -223,3 +225,4 @@ place!
 [#sig-contribex]: https://app.slack.com/client/T09NY5SBT/C1TU9EB9S
 [#office-hours]: https://app.slack.com/client/T09NY5SBT/C6RFQ3T5H
 [office-hours]: /events/office-hours.md
+[LWKD]: https://lwkd.info
