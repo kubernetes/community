@@ -58,6 +58,7 @@ The following [subprojects][subproject-definition] are owned by sig-instrumentat
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/custom-metrics-apiserver/master/OWNERS
 ### heapster
+(Deprecated)
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
 ### instrumentation-tools
@@ -73,6 +74,9 @@ The following [subprojects][subproject-definition] are owned by sig-instrumentat
   - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
 - **Contact:**
   - Slack: [#kube-state-metrics](https://kubernetes.slack.com/messages/kube-state-metrics)
+### metric-stability-framework
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/metrics/OWNERS
 ### metrics
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
@@ -81,11 +85,15 @@ The following [subprojects][subproject-definition] are owned by sig-instrumentat
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/metrics-server/master/OWNERS
 ### mutating-trace-admission-controller
+(Deprecated)
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
 ### prometheus-adapter
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/prometheus-adapter/master/OWNERS
+### structured-logging
+- **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/logs/OWNERS
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

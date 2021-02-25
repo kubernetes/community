@@ -1503,6 +1503,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/custom-metrics-apiserver/master/OWNERS
   - name: heapster
+    description: (Deprecated)
     owners:
     - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
   - name: instrumentation-tools
@@ -1518,6 +1519,9 @@ sigs:
       slack: kube-state-metrics
     owners:
     - https://raw.githubusercontent.com/kubernetes/kube-state-metrics/master/OWNERS
+  - name: metric-stability-framework
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/metrics/OWNERS
   - name: metrics
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/metrics/OWNERS
@@ -1526,11 +1530,15 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/metrics-server/master/OWNERS
   - name: mutating-trace-admission-controller
+    description: (Deprecated)
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
   - name: prometheus-adapter
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/prometheus-adapter/master/OWNERS
+  - name: structured-logging
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/logs/OWNERS
 - dir: sig-multicluster
   name: Multicluster
   mission_statement: >
