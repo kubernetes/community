@@ -22,6 +22,7 @@ The [charter](charter.md) defines the scope and governance of the Release Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Lauri Apple (**[@LappleApple](https://github.com/LappleApple)**), VMware
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Cisco
 * Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**), Red Hat
 

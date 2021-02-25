@@ -1829,6 +1829,9 @@ sigs:
   label: release
   leadership:
     chairs:
+    - github: LappleApple
+      name: Lauri Apple
+      company: VMware
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
