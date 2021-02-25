@@ -42,7 +42,7 @@ The process for setting up a SIG or Working Group (WG) is listed in the
 ### Notes on Roles
 
 Within this section "Lead" refers to someone who is a member of the union
- of a Chair, Tech Lead or Subproject Owner role. There is no one lead to any
+ of a Chair, Tech Lead, Subproject Owner, or Program Manager role. There is no one lead to any
  Kubernetes community group. Leads have specific decision making power over some
  part of a group and thus additional accountability. Each role is detailed below.  
 
@@ -85,6 +85,7 @@ Subproject contributors (as applicable).
 - Number: 2-3
 - Membership tracked in [sigs.yaml]  
   - If no tech lead role is present, Chair assumes responsibilities from [#tech-lead] section.
+  - If no program manager role is present, Chair assumes responsibilities from [#program-manager] section.
   
   In addition, run operations and processes governing the SIG:
 
@@ -139,6 +140,17 @@ curation from other SIG participants
   - *SHOULD* set milestone priorities or delegate this responsibility
   - Number: 2-3
   - Membership tracked in [sigs.yaml]
+
+### Program Manager
+
+- *Optional Role*: SIG Program Managers
+  -  Coordinate the success of their SIGs’ delivery workflow and related practices
+  -  Coordinate cross-SIG coordination
+  -  Set up, launch, and continuously optimize processes
+  -  Drive prioritization, delegation, communication, risk mitigation efforts
+  -  Number: 1-3
+  -  Membership tracked in [sigs.yaml]
+  -  Role description in [program-manager.md] 
 
 ### All Leads
 
@@ -241,8 +253,10 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [contributor guide]: /contributors/guide/README.md
 [devel]: /contributors/devel/README.md
 [#tech-lead]: #Tech-Lead
+[#program-manager]: #Program-Manager
 [Google group]: https://groups.google.com/forum/#!forum/kubernetes-sig-config
 [dashboard]: https://testgrid.k8s.io/
 [monthly community meeting]: /events/community-meeting.md
 [inclusive speaker training course]: https://training.linuxfoundation.org/training/inclusive-speaker-orientation/
 [technical-lead.md]: /contributors/chairs-and-techleads/technical-lead.md
+[program-manager.md]: /contributors/chairs-and-techleads/program-manager.md
