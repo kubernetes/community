@@ -1807,9 +1807,6 @@ sigs:
       name: Sascha Grunert
       company: SUSE
     tech_leads:
-    - github: alejandrox1
-      name: Jorge Alarcon Ochoa
-      company: Searchable AI
     - github: hasheddan
       name: Daniel Mangum
       company: Upbound
@@ -1817,6 +1814,8 @@ sigs:
       name: Jeremy Rickard
       company: Apple
     emeritus_leads:
+    - github: alejandrox1
+      name: Jorge Alarcon Ochoa
     - github: calebamiles
       name: Caleb Miles
     - github: jdumars
