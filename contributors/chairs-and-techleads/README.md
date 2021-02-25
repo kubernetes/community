@@ -12,15 +12,15 @@ TODO - [Meeting agenda templates]
 ## Important Governance Documentation
   
   - [governance.md]
-  - [sig-governanace.md]
-  - [wg-governanace.md]
+  - [sig-governance.md]
+  - [wg-governance.md]
   
   [Code of Conduct]
   - conduct@kubernetes.io if you need anything from them or to report
   - may have training or guidance - ask!
   
   [Kubernetes values]  
-  [Governance Principles]
+  [Governance principles]
   
   ## Communication and feedback loops:
   
@@ -68,8 +68,8 @@ TODO - [Meeting agenda templates]
 [Mentoring, succession planning, and staffing]: https://github.com/kubernetes/community/tree/master/mentoring
 [Kubernetes values]: https://github.com/kubernetes/community/blob/master/values.md
 [governance.md]: https://github.com/kubernetes/community/blob/master/governance.md
-[sig-governanace.md]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
-[wg-governanace.md]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md
+[sig-governance.md]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
+[wg-governance.md]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md
 [group-mentoring.md]: https://github.com/kubernetes/community/blob/master/mentoring/processes/group-mentoring.md
 [mentoring-programs]: https://github.com/kubernetes/community/tree/master/mentoring/programs
 [maintainers-circle]: https://github.com/cncf/sig-contributor-strategy/tree/master/maintainers-circle
