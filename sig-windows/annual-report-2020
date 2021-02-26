@@ -1,0 +1,85 @@
+# Kubernetes Community Group Annual Reports Template 
+
+Checklist 
+[ ] Read about the process here (https://git.k8s.io/community/committee-steering/governance/annual-reports.md#reporting-process) 
+[x] Copy this template into a new document and share with your mailing list/slack channel/meeting on whatever platform (gdocs, hackmd, etc.) that the team prefers.
+[x] Remove sections that are not applicable (example: if you are a working group, delete the special interest group questions)
+[ ] Pick graphs from Devstats to pull supporting data for your responses. 
+[ ] Schedule a time with your Steering liaison and other Chairs, TLs, and Organizers of your group to check-in on your roles as Chair or Working Group Organizer. If anyone would rather meet 1:1, please have them reach out to the liaison directly, we are happy to. We’d like to talk about: challenges, wins, things you didn’t know before but wish you did, want to continue in the role or help finding a replacement; and lastly any feedback you have for us as a body and how we can help you succeed and feel comfortable in these leadership roles. 
+[ ] PR this document into your community group directory in kubernetes/community (example: sig-architecture/) 
+[ ] by March 8th, 2021
+[ ] titled: annual-report-YEAR.md
+[ ] are there any responses that you’d like to share privately first? steering-private@kubernetes.io or tag your liaison in for discussion. 
+
+# Special Interest Groups:
+(do not copy if you are responding for a working group)
+
+
+# Instructions for this section:
+[ ] each response should have supporting documentation, linked KEPs, graphs, data
+[ ] err on the side of being descriptive with your responses. End users and others that read this might not know our upstream acronyms, shorthand, or where to find a reference. 
+Operational
+
+How are you doing with operational tasks in sig-governance.md?
+Is your README accurate?have a CONTRIBUTING.md file?
+Yes / Yes - README.md is up to date, CONTRIBUTING.md is still accurate but could use some updates.  
+
+All subprojects correctly mapped and listed in sigs.yaml?
+Yes
+
+What’s your meeting culture? Large/small, active/quiet, learnings? Meeting notes up to date? Are you keeping recordings up to date/trends in community members watching recordings?
+Meetings have decent attendance but few active participants. 
+Meeting notes are used during the meetings are up to date. 
+Recordings are up to date but few views 
+
+How does the group get updates, reports, or feedback from subprojects? Are there any springing up or being retired? Are OWNERS files up to date in these areas?
+Owners files are up to date. Existing subprojects are mostly in maintenance mode. We would like to try starting one or two subprojects to gather more interest / new participation in SIG-Windows.
+Same question as above but for working groups.
+N/A
+
+When was your last monthly community-wide update? (provide link to deck and/or recording)
+Sept 17 Slides recording
+Membership
+
+Are all listed SIG leaders (chairs, tech leads, and subproject owners) active?
+Yes
+
+How do you measure membership? By mailing list members, OWNERs, or something else?
+We don’t measure membership.
+
+How does the group measure reviewer and approver bandwidth? Do you need help in any area now? What are you doing about it?
+We are blocked on reviewer/approver bandwidth from other SIGs much more often than reviewer/approver bandwidth in our SIG.
+Is there a healthy onboarding and growth path for contributors in your SIG? What are some activities that the group does to encourage this? What programs are you participating in to grow contributors throughout the contributor ladder?
+We want to focus on this in the next few months. Some ideas we have are pairing with folks and establishing one or two new focused subprojects that will encourage new participants.
+
+What programs do you participate in for new contributors? We’re wanting to groom long-term/dedicated contributors. Are there programs to help with this? Does the group have contributors from multiple companies/affiliations? Can end users/companies contribute in some way that they currently are not?
+Yes, we have contributors from many companies. Current initiatives and project health
+
+[ ] Please include links to KEPs and other supporting information that will be beneficial to multiple types of community members. 
+
+What are initiatives that should be highlighted, lauded, shout out, that your group is proud of? Currently underway? What are some of the longer tail projects that your group is working on?
+
+Containerd support
+Network policy support
+Cluster API support
+Privileged containers
+
+Year to date KEP work review: What’s now stable? Beta? Alpha? Road to alpha?
+
+Alpha / going alpha
+Privileged containers
+Node log viewer
+Beta / going beta
+DSR support
+Stable / going stable
+CSI proxy 
+
+What areas and/or subprojects does the group need the most help with?
+
+E2e tests / coverage / keeping things green
+Testgrid
+Cross-SIG collaboration 
+What's the average open days of a PR and Issue in your group? / what metrics does your group care about and/or measure?
+Average open days for PR is long - mainly due to requiring reviews/approvals from multiple SIGs most of the time.
+
+
