@@ -55,22 +55,22 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fdocs)
 - GitHub Teams:
-    - [@kubernetes/kubernetes-blog](https://github.com/orgs/kubernetes/teams/kubernetes-blog) - Kubernetes blog maintainers
-    - [@kubernetes/sig-docs-de-owners](https://github.com/orgs/kubernetes/teams/sig-docs-de-owners) - German language content
-    - [@kubernetes/sig-docs-en-owners](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners) - English content (default)
-    - [@kubernetes/sig-docs-es-owners](https://github.com/orgs/kubernetes/teams/sig-docs-es-owners) - Spanish language content
-    - [@kubernetes/sig-docs-fr-owners](https://github.com/orgs/kubernetes/teams/sig-docs-fr-owners) - French language content
-    - [@kubernetes/sig-docs-hi-owners](https://github.com/orgs/kubernetes/teams/sig-docs-hi-owners) - Hindi language content
-    - [@kubernetes/sig-docs-id-owners](https://github.com/orgs/kubernetes/teams/sig-docs-id-owners) - Indonesian language content
-    - [@kubernetes/sig-docs-it-owners](https://github.com/orgs/kubernetes/teams/sig-docs-it-owners) - Italian language content
-    - [@kubernetes/sig-docs-ja-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) - Japanese language content
-    - [@kubernetes/sig-docs-ko-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) - Korean language content
-    - [@kubernetes/sig-docs-maintainers](https://github.com/orgs/kubernetes/teams/sig-docs-maintainers) - Documentation maintainers
-    - [@kubernetes/sig-docs-pl-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pl-owners) - Polish language content
-    - [@kubernetes/sig-docs-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) - Documentation PR reviews
-    - [@kubernetes/sig-docs-pt-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) - Portuguese language content
-    - [@kubernetes/sig-docs-uk-owners](https://github.com/orgs/kubernetes/teams/sig-docs-uk-owners) - Ukrainian language content
-    - [@kubernetes/sig-docs-zh-owners](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) - Chinese language content
+    - [@kubernetes/kubernetes-blog](https://github.com/kubernetes/website/blob/master/content/en/blog/OWNERS) - Kubernetes blog maintainers
+    - [@kubernetes/sig-docs-de-owners](https://github.com/kubernetes/website/blob/master/content/de/OWNERS) - German language content
+    - [@kubernetes/sig-docs-en-owners](https://github.com/kubernetes/website/blob/master/content/en/OWNERS) - English content (default)
+    - [@kubernetes/sig-docs-es-owners](https://github.com/kubernetes/website/blob/master/content/es/OWNERS) - Spanish language content
+    - [@kubernetes/sig-docs-fr-owners](https://github.com/kubernetes/website/blob/master/content/fr/OWNERS) - French language content
+    - [@kubernetes/sig-docs-hi-owners](https://github.com/kubernetes/website/blob/master/content/hi/OWNERS) - Hindi language content
+    - [@kubernetes/sig-docs-id-owners](https://github.com/kubernetes/website/blob/master/content/id/OWNERS) - Indonesian language content
+    - [@kubernetes/sig-docs-it-owners](https://github.com/kubernetes/website/blob/master/content/it/OWNERS) - Italian language content
+    - [@kubernetes/sig-docs-ja-owners](https://github.com/kubernetes/website/blob/master/content/ja/OWNERS) - Japanese language content
+    - [@kubernetes/sig-docs-ko-owners](https://github.com/kubernetes/website/blob/master/content/ko/OWNERS) - Korean language content
+    - [@kubernetes/sig-docs-maintainers](https://github.com/kubernetes/website/blob/master/OWNERS) - Documentation maintainers
+    - [@kubernetes/sig-docs-pl-owners](https://github.com/kubernetes/website/blob/master/content/pl/OWNERS) - Polish language content
+    - [@kubernetes/sig-docs-pr-reviews](https://github.com/kubernetes/website/blob/master/OWNERS_ALIASES) - Documentation PR reviews
+    - [@kubernetes/sig-docs-pt-owners](https://github.com/kubernetes/website/blob/master/content/pt/OWNERS) - Portuguese language content
+    - [@kubernetes/sig-docs-uk-owners](https://github.com/kubernetes/website/blob/master/content/uk/OWNERS) - Ukrainian language content
+    - [@kubernetes/sig-docs-zh-owners](https://github.com/kubernetes/website/blob/master/content/zh/OWNERS) - Chinese language content
 - Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
 
 ## Subprojects
