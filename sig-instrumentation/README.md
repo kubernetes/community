@@ -80,9 +80,6 @@ The following [subprojects][subproject-definition] are owned by sig-instrumentat
 ### metrics-server
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/metrics-server/master/OWNERS
-### mutating-trace-admission-controller
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
 ### prometheus-adapter
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes-sigs/prometheus-adapter/master/OWNERS

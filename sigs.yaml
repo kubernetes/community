@@ -1525,9 +1525,6 @@ sigs:
   - name: metrics-server
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/metrics-server/master/OWNERS
-  - name: mutating-trace-admission-controller
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
   - name: prometheus-adapter
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/prometheus-adapter/master/OWNERS
