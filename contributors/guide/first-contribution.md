@@ -99,7 +99,7 @@ by typing the following:
 /sig network
 ```
 
-Follow the link in the SIG name column to reach each SIG'ss README. 
+Follow the link in the SIG name column to reach each SIG's README. 
 
 Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a 
 comment on issues and pull requests for higher visibility.  If you are not sure 
