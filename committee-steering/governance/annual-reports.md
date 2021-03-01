@@ -30,9 +30,14 @@ Committee.
 1. Steering Committee liaison reaches out to group leads to kick off
 2. Chairs/Organizers will:
   - share with their groups (see tips below) and begin to 
-compile the doc due at the end of February 
+compile the doc due April 8th - final version
   - use this [question template]
-  - submit a pull request to the groups documentation in the community repo
+  - submit a pull request with at least the template questions against the set 
+  issue to the groups documentation in the community repo by March 8th
+  - verify that Steering Liaison has reviewed
+  - post a call for comments period with your groups mailing list and a complete 
+  questionnaire; you can follow your charter communication period if you have
+  one but no less than 72 hours 
   - if there are private matters to address with Steering before submitting the 
 pull request, share a copy with your liaison and wait until comments are
 addressed before submitting.
