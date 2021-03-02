@@ -218,6 +218,8 @@ Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [Th
 ### Self-Assigning
 If you think you can fix the issue, assign it to yourself with *just* the `/assign` label. If you cannot self-assign for permissions-related reasons, leave a comment that you'd like to claim it and work on creating a PR.
 
+When an issue already has an assignee, **Do Not** assign it to yourself or create a PR without talking to the existing assignee or going through the [Follow Up](#Step-Five:-Follow-Up) steps as described in this document. Creating a PR, when someone else is working on it, is not a good practice and should be discouraged.
+
 ## Step Five: Follow Up
 ### If no PR is created for an Issue Within the Current Release Cycle
 If you see any issue which is owned by a developer but a PR is not created in 30 days, a Triage engineer should contact the issue owner and ask them to either create a PR or release ownership.
