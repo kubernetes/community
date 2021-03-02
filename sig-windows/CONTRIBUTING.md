@@ -83,7 +83,9 @@ If you modifying an API in the SIG-Windows codebase, make sure you are aware of 
 
 ## Running Tests
 
-For the most up-to-date steps on how to build and run tests, please go to [https://github.com/kubernetes-sigs/windows-testing](https://github.com/kubernetes-sigs/windows-testing). It has everything you need to build and run tests, as well as links to the SIG-Windows configurations used on [TestGrid](https://testgrid.k8s.io/sig-windows).
+For the most up-to-date steps on how to build and run tests, please go to [https://github.com/kubernetes-sigs/windows-testing](https://github.com/kubernetes-sigs/windows-testing). It has everything you need to build and run tests, as well as links to the SIG-Windows configurations used on [TestGrid](https://testgrid.k8s.io/sig-windows).  
+
+Specifically, you need to build the e2e test binary, using https://github.com/kubernetes-sigs/windows-testing/blob/master/README.md#how-do-i-build-the-e2etest-binary, in order to run these tests.
 
 ## Troubleshooting
 
