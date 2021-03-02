@@ -2,8 +2,8 @@
 
 **Authors:**
 
-Irvi Aini ([@irvifa](https://github.com/irvifa))
-Jim Angel ([@jimangel](https://github.com/jimangel))
+Irvi Aini ([@irvifa](https://github.com/irvifa)),
+Jim Angel ([@jimangel](https://github.com/jimangel)),
 Kaitlyn Barnard ([@kbarnard10](https://github.com/kbarnard10))
 
 - [Operational](#operational)
@@ -14,25 +14,27 @@ Kaitlyn Barnard ([@kbarnard10](https://github.com/kbarnard10))
 
 **How are you doing with operational tasks in [sig-governance.md](/committee-steering/governance/sig-governance.md)?**
 
+  - **Is your README accurate? have a CONTRIBUTING.md file?**
+
+    Yes. We also have `Contributing.md` file.
+  - **All subprojects correctly mapped and listed in [sigs.yaml](/sig-list.md)?**
+
+    Yes.
+      
+  - **What’s your meeting culture? Large/small, active/quiet, learnings? Meeting notes up to date?
+    Are you keeping recordings up to date/trends in community members watching recordings?**
+    
+    Quite small (usually 5-10 people) and generally we try to make people feel comfortable to give their opinion.
+    Meeting notes are up to date. We have recording of the meetings uploaded.
+
+
+**How does the group get updates, reports, or feedback from subprojects? Are there any springing up or being retired?
+Are OWNERS files up to date in these areas?**
+
 <!-- TODO -->
 
-**Is your README accurate? have a CONTRIBUTING.md file?**
-
-<!-- TODO -->
-
-**All subprojects correctly mapped and listed in [sigs.yaml](/sig-list.md)?**
-
-<!-- TODO -->
-
-**What’s your meeting culture? Large/small, active/quiet, learnings? Meeting notes up to date? Are you keeping recordings up to date/trends in community members watching recordings?**
-
-<!-- TODO -->
-
-**How does the group get updates, reports, or feedback from subprojects? Are there any springing up or being retired? Are OWNERS files up to date in these areas?**
-
-<!-- TODO -->
-
-**How does the group get updates, reports, or feedback from Working Groups? Are there any springing up or being retired? Are OWNERS files up to date in these areas?**
+**How does the group get updates, reports, or feedback from Working Groups? Are there any springing up or being retired? 
+Are OWNERS files up to date in these areas?**
 
 <!-- TODO -->
 
@@ -48,21 +50,29 @@ Kaitlyn Barnard ([@kbarnard10](https://github.com/kbarnard10))
 
 **How do you measure membership? By mailing list members, OWNERs, or something else?**
 
-<!-- TODO -->
+We don't have an official way of measuring membership.
 
 **How does the group measure reviewer and approver bandwidth? Do you need help in any area now? What are you doing about it?**
 
-<!-- TODO -->
+PR are generally open for anyone to review. We have [PR wrangler rotation](https://github.com/kubernetes/website/wiki/PR-Wranglers).
+In general each of the approver will taking the rotation. Under exceptional circumstances where there's lots of
+pressure for the wrangler, another approver usually will be willing to help.
 
-**Is there a healthy onboarding and growth path for contributors in your SIG? What are some activities that the group does to encourage this? What programs are you participating in to grow contributors throughout the contributor ladder?**
+For technical reviews, other than SIG Docs Tech Leads, we also notify respective SIGs with necessary knowledge of the
+technical aspect of the content.
 
-<!-- TODO -->
+**Is there a healthy onboarding and growth path for contributors in your SIG? 
+What are some activities that the group does to encourage this? 
+What programs are you participating in to grow contributors throughout the contributor ladder?**
+
+There is no official onboarding process.
 
 **What programs do you participate in for new contributors?**
 
 <!-- TODO -->
 
-**Does the group have contributors from multiple companies/affiliations? Can end users/companies contribute in some way that they currently are not?**
+**Does the group have contributors from multiple companies/affiliations? 
+Can end users/companies contribute in some way that they currently are not?**
 
 <!-- TODO -->
 
@@ -70,7 +80,8 @@ Kaitlyn Barnard ([@kbarnard10](https://github.com/kbarnard10))
 
 [ ] Please include links to KEPs and other supporting information that will be beneficial to multiple types of community members.
 
-**What are initiatives that should be highlighted, lauded, shout out, that your group is proud of? Currently underway? What are some of the longer tail projects that your group is working on?**
+**What are initiatives that should be highlighted, lauded, shout out, that your group is proud of? 
+Currently underway? What are some of the longer tail projects that your group is working on?**
 
 <!-- TODO -->
 
