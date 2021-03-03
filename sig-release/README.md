@@ -23,7 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Release Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
-* Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**), SUSE
+* Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**), Red Hat
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
