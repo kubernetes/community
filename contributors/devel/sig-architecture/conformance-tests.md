@@ -312,9 +312,8 @@ To promote a test to the conformance test suite, open a PR as follows:
     than the `framework.It()` function
   - adds a comment immediately before the `ConformanceIt()` call that includes
     all of the required [conformance test comment metadata]
-  - run `bazel build //test/conformance:list_conformance_tests` then
-    `cp bazel-bin/test/conformance/conformance.yaml test/conformance/testdata`
-    which adds the test name to the [conformance.yaml] file
+  - run `hack/update-conformance-yaml.sh` which adds the test name to the [conformance.yaml] file
+    More information [here](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/README.md)
 - add the PR to SIG Architecture's [Conformance Test Review board] in the To
   Triage column
 
