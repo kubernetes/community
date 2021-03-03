@@ -1805,7 +1805,7 @@ sigs:
       company: VMware
     - github: saschagrunert
       name: Sascha Grunert
-      company: SUSE
+      company: Red Hat
     tech_leads:
     - github: hasheddan
       name: Daniel Mangum
