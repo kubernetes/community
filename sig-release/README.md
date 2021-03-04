@@ -60,6 +60,8 @@ The Release Engineering subproject is responsible for the [process/procedures](h
   - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/mdtoc/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/release-sdk/main/OWNERS
+  - https://raw.githubusercontent.com/kubernetes-sigs/release-utils/main/OWNERS
   - https://raw.githubusercontent.com/kubernetes-sigs/zeitgeist/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
