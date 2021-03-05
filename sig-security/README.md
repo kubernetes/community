@@ -40,9 +40,11 @@ The following [subprojects][subproject-definition] are owned by sig-security:
 ### security-audit
 Third Party Security Audit
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/community/master/sig-security/sig-security-external-audit/OWNERS
 ### security-docs
 Security Documents and Documentation
 - **Owners:**
+  - https://raw.githubusercontent.com/kubernetes/community/master/sig-security/sig-security-docs/OWNERS
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

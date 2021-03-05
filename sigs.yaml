@@ -2092,10 +2092,12 @@ sigs:
   subprojects:
   - name: security-audit
     description: Third Party Security Audit
-    owners: []
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-security/sig-security-external-audit/OWNERS
   - name: security-docs
     description: Security Documents and Documentation
-    owners: []
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-security/sig-security-docs/OWNERS
 - dir: sig-service-catalog
   name: Service Catalog
   mission_statement: >
