@@ -81,10 +81,10 @@ Documents and processes related to SIG Release
 - **Owners:**
   - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
 ### hyperkube
+Best-effort maintaining of hyperkube until 1.18 goes EOL 2021-04-30.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/debian-hyperkube-base/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/hyperkube/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/hyperkube/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.18/cluster/images/hyperkube/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/release/master/images/build/debian-hyperkube-base/OWNERS
 ### kubernetes/repo-infra
 Creates and maintains tools and templates for Kubernetes org repositories.
 Includes bazel tooling for managing dependencies for kubernetes/kubernetes
