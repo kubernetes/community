@@ -78,8 +78,8 @@ Contributor Communications focuses on amplifying the success of Kubernetes contr
 ### contributors-documentation
 writes and maintains documentation around contributing to Kubernetes, including the Contributor's Guide, Developer's Guide, and contributor website.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
   - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
+  - https://raw.githubusercontent.com/kubernetes/contributor-site/master/OWNERS
 ### devstats
 Maintains and updates https://k8s.devstats.cncf.io, including taking requests for new charts.
 - **Owners:**
