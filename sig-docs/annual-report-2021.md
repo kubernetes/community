@@ -4,7 +4,10 @@
 
 Irvi Aini ([@irvifa](https://github.com/irvifa)),
 Jim Angel ([@jimangel](https://github.com/jimangel)),
-Kaitlyn Barnard ([@kbarnard10](https://github.com/kbarnard10))
+Karen Bradshaw ([kbhawkey](https://github.com/kbhawkey)),
+Kaitlyn Barnard ([@kbarnard10](https://github.com/kbarnard10)),
+Taylor Dolezal ([onlydole](https://github.com/onlydole)),
+Tim Bannister ([sftim](https://github.com/sftim))
 
 - [Operational](#operational)
 - [Membership](#membership)
@@ -31,12 +34,12 @@ Kaitlyn Barnard ([@kbarnard10](https://github.com/kbarnard10))
 **How does the group get updates, reports, or feedback from subprojects? Are there any springing up or being retired?
 Are OWNERS files up to date in these areas?**
 
-<!-- TODO -->
+Yes it is.
 
 **How does the group get updates, reports, or feedback from Working Groups? Are there any springing up or being retired? 
 Are OWNERS files up to date in these areas?**
 
-<!-- TODO -->
+Yes it is.
 
 **When was your last monthly community-wide update? (provide link to deck and/or recording)**
 
@@ -46,7 +49,7 @@ Are OWNERS files up to date in these areas?**
 
 **Are all listed SIG leaders (chairs, tech leads, and subproject owners) active?**
 
-<!-- TODO -->
+Yes, they are.
 
 **How do you measure membership? By mailing list members, OWNERs, or something else?**
 
@@ -65,11 +68,16 @@ technical aspect of the content.
 What are some activities that the group does to encourage this? 
 What programs are you participating in to grow contributors throughout the contributor ladder?**
 
-There is no official onboarding process.
+There is no official onboarding process. However, the SIG is supportive of new contributors,
+willing to walk through the contribution process and eager to see contributions completed.
+Issues are created regularly and triaged. Issues are also created specifically for new 
+contributors. There are issues labelled for the different contribution areas (web development, 
+blog, first time contributors, task, concept, API, etc) which helps new contributors 
+identify how to get started.
 
 **What programs do you participate in for new contributors?**
 
-<!-- TODO -->
+We have an in person session during the KubeCon.
 
 **Does the group have contributors from multiple companies/affiliations? 
 Can end users/companies contribute in some way that they currently are not?**
@@ -87,7 +95,9 @@ Currently underway? What are some of the longer tail projects that your group is
 
 **Year to date KEP work review: What’s now stable? Beta? Alpha? Road to alpha?**
 
-<!-- TODO -->
+We have ongoing KEP, but we don't have a deadline set on when it should be finished.
+
+- [Doc policies for third party content](https://github.com/kubernetes/enhancements/tree/master/keps/sig-docs/1326-third-party-content-in-docs)
 
 **What areas and/or subprojects does the group need the most help with?**
 
@@ -95,4 +105,9 @@ Currently underway? What are some of the longer tail projects that your group is
 
 **What's the average open days of a PR and Issue in your group? / what metrics does your group care about and/or measure?**
 
-<!-- TODO -->
+We have the information from [devstat](https://k8s.devstats.cncf.io/d/25/open-pr-age-by-repository-group?orgId=1&var-period=q&var-repogroup_name=SIG%20Docs&var-kind_name=All):
+
+![Devstat 2020](devstats/devstats-quarter-2021.png)
+
+For example, based on 10/01/2020 data, we have:
+Average number of opened PRs 1.23 K with the median opened PRs age 3 days 13 hours 52 minutes 10 seconds.
