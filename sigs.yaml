@@ -1234,8 +1234,8 @@ sigs:
     description: writes and maintains documentation around contributing to Kubernetes,
       including the Contributor's Guide, Developer's Guide, and contributor website.
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/contributor-site/master/OWNERS
   - name: devstats
     description: Maintains and updates https://k8s.devstats.cncf.io, including taking
       requests for new charts.
