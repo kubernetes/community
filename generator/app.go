@@ -23,6 +23,7 @@ import (
 	"net/url"
 	"os"
 	"path/filepath"
+	"regexp"
 	"sort"
 	"strings"
 	"text/template"
@@ -47,6 +48,9 @@ const (
 	endCustomMarkdown   = "<!-- END CUSTOM CONTENT -->"
 	beginCustomYaml     = "## BEGIN CUSTOM CONTENT"
 	endCustomYaml       = "## END CUSTOM CONTENT"
+
+	regexRawGitHubURL = "https://raw.githubusercontent.com/(?P<org>[^/]+)/(?P<repo>[^/]+)/(?P<branch>[^/]+)/(?P<path>.*)"
+	regexGitHubURL    = "https://github.com/(?P<org>[^/]+)/(?P<repo>[^/]+)/(blob|tree)/(?P<branch>[^/]+)/(?P<path>.*)"
 )
 
 var (
@@ -369,6 +373,37 @@ func getExistingContent(path string, fileFormat string) (string, error) {
 var funcMap = template.FuncMap{
 	"tzUrlEncode": tzURLEncode,
 	"trimSpace":   strings.TrimSpace,
+	"githubURL":   githubURL,
+	"orgRepoPath": orgRepoPath,
+}
+
+// githubURL converts a raw GitHub url (links directly to file contents) into a
+// regular GitHub url (links to Code view for file), otherwise returns url untouched
+func githubURL(url string) string {
+	re := regexp.MustCompile(regexRawGitHubURL)
+	mat := re.FindStringSubmatchIndex(url)
+	if mat == nil {
+		return url
+	}
+	result := re.ExpandString([]byte{}, "https://github.com/${org}/${repo}/blob/${branch}/${path}", url, mat)
+	return string(result)
+}
+
+// orgRepoPath converts either
+//  - a regular GitHub url of form https://github.com/org/repo/blob/branch/path/to/file
+//  - a raw GitHub url of form https://raw.githubusercontent.com/org/repo/branch/path/to/file
+// to a string of form 'org/repo/path/to/file'
+func orgRepoPath(url string) string {
+	for _, regex := range []string{regexRawGitHubURL, regexGitHubURL} {
+		re := regexp.MustCompile(regex)
+		mat := re.FindStringSubmatchIndex(url)
+		if mat == nil {
+			continue
+		}
+		result := re.ExpandString([]byte{}, "${org}/${repo}/${path}", url, mat)
+		return string(result)
+	}
+	return url
 }
 
 // tzUrlEncode returns a url encoded string without the + shortcut. This is
@@ -525,6 +560,7 @@ func main() {
 		log.Fatal(err)
 	}
 
+	fmt.Println("Generating group READMEs")
 	for prefix, groups := range ctx.PrefixToGroupMap() {
 		err = createGroupReadme(groups, prefix)
 		if err != nil {

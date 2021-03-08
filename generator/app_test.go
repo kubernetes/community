@@ -236,3 +236,73 @@ func TestFullGeneration(t *testing.T) {
 		}
 	}
 }
+
+func TestGitHubURL(t *testing.T) {
+	cases := []struct {
+		name     string
+		url      string
+		expected string
+	}{
+		{
+			name:     "kubernetes-sigs root raw github url",
+			url:      "https://raw.githubusercontent.com/kubernetes-sigs/boskos/main/OWNERS",
+			expected: "https://github.com/kubernetes-sigs/boskos/blob/main/OWNERS",
+		},
+		{
+			name:     "kubernetes non-root raw github url",
+			url:      "https://raw.githubusercontent.com/kubernetes/kubernetes/main/test/OWNERS",
+			expected: "https://github.com/kubernetes/kubernetes/blob/main/test/OWNERS",
+		},
+		{
+			name:     "kubernetes github url should be unchanged",
+			url:      "https://github.com/kubernetes/kubernetes/blob/main/test/OWNERS",
+			expected: "https://github.com/kubernetes/kubernetes/blob/main/test/OWNERS",
+		},
+		{
+			name:     "non-github url should be unchanged",
+			url:      "https://viewsource.com/github/kubernetes/community/generator/app.go",
+			expected: "https://viewsource.com/github/kubernetes/community/generator/app.go",
+		},
+	}
+	for _, c := range cases {
+		actual := githubURL(c.url)
+		if actual != c.expected {
+			t.Errorf("FAIL %s: got: '%s' but expected: '%s'", c.name, actual, c.expected)
+		}
+	}
+}
+
+func TestOrgRepoPath(t *testing.T) {
+	cases := []struct {
+		name     string
+		url      string
+		expected string
+	}{
+		{
+			name:     "kubernetes-sigs root raw github url",
+			url:      "https://raw.githubusercontent.com/kubernetes-sigs/boskos/main/OWNERS",
+			expected: "kubernetes-sigs/boskos/OWNERS",
+		},
+		{
+			name:     "kubernetes non-root raw github url",
+			url:      "https://raw.githubusercontent.com/kubernetes/kubernetes/main/test/OWNERS",
+			expected: "kubernetes/kubernetes/test/OWNERS",
+		},
+		{
+			name:     "kubernetes github url",
+			url:      "https://github.com/kubernetes/kubernetes/blob/main/test/OWNERS",
+			expected: "kubernetes/kubernetes/test/OWNERS",
+		},
+		{
+			name:     "non-github url should be unchanged",
+			url:      "https://viewsource.com/github/kubernetes/community/generator/app.go",
+			expected: "https://viewsource.com/github/kubernetes/community/generator/app.go",
+		},
+	}
+	for _, c := range cases {
+		actual := orgRepoPath(c.url)
+		if actual != c.expected {
+			t.Errorf("FAIL %s: got: '%s' but expected: '%s'", c.name, actual, c.expected)
+		}
+	}
+}
