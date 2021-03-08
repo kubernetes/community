@@ -155,19 +155,22 @@ func TestGroupDirName(t *testing.T) {
 func TestCreateGroupReadmes(t *testing.T) {
 	baseGeneratorDir = "generated"
 	templateDir = "../../generator"
+	const groupType = "sig"
 
-	groups := []Group{
-		{Name: "Foo"},
-		{Name: "Bar"},
+	groups := []Group{}
+	for _, n := range []string{"Foo", "Bar"} {
+		g := Group{Name: n}
+		g.Dir = g.DirName(groupType)
+		groups = append(groups, g)
 	}
 
-	err := createGroupReadme(groups, "sig")
+	err := createGroupReadme(groups, groupType)
 	if err != nil {
 		t.Fatal(err)
 	}
 
 	for _, group := range groups {
-		path := filepath.Join(baseGeneratorDir, group.DirName("sig"), "README.md")
+		path := filepath.Join(baseGeneratorDir, group.DirName(groupType), "README.md")
 		if !pathExists(path) {
 			t.Fatalf("%s should exist", path)
 		}

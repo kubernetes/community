@@ -1,5 +1,19 @@
 sigs:
-  - name: Foo
-  - name: Bar
+  - dir: sig-foo
+    name: Foo
+    label: foo
+    charter_link: foo-charter
+    mission_statement: covers foo
+    subprojects:
+    - name: sub-foo
+  - dir: sig-bar
+    name: Bar
+    label: bar
+    charter_link: charter-bar
+    mission_statement: owns areas related to bar
+    subprojects:
+    - name: sub-bar
 workinggroups:
-  - name: Baz
+  - dir: wg-baz
+    name: Baz
+    label: baz
