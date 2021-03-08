@@ -76,7 +76,7 @@ The following [subprojects][subproject-definition] are owned by sig-{{.Label}}:
 {{- end }}
 - **Owners:**
 {{- range .Owners }}
-  - {{.}}
+  - [{{trimSuffix (orgRepoPath .) "/OWNERS"}}]({{githubURL .}})
 {{- end }}
 {{- if .Contact }}
 - **Contact:**

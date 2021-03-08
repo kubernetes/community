@@ -374,6 +374,7 @@ func getExistingContent(path string, fileFormat string) (string, error) {
 var funcMap = template.FuncMap{
 	"tzUrlEncode": tzURLEncode,
 	"trimSpace":   strings.TrimSpace,
+	"trimSuffix":  strings.TrimSuffix,
 	"githubURL":   githubURL,
 	"orgRepoPath": orgRepoPath,
 }
