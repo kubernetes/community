@@ -34,7 +34,7 @@ workflow and related practices, including cross-SIG coordination and communicati
 the SIG.
 - They are willing to observe current processes and development practices and listen to 
 SIG leads and contributors before making any recommendations. 
-- They're involved in the day-to-day workings of the SIG—attending meetings, following 
+- They're involved in the day-to-day workings of the SIG—attending (or in some cases hosting) meetings, following 
 discussions on Slack, learning about the priorities and technical responsibilities and plans 
 for the group. This heightens their ability to make relevant suggestions and decisions.
 
