@@ -49,7 +49,8 @@ for feedback and measuring impact with metrics.
 - Coaching/mentoring other SIG leads and contributors to facilitate processes, meetings, and 
 activities that drive achievement of delivery outcomes.
 - Guiding their SIG to adopt prioritisation frameworks that support delivery of the highest-
-value, highest-impact work.
+value, highest-impact work. Ensuring the reliability and ongoing maintenance work is prioritised
+and accounted for.
 - Ensuring their SIG is following established practices in Kubernetes, from adherence to release
 deadlines to enforcing the Code of Conduct.
 - Advising the SIG on tooling that supports delivery effectiveness and smooth workflows, such as
