@@ -6,6 +6,8 @@ sigs:
     mission_statement: covers foo
     subprojects:
     - name: sub-foo
+      owners:
+      - "https://raw.githubusercontent.com/org/foo/main/OWNERS"
   - dir: sig-bar
     name: Bar
     label: bar
@@ -13,6 +15,8 @@ sigs:
     mission_statement: owns areas related to bar
     subprojects:
     - name: sub-bar
+      owners:
+      - "https://raw.githubusercontent.com/org/bar/main/test/OWNERS"
 workinggroups:
   - dir: wg-baz
     name: Baz
