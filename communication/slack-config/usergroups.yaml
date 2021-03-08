@@ -182,18 +182,18 @@ usergroups:
       - mrbobbytables
       - nikhita
       - paris
-      
+
   - name: grafana-operator-maintainers
-      long_name: Grafana Operator Maintainers
-      description: Support group for Grafana Operator.
-      channels:
-        - grafana-operator
-      members:
-        - david-martin
-        - grdryn
-        - hubertstefanski
-        - pb82
-        - r-lawton
-        - robshelly
-        - vladimirmukhin
-        - wurbanski
+    long_name: Grafana Operator Maintainers
+    description: Support group for Grafana Operator.
+    channels:
+      - grafana-operator
+    members:
+      - david-martin
+      - grdryn
+      - hubertstefanski
+      - pb82
+      - r-lawton
+      - robshelly
+      - vladimirmukhin
+      - wurbanski
