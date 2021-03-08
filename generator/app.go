@@ -250,7 +250,8 @@ func (c *Context) Sort() {
 func (c *Context) Validate() []error {
 	errors := []error{}
 	people := make(map[string]Person)
-	rawGitHubURL := regexp.MustCompile(regexRawGitHubURL)
+	reRawGitHubURL := regexp.MustCompile(regexRawGitHubURL)
+	reGitHubURL := regexp.MustCompile(regexGitHubURL)
 	for prefix, groups := range c.PrefixToGroupMap() {
 		for _, group := range groups {
 			expectedDir := group.DirName(prefix)
@@ -309,7 +310,7 @@ func (c *Context) Validate() []error {
 					errors = append(errors, fmt.Errorf("%s/%s: subproject has no owners", group.Dir, subproject.Name))
 				}
 				for _, ownerURL := range subproject.Owners {
-					if !rawGitHubURL.MatchString(ownerURL) {
+					if !reRawGitHubURL.MatchString(ownerURL) && !reGitHubURL.MatchString(ownerURL) {
 						errors = append(errors, fmt.Errorf("%s/%s: subproject owners should match regexp %s, found: %s", group.Dir, subproject.Name, regexRawGitHubURL, ownerURL))
 					}
 				}
