@@ -14,7 +14,7 @@ clarify expectations associated with the role.
 Kubernetes SIGs may choose to implement the Program Manager role as part of their 
 [governance model](https://git.k8s.io/community/committee-steering/governance/sig-governance.md#roles)
 and document the role in their SIG charters. SIG Chairs choose program managers and 
-endow them with the same set of permissions. Based on overall SIG size, 2-3 program 
+endow them with the same set of permissions. Based on overall SIG size, 1-3 program 
 managers are recommended to support the SIG's program and process-related efforts.  
 
 Program Managers are generally responsible for driving process development and improvements 
