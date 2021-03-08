@@ -323,9 +323,10 @@ worked before the change.
   values of a given field will not be able to handle the new values. However, removing a
   value from an enumerated set *can* be a compatible change, if handled properly (treat the
   removed value as deprecated but allowed). For enumeration-like fields that expect to add
-  new values in the future, such as `reason` fields, please document that expectation clearly
-  in the API field descriptions. Clients should treat such sets of values as potentially
-  open-ended.
+  new values in the future, such as `reason` fields, document that expectation clearly
+  in the API field description in the first release the field is made available,
+  and describe how clients should treat an unknown value. Clients should treat such 
+  sets of values as potentially open-ended.
 
 * For [Unions](api-conventions.md#unions), sets of fields where at most one should
   be set, it is acceptable to add a new option to the union if the [appropriate
@@ -1035,7 +1036,8 @@ to the following existing enum field:
 type Frobber struct {
   // restartPolicy may be set to "Always" or "Never".
   // Additional policies may be defined in the future.
-  // Unrecognized policies should be treated as "Never".
+  // Clients should expect to handle additional values,
+  // and treat unrecognized values in this field as "Never".
   RestartPolicy string `json:"policy"
 }
 ```
@@ -1059,6 +1061,9 @@ Release 1:
 
 * Only allow the new enum value when updating existing objects that already contain the new enum value
 * Disallow it in other cases (creation, and update of objects that do not already contain the new enum value)
+* Verify that known clients handle the new value as expected, honoring the new value or using previously defined "unknown value" behavior,
+  (depending on whether the associated feature gate is enabled or not)
+
 
 Release 2:
 
@@ -1122,7 +1127,7 @@ The recommended place to do this is in the REST storage strategy's Validate/Vali
     func validationOptionsForFrobber(newFrobber, oldFrobber *api.Frobber) validation.FrobberValidationOptions {
       opts := validation.FrobberValidationOptions{
         // allow if the feature is enabled
-        AllowRestartPolicyOnTuesday: utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D)
+        AllowRestartPolicyOnTuesday: utilfeature.DefaultFeatureGate.Enabled(features.FrobberRestartPolicyOnTuesday)
       }
 
       if oldFrobber == nil {
