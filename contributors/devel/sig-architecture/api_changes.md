@@ -19,8 +19,12 @@ found at [API Conventions](api-conventions.md).
   - [Edit types.go](#edit-typesgo-1)
 - [Edit validation.go](#edit-validationgo)
 - [Edit version conversions](#edit-version-conversions)
-- [Generate protobuf objects](#generate-protobuf-objects)
-- [Edit json (un)marshaling code](#edit-json-unmarshaling-code)
+- [Generate Code](#generate-code)
+  - [Generate protobuf objects](#generate-protobuf-objects)
+  - [Generate Clientset](#generate-clientset)
+  - [Generate Listers](#generate-listers)
+  - [Generate Informers](#generate-informers)
+  - [Edit json (un)marshaling code](#edit-json-unmarshaling-code)
 - [Making a new API Version](#making-a-new-api-version)
 - [Making a new API Group](#making-a-new-api-group)
 - [Update the fuzzer](#update-the-fuzzer)
@@ -30,6 +34,9 @@ found at [API Conventions](api-conventions.md).
 - [Examples and docs](#examples-and-docs)
 - [Alpha, Beta, and Stable Versions](#alpha-beta-and-stable-versions)
   - [Adding Unstable Features to Stable Versions](#adding-unstable-features-to-stable-versions)
+    - [New field in existing API version](#new-field-in-existing-api-version)
+    - [New enum value in existing field](#new-enum-value-in-existing-field)
+    - [New alpha API version](#new-alpha-api-version)
 
 ## So you want to change the API?
 
@@ -316,9 +323,10 @@ worked before the change.
   values of a given field will not be able to handle the new values. However, removing a
   value from an enumerated set *can* be a compatible change, if handled properly (treat the
   removed value as deprecated but allowed). For enumeration-like fields that expect to add
-  new values in the future, such as `reason` fields, please document that expectation clearly
-  in the API field descriptions. Clients should treat such sets of values as potentially
-  open-ended.
+  new values in the future, such as `reason` fields, document that expectation clearly
+  in the API field description in the first release the field is made available,
+  and describe how clients should treat an unknown value. Clients should treat such 
+  sets of values as potentially open-ended.
 
 * For [Unions](api-conventions.md#unions), sets of fields where at most one should
   be set, it is acceptable to add a new option to the union if the [appropriate
@@ -880,7 +888,10 @@ users are only able or willing to accept a released version of Kubernetes. In
 that case, the developer has a few options, both of which require staging work
 over several releases.
 
-#### Alpha field in existing API version
+The mechanism used depends on whether a new field is being added,
+or a new value is being permitted in an existing field.
+
+#### New field in existing API version
 
 Previously, annotations were used for experimental alpha features, but are no longer recommended for several reasons:
 
@@ -1013,6 +1024,159 @@ In future Kubernetes versions:
       Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
       
       // +k8s:deprecated=width,protobuf=3
+    }
+    ```
+
+#### New enum value in existing field
+
+A developer is considering adding a new allowed enum value of `"OnlyOnTuesday"`
+to the following existing enum field:
+
+```go
+type Frobber struct {
+  // restartPolicy may be set to "Always" or "Never".
+  // Additional policies may be defined in the future.
+  // Clients should expect to handle additional values,
+  // and treat unrecognized values in this field as "Never".
+  RestartPolicy string `json:"policy"
+}
+```
+
+Older versions of expected API clients must be able handle the new value in a safe way:
+
+* If the enum field drives behavior of a single component, ensure all versions of that component
+  that will encounter API objects containing the new value handle it properly or fail safe.
+  For example, a new allowed value in a `Pod` enum field consumed by the kubelet must be handled
+  safely by kubelets up to two versions older than the first API server release that allowed the new value.
+* If an API drives behavior that is implemented by external clients (like `Ingress` or `NetworkPolicy`),
+  the enum field must explicitly indicate that additional values may be allowed in the future,
+  and define how unrecognized values must be handled by clients. If this was not done in the first release
+  containing the enum field, it is not safe to add new values that can break existing clients.
+
+If expected API clients safely handle the new enum value, the next requirement is to begin allowing it
+in a way that does not break validation of that object by a previous API server.
+This requires at least two releases to accomplish safely:
+
+Release 1:
+
+* Only allow the new enum value when updating existing objects that already contain the new enum value
+* Disallow it in other cases (creation, and update of objects that do not already contain the new enum value)
+* Verify that known clients handle the new value as expected, honoring the new value or using previously defined "unknown value" behavior,
+  (depending on whether the associated feature gate is enabled or not)
+
+
+Release 2:
+
+* Allow the new enum value in create and update scenarios
+
+This ensures a cluster with multiple servers at skewed releases (which happens during a rolling upgrade),
+will not allow data to be persisted which the previous release of the API server would choke on.
+
+Typically, a feature gate is used to do this rollout, starting in alpha and disabled by default in release 1,
+and graduating to beta and enabled by default in release 2.
+
+1. Add a feature gate to the API server to control enablement of the new enum value (and associated function):
+
+    In [staging/src/k8s.io/apiserver/pkg/features/kube_features.go](https://git.k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/features/kube_features.go):
+
+    ```go
+    // owner: @you
+    // alpha: v1.11
+    //
+    // Allow OnTuesday restart policy in frobbers.
+    FrobberRestartPolicyOnTuesday utilfeature.Feature = "FrobberRestartPolicyOnTuesday"
+    
+    var defaultKubernetesFeatureGates = map[utilfeature.Feature]utilfeature.FeatureSpec{
+      ...
+      FrobberRestartPolicyOnTuesday: {Default: false, PreRelease: utilfeature.Alpha},
+    }
+    ```
+
+2. Update the documentation on the API type:
+
+    * include details about the alpha-level in the field description
+    
+    ```go
+    type Frobber struct {
+      // restartPolicy may be set to "Always" or "Never" (or "OnTuesday" if the alpha "FrobberRestartPolicyOnTuesday" feature is enabled).
+      // Additional policies may be defined in the future.
+      // Unrecognized policies should be treated as "Never".
+      RestartPolicy string `json:"policy"
+    }
+    ```
+
+3. When validating the object, determine whether the new enum value should be allowed.
+This prevents new usage of the new value when the feature is disabled, while ensuring existing data is preserved.
+Ensuring existing data is preserved is needed so that when the feature is enabled by default in a future version *n*
+and data is unconditionally allowed to be persisted in the field, an *n-1* API server
+(with the feature still disabled by default) will not choke on validation.
+The recommended place to do this is in the REST storage strategy's Validate/ValidateUpdate methods:
+
+    ```go
+    func (frobberStrategy) Validate(ctx genericapirequest.Context, obj runtime.Object) field.ErrorList {
+      frobber := obj.(*api.Frobber)
+      return validation.ValidateFrobber(frobber, validationOptionsForFrobber(frobber, nil))
+    }
+    
+    func (frobberStrategy) ValidateUpdate(ctx genericapirequest.Context, obj, old runtime.Object) field.ErrorList {
+      newFrobber := obj.(*api.Frobber)
+      oldFrobber := old.(*api.Frobber)
+      return validation.ValidateFrobberUpdate(newFrobber, oldFrobber, validationOptionsForFrobber(newFrobber, oldFrobber))
+    }
+
+    func validationOptionsForFrobber(newFrobber, oldFrobber *api.Frobber) validation.FrobberValidationOptions {
+      opts := validation.FrobberValidationOptions{
+        // allow if the feature is enabled
+        AllowRestartPolicyOnTuesday: utilfeature.DefaultFeatureGate.Enabled(features.FrobberRestartPolicyOnTuesday)
+      }
+
+      if oldFrobber == nil {
+        // if there's no old object, use the options based solely on feature enablement
+        return opts
+      }
+
+      if oldFrobber.RestartPolicy == api.RestartPolicyOnTuesday {
+        // if the old object already used the enum value, continue to allow it in the new object
+        opts.AllowRestartPolicyOnTuesday = true
+      }
+      return opts
+    }
+    ```
+
+4. In validation, validate the enum value based on the passed-in options:
+
+    ```go
+    func ValidateFrobber(f *api.Frobber, opts FrobberValidationOptions) field.ErrorList {
+      ...
+      validRestartPolicies := sets.NewString(RestartPolicyAlways, RestartPolicyNever)
+      if opts.AllowRestartPolicyOnTuesday {
+        validRestartPolicies.Insert(RestartPolicyOnTuesday)
+      }
+
+      if f.RestartPolicy == RestartPolicyOnTuesday && !opts.AllowRestartPolicyOnTuesday {
+        allErrs = append(allErrs, field.Invalid(field.NewPath("restartPolicy"), f.RestartPolicy, "only allowed if the FrobberRestartPolicyOnTuesday feature is enabled"))
+      } else if !validRestartPolicies.Has(f.RestartPolicy) {
+        allErrs = append(allErrs, field.NotSupported(field.NewPath("restartPolicy"), f.RestartPolicy, validRestartPolicies.List()))
+      }
+      ...
+    }
+    ```
+
+5. After at least one release, the feature can be promoted to beta or GA and enabled by default.
+
+    In [staging/src/k8s.io/apiserver/pkg/features/kube_features.go](https://git.k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/features/kube_features.go):
+
+    ```go
+    // owner: @you
+    // alpha: v1.11
+    // beta: v1.12
+    //
+    // Allow OnTuesday restart policy in frobbers.
+    FrobberRestartPolicyOnTuesday utilfeature.Feature = "FrobberRestartPolicyOnTuesday"
+    
+    var defaultKubernetesFeatureGates = map[utilfeature.Feature]utilfeature.FeatureSpec{
+      ...
+      FrobberRestartPolicyOnTuesday: {Default: true, PreRelease: utilfeature.Beta},
     }
     ```
 
