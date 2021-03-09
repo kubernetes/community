@@ -1502,10 +1502,6 @@ sigs:
   - name: custom-metrics-apiserver
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/custom-metrics-apiserver/master/OWNERS
-  - name: heapster
-    description: (Deprecated)
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/heapster/master/OWNERS
   - name: instrumentation-tools
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/instrumentation-tools/master/OWNERS
@@ -1529,10 +1525,6 @@ sigs:
   - name: metrics-server
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/metrics-server/master/OWNERS
-  - name: mutating-trace-admission-controller
-    description: (Deprecated)
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/mutating-trace-admission-controller/master/OWNERS
   - name: prometheus-adapter
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/prometheus-adapter/master/OWNERS
