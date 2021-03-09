@@ -43,20 +43,20 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-autoscaling:
 ### addon-resizer
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/autoscaler/master/addon-resizer/OWNERS
+  - [kubernetes/autoscaler/addon-resizer](https://github.com/kubernetes/autoscaler/blob/master/addon-resizer/OWNERS)
 ### cluster-autoscaler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+  - [kubernetes/autoscaler](https://github.com/kubernetes/autoscaler/blob/master/OWNERS)
 ### horizontal-pod-autoscaler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
+  - [kubernetes/api/autoscaling](https://github.com/kubernetes/api/blob/master/autoscaling/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/podautoscaler](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/podautoscaler/OWNERS)
 ### scale-client
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/client-go/master/scale/OWNERS
+  - [kubernetes/client-go/scale](https://github.com/kubernetes/client-go/blob/master/scale/OWNERS)
 ### vertical-pod-autoscaler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+  - [kubernetes/autoscaler](https://github.com/kubernetes/autoscaler/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

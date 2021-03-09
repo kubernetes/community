@@ -48,22 +48,22 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-multicluster:
 ### Kubefed
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/kubefed/master/OWNERS
+  - [kubernetes-sigs/kubefed](https://github.com/kubernetes-sigs/kubefed/blob/master/OWNERS)
 ### cluster-registry
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS
+  - [kubernetes/cluster-registry](https://github.com/kubernetes/cluster-registry/blob/master/OWNERS)
 ### federation-v1
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
+  - [kubernetes/federation](https://github.com/kubernetes/federation/blob/master/OWNERS)
 ### kubemci
 - **Owners:**
-  - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
+  - [GoogleCloudPlatform/k8s-multicluster-ingress](https://github.com/GoogleCloudPlatform/k8s-multicluster-ingress/blob/master/OWNERS)
 ### mcs-api
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
+  - [kubernetes-sigs/mcs-api](https://github.com/kubernetes-sigs/mcs-api/blob/master/OWNERS)
 ### work-api
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/work-api/master/OWNERS
+  - [kubernetes-sigs/work-api](https://github.com/kubernetes-sigs/work-api/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

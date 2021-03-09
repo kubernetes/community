@@ -32,7 +32,7 @@ The following [subprojects][subproject-definition] are owned by the Product Secu
 ### security
 Policies and documentation for the Product Security Committee
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/security/master/OWNERS
+  - [kubernetes/security](https://github.com/kubernetes/security/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
