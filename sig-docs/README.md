@@ -81,13 +81,13 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 The following [subprojects][subproject-definition] are owned by sig-docs:
 ### kubernetes-blog
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
+  - [kubernetes/website/content/en/blog](https://github.com/kubernetes/website/blob/master/content/en/blog/OWNERS)
 ### reference-docs
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/reference-docs/master/OWNERS
+  - [kubernetes-sigs/reference-docs](https://github.com/kubernetes-sigs/reference-docs/blob/master/OWNERS)
 ### website
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+  - [kubernetes/website](https://github.com/kubernetes/website/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

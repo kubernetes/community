@@ -53,16 +53,16 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 The following [subprojects][subproject-definition] are owned by sig-windows:
 ### windows-gmsa
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/windows-gmsa/master/OWNERS
+  - [kubernetes-sigs/windows-gmsa](https://github.com/kubernetes-sigs/windows-gmsa/blob/master/OWNERS)
 ### windows-samples
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-samples/master/OWNERS
+  - [kubernetes-sigs/sig-windows-samples](https://github.com/kubernetes-sigs/sig-windows-samples/blob/master/OWNERS)
 ### windows-testing
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
+  - [kubernetes-sigs/windows-testing](https://github.com/kubernetes-sigs/windows-testing/blob/master/OWNERS)
 ### windows-tools
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
+  - [kubernetes-sigs/sig-windows-tools](https://github.com/kubernetes-sigs/sig-windows-tools/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

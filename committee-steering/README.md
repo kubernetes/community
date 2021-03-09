@@ -42,11 +42,11 @@ The following [subprojects][subproject-definition] are owned by the Steering Com
 ### funding
 Funding requests for project infrastructure, events, and consulting
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/funding/master/OWNERS
+  - [kubernetes/funding](https://github.com/kubernetes/funding/blob/master/OWNERS)
 ### steering
 Steering Committee policy and documentation
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
+  - [kubernetes/steering](https://github.com/kubernetes/steering/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

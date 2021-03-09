@@ -55,11 +55,11 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-service-catalog:
 ### minibroker
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/minibroker/master/OWNERS
+  - [kubernetes-sigs/minibroker](https://github.com/kubernetes-sigs/minibroker/blob/master/OWNERS)
 ### service-catalog
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/go-open-service-broker-client/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/service-catalog/master/OWNERS
+  - [kubernetes-sigs/go-open-service-broker-client](https://github.com/kubernetes-sigs/go-open-service-broker-client/blob/master/OWNERS)
+  - [kubernetes-sigs/service-catalog](https://github.com/kubernetes-sigs/service-catalog/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
