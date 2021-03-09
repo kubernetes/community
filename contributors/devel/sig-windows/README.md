@@ -19,15 +19,15 @@ We have a generic getting started guide here: https://github.com/kubernetes/comm
 
 ## Test grid
 
-The Kubernetes test-grid needs continuos monitoring and triage.  If you are interested in helping us maintain this, 
-check https://testgrid.k8s.io/sig-windows-signal, and contact any of the sig-windows leads.  This is a great place for begginers
+The Kubernetes test-grid needs continuous monitoring and triage.  If you are interested in helping us maintain this, 
+check https://testgrid.k8s.io/sig-windows-signal, and contact any of the sig-windows leads.  This is a great place for beginners
 to get started, as it involves reading through logs, looking for failures, and making small patches/telling contributors about
 areas that need help.
 
 ## Developer recipes and automation 
 
 Developing on windows takes alot of manual setup, and a good place to help is making sure we have automation available for spinning up 
-windows VMs from source.  This is also a great place to get started as a begginer.
+windows VMs from source.  This is also a great place to get started as a beginner.
 
 ## E2Es and Conformance testing
 
@@ -51,8 +51,8 @@ Theres lots of evolution in the networking landscape for windows:
 The windows group dives into privileged containers (for windows) as well as maintains the csi-proxy, a way to run "privileged" storage containers
 that implement CSI.  Reading about https://github.com/kubernetes-csi/csi-proxy, and looking at the in-tree windows storage provider code is a good place to start here.
 
-## Priveliged containers and beyond
+## Privileged containers and beyond
 
 Windows is re-inventing many native linux concepts to enable linux-idioms in the Windows ecosystem.  Experimenting with topics like 
-GMSA, priveliged containers, containerd integration, devices, and other advanced windows concepts might be a great place for a newcomer
+GMSA, privileged containers, containerd integration, devices, and other advanced windows concepts might be a great place for a newcomer
 with domain experience (i.e. an ActiveDirectory user without K8s experience) to get involved and start contributing. 
