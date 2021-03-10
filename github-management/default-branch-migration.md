@@ -128,7 +128,7 @@ Include the link to the [GitHub instructions to rename your local branch].
 [kubernetes/test-infra#20669]: https://github.com/kubernetes/test-infra/pull/20669
 [kubernetes/test-infra#20675]: https://github.com/kubernetes/test-infra/pull/20675
 [`status-reconciler`]: https://github.com/kubernetes/test-infra/tree/master/prow/cmd/status-reconciler
-[`branch_protection]: https://github.com/kubernetes/test-infra/blob/ca6273046b355d38eade4c4bd435bd13fbb55043/config/prow/config.yaml#L131
+[`branch_protection`]: https://github.com/kubernetes/test-infra/blob/ca6273046b355d38eade4c4bd435bd13fbb55043/config/prow/config.yaml#L131
 [`milestone_applier`]: https://github.com/kubernetes/test-infra/blob/ca6273046b355d38eade4c4bd435bd13fbb55043/config/prow/plugins.yaml#L324
 [official instructions]: https://github.com/github/renaming#renaming-existing-branches
 [GitHub instructions to rename your local branch]: https://docs.github.com/en/github/administering-a-repository/renaming-a-branch#updating-a-local-clone-after-a-branch-name-changes
