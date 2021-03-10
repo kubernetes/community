@@ -98,6 +98,9 @@ kubetest --test --test_args="--ginkgo.focus=\[Feature:Performance\]" --provider=
 # Conversely, exclude tests that match the regex "Pods.*env"
 kubetest --test --test_args="--ginkgo.skip=Pods.*env"
 
+# Exclude tests tha require a certain minimum version of the kubelet
+kubetest --test --test_args="--ginkgo.skip=\[MinimumKubeletVersion:1.20\]"
+
 # Run tests in parallel, skip any that must be run serially
 GINKGO_PARALLEL=y kubetest --test --test_args="--ginkgo.skip=\[Serial\]"
 
@@ -441,12 +444,18 @@ breaking changes, it does *not* block PR merges, and thus should run in
 some separate test suites owned by the feature owner(s)
 (see [Continuous Integration](#continuous-integration) below).
 
+  - `[MinimumKubeletVersion:.+]`: This label must be set on tests that require
+a minimum version of the kubelet. Invocations of the test suite can then decide
+to `skip` the same tests if kubelets in the cluster do not satisfy the requirement.
+For example, `[MinimumKubeletVersion:(1.20|1.21)]` would `skip` tests with minimum
+kubelet versions `1.20` and `1.21`.
+
   - `[Conformance]`: Designate that this test is included in the Conformance
 test suite for [Conformance Testing](../sig-architecture/conformance-tests.md). This test must
 meet a number of [requirements](../sig-architecture/conformance-tests.md#conformance-test-requirements)
 to be eligible for this tag. This tag does not supersed any other labels.
 
-  - `[LinuxOnly]`: If a test is known to be using Linux-specific features 
+  - `[LinuxOnly]`: If a test is known to be using Linux-specific features
 (e.g.: seLinuxOptions) or is unable to run on Windows nodes, it is labeled
 `[LinuxOnly]`. When using Windows nodes, this tag should be added to the
 `skip` argument.
@@ -543,7 +552,7 @@ If a behavior does not currently have coverage and a developer wishes to add a
 new e2e test, navigate to the ./test/e2e directory and create a new test using
 the existing suite as a guide.
 
-**NOTE:** To build/run with tests in a new directory within ./test/e2e, add the 
+**NOTE:** To build/run with tests in a new directory within ./test/e2e, add the
 directory to import list in ./test/e2e/e2e_test.go
 
 When writing a test, consult #kinds-of-tests above to determine how your test
