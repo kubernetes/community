@@ -4,14 +4,14 @@ The following conventions for the klog levels to use.
 [klog](http://godoc.org/github.com/kubernetes/klog) is globally preferred to
 [log](http://golang.org/pkg/log/) for better runtime control.
 
-Shared libraries, such as `client-go`, should not use `klog.Errorf()` and `klog.Warningf()`,
+Shared libraries, such as `client-go`, should not use `klog.ErrorS()` and `klog.InfoS()`,
 but just return `error`, because client libraries may be used in CLI UIs that wish to control output.
 
-* klog.Errorf() - Always an error
+* klog.ErrorS() - Always an error
 
-* klog.Warningf() - Something unexpected, but probably not an error
+* klog.InfoS() -  Structured logs to the INFO log. Something unexpected, but probably not an error.
 
-* klog.Infof() has multiple levels:
+* klog.InfoS() has multiple levels:
   * klog.V(0) - Generally useful for this to ALWAYS be visible to an operator
     * Programmer errors
     * Logging extra info about a panic
@@ -31,8 +31,6 @@ but just return `error`, because client libraries may be used in CLI UIs that wi
   * klog.V(5) - Trace level verbosity
     * Context to understand the steps leading up to errors and warnings
     * More information for troubleshooting reported issues
-
-* klog.InfoS() - structured logs to the INFO log
 
 As per the comments, the practical default level is V(2). Developers and QE
 environments may wish to run at V(3) or V(4). If you wish to change the log
