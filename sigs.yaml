@@ -2530,6 +2530,12 @@ sigs:
     - github: michmike
       name: Michael Michael
   meetings:
+  - description: Backlog Refinement  / Bug Triage Meeting
+    day: Thursday
+    time: "12:30"
+    tz: Eastern Time (ET)
+    frequency: biweekly
+    url: https://zoom.us/j/94389601840?pwd=MCs2SEJQWG0zUWpBS3Nod0ZNMmVXQT09
   - description: Regular SIG Meeting
     day: Tuesday
     time: "12:30"
@@ -2538,6 +2544,13 @@ sigs:
     url: https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09
     archive_url: https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4
+  - description: Weekly CI Meeting
+    day: Tuesday
+    time: "12:15"
+    tz: Eastern Time (ET)
+    frequency: weekly
+    url: https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09
+    archive_url: https://docs.google.com/document/d/1j2XEKXNyGaSO0XZNkSQUliaT48ZQl6StLhrsVurJoco/edit#
   contact:
     slack: sig-windows
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-windows
