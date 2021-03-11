@@ -14,7 +14,7 @@ The primary reason is to reduce risk. Without processes in place to engage and g
 
 The idea here is progress, not perfection. Please try to put past process experiments and things-that-didn’t-work behind you. What failed yesterday might work today. You might need to recalibrate your idea of “failure”—a small bit of progress is still progress. Also, from failures we learn.
 
-You might also take a cue from SIG Release and create a Program Manager role for your SIG. Reach out to @lauri if you’d like to explore this option.
+You might also take a cue from SIG Release and create a Program Manager role for your SIG. Reach out to [@LappleApple](https://github.com/lappleapple) if you’d like to explore this option.
 
 ## What This Covers
 
