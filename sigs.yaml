@@ -1739,8 +1739,8 @@ sigs:
     url: https://zoom.us/j/4799874685
     archive_url: https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG
-  - description: Weekly CI Meeting
-    day: Monday
+  - description: Weekly CI/Triage Meeting
+    day: Wednesday
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: weekly
