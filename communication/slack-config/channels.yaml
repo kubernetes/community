@@ -283,6 +283,7 @@ channels:
   - name: opencontainers
   - name: openebs
   - name: openebs-dev
+  - name: openkruise
   - name: openshift-dev
   - name: openshift-users
   - name: openstack-helm
