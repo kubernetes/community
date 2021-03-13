@@ -1,6 +1,6 @@
 # Feature gate progression in Kubernetes
 
-Feature flags are how Kubernetes tracks progression of functionality that is available to a deployer.
+Feature flags are how Kubernetes tracks progression of functionality that is available when deployed.
 
 ## Lifecycle
 
@@ -60,5 +60,4 @@ Also note that when we set `LockToDefault` to `true`, we remove all references (
 ## Other scenarios
 
 Sometimes we use`{Default: true, PreRelease: featuregate.Beta}` for keeping legacy behavior (see `LegacyNodeRoleBehavior`) on and when we basically want to drop the legacy behavior with new default behavior. So at GA we will end up with `{Default: false, PreRelease: featuregate.GA, LockToDefault: true}`
-
 
