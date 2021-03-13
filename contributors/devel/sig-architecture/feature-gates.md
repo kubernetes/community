@@ -30,7 +30,7 @@ This enables folks to switch on the feature using the command line. By default i
 ## Beta Features
 
 * `PreRelease` is set to `featuregate.Beta`
-* `Default` is always set to `true`
+* `Default` is set to `true`
 * `LockToDefault` is not set. Defaults to `false`
 
 This enables the feature to be on and available in the default installation of kubernetes. 
@@ -60,4 +60,3 @@ Also note that when we set `LockToDefault` to `true`, we remove all references (
 ## Other scenarios
 
 Sometimes we use`{Default: true, PreRelease: featuregate.Beta}` for keeping legacy behavior (see `LegacyNodeRoleBehavior`) on and when we basically want to drop the legacy behavior with new default behavior. So at GA we will end up with `{Default: false, PreRelease: featuregate.GA, LockToDefault: true}`
-
