@@ -45,7 +45,7 @@ Sometimes (rarely) the `Default` is set to `false`. For example when this flag n
 
 GA features are always on. 
 
-Sometimes (rarely) we do not set `LockToDefault` and let it default to false. This enables folks to switch off the GA feature. We do this to tell folks that while the feature (for example `coredns`) is GA, they need to move off say `kubedns` to `coredns` in their infrastructures pretty soon and if they want to continue `kubedns` for a short time, they will have to switch off the GA flag. When we do remove the support for `kubedns` entirely we would set `LockToDefault` to `true` with some grace period for the transition
+Sometimes (rarely) we do not set `LockToDefault` and let it default to `false`. This enables folks to switch off the GA feature. We do this to tell folks that while the feature (for example `coredns`) is GA, they need to move off say `kubedns` to `coredns` in their infrastructures pretty soon and if they want to continue `kubedns` for a short time, they will have to switch off the GA flag. When we do remove the support for `kubedns` entirely we would set `LockToDefault` to `true` with some grace period for the transition.
 
 
 Typically we add a comment `// remove in 1.23` to signal when we would entirely remove the feature gate. Remember when the feature gate is removed and the deployer has forgotten to drop the reference to the feature in the CLI flags (say the `kube-apiserver`), then they will see a hard failure. 
