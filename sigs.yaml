@@ -2761,15 +2761,18 @@ workinggroups:
   label: k8s-infra
   leadership:
     chairs:
-    - github: bartsmykla
-      name: Bart Smykla
-      company: VMware
+    - github: ameukam
+      name: Arnaud Meukam
+      company: Alter Way
     - github: dims
       name: Davanum Srinivas
       company: VMware
     - github: spiffxp
       name: Aaron Crickenberger
       company: Google
+    emeritus_leads:
+    - github: bartsmykla
+      name: Bart Smykla
   meetings:
   - description: Regular WG Meeting
     day: Wednesday
