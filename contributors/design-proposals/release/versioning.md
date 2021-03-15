@@ -1,3 +1,7 @@
+**This design proposal does NOT reflect the current state of Kubernetes versioning.**
+
+**Up-to-date versioning policies can be found [here](https://git.k8s.io/sig-release/release-engineering/versioning.md).**
+
 # Kubernetes Release Versioning
 
 Reference: [Semantic Versioning](http://semver.org)
