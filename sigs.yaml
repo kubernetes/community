@@ -3033,7 +3033,7 @@ committees:
 - dir: committee-security-response
   name: Security Response
   mission_statement: >
-    The Kubernetes Security Reponse Committee is the body that is responsible for
+    The Kubernetes Security Response Committee is the body that is responsible for
     receiving and responding to reports of security issues in Kubernetes projects.
 
   label: security-response
