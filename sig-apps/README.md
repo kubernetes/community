@@ -25,7 +25,11 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
 * Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Brex
 * Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Rancher Labs
-* Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), Brex
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+
+## Emeritus Leads
+
+* Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**)
 
 ## Contact
 - Slack: [#sig-apps](https://kubernetes.slack.com/messages/sig-apps)
