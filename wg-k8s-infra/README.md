@@ -25,14 +25,21 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Work
 
 ## Organizers
 
-* Bart Smykla (**[@bartsmykla](https://github.com/bartsmykla)**), VMware
+* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), Alter Way
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
+
+## Emeritus Organizers
+
+* Bart Smykla (**[@bartsmykla](https://github.com/bartsmykla)**)
 
 ## Contact
 - Slack: [#wg-k8s-infra](https://kubernetes.slack.com/messages/wg-k8s-infra)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fk8s-infra)
+- GitHub Teams:
+    - [@kubernetes/wg-k8s-infra](https://github.com/orgs/kubernetes/teams/wg-k8s-infra) - active contributors in wg-k8s-infra
+    - [@kubernetes/wg-k8s-infra-leads](https://github.com/orgs/kubernetes/teams/wg-k8s-infra-leads) - wg-k8s-infra leads
 - Steering Committee Liaison: Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
