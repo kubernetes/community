@@ -2785,6 +2785,11 @@ workinggroups:
   contact:
     slack: wg-k8s-infra
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra
+    teams:
+    - name: wg-k8s-infra
+      description: active contributors in wg-k8s-infra
+    - name: wg-k8s-infra-leads
+      description: wg-k8s-infra leads
     liaison:
       github: nikhita
       name: Nikhita Raghunath
