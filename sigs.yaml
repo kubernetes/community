@@ -1510,6 +1510,10 @@ sigs:
   - name: custom-metrics-apiserver
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/custom-metrics-apiserver/master/OWNERS
+  - name: instrumentation
+    description: Organization of SIG Instrumentation subprojects
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/instrumentation/master/OWNERS
   - name: instrumentation-tools
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/instrumentation-tools/master/OWNERS

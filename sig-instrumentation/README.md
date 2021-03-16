@@ -57,6 +57,10 @@ The following [subprojects][subproject-definition] are owned by sig-instrumentat
 ### custom-metrics-apiserver
 - **Owners:**
   - [kubernetes-sigs/custom-metrics-apiserver](https://github.com/kubernetes-sigs/custom-metrics-apiserver/blob/master/OWNERS)
+### instrumentation
+Organization of SIG Instrumentation subprojects
+- **Owners:**
+  - [kubernetes-sigs/instrumentation](https://github.com/kubernetes-sigs/instrumentation/blob/master/OWNERS)
 ### instrumentation-tools
 - **Owners:**
   - [kubernetes-sigs/instrumentation-tools](https://github.com/kubernetes-sigs/instrumentation-tools/blob/master/OWNERS)
