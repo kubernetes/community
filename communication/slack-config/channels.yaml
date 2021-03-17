@@ -181,6 +181,7 @@ channels:
   - name: kube-score
   - name: kube-spawn
   - name: kube-state-metrics
+  - name: kube-vip
   - name: kubeadm
   - name: kubeadm-cn
   - name: kubeapps
