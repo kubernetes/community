@@ -92,4 +92,16 @@ As always, you can also find the active list of open issues and proposals [Open 
 
 Past meetings are in the [Recorded Meetings Playlist on Youtube](https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4&jct=LZ9EIvD4DGrhr2h4r0ItaBmco7gTgw)
 
+## Sig-Windows is Growing! 
+
+Sig-Windows is looking to build new commiters and owners, with the goal of eventually having new leaders and chairs.
+
+If you are interested in this path, 
+
+- *First*, learn how to install, build, and run upstream Kubernetes bits with windows.  This might take a week or two as it is non-trivial, but understanding the upstream componentry, and contributing to it, is the first step to taking on a role as a new sig-windows contributor. and improving our documentation for others.
+- *Second* volunteer to help own and shepherd a major project: such as managemnt of upstream Kubernetes installation tooling, test health, developer tooling, a core feature set, or any volunteer to help with other issues/active Keps which are in flight.  
+- *Third* If you don't want to own a feature, project, or initiative ~ alternatively, long term engagement writing windows related CNCF blog posts, managing community events, or growing/mentoring new windows contributors also counts towards this end.
+
+After 3 months of consistent Windows engagement in the community *in addition to* having 5 commits (or a few major, large patches) demonstrating individual competence in the technical aspects of owning windows related features in Kubernetes, approach the sig-chairs/leads about your desire to take on a more significant role.  Note that there are always new opportunities on the rise, but timing may not be instantaneous.  Chairs and leads are often rotating, even if formal positions aren't available, the ability to contribute as a defacto lead or organize releases and technical priorities as a shadowing chair can be an option.
+
 <!-- END CUSTOM CONTENT -->
