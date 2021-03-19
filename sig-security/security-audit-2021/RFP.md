@@ -63,9 +63,9 @@ If your proposal includes subcontractors, please include relevant details from t
 
 ### Anticipated Selection Schedule
 
-This RFP will be open between 2021/02/08 and 2021/03/12.
+This RFP will be open between 2021/02/08 and 2021/04/09.
 
-The working group will answer questions for the first two weeks of this period.
+The working group will answer questions for the beginning of the RFP period.
 
 Questions can be submitted [here](https://docs.google.com/forms/d/e/1FAIpQLScjApMDAJ5o5pIBFKpJ3mUhdY9w5s9VYd_TffcMSvYH_O7-og/viewform). All questions will be answered publicly in this document.
 
@@ -74,9 +74,9 @@ Proposals must include CVs, resumes, and/or example reports from staff that will
 Proposals should be submitted to kubernetes-security-audit-2021@googlegroups.com
 
 * 2021/02/08: RFP Open, Question period open
-* 2021/02/22: Question period closes
-* 2021/03/12: RFP Closes
-* 2021/03/23: The working group will announce vendor selection
+* 2021/03/26: Question period closes
+* 2021/04/09: RFP Closes
+* 2021/04/20: The working group will announce vendor selection
 
 ## Methodology
 
