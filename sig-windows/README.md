@@ -98,7 +98,7 @@ Sig-Windows is looking to build new commiters and owners, with the goal of event
 
 If you are interested in this path, 
 
-- *First*, learn how to install, build, and run upstream Kubernetes bits with windows.  This might take a week or two as it is non-trivial, but understanding the upstream componentry, and contributing to it, is the first step to taking on a role as a new sig-windows contributor. and improving our documentation for others.
+- *First*, learn how to install, build, and run upstream Kubernetes bits with windows.  This might take a week or two as it is non-trivial, but understanding the upstream componentry, and contributing to it, is the first step to taking on a role as a new sig-windows contributor and improving our documentation for others.
 - *Second* volunteer to help own and shepherd a major project: such as managemnt of upstream Kubernetes installation tooling, test health, developer tooling, a core feature set, or any volunteer to help with other issues/active Keps which are in flight.  
 - *Third* If you don't want to own a feature, project, or initiative ~ alternatively, long term engagement writing windows related CNCF blog posts, managing community events, or growing/mentoring new windows contributors also counts towards this end.
 
