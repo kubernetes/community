@@ -94,7 +94,7 @@ Past meetings are in the [Recorded Meetings Playlist on Youtube](https://www.you
 
 ## Sig-Windows is Growing! 
 
-SIG-Windows is looking to onboard new contributors and maintainers, with the goal of eventually having new leaders and chairs.
+SIG-Windows is looking to onboard new contributors and maintainers, and grow *organically*.  Although it's not an overnight process,  we are here to pair with you, help you find areas to own, and give guidance when needed.
 
 If you are interested in this path, 
 
