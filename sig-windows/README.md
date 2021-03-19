@@ -94,7 +94,7 @@ Past meetings are in the [Recorded Meetings Playlist on Youtube](https://www.you
 
 ## Sig-Windows is Growing! 
 
-Sig-Windows is looking to build new commiters and owners, with the goal of eventually having new leaders and chairs.
+SIG-Windows is looking to onboard new contributors and maintainers, with the goal of eventually having new leaders and chairs.
 
 If you are interested in this path, 
 
