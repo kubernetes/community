@@ -188,7 +188,7 @@ place!
 [Discuss Kubernetes]: https://discuss.kubernetes.io
 [Join]: http://slack.k8s.io
 [Slack Guidelines]: /communication/slack-guidelines.md
-[10am US Pacific Time]: https://www.google.com/search?q=1000+am+in+pst
+[10am US Pacific Time]: https://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29
 [troubleshooting guide]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
 [@kubernetesio]: https://twitter.com/kubernetesio
 [website guidelines]: ./website-guidelines.md
