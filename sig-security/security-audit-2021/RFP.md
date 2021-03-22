@@ -19,7 +19,7 @@ These findings, below, paint a broad picture of Kubernetes security, as of versi
 
 This subsequent audit is intended to be the second in a series of recurring audits, each focusing on a specific aspect of Kubernetes while maintaining coverage of all aspects that have changed since the previous audit ([1.13](../security-audit-2019/findings/)).
 
-The scope of this audit is the most recent release (1.20) of the core [Kubernetes project](https://github.com/kubernetes/kubernetes) and certain other code maintained by [Kubernetes SIGs](https://github.com/kubernetes-sigs/).
+The scope of this audit is the most recent release (1.21 at the close of this RFP) of the core [Kubernetes project](https://github.com/kubernetes/kubernetes) and certain other code maintained by [Kubernetes SIGs](https://github.com/kubernetes-sigs/).
 
 This audit will focus on the following components of Kubernetes:
 
