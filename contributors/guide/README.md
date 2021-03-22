@@ -12,21 +12,21 @@ description:
 # Getting Started
 
 - [Getting Started](#getting-started)
-- [Welcome](#welcome)
-- [Contributor Guide](#contributor-guide)
-- [Prerequisites](#prerequisites)
-  - [Sign the CLA](#sign-the-cla)
-  - [Code of Conduct](#code-of-conduct)
-  - [Setting Up Your Developer Environment](#setting-up-your-development-environment)
-  - [Community Expectations and Roles](#community-expectations-and-roles)
-- [Contributor Playground](#kubernetes-contributor-playground)
-  - [Contributor Workshops](#contributor-workshops)
-- [Community](#community)
-  - [Communication](#communication)
-  - [Events](#events)
-  - [Meetups](#meetups)
-  - [Mentorship](#mentorship)
-- [Advanced Topics](#advanced-topics)
+  - [Welcome](#welcome)
+  - [Contributor Guide](#contributor-guide)
+  - [Prerequisites](#prerequisites)
+    - [Sign the CLA](#sign-the-cla)
+    - [Code of Conduct](#code-of-conduct)
+    - [Setting up your development environment](#setting-up-your-development-environment)
+    - [Community Expectations and Roles](#community-expectations-and-roles)
+  - [Kubernetes Contributor Playground](#kubernetes-contributor-playground)
+    - [Contributor Workshops](#contributor-workshops)
+  - [Community](#community)
+    - [Communication](#communication)
+    - [Events](#events)
+    - [Meetups](#meetups)
+    - [Mentorship](#mentorship)
+  - [Advanced Topics](#advanced-topics)
 
 ## Welcome
 
@@ -150,7 +150,7 @@ do not need to interact with regularly.
 [CM]: /community-membership.md
 [here]: /events/2019/11-contributor-summit
 [General Information]: /communication
-[mentoring initiatives]: /mentoring/README.md 
+[mentoring initiatives]: /mentoring/README.md
 [Meet Our Contributors]: /mentoring/programs/meet-our-contributors.md
 [OWNERS files]: ./owners.md
 [Cloud Native Computing Foundation Guidelines]: https://github.com/cncf/communitygroups
