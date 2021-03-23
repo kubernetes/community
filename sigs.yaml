@@ -499,6 +499,11 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/OWNERS
+  - name: hierarchical-namespace-controller
+    description: |
+      Controller to manage hierarchical namespaces
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/hierarchical-namespaces/master/OWNERS
   - name: multi-tenancy
     description: |
       Proposals and prototypes for introducing tenant model to enable multi-tenant cluster

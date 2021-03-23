@@ -115,6 +115,10 @@ API storage support for storing data encrypted at rest in etcd.
 - **Owners:**
   - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/OWNERS)
+### hierarchical-namespace-controller
+Controller to manage hierarchical namespaces
+- **Owners:**
+  - [kubernetes-sigs/hierarchical-namespaces](https://github.com/kubernetes-sigs/hierarchical-namespaces/blob/master/OWNERS)
 ### multi-tenancy
 Proposals and prototypes for introducing tenant model to enable multi-tenant cluster
 - **Owners:**
