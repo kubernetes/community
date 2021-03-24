@@ -74,6 +74,9 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### iptables-wrappers
 - **Owners:**
   - [kubernetes-sigs/iptables-wrappers](https://github.com/kubernetes-sigs/iptables-wrappers/blob/master/OWNERS)
+### kpng
+- **Owners:**
+  - [kubernetes-sigs/kpng](https://github.com/kubernetes-sigs/kpng/blob/master/OWNERS)
 ### kube-dns
 - **Owners:**
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
