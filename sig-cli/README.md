@@ -83,6 +83,10 @@ Centralized plugin index for krew.
 - **Owners:**
   - [kubernetes/kubectl](https://github.com/kubernetes/kubectl/blob/master/OWNERS)
   - [kubernetes/kubernetes/pkg/kubectl](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubectl/OWNERS)
+### kui
+Hybrid command-line/UI development experience for cloud-native development
+- **Owners:**
+  - [kubernetes-sigs/kui](https://github.com/kubernetes-sigs/kui/blob/master/OWNERS)
 ### kustomize
 - **Owners:**
   - [kubernetes-sigs/kustomize](https://github.com/kubernetes-sigs/kustomize/blob/master/OWNERS)

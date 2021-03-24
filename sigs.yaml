@@ -708,6 +708,10 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
+  - name: kui
+    description: Hybrid command-line/UI development experience for cloud-native development
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kui/master/OWNERS
   - name: kustomize
     contact:
       slack: kustomize
