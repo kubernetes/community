@@ -257,6 +257,7 @@ channels:
   - name: meetup-trondheim
   - name: meetup-tunisia
   - name: metacontroller
+  - name: metal-stack
   - name: metallb
   - name: metallb-dev
   - name: microk8s
