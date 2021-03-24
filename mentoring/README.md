@@ -1,12 +1,13 @@
 ---
-Title: Kubernetes Upstream Mentoring Programs
+title: "Mentoring Programs and Resources"
+weight: 3
+description: |
+  An index of Kubernetes Mentoring programs, initiatives, and resources.
 ---
 
 # Kubernetes Upstream Mentoring Programs
 
-This folder will be used for all mentoring initiatives for contributing to
-Kubernetes. Check out KubeCon and other CNCF events and programs for end user
-training and learning.
+This page indexes all of the mentoring initiatives for contributing to the Kubernetes project. For end user mentoring initiatives, check out KubeCon and other CNCF events and programs.
 
 ---
 
