@@ -4,6 +4,10 @@ We recommend the following presentations, docs, and videos to help get familiar 
 
 | Date | Title | Link | Description |
 | --- | --- | --- | --- |
+| 2020 November 20 | Intro & Deep Dive: Kubernetes SIG-Storage | [Video](https://www.youtube.com/watch?v=rnCdvWToPPM&t=2s) | An overview and update of SIG Storage by Xing Yang and Michelle Au at KubeCon/CloudNativeCon NA 2020. |
+| 2020 November 20 | Intro & Deep Dive: Kubernetes Data Protection WG | [Video](https://www.youtube.com/watch?v=g8HEQnLVo04) | An overview of Data Protection WG by Xing Yang and Xiangqian Yu at KubeCon/CloudNativeCon NA 2020. |
+| 2020 November 18 | Beyond File and Block Storage in Kubernetes | [Video](https://www.youtube.com/watch?v=Y3GgJb71Cwo) | An introduction of Container Object Storage Interface (COSI) by Sidhartha Mani at KubeCon/CloudNativeCon NA 2020. |
+| 2020 December 10 | Kubernetes 1.20: Kubernetes Volume Snapshot Moves to GA |[Blog post](https://kubernetes.io/blog/2020/12/10/kubernetes-1.20-volume-snapshot-moves-to-ga/)| Overview of Volume Snapshots in Kubernetes at GA. |
 | - | Persistent Volume Framework | [Doc](http://kubernetes.io/docs/user-guide/persistent-volumes/) | Public user docs for Kubernetes Persistent Volume framework.
 | 2018 May 03 | SIG Storage Intro | [Video](https://www.youtube.com/watch?v=GvrTl2T-Tts&list=PLj6h78yzYM2N8GdbjmhVU65KYm_68qBmo&index=164&t=0s) | An overview of SIG Storage By Saad Ali at KubeCon/CloudNativeCon EU 2018. |
 | 2018 May 04 | Kubernetes Storage Lingo 101 | [Video](https://www.youtube.com/watch?v=uSxlgK1bCuA&t=0s&index=300&list=PLj6h78yzYM2N8GdbjmhVU65KYm_68qBmo) | An overview of various terms used in Kubernetes storage and what they mean by Saad Ali at KubeCon/CloudNativeCon EU 2018.|
@@ -36,12 +40,6 @@ and documentation in your implementation PR.
 A great way to get involved is to pick an issue and help address it. We would love help here. Storage related issues are [listed here](https://github.com/kubernetes/kubernetes/issues?utf8=%E2%9C%93&q=is%3Aopen+is%3Aissue+label%3Asig%2Fstorage+).
 
 ### Adding support for a new storage platform in Kubernetes
-For folks looking to add support for a new storage platform in Kubernetes, you have several options:
-- Write an in-tree volume plugin or provisioner: You can contribute a new in-tree volume plugin or provisioner, that gets built and ships with Kubernetes, for use within the Persistent Volume Framework. 
-[See the Ceph RBD volume plugin example](https://git.k8s.io/kubernetes/pkg/volume/rbd) or [the AWS Provisioner example](https://github.com/kubernetes/kubernetes/pull/29006)
-- Write a FlexVolume plugin: This is an out-of-tree volume plugin which you develop and build separately outside of Kubernetes. 
-You then install the plugin on every Kubernetes host within your cluster and then [configure the plugin in Kubernetes as a FlexVolume](https://git.k8s.io/examples/staging/volumes/flexvolume)
-- Write a Provisioner Controller: You can write a separate controller that watches for pending claims with a specific selector label on them. 
-Once an appropriate claim is discovered, the controller then provisions the appropriate storage intended for the claim and creates a corresponding 
-persistent volume for the claim that includes the same label used in the original claim selector. This will ensure that the PV for the new 
-storage provisioned gets bound to the original claim.
+For folks looking to add support for a new storage platform in Kubernetes, take a look of the [CSI Drivers Doc](https://kubernetes-csi.github.io/docs/). The CSI Drivers Doc website documents how to develop, deploy, and test a [Container Storage Interface](https://github.com/container-storage-interface/spec/blob/master/spec.md) (CSI) driver on Kubernetes.
+
+Also see [here](https://github.com/kubernetes/community/blob/master/sig-storage/volume-plugin-faq.md) for deprecation notices regarding in-tree volume plugin and out-of-tree FlexVolume driver.
