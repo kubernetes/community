@@ -108,6 +108,10 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
 - **Owners:**
   - [kubernetes-sigs/nfs-ganesha-server-and-external-provisioner](https://github.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/blob/master/OWNERS)
   - [kubernetes-sigs/nfs-subdir-external-provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/blob/master/OWNERS)
+### volume-populators
+- **Owners:**
+  - [kubernetes-csi/lib-volume-populator](https://github.com/kubernetes-csi/lib-volume-populator/blob/master/OWNERS)
+  - [kubernetes-csi/volume-data-source-validator](https://github.com/kubernetes-csi/volume-data-source-validator/blob/master/OWNERS)
 ### volumes
 - **Owners:**
   - [kubernetes/kubernetes/pkg/volume](https://github.com/kubernetes/kubernetes/blob/master/pkg/volume/OWNERS)

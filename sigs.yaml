@@ -2316,6 +2316,10 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/OWNERS
+  - name: volume-populators
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-csi/lib-volume-populator/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-csi/volume-data-source-validator/master/OWNERS
   - name: volumes
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volume/OWNERS
