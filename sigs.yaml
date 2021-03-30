@@ -1615,12 +1615,6 @@ sigs:
   - name: Kubefed
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubefed/master/OWNERS
-  - name: cluster-registry
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS
-  - name: federation-v1
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
   - name: kubemci
     owners:
     - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
