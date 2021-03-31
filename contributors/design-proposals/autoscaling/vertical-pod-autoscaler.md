@@ -434,8 +434,7 @@ by a VPA config with mode not set to “off”, the controller rewrites the requ
 by applying recommended resources to the Pod spec. Otherwise it leaves the Pod
 spec unchanged.
 
-The controller gets the recommended resources by fetching
-/recommendedPodResources from the Recommender. If the call times out or fails,
+The controller gets the recommended resources by fetching recommended Pod resources from the Recommender. If the call times out or fails,
 the controller falls back to the recommendation cached in the VPA object.
 If this is also not available the controller lets the request pass-through
 with originally specified resources.
