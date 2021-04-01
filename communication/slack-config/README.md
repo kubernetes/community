@@ -61,4 +61,4 @@ this:
     - idealhack
 ```
 
-[Tempelis]: https://github.com/kubernetes-sigs/slack-infra/tree/master/tempelis
+[Tempelis]: https://github.com/kubernetes-sigs/slack-infra/tree/main/tempelis
