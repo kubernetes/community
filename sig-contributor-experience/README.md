@@ -129,7 +129,7 @@ Oversees and develops programs for helping contributors ascend the contributor l
 ### slack-infra
 Creates and maintains tools and automation for Kubernetes Slack.
 - **Owners:**
-  - [kubernetes-sigs/slack-infra](https://github.com/kubernetes-sigs/slack-infra/blob/master/OWNERS)
+  - [kubernetes-sigs/slack-infra](https://github.com/kubernetes-sigs/slack-infra/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#slack-infra](https://kubernetes.slack.com/messages/slack-infra)
 

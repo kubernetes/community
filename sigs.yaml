@@ -1326,7 +1326,7 @@ sigs:
     contact:
       slack: slack-infra
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/slack-infra/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/slack-infra/main/OWNERS
 - dir: sig-docs
   name: Docs
   mission_statement: >
