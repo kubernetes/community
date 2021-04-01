@@ -157,6 +157,7 @@ channels:
   - name: kcli
   - name: klog
   - name: knative
+  - name: ko-project
   - name: kompose
   - name: kong
   - name: konveyor
