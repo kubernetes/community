@@ -42,9 +42,9 @@ Administrator seats: 3
 
 | Name                | Kubernetes Slack ID | Region   | Timezone                                                |
 | ------------------- | ------------------- | -------- | ------------------------------------------------------- |
-| Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Aaron Crickenberger | @spiffxp            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| _Open_              | _Open_              |          |                                                         |
+| Davanum Srinivas    | @dims               | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 #### Primary Moderators
 
@@ -52,11 +52,11 @@ Primary moderators seats: 6
 
 | Name                | Kubernetes Slack ID | Region   | Timezone                                                |
 | ------------------- | ------------------- | -------- | ------------------------------------------------------- |
-| Jorge Castro        | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen          | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
+| Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Nikhita Raghunath   | @nikhita            | APAC     | [IST - Indian Standard Time](https://time.is/India)     |
+| _Open_              | _Open_              |          |                                                         |
 | _Open_              | _Open_              |          |                                                         |
 
 #### Moderators Pro Tempore
