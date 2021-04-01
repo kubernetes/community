@@ -6,7 +6,7 @@ usergroups:
   # - https://git.k8s.io/sig-release/release-managers.md#associates
   - name: release-managers
     long_name: Release Managers
-    description: |-
+    description: >-
       Release Managers. Ping for questions on branch cuts and building/packaging
       Kubernetes.
     channels:
@@ -34,7 +34,7 @@ usergroups:
   # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.20/release_team.md
   - name: release-team-leads
     long_name: Release Team Leads
-    description: |-
+    description: >-
       Release Team Leads. Ping for questions on the current Kubernetes release
       cycle.
     channels:
@@ -61,7 +61,7 @@ usergroups:
   # https://git.k8s.io/community/sig-release/README.md#leadership
   - name: sig-release-leads
     long_name: SIG Release Leads
-    description: |-
+    description: >-
       SIG Release Leads. Ping for questions on SIG Release process and escalations.
     channels:
       - release-ci-signal
@@ -80,10 +80,9 @@ usergroups:
   # - https://git.k8s.io/sig-release/release-managers.md#release-managers
   - name: security-release-team
     long_name: Security Release Team
-    description: |-
-      Security Release Team is the composite of full-fledged Product Security
-      Committee members and Release Managers. Ping for questions on Kubernetes
-      security releases.
+    description: >-
+      Composite of Product Security Committee members and Release Managers. Ping
+      for questions on Kubernetes security releases.
     channels:
       - release-management
       - sig-release
