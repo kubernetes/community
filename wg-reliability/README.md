@@ -20,6 +20,7 @@ The [charter](charter.md) defines the scope and governance of the Reliability Wo
 * SIG Testing
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-reliability) for the group will typically add invites for the following meetings to your calendar.*
 * Regular WG Meeting: [Mondays at 11:00 PT (Pacific Time)](https://zoom.us/j/97964505804?pwd=R3hzSnArQWJHYmdWUnpSUDh3aXhFUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1KF_kof3rBWzis87wMkwXicetREuutxlPI6dFDSqdWbo/edit).
   * [Meeting recordings](TODO).

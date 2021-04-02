@@ -19,6 +19,7 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Work
 * SIG Testing
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra) for the group will typically add invites for the following meetings to your calendar.*
 * Regular WG Meeting: [Wednesdays at 8:30 PT (Pacific Time)](https://zoom.us/j/8152322659?pwd=UWc3UFdoT0xlMTRQTEZFNzZBSE4rdz09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](http://bit.ly/wg-k8s-infra-notes).
   * [Meeting recordings](http://bit.ly/wg-k8s-infra-playlist).
