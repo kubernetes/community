@@ -25,6 +25,7 @@ channels:
   - name: bindings-discuss
   - name: bootkube
   - name: brigade
+  - name: camptocamp-devops-stack
   - name: cdk
   - name: cert-manager
   - name: cert-manager-dev
