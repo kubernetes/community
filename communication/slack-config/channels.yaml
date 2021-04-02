@@ -413,6 +413,7 @@ channels:
   - name: wg-reliability
   - name: wg-resource-mgmt
     archived: true
+  - name: wg-structured-logging
   - name: wg-security-audit
     archived: true
   - name: wg-virtual-kubelet
