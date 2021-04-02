@@ -281,8 +281,8 @@ sigs:
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
   - description: Regular SIG Meeting
     day: Thursday
-    time: "19:00"
-    tz: UTC
+    time: "11:00"
+    tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/845605479
     archive_url: https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit
