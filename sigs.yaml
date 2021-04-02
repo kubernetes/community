@@ -2788,10 +2788,10 @@ workinggroups:
   meetings:
   - description: Regular WG Meeting
     day: Wednesday
-    time: "8:30"
-    tz: PT (Pacific Time)
+    time: "20:00"
+    tz: UTC
     frequency: bi-weekly
-    url: https://zoom.us/j/8152322659?pwd=UWc3UFdoT0xlMTRQTEZFNzZBSE4rdz09
+    url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
     archive_url: http://bit.ly/wg-k8s-infra-notes
     recordings_url: http://bit.ly/wg-k8s-infra-playlist
   contact:
