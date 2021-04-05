@@ -3098,6 +3098,9 @@ committees:
     - github: swamymsft
       name: Swamy Shivaganga Nagaraju
       company: Microsoft
+    - github: tabbysable
+      name: Tabitha Sable
+      company: Datadog
     - github: tallclair
       name: Tim Allclair
       company: Apple
