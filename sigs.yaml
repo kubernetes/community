@@ -1615,6 +1615,9 @@ sigs:
   - name: Kubefed
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubefed/master/OWNERS
+  - name: about-api
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/about-api/master/OWNERS
   - name: kubemci
     owners:
     - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
