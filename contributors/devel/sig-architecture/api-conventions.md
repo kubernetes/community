@@ -491,9 +491,12 @@ particularly in an edge-based manner.
 
 #### Lists of named subobjects preferred over maps
 
-Discussed in [#2004](http://issue.k8s.io/2004) and elsewhere. There are no maps
-of subobjects in any API objects. Instead, the convention is to use a list of
-subobjects containing name fields.
+Discussed in [#2004](http://issue.k8s.io/2004) and elsewhere. There are
+no maps of subobjects in any API objects. Instead, the convention is to
+use a list of subobjects containing name fields. These conventions, and
+how one can change the semantics of lists, structs and maps are
+described in more details in the Kubernetes
+[documentation](https://kubernetes.io/docs/reference/using-api/server-side-apply/#merge-strategy).
 
 For example:
 
