@@ -26,6 +26,7 @@ This report reflects back on CY 2020 and was written in March 2021.
     * Last presentation was on April 16, 2020:
     * [Slides](https://docs.google.com/presentation/d/1Y8SHFz6yyYS6rvRCgYUrSgF-moPk_YB6A-7Ykw5eWnU/edit#slide=id.g401c104a3c_0_)
     * [Recording](https://youtu.be/Y3z2grPHRh4?t=415)
+    * [KubeCon NA 2020 recording](https://www.youtube.com/watch?v=gTzv6mpTYWw)
 
 ## Membership
 
@@ -36,11 +37,11 @@ This report reflects back on CY 2020 and was written in March 2021.
     * Anyone can be considered a SIG member if they join the Zoom calls or general discussions regularly.
 
 * How does the group measure reviewer and approver bandwidth? Do you need help in any area now? What are you doing about it?
-    * At our biweekly meetings, we track the progress of each feature the SIG is working on. Each feature has dev leads assigned to it. If a developer does not have time to complete the task we try to find someone else who has the bandwidth or we defer the feature to the next release.
-    * We periodically remove inactive members and invite members to join that we have seen active in SIG meetings and activities.
+    * At our biweekly meetings (see [notes](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit)), we track the progress of each feature the SIG is working on. Each feature has dev leads assigned to it. If a developer does not have time to complete the task we try to find someone else who has the bandwidth or we defer the feature to the next release.
+    * We periodically remove inactive reviewers and approvers, invite new contributors we have seen active in SIG meetings and activities to join the ranks.
 
 * Is there a healthy onboarding and growth path for contributors in your SIG? What are some activities that the group does to encourage this? What programs are you participating in to grow contributors throughout the contributor ladder?
-    * Over the past month the leads take a bit more aggressive approach to closely monitor contributions and recognize the most active members by promoting them to reviewers and eventually approvers.
+    * Over the past months the leads take a bit more aggressive approach to closely monitor contributions and recognize the most active members by promoting them to reviewers and eventually approvers.
 
 * What programs do you participate in for new contributors?
     * We try to feature “good-first-issue”s.
@@ -48,6 +49,7 @@ This report reflects back on CY 2020 and was written in March 2021.
     * KubeCon updates.
     * Individual/1-1 mentoring.
     * In 2020 we participated in Google Season of Docs which resulted in [new documentation for kubectl and kustomize](https://kubectl.docs.kubernetes.io/).
+    * Meet our contributors.
 
 * Does the group have contributors from multiple companies/affiliations? Can end users/companies contribute in some way that they currently are not?
     * The group has contributors from multiple companies/affiliations.
@@ -61,11 +63,11 @@ This report reflects back on CY 2020 and was written in March 2021.
 * Year to date KEP work review: What’s now stable? Beta? Alpha? Road to alpha?
     * [Moving kubectl package code to staging](https://github.com/kubernetes/enhancements/issues/1020)
         * Our multi-year effort to split out of the main kubernetes repository.
-    * [kubectl debug](https://github.com/kubernetes/enhancements/issues/1441)
+    * [kubectl debug](https://github.com/kubernetes/enhancements/issues/1441) (beta)
     * Several smaller efforts to unify code across all the commands, and removing technical debt.
 
 * What areas and/or subprojects does the group need the most help with?
-    * Feature management
+    * Feature management - we're looking for a person who is familiar with managing feature delivery/product management in a broad sense. As mentioned before, the current process is that during our bi-weekly calls at the beginning of every release we write down planned features and a person responsible for delivering it. We would like to see a single person driving this effort and transforming that to a more asynchronous process. For example, gathering features through our mailing list and reporting progress during our bi-weekly calls.
 
 * What's the average open days of a PR and Issue in your group? / what metrics does your group care about and/or measure?
-    * Over the past year we've introduced monthly blocker bug scrubs which allowed us to shorten the average PR time to approve and merge by more than half, [from over a 8.5 days to 3 days](https://k8s.devstats.cncf.io/d/44/pr-time-to-approve-and-merge?orgId=1&from=1577865600000&to=1609488000000&var-period=m&var-repogroup_name=SIG%20CLI&var-apichange=All&var-size_name=All&var-kind_name=All).
+    * Over the past year we've introduced monthly blocker bug scrubs which allowed us to shorten the average PR time to approve and merge by more than half, [from over a 8.5 days to 3 days](https://k8s.devstats.cncf.io/d/44/pr-time-to-approve-and-merge?orgId=1&from=1577865600000&to=1609488000000&var-period=y&var-repogroup_name=SIG%20CLI&var-apichange=All&var-size_name=All&var-kind_name=All).
