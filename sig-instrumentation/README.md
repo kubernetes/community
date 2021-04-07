@@ -61,6 +61,9 @@ The following [subprojects][subproject-definition] are owned by sig-instrumentat
 Organization of SIG Instrumentation subprojects
 - **Owners:**
   - [kubernetes-sigs/instrumentation](https://github.com/kubernetes-sigs/instrumentation/blob/master/OWNERS)
+### instrumentation-addons
+- **Owners:**
+  - [kubernetes-sigs/instrumentation-addons](https://github.com/kubernetes-sigs/instrumentation-addons/blob/master/OWNERS)
 ### instrumentation-tools
 - **Owners:**
   - [kubernetes-sigs/instrumentation-tools](https://github.com/kubernetes-sigs/instrumentation-tools/blob/master/OWNERS)

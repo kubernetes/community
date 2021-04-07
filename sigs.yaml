@@ -1526,6 +1526,9 @@ sigs:
     description: Organization of SIG Instrumentation subprojects
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/instrumentation/master/OWNERS
+  - name: instrumentation-addons
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/instrumentation-addons/master/OWNERS
   - name: instrumentation-tools
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/instrumentation-tools/master/OWNERS
