@@ -15,7 +15,11 @@
 
 **Is your README accurate? have a CONTRIBUTING.md file?**
 
+Yes, our README is accurate. We do not have a CONTRIBUTING.md file, and so will add one.
+
 **All subprojects correctly mapped and listed in sigs.yaml?**
+
+Yes.
 
 **What’s your meeting culture? Large/small, active/quiet, learnings? Meeting notes up to date? Are you keeping recordings up to date/trends in community members watching recordings?**
 
@@ -33,6 +37,8 @@ We have not been getting updates from the working groups on any regular cadence.
 
 **When was your last monthly community-wide update? (provide link to deck and/or recording)**
 
+[December, 2020](https://youtu.be/rnNqcUeCD8E) at KubeCon NA, published on YouTube.
+
 ## Membership
 
 **Are all listed SIG leaders (chairs, tech leads, and subproject owners) active?**
@@ -47,7 +53,8 @@ For the enhancements subproject, all owners are all active.
 
 For the API review subproject... [@dims or @liggitt please update]
 
-For the code organization subproject...[@dims or @liggitt please update]
+For the code organization subproject, @dims and @liggitt run regular meetings and review PRs and issues, pulling
+in other owners as needed.
 
 **How do you measure membership? By mailing list members, OWNERs, or something else?**
 
@@ -55,13 +62,16 @@ Mailing list members, though based on bounces during calendar updates, there are
 
 **How does the group measure reviewer and approver bandwidth? Do you need help in any area now? What are you doing about it?**
 
+SIG Architecture owns very little code. The API review and Production Readiness Review projects do have reviewers and approvers
+for those specialized purposes. Each of those programs has a documented shadow program to add new reviewers and approvers.
+
 **Is there a healthy onboarding and growth path for contributors in your SIG? What are some activities that the group does to encourage this? What programs are you participating in to grow contributors throughout the contributor ladder?**
 
 **What programs do you participate in for new contributors?**
 
 **Does the group have contributors from multiple companies/affiliations? Can end users/companies contribute in some way that they currently are not?**
 
-Yes. Our chairs are from three different companies. We have many participants have many participants and subproject owners from those same companies and others.
+Yes. Our chairs are from three different companies. We have many participants and subproject owners from those same companies and others.
 
 ## Current initiatives and project health
 
