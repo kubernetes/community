@@ -101,8 +101,10 @@ Simplified mapping between functions:
 * `klog.V(N).Warning`, `klog.V(N).Warningf`, `klog.V(N).Warningln`, `klog.V(N).WarningDepth` -> `klog.V(N).InfoS`
 * `klog.Error`, `klog.Errorf`, `klog.Errorln`, `klog.ErrorDepth` -> `klog.ErrorS`
 * `klog.V(N).Error`, `klog.V(N).Errorf`, `klog.V(N).Errorln`, `klog.V(N).ErrorDepth` -> `klog.ErrorS`
-* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln`, `klog.FatalDepth` -> `klog.ErrorS` followed by `os.Exit(1)` (see below)
-* `klog.V(N).Fatal`, `klog.V(N).Fatalf`, `klog.V(N).Fatalln`, `klog.V(N).FatalDepth` -> `klog.ErrorS` followed by `os.Exit(1)` (see below)
+* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln`, `klog.FatalDepth` -> `klog.ErrorS` followed by `os.Exit(1)` ([see below])
+* `klog.V(N).Fatal`, `klog.V(N).Fatalf`, `klog.V(N).Fatalln`, `klog.V(N).FatalDepth` -> `klog.ErrorS` followed by `os.Exit(1)` ([see below])
+
+[see below]: #replacing-fatal-calls
 
 ### Removing Depth
 
