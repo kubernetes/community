@@ -250,4 +250,4 @@ Across a project the size of Kubernetes, communications can easily be lost or mi
 
 ### Mailing List and GitHub Notification Best Practices
 
-Visit /community for [documentation on this topic](https://github.com/kubernetes/community/blob/master/communication/best-practices.md).
+See the [communication best practices for mailing list and GitHub notifications](/communication/best-practices.md).
