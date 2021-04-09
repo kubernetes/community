@@ -121,6 +121,16 @@ pull requests on the `master` branch in that they:
 
 - Are by default expected to be `kind/bug` and `priority/critical-urgent`.
 
+- The original change to the `master` branch is expected to be merged for
+  some time and no related CI failures or test flakiness must be discovered.
+  
+- The easy way to compare changes from the original change and cherry-pick
+  is to compare PRs `.patch` files. To generate the patch from
+  PR, just add the `.patch` to PR url. For example, for PR #100972 in
+  kubernetes repositry, ptach can be downloaded following this URL:
+  
+  `https://github.com/kubernetes/kubernetes/pull/100972.patch`
+  
 - Milestones must be set on the PR reflecting the milestone for the target
   release branch (for example, milestone v1.11 for a cherry pick onto branch
   `release-1.11`). This is normally done for you by automation.
