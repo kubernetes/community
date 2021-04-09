@@ -88,7 +88,7 @@ You can find [comprehensive triaging guidelines](/contributors/guide/issue-triag
 
 Triaging is highly recommended for improving workflow and responsiveness to contributors. 
 
-Some SIGs, like API Machinery and [Instrumentation](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit), host triage-specific meetings to manage their backlogs. If your SIG’s backlog is small, however, then you can triage and refine during your bimonthly meetings by setting aside time. In November 2020 we rolled out a needs-triage label to support triage activities. You can add your [user feedback about the label here](https://github.com/kubernetes/community/issues/5299#issuecomment-776914413).
+Some SIGs, like API Machinery and [Instrumentation](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit), host triage-specific meetings to manage their backlogs. If your SIG’s backlog is small, however, then you can triage and refine during your bimonthly meetings by setting aside time. In November 2020 we rolled out a needs-triage label to support triage activities. You can add your [user feedback about the label here](https://github.com/kubernetes/community/issues/5299).
 
 #### Staffing Triage Activities
 
