@@ -4,7 +4,7 @@ Author: **[@LappleApple](https://github.com/lappleapple)** || Contributors: **[@
 
 ## Who This Is For
 
-- SIG leads who want guidance on how to structure workflow and processes using models explored successfully by other SIGs 
+- Leads who want guidance on how to structure workflow and processes using models explored successfully by other groups 
 - Contributors who want to support SIGs with process and workflow improvements
 - Contributors who want to become SIG leads or drive Kubernetes Enhancements Proposals (KEPs) and projects
 
