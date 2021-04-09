@@ -192,7 +192,7 @@ Network and Storage are two SIGs that regularly break down large KEPs to ship mo
 
 #### When You Need More Help with KEPs/KEP Process
 
-Please ping the Enhancements subproject at **#enhancements** with your questions, needs, and concerns. In addition to having extensive knowledge about the KEP process and how to manage it, the subproject also includes several product manager-contributors who will embed with your SIG and help you with prioritization, user story creation for KEPs, roadmapping, and other efforts that can save you time and reduce complexity.
+Please ping the Enhancements subproject at [#enhancements](https://kubernetes.slack.com/messages/enhancements) with your questions, needs, and concerns. In addition to having extensive knowledge about the KEP process and how to manage it, the subproject also includes several product manager-contributors who will embed with your SIG and help you with prioritization, user story creation for KEPs, roadmapping, and other efforts that can save you time and reduce complexity.
 
 ## Creating Roadmaps
 
