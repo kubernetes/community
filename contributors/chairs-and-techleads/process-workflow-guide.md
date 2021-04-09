@@ -33,7 +33,6 @@ This guide presents guidance for key areas of workflow and process along with ex
   - [Example: Pull Request Triage Board](#example-pull-request-triage-board-sig-node) (SIG Node)
   - [Example: Board Highlighting Risks](#example-board-highlighting-risks-sig-windows) (SIG Windows) 
   - [Example: KEP-Specific Issue Triage](#example-kep-specific-issue-triage-sig-release) (SIG Release)
-- Triaging CI Signal Needs (SIG Windows)
 - [KEP Planning for an Upcoming Release Cycle](#kep-planning-for-an-upcoming-release-cycle) (Network, Storage)
   - [Example: Prioritization Framework](#example-prioritization-framework-sig-release) (SIG Release)
   - [Example: KEP Tracking Table/Google Doc](#example-kep-tracking-tablegoogle-doc-sigs-node-windows) (SIGs Node, Windows)
@@ -116,11 +115,11 @@ A growing number of Kubernetes groups use GitHub project boards to quickly monit
 
 Project boards enable you to automate your workflow and review the status of work. You can automate board settings to eliminate the manual toil of moving items across the board:
 
-<img src="GitHub project board auto.png" width="35%" height="35%">
+<img src="GitHub_project_board_auto.png" width="35%" height="35%">
 
 To set up a project board, create several columns and put the earliest stages of work status at left. An example is Release Engineering’s board:
 
-<img src="Rel Eng snapshot.png">
+<img src="Rel_Eng_snapshot.png">
 
 **The column flow here is**:<br>
 Issues to Triage ⇒ <br>
@@ -138,7 +137,7 @@ SIG Node uses [this GitHub project board layout](https://github.com/orgs/kuberne
 
 Note the cards at the top, which give direction and context to help new contributors get started with this board. With such guidance in place, even a new contributor can run a triage session for the team—enabling you to delegate.
 
-<img src="SIG Node PR triage.png">
+<img src="SIG_Node_PR_triage.png">
 
 #### Example: Board Highlighting Risks (SIG Windows) 
 
@@ -156,7 +155,7 @@ SIGs are advised to start planning their list of KEPs for the upcoming release c
 
 [This article](https://productcoalition.com/how-to-prioritize-features-and-projects-heres-the-ultimate-list-of-prioritization-frameworks-6f5b626ae779) provides many examples of prioritization frameworks to help you identify the highest-value work in your backlog and make trade-offs. Here’s a simple framework that enables you to make choices based on the required effort as well as urgency:
 
-<img src="Prioritization framework.png" height="60%" width="60%">
+<img src="Prioritization_framework.png" height="60%" width="60%">
 
 The above framework image was created with [Miro](http://miro.com), a digital whiteboard tool that your SIG can use for free. A recommendation is to run a planning meeting in which your SIG members use Miro PostIts to place KEPs along this matrix. From the resulting discussion you can come up with your KEPs for the upcoming release cycle and also spark a useful discussion about which KEPs are more urgent than others. Running such an exercise also gives you leverage in saying “no” or “not yet” to KEPs that must span across several cycles or are judged by the group to be lower-priority.
 
@@ -175,7 +174,7 @@ SIG Windows Chair Mark Rossetti says this table has helped “especially as a TL
 
 If you prefer tracking work in spreadsheets, here’s an example from Storage: 
 
-<img src="Storage tracking sheet.png">
+<img src="Storage_tracking_sheet.png">
 
 #### Tips for Handling KEPs That Require Cross-SIG Coordination
 
@@ -214,7 +213,7 @@ The KEP planning tools shared above are one way to roadmap a release cycle. But 
 
 Release Manager Adolfo “Puerco” García Veytia and SIG Release Tech Lead Dan Mangum used Miro to brainstorm a roadmap for creating a bill of materials:
 
-<img src="BOM board.png">
+<img src="BOM_board.png">
 
 SIG Release/Release Engineering is using [this template](https://docs.google.com/document/d/1U-SxIQKwEDmlj3QMxmKUl2laFRKaelDwBBBqWtnxPvw/edit) to draft a 2021 North Star vision that tells a coherent story to the project and contributors about what work is important this year, and why.
 
