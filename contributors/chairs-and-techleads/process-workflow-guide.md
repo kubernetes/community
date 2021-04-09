@@ -49,7 +49,7 @@ This guide presents guidance for key areas of workflow and process along with ex
   - [Slack](#slack)
   - [Mailing List and GitHub Notification Best Practices](#mailing-list-and-github-notification-best-practices) (SIG Contributor Experience)
 
-For brevity’s sake, not every aspect of running a SIG is covered. If you have questions, please reach out in **#chairs-and-leads**.
+For brevity’s sake, not every aspect of running a SIG is covered. If you have questions, please reach out in [#chairs-and-leads](https://kubernetes.slack.com/messages/chairs-and-techleads).
 
 ## Ways of Working Agreement
 
