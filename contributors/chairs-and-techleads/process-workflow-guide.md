@@ -5,16 +5,16 @@ Author: **[@LappleApple](https://github.com/lappleapple)** || Contributors: **[@
 ## Who This Is For
 
 - Leads who want guidance on how to structure workflow and processes using models explored successfully by other groups 
-- Contributors who want to support SIGs with process and workflow improvements
-- Contributors who want to become SIG leads or drive Kubernetes Enhancements Proposals (KEPs) and projects
+- Contributors who want to support Special Interest Groups (SIGs), Working Groups (WGs), subprojects, and other groups with process and workflow improvements
+- Contributors who want to become leads or drive Kubernetes Enhancements Proposals (KEPs) and projects/subprojects
 
 ## Why This Exists
 
-The primary reason is to reduce risk. Without processes in place to engage and graduate contributors, keep work flowing forward to completion, delegate, and ensure that the highest-value work gets done, Kubernetes will lose contributors, momentum, and growth opportunities. And you, as leads, might burn out from trying to do it all. Process assists in delegation, which is how overworked and overstretched SIG leads can load-balance. 
+The primary reason is to reduce risk. Without processes in place to engage and graduate contributors, keep work flowing forward to completion, delegate, and ensure that the highest-value work gets done, Kubernetes will lose contributors, momentum, and growth opportunities. And you, as leads, might burn out from trying to do it all. Process assists in delegation, which is how overworked and overstretched SIG, WG, and subproject leads can load-balance. 
 
 The idea here is progress, not perfection. Please try to put past process experiments and things-that-didn’t-work behind you. What failed yesterday might work today. You might need to recalibrate your idea of “failure”—a small bit of progress is still progress. Also, from failures we learn.
 
-You might also take a cue from SIG Release and create a Program Manager role for your SIG. Reach out to [@LappleApple](https://github.com/lappleapple) if you’d like to explore this option.
+You might also take a cue from SIG Release and create a Program Manager role for your group. Reach out to Lauri Apple via the [#chairs-and-techleads](https://kubernetes.slack.com/messages/chairs-and-techleads) Slack channel if you’d like to explore this option.
 
 ## What This Covers
 
@@ -49,19 +49,19 @@ This guide presents guidance for key areas of workflow and process along with ex
   - [Slack](#slack)
   - [Mailing List and GitHub Notification Best Practices](#mailing-list-and-github-notification-best-practices) (SIG Contributor Experience)
 
-For brevity’s sake, not every aspect of running a SIG is covered. If you have questions, please reach out in [#chairs-and-leads](https://kubernetes.slack.com/messages/chairs-and-techleads).
+For brevity’s sake, not every aspect of running a SIG, WG, or subproject is covered. If you have questions, please reach out in [#chairs-and-techleads](https://kubernetes.slack.com/messages/chairs-and-techleads).
 
 ## Ways of Working Agreement
 
-This one comes first as it’s a helpful way to summarize how your SIG operates in terms of communication, processes, and roles & responsibilities. This can serve as a useful onboarding tool or help you prevent process drift/abandonment. 
+This one comes first as it’s a helpful way to summarize how your SIG, WG, or subproject operates in terms of communication, processes, and roles and responsibilities. This can serve as a useful onboarding tool or help you prevent process drift or abandonment. 
 
 ### Example: SIG Release/Release Engineering
 
-[Release Engineering](https://github.com/kubernetes/sig-release/tree/master/release-engineering) has published their Ways of Working agreement that covers communication channels (and how they’re used), roles and responsibilities, how they discuss work, and other major aspects of SIG workflow. 
+The [Release Engineering](https://github.com/kubernetes/sig-release/tree/master/release-engineering) subproject of SIG Release has published a Ways of Working agreement that covers communication channels and how they’re used; roles and responsibilities; how they discuss work; and other major aspects of workflow and process. 
 
 ### Making the Most out of Meetings
 
-Most, if not all, SIGs already have templates for organizing bimonthly meetings. [Here is a collection of templates](https://miro.com/templates/team-meetings/) for remote meetings that you might also find useful.
+Most, if not all, SIGs, WGs, and subprojects already have templates for organizing bimonthly meetings. [Here is a collection of templates](https://miro.com/templates/team-meetings/) for remote meetings that you might also find useful.
 
 You’ll find some SIG-specific meeting tips in Release Engineering’s WoW agreement. A few more:
 
@@ -75,7 +75,7 @@ Meetings provide an opportunity to delegate work to contributors and to make gro
 
 ## Triage and Triaging Tools
 
-Triaging is an effective method for improving SIG responsiveness to contributor requests—and, consequently, keeping contributors engaged and motivated. It’s also useful for:
+Triaging is an effective method for improving responsiveness to contributor requests—and, consequently, keeping contributors engaged and motivated. It’s also useful for:
 - keeping on top of incoming work and delegating it to contributors
 - maintaining company agnosticism. “Devs from other SIGs don’t have to ask for any favors in getting PRs to move forward—it’s just part of the process,” API Machinery Chair Fede Bongiovanni says. “Features don't get biased development.”
 
@@ -88,11 +88,11 @@ You can find [comprehensive triaging guidelines](/contributors/guide/issue-triag
 
 Triaging is highly recommended for improving workflow and responsiveness to contributors. 
 
-Some SIGs, like API Machinery and [Instrumentation](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit), host triage-specific meetings to manage their backlogs. If your SIG’s backlog is small, however, then you can triage and refine during your bimonthly meetings by setting aside time. In November 2020 we rolled out a needs-triage label to support triage activities. You can add your [user feedback about the label here](https://github.com/kubernetes/community/issues/5299).
+Some groups, like SIGs API Machinery and [Instrumentation](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit), host triage-specific meetings to manage their backlogs. If your group's backlog is small, however, then you can triage and refine during your bimonthly meetings by setting aside time. In November 2020 we rolled out a needs-triage label to support triage activities. You can add your [user feedback about the label here](https://github.com/kubernetes/community/issues/5299).
 
 #### Staffing Triage Activities
 
-If you’re a SIG lead who runs triage yourself, you might strongly consider delegating this role to new contributors, including non-code contributors. You might also have contributors who take a strong interest in process and workflow topics—ask and you might be surprised.
+If you’re a lead who runs triage yourself, you might strongly consider delegating this role to new contributors, including non-code contributors. You might also have contributors who take a strong interest in process and workflow topics—ask and you might be surprised.
 
 SIG Docs rotates the triage facilitator role with its “[wrangler of the week](https://github.com/kubernetes/website/wiki/PR-Wranglers)” schedule. The wrangler balances their time between reviewing PRs and triaging new issues. 
 
@@ -106,11 +106,11 @@ SIG Docs rotates the triage facilitator role with its “[wrangler of the week](
 
 **Other Uses of Triage Party**:
 - SIG CLI uses it to manage [kubectl](https://tp.kuberneddies.dev/s/daily) workflow, including quarterly bug scrubs and daily/weekly triage
-- SIG Release has set up a Triage Party instance and will begin using it for bug triage, issue triage, and other activities in 1.21.
+- SIG Release launched [their instance](https://release.triage.k8s.io/s/milestone), which includes tabs for the current milestone as well as subprojects, in April 2021.
 
 ### GitHub Project Boards
 
-Many SIGs use GitHub project boards to quickly monitor and triage workflow. SIGs with boards include Contributor Experience, Release, Windows, Node, and Architecture. Some of these boards are highlighted below.
+A growing number of Kubernetes groups use GitHub project boards to quickly monitor and triage workflow. SIGs with boards include Contributor Experience, Release, Windows, Node, and Architecture. Some of these boards are highlighted below.
 
 #### Board Set-up Basics
 
@@ -134,7 +134,7 @@ When using a project board during a meeting, it’s recommended to review items 
 
 #### Example: Pull Request Triage Board (SIG Node)
 
-SIG Node uses [this GitHub project board layout](https://github.com/orgs/kubernetes/projects/49) to manage PR workflow. This not only helps Node, but also other SIGs organize their work. “Node’s PR triage board has been helpful for us,” says SIG Windows Chair Mark Rosetti. “I've been trying to make sure PRs that have been reviewed/approved by sig-windows but still need an approval from node / kubelet owner end up there.”
+SIG Node uses [this GitHub project board layout](https://github.com/orgs/kubernetes/projects/49) to manage PR workflow. This not only helps Node, but also other SIGs organize their work. “Node’s PR triage board has been helpful for us,” says SIG Windows Chair Mark Rosetti. “I've been trying to make sure PRs that have been reviewed/approved by SIG Windows but still need an approval from the node / kubelet owner end up there.”
 
 Note the cards at the top, which give direction and context to help new contributors get started with this board. With such guidance in place, even a new contributor can run a triage session for the team—enabling you to delegate.
 
@@ -146,11 +146,11 @@ SIG Windows has created columns in [their project board](https://github.com/orgs
 
 #### Example: KEP-Specific Issue Triage (SIG Release)
 
-GitHub project boards are easy to spin up and tear down, which means you can easily set up one for managing the workflow of a large KEP—or a KEP that requires coordination across several different SIGs. Here’s an example:
+GitHub project boards are easy to spin up and tear down, which means you can easily set up one for managing the workflow of a large KEP—or a KEP that requires coordination across several different SIGs.
 
 ### KEP Planning for an Upcoming Release Cycle
 
-Start planning your SIG’s batch of KEPs for an upcoming release cycle [**how early in the cycle?**]. This allows you plenty of time to discuss the KEPs during your regular bimonthly meetings and organize your release cycle plans. SIG Storage runs release-cycle planning sessions to organize themselves, and also to refine their backlog to prune abandoned KEPs from their backlog.
+SIGs are advised to start planning their list of KEPs for the upcoming release cycle as early as possible. This allows plenty of time to discuss the KEPs during your regular bimonthly meetings and organize your release cycle plans. SIG Storage runs release-cycle planning sessions to organize themselves, and also to refine their backlog to prune abandoned KEPs from their backlog.
 
 #### Example: Prioritization Framework (SIG Release)
 
@@ -158,9 +158,9 @@ Start planning your SIG’s batch of KEPs for an upcoming release cycle [**how e
 
 <img src="Prioritization framework.png" height="60%" width="60%">
 
-The above framework image was created with [Miro](http://miro.com), a digital whiteboard tool that your SIG can use for free (up to three boards). A recommendation is to run a planning meeting in which your SIG members use Miro PostIts to place KEPs along this matrix. From the resulting discussion you can come up with your KEPs for the upcoming release cycle and also spark a useful discussion about which KEPs are more urgent than others. Running such an exercise also gives you leverage in saying “no” or “not yet” to KEPs that require more time or are judged to be lower-priority from the group.
+The above framework image was created with [Miro](http://miro.com), a digital whiteboard tool that your SIG can use for free. A recommendation is to run a planning meeting in which your SIG members use Miro PostIts to place KEPs along this matrix. From the resulting discussion you can come up with your KEPs for the upcoming release cycle and also spark a useful discussion about which KEPs are more urgent than others. Running such an exercise also gives you leverage in saying “no” or “not yet” to KEPs that must span across several cycles or are judged by the group to be lower-priority.
 
-SIG Release/Release Engineering has been using Miro planning boards since 1.20 to prioritize KEPs and other work. SIG Cluster Lifecycle co-chair Lubomir I. Ivanov also recommends [Diagrams.net]( https://www.diagrams.net/), which needs shareable folders (e.g. Google Drive) to work.
+SIG Release's Release Engineering subproject has been using Miro planning boards since 1.20 to prioritize KEPs and other work. SIG Cluster Lifecycle co-chair Lubomir I. Ivanov also recommends [Diagrams.net]( https://www.diagrams.net/), which needs shareable folders (e.g. Google Drive) to work.
 
 #### Example: KEP Tracking Table/Google Doc (SIGs Node, Windows)
 
@@ -218,8 +218,6 @@ Release Manager Adolfo “Puerco” García Veytia and SIG Release Tech Lead Dan
 
 SIG Release/Release Engineering is using [this template](https://docs.google.com/document/d/1U-SxIQKwEDmlj3QMxmKUl2laFRKaelDwBBBqWtnxPvw/edit) to draft a 2021 North Star vision that tells a coherent story to the project and contributors about what work is important this year, and why.
 
-SIG Docs also does quarterly planning and objectives... (**find out more**)
-
 ### Example: Umbrella Issues for Roadmapping an Initiative/Epic (SIGs Testing, Release)
 
 GitHub doesn’t provide different issue types for different sizes of work. A commonly used workaround is the umbrella issue, which enables you to document a complex piece of work using headers and checkboxes. 
@@ -239,7 +237,7 @@ Here’s [another good example](https://github.com/kubernetes/test-infra/issues/
 
 ## Managing Communications: Delegating and Driving Transparency
 
-Across a project the size of Kubernetes, communications can easily be lost or missed. Many contributors receive literally hundreds of GitHub notifications a day. Many notes get pushed to Slack, and SIG Chairs and Leads face many direct messages on top of channel pings. Time to read important but long documents can be scarce. 
+Across a project the size of Kubernetes, communications can easily be lost or missed. Many contributors receive literally hundreds of GitHub notifications a day. Many notes get pushed to Slack, and group leads face many direct messages on top of channel pings. Time to read important but long documents can be scarce. 
 
 ### Slack
 
