@@ -11,10 +11,10 @@ milestone.
 - [Definitions](#definitions)
 - [The Release Cycle](#the-release-cycle)
 - [Milestone Maintainers](#milestone-maintainers)
-  - [Removal Of Items From The Milestone](#removal-of-items-from-the-milestone)
-  - [Adding An Item To The Milestone](#adding-an-item-to-the-milestone)
-    - [Feature additions](#feature-additions)
-    - [Issue additions](#issue-additions)
+  - [Removal of Items from the Milestone](#removal-of-items-from-the-milestone)
+  - [Adding an Item to the Milestone](#adding-an-item-to-the-milestone)
+    - [Feature Additions](#feature-additions)
+    - [Issue Additions](#issue-additions)
     - [PR Additions](#pr-additions)
 - [Other Required Labels](#other-required-labels)
   - [SIG Owner Label](#sig-owner-label)
@@ -196,14 +196,14 @@ Each release is part of a broader Kubernetes lifecycle:
 
 # Milestone Maintainers
 
-To maintain up-to-date status on milestone inclusion, we rely on a set of Milestone Maintainers (members of the `kubernetes-milestone-maintainers` GitHub team) to apply the appropriate labels to issues / PRs. This is facilitated by `/milestone` commands and bot automation.
+To maintain up-to-date status on milestone inclusion, we rely on a set of Milestone Maintainers (members of the `kubernetes-milestone-maintainers` GitHub team) to apply the appropriate labels to issues and PRs. This is facilitated by `/milestone` commands and bot automation.
 
 The members of the [`milestone-maintainers`](https://github.com/orgs/kubernetes/teams/milestone-maintainers/members)
 GitHub team are entrusted with the responsibility of specifying the release milestone on GitHub artifacts by assigning a milestone label to an enhancement.
 
-Members of the `kubernetes-milestone-maintainers` GitHub team, called milestone maintainer, can include:
-- SIG leadership (SIG Chairs / Technical Leads) from all SIGs
-- SIG milestone maintainers from all SIGs (in addition to SIG leadership)
+Members of the `kubernetes-milestone-maintainers` GitHub team can include:
+- the leadership of a SIG (SIG Chairs / Technical Leads) from all SIGs
+- dedicated SIG milestone maintainers from all SIGs (in addition to SIG leadership)
 - Special code reviewers, as selected by SIG Release
 
 Milestone maintainers also have write access to [kubernetes/enhancements][k/enhancements], which allows them to keep enhancement tracking issue descriptions up-to-date.
@@ -221,17 +221,17 @@ To request membership to `kubernetes-milestone-maintainers` or update the team:
   - for Release Team: Request approval from the current Release Team Lead or SIG Release Chairs
   - for Special code reviewers: Request approval from SIG Release Chairs
 
-- Once your request is approved by the appropriate group, you can now assign to the PR to a SIG Release Chair for final approval.
+- Once your request is approved by the appropriate group, you can now assign the PR to a SIG Release Chair for final approval.
 
-The responsibles for the `kubernetes-milestone-maintainers` GitHub team are defined as follows:
+Those responsibles for the `kubernetes-milestone-maintainers` GitHub team are defined as follows:
 - [SIG Release Chairs](https://github.com/kubernetes/sig-release/blob/master/release-managers.md#sig-release-leads)
 - Current [Release Team Lead](https://github.com/kubernetes/sig-release/tree/master/releases)
 
-They can, with justification, add or remove members at any time during release cycles of the GitHub team. Members are expected to actively [triage](/contributors/guide/issue-triage.md) issues and PRs to retain membership in `kubernetes-milestone maintainers`. Members not fulfilling the duties of this role should be removed.
+They can, with justification, add or remove members of the GitHub team at any time during release cycles. Members are expected to actively [triage](/contributors/guide/issue-triage.md) issues and PRs to retain membership in `kubernetes-milestone maintainers`. Members not fulfilling the duties of this role should be removed.
 
-## Adding An Item To The Milestone
+## Adding an Item to the Milestone
 
-### Feature additions
+### Feature Additions
 
 Feature planning and definition takes many forms today, but a typical example
 might be a large piece of work described in a [KEP][keps], with associated task
@@ -247,9 +247,9 @@ If you have an enhancement to target for an upcoming release milestone, begin a
 conversation with your SIG leadership and with that release's Enhancements
 Lead.
 
-Under special circumstanses you can fill an [exception](https://github.com/kubernetes/sig-release/blob/master/releases/EXCEPTIONS.md) request, in case you missed the release cycle deadline or an urgently needed enhancement cames up.
+Under special circumstances you can file an [exception](https://github.com/kubernetes/sig-release/blob/master/releases/EXCEPTIONS.md) request — for example, if you miss the release cycle deadline or an urgently needed enhancement comes up.
 
-### Issue additions
+### Issue Additions
 
 Issues are marked as targeting a milestone via the Prow "/milestone" command.
 
@@ -274,7 +274,7 @@ PRs are marked as targeting a milestone via the Prow "/milestone" command.
 
 This is a blocking requirement during Code Freeze as described above.
 
-## Removal Of Items From The Milestone
+## Removal of Items from the Milestone
 
 Members of the [Release Team][release-team] may remove issues from the
 milestone if they or the responsible SIG determine that the issue is not
@@ -298,7 +298,7 @@ SIG(s), it is the responsibility of the submitter to categorize PRs, and to
 secure support from the relevant SIG to guarantee that any breakage caused by
 the PR will be rapidly resolved.
 
-Where additional action is required, an attempt at human to human escalation
+Where additional action is required, an attempt at human-to-human escalation
 will be made by the Release Team through the following channels:
 
 - Comment in GitHub mentioning the SIG team and SIG members as appropriate for
@@ -308,7 +308,7 @@ will be made by the Release Team through the following channels:
     [community sig list][sig-list]
   - optionally also directly addressing SIG leadership or other SIG members
 - Messaging the SIG's Slack channel
-  - bootstrapped with the slackchannel and SIG leadership from the
+  - bootstrapped with the Slack channel and SIG leadership from the
     [community sig list][sig-list]
   - optionally directly "@" mentioning SIG leadership or others by handle
 

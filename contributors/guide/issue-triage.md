@@ -206,9 +206,9 @@ We aim for consistency across the entire project. However, if you notice an issu
 | **priority/awaiting-more-evidence** | Possibly useful, but not yet enough support to actually get it done. | Mostly placeholders for potentially good ideas, so that they don't get completely forgotten, and can be referenced or deduped every time they come up | 
 
 ### Define Milestones
-Consider in your triaging process also "/milestone" labeled issues. [Milestone maintainer](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-release/release.md#milestone-maintainers) are responsible for setting this labels and interact with the [release team](https://github.com/kubernetes/sig-release/blob/master/release-team/README.md) to include enhancements into a release. 
+Also consider issues labeled "/milestone" in your triaging process. [Milestone maintainers](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-release/release.md#milestone-maintainers) are responsible for setting these labels and interact with the [release team](https://github.com/kubernetes/sig-release/blob/master/release-team/README.md) to include enhancements into a release. 
 
-In case an issue has to be addressed within the next milestone, you ether include them through the regular release process (SIG Release Enhancement Team will reach out to the SIGs) or you have to request an [exception](https://github.com/kubernetes/sig-release/blob/master/releases/EXCEPTIONS.md) at the release team.
+In case an issue has to be addressed within the next milestone, you either include it through the regular release process (SIG Release Enhancement Team will reach out to the SIGs) or request an [exception](https://github.com/kubernetes/sig-release/blob/master/releases/EXCEPTIONS.md) from the release team.
 
 ## Step Four: Find and Set the Right SIG(s) to Own an Issue 
 Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [The bot](https://go.k8s.io/bot-commands) assists in finding a proper SIG to own an issue.
