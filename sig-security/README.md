@@ -45,6 +45,8 @@ Third Party Security Audit
 Security Documents and Documentation
 - **Owners:**
   - [kubernetes/community/sig-security/sig-security-docs](https://github.com/kubernetes/community/blob/master/sig-security/sig-security-docs/OWNERS)
+- **Contact:**
+  - Slack: [#sig-security-docs](https://kubernetes.slack.com/messages/sig-security-docs)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

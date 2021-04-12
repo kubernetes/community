@@ -2124,6 +2124,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-security/sig-security-external-audit/OWNERS
   - name: security-docs
     description: Security Documents and Documentation
+    contact:
+      slack: sig-security-docs
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-security/sig-security-docs/OWNERS
 - dir: sig-service-catalog
