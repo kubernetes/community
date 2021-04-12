@@ -21,7 +21,7 @@ Same question as above but for working groups.
 N/A
 
 When was your last monthly community-wide update? (provide link to deck and/or recording)
-I do not recall 
+https://www.youtube.com/watch?v=H6UuxSZEw3s
 
 ## Membership
 
