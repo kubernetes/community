@@ -64,94 +64,98 @@ The following [subprojects][subproject-definition] are owned by sig-auth:
 ### audit-logging
 Kubernetes API support for audit logging.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/auditregistration/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/apis/audit/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/audit/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/plugin/pkg/audit/OWNERS
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/auditregistration](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/auditregistration/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/apis/audit](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/apis/audit/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/audit](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/audit/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/plugin/pkg/audit](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/plugin/pkg/audit/OWNERS)
 ### authenticators
 Kubernetes API support for authentication.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/authentication/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubeapiserver/authenticator/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/authentication/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/auth/authenticator/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/authentication/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/authentication/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/plugin/pkg/authenticator/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/kubernetes/typed/authentication/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/authentication/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/pkg/apis/clientauthentication/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/plugin/pkg/client/auth/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/tools/auth/OWNERS
+  - [kubernetes/kubernetes/pkg/apis/authentication](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/authentication/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubeapiserver/authenticator](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubeapiserver/authenticator/OWNERS)
+  - [kubernetes/kubernetes/pkg/registry/authentication](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/authentication/OWNERS)
+  - [kubernetes/kubernetes/plugin/pkg/auth/authenticator](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/auth/authenticator/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/authentication](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/authentication/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/authentication](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/authentication/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/plugin/pkg/authenticator](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/plugin/pkg/authenticator/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/client-go/kubernetes/typed/authentication](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/kubernetes/typed/authentication/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/client-go/listers/authentication](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/listers/authentication/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/client-go/pkg/apis/clientauthentication](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/pkg/apis/clientauthentication/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/client-go/plugin/pkg/client/auth](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/plugin/pkg/client/auth/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/client-go/tools/auth](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/tools/auth/OWNERS)
 ### authorizers
 Kubernetes API support for authorization.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/authorization/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/rbac/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubeapiserver/authorizer/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/cmd/auth/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/authorization/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/rbac/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/auth/authorizer/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/authorization/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/rbac/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/authorization/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/plugin/pkg/authorizer/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/kubernetes/typed/authorization/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/kubernetes/typed/rbac/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/authorization/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/rbac/OWNERS
+  - [kubernetes/kubernetes/pkg/apis/authorization](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/authorization/OWNERS)
+  - [kubernetes/kubernetes/pkg/apis/rbac](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/rbac/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubeapiserver/authorizer](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubeapiserver/authorizer/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubectl/cmd/auth](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubectl/cmd/auth/OWNERS)
+  - [kubernetes/kubernetes/pkg/registry/authorization](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/authorization/OWNERS)
+  - [kubernetes/kubernetes/pkg/registry/rbac](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/rbac/OWNERS)
+  - [kubernetes/kubernetes/plugin/pkg/auth/authorizer](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/auth/authorizer/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/authorization](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/authorization/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/rbac](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/rbac/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/authorization](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/authorization/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/plugin/pkg/authorizer](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/plugin/pkg/authorizer/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/client-go/kubernetes/typed/authorization](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/kubernetes/typed/authorization/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/client-go/kubernetes/typed/rbac](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/kubernetes/typed/rbac/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/client-go/listers/authorization](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/listers/authorization/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/client-go/listers/rbac](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/listers/rbac/OWNERS)
 ### certificates
 Certificates APIs and client infrastructure to support PKI.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/certificates/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/certificates/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/certificates/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/authentication/request/x509/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/util/cert/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/util/certificate/OWNERS
+  - [kubernetes/kubernetes/pkg/apis/certificates](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/certificates/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/certificates](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/certificates/OWNERS)
+  - [kubernetes/kubernetes/pkg/registry/certificates](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/certificates/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/authentication/request/x509](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/authentication/request/x509/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/client-go/util/cert](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/util/cert/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/client-go/util/certificate](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/util/certificate/OWNERS)
 ### encryption-at-rest
 API storage support for storing data encrypted at rest in etcd.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/OWNERS
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/OWNERS)
+### hierarchical-namespace-controller
+Controller to manage hierarchical namespaces
+- **Owners:**
+  - [kubernetes-sigs/hierarchical-namespaces](https://github.com/kubernetes-sigs/hierarchical-namespaces/blob/master/OWNERS)
 ### multi-tenancy
 Proposals and prototypes for introducing tenant model to enable multi-tenant cluster
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/multi-tenancy/master/OWNERS
+  - [kubernetes-sigs/multi-tenancy](https://github.com/kubernetes-sigs/multi-tenancy/blob/master/OWNERS)
 ### node-identity-and-isolation
 Node identity management (co-owned with sig-lifecycle), and authorization restrictions for isolating workloads on separate nodes (co-owned with sig-node).
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/certificates/approver/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/certificate/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/noderestriction/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/auth/authorizer/node/OWNERS
+  - [kubernetes/kubernetes/pkg/controller/certificates/approver](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/certificates/approver/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubelet/certificate](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/certificate/OWNERS)
+  - [kubernetes/kubernetes/plugin/pkg/admission/noderestriction](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/admission/noderestriction/OWNERS)
+  - [kubernetes/kubernetes/plugin/pkg/auth/authorizer/node](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/auth/authorizer/node/OWNERS)
 ### policy-management
 API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/wg-policy-prototypes/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/policy/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/policy/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/security/podsecuritypolicy/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/imagepolicy/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/security/podsecuritypolicy/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/imagepolicy/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/policy/OWNERS
+  - [kubernetes-sigs/wg-policy-prototypes](https://github.com/kubernetes-sigs/wg-policy-prototypes/blob/master/OWNERS)
+  - [kubernetes/kubernetes/pkg/apis/imagepolicy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/imagepolicy/OWNERS)
+  - [kubernetes/kubernetes/pkg/apis/policy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/policy/OWNERS)
+  - [kubernetes/kubernetes/pkg/registry/policy](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/policy/OWNERS)
+  - [kubernetes/kubernetes/pkg/security/podsecuritypolicy](https://github.com/kubernetes/kubernetes/blob/master/pkg/security/podsecuritypolicy/OWNERS)
+  - [kubernetes/kubernetes/plugin/pkg/admission/imagepolicy](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/admission/imagepolicy/OWNERS)
+  - [kubernetes/kubernetes/plugin/pkg/admission/security/podsecuritypolicy](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/admission/security/podsecuritypolicy/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/imagepolicy](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/imagepolicy/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/policy](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/policy/OWNERS)
 ### secrets-store-csi-driver
 Integrates secrets stores with Kubernetes via a CSI volume.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/OWNERS
+  - [kubernetes-sigs/secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#csi-secrets-store](https://kubernetes.slack.com/messages/csi-secrets-store)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-secrets-store-csi-driver)
 ### service-accounts
 Infrastructure implementing Kubernetes service account based workload identity.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/serviceaccount/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/token/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/serviceaccount/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/serviceaccount/OWNERS
+  - [kubernetes/kubernetes/pkg/controller/serviceaccount](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/serviceaccount/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubelet/token](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/token/OWNERS)
+  - [kubernetes/kubernetes/pkg/serviceaccount](https://github.com/kubernetes/kubernetes/blob/master/pkg/serviceaccount/OWNERS)
+  - [kubernetes/kubernetes/plugin/pkg/admission/serviceaccount](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/admission/serviceaccount/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

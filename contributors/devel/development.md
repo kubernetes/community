@@ -282,7 +282,8 @@ different versions of Kubernetes.
 | 1.13           | 1.11.13     |
 | 1.14 - 1.16    | 1.12.9      |
 | 1.17 - 1.18    | 1.13.15     |
-| 1.18+          | 1.15        |
+| 1.18 - 1.20    | 1.15        |
+| 1.20.4+        | 1.16        |
 
 ##### A Note on Changing Go Versions
 

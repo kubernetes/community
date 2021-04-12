@@ -25,6 +25,7 @@ channels:
   - name: bindings-discuss
   - name: bootkube
   - name: brigade
+  - name: camptocamp-devops-stack
   - name: cdk
   - name: cert-manager
   - name: cert-manager-dev
@@ -157,6 +158,7 @@ channels:
   - name: kcli
   - name: klog
   - name: knative
+  - name: ko-project
   - name: kompose
   - name: kong
   - name: konveyor
@@ -181,6 +183,7 @@ channels:
   - name: kube-score
   - name: kube-spawn
   - name: kube-state-metrics
+  - name: kube-vip
   - name: kubeadm
   - name: kubeadm-cn
   - name: kubeapps
@@ -214,6 +217,7 @@ channels:
   - name: kubespray
   - name: kubespray-dev
   - name: kubevirt-dev
+  - name: kubewarden
   - name: kubicorn
   - name: kudo
   - name: kurl
@@ -256,6 +260,7 @@ channels:
   - name: meetup-trondheim
   - name: meetup-tunisia
   - name: metacontroller
+  - name: metal-stack
   - name: metallb
   - name: metallb-dev
   - name: microk8s
@@ -283,6 +288,7 @@ channels:
   - name: opencontainers
   - name: openebs
   - name: openebs-dev
+  - name: openkruise
   - name: openshift-dev
   - name: openshift-users
   - name: openstack-helm

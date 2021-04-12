@@ -25,6 +25,9 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 * Regular SIG Meeting: [Tuesdays at 17:30 UTC](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit) (weekly - except fourth Tuesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
+* Spanish Team Meeting: [Tuesdays at 15:30 UTC](https://zoom.us/j/95918289494?pwd=Wk9Oa0xZUkFXSDV5OTFoZEZsTURCZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1jOTK1tqBRwlNQJUB88wfDnGxpdInxMJ7lIFDZy9cMGY).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 
 ## Leadership
 
@@ -78,13 +81,13 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 The following [subprojects][subproject-definition] are owned by sig-docs:
 ### kubernetes-blog
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
+  - [kubernetes/website/content/en/blog](https://github.com/kubernetes/website/blob/master/content/en/blog/OWNERS)
 ### reference-docs
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/reference-docs/master/OWNERS
+  - [kubernetes-sigs/reference-docs](https://github.com/kubernetes-sigs/reference-docs/blob/master/OWNERS)
 ### website
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+  - [kubernetes/website](https://github.com/kubernetes/website/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

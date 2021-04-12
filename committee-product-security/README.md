@@ -18,6 +18,7 @@ The Kubernetes Product Security Committee is the body that is responsible for re
 * Luke Hinds (**[@lukehinds](https://github.com/lukehinds)**), Red Hat
 * Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
 * Swamy Shivaganga Nagaraju (**[@swamymsft](https://github.com/swamymsft)**), Microsoft
+* Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Apple
 
 ## Contact
@@ -32,7 +33,7 @@ The following [subprojects][subproject-definition] are owned by the Product Secu
 ### security
 Policies and documentation for the Product Security Committee
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/security/master/OWNERS
+  - [kubernetes/security](https://github.com/kubernetes/security/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

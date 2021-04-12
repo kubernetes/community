@@ -13,7 +13,7 @@ Service Catalog is a Kubernetes extension project that implements the [Open Serv
 The [charter](charter.md) defines the scope and governance of the Service Catalog Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Mondays at 13:00 PT (Pacific Time)](https://zoom.us/j/7201225346) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Mondays at 10:00 PT (Pacific Time)](https://zoom.us/j/7201225346) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs).
 
@@ -55,11 +55,11 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-service-catalog:
 ### minibroker
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/minibroker/master/OWNERS
+  - [kubernetes-sigs/minibroker](https://github.com/kubernetes-sigs/minibroker/blob/master/OWNERS)
 ### service-catalog
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/go-open-service-broker-client/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/service-catalog/master/OWNERS
+  - [kubernetes-sigs/go-open-service-broker-client](https://github.com/kubernetes-sigs/go-open-service-broker-client/blob/master/OWNERS)
+  - [kubernetes-sigs/service-catalog](https://github.com/kubernetes-sigs/service-catalog/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

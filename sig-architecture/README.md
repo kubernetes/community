@@ -19,7 +19,7 @@ The [charter](charter.md) defines the scope and governance of the Architecture S
 * Production Readiness Office Hours: [Wednesdays at 12:00 PT (Pacific Time)](https://zoom.us/j/482444151) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/10QkXwiZfBL7wBKHHFslooXvGDKHA75jkkgiIXuKFryM/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
-* Regular SIG Meeting: [Thursdays at 19:00 UTC](https://zoom.us/j/845605479) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
+* Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://zoom.us/j/845605479) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1BlmHq5uPyBUDlppYqAAzslVbAO8hilgjqZUTaNXUhKM/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
 * code organization Office Hours: [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/159990793) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
@@ -58,25 +58,25 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
 ### architecture-and-api-governance
 [Described below](#architecture-and-api-governance)
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
+  - [kubernetes/api](https://github.com/kubernetes/api/blob/master/OWNERS)
+  - [kubernetes/community/contributors/design-proposals/architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/OWNERS)
 ### code-organization
 [Described below](#code-organization)
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/component-helpers/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-helpers/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
+  - [kubernetes/component-helpers](https://github.com/kubernetes/component-helpers/blob/master/OWNERS)
+  - [kubernetes/kubernetes/staging](https://github.com/kubernetes/kubernetes/blob/master/staging/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/component-helpers](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-helpers/OWNERS)
+  - [kubernetes/kubernetes/third_party](https://github.com/kubernetes/kubernetes/blob/master/third_party/OWNERS)
+  - [kubernetes/kubernetes/vendor](https://github.com/kubernetes/kubernetes/blob/master/vendor/OWNERS)
+  - [kubernetes/utils](https://github.com/kubernetes/utils/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#k8s-code-organization](https://kubernetes.slack.com/messages/k8s-code-organization)
 ### conformance-definition
 [Described below](#conformance-definition)
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
+  - [kubernetes/kubernetes/test/conformance](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/OWNERS)
+  - [kubernetes/kubernetes/test/conformance/testdata](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS)
 - **Contact:**
   - Slack: [#k8s-conformance](https://kubernetes.slack.com/messages/k8s-conformance)
   - GitHub Teams:
@@ -84,13 +84,13 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
 ### enhancements
 [Described below](#enhancements)
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
+  - [kubernetes/enhancements](https://github.com/kubernetes/enhancements/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#enhancements](https://kubernetes.slack.com/messages/enhancements)
 ### production-readiness
 [Described below](#production-readiness)
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/community/master/sig-architecture/OWNERS
+  - [kubernetes/community/sig-architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/OWNERS)
 - **Contact:**
   - Slack: [#prod-readiness](https://kubernetes.slack.com/messages/prod-readiness)
 

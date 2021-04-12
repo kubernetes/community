@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Security Response Committee
 
-The Kubernetes Security Reponse Committee is the body that is responsible for receiving and responding to reports of security issues in Kubernetes projects.
+The Kubernetes Security Response Committee is the body that is responsible for receiving and responding to reports of security issues in Kubernetes projects.
 
 
 ## Members
@@ -18,6 +18,7 @@ The Kubernetes Security Reponse Committee is the body that is responsible for re
 * Luke Hinds (**[@lukehinds](https://github.com/lukehinds)**), Red Hat
 * Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
 * Swamy Shivaganga Nagaraju (**[@swamymsft](https://github.com/swamymsft)**), Microsoft
+* Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Apple
 
 ## Contact
@@ -32,7 +33,7 @@ The following [subprojects][subproject-definition] are owned by the Security Res
 ### security
 Policies and documentation for the Security Response Committee
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/security/master/OWNERS
+  - [kubernetes/security](https://github.com/kubernetes/security/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

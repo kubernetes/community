@@ -25,7 +25,11 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
 * Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Brex
 * Matt Farina (**[@mattfarina](https://github.com/mattfarina)**), Rancher Labs
-* Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**), Brex
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+
+## Emeritus Leads
+
+* Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**)
 
 ## Contact
 - Slack: [#sig-apps](https://kubernetes.slack.com/messages/sig-apps)
@@ -47,44 +51,44 @@ The following [subprojects][subproject-definition] are owned by sig-apps:
 ### application
 Application metadata descriptor CRD
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/application/master/OWNERS
+  - [kubernetes-sigs/application](https://github.com/kubernetes-sigs/application/blob/master/OWNERS)
 ### examples
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
+  - [kubernetes/examples](https://github.com/kubernetes/examples/blob/master/OWNERS)
 ### execution-hook
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/execution-hook/master/OWNERS
+  - [kubernetes-sigs/execution-hook](https://github.com/kubernetes-sigs/execution-hook/blob/master/OWNERS)
 ### kompose
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
+  - [kubernetes/kompose](https://github.com/kubernetes/kompose/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#kompose](https://kubernetes.slack.com/messages/kompose)
 ### workloads-api
 The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, and StatefulSet kinds
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/core/v1/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/extensions/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cronjob/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/daemon/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/deployment/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/disruption/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/history/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/job/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replicaset/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/replication/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/batch/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/extensions/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/apps/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/batch/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/core/v1/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/extensions/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/apps/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/daemonset/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/deployment/OWNERS
+  - [kubernetes/kubernetes/pkg/apis/apps](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/apps/OWNERS)
+  - [kubernetes/kubernetes/pkg/apis/batch](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/batch/OWNERS)
+  - [kubernetes/kubernetes/pkg/apis/core/v1](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/core/v1/OWNERS)
+  - [kubernetes/kubernetes/pkg/apis/extensions](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/extensions/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/cronjob](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/cronjob/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/daemon](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/daemon/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/deployment](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/deployment/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/disruption](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/disruption/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/history](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/history/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/job](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/job/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/replicaset](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/replicaset/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/replication](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/replication/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/statefulset](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/statefulset/OWNERS)
+  - [kubernetes/kubernetes/pkg/registry/apps](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/apps/OWNERS)
+  - [kubernetes/kubernetes/pkg/registry/batch](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/batch/OWNERS)
+  - [kubernetes/kubernetes/pkg/registry/extensions](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/extensions/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/apps](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/apps/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/batch](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/batch/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/core/v1](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/core/v1/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/extensions](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/extensions/OWNERS)
+  - [kubernetes/kubernetes/test/e2e/apps](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/apps/OWNERS)
+  - [kubernetes/kubernetes/test/integration/daemonset](https://github.com/kubernetes/kubernetes/blob/master/test/integration/daemonset/OWNERS)
+  - [kubernetes/kubernetes/test/integration/deployment](https://github.com/kubernetes/kubernetes/blob/master/test/integration/deployment/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

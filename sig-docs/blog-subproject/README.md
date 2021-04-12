@@ -66,7 +66,7 @@ _If a blog post does not contain any technical content (for example, [How You Ca
 
 ### Embargoed Content
 
-The blog repository on GitHub is public, therefore any content that needs to remain confidential until a certain time (for example: release posts, security vulnerabilities) should be submitted via the form directly. On [the form](https://docs.google.com/forms/d/e/1FAIpQLSch_phFYMTYlrTDuYziURP6nLMijoXx_f7sLABEU5gWBtxJHQ/viewform), please note the time that the embargo will be lifted. In this case, the editorial team will do all reviews in Google Docs. If this is time sensitive, please email [blog@kubernetes.io](mailto:blog@kubernetes.io).
+The blog repository on GitHub is public, therefore any content that needs to remain confidential until a certain time (for example: release posts, security vulnerabilities) should be proposed by email message to [blog@kubernetes.io](mailto:blog@kubernetes.io). In your message, please note the time that the embargo will be lifted.
 
 ### SLA
 

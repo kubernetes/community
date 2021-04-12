@@ -49,41 +49,44 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-network:
 ### cluster-proportional-autoscaler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-proportional-autoscaler/master/OWNERS
+  - [kubernetes-sigs/cluster-proportional-autoscaler](https://github.com/kubernetes-sigs/cluster-proportional-autoscaler/blob/master/OWNERS)
 ### cluster-proportional-vertical-autoscaler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-proportional-vertical-autoscaler/master/OWNERS
+  - [kubernetes-sigs/cluster-proportional-vertical-autoscaler](https://github.com/kubernetes-sigs/cluster-proportional-vertical-autoscaler/blob/master/OWNERS)
 ### external-dns
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/OWNERS
+  - [kubernetes-sigs/external-dns](https://github.com/kubernetes-sigs/external-dns/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
 ### gateway-api
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
+  - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/endpoint](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/endpoint/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/service](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/service/OWNERS)
+  - [kubernetes/kubernetes/pkg/proxy](https://github.com/kubernetes/kubernetes/blob/master/pkg/proxy/OWNERS)
 - **Contact:**
   - Slack: [#sig-network-gateway-api](https://kubernetes.slack.com/messages/sig-network-gateway-api)
 ### ingress
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
+  - [kubernetes-sigs/ingress-controller-conformance](https://github.com/kubernetes-sigs/ingress-controller-conformance/blob/master/OWNERS)
+  - [kubernetes/ingress-gce](https://github.com/kubernetes/ingress-gce/blob/master/OWNERS)
+  - [kubernetes/ingress-nginx](https://github.com/kubernetes/ingress-nginx/blob/master/OWNERS)
 ### iptables-wrappers
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/iptables-wrappers/master/OWNERS
+  - [kubernetes-sigs/iptables-wrappers](https://github.com/kubernetes-sigs/iptables-wrappers/blob/master/OWNERS)
+### kpng
+- **Owners:**
+  - [kubernetes-sigs/kpng](https://github.com/kubernetes-sigs/kpng/blob/master/OWNERS)
 ### kube-dns
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
+  - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
 ### network-policy
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
+  - [kubernetes/api/networking](https://github.com/kubernetes/api/blob/master/networking/OWNERS)
 ### pod-networking
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
+  - [kubernetes-sigs/ip-masq-agent](https://github.com/kubernetes-sigs/ip-masq-agent/blob/master/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubelet/network](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/network/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

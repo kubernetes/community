@@ -61,31 +61,35 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 The following [subprojects][subproject-definition] are owned by sig-cli:
 ### cli-experimental
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cli-experimental/master/OWNERS
+  - [kubernetes-sigs/cli-experimental](https://github.com/kubernetes-sigs/cli-experimental/blob/master/OWNERS)
 ### cli-sdk
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/cli-runtime/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
+  - [kubernetes/cli-runtime](https://github.com/kubernetes/cli-runtime/blob/master/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/cli-runtime](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cli-runtime/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/sample-cli-plugin](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/sample-cli-plugin/OWNERS)
+  - [kubernetes/sample-cli-plugin](https://github.com/kubernetes/sample-cli-plugin/blob/master/OWNERS)
 ### cli-utils
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cli-utils/master/OWNERS
+  - [kubernetes-sigs/cli-utils](https://github.com/kubernetes-sigs/cli-utils/blob/master/OWNERS)
 ### krew
 Plugin manager for kubectl.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/krew/master/OWNERS
+  - [kubernetes-sigs/krew](https://github.com/kubernetes-sigs/krew/blob/master/OWNERS)
 ### krew-index
 Centralized plugin index for krew.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
+  - [kubernetes-sigs/krew-index](https://github.com/kubernetes-sigs/krew-index/blob/master/OWNERS)
 ### kubectl
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
+  - [kubernetes/kubectl](https://github.com/kubernetes/kubectl/blob/master/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubectl](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubectl/OWNERS)
+### kui
+Hybrid command-line/UI development experience for cloud-native development
+- **Owners:**
+  - [kubernetes-sigs/kui](https://github.com/kubernetes-sigs/kui/blob/master/OWNERS)
 ### kustomize
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
+  - [kubernetes-sigs/kustomize](https://github.com/kubernetes-sigs/kustomize/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#kustomize](https://kubernetes.slack.com/messages/kustomize)
 

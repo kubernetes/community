@@ -7,7 +7,7 @@ aliases:
     - janetkuo
     - kow3ns
     - mattfarina
-    - prydonius
+    - soltysh
   sig-architecture-leads:
     - derekwaynecarr
     - dims
@@ -114,7 +114,7 @@ aliases:
     - cindyxing
     - dejanb
   wg-k8s-infra-leads:
-    - bartsmykla
+    - ameukam
     - dims
     - spiffxp
   wg-multitenancy-leads:
@@ -153,6 +153,7 @@ aliases:
     - lukehinds
     - micahhausler
     - swamymsft
+    - tabbysable
     - tallclair
   committee-steering:
     - cblecker
