@@ -53,6 +53,7 @@ usergroups:
       - micahhausler
       - swamymsft
       - tallclair
+      - tabbysable
 
   - name: velero-maintainers
     long_name: Velero Maintainers
