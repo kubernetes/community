@@ -92,7 +92,7 @@ patch release branches.
     release branches where the fix is applicable.
 
   - If `GITHUB_TOKEN` is not set you will be asked for your github password:
-    provide the github personal access token rather than your actual github
+    provide the github [personal access token](https://github.com/settings/tokens) rather than your actual github
     password. If you can securely set the environment variable `GITHUB_TOKEN`
     to your personal access token then you can avoid an interactive prompt.
     Refer [https://github.com/github/hub/issues/2655#issuecomment-735836048](https://github.com/github/hub/issues/2655#issuecomment-735836048)
