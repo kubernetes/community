@@ -1,6 +1,13 @@
 Strategic Merge Patch
 =====================
 
+# Disclaimer
+
+This document is old and probably obsolete. 
+[Server-side Apply](https://kubernetes.io/docs/reference/using-api/server-side-apply/) 
+is the new solution and is the recommended way to go. It doesn't require
+any client-side logic.
+
 # Background
 
 Kubernetes supports a customized version of JSON merge patch called strategic merge patch.  This
