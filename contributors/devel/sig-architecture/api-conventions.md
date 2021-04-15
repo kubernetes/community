@@ -123,7 +123,7 @@ defaults) and may not have lists.
 
    In addition, all lists that return objects with labels should support label
 filtering (see [the labels documentation](https://kubernetes.io/docs/user-guide/labels/)), and most
-lists should support filtering by fields (see 
+lists should support filtering by fields (see
 [the fields documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/)).
 
    Examples: `PodList`, `ServiceList`, `NodeList`.
@@ -691,10 +691,10 @@ have a built-in `nil` value (e.g. maps and slices).
 - The API server should allow POSTing and PUTing a resource with this field
 unset.
 
-In most cases, optional fields should also have the `omitempty` struct tag (the 
+In most cases, optional fields should also have the `omitempty` struct tag (the
 `omitempty` option specifies that the field should be omitted from the json
-encoding if the field has an empty value). However, If you want to have 
-different logic for an optional field which is not provided vs. provided with 
+encoding if the field has an empty value). However, If you want to have
+different logic for an optional field which is not provided vs. provided with
 empty values, do not use `omitempty` (e.g. https://github.com/kubernetes/kubernetes/issues/34641).
 
 Note that for backward compatibility, any field that has the `omitempty` struct
@@ -709,7 +709,7 @@ Required fields have the opposite properties, namely:
 - The API server should not allow POSTing or PUTing a resource with this field
 unset.
 
-Using the `+optional` or the `omitempty` tag causes OpenAPI documentation to 
+Using the `+optional` or the `omitempty` tag causes OpenAPI documentation to
 reflect that the field is optional.
 
 Using a pointer allows distinguishing unset from the zero value for that type.
@@ -738,6 +738,13 @@ resource will include the default values explicitly.
 Incorporating the default values into the `Spec` ensures that `Spec` depicts the
 full desired state so that it is easier for the system to determine how to
 achieve the state, and for the user to know what to anticipate.
+
+Default values can be specified on a field using the `+default=` tag. Primitives
+will have their values directly assigned while structs will go through the
+JSON unmarshalling process. Fields that do not have an `omitempty` json tag will
+default to the zero value of their corresponding type if no default is assigned.
+
+Refer to [defaulting docs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#defaulting) for more information.
 
 API version-specific default values are set by the API server.
 
@@ -880,16 +887,16 @@ references can have unexpected impacts, including:
     or opt-in's from both involved namespaces.
  3. referential integrity problems that one party cannot solve. Referencing namespace/B from namespace/A doesn't imply the
     power to control the other namespace. This means that you can refer to a thing you cannot create or update.
- 4. unclear semantics on deletion. If a namespaced resource  is referenced by other namespaces, should a delete of the 
+ 4. unclear semantics on deletion. If a namespaced resource  is referenced by other namespaces, should a delete of the
     referenced resource result in removal or should the referenced resource be force to remain.
  5. unclear semantics on creation. If a referenced resource is created after its reference, there is no way to know if it
     is the one that is expected or if it is a different one created with the same name.
 
 Built-in types and ownerReferences do not support cross namespaces references.
-If a non-built-in types chooses to have cross-namespace references the semantics of the edge cases above should be 
+If a non-built-in types chooses to have cross-namespace references the semantics of the edge cases above should be
 clearly described and the permissions issues should be resolved.
 This could be done with a double opt-in (an opt-in from both the referrer and the refer-ee) or with secondary permissions
-checks performed in admission. 
+checks performed in admission.
 
 ### Naming of the reference field
 
@@ -974,9 +981,9 @@ A single kind object reference is straightforward in that the controller can har
 ```yaml
 # for a single resource, the suffix should be Ref, with the field name
 # providing an indication as to the resource type referenced.
-secretRef: 
+secretRef:
     name: foo
-    # namespace would generally not be needed and is discouraged, 
+    # namespace would generally not be needed and is discouraged,
     # as explained above.
     namespace: foo-namespace
 ```
@@ -1023,7 +1030,7 @@ fooObjectRef:
     group: operator.openshift.io
     resource: openshiftapiservers
     name: cluster
-    # namespace is unset if the resource is cluster-scoped, or lives in the 
+    # namespace is unset if the resource is cluster-scoped, or lives in the
     # same namespace as the referrer.
 ```
 
@@ -1394,7 +1401,7 @@ reduce data volume, load on the system, and noise exposed to users.
 * Go field names must be PascalCase. JSON field names must be camelCase. Other
 than capitalization of the initial letter, the two should almost always match.
 No underscores or dashes in either.
-* Field and resource names should be declarative, not imperative (SomethingDoer, 
+* Field and resource names should be declarative, not imperative (SomethingDoer,
 DoneBy, DoneAt).
 * Use `Node` where referring to
 the node resource in the context of the cluster. Use `Host` where referring to
@@ -1528,7 +1535,7 @@ Kubernetes components and tools:
   - Key prefixes under "kubernetes.io" and "k8s.io" are reserved for the Kubernetes
     project.
     - Such keys are effectively part of the kubernetes API and may be subject
-      to deprecation and compatibility policies. 
+      to deprecation and compatibility policies.
   - Key names, including prefixes, should be precise enough that a user could
     plausibly understand where it came from and what it is for.
   - Key prefixes should carry as much context as possible.
@@ -1617,19 +1624,19 @@ API objects often are [union](#Unions) object containing the following:
 1. One or more fields identifying the `Type` specific to API object (aka the `discriminator`).
 2. A set of N fields, only one of which should be set at any given time - effectively a union.
 
-Controllers operating on the API type often allocate resources based on 
-the `Type` and/or some additional data provided by user. A canonical example 
-of this is the `Service` API object where resources such as IPs and network ports 
-will be set in the API object based on `Type`. When the user does not specify 
-resources, they will be allocated, and when the user specifies exact value, they will 
+Controllers operating on the API type often allocate resources based on
+the `Type` and/or some additional data provided by user. A canonical example
+of this is the `Service` API object where resources such as IPs and network ports
+will be set in the API object based on `Type`. When the user does not specify
+resources, they will be allocated, and when the user specifies exact value, they will
 be reserved or rejected.
 
-When the user chooses to change the `discriminator` value (e.g., from `Type X` to `Type Y`) without 
-changing any other fields then the system should clear the fields that were used to represent `Type X` 
-in the union along with releasing resources that were attached to `Type X`. This should automatically 
-happen irrespective of how these values and resources were allocated (i.e., reserved by the user or 
-automatically allocated by the system. A concrete example of this is again `Service` API. The system 
-allocates resources such as `NodePorts` and `ClusterIPs` and automatically fill in the fields that 
-represent them in case of the service is of type `NodePort` or `ClusterIP` (`discriminator` values). 
-These resources and the fields representing them are automatically cleared when  the users changes 
-service type to `ExternalName` where these resources and field values no longer apply. 	
+When the user chooses to change the `discriminator` value (e.g., from `Type X` to `Type Y`) without
+changing any other fields then the system should clear the fields that were used to represent `Type X`
+in the union along with releasing resources that were attached to `Type X`. This should automatically
+happen irrespective of how these values and resources were allocated (i.e., reserved by the user or
+automatically allocated by the system. A concrete example of this is again `Service` API. The system
+allocates resources such as `NodePorts` and `ClusterIPs` and automatically fill in the fields that
+represent them in case of the service is of type `NodePort` or `ClusterIP` (`discriminator` values).
+These resources and the fields representing them are automatically cleared when  the users changes
+service type to `ExternalName` where these resources and field values no longer apply.
