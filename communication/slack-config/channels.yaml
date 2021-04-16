@@ -81,6 +81,7 @@ channels:
     archived: true
   - name: emea-dev
   - name: emea-users
+  - name: ephemeralcontainers
   - name: es-users
   - name: etcd
   - name: etcdadm
