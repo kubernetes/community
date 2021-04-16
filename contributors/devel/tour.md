@@ -2,7 +2,7 @@
 
 ### Kubernetes architecture
 
-![k8s](https://raw.githubusercontent.com/qas/k8s/master/static/img/k8s.svg)
+![k8s](https://raw.githubusercontent.com/qas/diagrams/master/k8s/architecture_detailed.svg)
 (Click the image to view links)
 
 [architecture details](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/architecture.md)
