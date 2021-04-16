@@ -336,6 +336,7 @@ sigs:
     contact:
       slack: k8s-code-organization
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/depstat/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/component-helpers/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-helpers/OWNERS
