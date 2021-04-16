@@ -384,9 +384,9 @@ sigs:
     - github: mikedanese
       name: Mike Danese
       company: Google
-    - github: tallclair
-      name: Tim Allclair
-      company: Apple
+    - github: ritazh
+      name: Rita Zhang
+      company: Microsoft
     tech_leads:
     - github: deads2k
       name: David Eads
@@ -402,6 +402,8 @@ sigs:
       name: Eric Chiang
     - github: erictune
       name: Eric Tune
+    - github: tallclair
+      name: Tim Allclair
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday

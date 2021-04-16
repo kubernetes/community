@@ -29,7 +29,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Mo Khan (**[@enj](https://github.com/enj)**), VMware
 * Mike Danese (**[@mikedanese](https://github.com/mikedanese)**), Google
-* Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Apple
+* Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -43,6 +43,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**)
 * Eric Tune (**[@erictune](https://github.com/erictune)**)
+* Tim Allclair (**[@tallclair](https://github.com/tallclair)**)
 
 ## Contact
 - Slack: [#sig-auth](https://kubernetes.slack.com/messages/sig-auth)
