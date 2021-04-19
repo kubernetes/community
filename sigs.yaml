@@ -445,7 +445,6 @@ sigs:
     description: |
       Kubernetes API support for audit logging.
     owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/auditregistration/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/apis/audit/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/audit/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/plugin/pkg/audit/OWNERS
@@ -472,7 +471,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/authorization/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/rbac/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubeapiserver/authorizer/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/cmd/auth/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/authorization/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/rbac/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/auth/authorizer/OWNERS
@@ -484,6 +482,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/kubernetes/typed/rbac/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/authorization/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/rbac/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/kubectl/pkg/cmd/auth/OWNERS
   - name: certificates
     description: |
       Certificates APIs and client infrastructure to support PKI.
