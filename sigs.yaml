@@ -1829,7 +1829,7 @@ sigs:
     chairs:
     - github: justaugustus
       name: Stephen Augustus
-      company: VMware
+      company: Cisco
     - github: saschagrunert
       name: Sascha Grunert
       company: Red Hat
@@ -2877,7 +2877,7 @@ workinggroups:
       company: Apple
     - github: justaugustus
       name: Stephen Augustus
-      company: VMware
+      company: Cisco
     - github: zacharysarah
       name: Zach Corleissen
       company: Linux Foundation
