@@ -24,7 +24,10 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 * Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), CNCF
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Apple
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Cisco
-* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
+
+## Emeritus Organizers
+
+* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**)
 
 ## Contact
 - Slack: [#wg-naming](https://kubernetes.slack.com/messages/wg-naming)
