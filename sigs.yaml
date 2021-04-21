@@ -2880,9 +2880,9 @@ workinggroups:
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
+    emeritus_leads:
     - github: zacharysarah
       name: Zach Corleissen
-      company: Linux Foundation
   meetings:
   - description: Regular WG Meeting
     day: Monday
