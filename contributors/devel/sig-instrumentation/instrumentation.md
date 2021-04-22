@@ -24,7 +24,7 @@ internal and external.
 
 The following describes the basic steps required to add a new metric (in Go).
 
-1. Import "github.com/prometheus/client_golang/prometheus".
+1. Import "k8s.io/component-base/metrics" for metrics and "k8s.io/component-base/metrics/legacyregistry" to register your declared metrics.
 
 2. Create a top-level var to define the metric. For this, you have to:
 
@@ -39,26 +39,23 @@ the values.
 labels on the metric. If so, add "Vec" to the name of the type of metric you
 want and add a slice of the label names to the definition.
 
-   [Example](https://github.com/kubernetes/kubernetes/blob/cd3299307d44665564e1a5c77d0daa0286603ff5/pkg/apiserver/apiserver.go#L53)
+   [Example](https://github.com/kubernetes/kubernetes/blob/v1.21.1-rc.0/staging/src/k8s.io/apiserver/pkg/endpoints/metrics/metrics.go#L75-L82)
    ```go
-    requestCounter = prometheus.NewCounterVec(
-      prometheus.CounterOpts{
-        Name: "apiserver_request_total",
-        Help: "Counter of apiserver requests broken out for each verb, API resource, client, and HTTP response code.",
-      },
-      []string{"verb", "resource", "client", "code"},
-    )
+	requestCounter = compbasemetrics.NewCounterVec(
+		&compbasemetrics.CounterOpts{
+			Name:           "apiserver_request_total",
+			Help:           "Counter of apiserver requests broken out for each verb, dry run value, group, version, resource, scope, component, and HTTP response code.",
+			StabilityLevel: compbasemetrics.STABLE,
+		},
+		[]string{"verb", "dry_run", "group", "version", "resource", "subresource", "scope", "component", "code"},
+	)
    ```
 
-3. Register the metric so that prometheus will know to export it.
+3. Register the metric so that prometheus will know to export it. This can be done in manually or through an init function.
 
-   [Example](https://github.com/kubernetes/kubernetes/blob/cd3299307d44665564e1a5c77d0daa0286603ff5/pkg/apiserver/apiserver.go#L78)
+   [Example](https://github.com/kubernetes/kubernetes/blob/v1.21.1-rc.0/staging/src/k8s.io/apiserver/pkg/endpoints/metrics/metrics.go#L280)
    ```go
-    func init() {
-      prometheus.MustRegister(requestCounter)
-      prometheus.MustRegister(requestLatencies)
-      prometheus.MustRegister(requestLatenciesSummary)
-    }
+	legacyregistry.MustRegister(metric)
    ```
 
 4. Use the metric by calling the appropriate method for your metric type (Set,
