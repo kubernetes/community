@@ -1315,9 +1315,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
     meetings:
-    - description: Mentoring Subproject Meeting (NA/APAC)
+    - description: Mentoring Subproject Meeting
       day: Monday
-      time: "4:00"
+      time: "08:00"
       tz: PT
       frequency: Biweekly
       url: https://zoom.us/j/95894431386?pwd=RFdmQzlZeVZDVWJzcFVXZXR5djNwUT09
