@@ -43,7 +43,7 @@ OWNERS files are in YAML format and support the following keys:
 - `security_contacts`: a list of users to contact for security issues
   - `github`: GitHub username (required)
   - `email`: E-mail address (optional)
-  - NB: the contacts here are for use _by_ the **[Kubernetes PSC][PSC]**, and should not normally include PSC members. The PSC will use the contact information to coordinate security issues.
+  - Note: the contacts here are for use _by_ the **[Kubernetes PSC][PSC]**, and should not normally include PSC members. The PSC will use the contact information to coordinate security issues.
 
 The above keys constitute a *simple OWNERS configuration*.
 
