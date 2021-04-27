@@ -844,7 +844,7 @@ I want to call out [@karenb](https://kubernetes.slack.com/team/UCLQ9GKSP) dealin
                 *   Taint nodes by condition
             *   Performance Improvements
                 *   Large Scale Clusters
-                *   4x improvement in prefered pod affinity
+                *   4x improvement in preferred pod affinity
                 *   Scheduling latency
                 *   How many pods via qued
         *   Plans for upcoming cycles
