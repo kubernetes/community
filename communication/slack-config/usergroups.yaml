@@ -58,8 +58,8 @@ usergroups:
       - lukehinds
       - micahhausler
       - swamymsft
-      - tallclair
       - tabbysable
+      - tallclair
 
   - name: velero-maintainers
     long_name: Velero Maintainers
