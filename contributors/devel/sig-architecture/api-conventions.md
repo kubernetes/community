@@ -900,8 +900,34 @@ clearly described and the permissions issues should be resolved.
 This could be done with a double opt-in (an opt-in from both the referrer and the refer-ee) or with secondary permissions
 checks performed in admission. 
 
-TODO: Plugins, extensions, nested kinds, headers
+TODO: Plugins, extensions, headers
 
+### Handling references to multiple kinds
+
+References which can refer to multiple kinds should use a single field, and select the target kind via `apiVersion` and `kind` fields.
+
+For example, if one can retrieving a referenced value from a `ConfigMap` or a `Secret` kind, the schema for the reference should be of the form:
+
+```yaml
+# preferred pattern
+valueFrom:
+  kind: Secret  # alternatively ConfigMap
+  name: resource-name
+  optional: true
+```
+
+Rather than:
+
+```yaml
+# discouraged pattern
+valueFrom:
+  configMapRef:
+    name: resource-name
+    optional: true
+  secretRef:
+    name: resource-name
+    optional: true
+```
 
 ## HTTP Status codes
 
