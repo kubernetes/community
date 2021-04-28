@@ -85,7 +85,7 @@ usergroups:
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
   # - https://git.k8s.io/sig-release/release-managers.md#release-managers
-  - name: security-release-team
+  - name: security-rel-team
     long_name: Security Release Team
     description: >-
       Composite of Product Security Committee members and Release Managers. Ping
