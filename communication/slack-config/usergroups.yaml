@@ -44,6 +44,9 @@ usergroups:
 
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
+  #
+  # Ensure any changes are also reflected in the Security Release Team
+  # usergroup (within the SIG Release config directory).
   - name: product-security-committee
     long_name: Product Security Committee
     description: |-
@@ -58,8 +61,8 @@ usergroups:
       - lukehinds
       - micahhausler
       - swamymsft
-      - tallclair
       - tabbysable
+      - tallclair
 
   - name: velero-maintainers
     long_name: Velero Maintainers

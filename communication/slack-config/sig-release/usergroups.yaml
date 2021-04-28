@@ -28,10 +28,16 @@ usergroups:
       - saschagrunert # subproject owner / Release Manager
       - sethmccombs # Release Manager Associate
       - Verolop # Release Manager Associate
+      - wilsonehusin # Release Manager Associate
       - xmudrii # Release Manager
 
-  # Should match the Release Team Leads of the current cycle and SIG Chairs at all times
-  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.20/release_team.md
+  # Should match the membership of the following groups at all times:
+  # - Release Team Lead
+  # - Release Team Lead shadows
+  # - Emeritus Adviser
+  # - SIG Release leads
+  #
+  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.22/release_team.md
   - name: release-team-leads
     long_name: Release Team Leads
     description: >-
@@ -70,7 +76,6 @@ usergroups:
       - release-management
       - sig-release
     members:
-      - alejandrox1 # SIG Release Technical Lead
       - hasheddan # SIG Release Technical Lead
       - jeremyrickard # SIG Release Technical Lead
       - justaugustus # SIG Release Chair
@@ -80,7 +85,7 @@ usergroups:
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
   # - https://git.k8s.io/sig-release/release-managers.md#release-managers
-  - name: security-release-team
+  - name: security-rel-team
     long_name: Security Release Team
     description: >-
       Composite of Product Security Committee members and Release Managers. Ping
@@ -90,7 +95,6 @@ usergroups:
       - sig-release
     members:
       - cjcullen # Product Security Committee
-      - cji # Product Security Committee
       - cpanato # Release Manager
       - feiskyer # Release Manager
       - hasheddan # subproject owner / Release Manager
@@ -102,5 +106,6 @@ usergroups:
       - puerco # Release Manager
       - saschagrunert # subproject owner / Release Manager
       - swamymsft # Product Security Committee
+      - tabbysable # Product Security Committee
       - tallclair # Product Security Committee
       - xmudrii # Release Manager
