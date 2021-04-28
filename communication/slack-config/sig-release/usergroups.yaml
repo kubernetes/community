@@ -95,7 +95,6 @@ usergroups:
       - sig-release
     members:
       - cjcullen # Product Security Committee
-      - cji # Product Security Committee
       - cpanato # Release Manager
       - feiskyer # Release Manager
       - hasheddan # subproject owner / Release Manager
@@ -107,5 +106,6 @@ usergroups:
       - puerco # Release Manager
       - saschagrunert # subproject owner / Release Manager
       - swamymsft # Product Security Committee
+      - tabbysable # Product Security Committee
       - tallclair # Product Security Committee
       - xmudrii # Release Manager
