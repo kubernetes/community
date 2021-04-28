@@ -28,6 +28,7 @@ usergroups:
       - saschagrunert # subproject owner / Release Manager
       - sethmccombs # Release Manager Associate
       - Verolop # Release Manager Associate
+      - wilsonehusin # Release Manager Associate
       - xmudrii # Release Manager
 
   # Should match the membership of the following groups at all times:
