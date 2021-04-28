@@ -5,28 +5,28 @@ README](https://github.com/kubernetes/community/blob/master/committee-steering/g
 
 ## Scope
 
-Service Catalog is a Kubernetes extension project that implements the [Open
-Service Broker API](https://www.openservicebrokerapi.org/) (OSBAPI). It enables
-application developers to provision cloud services from within Kubernetes and
-integrates configuration and discovery of those services into Kubernetes
-resources.
+Service Catalog is a Kubernetes extension project that implements and provides
+specifications for kubernetes-specific solutions that enable application developers to
+consume cloud-provided or self-hosted services from within Kubernetes and integrates
+configuration and discovery of those services into Kubernetes resources.
 
 ### In scope
 
 See the [service-catalog SIG entry](https://github.com/kubernetes/community/tree/master/sig-service-catalog).
 
-This SIG’s main goals are:
-- Support, and adhere to, the Platform requirements of the [OSBAPI
-  specification](https://github.com/openservicebrokerapi/servicebroker/blob/master/spec.md).
-- Provide a UX for Kubernetes users that is consistent with both the OSB API
-  specification and traditional Kubernetes user interactions.
-- Align with the OSBAPI specification as changes are made.
-- Provide feedback (bugs or feature requests) to the [OSBAPI WG]](https://www.openservicebrokerapi.org/).
+Areas of focus:
+
+- Develop specifications for solutions related to configuring, discovering and connecting cloud services to applications running on Kubernetes
+- Host implementations of the abovementioned specifications
+- Provide a UX for Kubernetes users that is consistent with traditional Kubernetes user interactions.
 
 ### Code, Binaries and services
 
-- [Source Repository](https://github.com/kubernetes-sigs/service-catalog)
-  - See [OWNERS](https://raw.githubusercontent.com/kubernetes-sigs/service-catalog/master/OWNERS) for who has access.
+- Source repositories
+  - [kubernetes-sigs/service-catalog](https://github.com/kubernetes-sigs/service-catalog)
+  - [kubernetes-sigs/go-open-service-broker-client](https://github.com/kubernetes-sigs/go-open-service-broker-client)
+  - [kubernetes-sigs/minibroker](https://github.com/kubernetes-sigs/minibroker)
+  - See the OWNERS file in each repo for who has access.
 - [Image Repository](https://quay.io/organization/kubernetes-service-catalog)
   - Canary builds are published on pushes to master.
   - Release builds (and latest) are published on tags.
@@ -53,12 +53,13 @@ This SIG’s main goals are:
 ### Out of scope
 
 The following, non-exhaustive, items are out of scope:
-- Operation of OSBAPI Service Brokers.
+- Operation of OSBAPI Service Brokers
+- Operation of any particular service
 
 ## Roles
 This SIG's charter deviates from the
 [sig-governance](https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md)
-roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair role.
+roles. We do not have the Tech Lead role, and have an honorary Emeritus Chair role.
 
 - [Maintainers](https://github.com/orgs/kubernetes-sigs/teams/service-catalog-maintainers/members)
   - Maintainer is equivalent to the standard [Kubernetes definition of
