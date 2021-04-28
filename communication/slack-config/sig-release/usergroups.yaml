@@ -75,7 +75,6 @@ usergroups:
       - release-management
       - sig-release
     members:
-      - alejandrox1 # SIG Release Technical Lead
       - hasheddan # SIG Release Technical Lead
       - jeremyrickard # SIG Release Technical Lead
       - justaugustus # SIG Release Chair
