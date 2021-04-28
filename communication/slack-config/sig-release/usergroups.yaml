@@ -30,8 +30,13 @@ usergroups:
       - Verolop # Release Manager Associate
       - xmudrii # Release Manager
 
-  # Should match the Release Team Leads of the current cycle and SIG Chairs at all times
-  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.20/release_team.md
+  # Should match the membership of the following groups at all times:
+  # - Release Team Lead
+  # - Release Team Lead shadows
+  # - Emeritus Adviser
+  # - SIG Release leads
+  #
+  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.22/release_team.md
   - name: release-team-leads
     long_name: Release Team Leads
     description: >-
