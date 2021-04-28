@@ -131,6 +131,9 @@ aliases:
     - deads2k
     - stevekuznetsov
     - wojtek-t
+  wg-structured-logging-leads:
+    - serathius
+    - shubheksha
   ug-big-data-leads:
     - erikerlandson
     - foxish
