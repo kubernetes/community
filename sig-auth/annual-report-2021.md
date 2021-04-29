@@ -79,31 +79,36 @@
 - [client-go auth plugins](https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/541-external-credential-providers)
 - [external kubelet credential providers](https://github.com/kubernetes/enhancements/blob/master/keps/sig-node/2133-kubelet-credential-providers)
 - [New features in Secrets Store CSI driver](https://secrets-store-csi-driver.sigs.k8s.io/introduction.html#features)
-- [PSP v2](https://github.com/kubernetes/enhancements/issues/2579)
+- [Pod Security Policy Replacement](https://github.com/kubernetes/enhancements/issues/2579)
 
 **Year to date KEP work review: What’s now stable? Beta? Alpha? Road to alpha?**
 
 - Stable
-    - Certificates API
-    - TokenRequest
-    - TokenRequestProjection
-    - ServiceAccountIssuerDiscovery
+    - BoundServiceAccountToken (v1.22)
+    - Certificates API (v1.19)
+    - TokenRequest (v1.20)
+    - TokenRequestProjection (v1.20)
+    - RootCAConfigMap (v1.21)
+    - ServiceAccountIssuerDiscovery (v1.21)
 - Beta
     - CSIServiceAccountToken
-    - RootCAConfigMap
-    - BoundServiceAccountToken
 - Alpha
     - Hierarchical Namespace Controller
+- Road to alpha
+    - Pod Security Policy Replacement
 
 **What areas and/or subprojects does the group need the most help with?**
 
-- PSP v2
 - Audit Logging
 - Audit ID
+    https://github.com/kubernetes/kubernetes/issues/101597
+    https://github.com/kubernetes/kubernetes/issues/84571
 - Testing
 - KMS
     - [KMS-Plugin: Areas for improvement](https://docs.google.com/document/d/1-WHXX_Dh_MNcJb2QJxF0gOAvLjh0fAnc3QrylWdMZJA/edit)
 
 **What's the average open days of a PR and Issue in your group? / what metrics does your group care about and/or measure?**
 
-- We do not currently have this data and will need to get metrics.
+- Based on devstats [Issue Velocity / Issues age by SIG and repository groups](https://k8s.devstats.cncf.io/d/15/issues-age-by-sig-and-repository-groups?orgId=1&var-period=d7&var-repogroup_name=Kubernetes&var-sig_name=auth&var-kind_name=All&var-prio_name=All) at the time of writing this report, median time to close sig auth issues in Kubernetes/Kubernetes created in the last 7 days is roughly 24 hours.  
+- Based on devstats [Issue Velocity / Inactive Issues by SIG for 90 days or more](https://k8s.devstats.cncf.io/d/73/inactive-issues-by-sig?orgId=1&var-sigs=%22auth%22) at the time of writing this report, average is 7.  
+- Based on devstats [PR Velocity / Awaiting PRs by SIG for 90 days or more](https://k8s.devstats.cncf.io/d/70/awaiting-prs-by-sig?orgId=1&var-sigs=%22auth%22) at the time of writing this report, average is 47.  
