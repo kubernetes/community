@@ -53,7 +53,6 @@ Areas of focus:
 ### Out of scope
 
 The following, non-exhaustive, items are out of scope:
-- Operation of OSBAPI Service Brokers
 - Operation of any particular service
 
 ## Roles
