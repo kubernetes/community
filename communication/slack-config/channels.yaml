@@ -333,6 +333,7 @@ channels:
   - name: sig-apps
   - name: sig-auth
   - name: sig-autoscaling
+  - name: sig-autoscaling-api
   - name: sig-cli
   - name: sig-clstr-life-leads
   - name: sig-cluster-lifecycle
