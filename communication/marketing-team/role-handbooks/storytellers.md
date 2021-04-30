@@ -9,12 +9,43 @@ TODO add more here
 
 ## Workflow ⚡️
 
-TODO  
-document a short workflow here
-1 should be for those who are comfortable going back and forth on a PR
-another option should include agreeing on a *final* version in a separate
-collaborative doc tool and the sig-docs-liaison or Editor will start the PR
-process
+### Upstream Marketing Process
+
+#### Idea Paths
+
+There is no one way to get into the kubernetes blog. Below are some options:
+
+The Kubernetes Upstream Marketing team under ContribEx can help you tell a kubernetes story. With Blog posts you can:
+
+* Pitch idea to the meeting or Open a [Contributor Comms Requests issue](https://github.com/kubernetes/community/issues
+)
+* Create initial draft
+  * Can be a
+    * gdoc
+    * markdown
+    * hackmd
+* Get assigned a pair
+  * Via issue or meeting
+* Work with the Upstream marketing team to polish, and format your blog
+  * No current cannonical format document
+  * [Technical consideration](https://github.com/kubernetes/community/issues
+) provided by the k8s blog team
+* Go to the kubernetes/website repo and send a PR
+  * Upstream marketing will offer to have your pair help with the PR and shepherd it throught the k8s blog process
+
+or if you already have everything you think you need you can simply
+
+* Go to the kubernetes/website repo and send a PR
+* There's a kubernetes blog team that will walk you through [the process](https://kubernetes.io/docs/contribute/new-content/blogs-case-studies/)
+
+### Tips
+
+Converting gdoc to markdown?
+
+* go to: https://discuss.kubernetes.io/
+* Open a new topic
+* Paste gdoc into window
+* Profit
 
 ## Minimum Skills and Experience
 
