@@ -2917,12 +2917,12 @@ workinggroups:
   label: policy
   leadership:
     chairs:
-    - github: rficcaglia
-      name: Robert Ficcaglia
-      company: SunStone
     - github: JimBugwadia
       name: Jim Bugwadia
       company: Kyverno/Nirmata
+    - github: rficcaglia
+      name: Robert Ficcaglia
+      company: SunStone
   meetings:
   - description: Regular WG Meeting
     day: Wednesday
