@@ -6,10 +6,10 @@
 [sig-governance.md](https://git.k8s.io/community/committee-steering/governance/sig-governance.md)?
   * Is your README accurate? have a CONTRIBUTING.md file?
     * Yes, [README.md](https://github.com/kubernetes/community/blob/master/sig-autoscaling/README.md) is accurate (other than one link)
-    * We do not currently have a [CONTRIBUTING.md] in the community repo
+    * We do not currently have a CONTRIBUTING.md in the community repo
 
   * All subprojects correctly mapped and listed in [sigs.yaml](https://git.k8s.io/community/sig-list.md)?
-    * [Yes](https://github.com/kubernetes/community/tree/master/sig-autoscaling#subprojects)]
+    * [Yes](https://github.com/kubernetes/community/tree/master/sig-autoscaling#subprojects)
 
   * What’s your meeting culture? Large/small, active/quiet, learnings? Meeting notes up to date? Are you keeping
   recordings up to date/trends in community members watching recordings?
