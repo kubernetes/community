@@ -126,7 +126,9 @@ channels:
   - name: in-dev
   - name: in-events
   - name: in-users
-  - name: ingress-nginx
+  - name: ingress-nginx-dev
+  - name: ingress-nginx-users
+    id: CANQGM8BA
   - name: inspektor-gadget
   - name: it-events
   - name: it-users
