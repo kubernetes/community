@@ -18,7 +18,7 @@ Same question as above but for working groups.
 We don't get updates from subprojects and are in the project of refactoring subprojects to match where active development is happening.
 
 When was your last monthly community-wide update? (provide link to deck and/or recording)
-No links available, we may modify this later.
+Sept 17, 2020.  The recording is here https://www.youtube.com/watch?v=6Wn_dIEg0E8, slides are here https://docs.google.com/presentation/d/1FkS6FIes9opMR1B4qXyVzwGfUBnX0A-sh27Kcnyi-e4/edit#slide=id.g97ab5232db_0_0 . 
 
 # Membership
 
