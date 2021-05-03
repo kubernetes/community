@@ -18,7 +18,7 @@ Same question as above but for working groups.
 We don't get updates from subprojects and are in the project of refactoring subprojects to match where active development is happening.
 
 When was your last monthly community-wide update? (provide link to deck and/or recording)
-Sept 17 Slides recording
+No links available, we may modify this later.
 
 # Membership
 
