@@ -6,7 +6,7 @@
 
 **Is your README accurate? have a CONTRIBUTING.md file?**
 
- - Yes, our README is accurate. As of this report, we do not have a CONTRIBUTING.md file. We will be creating one shortly.
+ - Yes, our README is accurate. As of this report, we do not have a CONTRIBUTING.md file. We will be [creating one](https://github.com/kubernetes/community/issues/5760) shortly.
 
 **All subprojects correctly mapped and listed in sigs.yaml?**
 
@@ -90,8 +90,9 @@
     - TokenRequestProjection (v1.20)
     - RootCAConfigMap (v1.21)
     - ServiceAccountIssuerDiscovery (v1.21)
+    - client-go auth plugins (v1.22)
 - Beta
-    - CSIServiceAccountToken
+    - CSIServiceAccountToken (v1.21)
 - Alpha
     - Hierarchical Namespace Controller
 - Road to alpha
@@ -100,10 +101,12 @@
 **What areas and/or subprojects does the group need the most help with?**
 
 - Audit Logging
-- Audit ID
-    https://github.com/kubernetes/kubernetes/issues/101597
-    https://github.com/kubernetes/kubernetes/issues/84571
+    - https://github.com/kubernetes/kubernetes/issues/101597
+    - https://github.com/kubernetes/kubernetes/issues/84571
+    - https://github.com/kubernetes/kubernetes/issues/82295
+    - https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue+label%3Aarea%2Faudit+
 - Testing
+    - https://github.com/kubernetes/enhancements/issues/541#issuecomment-799372909
 - KMS
     - [KMS-Plugin: Areas for improvement](https://docs.google.com/document/d/1-WHXX_Dh_MNcJb2QJxF0gOAvLjh0fAnc3QrylWdMZJA/edit)
 
