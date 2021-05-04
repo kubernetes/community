@@ -68,7 +68,8 @@ usergroups:
     long_name: Velero Maintainers
     description: Velero Maintainers group.
     channels:
-      - velero
+      # - velero-dev
+      - velero-users
     members:
       - ashish-amarnath
       - carlisia

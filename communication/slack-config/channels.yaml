@@ -389,7 +389,9 @@ channels:
   - name: ug-big-data
     id: C0ELB338T
   - name: ug-vmware
-  - name: velero
+  - name: velero-dev
+  - name: velero-users
+    id: C6VCGP4MT
   - name: virtlet
   - name: virtual-kubelet
   - name: virtualization
