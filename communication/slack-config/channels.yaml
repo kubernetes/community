@@ -390,7 +390,6 @@ channels:
     id: C0ELB338T
   - name: ug-vmware
   - name: undistro
-  - name: velero
   - name: velero-dev
   - name: velero-users
     id: C6VCGP4MT
