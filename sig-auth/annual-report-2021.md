@@ -112,6 +112,5 @@
 
 **What's the average open days of a PR and Issue in your group? / what metrics does your group care about and/or measure?**
 
-- Based on devstats [Issue Velocity / Issues age by SIG and repository groups](https://k8s.devstats.cncf.io/d/15/issues-age-by-sig-and-repository-groups?orgId=1&var-period=d7&var-repogroup_name=Kubernetes&var-sig_name=auth&var-kind_name=All&var-prio_name=All) at the time of writing this report, median time to close sig auth issues in Kubernetes/Kubernetes created in the last 7 days is roughly 24 hours.  
 - Based on devstats [Issue Velocity / Inactive Issues by SIG for 90 days or more](https://k8s.devstats.cncf.io/d/73/inactive-issues-by-sig?orgId=1&var-sigs=%22auth%22) at the time of writing this report, average is 7.  
 - Based on devstats [PR Velocity / Awaiting PRs by SIG for 90 days or more](https://k8s.devstats.cncf.io/d/70/awaiting-prs-by-sig?orgId=1&var-sigs=%22auth%22) at the time of writing this report, average is 47.  
