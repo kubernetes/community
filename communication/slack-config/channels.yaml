@@ -107,7 +107,9 @@ channels:
   - name: gloo
   - name: grafana-operator
   - name: haproxy-ingress
-  - name: headlamp
+  - name: headlamp-users
+    id: C01FXB5E8ER
+  - name: headlamp-dev
   - name: helm-chart-testing
   - name: helm-deprecated
     archived: true
