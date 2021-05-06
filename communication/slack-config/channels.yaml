@@ -55,6 +55,7 @@ channels:
   - name: cn-dev
   - name: cn-events
   - name: cn-users
+  - name: code-of-conduct
   - name: community-sites
   - name: compliance-hipaa
   - name: contour
