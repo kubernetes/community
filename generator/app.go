@@ -39,6 +39,7 @@ const (
 	headerTemplate   = "header.tmpl"
 
 	sigsYamlFile     = "sigs.yaml"
+	userSlackMapFile = "communication/slack-config/users.yaml"
 	sigListOutput    = "sig-list.md"
 	aliasesOutput    = "OWNERS_ALIASES"
 	indexFilename    = "README.md"
@@ -75,6 +76,7 @@ type Person struct {
 	GitHub  string
 	Name    string
 	Company string `yaml:"company,omitempty"`
+	Slack   string `yaml:"slack,omitempty"`
 }
 
 // Meeting represents a regular meeting for a group.
@@ -186,6 +188,12 @@ type Context struct {
 	Committees    []Group
 }
 
+// SlackContext uses communication/slack-config/users.yaml to make
+// GitHub user IDs to their equivalent unique Slack ID
+type SlackContext struct {
+	Users map[string]string
+}
+
 func index(groups []Group, predicate func(Group) bool) int {
 	for i, group := range groups {
 		if predicate(group) {
@@ -193,6 +201,18 @@ func index(groups []Group, predicate func(Group) bool) int {
 		}
 	}
 	return -1
+}
+func (c *Context) AddSlackMappings(s SlackContext) {
+	for i, group := range c.Committees {
+		for j, person := range group.Leadership.Chairs {
+			slackid, ok := s.Users[person.GitHub]
+			if ok {
+				person.Slack = slackid
+				c.Committees[i].Leadership.Chairs[j].Slack = slackid
+				fmt.Printf("matched %s to %s\n", person.GitHub, person.Slack)
+			}
+		}
+	}
 }
 
 // PrefixToGroupMap returns a map of prefix to groups, useful for iteration over all groups
@@ -561,6 +581,15 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	// Build a reference for Slack userid mappings
+	slackMapPath := filepath.Join(baseGeneratorDir, userSlackMapFile)
+	var ctxSlack SlackContext
+	err = readYaml(slackMapPath, &ctxSlack)
+	if err != nil {
+		log.Fatal(err)
+	}
+	ctx.AddSlackMappings(ctxSlack)
 
 	fmt.Println("Generating group READMEs")
 	for prefix, groups := range ctx.PrefixToGroupMap() {
