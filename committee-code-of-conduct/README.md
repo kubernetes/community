@@ -14,11 +14,11 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 ## Members
 
-* Aeva Black (**[@AevaOnline](https://github.com/AevaOnline)**), Microsoft
-* Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), CNCF
-* Karen Chu (**[@karenhchu](https://github.com/karenhchu)**), Microsoft
-* Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
-* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
+* Aeva Black (**GitHub: [@AevaOnline](https://github.com/AevaOnline), Slack: [Send DM](https://kubernetes.slack.com/team/U0GHWKQ9W)**), Microsoft
+* Celeste Horgan (**GitHub: [@celestehorgan](https://github.com/celestehorgan), Slack: [Send DM](https://kubernetes.slack.com/team/USF2T2W78)**), CNCF
+* Karen Chu (**GitHub: [@karenhchu](https://github.com/karenhchu), Slack: [Send DM](https://kubernetes.slack.com/team/U0HMJ19U0)**), Microsoft
+* Tasha Drew (**GitHub: [@tashimi](https://github.com/tashimi), Slack: [Send DM](https://kubernetes.slack.com/team/U98L57XTL)**), VMware
+* Tim Pepper (**GitHub: [@tpepper](https://github.com/tpepper), Slack: [Send DM](https://kubernetes.slack.com/team/U6UB5V4TX)**), VMware
 
 ## Contact
 - Private Mailing List: conduct@kubernetes.io

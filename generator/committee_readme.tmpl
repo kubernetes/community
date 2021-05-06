@@ -24,7 +24,7 @@ The [charter]({{.CharterLink}}) defines the scope and governance of the {{.Name}
 
 ## Members
 {{ range .Leadership.Chairs }}
-* {{.Name}} (**[@{{.GitHub}}](https://github.com/{{.GitHub}})**){{if .Company}}, {{.Company}}{{end}}
+* {{.Name}} (**{{if .Slack}}GitHub: {{end}}[@{{.GitHub}}](https://github.com/{{.GitHub}}){{if .Slack}}, Slack: [Send DM](https://kubernetes.slack.com/team/{{.Slack}}){{end}}**){{if .Company}}, {{.Company}}{{end}}
 {{- end }}
 {{- end }}
 {{- end }}
