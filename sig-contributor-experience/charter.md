@@ -135,7 +135,7 @@ Chairs and Technical Leads
 [Zoom]: https://git.k8s.io/community/communication/zoom-guidelines.md
 [/kubernetescommunity]: https://www.youtube.com/kubernetescommunity
 [discuss.kubernetes.io]: https://discuss.kubernetes.io
-[contributor guide]: https://git.k8s.io/community/contributor
+[contributor guide]: https://git.k8s.io/community/contributors/guide
 [moderation]: https://git.k8s.io/community/communication/moderation.md
 [code of conduct committee]: https://git.k8s.io/community/committee-code-of-conduct
 [Mailing lists]: https://git.k8s.io/community/communication/moderation.md#specific-guidelines

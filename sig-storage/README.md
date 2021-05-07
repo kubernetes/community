@@ -71,6 +71,7 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - [kubernetes-sigs/container-object-storage-interface-csi-adapter](https://github.com/kubernetes-sigs/container-object-storage-interface-csi-adapter/blob/master/OWNERS)
   - [kubernetes-sigs/container-object-storage-interface-provisioner-sidecar](https://github.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar/blob/master/OWNERS)
   - [kubernetes-sigs/container-object-storage-interface-spec](https://github.com/kubernetes-sigs/container-object-storage-interface-spec/blob/master/OWNERS)
+  - [kubernetes-sigs/cosi-driver-minio](https://github.com/kubernetes-sigs/cosi-driver-minio/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#sig-storage-cosi](https://kubernetes.slack.com/messages/sig-storage-cosi)
 ### kubernetes-csi
@@ -108,6 +109,10 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
 - **Owners:**
   - [kubernetes-sigs/nfs-ganesha-server-and-external-provisioner](https://github.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/blob/master/OWNERS)
   - [kubernetes-sigs/nfs-subdir-external-provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/blob/master/OWNERS)
+### volume-populators
+- **Owners:**
+  - [kubernetes-csi/lib-volume-populator](https://github.com/kubernetes-csi/lib-volume-populator/blob/master/OWNERS)
+  - [kubernetes-csi/volume-data-source-validator](https://github.com/kubernetes-csi/volume-data-source-validator/blob/master/OWNERS)
 ### volumes
 - **Owners:**
   - [kubernetes/kubernetes/pkg/volume](https://github.com/kubernetes/kubernetes/blob/master/pkg/volume/OWNERS)

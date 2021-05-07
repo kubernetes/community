@@ -33,9 +33,8 @@ There isn't any formal process. Updates are given during regular SIG meetings.
 
 **When was your last monthly community-wide update? (provide link to deck and/or recording)**
 
-January'20: [slide deck]
-
-[slide deck]:https://docs.google.com/presentation/d/1M81X3_SWwHrJaWdJsecJReOVNxjjWSBFBkhPKEV35hs/edit
+- [Aug 20](https://docs.google.com/presentation/d/1-NOmFvwBqIGkZNQPe4R44hLvv0BuxbZy3DLleipKPHg/edit)
+- [Jan 20](https://docs.google.com/presentation/d/1M81X3_SWwHrJaWdJsecJReOVNxjjWSBFBkhPKEV35hs/edit)
 
 
 ## Membership

@@ -8,7 +8,7 @@ for CNCF compliance and for the guidelines of the community.
 
 The [GitHub Administration Team] will aim to handle requests in the following
 time frames:
-- Organization invites should be handled within 72 hours of all requirements for
+- Organization invites should be handled within one week of all requirements for
   membership being met (all +1s obtained).
 - Repository creation or migration requests should be responded to within 72
   hours of the issue being opened. There may be information required or specific
@@ -16,7 +16,7 @@ time frames:
   repo should be created within 72 hours.
 - Security or moderation requests should be handled ASAP, and coverage should be
   provided in multiple time zones and countries.
-- All other requests should be responded to within 72 hours of the issue being
+- All other requests should be responded to within a week of the issue being
   opened. The time to resolve these requests will vary depending on the
   specifics of the request.
 

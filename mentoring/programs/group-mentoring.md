@@ -1,41 +1,36 @@
-# Group Mentoring for Contributor Ladder Growth
-*This is a work in progress*
-
-
-## Summary
-This is an experimental group mentoring program where individuals will work
-self-paced in a semi-structured learning environment over the course of three
-months. Want to get `/lgtm` rights? Be a decision maker in an OWNERS file? This
-could be a great way to get the knowledge you need, and some accountability to
-do it. Through this program you will get the opportunity to interact with active
-contributors who may be on the same path as you as well very experienced
-Kubernetes contributors.
+# Contributor Ladder Growth Programs
+  
+These programs place an emphasis on learning in groups for active contributors
+that would like to be a reviewer or other leadership roles like a Chair. The 
+groups are semi-structured learning environments over the course of three
+months or a release cycle. Want to get `/lgtm` rights? Be a decision maker in an
+ OWNERS file? This could be a great way to get the knowledge you need, and some 
+ accountability to do it. Through this program you will get the opportunity to 
+ interact with active contributors who may be on the same path as you as well 
+ very experienced Kubernetes contributors.
 
 ## How This Works
 Foundation:  
-This program is built around our [community membership guidelines].
-This doc shows how you can grow through the project in different roles and
-provides the requirements to get to each level on our ladder. Building trust is
-the key to this document.
+This program is built around our [community membership guidelines] as well as 
+our [Chair] and [Tech Lead] governance descriptions.
+These docs show how you can grow through the project in different roles and
+provides the requirements to get to each level on our ladder. Building trust is 
+key.
 
 ## Cohorts
-Contributors will form small cohorts of no more than 10 (8-10 is great) all aiming
-to achieve the same goal - the next stage on the contributor ladder - with the
-help of active contributors (1 mentor to 3 mentees). For example, our first test
-cohort was Member -> Reviewer in SIG Apps, SIG Cluster Lifecycle, and SIG AWS.  
+- No more than 4 mentees per 1 mentor; no more than 8 total in the group
+  - this scales better than 1:1 and peers can help each other in a community
+  setting
+- Everyone is on the same journey 
+Member -> Reviewer | Reviewer -> Approver | SIG Member -> Chair
+- Three months / one release cycle 
+- Private slack channel
+ For you to progress, the community wants to know you are dependable and 
+ understand the domain.
 
-Each cohort will last 2-3 months based on the time requirement in the community
-membership guidelines per level. This time requirement is pretty flexible and not
-a hard line because as noted above, this is about building trust and skills. Folks
-want to know you are dependable and understand the domain.
-
-The cohort gathers on slack in a private room that one of the mentors or sig-contribex
-will PR into the slack config files on the k/community repo.
-TODO: make the self service aspect here solid for faster onboarding
-
-Mentors can rotate facilitating once a week for slack standups with the expectation
-that cohort members need to check in with a predetermined status update
-(accomplishments, challenges, etc)  
+Mentors can rotate facilitating once a week for slack standups with the 
+expectation that cohort members need to check in with a predetermined status 
+update (accomplishments, challenges, etc)  
 
 ## Benefits of a Cohort
 * Peer mentoring  
@@ -47,38 +42,39 @@ that cohort members need to check in with a predetermined status update
  
 
 ## Mentor requirements  
-TODO  
+- Github Org Member
+- At least the same level as the goal of the group (example: Reviewer for 
+Reviewers) 
+- Time commitment: facilitate biweekly, hour long zoom sessions plus curriculum 
+planning in between sessions (~1-2h/wk total).
 
 ## First Cohort Success Rates
-5/10 graduated into OWNERs files from members to reviewers.   
-TODO check how many are still active  
+5/10 graduated into OWNERs files from members to reviewers in 2019. 2 are
+subproject owners in 2021.  
 
 ## FAQs
 I'm a SIG Chair/TL/Subproject Owner and have a need for more members, reviewers,
 approvers, how can we form a cohort?  
-TODO  
+Reach out to #sig-contribex in slack or file an issue against 
+kubernetes/community 
 
 I'm a contributor looking for a cohort, where do I go?  
-TODO  
+Look in the kubernetes/community repo for issues labelled "contributor ladder
+mentoring" 
 
 I'm not a chair, tech lead, or subproject owner but I'm a reviewer or approver,
 how can I help?  
-TODO  
+Talk to your Chairs and Tech Leads about forming a group that you can help 
+mentor.  
 
 
 ## Important Links
 [Mentor Guide]  
 [Mentee Guide]
 
-
-## Open ended questions
-how can mentors organize the tasks, issues, prs, that they give to the mentees?   
-should they be high priority items to help with backlog and mentor at the same time?  
-should we include a list of topics that should be covered by role?  
-- example: for member to reviewer we focused on - live how to code review, how to review [better] docs, communicating with empathy, advanced testing/ci, general community/governance  
-
-
-[Mentee Guide]: /mentoring/group-mentee-guide.md
+[Mentee Guide]: /mentoring/programs/group-mentee-guide.md
 [Mentoring/Contributor Info Form]: https://goo.gl/forms/SHWAiZ9Ih1qwuJbs1
-[Mentor Guide]: /mentoring/mentor-guide.md
+[Mentor Guide]: /mentoring/processes/mentor-guide.md
 [community membership guidelines]: /community-membership.md
+[Chair]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md#chair
+[Tech Lead]: https://github.com/kubernetes/community/blob/master/contributors/chairs-and-techleads/technical-lead.md

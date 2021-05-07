@@ -19,7 +19,7 @@ These findings, below, paint a broad picture of Kubernetes security, as of versi
 
 This subsequent audit is intended to be the second in a series of recurring audits, each focusing on a specific aspect of Kubernetes while maintaining coverage of all aspects that have changed since the previous audit ([1.13](../security-audit-2019/findings/)).
 
-The scope of this audit is the most recent release (1.21 at the close of this RFP) of the core [Kubernetes project](https://github.com/kubernetes/kubernetes) and certain other code maintained by [Kubernetes SIGs](https://github.com/kubernetes-sigs/).
+The scope of this audit is the most recent release at commencement of audit of the core [Kubernetes project](https://github.com/kubernetes/kubernetes) and certain other code maintained by [Kubernetes SIGs](https://github.com/kubernetes-sigs/).
 
 This audit will focus on the following components of Kubernetes:
 
@@ -63,24 +63,26 @@ If your proposal includes subcontractors, please include relevant details from t
 
 ### Anticipated Selection Schedule
 
-This RFP will be open between 2021/02/08 and 2021/04/09.
+This RFP will be open until 4 proposals have been received.
+The RFP closing date will be set 2 calendar weeks after the fourth proposal is received.
+The working group will announce the vendor selection 2 calendar weeks after the RFP closes.
+Upon receipt of the fourth proposal, the working group will update the RFP closure date and vendor selection date in this document.
 
-The working group will answer questions for the beginning of the RFP period.
+The working group will answer questions for the RFP period.
 
 Questions can be submitted [here](https://docs.google.com/forms/d/e/1FAIpQLScjApMDAJ5o5pIBFKpJ3mUhdY9w5s9VYd_TffcMSvYH_O7-og/viewform). All questions will be answered publicly in this document.
 
-Proposals must include CVs, resumes, and/or example reports from staff that will be working on the project.
+We understand scheduling can be complex but we prefer to have proposals include CVs, resumes, and/or example reports from staff that will be working on the project.
 
 Proposals should be submitted to kubernetes-security-audit-2021@googlegroups.com
 
 * 2021/02/08: RFP Open, Question period open
-* 2021/03/26: Question period closes
-* 2021/04/09: RFP Closes
-* 2021/04/20: The working group will announce vendor selection
+* TBD: RFP Closes, Question period closes
+* TBD: The working group will announce vendor selection
 
 ## Methodology
 
-We are allowing roughly 12 calendar weeks for this audit, start date can be negotiated after vendor selection. 
+The start and end dates will be negotiated after vendor selection. The timeline for this audit is flexible.
 
 The working group will establish a 60 minute kick-off meeting to answer any initial questions and discuss the Kubernetes architecture.
 

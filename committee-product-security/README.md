@@ -18,6 +18,7 @@ The Kubernetes Product Security Committee is the body that is responsible for re
 * Luke Hinds (**[@lukehinds](https://github.com/lukehinds)**), Red Hat
 * Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
 * Swamy Shivaganga Nagaraju (**[@swamymsft](https://github.com/swamymsft)**), Microsoft
+* Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Apple
 
 ## Contact

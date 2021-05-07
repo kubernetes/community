@@ -10,6 +10,7 @@
     - [Extracting a specific version of Kubernetes](#extracting-a-specific-version-of-kubernetes)
     - [Bringing up a cluster for testing](#bringing-up-a-cluster-for-testing)
     - [Debugging clusters](#debugging-clusters)
+    - [Debugging an E2E test with a debugger (delve)](#debugging-an-e2e-test-with-a-debugger-delve)
     - [Local clusters](#local-clusters)
       - [Testing against local clusters](#testing-against-local-clusters)
     - [Version-skewed and upgrade testing](#version-skewed-and-upgrade-testing)
@@ -229,6 +230,7 @@ stale permissions can cause problems.
   - `sudo iptables -F`, clear ip tables rules left by the kube-proxy.
 
 ### Reproducing failures in flaky tests
+
 You can run a test repeatedly until it fails. This is useful when debugging
 flaky tests. In order to do so, you need to set the following environment
 variable:
@@ -258,6 +260,121 @@ the provided directory (which should already exist).
 
 The Google-run Jenkins builds automatically collected these logs for every
 build, saving them in the `artifacts` directory uploaded to GCS.
+
+### Debugging an E2E test with a debugger (delve)
+
+When debugging E2E tests it's sometimes useful to pause in the middle of an E2E test
+to check the value of a variable or to check something in the cluster, instead of adding
+`time.Sleep(...)` we can run the E2E test with `delve`
+
+Requirements:
+
+- delve (https://github.com/go-delve/delve/tree/master/Documentation/installation)
+
+For this example we'll debug a [sig-storage test that will provision storage from a snapshot](https://github.com/kubernetes/kubernetes/blob/3ed71cf190a3d6a6dcb965cf73224538059e8e5e/test/e2e/storage/testsuites/provisioning.go#L200-L236)
+
+First, compile the E2E test suite with additional compiler flags
+
+```sh
+# -N Disable optimizations.
+# -l Disable inlining.
+make WHAT=test/e2e/e2e.test GOGCFLAGS="all=-N -l" GOLDFLAGS=""
+```
+
+Then set the env var `E2E_TEST_DEBUG_TOOL=delve` and then run the test with `./hack/gingko.sh` instead of `kubetest`, you should see the delve command line prompt
+
+```sh
+E2E_TEST_DEBUG_TOOL=delve ./hack/ginkgo-e2e.sh --ginkgo.focus="sig-storage.*csi-hostpath.*Dynamic.PV.*default.fs.*provisioning.should.provision.storage.with.snapshot.data.source" --allowed-not-ready-nodes=10
+---
+Setting up for KUBERNETES_PROVIDER="gce".
+Project: ...
+Network Project: ...
+Zone: ...
+Trying to find master named '...'
+Looking for address '...'
+Using master: ... (external IP: XX.XXX.XXX.XX; internal IP: (not set))
+Type 'help' for list of commands.
+(dlv)
+```
+
+Use the commands described in the [delve command lists](https://github.com/go-delve/delve/blob/master/Documentation/cli/README.md), for our example we'll set a breakpoint at the start of the method
+
+```sh
+(dlv) break test/e2e/storage/testsuites/provisioning.go:201
+Breakpoint 1 set at 0x72856f2 for k8s.io/kubernetes/test/e2e/storage/testsuites.(*provisioningTestSuite).DefineTests.func4() _output/local/go/src/k8s.io/kubernetes/test/e2e/storage/testsuites/provisioning.go:201
+```
+
+When you're done setting breakpoints execute `continue` to continue the test, once the breakpoint hits you have the chance to explore variables in the test
+
+```sh
+(dlv) continue
+Apr 16 20:29:18.724: INFO: Fetching cloud provider for "gce"
+I0416 20:29:18.725327 3669683 gce.go:909] Using DefaultTokenSource &oauth2.reuseTokenSource{new:(*oauth2.tokenRefresher)(0xc002b65d10), mu:sync.Mutex{state:0, sema:0x0}, t:(*oauth2.Token)(0xc0028e43c0)}
+W0416 20:29:18.891866 3669683 gce.go:477] No network name or URL specified.
+I0416 20:29:18.892058 3669683 e2e.go:129] Starting e2e run "ae1b58af-9e9e-4745-b1f4-27d763451f8e" on Ginkgo node 1
+{"msg":"Test Suite starting","total":1,"completed":0,"skipped":0,"failed":0}
+Running Suite: Kubernetes e2e suite
+===================================
+Random Seed: 1618604956 - Will randomize all specs
+Will run 1 of 5745 specs
+...
+------------------------------
+[sig-storage] CSI Volumes [Driver: csi-hostpath] [Testpattern: Dynamic PV (default fs)] provisioning
+  should provision storage with snapshot data source [Feature:VolumeSnapshotDataSource]
+  _output/local/go/src/k8s.io/kubernetes/test/e2e/storage/testsuites/provisioning.go:200
+[BeforeEach] [Testpattern: Dynamic PV (default fs)] provisioning
+  _output/local/go/src/k8s.io/kubernetes/test/e2e/storage/framework/testsuite.go:51
+[BeforeEach] [Testpattern: Dynamic PV (default fs)] provisioning
+  _output/local/go/src/k8s.io/kubernetes/test/e2e/framework/framework.go:185
+STEP: Creating a kubernetes client
+Apr 16 20:29:24.747: INFO: >>> kubeConfig: ...
+STEP: Building a namespace api object, basename provisioning
+W0416 20:29:24.901750 3669683 warnings.go:70] policy/v1beta1 PodSecurityPolicy is deprecated in v1.21+, unavailable in v1.25+
+Apr 16 20:29:24.901: INFO: No PodSecurityPolicies found; assuming PodSecurityPolicy is disabled.
+STEP: Waiting for a default service account to be provisioned in namespace
+[It] should provision storage with snapshot data source [Feature:VolumeSnapshotDataSource]
+  _output/local/go/src/k8s.io/kubernetes/test/e2e/storage/testsuites/provisioning.go:200
+> k8s.io/kubernetes/test/e2e/storage/testsuites.(*provisioningTestSuite).DefineTests.func4() _output/local/go/src/k8s.io/kubernetes/test/e2e/storage/testsuites/provisioning.go:201 (hits goroutine(165):1 total:1) (PC: 0x72856f2)
+Warning: listing may not match stale executable
+   196:
+   197:                 l.testCase.TestDynamicProvisioning()
+   198:         })
+   199:
+   200:         ginkgo.It("should provision storage with snapshot data source [Feature:VolumeSnapshotDataSource]", func() {
+=> 201:                 if !dInfo.Capabilities[storageframework.CapSnapshotDataSource] {
+   202:                         e2eskipper.Skipf("Driver %q does not support populate data from snapshot - skipping", dInfo.Name)
+   203:                 }
+   204:                 if !dInfo.SupportedFsType.Has(pattern.FsType) {
+   205:                         e2eskipper.Skipf("Driver %q does not support %q fs type - skipping", dInfo.Name, pattern.FsType)
+   206:                 }
+(dlv) print dInfo
+*k8s.io/kubernetes/test/e2e/storage/framework.DriverInfo {
+        Name: "csi-hostpath",
+        InTreePluginName: "",
+        FeatureTag: "",
+        MaxFileSize: 104857600,
+        SupportedSizeRange: k8s.io/kubernetes/test/e2e/framework/volume.SizeRange {Max: "", Min: "1Mi"},
+        SupportedFsType: k8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/util/sets.String [
+                "": {},
+        ],
+        SupportedMountOption: k8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/util/sets.String nil,
+        RequiredMountOption: k8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/util/sets.String nil,
+        Capabilities: map[k8s.io/kubernetes/test/e2e/storage/framework.Capability]bool [
+                "persistence": true,
+                "snapshotDataSource": true,
+                "multipods": true,
+                "block": true,
+                "pvcDataSource": true,
+                "controllerExpansion": true,
+                "singleNodeVolume": true,
+                "volumeLimits": true,
+        ],
+        RequiredAccessModes: []k8s.io/kubernetes/vendor/k8s.io/api/core/v1.PersistentVolumeAccessMode len: 0, cap: 0, nil,
+        TopologyKeys: []string len: 0, cap: 0, nil,
+        NumAllowedTopologies: 0,
+        StressTestOptions: *k8s.io/kubernetes/test/e2e/storage/framework.StressTestOptions {NumPods: 10, NumRestarts: 10},
+        VolumeSnapshotStressTestOptions: *k8s.io/kubernetes/test/e2e/storage/framework.VolumeSnapshotStressTestOptions {NumPods: 10, NumSnapshots: 10},}
+```
 
 ### Local clusters
 

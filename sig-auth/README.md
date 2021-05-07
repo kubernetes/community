@@ -29,7 +29,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Mo Khan (**[@enj](https://github.com/enj)**), VMware
 * Mike Danese (**[@mikedanese](https://github.com/mikedanese)**), Google
-* Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Apple
+* Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -43,6 +43,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**)
 * Eric Tune (**[@erictune](https://github.com/erictune)**)
+* Tim Allclair (**[@tallclair](https://github.com/tallclair)**)
 
 ## Contact
 - Slack: [#sig-auth](https://kubernetes.slack.com/messages/sig-auth)
@@ -64,7 +65,6 @@ The following [subprojects][subproject-definition] are owned by sig-auth:
 ### audit-logging
 Kubernetes API support for audit logging.
 - **Owners:**
-  - [kubernetes/kubernetes/staging/src/k8s.io/api/auditregistration](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/auditregistration/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/apis/audit](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/apis/audit/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/audit](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/audit/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/plugin/pkg/audit](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/plugin/pkg/audit/OWNERS)
@@ -89,7 +89,6 @@ Kubernetes API support for authorization.
   - [kubernetes/kubernetes/pkg/apis/authorization](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/authorization/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/rbac](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/rbac/OWNERS)
   - [kubernetes/kubernetes/pkg/kubeapiserver/authorizer](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubeapiserver/authorizer/OWNERS)
-  - [kubernetes/kubernetes/pkg/kubectl/cmd/auth](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubectl/cmd/auth/OWNERS)
   - [kubernetes/kubernetes/pkg/registry/authorization](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/authorization/OWNERS)
   - [kubernetes/kubernetes/pkg/registry/rbac](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/rbac/OWNERS)
   - [kubernetes/kubernetes/plugin/pkg/auth/authorizer](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/auth/authorizer/OWNERS)
@@ -101,6 +100,7 @@ Kubernetes API support for authorization.
   - [kubernetes/kubernetes/staging/src/k8s.io/client-go/kubernetes/typed/rbac](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/kubernetes/typed/rbac/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/client-go/listers/authorization](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/listers/authorization/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/client-go/listers/rbac](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/client-go/listers/rbac/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/kubectl/pkg/cmd/auth](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubectl/pkg/cmd/auth/OWNERS)
 ### certificates
 Certificates APIs and client infrastructure to support PKI.
 - **Owners:**

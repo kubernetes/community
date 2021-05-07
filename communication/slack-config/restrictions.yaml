@@ -34,7 +34,7 @@ restrictions:
     usergroups:
       - "^sig-release-"
       - "^release-"
-      - "^security-release-team$"
+      - "^security-rel-team$"
   - path: "sig-security/*.yaml"
     channels:
       - "^sig-security$"

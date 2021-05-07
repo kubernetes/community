@@ -49,6 +49,9 @@ The following [subprojects][subproject-definition] are owned by sig-multicluster
 ### Kubefed
 - **Owners:**
   - [kubernetes-sigs/kubefed](https://github.com/kubernetes-sigs/kubefed/blob/master/OWNERS)
+### about-api
+- **Owners:**
+  - [kubernetes-sigs/about-api](https://github.com/kubernetes-sigs/about-api/blob/master/OWNERS)
 ### kubemci
 - **Owners:**
   - [GoogleCloudPlatform/k8s-multicluster-ingress](https://github.com/GoogleCloudPlatform/k8s-multicluster-ingress/blob/master/OWNERS)
