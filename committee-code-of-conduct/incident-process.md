@@ -13,6 +13,20 @@ This document outlines the Code of Conduct Committee's workflow when receiving a
 
 ## When and Where does the Kubernetes Code of Conduct apply?
 
+The Code of Conduct applies between all community members when interacting about Kubernetes. This primarily addresses official spaces, but if conduct-related issues are affecting our community in unofficial spaces in ways that are likely also affect interpersonal interactions in _official_ spaces, we may be asked to become involved.
+
+### What are the boundaries of the Kubernetes community?
+
+There are no hard boundaries of the community, but common places we are asked to extend guidance to are:
+
+- Official Kubernetes communication channels
+- Kubernetes events and meetups
+- Media and web presences
+- Social media
+    - In some cases, where individual social media messages are not related to Kubernetes but have been reported to the Code of Conduct Committee and are making project members feel unsafe or unwelcome, we might choose to act.
+
+## Incident Reports
+
 ### What is an incident report?
 
 An **incident report** is a description of an event, interaction, or public statement submitted to the Kubernetes Code of Conduct Committee, which the reporter feels violates the [Kubernetes Code of Conduct](https://kubernetes.io/community/code-of-conduct/). 
@@ -29,16 +43,6 @@ The Code of Conduct Committee accepts reports from everyone who interacts with t
 
 At times we encourage community members to email us if an incident is ongoing and we have not been contacted.
 
-### What are the boundaries of the Kubernetes community?
-
-There are no hard boundaries of the community, but common places we are asked to extend guidance to are:
-
-- Official Kubernetes communication channels
-- Kubernetes events
-- Media and web presences
-- Social media
-    - In some cases, where individual social media messages are not related to Kubernetes but have been reported to the Code of Conduct Committee and are making project members feel unsafe or unwelcome, we might choose to act.
-
 ### Where do private incident reports happen? 
 
 The Code of Conduct Committee's primary means of contact is our email address, conduct@kubernetes.io. 
@@ -46,6 +50,10 @@ The Code of Conduct Committee's primary means of contact is our email address, c
 We can also be reached via Slack direct messages to individual committee members (see [member list](https://github.com/kubernetes/community/tree/master/committee-code-of-conduct#members)) or otherwise, though we might direct you to contact us via email. 
 
 ### How is the privacy of a report protected?
+
+All incident-related discussions happen in private spaces between current Code of Conduct Committee members, and all members agree when joining the Committee to maintain the confidentiality of incidents to the extent permitted by law.
+
+Where incidents relate to _unintentionally_ or _non-consensually_ publicly-visible content or messages, we may, or may request others to, delete that content to help preserve the privacy of involved parties. 
 
 ### Why does this process exist?
 
@@ -59,17 +67,22 @@ The Code of Conduct Committee has unilateral power to address harms as needed an
 
 The Code of Conduct Committee responds to all emails in a timely manner, usually within a few days.
 
+When an email is received, it is reviewed for severity. Based on our training, the initial member(s) to review the report and determine severity and urgency. When necessary, we may alert other members and call for an urgent meeting, but in most cases, we discuss asynchronously and develop a response plan.
+
+We maintain a triage rotation schedule so that there are at least two people watching for incoming reports. This allows us to meet our SLA to the community.
+
 ### Recusal 
 
-Before beginning investigation on an incident, members can recuse (or refuse to pass judgement on) an incident if they feel a relationship with someone in the incident may hinder impartiality or create a perception of impropriety with respect to individuals involved in the reported incident. Code of Conduct Committee Members might recuse for the following reasons:
+Before beginning investigation on an incident, members can recuse from (or refuse to pass judgement on) an incident if they feel a relationship with someone in the incident may hinder impartiality or create a perception of impropriety with respect to individuals involved in the reported incident. Some examples of reasons a Code of Conduct Committee member might recuse themselves are:
 
-- Direct reporting relationships, or company work relationships 
+- Direct reporting relationships, or company work relationships that would cause the investigation to appear inappropriate
 - Close working relationships in the Kubernetes community, for example co-leading a SIG with the reporter or someone else mentioned in the report
-
 
 If all members of the Code of Conduct Committee felt the need to recuse themselves from an incident, the incident would be handled by our thid party mediator.
 
-### Reaching out to involved parties
+To reduce the likelihood of recusals, our [election](election.md) process stipulates that we may never have a majority of the Committee from a single employer.
+
+### Building a plan
 
 The Code of Conduct Committee will privately discuss the incident report, and may or may not decide that we need more information prior to determining whether to take any action.
 
@@ -80,11 +93,11 @@ We consider the following at this stage:
 - Is there a public record of the incident which we can review, such as a chat log or video recording? 
 - Are there any privacy or safety considerations that we must take into account? For example, if we reach out to an individual named in the report, could this jeapordize the safety of the reporter or other individuals?
 
+### Reaching out to involved parties
+
 It is our intention to put as little emotional labor on those who have been harmed as possible, and to protect the safety (both physical and emotional) of all community members. We labor to be supportive and non-judgemental and to make the reporting process as safe and low anxiety as possible.
 
 In all instances these clarifying discussions are confidential.
-
-
 
 ## Incident response workflow
 
@@ -110,11 +123,11 @@ In general, the committee strives for unanimous consensus before taking an actio
 
 For example, we may choose to do nothing, to issue a private warning, to offer coaching, to recommend organizational changes, or to ban someone from a community platform. 
 
-
 ### Taking Actions and Communicating our Recommendations 
 
 When we have decided on a course of action, we do the following:
 
 - We clearly communicate our decision to those who need to hear it, without violating the confidentiality of those who requested it during an investigative process (if one was undertaken).
-- If and only if it is needed, we work with other leadership bodies (e.g., Steering Committee and the Linux Foundation) to issue a public statement.
-
+- If and only if it is needed, we work with other leadership bodies (e.g., Steering Committee and the Linux Foundation) 
+    - This may be necessary if the incident extends to other communities or event spaces, particularly if we feel there is elevated risk of harm to members of those communities
+    - In rare cases, we might find it necessary to issue a public statement, either jointly or separately

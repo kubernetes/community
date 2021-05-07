@@ -3120,6 +3120,7 @@ committees:
       name: Paris Pittman
   meetings: []
   contact:
+    slack: code-of-conduct
     private_mailing_list: conduct@kubernetes.io
     teams:
     - name: code-of-conduct-committee
