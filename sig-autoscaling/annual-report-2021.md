@@ -13,7 +13,7 @@
 
   * What’s your meeting culture? Large/small, active/quiet, learnings? Meeting notes up to date? Are you keeping
   recordings up to date/trends in community members watching recordings?
-    * The main SIG meeting has ~8 people on average. Meeting notes [are recorded](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit#heading=h.mh9yomoq1p6v), no video recordings made.
+    * The main SIG meeting has ~8 people on average. Meeting notes [are recorded](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit#heading=h.mh9yomoq1p6v). Video recordings were not made for a number of years, however recording of SIG meetings will be resuming as of 2021/05/17.
 
 * How does the group get updates, reports, or feedback from subprojects? Are there any springing up or being
 retired? Are OWNERS.md files up to date in these areas?
