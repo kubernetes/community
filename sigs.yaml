@@ -817,6 +817,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-iam-authenticator/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/provider-aws-test-infra/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
     meetings:
     - description: Regular AWS Subproject Meeting
