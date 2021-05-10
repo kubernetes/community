@@ -1737,6 +1737,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
   - name: network-policy
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
   - name: pod-networking
     owners:
