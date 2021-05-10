@@ -155,6 +155,7 @@ channels:
     archived: true
   - name: k8spin
   - name: kapitan
+  - name: kcp-prototype
   - name: keda
   - name: keda-dev
   - name: keel
