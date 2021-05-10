@@ -1451,7 +1451,7 @@ specified".
 * When referencing a literal string value, indicate the literal in
 single-quotes. Example: "must not contain '..'".
 * When referencing another field name, indicate the name in back-quotes.
-Example: "must be greater than `request`".
+Example: "must be greater than \`request\`".
 * When specifying inequalities, use words rather than symbols.  Examples: "must
 be less than 256", "must be greater than or equal to 0".  Do not use words
 like "larger than", "bigger than", "more than", "higher than", etc.
