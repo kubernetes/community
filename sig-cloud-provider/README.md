@@ -79,6 +79,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - [kubernetes-sigs/aws-encryption-provider](https://github.com/kubernetes-sigs/aws-encryption-provider/blob/master/OWNERS)
   - [kubernetes-sigs/aws-fsx-csi-driver](https://github.com/kubernetes-sigs/aws-fsx-csi-driver/blob/master/OWNERS)
   - [kubernetes-sigs/aws-iam-authenticator](https://github.com/kubernetes-sigs/aws-iam-authenticator/blob/master/OWNERS)
+  - [kubernetes-sigs/provider-aws-test-infra](https://github.com/kubernetes-sigs/provider-aws-test-infra/blob/master/OWNERS)
   - [kubernetes/cloud-provider-aws](https://github.com/kubernetes/cloud-provider-aws/blob/master/OWNERS)
 - **Meetings:**
   - Regular AWS Subproject Meeting: [Fridays at 9:00 PT (Pacific Time)](https://zoom.us/my/k8ssigaws) (biweekly 2019 start date: Jan. 11th). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
