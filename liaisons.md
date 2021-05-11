@@ -55,6 +55,7 @@ of SIGs, WGs and UGs.
 | [WG Multitenancy](wg-multitenancy/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [WG Naming](wg-naming/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [WG Policy](wg-policy/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
+| [WG Structured Logging](wg-structured-logging/README.md) | Davanum Srinivas (**[@dims](https://github.com/dims)**) |
 | [UG Big Data](ug-big-data/README.md) | Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**) |
 | [UG VMware Users](ug-vmware-users/README.md) | Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**) |
 <!-- BEGIN CUSTOM CONTENT -->

@@ -31,6 +31,7 @@ Modernize logging in Kubernetes core components, allowing users to efficiently c
 - Slack: [#wg-structured-logging](https://kubernetes.slack.com/messages/wg-structured-logging)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-structured-logging)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fstructured-logging)
+- Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
