@@ -168,6 +168,10 @@ channels:
   - name: kompose
   - name: kong
   - name: konveyor
+  - name: konveyor-crane
+  - name: konveyor-forklift
+  - name: konveyor-move2kube
+  - name: konveyor-tackle
   - name: kops-dev
   - name: kops-users
   - name: kots
