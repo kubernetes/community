@@ -874,11 +874,6 @@ Examples:
 
 ## Object references
 
-Object references should either be called `fooName` if referring to an object of
-kind `Foo` by just the name (within the current namespace, if a namespaced
-resource), or should be called `fooRef`, and should contain a subset of the
-fields of the `ObjectReference` type.
-
 Object references on a namespaced type should usually refer only to objects in
 the same namespace.  Because namespaces are a security boundary, cross namespace
 references can have unexpected impacts, including:
@@ -900,34 +895,85 @@ clearly described and the permissions issues should be resolved.
 This could be done with a double opt-in (an opt-in from both the referrer and the refer-ee) or with secondary permissions
 checks performed in admission. 
 
+### References to a single resource type 
+
+A single kind object reference is straightforward in that the controller can hard-code most qualifiers needed to identify the object. As such as the only value needed to be provided is the name (and namespace, although cross-namespace references are discouraged):
+
+```yaml
+# for a single resource, the suffix should be Ref, with the field name
+# providing an indication as to the resource type referenced.
+secretRef: 
+    name: foo
+    # namespace would generally not be needed and is discouraged, 
+    # as explained above.
+    namespace: foo-namespace
+```
+
+#### Controller behavior
+
+The operator is expected to know the version, group, and resource name of the object it needs to retrieve the value from, and can use the discovery client or construct the API path directly.
+
+### References which can point to multiple resource types
+
+Multi-kind object references are used when there is a bounded set of valid resource types that a reference can point to.
+
+As with a single-kind object reference, the operator can supply missing fields, provided that the fields that are present are sufficient to uniquely identify the object resource type among the set of supported types.
+
+```yaml
+# guidance for the field name is the same as a single resource.
+fooRef:
+    group: sns.services.k8s.aws
+    resource: topics
+    name: foo
+    namespace: foo-namespace
+```
+
+Although not always necessary to help a controller identify a resource type, “group” is included to avoid ambiguity when the resource exists in multiple groups. It also provides clarity to end users and enables copy-pasting of a reference without the referenced type changing due to a different controller handling the reference.
+
+#### Controller behavior
+
+The operator can store a map of (group,resource) to the version of that resource it desires. From there, it can construct the full path to the resource, and retrieve the object.
+
+### Generic object reference
+
+A generic object reference is used when the desire is to provide a pointer to some object to simplify discovery for the user. For example, this could be used to reference a target object for a `core.v1.Event` that occurred.
+
+With a generic object reference, it is not possible to extract any information about the referenced object aside from what is standard (e.g. ObjectMeta). Since any standard fields exist in any version of a resource, it is possible to not include version in this case:
+
+```yaml
+fooObjectRef:
+    group: operator.openshift.io
+    resource: OpenShiftAPIServer
+    name: cluster
+    # namespace is unset if the resource is cluster-scoped, or lives in the 
+    # same namespace as the referrer.
+```
+
+#### Controller behavior
+
+The operator would be expected to find the resource via the discovery client (as the version is not supplied).
+
+### Field reference
+
+A field reference is used when the desire is to extract a value from a specific field in a referenced object.
+
+Field references differ from other reference types, as the operator has no knowledge of the object prior to the reference. Since the schema of an object can differ for different versions of a resource, this means that a “version” is required for this type of reference.
+
+```yaml
+fooFieldRef:
+   version: v1 # version of the resource
+   # group is elided in the ConfigMap example, since it has a blank group in the OpenAPI spec.
+   resource: configmaps
+   fieldPath: data/foo
+```
+
+The fieldPath should point to a single value, and use JSON Pointer syntax to specify the desired field, from the root of the object.
+
+#### Controller behavior
+
+In this scenario, all required attributes are required, so the operator may query the API directly.
+
 TODO: Plugins, extensions, headers
-
-### Handling references to multiple kinds
-
-References which can refer to multiple kinds should use a single field, and select the target kind via `apiVersion` and `kind` fields.
-
-For example, if one can retrieving a referenced value from a `ConfigMap` or a `Secret` kind, the schema for the reference should be of the form:
-
-```yaml
-# preferred pattern
-valueFrom:
-  kind: Secret  # alternatively ConfigMap
-  name: resource-name
-  optional: true
-```
-
-Rather than:
-
-```yaml
-# discouraged pattern
-valueFrom:
-  configMapRef:
-    name: resource-name
-    optional: true
-  secretRef:
-    name: resource-name
-    optional: true
-```
 
 ## HTTP Status codes
 
