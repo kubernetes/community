@@ -743,6 +743,8 @@ doing!
 
 Check out the [E2E docs](../sig-testing/e2e-tests.md) for detailed information about how to
 write end-to-end tests for your feature.
+Make sure the E2E tests are running in the default presubmits for a feature that
+is being promoted to Beta (enabled by default).
 
 ## Examples and docs
 
