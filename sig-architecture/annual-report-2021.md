@@ -25,7 +25,14 @@
 **How does the group get updates, reports, or feedback from working groups? Are there any springing up or being retired? Are OWNERS files up to date in these areas?**
 
  - We have not been getting updates from the working groups on any regular cadence.
- - We lost track of the WGs we sponsored. We will make it a priority to get updates in the next upcoming meetings.
+ - We will make it a priority to get updates in the next upcoming meetings.
+ - Currently sponsored workgroups are:
+    - wg-api-expression
+    - wg-component-standard
+    - wg-k8s-infra
+    - wg-naming
+    - wg-policy
+    - wg-reliability
 
 **When was your last monthly community-wide update? (provide link to deck and/or recording)**
 
@@ -57,7 +64,10 @@
 - PRR assigns specific approvers to each KEP that is targeting a release. Therefore, we have a clear picture of how much each
   approver must do each cycle. In 1.21, each approver reviewed 22 KEPs. for the 1.22 cycle, we have a new approver (@ehashman) to
   help reduce the load on each approver. Go Elana!
-- Code Organization is coming along. Though we haven't updated dep-approvers in a while. Currently the root OWNERS are a bottleneck as their time is limited for dependency updates. We have a new approval plugin that wiiiii
+- Code Organization is coming along. Though we haven't updated dep-approvers in a while. Currently the root OWNERS are a bottleneck as their time is limited for dependency updates. We have a new approval plugin that will help.
+
+    - [kubernetes/test-infra#7690](https://github.com/kubernetes/test-infra/issues/7690) would allow routing dep approval to a distinct group
+    - Started dep-reviewers alias in [kubernetes/kubernetes#101670](https://github.com/kubernetes/kubernetes/pull/101670), can use to get additional help on reviews
 
 **Is there a healthy onboarding and growth path for contributors in your SIG? What are some activities that the group does to encourage this? What programs are you participating in to grow contributors throughout the contributor ladder?**
 
@@ -66,19 +76,18 @@
 - The main meeting itself is losing steam a bit. We could use more across the board attendance. We have to find ways to do this with better timely topics.
 - The sub projects are in sustainable shape for the most part. We could use more people in conformance, code-organization, and PRR for sure.
 - We want to rework the API reviews as well to make sure SIGs can for the most part do their own API reviews.
-- The Enhancements subproject has some tooling code, and is a good place for newer folks to contribute. It has been quite active recently, and as a process-focused subproject is a place where program managers can be 
+- The Enhancements subproject has some tooling code, and is a good place for newer folks to contribute. It has been quite active recently, and as a process-focused subproject is a place where program managers can collaborate with other contributors on optimising processes regarding feature development, deprecations, policy rollouts, and other substantial changes.
 
 **What programs do you participate in for new contributors?**
 - Mainly through code-organization, we have a new mentee from LFX for example. 
-- We do need to grow more folks who can work across SIGs somehow. We might need to put together a mentoring program to help with this. One idea we had before of reading group for KEPs may need to be revived.
+- We do need to grow more folks who can work across SIGs somehow. We might need to put together a mentoring program to help with this.
+- We are reviving the idea of a reading group for KEPs.
 
 **Does the group have contributors from multiple companies/affiliations? Can end users/companies contribute in some way that they currently are not?**
 
 - Yes. Our chairs are from three different companies. We have many participants and subproject owners from those same companies and others.
 
 ## Current initiatives and project health
-
-- Please include links to KEPs and other supporting information that will be beneficial to multiple types of community members. 
 
 **What are initiatives that should be highlighted, lauded, shout out, that your group is proud of? Currently underway? What are some of the longer tail projects that your group is working on?**
 
@@ -88,6 +97,10 @@
 - Policies to move features across the project to GA, including:
     - [Conformance Without Beta](https://github.com/kubernetes/enhancements/tree/master/keps/sig-architecture/1333-conformance-without-beta)
     - [Preventing Permabeta](https://github.com/kubernetes/enhancements/tree/master/keps/sig-architecture/1635-prevent-permabeta)
+- The Enhancements subproject has a number of initiatives, including:
+    - Process changes: the team has been working with the Release Team to assist SIGs in taking greater ownership of their KEPs during the release cycle, reducing reliance on the RT and allowing them to better organize their work and increase communication between SIGs and authors.
+    - The Receipts Project (ongoing) is working on automating some of the mechanics of KEP process to streamline and better track KEPs in a release cycle.
+    - KEPs have been transitioned to the new format which includes kep.yamls and a new directory structure (special thanks to @wojtek-t and new contributor @shekhar-rajak for all of their hard work on this!).
 
 **Year to date KEP work review: What’s now stable? Beta? Alpha? Road to alpha?**
 
@@ -96,6 +109,7 @@
 **What areas and/or subprojects does the group need the most help with?**
 
 - Setting up a mentoring program to increase the number of folks who can work across SIGs.
+- Increasing the number of API reviewers and PRR approvers.
 
 **What's the average open days of a PR and Issue in your group? / what metrics does your group care about and/or measure?**
 
