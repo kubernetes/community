@@ -15,7 +15,6 @@ TODO add more here
 
 There is no one way to get into the kubernetes blog. Below are some options:
 
-The Kubernetes Upstream Marketing team under ContribEx can help you tell a kubernetes story. With Blog posts you can:
 
 * Pitch idea to the meeting or Open a [Contributor Comms Requests issue](https://github.com/kubernetes/community/issues
 )
