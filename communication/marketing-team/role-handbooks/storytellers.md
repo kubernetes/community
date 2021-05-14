@@ -13,7 +13,7 @@ TODO add more here
 
 #### Idea Paths
 
-There is no one way to get into the kubernetes blog. Below are some options:
+There are multiple ways to successfully a Kubernetes blog. Here are some of the common paths to help you do so:
 
 
 * Pitch idea to the meeting or Open a [Contributor Comms Requests issue](https://github.com/kubernetes/community/issues
