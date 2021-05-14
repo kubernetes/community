@@ -291,6 +291,8 @@ For more information, see [squash commits](./github-workflow.md#squash-commits).
  Don't squash when there are independent changes layered to achieve a single goal.
  For instance, writing a code munger could be one commit, applying it could be another, and adding a precommit check could be a third.
  One could argue they should be separate pull requests, but there's really no way to test/review the munger without seeing it applied, and there needs to be a precommit check to ensure the munged output doesn't immediately get out of date.
+ 
+**Note**: you can also ask your reviewer to add the `tide/merge-method-squash` label to your PR (this can be done by a reviewer by issuing the command: `/label tide/merge-method-squash`), this will let the bot take care of squashing _all_ commits that are part of this PR and will not result in removal of the `LGTM` label (if already applied) or re-run of the CI tests.
 
 ## Commit Message Guidelines
 
