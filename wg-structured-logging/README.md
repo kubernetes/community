@@ -20,7 +20,10 @@ Modernize logging in Kubernetes core components, allowing users to efficiently c
 * SIG Scheduling
 * SIG Storage
 
-
+## Meetings
+* Regular Meeting: [Thursdays at 15:00 UTC](https://zoom.us/j/96716142646?pwd=VmgrN29sbmhDREp3R0NtZlpGSlZ4Zz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1R9bZ34L9vR1ftH0dFeOp-j50lLh5ijKVwwXJ3LDrY4I/edit?usp=sharing).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2GY3so1z2Cnkvkt5A_x1Aw).
 
 ## Organizers
 
