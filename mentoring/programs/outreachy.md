@@ -35,7 +35,6 @@ The README in the [community repo](https://github.com/kubernetes/community) deta
 |----------|-----------|-----------|
 | [Paris Pittman](https://github.com/parispittman) | @paris |  parispittman@google.com |
 | [Nikhita Raghunath](https://github.com/nikhita) | @nikhita | nikitaraghunath@gmail.com |
-| [Marky Jackson](https://github.com/markyjackson-taulia) | @markyjackson | marky.r.jackson@gmail.com |
 
 The coordinators can be contacted at any time. The easiest way is to send a slack message.
 
