@@ -160,6 +160,7 @@ channels:
   - name: keda-dev
   - name: keel
   - name: kiam
+  - name: kilo
   - name: kiosk
   - name: kcli
   - name: klog
