@@ -27,7 +27,7 @@ branches.
 - Have `hub` installed, which is most easily installed via
   `go get github.com/github/hub` assuming you have a standard golang
   development environment.
-- A github token which has permissions to create a PR in an upstream branch.
+- A github personal access token which has permissions to access public repositories.
 
 ## What Kind of PRs are Good for Cherry Picks
 
@@ -90,9 +90,11 @@ patch release branches.
     release you want to cherry pick to. Cherry picks should be applied to all
     [active](https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md#detailed-release-history-for-active-branches)
     release branches where the fix is applicable.
-  
-  - When asked for your github password, provide the created github token 
-    rather than your actual github password. 
+
+  - If `GITHUB_TOKEN` is not set you will be asked for your github password:
+    provide the github [personal access token](https://github.com/settings/tokens) rather than your actual github
+    password. If you can securely set the environment variable `GITHUB_TOKEN`
+    to your personal access token then you can avoid an interactive prompt.
     Refer [https://github.com/github/hub/issues/2655#issuecomment-735836048](https://github.com/github/hub/issues/2655#issuecomment-735836048)
 
 
@@ -123,14 +125,14 @@ pull requests on the `master` branch in that they:
 
 - The original change to the `master` branch is expected to be merged for
   some time and no related CI failures or test flakiness must be discovered.
-  
+
 - The easy way to compare changes from the original change and cherry-pick
   is to compare PRs `.patch` files. To generate the patch from
   PR, just add the `.patch` to PR url. For example, for PR #100972 in
   kubernetes repositry, ptach can be downloaded following this URL:
-  
+
   `https://github.com/kubernetes/kubernetes/pull/100972.patch`
-  
+
 - Milestones must be set on the PR reflecting the milestone for the target
   release branch (for example, milestone v1.11 for a cherry pick onto branch
   `release-1.11`). This is normally done for you by automation.

@@ -23,6 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Usability Spec
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Himanshu Pandey (**[@hpandeycodeit](https://github.com/hpandeycodeit)**), VMware
+* Gaby Moreno Cesar (**[@morengab](https://github.com/morengab)**), IBM
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
 
 ## Emeritus Leads

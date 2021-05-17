@@ -152,8 +152,8 @@ Moderators seats: 10
 | Jeffrey Sica   | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen     | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Chris Short    | @chrisshort         | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Marky Jackson  | @markyjackson       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Taylor Dolezal | @onlydole           | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| _Open_          | _Open_             |          |                                                         |
 
 ### Moderators Pro Tempore
 
@@ -191,7 +191,7 @@ Moderators seats: 10
 | Roy Lenferink       | @rlenferink         | EMEA     | [CET - Central European Time](https://time.is/CET)      |
 | Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
 | Josh Berkus         | @jberkus            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Marky Jackson       | @markyjackson       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| _Open_              | _Open_              |          |                                                         |
 
 ### Moderators Pro Tempore
 
@@ -220,10 +220,10 @@ Administrators seats: 6
 | Paris Pittman   | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Naeil Ezzoueidi | @nzoueidi           | EMEA     | [CET - Central European Time](https://time.is/CET)      |
 | Yang Li         | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
-| Marky Jackson   | @markyjackson       | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Taylor Dolezal  | @onlydole           | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Jeffrey Sica    | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Ihor Dvoretskyi | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
+| _Open_          | _Open_              |          |                                                         |
 
 - License and main account controlled by the CNCF
 

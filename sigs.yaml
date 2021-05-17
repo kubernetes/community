@@ -336,6 +336,7 @@ sigs:
     contact:
       slack: k8s-code-organization
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/depstat/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/component-helpers/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-helpers/OWNERS
@@ -383,9 +384,9 @@ sigs:
     - github: mikedanese
       name: Mike Danese
       company: Google
-    - github: tallclair
-      name: Tim Allclair
-      company: Apple
+    - github: ritazh
+      name: Rita Zhang
+      company: Microsoft
     tech_leads:
     - github: deads2k
       name: David Eads
@@ -401,6 +402,8 @@ sigs:
       name: Eric Chiang
     - github: erictune
       name: Eric Tune
+    - github: tallclair
+      name: Tim Allclair
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
@@ -444,7 +447,6 @@ sigs:
     description: |
       Kubernetes API support for audit logging.
     owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/auditregistration/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/apis/audit/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/audit/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/plugin/pkg/audit/OWNERS
@@ -471,7 +473,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/authorization/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/rbac/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubeapiserver/authorizer/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/cmd/auth/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/authorization/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/rbac/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/auth/authorizer/OWNERS
@@ -483,6 +484,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/kubernetes/typed/rbac/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/authorization/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/rbac/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/kubectl/pkg/cmd/auth/OWNERS
   - name: certificates
     description: |
       Certificates APIs and client infrastructure to support PKI.
@@ -815,6 +817,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-iam-authenticator/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/provider-aws-test-infra/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
     meetings:
     - description: Regular AWS Subproject Meeting
@@ -1313,9 +1316,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
     meetings:
-    - description: Mentoring Subproject Meeting (NA/APAC)
+    - description: Mentoring Subproject Meeting
       day: Monday
-      time: "4:00"
+      time: "08:00"
       tz: PT
       frequency: Biweekly
       url: https://zoom.us/j/95894431386?pwd=RFdmQzlZeVZDVWJzcFVXZXR5djNwUT09
@@ -1649,11 +1652,18 @@ sigs:
       name: Tim Hockin
       company: Google
   meetings:
-  - description: Gateway API Meeting
-    day: Wednesday
-    time: "11:00"
+  - description: Gateway API Meeting (APAC Friendly)
+    day: Monday
+    time: "15:00"
     tz: PT (Pacific Time)
-    frequency: weekly
+    frequency: biweekly
+    url: https://zoom.us/j/441530404
+    archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
+  - description: Gateway API Meeting (EMEA Friendly)
+    day: Tuesday
+    time: "10:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
     url: https://zoom.us/j/441530404
     archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
   - description: Network Policy API Meeting
@@ -1829,7 +1839,7 @@ sigs:
     chairs:
     - github: justaugustus
       name: Stephen Augustus
-      company: VMware
+      company: Cisco
     - github: saschagrunert
       name: Sascha Grunert
       company: Red Hat
@@ -2283,6 +2293,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-csi-adapter/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-spec/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cosi-driver-minio/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cosi-driver-sample/master/OWNERS
   - name: kubernetes-csi
     owners:
     - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
@@ -2484,6 +2496,9 @@ sigs:
     - github: hpandeycodeit
       name: Himanshu Pandey
       company: VMware
+    - github: morengab
+      name: Gaby Moreno Cesar
+      company: IBM
     - github: tashimi
       name: Tasha Drew
       company: VMware
@@ -2876,10 +2891,10 @@ workinggroups:
       company: Apple
     - github: justaugustus
       name: Stephen Augustus
-      company: VMware
+      company: Cisco
+    emeritus_leads:
     - github: zacharysarah
       name: Zach Corleissen
-      company: Linux Foundation
   meetings:
   - description: Regular WG Meeting
     day: Monday
@@ -2971,6 +2986,45 @@ workinggroups:
   contact:
     slack: wg-reliability
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-reliability
+- dir: wg-structured-logging
+  name: Structured Logging
+  mission_statement: >
+    Modernize logging in Kubernetes core components, allowing users to efficiently
+    consume, process, store and analyse information stored in logs.
+
+  stakeholder_sigs:
+  - API Machinery
+  - Architecture
+  - Cloud Provider
+  - Instrumentation
+  - Network
+  - Node
+  - Scheduling
+  - Storage
+  label: structured-logging
+  leadership:
+    chairs:
+    - github: serathius
+      name: Marek Siarkowicz
+      company: Google
+    - github: shubheksha
+      name: Shubheksha Jalan
+      company: Apple
+  meetings:
+  - description: Regular Meeting
+    day: Thursday
+    time: "15:00"
+    tz: UTC
+    frequency: biweekly
+    url: https://zoom.us/j/96716142646?pwd=VmgrN29sbmhDREp3R0NtZlpGSlZ4Zz09
+    archive_url: https://docs.google.com/document/d/1R9bZ34L9vR1ftH0dFeOp-j50lLh5ijKVwwXJ3LDrY4I/edit?usp=sharing
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2GY3so1z2Cnkvkt5A_x1Aw
+  contact:
+    slack: wg-structured-logging
+    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-structured-logging
+    liaison:
+      github: dims
+      name: Davanum Srinivas
 usergroups:
 - dir: ug-big-data
   name: Big Data
@@ -3082,6 +3136,7 @@ committees:
       name: Paris Pittman
   meetings: []
   contact:
+    slack: code-of-conduct
     private_mailing_list: conduct@kubernetes.io
     teams:
     - name: code-of-conduct-committee

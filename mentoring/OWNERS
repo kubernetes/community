@@ -3,12 +3,12 @@
 reviewers:
   - parispittman
   - nikhita
-  - markyjackson-taulia
 approvers:
-  - markyjackson-taulia # for community-bridge and meeting bosun
   - parispittman
   - nikhita
   - sig-contributor-experience-leads
+emeritus_approvers:
+  - markyjackson-taulia # for community-bridge and meeting bosun
 labels:
   - sig/contributor-experience
   - area/mentorship-planning

@@ -17,7 +17,7 @@ aliases:
     - enj
     - liggitt
     - mikedanese
-    - tallclair
+    - ritazh
   sig-autoscaling-leads:
     - gjtempleton
     - mwielgus
@@ -94,6 +94,7 @@ aliases:
     - maciaszczykm
   sig-usability-leads:
     - hpandeycodeit
+    - morengab
     - tashimi
   sig-windows-leads:
     - ddebroy
@@ -124,7 +125,6 @@ aliases:
     - celestehorgan
     - jdumars
     - justaugustus
-    - zacharysarah
   wg-policy-leads:
     - ericavonb
     - hannibalhuang
@@ -132,6 +132,9 @@ aliases:
     - deads2k
     - stevekuznetsov
     - wojtek-t
+  wg-structured-logging-leads:
+    - serathius
+    - shubheksha
   ug-big-data-leads:
     - erikerlandson
     - foxish
