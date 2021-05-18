@@ -51,7 +51,7 @@
 
 - For the enhancements subproject, all owners are all active.
 
-- For the API review subproject. There is no meetings as such. The subproject coordinates via a project board.
+- For the API review subproject, there are no standing meetings. The subproject coordinates via a [project board](https://github.com/orgs/kubernetes/projects/13) and [mailing list](https://groups.google.com/g/kubernetes-api-reviewers).
 
 - For the code organization subproject, @dims and @liggitt run regular meetings and review PRs and issues, pulling in other owners as needed.
 
