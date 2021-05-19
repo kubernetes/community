@@ -895,7 +895,28 @@ clearly described and the permissions issues should be resolved.
 This could be done with a double opt-in (an opt-in from both the referrer and the refer-ee) or with secondary permissions
 checks performed in admission. 
 
-### References to a single resource type 
+### Naming of the reference field
+
+The name of the reference field should be of the format "{field}Ref", with "Ref" always included in the suffix.
+
+The "{field}" component should be named to indicate the purpose of the reference. For example, "targetRef" in an
+endpoint indicates that the object reference specifies the target.
+
+It is okay to have the "{field}" component indicate the resource type. For example, "secretRef" when referencing
+a secret. However, this comes with the risk off the field being a misnomer in the case that the field is expanded to
+reference more than one type.
+
+### Object References Examples
+
+The following sections illustrate recommended schemas for various object references scenarios.
+
+The schemas outlined below are designed to enable purely additive fields as the types of referencable
+objects expand, and therefore are backwards compatible.
+
+For example, it is possible to go from a single resource type to multiple resource types without
+a breaking change in the schema.
+
+#### References to a single resource type 
 
 A single kind object reference is straightforward in that the controller can hard-code most qualifiers needed to identify the object. As such as the only value needed to be provided is the name (and namespace, although cross-namespace references are discouraged):
 
@@ -909,11 +930,11 @@ secretRef:
     namespace: foo-namespace
 ```
 
-#### Controller behavior
+##### Controller behavior
 
 The operator is expected to know the version, group, and resource name of the object it needs to retrieve the value from, and can use the discovery client or construct the API path directly.
 
-### References which can point to multiple resource types
+#### References which can point to multiple resource types
 
 Multi-kind object references are used when there is a bounded set of valid resource types that a reference can point to.
 
@@ -930,11 +951,11 @@ fooRef:
 
 Although not always necessary to help a controller identify a resource type, “group” is included to avoid ambiguity when the resource exists in multiple groups. It also provides clarity to end users and enables copy-pasting of a reference without the referenced type changing due to a different controller handling the reference.
 
-#### Controller behavior
+##### Controller behavior
 
 The operator can store a map of (group,resource) to the version of that resource it desires. From there, it can construct the full path to the resource, and retrieve the object.
 
-### Generic object reference
+#### Generic object reference
 
 A generic object reference is used when the desire is to provide a pointer to some object to simplify discovery for the user. For example, this could be used to reference a target object for a `core.v1.Event` that occurred.
 
@@ -943,17 +964,17 @@ With a generic object reference, it is not possible to extract any information a
 ```yaml
 fooObjectRef:
     group: operator.openshift.io
-    resource: OpenShiftAPIServer
+    resource: openshiftapiservers
     name: cluster
     # namespace is unset if the resource is cluster-scoped, or lives in the 
     # same namespace as the referrer.
 ```
 
-#### Controller behavior
+##### Controller behavior
 
 The operator would be expected to find the resource via the discovery client (as the version is not supplied).
 
-### Field reference
+#### Field reference
 
 A field reference is used when the desire is to extract a value from a specific field in a referenced object.
 
@@ -964,12 +985,12 @@ fooFieldRef:
    version: v1 # version of the resource
    # group is elided in the ConfigMap example, since it has a blank group in the OpenAPI spec.
    resource: configmaps
-   fieldPath: data/foo
+   fieldPath: data.foo
 ```
 
-The fieldPath should point to a single value, and use JSON Pointer syntax to specify the desired field, from the root of the object.
+The fieldPath should point to a single value, and use [the recommended field selector notation](#selecting-fields) to denote the field path.
 
-#### Controller behavior
+##### Controller behavior
 
 In this scenario, all required attributes are required, so the operator may query the API directly.
 
