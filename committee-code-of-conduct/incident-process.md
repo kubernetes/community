@@ -99,6 +99,8 @@ It is our intention to put as little emotional labor on those who have been harm
 
 In all instances these clarifying discussions are confidential.
 
+Clarifying discussions typically take the form of email, Slack DM, or Zoom meeting 1:1 between a member of the Code of Conduct Committee selected during our triaging of an incident report and the individual from whom clarification is sought.  The Code of Conduct Committee member will explicitly identify themselves and indicate they are engaging in conversation as a representative of the Code of Conduct Committee.  If the individual prefers we will endeavor to make the meeting/conversation not 1:1, but rather also include an observer/scribe agreed by both parties and still with all discussion being confidential.
+
 ## Incident response workflow
 
 ### Reconvening the Committee
