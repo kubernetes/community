@@ -19,6 +19,7 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
 * Network Policy API Meeting: [Mondays at 13:00 PT (Pacific Time)](https://zoom.us/j/96264742248) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs).
+* SIG Network Kube Proxy Meeting: [Fridays at 8:30 PT (Pacific Time)](https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
 * SIG Network Meeting: [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/361123509) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
