@@ -142,6 +142,7 @@ API validation and policies enforced during admission, such as PodSecurityPolicy
   - [kubernetes/kubernetes/plugin/pkg/admission/security/podsecuritypolicy](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/admission/security/podsecuritypolicy/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/api/imagepolicy](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/imagepolicy/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/api/policy](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/policy/OWNERS)
+  - [kubernetes/pod-security-admission](https://github.com/kubernetes/pod-security-admission/blob/master/OWNERS)
 ### secrets-store-csi-driver
 Integrates secrets stores with Kubernetes via a CSI volume.
 - **Owners:**
