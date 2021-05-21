@@ -2,3 +2,4 @@ channels:
   - name: sig-security
   - name: sig-security-docs
   - name: sig-security-tooling
+  - name: sig-security-assess-capi
