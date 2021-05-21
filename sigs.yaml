@@ -1673,12 +1673,6 @@ sigs:
     frequency: weekly
     url: https://zoom.us/j/96264742248
     archive_url: https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs
-  - description: SIG Network Kube Proxy Meeting
-    day: Friday
-    time: "8:30"
-    tz: PT (Pacific Time)
-    frequency: weekly
-    url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
   - description: SIG Network Meeting
     day: Thursday
     time: "14:00"
