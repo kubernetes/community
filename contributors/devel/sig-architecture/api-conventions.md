@@ -903,7 +903,7 @@ The "{field}" component should be named to indicate the purpose of the reference
 endpoint indicates that the object reference specifies the target.
 
 It is okay to have the "{field}" component indicate the resource type. For example, "secretRef" when referencing
-a secret. However, this comes with the risk off the field being a misnomer in the case that the field is expanded to
+a secret. However, this comes with the risk of the field being a misnomer in the case that the field is expanded to
 reference more than one type.
 
 ### Object References Examples
@@ -1549,4 +1549,3 @@ Example: "must be greater than \`request\`".
 be less than 256", "must be greater than or equal to 0".  Do not use words
 like "larger than", "bigger than", "more than", "higher than", etc.
 * When specifying numeric ranges, use inclusive ranges when possible.
-
