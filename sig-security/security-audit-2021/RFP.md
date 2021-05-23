@@ -127,3 +127,12 @@ The audit should result in the following deliverables, which will be made public
 ### Do we need to use our own hardware and infrastructure or should we use a cloud?
 
 Strong preference would be for the vendor to provide their own infrastructure or use a public cloud provider, just NOT a managed offering like GKE or EKS. The reasoning is to prevent accidentally auditing a cloud provider's kubernetes service instead of kubernetes/kubernetes. Depending on the scope and approach, it may make sense to use a local cluster (e.g. kind) for API fuzzing and anything that doesn't impact the underlying OS, and is an easy to use repeatable setup (see Methodology above).
+
+### What is the intellectual property ownership of the report and all work product?
+
+The report must be licensed under CC BY 4.0 based on the charter. (https://github.com/cncf/foundation/blob/master/charter.md#11-ip-policy - see (f))
+Separately, any code used needs to be under Apache 2.0, see https://github.com/cncf/foundation/blob/master/charter.md#11-ip-policy - sections (e) and (d). 
+
+### Must I use the report format from the previous audit? Can the SIG provide a report format template I can use?
+
+Vendors who wish to use either the previous report format, as allowed by CC BY 4.0, or a report format provided by the community may do so as long as it is also available under CC BY 4.0. Vendors who wish to publish 2 versions of the report, one tailored for the community under CC BY 4.0 and one that they host on their own site using their proprietary fonts, formats, branding, or other copyrights, under their own license may do so, in order to differentiate their commercial report format from this report. Vendors may also publish a synopsis and marketing materials regarding the report on their webiste as long as it links to the original report in this repository.  In the community report, vendors can place links in the report to materails hosted on their commercial site. This does not imply that linked materials are themselves CC BY 4.0.
