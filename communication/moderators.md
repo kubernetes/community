@@ -153,6 +153,7 @@ Moderators seats: 10
 | Bob Killen     | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Chris Short    | @chrisshort         | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Taylor Dolezal | @onlydole           | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| David McKay    | @rawkode            | EMEA     | [GMT - Greenwich Mean Time](https://time.is/GMT)        |
 | _Open_          | _Open_             |          |                                                         |
 
 ### Moderators Pro Tempore
