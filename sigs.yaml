@@ -532,6 +532,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/security/podsecuritypolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/imagepolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/policy/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/pod-security-admission/master/OWNERS
   - name: secrets-store-csi-driver
     description: |
       Integrates secrets stores with Kubernetes via a CSI volume.
