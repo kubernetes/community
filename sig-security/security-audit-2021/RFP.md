@@ -130,7 +130,7 @@ Strong preference would be for the vendor to provide their own infrastructure or
 
 ### What is the intellectual property ownership of the report and all work product?
 
-The report must be licensed under CC BY 4.0 based on the charter. (https://github.com/cncf/foundation/blob/master/charter.md#11-ip-policy - see (f))
+The report must be licensed under the Creative Commons Attribution 4.0 International Public License (CC BY 4.0) based on [section 11.(f) of the Cloud Native Computing Foundation (CNCF) Charter](https://github.com/cncf/foundation/blob/master/charter.md#11-ip-policy).
 Separately, any code used needs to be under Apache 2.0, see https://github.com/cncf/foundation/blob/master/charter.md#11-ip-policy - sections (e) and (d). 
 
 ### Must I use the report format from the previous audit? Can the SIG provide a report format template I can use?
