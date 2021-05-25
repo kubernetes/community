@@ -906,6 +906,24 @@ It is okay to have the "{field}" component indicate the resource type. For examp
 a secret. However, this comes with the risk of the field being a misnomer in the case that the field is expanded to
 reference more than one type.
 
+### Referencing resources with multiple versions
+
+Most resources will have multiple versions. For example, core resources
+will undergo version changes as it transitions from alpha to GA.
+
+Controllers should assume that a version of a resource may change, and include appropriate error handling.
+
+### Handling of resources that do not exist
+
+There are multiple scenarios where a desired resource may not exist. Examples include:
+
+- the desired version of the resource does not exist.
+- race condition in the bootstrapping of a cluster resulting a resource not yet added.
+- user error.
+
+Controllers should be authored with the assumption that the referenced resource may not exist, and include
+error handling to make the issue clear to the user.
+
 ### Object References Examples
 
 The following sections illustrate recommended schemas for various object references scenarios.
@@ -955,6 +973,9 @@ Although not always necessary to help a controller identify a resource type, “
 
 The operator can store a map of (group,resource) to the version of that resource it desires. From there, it can construct the full path to the resource, and retrieve the object.
 
+It is also possible to have the controller choose a version that it finds via the discovery client. However, as schemas can vary across different versions
+of a resource, the controller must also handle these differences.
+
 #### Generic object reference
 
 A generic object reference is used when the desire is to provide a pointer to some object to simplify discovery for the user. For example, this could be used to reference a target object for a `core.v1.Event` that occurred.
@@ -972,7 +993,7 @@ fooObjectRef:
 
 ##### Controller behavior
 
-The operator would be expected to find the resource via the discovery client (as the version is not supplied).
+The operator would be expected to find the resource via the discovery client (as the version is not supplied). As any retrievable field would be common to all objects, any version of the resource should do.
 
 #### Field reference
 
@@ -992,9 +1013,12 @@ The fieldPath should point to a single value, and use [the recommended field sel
 
 ##### Controller behavior
 
-In this scenario, all required attributes are required, so the operator may query the API directly.
+In this scenario, the user will supply all of the required path elements: group, version, resource, name, and possibly namespace.
+As such, the controller can construct the API prefix and query it without the use of the discovery client:
 
-TODO: Plugins, extensions, headers
+```
+/apis/{group}/{version}/{resource}/
+```
 
 ## HTTP Status codes
 
