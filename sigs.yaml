@@ -1674,6 +1674,14 @@ sigs:
     frequency: weekly
     url: https://zoom.us/j/96264742248
     archive_url: https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs
+  - description: SIG Network Ingress NGINX Meeting
+    day: Tuesday
+    time: "9:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/98377891310
+    archive_url: https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit
+    recordings_url: https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X
   - description: SIG Network Kube Proxy Meeting
     day: Friday
     time: "8:30"
