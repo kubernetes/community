@@ -874,11 +874,6 @@ Examples:
 
 ## Object references
 
-Object references should either be called `fooName` if referring to an object of
-kind `Foo` by just the name (within the current namespace, if a namespaced
-resource), or should be called `fooRef`, and should contain a subset of the
-fields of the `ObjectReference` type.
-
 Object references on a namespaced type should usually refer only to objects in
 the same namespace.  Because namespaces are a security boundary, cross namespace
 references can have unexpected impacts, including:
@@ -900,8 +895,133 @@ clearly described and the permissions issues should be resolved.
 This could be done with a double opt-in (an opt-in from both the referrer and the refer-ee) or with secondary permissions
 checks performed in admission. 
 
-TODO: Plugins, extensions, nested kinds, headers
+### Naming of the reference field
 
+The name of the reference field should be of the format "{field}Ref", with "Ref" always included in the suffix.
+
+The "{field}" component should be named to indicate the purpose of the reference. For example, "targetRef" in an
+endpoint indicates that the object reference specifies the target.
+
+It is okay to have the "{field}" component indicate the resource type. For example, "secretRef" when referencing
+a secret. However, this comes with the risk of the field being a misnomer in the case that the field is expanded to
+reference more than one type.
+
+### Referencing resources with multiple versions
+
+Most resources will have multiple versions. For example, core resources
+will undergo version changes as it transitions from alpha to GA.
+
+Controllers should assume that a version of a resource may change, and include appropriate error handling.
+
+### Handling of resources that do not exist
+
+There are multiple scenarios where a desired resource may not exist. Examples include:
+
+- the desired version of the resource does not exist.
+- race condition in the bootstrapping of a cluster resulting a resource not yet added.
+- user error.
+
+Controllers should be authored with the assumption that the referenced resource may not exist, and include
+error handling to make the issue clear to the user.
+
+### Object References Examples
+
+The following sections illustrate recommended schemas for various object references scenarios.
+
+The schemas outlined below are designed to enable purely additive fields as the types of referencable
+objects expand, and therefore are backwards compatible.
+
+For example, it is possible to go from a single resource type to multiple resource types without
+a breaking change in the schema.
+
+#### Single resource reference
+
+A single kind object reference is straightforward in that the controller can hard-code most qualifiers needed to identify the object. As such as the only value needed to be provided is the name (and namespace, although cross-namespace references are discouraged):
+
+```yaml
+# for a single resource, the suffix should be Ref, with the field name
+# providing an indication as to the resource type referenced.
+secretRef: 
+    name: foo
+    # namespace would generally not be needed and is discouraged, 
+    # as explained above.
+    namespace: foo-namespace
+```
+
+This schema should only be used when the intention is to always have the reference only be to a single resource.
+If extending to multiple resource types is possible, use the [multiple resource reference](#multiple-resource-reference).
+
+##### Controller behavior
+
+The operator is expected to know the version, group, and resource name of the object it needs to retrieve the value from, and can use the discovery client or construct the API path directly.
+
+#### Multiple resource reference
+
+Multi-kind object references are used when there is a bounded set of valid resource types that a reference can point to.
+
+As with a single-kind object reference, the operator can supply missing fields, provided that the fields that are present are sufficient to uniquely identify the object resource type among the set of supported types.
+
+```yaml
+# guidance for the field name is the same as a single resource.
+fooRef:
+    group: sns.services.k8s.aws
+    resource: topics
+    name: foo
+    namespace: foo-namespace
+```
+
+Although not always necessary to help a controller identify a resource type, “group” is included to avoid ambiguity when the resource exists in multiple groups. It also provides clarity to end users and enables copy-pasting of a reference without the referenced type changing due to a different controller handling the reference.
+
+##### Controller behavior
+
+The operator can store a map of (group,resource) to the version of that resource it desires. From there, it can construct the full path to the resource, and retrieve the object.
+
+It is also possible to have the controller choose a version that it finds via the discovery client. However, as schemas can vary across different versions
+of a resource, the controller must also handle these differences.
+
+#### Generic object reference
+
+A generic object reference is used when the desire is to provide a pointer to some object to simplify discovery for the user. For example, this could be used to reference a target object for a `core.v1.Event` that occurred.
+
+With a generic object reference, it is not possible to extract any information about the referenced object aside from what is standard (e.g. ObjectMeta). Since any standard fields exist in any version of a resource, it is possible to not include version in this case:
+
+```yaml
+fooObjectRef:
+    group: operator.openshift.io
+    resource: openshiftapiservers
+    name: cluster
+    # namespace is unset if the resource is cluster-scoped, or lives in the 
+    # same namespace as the referrer.
+```
+
+##### Controller behavior
+
+The operator would be expected to find the resource via the discovery client (as the version is not supplied). As any retrievable field would be common to all objects, any version of the resource should do.
+
+#### Field reference
+
+A field reference is used when the desire is to extract a value from a specific field in a referenced object.
+
+Field references differ from other reference types, as the operator has no knowledge of the object prior to the reference. Since the schema of an object can differ for different versions of a resource, this means that a “version” is required for this type of reference.
+
+```yaml
+fooFieldRef:
+   version: v1 # version of the resource
+   # group is elided in the ConfigMap example, since it has a blank group in the OpenAPI spec.
+   resource: configmaps
+   fieldPath: data.foo
+```
+
+The fieldPath should point to a single value, and use [the recommended field selector notation](#selecting-fields) to denote the field path.
+
+##### Controller behavior
+
+In this scenario, the user will supply all of the required path elements: group, version, resource, name, and possibly namespace.
+As such, the controller can construct the API prefix and query it without the use of the discovery client:
+
+```
+/apis/{group}/{version}/{resource}/
+```
 
 ## HTTP Status codes
 
@@ -1456,4 +1576,3 @@ Example: "must be greater than \`request\`".
 be less than 256", "must be greater than or equal to 0".  Do not use words
 like "larger than", "bigger than", "more than", "higher than", etc.
 * When specifying numeric ranges, use inclusive ranges when possible.
-
