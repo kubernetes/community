@@ -20,7 +20,7 @@ Provide an overall architecture that describes both the current policy related i
 * SIG Storage
 
 ## Meetings
-* Regular WG Meeting: [Wednesdays at 16:00 PT (Pacific Time)](https://zoom.us/j/7375677271) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Wednesdays at 16:00 UTC](https://zoom.us/j/7375677271) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing).
 
 ## Organizers
