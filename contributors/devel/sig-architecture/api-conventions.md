@@ -934,7 +934,7 @@ objects expand, and therefore are backwards compatible.
 For example, it is possible to go from a single resource type to multiple resource types without
 a breaking change in the schema.
 
-#### References to a single resource type 
+#### Single resource reference
 
 A single kind object reference is straightforward in that the controller can hard-code most qualifiers needed to identify the object. As such as the only value needed to be provided is the name (and namespace, although cross-namespace references are discouraged):
 
@@ -948,11 +948,14 @@ secretRef:
     namespace: foo-namespace
 ```
 
+This schema should only be used when the intention is to always have the reference only be to a single resource.
+If extending to multiple resource types is possible, use the [multiple resource reference](#multiple-resource-reference).
+
 ##### Controller behavior
 
 The operator is expected to know the version, group, and resource name of the object it needs to retrieve the value from, and can use the discovery client or construct the API path directly.
 
-#### References which can point to multiple resource types
+#### Multiple resource reference
 
 Multi-kind object references are used when there is a bounded set of valid resource types that a reference can point to.
 
