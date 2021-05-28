@@ -147,7 +147,7 @@ The document gets slow as we add notes, so it is archived regularly into the
 [Meeting Notes Archive].
 
 
-[community-meeting]: https://zoom.us/my/kubernetescommunity
+[community-meeting]: https://zoom.us/j/91768411674?pwd=MVpqL0ZHbGFYMnpXVXpybTBvalFRQT09
 [10am PT]: http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29
 [calendar.google.com]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [iCal url]: https://calendar.google.com/calendar/ical/calendar%40kubernetes.io/public/basic.ics
