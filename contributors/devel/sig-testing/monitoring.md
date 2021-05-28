@@ -29,7 +29,8 @@ results in a grid. TestGrid's back end components are open sourced and can be
 viewed in the [TestGrid repo]  The front-end code
 that renders the dashboard is not currently open sourced.
 
-The Kubernetes community has its own [TestGrid instance] which we use to monitor and observe the health of the project.
+The Kubernetes community has its own [TestGrid instance] which we use to monitor
+and observe the health of the project.
 
 Each Special Interest Group or [SIG] has its own set of dashboards. Each
 dashboard is composed of different jobs (build, unit test, integration test,
@@ -205,28 +206,19 @@ We can see that the following jobs were flaky at the time this screenshot was ta
 1. **Which tests are flaking**
 
 Let's grab an example from the SIG release dashboards and look at the
-`node-kubelet-features-master` job in sig-release-master-informing [node-kubelet-features-master].
+`node-kubelet-master` job in sig-release-master [node-kubelet-master].
 
-<img src="./testgrid-images/failed-tests.png" height="70%" width="100%">
+<img src="./testgrid-images/test-grid-job.svg" height="70%" width="100%">
 
-Here we see that at 16.07 EDT and 15:07 EDT the tests
-
-```text
-[k8s.io] NodeProblemDetector [NodeFeature:NodeProblemDetector]
-[k8s.io] SystemLogMonitor should generate node condition and events for corresponding errors [ubuntu]
-```
-
-Failed for Kubernetes commit `9af86e8db` (3)
-The corresponding test-infra commit was `11cb57d36`
-
-At 15:07 EDT, the test
+Here we see that at 07.19 IST the tests
 
 ```text
-[k8s.io] NodeProblemDetector [NodeFeature:NodeProblemDetector]
-[k8s.io] SystemLogMonitor should generate node condition and events for corresponding errors [cos-stable2]
+E2eNode Suite.[sig-node] Summary API [NodeConformance] when querying /stats/summary should report resource usage through the stats api [cos-stable2]
+kubetest.Node Tests [runner]
 ```
 
-failed as well.
+Failed for Kubernetes commit `d8f9e4587` 
+The corresponding test-infra commit was `fe9c22dc8`
 
 3. **Since when has it been flaking**
 
@@ -261,9 +253,9 @@ when the job was run.
 Click on the failed runs (the red cells in the grid)  to see the results in 
 SpyGlass.
 
-For `node-kubelet-features-master`, we see the following:
+For `node-kubelet-master`, we see the following:
 
-![Spyglass Prow Job Results for node-kubelet-features-master`](./testgrid-images/spyglass-summary.png "Spyglass Prow Job results viewer")
+![Spyglass Prow Job Results for node-kubelet-master`](./testgrid-images/spyglass-summary-node-kubelet-master.png "Spyglass Prow Job results viewer")
 
 Here we see that 2 tests failed (both related to the node problem detector) and
 the `e2e.go: Node Tests` stage was marked as failed (because the node problem
@@ -294,16 +286,19 @@ been failing in others and to understand how jobs are behaving.
 For example, we can see how the job we have been looking at has been behaving
 recently.
 
-There is one important detail is that the job names you see on TestGrid are
-often aliases.
+One important detail is that the job names you see on tabs in TestGrid are often
+aliases. Job definition details including the job name, the job definition
+configuration file and a description of the job can be found below the tab name
+in TestGrid with a URL pointing to the yaml file where the job is configured.
 
-For example, when we clicked on a test run for [node-kubelet-features-master],
-the job name can be found at the top left corner of the Spyglass page
-`ci-kubernetes-node-kubelet-features` (notice the "ci-kubernetes-" prefix).
+For example, when we clicked on a test run for [node-kubelet-master],
+the job name, `ci-kubernetes-node-kubelet-features`, can be found at the top left
+corner of the Spyglass page (notice the "ci-kubernetes-" prefix).
 
 Then we can run a query on Triage using [ci-kubernetes-node-kubelet-features in
-the job field] Note the Triage query can be bookmarked and can be used as a
-deep link for use in issues.
+the job field] Note that the Triage query can be bookmarked and can be used as a
+deep link that can be added to GitHub issues to assist test maintainers in
+understanding what is wrong with a test.
 
 At the time of this writing we saw the following:
 
@@ -359,7 +354,7 @@ list.
 [skew-cluster-latest-kubectl-stable1-gce]:https://testgrid.k8s.io/sig-release-master-blocking#skew-cluster-latest-kubectl-stable1-gce
 [gci-gce-ingress]:https://testgrid.k8s.io/sig-release-master-blocking#gci-gce-ingress
 [kind-master-parallel]:https://testgrid.k8s.io/sig-release-master-blocking#kind-master-parallel
-[node-kubelet-features-master]:https://testgrid.k8s.io/sig-release-master-informing#node-kubelet-features-master
+[node-kubelet-master]:https://testgrid.k8s.io/sig-release-master-blocking#node-kubelet-master
 
 [Triage]:https://go.k8s.io/triage
 [ci-kubernetes-node-kubelet-features in the job field]:https://go.k8s.io/triage?pr=1&job=ci-kubernetes-node-kubelet-features
