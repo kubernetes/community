@@ -22,6 +22,12 @@ The contributor/community repository triage team exist to speed up management of
 
 The list of duties can be found [here](https://github.com/kubernetes/community/blob/master/sig-contributor-experience/triage-team/triage.md)
 
+## Production Readiness Review
+
+Production readiness reviews are intended to ensure that features merging into Kubernetes are observable, scalable and supportable, can be safely operated in production environments, and can be disabled or rolled back in the event they cause increased failures in production.
+
+The list of roles and duties can be found [here](https://github.com/kubernetes/community/blob/master/sig-architecture/production-readiness.md)
+
 ## Upstream Marketing
 The mission of the Kubernetes Upstream Marketing Team is to elevate the hard work being done throughout the Kubernetes 
 community by its contributors. Promoting the work and helping fill the needs of the Kubernetes community is the driving 

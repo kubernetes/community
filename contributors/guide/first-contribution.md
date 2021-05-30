@@ -69,7 +69,7 @@ to Kubernetes. Check out the [list of SIGs][sl] for contact information.
 
 A SIG is an open, community effort.
 
-Anybody is welcome to jump into a SIG and begin fixing issues, critiqe design 
+Anybody is welcome to jump into a SIG and begin fixing issues, critique design 
 proposals, and review code. SIGs have regular [video meetings] which everyone 
 is welcome to attend. Each SIG has a Slack channel, meeting notes, and their own 
 documentation that is useful to read and understand. There is an entire SIG 
@@ -99,7 +99,7 @@ by typing the following:
 /sig network
 ```
 
-Follow the link in the SIG name column to reach each SIG'ss README. 
+Follow the link in the SIG name column to reach each SIG's README. 
 
 Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a 
 comment on issues and pull requests for higher visibility.  If you are not sure 

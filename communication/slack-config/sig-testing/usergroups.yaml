@@ -1,0 +1,8 @@
+usergroups:
+  # maintained by https://github.com/kubernetes/test-infra/blob/master/experiment/slack-oncall-updater
+  - name: test-infra-oncall
+    external: true
+
+  # maintained by https://github.com/kubernetes/test-infra/blob/master/experiment/slack-oncall-updater
+  - name: google-build-admin
+    external: true

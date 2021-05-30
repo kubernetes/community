@@ -25,6 +25,7 @@ channels:
   - name: bindings-discuss
   - name: bootkube
   - name: brigade
+  - name: camptocamp-devops-stack
   - name: cdk
   - name: cert-manager
   - name: cert-manager-dev
@@ -54,6 +55,7 @@ channels:
   - name: cn-dev
   - name: cn-events
   - name: cn-users
+  - name: code-of-conduct
   - name: community-sites
   - name: compliance-hipaa
   - name: contour
@@ -106,7 +108,9 @@ channels:
   - name: gloo
   - name: grafana-operator
   - name: haproxy-ingress
-  - name: headlamp
+  - name: headlamp-users
+    id: C01FXB5E8ER
+  - name: headlamp-dev
   - name: helm-chart-testing
   - name: helm-deprecated
     archived: true
@@ -125,7 +129,9 @@ channels:
   - name: in-dev
   - name: in-events
   - name: in-users
-  - name: ingress-nginx
+  - name: ingress-nginx-dev
+  - name: ingress-nginx-users
+    id: CANQGM8BA
   - name: inspektor-gadget
   - name: it-events
   - name: it-users
@@ -149,15 +155,17 @@ channels:
     archived: true
   - name: k8spin
   - name: kapitan
+  - name: kcp-prototype
   - name: keda
   - name: keda-dev
   - name: keel
   - name: kiam
-  - name: kind
+  - name: kilo
   - name: kiosk
   - name: kcli
   - name: klog
   - name: knative
+  - name: ko-project
   - name: kompose
   - name: kong
   - name: konveyor
@@ -182,6 +190,7 @@ channels:
   - name: kube-score
   - name: kube-spawn
   - name: kube-state-metrics
+  - name: kube-vip
   - name: kubeadm
   - name: kubeadm-cn
   - name: kubeapps
@@ -215,6 +224,7 @@ channels:
   - name: kubespray
   - name: kubespray-dev
   - name: kubevirt-dev
+  - name: kubewarden
   - name: kubicorn
   - name: kudo
   - name: kurl
@@ -257,6 +267,7 @@ channels:
   - name: meetup-trondheim
   - name: meetup-tunisia
   - name: metacontroller
+  - name: metal-stack
   - name: metallb
   - name: metallb-dev
   - name: microk8s
@@ -284,6 +295,7 @@ channels:
   - name: opencontainers
   - name: openebs
   - name: openebs-dev
+  - name: openkruise
   - name: openshift-dev
   - name: openshift-users
   - name: openstack-helm
@@ -301,8 +313,6 @@ channels:
   - name: prometheus
   - name: prometheus-operator
   - name: prometheus-operator-dev
-  - name: prow
-  - name: prow-alerts
   - name: pt_br-users
   - name: purelb-users
   - name: raksh
@@ -328,6 +338,7 @@ channels:
   - name: sig-apps
   - name: sig-auth
   - name: sig-autoscaling
+  - name: sig-autoscaling-api
   - name: sig-cli
   - name: sig-clstr-life-leads
   - name: sig-cluster-lifecycle
@@ -336,7 +347,9 @@ channels:
   - name: sig-configuration
     archived: true
   - name: sig-contribex
+  - name: sig-contribex-meetings
   - name: sig-contribex-triage
+    archived: true
   # sig-docs* channels are defined in sig-docs/
   - name: sig-high-availability
     archived: true
@@ -349,7 +362,7 @@ channels:
   - name: sig-scheduling
   # sig-security* channels are defined in sig-security/
   - name: sig-service-catalog
-  - name: sig-testing
+  # sig-testing channels are defined in sig-testing/
   - name: sig-ui
   - name: sig-usability
   - name: sig-windows
@@ -369,8 +382,6 @@ channels:
   - name: talk-proposals
   - name: terraform-providers
   - name: test-failures
-  - name: testing-commons
-  - name: testing-ops
   - name: tilt
   - name: tn-users
   - name: topology-aware-scheduling
@@ -383,7 +394,10 @@ channels:
   - name: ug-big-data
     id: C0ELB338T
   - name: ug-vmware
-  - name: velero
+  - name: undistro
+  - name: velero-dev
+  - name: velero-users
+    id: C6VCGP4MT
   - name: virtlet
   - name: virtual-kubelet
   - name: virtualization
@@ -411,6 +425,7 @@ channels:
   - name: wg-reliability
   - name: wg-resource-mgmt
     archived: true
+  - name: wg-structured-logging
   - name: wg-security-audit
     archived: true
   - name: wg-virtual-kubelet

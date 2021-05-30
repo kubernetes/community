@@ -13,13 +13,19 @@ Covers networking in Kubernetes.
 The [charter](charter.md) defines the scope and governance of the Network Special Interest Group.
 
 ## Meetings
+* Gateway API Meeting (APAC Friendly): [Mondays at 15:00 PT (Pacific Time)](https://zoom.us/j/441530404) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
+* Gateway API Meeting (EMEA Friendly): [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/441530404) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
 * Network Policy API Meeting: [Mondays at 13:00 PT (Pacific Time)](https://zoom.us/j/96264742248) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs).
+* SIG Network Ingress NGINX Meeting: [Tuesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/98377891310) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit).
+  * [Meeting recordings](https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X).
+* SIG Network Kube Proxy Meeting: [Fridays at 8:30 PT (Pacific Time)](https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
 * SIG Network Meeting: [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/361123509) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
-* Service APIs Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/441530404) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
 
 ## Leadership
 
@@ -49,41 +55,45 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-network:
 ### cluster-proportional-autoscaler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-proportional-autoscaler/master/OWNERS
+  - [kubernetes-sigs/cluster-proportional-autoscaler](https://github.com/kubernetes-sigs/cluster-proportional-autoscaler/blob/master/OWNERS)
 ### cluster-proportional-vertical-autoscaler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-proportional-vertical-autoscaler/master/OWNERS
+  - [kubernetes-sigs/cluster-proportional-vertical-autoscaler](https://github.com/kubernetes-sigs/cluster-proportional-vertical-autoscaler/blob/master/OWNERS)
 ### external-dns
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/OWNERS
+  - [kubernetes-sigs/external-dns](https://github.com/kubernetes-sigs/external-dns/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
+### gateway-api
+- **Owners:**
+  - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/endpoint](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/endpoint/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/service](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/service/OWNERS)
+  - [kubernetes/kubernetes/pkg/proxy](https://github.com/kubernetes/kubernetes/blob/master/pkg/proxy/OWNERS)
+- **Contact:**
+  - Slack: [#sig-network-gateway-api](https://kubernetes.slack.com/messages/sig-network-gateway-api)
 ### ingress
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
+  - [kubernetes-sigs/ingress-controller-conformance](https://github.com/kubernetes-sigs/ingress-controller-conformance/blob/master/OWNERS)
+  - [kubernetes/ingress-gce](https://github.com/kubernetes/ingress-gce/blob/master/OWNERS)
+  - [kubernetes/ingress-nginx](https://github.com/kubernetes/ingress-nginx/blob/master/OWNERS)
 ### iptables-wrappers
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/iptables-wrappers/master/OWNERS
+  - [kubernetes-sigs/iptables-wrappers](https://github.com/kubernetes-sigs/iptables-wrappers/blob/master/OWNERS)
+### kpng
+- **Owners:**
+  - [kubernetes-sigs/kpng](https://github.com/kubernetes-sigs/kpng/blob/master/OWNERS)
 ### kube-dns
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
+  - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
 ### network-policy
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
+  - [kubernetes-sigs/network-policy-api](https://github.com/kubernetes-sigs/network-policy-api/blob/master/OWNERS)
+  - [kubernetes/api/networking](https://github.com/kubernetes/api/blob/master/networking/OWNERS)
 ### pod-networking
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
-### service-apis
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/service-apis/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/service/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
-- **Contact:**
-  - Slack: [#sig-network-service-apis](https://kubernetes.slack.com/messages/sig-network-service-apis)
+  - [kubernetes-sigs/ip-masq-agent](https://github.com/kubernetes-sigs/ip-masq-agent/blob/master/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubelet/network](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/network/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

@@ -31,9 +31,8 @@ This SIG’s main goals are:
   - Canary builds are published on pushes to master.
   - Release builds (and latest) are published on tags.
   - Chairs have access to manage this repository.
-- [Helm Repository](https://svc-catalog-charts.storage.googleapis.com)
-  - Charts are manually published after each release.
-  - Managed by Vic Iglesias (Google), @viglesias on the kubernetes slack.
+- [Helm Repository](https://kubernetes-sigs.github.io/service-catalog)
+  - Charts are automatically published as part of the release process.
 - [svc-cat.io](https://svc-cat.io)
   - Published on pushes to master.
   - Site hosted with [Netlify](https://app.netlify.com/sites/svc-cat/overview).

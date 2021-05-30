@@ -8,12 +8,18 @@ Different actions on this list must be carried out by different members:
 
 ## Permissions 
 
-### Slack
+### Slack Channel Membership
 
 **Who executes:** When offboarding, outgoing members must remove themselves from Slack channels. When onboarding, carryover members must add incoming members.
 
-- [ ] Code of conduct committee Slack channel on `kubernetes.slack.com`
+- [ ] Code of conduct committee Slack channel(s) (public and private) on `kubernetes.slack.com`
 - [ ] Code of conduct sync Slack channel on `cloud-native.slack.com`
+
+### Slack Channel Admin Privileges
+
+**Who executes:** During transition, carryover members initiate promotion/removal by pinging project Slack admins
+
+- [ ] Ping project Slack admins to add/remove Slack admin privileges for incoming/outgoing members in CoCC channel(s)
 
 ### Kubernetes/community permissions and google permissions
 

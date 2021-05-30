@@ -32,7 +32,7 @@ Development would be based on a generated client using OpenAPI and [swagger-code
 
         * X509 Client certificate (inline and referenced by file)
 
-        * Bearer tokens (inline and referenced by file)
+        * Bearer tokens (inline or referenced by a file that is reloaded at least once per minute)
 
         * encryption/TLS (inline, referenced by file, insecure)
 

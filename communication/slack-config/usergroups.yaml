@@ -35,15 +35,18 @@ usergroups:
       - Tunde
       - kaslin
       - rajula96reddy
-
-  - name: test-infra-oncall
-    external: true
-
-  - name: google-build-admin
-    external: true
+      - "Sladyn Nunes"
+      - "Kunal Kushwaha"
+      - "Bart Farrell"
+      - pensu91 
+      - "Joel Barker"
+      - Jason
 
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
+  #
+  # Ensure any changes are also reflected in the Security Release Team
+  # usergroup (within the SIG Release config directory).
   - name: product-security-committee
     long_name: Product Security Committee
     description: |-
@@ -54,18 +57,19 @@ usergroups:
       - sig-release
     members:
       - cjcullen
-      - cji
       - joelsmith
       - lukehinds
       - micahhausler
       - swamymsft
+      - tabbysable
       - tallclair
 
   - name: velero-maintainers
     long_name: Velero Maintainers
     description: Velero Maintainers group.
     channels:
-      - velero
+      # - velero-dev
+      - velero-users
     members:
       - ashish-amarnath
       - carlisia
@@ -82,7 +86,6 @@ usergroups:
       - alisondy
       - castrojo
       - jeefy
-      - markyjackson-taulia
       - mrbobbytables
       - onlydole
       - paris
@@ -96,7 +99,6 @@ usergroups:
       - alejandrox1
       - castrojo
       - idealhack
-      - markyjackson-taulia
       - mrbobbytables
       - nzoueidi
       - onlydole
@@ -174,3 +176,33 @@ usergroups:
       - cfryanr
       - margocrawf
       - microwavables
+      - pabloschuhmacher
+
+  - name: steering-members
+    long_name: Kubernetes Steering Committee
+    description: Members of the Kubernetes Steering Committee
+    channels:
+      - steering-committee
+    members:
+      - cblecker
+      - derekwaynecarr
+      - dims
+      - liggitt
+      - mrbobbytables
+      - nikhita
+      - paris
+
+  - name: grafana-operator-maintainers
+    long_name: Grafana Operator Maintainers
+    description: Support group for Grafana Operator.
+    channels:
+      - grafana-operator
+    members:
+      - david-martin
+      - grdryn
+      - hubertstefanski
+      - pb82
+      - r-lawton
+      - robshelly
+      - vladimirmukhin
+      - wurbanski

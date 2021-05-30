@@ -13,9 +13,12 @@ Focuses on supporting Windows Node and scheduling Windows containers on Kubernet
 The [charter](charter.md) defines the scope and governance of the Windows Special Interest Group.
 
 ## Meetings
+* Backlog Refinement  / Bug Triage Meeting: [Thursdays at 12:30 Eastern Time (ET)](https://zoom.us/j/94389601840?pwd=MCs2SEJQWG0zUWpBS3Nod0ZNMmVXQT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Time%20%28ET%29).
 * Regular SIG Meeting: [Tuesdays at 12:30 Eastern Time (ET)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Time%20%28ET%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4).
+* Weekly CI Meeting: [Tuesdays at 12:15 Eastern Time (ET)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:15&tz=Eastern%20Time%20%28ET%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1j2XEKXNyGaSO0XZNkSQUliaT48ZQl6StLhrsVurJoco/edit#).
 
 ## Leadership
 
@@ -53,16 +56,16 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 The following [subprojects][subproject-definition] are owned by sig-windows:
 ### windows-gmsa
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/windows-gmsa/master/OWNERS
+  - [kubernetes-sigs/windows-gmsa](https://github.com/kubernetes-sigs/windows-gmsa/blob/master/OWNERS)
 ### windows-samples
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-samples/master/OWNERS
+  - [kubernetes-sigs/sig-windows-samples](https://github.com/kubernetes-sigs/sig-windows-samples/blob/master/OWNERS)
 ### windows-testing
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
+  - [kubernetes-sigs/windows-testing](https://github.com/kubernetes-sigs/windows-testing/blob/master/OWNERS)
 ### windows-tools
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
+  - [kubernetes-sigs/sig-windows-tools](https://github.com/kubernetes-sigs/sig-windows-tools/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

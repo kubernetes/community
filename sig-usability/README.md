@@ -23,6 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Usability Spec
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Himanshu Pandey (**[@hpandeycodeit](https://github.com/hpandeycodeit)**), VMware
+* Gaby Moreno Cesar (**[@morengab](https://github.com/morengab)**), IBM
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
 
 ## Emeritus Leads
@@ -48,7 +49,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-usability:
 ### sig-usability
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/sig-usability/master/OWNERS
+  - [kubernetes-sigs/sig-usability](https://github.com/kubernetes-sigs/sig-usability/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

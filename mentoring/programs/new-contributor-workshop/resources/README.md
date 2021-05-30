@@ -7,6 +7,8 @@ This folder contains the [handbook for the New Contributor Workshop Content Lead
 
 This workshop is held periodically by the Kubernetes Community, but materials and processes may be used at contributor focused summits and events anywhere.
 
+Slides from previous New Contributor Workshops can be found [here](https://github.com/cncf/presentations/blob/master/kubernetes/README.md#kubernetes-new-contributor-workshops).
+
 ## Sample Track for Beginner Workshop
 
 This workshop is meant for folks who have never contributed to opensource before and/or need help setting up a Kubernetes developer environment.
@@ -34,5 +36,5 @@ This workshop differs from the Beginner workshop in that participants are expect
 1. [Kubernetes Orgs Overview](./repo-tour.md)
 1. k/k Walkthrough
 1. [Local Build&Test](./build-and-test.md)
-1. Labels, Bots and Git Workflow
+1. [Labels, Bots and Git Workflow](./labels-and-bots.md)
 1. [Find Your First Issue](./first-issue-help.md)

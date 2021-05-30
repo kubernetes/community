@@ -36,3 +36,19 @@ Shadows and co-presenters are expected to assist and review these updates.
 ## Time Commitment
 
 1-2 hours/week most of the time, 4-5 in the weeks leading up to NCW, depending on previous teaching/shadowing experience.
+
+## Coupon Codes
+
+If you would like to share coupon codes for the CNCF store with your
+attendees, please create an issue in the [kubernetes/funding] repo and
+assign [SIG Contributor Experience chairs] for approval.
+
+The funding request should contain the following details:
+- Number of coupon codes required
+- Desired amount of each coupon code (e.g. $20) OR desired swags for each coupon code (e.g. 1 Tshirt, 2 stickers)
+
+Once the request is approved, the chairs will create a CNCF Service Desk
+ticket to get the list of coupon codes.
+
+[kubernetes/funding]: https://github.com/kubernetes/funding
+[SIG Contributor Experience chairs]: /sig-contributor-experience#chairs

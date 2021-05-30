@@ -75,7 +75,7 @@ Some edge hardware designs include intrusion detection mechanisms, often related
 
 Even when edge hardware contains a root of trust technology implementation, and even if that root of trust is integrated with software layers above it, there may still be a foundational breach of security if the authenticity of the hardware cannot be assured. A mainboard that masks espionage functionality as a trusted device will appear to be non-compromised but it was, in fact, designed to be untrustworthy from the start.
 
-While these threats are typically only reserved for nation-state threat actors that have the sovereignty, influence and resources to launch an attack of this sophistication and addressing this security challenge goes far beyond the scope of technology or architecture and reaches into the areas of business operations and supply chain management, it is noted here for good reasonThe cost of replacing edge hardware, once deployed, can be much higher than replacing hardware in a centralized location. Additionally, the opportunity to discover covert edge hardware functionality may be much lower than if the hardware were present in a controlled physical location. The owner may simply never be physically near enough to the edge device during production operation in order to detect unexpected behavior.
+While these threats are typically only reserved for nation-state threat actors that have the sovereignty, influence and resources to launch an attack of this sophistication and addressing this security challenge goes far beyond the scope of technology or architecture and reaches into the areas of business operations and supply chain management, it is noted here for good reason. The cost of replacing edge hardware, once deployed, can be much higher than replacing hardware in a centralized location. Additionally, the opportunity to discover covert edge hardware functionality may be much lower than if the hardware were present in a controlled physical location. The owner may simply never be physically near enough to the edge device during production operation in order to detect unexpected behavior.
 
 
 ## 3 Trusting connected devices
@@ -99,9 +99,7 @@ Once data enters an edge compute node, it may be stored, copied, forwarded, and 
 
 ### 3.3 Device management
 
-The concept of device management includes a very large set of activities and functionality. Everything from provisioning devices for use in a solution to monitoring battery life and updating firmware can be placed under this topic. Many device management systems accept information about the state of a device without question. In some cases, the point of ingestion for device status information is an open API available at a public IP address. For production systems, this poses a significant security threat because
-
- false device status information may result in physical actions. Losses in the form of time, wages, materials, and fuel are possible. But additionally the system may be distributing commands or other information to false devices which are indistinguishable from legitimate devices.
+The concept of device management includes a very large set of activities and functionality. Everything from provisioning devices for use in a solution to monitoring battery life and updating firmware can be placed under this topic. Many device management systems accept information about the state of a device without question. In some cases, the point of ingestion for device status information is an open API available at a public IP address. For production systems, this poses a significant security threat because false device status information may result in physical actions. Losses in the form of time, wages, materials, and fuel are possible. But additionally the system may be distributing commands or other information to false devices which are indistinguishable from legitimate devices.
 
 
 ## 4 Operating system
@@ -120,7 +118,7 @@ Any later stage drivers and user space software will be the subject of security 
 
 Once the later stage operating system drivers are loading and user space software is beginning to activate, most edge compute nodes are expected to be somewhat flexible in terms of running binaries. After all, there is little need for edge computing infrastructure if the processing taking place at the edge can be permanently planned in advance and will not change.
 
-Because edge software is dynamic, we can monitor the binaries that get loaded at the close of the standard secure boot process and afterward but we cannot simply block non-whitelist software. An attestation method may be most appropriate here, but regardless of the technique some form of remote awareness and control of running processes is needed. The security challenge does not end with this, however, because it is likely that rogue software would falsify or cancel reporting of process monitoring as an immediate step once invoked. The challenge in this situation includes finding a way to take action immediately at the edge for the detection of unauthorized software running directly on the operating system.
+Because edge software is dynamic, we can monitor the binaries that get loaded at the close of the standard secure boot process and afterward but we cannot simply block non-allowlist software. An attestation method may be most appropriate here, but regardless of the technique some form of remote awareness and control of running processes is needed. The security challenge does not end with this, however, because it is likely that rogue software would falsify or cancel reporting of process monitoring as an immediate step once invoked. The challenge in this situation includes finding a way to take action immediately at the edge for the detection of unauthorized software running directly on the operating system.
 
 ### 4.4 Component Firmware Vulnerabilities
 
@@ -175,7 +173,7 @@ Most systems are designed with devices and gateways deployed at the edge but con
 
 ### 5.5 Attacks of transport layer
 
-When working with communication protocols like Zigbee, Wifi or Bluetooth it is possible to disturb or attack the communication transport layer. By using for example white noise generators the communication between edge-devices and master nodes can be complete blocked and would look similar to something like a denial of service attack. By introducing noise into a network layer some systems will automatically increase the SNR ratio which would lead to an increase in power consumption.
+When working with communication protocols like Zigbee, Wifi, or Bluetooth it is possible to disturb or attack the communication transport layer. By using for example white noise generators the communication between edge-devices and master nodes can be complete blocked and would look similar to something like a denial of service attack. By introducing noise into a network layer some systems will automatically increase the SNR ratio which would lead to an increase in power consumption.
 
 
 ### 5.6 Denial-of-thing attacks
@@ -206,7 +204,7 @@ Many edge microservices need configuration, API keys, database credentials, and 
 
 ### 6.3 Unauthorized microservices
 
-Any unauthorized edge microservices should be detected and eliminated. The best approach is to prevent any microservice that is not whitelisted from ever starting, of course. Attempts to launch unauthorized microservices should be reported even if prevented successfully. A further hurdle for access violations is, to run the microservice with the least required privileges. 
+Any unauthorized edge microservices should be detected and eliminated. The best approach is to prevent any microservice that is not allowlisted from ever starting, of course. Attempts to launch unauthorized microservices should be reported even if prevented successfully. A further hurdle for access violations is, to run the microservice with the least required privileges. 
 
 
 ### 6.4 Controlled access to resources

@@ -7,7 +7,7 @@ aliases:
     - janetkuo
     - kow3ns
     - mattfarina
-    - prydonius
+    - soltysh
   sig-architecture-leads:
     - derekwaynecarr
     - dims
@@ -17,7 +17,7 @@ aliases:
     - enj
     - liggitt
     - mikedanese
-    - tallclair
+    - ritazh
   sig-autoscaling-leads:
     - gjtempleton
     - mwielgus
@@ -62,8 +62,8 @@ aliases:
     - dchen1107
     - derekwaynecarr
   sig-release-leads:
-    - alejandrox1
     - hasheddan
+    - jeremyrickard
     - justaugustus
     - saschagrunert
   sig-scalability-leads:
@@ -94,6 +94,7 @@ aliases:
     - maciaszczykm
   sig-usability-leads:
     - hpandeycodeit
+    - morengab
     - tashimi
   sig-windows-leads:
     - ddebroy
@@ -114,7 +115,7 @@ aliases:
     - cindyxing
     - dejanb
   wg-k8s-infra-leads:
-    - bartsmykla
+    - ameukam
     - dims
     - spiffxp
   wg-multitenancy-leads:
@@ -124,7 +125,6 @@ aliases:
     - celestehorgan
     - jdumars
     - justaugustus
-    - zacharysarah
   wg-policy-leads:
     - ericavonb
     - hannibalhuang
@@ -132,6 +132,9 @@ aliases:
     - deads2k
     - stevekuznetsov
     - wojtek-t
+  wg-structured-logging-leads:
+    - serathius
+    - shubheksha
   ug-big-data-leads:
     - erikerlandson
     - foxish
@@ -149,11 +152,11 @@ aliases:
     - tpepper
   committee-product-security:
     - cjcullen
-    - cji
     - joelsmith
     - lukehinds
     - micahhausler
     - swamymsft
+    - tabbysable
     - tallclair
   committee-steering:
     - cblecker

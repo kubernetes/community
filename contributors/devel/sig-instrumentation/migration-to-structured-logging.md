@@ -98,8 +98,13 @@ Simplified mapping between functions:
 * `klog.Infof`, `klog.Info`, `klog.Infoln`, `klog.InfoDepth` -> `klog.InfoS`
 * `klog.V(N).Infof`, `klog.V(N).Info`, `klog.V(N).Infoln` -> `klog.V(N).InfoS`
 * `klog.Warning`, `klog.Warningf`, `klog.Warningln`, `klog.WarningDepth` -> `klog.InfoS`
+* `klog.V(N).Warning`, `klog.V(N).Warningf`, `klog.V(N).Warningln`, `klog.V(N).WarningDepth` -> `klog.V(N).InfoS`
 * `klog.Error`, `klog.Errorf`, `klog.Errorln`, `klog.ErrorDepth` -> `klog.ErrorS`
-* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln`, `klog.FatalDepth` -> `klog.ErrorS`
+* `klog.V(N).Error`, `klog.V(N).Errorf`, `klog.V(N).Errorln`, `klog.V(N).ErrorDepth` -> `klog.ErrorS`
+* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln`, `klog.FatalDepth` -> `klog.ErrorS` followed by `os.Exit(1)` ([see below])
+* `klog.V(N).Fatal`, `klog.V(N).Fatalf`, `klog.V(N).Fatalln`, `klog.V(N).FatalDepth` -> `klog.ErrorS` followed by `os.Exit(1)` ([see below])
+
+[see below]: #replacing-fatal-calls
 
 ### Removing Depth
 
@@ -122,7 +127,7 @@ func logHTTPRequest(r *http.Request) {
 should be replaced with
 ```go
 func Handle(w http.ReponseWriter, r *http.Request) {
-    klog.Info("Received HTTP request", httpRequestLog(r)...)
+    klog.InfoS("Received HTTP request", httpRequestLog(r)...)
     handle(w, r)
 }
 
@@ -149,6 +154,8 @@ origin point. For expected errors (`errors` that can happen during routine opera
 
 Use of Fatal should be discouraged and it's not available in new functions. Instead of depending on the logger to exit
 the process, you should call `os.Exit()` yourself.
+
+Fatal calls use a default exit code of 255. When migrating, please use an exit code of 1 and include an "ACTION REQUIRED:" release note.
 
 ## Remove string formatting from log message
 
@@ -199,6 +206,12 @@ has different meaning for variadic arguments. Instead of just passing arguments,
 argument name and argument value. This means when migrating a log call we need to add an additional string before each
 argument, that will be used as it's name.
 
+How variable arguments should be used:
+
+```go
+klog.InfoS("message", "key1", value1, "key2", "value2")
+```
+
 For example
 ```go
 func LogHTTP(r *http.Request) {
@@ -212,37 +225,85 @@ func LogHTTP(r *http.Request) {
 }
 ```
 
-Names of arguments should use [lowerCamelCase] and be alphanumeric. Arguments names in one log call should be unique.
-Names should be picked based on semantic meaning of value itself, not the context in which is used (log message should
-imply the context). For example names like `status` should be used over (`desiredStatus`, `oldStatus`, `badStatus`) thus
-allowing to query and join different log lines of the `status` field.
+When deciding on names of arguments you should:
+* Always use [lowerCamelCase], for example use `containerName` and not `container name` or `container_name`.
+* Use [alphanumeric] characters: no special characters like `%$*`, non-latin, or unicode characters.
+* Use object kind when referencing Kubernetes objects, for example `deployment`, `pod` and `node`.
+* Describe the type of value stored under the key and use normalized labels:
+  * Don't include implementation-specific details in the labels. Don't use `directory`, do use `path`.
+  * Do not provide additional context for how value is used. Don't use `podIP`, do use `IP`.
+  * With the exception of acronyms like "IP" and the standard "err", don't shorten names. Don't use `addr`, do use `address`.
+  * When names are very ambiguous, try to include context in the label. For example, instead of
+    `key` use `cacheKey` or instead of `version` use `dockerVersion`.
+* Be consistent, for example when logging file path we should always use `path` and not switch between
+  `hostPath`, `path`, `file`.
 
-Kubernetes objects should be referenced using only their kind, no matter their api group or version. Example argument
-names: `deployment`, `pod`, `node`, `replicaSet`. For objects of unknown type, is ok to log them under `object` key with
-addition of `apiVersion` and `kind` fields describing the k8s object type.
+Here are a few exceptions to the rules above---some cases are temporary workarounds that may change if we settle on better solution:
+* Do use `err` rather than `error` to match the key used by `klog.ErrorS`
+* Context in name is acceptable to distinguish between values that normally go under same key. For example using both
+  `status` and `oldStatus` in log that needs to show the change between statuses.
+* When Kubernetes object kind is unknown without runtime checking we should use `object` key. To provide information
+  about kind we should add separate `apiVersion` and `kind` fields.
+* If we cannot use `klog.KObj` nor `klog.KRef` for Kubernetes object, like in cases when we only have access to name or UID,
+  then we should fallback to using object kind with suffix based on value type. For example `podName`, `podUID`.
+* When providing multiple indistinguishable values (for example list of evicted pods), then we can use plural version of
+  argument name. For example we should use `pods` and not `podList`.
 
-In situations when we want to the log value of the same meaning twice (e.g. transition between state) it is ok to name
-an additional argument based on context, but leaving one most current/correct value with canonical name.
+Examples of **good keys** (strongly suggested, will be extended when pattern emerge, no standard schema yet):
+* `cacheKey`
+* `cacheValue`
+* `CIDR`
+* `containerID`
+* `containerName`
+* `controller`
+* `cronJob`
+* `deployment`
+* `dockerVersion`
+* `duration`
+* `err`
+* `job`
+* `object`
+* `pod`
+* `podName`
+* `podUID`
+* `PVC`
+* `PV`
+* `volumeName`
+* `replicaSet`
 
-Examples of keys (strongly suggested, will be extended when pattern emerge, no standard schema yet):
-* `err` - error when using `klog.InfoS`. Used for expected errors that are not `klog.ErrorS`.
-* `object` - reference to k8s objects of unknown type. Should be used with `kind` and `apiVersion`.
-* `kind` - kind of k8s object of unknown type.
-* `apiVersion` -  API version of k8s object of unknown type.
+Examples of **bad** keys:
+* `addr` - replace with `address`
+* `container` - replace with `containerName` or `containerID` depending on value
+* `currentNode` - replace with `node`
+* `directory` - replace with `path`
+* `elapsed` - replace with `duration`
+* `externalIP` - replace  with `IP`
+* `file` - replace with `path`
+* `hostPath` - replace with `path`
+* `ip` - replace with `IP`
+* `key` -  replace with key describing what kind of key it is, for example `cacheKey`
+* `loadBalancerIP` - replace with `IP`
+* `podFullName` - try to rewrite code so that pod name or pod object can be used with `pod` or `podName` keys
+* `podIP` - replace with `IP`
+* `podList` - replace with `pods`
+* `version` - replace with key describing what it belongs to so that it can be compared, for example `dockerVersion`
+* `servicePortName` - replace with `portName`
+* `svc` - replace with `service`
 
-Example:
+Example of using context in to distinguish between two same keys:
 
 ```go
-func ChangeStatus(newStatus, currentStatus string) {
-  err := changeStatus(newStatus)
-  if err != nil {
-    klog.ErrorS(err, "Failed changing status", "desiredStatus", newStatus, "status", currentStatus)
-  }
-  klog.InfoS("Changed status", "previousStatus", currentStatus, "status", newStatus)
+func ChangePodStatus(newStatus, currentStatus string) {
+  klog.InfoS("PodStatusController found pod with status", "status", currentStatus)
+  ...
+  // Logic that changes status
+  ...
+  klog.InfoS("PodStatusController changed pod status", "oldStatus", currentStatus, "status", newStatus)
 }
 ```
 
 [lowerCamelCase]: https://en.wiktionary.org/wiki/lowerCamelCase
+[alphanumeric]: https://en.wikipedia.org/wiki/Alphanumeric
 
 ### Use `klog.KObj` and `klog.KRef` for Kubernetes objects
 
