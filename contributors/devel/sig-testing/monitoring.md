@@ -8,7 +8,6 @@ description: |
 ## Monitoring Kubernetes Health
 
 ### Table of Contents
-<!-- markdown-toc start>
 - [Overview](#overview)
 - [Monitoring the health of Kubernetes CI Jobs with TestGrid](#monitoring-the-health-of-kubernetes-ci-jobs-with-testgrid)
     - [What dashboards should I monitor?](#what-dashboards-should-i-monitor)
@@ -19,7 +18,6 @@ description: |
         - [Fill out the issue for a Flaking Test](#fill-out-the-issue-for-a-flaking-test)
     - [Iterate](#iterate)
 
-<!-- markdown-toc end -->
 
 ## Overview
 
