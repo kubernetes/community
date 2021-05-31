@@ -40,6 +40,10 @@ package klog
 // >> I1025 00:15:15.525108       1 controller_utils.go:116] "Pod status updated" pod="kube-system/kubedns" status="ready"
 func InfoS(msg string, keysAndValues ...interface{})
 
+// InfoSDepth acts as InfoS but uses depth to determine which call frame to log.
+// InfoSDepth(0, "msg") is the same as InfoS("msg").
+func InfoSDepth(depth int, msg string, keysAndValues ...interface{}) 
+
 // ErrorS structured logs to the ERROR, WARNING, and INFO logs.
 // the err argument used as "err" field of log line.
 // The msg argument used to add constant description to the log line.
@@ -50,6 +54,10 @@ func InfoS(msg string, keysAndValues ...interface{})
 // output:
 // >> E1025 00:15:15.525108       1 controller_utils.go:114] "Failed to update pod status" err="timeout"
 func ErrorS(err error, msg string, keysAndValues ...interface{})
+
+// ErrorSDepth acts as ErrorS but uses depth to determine which call frame to log.
+// ErrorSDepth(0, "msg") is the same as ErrorS("msg").
+func ErrorSDepth(depth int, err error, msg string, keysAndValues ...interface{})
 
 // KObj is used to create ObjectRef when logging information about Kubernetes objects
 // Examples:
@@ -95,49 +103,17 @@ Structured logging functions follow a different logging interface design than ot
 minimal design from [logr] thus there is no one-to-one mapping.
 
 Simplified mapping between functions:
-* `klog.Infof`, `klog.Info`, `klog.Infoln`, `klog.InfoDepth` -> `klog.InfoS`
+* `klog.Infof`, `klog.Info`, `klog.Infoln` -> `klog.InfoS`
+* `klog.InfoDepth` -> `klog.InfoSDepth`
 * `klog.V(N).Infof`, `klog.V(N).Info`, `klog.V(N).Infoln` -> `klog.V(N).InfoS`
-* `klog.Warning`, `klog.Warningf`, `klog.Warningln`, `klog.WarningDepth` -> `klog.InfoS`
-* `klog.V(N).Warning`, `klog.V(N).Warningf`, `klog.V(N).Warningln`, `klog.V(N).WarningDepth` -> `klog.V(N).InfoS`
-* `klog.Error`, `klog.Errorf`, `klog.Errorln`, `klog.ErrorDepth` -> `klog.ErrorS`
-* `klog.V(N).Error`, `klog.V(N).Errorf`, `klog.V(N).Errorln`, `klog.V(N).ErrorDepth` -> `klog.ErrorS`
-* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln`, `klog.FatalDepth` -> `klog.ErrorS` followed by `os.Exit(1)` ([see below])
-* `klog.V(N).Fatal`, `klog.V(N).Fatalf`, `klog.V(N).Fatalln`, `klog.V(N).FatalDepth` -> `klog.ErrorS` followed by `os.Exit(1)` ([see below])
+* `klog.Warning`, `klog.Warningf`, `klog.Warningln` -> `klog.InfoS`
+* `klog.WarningDepth` -> `klog.InfoSDepth`
+* `klog.Error`, `klog.Errorf`, `klog.Errorln` -> `klog.ErrorS`
+* `klog.ErrorDepth` -> `klog.ErrorSDepth`
+* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln` -> `klog.ErrorS` followed by `os.Exit(1)` ([see below])
+* `klog.FatalDepth` -> `klog.ErrorDepth` followed by `os.Exit(1)` ([see below])
 
 [see below]: #replacing-fatal-calls
-
-### Removing Depth
-
-Functions with depth (`klog.InfoDepth`, `klog.WarningDepth`, `klog.ErrorDepth`, `klog.FatalDepth`) are used to indicate
-that the source of the log (added as metadata in log) is different than the invocation of logging library. This is
-usually used when implementing logging util functions. As logr interface doesn't support depth, those functions should
-return logging arguments instead of calling `klog` directly.
-
-For example
-```go
-func Handle(w http.ReponseWriter, r *http.Request) {
-    logHTTPRequest(r)
-    handle(w, r)
-}
-
-func logHTTPRequest(r *http.Request) {
-    klog.InfoDepth(1, "Received HTTP %s request", r.Method)
-}
-```
-should be replaced with
-```go
-func Handle(w http.ReponseWriter, r *http.Request) {
-    klog.InfoS("Received HTTP request", httpRequestLog(r)...)
-    handle(w, r)
-}
-
-func httpRequestLog(r *http.Request) []interface{} {
-    return []interface{}{
-        "verb", r.Method,
-    }
-}
-
-```
 
 ### Using ErrorS
 
