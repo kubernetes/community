@@ -8,19 +8,35 @@ description: |
 ## Monitoring Kubernetes Health
 
 ### Table of Contents
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [-](#-)
+    - [Table of Contents](#table-of-contents)
+    - [Overview](#overview)
+    - [Monitoring the health of Kubernetes CI Jobs with TestGrid](#monitoring-the-health-of-kubernetes-ci-jobs-with-testgrid)
+        - [What dashboards should I monitor?](#what-dashboards-should-i-monitor)
+    - [Pull request test failures caused by tests unrelated to your change](#pull-request-test-failures-caused-by-tests-unrelated-to-your-change)
+    - [What do I do when I see a TestGrid alert?](#what-do-i-do-when-i-see-a-testgrid-alert)
+        - [Communicate your findings](#communicate-your-findings)
+            - [Creating a GitHub Issue for Flaking or Failing Tests](#creating-a-github-issue-for-flaking-or-failing-tests)
+            - [Fill out the issue for a Flaking Test](#fill-out-the-issue-for-a-flaking-test)
+        - [Iterate](#iterate)
+
+<!-- markdown-toc end -->
 
 - [Monitoring the health of Kubernetes with TestGrid](#monitoring-the-health-of-kubernetes-with-testgrid)
 - [What dashboards should I monitor?](#what-dashboards-should-i-monitor)
 - [Test failures that block my Pull Request](#pr-test-failures)
 - [What do I do when I see a TestGrid alert?](#what-do-i-do-when-i-see-a-testgrid-alert)
 - [Communicate your findings](#communicate-your-findings)
-- [Fill out the issue](#fill-out-the-issue)
+- [Creating a GitHub Issue for Flaking or Failing Tests](#creating-a-github-issue-for-flaking-or-failing-tests)
 - [Iterate](#iterate)
 
 ## Overview
 
-This document describes the tools used to monitor CI jobs that check the
-correctness of changes made to core Kubernetes.
+This document describes the tools used to monitor CI jobs and the tests that
+they run that check the correctness of changes made to core Kubernetes.
 
 ## Monitoring the health of Kubernetes CI Jobs with TestGrid
 
@@ -174,7 +190,7 @@ You can jump to create either test issue type using the following links :
 - [create a new issue - Failing Test]
 - [create a new issue - Flaking Test]
 
-#### Filling out an issue
+#### Creating a GitHub Issue for Flaking or Failing Tests
 
 Both test issue templates are reasonably self-explanatory, what follows are
 guidelines and tips on filling out the templates.
