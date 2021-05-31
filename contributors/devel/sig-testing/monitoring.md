@@ -5,7 +5,7 @@ description: |
   Guidelines for finding and reporting failing tests in Kubernetes.
 ---
 
-## Monitoring Kubernetes Health
+## How to monitor Continuous Integration jobs on the Kubernetes project
 
 ### Table of Contents
 - [Overview](#overview)
@@ -21,8 +21,9 @@ description: |
 
 ## Overview
 
-This document describes the tools used to monitor CI jobs and the tests that
-they run that check the correctness of changes made to core Kubernetes.
+This document describes the tools used to monitor [continuous integration ](CI)
+jobs and the tests that they run to check the correctness of changes made to
+core Kubernetes.
 
 ## Monitoring the health of Kubernetes CI Jobs with TestGrid
 
@@ -325,6 +326,7 @@ to work on them. For the time being, reach out to people in Slack or the mailing
 list.
 
 <!-- links -->
+[continuous integration]: https://en.wikipedia.org/wiki/Continuous_integration
 [TestGrid repo]: https://github.com/GoogleCloudPlatform/testgrid
 [TestGrid instance]: https://testgrid.k8s.io/
 
