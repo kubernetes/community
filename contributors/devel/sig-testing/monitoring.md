@@ -21,16 +21,16 @@ description: |
 
 ## Overview
 
-This document describes the tools used to monitor [continuous integration ](CI)
-jobs and the tests that they run to check the correctness of changes made to
-core Kubernetes.
+This document describes the tools used to monitor [continuous integration] jobs
+(CI jobs) and the tests that they run to check the correctness of changes made
+to core Kubernetes.
 
 ## Monitoring the health of Kubernetes CI Jobs with TestGrid
 
 TestGrid is a highly-configurable, interactive dashboard for viewing your test
 results in a grid. TestGrid's back end components are open sourced and can be
-viewed in the [TestGrid repo] The front-end code
-that renders the dashboard is not currently open sourced.
+viewed in the [TestGrid repo]. The front-end code that renders the dashboard is
+not currently open sourced.
 
 The Kubernetes community has its own [TestGrid instance] which we use to monitor
 and observe the health of the project.
