@@ -9,8 +9,6 @@ description: |
 
 ### Table of Contents
 <!-- markdown-toc start>
-**Table of Contents**
-
 - [Overview](#overview)
 - [Monitoring the health of Kubernetes CI Jobs with TestGrid](#monitoring-the-health-of-kubernetes-ci-jobs-with-testgrid)
     - [What dashboards should I monitor?](#what-dashboards-should-i-monitor)
