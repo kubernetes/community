@@ -62,7 +62,7 @@ In particular, we always welcome the following contributions:
 **Note**: It is important that all SIGs periodically monitor their jobs and
 tests. Furthermore, if jobs or tests are failing or flaking, then pull requests
 will take a lot longer to be merged. For more information on how flaking tests
-disrupt PR merging and how to eliminate them see [Flaky Tests]
+disrupt PR merging and how to eliminate them see [Flaky Tests].
 
 ### What dashboards should I monitor?
 
@@ -81,7 +81,7 @@ block a release from taking place.
 
 If your contributions involve code for past releases of Kubernetes (e.g.
 cherry-picks or backports), we recommend you periodically check on the
-*blocking* and *informing* dashboards for [past releases]
+*blocking* and *informing* dashboards for [past releases].
 
 ---
 
@@ -274,7 +274,7 @@ us figure out why the test failed.
 Further down the page you will see all the logs for the entire test run.
 Please copy any information you think may be useful from here into the issue.
 
-You can reference a specific line in the logs by click on the line number and
+You can reference a specific line in the logs by clicking on the line number and
 then copying the URL which will now include an anchor to the specific line.
 
 5. **Anything else we need to know**
