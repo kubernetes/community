@@ -8,30 +8,20 @@ description: |
 ## Monitoring Kubernetes Health
 
 ### Table of Contents
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+<!-- markdown-toc start>
 **Table of Contents**
 
-- [-](#-)
-    - [Table of Contents](#table-of-contents)
-    - [Overview](#overview)
-    - [Monitoring the health of Kubernetes CI Jobs with TestGrid](#monitoring-the-health-of-kubernetes-ci-jobs-with-testgrid)
-        - [What dashboards should I monitor?](#what-dashboards-should-i-monitor)
-    - [Pull request test failures caused by tests unrelated to your change](#pull-request-test-failures-caused-by-tests-unrelated-to-your-change)
-    - [What do I do when I see a TestGrid alert?](#what-do-i-do-when-i-see-a-testgrid-alert)
-        - [Communicate your findings](#communicate-your-findings)
-            - [Creating a GitHub Issue for Flaking or Failing Tests](#creating-a-github-issue-for-flaking-or-failing-tests)
-            - [Fill out the issue for a Flaking Test](#fill-out-the-issue-for-a-flaking-test)
-        - [Iterate](#iterate)
+- [Overview](#overview)
+- [Monitoring the health of Kubernetes CI Jobs with TestGrid](#monitoring-the-health-of-kubernetes-ci-jobs-with-testgrid)
+    - [What dashboards should I monitor?](#what-dashboards-should-i-monitor)
+- [Pull request test failures caused by tests unrelated to your change](#pull-request-test-failures-caused-by-tests-unrelated-to-your-change)
+- [What do I do when I see a TestGrid alert?](#what-do-i-do-when-i-see-a-testgrid-alert)
+    - [Communicate your findings](#communicate-your-findings)
+        - [Creating a GitHub Issue for Flaking or Failing Tests](#creating-a-github-issue-for-flaking-or-failing-tests)
+        - [Fill out the issue for a Flaking Test](#fill-out-the-issue-for-a-flaking-test)
+    - [Iterate](#iterate)
 
 <!-- markdown-toc end -->
-
-- [Monitoring the health of Kubernetes with TestGrid](#monitoring-the-health-of-kubernetes-with-testgrid)
-- [What dashboards should I monitor?](#what-dashboards-should-i-monitor)
-- [Test failures that block my Pull Request](#pr-test-failures)
-- [What do I do when I see a TestGrid alert?](#what-do-i-do-when-i-see-a-testgrid-alert)
-- [Communicate your findings](#communicate-your-findings)
-- [Creating a GitHub Issue for Flaking or Failing Tests](#creating-a-github-issue-for-flaking-or-failing-tests)
-- [Iterate](#iterate)
 
 ## Overview
 
