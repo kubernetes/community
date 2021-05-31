@@ -8,41 +8,25 @@ description: |
 ## Monitoring Kubernetes Health
 
 ### Table of Contents
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-**Table of Contents**
-
-- [-](#-)
-    - [Table of Contents](#table-of-contents)
-    - [Overview](#overview)
-    - [Monitoring the health of Kubernetes CI Jobs with TestGrid](#monitoring-the-health-of-kubernetes-ci-jobs-with-testgrid)
-        - [What dashboards should I monitor?](#what-dashboards-should-i-monitor)
-    - [Pull request test failures caused by tests unrelated to your change](#pull-request-test-failures-caused-by-tests-unrelated-to-your-change)
-    - [What do I do when I see a TestGrid alert?](#what-do-i-do-when-i-see-a-testgrid-alert)
-        - [Communicate your findings](#communicate-your-findings)
-            - [Creating a GitHub Issue for Flaking or Failing Tests](#creating-a-github-issue-for-flaking-or-failing-tests)
-            - [Fill out the issue for a Flaking Test](#fill-out-the-issue-for-a-flaking-test)
-        - [Iterate](#iterate)
-
-<!-- markdown-toc end -->
 
 - [Monitoring the health of Kubernetes with TestGrid](#monitoring-the-health-of-kubernetes-with-testgrid)
 - [What dashboards should I monitor?](#what-dashboards-should-i-monitor)
 - [Test failures that block my Pull Request](#pr-test-failures)
 - [What do I do when I see a TestGrid alert?](#what-do-i-do-when-i-see-a-testgrid-alert)
 - [Communicate your findings](#communicate-your-findings)
-- [Creating a GitHub Issue for Flaking or Failing Tests](#creating-a-github-issue-for-flaking-or-failing-tests)
+- [Fill out the issue](#fill-out-the-issue)
 - [Iterate](#iterate)
 
 ## Overview
 
-This document describes the tools used to monitor CI jobs and the tests that
-they run that check the correctness of changes made to core Kubernetes.
+This document describes the tools used to monitor CI jobs that check the
+correctness of changes made to core Kubernetes.
 
 ## Monitoring the health of Kubernetes CI Jobs with TestGrid
 
 TestGrid is a highly-configurable, interactive dashboard for viewing your test
 results in a grid. TestGrid's back end components are open sourced and can be
-viewed in the [TestGrid repo] The front-end code
+viewed in the [TestGrid repo]  The front-end code
 that renders the dashboard is not currently open sourced.
 
 The Kubernetes community has its own [TestGrid instance] which we use to monitor
@@ -178,7 +162,7 @@ You can:
 
 - Add a link to the Prow job where the latest test failure has occurred, and
 - Note the error message
-
+  
 New evidence is especially useful if the root cause of the problem with the test
 has not yet been determined and the issue still has a *needs-triage* label.
 
@@ -190,7 +174,7 @@ You can jump to create either test issue type using the following links :
 - [create a new issue - Failing Test]
 - [create a new issue - Flaking Test]
 
-#### Creating a GitHub Issue for Flaking or Failing Tests
+#### Filling out an issue
 
 Both test issue templates are reasonably self-explanatory, what follows are
 guidelines and tips on filling out the templates.
@@ -266,7 +250,7 @@ community, as the issue reporter you do not have to find the reason for failure
 right away (nor the solution). You can just log the error reported by the test
 when the job was run.
 
-Click on the failed runs (the red cells in the grid) to see the results in
+Click on the failed runs (the red cells in the grid)  to see the results in 
 SpyGlass.
 
 For `node-kubelet-master`, we see the following:
@@ -338,7 +322,6 @@ issue! All issues are unique and require a bit of experience to figure out how
 to work on them. For the time being, reach out to people in Slack or the mailing
 list.
 
-<!-- links -->
 [TestGrid repo]: https://github.com/GoogleCloudPlatform/testgrid
 [TestGrid instance]: https://testgrid.k8s.io/
 
