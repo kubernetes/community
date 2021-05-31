@@ -79,7 +79,7 @@ quality of Kubernetes and whether or not the commit on master can be considered
 suitable for release. Failing tests on a job in sig-release-master-blocking
 block a release from taking place.
 
-If your contributions involve code for past releases of kubernetes (e.g.
+If your contributions involve code for past releases of Kubernetes (e.g.
 cherry-picks or backports), we recommend you periodically check on the
 *blocking* and *informing* dashboards for [past releases]
 
