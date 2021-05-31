@@ -26,7 +26,7 @@ correctness of changes made to core Kubernetes.
 
 TestGrid is a highly-configurable, interactive dashboard for viewing your test
 results in a grid. TestGrid's back end components are open sourced and can be
-viewed in the [TestGrid repo]  The front-end code
+viewed in the [TestGrid repo] The front-end code
 that renders the dashboard is not currently open sourced.
 
 The Kubernetes community has its own [TestGrid instance] which we use to monitor
@@ -162,7 +162,7 @@ You can:
 
 - Add a link to the Prow job where the latest test failure has occurred, and
 - Note the error message
-  
+
 New evidence is especially useful if the root cause of the problem with the test
 has not yet been determined and the issue still has a *needs-triage* label.
 
@@ -250,7 +250,7 @@ community, as the issue reporter you do not have to find the reason for failure
 right away (nor the solution). You can just log the error reported by the test
 when the job was run.
 
-Click on the failed runs (the red cells in the grid)  to see the results in 
+Click on the failed runs (the red cells in the grid) to see the results in
 SpyGlass.
 
 For `node-kubelet-master`, we see the following:
@@ -322,6 +322,7 @@ issue! All issues are unique and require a bit of experience to figure out how
 to work on them. For the time being, reach out to people in Slack or the mailing
 list.
 
+<!-- links -->
 [TestGrid repo]: https://github.com/GoogleCloudPlatform/testgrid
 [TestGrid instance]: https://testgrid.k8s.io/
 
