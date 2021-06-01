@@ -53,7 +53,6 @@ usergroups:
       - sig-release
     members:
       - annajung # 1.22 Release Team Lead Shadow
-      - alejandrox1 # SIG Release Technical Lead
       - divya-mohan0209 # 1.22 Release Team Lead Shadow
       - erismaster # 1.22 Release Team Lead Shadow
       - guineveresaenger # 1.22 Release Team EA
