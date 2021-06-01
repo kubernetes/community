@@ -16,17 +16,16 @@ usergroups:
     members:
       - ameukam # Release Manager Associate
       - cpanato # Release Manager
-      - feiskyer # Release Manager
       - hasheddan # subproject owner / Release Manager
-      - idealhack # Release Manager
       - jimangel # Release Manager Associate
       - justaugustus # subproject owner / Release Manager
-      - markyjackson-taulia # Release Manager Associate
       - mkorbi # Release Manager Associate
       - onlydole # Release Manager Associate
+      - palnabarun # Release Manager Associate
       - puerco # Release Manager
       - saschagrunert # subproject owner / Release Manager
       - sethmccombs # Release Manager Associate
+      - thejoycekung # Release Manager Associate
       - Verolop # Release Manager Associate
       - wilsonehusin # Release Manager Associate
       - xmudrii # Release Manager
@@ -53,7 +52,6 @@ usergroups:
       - sig-release
     members:
       - annajung # 1.22 Release Team Lead Shadow
-      - alejandrox1 # SIG Release Technical Lead
       - divya-mohan0209 # 1.22 Release Team Lead Shadow
       - erismaster # 1.22 Release Team Lead Shadow
       - guineveresaenger # 1.22 Release Team EA
@@ -96,9 +94,7 @@ usergroups:
     members:
       - cjcullen # Product Security Committee
       - cpanato # Release Manager
-      - feiskyer # Release Manager
       - hasheddan # subproject owner / Release Manager
-      - idealhack # Release Manager
       - joelsmith # Product Security Committee
       - justaugustus # subproject owner / Release Manager
       - lukehinds # Product Security Committee
