@@ -62,9 +62,11 @@ aliases:
     - dchen1107
     - derekwaynecarr
   sig-release-leads:
+    - cpanato
     - hasheddan
     - jeremyrickard
     - justaugustus
+    - puerco
     - saschagrunert
   sig-scalability-leads:
     - mm4tt
