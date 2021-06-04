@@ -930,15 +930,17 @@ Many of the values used in an object reference are used as part of the API path.
 the object name is used in the path to identify the object. Unsanitized, these values can be used to
 attempt to retrieve other resources, such as by using values with semantic meanings such as  `..` or `/`.
 
-Have the controller validate the field before using it as a reference, and emit an event to
+Have the controller validate fields before using them as path segments in an API request, and emit an event to
 tell the user that the validation has failed.
 
-See [Object Names and IDs](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names)
+See [Object Names and IDs](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
 for more information on legal object names.
 
 ### Do not modify the referred object
 
-To minimize potential privilege escalation vectors, do not modify the object that is being referred to.
+To minimize potential privilege escalation vectors, do not modify the object that is being referred to,
+or limit modification to objects in the same namespace and constrain the type of modification allowed
+(for example, the HorizontalPodAutoscaler controller only writes to the `/scale` subresource).
 
 ### Minimize copying or printing values to the referrer object
 
@@ -950,7 +952,7 @@ would not have access to previously.
 
 The same scenario applies to writing information about the referred object to events.
 
-In general, do not write or print information about the referred object to the spec, other objects, or logs.
+In general, do not write or print information retrieved from the referred object to the spec, other objects, or logs.
 
 When it is necessary, consider whether these values would be ones that the
 author of the referrer object would have access to via other means (e.g. already required to
