@@ -163,8 +163,8 @@ The latest date to receive deliverables will be negotiated with the selected ven
 
 1. The attack vector most concerned about is unauthenticated access to a cluster resulting in compromise of the [components in-scope](#project_goals_and_scope)
 2. Crossing cluster boundaries for multi-cluster configuration
-3. Crossing namespaces
-4. Any attack vector that exists against the components in scope
+3. Crossing namespace boundaries, an authenticated attacker being able to affect resources their credentials do not directly allow
+4. Any other attack vector that exists against the components in scope
 
 ### Is there flexibility to wait for staff to be available to work on the audit?
 
