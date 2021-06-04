@@ -1,4 +1,4 @@
-# 2021 SIG Architecture Annual Report
+# 2020 SIG Architecture Annual Report
 
 ## Operational
 
