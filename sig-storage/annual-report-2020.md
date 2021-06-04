@@ -1,4 +1,4 @@
-# Kubernetes SIG Storage Community Group Annual Reports 2021
+# Kubernetes SIG Storage Community Group Annual Reports 2020
 
 This report reflects back on CY 2020 and was written in Feb-Mar. 2021.
 

@@ -1,4 +1,4 @@
-# SIG CLI Annual Report 2021
+# SIG CLI Annual Report 2020
 
 This report reflects back on CY 2020 and was written in March 2021.
 

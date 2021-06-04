@@ -1,4 +1,4 @@
-# Data Protection WG Community Report 2021
+# Data Protection WG Community Report 2020
 
 This report reflects back on CY 2020 and was written in Mar. 2021.
 
