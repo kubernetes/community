@@ -136,3 +136,35 @@ Separately, any code released with or as part of the report needs to be under th
 ### Must I use the report format from the previous audit? Can the SIG provide a report format template I can use?
 
 Vendors who wish to use either the previous report format, as allowed by CC BY 4.0, or a report format provided by the community may do so as long as it is also available under CC BY 4.0. Vendors who wish to publish 2 versions of the report, one tailored for the community under CC BY 4.0 and one that they host on their own site using their proprietary fonts, formats, branding, or other copyrights, under their own license may do so, in order to differentiate their commercial report format from this report. Vendors may also publish a synopsis and marketing materials regarding the report on their website as long as it links to the original report in this repository.  In the community report, vendors can place links in the report to materials hosted on their commercial site. This does not imply that linked materials are themselves CC BY 4.0.
+
+### Do you have any developer documentation or design documentation specifications that aren't available on the internet that you would be able to share?
+
+Kubernetes is an open source project, all documentation is available on https://kubernetes.io or on https://github.com/kubernetes.
+
+### What are the most important publicly available pages detailing the design of the system and the data it receives.
+
+- Overview of [Kubernetes components](https://kubernetes.io/docs/concepts/overview/components/)
+- [kube-apiserver overview](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)
+- [kube-scheduler overview](https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/)
+- [Operating etcd clusters for Kubernetes](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/)
+- [etcd clustering guide](https://etcd.io/docs/next/op-guide/clustering/)
+- [kube-controller-manager overview](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/)
+- [cloud-controller-manager overview](https://kubernetes.io/docs/concepts/architecture/cloud-controller/)
+- [cloud-controller-manager administration](https://kubernetes.io/docs/tasks/administer-cluster/running-cloud-controller/)
+- [kubelet overview](https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/)
+- [kube-proxy overview](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/)
+- [secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver)
+
+### How long does the Working Group envision the engagement lasting and what is the latest date you can receive the deliverables?
+
+The latest date to receive deliverables will be negotiated with the selected vendor.
+
+### Which attack vectors are of most concern to the Working Group.
+
+1. The attack vector most concerned about is unauthenticated access to a cluster resulting in compromise of the [components in-scope](#project_goals_and_scope)
+2. Crossing namespace boundaries, an authenticated attacker being able to affect resources their credentials do not directly allow
+3. Any other attack vector that exists against the components in scope
+
+### Is there flexibility to wait for staff to be available to work on the audit?
+
+Yes, the timeline for the audit is flexible and the timeline will be further discussed and negotiated with the selected vendor.
