@@ -15,6 +15,7 @@ This report reflects back on CY 2020 and was written in April 2021.
   - All subprojects correctly mapped and listed in [sigs.yaml](https://github.com/kubernetes/community/blob/master/sig-list.md)?
     - Yes, all subprojects are correctly listed. 
     - We have one unofficial group that should probably be a subproject - the network plumbing group.
+      - [Network plumbing group meeting minutes](https://docs.google.com/document/d/1oE93V3SgOGWJ4O1zeD1UmpeToa0ZiiO6LqRAmZBPFWM/edit)
   - What’s your meeting culture? Large/small, active/quiet, learnings? Meeting notes up to date? Are you keeping recordings up to date/trends in community members watching recordings?
     - We generally have fairly large meetings with >20 attendees, although a much smaller group of regular speakers.
     - Meetings generally start with 15 minutes of group issue or PR triage, followed by 45 minutes of topics from the agenda, which are crowd-sourced throughout the week leading up.
@@ -27,7 +28,10 @@ This report reflects back on CY 2020 and was written in April 2021.
 - Same question as above but for working groups.
   - Same answer as above, but for working groups.
 - When was your last monthly community-wide update? (provide link to deck and/or recording)
-  - Last community meeting was long enough ago that it is no longer in the minutes history (so, clearly we're due).
+  - Last community meeting was in July 2020. 
+  - [Slides](https://docs.google.com/presentation/d/1k4uzqWCQgz8by3ZNUeXb1A5aeOpufOt4UTdGMLd6rjc/edit#slide=id.g401c104a3c_0_0)
+  - [Recording](https://www.youtube.com/watch?v=J3O8fXTm3HE&list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ)
+  - We're overdue.
 
 # Membership
 
@@ -63,3 +67,4 @@ This report reflects back on CY 2020 and was written in April 2021.
   - Reporting to other SIGs / community meeting.
 - What's the average open days of a PR and Issue in your group? / what metrics does your group care about and/or measure?
   - I don't think we currently track this.
+  - Here are some dashboard we probably should track: [1](https://k8s.devstats.cncf.io/d/34/pr-workload-per-sig-table?orgId=1&var-period_name=Last%20year), [2](https://k8s.devstats.cncf.io/d/44/pr-time-to-approve-and-merge?orgId=1&var-period=w&var-repogroup_name=SIG%20Network&var-repo_name=kubernetes%2Fkubernetes&var-apichange=All&var-size_name=All&var-kind_name=All)
