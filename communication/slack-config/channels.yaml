@@ -99,6 +99,7 @@ channels:
   - name: garden-dev
   - name: gardener
   - name: gimbal
+  - name: ginkgo
   - name: github
     archived: true
   - name: github-management
