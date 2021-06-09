@@ -382,7 +382,7 @@ Blue / Samson – i.e. Blue Snowball / Blue Yeti / Samson Meteor / Samson G-Trac
 
 #### Webcams
 
-Good value – Logitech C270
+Good value – Logitech C920
 
 
 
