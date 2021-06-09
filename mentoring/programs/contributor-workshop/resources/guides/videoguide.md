@@ -386,7 +386,6 @@ Good value – Logitech C270
 
 Value + added features – Logitech B525/C615
 
-Higher resolution, better microphone – Logitech 9series / Microsoft LifeCam 
 
 More info – https://www.tomsguide.com/news/where-to-buy-webcams-now-these-retailers-have-stock
 
