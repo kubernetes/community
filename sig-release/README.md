@@ -29,8 +29,10 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
+* Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**), Mattermost
 * Daniel Mangum (**[@hasheddan](https://github.com/hasheddan)**), Upbound
 * Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Apple
+* Adolfo García Veytia (**[@puerco](https://github.com/puerco)**), uServers
 
 ## Emeritus Leads
 
