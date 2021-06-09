@@ -2945,18 +2945,18 @@ workinggroups:
   label: policy
   leadership:
     chairs:
-    - github: ericavonb
-      name: Erica von Buelow
-      company: Red Hat
-    - github: hannibalhuang
-      name: Howard Huang
-      company: Huawei
+    - github: JimBugwadia
+      name: Jim Bugwadia
+      company: Kyverno/Nirmata
+    - github: rficcaglia
+      name: Robert Ficcaglia
+      company: SunStone
   meetings:
   - description: Regular WG Meeting
     day: Wednesday
-    time: "16:00"
+    time: "8:00"
     tz: PT (Pacific Time)
-    frequency: weekly
+    frequency: semimonthly
     url: https://zoom.us/j/7375677271
     archive_url: https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing
   contact:
