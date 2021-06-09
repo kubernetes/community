@@ -202,7 +202,7 @@ For example
 
 ### Updating Youtube
 
-Once you have uploaded the video to drive, upload it to youtube, and update the previous recording on youtube ( if any )
+Once you have uploaded the video to drive, contact one of the [youtube admins](/communication/moderators.md#youtube-channel) to upload it to the Kubernetes YouTube channel.
 
 #### Upload the new video
 
