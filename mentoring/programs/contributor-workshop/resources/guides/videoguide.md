@@ -384,7 +384,6 @@ Blue / Samson – i.e. Blue Snowball / Blue Yeti / Samson Meteor / Samson G-Trac
 
 Good value – Logitech C270
 
-Value + added features – Logitech B525/C615
 
 
 More info – https://www.tomsguide.com/news/where-to-buy-webcams-now-these-retailers-have-stock
