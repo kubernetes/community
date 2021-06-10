@@ -357,6 +357,7 @@ channels:
   - name: sig-multicluster
   - name: sig-network
   - name: sig-node
+  - name: sig-node-bug-scrub
   - name: sig-node-rkt
   - name: sig-scalability
   - name: sig-scheduling
