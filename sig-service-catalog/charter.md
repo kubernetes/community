@@ -46,9 +46,6 @@ Areas of focus:
 - [Travis](https://travis-ci.org/kubernetes-sigs/service-catalog)
   - Runs the CI builds.
   - Maintainers have access.
-- [Jenkins](https://service-catalog-jenkins.appspot.com/)
-  - Runs end-to-end tests on a live cluster.
-  - Server managed by Michael Kibbe (Google).
 
 ### Out of scope
 
