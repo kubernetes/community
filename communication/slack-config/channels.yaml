@@ -358,6 +358,7 @@ channels:
   - name: sig-network
   - name: sig-node
   - name: sig-node-rkt
+    archived: true
   - name: sig-scalability
   - name: sig-scheduling
   # sig-security* channels are defined in sig-security/
