@@ -5,7 +5,8 @@
 - [Verification Tests](#verification-tests)
   - [Overview](#overview)
   - [Note](#note)
-  - [`verify-govet-levee`](#verify-govet-leve)
+  - [verify-govet-levee](#verify-govet-leve)
+  - [verify-api-groups](#verify-api-groups)
 
 ## Overview
 
@@ -81,3 +82,26 @@ In order of decreasing preference:
 
 Analysis configuration can be found at [kubernetes/kubernetes/hack/testdata/levee/levee-config.yaml](https://github.com/kubernetes/kubernetes/blob/master/hack/testdata/levee/levee-config.yaml).
 Contact SIG-Security with any additional questions.
+
+### `verify-api-groups`
+
+This verification script validates the different api-groups by reading
+the respective `register.go` file. Every register file must contain a
+GroupName.  Another check which is performed when this script runs is
+to ensure that all types have client code generated for them, except
+types that belong to groups not served from the API server (defined in
+this script via the bash array `groups_without_codegen`).
+
+Next, the script compares the `GroupName`s against
+`import_known_versions` to ensure the import packages will get
+installed. We list out packages which are required without
+installation along with importing `known_version`. Then we do a search
+for packages that reqiure installation on the basis of
+`packages_without_installation`. We verify if file is a
+`known_version_file` or not only if an `expected_install_package` is
+present in it.
+
+Finally the script checks that all external group versions
+(e.g. `foobar/v1`) are defined in `hack/lib/init.sh` in either the
+`KUBE_AVAILABLE_GROUP_VERSIONS` or `KUBE_NONSERVER_GROUP_VERSIONS`
+bash variables.
