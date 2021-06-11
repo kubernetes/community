@@ -23,12 +23,12 @@ The [charter](charter.md) defines the scope and governance of the UI Special Int
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Sebastian Florek (**[@floreks](https://github.com/floreks)**), Loodse
-* Jeffrey Sica (**[@jeefy](https://github.com/jeefy)**), Red Hat
 * Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**), Loodse
 
 ## Emeritus Leads
 
 * Dan Romlein (**[@danielromlein](https://github.com/danielromlein)**)
+* Jeffrey Sica (**[@jeefy](https://github.com/jeefy)**)
 
 ## Contact
 - Slack: [#sig-ui](https://kubernetes.slack.com/messages/sig-ui)
