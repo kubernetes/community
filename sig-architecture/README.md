@@ -56,13 +56,13 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 The following [subprojects][subproject-definition] are owned by sig-architecture:
 ### architecture-and-api-governance
-[Described below](#architecture-and-api-governance)
+[Described below](#architecture-and-api-governance-1)
 - **Owners:**
   - [kubernetes/api](https://github.com/kubernetes/api/blob/master/OWNERS)
   - [kubernetes/community/contributors/design-proposals/architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/api](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/OWNERS)
 ### code-organization
-[Described below](#code-organization)
+[Described below](#code-organization-1)
 - **Owners:**
   - [kubernetes-sigs/depstat](https://github.com/kubernetes-sigs/depstat/blob/master/OWNERS)
   - [kubernetes/component-helpers](https://github.com/kubernetes/component-helpers/blob/master/OWNERS)
@@ -74,7 +74,7 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
 - **Contact:**
   - Slack: [#k8s-code-organization](https://kubernetes.slack.com/messages/k8s-code-organization)
 ### conformance-definition
-[Described below](#conformance-definition)
+[Described below](#conformance-definition-1)
 - **Owners:**
   - [kubernetes/kubernetes/test/conformance](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/OWNERS)
   - [kubernetes/kubernetes/test/conformance/testdata](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS)
@@ -83,13 +83,13 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
   - GitHub Teams:
     - [@kubernetes/cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg)
 ### enhancements
-[Described below](#enhancements)
+[Described below](#enhancement-proposals)
 - **Owners:**
   - [kubernetes/enhancements](https://github.com/kubernetes/enhancements/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#enhancements](https://kubernetes.slack.com/messages/enhancements)
 ### production-readiness
-[Described below](#production-readiness)
+[Described below](#production-readiness-1)
 - **Owners:**
   - [kubernetes/community/sig-architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/OWNERS)
 - **Contact:**
@@ -118,10 +118,10 @@ Please see the [API Reviews](https://github.com/orgs/kubernetes/projects/13) tra
 
 Kubernetes Enhancement proposals (KEPs) are used to propose and communicate changes to sub-projects of SIG-Architecture. Following the KEP process is mandatory for all enhancements since Kubernetes 1.14 release.
 
-* Answers to our FAQs can be found here [FAQs](https://github.com/kubernetes/enhancements/tree/master/keps#faqs) 
-* Full details of the KEP process can be found in [KEP-1](https://github.com/kubernetes/enhancements/blob/master/keps/0001-kubernetes-enhancement-proposal-process.md)
+* Answers to our FAQs can be found here [FAQs](https://github.com/kubernetes/enhancements/tree/master/keps#faqs)
+* Full details of the KEP process can be found in [KEP-1](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/0000-kep-process/README.md)
 * Please follow the KEP template available at [KEP Template](https://github.com/kubernetes/enhancements/blob/master/keps/NNNN-kep-template/README.md) for the enhancement proposal.
-* Progress of KEPs can be tracked on our github project board at [Kubernetes Enhancements](https://github.com/kubernetes/enhancements/projects/4) 
+* Progress of KEPs can be tracked on our github project board at [Kubernetes Enhancements](https://github.com/kubernetes/enhancements/projects/4)
 * Please review [OWNERS](https://github.com/kubernetes/enhancements/commit/ed46d6956b616e46cd62ac9a3d98449a0a313c89) to connect with enhancement chairs, approvers, and reviewers
 
 ## Conformance Definition
@@ -131,7 +131,7 @@ Reviewing, approving, and driving changes to the conformance test suite; reviewi
 * [Conformance Tests](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.yaml)
 * [Test Guidelines](/contributors/devel/sig-architecture/conformance-tests.md)
 
-Please see the [Conformance Test Review](https://github.com/kubernetes-sigs/architecture-tracking/projects/1) tracking board to follow the work for this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS) file if you are interested in joining this effort. There is a lot of overlap with the [Kubernetes Software Conformance Working Group](https://github.com/cncf/k8s-conformance/blob/master/README-WG.md) with this sub project as well. The github group [cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg) enumerates the folks on this working group. Look for the `area/conformance` label in the kubernetes repositories to mark [issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fconformance) and [PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+is%3Aopen+label%3Aarea%2Fconformance) 
+Please see the [Conformance Test Review](https://github.com/kubernetes-sigs/architecture-tracking/projects/1) tracking board to follow the work for this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS) file if you are interested in joining this effort. There is a lot of overlap with the [Kubernetes Software Conformance Working Group](https://github.com/cncf/k8s-conformance/blob/master/README-WG.md) with this sub project as well. The github group [cncf-conformance-wg](https://github.com/orgs/kubernetes/teams/cncf-conformance-wg) enumerates the folks on this working group. Look for the `area/conformance` label in the kubernetes repositories to mark [issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fconformance) and [PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+is%3Aopen+label%3Aarea%2Fconformance).
 
 ## Code Organization
 

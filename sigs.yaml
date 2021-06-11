@@ -326,13 +326,13 @@ sigs:
       name: Jordan Liggitt
   subprojects:
   - name: architecture-and-api-governance
-    description: '[Described below](#architecture-and-api-governance)'
+    description: '[Described below](#architecture-and-api-governance-1)'
     owners:
     - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
   - name: code-organization
-    description: '[Described below](#code-organization)'
+    description: '[Described below](#code-organization-1)'
     contact:
       slack: k8s-code-organization
     owners:
@@ -344,7 +344,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
     - https://raw.githubusercontent.com/kubernetes/utils/master/OWNERS
   - name: conformance-definition
-    description: '[Described below](#conformance-definition)'
+    description: '[Described below](#conformance-definition-1)'
     contact:
       slack: k8s-conformance
       teams:
@@ -353,13 +353,13 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
   - name: enhancements
-    description: '[Described below](#enhancements)'
+    description: '[Described below](#enhancement-proposals)'
     contact:
       slack: enhancements
     owners:
     - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
   - name: production-readiness
-    description: '[Described below](#production-readiness)'
+    description: '[Described below](#production-readiness-1)'
     contact:
       slack: prod-readiness
     owners:
