@@ -479,11 +479,7 @@ ensure that GETs of individual objects remain bounded in time and space, these
 sets may be queried via separate API queries, but will not be expanded in the
 referring object's status.
 
-References to specific objects, especially specific resource versions and/or
-specific fields of those objects, are specified using the `ObjectReference` type
-(or other types representing strict subsets of it). Unlike partial URLs, the
-ObjectReference type facilitates flexible defaulting of fields from the
-referring object or other contextual information.
+For references to specific objects, see [Object references](#object-references).
 
 References in the status of the referee to the referrer may be permitted, when
 the references are one-to-one and do not need to be frequently updated,
@@ -905,6 +901,9 @@ endpoint indicates that the object reference specifies the target.
 It is okay to have the "{field}" component indicate the resource type. For example, "secretRef" when referencing
 a secret. However, this comes with the risk of the field being a misnomer in the case that the field is expanded to
 reference more than one type.
+
+In the case of a list of object references, the field should be of the format "{field}Refs", with the same guidance
+as the singular case above.
 
 ### Referencing resources with multiple versions
 
