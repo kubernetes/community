@@ -2472,15 +2472,14 @@ sigs:
     - github: floreks
       name: Sebastian Florek
       company: Loodse
-    - github: jeefy
-      name: Jeffrey Sica
-      company: Red Hat
     - github: maciaszczykm
       name: Marcin Maciaszczyk
       company: Loodse
     emeritus_leads:
     - github: danielromlein
       name: Dan Romlein
+    - github: jeefy
+      name: Jeffrey Sica
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
