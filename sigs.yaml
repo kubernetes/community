@@ -2471,10 +2471,13 @@ sigs:
     chairs:
     - github: floreks
       name: Sebastian Florek
-      company: Loodse
+      company: Kubermatic
     - github: maciaszczykm
       name: Marcin Maciaszczyk
-      company: Loodse
+      company: Kubermatic
+    - github: shu-mutou
+      name: Shu Muto
+      company: NEC
     emeritus_leads:
     - github: danielromlein
       name: Dan Romlein
