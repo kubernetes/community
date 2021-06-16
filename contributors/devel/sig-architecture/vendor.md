@@ -34,6 +34,16 @@ The `go.mod` file in the root of `k8s.io/kubernetes` describes dependencies usin
 * `require` directives list the preferred version of dependencies (this is auto-updated by go tooling to the maximum preferred version of the module)
 * `replace` directives pin to specific tags or commits
 
+## Dependency versions
+
+As a project we prefer that all entries in `go.mod` should be tagged in their
+respective repositories. There may be exceptions that will be up to the
+dependency approvers to approve. If there are issues with go mod tooling itself
+then there has to be an explicit comment (trailing `// comment`) with details on
+exact tag/release that this SHA corresponds to. Also please ensure tracking
+issues are open to ensure these SHA(s) are cleaned up over time and switched
+over to tags.
+
 ## Adding or updating a dependency
 
 The most common things people need to do with deps are add and update them.
