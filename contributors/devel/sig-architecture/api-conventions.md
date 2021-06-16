@@ -258,15 +258,25 @@ including configuration settings provided by the user,
 or otherwise changed after creation by other ecosystem components (e.g.,
 schedulers, auto-scalers), and is persisted in stable storage with the API
 object. If the specification is deleted, the object will be purged from the
-system. The status summarizes the current state of the object in the system, and
-is usually persisted with the object by automated processes but may be
-generated on the fly. At some cost and perhaps some temporary degradation in
-behavior, the status could be reconstructed by observation if it were lost.
+system.
+
+The status summarizes the current state of the object in the system, and is
+usually persisted with the object by automated processes but may be generated
+on the fly.  As a general guideline, fields in status should be the most recent
+observations of actual state, but they may contain information such as the
+results of allocations or similar operations which are executed in response to
+the object's spec.  See [below](#representing-allocated-values) for more
+details.
+
+Types with both spec and status stanzas can (and usually should) have distinct
+authorization scopes for them.  This allows users to be granted full write
+access to spec and read-only access to status, while relevant controllers are
+granted read-only access to spec but full write access to status.
 
 When a new version of an object is POSTed or PUT, the "spec" is updated and
 available immediately. Over time the system will work to bring the "status" into
 line with the "spec". The system will drive toward the most recent "spec"
-regardless of previous versions of that stanza. In other words, if a value is
+regardless of previous versions of that stanza. For example, if a value is
 changed from 2 to 5 in one PUT and then back down to 3 in another PUT the system
 is not required to 'touch base' at 5 before changing the "status" to 3. In other
 words, the system's behavior is *level-based* rather than *edge-based*. This
@@ -308,7 +318,6 @@ a "call and response" pattern. The spec is the request (often a request for
 information) and the status is the response. For these RPC like objects the only
 operation may be POST, but having a consistent schema between submission and
 response reduces the complexity of these clients.
-
 
 ##### Typical status properties
 
@@ -368,7 +377,7 @@ Conditions are most useful when they follow some consistent conventions:
   ("Deploying"). Intermediate states may be indicated by setting the status of
   the condition to `Unknown`.
 
-  * For state transitions which take a long period of time (rule of thumb: > 1
+  * For state transitions which take a long period of time (e.g. more than 1
     minute), it is reasonable to treat the transition itself as an observed
     state. In these cases, the Condition (such as "Resizing") itself should not
     be transient, and should instead be signalled using the
@@ -1671,7 +1680,6 @@ be less than 256", "must be greater than or equal to 0".  Do not use words
 like "larger than", "bigger than", "more than", "higher than", etc.
 * When specifying numeric ranges, use inclusive ranges when possible.
 
-
 ## Automatic Resource Allocation And Deallocation
 
 API objects often are [union](#Unions) object containing the following:
@@ -1694,3 +1702,114 @@ allocates resources such as `NodePorts` and `ClusterIPs` and automatically fill 
 represent them in case of the service is of type `NodePort` or `ClusterIP` (`discriminator` values).
 These resources and the fields representing them are automatically cleared when  the users changes
 service type to `ExternalName` where these resources and field values no longer apply.
+
+## Representing Allocated Values
+
+Many API types include values that are allocated on behalf of the user from
+some larger space (e.g. IP addresses from a range, or storage bucket names).
+These allocations are usually driven by controllers asynchronously to the
+user's API operations.  Sometimes the user can request a specific value and a
+controller must confirm or reject that request.  There are many examples of
+this in Kubernetes, and there a handful of patterns used to represent it.
+
+The common theme among all of these is that the system should not trust users
+with such fields, and must verify or otherwise confirm such requests before
+using them.
+
+Some examples:
+
+* Service `clusterIP`: Users may request a specific IP in `spec` or will be
+  allocated one (in the same `spec` field).  If a specific IP is requested, the
+  apiserver will wither confirm that IP is available or, failing that, will
+  reject the API operation synchronously (rare).  Consumers read the result
+  from `spec`.  This is safe because the value is either valid or it is never
+  stored.
+* Service `loadBalancerIP`: Users may request a specific IP in `spec` or will
+  be allocated one which is reported in `status`.  If a specific IP is
+  requested, the LB controller will either ensure that IP is available or
+  report failure asynchronously.  Consumers read the result from `status`.
+  This is safe because most users do not have acces to write to `status`.
+* PersistentVolumeClaims: Users may request a specific PersistentVolume in
+  `spec` or will be allocated one (in the same `spec` field).  If a specific PV
+  is requested, the volume controller will either ensure that the volume is
+  available or report failure asynchronously.  Consumers read the result by
+  examining both the PVC and the PV.  This is more complicated than the others
+  because the `spec` value is stored before being confirmed, which could lead
+  to a user accessing someone else's PV.
+
+A counter-example:
+
+* Service `externalIPs`: Users must specify one or more specific IPs in `spec`.
+  The system cannot easily verify those IPs (by their definition, they are
+  external). Consumers read the result from `spec`.  This is UNSAFE and has
+  caused problems with untrusted users.
+
+In the past, API conventions dictated that `status` fields always come from
+observation, which made some of these cases more complicated than necessary.
+The conventions have been updated to allow `status` to hold such allocated
+values.  This is not a one-size-fits-all solution, though.
+
+### When to use a `spec` field
+
+New APIs should almost never do this.  Instead, they should use `status`.
+PersistentVolumes might have been simpler if we had done this.
+
+### When to use a `status` field
+
+Storing such values in `status` is the easiest and most straight-forward
+pattern.  This is appropriate when:
+
+* the allocated value is highly coupled to the rest of the object (e.g. pod
+  resource allocations)
+* the allocated value is always or almost always needed (i.e. most instances of
+  this type will have a value)
+* the schema and controller are known a priori (i.e. it's not an extension)
+* it is "safe" to allow the controller(s) to write to `status` (i.e.
+  there's low risk of them causing problems viaa other `status` fields).
+
+Consumers of such values can look at the `status` field for the "final" value.
+
+#### Sequencing operations
+
+Since almost everything is happening asynchronously to almost everything else,
+controller implementations should take care around the ordering of operations.
+For example, whether the controller updates a `status` field before or after it
+actuates a change depends on what guarantees need to be made to observers of
+the system.  In some cases, writing to a `status` field represents an
+acknowledgement or acceptance of a `spec` value, and it is OK to write it before
+actuation.  However, if it would be problematic for a client to observe the
+`status` value before it is actuated then the controller must actuate first and
+update `status` afterward.  In some rarer cases, controllers will need to
+acknowledge, then actuate, then update to a "final" value.
+
+Controllers must take care to consider how a `status` field will be handled in
+the case of interrupted control loops (e.g. controller crash and restart), and
+must act idempotently and consistently.
+
+### When to use a different type
+
+Storing allocated values in a different type is more complicated but also more
+flexible.  This is most appropriate when:
+
+* the allocated value is optional (i.e. many instances of this type will not
+  have a value at all)
+* the schema and controller are not known a priori (i.e. it's an extension)
+* the schema is sufficiently complicated (i.e. it doesn't make sense to burden
+  the main type with it)
+* access control for this type demands finer granularity than "all of status"
+* the lifecycle of the allocated value is different than the lifecycle of the
+  allocation holder
+
+Services and Endpoints could be considered a form of this pattern, as could
+PersistentVolumes and PersistentVolumeClaims.
+
+When using this pattern, you must account for lifecycle of the allocated
+objects (who cleans them up and when) as well as the "linkage" between them and
+the main type (often using the same name, an object-ref field, or a selector).
+
+There will always be some cases which could follow either path, and these will
+need human evaluation to decide.  For example, Service `clusterIP` is highly
+coupled to the rest of Service and most instances use it.  But it also is
+strictly optional and has an increasingly complicated schema of related fields.
+An argument could be made for either path.
+>>>>>>> 49012588 (Loosen the meaning of status in API conventions)
