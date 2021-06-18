@@ -906,6 +906,9 @@ It is okay to have the "{field}" component indicate the resource type. For examp
 a secret. However, this comes with the risk of the field being a misnomer in the case that the field is expanded to
 reference more than one type.
 
+In the case of a list of object references, the field should be of the format "{field}Refs", with the same guidance
+as the singular case above.
+
 ### Referencing resources with multiple versions
 
 Most resources will have multiple versions. For example, core resources
