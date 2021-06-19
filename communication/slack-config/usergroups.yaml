@@ -71,10 +71,9 @@ usergroups:
       # - velero-dev
       - velero-users
     members:
-      - ashish-amarnath
-      - carlisia
       - Dave Smith-Uchida
-      - nrb
+      - jiangd
+      - yinw
       - zubron
 
   - name: youtube-admins
