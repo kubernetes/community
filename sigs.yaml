@@ -3161,13 +3161,13 @@ committees:
     teams:
     - name: code-of-conduct-committee
       description: General Discussion
-- dir: committee-product-security
-  name: Product Security
+- dir: committee-security-response
+  name: Security Response
   mission_statement: >
-    The Kubernetes Product Security Committee is the body that is responsible for
-    receiving and responding to reports of security issues in Kubernetes products.
+    The Kubernetes Security Response Committee is the body that is responsible for
+    receiving and responding to reports of security issues in Kubernetes projects.
 
-  label: product-security
+  label: security-response
   leadership:
     chairs:
     - github: cjcullen
@@ -3195,11 +3195,11 @@ committees:
   contact:
     private_mailing_list: security@kubernetes.io
     teams:
-    - name: product-security-committee
+    - name: security-response-committee
       description: General Discussion
   subprojects:
   - name: security
-    description: Policies and documentation for the Product Security Committee
+    description: Policies and documentation for the Security Response Committee
     owners:
     - https://raw.githubusercontent.com/kubernetes/security/master/OWNERS
 - dir: committee-steering
