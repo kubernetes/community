@@ -82,11 +82,6 @@ The Kubernetes Release Team is responsible for the day-to-day work required to s
 Documents and processes related to SIG Release
 - **Owners:**
   - [kubernetes/sig-release](https://github.com/kubernetes/sig-release/blob/master/OWNERS)
-### hyperkube
-Best-effort maintaining of hyperkube until 1.18 goes EOL 2021-04-30.
-- **Owners:**
-  - [kubernetes/kubernetes/cluster/images/hyperkube](https://github.com/kubernetes/kubernetes/blob/release-1.18/cluster/images/hyperkube/OWNERS)
-  - [kubernetes/release/images/build/debian-hyperkube-base](https://github.com/kubernetes/release/blob/master/images/build/debian-hyperkube-base/OWNERS)
 ### kubernetes/repo-infra
 Creates and maintains tools and templates for Kubernetes org repositories.
 Includes bazel tooling for managing dependencies for kubernetes/kubernetes

@@ -1941,12 +1941,6 @@ sigs:
       Documents and processes related to SIG Release
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
-  - name: hyperkube
-    description: |
-      Best-effort maintaining of hyperkube until 1.18 goes EOL 2021-04-30.
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.18/cluster/images/hyperkube/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/release/master/images/build/debian-hyperkube-base/OWNERS
   - name: kubernetes/repo-infra
     description: |
       Creates and maintains tools and templates for Kubernetes org repositories.
