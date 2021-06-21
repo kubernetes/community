@@ -47,6 +47,12 @@ Security Documents and Documentation
   - [kubernetes/community/sig-security/sig-security-docs](https://github.com/kubernetes/community/blob/master/sig-security/sig-security-docs/OWNERS)
 - **Contact:**
   - Slack: [#sig-security-docs](https://kubernetes.slack.com/messages/sig-security-docs)
+### security-tooling
+Development and Enhancements of Security Tooling
+- **Owners:**
+  - [kubernetes/community/sig-security/sig-security-tooling](https://github.com/kubernetes/community/blob/master/sig-security/sig-security-tooling/OWNERS)
+- **Contact:**
+  - Slack: [#sig-security-tooling](https://kubernetes.slack.com/messages/sig-security-tooling)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
