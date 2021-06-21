@@ -117,9 +117,9 @@ emeritus_approvers:
 
 ### OWNERS_ALIASES
 
-Each repo may contain at its root an OWNERS_ALIAS file.
+Each repo may contain at its root an OWNERS_ALIASES file.
 
-OWNERS_ALIAS files are in YAML format and support the following keys:
+OWNERS_ALIASES files are in YAML format and support the following keys:
 
 - `aliases`: a mapping of alias name to a list of GitHub usernames
 
