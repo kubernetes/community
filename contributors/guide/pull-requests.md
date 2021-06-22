@@ -284,7 +284,7 @@ For more information, see [squash commits](./github-workflow.md#squash-commits).
 * Sausage => squash
 
  Do squash when there are several commits to fix bugs in the original commit(s), address reviewer feedback, etc. 
- Really we only want to see the end state and commit message for the whole pull request.
+ Really we only want to see the end state, and commit message for the whole pull request.
 
 * Layers => don't squash
 
@@ -563,9 +563,9 @@ Pull requests by Kubernetes organization [members](/community-membership.md) do 
 The behavior of Prow is configurable across projects. You should be aware of the following configurable behaviors.
 
 * If you are listed as an `/approver` in the `OWNERS` file, an implicit `/approve` can be applied to your pull request. This can result in a merge being triggered by a `/lgtm` label. This is the configured behavior in many projects, including `kubernetes/kubernetes`. You can remove the implicit `/approve` with `/approve cancel`
-* `/lgtm` can be configured so that from someone listed as both a `reviewer` and an `approver` will cause both labels to be applied. For `kubernetes/kuebernetes` and many other projects this is _not_ the default behavior, and `/lgtm` is decoupled from `/approve`
+* `/lgtm` can be configured so that from someone listed as both a `reviewer` and an `approver` will cause both labels to be applied. For `kubernetes/kubernetes` and many other projects this is _not_ the default behavior, and `/lgtm` is decoupled from `/approve`
 
-Once the tests pass and the reviewer adds the `lgtm` and `approved` labels, the pull request enters the final merge pool. 
+Once the tests pass, and the reviewer adds the `lgtm` and `approved` labels, the pull request enters the final merge pool. 
 The merge pool is needed to make sure no incompatible changes have been introduced by other pull requests since the tests were last run on your pull request.
 <!-- TODO: create parallel instructions for reviewers -->
 
@@ -595,7 +595,7 @@ That's the last step. Your pull request is now merged.
 - There are various other factors on which labelling of `ok-to-test` depends :
     - Size of PR :
         - If the PR is of `size/S` or `size/M` which is just to fix a grammatical error or spelling mistake, the reviewer can trigger the `CI/CD` without having a second thought.
-        - If the PR is of `size/XXL` which aims at adding a new feature, a new API endpoint or any new substantial feature. There needs to other conventions & process to be followed regarding the change made. Hence it may have a slight to delay to get labelled with `ok-to-test`.
+        - If the PR is of `size/XXL` which aims at adding a new feature, a new API endpoint or any new substantial feature. There needs to other conventions & process to be followed regarding the change made. Hence, it may have a slight delay to get labelled with `ok-to-test`.
     - Other org members who are not assigned to the following PR may also label `ok-to-test` , if the change is small.
     - If the PR is labelled with `cncf-cla: no`, then it is better to wait before labelling `ok-to-test`.
     - PRs with tag `do-not-merge/hold` or `needs-rebase` should make the appropriate changes before the PR can be labelled `ok-to-test`.
