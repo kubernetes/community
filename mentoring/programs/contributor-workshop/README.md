@@ -16,12 +16,15 @@ The umbrella issue tracking getting this initiative available to the public is [
 
 ## Getting Involved
 
-* Read the guides on contributing to the Contributor Workshop
-[Contributing to the Contributor Workshop](resources/guides/README.md)
+* Read the guides on [Contributing to the Contributor Workshop](guides/README.md)
 
 * Attend the bi-weekly mentoring meeting
 
 * Join the discussion in #contributor-workshop-dev on Kubernetes Slack
+
+## Other Resources
+
+[live-workshop](live-workshop/README.md) - Resources for running a live contributor workshop
 
 ## Previous Live Workshops
 
