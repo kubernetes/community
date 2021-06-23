@@ -16,16 +16,19 @@ This guide covers how to update segments in the Contributor Workshop.
 
 ### Fork & Clone the ``contributor-site``
 
-Create a fork of the [``contributor-site``](https://github.com/kubernetes/contributor-site/tree/workshop) repo.
+Create a fork of the [``contributor-site``](https://github.com/kubernetes/contributor-site) repo.
 
 Clone your fork locally
 
 ### Checkout a branch off the workshop branch for your changes
 
 ```bash
+git remote add upstream git@github.com:kubernetes/contributor-site.git
+git remote set-url --push upstream no_push
+git fetch upstream
 git checkout workshop
-
-git checkout -b my-changes
+git rebase upstream/workshop
+git checkout <your feature branch>
 ```
 
 ### Run the site locally with your changes
