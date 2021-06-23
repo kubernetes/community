@@ -12,7 +12,7 @@ The Contributor Workshop is currently in development, and has not been released 
 
 You can view the live state of the site by going to [https://workshop--kubernetes-contributor.netlify.app/docs/workshop/](https://workshop--kubernetes-contributor.netlify.app/docs/workshop/)
 
-The umbrella issue tracking getting this initiative available to the public is [#4830 in kubernetes/community](https://github.com/kubernetes/community/issues/4830).
+The umbrella issue tracking getting this initiative available to the public is [kubernetes/community#4830](https://github.com/kubernetes/community/issues/4830).
 
 ## Getting Involved
 
