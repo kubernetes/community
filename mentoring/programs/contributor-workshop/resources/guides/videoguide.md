@@ -26,7 +26,7 @@ This guide covers, how to structure, record, upload and update video guides asso
   - [Recording in Streamyard](#recording-in-streamyard)
 - [Updating / Adding video to a segment](#updating--adding-video-to-a-segment)
   - [Rename your recording](#rename-your-recording)
-  - [Uploading your video to Google Drive](#uploading-your-video-to-google-drive)
+  - [Upload your video to Google Drive](#upload-your-video-to-google-drive)
   - [Updating Youtube](#updating-youtube)
 - [Update the Segment page with video](#update-the-segment-page-with-video)
 - [Best Practices & Recommendations](#best-practices--recommendations)
@@ -179,15 +179,9 @@ For example
 
 ``2021-05-10-why-contribute-alisondy-mrbobbytables.mp4``
 
-### Uploading your video to Google Drive
+### Upload your video to Google Drive
 
-You will upload your recording to the folder associated with your segment. If the folder for your segment doesn't exist, create a new one with the segment name.
-
-The segment name being the name of the markdown file associated with that segment. see [CONTRIBUTING.md](https://github.com/kubernetes/contributor-site/tree/workshop/content/en/workshop/CONTRIBUTING.md#list-of-segments)
-
-For example
-
-``why-contribute``
+Upload your recording to the Google Drive folder provided for the Workshop Videos.
 
 ### Updating Youtube
 

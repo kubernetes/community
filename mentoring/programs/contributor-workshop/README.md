@@ -1,6 +1,6 @@
 # Contributor Workshop
 
-## Overview 
+## Overview
 
 The Contributor Workshop is a self paced course on the contributor site, aimed at both new and existing contributors.
 
@@ -24,4 +24,5 @@ The umbrella issue tracking getting this initiative available to the public is [
 * Join the discussion in #contributor-workshop-dev on Kubernetes Slack
 
 ## Previous Live Workshops
+
 * [2019 NA Contributor Summit NCW](https://www.youtube.com/watch?v=uUJrGwAom-E&list=PL69nYSiGNLP0OWp38tPBc-jSlMmwWr6Ci&index=16) (Videos in playlist, links to first NCW video)

@@ -1,6 +1,6 @@
 ---
 title: "Segment Name"   # The name of the page
-weight: 0               # Ordering of the page
+weight: 2               # Ordering of the page
 description: |
   A brief description of what this segment aims to cover. 
 ---
