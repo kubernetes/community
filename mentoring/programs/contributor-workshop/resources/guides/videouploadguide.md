@@ -94,4 +94,4 @@ Close the comment section of the deprecated video
 
 ## Update the Playlist
 
-Update the youtube playlist with the segment recording.
+Update the youtube playlist with the segment recording. Remove the previous version of the video from the playlist if it exists.
