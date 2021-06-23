@@ -154,7 +154,6 @@ usergroups:
     channels:
       - odo
     members:
-      - adisky
       - cdrage
       - dharmit
       - girishramnani
@@ -162,6 +161,9 @@ usergroups:
       - mik-dass
       - prietyc123
       - kadel
+      - feloy
+      - anandrkskd
+      - rnapoles-rh
 
   - name: pinniped-dev
     long_name: Pinniped Development Team
