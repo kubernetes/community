@@ -22,8 +22,9 @@ The [charter](charter.md) defines the scope and governance of the UI Special Int
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Sebastian Florek (**[@floreks](https://github.com/floreks)**), Loodse
-* Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**), Loodse
+* Sebastian Florek (**[@floreks](https://github.com/floreks)**), Kubermatic
+* Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**), Kubermatic
+* Shu Muto (**[@shu-mutou](https://github.com/shu-mutou)**), NEC
 
 ## Emeritus Leads
 
