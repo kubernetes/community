@@ -105,3 +105,30 @@ Finally the script checks that all external group versions
 (e.g. `foobar/v1`) are defined in `hack/lib/init.sh` in either the
 `KUBE_AVAILABLE_GROUP_VERSIONS` or `KUBE_NONSERVER_GROUP_VERSIONS`
 bash variables.
+
+### `verify-bazel`
+
+This verification script validates whehter the removal of `bazel`
+related files is still needed or not. This script after setting the
+temporary directories for gopath and kube-related path, runs
+`[update-bazel.sh]()`. And once executed, `update-bazel` deletes all
+the bazel related files which are either not there in vendor and some
+additional one-off files. After execution, the `verify-bazel` script
+again calculates diff to check the earlier output. And if the diff
+result is non-zero then script `update-bazel.sh` is run again for the
+files that might be left.  
+
+Following are the files that are searched for deletion as part of this
+script:
+
+```bash
+  "${KUBE_ROOT}/build/root/BUILD.root" \
+  "${KUBE_ROOT}/WORKSPACE" \
+  "${KUBE_ROOT}/build/root/WORKSPACE" \
+  "${KUBE_ROOT}/.bazelrc" \
+  "${KUBE_ROOT}/build/root/.bazelrc" \
+  "${KUBE_ROOT}/.bazelversion" \
+  "${KUBE_ROOT}/build/root/.bazelversion" \
+  "${KUBE_ROOT}/.kazelcfg.json" \
+  "${KUBE_ROOT}/build/root/.kazelcfg.json"
+```
