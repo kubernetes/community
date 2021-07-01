@@ -1308,7 +1308,7 @@ sigs:
     description: Creates and maintains shortcuts and automation apps running in the
       k8s.io domain.
     owners:
-    - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/k8s.io/main/OWNERS
   - name: mentoring
     description: Oversees and develops programs for helping contributors ascend the
       contributor ladder, including the New Contributor Workshops, Meet Our Contributors,
