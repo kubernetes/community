@@ -266,6 +266,7 @@ channels:
   - name: meetup-toulouse
   - name: meetup-trondheim
   - name: meetup-tunisia
+  - name: meshery
   - name: metacontroller
   - name: metal-stack
   - name: metallb
