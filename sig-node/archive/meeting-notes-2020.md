@@ -345,7 +345,7 @@ Total active pull requests: [186](https://github.com/kubernetes/kubernetes/pulls
 
 * [@[ruiwen-zhao](https://github.com/ruiwen-zhao)] [https://github.com/kubernetes/k8s.io/pull/1194](https://github.com/kubernetes/k8s.io/pull/1194) (Nvidia GPU device plugin)
   * GoogleCloudPlatform/container-engine-accelerators has been releasing device plugins through [Kubernetes’ addons](https://github.com/kubernetes/kubernetes/blob/master/cluster/addons/device-plugins/nvidia-gpu/daemonset.yaml#L39)
-  * After the [Vanity Domain Flip](https://github.com/kubernetes/k8s.io/blob/master/k8s.gcr.io/Vanity-Domain-Flip.md), the vanity domain (k8s.gcr.io) now points to {asia,eu,us}.gcr.io/k8s-artifacts-prod. The PR above is to create a repo in OSS community so that we can keep releasing the device plugin to the new domain.
+  * After the [Vanity Domain Flip](https://github.com/kubernetes/k8s.io/blob/main/k8s.gcr.io/Vanity-Domain-Flip.md), the vanity domain (k8s.gcr.io) now points to {asia,eu,us}.gcr.io/k8s-artifacts-prod. The PR above is to create a repo in OSS community so that we can keep releasing the device plugin to the new domain.
 * [@xing-yang, @yuxiangqian] ContainerNotifier
   * [enhancement issue](https://github.com/kubernetes/enhancements/issues/1977)
   * working on a KEP based on the doc [here](https://docs.google.com/document/d/1SWSlZoxY5zFjBKFKaATP07s3q02UenSp8R9-yRkCcwg/edit#)

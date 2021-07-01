@@ -130,4 +130,4 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 [update meetings]: /communication/calendar-guidelines.md
 [community members]: /community-membership.md
 [mailing-list-guidelines.md]: /communication/mailing-list-guidelines.md
-[leads@kubernetes.io group]: https://github.com/kubernetes/k8s.io/blob/master/groups/groups.yaml
+[leads@kubernetes.io group]: https://github.com/kubernetes/k8s.io/blob/main/groups/groups.yaml

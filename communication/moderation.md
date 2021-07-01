@@ -253,7 +253,7 @@ This is the workflow for adding a moderator.
 - Ensure person is enrolled for a future bias training course, this can either
   be provided by the project or their employer.
 
-[moderators@kubernetes.io group]: https://github.com/kubernetes/k8s.io/blob/master/groups/groups.yaml
+[moderators@kubernetes.io group]: https://github.com/kubernetes/k8s.io/blob/main/groups/groups.yaml
 
 ## References and Resources
 
