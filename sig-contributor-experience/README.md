@@ -116,7 +116,7 @@ Manages and controls Github permissions, repos, and groups, including Org Member
 ### k8s.io
 Creates and maintains shortcuts and automation apps running in the k8s.io domain.
 - **Owners:**
-  - [kubernetes/k8s.io](https://github.com/kubernetes/k8s.io/blob/master/OWNERS)
+  - [kubernetes/k8s.io](https://github.com/kubernetes/k8s.io/blob/main/OWNERS)
 ### mentoring
 Oversees and develops programs for helping contributors ascend the contributor ladder, including the New Contributor Workshops, Meet Our Contributors, and other programs.
 - **Owners:**
