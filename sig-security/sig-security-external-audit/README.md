@@ -20,7 +20,7 @@ Previous RFPs:
   - [2019](https://github.com/kubernetes/community/blob/master/sig-security/security-audit-2019/RFP.md)
   - [2021](https://github.com/kubernetes/community/blob/master/sig-security/security-audit-2021/RFP.md)
 
-As efforts begin for the year's security audit, create a tracking issue for the security audit in `kubernetes/community` with the `sig/security` label.
+As efforts begin for the year's security audit, create a tracking issue for the security audit in `kubernetes/community` with the `/sig security` and `/label external-audit` labels.
 
 ### Security Audit Scope
 
@@ -38,7 +38,7 @@ The question period is typically open between the RFP's opening date and closing
 
 ## Review of Proposals
 
-Proposals are reviewed by the subproject proposal reviewers after the RFP closing date.
+Proposals are reviewed by the subproject proposal reviewers after the RFP closing date. An understanding of security audits is required to be a proposal reviewer.
 
 All proposal reviewers must agree to abide by the **[Security Release Process](https://github.com/kubernetes/security/blob/master/security-release-process.md)**, **[embargo policy](https://github.com/kubernetes/security/blob/master/private-distributors-list.md#embargo-policy)**, and have no [conflict of interest](#conflict-of-interest) the tracking issue. This is done by placing a comment on the issue associated with the security audit. e.g. `I agree to abide by the guidelines set forth in the Security Release Process, specifically the embargo on CVE communications and have no conflict of interest`
 
