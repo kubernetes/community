@@ -225,4 +225,3 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [SIG Governance Requirements]: /committee-steering/governance/sig-governance-requirements.md
 [Annual Report]: /committee-steering/governance/annual-reports.md
 [monthly community meeting]: /events/community-meeting.md
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/governance.md?pixel)]()
