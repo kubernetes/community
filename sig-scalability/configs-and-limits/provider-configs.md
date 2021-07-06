@@ -75,6 +75,8 @@ proposed</td>
 
 * API server configured for load balancing, other components using standard leader election.
 
+* For performance reasons, it is best to use containerd as a container runtimer.
+
 * Etcd is used for two distinct cluster purposes - cluster state and event processing. These have different i/o characteristics. It is important to scalability testing efforts that the iops provided by the servers to etcd be consistent and protected. These leads to two requirements:
 
     * Split etcd: Two different etcd clusters for events and cluster state (note: this is currently the GKE production default as well).
