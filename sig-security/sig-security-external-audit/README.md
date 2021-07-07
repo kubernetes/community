@@ -20,7 +20,7 @@ Previous RFPs:
   - [2019](https://github.com/kubernetes/community/blob/master/sig-security/security-audit-2019/RFP.md)
   - [2021](https://github.com/kubernetes/community/blob/master/sig-security/security-audit-2021/RFP.md)
 
-As efforts begin for the year's security audit, create a tracking issue for the security audit in `kubernetes/community` with the `/sig security` and `/label external-audit` labels.
+As efforts begin for the year's security audit, create a tracking issue for the security audit in `kubernetes/community` with the `/sig security` label.
 
 ### Security Audit Scope
 
