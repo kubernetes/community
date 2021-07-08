@@ -18,7 +18,7 @@ https://github.com/kubernetes/kubernetes/tree/master/cmd/kubelet
 
 https://github.com/kubernetes/kubernetes/tree/master/pkg/kubelet  
 
-https://github.com/kubernetes/kuberentes/tree/master/pkg/probe  
+https://github.com/kubernetes/kubernetes/tree/master/pkg/probe  
 
 Development Resources:  
 
