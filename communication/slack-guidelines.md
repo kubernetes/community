@@ -84,7 +84,7 @@ in the purpose or pinned docs of that channel.
 - `#kubernetes-contributors` - Questions and discourse around upstream
   contributions and development to kubernetes.
 - `#kubernetes-careers` - Job openings for positions working with/on/around
-  Kubernetes. Post the job once and pin it. Pins expire after 30 days. Postings
+  Kubernetes. Postings
   must include:
   - A link to the posting or job description.
   - The business name that will employ the Kubernetes hire.
