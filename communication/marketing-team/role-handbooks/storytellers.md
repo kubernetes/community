@@ -49,7 +49,8 @@ Converting gdoc to markdown?
 
 * go to: https://discuss.kubernetes.io/
 * Open a new topic
-* Paste gdoc into window
+* Paste gdoc into new topic window
+  * Discourse will automatically convert it to markdown 🎉 
 * Profit
 
 ## Minimum Skills and Experience
