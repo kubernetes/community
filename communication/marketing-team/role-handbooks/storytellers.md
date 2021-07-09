@@ -51,7 +51,9 @@ Converting gdoc to markdown?
 * Open a new topic
 * Paste gdoc into new topic window
   * Discourse will automatically convert it to markdown 🎉 
-* Profit
+* Now you can copy the markdown text, with all its original formatting, and paste it into your blog post file (this will often be a text file you are editing on your computer from a text editor like VS Code)
+* Be sure to add the syntax required at the top of the blog post (see links above)
+* Now you are ready to submit it as a PR
 
 ## Minimum Skills and Experience
 
