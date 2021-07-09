@@ -13,7 +13,7 @@ TODO add more here
 
 #### Idea Paths
 
-There are multiple ways to successfully a Kubernetes blog. Here are some of the common paths to help you do so:
+There are multiple ways to successfully contribute a Kubernetes blog post. Here are some of the common paths to help you do so:
 
 
 **To start:** 
