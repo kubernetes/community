@@ -15,14 +15,14 @@ processes and their access to cluster resources in a distributed computing
 environment.
 
 To run most clustered software on Kubernetes, it must be possible to guarantee
-**at most once** execution of a particular pet pod at any time on the cluster.
-This allows the controller to prevent multiple processes having access to
-shared cluster resources believing they are the same entity. When a node
-containing a pet is partitioned, the Pet Set must remain consistent (no new
-entity will be spawned) but may become unavailable (cluster no longer has
-a sufficient number of members). The Pet Set guarantee must be strong enough
-for an administrator to reason about the state of the cluster by observing
-the Kubernetes API.
+**at most once** execution of a particular statefulset pod at any time on the
+cluster. This allows the controller to prevent multiple processes having access
+to shared cluster resources believing they are the same entity. When a node
+containing a statefulset pod is partitioned, the StatefulSet must remain
+consistent (no new entity will be spawned) but may become unavailable (cluster
+no longer has a sufficient number of members). The StatefulSet guarantee must be
+strong enough for an administrator to reason about the state of the cluster by
+observing the Kubernetes API.
 
 In order to reconcile partitions, an actor (human or automated) must decide
 when the partition is unrecoverable. The actor may be informed of the failure
@@ -35,11 +35,12 @@ as **fencing** and is a well understood domain.
 
 This proposal covers the changes necessary to ensure:
 
-* Pet Sets can ensure **at most one** semantics for each individual pet
+* StatefulSets can ensure **at most one** semantics for each individual
+  statefulset pod
 * Other system components such as the node and namespace controller can
   safely perform their responsibilities without violating that guarantee
 * An administrator or higher level controller can signal that a node
-  partition is permanent, allowing the Pet Set controller to proceed.
+  partition is permanent, allowing the StatefulSet controller to proceed.
 * A fencing controller can take corrective action automatically to heal
   partitions
 
@@ -108,7 +109,7 @@ force deleting a pod means that the pod processes may continue
 to run for an arbitrary amount of time. If a higher level component like the
 StatefulSet controller treats the existence of the pod API object as a strongly
 consistent entity, deleting the pod in this fashion will violate the
-at-most-one guarantee we wish to offer for pet sets.
+at-most-one guarantee we wish to offer for statefulsets.
 
 
 ### Guarantees provided by replica sets and replication controllers
@@ -146,7 +147,7 @@ replica set or deployment, even at scale 1.
 
 ### Avoid multiple instances of pods
 
-To ensure that the Pet Set controller can safely use pods and ensure at most
+To ensure that the StatefulSet controller can safely use pods and ensure at most
 one pod instance is running on the cluster at any time for a given pod name,
 it must be possible to make pod deletion strongly consistent.
 
@@ -197,11 +198,12 @@ It has been requested that force deletion be restricted to privileged users.
 That limits the application owner in resolving partitions when the consequences
 of force deletion are understood, and not all application owners will be
 privileged users. For example, a user may be running a 3 node etcd cluster in a
-pet set. If pet 2 becomes partitioned, the user can instruct etcd to remove
-pet 2 from the cluster (via direct etcd membership calls), and because a quorum
-exists pets 0 and 1 can safely accept that action. The user can then force
-delete pet 2 and the pet set controller will be able to recreate that pet on
-another node and have it join the cluster safely (pets 0 and 1 constitute a
+statefulset. If statefulset pod 2 becomes partitioned, the user can instruct
+etcd to remove statefulset pod 2 from the cluster (via direct etcd membership
+calls), and because a quorum exists statefulset pods 0 and 1 can safely accept
+that action. The user can then force delete statefulset pod 2 and the
+statefulset controller will be able to recreate that statefulset pod on another
+node and have it join the cluster safely (statefulset pods 0 and 1 constitute a
 quorum for membership change).
 
 This proposal does not alter the behavior of finalizers - instead, it makes
@@ -210,7 +212,7 @@ deletes pods when safe).
 
 ### Fencing
 
-The changes above allow Pet Sets to ensure at-most-one pod, but provide no
+The changes above allow StatefulSets to ensure at-most-one pod, but provide no
 recourse for the automatic resolution of cluster partitions during normal
 operation. For that, we propose a **fencing controller** which exists above
 the current controller plane and is capable of detecting and automatically
@@ -352,7 +354,7 @@ users understand what actions they could take.
 
 ## Backwards compatibility
 
-On an upgrade, pet sets would not be "safe" until the above behavior is implemented.
+On an upgrade, statefulsets would not be "safe" until the above behavior is implemented.
 All other behaviors should remain as-is.
 
 
@@ -371,8 +373,9 @@ designed to expose ordering and consistency flaws in the presence of
 * Kubelet failures
 * Controller failures
 
-A test suite that can perform these tests in combination with real world pet sets
-would be desirable, although possibly non-blocking for this proposal.
+A test suite that can perform these tests in combination with real world
+statefulsets would be desirable, although possibly non-blocking for this
+proposal.
 
 
 ## Documentation
