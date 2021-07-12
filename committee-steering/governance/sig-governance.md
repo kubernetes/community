@@ -7,7 +7,8 @@ In order to standardize Special Interest Group efforts, create maximum
 transparency, and route contributors to the appropriate SIG, SIGs should follow
 these guidelines:
 
-- Create a charter and have it approved according to the [SIG charter process]
+- Have an approved Charter [SIG charter process]
+- Have at least one (1) Chair and one (1) defined Tech Lead
 - Meet regularly, at least for 30 minutes every 3 weeks, except November and
 December
 - Keep up-to-date meeting notes, linked from the SIG's page in the community
@@ -162,6 +163,24 @@ within 30 days from the date of their appointment.
   - *MUST* accept the [Embargo Policy]
   - Defined in `SECURITY_CONTACTS` files, this is only relevant to the root file
    in the repository. Template [SECURITY_CONTACTS]
+
+### Other Roles
+SIGs can operate differently for a number of reasons; therefore, they have processes
+that would require other named roles. //we can list an example of why things are 
+different if it makes this part clearer. The project currently supports the following
+roles that SIGs have successfully implemented:
+
+- [Program Manager](link to SIG Release docs)
+- [Enhancements Lead](link to SIG Release docs)
+- [API Reviewer] (link to SIG API docs)
+- [Event Lead](link to SIG Contribex rolebook)
+- [Communications Lead] (sig contribex, sig release, etc)
+- [Triage Captain](link to sig node, etc)
+
+- *MUST* be tracked on the SIG README with a link to the role definition [somewhereTBD;
+maybe there is a roles.md with a catalog of definitions]
+- *MAY* Fill in for another named role above so long as that is explicitly 
+spelled out in the role description
 
 #### Subproject Creation
 
