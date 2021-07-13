@@ -162,7 +162,7 @@ The latest date to receive deliverables will be negotiated with the selected ven
 
 ### Which attack vectors are of most concern to the Working Group.
 
-1. The attack vector most concerned about is unauthenticated access to a cluster resulting in compromise of the [components in-scope](#project_goals_and_scope)
+1. The attack vector most concerned about is unauthenticated access to a cluster resulting in compromise of the [components in-scope](#project-goals-and-scope)
 2. Crossing namespace boundaries, an authenticated attacker being able to affect resources their credentials do not directly allow
 3. Any other attack vector that exists against the components in scope
 
