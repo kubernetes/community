@@ -1,116 +1,114 @@
 ---
-title: "Making your First Contribution"
-weight: 3
-description: |
-  Not sure where to make your first contribution? This doc has some tips and
-  ideas to help get you started.
+শিরোনাম: "কিকরে আপনার প্রথম কন্ট্রিব্যুশন করবেন"
+ওজন: ৩
+বর্ণনা: |
+  আপনার প্রথম কন্ট্রিব্যুশন কোথায় করবেন তা নিশ্চিত নন? এই দস্তাবেজের কিছু টিপস রয়েছে এবং
+  আপনাকে শুরু করতে সহায়তা করার মতামত।
 ---
 
-# Your First Contribution
+# আপনার প্রথম কন্ট্রিব্যুশন
 
-- [Find something to work on](#find-something-to-work-on)
-  - [Find a good first topic](#find-a-good-first-topic)
-    - [Issue Assignment in Github](#issue-assignment-in-github)
-  - [Learn about SIGs](#learn-about-sigs)
-    - [SIG structure](#sig-structure)
-    - [Find a SIG that is related to your contribution](#find-a-sig-that-is-related-to-your-contribution)
-  - [SIG-specific contributing guidelines](#sig-specific-contributing-guidelines)
-  - [File an Issue](#file-an-issue)
+- [কাজ করার জন্য কিছু সন্ধান করুন](#কাজ-করার-জন্য-কিছু-সন্ধান-করুন)
+  - [একটি ভাল প্রথম বিষয় সন্ধান করুন](#একটি-ভাল-প্রথম-বিষয়-সন্ধান-করুন)
+    - [গিটহাব-এ অ্যাসাইনমেন্ট জারি করুন](#গিটহাব-এ-অ্যাসাইনমেন্ট-জারি-করুন)
+  - [এসআইজি সম্পর্কে জানুন](#এসআইজি-সম্পর্কে-জানুন)
+    - [এসআইজি কাঠামো](#এসআইজি-কাঠামো)
+    - [আপনার অবদানের সাথে সম্পর্কিত এমন একটি এসআইজি সন্ধান করুন](#আপনার-অবদানের-সাথে-সম্পর্কিত-এমন-একটি-এসআইজি-সন্ধান-করুন)
+  - [এসআইজি দ্বারা নির্দিষ্ট অবদান নির্দেশিকা](#এসআইজি-দ্বারা-নির্দিষ্ট-অবদান-নির্দেশিকা)
+  - [একটি সমস্যা ফাইল করুন](#একটি-সমস্যা-ফাইল-করুন)
 
-## Find something to work on
+## কাজ করার জন্য কিছু সন্ধান করুন
 
-The first step to getting starting contributing to Kubernetes is to find something
-to work on. Help is always welcome, and no contribution is too small! 
+কুবারনেটসে অবদান শুরু করার প্রথম পদক্ষেপটি কোনও সন্ধান করা কাজ করার। সহায়তা সর্বদা স্বাগতম, এবং কোনও অবদান খুব কম নয়!
 
-Here are some things you can do today to get started contributing:
+অবদান শুরু করার জন্য আপনি আজ কিছু কাজ করতে পারেন:
 
-* Help improve the Kubernetes documentation
-* Clarify code, variables, or functions that can be renamed or commented on
-* Write test coverage
-* Help triage issues
+* কুবেরনেটস ডকুমেন্টেশন উন্নত করতে সহায়তা করুন
+* কোড, ভেরিয়েবল বা ফাংশনগুলি পরিষ্কার করুন যা নাম পরিবর্তন বা মন্তব্য করতে পারে
+* পরীক্ষা কভারেজ লিখুন
+* ট্রাইজ সমস্যাগুলি সহায়তা করুন
 
-If the above suggestions don't appeal to you, you can browse the 
-[Contributor Role Board] to see who is looking for help. Those interested 
-in contributing without writing code can also find ideas in the 
-[Non-Code Contributions Guide].
+যদি উপরের পরামর্শগুলি আপনার কাছে আবেদন না করে, আপনি ব্রাউজ করতে পারেন
+কারা সাহায্যের সন্ধান করছে তা দেখতে [কন্ট্রিবিউটর রোল বোর্ড] যারা আগ্রহী
+কোড না লিখে অবদান অবদানের ক্ষেত্রেও ধারণা পেতে পারে
+[নন-কোড অবদান গাইড]।
 
-### Find a good first topic
+### একটি ভাল প্রথম বিষয় সন্ধান করুন
 
-There are [multiple repositories] within the Kubernetes organization.
-Each repository has beginner-friendly issues that are a great place to 
-get started on your contributor journey. For example, [kubernetes/kubernetes] has 
-[help wanted] and [good first issue] labels for issues that don't need high-level 
-Kubernetes knowledge to contribute to. The `good first issue` label also indicates 
-that Kubernetes Members have committed to providing [extra assistance] for new 
-contributors. Another way to get started is to find a documentation improvement, 
-such as a missing/broken link, which will give you exposure to the code 
-submission/review process without the added complication of technical depth. 
+কুবেরনেটস সংস্থার মধ্যে [একাধিক সংগ্রহস্থল] রয়েছে।
+প্রতিটি সংগ্রহস্থলের শিক্ষানবিস-বান্ধব সমস্যাগুলি থাকে যাগুলির জন্য দুর্দান্ত জায়গা
+আপনার অবদানকারী যাত্রা শুরু করুন। উদাহরণস্বরূপ, [কুবারনেটস / কুবারনেটস] আছে
+[সহায়তা চেয়েছিল] এবং [ভাল প্রথম ইস্যু] এমন সমস্যাগুলির জন্য লেবেলগুলি যা উচ্চ-স্তরের প্রয়োজন নেই
+অবদান রাখতে জ্ঞান কুবের্নেটেস। "ভাল প্রথম ইস্যু" লেবেলটিও নির্দেশ করে
+যে কুবেরনেটস সদস্যরা নতুনের জন্য [অতিরিক্ত সহায়তা] সরবরাহ করার প্রতিশ্রুতিবদ্ধ হয়েছে
+অবদানকারী। আরম্ভ করার আরেকটি উপায় হ'ল ডকুমেন্টেশনের উন্নতি সন্ধান করা,
+যেমন একটি অনুপস্থিত / ভাঙা লিঙ্ক, যা আপনাকে কোডের সংস্পর্শে দেবে
+প্রযুক্তিগত গভীরতার অতিরিক্ত জটিলতা ছাড়াই জমা / পর্যালোচনা প্রক্রিয়া।
 
-### Issue Assignment in Github
+### গিটহাব-এ অ্যাসাইনমেন্ট জারি করুন
 
-When you've found an issue to work on, you can assign it to yourself.
+আপনি যখন কাজ করার জন্য কোনও সমস্যা পেয়েছেন, আপনি এটিকে নিজের কাছে নির্ধারণ করতে পারেন।
 
-* Reply with `/assign` or `/assign @yourself` on the issue you'd like to work on 
-* The [K8s-ci-robot] will automatically assign the issue to you. 
-* Your name will then be listed under, `Assignees`.
+* আপনি যে ইস্যুতে কাজ করতে চান তাতে `/ কার্যভার। বা` / কার্যনির্বাহ @ নিজেকে দিন- দিয়ে উত্তর দিন
+* [K8s-ci-রোবট] স্বয়ংক্রিয়ভাবে আপনাকে বিষয়টি বরাদ্দ করবে।
+* আপনার নামটি তখন `Assignees` এর অধীনে তালিকাভুক্ত হবে`
 
-## Learn about SIGs
+### এসআইজি সম্পর্কে জানুন
 
-Some repositories in the Kubernetes Organization are owned by 
-[Special Interest Groups], or SIGs.
+কুবেরনেটস সংস্থার কয়েকটি সংগ্রহস্থলের মালিকানা রয়েছে
+[বিশেষ আগ্রহী গোষ্ঠী], বা SIG-গুলি।
 
-The Kubernetes community is broken out into SIGs in order to improve its workflow,
-and more easily manage what is a very large community project. The developers 
-within each SIG have autonomy and ownership over that SIG's part of Kubernetes. 
-Understanding how to interact with SIGs is an important part of contributing 
-to Kubernetes. Check out the [list of SIGs][sl] for contact information.
+কুবেরনেটস সম্প্রদায়টি তার কর্মপ্রবাহের উন্নতি করার জন্য সিমগুলিতে বিভক্ত হয়ে গেছে,
+একটি খুব বড় সম্প্রদায় প্রকল্প কী এবং আরও সহজেই পরিচালনা করুন। ডেভেলপাররা
+প্রতিটি সিগের মধ্যেই কুবেরনেটসের সেই অংশটির স্বায়ত্তশাসন এবং মালিকানা থাকে।
+কীভাবে SIGs এর সাথে ইন্টারঅ্যাক্ট করবেন তা বোঝা অবদানের একটি গুরুত্বপূর্ণ অঙ্গ
+কুবেরনেটসে যোগাযোগের তথ্যের জন্য [সাইনগুলির তালিকা] [স্লাই] দেখুন।
 
-### SIG structure
+### এসআইজি কাঠামো
 
-A SIG is an open, community effort.
+একটি সাইন একটি উন্মুক্ত, সম্প্রদায় প্রচেষ্টা
 
-Anybody is welcome to jump into a SIG and begin fixing issues, critique design 
-proposals, and review code. SIGs have regular [video meetings] which everyone 
-is welcome to attend. Each SIG has a Slack channel, meeting notes, and their own 
-documentation that is useful to read and understand. There is an entire SIG 
-([sig-contributor-experience]) devoted to improving your experience as a contributor. 
-If you have an idea for  improving the contributor experience, please consider 
-attending one of the Contributor Experience SIG's [weekly meetings].
+যে কোনও ব্যক্তিকে একটি SIG এ ঝাঁপিয়ে পড়া এবং সমালোচনা নকশা ফিক্সিং শুরু করতে স্বাগত জানানো হয়
+প্রস্তাবনা এবং পর্যালোচনা কোড। সাইনগুলির নিয়মিত [ভিডিও মিটিং] থাকে যা প্রত্যেকে
+আমরা স্বাগত জানাই। প্রতিটি সিআইএসের একটি স্ল্যাক চ্যানেল, মিটিং নোট এবং তাদের নিজস্ব থাকে
+ডকুমেন্টেশন যা পড়তে এবং বুঝতে দরকারী। একটি সম্পূর্ণ SIG আছে
+([এসআইজ-অবদানকারী-অভিজ্ঞতা]) অবদানকারী হিসাবে আপনার অভিজ্ঞতার উন্নতি করতে উত্সর্গীকৃত।
+অবদানকারীদের অভিজ্ঞতা উন্নত করার জন্য আপনার যদি ধারণা থাকে তবে দয়া করে বিবেচনা করুন
+সহযোগী অভিজ্ঞতার মধ্যে একটিতে উপস্থিত হওয়া সাইন এর [সাপ্তাহিক সভা] 
 
-### Find a SIG that is related to your contribution
+### আপনার অবদানের সাথে সম্পর্কিত এমন একটি এসআইজি সন্ধান করুন
 
-Finding the appropriate SIG for your contribution and adding a SIG label will 
-help you ask questions in the correct place and give your contribution higher 
-visibility and a faster community response.
+আপনার অবদানের জন্য উপযুক্ত এসআইজি সন্ধান করা এবং একটি সাইন লেবেল যুক্ত করা হবে
+আপনাকে সঠিক জায়গায় প্রশ্ন জিজ্ঞাসা করতে এবং আপনার অবদানকে আরও বেশি দিতে সহায়তা করে
+দৃশ্যমানতা এবং একটি দ্রুত সম্প্রদায় প্রতিক্রিয়া।
 
-For Pull Requests, the automatically assigned reviewer will add a SIG label 
-if you haven't already done so. 
+অনুরোধগুলির জন্য টানুন, স্বয়ংক্রিয়ভাবে নির্ধারিত পর্যালোচক একটি সাইন লেবেল যুক্ত করবেন
+আপনি যদি ইতিমধ্যে এটি না করে থাকেন।
 
-For Issues, please note that the community is working on a more automated workflow.
-Since SIGs do not directly map onto Kubernetes subrepositories, it may be 
-difficult to find which SIG your contribution belongs in. Review the 
-[list of SIGs][sl] to determine which SIG is most likely related to your 
-contribution.
+ইস্যুগুলির জন্য, দয়া করে নোট করুন যে সম্প্রদায়টি আরও বেশি স্বয়ংক্রিয় ওয়ার্কফ্লোতে কাজ করছে।
+যেহেতু সিগগুলি কুবেরনেটস সাব-পোপসিটিরিগুলিতে সরাসরি ম্যাপ করে না, এটি হতে পারে
+আপনার অবদানটি কোন স্বাক্ষরিত তা সন্ধান করা কঠিন the
+কোন চিহ্নগুলি সম্ভবত আপনার সাথে সম্পর্কিত তা নির্ধারণ করার জন্য [সাইনগুলির তালিকা] [স্লাই]
+অবদান.
 
-*Example:* if you are filing a CNI issue (that's [Container Networking Interface]) 
-you'd choose the [Network SIG]. Add the SIG label in a new comment on GitHub 
-by typing the following:
-```
-/sig network
-```
+* উদাহরণ: * আপনি যদি সিএনআই ইস্যু ফাইল করছেন তবে (এটি [কনটেইনার নেটওয়ার্কিং ইন্টারফেস])
+আপনি [নেটওয়ার্ক এসআইজ] বেছে নিতে পারেন। গিটহাবের নতুন মন্তব্যে সাইন লেবেল যুক্ত করুন
+নিম্নলিখিত টাইপ করে:
+`` `
+/ সিগ নেটওয়ার্ক
+`` `
+প্রতিটি সিগের README এ পৌঁছানোর জন্য সাইন নাম কলামের লিঙ্কটি অনুসরণ করুন।
 
-Follow the link in the SIG name column to reach each SIG's README. 
+বেশিরভাগ সিগস-এ গিটহাব টিমের একটি সেট থাকবে যা ট্যাগগুলিতে উল্লেখ করা যেতে পারে
+সমস্যাগুলিতে মন্তব্য করুন এবং উচ্চতর দৃশ্যমানতার জন্য অনুরোধগুলি টানুন। আপনি যদি নিশ্চিত না হন
+কোনও সমস্যার জন্য সঠিক SIG সম্পর্কে, আপনি [এসআইজি-অবদানকারী-অভিজ্ঞতা] চেষ্টা করতে পারেন,
+অথবা [স্ল্যাককে জিজ্ঞাসা করুন]।
 
-Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a 
-comment on issues and pull requests for higher visibility.  If you are not sure 
-about the correct SIG for an issue, you can try [SIG-contributor-experience], 
-or [ask in Slack].
+### এসআইজি দ্বারা নির্দিষ্ট অবদান নির্দেশিকা
 
-### SIG-specific contributing guidelines
-
-Some SIGs have their own `CONTRIBUTING.md` files, which may contain extra information 
-or guidelines in addition to these general ones. These are located in the SIG-specific 
-community directories:
+কিছু সংখ্যার নিজস্ব `CONTRIBUTING.md` ফাইল রয়েছে, এতে অতিরিক্ত তথ্য থাকতে পারে
+বা এই সাধারণগুলি ছাড়াও গাইডলাইন। এগুলি সাইন-নির্দিষ্টে অবস্থিত
+সম্প্রদায় নির্দেশিকা:
 
 - [`/sig-apps/CONTRIBUTING.md`](/sig-apps/CONTRIBUTING.md)
 - [`/sig-cli/CONTRIBUTING.md`](/sig-cli/CONTRIBUTING.md)
@@ -118,33 +116,33 @@ community directories:
 - [`/sig-storage/CONTRIBUTING.md`](/sig-storage/CONTRIBUTING.md)
 - [`/sig-windows/CONTRIBUTING.md`](/sig-windows/CONTRIBUTING.md)
 
-### File an Issue
+### একটি সমস্যা ফাইল করুন
 
-Not ready to contribute code, but see something that needs work?
-While the community encourages everyone to contribute code, it is also appreciated 
-when someone reports an issue. Issues should be filed under the appropriate Kubernetes 
-subrepository. For example, a documentation issue should be opened in 
-[kubernetes/website]. Make sure to adhere to the prompted submission guidelines 
-while opening an issue. Check the [issue triage guide] for more information.
+কোড অবদান রাখতে প্রস্তুত নয়, তবে এমন কিছু দেখুন যা কাজের প্রয়োজন?
+সম্প্রদায়টি কোড অবদানের জন্য সবাইকে উত্সাহিত করার পরেও এটি প্রশংসাযোগ্য
+যখন কেউ একটি সমস্যা রিপোর্ট। ইস্যুগুলি যথাযথ কুবেরনেটের অধীনে ফাইল করা উচিত
+subrepository। উদাহরণস্বরূপ, একটি ডকুমেন্টেশন ইস্যুটি খোলার দরকার
+[কুবারনেটস / ওয়েবসাইট]। অনুরোধ জানানো নির্দেশাবলী অনুসরণ করা নিশ্চিত করুন
+ইস্যু খোলার সময় আরও তথ্যের জন্য [সমস্যা সমাধানের গাইড] পরীক্ষা করুন।
 
-[Contributor Role Board]: https://discuss.kubernetes.io/c/contributors/role-board
-[k8s-ci-robot]: https://github.com/k8s-ci-robot
-[Non-Code Contributions Guide]: ./non-code-contributions.md
-[multiple repositories]: https://github.com/kubernetes/
-[kubernetes/kubernetes]: https://git.k8s.io/kubernetes
-[help wanted]: https://go.k8s.io/help-wanted
-[good first issue]: https://go.k8s.io/good-first-issue
-[extra assistance]:./help-wanted.md
+[কন্ট্রিবিউটর রোল বোর্ড]: https://discuss.kubernetes.io/c/contributors/role-board
+[k8s-ci-রোবট]: https://github.com/k8s-ci-robot
+[নন-কোড অবদান গাইড]: ./non-code-contributions.md
+[একাধিক সংগ্রহস্থল]: https://github.com/kubernetes/
+[কুবেরনেটস / কুবারনেটস]: https://git.k8s.io/kubernetes
+[সাহায্য চেয়েছিলেন]: https://go.k8s.io/help-wanted
+[ভাল প্রথম ইস্যু]: https://go.k8s.io/good-first-issue
+[অতিরিক্ত সহায়তা]:./help-wanted.md
 [sl]: /sig-list.md
-[video meetings]: https://kubernetes.io/community/
-[sig-contributor-experience]: /sig-contributor-experience/README.md
-[weekly meetings]: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit
-[container networking interface]: https://github.com/containernetworking/cni
-[network SIG]: http://git.k8s.io/community/sig-network
-[ask in Slack]: http://slack.k8s.io/
-[issue triage guide]: ./issue-triage.md
-[kubernetes/website]: https://github.com/kubernetes/website/issues
-[SIG Contributor Experience]: /sig-contributor-experience#contact
+[ভিডিও সভা]: https://kubernetes.io/community/
+[এসআইজি-অবদানকারী-অভিজ্ঞতা]: /sig-contributor-experience/README.md
+[সাপ্তাহিক সভা]: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit
+[কনটেইনার নেটওয়ার্কিং ইন্টারফেস]: https://github.com/containernetworking/cni
+[নেটওয়ার্ক এসআইজ]: http://git.k8s.io/community/sig-network
+[স্ল্যাক জিজ্ঞাসা করুন]: http://slack.k8s.io/
+[সমস্যা সমাধানের গাইড]: ./issue-triage.md
+[কুবারনেটস / ওয়েবসাইট]: https://github.com/kubernetes/website/issues
+[এসআইজ-অবদানকারী-অভিজ্ঞতা]: /sig-contributor-experience#contact
 
 
 
