@@ -10,6 +10,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Modernize logging in Kubernetes core components, allowing users to efficiently consume, process, store and analyse information stored in logs.
 
+The [charter](charter.md) defines the scope and governance of the Structured Logging Working Group.
+
 ## Stakeholder SIGs
 * SIG API Machinery
 * SIG Architecture
