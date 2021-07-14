@@ -95,11 +95,11 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
 ### server-binaries
 - **Owners:**
   - [kubernetes/kubernetes/cmd/cloud-controller-manager](https://github.com/kubernetes/kubernetes/blob/master/cmd/cloud-controller-manager/OWNERS)
-  - [kubernetes/kubernetes/cmd/controller-manager](https://github.com/kubernetes/kubernetes/blob/master/cmd/controller-manager/OWNERS)
   - [kubernetes/kubernetes/cmd/kube-apiserver](https://github.com/kubernetes/kubernetes/blob/master/cmd/kube-apiserver/OWNERS)
   - [kubernetes/kubernetes/cmd/kube-controller-manager](https://github.com/kubernetes/kubernetes/blob/master/cmd/kube-controller-manager/OWNERS)
   - [kubernetes/kubernetes/pkg/kubeapiserver](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubeapiserver/OWNERS)
   - [kubernetes/kubernetes/pkg/master](https://github.com/kubernetes/kubernetes/blob/master/pkg/master/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/controller-manager](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/controller-manager/OWNERS)
 ### server-crd
 - **Owners:**
   - [kubernetes/apiextensions-apiserver](https://github.com/kubernetes/apiextensions-apiserver/blob/master/OWNERS)
