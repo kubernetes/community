@@ -2,7 +2,9 @@
 
 reviewers:
   - sig-node-leads
+  - ehashman
 approvers:
   - sig-node-leads
+  - ehashman
 labels:
   - sig/node
