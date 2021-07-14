@@ -1,9 +1,8 @@
 # WG Structured Logging Charter
 
 This charter adheres to the conventions described in the [Kubernetes Charter README]
-and uses the Roles and Organization Management outlined in [sig-governance].
+and uses the Roles and Organization Management outlined in [wg-governance].
 
-[sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 
 ## Scope
@@ -25,7 +24,7 @@ scope.
 
 ### Out of scope
 
-- Logging of non-core Kubernetes components
+- Logging outside the kubernetes/kubernetes repository
 
 ## Stakeholders
 
@@ -54,10 +53,10 @@ The artifacts the group is supposed to deliver include:
 
 ## Roles and Organization Management
 
-This sig follows adheres to the Roles and Organization Management outlined in
-[sig-governance] and opts-in to updates and modifications to [sig-governance].
+This wg follows adheres to the Roles and Organization Management outlined in
+[wg-governance] and opts-in to updates and modifications to [wg-governance].
 
-[sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
+[wg-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md
 
 ## Timelines and Disbanding
 
