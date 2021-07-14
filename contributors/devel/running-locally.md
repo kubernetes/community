@@ -68,6 +68,7 @@ The `--depth=1` parameter is optional and will ensure a smaller download.
 
 ## Starting the cluster
 
+### Using local-up-cluster script
 In a separate tab of your terminal, run the following:
 
 ```sh
@@ -83,6 +84,8 @@ sudo ./hack/local-up-cluster.sh
 
 This will build and start a lightweight local cluster, consisting of a master and a single node. Press Control+C to shut it down.
 
+If the above command is executed on **MacOS** then the kubelet and the kube-proxy are not started. The reason being kubelet is not supported on Darwin. And when kube-proxy tries to spin up, it will wait for kubelet to start, which will not happen on Darwin.
+
 **Note:** If you've already compiled the Kubernetes components, you can avoid rebuilding them with the `-O` flag.
 
 ```sh
@@ -92,6 +95,30 @@ This will build and start a lightweight local cluster, consisting of a master an
 You can use the `./cluster/kubectl.sh` script to interact with the local cluster. `./hack/local-up-cluster.sh` will
 print the commands to run to point kubectl at the local cluster.
 
+### Using Kind
+kind is a tool for running local Kubernetes clusters using Docker container "nodes". kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI. For more information please check [kind](https://github.com/kubernetes-sigs/kind).
+
+To create a cluster from Kubernetes source:
+- ensure that `kind` is [installed](https://kind.sigs.k8s.io/docs/user/quick-start/#installation)
+- ensure that Kubernetes is cloned in `$(go env GOPATH)/src/k8s.io/kubernetes`
+- build a node image and create a cluster with:
+
+```sh
+kind build node-image
+kind create cluster --image kindest/node:latest
+```
+
+**Note:** If the Kubernetes is cloned in path other than `$(go env GOPATH)/src/k8s.io/kubernetes` you can build node-image by specifying --kube-root args with value as path to the kubernetes source.
+
+```sh
+kind build node-image --kube-root=/path/to/kubernetes/repo
+```
+
+After you have created cluster using `kind` you can set the `kubectl` context to `kind-kind` with:
+
+```sh
+./cluster/kubectl.sh cluster-info --context kind-kind
+```
 
 ## Running a container
 
