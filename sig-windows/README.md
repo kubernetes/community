@@ -65,6 +65,7 @@ The following [subprojects][subproject-definition] are owned by sig-windows:
   - [kubernetes-sigs/windows-testing](https://github.com/kubernetes-sigs/windows-testing/blob/master/OWNERS)
 ### windows-tools
 - **Owners:**
+  - [kubernetes-sigs/sig-windows-dev-tools](https://github.com/kubernetes-sigs/sig-windows-dev-tools/blob/master/OWNERS)
   - [kubernetes-sigs/sig-windows-tools](https://github.com/kubernetes-sigs/sig-windows-tools/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
