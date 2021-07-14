@@ -38,7 +38,7 @@ usergroups:
       - "Sladyn Nunes"
       - "Kunal Kushwaha"
       - "Bart Farrell"
-      - pensu91 
+      - pensu91
       - "Joel Barker"
       - Jason
 
@@ -207,3 +207,13 @@ usergroups:
       - robshelly
       - vladimirmukhin
       - wurbanski
+
+  - name: aws-account-users
+    long_name: Users of AWS Accounts
+    description: Group used to send AlertManager alerts around AWS accounts issues
+    channels:
+      - cluster-api-aws-alerts
+    members:
+      - naadir
+      - richcase
+      - sedefsavas
