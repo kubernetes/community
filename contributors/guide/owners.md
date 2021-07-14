@@ -40,6 +40,11 @@ OWNERS files are in YAML format and support the following keys:
     Allows the use case where `a/deep/nested/OWNERS` file prevents `a/OWNERS` file from having any
     effect on `a/deep/nested/bit/of/code`
 - `reviewers`: a list of GitHub usernames or aliases that are good candidates to `/lgtm` a PR
+- `security_contacts`: a map of usernames with contact info for security issues
+  - `username`: GitHub username, same value as used in `approvers` and `reviewers`
+    - `email`: E-mail address
+    - `slack_id`: Slack ID (_not_ Slack username/displayname as they are not guaranteed to be unique)
+  - Note: the contacts here are for use _by_ the **[Kubernetes PSC][PSC]**, and should not normally include PSC members. The PSC will use the contact information to coordinate security issues.
 
 The above keys constitute a *simple OWNERS configuration*.
 
@@ -56,6 +61,12 @@ reviewers:
   - alice
   - carol   # this is another comment
   - sig-foo # this is an alias
+security_contacts:
+  alice:
+    email: alice@mail.com
+    slack_id: U123ABC
+  dan:
+    slack_id: WABC1234
 ```
 
 #### Filters
@@ -317,3 +328,4 @@ Good examples of OWNERS usage:
 [chromium-owners]: https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md
 [github-codeowners]: https://help.github.com/articles/about-codeowners/
 [pr-workflow]: /contributors/guide/pull-requests.md#the-testing-and-merge-workflow
+[PSC]: https://github.com/kubernetes/security#product-security-committee-psc
