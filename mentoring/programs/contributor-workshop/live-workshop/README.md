@@ -1,9 +1,8 @@
-# New Contributor Workshops Resources
-
+# Live Workshops Resources
 
 ## Overview
 
-This folder contains the [handbook for the New Contributor Workshop Content Lead](./new-contributor-workshop-lead.md) as well as playbooks for each of the New Contributor Workshop sessions.
+This folder contains the [handbook for the New Contributor Workshop Content Lead](./new-contributor-workshop-lead.md) as well as playbooks for each of the Contributor Workshop sessions in a live setting.
 
 This workshop is held periodically by the Kubernetes Community, but materials and processes may be used at contributor focused summits and events anywhere.
 
