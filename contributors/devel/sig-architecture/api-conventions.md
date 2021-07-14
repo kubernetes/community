@@ -739,6 +739,13 @@ Incorporating the default values into the `Spec` ensures that `Spec` depicts the
 full desired state so that it is easier for the system to determine how to
 achieve the state, and for the user to know what to anticipate.
 
+Default values can be specified on a field using the `+default=` tag. Primitives
+will have their values directly assigned while structs will go through the
+JSON unmarshalling process. Fields that do not have an `omitempty` json tag may
+only default to the zero value of their corresponding type.
+
+Refer to [defaulting docs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#defaulting) for more information.
+
 API version-specific default values are set by the API server.
 
 ## Late Initialization
