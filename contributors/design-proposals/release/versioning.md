@@ -1,3 +1,7 @@
+This document does not reflect the current state and has been moved to the
+[kubernetes/sig-release](https://github.com/kubernetes/sig-release/blob/d1aab33/release-engineering/versioning.md)
+repository.
+
 # Kubernetes Release Versioning
 
 Reference: [Semantic Versioning](http://semver.org)
