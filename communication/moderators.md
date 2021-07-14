@@ -56,8 +56,8 @@ Primary moderators seats: 6
 | Carlos Panato       | @cpanato            | EMEA     | [CET - Central European Time](https://time.is/CET)      |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
 | Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Nabarun Pal         | @palnabarun         | APAC     | [IST - Indian Standard Time](https://time.is/India)     |
 | Nikhita Raghunath   | @nikhita            | APAC     | [IST - Indian Standard Time](https://time.is/India)     |
-| _Open_              | _Open_              |          |                                                         |
 
 #### Moderators Pro Tempore
 
