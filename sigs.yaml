@@ -2154,6 +2154,13 @@ sigs:
       slack: sig-security-docs
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-security/sig-security-docs/OWNERS
+  - name: security-tooling
+    description: Development and Enhancements of Security Tooling
+    contact:
+      slack: sig-security-tooling
+      mailing_list: kubernetes-security-tooling-private@googlegroups.com
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/sig-security/sig-security-tooling/OWNERS
 - dir: sig-service-catalog
   name: Service Catalog
   mission_statement: >
