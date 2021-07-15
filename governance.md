@@ -194,7 +194,7 @@ to its charter, will own the decision. In the case of extended debate
 or deadlock, decisions may be escalated to the Steering Committee,
 which is expected to be uncommon.
 
-The [KEP process] is being developed as a way to facilitate definition, agreement and communication of efforts that cross SIG boundaries.
+The [KEP process](https://github.com/kubernetes/enhancements/tree/master/keps#kubernetes-enhancement-proposals-keps) facilitates definition, agreement and communication of efforts that cross SIG boundaries.
 SIGs are encouraged to use this process for larger efforts.
 This process is also available for smaller efforts within a SIG.
 
