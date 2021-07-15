@@ -164,6 +164,8 @@ sigs:
       name: Maciej Szulik
       company: Red Hat
     emeritus_leads:
+    - github: mattfarina
+      name: Matt Farina
     - github: prydonius
       name: Adnan Abdulhussein
   meetings:

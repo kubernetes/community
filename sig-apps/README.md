@@ -28,6 +28,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 ## Emeritus Leads
 
+* Matt Farina (**[@mattfarina](https://github.com/mattfarina)**)
 * Adnan Abdulhussein (**[@prydonius](https://github.com/prydonius)**)
 
 ## Contact
