@@ -178,6 +178,7 @@ channels:
   - name: kr-users
   - name: kraken
   - name: krane
+  - name: krator
   - name: krew
   - name: krex
   - name: krustlet
