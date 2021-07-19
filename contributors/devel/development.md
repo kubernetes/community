@@ -461,12 +461,6 @@ run the tests, and then tear the cluster down.
 
 **Note:** Running all E2E tests takes a *very long time*!
 
-To run E2E tests, use this command:
-
-```sh
-make test-e2e
-```
-
 For more information on E2E tests, including methods for saving time
 by just running specific tests, read
 [End-to-End Testing in Kubernetes](./sig-testing/e2e-tests.md) and the
