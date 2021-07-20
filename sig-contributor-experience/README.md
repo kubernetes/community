@@ -70,6 +70,7 @@ Manages operations and policy for upstream community group communication platfor
 Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
 - **Owners:**
   - [kubernetes-sigs/contributor-tweets](https://github.com/kubernetes-sigs/contributor-tweets/blob/master/OWNERS)
+  - [kubernetes-sigs/lwkd](https://github.com/kubernetes-sigs/lwkd/blob/main/OWNERS)
   - [kubernetes/community/communication/marketing-team](https://github.com/kubernetes/community/blob/master/communication/marketing-team/OWNERS)
 - **Meetings:**
   - Contributor Comms - Upstream Marketing Team Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/596959769?pwd=TURBNlZPb3BEWVFmbWlCYXlMVVJiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
