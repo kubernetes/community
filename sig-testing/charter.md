@@ -97,7 +97,6 @@ This sig adheres to the Roles and Organization Management outlined in
 
 ### Deviations from [sig-governance]
 
-- Chairs also fulfill the role of Tech Lead
 - Proposing and making decisions _MAY_ be done without the use of KEPS so long
   as the decision is documented in a linkable medium. We prefer to use issues
   on [kubernetes/test-infra] to document technical decisions, and mailing list
@@ -109,7 +108,6 @@ This sig adheres to the Roles and Organization Management outlined in
 ### Subproject Creation
 
 Subprojects are created by Tech Leads following the process defined in [sig-governance]
-
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
