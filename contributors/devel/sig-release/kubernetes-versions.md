@@ -48,28 +48,28 @@ You may see version markers leveraged in a variety of places, including:
 
 You need a...
 
-### CI - cross build
+### CI - cross build version
 
-Use `gsutil cat gs://kubernetes-release-dev/ci/latest.txt` (`master` branch)
+Use `curl -Ls https://dl.k8s.io/ci/latest.txt` (`master` branch)
 
 OR
 
-`gsutil cat gs://kubernetes-release-dev/ci/latest-x.y.txt`, where `x` is the
+`curl -Ls https://dl.k8s.io/ci/latest-x.y.txt`, where `x` is the
 Kubernetes major version and `y` is the Kubernetes minor version (release branches).
 
-### CI - linux/amd64 (fast) build
+### CI - linux/amd64 (fast) build version
 
-Use `gsutil cat gs://kubernetes-release-dev/ci/latest-fast.txt` (**_only available
+Use `curl -Ls https://dl.k8s.io/ci/latest-fast.txt` (**_only available
 on `master` branch_**).
 
-### Release - Official release build
+### Release - Official release build version
 
-Use `gsutil cat gs://kubernetes-release/release/stable-x.y.txt`, where `x` is the
+Use `curl -Ls https://dl.k8s.io/release/stable-x.y.txt`, where `x` is the
 Kubernetes major version and `y` is the Kubernetes minor version.
 
-### Release - Pre-release build
+### Release - Pre-release build version
 
-Use `gsutil cat gs://kubernetes-release/release/latest-x.y.txt`, where `x` is the
+Use `curl -Ls https://dl.k8s.io/release/latest-x.y.txt`, where `x` is the
 Kubernetes major version and `y` is the Kubernetes minor version.
 
 ## Usage
@@ -79,7 +79,7 @@ Kubernetes major version and `y` is the Kubernetes minor version.
 All version markers have similar endpoints:
 
 ```console
-<gcs-bucket>/<directory>/<marker>
+<base-uri>/<directory>/<marker>
 ```
 
 Expected output is [semver](https://semver.org/spec/v2.0.0.html)-compliant
@@ -96,28 +96,41 @@ v1.20.0-alpha.0.391+575c4925be8c39
 Version markers are accessible via HTTP, so there are several ways to get them,
 depending on your use case.
 
-#### [gsutil](https://cloud.google.com/storage/docs/gsutil)
-
-```shell
-for version in latest latest-1.19 latest-1.18 latest-1.17 latest-1.16; do
-  echo ci/$version: $(gsutil cat gs://kubernetes-release-dev/ci/$version.txt);
-done
-ci/latest: v1.20.0-alpha.0.391+575c4925be8c39
-ci/latest-1.19: v1.19.0-rc.2.118+d01fde696783fa
-ci/latest-1.18: v1.18.7-rc.0.8+ec73e191f47b79
-ci/latest-1.17: v1.17.10-rc.0.10+79569e22b50897
-ci/latest-1.16: v1.16.14-rc.0.10+5e764419987f2e
-```
-
 #### curl/wget
 
-```console
-https://storage.googleapis.com/<gcs-bucket>/<directory>/<marker>
+The pattern to use is:
+
+```
+https://dl.k8s.io/<directory>/<marker>
 ```
 
+For example, this generates a list of copy-pastable curl commands for each marker:
 ```shell
-$ curl https://storage.googleapis.com/kubernetes-release-dev/ci/latest.txt
-v1.20.0-alpha.0.391+575c4925be8c39
+for p in ci release; do \
+  for v in "" -1 -1.21 -1.20 -1.19; do \
+    for t in latest stable; do \
+      m=$p/$t$v; echo curl -Ls https://dl.k8s.io/$m.txt: $(curl -Ls https://dl.k8s.io/$m.txt); \
+    done; 
+  done; 
+done | grep -v NoSuchKey
+```
+
+```
+curl -Ls https://dl.k8s.io/ci/latest.txt: v1.22.0-beta.2.39+33aba7ee025dfd
+curl -Ls https://dl.k8s.io/ci/latest-1.txt: v1.22.0-beta.2.39+33aba7ee025dfd
+curl -Ls https://dl.k8s.io/ci/latest-1.21.txt: v1.21.4-rc.0.8+e33079364f8f66
+curl -Ls https://dl.k8s.io/ci/latest-1.20.txt: v1.20.10-rc.0.3+c0f757a067f32a
+curl -Ls https://dl.k8s.io/ci/latest-1.19.txt: v1.19.14-rc.0.1+4900b04db38214
+curl -Ls https://dl.k8s.io/release/latest.txt: v1.22.0-beta.2
+curl -Ls https://dl.k8s.io/release/stable.txt: v1.21.3
+curl -Ls https://dl.k8s.io/release/latest-1.txt: v1.22.0-beta.2
+curl -Ls https://dl.k8s.io/release/stable-1.txt: v1.21.3
+curl -Ls https://dl.k8s.io/release/latest-1.21.txt: v1.21.4-rc.0
+curl -Ls https://dl.k8s.io/release/stable-1.21.txt: v1.21.3
+curl -Ls https://dl.k8s.io/release/latest-1.20.txt: v1.20.10-rc.0
+curl -Ls https://dl.k8s.io/release/stable-1.20.txt: v1.20.9
+curl -Ls https://dl.k8s.io/release/latest-1.19.txt: v1.19.14-rc.0
+curl -Ls https://dl.k8s.io/release/stable-1.19.txt: v1.19.13
 ```
 
 #### gcsweb
@@ -125,10 +138,20 @@ v1.20.0-alpha.0.391+575c4925be8c39
 Navigate via web browser to
 `https://gcsweb.k8s.io/gcs/<gcs-bucket>/<directory>/<marker>`.
 
+For CI builds, `<gcs-bucket>` is `k8s-release-dev`
+
 Example:
 
 ```console
-https://gcsweb.k8s.io/gcs/kubernetes-release-dev/ci
+$ open https://gcsweb.k8s.io/gcs/k8s-release-dev/ci
+```
+
+For release builds, `<gcs-bucket>` is `kubernetes-release`
+
+Example:
+
+```console
+$ open https://gcsweb.k8s.io/gcs/kubernetes-release/release
 ```
 
 ### Querying a build
@@ -138,116 +161,121 @@ contents of a Kubernetes build.
 
 Here's an example:
 
-```shell
-$ gsutil ls gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39
+```console
+$ gsutil ls gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/
 ```
 
 Output:
 
 <details>
 
-```console
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/SHA256SUMS
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/SHA256SUMS.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/SHA256SUMS.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/SHA512SUMS
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/SHA512SUMS.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/SHA512SUMS.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-darwin-amd64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-darwin-amd64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-darwin-amd64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-386.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-386.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-386.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-amd64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-amd64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-amd64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-arm.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-arm.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-arm.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-arm64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-arm64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-arm64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-ppc64le.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-ppc64le.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-ppc64le.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-s390x.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-s390x.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-linux-s390x.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-windows-386.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-windows-386.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-windows-386.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-windows-amd64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-windows-amd64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-client-windows-amd64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-manifests.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-manifests.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-manifests.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-amd64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-amd64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-amd64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-arm.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-arm.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-arm.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-arm64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-arm64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-arm64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-ppc64le.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-ppc64le.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-ppc64le.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-s390x.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-s390x.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-linux-s390x.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-windows-amd64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-windows-amd64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-node-windows-amd64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-amd64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-amd64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-amd64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-arm.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-arm.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-arm.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-arm64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-arm64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-arm64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-ppc64le.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-ppc64le.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-ppc64le.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-s390x.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-s390x.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-server-linux-s390x.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-src.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-src.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-src.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-darwin-amd64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-darwin-amd64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-darwin-amd64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-amd64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-amd64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-amd64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-arm.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-arm.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-arm.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-arm64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-arm64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-arm64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-ppc64le.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-ppc64le.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-ppc64le.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-s390x.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-s390x.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-linux-s390x.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-portable.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-portable.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-portable.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-windows-amd64.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-windows-amd64.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes-test-windows-amd64.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes.tar.gz
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes.tar.gz.sha256
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/kubernetes.tar.gz.sha512
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/bin/
-gs://kubernetes-release-dev/ci/v1.20.0-alpha.0.391+575c4925be8c39/extra/
+```
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/SHA256SUMS
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/SHA256SUMS.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/SHA256SUMS.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/SHA512SUMS
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/SHA512SUMS.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/SHA512SUMS.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-darwin-amd64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-darwin-amd64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-darwin-amd64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-darwin-arm64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-darwin-arm64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-darwin-arm64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-386.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-386.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-386.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-amd64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-amd64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-amd64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-arm.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-arm.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-arm.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-arm64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-arm64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-arm64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-ppc64le.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-ppc64le.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-ppc64le.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-s390x.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-s390x.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-linux-s390x.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-windows-386.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-windows-386.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-windows-386.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-windows-amd64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-windows-amd64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-client-windows-amd64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-manifests.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-manifests.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-manifests.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-amd64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-amd64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-amd64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-arm.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-arm.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-arm.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-arm64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-arm64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-arm64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-ppc64le.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-ppc64le.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-ppc64le.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-s390x.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-s390x.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-linux-s390x.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-windows-amd64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-windows-amd64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-node-windows-amd64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-amd64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-amd64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-amd64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-arm.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-arm.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-arm.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-arm64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-arm64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-arm64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-ppc64le.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-ppc64le.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-ppc64le.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-s390x.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-s390x.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-server-linux-s390x.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-src.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-src.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-src.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-darwin-amd64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-darwin-amd64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-darwin-amd64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-darwin-arm64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-darwin-arm64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-darwin-arm64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-amd64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-amd64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-amd64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-arm.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-arm.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-arm.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-arm64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-arm64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-arm64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-ppc64le.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-ppc64le.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-ppc64le.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-s390x.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-s390x.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-linux-s390x.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-portable.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-portable.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-portable.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-windows-amd64.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-windows-amd64.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes-test-windows-amd64.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes.tar.gz
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes.tar.gz.sha256
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/kubernetes.tar.gz.sha512
+gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/bin/
 ```
 
 </details>
@@ -261,13 +289,13 @@ Version markers are broken into two primary types: `CI` and `release` markers
 
 ### CI
 
-**GCS Bucket:** `kubernetes-release-dev`
+**GCS Bucket:** `k8s-release-dev`
 
 **Directory:** `ci`
 
 #### latest
 
-**Path:** `https://storage.googleapis.com/kubernetes-release-dev/ci/latest[-x.y].txt`
+**Path:** `https://dl.k8s.io/ci/latest[-x.y].txt`
 
 **kubekins-e2e `extract`:** `ci/latest[-x.y].txt`
 
@@ -278,7 +306,7 @@ This version marker exists for all active Kubernetes release branches.
 
 #### latest-fast
 
-**Path:** `https://storage.googleapis.com/kubernetes-release-dev/ci/latest-fast.txt`
+**Path:** `https://dl.k8s.io/ci/latest-fast.txt`
 
 **kubekins-e2e `extract`:** `ci/latest-fast.txt`
 
@@ -289,14 +317,14 @@ This version marker only exists for the `master` branch.
 
 #### **DEPRECATED** - generic
 
-**Path:** `https://storage.googleapis.com/kubernetes-release-dev/ci/k8s-<generic-version>.txt`
+**Path:** `https://dl.k8s.io/ci/k8s-<generic-version>.txt`
 
 **kubekins-e2e `extract`:** `ci/k8s-<generic-version>.txt`
 
 The following generic markers are available:
 
 - `k8s-master`
-- `k8s-beta`
+- `k8s-beta`*
 - `k8s-stable1`
 - `k8s-stable2`
 - `k8s-stable3`
@@ -321,7 +349,7 @@ future date.**
 
 #### Official
 
-**Path:** `https://storage.googleapis.com/kubernetes-release/release/stable-x.y.txt`
+**Path:** `https://dl.k8s.io/release/stable-x.y.txt`
 
 **kubekins-e2e `extract`:** `release/stable-x.y.txt`
 
@@ -333,7 +361,7 @@ had a minor (`x.y.0`) release.
 
 #### Pre-release
 
-**Path:** `https://storage.googleapis.com/kubernetes-release/release/latest-x.y.txt`
+**Path:** `https://dl.k8s.io/release/latest-x.y.txt`
 
 **kubekins-e2e `extract`:** `release/latest-x.y.txt`
 
