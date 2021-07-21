@@ -177,7 +177,7 @@ If you can't reproduce it:
 * Close the issue if both the parties agree that it could not be reproduced.
 
 If you need more information to further work on the issue:
-* Let the reporter know it by adding an issue comment followed by label `lifecycle/needs-information`.
+* Let the reporter know it by adding an issue comment. Include `/triage needs-information` in the comment to apply the `triage/needs-information` label.
 
 In all cases, if you do not get a response in 20 days then close the issue with an appropriate comment. If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, please leave a comment describing your findings.
 
