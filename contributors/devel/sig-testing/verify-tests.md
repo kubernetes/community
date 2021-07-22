@@ -161,5 +161,25 @@ kubectl uncordon
 kubectl wait
 kubectl top node
 ```
-And if the output looks good i.e. CLI follows all tested conventions the test passes.
 
+And if the output looks good i.e. CLI follows all tested conventions
+the test passes.
+
+
+## `verify-codegen`
+
+This script verifies if the code update is needed or not for specific
+sub-projects. It first verifies the correct Go version and creates Go
+path. The script checks for the updated code for below subprojects,
+
+```bash
+k8s.io/code-generator
+k8s.io/kube-aggregator
+k8s.io/sample-apiserver
+k8s.io/sample-controller
+k8s.io/apiextensions-apiserver
+k8s.io/metrics
+```
+
+Once it completes checking for code updates, later the script calls
+`update-codegen.sh` scripts.
