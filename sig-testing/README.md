@@ -26,6 +26,14 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
 
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
+* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
+* Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
+
 ## Emeritus Leads
 
 * Erick Fejta (**[@fejta](https://github.com/fejta)**)
