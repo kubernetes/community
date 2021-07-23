@@ -42,7 +42,7 @@ and opts-in to updates and modifications to [sig-governance].
 
 - Generic technical leads are not appropriate for this SIG because sub-projects maintain their processes
 - Chairs follow the Technical Leads process in the subproject creation process
-- Proposing and making decisions MAY be done without the use of KEPS so long as the decision is documented in a linkable medium.
+- Proposing and making decisions MAY be done without the use of KEPs so long as the decision is documented in a linkable medium.
 
 ### Subproject Creation
 
