@@ -1,0 +1,401 @@
+KUBERNETES - CORE CONCEPTS:-
+
+to run the image as pod - kubectl run nginx --image=nginx
+
+to get cluster info - kubectl cluster-info
+
+to get all running pods - kubectl get pods
+
+to get pod description - kubectl describe pod nginx
+
+to get where the pod is running and stuff - kubectl get pods -o wide
+
+dictonary is un ordered but list is ordered
+
+pod-definition.yml:
+apiVersion: v1
+kind: Pod
+metadata:
+   name: myapp-pod
+   labels:
+      app: myapp
+spec:
+  containers:
+     - name: nginx-container
+       image: nginx
+
+to create pod from yaml file-  kubectl create -f pod-definition.yml
+
+to delete pods or replicasets kubectl delete pods/replicasets <name>
+
+to forward the port - kubectl port-forward bondui-pod 4200:80
+
+if the definiton.yaml is not present and to get that so the we can edit run - kubectl get pod <pod-name> -o yaml > pod-definition.yaml
+
+ways to scale relicasets :-
+- change the number of replicas and run kubectl replace -f <filename>
+- or run kubectl scale --replicas=6 -f <filename>
+- or run kubectl scale --replicas=6 replicaset <name of replicaset>
+
+deployment file is same type as replicaset and works the same way. just kind changes from replicaset to deployment
+
+to get all the components run - kubectl get all
+
+to check the status of the rollout - kubectl rollout status deployment/bondui-deployment
+
+to check the history of rollouts - kubectl rollout history deployment/bondui-deployment
+
+updating the exsisting environment:-
+- by running apply command - kubectl apply -f <deployment file name>
+- running set image - kubectl set image deployment/bondui-deployment nginx=nginx:1.9.1
+
+reverting to your previous version - kubectl rollout undo deployment/bondui-deployment
+
+addition of --record records the command for the specific update/creation of command
+
+if there is any error in the update the container didnt come online . the brings n-1 pods  to working previous state and shows erro for the newly updated pods
+check p1.png in pictures/kube/
+ 
+and if u are rolling back to previous version in history the previous nuber will be removed and same record will be added in latest status. u can notice only if record the change with --record.
+
+namespace is the environment where the pods will be running
+there can be multiple namespce within same cluster. dev prod testing etc
+
+to get all namespaces - kubectl get namespace
+u access pods from different name space run - kubectl get pods --namespace=kube-system
+t see pods on all namespace - kubectl get pods --all-namespaces
+
+u can also specify the namespace in the definition file under metadata
+
+to create new namespace - kubectl create namespace dev
+
+to move to different name space - kubectl config set-context $(kubectl current context) --namespace=dev
+
+shortcuts to create definition file
+
+pods-
+kubectl run redid --image=redis:alpine --dry-run=client -o yaml > redis-definition.yaml
+include --port=8080 to expose container port.
+
+service -
+kubectl expose pod redis --port=6379 --name=redis -o yaml > redis-service.yaml
+
+deployment-
+kubectl create deployment webapp --image=kodekloud/webapp-color --replicas=3 --dry-run=client -o yaml > webapp-deployment.yaml
+u can include -n here itself to specify namespace
+
+namespace-
+kubectl create namespace dev-ns --dry-run=client -o yaml > namespace.yaml
+
+to create a service and pod in one step -kubectl run httpd --image=httpd:alpine --port=80 --expose
+
+CONFIGURATIONS:-
+command :[ "sleep2.0"] this is similar to entry point in docker and 
+args: ["10"] this is similiar to the args (these are specific to single containers)
+
+creating config map:
+imperative way (u can use  -o yaml > filename to craete the definition file and add --dry-run=client to just create file):
+kubectl create configmap <name> --from-literal=APP_COLOR=blue 
+to add multple literals add more "--from-literal=APP_COLOR=red"
+
+declarative way(file):= same structure instaed of spec its data and write key value pairs under data
+
+creating secret:
+imperative way (u can use  -o yaml > filename to craete the definition file and add --dry-run=client to just create file):
+kubectl create secret generic <name> --from-literal=DB_HOST=mysql
+to add multple literals add more "--from-literal=DB_USER=root" 
+
+declarative way(file):= same structure instaed of spec its data and write key value pairs under data. here the value is written in encoded format. to encode data in linux use ` echo -n text | base64 `
+and --decode flaf along with the above line decodes the hashed value input
+
+
+environment variable can be set in following way (these are specific to single containers)
+- key value
+env:
+   - name: APP_COLOR
+      value: "pink"
+
+-config map
+envFrom:
+   - configMapRef:
+         name: <name of config map specified within file>
+
+-secret
+envFrom:
+   - secretRef:
+         name: <name of config map specified within file>
+
+security can be implemeneted in 2 levels in the kubernetes, pod level and container level. if specified in both the places the security for container on container  level overrides pod level security.
+
+include securityContext under spec for pod level and under containers for container level. capabilities are only supported on the container level.
+securityContext:
+   runAsUser: 1000
+   capabilities: 
+      add: ["MAC_ADMIN"]
+
+Service Account 
+to create a service account - kubectl create serviceaccount <name>
+when u describe the serviceaccount u will get the token name. this token will be present under secrets and the value will be encoded
+u need to describe secret to view the token and use it
+ every pod has a default service account. u cant chnage it , if u want to change it u need to create a new one by specifying under spec.
+u can specify automountServiceAccountToken = false so that it diesnt attach service account by default.
+
+serviceAccountName: build-robot
+automountServiceAccountToken: false   //these values under spec of conatiner.
+
+resource request
+the resource required by a specific container can be set under conatiners
+resources:
+  requests:
+    memory: "1Gi"
+    cpu: 1
+  limits:
+    memory: "2Gi"
+    cpu: 2
+
+error crashloopbackoff means out of memory
+
+taints & tolerants
+taints are set on nodes and toleratants are set on Pods
+
+to taint a node -
+kubectl taint nodes <node-name> key=value:taint-effect
+there are 3 types of taint effects : NoSchedule, Prefer NoSchedule, NoExecute
+eg:- kubectl taint nodes node1 app=blue:NoSchedule
+
+tolerations can be defined under spec of pod definition -
+tolerations:
+  - key: "app"
+     operator: "Equal"
+     value: "blue"
+     effect: "Noschedule"
+
+to untaint a node -
+kubectl taint nodes master/controlplane node role.kubernetes.io/master:NoSchedule-
+
+NodeSelector & Node Afiinity
+
+to lable the node 
+kubectl label nodes node1 size=large
+
+to specify selector in node , include nodeSelector under spec
+nodeSelector:
+   size: large    //label
+
+nodeAffinity is specified under the spec of pod -
+nodeAffinity:
+   requiredDuringSchedulingIgnoreDuringExecution:
+      nodeSelectorTerms:
+      - matchExpression:
+        - key: size 
+           operator: Exsists / In/ NotIn
+           values:
+           - large
+           - medium
+
+2 types of affinity
+requiredDuringSchedulingIgnoreDuringExecution, 
+preferredDuringSchedulingIgnoreDuringExecution
+
+KUBERNETES - OBSERVABILTY
+
+to see pod condition: run kubectl describe and look for Conditions field
+once the ready condition under conditions is set to true then the application can we viewed from outside world 
+
+Readiness Probe : its specified under specific container
+for http test:
+readinessProbe:
+   httpGet:
+      path: /api/ready
+      port: 8080
+
+   initialDelaySeconds: 10      //if u want to do the test with delay
+   periodSeconds: 5               // how offen the test needs to be run (time gap)
+   failureThreshold: 8             // number of failures alllowed before stopping (by deafult this is set to 3. this is overiding it)
+
+TCP socket test
+readinessProbe:
+   tcpSocket:
+      port: 3306
+
+Exce command test
+readinessProbe:
+   exec:
+   command:        //command arguments need to be array format
+      - cat
+      - /app/is_ready
+
+Liveness Probe : its specified under specific container
+livenessProbe follows same syntax as readinessProbe just header is changed as specified here.
+
+Logs:
+to get logs of pod - kubectl logs -f <pod-name> 
+if there are multple containers in the pod then u need to specify container name along with pod-name
+- kubectl logs -f <pod-name> <container-name>
+
+mertic-service
+after running ` kubectl create -f . ` to start metric-service u can run
+- kubectl top nodes     //for nodes performance
+- kubectl top pods      //for pods performance
+ 
+KUBERNETES - MULTICONTAINER PODS
+
+patterns in multicontainer pods are Ambassador, Adapter, Sidecar
+ 
+Sidecar pattern is bringing up a logging or any type container along side with main container to send out logs to the central log server.
+
+Adapter pattern helps in formating the logs to standerdised format before sending to main loging server
+
+when u are using multiple databases one for dev /test/ prod u need to use these databases as per need and specific logic needs to be written . this can be outsourced to Ambassador container to take care of that.
+
+KUBERNETES - POD DESIGN 
+
+labels- labels are defined under metadata and can have key value pairs which will be used to filter using selector
+labels:
+  app: app1
+  type: front-end
+
+u can use --selector <label key value> along with get pods so that u get pods satisfying this label.
+
+eg: kubectl get pods --selector app=app1,env=prod    //u can provide multiple
+
+annotation: annotations are feild used to record internal build information version etc. it is specified under metadata
+annotations:
+   buildversion: 1.34
+
+Restart policy is specified under spec -
+restartPolicy: Always       //possible values Always ,Never, OnFailure 
+
+Jobs: jobs are like pods they are created to process some data or create some computation.
+by specifying completions under top spec , we are telling how many time the job need to be completed.
+Dont forget to specify restartPolicy because after complete by default it keeps restarting to keep pod alive as long a possible till threshold is reached.
+by specifying parallelism under the top spec , we are telling how many pods need to running parallely to complete the give tasks.
+
+KUBERNETES - NETWORKING
+
+service is used to connect the pod port to a custer port so that it can be accessed from outside world
+
+there are 3 types in Services, NodePort, ClusterIP , LoadBalancer
+
+shortcut-
+kubectl expose pod redis --port=6379 --name=redis -o yaml > redis-service.yaml
+
+structure :-
+apiVersion: v1 
+kind: Service
+metadata:
+  name: bondui-service
+spec:
+  type: ClusterIP
+  ports:
+    - name: bond-ui
+      targetPort: 80        //if u dont provide targetPort it assumed same as port
+      port: 80
+      nodePort: 30008    //if its not provided a free port will be assigned
+  selector:
+    app: bond-ui
+    type: front-end
+
+Ingress: 
+ there are 2 parts ingress controller and ingress resource.
+
+to create  a ingress controller u need a deployment for nginx-ingress-controller pod , service ,config map, service account for authentication. 
+
+ingress resource. which connects to service and routes communication
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-bondui
+spec:
+rules:
+  - host: foo.bar.com
+     http:
+       paths:
+         - path: /foo
+              backend:
+                 serviceName: bondui-service
+                 servicePort: 80
+
+incoming traffic is called ingress
+outgoing traffic is called egress
+
+network policy rules definition:
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: networkpolicy1
+spec:
+   podSelector:
+     matchLabels:
+        role: db
+   policyTypes:
+    - Ingress
+   ingress:
+   - from:
+      - podSelector:
+         - matchLables:
+              name: api-pod
+      ports:
+      - protocol: TCP
+         port: 3306
+ 
+to restrict pods from other namespaces accessing under from specify namespaceSelector.
+namspaceSelector:
+   matchLabels:
+      name: prod
+ and for ipBlocking under from 
+- ipBlock:
+    cidr: 192.168.5.10/32
+
+in case of egress , the under policy type add - Egress and below
+-egress:
+   -to:
+rest everything remains same as ingress
+
+KUBERNETES VOLUME
+
+to retain the data we use volume
+
+under spec of pod
+volumes:
+- name: data-volume
+   hostPath:
+      path: /data
+      type: Directory
+
+under container 
+volumeMounts:
+- mountPath: /opt    // path of data u wanna store 
+   name: data-volume
+
+persistant volume def
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: custom-volume
+spec:
+  persistentVolumeReclaimPolicy: Retain
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 50Mi
+  hostPath:
+    path: /opt/data
+
+supported modes in persistant volume
+ReadOnlyMany
+ReadWriteOnce
+ReadWriteMany
+
+persistant volume claim def
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: custom-volume-claim
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests: 
+       storage: 50Mi
