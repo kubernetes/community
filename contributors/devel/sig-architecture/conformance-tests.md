@@ -188,11 +188,7 @@ appropriate endpoint and credentials.
 2. Create your kind node image:
 
 ```sh
-# Without bazel
 kind build node-image
-
-# Or with bazel
-kind build node-image --type bazel
 ```
 
 3. Create your kind e2e cluster config kind-config-yaml:
@@ -225,21 +221,13 @@ kind create cluster --config kind-config.yaml --image kindest/node:latest -v4
 6. Create your e2e Kubernetes binary (from your Kubernetes src code):
 
 ```sh
-# Without bazel
 make WHAT="test/e2e/e2e.test"
-
-# Or with bazel
-bazel build //test/e2e:e2e.test
 ```
 
 7. Execute your tests:
 
 ```sh
-# Without bazel
 ./_output/bin/e2e.test -context kind-kind -ginkgo.focus="\[sig-network\].*Conformance" -num-nodes 2
-
-# Or with bazel
-./bazel-bin/test/e2e/e2e.test -context kind-kind -ginkgo.focus="\[sig-network\].*Conformance" -num-nodes 2
 ```
 
 ### Running Conformance Tests With kubetest

@@ -481,12 +481,6 @@ Developers who need to manage dependencies in the `vendor/` tree should read
 the docs on [using go modules to manage dependencies](/contributors/devel/sig-architecture/vendor.md).
 
 
-## Build with Bazel/Gazel
-
-Building with Bazel is currently experimental.  For more information,
-see [Build with Bazel].
-
-
 ## GitHub workflow
 
 To check out code to work on, please refer to [this guide](/contributors/guide/github-workflow.md).
@@ -503,4 +497,3 @@ To check out code to work on, please refer to [this guide](/contributors/guide/g
 [kubectl user guide]: https://kubernetes.io/docs/user-guide/kubectl
 [kubernetes.io]: https://kubernetes.io
 [mercurial]: http://mercurial.selenic.com/wiki/Download
-[Build with Bazel]: sig-testing/bazel.md
