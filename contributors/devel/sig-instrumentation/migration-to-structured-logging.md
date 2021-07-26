@@ -7,6 +7,84 @@ should be applicable at later stages or for other projects using `klog` logging 
 
 [Structured Logging KEP]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/1602-structured-logging
 
+## How to contribute
+
+### About the migration
+
+We would like for the Kubernetes community to settle on one preferred log message structure, that will be enforced by new klog methods. The goal of the migration is to switch C like format string logs to structured logs with explicit metadata about parameters.
+
+Migration within the structured logging working group happens in two different ways - organized & non-organized. 
+
+With organized, milestone-based, large-scale migration we try to target deliverables for a specific Kubernetes release. A good example of such an effort is the migration of the entire Kubelet code in the [#1.21 release](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.21.md#structured-logging-in-kubelet) 
+
+For non-organized migrations, the onus is, generally, on the individual contributors.
+
+* Organized Migration
+
+Organized migration is carried out in a two state cycle aligning with the cadence of Kubernetes releases. 
+
+In the first stage, we pick a particular migration milestone & create an issue to split the work into smaller chunks (for example, migrating just a single file). This ensures that the work can be easily picked up by multiple individual contributors and also avoids conflicts. After the migration activity is complete, we mark the directory as migrated to avoid regressions with the help of tooling that we have developed. 
+
+In the second milestone, we take a break from migration to analyze results & improve our existing processes. Adding structured information to logs is a very costly & time-consuming affair. Setting aside time in the second stage to collect feedback, analyze the impact of changes on the log volume & performance, and better our PR review process helps us avoid mistakes and duplicate efforts.
+
+* Non-organized migration
+
+As aforementioned, our non-organized migration efforts are spearheaded by individual contributors who need to migrate particular code sections to utilize new features early. 
+
+Efforts for Kubernetes components not yet marked for migration also fall under this category & we will try our best to review and accept as many PRs as we can, but being a small team, we can't give any time frames for the same. 
+
+The respective component owners have a final say in the acceptance of these contributions. Since this is a non-organized effort there is a high possibility that two contributors could be working on migrating the same code. 
+
+Before sending a PR our way, please ensure that there isn't one already in place created by someone else.
+
+### Current status
+
+* 1.21 Kubelet was migrated
+* 1.22 We are collecting feedback and making improvements to the migration process.
+
+## Sending a Structured Logging Migration Pull Request
+
+### Before creating the Pull Request
+
+* In case of any questions, please contact us on [#wg-structured-logging](https://kubernetes.slack.com/messages/wg-structured-logging) Slack channel.
+* Check list of [opened PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Aopen+label%3Awg%2Fstructured-logging+is%3Apr) to understand if someone is already working on this.
+* Reference: [Pull Request Process](https://www.kubernetes.dev/docs/guide/pull-requests/)
+
+### What to include in the Pull request
+
+To ensure that the PRs are reviewed in a timely manner, we require authors to provide the below information. This helps in proper triaging & reviewing by the concerned knowledgeable parties.
+
+* title: `Migrate <directory/file> to structured logging`
+* WGs: `structured-logging`
+* area: `logging`
+* priority: `important-longterm` for normal PR or `important-soon` for PRs that are part of organized migration of component. 
+* cc: @kubernetes/wg-structured-logging-reviews
+* kind: cleanup
+* release note: `Migrate <directory/file> to structured logging
+`
+To quickly add this information you can comment on PR with below commands:
+
+```
+/retitle Migrate <directory/file> to structured logging
+/wg structured-logging 
+/area logging
+/priority important-longterm
+/kind cleanup
+/cc @kubernetes/wg-structured-logging-reviews
+```
+And edit the top comment to include release note:
+Migrate <directory/file> to structured logging
+
+### Why my PR was rejected?
+
+Even though the Kubernetes project is organizing migration of Structured Logging, this doesn't mean that we are able to accept all the PRs that come our way. We reserve the right to reject the Pull Request in situations listed below:
+
+* Pull request is below minimum quality standards and clearly shows that author hasn't read the guide at all, for example PR just renames `Infof` to `InfoS`.
+* Pull request migrates components that the owners have decided against migrating. List of those components:
+   * kubeadm
+
+ 
+
 ## Goal of Alpha migration
 
 The first step is to introduce structure to the high percentage of logs generated in Kubernetes by changing only a

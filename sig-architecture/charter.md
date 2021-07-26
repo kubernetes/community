@@ -18,6 +18,8 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 - *Design principles*
 - *Deprecation policy*
 - *Kubernetes Enhancement Proposal (KEP) process*
+- *Upgrade and downgrade policy*
+- *Cross-component version support skew*
 
 #### Cross-cutting and Externally Facing Processes
 

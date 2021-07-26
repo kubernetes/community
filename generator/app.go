@@ -218,7 +218,7 @@ func (c *Context) Sort() {
 				group.Leadership.TechnicalLeads,
 				group.Leadership.EmeritusLeads} {
 				sort.Slice(people, func(i, j int) bool {
-					// This ensure OWNERS / OWNERS_ALIAS files are ordered by github
+					// This ensure OWNERS / OWNERS_ALIASES files are ordered by github
 					return people[i].GitHub < people[j].GitHub
 				})
 			}

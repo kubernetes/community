@@ -22,6 +22,9 @@ against the kubernetes/org repo.
 - [Core Repositories](#core-repositories)
   * [Goals](#goals-2)
   * [Rules](#rules-1)
+- [Maintenance Mode](#maintenance-mode)
+  * [Roadmap](#roadmap)
+  * [How-tos](#how-tos)
 - [Removing Repositories](#removing-repositories)
   * [Grounds for removal](#grounds-for-removal)
 - [FAQ](#faq)
@@ -135,6 +138,34 @@ ecosystem. Carries the endorsement of the Kubernetes community.
    * All OWNERS must be members of standing as defined by ability to vote in
      Kubernetes steering committee elections. in the Kubernetes community
    * Repository must be approved by SIG-Architecture
+
+## Maintenance Mode
+
+Projects that are considered "done" or not pursuing the development of new features but are relied on as a dependency can be considered in Maintenance mode.
+
+When in maintenance mode, the community can expect the following from the owners
+of the project/repository:
+
+  * No concrete plan on introduction of new features
+  * Incoming Issues and PR(s) will not be looked at in any regular cadence
+  * Minimal upkeep for project language and  dependency updates
+  * Security-related features/updates to be taken care of
+  * Explicit guidance around removal/transition to active state
+
+### Process for transitioning to maintenance mode
+
+  * SIG Chairs or TLs can open PRs to add the label and a preamble in the README.md
+ for the project.
+  * In addition, a notice will be sent out by the SIG Chairs or TLs to the [#k-dev]() 
+  mailing list with a fortnight for lazy consensus once the PR is opened.
+
+### Rules
+
+ * Steering committee liaisons can also recommend a project/repository to transition to
+ maintenance mode during the annual reporting process.
+ * When in doubt, SIG-Architecture will be the decision-maker.
+ * Specific members who can help with the process will be identified & added to the
+ OWNERS file for performing the required activities. 
 
 ## Removing Repositories
 

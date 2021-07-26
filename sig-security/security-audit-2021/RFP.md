@@ -65,7 +65,7 @@ If your proposal includes subcontractors, please include relevant details from t
 
 This RFP will be open until 4 proposals have been received.
 The RFP closing date will be set 2 calendar weeks after the fourth proposal is received.
-The working group will announce the vendor selection 2 calendar weeks after the RFP closes.
+The working group will announce the vendor selection 5 calendar weeks after the RFP closes.
 Upon receipt of the fourth proposal, the working group will update the RFP closure date and vendor selection date in this document.
 
 The working group will answer questions for the RFP period.
@@ -77,8 +77,9 @@ We understand scheduling can be complex but we prefer to have proposals include 
 Proposals should be submitted to kubernetes-security-audit-2021@googlegroups.com
 
 * 2021/02/08: RFP Open, Question period open
-* TBD: RFP Closes, Question period closes
-* TBD: The working group will announce vendor selection
+* 2021/06/22: Fourth proposal received
+* 2021/07/06: RFP Closes, Question period closes
+* 2021/08/10: The working group will announce vendor selection
 
 ## Methodology
 
@@ -161,7 +162,7 @@ The latest date to receive deliverables will be negotiated with the selected ven
 
 ### Which attack vectors are of most concern to the Working Group.
 
-1. The attack vector most concerned about is unauthenticated access to a cluster resulting in compromise of the [components in-scope](#project_goals_and_scope)
+1. The attack vector most concerned about is unauthenticated access to a cluster resulting in compromise of the [components in-scope](#project-goals-and-scope)
 2. Crossing namespace boundaries, an authenticated attacker being able to affect resources their credentials do not directly allow
 3. Any other attack vector that exists against the components in scope
 

@@ -1,4 +1,4 @@
-# 2021 SIG network annual report
+# 2020 SIG network annual report
 
 This report reflects back on CY 2020 and was written in April 2021.
 

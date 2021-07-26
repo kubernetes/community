@@ -181,7 +181,7 @@ A very rough breakdown of the $109k:
 Our community
 [readme](https://github.com/kubernetes/community/tree/master/wg-k8s-infra) is
 accurate if sparse. The
-[readme](https://github.com/kubernetes/k8s.io/blob/master/README.md) in k8s.io,
+[readme](https://github.com/kubernetes/k8s.io/blob/main/README.md) in k8s.io,
 which houses most of the actual infrastructure, is terse and slightly out of
 date (missing triage party)
 

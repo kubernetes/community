@@ -658,22 +658,45 @@ If you are adding a new API version to an existing group, you can copy the
 structure of the existing `pkg/apis/<group>/<existing-version>` and
 `staging/src/k8s.io/api/<group>/<existing-version>` directories.
 
+It is helpful to structure the PR in layered commits to make it easier for
+reviewers to see what has changed between the two versions:
+1. A commit that just copies the `pkg/apis/<group>/<existing-version>` and
+   `staging/src/k8s.io/api/<group>/<existing-version>` packages to the
+   `<new-version>`.
+1. A commit that renames `<existing-version>`to `<new-version>` in the new files.
+1. A commit that makes any new changes for `<new-version>`.
+1. A commit that contains the generated files from running `make generated_files`, `make update`, etc.
+
 Due to the fast changing nature of the project, the following content is probably out-dated:
-* You can control if the version is enabled by default by update
-[pkg/master/master.go](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/master/master.go#L381).
+* You must add the version to
+  [pkg/controlplane/instance.go](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/controlplane/instance.go#L662)
+  is be enabled by default for beta and stable versions, or disabled by default
+  for alpha versions.
 * You must add the new version to
-  [pkg/apis/group_name/install/install.go](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/apis/apps/install/install.go).
+  `pkg/apis/group_name/install/install.go` (for example, [pkg/apis/apps/install/install.go](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/apis/apps/install/install.go)).
 * You must add the new version to
-  [hack/lib/init.sh#KUBE_AVAILABLE_GROUP_VERSIONS](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/hack/lib/init.sh#L53).
+  [hack/lib/init.sh#KUBE_AVAILABLE_GROUP_VERSIONS](https://github.com/kubernetes/kubernetes/blob/v1.21.2/hack/lib/init.sh#L65).
 * You must add the new version  to
-  [hack/update-generated-protobuf-dockerized.sh](https://github.com/kubernetes/kubernetes/blob/v1.8.2/hack/update-generated-protobuf-dockerized.sh#L44)
-  to generate protobuf IDL and marshallers.
-* You must add the new version  to
-  [cmd/kube-apiserver/app#apiVersionPriorities](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/cmd/kube-apiserver/app/aggregator.go#L172)
+  [cmd/kube-apiserver/app#apiVersionPriorities](https://github.com/kubernetes/kubernetes/blob/v1.21.2/cmd/kube-apiserver/app/aggregator.go#L247).
 * You must setup storage for the new version in
-  [pkg/registry/group_name/rest](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/registry/authentication/rest/storage_authentication.go)
+  `pkg/registry/group_name/rest` (for example, [pkg/registry/authentication/rest](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/registry/authentication/rest/storage_authentication.go)).
 
 You need to regenerate the generated code as instructed in the sections above.
+
+### Testing
+
+Some updates to tests are required.
+
+* You must add the new storage version hash published in API discovery data to
+  [pkg/controlplane/storageversionhashdata/datago#GVRToStorageVersionHash](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/controlplane/storageversionhashdata/data.go#L44).
+    * Run `go test ./pkg/controlplane -run StorageVersion` to verify.
+* You must add the new version stub to the persisted versions stored in etcd in [test/integration/etcd/data.go](https://github.com/kubernetes/kubernetes/blob/v1.21.2/test/integration/etcd/data.go#L40).
+    * Run `go test ./test/integration/etcd` to verify
+* Sanity test the changes by bringing up a cluster (i.e.,
+local-up-cluster.sh, kind, etc) and running `kubectl get
+<resource>.<version>.<group>`.
+* [Integration tests](../sig-testing/integration-tests.md)
+are also good for testing the full CRUD lifecycle along with the controller.
 
 ## Making a new API Group
 

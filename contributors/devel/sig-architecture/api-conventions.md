@@ -479,11 +479,7 @@ ensure that GETs of individual objects remain bounded in time and space, these
 sets may be queried via separate API queries, but will not be expanded in the
 referring object's status.
 
-References to specific objects, especially specific resource versions and/or
-specific fields of those objects, are specified using the `ObjectReference` type
-(or other types representing strict subsets of it). Unlike partial URLs, the
-ObjectReference type facilitates flexible defaulting of fields from the
-referring object or other contextual information.
+For references to specific objects, see [Object references](#object-references).
 
 References in the status of the referee to the referrer may be permitted, when
 the references are one-to-one and do not need to be frequently updated,
@@ -906,6 +902,9 @@ It is okay to have the "{field}" component indicate the resource type. For examp
 a secret. However, this comes with the risk of the field being a misnomer in the case that the field is expanded to
 reference more than one type.
 
+In the case of a list of object references, the field should be of the format "{field}Refs", with the same guidance
+as the singular case above.
+
 ### Referencing resources with multiple versions
 
 Most resources will have multiple versions. For example, core resources
@@ -923,6 +922,40 @@ There are multiple scenarios where a desired resource may not exist. Examples in
 
 Controllers should be authored with the assumption that the referenced resource may not exist, and include
 error handling to make the issue clear to the user.
+
+### Validation of fields
+
+Many of the values used in an object reference are used as part of the API path. For example,
+the object name is used in the path to identify the object. Unsanitized, these values can be used to
+attempt to retrieve other resources, such as by using values with semantic meanings such as  `..` or `/`.
+
+Have the controller validate fields before using them as path segments in an API request, and emit an event to
+tell the user that the validation has failed.
+
+See [Object Names and IDs](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+for more information on legal object names.
+
+### Do not modify the referred object
+
+To minimize potential privilege escalation vectors, do not modify the object that is being referred to,
+or limit modification to objects in the same namespace and constrain the type of modification allowed
+(for example, the HorizontalPodAutoscaler controller only writes to the `/scale` subresource).
+
+### Minimize copying or printing values to the referrer object
+
+As the permissions of the controller can differ from the permissions of the author of the object
+the controller is managing, it is possible that the author of the object may not have permissions to
+view the referred object. As a result, the copying of any values about the referred object to the
+referrer object can be considered permissions escalations, enabling a user to read values that they
+would not have access to previously.
+
+The same scenario applies to writing information about the referred object to events.
+
+In general, do not write or print information retrieved from the referred object to the spec, other objects, or logs.
+
+When it is necessary, consider whether these values would be ones that the
+author of the referrer object would have access to via other means (e.g. already required to
+correctly populate the object reference).
 
 ### Object References Examples
 

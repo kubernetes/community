@@ -92,8 +92,8 @@ aliases:
     - stevekuznetsov
   sig-ui-leads:
     - floreks
-    - jeefy
     - maciaszczykm
+    - shu-mutou
   sig-usability-leads:
     - hpandeycodeit
     - morengab
@@ -152,7 +152,7 @@ aliases:
     - karenhchu
     - tashimi
     - tpepper
-  committee-product-security:
+  committee-security-response:
     - cjcullen
     - joelsmith
     - lukehinds

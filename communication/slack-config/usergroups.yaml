@@ -38,7 +38,7 @@ usergroups:
       - "Sladyn Nunes"
       - "Kunal Kushwaha"
       - "Bart Farrell"
-      - pensu91 
+      - pensu91
       - "Joel Barker"
       - Jason
 
@@ -71,10 +71,9 @@ usergroups:
       # - velero-dev
       - velero-users
     members:
-      - ashish-amarnath
-      - carlisia
       - Dave Smith-Uchida
-      - nrb
+      - jiangd
+      - yinw
       - zubron
 
   - name: youtube-admins
@@ -155,14 +154,15 @@ usergroups:
     channels:
       - odo
     members:
-      - adisky
       - cdrage
       - dharmit
-      - girishramnani
       - mohammedzee1000
       - mik-dass
       - prietyc123
       - kadel
+      - feloy
+      - anandrkskd
+      - rnapoles-rh
 
   - name: pinniped-dev
     long_name: Pinniped Development Team

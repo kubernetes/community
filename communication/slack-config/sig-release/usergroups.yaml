@@ -52,6 +52,7 @@ usergroups:
       - sig-release
     members:
       - annajung # 1.22 Release Team Lead Shadow
+      - cpanato # SIG Release Technical Lead
       - divya-mohan0209 # 1.22 Release Team Lead Shadow
       - erismaster # 1.22 Release Team Lead Shadow
       - guineveresaenger # 1.22 Release Team EA
@@ -60,6 +61,7 @@ usergroups:
       - justaugustus # SIG Release Chair
       - kikisdeliveryservice # 1.22 Release Team Lead Shadow
       - LappleApple # SIG Release Program Manager
+      - puerco # SIG Release Technical Lead
       - saschagrunert # SIG Release Chair
       - savitharaghunathan # 1.22 Release Team Lead
 
@@ -74,10 +76,12 @@ usergroups:
       - release-management
       - sig-release
     members:
+      - cpanato # SIG Release Technical Lead
       - hasheddan # SIG Release Technical Lead
       - jeremyrickard # SIG Release Technical Lead
       - justaugustus # SIG Release Chair
       - LappleApple # SIG Release Program Manager
+      - puerco # SIG Release Technical Lead
       - saschagrunert # SIG Release Chair
 
   # Should match the membership of the following teams at all times:

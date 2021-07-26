@@ -655,6 +655,14 @@ sigs:
     url: https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09
     archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
+  - description: Kustomize Bug Scrub
+    day: Wednesday
+    time: "09:00"
+    tz: PT (Pacific Time)
+    frequency: monthly
+    url: https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09
+    archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
   - description: Regular SIG Meeting
     day: Wednesday
     time: "09:00"
@@ -1236,6 +1244,7 @@ sigs:
       Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-tweets/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/lwkd/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/communication/marketing-team/OWNERS
     meetings:
     - description: Contributor Comms - Upstream Marketing Team Meeting
@@ -1308,7 +1317,7 @@ sigs:
     description: Creates and maintains shortcuts and automation apps running in the
       k8s.io domain.
     owners:
-    - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/k8s.io/main/OWNERS
   - name: mentoring
     description: Oversees and develops programs for helping contributors ascend the
       contributor ladder, including the New Contributor Workshops, Meet Our Contributors,
@@ -1941,12 +1950,6 @@ sigs:
       Documents and processes related to SIG Release
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
-  - name: hyperkube
-    description: |
-      Best-effort maintaining of hyperkube until 1.18 goes EOL 2021-04-30.
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.18/cluster/images/hyperkube/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/release/master/images/build/debian-hyperkube-base/OWNERS
   - name: kubernetes/repo-infra
     description: |
       Creates and maintains tools and templates for Kubernetes org repositories.
@@ -2379,6 +2382,16 @@ sigs:
     - github: stevekuznetsov
       name: Steve Kuznetsov
       company: Red Hat
+    tech_leads:
+    - github: BenTheElder
+      name: Benjamin Elder
+      company: Google
+    - github: spiffxp
+      name: Aaron Crickenberger
+      company: Google
+    - github: stevekuznetsov
+      name: Steve Kuznetsov
+      company: Red Hat
     emeritus_leads:
     - github: fejta
       name: Erick Fejta
@@ -2471,16 +2484,18 @@ sigs:
     chairs:
     - github: floreks
       name: Sebastian Florek
-      company: Loodse
-    - github: jeefy
-      name: Jeffrey Sica
-      company: Red Hat
+      company: Kubermatic
     - github: maciaszczykm
       name: Marcin Maciaszczyk
-      company: Loodse
+      company: Kubermatic
+    - github: shu-mutou
+      name: Shu Muto
+      company: NEC
     emeritus_leads:
     - github: danielromlein
       name: Dan Romlein
+    - github: jeefy
+      name: Jeffrey Sica
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
@@ -3162,13 +3177,13 @@ committees:
     teams:
     - name: code-of-conduct-committee
       description: General Discussion
-- dir: committee-product-security
-  name: Product Security
+- dir: committee-security-response
+  name: Security Response
   mission_statement: >
-    The Kubernetes Product Security Committee is the body that is responsible for
-    receiving and responding to reports of security issues in Kubernetes products.
+    The Kubernetes Security Response Committee is the body that is responsible for
+    receiving and responding to reports of security issues in Kubernetes projects.
 
-  label: product-security
+  label: security-response
   leadership:
     chairs:
     - github: cjcullen
@@ -3196,11 +3211,11 @@ committees:
   contact:
     private_mailing_list: security@kubernetes.io
     teams:
-    - name: product-security-committee
+    - name: security-response-committee
       description: General Discussion
   subprojects:
   - name: security
-    description: Policies and documentation for the Product Security Committee
+    description: Policies and documentation for the Security Response Committee
     owners:
     - https://raw.githubusercontent.com/kubernetes/security/master/OWNERS
 - dir: committee-steering
