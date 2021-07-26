@@ -161,8 +161,6 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 * **Flaky tests** [flaky-tests.md](sig-testing/flaky-tests.md)
 
-* **Build and test with Bazel** [bazel.md](sig-testing/bazel.md)
-
 ### SIG Node
 
 * **CRI: the Container Runtime Interface** [container-runtime-interface.md](sig-node/container-runtime-interface.md)
