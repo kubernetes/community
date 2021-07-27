@@ -1704,18 +1704,11 @@ sigs:
       name: Tim Hockin
       company: Google
   meetings:
-  - description: Gateway API Meeting (APAC Friendly)
+  - description: Gateway API Meeting
     day: Monday
     time: "15:00"
     tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/441530404
-    archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
-  - description: Gateway API Meeting (EMEA Friendly)
-    day: Tuesday
-    time: "10:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
+    frequency: weekly
     url: https://zoom.us/j/441530404
     archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
   - description: Network Policy API Meeting
