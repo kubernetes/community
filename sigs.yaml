@@ -2546,7 +2546,7 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
-    time: "9:00"
+    time: "10:00"
     tz: PT (Pacific Time)
     frequency: first Tuesday
     url: https://zoom.us/my/sigusability
