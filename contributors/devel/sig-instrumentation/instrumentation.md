@@ -160,8 +160,8 @@ constantly create new ones, with new names. However, they have
 a reasonable upper bound for a given size of infrastructure they refer to and
 its typical frequency of changes.
 
-In general, “external” labels like pod or node name do not belong in the
-instrumentation itself. They are to be attached to metrics by the collecting
+In general, “external” labels like pod name, node name (any object name), & namespace do not belong in the
+instrumentation itself (the exception being kube-state-metrics). They are to be attached to metrics by the collecting
 system that has the external knowledge ([blog post](https://www.robustperception.io/target-labels-are-for-life-not-just-for-christmas/)).
 
 ## Normalization
