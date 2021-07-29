@@ -172,7 +172,7 @@ type KMetadata interface {
 1. Change log functions to structured equivalent
 1. Remove string formatting from log message
 1. Name arguments
-1. Use `klog.KObj` and `klog.KRef` for Kubernetes object references
+1. Use `klog.KObj` and `klog.KRef` for Kubernetes objects
 1. Verify log output
 
 ## Change log functions to structured equivalent
