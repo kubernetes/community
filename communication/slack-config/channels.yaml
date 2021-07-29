@@ -24,6 +24,7 @@ channels:
   - name: bazel
   - name: bindings-discuss
   - name: bootkube
+    archived: true
   - name: brigade
   - name: camptocamp-devops-stack
   - name: cdk
