@@ -962,11 +962,6 @@ sigs:
       github: dims
       name: Davanum Srinivas
   subprojects:
-  - name: bootkube
-    contact:
-      slack: bootkube
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/bootkube/master/OWNERS
   - name: cluster-addons
     contact:
       slack: cluster-addons
