@@ -48,11 +48,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-cluster-lifecycle:
-### bootkube
-- **Owners:**
-  - [kubernetes-sigs/bootkube](https://github.com/kubernetes-sigs/bootkube/blob/master/OWNERS)
-- **Contact:**
-  - Slack: [#bootkube](https://kubernetes.slack.com/messages/bootkube)
 ### cluster-addons
 - **Owners:**
   - [kubernetes-sigs/cluster-addons](https://github.com/kubernetes-sigs/cluster-addons/blob/master/OWNERS)
