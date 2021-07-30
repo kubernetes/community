@@ -1306,11 +1306,6 @@ sigs:
       url: https://zoom.us/j/442435463?pwd=Rk1PWWpSSTJDaWJKdzRYb2EyTlkvZz09
       archive_url: https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
-  - name: k8s.io
-    description: Creates and maintains shortcuts and automation apps running in the
-      k8s.io domain.
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/k8s.io/main/OWNERS
   - name: mentoring
     description: Oversees and develops programs for helping contributors ascend the
       contributor ladder, including the New Contributor Workshops, Meet Our Contributors,
@@ -1554,6 +1549,59 @@ sigs:
   - name: structured-logging
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/logs/OWNERS
+- dir: sig-k8s-infra
+  name: K8s Infra
+  mission_statement: >
+    We are interested in the successful migration of all project infrastructure
+    from Google (or elsewhere) to the CNCF, such that the project is able to
+    sustainably operate itself without direct assistance from entities such as
+    Google or Red Hat.
+  charter_link: charter.md
+  label: k8s-infra
+  leadership:
+    chairs:
+    - github: ameukam
+      name: Arnaud Meukam
+      company: Alter Way
+    - github: dims
+      name: Davanum Srinivas
+      company: VMware
+    tech_leads:
+    - github: spiffxp
+      name: Aaron Crickenberger
+      company: Google
+    - github: thockin
+      name: Tim Hockin
+      company: Google
+    emeritus_leads:
+    - github: bartsmykla
+      name: Bart Smykla
+  meetings:
+  - description: Regular SIG Meeting
+    day: Wednesday
+    time: "20:00"
+    tz: UTC
+    frequency: bi-weekly
+    url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
+    archive_url: http://bit.ly/sig-k8s-infra-notes
+    recordings_url: http://bit.ly/sig-k8s-infra-playlist
+  contact:
+    slack: sig-k8s-infra
+    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+    teams:
+    - name: sig-k8s-infra
+      description: active contributors in sig-k8s-infra
+    - name: sig-k8s-infra-leads
+      description: sig-k8s-infra chairs and tech leads
+    liaison:
+      github: nikhita
+      name: Nikhita Raghunath
+  subprojects:
+  - name: k8s.io
+    description: Code and configuration to manage Kubernetes project
+      infrastructure, including various *.k8s.io sites
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/k8s.io/main/OWNERS
 - dir: sig-multicluster
   name: Multicluster
   mission_statement: >
@@ -2830,55 +2878,6 @@ workinggroups:
     liaison:
       github: derekwaynecarr
       name: Derek Carr
-- dir: wg-k8s-infra
-  name: K8s Infra
-  mission_statement: >
-    A Working Group dedicated to migrating Kubernetes project infrastructure over
-    to the CNCF, and the creation of teams and processes for ongoing maintenance.
-    Involves collaboration with multiple SIGs such as Architecture, Contributor Experience,
-    Release, and Testing, etc.
-
-  charter_link: charter.md
-  stakeholder_sigs:
-  - Architecture
-  - Contributor Experience
-  - Release
-  - Testing
-  label: k8s-infra
-  leadership:
-    chairs:
-    - github: ameukam
-      name: Arnaud Meukam
-      company: Alter Way
-    - github: dims
-      name: Davanum Srinivas
-      company: VMware
-    - github: spiffxp
-      name: Aaron Crickenberger
-      company: Google
-    emeritus_leads:
-    - github: bartsmykla
-      name: Bart Smykla
-  meetings:
-  - description: Regular WG Meeting
-    day: Wednesday
-    time: "20:00"
-    tz: UTC
-    frequency: bi-weekly
-    url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-    archive_url: http://bit.ly/wg-k8s-infra-notes
-    recordings_url: http://bit.ly/wg-k8s-infra-playlist
-  contact:
-    slack: wg-k8s-infra
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra
-    teams:
-    - name: wg-k8s-infra
-      description: active contributors in wg-k8s-infra
-    - name: wg-k8s-infra-leads
-      description: wg-k8s-infra leads
-    liaison:
-      github: nikhita
-      name: Nikhita Raghunath
 - dir: wg-multitenancy
   name: Multitenancy
   mission_statement: >
