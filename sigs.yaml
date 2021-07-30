@@ -2645,6 +2645,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
   - name: windows-tools
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-dev-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
 workinggroups:
 - dir: wg-api-expression
