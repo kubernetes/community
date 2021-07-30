@@ -418,7 +418,7 @@ channels:
   - name: wg-component-standard-mentorship
   - name: wg-data-protection
   - name: wg-iot-edge
-  - name: wg-k8s-infra
+  - name: sig-k8s-infra
   - name: wg-lts
     archived: true
   - name: wg-machine-learning

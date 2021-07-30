@@ -90,7 +90,7 @@ time.
 
 - Proposing and making decisions _MAY_ be done without the use of KEPS so long
   as the decision is documented in a linkable medium. We prefer to see written
-  decisions and reasoning on the [wg-k8s-infra@] mailing list or as issues
+  decisions and reasoning on the [sig-k8s-infra@] mailing list or as issues
   filed against [kubernetes/k8s.io]. We encourage the use of faster mediums
   such as slack of video conferences to come to consensus.
 
@@ -127,5 +127,5 @@ time.
 [lazy consensus]: http://en.osswiki.info/concepts/lazy_consensus
 
 [kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev
-[wg-k8s-infra@]: https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra
+[sig-k8s-infra@]: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
 [kubernetes/k8s.io]: https://git.k8s.io/k8s.io

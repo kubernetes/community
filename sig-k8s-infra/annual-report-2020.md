@@ -168,7 +168,7 @@ What remains (TODO: we need to update our issues to reflect this)
 **Have you produced any artifacts, reports, white papers to date?**
 
 We provide a [publicly viewable billing report](https://datastudio.google.com/u/0/reporting/14UWSuqD5ef9E4LnsCD9uJWTPv8MHOA3e)
-accessible to members of kubernetes-wg-k8s-infra@googlegroups.com.
+accessible to members of kubernetes-sig-k8s-infra@googlegroups.com.
 The project was given $3M/yr for 3 years, and our third year started ~August 2020.
 Our spend over the past 28 days has been ~$109K, which works out to ~$1.42M/yr.
 A very rough breakdown of the $109k:
@@ -179,7 +179,7 @@ A very rough breakdown of the $109k:
 **Is everything in your readme accurate? posting meetings on youtube?**
 
 Our community
-[readme](https://github.com/kubernetes/community/tree/master/wg-k8s-infra) is
+[readme](https://github.com/kubernetes/community/tree/master/sig-k8s-infra) is
 accurate if sparse. The
 [readme](https://github.com/kubernetes/k8s.io/blob/main/README.md) in k8s.io,
 which houses most of the actual infrastructure, is terse and slightly out of
