@@ -129,8 +129,9 @@ lists should support filtering by fields (see
    Examples: `PodList`, `ServiceList`, `NodeList`.
 
 Note that`kubectl` and other tools sometimes output collections of resources
-as `kind: List`. Keep in mind that `kind: List`" is not an API object but is
-simply used by those tools to present groups of mixed resources.
+as `kind: List`. Keep in mind that `kind: List`" is not part of the Kubernetes API; it is
+exposing an implementation detail from client-side code in those tools, used to
+handle groups of mixed resources.
 
 3. **Simple** kinds are used for specific actions on objects and for
 non-persistent entities.
