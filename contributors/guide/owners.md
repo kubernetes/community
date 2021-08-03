@@ -126,7 +126,7 @@ OWNERS_ALIASES files are in YAML format and support the following keys:
 We use aliases for groups instead of GitHub Teams, because changes to GitHub Teams are not
 publicly auditable.
 
-A sample OWNERS_ALISES file looks like:
+A sample OWNERS_ALIASES file looks like:
 
 ```yaml
 aliases:
