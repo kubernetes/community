@@ -121,7 +121,7 @@ implementation detail of object reconciliation.  The collection of controllers
 which comprise a working Kubernetes cluster is viewed as a single system which
 drives objects towards their specified desired state.  Metrics concerning a
 given object should be easily discoverable and comparable even when they are
-produced by different kinds of controllers.  Metrics describing the state of a built-in
+produced by different controllers.  Metrics describing the state of a built-in
 Kubernetes object take the form:
 
 ```

@@ -211,6 +211,23 @@ the process, you should call `os.Exit()` yourself.
 
 Fatal calls use a default exit code of 255. When migrating, please use an exit code of 1 and include an "ACTION REQUIRED:" release note.
 
+For example
+```go
+func validateFlags(cfg *config.Config, flags *pflag.FlagSet) error {
+	if err := cfg.ReadAndValidate(flags); err != nil {
+		klog.FatalF("Error in reading and validating flags %s", err)
+	}
+}
+```
+should be changed to
+```go
+func validateFlags(cfg *config.Config, flags *pflag.FlagSet) error {
+	if err := cfg.ReadAndValidate(flags); err != nil {
+		klog.ErrorS(err, "Error in reading and validating flags")
+	}
+}
+```
+
 ## Remove string formatting from log message
 
 With structured logging, log messages are no longer formatted, leaving argument marshalling up to the logging client
