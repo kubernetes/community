@@ -3024,6 +3024,7 @@ workinggroups:
     Modernize logging in Kubernetes core components, allowing users to efficiently
     consume, process, store and analyse information stored in logs.
 
+  charter_link: charter.md
   stakeholder_sigs:
   - API Machinery
   - Architecture
