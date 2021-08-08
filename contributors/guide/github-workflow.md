@@ -197,7 +197,7 @@ rebase](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History):
 
   ```
 
-3. Use a command line text editor to change the word `pick` to `fixup` for the commits you want to squash, then save your changes and continue the rebase:
+3. Use a command line text editor to change the word `pick` to `squash` for the commits you want to squash, then save your changes and continue the rebase:
 
   ```
   pick 2ebe926 Original commit
