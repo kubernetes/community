@@ -265,8 +265,8 @@ before being able to contribute effectively.
 [Kubernetes org]: https://github.com/kubernetes
 [kubernetes-dev@googlegroups.com]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
-[membership request]: https://github.com/kubernetes/org/issues/new?template=membership.md&title=REQUEST%3A%20New%20membership%20for%20%3Cyour-GH-handle%3E
-[membership template]: https://git.k8s.io/org/.github/ISSUE_TEMPLATE/membership.md
+[membership request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-membership&template=membership.yml&title=REQUEST%3A+New+membership+for+%3Cyour-GH-handle%3E
+[membership template]: https://github.com/kubernetes/org/blob/main/.github/ISSUE_TEMPLATE/membership.yml
 [New contributors]: /CONTRIBUTING.md
 [OWNERS]: /contributors/guide/owners.md
 [sigs.yaml]: /sigs.yaml
