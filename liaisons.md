@@ -53,7 +53,6 @@ of SIGs, WGs and UGs.
 | [WG Data Protection](wg-data-protection/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
 | [WG IoT Edge](wg-iot-edge/README.md) | Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**) |
 | [WG Multitenancy](wg-multitenancy/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
-| [WG Naming](wg-naming/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [WG Policy](wg-policy/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG Structured Logging](wg-structured-logging/README.md) | Davanum Srinivas (**[@dims](https://github.com/dims)**) |
 | [UG Big Data](ug-big-data/README.md) | Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**) |
