@@ -931,8 +931,8 @@ sigs:
     - github: neolit123
       name: Lubomir Ivanov
       company: VMware
-    - github: timothysc
-      name: Timothy St. Clair
+    - github: vincepri
+      name: Vince Prignano
       company: VMware
     tech_leads:
     - github: fabriziopandini
@@ -943,6 +943,8 @@ sigs:
       name: Lucas Käldström
     - github: roberthbailey
       name: Robert Bailey
+    - github: timothysc
+      name: Timothy St. Clair
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
