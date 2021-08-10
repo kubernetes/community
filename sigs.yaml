@@ -160,13 +160,12 @@ sigs:
     - github: kow3ns
       name: Kenneth Owens
       company: Brex
-    - github: mattfarina
-      name: Matt Farina
-      company: Rancher Labs
     - github: soltysh
       name: Maciej Szulik
       company: Red Hat
     emeritus_leads:
+    - github: mattfarina
+      name: Matt Farina
     - github: prydonius
       name: Adnan Abdulhussein
   meetings:
