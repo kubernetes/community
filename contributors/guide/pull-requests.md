@@ -1,5 +1,5 @@
 ---
-title: "Pull Request Process"
+title: "Pull Request Process" 
 weight: 5
 description: |
   Explains the process and best practices for submitting a pull request
@@ -17,7 +17,7 @@ It should serve as a reference for all contributors, and be useful especially to
   - [Marking Unfinished Pull Requests](#marking-unfinished-pull-requests)
   - [Pull Requests and the Release Cycle](#pull-requests-and-the-release-cycle)
   - [Comment Commands Reference](#comment-commands-reference)
-  - [Automation](#automation)
+  - [Automation](#automation) 
   - [How the e2e Tests Work](#how-the-e2e-tests-work)
 - [Why was my pull request closed?](#why-was-my-pull-request-closed)
 - [Why is my pull request not getting reviewed?](#why-is-my-pull-request-not-getting-reviewed)
