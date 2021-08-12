@@ -1498,30 +1498,22 @@ sigs:
     url: https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09
     archive_url: https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing
   - description: Regular Triage Meeting
-    day: Wednesday
-    time: "9:00"
+    day: Thursday
+    time: "9:30"
     tz: PT (Pacific Time)
-    frequency: biweekly
+    frequency: biweekly - alternating with regular meeting
     url: https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09
     archive_url: https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing
   contact:
     slack: sig-instrumentation
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation
     teams:
-    - name: sig-instrumentation-api-reviews
-      description: API Changes and Reviews
-    - name: sig-instrumentation-bugs
-      description: Bug Triage and Troubleshooting
-    - name: sig-instrumentation-feature-requests
-      description: Feature Requests
-    - name: sig-instrumentation-misc
-      description: General Discussion
-    - name: sig-instrumentation-pr-reviews
-      description: PR Reviews
-    - name: sig-instrumentation-proposals
-      description: Design Proposals
-    - name: sig-instrumentation-test-failures
-      description: Test Failures and Triage
+    - name: sig-instrumentation-approvers
+      description: SIG Top-level Approvers
+    - name: sig-instrumentation-leads
+      description: SIG Chairs and Tech Leads
+    - name: sig-instrumentation-members
+      description: SIG Membership Roster
     liaison:
       github: cblecker
       name: Christoph Blecker
