@@ -15,7 +15,7 @@ The [charter](charter.md) defines the scope and governance of the Instrumentatio
 ## Meetings
 * Regular SIG Meeting: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing).
-* Regular Triage Meeting: [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+* Regular Triage Meeting: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09) (biweekly - alternating with regular meeting). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing).
 
 ## Leadership
@@ -42,13 +42,9 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Finstrumentation)
 - GitHub Teams:
-    - [@kubernetes/sig-instrumentation-api-reviews](https://github.com/orgs/kubernetes/teams/sig-instrumentation-api-reviews) - API Changes and Reviews
-    - [@kubernetes/sig-instrumentation-bugs](https://github.com/orgs/kubernetes/teams/sig-instrumentation-bugs) - Bug Triage and Troubleshooting
-    - [@kubernetes/sig-instrumentation-feature-requests](https://github.com/orgs/kubernetes/teams/sig-instrumentation-feature-requests) - Feature Requests
-    - [@kubernetes/sig-instrumentation-misc](https://github.com/orgs/kubernetes/teams/sig-instrumentation-misc) - General Discussion
-    - [@kubernetes/sig-instrumentation-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-instrumentation-pr-reviews) - PR Reviews
-    - [@kubernetes/sig-instrumentation-proposals](https://github.com/orgs/kubernetes/teams/sig-instrumentation-proposals) - Design Proposals
-    - [@kubernetes/sig-instrumentation-test-failures](https://github.com/orgs/kubernetes/teams/sig-instrumentation-test-failures) - Test Failures and Triage
+    - [@kubernetes/sig-instrumentation-approvers](https://github.com/orgs/kubernetes/teams/sig-instrumentation-approvers) - SIG Top-level Approvers
+    - [@kubernetes/sig-instrumentation-leads](https://github.com/orgs/kubernetes/teams/sig-instrumentation-leads) - SIG Chairs and Tech Leads
+    - [@kubernetes/sig-instrumentation-members](https://github.com/orgs/kubernetes/teams/sig-instrumentation-members) - SIG Membership Roster
 - Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 
 ## Subprojects
