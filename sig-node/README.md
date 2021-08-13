@@ -15,7 +15,9 @@ The [charter](charter.md) defines the scope and governance of the Node Special I
 ## Meetings
 * Regular SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing).
-  * [Meeting recordings](https://www.youtube.com/watch?v=FbKOI9-x9hI&list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
+* Weekly CI/Triage Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1fb-ugvgdSVIkkuJ388_nhp2pBTy_4HEVg5848Xy7n5U/edit).
 
 ## Leadership
 
@@ -36,36 +38,44 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-node-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-node-pr-reviews) - PR Reviews
     - [@kubernetes/sig-node-proposals](https://github.com/orgs/kubernetes/teams/sig-node-proposals) - Design Proposals
     - [@kubernetes/sig-node-test-failures](https://github.com/orgs/kubernetes/teams/sig-node-test-failures) - Test Failures and Triage
+- Steering Committee Liaison: Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-node:
 ### cri-api
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/cri-api/master/OWNERS
+  - [kubernetes/cri-api](https://github.com/kubernetes/cri-api/blob/master/OWNERS)
 ### cri-tools
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
+  - [kubernetes-sigs/cri-tools](https://github.com/kubernetes-sigs/cri-tools/blob/master/OWNERS)
 ### frakti
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/frakti/master/OWNERS
+  - [kubernetes/frakti](https://github.com/kubernetes/frakti/blob/master/OWNERS)
 ### kubelet
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubelet/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
+  - [kubernetes/kubernetes/cmd/kubelet](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubelet/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubelet](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/OWNERS)
 ### node-api
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/node-api/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/node-api/master/OWNERS
+  - [kubernetes/api/node](https://github.com/kubernetes/api/blob/master/node/OWNERS)
 ### node-feature-discovery
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery-operator/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/OWNERS
+  - [kubernetes-sigs/node-feature-discovery-operator](https://github.com/kubernetes-sigs/node-feature-discovery-operator/blob/master/OWNERS)
+  - [kubernetes-sigs/node-feature-discovery](https://github.com/kubernetes-sigs/node-feature-discovery/blob/master/OWNERS)
 ### node-problem-detector
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
+  - [kubernetes/node-problem-detector](https://github.com/kubernetes/node-problem-detector/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
+### noderesourcetopology-api
+- **Owners:**
+  - [kubernetes/noderesourcetopology-api](https://github.com/kubernetes/noderesourcetopology-api/blob/master/OWNERS)
+### security-profiles-operator
+- **Owners:**
+  - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/master/OWNERS)
+- **Contact:**
+  - Slack: [#security-profiles-operator](https://kubernetes.slack.com/messages/security-profiles-operator)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

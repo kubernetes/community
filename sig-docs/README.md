@@ -13,14 +13,20 @@ Covers documentation, doc processes, and doc publishing for Kubernetes.
 The [charter](charter.md) defines the scope and governance of the Docs Special Interest Group.
 
 ## Meetings
-* APAC SIG Meeting: [Wednesdays at 02:00 UTC](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit) (monthly - Wednesday, after the fourth Tuesday, every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=02:00&tz=UTC).
+* APAC SIG Meeting: [Wednesdays at 01:00 UTC](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit) (monthly - Wednesday, after the fourth Tuesday, every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=01:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 * Korean Team Meeting: [Thursdays at 13:00 UTC](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLAOP7m08QDCWZ7RwGca6cU4vzrOMw3ht7).
+* Localization Subgroup Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 * Regular SIG Meeting: [Tuesdays at 17:30 UTC](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit) (weekly - except fourth Tuesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
+* Spanish Team Meeting: [Tuesdays at 15:30 UTC](https://zoom.us/j/95918289494?pwd=Wk9Oa0xZUkFXSDV5OTFoZEZsTURCZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1jOTK1tqBRwlNQJUB88wfDnGxpdInxMJ7lIFDZy9cMGY).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 
 ## Leadership
@@ -28,9 +34,9 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jim Angel (**[@jimangel](https://github.com/jimangel)**), General Motors
+* Irvi Aini (**[@irvifa](https://github.com/irvifa)**), Spotify
+* Jim Angel (**[@jimangel](https://github.com/jimangel)**), Google
 * Kaitlyn Barnard (**[@kbarnard10](https://github.com/kbarnard10)**), Kong
-* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -45,6 +51,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**)
 * Andrew Chen (**[@chenopis](https://github.com/chenopis)**)
 * Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**)
+* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**)
 
 ## Contact
 - Slack: [#sig-docs](https://kubernetes.slack.com/messages/sig-docs)
@@ -67,19 +74,20 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-docs-pt-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) - Portuguese language content
     - [@kubernetes/sig-docs-uk-owners](https://github.com/orgs/kubernetes/teams/sig-docs-uk-owners) - Ukrainian language content
     - [@kubernetes/sig-docs-zh-owners](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) - Chinese language content
+- Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-docs:
 ### kubernetes-blog
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
+  - [kubernetes/website/content/en/blog](https://github.com/kubernetes/website/blob/master/content/en/blog/OWNERS)
 ### reference-docs
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/reference-docs/master/OWNERS
+  - [kubernetes-sigs/reference-docs](https://github.com/kubernetes-sigs/reference-docs/blob/master/OWNERS)
 ### website
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+  - [kubernetes/website](https://github.com/kubernetes/website/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

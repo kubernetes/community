@@ -14,13 +14,14 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 ## Members
 
-* Aeva van der Veen (**[@AevaOnline](https://github.com/AevaOnline)**), Microsoft
-* Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**), Stripe
-* Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**), Microsoft
-* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Apple
+* Aeva Black (**[@AevaOnline](https://github.com/AevaOnline)**), Microsoft
+* Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), CNCF
+* Karen Chu (**[@karenhchu](https://github.com/karenhchu)**), Microsoft
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
+* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
 
 ## Contact
+- Slack: [#code-of-conduct](https://kubernetes.slack.com/messages/code-of-conduct)
 - Private Mailing List: conduct@kubernetes.io
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fcode-of-conduct)
 - GitHub Teams:
@@ -28,20 +29,37 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
+
+## Reporting An Incident
+
+Please email conduct@kubernetes.io to initiate an incident report. **_Please do not make reports via our public slack channel._**
+
+Our [Incident Report Handling Procedures](incident-process.md) describes how we handle reports while protecting the safety and confidentiality of all involved parties.
+
 ## Terms
 
 The members and their terms are as follows:
 
-### Term ends on August 7, 2020
+### Term ends on August 7, 2021
+
+- Aeva Black (Microsoft)
+- Tasha Drew (VMware)
+
+### Term ends on August 7, 2022
+
+- Karen Chu (Microsoft)
+- Celeste Horgan (CNCF)
+- Tim Pepper (VMware)
+
+Please see the [bootstrapping document](./bootstrapping-process.md) and [election process guidelines](election.md) for more information on how members are picked and their responsibilities.
+
+## Emeritus Committee Members
+
+The Code of Conduct Committee sincerely thanks our emeritus committee members for their contributions.
+
 - Jaice Singer Dumars (Google)
 - Jennifer Rondeau (Stripe)
 - Carolyn Van Slyck (Microsoft)
+- Paris Pittman (Apple)
 
-### Term ends on August 7, 2021
-- Aeva van der Veen (Microsoft)
-- Tasha Drew (VMWare)
-
-Please see the [bootstrapping document](./bootstrapping-process.md) for more information on how members are picked, their responsibilities, and how the committee will initially function.
-
-_More information on conflict resolution process to come in the near future. For now, any Code of Conduct or Code of Conduct Committee concerns can be directed to <conduct@kubernetes.io>_.
 <!-- END CUSTOM CONTENT -->

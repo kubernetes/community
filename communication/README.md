@@ -38,7 +38,7 @@ on these platforms.
 
 ### Appropriate Content for Community Resources
 
-All communications properties are under the [Kubernetes code of conduct]. 
+All communications properties are under the [Kubernetes code of conduct].
 Additionally, these resources are for the contributors and users of Kubernetes; commercial usage of these properties is heavily moderated.
 Note that commercial content is allowed, unsolicited commercial content mostly is NOT:
 
@@ -50,7 +50,7 @@ Examples of inappropriate content:
 Examples of appropriate content:
 - Asking about commercial products in an appropriate channel. For example most clouds have a channel in Slack, asking how to use GKE on the GKE channel or AKS on the Azure channels is fine.
 - "Does anyone have experience with project foo?" is fine
-- Some OSS projects are also hosted on the Kubernetes Slack that also have a commercial offering, these are allowed. 
+- Some OSS projects are also hosted on the Kubernetes Slack that also have a commercial offering, these are allowed.
 
 ## Decisions Are Made Here
 
@@ -79,7 +79,7 @@ We talk a lot, too.
 Our real-time platform with Kubernetes enthusiasts spread across 250+ channels.
 Owned and operated by sig-contributor-experience.
 
-[Join] | [Slack Guidelines] | [slack moderators] | [#kubernetes-dev]
+[Join] | [Slack Guidelines] | [slack moderators] | [#kubernetes-contributors]
 
 Pro-tip: If you want to add a new channel, simply file a request following
 [these instructions].
@@ -107,6 +107,10 @@ We use Zoom for all of our community group meetings and contributor programs. -
 
 We keep a [shared calendar] with all of our community group meetings. If you'd
 like a contributor event published, please reach out to [#sig-contribex] on slack.
+
+### Website
+
+Documentation is published at https://kubernetes.io - [website guidelines]
 
 ### Social Media & Blogs
 
@@ -150,6 +154,8 @@ resources.
 - [kubeweekly] - owned by cncf and curated by community members listed on the site.
 Collection of news, blogs, talks, and events for all things Kubernetes.
 send submissions to kubeweekly@cncf.io
+- [LWKD] - weekly newsletter that summarizes changes to Kubernetes code, development,
+ and release schedules.  Written by two members of SIG-Contribex.
 
 ### Conferences, Meetups, Summits, and Face to Face Meetings
 
@@ -173,7 +179,7 @@ place!
 
 
 [Kubernetes Blog]: https://kubernetes.io/blog/
-[shared calendar]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com&ctz=America/Los_Angeles
+[shared calendar]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [Kubernetes code of conduct]: /code-of-conduct.md
 [events]: https://www.cncf.io/events/
 [file an issue]: https://github.com/kubernetes/kubernetes/issues/new
@@ -182,9 +188,10 @@ place!
 [Discuss Kubernetes]: https://discuss.kubernetes.io
 [Join]: http://slack.k8s.io
 [Slack Guidelines]: /communication/slack-guidelines.md
-[10am US Pacific Time]: https://www.google.com/search?q=1000+am+in+pst
+[10am US Pacific Time]: https://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29
 [troubleshooting guide]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
 [@kubernetesio]: https://twitter.com/kubernetesio
+[website guidelines]: ./website-guidelines.md
 [Josh Berkus]: https://github.com/jberkus
 [zoom]: https://zoom.us/my/kubernetescommunity
 [k-dev moderators]: ./moderators.md#kubernetes-dev
@@ -214,7 +221,8 @@ place!
 [the doc]: /events/office-hours.md
 [moderators]: ./moderators.md
 [slack moderators]: ./moderators.md#slack
-[#kubernetes-dev]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
+[#kubernetes-contributors]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
 [#sig-contribex]: https://app.slack.com/client/T09NY5SBT/C1TU9EB9S
 [#office-hours]: https://app.slack.com/client/T09NY5SBT/C6RFQ3T5H
 [office-hours]: /events/office-hours.md
+[LWKD]: https://lwkd.info

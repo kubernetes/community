@@ -13,7 +13,13 @@ Covers kubectl and related tools. We focus on the development and standardizatio
 The [charter](charter.md) defines the scope and governance of the CLI Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+* Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
+* Kustomize Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
+* Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
 
@@ -22,6 +28,7 @@ The [charter](charter.md) defines the scope and governance of the CLI Special In
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Amazon
 * Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 
@@ -29,7 +36,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Google
+* Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**), Apple
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 
 ## Emeritus Leads
@@ -50,37 +57,42 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-cli-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-cli-pr-reviews) - PR Reviews
     - [@kubernetes/sig-cli-proposals](https://github.com/orgs/kubernetes/teams/sig-cli-proposals) - Design Proposals
     - [@kubernetes/sig-cli-test-failures](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) - Test Failures and Triage
+- Steering Committee Liaison: Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**)
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-cli:
 ### cli-experimental
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cli-experimental/master/OWNERS
+  - [kubernetes-sigs/cli-experimental](https://github.com/kubernetes-sigs/cli-experimental/blob/master/OWNERS)
 ### cli-sdk
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/cli-runtime/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cli-runtime/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/sample-cli-plugin/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/sample-cli-plugin/master/OWNERS
+  - [kubernetes/cli-runtime](https://github.com/kubernetes/cli-runtime/blob/master/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/cli-runtime](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cli-runtime/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/sample-cli-plugin](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/sample-cli-plugin/OWNERS)
+  - [kubernetes/sample-cli-plugin](https://github.com/kubernetes/sample-cli-plugin/blob/master/OWNERS)
 ### cli-utils
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cli-utils/master/OWNERS
+  - [kubernetes-sigs/cli-utils](https://github.com/kubernetes-sigs/cli-utils/blob/master/OWNERS)
 ### krew
 Plugin manager for kubectl.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/krew/master/OWNERS
+  - [kubernetes-sigs/krew](https://github.com/kubernetes-sigs/krew/blob/master/OWNERS)
 ### krew-index
 Centralized plugin index for krew.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
+  - [kubernetes-sigs/krew-index](https://github.com/kubernetes-sigs/krew-index/blob/master/OWNERS)
 ### kubectl
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
+  - [kubernetes/kubectl](https://github.com/kubernetes/kubectl/blob/master/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubectl](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubectl/OWNERS)
+### kui
+Hybrid command-line/UI development experience for cloud-native development
+- **Owners:**
+  - [kubernetes-sigs/kui](https://github.com/kubernetes-sigs/kui/blob/master/OWNERS)
 ### kustomize
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
+  - [kubernetes-sigs/kustomize](https://github.com/kubernetes-sigs/kustomize/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#kustomize](https://kubernetes.slack.com/messages/kustomize)
 

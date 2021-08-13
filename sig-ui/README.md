@@ -22,26 +22,28 @@ The [charter](charter.md) defines the scope and governance of the UI Special Int
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Sebastian Florek (**[@floreks](https://github.com/floreks)**), Loodse
-* Jeffrey Sica (**[@jeefy](https://github.com/jeefy)**), Red Hat
-* Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**), Loodse
+* Sebastian Florek (**[@floreks](https://github.com/floreks)**), Kubermatic
+* Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**), Kubermatic
+* Shu Muto (**[@shu-mutou](https://github.com/shu-mutou)**), NEC
 
 ## Emeritus Leads
 
 * Dan Romlein (**[@danielromlein](https://github.com/danielromlein)**)
+* Jeffrey Sica (**[@jeefy](https://github.com/jeefy)**)
 
 ## Contact
 - Slack: [#sig-ui](https://kubernetes.slack.com/messages/sig-ui)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fui)
+- Steering Committee Liaison: Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-ui:
 ### dashboard
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+  - [kubernetes-sigs/dashboard-metrics-scraper](https://github.com/kubernetes-sigs/dashboard-metrics-scraper/blob/master/OWNERS)
+  - [kubernetes/dashboard](https://github.com/kubernetes/dashboard/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

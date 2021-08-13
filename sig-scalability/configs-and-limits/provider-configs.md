@@ -75,6 +75,8 @@ proposed</td>
 
 * API server configured for load balancing, other components using standard leader election.
 
+* For performance reasons, it is best to use containerd as a container runtime.
+
 * Etcd is used for two distinct cluster purposes - cluster state and event processing. These have different i/o characteristics. It is important to scalability testing efforts that the iops provided by the servers to etcd be consistent and protected. These leads to two requirements:
 
     * Split etcd: Two different etcd clusters for events and cluster state (note: this is currently the GKE production default as well).
@@ -120,7 +122,7 @@ proposed</td>
 
 * Leader election results are non-deterministic on a typical cluster, and a config would be best served to be configured as worst-case. Not presently known whether there are performance impacts resulting from leader election resulting in either co-location or distribution of those components.
 
-* Improving the cluster performance loading to match production deployment scenarios is critical on-going work, especially clusterloader: [https://git.k8s.io/perf-tests/clusterloader](https://git.k8s.io/perf-tests/clusterloader)
+* Improving the cluster performance loading to match production deployment scenarios is critical on-going work, especially clusterloader2: [https://git.k8s.io/perf-tests/clusterloader2](https://git.k8s.io/perf-tests/clusterloader2)
 
 * Multi-zone / multi-az deployments are often used to manage large clusters, but for testing/scalability efforts the target is intentionally a single Availability Zone. This keeps greater consistency between environments that do and don’t support AZ-based deployments. Failures during scalability testing are outside the SIG charter. Protecting against network partitioning and improving total cluster availability (one of the key benefits to a multi-AZ strategy) are currently out scope for the Scalability SIG efforts.
 
@@ -159,4 +161,4 @@ Motivated by many of the issues above, an alternative configuration is reasonabl
 
 CoreOS commentary on etcd sizing.
 
-[https://github.com/coreos/etcd/blob/master/Documentation/op-guide/hardware.md](https://github.com/coreos/etcd/blob/master/Documentation/op-guide/hardware.md)
+[Hardware guidelines for administering etcd clusters](https://github.com/etcd-io/website/blob/master/content/docs/v3.4/op-guide/hardware.md)

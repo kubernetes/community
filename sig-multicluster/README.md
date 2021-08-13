@@ -13,11 +13,8 @@ A Special Interest Group focused on solving common challenges related to the man
 The [charter](charter.md) defines the scope and governance of the Multicluster Special Interest Group.
 
 ## Meetings
-* Cluster Federation (KubeFed) Working Group: [Wednesdays at 7:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7:30&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3iKP5EzMbtNT2zOZv6RCrX).
-* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/18mk62nOXE_MCSSnb4yJD_8UadtzJrYyJxFwbrgabHe8/edit).
+* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://tinyurl.com/sig-multicluster-notes).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
 
 ## Leadership
@@ -25,8 +22,12 @@ The [charter](charter.md) defines the scope and governance of the Multicluster S
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Jeremy Olmsted-Thompson (**[@jeremyot](https://github.com/jeremyot)**), Google
 * Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
-* Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
+
+## Emeritus Leads
+
+* Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**)
 
 ## Contact
 - Slack: [#sig-multicluster](https://kubernetes.slack.com/messages/sig-multicluster)
@@ -40,22 +41,26 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-multicluster-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-multicluster-pr-reviews) - PR Reviews
     - [@kubernetes/sig-multicluster-test-failures](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) - Test Failures and Triage
     - [@kubernetes/sig-mutlicluster-proposals](https://github.com/orgs/kubernetes/teams/sig-mutlicluster-proposals) - Design Proposals
+- Steering Committee Liaison: Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-multicluster:
 ### Kubefed
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/kubefed/master/OWNERS
-### cluster-registry
+  - [kubernetes-sigs/kubefed](https://github.com/kubernetes-sigs/kubefed/blob/master/OWNERS)
+### about-api
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS
-### federation-v1
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
+  - [kubernetes-sigs/about-api](https://github.com/kubernetes-sigs/about-api/blob/master/OWNERS)
 ### kubemci
 - **Owners:**
-  - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
+  - [GoogleCloudPlatform/k8s-multicluster-ingress](https://github.com/GoogleCloudPlatform/k8s-multicluster-ingress/blob/master/OWNERS)
+### mcs-api
+- **Owners:**
+  - [kubernetes-sigs/mcs-api](https://github.com/kubernetes-sigs/mcs-api/blob/master/OWNERS)
+### work-api
+- **Owners:**
+  - [kubernetes-sigs/work-api](https://github.com/kubernetes-sigs/work-api/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

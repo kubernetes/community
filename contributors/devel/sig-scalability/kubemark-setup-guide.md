@@ -46,13 +46,12 @@ docker push {{kubemark_image_registry}}/kubemark:{{kubemark_image_tag}}
 
 2. Create hollow nodes
 
-- i. create namespace, configmap and secret
+- i. create namespace and secret
 
 Copy kubemark master's kubeconfig which is used to configure access, put it on a master of external cluster, rename it as config.
 
 ```
 kubectl create ns kubemark
-kubectl create configmap node-configmap -n kubemark --from-literal=content.type="test-cluster"
 kubectl create secret generic kubeconfig --type=Opaque --namespace=kubemark --from-file=kubelet.kubeconfig=config --from-file=kubeproxy.kubeconfig=config
 ```
 

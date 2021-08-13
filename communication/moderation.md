@@ -1,3 +1,11 @@
+---
+title: "Moderation Rules and Responsibilities"
+description: |
+  Overview of community property moderator roles, responsibilities, selection,
+  and best practices.
+---
+
+<!-- omit in toc -->
 # Moderation on Kubernetes Communications Channels
 
 
@@ -12,20 +20,21 @@ lists, YouTube, Zoom, and any property listed in the SIG Contributor Experience
 
 ---
 
-- [Moderation on Kubernetes Communications Channels](#moderation-on-kubernetes-communications-channels)
-  - [Selection of Moderators](#selection-of-moderators)
-    - [Moderators Pro Tempore](#moderators-pro-tempore)
-  - [Rotation of Moderators](#rotation-of-moderators)
-  - [Roles and Responsibilities](#roles-and-responsibilities)
-  - [Violations](#violations)
-  - [Escalation Procedures](#escalation-procedures)
-  - [Platform Specific Guidelines](#platform-specific-guidelines)
-    - [Discuss](#discuss)
-    - [Mailing List](#mailing-list)
-    - [Slack](#slack)
-    - [YouTube](#youtube)
-    - [Zoom](#zoom)
-  - [References and Resources](#references-and-resources)
+
+- [Selection of Moderators](#selection-of-moderators)
+  - [Moderators Pro Tempore](#moderators-pro-tempore)
+- [Rotation of Moderators](#rotation-of-moderators)
+- [Roles and Responsibilities](#roles-and-responsibilities)
+- [Violations](#violations)
+- [Escalation Procedures](#escalation-procedures)
+- [Platform Specific Guidelines](#platform-specific-guidelines)
+  - [Discuss](#discuss)
+  - [Mailing List](#mailing-list)
+  - [Slack](#slack)
+  - [YouTube](#youtube)
+  - [Zoom](#zoom)
+  - [Process for Adding a Moderator](#process-for-adding-a-moderator)
+- [References and Resources](#references-and-resources)
 
 ---
 
@@ -64,8 +73,7 @@ The process for applying for moderatorship is as follows:
       using to moderate.
 - **[Open an issue][moderator request] against the kubernetes/community repo**
    - Ensure your sponsors are @mentioned on the issue.
-   - Complete every item on the checklist ([preview the current version of the
-     template][moderator template])
+   - Complete every item on the checklist
    - Make sure that the list of contributions included is representative of your
      work on the project.
 - Have your sponsoring reviewers reply confirmation of sponsorship: `+1` or
@@ -116,9 +124,12 @@ Moderators _MUST_:
 - Abide by the documented tasks and actions required of moderators.
 - Ensure that the Kubernetes [Code of Conduct] is in effect on all official
   Kubernetes communication channels.
-- Make yourself generally available during working hours in your time zone for moderation.
-  - This can be handled as a group so that there is enough coverage of people to allow for absences/travel.
-  - Ensure you are on #slack-admins during work hours and notifications are set appropriately.
+- Make yourself generally available during working hours in your time zone for
+  moderation.
+  - This can be handled as a group so that there is enough coverage of people to
+    allow for absences/travel.
+  - Ensure you are on #slack-admins during work hours and notifications are set
+    appropriately.
 - Become familiar with the [Kubernetes Community Values].
 - Take care of spam as soon as possible, which may mean taking action by
   removing a member from that resource.
@@ -173,10 +184,10 @@ procedures:
     other primary moderators as soon as possible.
   - If appropriate, the next level of people to contact are the OWNERS of the
     subproject.
-  - If appropriate, the next level of people to contact is the [Code of Conduct
-    Committee].
-  - If appropriate, the next level of people to contact is the [Steering
-    Committee].
+  - If appropriate, the next level of people to contact is the
+    [Code of Conduct Committee].
+  - If appropriate, the next level of people to contact is the
+    [Steering Committee].
 - Moderators will have access to a private document with contact information of
   the appropriate people.
 - Primary moderators will then execute an audit of the affected property:
@@ -227,12 +238,22 @@ This is the workflow for adding a moderator.
 - Moderator applies by [filing an issue] in the kubernetes/community repo
 - Moderator gets approval from 2 current moderators
 - Add the person to their respective moderation tool:
-  - Slack - Add them as a slack workspace admins (instructions pinned on #slack-admins-private): Invite them to #slack-admins-private, #slack-admins, #slack-log, #slack-reports and #slack-invites
+  - Slack - Add them as a slack workspace admins (instructions pinned on
+    #slack-admins-private): Invite them to #slack-admins-private, #slack-admins,
+    #slack-log, #slack-reports and #slack-invites
   - Discuss - Change their permission to moderator
-  - Kubernetes.io Google group - PR the person into the correct yaml file in kubernetes/k8s.io. (Note: This only applies to groups using @kubernetes.io, most other lists are still managed out of band)
-  - Ensure they add that they are an admin in their profile page on whatever service they are administrating
-- Add them to the moderators mailing list by PRing them into this file, ensure you link to the person's moderator github application as part of the PR for reference: https://github.com/kubernetes/k8s.io/blob/master/groups/groups.yaml
-- Ensure person is enrolled for a future bias training course, this can either be provided by the project or their employer.
+  - Kubernetes.io Google group - PR the person into the correct yaml file in
+    kubernetes/k8s.io. (Note: This only applies to groups using @kubernetes.io,
+    most other lists are still managed out of band)
+  - Ensure they add that they are an admin in their profile page on whatever
+    service they are administrating
+- Add them to the moderators mailing list by PRing them into the
+  [moderators@kubernetes.io group] linking to the person's moderator github
+  application as part of the PR.
+- Ensure person is enrolled for a future bias training course, this can either
+  be provided by the project or their employer.
+
+[moderators@kubernetes.io group]: https://github.com/kubernetes/k8s.io/blob/main/groups/groups.yaml
 
 ## References and Resources
 
@@ -256,5 +277,4 @@ guidelines:
 [Code of Conduct Committee]: /committee-code-of-conduct/README.md
 [Steering Committee]: https://git.k8s.io/steering
 [moderator request]: https://github.com/kubernetes/community/issues/new/choose
-[moderator template]: https://git.k8s.io/community/.github/ISSUE_TEMPLATE/moderator_application.md
 [filing an issue]: https://github.com/kubernetes/community/issues/new/?assignees=&labels=area%2Fcommunity-management%2C+sig%2Fcontributor-experience&template=moderator_application.md&title=REQUEST%3A+New+moderator+for+%3Cyour-GH-handle%3E+of+%3Ck8s+property%3E

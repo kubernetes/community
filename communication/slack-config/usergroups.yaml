@@ -27,7 +27,6 @@ usergroups:
       - sig-contribex
     members:
       - chrisshort
-      - jonasrosland
       - mbbroberg
       - onlydole
       - paris
@@ -35,20 +34,47 @@ usergroups:
       - simplytunde
       - Tunde
       - kaslin
+      - rajula96reddy
+      - "Sladyn Nunes"
+      - "Kunal Kushwaha"
+      - "Bart Farrell"
+      - pensu91
+      - "Joel Barker"
+      - Jason
 
-  - name: test-infra-oncall
-    external: true
+  # Should match the membership of the following teams at all times:
+  # - https://git.k8s.io/security/#product-security-committee-psc
+  #
+  # Ensure any changes are also reflected in the Security Release Team
+  # usergroup (within the SIG Release config directory).
+  - name: product-security-committee
+    long_name: Product Security Committee
+    description: |-
+      The Product Security Committee (PSC) is responsible for triaging and
+      handling the security issues for Kubernetes.
+    channels:
+      - release-management
+      - sig-release
+    members:
+      - cjcullen
+      - joelsmith
+      - lukehinds
+      - micahhausler
+      - swamymsft
+      - tabbysable
+      - tallclair
 
   - name: velero-maintainers
     long_name: Velero Maintainers
     description: Velero Maintainers group.
     channels:
-      - velero 
+      # - velero-dev
+      - velero-users
     members:
-      - ashish-amarnath
-      - carlisia
-      - nrb
-      - skriss
+      - Dave Smith-Uchida
+      - jiangd
+      - yinw
+      - zubron
 
   - name: youtube-admins
     long_name: YouTube Admins
@@ -56,15 +82,10 @@ usergroups:
     channels:
       - sig-contribex
     members:
-      - alejandrox1
+      - alisondy
       - castrojo
-      - idealhack
-      - idvoretskyi
-      - jdumars
       - jeefy
-      - markyjackson-taulia
       - mrbobbytables
-      - nzoueidi
       - onlydole
       - paris
 
@@ -77,8 +98,111 @@ usergroups:
       - alejandrox1
       - castrojo
       - idealhack
-      - markyjackson-taulia
       - mrbobbytables
       - nzoueidi
       - onlydole
       - paris
+
+  - name: k8satl-hosts
+    long_name: Kubernetes Atlanta Meetup Hosts
+    description: Kubernetes Atlanta Meetup Hosts group
+    channels:
+      - meetup-atlanta
+    members:
+      - phenixblue
+      - AlexB138
+
+  - name: skaffold-devs
+    long_name: Skaffold Development Team
+    description: Active developers on #skaffold
+    channels:
+      - skaffold
+    members:
+      - briandealwis
+      - gsquared94
+      - ilya-zuyev
+      - IsaacPD
+      - MarlonGamez
+      - nkubala
+      - tejal29
+      - tstromberg
+
+  - name: operator-sdk-maintainers
+    long_name: Operator SDK maintainers
+    description: Active developers of the Operator SDK
+    channels:
+      - kubernetes-operators
+      - operator-sdk-dev
+      - kubebuilder
+    members:
+      - estroz
+      - joelanford
+      - jmccormick2001
+      - jmrodri
+      - asmacdo
+      - marc-obrien
+      - theishshah
+      - camilamacedo86
+      - fabianvf
+      - varshaprasad96
+      - rashmigottipati
+      - jberkhahn
+
+  - name: odo-devs
+    long_name: Odo Development Team
+    description: Active developers of odo on #odo
+    channels:
+      - odo
+    members:
+      - cdrage
+      - dharmit
+      - mohammedzee1000
+      - mik-dass
+      - prietyc123
+      - kadel
+      - feloy
+      - anandrkskd
+      - rnapoles-rh
+
+  - name: pinniped-dev
+    long_name: Pinniped Development Team
+    description: Active developers of Pinniped @ pinniped.dev
+    channels:
+      - pinniped
+    members:
+      - enj
+      - mattmoyer
+      - ankeesler
+      - cfryanr
+      - margocrawf
+      - microwavables
+      - pabloschuhmacher
+
+  - name: steering-members
+    long_name: Kubernetes Steering Committee
+    description: Members of the Kubernetes Steering Committee
+    channels:
+      - steering-committee
+    members:
+      - cblecker
+      - derekwaynecarr
+      - dims
+      - liggitt
+      - mrbobbytables
+      - nikhita
+      - paris
+
+  - name: grafana-operator-maintainers
+    long_name: Grafana Operator Maintainers
+    description: Support group for Grafana Operator.
+    channels:
+      - grafana-operator
+    members:
+      - david-martin
+      - grdryn
+      - hubertstefanski
+      - pb82
+      - r-lawton
+      - robshelly
+      - vladimirmukhin
+      - wurbanski

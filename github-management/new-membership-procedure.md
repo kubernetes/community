@@ -47,7 +47,7 @@ required to be eligible to sponsor a new member. These requirements are:
 
 - Sponsors must be a member of the org they are attempting to sponsor for.
 
-  For example, if the membership being requested is for kubernetes-incubator,
+  For example, if the membership being requested is for kubernetes-sigs,
   then the sponsor should be a member of either that org, or main Kubernetes
   org (as members of the main org have implicit membership in other orgs).
 

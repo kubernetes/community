@@ -75,7 +75,6 @@ nützlicher Informationen gedacht, um deine Beitragserfahrung auf GitHub besser 
 - [Prow] - Kubernetes CI/CD-System.
 - [Test Grid] - Ansicht historischer Tests und den zugehörigen Informationen.
 - [Triage Dashboard] - Aggregiert ähnliche Fehler zur besseren Fehlerbehandlung.
-- [Velodrome] - Dashboard zur Überwachung der Job- und Testgesundheit.
 
 
 ### Wichtige Email-Adressen
@@ -354,14 +353,13 @@ anderer Beitragenden zu überlassen, die als Reviewer und Approver für den PR z
 [GitHub Labels]: https://go.k8s.io/github-labels
 [Kubernetes Code Search]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[Kalender]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[Kalender]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [Slack Channels]: http://slack.k8s.io/
 [Stack-Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [Youtube Channel]: https://www.youtube.com/c/KubernetesCommunity/
 [Triage Dashboard]: https://go.k8s.io/triage
 [Test Grid]: https://testgrid.k8s.io
-[Velodrome]: https://go.k8s.io/test-health
 [Developer Statistiken]: https://k8s.devstats.cncf.io
 [Code of Conduct]: /code-of-conduct.md
 [user support requests]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

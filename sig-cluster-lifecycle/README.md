@@ -13,32 +13,9 @@ The Cluster Lifecycle SIG examines how we should change Kubernetes to make it ea
 The [charter](charter.md) defines the scope and governance of the Cluster Lifecycle Special Interest Group.
 
 ## Meetings
-* Cluster API (AWS implementation) office hours: [Mondays at 10:00 PT (Pacific Time)](https://zoom.us/j/423312508) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1ojR0jooQaHEuz3gGW6DxcZlsws9ZX7jHPC8walm1G3A/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-* Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/861487554) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1fQNlqsDkvEggWFi51GVxOglL2P1Bvo2JhZlMhm2d-Co/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-* Cluster Addons meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/130096731) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit).
-* Image Builder office hours: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/807524571) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-* Kubespray Office Hours: [Wednesdays at 08:00 PT (Pacific Time)](https://zoom.us/j/532465189) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit).
-* Regular SIG Meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/916523531) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Tuesdays at 08:00 PT (Pacific Time)](https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-* Regular SIG Meeting in China: [Tuesdays at 20:00 Beijing](https://zoom.us/j/179916854) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=Beijing).
-  * [Meeting notes and Agenda](https://shimo.im/docs/YcoaYlvRmIYcrwnd).
-* etcdadm Office Hours: [Mondays at 09:00 PT (Pacific Time)](https://zoom.us/j/612375927) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-* kops Office Hours: [Fridays at 09:00 PT (Pacific Time)](https://zoom.us/my/k8ssigaws) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit).
-* kubeadm Office Hours: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/179916854) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-* minikube Office Hours: [Mondays at 11:00 PT (Pacific Time)](https://zoom.us/j/905156508) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit).
 
 ## Leadership
 
@@ -66,99 +43,137 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcluster-lifecycle)
 - GitHub Teams:
     - [@kubernetes/sig-cluster-lifecycle](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle) - Notify group
-    - [@kubernetes/sig-cluster-lifecycle-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle-pr-reviews) - PR Reviews
+- Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-cluster-lifecycle:
-### bootkube
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/bootkube/master/OWNERS
-- **Contact:**
-  - Slack: [#bootkube](https://kubernetes.slack.com/messages/bootkube)
 ### cluster-addons
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-addons/master/OWNERS
+  - [kubernetes-sigs/cluster-addons](https://github.com/kubernetes-sigs/cluster-addons/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#cluster-addons](https://kubernetes.slack.com/messages/cluster-addons)
+- **Meetings:**
+  - Cluster Addons meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/130096731?pwd=U3pzWloxZ0lpbEtadTZGSERRdENrZz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit).
 ### cluster-api
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-bootstrap-provider-kubeadm/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
+  - [kubernetes-sigs/cluster-api](https://github.com/kubernetes-sigs/cluster-api/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
+- **Meetings:**
+  - Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1LdooNTbb9PZMFWy3_F-XAsl7Og5F2lvG3tCgQvoB5e4/edit).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-aws
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
+  - [kubernetes-sigs/cluster-api-provider-aws](https://github.com/kubernetes-sigs/cluster-api-provider-aws/blob/master/OWNERS)
+- **Meetings:**
+  - Cluster API Provider AWS office hours: [Mondays at 10:00 PT (Pacific Time)](https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1iW-kqcX-IhzVGFrRKTSPGBPOc-0aUvygOVoJ5ETfEZU/).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-azure
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
+  - [kubernetes-sigs/cluster-api-provider-azure](https://github.com/kubernetes-sigs/cluster-api-provider-azure/blob/master/OWNERS)
 - **Meetings:**
-  - Cluster API Azure meeting: [Thursdays at 13:30 PT (Pacific Time)](https://docs.google.com/document/d/1P2FrRjuCZjGy0Yh72lwWCwmXekSEkqliUVTmJy_ETIk/edit?usp=sharing) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:30&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API Provider Azure office hours: [Thursdays at 08:00 PT (Pacific Time)](https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](http://bit.ly/k8s-capz-agenda).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-digitalocean
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
+  - [kubernetes-sigs/cluster-api-provider-digitalocean](https://github.com/kubernetes-sigs/cluster-api-provider-digitalocean/blob/master/OWNERS)
+- **Meetings:**
+  - Cluster API Provider DigitalOcean office hours: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/91312171751?pwd=bndnMDdJMkhySDVncjZoR1VhdFBTZz09) (monthly, second Thursday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](http://bit.ly/k8s-capdo-agenda).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-docker
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-docker/master/OWNERS
+  - [kubernetes-sigs/cluster-api-provider-docker](https://github.com/kubernetes-sigs/cluster-api-provider-docker/blob/master/OWNERS)
 ### cluster-api-provider-gcp
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
+  - [kubernetes-sigs/cluster-api-provider-gcp](https://github.com/kubernetes-sigs/cluster-api-provider-gcp/blob/master/OWNERS)
 ### cluster-api-provider-ibmcloud
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
+  - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/master/OWNERS)
+### cluster-api-provider-kubemark
+- **Owners:**
+  - [kubernetes-sigs/cluster-api-provider-kubemark](https://github.com/kubernetes-sigs/cluster-api-provider-kubemark/blob/master/OWNERS)
+### cluster-api-provider-nested
+- **Owners:**
+  - [kubernetes-sigs/cluster-api-provider-nested](https://github.com/kubernetes-sigs/cluster-api-provider-nested/blob/master/OWNERS)
+- **Meetings:**
+  - Cluster API Provider Nested Office Hours: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/91929881559?pwd=WllxazhTUzBFN1BNWTRadTA3NGtQQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/10aTeq2lhXW_3aFQAd_MdGjY8PtZPslKhZCCcXxFp3_Q/edit).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-openstack
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
+  - [kubernetes-sigs/cluster-api-provider-openstack](https://github.com/kubernetes-sigs/cluster-api-provider-openstack/blob/master/OWNERS)
 ### cluster-api-provider-packet
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-packet/master/OWNERS
+  - [kubernetes-sigs/cluster-api-provider-packet](https://github.com/kubernetes-sigs/cluster-api-provider-packet/blob/master/OWNERS)
 ### cluster-api-provider-vsphere
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
+  - [kubernetes-sigs/cluster-api-provider-vsphere](https://github.com/kubernetes-sigs/cluster-api-provider-vsphere/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#cluster-api-vsphere](https://kubernetes.slack.com/messages/cluster-api-vsphere)
 - **Meetings:**
-  - Cluster API vSphere meeting: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/875399243) (biweekly starting Thursday June 25th, 2020). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API vSphere meeting: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/92253194848?pwd=cVVVNDMxeTl1QVJPUlpvLzNSVU1JZz09) (biweekly starting Thursday June 25th, 2020). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu).
 ### etcdadm
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
+  - [kubernetes-sigs/etcdadm](https://github.com/kubernetes-sigs/etcdadm/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#etcdadm](https://kubernetes.slack.com/messages/etcdadm)
+- **Meetings:**
+  - etcdadm Office Hours: [Mondays at 09:00 PT (Pacific Time)](https://zoom.us/j/612375927?pwd=MldxRnRSOExCVW1rbjM4ZzBSc3MvUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit).
 ### image-builder
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/image-builder/master/OWNERS
+  - [kubernetes-sigs/image-builder](https://github.com/kubernetes-sigs/image-builder/blob/master/OWNERS)
+- **Contact:**
+  - Slack: [#image-builder](https://kubernetes.slack.com/messages/image-builder)
+- **Meetings:**
+  - Image Builder office hours: [Thursdays at 08:00 PT (Pacific Time)](https://zoom.us/j/807524571?pwd=WEFTeDJzeWU3bVFkcWQ0UEdZRkRCdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### kops
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
-### kube-aws
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-incubator/kube-aws/master/OWNERS
-- **Contact:**
-  - Slack: [#kube-aws](https://kubernetes.slack.com/messages/kube-aws)
+  - [kubernetes/kops](https://github.com/kubernetes/kops/blob/master/OWNERS)
+- **Meetings:**
+  - kops Office Hours: [Fridays at 09:00 PT (Pacific Time)](https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit).
 ### kube-up
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
+  - [kubernetes/kubernetes/cluster](https://github.com/kubernetes/kubernetes/blob/master/cluster/OWNERS)
 ### kubeadm
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/system-validators/master/OWNERS
+  - [kubernetes/cluster-bootstrap](https://github.com/kubernetes/cluster-bootstrap/blob/master/OWNERS)
+  - [kubernetes/kubeadm](https://github.com/kubernetes/kubeadm/blob/master/OWNERS)
+  - [kubernetes/kubernetes/cmd/kubeadm](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubeadm/OWNERS)
+  - [kubernetes/system-validators](https://github.com/kubernetes/system-validators/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#kubeadm](https://kubernetes.slack.com/messages/kubeadm)
+- **Meetings:**
+  - kubeadm Office Hours: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/179916854?pwd=dzRhbjFnRGVQRDVUVHY1a29JV2JxUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1ONcoy8bOw8SWPUwXxnKeRZST3lnUxYpUv4Y6466h9Ek/edit).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### kubespray
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
+  - [kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#kubespray](https://kubernetes.slack.com/messages/kubespray)
+- **Meetings:**
+  - Kubespray Office Hours: [Wednesdays at 08:00 PT (Pacific Time)](https://zoom.us/j/532465189?pwd=THMvL2MzdjZXWG55eHpJMkU2dkI1dz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit).
 ### minikube
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
+  - [kubernetes/minikube](https://github.com/kubernetes/minikube/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#minikube](https://kubernetes.slack.com/messages/minikube)
+- **Meetings:**
+  - minikube office hours: [Mondays at 11:00 PT (Pacific Time)](https://zoom.us/j/97017029363?pwd=U3MvZ3pMMHM5eWorSjgzUnd5OEFtUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit).
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

@@ -14,19 +14,26 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 * SIG Contributor Experience
 * SIG Docs
 
-
+## Meetings
+* Regular WG Meeting: [Mondays at 10:30 PT (Pacific Time)](https://zoom.us/j/91522666403?pwd=WnRSNlNhNXhDWkR2ZU9ydGpsNWxtZz09) (monthly - second Monday of month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://bit.ly/k8s-wg-naming-agenda).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3BrAtDHyr8KTUfhBhCG7CD).
 
 ## Organizers
 
 * Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), CNCF
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**), Apple
-* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), VMware
-* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**), Linux Foundation
+* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Cisco
+
+## Emeritus Organizers
+
+* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**)
 
 ## Contact
 - Slack: [#wg-naming](https://kubernetes.slack.com/messages/wg-naming)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-naming)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fnaming)
+- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 **The following section will be reworked and formalized as a charter once the

@@ -14,10 +14,11 @@ This charter adheres to the conventions described in the [Kubernetes Charter REA
 - Ensuring quality Kubernetes releases
   - Defining and staffing release roles to manage the resolution of release blocking criteria
   - Defining and driving development processes (e.g. merge queues, cherrypicks) and release processes
-    (e.g. burndown meetings, cutting beta releases) with the intent of meeting the release schedule
+    (e.g. burndown meetings, cutting pre-releases) with the intent of meeting the release schedule
   - Managing the creation of release specific artifacts, including:
     - Code branches
     - Binary artifacts
+    - Container Images
     - Release notes
 - Continually improving release and development processes
   - Working closely with SIG Contributor Experience to define and build tools to facilitate release process (e.g. dashboards)
@@ -40,30 +41,47 @@ This SIG adheres to the Roles and Organization Management outlined in [sig-gover
 
 Specifically, the common guidelines (see: [sig-governance]) for continuity of membership within roles in the SIG are followed.
 
+#### Release Engineering subproject
+
+SIG Release features a [Release Engineering subproject], which is dedicated to
+the technical aspects of Kubernetes releases, for example its tooling and source
+code ownership.
+
 ### Deviations from [sig-governance]
 
-- SIG Release subprojects have subproject chairs
-- SIG Release does not have top-level SIG Technical Leads. With few exceptions, technical decisions should be handled within the scope of the relevant SIG Release subproject.
+- SIG Release has a "Program Management" role
+- The [Release Engineering subproject] has the roles "Release Manager" and
+  "Release Manager Associate"
 
 #### SIG Membership
 
 SIG Release has a concept of membership. SIG members can be occasionally called on to assist with decision making, especially as it relates to gathering historical context around existing policies and enacting new policy.
 
-SIG Release membership is represented by membership in the `sig-release` GitHub team.
+SIG Release membership is represented by membership in the `sig-release` GitHub
+team. There are several other GitHub teams which specify a more fine-grained
+membership:
+
+- `sig-release-admins`: Admins for SIG Release repositories
+- `sig-release-leads`: Chairs, Technical Leads, and Program Managers for SIG Release
+- `sig-release-pms`: Grants access to maintain SIG Release project boards
+- `release-managers`: People actively pushing Kubernetes releases, which are
+  memebers of the [Release Engineering subproject].
 
 SIG Release membership is defined as the set of Kubernetes contributors included in:
 - All SIG Release top-level subproject OWNERS files
 - All documented former Release Team members holding Lead roles e.g., Enhancements Lead, Patch Release Team
 
-Subproject `approvers` and incoming Release Team Leads should ensure that new members are added to the `sig-release` GitHub team.
+Subproject `approvers` and incoming Release Team Leads should ensure that new
+members are added to the corresponding GitHub teams.
 
-SIG Release Chairs will periodically review the `sig-release` GitHub team to ensure it remains accurate and up-to-date.
+SIG Release Chairs will periodically review the GitHub teams to ensure it
+remains accurate and up-to-date.
 
 All SIG Release roles will be filled by SIG Release members, except where explicitly defined in other policy. A notable exception to this would be Release Team Shadows.
 
 It may be implied, given the criteria for SIG membership, but to be explicit:
 - SIG Release membership is representative of people who actively contribute to the health of the SIG. Given that, those members should also be enabled to help drive SIG Release policy.
-- SIG Chairs should represent the sentiment of and facilitate the decision making by SIG Members.
+- SIG Chairs and Technical Leads should represent the sentiment of and facilitate the decision making by SIG Members.
 
 ### Subproject Creation
 
@@ -80,6 +98,7 @@ Additional requirements:
 
 [KEP]: https://git.k8s.io/enhancements/keps/YYYYMMDD-kep-template.md
 [Kubernetes Charter README]: /committee-steering/governance/README.md
-[lazy-consensus]: http://communitymgt.wikia.com/wiki/Lazy_consensus
+[lazy-consensus]: https://communitymgt.fandom.com/wiki/Lazy_consensus
 [sig-governance]: /committee-steering/governance/sig-governance.md
 [sigs.yaml]: /sigs.yaml
+[Release Engineering subproject]: https://github.com/kubernetes/sig-release/tree/master/release-engineering

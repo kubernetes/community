@@ -2,3 +2,5 @@
 
 approvers:
   - sig-docs-leads
+labels:
+  - sig/docs

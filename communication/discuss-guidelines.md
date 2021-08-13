@@ -1,4 +1,29 @@
+---
+title: "Discuss Forum Guidelines"
+description: |
+  Overview of Discourse, it's moderation capabilities and how they're applied
+  in the Kubernetes Forum, along with detailed instructions on requesting new
+  categories.
+---
+
+<!-- omit in toc -->
 # Discuss guidelines
+
+
+- [Code of conduct](#code-of-conduct)
+- [Privacy Policy](#privacy-policy)
+- [Admins](#admins)
+- [General communication guidelines](#general-communication-guidelines)
+  - [PM (Private Message) conversations](#pm-private-message-conversations)
+  - [Escalating and/or reporting a problem](#escalating-andor-reporting-a-problem)
+- [Moderation](#moderation)
+  - [Moderator expectations and guidelines](#moderator-expectations-and-guidelines)
+  - [Other moderator responsibilities](#other-moderator-responsibilities)
+    - [Ingest queue](#ingest-queue)
+- [New category requests](#new-category-requests)
+  - [Requesting a general category](#requesting-a-general-category)
+  - [Requesting a SIG, WG, or sub-project category](#requesting-a-sig-wg-or-sub-project-category)
+  - [Requesting a regional category](#requesting-a-regional-category)
 
 Discuss (discuss.kubernetes.io), is the Kubernetes community forum backed by
 the [Discourse] discussion platform. It serves as the primary communication
@@ -10,7 +35,7 @@ Communication should be polite and respectful. Follow the general guideline of
 _"be excellent to each other"_.
 
 **Reference Links:**
-- [KEP 0007] - A community forum for Kubernetes
+- [A community forum for Kubernetes KEP]
 - [Archive k-users] - kubernetes-users mailing list migrated to Discuss
 
 
@@ -176,7 +201,7 @@ list with the new region, the moderators and their timezone.
 
 
 [Discourse]: https://discourse.org
-[KEP 0007]: https://github.com/kubernetes/enhancements/blob/master/keps/sig-contributor-experience/0007-20180403-community-forum.md
+[A community forum for Kubernetes KEP]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-contributor-experience/0000-community-forum
 [archive k-users]: https://github.com/kubernetes/community/issues/2492
 [Kubernetes Code of Conduct]: /code-of-conduct.md
 [Linux Foundation Privacy Policy]: https://www.linuxfoundation.org/privacy/

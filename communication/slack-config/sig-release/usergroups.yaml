@@ -6,33 +6,42 @@ usergroups:
   # - https://git.k8s.io/sig-release/release-managers.md#associates
   - name: release-managers
     long_name: Release Managers
-    description: Release Managers. Ping for questions on branch cuts and building/packaging Kubernetes.
+    description: >-
+      Release Managers. Ping for questions on branch cuts and building/packaging
+      Kubernetes.
     channels:
       - release-ci-signal
       - release-management
       - sig-release
     members:
-      - calebamiles # subproject owner
+      - ameukam # Release Manager Associate
       - cpanato # Release Manager
-      - dougm # Release Manager
-      - feiskyer # Release Manager
-      - hasheddan # Release Manager
-      - hoegaarden # Release Manager
-      - idealhack # Release Manager
+      - hasheddan # subproject owner / Release Manager
       - jimangel # Release Manager Associate
       - justaugustus # subproject owner / Release Manager
-      - markyjackson-taulia # Release Manager Associate
-      - saschagrunert # Release Manager
+      - mkorbi # Release Manager Associate
+      - onlydole # Release Manager Associate
+      - palnabarun # Release Manager Associate
+      - puerco # Release Manager
+      - saschagrunert # subproject owner / Release Manager
       - sethmccombs # Release Manager Associate
-      - tpepper # subproject owner / Release Manager
+      - thejoycekung # Release Manager Associate
       - Verolop # Release Manager Associate
-      - xmudrii # Release Manager Associate
+      - wilsonehusin # Release Manager Associate
+      - xmudrii # Release Manager
 
-  # Should match the Release Team Leads of the current cycle and SIG Chairs at all times
-  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.19/release_team.md
+  # Should match the membership of the following groups at all times:
+  # - Release Team Lead
+  # - Release Team Lead shadows
+  # - Emeritus Adviser
+  # - SIG Release leads
+  #
+  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.22/release_team.md
   - name: release-team-leads
     long_name: Release Team Leads
-    description: Release Team Leads. Ping for questions on the current Kubernetes release cycle.
+    description: >-
+      Release Team Leads. Ping for questions on the current Kubernetes release
+      cycle.
     channels:
       - release-bug-triage
       - release-ci-signal
@@ -42,9 +51,61 @@ usergroups:
       - release-notes
       - sig-release
     members:
-      - calebamiles # SIG Chair
-      - jeremyrickard # 1.19 Release Team Lead Shadow
-      - justaugustus # SIG Chair
-      - mrbobbytables # 1.19 Release Team Lead Shadow
-      - onlydole # 1.19 Release Team Lead
-      - tpepper # SIG Chair
+      - annajung # 1.22 Release Team Lead Shadow
+      - cpanato # SIG Release Technical Lead
+      - divya-mohan0209 # 1.22 Release Team Lead Shadow
+      - erismaster # 1.22 Release Team Lead Shadow
+      - guineveresaenger # 1.22 Release Team EA
+      - hasheddan # SIG Release Technical Lead
+      - jeremyrickard # SIG Release Technical Lead
+      - justaugustus # SIG Release Chair
+      - kikisdeliveryservice # 1.22 Release Team Lead Shadow
+      - LappleApple # SIG Release Program Manager
+      - puerco # SIG Release Technical Lead
+      - saschagrunert # SIG Release Chair
+      - savitharaghunathan # 1.22 Release Team Lead
+
+  # Should match SIG Release Leads at all times:
+  # https://git.k8s.io/community/sig-release/README.md#leadership
+  - name: sig-release-leads
+    long_name: SIG Release Leads
+    description: >-
+      SIG Release Leads. Ping for questions on SIG Release process and escalations.
+    channels:
+      - release-ci-signal
+      - release-management
+      - sig-release
+    members:
+      - cpanato # SIG Release Technical Lead
+      - hasheddan # SIG Release Technical Lead
+      - jeremyrickard # SIG Release Technical Lead
+      - justaugustus # SIG Release Chair
+      - LappleApple # SIG Release Program Manager
+      - puerco # SIG Release Technical Lead
+      - saschagrunert # SIG Release Chair
+
+  # Should match the membership of the following teams at all times:
+  # - https://git.k8s.io/security/#product-security-committee-psc
+  # - https://git.k8s.io/sig-release/release-managers.md#release-managers
+  - name: security-rel-team
+    long_name: Security Release Team
+    description: >-
+      Composite of Product Security Committee members and Release Managers. Ping
+      for questions on Kubernetes security releases.
+    channels:
+      - release-management
+      - sig-release
+    members:
+      - cjcullen # Product Security Committee
+      - cpanato # Release Manager
+      - hasheddan # subproject owner / Release Manager
+      - joelsmith # Product Security Committee
+      - justaugustus # subproject owner / Release Manager
+      - lukehinds # Product Security Committee
+      - micahhausler # Product Security Committee
+      - puerco # Release Manager
+      - saschagrunert # subproject owner / Release Manager
+      - swamymsft # Product Security Committee
+      - tabbysable # Product Security Committee
+      - tallclair # Product Security Committee
+      - xmudrii # Release Manager

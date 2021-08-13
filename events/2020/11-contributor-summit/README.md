@@ -1,39 +1,12 @@
-# 2020 Kubernetes Contributor Summit NA
-
-**This event is still in the planning stages. Please check back here for updates!**
+# 2020 Kubernetes Contributor Celebration NA
 
 ## What
 
-This event brings together new and current Kubernetes contributors to connect and learn from one another. 
-It is an opportunity for existing contributors to help shape the future of the project and offers a welcoming 
-space for new community members to learn, explore, and put the contributor workflow to practice. The summit 
-is held in the two days before KubeCon + CloudNativeCon with an optional social event in the evening of 
-Monday, November 16th along with the main full-day event on Tuesday, November 17th.
-
-## Registration
-
-Registration is not yet open. We will announce the opening of registration on the 
-[kubernetes-dev](https://groups.google.com/forum/#!forum/kubernetes-dev) mailing list or check this page for updates.
+Instead of our traditional Contributor Summit, this time we're hosting a Contributor Celebration social event on Discord so we can all get together and unwind from a very stressful year.
 
 ## When and Where
 
-The Contributor Summit takes place in the days leading up to 
-[KubeCon + CloudNativeCon NA](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/)
-so make sure you plan travel accordingly.
-
-- Monday, November 16th, 2020 ~5PM - 9PM  
-  Social event (optional)
-- Tuesday, November 17th, 2020 ~8AM - 6PM   
-  Full day event
-- Boston, MA
-- Event website with more information:   
-  https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america
-
-### Transparency
-
-- Recording: Sessions will be video recorded and uploaded to YouTube.
-- Transcription: Transcriptions will be uploaded with the video.
-- Content Sharing: All presentations will be uploaded.
+The Contributor Celebration will take place December 10th to 13th on Discord. See https://www.kubernetes.dev/events/kcc2020/ for more information.
 
 ## Team
 

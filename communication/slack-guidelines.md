@@ -1,9 +1,17 @@
+---
+title: "Slack Guidelines"
+description: |
+  The policies, procedures, and escalation mechanisms for the Slack platform,
+  such as requesting channels, tokens, and how to report inappropriate content.
+---
+
+<!-- omit in toc -->
 # Slack Guidelines
 
 Slack serves as the main communication platform for the Kubernetes community
 outside of the mailing lists. It’s important that conversations stays on topic
 in each channel, and that everyone abides by the [Code of Conduct][coc]. There
-are over 50,000 members who should all expect to have a positive experience.
+are over 100,000 members who should all expect to have a positive experience.
 
 Chat is searchable and public. Do not make comments that you would not say on a
 video recording or in another public space. Please be courteous to others.
@@ -15,15 +23,17 @@ video recording or in another public space. Please be courteous to others.
   - [DM (Direct Message) Conversations](#dm-direct-message-conversations)
   - [Specific Channel Rules](#specific-channel-rules)
   - [Escalating and/or Reporting a Problem](#escalating-andor-reporting-a-problem)
+- [Should you have a channel on the Kubernetes Slack?](#should-you-have-a-channel-on-the-kubernetes-slack)
 - [Requesting a Channel](#requesting-a-channel)
   - [Delegating Channel Ownership](#delegating-channel-ownership)
 - [Requesting a User Group](#requesting-a-user-group)
 - [Requesting a Bot, Token, or Webhook](#requesting-a-bot-token-or-webhook)
 - [Moderation](#moderation)
-  - [Admin Expectations and Guidelines]()
-  - [Sending Messages to the Channel]()
+  - [Admin Expectations and Guidelines](#admin-expectations-and-guidelines)
+  - [Sending Messages to the Channel](#sending-messages-to-the-channel)
   - [Processing Slack Requests](#processing-slack-requests)
     - [Processing Channel Requests](#processing-channel-requests)
+    - [Processing User Group Requests](#processing-user-group-requests)
     - [Processing Bot, Token, or Webhook Requests](#processing-bot-token-or-webhook-requests)
   - [Inactivating Accounts](#inactivating-accounts)
 
@@ -56,7 +66,6 @@ administrators have time. There is no explicit interval.
 
 [Slack Archive Download]
 
-
 ### DM (Direct Message) Conversations
 
 Please do not engage in proprietary company specific conversations in the
@@ -72,10 +81,10 @@ applicability to the Kubernetes community.
 Some channels have specific rules or guidelines. If they do, they will be listed
 in the purpose or pinned docs of that channel.
 
-- `#kubernetes-dev` - Questions and discourse around upstream contributions and
-development to kubernetes,
+- `#kubernetes-contributors` - Questions and discourse around upstream
+  contributions and development to kubernetes.
 - `#kubernetes-careers` - Job openings for positions working with/on/around
-  Kubernetes. Post the job once and pin it. Pins expire after 30 days. Postings
+  Kubernetes. Postings
   must include:
   - A link to the posting or job description.
   - The business name that will employ the Kubernetes hire.
@@ -110,6 +119,39 @@ a [code of conduct][coc] issue, please send an email to <conduct@kubernetes.io>
 and describe the situation.
 
 ---
+
+## Should you have a channel on the Kubernetes Slack?
+
+The primary purpose of the Kubernetes slack is for the coordination of the
+Kubernetes project. However it is useful for developers and users to have a
+strong ecosystem of channels for related things. Here are some guidelines for
+determining if you should request a channel:
+
+- The channel MUST be Kubernetes related in some way.
+  - Related cloud native projects might be more appropriate on the [CNCF Slack].
+- The project MUST be open source. 
+  - If you are open sourcing a project DO THAT FIRST, we cannot accommodate every
+    organization's open sourcing launch plans.
+  - The purpose of Slack is to organize an existing community, not seed new ones.
+  - Moderators look at contributor activity, adoption and community consensus
+    around a project, otherwise Slack becomes a vehicle for promotion instead of
+    promulgation.
+  - Establishing and maintaining a Slack channel should be an inflection point
+    in a project's adoption.
+  - Requesting a channel means maintaining it on behalf of the project filing
+    the issue, you will be expected to participate and foster a healthy
+    discourse.
+- Channels around commercial services built on OSS projects are allowed.
+  - Users love the value of being able to collaborate around various services.
+  - Keep it classy, on the Kubernetes Slack we're all on the same team.
+- The channel MUST be public.
+  - In order to ensure all channels adhere to our Code of Conduct, we heavily
+    restrict private channels.
+  - We do allow `#...-dev` channels for established projects where a single
+    project channel is too noisy, but please don't create both at the start.
+  - If you need private discussion areas for security-sensitive topics, a
+    project-specific Slack or the [CNCF Slack] may be a better fit.
+- Ask in #slack-admins or file an issue if you're unsure, it never hurts to ask.
 
 ## Requesting a Channel
 
@@ -376,3 +418,4 @@ Report any actions taken to the other slack admins, and if needed the
 [default message pinned]: ./slack-config/template.yaml
 [Slack’s policy on inactivated accounts]: https://get.Slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account
 [moderation guidelines]: ./moderation.md
+[CNCF Slack]: https://slack.cncf.io/

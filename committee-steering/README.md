@@ -13,7 +13,9 @@ The Kubernetes Steering Committee is the governing body of the Kubernetes projec
 The [charter](https://git.k8s.io/steering/charter.md) defines the scope and governance of the Steering Committee.
 
 ## Meetings
-* Public Steering Committee Meeting: [Mondays at 11:00 PT (Pacific Time)](https://bit.ly/k8s-steering-wd) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+* Private Steering Committee Meeting: [third Mondays at 9:30 PT (Pacific Time)](https://bit.ly/k8s-steering-wd) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting recordings](https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM).
+* Public Steering Committee Meeting: [first Mondays at 9:30 PT (Pacific Time)](https://bit.ly/k8s-steering-wd) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting recordings](https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM).
 
 ## Members
@@ -21,10 +23,10 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
-* Lachlan Evenson (**[@lachie83](https://github.com/lachie83)**), Microsoft
+* Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google
+* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
 * Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**), VMware
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Apple
-* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 
 ## Contact
 - Slack: [#steering-committee](https://kubernetes.slack.com/messages/steering-committee)
@@ -40,15 +42,11 @@ The following [subprojects][subproject-definition] are owned by the Steering Com
 ### funding
 Funding requests for project infrastructure, events, and consulting
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/funding/master/OWNERS
-### kubernetes-template-project
-Template for starting new projects in the GitHub organizations owned by Kubernetes.
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
+  - [kubernetes/funding](https://github.com/kubernetes/funding/blob/master/OWNERS)
 ### steering
 Steering Committee policy and documentation
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
+  - [kubernetes/steering](https://github.com/kubernetes/steering/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

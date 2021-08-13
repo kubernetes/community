@@ -1,3 +1,10 @@
+---
+title: "Zoom Guidelines"
+description: |
+  Policies, procedures and best practices for managing Zoom.
+---
+
+<!-- omit in toc -->
 # Zoom guidelines
 
 Zoom is the main video communication platform for Kubernetes.
@@ -5,13 +12,28 @@ It is used for running the [community meeting], [SIG/WG meetings],
 [Office Hours], [Meet Our Contributors] and many other Kubernetes online events.
 Since the Zoom meetings are open to the general public, a Zoom host or co-host
 has to moderate a meeting in all senses of the word from starting and stopping
-the meeting, to acting on [code of conduct] issues.
+the meeting, to acting on [Kubernetes code of conduct] issues.
 
 These guidelines are meant as a tool to help Kubernetes members manage their
 Zoom resources.
 
 Check the main [moderation] page for more information on other tools and general
 moderation guidelines.
+
+
+- [Code of conduct](#code-of-conduct)
+- [Zoom license management](#zoom-license-management)
+  - [Obtaining a Zoom license](#obtaining-a-zoom-license)
+- [Setting up your meeting and moderation](#setting-up-your-meeting-and-moderation)
+  - [Moderation](#moderation)
+    - [Related moderation documentation](#related-moderation-documentation)
+  - [Escalating and/Reporting a Problem](#escalating-andreporting-a-problem)
+- [Meeting recordings](#meeting-recordings)
+- [Screen sharing guidelines and recommendations](#screen-sharing-guidelines-and-recommendations)
+- [Audio/Video quality recommendations](#audiovideo-quality-recommendations)
+  - [Recommended hardware to have](#recommended-hardware-to-have)
+  - [Hardware we don't recommend](#hardware-we-dont-recommend)
+  - [Pro-tips](#pro-tips)
 
 
 ## Code of conduct
@@ -86,7 +108,7 @@ and training.
 #### Related moderation documentation
 
 - Zoom has [documentation on how to use their moderation tools].
-- Members of the _kubernetes-sig-leads@_ group have access to an extensive
+- Members of the _leads@_ group have access to an extensive
   [best practices doc] with screenshots going over the community Zoom best
   practices.
 
@@ -208,7 +230,7 @@ Thanks for making Kubernetes meetings work great!
 [best practices doc]: https://docs.google.com/document/d/1fudC_diqhN2TdclGKnQ4Omu4mwom83kYbZ5uzVRI07w/edit?usp=sharing
 [Kubernetes channel]: https://www.youtube.com/c/kubernetescommunity
 [SIG Contributor Experience]: /sig-contributor-experience
-[Please follow this guideline for more details.]: ./youtube-guidelines.md
+[Please follow this guideline for more details]: ./youtube/youtube-guidelines.md
 [centralized list of administrators]: ./moderators.md
 [documentation on how to use their screen sharing feature]: https://support.zoom.us/hc/en-us/articles/201362153-How-Do-I-Share-My-Screen
 [lots of things that can go wrong]: https://www.youtube.com/watch?v=JMOOG7rWTPg

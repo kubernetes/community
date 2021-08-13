@@ -65,8 +65,8 @@ kinds would have different attributes and properties)
 via HTTP to the server. Resources are exposed via:
   * Collections - a list of resources of the same type, which may be queryable
   * Elements - an individual resource, addressable via a URL
-* **API Group** a set of resources that are exposed together. Along
-with the version is exposed in the "apiVersion" field as "GROUP/VERSION", e.g.
+* **API Group** a set of resources that are exposed together, along
+with the version exposed in the "apiVersion" field as "GROUP/VERSION", e.g.
 "policy.k8s.io/v1".
 
 Each resource typically accepts and returns data of a single kind. A kind may be
@@ -123,11 +123,10 @@ defaults) and may not have lists.
 
    In addition, all lists that return objects with labels should support label
 filtering (see [the labels documentation](https://kubernetes.io/docs/user-guide/labels/)), and most
-lists should support filtering by fields.
+lists should support filtering by fields (see 
+[the fields documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/)).
 
-   Examples: `PodLists`, `ServiceLists`, `NodeLists`.
-
-   TODO: Describe field filtering below or in a separate doc.
+   Examples: `PodList`, `ServiceList`, `NodeList`.
 
 3. **Simple** kinds are used for specific actions on objects and for
 non-persistent entities.
@@ -308,17 +307,77 @@ response reduces the complexity of these clients.
 
 ##### Typical status properties
 
-**Conditions** represent the latest available observations of an object's
-state.  They are an extension mechanism intended to be used when the details of
-an observation are not a priori known or would not apply to all instances of a
-given Kind.  For observations that are well known and apply to all instances, a
-regular field is preferred.  An example of a Condition that probably should
-have been a regular field is Pod's "Ready" condition - it is managed by core
-controllers, it is well understood, and it applies to all Pods.
+**Conditions** provide a standard mechanism for higher-level status reporting
+from a controller. They are an extension mechanism which allows tools and other
+controllers to collect summary information about resources without needing to
+understand resource-specific status details. Conditions should complement more
+detailed information about the observed status of an object written by a
+controller, rather than replace it. For example, the "Available" condition of a
+Deployment can be determined by examining `readyReplicas`, `replicas`, and
+other properties of the Deployment. However, the "Available" condition allows
+other components to avoid duplicating the availability logic in the Deployment
+controller.
 
 Objects may report multiple conditions, and new types of conditions may be
 added in the future or by 3rd party controllers. Therefore, conditions are
-represented using a list/slice, where all have similar structure.
+represented using a list/slice of objects, where each condition has a similar
+structure. This collection should be treated as a map with a key of `type`.
+
+Conditions are most useful when they follow some consistent conventions:
+
+* Conditions should be added to explicitly convey properties that users and
+  components care about rather than requiring those properties to be inferred
+  from other observations.  Once defined, the meaning of a Condition can not be
+  changed arbitrarily - it becomes part of the API, and has the same backwards-
+  and forwards-compatibility concerns of any other part of the API.
+
+* Controllers should apply their conditions to a resource the first time they
+  visit the resource, even if the `status` is Unknown. This allows other
+  components in the system to know that the condition exists and the controller
+  is making progress on reconciling that resource.
+
+   * Not all controllers will observe the previous advice about reporting
+     "Unknown" or "False" values. For known conditions, the absence of a
+     condition status should be interpreted the same as `Unknown`, and
+     typically indicates that reconciliation has not yet finished (or that the
+     resource state may not yet be observable).
+
+* For some conditions, `True` represents normal operation, and for some
+  conditions, `False` represents normal operation. ("Normal-true" conditions
+  are sometimes said to have "positive polarity", and "normal-false" conditions
+  are said to have "negative polarity".) Without further knowledge of the
+  conditions, it is not possible to compute a generic summary of the conditions
+  on a resource.
+
+* Condition type names should make sense for humans; neither positive nor
+  negative polarity can be recommended as a general rule. A negative condition
+  like "MemoryExhausted" may be easier for humans to understand than
+  "SufficientMemory". Conversely, "Ready" or "Succeeded" may be easier to
+  understand than "Failed", because "Failed=Unknown" or "Failed=False" may
+  cause double-negative confusion.
+
+* Condition type names should describe the current observed state of the
+  resource, rather than describing the current state transitions. This
+  typically means that the name should be an adjective ("Ready", "OutOfDisk")
+  or a past-tense verb ("Succeeded", "Failed") rather than a present-tense verb
+  ("Deploying"). Intermediate states may be indicated by setting the status of
+  the condition to `Unknown`.
+
+  * For state transitions which take a long period of time (rule of thumb: > 1
+    minute), it is reasonable to treat the transition itself as an observed
+    state. In these cases, the Condition (such as "Resizing") itself should not
+    be transient, and should instead be signalled using the
+    `True`/`False`/`Unknown` pattern. This allows other observers to determine
+    the last update from the controller, whether successful or failed. In cases
+    where the state transition is unable to complete and continued
+    reconciliation is not feasible, the Reason and Message should be used to
+    indicate that the transition failed.
+
+* When designing Conditions for a resource, it's helpful to have a common
+  top-level condition which summarizes more detailed conditions. Simple
+  consumers may simply query the top-level condition. Although they are not a
+  consistent standard, the `Ready` and `Succeeded` condition types may be used
+  by API designers for long-running and bounded-execution objects, respectively.
 
 The `FooCondition` type for some resource type `Foo` may include a subset of the
 following fields, but must contain at least `type` and `status` fields:
@@ -347,19 +406,12 @@ Use of the `Reason` field is encouraged.
 Use the `LastHeartbeatTime` with great caution - frequent changes to this field
 can cause a large fan-out effect for some resources.
 
-Conditions should be added to explicitly convey properties that users and
-components care about rather than requiring those properties to be inferred from
-other observations.  Once defined, the meaning of a Condition can not be
-changed arbitrarily - it becomes part of the API, and has the same backwards-
-and forwards-compatibility concerns of any other part of the API.
+Condition types should be named in PascalCase. Short condition names are
+preferred (e.g. "Ready" over "MyResourceReady").
 
 Condition status values may be `True`, `False`, or `Unknown`. The absence of a
 condition should be interpreted the same as `Unknown`.  How controllers handle
 `Unknown` depends on the Condition in question.
-
-Condition types should indicate state in the "abnormal-true" polarity.  For
-example, if the condition indicates when a policy is invalid, the "is valid"
-case is probably the norm, so the condition should be called "Invalid".
 
 The thinking around conditions has evolved over time, so there are several
 non-normative examples in wide use.
@@ -371,12 +423,12 @@ we define comprehensive state machines for objects, nor behaviors associated
 with state transitions. The system is level-based rather than edge-triggered,
 and should assume an Open World.
 
-An example of an oscillating condition type is `Ready` (despite it running
-afoul of current guidance), which indicates the object was believed to be fully
-operational at the time it was last probed. A possible monotonic condition
-could be `Failed`. A `True` status for `Failed` would imply failure with no
-retry. An object that was still active would generally not have a `Failed`
-condition.
+An example of an oscillating condition type is `Ready`, which indicates the
+object was believed to be fully operational at the time it was last probed. A
+possible monotonic condition could be `Succeeded`. A `True` status for
+`Succeeded` would imply completion and that the resource was no longer
+active. An object that was still active would generally have a `Succeeded`
+condition with status `Unknown`.
 
 Some resources in the v1 API contain fields called **`phase`**, and associated
 `message`, `reason`, and other status fields. The pattern of using `phase` is
@@ -427,11 +479,7 @@ ensure that GETs of individual objects remain bounded in time and space, these
 sets may be queried via separate API queries, but will not be expanded in the
 referring object's status.
 
-References to specific objects, especially specific resource versions and/or
-specific fields of those objects, are specified using the `ObjectReference` type
-(or other types representing strict subsets of it). Unlike partial URLs, the
-ObjectReference type facilitates flexible defaulting of fields from the
-referring object or other contextual information.
+For references to specific objects, see [Object references](#object-references).
 
 References in the status of the referee to the referrer may be permitted, when
 the references are one-to-one and do not need to be frequently updated,
@@ -439,9 +487,12 @@ particularly in an edge-based manner.
 
 #### Lists of named subobjects preferred over maps
 
-Discussed in [#2004](http://issue.k8s.io/2004) and elsewhere. There are no maps
-of subobjects in any API objects. Instead, the convention is to use a list of
-subobjects containing name fields.
+Discussed in [#2004](http://issue.k8s.io/2004) and elsewhere. There are
+no maps of subobjects in any API objects. Instead, the convention is to
+use a list of subobjects containing name fields. These conventions, and
+how one can change the semantics of lists, structs and maps are
+described in more details in the Kubernetes
+[documentation](https://kubernetes.io/docs/reference/using-api/server-side-apply/#merge-strategy).
 
 For example:
 
@@ -490,7 +541,23 @@ selectors, annotations, data), as opposed to sets of subobjects.
 
 Some fields will have a list of allowed values (enumerations). These values will
 be strings, and they will be in CamelCase, with an initial uppercase letter.
-Examples: `ClusterFirst`, `Pending`, `ClientIP`.
+Examples: `ClusterFirst`, `Pending`, `ClientIP`. When an acronym or initialism
+each letter in the acronym should be uppercase, such as with `ClientIP` or
+`TCPDelay`. When a proper name or the name of a command-line executable is used
+as a constant the proper name should be represented in consistent casing -
+examples: `systemd`, `iptables`, `IPVS`, `cgroupfs`, `Docker` (as a generic
+concept), `docker` (as the command-line executable). If a proper name is used
+which has mixed capitalization like `eBPF` that should be preserved in a longer
+constant such as `eBPFDelegation`.
+
+All API within Kubernetes must leverage constants in this style, including
+flags and configuration files. Where inconsistent constants were previously used,
+new flags should be CamelCase only, and over time old flags should be updated to
+accept a CamelCase value alongside the inconsistent constant. Example: the
+Kubelet accepts a `--topology-manager-policy` flag that has values `none`,
+`best-effort`, `restricted`, and `single-numa-node`. This flag should accept
+`None`, `BestEffort`, `Restricted`, and `SingleNUMANode` going forward. If new
+values are added to the flag, both forms should be supported.
 
 #### Unions
 
@@ -561,11 +628,13 @@ duration in seconds before the object should be deleted. Individual kinds may
 declare fields which provide a default grace period, and different kinds may
 have differing kind-wide default grace periods. A user provided grace period
 overrides a default grace period, including the zero grace period ("now").
+* DELETE /&lt;resourceNamePlural&gt; - Deletes a list of type
+&lt;resourceName&gt;, e.g. DELETE /pods a list of Pods.
 * PUT /&lt;resourceNamePlural&gt;/&lt;name&gt; - Update or create the resource
 with the given name with the JSON object provided by the client.
 * PATCH /&lt;resourceNamePlural&gt;/&lt;name&gt; - Selectively modify the
 specified fields of the resource. See more information [below](#patch-operations).
-* GET /&lt;resourceNamePlural&gt;&amp;watch=true - Receive a stream of JSON
+* GET /&lt;resourceNamePlural&gt;&quest;watch=true - Receive a stream of JSON
 objects corresponding to changes made to any resource of the given kind over
 time.
 
@@ -801,14 +870,191 @@ Examples:
 
 ## Object references
 
-Object references should either be called `fooName` if referring to an object of
-kind `Foo` by just the name (within the current namespace, if a namespaced
-resource), or should be called `fooRef`, and should contain a subset of the
-fields of the `ObjectReference` type.
+Object references on a namespaced type should usually refer only to objects in
+the same namespace.  Because namespaces are a security boundary, cross namespace
+references can have unexpected impacts, including:
+ 1. leaking information about one namespace into another namespace. It's natural to place status messages or even bits of
+    content about the referenced object in the original. This is a problem across namespaces.
+ 2. potential invasions into other namespaces. Often references give access to a piece of referred information, so being
+    able to express "give me that one over there" is dangerous across namespaces without additional work for permission checks
+    or opt-in's from both involved namespaces.
+ 3. referential integrity problems that one party cannot solve. Referencing namespace/B from namespace/A doesn't imply the
+    power to control the other namespace. This means that you can refer to a thing you cannot create or update.
+ 4. unclear semantics on deletion. If a namespaced resource  is referenced by other namespaces, should a delete of the 
+    referenced resource result in removal or should the referenced resource be force to remain.
+ 5. unclear semantics on creation. If a referenced resource is created after its reference, there is no way to know if it
+    is the one that is expected or if it is a different one created with the same name.
 
+Built-in types and ownerReferences do not support cross namespaces references.
+If a non-built-in types chooses to have cross-namespace references the semantics of the edge cases above should be 
+clearly described and the permissions issues should be resolved.
+This could be done with a double opt-in (an opt-in from both the referrer and the refer-ee) or with secondary permissions
+checks performed in admission. 
 
-TODO: Plugins, extensions, nested kinds, headers
+### Naming of the reference field
 
+The name of the reference field should be of the format "{field}Ref", with "Ref" always included in the suffix.
+
+The "{field}" component should be named to indicate the purpose of the reference. For example, "targetRef" in an
+endpoint indicates that the object reference specifies the target.
+
+It is okay to have the "{field}" component indicate the resource type. For example, "secretRef" when referencing
+a secret. However, this comes with the risk of the field being a misnomer in the case that the field is expanded to
+reference more than one type.
+
+In the case of a list of object references, the field should be of the format "{field}Refs", with the same guidance
+as the singular case above.
+
+### Referencing resources with multiple versions
+
+Most resources will have multiple versions. For example, core resources
+will undergo version changes as it transitions from alpha to GA.
+
+Controllers should assume that a version of a resource may change, and include appropriate error handling.
+
+### Handling of resources that do not exist
+
+There are multiple scenarios where a desired resource may not exist. Examples include:
+
+- the desired version of the resource does not exist.
+- race condition in the bootstrapping of a cluster resulting a resource not yet added.
+- user error.
+
+Controllers should be authored with the assumption that the referenced resource may not exist, and include
+error handling to make the issue clear to the user.
+
+### Validation of fields
+
+Many of the values used in an object reference are used as part of the API path. For example,
+the object name is used in the path to identify the object. Unsanitized, these values can be used to
+attempt to retrieve other resources, such as by using values with semantic meanings such as  `..` or `/`.
+
+Have the controller validate fields before using them as path segments in an API request, and emit an event to
+tell the user that the validation has failed.
+
+See [Object Names and IDs](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+for more information on legal object names.
+
+### Do not modify the referred object
+
+To minimize potential privilege escalation vectors, do not modify the object that is being referred to,
+or limit modification to objects in the same namespace and constrain the type of modification allowed
+(for example, the HorizontalPodAutoscaler controller only writes to the `/scale` subresource).
+
+### Minimize copying or printing values to the referrer object
+
+As the permissions of the controller can differ from the permissions of the author of the object
+the controller is managing, it is possible that the author of the object may not have permissions to
+view the referred object. As a result, the copying of any values about the referred object to the
+referrer object can be considered permissions escalations, enabling a user to read values that they
+would not have access to previously.
+
+The same scenario applies to writing information about the referred object to events.
+
+In general, do not write or print information retrieved from the referred object to the spec, other objects, or logs.
+
+When it is necessary, consider whether these values would be ones that the
+author of the referrer object would have access to via other means (e.g. already required to
+correctly populate the object reference).
+
+### Object References Examples
+
+The following sections illustrate recommended schemas for various object references scenarios.
+
+The schemas outlined below are designed to enable purely additive fields as the types of referencable
+objects expand, and therefore are backwards compatible.
+
+For example, it is possible to go from a single resource type to multiple resource types without
+a breaking change in the schema.
+
+#### Single resource reference
+
+A single kind object reference is straightforward in that the controller can hard-code most qualifiers needed to identify the object. As such as the only value needed to be provided is the name (and namespace, although cross-namespace references are discouraged):
+
+```yaml
+# for a single resource, the suffix should be Ref, with the field name
+# providing an indication as to the resource type referenced.
+secretRef: 
+    name: foo
+    # namespace would generally not be needed and is discouraged, 
+    # as explained above.
+    namespace: foo-namespace
+```
+
+This schema should only be used when the intention is to always have the reference only be to a single resource.
+If extending to multiple resource types is possible, use the [multiple resource reference](#multiple-resource-reference).
+
+##### Controller behavior
+
+The operator is expected to know the version, group, and resource name of the object it needs to retrieve the value from, and can use the discovery client or construct the API path directly.
+
+#### Multiple resource reference
+
+Multi-kind object references are used when there is a bounded set of valid resource types that a reference can point to.
+
+As with a single-kind object reference, the operator can supply missing fields, provided that the fields that are present are sufficient to uniquely identify the object resource type among the set of supported types.
+
+```yaml
+# guidance for the field name is the same as a single resource.
+fooRef:
+    group: sns.services.k8s.aws
+    resource: topics
+    name: foo
+    namespace: foo-namespace
+```
+
+Although not always necessary to help a controller identify a resource type, “group” is included to avoid ambiguity when the resource exists in multiple groups. It also provides clarity to end users and enables copy-pasting of a reference without the referenced type changing due to a different controller handling the reference.
+
+##### Controller behavior
+
+The operator can store a map of (group,resource) to the version of that resource it desires. From there, it can construct the full path to the resource, and retrieve the object.
+
+It is also possible to have the controller choose a version that it finds via the discovery client. However, as schemas can vary across different versions
+of a resource, the controller must also handle these differences.
+
+#### Generic object reference
+
+A generic object reference is used when the desire is to provide a pointer to some object to simplify discovery for the user. For example, this could be used to reference a target object for a `core.v1.Event` that occurred.
+
+With a generic object reference, it is not possible to extract any information about the referenced object aside from what is standard (e.g. ObjectMeta). Since any standard fields exist in any version of a resource, it is possible to not include version in this case:
+
+```yaml
+fooObjectRef:
+    group: operator.openshift.io
+    resource: openshiftapiservers
+    name: cluster
+    # namespace is unset if the resource is cluster-scoped, or lives in the 
+    # same namespace as the referrer.
+```
+
+##### Controller behavior
+
+The operator would be expected to find the resource via the discovery client (as the version is not supplied). As any retrievable field would be common to all objects, any version of the resource should do.
+
+#### Field reference
+
+A field reference is used when the desire is to extract a value from a specific field in a referenced object.
+
+Field references differ from other reference types, as the operator has no knowledge of the object prior to the reference. Since the schema of an object can differ for different versions of a resource, this means that a “version” is required for this type of reference.
+
+```yaml
+fooFieldRef:
+   version: v1 # version of the resource
+   # group is elided in the ConfigMap example, since it has a blank group in the OpenAPI spec.
+   resource: configmaps
+   fieldPath: data.foo
+```
+
+The fieldPath should point to a single value, and use [the recommended field selector notation](#selecting-fields) to denote the field path.
+
+##### Controller behavior
+
+In this scenario, the user will supply all of the required path elements: group, version, resource, name, and possibly namespace.
+As such, the controller can construct the API prefix and query it without the use of the discovery client:
+
+```
+/apis/{group}/{version}/{resource}/
+```
 
 ## HTTP Status codes
 
@@ -1145,11 +1391,11 @@ reduce data volume, load on the system, and noise exposed to users.
 
 ## Naming conventions
 
-* Go field names must be CamelCase. JSON field names must be camelCase. Other
+* Go field names must be PascalCase. JSON field names must be camelCase. Other
 than capitalization of the initial letter, the two should almost always match.
-No underscores nor dashes in either.
-* Field and resource names should be declarative, not imperative (DoSomething,
-SomethingDoer, DoneBy, DoneAt).
+No underscores or dashes in either.
+* Field and resource names should be declarative, not imperative (SomethingDoer, 
+DoneBy, DoneAt).
 * Use `Node` where referring to
 the node resource in the context of the cluster. Use `Host` where referring to
 properties of the individual physical/virtual system, such as `hostname`,
@@ -1358,9 +1604,8 @@ specified".
 * When referencing a literal string value, indicate the literal in
 single-quotes. Example: "must not contain '..'".
 * When referencing another field name, indicate the name in back-quotes.
-Example: "must be greater than `request`".
+Example: "must be greater than \`request\`".
 * When specifying inequalities, use words rather than symbols.  Examples: "must
 be less than 256", "must be greater than or equal to 0".  Do not use words
 like "larger than", "bigger than", "more than", "higher than", etc.
 * When specifying numeric ranges, use inclusive ranges when possible.
-

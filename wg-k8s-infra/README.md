@@ -19,20 +19,28 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Work
 * SIG Testing
 
 ## Meetings
-* Regular WG Meeting: [Wednesdays at 8:30 PT (Pacific Time)](https://zoom.us/j/8152322659) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
   * [Meeting notes and Agenda](http://bit.ly/wg-k8s-infra-notes).
   * [Meeting recordings](http://bit.ly/wg-k8s-infra-playlist).
 
 ## Organizers
 
-* Bart Smykla (**[@bartsmykla](https://github.com/bartsmykla)**), VMware
+* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), Alter Way
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
+
+## Emeritus Organizers
+
+* Bart Smykla (**[@bartsmykla](https://github.com/bartsmykla)**)
 
 ## Contact
 - Slack: [#wg-k8s-infra](https://kubernetes.slack.com/messages/wg-k8s-infra)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-k8s-infra)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fk8s-infra)
+- GitHub Teams:
+    - [@kubernetes/wg-k8s-infra](https://github.com/orgs/kubernetes/teams/wg-k8s-infra) - active contributors in wg-k8s-infra
+    - [@kubernetes/wg-k8s-infra-leads](https://github.com/orgs/kubernetes/teams/wg-k8s-infra-leads) - wg-k8s-infra leads
+- Steering Committee Liaison: Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

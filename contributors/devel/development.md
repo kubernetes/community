@@ -21,7 +21,7 @@ is a critical component that is too slow for an SLA that we care about) from the
 solution (e.g. make X faster).
 
 Some of these checks were less common in Kubernetes' earlier days. Now that we
-have over 1000 contributors, each issue should be filed with care. No issue
+have over 50000 contributors, each issue should be filed with care. No issue
 should take more than 5 minutes to check for sanity (even the busiest of
 reviewers can spare 5 minutes to review a patch that is thoughtfully justified).
 
@@ -50,7 +50,7 @@ resilient behavior.  For example: if your patch causes a controller to better
 handle inconsistent data, make a mock object which returns incorrect data a few
 times and verify the controller's new behaviour.
 
-### Is this a performance improvement ?
+### Is this a performance improvement?
 
 Performance bug reports MUST include data that demonstrates the bug.  Without
 data, the issue will be closed.  You can measure performance using kubemark,
@@ -98,7 +98,7 @@ or all of these before you get started.
 Since performance improvements can be empirically measured, you should follow
 the "scientific method" of creating a hypothesis, collecting data, and then
 revising your hypothesis.  The above issues do this transparently, using figures
-and data rather then conjecture. Notice that the problem is analyzed and a
+and data rather than conjecture. Notice that the problem is analyzed and a
 correct solution is created before a single line of code is reviewed.
 
 ## Building Kubernetes with Docker
@@ -109,47 +109,163 @@ instructions](http://releases.k8s.io/HEAD/build/README.md).
 
 ## Building Kubernetes on a local OS/shell environment
 
-Kubernetes development helper scripts assume an up-to-date GNU tools
-environment. Recent Linux distros should work out-of-the-box.
+While building via Docker can be simpler, sometimes it makes sense to
+do development on your local workstation or some other shell
+environment. The details below outline the hardware and software
+requirements for building on Linux, Windows, and macOS.
 
-macOS ships with outdated BSD-based tools. We recommend installing [macOS GNU
-tools].
+### Hardware Requirements
 
-Developers with Windows machines have two choices available to run the needed tools:
-1. If you're using Windows 10 20h1, then you may [install WSL2] and your distro of choice
-2. If you're using a previous version of Windows, then set up a Linux VM with at least 8GB of memory and 60GB of disk space.
+Kubernetes is a large project, and compiling it can use a lot of
+resources. We recommend the following for any physical or virtual
+machine being used for building Kubernetes.
 
-In either case, the same Linux development tools and Kubernetes source code are needed. Start your WSL2 distro or connect 
-to your Linux VM and follow the steps below to install the required tools.
+    - 8GB of RAM
+    - 50GB of free disk space
 
-### make
+### Preparing Your Local Operating System
 
-Kubernetes local build system requires `make` command to be present in your corresponding development platform.
+Where needed, each piece of required software will have separate
+instructions for Linux, Windows, or macOS.
 
-To install `make` command:
-- OS X
-    + `xcode-select --install` (Following command will install CLI Tools to your local development environment)
-- Linux
-    + `sudo apt-get install build-essential` (Following command will install essential commands like `gcc`, `make` etc.)
+#### Setting Up Windows
 
-### Docker
+If you are running Windows, you will need to use one of two methods
+to set up your machine for Kubernetes development. To figure out which
+method is the best choice, you will first need to determine which version of
+Windows you are running. To do this, press **Windows logo key + R**,
+type **winver**, and click **OK**. You may also enter the `ver` command at
+the Windows Command Prompt.
 
-Kubernetes Development requires some of the verification tests which are ran through Docker. Hence, you will need [Docker](https://docs.docker.com/v17.09/engine/installation/) Pre-Installed on your development environment. 
+1. If you're using Windows 10, Version 2004, Build 19041 or higher,
+   you can use Windows Subsystem for Linux (WSL) to build
+   Kubernetes. [Follow these instructions to install WSL2.](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+2. If you're using an earlier version of Windows, then create a Linux
+   virtual machine with at least 8GB of memory and 60GB of disk space. 
 
-### rsync
+Once you have finished setting up your WSL2 installation or Linux VM,
+follow the instructions below to configure your system for building
+and developing Kubernetes.
 
-Kubernetes build system requires `rsync` command present in the development
-platform.
+#### Setting Up macOS
 
-### jq
+Since Kubernetes assumes you are using GNU command line tools, you will need to
+install those tools on your
+system. [Follow these directions to install the tools](https://ryanparman.com/posts/2019/using-gnu-command-line-tools-in-macos-instead-of-freebsd-tools/).
+In particular, this command installs the necessary packages:
 
-Kube-apiserver requires `jq` to be installed to successfully build in your local environment. 
-The [jq installation guide](https://stedolan.github.io/jq/download/) provides detailed instructions for supported platforms.
+```sh
+brew install coreutils ed findutils gawk gnu-sed gnu-tar grep make
+```
 
-### Go
+You will want to include this block or something similar at the end of
+your `.bashrc` or shell init script:
+
+```sh
+GNUBINS="$(find /usr/local/opt -type d -follow -name gnubin -print)"
+
+for bindir in ${GNUBINS[@]}
+do
+  export PATH=$bindir:$PATH
+done
+
+export PATH
+```
+
+This ensures that the GNU tools are found first in your path. Note
+that shell init scripts work a little differently for
+macOS. [This article can help you figure out what changes to make.](https://scriptingosx.com/2017/04/about-bash_profile-and-bashrc-on-macos/)
+
+### Installing Required Software
+
+#### GNU Development Tools 
+
+Kubernetes development helper scripts require an up-to-date GNU
+development tools environment. The method for installing these tools
+varies from system to system.
+
+##### Installing on Linux
+
+All Linux distributions have the GNU tools available. The most popular
+distributions and commands used to install these tools are below.
+
+- Debian/Ubuntu
+  ```sh
+  sudo apt update
+  sudo apt install build-essential
+  ```
+- Fedora/RHEL/CentOS
+  ```sh
+  sudo yum update
+  sudo yum groupinstall "Development Tools"
+  ```
+- OpenSUSE
+  ```sh
+  sudo zypper update
+  sudo zypper install -t pattern devel_C_C++
+  ```
+- Arch
+  ```sh
+  sudo pacman -Sy base-devel
+  ```
+
+Once you have finished, confirm that `gcc` and `make` are installed.
+
+##### Installing on macOS
+
+Some of the build tools were installed when you prepared your system
+with the GNU command line tools earlier. However, you will also need
+to install the
+[Command Line Tools for Xcode](https://developer.apple.com/library/archive/technotes/tn2339/_index.html).
+
+#### Docker
+
+Kubernetes development requires Docker to run certain verifications. To
+install Docker in your development environment,
+[follow the instructions from the Docker website](https://docs.docker.com/get-docker/).
+
+**Note:** If you are running macOS, make sure that `/usr/local/bin` is
+in your `PATH`.
+
+#### rsync
+
+The Kubernetes build system requires that `rsync`, a common file
+synchronization and transfer tool, be present in the
+development environment. Most modern operating systems come with
+`rsync` already installed. If this is not the case, your operating
+system's package manager can most likely install the `rsync`
+package.
+
+If this fails, check the [rsync download instructions page](https://rsync.samba.org/download.html).
+
+#### jq
+
+Some of the Kubernetes helper scripts require `jq`, a command-line JSON processor, to be
+installed in your development environment. The
+[jq installation guide](https://stedolan.github.io/jq/download/)
+provides detailed instructions for supported platforms.
+
+#### gcloud
+
+If you plan to build remotely or run end-to-end (e2e) tests, you will
+need to install the command line interface to the Google Cloud
+Platform. [Follow the `gcloud` installation instructions for your operating system.](https://cloud.google.com/sdk/downloads)
+
+#### Go
 
 Kubernetes is written in [Go](http://golang.org). If you don't have a Go
-development environment, please [set one up](http://golang.org/doc/code.html).
+development environment, please follow the instructions in the
+[Go Getting Started guide](https://golang.org/doc/install).
+
+Confirm that your `GOPATH` and `GOBIN` environment variables are
+correctly set as detailed in
+[How to Write Go Code](https://golang.org/doc/code.html) before
+proceeding.
+
+**Note:** Building and developing Kubernetes requires a very recent
+version of Go. Please install the newest stable version available for
+your system. The table below lists the required Go versions for
+different versions of Kubernetes.
 
 
 | Kubernetes     | requires Go |
@@ -165,72 +281,87 @@ development environment, please [set one up](http://golang.org/doc/code.html).
 | 1.12           | 1.10.4      |
 | 1.13           | 1.11.13     |
 | 1.14 - 1.16    | 1.12.9      |
-| 1.17 - 1.18    | 1.13.9      |
-| 1.18+          | 1.14.4      |
+| 1.17 - 1.18    | 1.13.15     |
+| 1.18 - 1.20    | 1.15        |
+| 1.20.4+        | 1.16        |
 
-Ensure your GOPATH and PATH have been configured in accordance with the Go
-environment instructions.
+##### A Note on Changing Go Versions
 
-#### Upgrading Go
+If you have already compiled Kubernetes but are now trying with a
+different version of Go, please refer to the
+[SIG Release documentation](https://github.com/kubernetes/sig-release).
 
-Upgrading Go requires specific modification of some scripts and container
-images.
-
-- The image for cross compiling in [build/build-image/cross].
-  The `VERSION` file and `Dockerfile`.
-- The cross tag `KUBE_BUILD_IMAGE_CROSS_TAG` in [build/common.sh].
-- The `go_version` in the [`go_register_toolchains`](https://git.k8s.io/kubernetes/build/root/WORKSPACE) bazel rule.
-- The desired Go version in
-  [test/images/Makefile](https://git.k8s.io/kubernetes/test/images/Makefile).
-
-### PyYAML
+#### PyYAML
 
 Some Kubernetes verification tests use [PyYAML](https://pyyaml.org/) and it therefore needs to be installed to successfully run all verification tests in your local environment. 
-You can use the [PyYAML documentation](https://pyyaml.org/wiki/PyYAMLDocumentation) to find the installation instructions.
+You can use the
+[PyYAML documentation](https://pyyaml.org/wiki/PyYAMLDocumentation) to
+find the installation instructions for your platform.
 
-### Quick Start
+**Note:** If you are running macOS, you may need to use the `pip3`
+command instead of the `pip` command to install PyYAML.
 
-The following section is a quick start on how to build Kubernetes locally, for more detailed information you can see [kubernetes/build](https://git.k8s.io/kubernetes/build/README.md). Before you start you will need to clone a local Kubernetes code base, refer to [GitHub workflow](#github-workflow) for details on how to set this up.
+#### Cloning the Kubernetes Git Repository
 
-The best way to validate your current setup is to build a small part of Kubernetes. This way you can address issues without waiting for the full build to complete. To build a specific part of Kubernetes use the `WHAT` environment variable to let the build scripts know you want to build only a certain package/executable.
+You are now ready to clone the Kubernetes git repository. See the [GitHub Workflow](/contributors/guide/github-workflow.md) document from the Contributor Guide for instructions.
+
+#### etcd
+
+To test Kubernetes, you will need to install a recent version of [etcd](https://etcd.io/), a consistent and highly-available key-value store. To install a local version of etcd, run the following command in your Kubernetes working directory.
 
 ```sh
-make WHAT=cmd/{$package_you_want}
+./hack/install-etcd.sh
 ```
 
-*Note:* This applies to all top level folders under kubernetes/cmd.
+This script will instruct you to make a change to your `PATH`. To make
+this permanent, add this to your `.bashrc` or login script:
 
-So for the cli, you can run:
+```sh
+export PATH="$GOPATH/src/k8s.io/kubernetes/third_party/etcd:${PATH}"
+```
+
+Once you have installed all required software, you can proceed to the
+[Building Kubernetes](#building-kubernetes) section to test if it all works properly.
+
+## Building Kubernetes
+
+The best way to validate your development environment is to build part of Kubernetes. This allows you to address issues and correct your configuration without waiting for a full build to complete. This section briefly describes various methods for compiling Kubernetes subsystems. For more detailed instructions, see [Building Kubernetes](https://github.com/kubernetes/kubernetes/blob/master/build/README.md) in the official Kubernetes documentation.
+
+To build a specific part of Kubernetes use the `WHAT` environment variable. In `$GOPATH/src/k8s.io/kubernetes/`, the Kubernetes project directory, run the following command:
+
+```sh
+make WHAT=cmd/<subsystem>
+```
+
+Replace `<subsystem>` with one of the command folders under the `cmd/` directory. For example, to build the `kubectl` CLI, run the following:
 
 ```sh
 make WHAT=cmd/kubectl
 ```
 
-If everything checks out you will have an executable in the `_output/bin` directory to play around with.
+If this command succeeds, you will now have an executable at `_output/bin/kubectl` off of your Kubernetes project directory.
 
-*Note:* If you are using `CDPATH`, you must either start it with a leading colon, or unset the variable. The make rules and scripts to build require the current directory to come first on the CD search path in order to properly navigate between directories.
-
-To build everything:
-```sh
-cd $working_dir/kubernetes
-
-# This is equivalent to calling 'make all'
-make
-```
-
-To remove the limit on the number of errors the Go compiler reports (default
-limit is 10 errors):
-```sh
-make GOGCFLAGS="-e"
-```
-
-To build with optimizations disabled (enables use of source debug tools):
+To build the entire Kubernetes project, run the following command:
 
 ```sh
-make GOGCFLAGS="-N -l"
+make all
 ```
 
-To build binaries for all platforms:
+**Note:** You can omit `all` and just run `make`.
+
+The Kubernetes build system defaults to limiting the number of reported Go compiler errors to 10. If you would like to remove this limit, add `GOGCFLAGS="-e"` to your command line. For example:
+
+```sh
+make WHAT="cmd/kubectl" GOGCFLAGS="-e"
+```
+
+If you need to use debugging inspection tools on your compiled Kubernetes executables, add `-N -l` to `GOGCFLAGS`. For example:
+
+```sh
+make WHAT="cmd/kubectl" GOGCFLAGS="-N -l"
+```
+
+To cross-compile Kubernetes for all platforms, run the following command:
 
 ```sh
 make cross
@@ -242,66 +373,112 @@ To build binaries for a specific platform, add `KUBE_BUILD_PLATFORMS=<os>/<arch>
 make cross KUBE_BUILD_PLATFORMS=windows/amd64
 ```
 
-#### Install etcd
+## A Quick Start for Testing Kubernetes
+
+Because kubernetes only merges pull requests when unit, integration, and e2e tests are
+passing, your development environment needs to run all tests successfully. While this quick start will get you going,
+to really understand the testing infrastructure, read the
+[Testing Guide](sig-testing/testing.md) and check out the
+[SIG Architecture developer guide material](README.md#sig-testing).
+
+Note that all of the commands in this section are run in your
+Kubernetes project directory at `$GOPATH/src/k8s.io/kubernetes/`
+unless otherwise specified.
+
+**Note:** You can get additional information for many of the commands
+mentioned here by running `make help`.
+
+### Presubmission Verification
+
+Presubmission verification provides a battery of checks and tests to
+give your pull request the best chance of being accepted. Developers need to run as many verification tests as possible
+locally. 
+
+You can view a list of all verification tests in `hack/verify-*.sh`
+off of your Kubernetes project directory.
+
+To run all presubmission verification tests, use this command:
 
 ```sh
-cd $working_dir/kubernetes
-
-# Installs in ./third_party/etcd
-hack/install-etcd.sh
-
-# Add to PATH
-echo export PATH="\$PATH:$working_dir/kubernetes/third_party/etcd" >> ~/.profile
+make verify
 ```
 
-#### Test
+If a specific verification test is failing, there could be an update
+script to help fix the problem. These are located in
+`hack/update-*.sh`. For example, `hack/update-gofmt.sh` makes sure
+that all source code files are correctly formatted. This is usually
+needed when you add new files to the project.
+
+You can also run all update scripts with this command:
 
 ```sh
-cd $working_dir/kubernetes
-
-# Run all the presubmission verification. Then, run a specific update script (hack/update-*.sh)
-# for each failed verification. For example:
-#   hack/update-gofmt.sh (to make sure all files are correctly formatted, usually needed when you add new files)
-#   hack/update-bazel.sh (to update bazel build related files, usually needed when you add or remove imports)
-make verify
-
-# Alternatively, run all update scripts to avoid fixing verification failures one by one.
 make update
+```
 
-# Run every unit test
+### Unit Tests
+
+Pull requests need to pass all unit tests. To run every unit test, use
+this command:
+
+```sh
 make test
+```
 
-# Run package tests verbosely
+You can also use the `WHAT` option to control which packages and
+subsystems are testing and use `GOFLAGS` to change how tests are
+run. For example, to run unit tests verbosely against just one
+package, use a command like this:
+
+```
 make test WHAT=./pkg/apis/core/helper GOFLAGS=-v
+```
 
-# Run integration tests, requires etcd
-# For more info, visit https://git.k8s.io/community/contributors/devel/sig-testing/testing.md#integration-tests
+### Integration Tests
+
+All integration tests need to pass for a pull request to be
+accepted. Note that for this stage, in particular, it is important that
+[etcd](#etcd) be properly installed. Without it, integration testing
+will fail.
+
+To run integration tests, use this command:
+
+```sh
 make test-integration
+```
 
-# Run e2e tests by building test binaries, turn up a test cluster, run all tests, and tear the cluster down
-# Note: running all e2e tests takes a LONG time! To run specific e2e tests, visit:
-# ./e2e-tests.md#building-kubernetes-and-running-the-tests
+To learn more about integration testing, read the
+[SIG Testing Integration Tests guide](./sig-testing/integration-tests.md).
+
+### E2E Tests
+
+End-to-end (E2E) tests provide a mechanism to test the end-to-end behavior
+of the system. The primary objective of the E2E tests is to ensure
+consistent and reliable behavior of the Kubernetes code base,
+especially in areas where unit and integration tests are insufficient.
+
+E2E tests build test binaries, spin up a test cluster,
+run the tests, and then tear the cluster down.
+
+**Note:** Running all E2E tests takes a *very long time*!
+
+To run E2E tests, use this command:
+
+```sh
 make test-e2e
 ```
 
-See the [testing guide](./sig-testing/testing.md) and [end-to-end tests](./sig-testing/e2e-tests.md)
-for additional information and scenarios.
+For more information on E2E tests, including methods for saving time
+by just running specific tests, read
+[End-to-End Testing in Kubernetes](./sig-testing/e2e-tests.md) and the
+[getting started guide for `kubetest2`](./sig-testing/e2e-tests-kubetest2.md).
 
-Run `make help` for additional information on these make targets.
-
-#### Dependency management
+## Dependency management
 
 Kubernetes uses [go modules](https://github.com/golang/go/wiki/Modules) to manage
 dependencies.
 
 Developers who need to manage dependencies in the `vendor/` tree should read
 the docs on [using go modules to manage dependencies](/contributors/devel/sig-architecture/vendor.md).
-
-
-## Build with Bazel/Gazel
-
-Building with Bazel is currently experimental.  For more information,
-see [Build with Bazel].
 
 
 ## GitHub workflow
@@ -320,5 +497,3 @@ To check out code to work on, please refer to [this guide](/contributors/guide/g
 [kubectl user guide]: https://kubernetes.io/docs/user-guide/kubectl
 [kubernetes.io]: https://kubernetes.io
 [mercurial]: http://mercurial.selenic.com/wiki/Download
-[Build with Bazel]: sig-testing/bazel.md
-[install WSL2]: https://docs.microsoft.com/en-us/windows/wsl/wsl2-install

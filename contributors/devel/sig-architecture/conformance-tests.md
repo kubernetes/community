@@ -68,21 +68,21 @@ Examples of features which are not currently eligible for conformance tests:
 - anything that requires a non-default admission plugin
 - features that are pending deprecation, eg: componentstatus
 
-Conformance tests are intended to be stable and backwards compatible according to 
-the standard API deprecation policies. Therefore any test that relies on specific 
-output that is not subject to the deprecation policy cannot be promoted to conformance. 
+Conformance tests are intended to be stable and backwards compatible according to
+the standard API deprecation policies. Therefore any test that relies on specific
+output that is not subject to the deprecation policy cannot be promoted to conformance.
 Examples of tests which are not eligible to conformance:
 - anything that checks specific Events are generated, as we make no guarantees
   about the contents of events, nor their delivery
-    - If a test depends on events it is recommended to change the test to 
+    - If a test depends on events it is recommended to change the test to
       use an informer pattern and watch specific resource changes instead.
-    - An exception to this is tests that generates synthetic events themselves 
+    - An exception to this is tests that generates synthetic events themselves
       to verify that the API is capable of being exercised
 - anything that checks optional Condition fields, such as Reason or Message, as
   these may change over time (however it is reasonable to verify these fields
   exist or are non-empty)
-    - If the test is checking for specific conditions or reasons, it is considered 
-      overly specific and it is recommended to simply look for pass/failure criteria 
+    - If the test is checking for specific conditions or reasons, it is considered
+      overly specific and it is recommended to simply look for pass/failure criteria
       where possible, and output the condition/reason for debugging purposes only.
 
 Examples of areas we may want to relax these requirements once we have a
@@ -105,7 +105,7 @@ Generally speaking, the goals are to:
 
 - Make sure tests that are already passing remain passing. If new OS-specific
 functionality is added, it should be in a new test.
-- Ensure that new tests covering Linux-specific functionality are tagged with `[LinuxOnly]` 
+- Ensure that new tests covering Linux-specific functionality are tagged with `[LinuxOnly]`
 (see: [Kinds of Tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests),
 - Give future reviewers a reference to an active issue or documentation clarifying why a test
 cannot run on Windows.
@@ -116,7 +116,7 @@ The tests that are running today:
 including Windows versions, or have been ported by SIG-Windows
 (see [kubernetes-sigs/windows-testing/images](https://github.com/kubernetes-sigs/windows-testing/tree/master/images)
 - Do not depend on any functionality that is different or not available on Windows. The full list
-is available in the Windows Kubernetes docs under [api](https://kubernetes.io/docs/setup/windows/intro-windows-in-kubernetes/#api). 
+is available in the Windows Kubernetes docs under [api](https://kubernetes.io/docs/setup/windows/intro-windows-in-kubernetes/#api).
 A brief summary is included here as a starting point. If the docs are insufficient
 or there are more questions, please contact #SIG-Windows on Slack to get another
 reviewer.
@@ -139,13 +139,13 @@ implicitly by Docker or ContainerD, not by the kubelet. Do not check properties 
 - Networking
   - Pods set `HostNetwork=true`. Is not supported on Windows, and the Pod will not start.
   - Network and DNS settings must be passed through CNI. Windows does not use `/etc/resolv.conf`, so tests should not rely on reading that file to check DNS settings.
-    - If you to check network settings such as dns search lists, please use [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) to output needed data from the container. 
+    - If you to check network settings such as dns search lists, please use [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) to output needed data from the container.
   - Windows treats all DNS lookups with a `.` to be FQDN, not PQDN. For example `kubernetes` will resolve as a PQDN,
   but `kubernetes.default` will be resolved as a FQDN and fail.
   - ICMP only works between pods on the same network, and are not routable to external networks. TCP/UDP are routable.
   - Windows containers do not support IPv6.
 
-The existing tests which are affected by one of those criteria are tagged with `[LinuxOnly]` 
+The existing tests which are affected by one of those criteria are tagged with `[LinuxOnly]`
 (see: [Kinds of Tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests).
 
 ## Conformance Test Version Skew Policy
@@ -169,7 +169,7 @@ with the following versions must pass conformance tests built from the
 following branches:
 
 | cluster version | master | release-1.3 | release-1.2 | release-1.1 |
-| --------------- | -----  | ----------- | ----------- | ----------- |
+| --------------- | ------ | ----------- | ----------- | ----------- |
 | v1.3.0-alpha    | yes    | yes         | yes         | no          |
 | v1.2.x          | no     | no          | yes         | yes         |
 | v1.1.x          | no     | no          | no          | yes         |
@@ -180,6 +180,57 @@ Conformance tests are designed to be run even when there is no cloud provider
 configured. Conformance tests must be able to be run against clusters that have
 not been created with `test-infra/kubetest`, just provide a kubeconfig with the
 appropriate endpoint and credentials.
+
+### Running Conformance Tests With [KinD](https://kind.sigs.k8s.io/)
+
+1. Work in your kubernetes branch, preferably in the default go src location: `$GOPATH/src/k8s.io/kubernetes`
+
+2. Create your kind node image:
+
+```sh
+kind build node-image
+```
+
+3. Create your kind e2e cluster config kind-config-yaml:
+
+```yaml
+# necessary for conformance
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  ipFamily: ipv4
+nodes:
+# the control plane node
+- role: control-plane
+- role: worker
+- role: worker
+```
+
+4. Set your KUBECONFIG env variable (KIND generates the conf based on it):
+
+```sh
+export KUBECONFIG="${HOME}/.kube/kind-test-config"
+```
+
+5. Use the previous config to create your cluster:
+
+```sh
+kind create cluster --config kind-config.yaml --image kindest/node:latest -v4
+```
+
+6. Create your e2e Kubernetes binary (from your Kubernetes src code):
+
+```sh
+make WHAT="test/e2e/e2e.test"
+```
+
+7. Execute your tests:
+
+```sh
+./_output/bin/e2e.test -context kind-kind -ginkgo.focus="\[sig-network\].*Conformance" -num-nodes 2
+```
+
+### Running Conformance Tests With kubetest
 
 These commands are intended to be run within a kubernetes directory, either
 cloned from source, or extracted from release artifacts such as
@@ -249,9 +300,8 @@ To promote a test to the conformance test suite, open a PR as follows:
     than the `framework.It()` function
   - adds a comment immediately before the `ConformanceIt()` call that includes
     all of the required [conformance test comment metadata]
-  - run `bazel build //test/conformance:list_conformance_tests` then
-    `cp bazel-bin/test/conformance/conformance.yaml test/conformance/testdata`
-    which adds the test name to the [conformance.yaml] file
+  - run `hack/update-conformance-yaml.sh` which adds the test name to the [conformance.yaml] file
+    More information [here](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/README.md)
 - add the PR to SIG Architecture's [Conformance Test Review board] in the To
   Triage column
 
@@ -286,7 +336,7 @@ The following snippet of code shows a sample conformance test's metadata:
 
 ```
 /*
-  Release : v1.9
+  Release: v1.9
   Testname: Kubelet: log output
   Description: By default the stdout and stderr from the process being
   executed in a pod MUST be sent to the pod's logs.

@@ -13,20 +13,13 @@ December
 - Keep up-to-date meeting notes, linked from the SIG's page in the community
 repo
 - Record meetings and make them publicly available on the
-[Kubernetes Community YouTube playlist]
-- Report activity with the community via the kubernetes-dev mailing list at
-least once a quarter. Whichever format the SIG uses should _always_ be reported
-to the kubernetes-dev mailing list as this is the list the community depends on
-for SIG updates.  
-  - Each SIG is assigned an update during the monthly community meeting
-  throughout the year. The meeting host will publish the notes to the
+[Kubernetes Community YouTube playlist]  
+- Report activity with the community via the kubernetes-dev@ mailing list at
+least once a year. 
+  - Each SIG is assigned an update during the [monthly community meeting]
+  throughout the year from sig-contributor-experience. The meeting host will publish the notes to the
   kubernetes-dev mailing list with the update.  
-  - Due to limited opportunities (twice a year) at the community meeting to
-  present, your SIG will need to figure out two other options to deliver on SIG
-  updates to meet the quarterly reporting requirement:
-    a. During KubeCon + CloudNativeCon or  
-    b. A presentation or summary update sent to the kubernetes-dev
-  mailing list.
+  - This is separate from the [annual report]. 
 - Participate in release planning meetings and retrospectives, and burndown
 meetings, as needed
 - Ensure related work happens in a project-owned github org and repository, with
@@ -122,9 +115,7 @@ Subproject contributors (as applicable).
  groups like SIGs and the Steering Committee but *MAY* delegate the actual
  communication and creation of content to other contributors where
  appropriate  
-- *MUST* provide quarterly updates through our community channels: twice a year
-to kubernetes-dev@googlegroups.com mailing list and twice a year presenting at
-the monthly community meeting  
+- *MUST* provide updates through the [monthly community meeting]
 - *MUST* present yearly [annual report] for the group but *SHOULD* get help with
 curation from other SIG participants
 
@@ -136,6 +127,7 @@ curation from other SIG participants
   - Resolve X-Subproject technical issues and decisions
   - Number: 2-3
   - Membership tracked in [sigs.yaml]
+  - Role description in [technical-lead.md]
 
 ### Subproject Owner
 
@@ -159,6 +151,8 @@ curation from other SIG participants
 - *MAY* build new functionality for subprojects
 - *MAY* participate in decision making for the subprojects they hold roles in
 - Includes all reviewers and approvers in [OWNERS] files for subprojects
+- *MUST* take an [Inclusive Open Source Community Orientation course] in support of our community values
+within 30 days from the date of their appointment.
 
 ### Security Contact
 
@@ -260,7 +254,7 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [forums provided]: /communication/README.md
 [lazy-consensus]: http://en.osswiki.info/concepts/lazy_consensus
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
-[KEP]: https://git.k8s.io/enhancements/keps/YYYYMMDD-kep-template.md
+[KEP]: https://git.k8s.io/enhancements/keps/NNNN-kep-template/README.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
 [OWNERS]: contributors/devel/owners.md
 [SIG Charter process]: https://git.k8s.io/community/committee-steering/governance/README.md
@@ -282,4 +276,6 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [Editor]: https://github.com/kubernetes/community/blob/master/communication/marketing-team/role-handbooks/editor.md
 [Events Lead]: https://github.com/kubernetes/community/blob/master/events/events-team/events-lead.md
 [PR Wrangler]: https://kubernetes.io/docs/contribute/participate/pr-wranglers/
-
+[monthly community meeting]: /events/community-meeting.md
+[Inclusive Open Source Community Orientation course]: https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/
+[technical-lead.md]: /contributors/chairs-and-techleads/technical-lead.md

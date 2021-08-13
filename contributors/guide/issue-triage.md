@@ -130,9 +130,11 @@ api-machinery has found that consistently meeting on a regular, fixed schedule i
 The SIG has developed a [triaging page](/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
 
 ## Step One: Review Newly Created Open Issues
-Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). New, untriaged issues come without labels attached. SIG leads should identify at least one SIG member to serve as a first point of contact for new issues.
+Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). Labels are the primary tools for triaging. [Here's a comprehensive label list](https://github.com/kubernetes/kubernetes/labels).
 
-Labels are the primary tools for triaging. [Here's a comprehensive label list](https://github.com/kubernetes/kubernetes/labels).
+New issues are automatically assigned a `needs-triage` label indicating that these issues are currently awaiting triage. After triaging an issue, the issue owning SIG will apply the `triage/accepted` label using the bot command `/triage accepted` as a comment. This will remove the  `needs-triage` label and add a `triage/accepted` label indicating that an issue is ready to be worked on.
+
+Note that adding labels requires Kubernetes GitHub org membership. If you are not an org member, you should add your triage findings as a comment.
 
 ### Conducting Searches
 GitHub allows you to filter out types of issues and pull requests, which helps you discover items in need of triaging. This table includes some predetermined searches for convenience:
@@ -153,7 +155,7 @@ Use [these labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%9
 Depending on your permissions, either close or comment on any issues that are identified as support requests, duplicates, or not-reproducible bugs, or that lack enough information from the reporter.
  
 ### Support Requests
-Some people mistakenly use GitHub issues to file support requests. Usually they're asking for help configuring some aspect of Kubernetes. To handle such an issue, direct the author to use our [support request channels](#support-requests-channels). Then apply the `triage/support` label, which is directed to our support structures, and apply the `close` label.
+Some people mistakenly use GitHub issues to file support requests. Usually they're asking for help configuring some aspect of Kubernetes. To handle such an issue, direct the author to use our [support request channels](#support-requests-channels). Then apply the `kind/support` label, which is directed to our support structures, and apply the `close` label.
 
 Please find more detailed information about Support Requests in the [Footnotes section](#footnotes).
 
@@ -175,7 +177,7 @@ If you can't reproduce it:
 * Close the issue if both the parties agree that it could not be reproduced.
 
 If you need more information to further work on the issue:
-* Let the reporter know it by adding an issue comment followed by label `lifecycle/needs-information`.
+* Let the reporter know it by adding an issue comment. Include `/triage needs-information` in the comment to apply the `triage/needs-information` label.
 
 In all cases, if you do not get a response in 20 days then close the issue with an appropriate comment. If you have permission to close someone else's issue, first `/assign` the issue to yourself, then `/close` it. If you do not, please leave a comment describing your findings.
 
@@ -216,6 +218,8 @@ Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [Th
 ### Self-Assigning
 If you think you can fix the issue, assign it to yourself with *just* the `/assign` label. If you cannot self-assign for permissions-related reasons, leave a comment that you'd like to claim it and work on creating a PR.
 
+When an issue already has an assignee, **Do Not** assign it to yourself or create a PR without talking to the existing assignee or going through the [Follow Up](#Step-Five:-Follow-Up) steps as described in this document. Creating a PR, when someone else is working on it, is not a good practice and should be discouraged.
+
 ## Step Five: Follow Up
 ### If no PR is created for an Issue Within the Current Release Cycle
 If you see any issue which is owned by a developer but a PR is not created in 30 days, a Triage engineer should contact the issue owner and ask them to either create a PR or release ownership.
@@ -232,9 +236,6 @@ These should be directed to the following:
 * [User documentation](https://kubernetes.io/docs/home/) and
 [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
 
-* [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes) and
-[ServerFault](http://serverfault.com/questions/tagged/kubernetes)
-
 * [Slack](https://kubernetes.slack.com) ([registration](http://slack.k8s.io))
 
 * [Discussion forums](https://discuss.kubernetes.io)
@@ -242,11 +243,10 @@ These should be directed to the following:
 ### User Support Response: Example
 
 If you see support questions on kubernetes-dev@googlegroups.com or issues asking for
-support, try to redirect them to Stack Overflow. Example response:
+support, try to redirect them to Discuss. Example response:
 
 ```code
-Please re-post your question to [Stack Overflow](http://stackoverflow.com/questions/tagged/kubernetes)
-or our [Discussion Forums](https://discuss.kubernetes.io).
+Please re-post your question to our [Discussion Forums](https://discuss.kubernetes.io).
 
 We are trying to consolidate the channels to which questions for help/support
 are posted so that we can improve our efficiency in responding to your requests,
@@ -258,7 +258,7 @@ thread only in one place or, worse, spread across multiple forums. Also, the
 large volume of support issues on GitHub is making it difficult for us to use
 issues to identify real bugs.
 
-Members of the Kubernetes community use Stack Overflow and Discussion Forums to field
+Members of the Kubernetes community use Discussion Forums to field
 support requests. Before posting a new question, please search these for answers
 to similar questions, and also familiarize yourself with:
 

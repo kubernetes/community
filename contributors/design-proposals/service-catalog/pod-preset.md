@@ -23,6 +23,8 @@
 
 ## Abstract
 
+**PodPresets did not progress out of alpha since 1.6.  They were removed in 1.20**
+
 Describes a policy resource that allows for the loose coupling of a Pod's
 definition from additional runtime requirements for that Pod. For example,
 mounting of Secrets, or setting additional environment variables,

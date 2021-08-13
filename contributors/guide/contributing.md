@@ -9,7 +9,7 @@ description: |
 
 - [Communication](#communication)
 - [GitHub workflow](#github-workflow)
-- [Open a Pull Request](#open-a-pull-request)
+- [Open a Pull Request](#opening-a-pull-request)
 - [Code Review](#code-review)
 - [Best Practices](#best-practices)
 - [Testing](#testing)
@@ -25,7 +25,7 @@ If you find that this is not the case, please complain loudly.
 As a potential contributor, your changes and ideas are welcome at any hour of the day or night, weekdays, weekends, and holidays.
 Please do not ever hesitate to ask a question or send a pull request.
 
-Check out our [community guiding principles](/contributors/guide/collab.md) on how to create great code as a big group.
+Check out our [community guiding principles](/contributors/guide/expectations.md#code-review) on how to create great code as a big group.
 
 Beginner focused information can be found below in [Open a Pull Request](#open-a-pull-request) and [Code Review](#code-review).
 
@@ -41,12 +41,16 @@ For general questions and troubleshooting, use the [standard lines of communicat
 
 To check out code to work on, please refer to [the GitHub Workflow Guide](./github-workflow.md).
 
-## Open a Pull Request
+The full workflow for a pull request is documented here: 
+
+- [Kubernetes-specific github workflow](pull-requests.md#the-testing-and-merge-workflow).
+
+That document is comprehensive and detailed, for purposes of a typical pull request we will cover the initial and simple use case here:
+
+## Opening a Pull Request
 
 Pull requests are often called a "PR".
 Kubernetes generally follows the standard [github pull request](https://help.github.com/articles/about-pull-requests/) process, but there is a layer of additional kubernetes specific (and sometimes SIG specific) differences:
-
-- [Kubernetes-specific github workflow](pull-requests.md#the-testing-and-merge-workflow).
 
 The first difference you'll see is that a bot will begin applying structured labels to your PR.
 
@@ -58,7 +62,7 @@ Common new contributor PR issues are:
 
 * not having correctly signed the CLA ahead of your first PR. See the [CLA page](/CLA.md) for troubleshooting help, in some cases you might need to file a ticket with the CNCF to resolve a CLA problem.  
 * finding the right SIG or reviewer(s) for the PR (see [Code Review](#code-review) section) and following any SIG or repository specific contributing guidelines (see [Learn about SIGs](#learn-about-sigs) section)
-* dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](http://velodrome.k8s.io/dashboard/db/bigquery-metrics?orgId=1))
+* dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](/contributors/devel/sig-testing/flaky-tests.md))
 * Not following [scalability good practices](scalability-good-practices.md)
 * Include mentions (like @person) and [keywords](https://help.github.com/en/articles/closing-issues-using-keywords) which could close the issue (like fixes #xxxx) in commit messages.
 
@@ -90,10 +94,11 @@ Note: if your pull request isn't getting enough attention, you can use the [#pr-
 - Make sure you don't include `@mentions` or `fixes` keywords in your git commit messages. These should be included in the PR body instead.
 - When you make a PR for small change (such as fixing a typo, style change, or grammar fix), please squash your commits so that we can maintain a cleaner git history.
 - Make sure you include a clear and detailed PR description explaining the reasons for the changes, and ensuring there is sufficient information for the reviewer to understand your PR.
-- Additional Readings : 
+- Additional Readings: 
     - [chris.beams.io/posts/git-commit/](https://chris.beams.io/posts/git-commit/)
-    - [github.com/blog/1506-closing-issues-via-pull-requests ](https://github.com/blog/1506-closing-issues-via-pull-requests )
-    - [davidwalsh.name/squash-commits-git ](https://davidwalsh.name/squash-commits-git )
+    - [github.com/blog/1506-closing-issues-via-pull-requests ](https://github.com/blog/1506-closing-issues-via-pull-requests)
+    - [davidwalsh.name/squash-commits-git ](https://davidwalsh.name/squash-commits-git)
+    - [https://mtlynch.io/code-review-love/](https://mtlynch.io/code-review-love/)
 
 ## Testing
 
@@ -127,5 +132,6 @@ If you're looking to run e2e tests on your own infrastructure, [kubetest](https:
 ## Issues Management or Triage
 
 Have you ever noticed the total number of [open issues](https://issues.k8s.io)?
-Helping to manage or triage these open issues can be a great contribution and a great opportunity to learn about the various areas of the project. Triaging is the word we use to describe the process of adding multiple types of descriptive labels to GitHub issues, in order to speed up routing issues to the right folks.
+Helping to manage or triage these open issues can be a great contribution and a great opportunity to learn about the various areas of the project.
+Triaging is the word we use to describe the process of adding multiple types of descriptive labels to GitHub issues, in order to speed up routing issues to the right folks.
 Refer to the [Issue Triage Guidelines](/contributors/guide/issue-triage.md) for more information.

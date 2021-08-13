@@ -6,8 +6,7 @@ aliases:
   sig-apps-leads:
     - janetkuo
     - kow3ns
-    - mattfarina
-    - prydonius
+    - soltysh
   sig-architecture-leads:
     - derekwaynecarr
     - dims
@@ -17,11 +16,12 @@ aliases:
     - enj
     - liggitt
     - mikedanese
-    - tallclair
+    - ritazh
   sig-autoscaling-leads:
     - gjtempleton
     - mwielgus
   sig-cli-leads:
+    - eddiezane
     - pwittrock
     - seans3
     - soltysh
@@ -34,25 +34,25 @@ aliases:
     - neolit123
     - timothysc
   sig-contributor-experience-leads:
-    - castrojo
+    - alisondy
     - cblecker
     - mrbobbytables
     - nikhita
   sig-docs-leads:
+    - irvifa
     - jimangel
     - kbarnard10
     - kbhawkey
     - onlydole
     - sftim
-    - zacharysarah
   sig-instrumentation-leads:
     - brancz
     - dashpole
     - ehashman
     - logicalhan
   sig-multicluster-leads:
+    - jeremyot
     - pmorie
-    - quinton-hoole
   sig-network-leads:
     - caseydavenport
     - dcbw
@@ -61,10 +61,12 @@ aliases:
     - dchen1107
     - derekwaynecarr
   sig-release-leads:
-    - alejandrox1
+    - cpanato
+    - hasheddan
+    - jeremyrickard
     - justaugustus
+    - puerco
     - saschagrunert
-    - tpepper
   sig-scalability-leads:
     - mm4tt
     - shyamjvs
@@ -72,9 +74,12 @@ aliases:
   sig-scheduling-leads:
     - Huang-Wei
     - ahg-g
+  sig-security-leads:
+    - IanColdwater
+    - tabbysable
   sig-service-catalog-leads:
     - jberkhahn
-    - mszostok
+    - jhvhs
   sig-storage-leads:
     - jsafrane
     - msau42
@@ -86,23 +91,23 @@ aliases:
     - stevekuznetsov
   sig-ui-leads:
     - floreks
-    - jeefy
     - maciaszczykm
+    - shu-mutou
   sig-usability-leads:
     - hpandeycodeit
+    - morengab
     - tashimi
   sig-windows-leads:
-    - benmoss
     - ddebroy
+    - jayunit100
+    - jsturtevant
     - marosset
-    - michmike
   wg-api-expression-leads:
     - apelisse
     - kwiesmueller
   wg-component-standard-leads:
     - mtaufen
     - stealthybox
-    - sttts
   wg-data-protection-leads:
     - xing-yang
     - yuxiangqian
@@ -111,18 +116,9 @@ aliases:
     - cindyxing
     - dejanb
   wg-k8s-infra-leads:
-    - bartsmykla
+    - ameukam
     - dims
     - spiffxp
-  wg-lts-leads:
-    - imkin
-    - quinton-hoole
-    - tpepper
-    - youngnick
-  wg-machine-learning-leads:
-    - k82cn
-    - kow3ns
-    - vishh
   wg-multitenancy-leads:
     - srampal
     - tashimi
@@ -130,15 +126,16 @@ aliases:
     - celestehorgan
     - jdumars
     - justaugustus
-    - zacharysarah
   wg-policy-leads:
-    - ericavonb
-    - hannibalhuang
-  wg-security-audit-leads:
-    - aasmall
-    - cji
-    - jaybeale
-    - joelsmith
+    - JimBugwadia
+    - rficcaglia
+  wg-reliability-leads:
+    - deads2k
+    - stevekuznetsov
+    - wojtek-t
+  wg-structured-logging-leads:
+    - serathius
+    - shubheksha
   ug-big-data-leads:
     - erikerlandson
     - foxish
@@ -150,25 +147,26 @@ aliases:
     - phenixblue
   committee-code-of-conduct:
     - AevaOnline
-    - Bradamant3
-    - carolynvs
-    - jdumars
+    - celestehorgan
+    - karenhchu
     - tashimi
-  committee-product-security:
+    - tpepper
+  committee-security-response:
     - cjcullen
-    - cji
     - joelsmith
     - lukehinds
     - micahhausler
+    - swamymsft
+    - tabbysable
     - tallclair
   committee-steering:
     - cblecker
     - derekwaynecarr
     - dims
-    - lachie83
+    - liggitt
+    - mrbobbytables
     - nikhita
     - parispittman
-    - spiffxp
 ## BEGIN CUSTOM CONTENT
   provider-aws:
     - d-nishi

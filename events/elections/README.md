@@ -17,9 +17,9 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 - Recommend the month of October to not collide with a release or end of a quarter.
 - Nomination and Voter Registration period start
 - Nomination period end (At least a two week period)
-- Voter Registration Deadline
 - Election period start
   - It takes time to create the poll in CIVS, so don’t give a specific hour, instead say “Morning of the 10th” or something vague.
+- Voter Registration Deadline
 - Election period stop
   - CIVS needs to be manually stopped, so an actual person needs to click for the poll to stop, so this needs to be a human friendly time
 - Results announcement date
@@ -45,7 +45,7 @@ eligibility for voting, eligibility for candidacy, maximal representation, etc.
 2. Announce voting schedule to community
 
 - Should mostly be links to the voter guide and the Steering Committee Charter
-- On kubernetes-dev list, kubernetes-dev slack, and twitter
+- On kubernetes-dev list, kubernetes-contributors slack, and twitter
 
 3. Executing the Election in CIVS
 

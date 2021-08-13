@@ -42,29 +42,30 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-scheduling-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-scheduling-pr-reviews) - PR Reviews
     - [@kubernetes/sig-scheduling-proposals](https://github.com/orgs/kubernetes/teams/sig-scheduling-proposals) - Design Proposals
     - [@kubernetes/sig-scheduling-test-failures](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) - Test Failures and Triage
+- Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-scheduling:
 ### cluster-capacity
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-capacity/master/OWNERS
+  - [kubernetes-sigs/cluster-capacity](https://github.com/kubernetes-sigs/cluster-capacity/blob/master/OWNERS)
 ### descheduler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/descheduler/master/OWNERS
+  - [kubernetes-sigs/descheduler](https://github.com/kubernetes-sigs/descheduler/blob/master/OWNERS)
 ### kube-batch
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
+  - [kubernetes-sigs/kube-batch](https://github.com/kubernetes-sigs/kube-batch/blob/master/OWNERS)
 ### poseidon
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
+  - [kubernetes-sigs/poseidon](https://github.com/kubernetes-sigs/poseidon/blob/master/OWNERS)
 ### scheduler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
+  - [kubernetes/kubernetes/cmd/kube-scheduler](https://github.com/kubernetes/kubernetes/blob/master/cmd/kube-scheduler/OWNERS)
+  - [kubernetes/kubernetes/pkg/scheduler](https://github.com/kubernetes/kubernetes/blob/master/pkg/scheduler/OWNERS)
 ### scheduler-plugins
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-plugins/master/OWNERS
+  - [kubernetes-sigs/scheduler-plugins](https://github.com/kubernetes-sigs/scheduler-plugins/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

@@ -70,7 +70,6 @@ C'est un "TL;DR" ou une référence rapide d'informations utiles pour améliorer
 - [Prow] - Kubernetes CI/CD System.
 - [Test Grid] - Afficher les tests historiques et leurs informations associées.
 - [Triage Dashboard] - Regroupe les défaillances similaires pour un meilleur dépannage.
-- [Velodrome] - Tableau de bord pour suivre le travail et tester la santé.
 
 ### Alias de messagerie importants
 
@@ -294,14 +293,13 @@ Si vous ne savez pas si vous devez faire un squash de vos commits, il est préf�
 [gitHub labels]: https://go.k8s.io/github-labels
 [Kubernetes Code Search]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[calendar]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[calendar]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [slack channels]: http://slack.k8s.io/
 [stackOverflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [youtube channel]: https://www.youtube.com/c/KubernetesCommunity/
 [triage dashboard]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [statistiques de développeur]: https://k8s.devstats.cncf.io
 [code of conduct]: /code-of-conduct.md
 [user support request]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

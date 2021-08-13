@@ -25,17 +25,29 @@ This document outlines the process, for Code of Conduct Committee (CoCC) electio
 
 ### Election process
 
-The steering committee will announce a request for nominations some time in July from any member of the following:
-* steering committee
-* members of the code of conduct committee
-* sig chair
-* sig tech lead
+The steering committee will announce a request for nominations some time in July from anyone meeting the [eligibility for candidacy](#eligibility-for-candidacy) guidelines.
 
 The steering committee will accept nominations for at least 1 week. Though the steering
 committee may choose to accept nominations for longer.  After the announced nomination
 period the steering committee will hold a private ballot election using time-limited
 [Condorcet] ranking use the [Schulze method] to break ties. The steering committee
 will publicly announce the results of the election.
+
+#### Nomination process
+
+Nominations can be collected via any means. In the past a Google form has been used to collect nominations. The form had the following questions which may be used as a template for subsequent elections:
+* Email Address (required)
+* Name of Nominee (required)
+* Email address of Nominee (required)
+* Why would you like to nominate this person for the Code of Conduct Committee? (required)
+* Does the nominee have any experience serving on an Ethics Committee or Code of Conduct Committee? (required)
+* How has this nominee demonstrated the [eligibility for candidacy](#eligibility-for-candidacy) guidelines? (optional)
+
+The nomination form must be communicated via email to [Kubernetes dev](https://groups.google.com/forum/#!forum/kubernetes-dev) mailing list.
+
+Prior to the voting process, Steering must:
+* Vet that all nominees support the role of the code of conduct committee, i.e. maintaining a safe and inclusive space for everyone to work on Kubernetes.
+* Confirm with all nominees (that were not self nominations) that they accept the nomination.
 
 ### Maximal representation
 

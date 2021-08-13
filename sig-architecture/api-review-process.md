@@ -68,7 +68,7 @@ Voluntary reviews apply towards non-core APIs that do not meet the [mandatory](#
 
 0. Requesters should complete the pre-review checklist:
     * The goal of the proposed change has agreement from the appropriate sub-project owners and/or SIG leads
-    * A [KEP](https://github.com/kubernetes/enhancements/blob/master/keps/0001-kubernetes-enhancement-proposal-process.md) and tracking issue in [kubernetes/enhancements](https://github.com/kubernetes/enhancements/) has been created for changes within the kubernetes-* org introducing:
+    * A [KEP](https://github.com/kubernetes/enhancements/blob/master/keps/README.md) and tracking issue in [kubernetes/enhancements](https://github.com/kubernetes/enhancements/) has been created for changes within the kubernetes-* org introducing:
         * Any new resource type
         * Any new version of a stable API
         * Any new functionality added to a stable API as defined by SIG Architecture and the API Reviewers

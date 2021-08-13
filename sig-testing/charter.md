@@ -27,7 +27,7 @@ health of the project.
   contributors who wish to provide additional test results not generated
   by the project's CI
 - Extraction, display and analysis of test artifacts via tools like
-  [gubernator], [kettle], [testgrid], [triage] and [velodrome]
+  [gubernator], [kettle], [testgrid], and [triage]
 - Configuration management of jobs and ensuring they use a consistent
   process via tools such as [job configs], [kubetest]
 - Tools that facilitate configuration management of github such as
@@ -97,7 +97,6 @@ This sig adheres to the Roles and Organization Management outlined in
 
 ### Deviations from [sig-governance]
 
-- Chairs also fulfill the role of Tech Lead
 - Proposing and making decisions _MAY_ be done without the use of KEPS so long
   as the decision is documented in a linkable medium. We prefer to use issues
   on [kubernetes/test-infra] to document technical decisions, and mailing list
@@ -109,7 +108,6 @@ This sig adheres to the Roles and Organization Management outlined in
 ### Subproject Creation
 
 Subprojects are created by Tech Leads following the process defined in [sig-governance]
-
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
@@ -131,7 +129,6 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 [testgrid]: https://testgrid.k8s.io
 [tide]: https://prow.k8s.io/tide
 [triage]: https://go.k8s.io/triage
-[velodrome]: https://velodrome.k8s.io
 
 [Release Team test-infra role]: https://git.k8s.io/sig-release/release-team/role-handbooks/test-infra
 [kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev

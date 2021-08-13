@@ -11,7 +11,7 @@ processes.
 This project formerly used a Submit Queue, it has since been replaced by
 [Tide](https://git.k8s.io/test-infra/prow/cmd/tide).
 
-#### Ready to merge status
+### Ready to merge status
 
 A PR is considered "ready for merging" by Tide if it matches the set
 of conditions listed in the [Tide dashboard](https://prow.k8s.io/tide).
@@ -40,7 +40,7 @@ reply with the `/ok-to-test` command on a single line to begin CI testing.
 
 ## FAQ:
 
-#### How can I ask my PR to be tested again for test failures?
+### How can I ask my PR to be tested again for test failures?
 
 PRs should only need to be manually re-tested if you believe there was a flake
 during the original test. It would be good to file flakes as an

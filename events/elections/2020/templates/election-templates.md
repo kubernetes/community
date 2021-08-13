@@ -4,13 +4,13 @@ Adjust this template as necessary:
 
 It’s that time of year again!
 
-As is now customary, this fall is election season for Kubernetes. Four(4) elected members (cblecker, derekwaynecarr, nikhita, parispittman) will stay on for the remaining year of their terms, and there will be three(3) positions open for election. Every election term will be 2 years. We will be posting regular updates to kubernetes-dev with deadlines and instructions as well as providing quick updates during the regular Thursday community meetings until completion of the election. 
+As is now customary, this fall is election season for Kubernetes. Four(4) elected members (cblecker, derekwaynecarr, nikhita, parispittman) will stay on for the remaining year of their terms, and there will be three(3) positions open for election. Every election term will be 2 years. We will be posting regular updates to kubernetes-dev with deadlines and instructions as well as providing quick updates during the regular Thursday community meetings until completion of the election.
 
 If you’d like to vote or run for a seat, all details and next steps are outlined in the election process doc[3] and voters guide.[4] The voters guide will be the single source of truth of information for this cycle. It will be updated live as new bios of candidates flow through over the next four weeks. Please pay attention to the scheduled dates:
 
-| schedule here | 
+| schedule here |
 
-As mentioned in the process doc, eligibility for voting will be determined by 50 contributions to a Kubernetes project over the past year, which will result in you getting a ballot emailed to you when the election starts. For those of you doing work within the Kubernetes project / community that is NOT measured in GitHub, you can apply for participation via the voter exemption form. This is to ensure that non-code contributors can participate, so please don’t hesitate to use the form. 
+As mentioned in the process doc, eligibility for voting will be determined by 50 contributions to a Kubernetes project over the past year, which will result in you getting a ballot emailed to you when the election starts. For those of you doing work within the Kubernetes project / community that is NOT measured in GitHub, you can apply for participation via the voter exemption form. This is to ensure that non-code contributors can participate, so please don’t hesitate to use the form.
 
 Resources:
 
@@ -49,7 +49,7 @@ The candidates and links to their bios are all available here: https://git.k8s.i
 
 // Schedule
 
-The next deadline is XXX , you have until then to complete your ballot. If you have any questions, let us know. 
+The next deadline is XXX , you have until then to complete your ballot. If you have any questions, let us know.
 
 | September 11 | All candidate bios and voting exception forms due by 0000 UTC (5pm PST) |
 | September 18 | Election Begins via email ballots |
@@ -69,21 +69,31 @@ Name (github), Name (github), etc
 
 If you have questions, please feel free to ask on the list; otherwise, you can reach the Election Officials at election@kubernetes.io
 
+## Election Poll Header
+
+Welcome to the 2020 annual Kubernetes Steering Committee election.  More information, including candidates, links to candidate bios, deadlines and procedures, can be found <a href="https://github.com/kubernetes/community/tree/master/events/elections/2020">on the 2020 election page.</a>
+<br /><br />
+All eligible <a href="https://github.com/kubernetes/community/blob/master/events/elections/2020/voters.md">voters</a> for this election should have received individual ballots by email.  Please do not use a ballot that was forwarded to you by another contributor, as that will invalidate your vote.
+<br /><br />
+The Steering Committee Election is a preference election.  Please arrange the candidates in the order you would prefer them.  Three members of the committee will be elected this year.  PLEASE NOTE: "No opinion" is also a voting option if you do not feel comfortable ranking every single candidate.
+<br /><br />
+To report issues with this election, need a replacement ballot, or ask questions, email <a href="mailto:election@kubernetes.io">the Election Officials.</a>
+
 ## Election Results
 
 This mail only goes to the incumbent members of steering who are NOT running that year!
 
 $greeting,
 
-Please keep this information private! 
+Please keep this information private!
 
 An incumbent steering member announces the results. At least one of you please come to the community meeting tomorrow to make the announcement. Let us know if you cannot.
 
 After the community meeting, we'll publish this blog post (feedback encouraged).
 
-A note on the results, as per previous elections we plan on announcing/celebrating the winners and only publishing their names, GitHub handles, and affiliations. We purposely don't mention rankings or the results of the rest of the field. 
+A note on the results, as per previous elections we plan on announcing/celebrating the winners and only publishing their names, GitHub handles, and affiliations. We purposely don't mention rankings or the results of the rest of the field.
 
-We will quietly check in the full election results (with anonymized ballots) into the community repo in the next few weeks. This will satisfy transparency requirements while being respectful to the other candidates. 
+We will quietly check in the full election results (with anonymized ballots) into the community repo in the next few weeks. This will satisfy transparency requirements while being respectful to the other candidates.
 
 Results and data from the 2019 Steering Committee election:
 
@@ -102,4 +112,4 @@ Last Year's data: 700 eligible voters with 307 votes cast (44%)
 Final Results:
 
 (paste these from CIVS)
-1. Jane Containerface (@github)  (Condorcet winner: wins contests with all other choices) 
+1. Jane Containerface (@github)  (Condorcet winner: wins contests with all other choices)

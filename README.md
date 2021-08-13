@@ -66,11 +66,9 @@ We encourage all contributors to become members. We aim to grow an active, healt
 [Contributor Guide]:
 contributors/guide/README.md
 [file an issue]:
-/contributors/guide/README.md#file-an-issue
+contributors/guide/first-contribution.md#file-an-issue
 [find something to work on]:
-contributors/guide/README.md#find-something-to-work-on
+contributors/guide/first-contribution.md#find-something-to-work-on
 [open a pull request]:
-contributors/guide/README.md#open-a-pull-request
+contributors/guide/contributing.md#opening-a-pull-request
 [Community Membership]:/community-membership.md
-
-![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/CONTRIBUTING.md?pixel)

@@ -69,7 +69,6 @@
 - [Prow] - कुबेरनेट्स CI / CD सिस्टम।
 - [परीक्षण ग्रिड] - ऐतिहासिक परीक्षण और उनसे जुड़ी जानकारी देखें।
 - [triage डैशबोर्ड] - बेहतरलिए समान विफलताओं को एक साथ समस्या निवारण केरखता है।
-- [veldrome] - नौकरी और परीक्षण स्वास्थ्य को ट्रैक करने के लिए डैशबोर्ड।
 
 ### महत्वपूर्ण ईमेल उपनाम
 
@@ -285,14 +284,13 @@ PR संशोधन का चरण। यदि आप अनिश्चि
 [Github लेबल]: https://go.k8s.io/github-labels
 [कुबरनेट्स Code Search]: https://cs.kubs.io/
 [@dims]: https://github.com/dims
-[कैलेंडर]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[कैलेंडर]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [Slack चैनल]: http://slack.k8s.io/
 [stackOverflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [youtube चैनल]: https://www.youtube.com/c/KubernetesCommunity/
 [triage डैशबोर्ड]: https://go.k8s.io/triage
 [परीक्षण ग्रिड]: https://testgrid.k8s.io
-[veldrome]: https://go.k8s.io/test-health
 [डेवलपर आँकड़े]: https://k8s.devstats.cncf.io
 [आचार संहिता]: /code-of-conduct.md
 [उपयोगकर्ता समर्थन अनुरोध]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

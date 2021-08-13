@@ -1,8 +1,10 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 reviewers:
+  - serathius
   - sig-instrumentation-leads
 approvers:
+  - serathius
   - sig-instrumentation-leads
 labels:
   - sig/instrumentation

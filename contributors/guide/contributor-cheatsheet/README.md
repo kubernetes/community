@@ -1,6 +1,7 @@
 ---
 title: Contributor Cheatsheet
 weight: 2
+aliases: [ "/cheatsheet" ]
 description: |
   A list of common resources when contributing to Kubernetes, tips, tricks, and
   common best practices used within the Kubernetes project. It is a "TL;DR" or
@@ -92,7 +93,6 @@ better.
 - [Test Grid] - View historical tests and their associated information.
 - [Triage Dashboard] - Aggregates similar failures together for better
   troubleshooting. 
-- [Velodrome] - Dashboard to track job and test health.
 
 
 ### Important Email Aliases
@@ -374,7 +374,7 @@ git rebase -i HEAD~3
 git push --force
 ```
 
-
+**Note**: you can also ask your reviewer to add the `tide/merge-method-squash` label to your PR (this can be done by a reviewer by issuing the command: `/label tide/merge-method-squash`), this will let the bot take care of squashing _all_ commits that are part of this PR and will not result in removal of the `LGTM` label (if already applied) or re-run of the CI tests.
 
 [contributor guide]: /contributors/guide/README.md
 [developer guide]: /contributors/devel/README.md
@@ -386,14 +386,13 @@ git push --force
 [gitHub labels]: https://go.k8s.io/github-labels
 [Kubernetes Code Search]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[calendar]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[calendar]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [slack channels]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [youtube channel]: https://www.youtube.com/c/KubernetesCommunity/
 [triage dashboard]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [developer statistics]: https://k8s.devstats.cncf.io
 [code of conduct]: /code-of-conduct.md
 [user support requests]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

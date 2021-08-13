@@ -1,6 +1,6 @@
 # Community membership
 
-**Note:** This document is in progress
+**Note:** This document is a work in progress
 
 This doc outlines the various responsibilities of contributor roles in
 Kubernetes.  The Kubernetes project is subdivided into subprojects under SIGs.
@@ -8,10 +8,10 @@ Responsibilities for most roles are scoped to these subprojects.
 
 | Role | Responsibilities | Requirements | Defined by |
 | -----| ---------------- | ------------ | -------|
-| member | active contributor in the community | sponsored by 2 reviewers.  multiple contributions to the project. | Kubernetes GitHub org member. |
-| reviewer | review contributions from other members | history of review and authorship in a subproject | [OWNERS] file reviewer entry. |
-| approver | approve accepting contributions | highly experienced and active reviewer + contributor to a subproject | [OWNERS] file approver entry|
-| subproject owner | set direction and priorities for a subproject | demonstrated responsibility and excellent technical judgement for the subproject | [sigs.yaml] subproject [OWNERS] file *owners* entry |
+| Member | Active contributor in the community | Sponsored by 2 reviewers and multiple contributions to the project | Kubernetes GitHub org member|
+| Reviewer | Review contributions from other members | History of review and authorship in a subproject | [OWNERS] file reviewer entry |
+| Approver | Contributions acceptance approval| Highly experienced active reviewer and contributor to a subproject | [OWNERS] file approver entry|
+| Subproject owner | Set direction and priorities for a subproject | Demonstrated responsibility and excellent technical judgement for the subproject | [sigs.yaml] subproject [OWNERS] file *owners* entry |
 
 ## New contributors
 
@@ -71,8 +71,10 @@ We are currently working on automation that would transfer membership in the
 Kubernetes organization to any related orgs automatically, but such is not the
 case currently. If you are a Kubernetes org member, you are implicitly eligible
 for membership in related orgs, and can request membership when it becomes
-relevant, by [opening an issue][membership request] against the kubernetes/org
-repo, as above. However, if you are a member of any of the related
+relevant, by creating a PR directly or [opening an issue][membership request]
+against the kubernetes/org repo, as above.
+
+However, if you are a member of any of the related
 [Kubernetes GitHub organizations] but not of the [Kubernetes org],
 you will need explicit sponsorship for your membership request.
 
@@ -221,11 +223,39 @@ The following apply to the subproject for which one would be an owner.
 - Ensure a healthy process for discussion and decision making is in place.
 - Work with other subproject owners to maintain the project's overall health and success holistically
 
-## ~~Maintainer~~
+## Inactive members
 
-**Status:** Removed
+_Members are continuously active contributors in the community._
 
-The Maintainer role has been removed and replaced with a greater focus on [OWNERS].
+A core principle in maintaining a healthy community is encouraging active
+participation. It is inevitable that people's focuses will change over time and
+they are not expected to be actively contributing forever.
+
+However, being a member of one of the Kubernetes GitHub organizations comes with
+an [elevated set of permissions]. These capabilities should not be used by those
+that are not familiar with the current state of the Kubernetes project.
+
+Therefore members with an extended period away from the project with no activity
+will be removed from the Kubernetes Github Organizations and will be required to
+go through the org membership process again after re-familiarizing themselves
+with the current state.
+
+
+### How inactivity is measured
+
+Inactive members are defined as members of one of the Kubernetes Organizations
+with **no** contributions across any organization within 18 months. This is
+measured by the CNCF [DevStats project].
+
+**Note:** Devstats does not take into account non-code contributions. If a
+non-code contributing member is accidentally removed this way, they may open an
+issue to quickly be re-instated.
+
+
+After an extended period away from the project with no activity
+those members would need to re-familiarize themselves with the current state
+before being able to contribute effectively.
+
 
 [code reviews]: /contributors/guide/expectations.md#code-review
 [community expectations]: /contributors/guide/expectations.md
@@ -235,10 +265,12 @@ The Maintainer role has been removed and replaced with a greater focus on [OWNER
 [Kubernetes org]: https://github.com/kubernetes
 [kubernetes-dev@googlegroups.com]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
-[membership request]: https://github.com/kubernetes/org/issues/new?template=membership.md&title=REQUEST%3A%20New%20membership%20for%20%3Cyour-GH-handle%3E
-[membership template]: https://git.k8s.io/org/.github/ISSUE_TEMPLATE/membership.md
+[membership request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-membership&template=membership.yml&title=REQUEST%3A+New+membership+for+%3Cyour-GH-handle%3E
+[membership template]: https://github.com/kubernetes/org/blob/main/.github/ISSUE_TEMPLATE/membership.yml
 [New contributors]: /CONTRIBUTING.md
 [OWNERS]: /contributors/guide/owners.md
 [sigs.yaml]: /sigs.yaml
 [SLO]: /github-management/org-owners-guide.md#slos
 [two-factor authentication]: https://help.github.com/articles/about-two-factor-authentication
+[elevated set of permissions]: #Responsibilities-and-privileges
+[Devstats project]: https://k8s.devstats.cncf.io/

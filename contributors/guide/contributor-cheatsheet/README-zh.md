@@ -70,7 +70,6 @@
 - [Prow] - Kubernetes CI/CD 系统
 - [Test Grid] - 查看过往的测试以及相关信息
 - [Triage 仪表盘] - 把相似的失败聚合在一起以便排除故障
-- [Velodrome] - 追踪任务和测试健康度的仪表盘
 
 
 ### 重要的 Email 地址
@@ -144,7 +143,7 @@ GitHub Issue 是追踪 bug 报告、改善请求，或者报告例如失败测�
 #### 回应 Issue
 
 - 在处理 issue 时，添加评论以便让其他人知道，避免重复的工作。
-- 如果之后您解决了什么问题，在关闭前该 issue 前，先评论以便让其他人知道。
+- 如果之后您解决了什么问题，在关闭该 issue 前，先评论以便让其他人知道。
 - 添加其它 PR 或 issue 的引用（或者任何可能的资料），例如 _「ref: #1234」_。这对于联系其它地方处理过的相关工作很有帮助。
 
 
@@ -292,14 +291,13 @@ git checkout -b myfeature
 [GitHub 标签]: https://go.k8s.io/github-labels
 [Kubernetes 代码搜索]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[日历]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[日历]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [Slack 频道]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [YouTube 频道]: https://www.youtube.com/c/KubernetesCommunity/
 [triage 仪表盘]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [开发者统计]: https://k8s.devstats.cncf.io
 [行为守则]: /code-of-conduct.md
 [用户支持请求]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

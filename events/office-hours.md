@@ -22,7 +22,7 @@ Kubernetes, or to just passively learn by following along.
 Third Wednesday of every month, there are two sessions: 
 
 - European Edition: [9am ET]
-- Western Edition: [9am PT]
+- Western Edition: [5pm PT]
 
 Tune into the [Kubernetes YouTube Channel] to follow along.
 
@@ -170,12 +170,12 @@ more than welcome to pull up a chair and hang out.
 
 [YouTube channel]: https://www.youtube.com/c/KubernetesCommunity/
 [9am ET]: http://www.thetimezoneconverter.com/?t=09:00&tz=ET%20%28Eastern%20Time%29
-[9am PT]: http://www.thetimezoneconverter.com/?t=12:00&tz=ET%20%28Eastern%20Time%29
+[5pm PT]: http://www.thetimezoneconverter.com/?t=17:00&&tz=PT%20(Pacific%20Time)
 [Kubernetes YouTube Channel]: https://www.youtube.com/c/KubernetesCommunity/live
 [#office-hours channel]: https://kubernetes.slack.com/messages/office-hours
 [discuss.kubernetes.io]: https://discuss.kubernetes.io
 [StackOverflow]: https://stackoverflow.com/questions/tagged/kubernetes
-[Meet our Contributors]: /mentoring/meet-our-contributors.md
+[Meet our Contributors]: /mentoring/programs/meet-our-contributors.md
 [Office Hours playlist]: https://www.youtube.com/watch?v=D0Q7wwljN30&list=PL69nYSiGNLP3azFUvYJjGn45YbF6C-uIg
 [Volunteer working sheet]: http://bit.ly/k8s-office-hours-volunteers
 [@castrojo]: https://github.com/castrojo

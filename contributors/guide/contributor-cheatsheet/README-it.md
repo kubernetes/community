@@ -76,7 +76,6 @@ condensato di informazioni utili per rendere migliore la tua esperienza di GitHu
 - [Prow] - Kubernetes CI/CD System.
 - [Test Grid] - Visualizzo lo storico dei test e tutte le informazioni associate.
 - [Triage Dashboard] - Aggrega problematiche simili per semplificare il troubleshooting.
-- [Velodrome] - Dashboard per monitorare lo storico dei job e dei test.
 
 ### Important Email Aliases
 
@@ -362,14 +361,13 @@ git push --force
 [gitHub labels]: https://go.k8s.io/github-labels
 [Kubernetes Code Search]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[calendar]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[calendar]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [slack channels]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [youtube channel]: https://www.youtube.com/c/KubernetesCommunity/
 [triage dashboard]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [developer statistics]: https://k8s.devstats.cncf.io
 [code of conduct]: /code-of-conduct.md
 [user support requests]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

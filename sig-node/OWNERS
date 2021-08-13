@@ -2,7 +2,11 @@
 
 reviewers:
   - sig-node-leads
+  - ehashman
+  - SergeyKanzhelev
 approvers:
   - sig-node-leads
+  - ehashman
+  - SergeyKanzhelev
 labels:
   - sig/node

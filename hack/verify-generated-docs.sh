@@ -21,7 +21,6 @@ set -o pipefail
 CRT_DIR=$(pwd)
 VERIFY_TEMP=$(mktemp -d 2>/dev/null || mktemp -d -t k8s-community.XXXXXX)
 WORKING_DIR="${VERIFY_TEMP}/src/testgendocs"
-GOPATH="${VERIFY_TEMP}"
 mkdir -p "${WORKING_DIR}"
 
 function cleanup {

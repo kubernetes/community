@@ -58,7 +58,7 @@ TODO: add more here
 
 ### Other Help Resources
 - slack
-	- #kubernetes-dev
+	- #kubernetes-contributors
 	- your respective sig or other sigs that could help
 		- [SIG List]
 		- #sig-contribex

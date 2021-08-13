@@ -79,3 +79,103 @@ Guide](http://kubernetes.io/docs/admin/).
 ## Building releases
 
 See the [kubernetes/release](https://github.com/kubernetes/release) repository for details on creating releases and related tools and helper scripts.
+
+## SIG Developer Guide Contributions
+
+### SIG Release
+* **Cherry Picks** [cherry-picks.md](sig-release/cherry-picks.md)
+  How cherry picks are managed on release branches within the `kubernetes/kubernetes` repository.
+
+* **Getting Kubernetes Builds** [getting-builds.md](sig-release/getting-builds.md)
+  
+* **Targeting enhancements, Issues and PRs to Release Milestones** [release.md](sig-release/release.md)
+
+### SIG Instrumentation
+* **Logging Conventions** [logging.md](sig-instrumentation/logging.md)
+
+* **Event style guide** [event-style-guide.md](sig-instrumentation/event-style-guide.md)
+
+* **Instrumenting Kubernetes** [instrumentation.md](sig-instrumentation/instrumentation.md)
+
+* **Structured Logging migration instructions** [migration-to-structured-logging.md](sig-instrumentation/migration-to-structured-logging.md)
+
+### SIG Storage
+* **NOTE** Flexvolume is deprecated. Out-of-tree CSI driver is the recommended way to write volume drivers in Kubernetes. See this doc [here]( https://github.com/kubernetes/community/blob/master/sig-storage/volume-plugin-faq.md) for more information.
+
+* **CSI Drivers Doc** [CSI drivers doc](https://kubernetes-csi.github.io/docs/)
+  This site documents how to develop, deploy, and test a [Container Storage Interface](https://github.com/container-storage-interface/spec/blob/master/spec.md) (CSI) driver on Kubernetes.
+
+* **Flexvolume** [flexvolume.md](sig-storage/flexvolume.md)
+  Flexvolume enables users to write their own drivers and add support for their volumes in Kubernetes.
+
+### SIG Scalability
+* **Kubemark User Guide** [kubemark-guide.md](sig-scalability/kubemark-guide.md)
+
+* **How to Set Up a Kubemark Cluster** [kubemark-setup-guide.md](sig-scalability/kubemark-setup-guide.md)
+
+* **Profiling Kubernetes** [profiling.md](sig-scalability/profiling.md)
+
+### SIG Scheduling
+
+* **Understanding the Kubernetes Scheduler** [scheduler.md](sig-scheduling/scheduler.md)
+
+* **Scheduler Algorithm in Kubernetes** [scheduler_algorithm.md](sig-scheduling/scheduler_algorithm.md)
+
+* **Scheduler Benchmarking** [scheduler_benchmarking.md](sig-scheduling/scheduler_benchmarking.md)
+
+### SIG Architecture
+
+* **API Conventions** [api-conventions.md](sig-architecture/api-conventions.md)
+
+* **Component Configuration Conventions** [component-config-conventions.md](sig-architecture/component-config-conventions.md)
+
+* **Changing the API** [api_changes.md](sig-architecture/api_changes.md)
+
+* **Staging Directory and Publishing** [staging.md](sig-architecture/staging.md)
+
+* **Using Go Modules to Manage Dependencies** [vendor.md](sig-architecture/vendor.md)
+  This document only applies to Kubernetes development after 1.14.x. See [previous godep documentation for working with dependencies](sig-architecture/godep.md) for Kubernetes 1.14.x and earlier.
+
+* **Using Go Modules to Manage Dependencies (for Kubernetes 1.14.x and earlier)** [godep.md](sig-architecture/godep.md)
+  See [current documentation for working with dependencies](sig-architecture/vendor.md) for master branch development.
+
+* **Conformance Testing in Kubernetes** [conformance-tests.md](sig-architecture/conformance-tests.md)
+
+### SIG API Machinery
+* **Strategic Merge Patch** [strategic-merge-patch.md](sig-api-machinery/strategic-merge-patch.md)
+* **Writing Controllers** [controllers.md](sig-api-machinery/controllers.md)
+* **Generation and release cycle of clientset** [generating-clientset.md](sig-api-machinery/generating-clientset.md)
+
+### SIG Testing
+* **Testing guide** [testing.md](sig-testing/testing.md)
+
+* **Writing good e2e tests for Kubernetes** [writing-good-e2e-tests.md](sig-testing/writing-good-e2e-tests.md)
+
+* **Writing Good Conformance Tests for Kubernetes** [writing-good-conformance-tests.md](sig-testing/writing-good-conformance-tests.md)
+
+* **Integration Testing in Kubernetes** [integration-tests.md](sig-testing/integration-tests.md)
+
+* **End-to-End Testing in Kubernetes** [e2e-tests.md](sig-testing/e2e-tests.md)
+
+* **Debugging with Gubernator** [gubernator.md](sig-testing/gubernator.md)
+
+* **Flaky tests** [flaky-tests.md](sig-testing/flaky-tests.md)
+
+### SIG Node
+
+* **CRI: the Container Runtime Interface** [container-runtime-interface.md](sig-node/container-runtime-interface.md)
+
+* **Container Runtime Interface (CRI) Networking Specifications** [kubelet-cri-networking.md](sig-node/kubelet-cri-networking.md)
+
+* **Measuring Node Performance** [node-performance-testing.md](sig-node/node-performance-testing.md)
+
+* **Container Runtime Interface: Container Metrics** [cri-container-stats.md](sig-node/cri-container-stats.md)
+
+* **Container Runtime Interface (CRI) Validation Testing** [cri-validation.md](sig-node/cri-validation.md)
+
+* **Node End-To-End tests** [e2e-node-tests.md](sig-node/e2e-node-tests.md)
+
+* **Container Runtime Interface: Testing Policy** [cri-testing-policy.md](sig-node/cri-testing-policy.md)
+
+### SIG CLI
+* **Kubectl Conventions** [kubectl-conventions.md](sig-cli/kubectl-conventions.md)

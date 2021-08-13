@@ -53,8 +53,8 @@ approvers:
   - alice
   - bob     # this is a comment
 reviewers:
-  - alice
-  - carol   # this is another comment
+  - carol
+  - david   # this is another comment
   - sig-foo # this is an alias
 ```
 
@@ -117,16 +117,16 @@ emeritus_approvers:
 
 ### OWNERS_ALIASES
 
-Each repo may contain at its root an OWNERS_ALIAS file.
+Each repo may contain at its root an OWNERS_ALIASES file.
 
-OWNERS_ALIAS files are in YAML format and support the following keys:
+OWNERS_ALIASES files are in YAML format and support the following keys:
 
 - `aliases`: a mapping of alias name to a list of GitHub usernames
 
 We use aliases for groups instead of GitHub Teams, because changes to GitHub Teams are not
 publicly auditable.
 
-A sample OWNERS_ALISES file looks like:
+A sample OWNERS_ALIASES file looks like:
 
 ```yaml
 aliases:
@@ -142,8 +142,7 @@ GitHub usernames and aliases listed in OWNERS files are case-insensitive.
 
 ## Code Review using OWNERS files
 
-This is a simplified description of our [full PR testing and merge
-workflow](/contributors/guide/pull-requests.md#the-testing-and-merge-workflow)
+This is a simplified description of our [full PR testing and merge workflow][pr-workflow]
 that conveniently forgets about the existence of tests, to focus solely on the roles driven by
 OWNERS files.  Please see [below](#automation-using-owners-files) for details on how specific
 aspects of this process may be configured on a per-repo basis.
@@ -317,3 +316,4 @@ Good examples of OWNERS usage:
 [community membership doc]: https://git.k8s.io/community/community-membership.md
 [chromium-owners]: https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md
 [github-codeowners]: https://help.github.com/articles/about-codeowners/
+[pr-workflow]: /contributors/guide/pull-requests.md#the-testing-and-merge-workflow

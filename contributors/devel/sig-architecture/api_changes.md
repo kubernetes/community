@@ -1,36 +1,44 @@
-*This document is oriented at developers who want to change existing APIs.
+# Changing the API
+
+This document is oriented at developers who want to change existing APIs.
 A set of API conventions, which applies to new APIs and to changes, can be
 found at [API Conventions](api-conventions.md).
 
 **Table of Contents**
 
 - [So you want to change the API?](#so-you-want-to-change-the-api)
-  - [Operational overview](#operational-overview)
-  - [On compatibility](#on-compatibility)
-  - [Backward compatibility gotchas](#backward-compatibility-gotchas)
-  - [Incompatible API changes](#incompatible-api-changes)
-  - [Changing versioned APIs](#changing-versioned-apis)
-    - [Edit types.go](#edit-typesgo)
-    - [Edit defaults.go](#edit-defaultsgo)
-    - [Edit conversion.go](#edit-conversiongo)
-  - [Changing the internal structures](#changing-the-internal-structures)
-    - [Edit types.go](#edit-typesgo-1)
-  - [Edit validation.go](#edit-validationgo)
-  - [Edit version conversions](#edit-version-conversions)
+- [Operational overview](#operational-overview)
+- [On compatibility](#on-compatibility)
+- [Backward compatibility gotchas](#backward-compatibility-gotchas)
+- [Incompatible API changes](#incompatible-api-changes)
+- [Changing versioned APIs](#changing-versioned-apis)
+  - [Edit types.go](#edit-typesgo)
+  - [Edit defaults.go](#edit-defaultsgo)
+  - [Edit conversion.go](#edit-conversiongo)
+- [Changing the internal structures](#changing-the-internal-structures)
+  - [Edit types.go](#edit-typesgo-1)
+- [Edit validation.go](#edit-validationgo)
+- [Edit version conversions](#edit-version-conversions)
+- [Generate Code](#generate-code)
   - [Generate protobuf objects](#generate-protobuf-objects)
+  - [Generate Clientset](#generate-clientset)
+  - [Generate Listers](#generate-listers)
+  - [Generate Informers](#generate-informers)
   - [Edit json (un)marshaling code](#edit-json-unmarshaling-code)
-  - [Making a new API Version](#making-a-new-api-version)
-  - [Making a new API Group](#making-a-new-api-group)
-  - [Update the fuzzer](#update-the-fuzzer)
-  - [Update the semantic comparisons](#update-the-semantic-comparisons)
-  - [Implement your change](#implement-your-change)
-  - [Write end-to-end tests](#write-end-to-end-tests)
-  - [Examples and docs](#examples-and-docs)
-  - [Alpha, Beta, and Stable Versions](#alpha-beta-and-stable-versions)
-    - [Adding Unstable Features to Stable Versions](#adding-unstable-features-to-stable-versions)
+- [Making a new API Version](#making-a-new-api-version)
+- [Making a new API Group](#making-a-new-api-group)
+- [Update the fuzzer](#update-the-fuzzer)
+- [Update the semantic comparisons](#update-the-semantic-comparisons)
+- [Implement your change](#implement-your-change)
+- [Write end-to-end tests](#write-end-to-end-tests)
+- [Examples and docs](#examples-and-docs)
+- [Alpha, Beta, and Stable Versions](#alpha-beta-and-stable-versions)
+  - [Adding Unstable Features to Stable Versions](#adding-unstable-features-to-stable-versions)
+    - [New field in existing API version](#new-field-in-existing-api-version)
+    - [New enum value in existing field](#new-enum-value-in-existing-field)
+    - [New alpha API version](#new-alpha-api-version)
 
-
-# So you want to change the API?
+## So you want to change the API?
 
 Before attempting a change to the API, you should familiarize yourself with a
 number of existing API types and with the [API conventions](api-conventions.md).
@@ -315,9 +323,10 @@ worked before the change.
   values of a given field will not be able to handle the new values. However, removing a
   value from an enumerated set *can* be a compatible change, if handled properly (treat the
   removed value as deprecated but allowed). For enumeration-like fields that expect to add
-  new values in the future, such as `reason` fields, please document that expectation clearly
-  in the API field descriptions. Clients should treat such sets of values as potentially
-  open-ended.
+  new values in the future, such as `reason` fields, document that expectation clearly
+  in the API field description in the first release the field is made available,
+  and describe how clients should treat an unknown value. Clients should treat such 
+  sets of values as potentially open-ended.
 
 * For [Unions](api-conventions.md#unions), sets of fields where at most one should
   be set, it is acceptable to add a new option to the union if the [appropriate
@@ -649,22 +658,45 @@ If you are adding a new API version to an existing group, you can copy the
 structure of the existing `pkg/apis/<group>/<existing-version>` and
 `staging/src/k8s.io/api/<group>/<existing-version>` directories.
 
+It is helpful to structure the PR in layered commits to make it easier for
+reviewers to see what has changed between the two versions:
+1. A commit that just copies the `pkg/apis/<group>/<existing-version>` and
+   `staging/src/k8s.io/api/<group>/<existing-version>` packages to the
+   `<new-version>`.
+1. A commit that renames `<existing-version>`to `<new-version>` in the new files.
+1. A commit that makes any new changes for `<new-version>`.
+1. A commit that contains the generated files from running `make generated_files`, `make update`, etc.
+
 Due to the fast changing nature of the project, the following content is probably out-dated:
-* You can control if the version is enabled by default by update
-[pkg/master/master.go](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/master/master.go#L381).
+* You must add the version to
+  [pkg/controlplane/instance.go](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/controlplane/instance.go#L662)
+  is be enabled by default for beta and stable versions, or disabled by default
+  for alpha versions.
 * You must add the new version to
-  [pkg/apis/group_name/install/install.go](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/apis/apps/install/install.go).
+  `pkg/apis/group_name/install/install.go` (for example, [pkg/apis/apps/install/install.go](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/apis/apps/install/install.go)).
 * You must add the new version to
-  [hack/lib/init.sh#KUBE_AVAILABLE_GROUP_VERSIONS](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/hack/lib/init.sh#L53).
+  [hack/lib/init.sh#KUBE_AVAILABLE_GROUP_VERSIONS](https://github.com/kubernetes/kubernetes/blob/v1.21.2/hack/lib/init.sh#L65).
 * You must add the new version  to
-  [hack/update-generated-protobuf-dockerized.sh](https://github.com/kubernetes/kubernetes/blob/v1.8.2/hack/update-generated-protobuf-dockerized.sh#L44)
-  to generate protobuf IDL and marshallers.
-* You must add the new version  to
-  [cmd/kube-apiserver/app#apiVersionPriorities](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/cmd/kube-apiserver/app/aggregator.go#L172)
+  [cmd/kube-apiserver/app#apiVersionPriorities](https://github.com/kubernetes/kubernetes/blob/v1.21.2/cmd/kube-apiserver/app/aggregator.go#L247).
 * You must setup storage for the new version in
-  [pkg/registry/group_name/rest](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/pkg/registry/authentication/rest/storage_authentication.go)
+  `pkg/registry/group_name/rest` (for example, [pkg/registry/authentication/rest](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/registry/authentication/rest/storage_authentication.go)).
 
 You need to regenerate the generated code as instructed in the sections above.
+
+### Testing
+
+Some updates to tests are required.
+
+* You must add the new storage version hash published in API discovery data to
+  [pkg/controlplane/storageversionhashdata/datago#GVRToStorageVersionHash](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/controlplane/storageversionhashdata/data.go#L44).
+    * Run `go test ./pkg/controlplane -run StorageVersion` to verify.
+* You must add the new version stub to the persisted versions stored in etcd in [test/integration/etcd/data.go](https://github.com/kubernetes/kubernetes/blob/v1.21.2/test/integration/etcd/data.go#L40).
+    * Run `go test ./test/integration/etcd` to verify
+* Sanity test the changes by bringing up a cluster (i.e.,
+local-up-cluster.sh, kind, etc) and running `kubectl get
+<resource>.<version>.<group>`.
+* [Integration tests](../sig-testing/integration-tests.md)
+are also good for testing the full CRUD lifecycle along with the controller.
 
 ## Making a new API Group
 
@@ -734,6 +766,8 @@ doing!
 
 Check out the [E2E docs](../sig-testing/e2e-tests.md) for detailed information about how to
 write end-to-end tests for your feature.
+Make sure the E2E tests are running in the default presubmits for a feature that
+is being promoted to Beta (enabled by default).
 
 ## Examples and docs
 
@@ -879,7 +913,10 @@ users are only able or willing to accept a released version of Kubernetes. In
 that case, the developer has a few options, both of which require staging work
 over several releases.
 
-#### Alpha field in existing API version
+The mechanism used depends on whether a new field is being added,
+or a new value is being permitted in an existing field.
+
+#### New field in existing API version
 
 Previously, annotations were used for experimental alpha features, but are no longer recommended for several reasons:
 
@@ -954,7 +991,38 @@ The recommended place to do this is in the REST storage strategy's PrepareForCre
     }
     ```
 
-4. In validation, validate the field if present:
+4. To future-proof your API testing, when testing with feature gate on and off, ensure that the gate is deliberately set as desired. Don't assume that gate is off or on. As your feature
+progresses from `alpha` to `beta` and then `stable` the feature might be turned on or off by default across the entire code base. The below example
+provides some details 
+ 
+   ```go
+   func TestAPI(t *testing.T){
+    testCases:= []struct{
+      // ... test definition ...
+    }{
+       {
+        // .. test case ..
+       },
+       {
+       // ... test case ..
+       },
+   }
+   
+   for _, testCase := range testCases{
+     t.Run("..name...", func(t *testing.T){
+      // run with gate on
+      defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features. Frobber2D, true)()
+       // ... test logic ...
+     })
+     t.Run("..name...", func(t *testing.T){
+      // run with gate off, *do not assume it is off by default*
+      defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features. Frobber2D, false)()
+      // ... test gate-off testing logic logic ...
+     })
+   }
+   ``` 
+
+5. In validation, validate the field if present:
 
     ```go
     func ValidateFrobber(f *api.Frobber, fldPath *field.Path) field.ErrorList {
@@ -981,6 +1049,159 @@ In future Kubernetes versions:
       Param  string `json:"param" protobuf:"bytes,2,opt,name=param"`
       
       // +k8s:deprecated=width,protobuf=3
+    }
+    ```
+
+#### New enum value in existing field
+
+A developer is considering adding a new allowed enum value of `"OnlyOnTuesday"`
+to the following existing enum field:
+
+```go
+type Frobber struct {
+  // restartPolicy may be set to "Always" or "Never".
+  // Additional policies may be defined in the future.
+  // Clients should expect to handle additional values,
+  // and treat unrecognized values in this field as "Never".
+  RestartPolicy string `json:"policy"
+}
+```
+
+Older versions of expected API clients must be able handle the new value in a safe way:
+
+* If the enum field drives behavior of a single component, ensure all versions of that component
+  that will encounter API objects containing the new value handle it properly or fail safe.
+  For example, a new allowed value in a `Pod` enum field consumed by the kubelet must be handled
+  safely by kubelets up to two versions older than the first API server release that allowed the new value.
+* If an API drives behavior that is implemented by external clients (like `Ingress` or `NetworkPolicy`),
+  the enum field must explicitly indicate that additional values may be allowed in the future,
+  and define how unrecognized values must be handled by clients. If this was not done in the first release
+  containing the enum field, it is not safe to add new values that can break existing clients.
+
+If expected API clients safely handle the new enum value, the next requirement is to begin allowing it
+in a way that does not break validation of that object by a previous API server.
+This requires at least two releases to accomplish safely:
+
+Release 1:
+
+* Only allow the new enum value when updating existing objects that already contain the new enum value
+* Disallow it in other cases (creation, and update of objects that do not already contain the new enum value)
+* Verify that known clients handle the new value as expected, honoring the new value or using previously defined "unknown value" behavior,
+  (depending on whether the associated feature gate is enabled or not)
+
+
+Release 2:
+
+* Allow the new enum value in create and update scenarios
+
+This ensures a cluster with multiple servers at skewed releases (which happens during a rolling upgrade),
+will not allow data to be persisted which the previous release of the API server would choke on.
+
+Typically, a feature gate is used to do this rollout, starting in alpha and disabled by default in release 1,
+and graduating to beta and enabled by default in release 2.
+
+1. Add a feature gate to the API server to control enablement of the new enum value (and associated function):
+
+    In [staging/src/k8s.io/apiserver/pkg/features/kube_features.go](https://git.k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/features/kube_features.go):
+
+    ```go
+    // owner: @you
+    // alpha: v1.11
+    //
+    // Allow OnTuesday restart policy in frobbers.
+    FrobberRestartPolicyOnTuesday utilfeature.Feature = "FrobberRestartPolicyOnTuesday"
+    
+    var defaultKubernetesFeatureGates = map[utilfeature.Feature]utilfeature.FeatureSpec{
+      ...
+      FrobberRestartPolicyOnTuesday: {Default: false, PreRelease: utilfeature.Alpha},
+    }
+    ```
+
+2. Update the documentation on the API type:
+
+    * include details about the alpha-level in the field description
+    
+    ```go
+    type Frobber struct {
+      // restartPolicy may be set to "Always" or "Never" (or "OnTuesday" if the alpha "FrobberRestartPolicyOnTuesday" feature is enabled).
+      // Additional policies may be defined in the future.
+      // Unrecognized policies should be treated as "Never".
+      RestartPolicy string `json:"policy"
+    }
+    ```
+
+3. When validating the object, determine whether the new enum value should be allowed.
+This prevents new usage of the new value when the feature is disabled, while ensuring existing data is preserved.
+Ensuring existing data is preserved is needed so that when the feature is enabled by default in a future version *n*
+and data is unconditionally allowed to be persisted in the field, an *n-1* API server
+(with the feature still disabled by default) will not choke on validation.
+The recommended place to do this is in the REST storage strategy's Validate/ValidateUpdate methods:
+
+    ```go
+    func (frobberStrategy) Validate(ctx genericapirequest.Context, obj runtime.Object) field.ErrorList {
+      frobber := obj.(*api.Frobber)
+      return validation.ValidateFrobber(frobber, validationOptionsForFrobber(frobber, nil))
+    }
+    
+    func (frobberStrategy) ValidateUpdate(ctx genericapirequest.Context, obj, old runtime.Object) field.ErrorList {
+      newFrobber := obj.(*api.Frobber)
+      oldFrobber := old.(*api.Frobber)
+      return validation.ValidateFrobberUpdate(newFrobber, oldFrobber, validationOptionsForFrobber(newFrobber, oldFrobber))
+    }
+
+    func validationOptionsForFrobber(newFrobber, oldFrobber *api.Frobber) validation.FrobberValidationOptions {
+      opts := validation.FrobberValidationOptions{
+        // allow if the feature is enabled
+        AllowRestartPolicyOnTuesday: utilfeature.DefaultFeatureGate.Enabled(features.FrobberRestartPolicyOnTuesday)
+      }
+
+      if oldFrobber == nil {
+        // if there's no old object, use the options based solely on feature enablement
+        return opts
+      }
+
+      if oldFrobber.RestartPolicy == api.RestartPolicyOnTuesday {
+        // if the old object already used the enum value, continue to allow it in the new object
+        opts.AllowRestartPolicyOnTuesday = true
+      }
+      return opts
+    }
+    ```
+
+4. In validation, validate the enum value based on the passed-in options:
+
+    ```go
+    func ValidateFrobber(f *api.Frobber, opts FrobberValidationOptions) field.ErrorList {
+      ...
+      validRestartPolicies := sets.NewString(RestartPolicyAlways, RestartPolicyNever)
+      if opts.AllowRestartPolicyOnTuesday {
+        validRestartPolicies.Insert(RestartPolicyOnTuesday)
+      }
+
+      if f.RestartPolicy == RestartPolicyOnTuesday && !opts.AllowRestartPolicyOnTuesday {
+        allErrs = append(allErrs, field.Invalid(field.NewPath("restartPolicy"), f.RestartPolicy, "only allowed if the FrobberRestartPolicyOnTuesday feature is enabled"))
+      } else if !validRestartPolicies.Has(f.RestartPolicy) {
+        allErrs = append(allErrs, field.NotSupported(field.NewPath("restartPolicy"), f.RestartPolicy, validRestartPolicies.List()))
+      }
+      ...
+    }
+    ```
+
+5. After at least one release, the feature can be promoted to beta or GA and enabled by default.
+
+    In [staging/src/k8s.io/apiserver/pkg/features/kube_features.go](https://git.k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/features/kube_features.go):
+
+    ```go
+    // owner: @you
+    // alpha: v1.11
+    // beta: v1.12
+    //
+    // Allow OnTuesday restart policy in frobbers.
+    FrobberRestartPolicyOnTuesday utilfeature.Feature = "FrobberRestartPolicyOnTuesday"
+    
+    var defaultKubernetesFeatureGates = map[utilfeature.Feature]utilfeature.FeatureSpec{
+      ...
+      FrobberRestartPolicyOnTuesday: {Default: true, PreRelease: utilfeature.Beta},
     }
     ```
 

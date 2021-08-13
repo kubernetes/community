@@ -1,17 +1,30 @@
 channels:
   - name: kubernetes-docs-ar
+  - name: kubernetes-docs-bn
+    id: CQ0TD298C
   - name: kubernetes-docs-de
   - name: kubernetes-docs-es
+  - name: kubernetes-docs-fa
   - name: kubernetes-docs-fr
   - name: kubernetes-docs-hi
   - name: kubernetes-docs-id
   - name: kubernetes-docs-it
   - name: kubernetes-docs-ja
+  - name: kubernetes-docs-ja-maintainers
   - name: kubernetes-docs-ko
   - name: kubernetes-docs-pt
   - name: kubernetes-docs-ru
   - name: kubernetes-docs-vi
   - name: kubernetes-docs-zh
-  - name: kubernetes-docs-be
   - name: kubernetes-docs-pl
   - name: kubernetes-docs-uk
+  - name: sig-docs
+  - name: sig-docs-blog
+  - name: sig-docs-localizations
+  - name: sig-docs-maintainers
+  - name: sig-docs-modeling
+  - name: sig-docs-release
+    archived: true
+  - name: sig-docs-security
+    archived: true
+  - name: sig-docs-tools

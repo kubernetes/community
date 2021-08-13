@@ -70,7 +70,6 @@ Kubernetesにコントリビュートする際のtipsや、Kubernetesプロジ�
 - [Prow] - KubernetesのCI/CDシステム
 - [Test Grid] - 歴史的なテストや関連した情報を見る
 - [Triageダッシュボード] - よりよくトラブルシューティングをするために、似たような失敗をまとめる
-- [Velodrome] - ジョブやテスト結果を追跡するためのダッシュボード
 
 
 ### 重要なEメールエイリアス
@@ -291,6 +290,15 @@ git checkout -b myfeature
 [スカッシュコミット]の主な目的はきれいに読めるgitの履歴や加えられた変更のログを作成することです。通常これはPRの改定の最終段階に行われます。
 コミットをスカッシュするべきかわからない場合は、作業を止めてPRのレビューと承認を担当する他のコントリビューターの判断に任せることをおすすめします。
 
+`git rebase` を対話モードで実行して、保持するコミットとまとめるコミットを選択し、ブランチを強制的にプッシュします:
+
+```
+git rebase -i HEAD~3
+...
+git push --force
+```
+
+**備考**: レビュー担当者にPRへの `tide/merge-method-squash` ラベルの付与を依頼することも可能です。（このラベルはレビュー担当者が `/label tide/merge-method-squash` コマンドを実行すると付与されます。）`tide/merge-method-squash` ラベルを付与すると、botはこのPRを構成する*すべての*コミットをまとめ、それにより `LGTM` ラベル（既に適用されている場合）の削除やCIテストの再実行が行われなくなります。
 
 [コントリビューターガイド]: /contributors/guide/README.md
 [開発者ガイド]: /contributors/devel/README.md
@@ -302,14 +310,13 @@ git checkout -b myfeature
 [GitHubラベル]: https://go.k8s.io/github-labels
 [Kubernetes Code Search]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[カレンダー]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[カレンダー]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [slackチャンネル]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [youtubeチャンネル]: https://www.youtube.com/c/KubernetesCommunity/
 [triageダッシュボード]: https://go.k8s.io/triage
 [test grid]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [開発者統計]: https://k8s.devstats.cncf.io
 [code of conduct]: /code-of-conduct.md
 [ユーザーによるサポート要求]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

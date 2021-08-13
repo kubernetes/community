@@ -79,7 +79,6 @@
 - [테스트 그리드] - 테스트 기록과 관련된 정보 확인
 - [Triage 대시보드] - 더 나은 문제 해결을 위해 유사한 오류를
   수집
-- [Velodrome] - 작업과 테스트 상태를 추적하는 대시보드
 
 
 ### 중요한 이메일 별칭
@@ -360,14 +359,13 @@ PR을 검토하고 승인하도록 지정된 다른 참여자의 판단에 맡�
 [gitHub 레이블]: https://go.k8s.io/github-labels
 [쿠버네티스 코드 검색]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
-[달력]: https://calendar.google.com/calendar/embed?src=cgnt364vd8s86hr2phapfjc6uk%40group.calendar.google.com
+[달력]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
 [kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [Slack 채널]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [YouTube 채널]: https://www.youtube.com/c/KubernetesCommunity/
 [triage 대시보드]: https://go.k8s.io/triage
 [테스트 그리드]: https://testgrid.k8s.io
-[velodrome]: https://go.k8s.io/test-health
 [개발자 통계]: https://k8s.devstats.cncf.io
 [행동 강령]: /code-of-conduct.md
 [사용자 지원 요청]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request

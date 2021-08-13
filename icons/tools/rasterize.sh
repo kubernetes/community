@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 SIZES=(128 256)
 
 docker build -t svgconvertor:latest -f tools/Dockerfile .
 
-total=$(ls svg/*/*/* | wc -l)
+total=$(($(ls svg/*/*/* | wc -l) * "${#SIZES[@]}"))
 counter=1
 
 for size in "${SIZES[@]}"; do 
@@ -13,7 +13,9 @@ for size in "${SIZES[@]}"; do
         mkdir -p png/$dir
         output=png/${svg%%.*}-$size.png
         echo "[$counter/$total] Generating $output"
-        docker run -v $(pwd)/svg:/convertor svgconvertor:latest  $svg -h $size -w $size > $output
+        # Only specify the width, since we know heptagons are wider than they
+        # are tall. The tool will automatically retain the source aspect ratio.
+        docker run -v $(pwd)/svg:/convertor svgconvertor:latest  $svg -w $size > $output
         counter=$[$counter +1]
     done
 done

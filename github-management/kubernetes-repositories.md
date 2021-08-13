@@ -22,6 +22,9 @@ against the kubernetes/org repo.
 - [Core Repositories](#core-repositories)
   * [Goals](#goals-2)
   * [Rules](#rules-1)
+- [Maintenance Mode](#maintenance-mode)
+  * [Roadmap](#roadmap)
+  * [How-tos](#how-tos)
 - [Removing Repositories](#removing-repositories)
   * [Grounds for removal](#grounds-for-removal)
 - [FAQ](#faq)
@@ -101,6 +104,8 @@ the developers who could not be reached
    * Additions of [the standard Kubernetes header](https://git.k8s.io/kubernetes/hack/boilerplate/boilerplate.go.txt)
      to code created by the contributors can occur post-transfer, but should
      ideally occur shortly thereafter.
+   * Should contain template files as per the
+     [kubernetes-template-project](https://github.com/kubernetes/kubernetes-template-project).
 
 Note that copyright notices should only be modified or removed by the people or
 organizations named in the notice. See [the FAQ below](#faq) for more information
@@ -134,6 +139,34 @@ ecosystem. Carries the endorsement of the Kubernetes community.
      Kubernetes steering committee elections. in the Kubernetes community
    * Repository must be approved by SIG-Architecture
 
+## Maintenance Mode
+
+Projects that are considered "done" or not pursuing the development of new features but are relied on as a dependency can be considered in Maintenance mode.
+
+When in maintenance mode, the community can expect the following from the owners
+of the project/repository:
+
+  * No concrete plan on introduction of new features
+  * Incoming Issues and PR(s) will not be looked at in any regular cadence
+  * Minimal upkeep for project language and  dependency updates
+  * Security-related features/updates to be taken care of
+  * Explicit guidance around removal/transition to active state
+
+### Process for transitioning to maintenance mode
+
+  * SIG Chairs or TLs can open PRs to add the label and a preamble in the README.md
+ for the project.
+  * In addition, a notice will be sent out by the SIG Chairs or TLs to the [#k-dev]() 
+  mailing list with a fortnight for lazy consensus once the PR is opened.
+
+### Rules
+
+ * Steering committee liaisons can also recommend a project/repository to transition to
+ maintenance mode during the annual reporting process.
+ * When in doubt, SIG-Architecture will be the decision-maker.
+ * Specific members who can help with the process will be identified & added to the
+ OWNERS file for performing the required activities. 
+
 ## Removing Repositories
 
 As important as it is to add new repositories, it is equally important to prune
@@ -163,25 +196,6 @@ project and are generally not subject to removal, except under exceptional
 circumstances (e.g. a code of conduct violation).
 
 ## FAQ
-
-**My project is currently in kubernetes-incubator, what is going to happen to
-it?**
-
-Nothing. We’ll grandfather existing projects and they can stay in the incubator
-org for as long as they want to. We expect/hope that most projects will either
-move out to ecosystem, or into SIG or Core repositories following the same
-approval process described below.
-
-**My project wants to graduate from incubator, how can it do that?**
-
-Either approval from a SIG to graduate to a SIG repository, or approval from
-SIG-Architecture to graduate into the core repository.
-
-**My incubator project wants to go GA, how can it do that?**
-
-For now, the project determines if and when it is GA. For the future, we may
-define a cross Kubernetes notion of GA for core and sig repositories, but that’s
-not in this proposal.
 
 **My project is currently in core, but doesn’t seem to fit these guidelines,
 what’s going to happen?**

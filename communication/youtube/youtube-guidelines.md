@@ -1,3 +1,9 @@
+---
+title: "YouTube Guidelines"
+description: |
+  Overview of community YouTube practices and admin responsibilities.
+---
+
 <!-- omit in toc -->
 # YouTube Channel Guidelines
 
@@ -24,7 +30,7 @@ project, and includes all communication mediums.
 
 ## Admins
 
-- Check the [centralized list of administrators][admins] for contact information.
+- Check the [centralized list of administrators] for contact information.
 - To contact the admin group in Slack, ping `@youtube-admins` in the `#sig-contribex`
   Slack channel.
 
@@ -34,6 +40,9 @@ The [Kubernetes YouTube Channel] has separate playlists for each SIG, WG, UG
 meeting recordings, as well as recordings of other recurring events such as the
 Kubernetes [Community meeting], [Office Hours], [Meet our Contributors] and
 others.
+
+[Subprojects], in addition to SIGs, WGs, UGs may request their own playlists
+to better target their contributors and increase general discoverability.
 
 To better serve the community, [collaboration] has been enabled to share the
 management of the playlists. Anyone with the appropriate link to the particular
@@ -49,6 +58,8 @@ Hours, will be shared with the appropriate point(s) of contact.
 **NOTE:** If you're using a G Suite account you may need to [loosen the
 permissions in your YouTube settings]. If you have any questions reach out to
 the [YouTube admins] or [SIG Contributor Experience].
+
+**NOTE:** Both public and private steering meeting recordings should be made public.
 
 With collaboration comes great responsibility. Playlist collaborators in the
 community must use it responsibly and are subject to the following guidelines:
@@ -137,13 +148,13 @@ or the admin of the license (ex: SIG Chair) to either provide it to you or reset
 it to a new one.
 - Kubernetes YouTube admin credentials
 - A correctly set up recurring meeting with a start and end time (this is
-  important) - check zoom guidelines for more details 
+  important) - check [zoom guidelines] for more details 
 
 Steps:
 - Install splain: https://marketplace.zoom.us/apps/WPKzwuoLQDuj_gPs68AQxw
 - Connect the zoom account
 - Connect YouTube account
-- Click the \manage\ tab next to App Info and scroll to the config button, click
+- Click the `manage` tab next to App Info and scroll to the config button, click
 - The splain dashboard will display: make sure the box for make videos private is
 checked so we can edit before it goes live.
 - Test that it works
@@ -154,11 +165,9 @@ The following SIGs and groups are currently running splain.io:
 - [SIG Contributor Experience](/sig-contributor-experience/README.md)
 - [SIG Docs](/sig-docs/README.md)
 - [SIG Network](/sig-network/README.md)
-- [SIG PM](/sig-pm/README.md)
 - [Steering Committee](/committee-steering/governance/README.md)
 - [WG Data Protection](/wg-data-protection/README.md)
 - [WG K8s Infra](/wg-k8s-infra/README.md)
-- [WG LTS](/wg-lts/README.md)
 
 The main zoom admin account which holds Meet Our Contributors and others (if
 you log in to splain using this account, all of the other accounts will be
@@ -186,6 +195,9 @@ Below are a good and incorrect example:
 * Incorrect description: `Data Protection WG Bi-Weekly Meeting for 2/26/2020`
 * Correct description: `Data Protection WG Bi-Weekly Meeting for 20200226`
 
+A short video tutorial of the editing of descriptions and playlists can be found here:
+* https://youtu.be/IbZ2wnvu_Zs
+
 ### Thumbnails
 
 TODO - someone help us with better thumbnails to lay over the videos!
@@ -204,12 +216,15 @@ detailed information about streaming, see our [Streaming Config]
 [Kubernetes YouTube Channel]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
 [collaboration]: https://support.google.com/youtube/answer/6109639
 [loosen the permissions in your YouTube settings]: https://support.google.com/a/answer/6212415
-[SIG Contributor Experience]: https://git.kubernetes.io/community/sig-contributor-experience
-[centralized list of administrators]: ./moderators.md
-[YouTube admins]: ./moderators.md#YouTube-Channel
+[SIG Contributor Experience]: /sig-contributor-experience
+[centralized list of administrators]: /communication/moderators.md
+[YouTube admins]: /communication/moderators.md#YouTube-Channel
 [trim]: https://support.google.com/youtube/answer/9057455?hl=en
 [edit]: https://support.google.com/youtube/topic/9257530?hl=en&ref_topic=9257610
 [Community Meeting]: /events/community-meeting.md
 [Office Hours]: /events/office-hours.md
-[Meet our Contributors]: /mentoring/meet-our-contributors.md
-[Streaming Config]: ./youtube/streaming-config.md
+[Meet our Contributors]: /mentoring/programs/meet-our-contributors.md
+[Streaming Config]: ./streaming-config.md
+[Subprojects]: /governance.md#subprojects
+[moderation guidelines]: /communication/moderation.md
+[zoom guidelines]:/communication/zoom-guidelines.md

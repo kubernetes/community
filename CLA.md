@@ -1,6 +1,6 @@
 # The Contributor License Agreement
 
-The [Cloud Native Computing Foundation](https://www.cncf.io/community) (CNCF) defines
+The [Cloud Native Computing Foundation](https://www.cncf.io) (CNCF) defines
 the legal status of the contributed code in two different types of _Contributor License Agreements_
 (CLAs), [individual contributors](https://github.com/cncf/cla/blob/master/individual-cla.pdf) and [corporations](https://github.com/cncf/cla/blob/master/corporate-cla.pdf).
 
@@ -15,7 +15,7 @@ It is important to read and understand this legal agreement.
 
 If your work is done as an employee of your company, contact your company's legal department and ask to be put on the list of approved contributors for the CNCF CLA. Below, we have included steps for "Corporation signup" in case your company does not have a company agreement and would like to have one.
 
-#### 1. Log in to the Linux Foundation ID Portal with Github
+#### 1. Log in to the Linux Foundation ID Portal with GitHub
 
 Click one of:
   * [Individual signup](https://identity.linuxfoundation.org/projects/cncf) to
@@ -23,7 +23,7 @@ Click one of:
   * [Corporation signup](https://identity.linuxfoundation.org/node/285/organization-signup)
   to sign as a corporation representative and manage signups from your organization.
 
-Once you get to the sign in form, click "Log in with Github":
+Once you get to the sign in form, click "Log in with GitHub":
 
 ![CNCFCLA1](http://i.imgur.com/tEk2x3j.png)
 
@@ -44,10 +44,10 @@ signing process through HelloSign.
 
 If you did not receive an email from HelloSign, [then request it here](https://identity.linuxfoundation.org/projects/cncf).
 
-#### 4. Ensure your Github e-mail address matches address used to sign CLA
+#### 4. Ensure your GitHub e-mail address matches address used to sign CLA
 
-Your Github email address __must match__ the same address you use when signing
-the CLA. Github has [documentation](https://help.github.com/articles/setting-your-commit-email-address-on-github/)
+Your GitHub email address __must match__ the same address you use when signing
+the CLA. GitHub has [documentation](https://help.github.com/articles/setting-your-commit-email-address-on-github/)
 on setting email addresses.
 
 You must also set your [git e-mail](https://help.github.com/articles/setting-your-email-in-git)

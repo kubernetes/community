@@ -34,6 +34,16 @@ The `go.mod` file in the root of `k8s.io/kubernetes` describes dependencies usin
 * `require` directives list the preferred version of dependencies (this is auto-updated by go tooling to the maximum preferred version of the module)
 * `replace` directives pin to specific tags or commits
 
+## Dependency versions
+
+As a project we prefer that all entries in `go.mod` should be tagged in their
+respective repositories. There may be exceptions that will be up to the
+dependency approvers to approve. If there are issues with go mod tooling itself
+then there has to be an explicit comment (trailing `// comment`) with details on
+exact tag/release that this SHA corresponds to. Also please ensure tracking
+issues are open to ensure these SHA(s) are cleaned up over time and switched
+over to tags.
+
 ## Adding or updating a dependency
 
 The most common things people need to do with deps are add and update them.
@@ -164,10 +174,14 @@ Additionally:
 - If this is all good, approve, but don't LGTM, unless you also do code review
   or unless it is trivial (e.g. moving from k/k/pkg/utils -> k/utils).
 
+Licenses for dependencies are specified by the CNCF [Allowlist Policy].
 All new dependency licenses should be reviewed by @kubernetes/dep-approvers to ensure that they
 are compatible with the Kubernetes project license. It is also important to note
 and flag if a license has changed when updating a dependency, so that these can
 also be reviewed.
 
-For reference, whitelisted licenses as per the CNCF Whitelist Policy are
-mentioned [here](https://git.k8s.io/sig-release/licensing/README.md#licenses-for-dependencies).
+In case of questions or concerns regarding the allowlist policy, please create
+an issue or send an email to the [SIG Architecture] mailing list.
+
+[Allowlist Policy]: https://github.com/cncf/foundation/blob/master/allowed-third-party-license-policy.md
+[SIG Architecture]: https://groups.google.com/forum/#!forum/kubernetes-sig-architecture

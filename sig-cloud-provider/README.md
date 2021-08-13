@@ -13,7 +13,7 @@ Ensures that the Kubernetes ecosystem is evolving in a way that is neutral to al
 The [charter](CHARTER.md) defines the scope and governance of the Cloud Provider Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 13:00 PT (Pacific Time)](https://zoom.us/j/508079177) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 13:00 PT (Pacific Time)](https://zoom.us/j/508079177?pwd=ZmEvMksxdTFTc0N1eXFLRm91QUlyUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3dXLcYbRKCbpPCN-8CDFAB).
 
@@ -43,87 +43,93 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-cloud-provider-proposals](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-proposals) - Design Proposals
     - [@kubernetes/sig-cloud-provider-test-failures](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-test-failures) - Test Failures and Triage
     - [@kubernetes/sig-cloud-providers-misc](https://github.com/orgs/kubernetes/teams/sig-cloud-providers-misc) - General Discussion
+- Steering Committee Liaison: Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-cloud-provider:
 ### cloud-provider-extraction-migration
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-network-proxy/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/legacy-cloud-providers/master/OWNERS
+  - [kubernetes-sigs/apiserver-network-proxy](https://github.com/kubernetes-sigs/apiserver-network-proxy/blob/master/OWNERS)
+  - [kubernetes/community/sig-cloud-provider/cloud-provider-extraction-migration](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS)
+  - [kubernetes/legacy-cloud-providers](https://github.com/kubernetes/legacy-cloud-providers/blob/master/OWNERS)
 - **Meetings:**
   - Weekly Sync removing the in-tree cloud providers led by @cheftako and @mcrute: [Thursdays at 13:30 PT (Pacific Time)](https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:30&tz=PT%20%28Pacific%20Time%29).
 ### kubernetes-cloud-provider
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/cloud-provider-sample/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/cloud-provider/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/cloudprovider/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cloud/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/OWNERS
+  - [kubernetes/cloud-provider-sample](https://github.com/kubernetes/cloud-provider-sample/blob/master/OWNERS)
+  - [kubernetes/cloud-provider](https://github.com/kubernetes/cloud-provider/blob/master/OWNERS)
+  - [kubernetes/kubernetes/cmd/cloud-controller-manager](https://github.com/kubernetes/kubernetes/blob/master/cmd/cloud-controller-manager/OWNERS)
+  - [kubernetes/kubernetes/pkg/cloudprovider](https://github.com/kubernetes/kubernetes/blob/master/pkg/cloudprovider/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/cloud](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/cloud/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/cloud-provider](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cloud-provider/OWNERS)
 ### provider-alibaba-cloud
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/alibaba-cloud-csi-driver/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/cloud-provider-alibaba-cloud/master/OWNERS
+  - [kubernetes-sigs/alibaba-cloud-csi-driver](https://github.com/kubernetes-sigs/alibaba-cloud-csi-driver/blob/master/OWNERS)
+  - [kubernetes/cloud-provider-alibaba-cloud](https://github.com/kubernetes/cloud-provider-alibaba-cloud/blob/master/OWNERS)
 - **Meetings:**
   - Regular Alibaba Cloud Subproject Meeting: [Tuesdays at 12:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (monthly 2020 start date: Jan. 7th). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=UTC).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1x7E2Brzx8rAEI4IIsfOZuZUBIf-J4NTIGuDaKb8z_sM/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLWpmsLfcyyD7HAhlLTuwmI9KWuoiaN9nO).
 ### provider-aws
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/aws-efs-csi-driver/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/aws-iam-authenticator/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
+  - [kubernetes-sigs/aws-alb-ingress-controller](https://github.com/kubernetes-sigs/aws-alb-ingress-controller/blob/master/OWNERS)
+  - [kubernetes-sigs/aws-ebs-csi-driver](https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/OWNERS)
+  - [kubernetes-sigs/aws-efs-csi-driver](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/OWNERS)
+  - [kubernetes-sigs/aws-encryption-provider](https://github.com/kubernetes-sigs/aws-encryption-provider/blob/master/OWNERS)
+  - [kubernetes-sigs/aws-fsx-csi-driver](https://github.com/kubernetes-sigs/aws-fsx-csi-driver/blob/master/OWNERS)
+  - [kubernetes-sigs/aws-iam-authenticator](https://github.com/kubernetes-sigs/aws-iam-authenticator/blob/master/OWNERS)
+  - [kubernetes-sigs/provider-aws-test-infra](https://github.com/kubernetes-sigs/provider-aws-test-infra/blob/master/OWNERS)
+  - [kubernetes/cloud-provider-aws](https://github.com/kubernetes/cloud-provider-aws/blob/master/OWNERS)
 - **Meetings:**
   - Regular AWS Subproject Meeting: [Fridays at 9:00 PT (Pacific Time)](https://zoom.us/my/k8ssigaws) (biweekly 2019 start date: Jan. 11th). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29DzPOBBaJi-SO3AQ_b4HC).
 ### provider-azure
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/blobfuse-csi-driver/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-azure/master/OWNERS
+  - [kubernetes-sigs/azuredisk-csi-driver](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/OWNERS)
+  - [kubernetes-sigs/azurefile-csi-driver](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/master/OWNERS)
+  - [kubernetes-sigs/blobfuse-csi-driver](https://github.com/kubernetes-sigs/blobfuse-csi-driver/blob/master/OWNERS)
+  - [kubernetes-sigs/cloud-provider-azure](https://github.com/kubernetes-sigs/cloud-provider-azure/blob/master/OWNERS)
 - **Meetings:**
-  - Azure Subproject Meeting (biweekly): [Mondays at 18:00 PT (Pacific Time)](https://zoom.us/j/586836662) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=PT%20%28Pacific%20Time%29).
+  - Azure Subproject Meeting (every four weeks): [Mondays at 18:00 PT (Pacific Time)](https://zoom.us/j/586836662) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
+    - [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
+  - Azure Subproject Meeting (every four weeks): [Thursdays at 8:30 PT (Pacific Time)](https://zoom.us/j/586836662) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
     - [Meeting recordings](https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
 ### provider-baiducloud
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-baiducloud/master/OWNERS
+  - [kubernetes-sigs/cloud-provider-baiducloud](https://github.com/kubernetes-sigs/cloud-provider-baiducloud/blob/master/OWNERS)
 ### provider-gcp
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/gcp-filestore-csi-driver/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/cloud-provider-gcp/master/OWNERS
+  - [kubernetes-sigs/gcp-compute-persistent-disk-csi-driver](https://github.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/blob/master/OWNERS)
+  - [kubernetes-sigs/gcp-filestore-csi-driver](https://github.com/kubernetes-sigs/gcp-filestore-csi-driver/blob/master/OWNERS)
+  - [kubernetes/cloud-provider-gcp](https://github.com/kubernetes/cloud-provider-gcp/blob/master/OWNERS)
 - **Meetings:**
   - Regular GCP Subproject Meeting: [Thursdays at 16:00 UTC](https://docs.google.com/document/d/1FQx0BPlkkl1Bn0c9ocVBxYIKojpmrS1CFP5h0DI68AE/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1mtmwZ4oVSSWhbEw8Lfzvc7ig84qxUpdK6uHyJp8rSGU/edit).
 ### provider-huaweicloud
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-huaweicloud/master/OWNERS
+  - [kubernetes-sigs/cloud-provider-huaweicloud](https://github.com/kubernetes-sigs/cloud-provider-huaweicloud/blob/master/OWNERS)
 ### provider-ibmcloud
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
+  - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/master/OWNERS)
+  - [kubernetes-sigs/ibm-vpc-block-csi-driver](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/blob/master/OWNERS)
 - **Meetings:**
   - Regular IBM Subproject Meeting: [Wednesdays at 14:00 EST](https://zoom.us/j/9392903494) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit).
 ### provider-openstack
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
+  - [kubernetes/cloud-provider-openstack](https://github.com/kubernetes/cloud-provider-openstack/blob/master/OWNERS)
 - **Meetings:**
   - Regular OpenStack Subproject Meeting: [Wednesdays at 08:00 PT (Pacific Time)](https://docs.google.com/document/d/1bW3j4hFN4D8rv2LFv-DybB3gcE5ISAaOO_OpvDCgrGg/edit) (biweekly starting Wednesday March 20, 2019). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/15UwgLbEyZyXXxVtsThcSuPiJru4CuqU9p3ttZSfTaY4/edit).
     - [Meeting recordings](https://www.youtube.com/watch?v=iCfUx7ilh0E&list=PL69nYSiGNLP20iTSChQ_i2QQmTBl3M7ax).
 ### provider-vsphere
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/vsphere-csi-driver/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/cloud-provider-vsphere/master/OWNERS
+  - [kubernetes-sigs/vsphere-csi-driver](https://github.com/kubernetes-sigs/vsphere-csi-driver/blob/master/OWNERS)
+  - [kubernetes/cloud-provider-vsphere](https://github.com/kubernetes/cloud-provider-vsphere/blob/master/OWNERS)
 - **Meetings:**
   - Cloud Provider vSphere monthly syncup: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/584244729) (monthly - first Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1B0NmmKVh8Ea5hnNsbUsJC7ZyNCsq_6NXl5hRdcHlJgY/edit?usp=sharing).
