@@ -4,11 +4,12 @@ Welcome to contributing to SIG Auth.
 
 If you haven't seen them already, the Kubernetes project has:
 
-- A [Contributor Guide][contrib-guide] - some
+- A [Contributor Guide](http://git.k8s.io/community/contributors/guide) - some
   [kubernetes/kubernetes]-specific content, but lots of info for the
   entire project
-- A [Contributor Cheat Sheet][contrib-cheatsheet] - lots of resources
-  and handy links
+- A [Contributor Cheat
+  Sheet](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet) -
+  lots of resources and handy links
 
 SIG Auth has multiple areas you can contribute to. Those contributions
 can be in the form of code, documentation, support being involved in
@@ -23,9 +24,11 @@ for SIG Auth.
 ## Workflow
 
 Just like rest of the Kubernetes project, we also use the same PR and
-review based workflow. Which means [use of the CNCF CLA][cla], [code
-review by reviewers and approvers listed in OWNERS files][owners], and
-tests that automatically exercise code or enforce conventions.
+review based workflow. Which means [use of the CNCF
+CLA](https://github.com/kubernetes/community/blob/master/CLA.md),
+[code review by reviewers and approvers listed in OWNERS
+files](https://github.com/kubernetes/community/blob/master/contributors/guide/owners.md),
+and tests that automatically exercise code or enforce conventions.
 
 ## Issue Triaging
 
