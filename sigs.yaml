@@ -1343,15 +1343,9 @@ sigs:
   label: docs
   leadership:
     chairs:
-    - github: irvifa
-      name: Irvi Aini
-      company: Spotify
     - github: jimangel
       name: Jim Angel
       company: Google
-    - github: kbarnard10
-      name: Kaitlyn Barnard
-      company: Kong
     tech_leads:
     - github: kbhawkey
       name: Karen Bradshaw
@@ -1367,8 +1361,12 @@ sigs:
       name: Jennifer Rondeau
     - github: chenopis
       name: Andrew Chen
+    - github: irvifa
+      name: Irvi Aini
     - github: jaredbhatti
       name: Jared Bhatti
+    - github: kbarnard10
+      name: Kaitlyn Barnard
     - github: zacharysarah
       name: Zach Corleissen
   meetings:
