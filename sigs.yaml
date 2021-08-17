@@ -2096,6 +2096,9 @@ sigs:
   - name: kube-batch
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
+  - name: kube-scheduler-simulator
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kube-scheduler-simulator/main/OWNERS
   - name: poseidon
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
