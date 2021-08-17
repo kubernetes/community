@@ -56,6 +56,9 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
 ### kube-batch
 - **Owners:**
   - [kubernetes-sigs/kube-batch](https://github.com/kubernetes-sigs/kube-batch/blob/master/OWNERS)
+### kube-scheduler-simulator
+- **Owners:**
+  - [kubernetes-sigs/kube-scheduler-simulator](https://github.com/kubernetes-sigs/kube-scheduler-simulator/blob/main/OWNERS)
 ### poseidon
 - **Owners:**
   - [kubernetes-sigs/poseidon](https://github.com/kubernetes-sigs/poseidon/blob/master/OWNERS)
