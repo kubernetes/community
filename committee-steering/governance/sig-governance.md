@@ -7,7 +7,7 @@ In order to standardize Special Interest Group efforts, create maximum
 transparency, and route contributors to the appropriate SIG, SIGs should follow
 these guidelines:
 
-- Create a charter and have it approved according to the [SIG charter process]
+- Have an approved Charter [SIG charter process]
 - Meet regularly, at least for 30 minutes every 3 weeks, except November and
 December
 - Keep up-to-date meeting notes, linked from the SIG's page in the community
@@ -163,6 +163,33 @@ within 30 days from the date of their appointment.
   - Defined in `SECURITY_CONTACTS` files, this is only relevant to the root file
    in the repository. Template [SECURITY_CONTACTS]
 
+### Other Roles
+This governance document outlines the required roles for SIGs: Chair and Tech
+Lead; however, SIGs are allowed to operate how they see fit outside of minimum 
+governance requirements, including defining more roles to sustain the group. If 
+a SIG needs to change the Chair and Tech Lead position to include or remove
+duties, this needs to be approved by the Steering Committee. Newly created roles
+that don't assume any responsibility of Chair and/or Tech Lead should follow
+the governing processes in the SIGs charter. 
+
+Example of SIG roles created to help operations:
+
+- [The Release Team: Bug Triage, CI Signal, and more]  
+- [API Reviewer and Moderator]   
+- [Production Readiness Reviewer]  
+- [Events Lead]  
+- [PR Wrangler] 
+- [Editor]
+
+Other roles...
+- *MUST* be tracked on the SIGs README with a link to the role definition
+- *MUST* have the Steering Committees approval to proceed with roles that assume
+duties from Chairs and/or Tech Leads on a non-temporary basis 
+- *SHOULD* be documented in SIG charters if the role has delegation away from a
+sig-governance.md listed role 
+- *SHOULD* be sent to kubernetes-dev@googlegroups.com for awareness as a notice 
+and a lazy consensus period when they are newly created 
+- *MAY* Fill in for another named role on a temporary basis 
 #### Subproject Creation
 
 ---
@@ -243,6 +270,12 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [#tech-lead]: #Tech-Lead
 [Google group]: https://groups.google.com/forum/#!forum/kubernetes-sig-config
 [dashboard]: https://testgrid.k8s.io/
+[The Release Team: Bug Triage, CI Signal, and more]: https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks
+[Production Readiness Reviewer]: https://github.com/kubernetes/community/blob/master/sig-architecture/production-readiness.md#becoming-a-prod-readiness-reviewer-or-approver
+[API Reviewer and Moderator]: https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md#expanding-the-reviewer-and-approver-pool
+[Editor]: https://github.com/kubernetes/community/blob/master/communication/marketing-team/role-handbooks/editor.md
+[Events Lead]: https://github.com/kubernetes/community/blob/master/events/events-team/events-lead.md
+[PR Wrangler]: https://kubernetes.io/docs/contribute/participate/pr-wranglers/
 [monthly community meeting]: /events/community-meeting.md
 [Inclusive Open Source Community Orientation course]: https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/
 [technical-lead.md]: /contributors/chairs-and-techleads/technical-lead.md
