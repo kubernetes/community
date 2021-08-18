@@ -224,7 +224,7 @@ type VerticalPodAutoscalerStatus {
 }
 ```
 
-The complete API definition is included [below](#complete_vpa_api_object_definition).
+The complete API definition is included [below](#complete-vpa-api-object-definition).
 
 #### Label Selector ####
 The label selector determines which Pods will be scaled according to the given
@@ -669,7 +669,7 @@ Alternatives considered
 #### proposal: ####
 Instead of VPA using label selectors, Pod Spec is extended with an optional
 field `verticalPodAutoscalerPolicy`,
-a [reference](https://kubernetes.io/docs/api-reference/v1/definitions/#_v1_localobjectreference)
+a [reference](https://kubernetes.io/docs/reference/kubernetes-api/common-definitions/local-object-reference/)
 to the VPA config.
 
 #### pros: ####
