@@ -295,10 +295,10 @@ sigs:
     archive_url: https://docs.google.com/document/d/1HtTI0rJEGP_MSf6eO87aCmx_tzpovPAAg7U2Zxwm8FE/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP03VEluzh0wpSRPzgve8kI5
   - description: conformance office Hours
-    day: Tuesday
+    day: Wednesday
     time: "19:00"
     tz: UTC
-    frequency: biweekly
+    frequency: First Wednesday of the month
     url: https://zoom.us/j/427337923
     archive_url: https://docs.google.com/document/d/1W31nXh9RYAb_VaYkwuPLd1hFxuRX3iU0DmaQ4lkCsX8/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
