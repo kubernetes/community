@@ -65,7 +65,7 @@ If your proposal includes subcontractors, please include relevant details from t
 
 This RFP will be open until 4 proposals have been received.
 The RFP closing date will be set 2 calendar weeks after the fourth proposal is received.
-The working group will announce the vendor selection 5 calendar weeks after the RFP closes.
+The working group will announce the vendor selection after reviewing proposals.
 Upon receipt of the fourth proposal, the working group will update the RFP closure date and vendor selection date in this document.
 
 The working group will answer questions for the RFP period.
@@ -79,7 +79,7 @@ Proposals should be submitted to kubernetes-security-audit-2021@googlegroups.com
 * 2021/02/08: RFP Open, Question period open
 * 2021/06/22: Fourth proposal received
 * 2021/07/06: RFP Closes, Question period closes
-* 2021/08/13: The working group will announce vendor selection
+* 2021/08/31: The working group will announce vendor selection
 
 ## Methodology
 
