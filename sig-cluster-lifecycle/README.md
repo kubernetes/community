@@ -24,7 +24,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**), Google
 * Lubomir Ivanov (**[@neolit123](https://github.com/neolit123)**), VMware
-* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**), VMware
+* Vince Prignano (**[@vincepri](https://github.com/vincepri)**), VMware
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -36,6 +36,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Lucas Käldström (**[@luxas](https://github.com/luxas)**)
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**)
+* Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**)
 
 ## Contact
 - Slack: [#sig-cluster-lifecycle](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
