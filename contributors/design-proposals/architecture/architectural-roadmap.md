@@ -37,7 +37,7 @@ Intended audience: Kubernetes contributors
 
 This document describes the ongoing architectural development of the Kubernetes system, and the
 motivations behind it. System developers wanting to extend or customize
-Kubernetes should use this document as a guide to inform where and how best to implement these
+Kubernetes should use this document as a guide to inform where and how to best implement these
 enhancements. Application developers wanting to develop large, portable and/or future-proof
 Kubernetes applications may refer to this document for guidance on which parts of Kubernetes they
 can rely on being present now and in the future.
@@ -62,7 +62,7 @@ Succinctly, the layers comprise:
    schemes for authorization, quota, network, and storage policy expression and enforcement. These
    are optional, and achievable via other solutions.
    
-4. **_The Interface Layer_** which provides commonly used libraries, tools, UI's and systems used to
+4. **_The Interface Layer_** which provides commonly used libraries, tools, UIs and systems used to
    interact with the Kubernetes API.
    
 5. **_The Ecosystem_** which includes everything else associated with Kubernetes, and is not really
@@ -99,7 +99,7 @@ community](https://docs.google.com/document/d/1J6yCsPtggsSx_yfqNenb3xxBK22k43c5X
 aims to clarify the intentions of the Kubernetes’s architecture
 SIG. It is currently somewhat aspirational, and is intended to be a
 blueprint for ongoing and future development. NIY marks items not yet
-implemented as of the lated updated date at the head of this document.
+implemented as of the latest updated date at the head of this document.
 
 [Presentation version](https://docs.google.com/presentation/d/1oPZ4rznkBe86O4rPwD2CWgqgMuaSXguIBHIE7Y0TKVc/edit#slide=id.p)
 
@@ -849,7 +849,7 @@ Dependency management.
 Kubernetes is not just an open-source toolkit, but is typically
 consumed as a running, easy-to-run, or ready-to-run cluster or
 service. We would like most users and use cases to be able to use
-stock upstream releases. This means Kubernetes needs sufficient
+stocked upstream releases. This means Kubernetes needs sufficient
 extensibility without rebuilding to handle such use cases.
 
 While gaps in extensibility are the primary drivers of code forks and
@@ -1047,7 +1047,7 @@ does it have?
 
 * Automate a common task across a subset of the cluster
 
-* Run a hosted workload that offers apis to consumers (spark, a
+* Run a hosted workload that offers APIs to consumers (spark, a
   database, etcd)
 
 * These fall into three major groups:
