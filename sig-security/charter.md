@@ -6,15 +6,15 @@ This charter adheres to the conventions described in the [Kubernetes Charter REA
 
 SIG Security covers horizontal security initiatives for the Kubernetes project, including regular security audits, the vulnerability management process, cross-cutting security documentation, and security community management. As a process-oriented SIG, it does not directly own Kubernetes component code. This SIG replaces the Security Audit Working Group. Instead, SIG Security focuses on improving the security of the Kubernetes project across all components.
 
-This SIG grew out of the [Third-Party Security Audit Working Group](https://github.com/kubernetes/community/tree/master/sig-security/security-audit-2019), which managed each recurrent Third-Party Security Audit over the course of the audit’s lifecycle. The Working Group worked closely with selected vendors, the Product Security Committee, and the CNCF. It created the RFP, selected the vendors, and managed the vendors’ engagement with other SIGs and subject matter experts.
+This SIG grew out of the [Third-Party Security Audit Working Group](https://github.com/kubernetes/community/tree/master/sig-security/security-audit-2019), which managed each recurrent Third-Party Security Audit over the course of the audit’s lifecycle. The Working Group worked closely with selected vendors, the Security Response Committee, and the CNCF. It created the RFP, selected the vendors, and managed the vendors’ engagement with other SIGs and subject matter experts.
 
-SIG Security continues to manage the third-party security audits, while serving a wider mission of advocating for security-related structural or systemic issues and default configuration settings, managing the non-embargoed (public) vulnerability process, defining the bug bounty, creating official Kubernetes Hardening Guides and security documents, and serving as a public relations contact point for Kubernetes security. 
+SIG Security continues to manage the third-party security audits, while serving a wider mission of advocating for security-related structural or systemic issues and default configuration settings, managing the non-embargoed (public) vulnerability process, defining the bug bounty, creating official Kubernetes Hardening Guides and security documents, and serving as a public relations contact point for Kubernetes security.
 
 ### In scope
 
 #### Vulnerability Management Process
 
-Work with the Kubernetes [Product Security Committee (PSC)](https://github.com/kubernetes/security#product-security-committee-psc) to define the processes for fixing and disclosing vulnerabilities, as outlined in https://github.com/kubernetes/security. For example:
+Work with the Kubernetes [Security Response Committee (SRC)](https://github.com/kubernetes/security#product-security-committee-src) to define the processes for fixing and disclosing vulnerabilities, as outlined in https://github.com/kubernetes/security. For example:
 
 - When the private fix & release process is invoked
 - How vulnerabilities are rated
@@ -50,17 +50,17 @@ Manage recurring security audits and follow up on issues. Coordinate vendors to 
 
 ### Out of scope
 
-In contrast to SIG Auth, SIG Security does not own any Kubernetes cluster component code. 
+In contrast to SIG Auth, SIG Security does not own any Kubernetes cluster component code.
 
 Further, SIG Security’s scope does not include:
 
 - Kubernetes authentication, authorization, audit and security policy features.  (SIG Auth)
-- Private vulnerability response (belongs to the PSC), including:
+- Private vulnerability response (belongs to the SRC), including:
     - Embargoed vulnerability management
     - Bug bounty submission triage and management
     - Non-public vulnerability collection, triage, and disclosure
 - The mechanisms to protect confidentiality/integrity of API data (belongs to SIG API Machinery, SIG Auth or others)
-- Security audit for all other CNCF projects (e.g., etcd, CoreDNS, CRI-O, containerd)  (Belongs to the CNCF’s SIG Security.) 
+- Security audit for all other CNCF projects (e.g., etcd, CoreDNS, CRI-O, containerd)  (Belongs to the CNCF’s SIG Security.)
 - Any projects outside of the Kubernetes project
 - Cloud provider-specific or distributor-specific hardening guides
 - Recommendations or endorsements of specific commercial product vendors or cloud providers.

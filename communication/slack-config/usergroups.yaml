@@ -43,14 +43,14 @@ usergroups:
       - Jason
 
   # Should match the membership of the following teams at all times:
-  # - https://git.k8s.io/security/#product-security-committee-psc
+  # - https://git.k8s.io/security/#product-security-committee-src
   #
   # Ensure any changes are also reflected in the Security Release Team
   # usergroup (within the SIG Release config directory).
   - name: product-security-committee
-    long_name: Product Security Committee
+    long_name: Security Response Committee
     description: |-
-      The Product Security Committee (PSC) is responsible for triaging and
+      The Security Response Committee (SRC) is responsible for triaging and
       handling the security issues for Kubernetes.
     channels:
       - release-management

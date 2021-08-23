@@ -49,7 +49,7 @@ Link to SIG section in [sigs.yaml]
   - Protection of volume data, container ephemeral data, and other non-API data (prefer: sig-storage
     and sig-node)
   - Container isolation (prefer: sig-node and sig-networking)
-  - Bug bounty (prefer: product security committee)
+  - Bug bounty (prefer: Security Response Committee)
   - Resource quota (prefer: sig-scheduling)
   - Resource availability / DOS protection (prefer: sig-apimachinery, sig-network, sig-node)
 

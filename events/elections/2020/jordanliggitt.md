@@ -22,7 +22,7 @@ so I have a broad perspective on community activities, challenges, and dynamics.
 
 Early on, I focused on API and security efforts,
 helped establish API patterns, contributed authentication/authorization components,
-and served on the Product Security Committee.
+and served on the Security Response Committee.
 
 Recently, I've focused on helping Kubernetes mature and stabilize:
 * advocated for extending support to 1 year

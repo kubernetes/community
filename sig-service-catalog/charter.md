@@ -108,7 +108,7 @@ roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair rol
     related events, such as KubeCon.
 
 - Security Contacts
-  - Are a contact point for the Product Security Committee to reach out to for
+  - Are a contact point for the Security Response Committee to reach out to for
     triaging and handling of incoming issues.
   - Must be a maintainer.
   - Must accept and adhere to the Kubernetes [Embargo

@@ -98,7 +98,7 @@ time.
   must be  staffed / owned by at least 3 volunteers
 
   - We aspire to follow the same 1/3 maximal representation rules used by the
-    Steering Committee, Product Security Committee, and other groups that have
+    Steering Committee, Security Response Committee, and other groups that have
     project-wide impact
   - However, while we are bootstrapping, we consider it acceptable for maximal
     representation concerns to be violated, since this will often be necessary
@@ -106,7 +106,7 @@ time.
   - Our plan would be to rectify this when choosing new members or rotating
     old members such that we eventually meet maximal representation criteria
 
-- We plan to follow the model set forth by the Product Security Committee for
+- We plan to follow the model set forth by the Security Response Committee for
   suitable vetting new subproject owners
 
 - Subproject owners must provide additional contact details within the WG, and

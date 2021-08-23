@@ -582,7 +582,7 @@ q2Xz68mF3_LggEY/edit?ts=5a68cdbc
         *   Tim Allclair (@tallclair, Google) nominated as replacement
             *   Long-term contributor to k8s auth/security
             *   Helped drive pod security policy and audit features
-            *   Member of kubernetes product security committee
+            *   Member of kubernetes Security Response Committee
             *   Brings container/node security expertise
             *   Unanimous support from other leads (Jordan Liggitt, Red Hat; Eric Chiang, CoreOS)
         *   Feedback on the change welcome (either public or private)

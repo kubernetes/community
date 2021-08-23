@@ -7,14 +7,14 @@
 *   **Moderators**:  Jonas Rosland [SIG ContribEx]
 *   **Note Taker**: Jorge Castro [SIG ContribEx]
 *   [ 0:00 ]**  Demo **-- Kubernetes in Kubernetes [?ukasz Ole?, [loles@mirantis.com](mailto:loles@mirantis.com)] (confirmed)
-    *   [https://docs.google.com/presentation/d/1PsB_fU1IxjS2grRdMdBm_fsNlSgVChWQ6r-HwGyBRNw/edit?usp=sharing](https://docs.google.com/presentation/d/1PsB_fU1IxjS2grRdMdBm_fsNlSgVChWQ6r-HwGyBRNw/edit?usp=sharing) 
-    *   [https://github.com/lukaszo/cluster-api-provider-virtlet](https://github.com/lukaszo/cluster-api-provider-virtlet) 
+    *   [https://docs.google.com/presentation/d/1PsB_fU1IxjS2grRdMdBm_fsNlSgVChWQ6r-HwGyBRNw/edit?usp=sharing](https://docs.google.com/presentation/d/1PsB_fU1IxjS2grRdMdBm_fsNlSgVChWQ6r-HwGyBRNw/edit?usp=sharing)
+    *   [https://github.com/lukaszo/cluster-api-provider-virtlet](https://github.com/lukaszo/cluster-api-provider-virtlet)
 *   [ 0:00 ]** Release Updates**
     *   Current Release Development Cycle  [Aaron Crickenberger - Release Manager]
         *   [We are at Week 7 for v1.14](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.14) - [minutes](https://docs.google.com/document/d/1U3jL8Ucruoq9wyzIgxEdyA51MuOIi_gvecVed1kAli0/edit#heading=h.60ptyogm23dd) - [recording](https://youtu.be/SfaBzKPeaLk)
         *   Everything has a KEP, but are they useful
         *   We have [release-1.14-blocking](https://testgrid.k8s.io/sig-release-1.14-blocking) and [release-1.14-all](https://testgrid.k8s.io/sig-release-1.14-all) testgrid dashboards backed by release-1.14 jobs (thanks @amwat, @dbhanushali, @krzyzacy)
-        *   Comments / questions / concerns on how this is going? Add them to [https://bit.ly/k8s114-retro](https://bit.ly/k8s114-retro) 
+        *   Comments / questions / concerns on how this is going? Add them to [https://bit.ly/k8s114-retro](https://bit.ly/k8s114-retro)
     *   Upcoming milestones:
         *   **[Burndown](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.14#burndown) Monday February 25** (week 8)
         *   **[Code Freeze](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.14#code-freeze) Thursday March 7** (week 9)
@@ -25,7 +25,7 @@
     *   Patch Release Updates
         *   x.x
         *   y.x
-*   [ 0:00 ] **Contributor Tip of the Week **[Katharine Berry] 
+*   [ 0:00 ] **Contributor Tip of the Week **[Katharine Berry]
     *   [Spyglass](https://github.com/kubernetes/test-infra/tree/master/prow/spyglass), and [the deprecation of Gubernator](https://github.com/kubernetes/test-infra/pull/11302) (to view artifacts! We're not touching the PR dashboard)
     *   You might know Gubernator as? that purple and white thing that shows test failures when you click the "Details" link on job results in PRs
     *   Spyglass is the prow component intended to replace this functionality, it's been around for a few months, but we're finally at enough parity that we'd like to switch over
@@ -70,13 +70,13 @@
     *   **Slack update: **we are only manually inviting contributors who need access for now until we hear from Slack. If you are in a SIG and have a member that needs access, Ping in #slack-admins and an admin will DM you for the email. Consumer traffic is being routed to discuss.kubernetes.io.
     *   
     *   **Kubecon Shanghai CFP** ends at 11:59PM PT, February 22, 2019
-        *   SIG Deep Dives/Intros due: 
+        *   SIG Deep Dives/Intros due:
     *   **Shoutouts (see slack #shoutouts) **
         *   nikhita - Figured this makes a good shoutout too! @spiffxp @pwittrock :smile:
         *   dbhanushali (The-Wall)- In no particular order @krzyzacy (seen) @amwat (Amit) @cjwagner (Cole) @ixdy (Jeff) @bentheelder (Been). shoutout for their assistance in test-infra release task automation
         *   spiffxp - Shoutouts to @coderanger @mrbobbytables and @kbarnard10 for putting together and posting https://kubernetes.io/blog/2019/02/11/runc-and-cve-2019-5736/ so quickly
         *   nikhita - shoutout to @mrbobbytables and @justaugustus for handling new member requests in k/org in such a timely manner! It feels like there are at least 4-5 requests every day and they still manage to get to each of them, while simultaneously doing so many other things for our community! :100:
-        *   paris - thanks Jeff for hosting this call in my absence at the last minute. True team player! 
+        *   paris - thanks Jeff for hosting this call in my absence at the last minute. True team player!
         *   mrbobbytables - shoutout to @zacharysarah, sig-docs and everyone involved in kick starting the french translation efforts! @sieben @Aurelien Perrier @lledru @yastij @smana @rbenzair @Jean-Yves Gastaud and the others I don't have slack handles for but heres github: awkif, abuisine, rekcah78 and erickhun
 
 
@@ -99,20 +99,20 @@
         *   Enhancements
             *   [https://bit.ly/k8s114-enhancements](https://bit.ly/k8s114-enhancements)
             *   [20 alpha](https://github.com/kubernetes/enhancements/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+milestone%3Av1.14+sort%3Acreated-asc+label%3Astage%2Falpha), [13 beta](https://github.com/kubernetes/enhancements/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+milestone%3Av1.14+sort%3Acreated-asc+label%3Astage%2Fbeta), [6 stable](https://github.com/kubernetes/enhancements/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+milestone%3Av1.14+sort%3Acreated-asc+label%3Astage%2Fstable)
-            *   Comments / questions / concerns on how this went? Add them to [https://bit.ly/k8s114-retro](https://bit.ly/k8s114-retro) 
+            *   Comments / questions / concerns on how this went? Add them to [https://bit.ly/k8s114-retro](https://bit.ly/k8s114-retro)
         *   CI Signal
             *   [http://bit.ly/k8s114-cisignal](http://bit.ly/k8s114-cisignal)
     *   Patch Release Updates
         *   No patch releases planned this week.
 *   [ 0:00 ] **SIG Updates**
-    *   SIG Instrumentation [Frederic Branczyk] (confirmed) 
+    *   SIG Instrumentation [Frederic Branczyk] (confirmed)
         *   Slides: [https://docs.google.com/presentation/d/1KzYZCf5VUMp65H_vlPwg7AD4UIXWTRtiUK34L1GYOqE/edit?usp=sharing](https://docs.google.com/presentation/d/1KzYZCf5VUMp65H_vlPwg7AD4UIXWTRtiUK34L1GYOqE/edit?usp=sharing)
     *   SIG Testing (postponed due to issues)
     *   SIG PM [Stephen Augustus] (confirmed)
         *   Slides: [https://docs.google.com/presentation/d/1A3xvBhMqjuPu183RFVSBZptm9hz-_Qz24XzZu14Qsoc/edit?usp=sharing](https://docs.google.com/presentation/d/1A3xvBhMqjuPu183RFVSBZptm9hz-_Qz24XzZu14Qsoc/edit?usp=sharing)
 *   [ 0:00 ] **?Announcements ?**
-    *   SIG Cluster Lifecycle has published a [grooming document](https://github.com/kubernetes/community/blob/master/sig-cluster-lifecycle/grooming.md) - "By providing a consistent set of best practices, it allows developers to work across sub-projects fairly easily. More importantly, it signals direction and priority to developers who may be new to the sub-projects." ? might be useful to other SIGs! 
-    *   We had a slack bad actor incident on Sunday Evening and the inviter is down. Slack.k8s.io is pointing to discuss.kubernetes.io. Once we have finished our talks with Slack and moderators have discussed, we will alert everyone as to the status of the inviter. 
+    *   SIG Cluster Lifecycle has published a [grooming document](https://github.com/kubernetes/community/blob/master/sig-cluster-lifecycle/grooming.md) - "By providing a consistent set of best practices, it allows developers to work across sub-projects fairly easily. More importantly, it signals direction and priority to developers who may be new to the sub-projects." ? might be useful to other SIGs!
+    *   We had a slack bad actor incident on Sunday Evening and the inviter is down. Slack.k8s.io is pointing to discuss.kubernetes.io. Once we have finished our talks with Slack and moderators have discussed, we will alert everyone as to the status of the inviter.
 
         **? **Shoutouts this week (Check in #shoutouts on slack) **?**
 
@@ -134,11 +134,11 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 
 
 *   **Moderators**: Jeffrey Sica [SIG UI]
-*   **Note Taker**: 
+*   **Note Taker**:
 *   [ 0:00 ]**  Demo**
     *   multicluster-scheduler: Running Argo Workflows Across Multiple Kubernetes Clusters ([adrien@admiralty.io](mailto:adrien@admiralty.io))
 
-        Slides: [https://docs.google.com/presentation/d/12UzVDWmwdyWCMttAWIDld2udri5sILIFWWqZzqfjrX4/edit?usp=sharing](https://docs.google.com/presentation/d/12UzVDWmwdyWCMttAWIDld2udri5sILIFWWqZzqfjrX4/edit?usp=sharing) 
+        Slides: [https://docs.google.com/presentation/d/12UzVDWmwdyWCMttAWIDld2udri5sILIFWWqZzqfjrX4/edit?usp=sharing](https://docs.google.com/presentation/d/12UzVDWmwdyWCMttAWIDld2udri5sILIFWWqZzqfjrX4/edit?usp=sharing)
 
 *   [ 0:00 ]** Release Updates**
     *   Current Release Development Cycle  [Aaron Crickenberger - Release Manager]
@@ -160,7 +160,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
                 *   8 alpha, 3 beta, 0 stable = 11 KEPs that need to get to implementable by Monday
             *   [kubernetes-dev@ e-mail](https://groups.google.com/forum/#!topic/kubernetes-dev/G5X_iQOIKQE)
             *   [repo: kubernetes/enhancements milestone:v1.14](https://github.com/kubernetes/enhancements/milestone/13)
-            *   If you have any questions about the KEP process, join us at (HEY AARON FILL THIS OUT) meeting. 
+            *   If you have any questions about the KEP process, join us at (HEY AARON FILL THIS OUT) meeting.
         *   CI Signal
             *   [http://bit.ly/k8s114-cisignal](http://bit.ly/k8s114-cisignal)
             *   We watch [release-master-blocking](https://testgrid.k8s.io/sig-release-master-blocking), [release-master-upgrade](https://testgrid.k8s.io/sig-release-master-upgrade)
@@ -168,7 +168,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
             *   FYI: [pull-kubernetes-e2e-kops-aws is optional, non-blocking](https://groups.google.com/forum/#!topic/kubernetes-dev/mvzwnWR3ahg)
             *   Implementing [release-blocking job criteria](https://github.com/kubernetes/sig-release/blob/master/release-blocking-jobs.md#release-blocking-criteria): all release-blocking jobs must have owners
                 *   Specify "owner" as "an e-mail address that testgrid can send alerts to if the job fails more than N times in a row"
-                *   Tracking issue: [https://github.com/kubernetes/sig-release/issues/441](https://github.com/kubernetes/sig-release/issues/441) 
+                *   Tracking issue: [https://github.com/kubernetes/sig-release/issues/441](https://github.com/kubernetes/sig-release/issues/441)
                 *   WIP PR: [https://github.com/kubernetes/test-infra/pull/10870](https://github.com/kubernetes/test-infra/pull/10870)
     *   Patch Release Updates
         *   1.13.3: [aiming](https://groups.google.com/d/topic/kubernetes-dev-announce/mxdNPaiJFHA/discussion) for tomorrow
@@ -183,28 +183,28 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   Google Summer of Code [Paris, Nikhita, Ihor]:
         *   The deadline to submit project ideas is February 6 20:00 UTC
         *   More details:
-            *   [https://github.com/cncf/soc#project-ideas](https://github.com/cncf/soc#project-ideas) 
-            *   [https://groups.google.com/d/msg/kubernetes-dev/S7HsqOkiC5g/DLSXB4oDEQAJ](https://groups.google.com/d/msg/kubernetes-dev/S7HsqOkiC5g/DLSXB4oDEQAJ) 
+            *   [https://github.com/cncf/soc#project-ideas](https://github.com/cncf/soc#project-ideas)
+            *   [https://groups.google.com/d/msg/kubernetes-dev/S7HsqOkiC5g/DLSXB4oDEQAJ](https://groups.google.com/d/msg/kubernetes-dev/S7HsqOkiC5g/DLSXB4oDEQAJ)
     *   Register to SIG updates (Intro and Deep Dive sessions) in Barcelona:
         *   The deadline to register to offer Intro and Deep Dive sessions for Barcelona is Friday, February 8.
-        *   To register an intro and/or deep dive session for Barcelona, please go to: [https://www.surveymonkey.com/r/J5K9JJR](https://www.surveymonkey.com/r/J5K9JJR) 
-    *   SIG/WG Chairs and coleads (Jorge): 
+        *   To register an intro and/or deep dive session for Barcelona, please go to: [https://www.surveymonkey.com/r/J5K9JJR](https://www.surveymonkey.com/r/J5K9JJR)
+    *   SIG/WG Chairs and coleads (Jorge):
         *   We need to complete our move to host-keys on Zoom.
         *   Here [are the instructions](https://docs.google.com/document/d/1fudC_diqhN2TdclGKnQ4Omu4mwom83kYbZ5uzVRI07w/).
         *   This is the only thing blocking us from having the calendar public on the web! It would be nice to have this back, see [issue #2536](https://github.com/kubernetes/community/issues/2536).
-        *   Talk to a Jorge or Paris near you if you have questions/need help. 
+        *   Talk to a Jorge or Paris near you if you have questions/need help.
     *   Kubecon Shanghai CFP deadline: February 22, 2019
     *   [Meet our contributors next week](https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md)!
         *   Looking for mentors, please see @paris
         *   Especially if you're new, we want to hear about the beginning of your k8s journey.
     *   **? **Shoutouts this week (Check in #shoutouts on slack) **?**
-        *   zacharysarah - Shoutout to @bentheelder for proactively seeking to collaborate on subdomain site design! [https://github.com/kubernetes/org/issues/397](https://github.com/kubernetes/org/issues/397) 
+        *   zacharysarah - Shoutout to @bentheelder for proactively seeking to collaborate on subdomain site design! [https://github.com/kubernetes/org/issues/397](https://github.com/kubernetes/org/issues/397)
         *   neolit123 - big thank you to @spiffxp for helping drive the PR that removes tracking of placeholder reference docs in the `k/k` repository. [https://github.com/kubernetes/kubernetes/pull/70052](https://github.com/kubernetes/kubernetes/pull/70052)  
-        *   spiffxp - shoutouts to @liggitt for making me forever associate "KEP" with [https://www.youtube.com/watch?v=vh3tuL_DVsE](https://www.youtube.com/watch?v=vh3tuL_DVsE) 
-        *   spiffxp - shoutouts to @stevekuznetsov for getting PR Number Eleven Thousand in [kubernetes/test-infra](https://github.com/kubernetes/test-infra)! [https://github.com/kubernetes/test-infra/pull/11000](https://github.com/kubernetes/test-infra/pull/11000) 
+        *   spiffxp - shoutouts to @liggitt for making me forever associate "KEP" with [https://www.youtube.com/watch?v=vh3tuL_DVsE](https://www.youtube.com/watch?v=vh3tuL_DVsE)
+        *   spiffxp - shoutouts to @stevekuznetsov for getting PR Number Eleven Thousand in [kubernetes/test-infra](https://github.com/kubernetes/test-infra)! [https://github.com/kubernetes/test-infra/pull/11000](https://github.com/kubernetes/test-infra/pull/11000)
         *   akutz - I wanted to #shoutout @stevekuznetsov. He always takes the time to fill in his issues on the #sig-testing weekly call agenda ahead of time and with great detail and links. This makes taking notes in real time much easier when it's his issues. Thank you Steve!
         *   paris - @mrbobbytables for knocking out a ton of "glue" work in our communication documentation to make our processes more complete and transparent in `kubernetes/community/communication` and closing several issues around them! thanks so much bob!
-        *   spiffxp - shoutout to @liggitt for suggesting the KEP extension to release freeze and providing language around it [https://github.com/kubernetes/sig-release/pull/482](https://github.com/kubernetes/sig-release/pull/482) 
+        *   spiffxp - shoutout to @liggitt for suggesting the KEP extension to release freeze and providing language around it [https://github.com/kubernetes/sig-release/pull/482](https://github.com/kubernetes/sig-release/pull/482)
 
 
 ## January 24, 2019 ([recording](https://youtu.be/bJ_p9t19xqs))
@@ -223,7 +223,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   can push to other tracing backends such as zipkin
     *   Very easy to configure on top of Kubernetes
     *   Adds annotation to pod and can follow all events related to that pod across Kubernetes by referencing that annotation
-    *   Very useful for debugging complex problems that span multiple components 
+    *   Very useful for debugging complex problems that span multiple components
     *   Future:
         *   pass trace context through downward api into containers
         *   add trace mechanisms to other Kubernetes objects and CRDs
@@ -248,11 +248,11 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
             *   41 enhancements, 19 in alpha, 11 in beta and 6 for GA.  Would be good to have less alpha, more stable.
         *   CI Signal
             *   [http://bit.ly/k8s114-cisignal](http://bit.ly/k8s114-cisignal)
-            *   We watch [release-master-blocking](https://testgrid.k8s.io/sig-release-master-blocking) 
+            *   We watch [release-master-blocking](https://testgrid.k8s.io/sig-release-master-blocking)
             *   Currently tracked in google doc, likely to change going forward
             *   Implementing [release-blocking job criteria](https://github.com/kubernetes/sig-release/blob/master/release-blocking-jobs.md#release-blocking-criteria): all release-blocking jobs must have owners
                 *   Specify "owner" as "an e-mail address that testgrid can send alerts to if the job fails more than N times in a row"
-                *   Tracking issue: [https://github.com/kubernetes/sig-release/issues/441](https://github.com/kubernetes/sig-release/issues/441) 
+                *   Tracking issue: [https://github.com/kubernetes/sig-release/issues/441](https://github.com/kubernetes/sig-release/issues/441)
                 *   WIP PR: [https://github.com/kubernetes/test-infra/pull/10870](https://github.com/kubernetes/test-infra/pull/10870)
                 *   Will be required "soon" (~week?) (k-dev@, look for e-mail, and SIGs, expect to be contacted)
     *   Patch Release Updates
@@ -300,7 +300,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
             *   improve debugging at node level
                 *   debug containers alpha
                 *   [tracing](https://github.com/kubernetes/enhancements/pull/650)
-    *   [SIG API Machinery](https://docs.google.com/presentation/d/1S9faDXJ_cs5oZlN74ysJVtytiCnBjoZliFBmt7mZEd8/edit#slide=id.g401c104a3c_0_0) [David Eads] (confirmed) 
+    *   [SIG API Machinery](https://docs.google.com/presentation/d/1S9faDXJ_cs5oZlN74ysJVtytiCnBjoZliFBmt7mZEd8/edit#slide=id.g401c104a3c_0_0) [David Eads] (confirmed)
         *   Last Cycle
             *   CRD webhook conversion - alpha 1.13
                 *   Please test it, looking for more testers to ensure it covers all use cases.
@@ -322,17 +322,17 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 
         **? **Shoutouts this week (Check in #shoutouts on slack) **?**
 
-    *   Aaron Crickenberger would like to thank: 
+    *   Aaron Crickenberger would like to thank:
         *   Ben Elder fixing yesterday's prow outage even though he wasn't on call, and following up with a post-mortem: [https://github.com/kubernetes/test-infra/pull/10911](https://github.com/kubernetes/test-infra/pull/10911)
         *   @eduar for reaching out to all of the SIGs and his continued work on revamping the kubernetes dev guide [https://github.com/kubernetes/community/issues/3064](https://github.com/kubernetes/community/issues/3064)
         *   Shoutouts to Hippie Hacker, Tim Hockin and Brendan Burns for transitioning the first piece of project infrastructure to the community: DNS
             *   Editor's note: tim-as-a-service DNS has been deprecated
-        *   shoutouts to Bob Killen (@mrbobbytables) for putting together a community documentation style guide [https://github.com/kubernetes/community/pull/3125](https://github.com/kubernetes/community/pull/3125) 
-    *   Aramb? Alarc?n has[ hosting facilities in Mexico City](https://discuss.kubernetes.io/t/looking-for-a-meetup-in-mexico-city-facilities-for-gathering-host/4347), would like to start hosting a k8s meetup group. 
+        *   shoutouts to Bob Killen (@mrbobbytables) for putting together a community documentation style guide [https://github.com/kubernetes/community/pull/3125](https://github.com/kubernetes/community/pull/3125)
+    *   Aramb? Alarc?n has[ hosting facilities in Mexico City](https://discuss.kubernetes.io/t/looking-for-a-meetup-in-mexico-city-facilities-for-gathering-host/4347), would like to start hosting a k8s meetup group.
     *   Henning Jacobs is collecting a list of [Kubernetes Failure Stories](https://srcco.de/posts/kubernetes-failure-stories.html).
-    *   Call for demos for this call, see the top of this document if you're interested in giving a demo. 
-    *   Also if you want to guest host this meeting, ping @castrojo or @paris 
-    *   #talk-proposals on slack - Place for people to discuss CFPs, talks, share stories and techniques, get peer reviews, etc. 
+    *   Call for demos for this call, see the top of this document if you're interested in giving a demo.
+    *   Also if you want to guest host this meeting, ping @castrojo or @paris
+    *   #talk-proposals on slack - Place for people to discuss CFPs, talks, share stories and techniques, get peer reviews, etc.
 
 
 ## January 17, 2019 ([recording](https://youtu.be/Pm0heuYoPnA))
@@ -340,9 +340,9 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 
 
 *   **Moderators**:  Paris Pittman, SIG-Contributor Experience
-*   **Note Taker**: Josh Berkus 
+*   **Note Taker**: Josh Berkus
 *   [ 0:00 ]**Demo: **Kamus (confirmed) (forgot to get name)
-    *   [Kamus](https://github.com/Soluto/kamus) - A secret encryption/decryption solution for Kubernetes applications. 
+    *   [Kamus](https://github.com/Soluto/kamus) - A secret encryption/decryption solution for Kubernetes applications.
         *   open source, avail on Github
     *   [Slides](https://docs.google.com/presentation/d/1XN_eSUwefkVs8HLv_IeVfIx4giu_qN4tb7JdLdxuFQ0)
     *   For storing all types of secrets (API token, certs, client pwd)
@@ -387,15 +387,15 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 *   [ 0:00 ] **Contributor Tip of the Week**
     *   **Mentoring!!**
         *   Grow your contributors!
-            *   [Meet Our Contributors - monthly youtube series](https://www.youtube.com/playlist?list=PL69nYSiGNLP3QpQrhZq_sLYo77BVKv09F) 
+            *   [Meet Our Contributors - monthly youtube series](https://www.youtube.com/playlist?list=PL69nYSiGNLP3QpQrhZq_sLYo77BVKv09F)
                 *   **New** and **current contributors**
                 *   Two sessions for global span 3:30pm and 9pm UTC
-                *   To ask a question: #meet-our-contributors in slack or DM paris for anonymity 
-                *   Current contributor benefits: an entire session with the steering committee to answer questions around: governance, structure of project, how they got involved, current business. 
-                    *   During regular mentor panel session: ask why is your test(s) flaking, how to be a subproject owner, what SIGs are looking for more contributors, etc 
+                *   To ask a question: #meet-our-contributors in slack or DM paris for anonymity
+                *   Current contributor benefits: an entire session with the steering committee to answer questions around: governance, structure of project, how they got involved, current business.
+                    *   During regular mentor panel session: ask why is your test(s) flaking, how to be a subproject owner, what SIGs are looking for more contributors, etc
             *   [Google Summer of Code!](https://github.com/cncf/soc)
                 *   CNCF submitted our application - we are aiming for as many as possible
-                *   Have an interesting project and/or can you mentor? Email was sent from Nikhita kubernetes-dev@google.com 
+                *   Have an interesting project and/or can you mentor? Email was sent from Nikhita kubernetes-dev@google.com
             *   New contributor workshop
                 *   Every KubeCon - will be listed in the co-located events section, announced via blog, and kubernetes-dev@googlegroups.com
                 *   Check out the playlist from the last one in December
@@ -456,7 +456,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   Placeholder for Steering [spiffxp]
         *   (updates summary not formally approved)
         *   New steering committee, first meeting was very productive
-        *   [Product Security Team to become a Committee](https://github.com/kubernetes/steering/issues/89)
+        *   [Security Response Team to become a Committee](https://github.com/kubernetes/steering/issues/89)
             *   now has rules on who's on it and how it relates to the project
         *   WG-k8s-infra now exists, for migrating stuff off of Google ownership mainly
             *   very early stages, don't even know how stuff will work yet
@@ -472,7 +472,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   [Contributor Experience charter is merged!!](https://github.com/kubernetes/community/tree/master/sig-contributor-experience)
     *   WE NEED MENTORS!! Meet Our Contributors could be a one time one hour commitment that will help hundreds!! Reach out to Paris or #sig-contribex on slack.
     *   **Shoutouts** ?
-        *   Slack! #shoutouts 
+        *   Slack! #shoutouts
         *   [justagustus] Shoutout to @jberkus for putting together the draft questions (https://github.com/kubernetes/sig-release/issues/368) for our first ever Release Team shadows questionnaire (https://www.surveymonkey.com/r/k8s-114-rt-shadows)!
 
             ...and everyone who helped review it! @ihor.dvoretskyi @maria @liggitt @mbohlool @spiffxp @marpaia @bentheelder @tpepper @aleksandram @AishSundar
@@ -481,7 +481,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 *   [coderanger] Shoutout to the whole ZH docs translation crew, and a special mention for Adam Dang as putting in a ton of work! In total the team has merged 444 PRs over the past two months of Chinese translation!
 *   [spiffxp] shoutout to @akutz for stepping to take notes for sig-testing's weekly meetings, we go a mile a minute and it's much appreciated!
 *   [spiffxp] shoutout to @nikhita for moving the kubernetes project values to kubernetes/community for more exposure (https://github.com/kubernetes/steering/pull/88) and improving our WG docs generated from sigs.yaml ([https://github.com/kubernetes/community/pull/3069](https://github.com/kubernetes/community/pull/3069))
-*   [nikhita] Shoutout to @mspreitz for adding lots of details to the code-generator conversion-gen docs! [https://github.com/kubernetes/kubernetes/pull/71821](https://github.com/kubernetes/kubernetes/pull/71821) 
+*   [nikhita] Shoutout to @mspreitz for adding lots of details to the code-generator conversion-gen docs! [https://github.com/kubernetes/kubernetes/pull/71821](https://github.com/kubernetes/kubernetes/pull/71821)
 
 
 ## January 10, 2019 - ([recording](https://youtu.be/XXZ0ekSX3cg))
@@ -529,7 +529,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   [Let's try using a schedule](https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md)
         *   1.13.2: Today
         *   1.12.5: [cut planned Thursday, Jan 17th](https://groups.google.com/forum/#!topic/kubernetes-dev/7hLP6bpvrr8)
-*   [ 0:21 ] **Contributor Tip of the Week **[Aaron Crickenberger] 
+*   [ 0:21 ] **Contributor Tip of the Week **[Aaron Crickenberger]
     *   Let's talk about project boards
     *   Creation:
         *   Per repo board: needs repo write access (eg: [kubernetes/kubernetes](https://github.com/kubernetes/kubernetes/projects))
@@ -636,8 +636,8 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   [https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/cfp/](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/cfp/)
     *   Next week SIG updates: CLI and Node!
         *   Also: **we need demos** (see the top of this document for instructions)
-    *   Revamping Dev Guide! If you have a suggestion for the persona of upstream developer -> [https://github.com/kubernetes/community/issues/3064](https://github.com/kubernetes/community/issues/3064). Persona #2 - building on top of K8s is the next one up. 
-    *   **Shoutouts:** 
+    *   Revamping Dev Guide! If you have a suggestion for the persona of upstream developer -> [https://github.com/kubernetes/community/issues/3064](https://github.com/kubernetes/community/issues/3064). Persona #2 - building on top of K8s is the next one up.
+    *   **Shoutouts:**
         *   [paris, jberkus] Shoutout to @coderanger for making LWKD happen over the holidays, when I was completely unavailable.  @coderanger also has been super supportive in slack fielding contributor questions while folks are out - thank you!
 
 
@@ -654,7 +654,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   Curated infrastructure for Open Source Testing focusing on 3 things:
         *   Reduce friction of cloud ecosystem tooling integration
         *   Testbed delivery and maintenance efficiency
-        *   cross-community collaboration 
+        *   cross-community collaboration
     *   Built completely on Open Source tooling
     *   Dedicated Resources include:
         *   dedicated physical servers
@@ -678,7 +678,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   SIG Leads, check out this set of [recommended topics to cover](https://github.com/kubernetes/community/blob/master/events/community-meeting.md#sig-updates) during your update
     *   [Slide template if you need it](https://docs.google.com/presentation/d/1-nTvKCiqu9UvFYUeM6p6RIqHS5-H-u3_x-V4xj_eIWo/edit#slide=id.g401c104a3c_0_0)
     *   Please also check the [SIG Update Schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k)!
-    *   SIG Autoscaling, Networking, and PM due next week! 
+    *   SIG Autoscaling, Networking, and PM due next week!
     *   SIG Apps [Matt Farina] (confirmed)
         *   [Slides](https://docs.google.com/presentation/d/1jbERrg36lsR05xdDmkF42NoWsM7-rMmQD9GzNYdvPXQ/edit?usp=sharing)
         *   Last Cycle
@@ -727,7 +727,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
             *   Better OAuth support
         *   How can you contribute
             *   looking for help with metrics
-    *   SIG VMWare [Steve Wong] (confirmed) 
+    *   SIG VMWare [Steve Wong] (confirmed)
         *   [Slides](https://docs.google.com/presentation/d/1eMaclhtHY2llnmLWe6BoJv1xdmXpaMe79xNjH-klOvY/edit?usp=sharing)
         *   Last Cycle
             *   External vSphere Cloud Provider [alpha]
@@ -744,9 +744,9 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   May 20 ? 23, 2019  |  Fira Barcelona, Barcelona, Spain
         *   CFP Closes on January 18th!
         *   [https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/cfp/](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-europe-2019/cfp/)
-    *   If you attended the Contributor Summit, please fill out the survey (in email). 
-    *   Want to demo during the first 10m of this meeting? Check out the top of this document to sign up! 
-    *   Slides/Videos of Kubecon Sessions: [https://github.com/cloudyuga/kubecon18-NA](https://github.com/cloudyuga/kubecon18-NA) (Thanks Cloudyuga!) 
+    *   If you attended the Contributor Summit, please fill out the survey (in email).
+    *   Want to demo during the first 10m of this meeting? Check out the top of this document to sign up!
+    *   Slides/Videos of Kubecon Sessions: [https://github.com/cloudyuga/kubecon18-NA](https://github.com/cloudyuga/kubecon18-NA) (Thanks Cloudyuga!)
 
         **? **Shoutouts this week  **?**
 
@@ -805,7 +805,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   Current Release Development Cycle  [Aish Sundar - Release Manager]
         *   **Code freeze for 1.13 is now lifted!** Code thaw went into effect 11/28, 8pm PST.
         *   Master is now open for 1.14 development.  
-        *   _Only the_ _absolute most critically urgent bug fixes_ might be cherry picked back in time for 1.13.0. 
+        *   _Only the_ _absolute most critically urgent bug fixes_ might be cherry picked back in time for 1.13.0.
         *   1.13-rc.2 slated to cut tomorrow, 11/30.
         *   The release is on target for** Monday, 12/3/2018**, pending CI signal.
         *   **_If you still have outstanding Docs PR or Release notes, please get -them in ASAP._**
@@ -820,7 +820,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   [Slide template if you need it](https://docs.google.com/presentation/d/1-nTvKCiqu9UvFYUeM6p6RIqHS5-H-u3_x-V4xj_eIWo/edit#slide=id.g401c104a3c_0_0)
         *   Please also check the [SIG Update Schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k)!
     *   SIG Architecture [Matt Farina] (confirmed)
-        *   Slides: [https://docs.google.com/presentation/d/1jwk23WLDLAs5PcFbTKC-P-Hknemu30IlL0u9iWcwT9M/edit?usp=sharing](https://docs.google.com/presentation/d/1jwk23WLDLAs5PcFbTKC-P-Hknemu30IlL0u9iWcwT9M/edit?usp=sharing) 
+        *   Slides: [https://docs.google.com/presentation/d/1jwk23WLDLAs5PcFbTKC-P-Hknemu30IlL0u9iWcwT9M/edit?usp=sharing](https://docs.google.com/presentation/d/1jwk23WLDLAs5PcFbTKC-P-Hknemu30IlL0u9iWcwT9M/edit?usp=sharing)
         *   Updates and ongoing work:
             *   Charter was accepted
             *   KEP process work ongoing
@@ -838,7 +838,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   SIG Arch meetings are right after the community meetings, come join
     *   SIG Release [Tim Pepper] (confirmed)
         *   SIG Release Update
-            *   Slides: [https://docs.google.com/presentation/d/1WtmoYP1Ay9hq2XuPEBQRVorH5pilJ6829qyQD5qWmwY/edit?usp=sharing](https://docs.google.com/presentation/d/1WtmoYP1Ay9hq2XuPEBQRVorH5pilJ6829qyQD5qWmwY/edit?usp=sharing) 
+            *   Slides: [https://docs.google.com/presentation/d/1WtmoYP1Ay9hq2XuPEBQRVorH5pilJ6829qyQD5qWmwY/edit?usp=sharing](https://docs.google.com/presentation/d/1WtmoYP1Ay9hq2XuPEBQRVorH5pilJ6829qyQD5qWmwY/edit?usp=sharing)
             *   Task:
                 *   Put out the releases
                 *   Mentor release team so that people don't burn out
@@ -879,7 +879,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   Steering Committee AMA @ 730a PT / 330pm UTC
         *   Mentor panel @ 1pm PT / 9pm UTC
         *   Be a mentor to hundreds with one hour of your time! Reach out to parispittman@google.com / "paris" on slack to get scheduled.
-    *   No k8s office hours this month - thanks to all the volunteers who helped make the program a success this year. 
+    *   No k8s office hours this month - thanks to all the volunteers who helped make the program a success this year.
     *   **? **Shoutouts this week **?**
         *   Twitterverse shoutouts for our fearless 1.13 Release Team Lead, @AishSundar: https://twitter.com/stephenaugustus/status/1063610123149545472?s=19
         *   Shoutout to @amerai for adding a search bar to Testgrid so that you don't have to dig to find the right dashboard! https://testgrid.k8s.io/
@@ -899,7 +899,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 *   **Note Taker**: -
 *   [ 0:00 ]** Release Updates**
     *   1.13 is in **Code Freeze - 11/16 to 11/28**
-    *   Beta.2 targeted EOD, 11/22 
+    *   Beta.2 targeted EOD, 11/22
     *   Still targeting 12/3 for release date.
     *   **[Latest CI Signal Report](https://groups.google.com/forum/#!topic/kubernetes-dev/4agE2-5vXQk)**
         *   No unknown blockers at this point
@@ -914,10 +914,10 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   SIGs please update asap if not done already
     *   **1.13 Retro**
         *   Targeted for 12/6 during Community meeting
-        *   [http://bit.ly/k8s113-retro](http://bit.ly/k8s113-retro) 
+        *   [http://bit.ly/k8s113-retro](http://bit.ly/k8s113-retro)
     *   **1.14 Release team **
         *   Leads nominated and chosen in SIG-Release meeting last week
-        *   Shadows selection process 
+        *   Shadows selection process
         *   Use [GitHub issue](https://github.com/kubernetes/sig-release/issues/372) or [PR](https://github.com/kubernetes/sig-release/pull/377#discussion_r235575768) to express interest
 *   [ 0:00 ] **SIG Updates**
     *   **SIG PM - **Stephen Augustus
@@ -932,10 +932,10 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   12/20 and 12/27 - **No community meetings**
         *   January: SIG Apps,  SIG UI, SIG VMWare
 *   **? **Shoutouts this week (Check in #shoutouts on slack) **?**
-    *   _@justaugustus_ 
-        *   Twitterverse shoutouts for our fearless 1.13 Release Team Lead, @AishSundar: [https://twitter.com/stephenaugustus/status/1063610123149545472](https://twitter.com/stephenaugustus/status/1063610123149545472) 
-    *   _@cjwagner_ 
-        *   Shoutout to @amerai for adding a search bar to Testgrid so that you don't have to dig to find the right dashboard! [https://testgrid.k8s.io/](https://testgrid.k8s.io/) 
+    *   _@justaugustus_
+        *   Twitterverse shoutouts for our fearless 1.13 Release Team Lead, @AishSundar: [https://twitter.com/stephenaugustus/status/1063610123149545472](https://twitter.com/stephenaugustus/status/1063610123149545472)
+    *   _@cjwagner_
+        *   Shoutout to @amerai for adding a search bar to Testgrid so that you don't have to dig to find the right dashboard! [https://testgrid.k8s.io/](https://testgrid.k8s.io/)
 
 
 ## November 15, 2018 - ([recording](https://youtu.be/wkMRB1dalpA))
@@ -971,11 +971,11 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   Current Release Development Cycle  [Aish Sundar - 1.13 Release Team Lead]
         *   **Code Freeze is tomorrow, 11/16 5pm PST**
             *   Only 1.13 critical fixes will be approved to go into master
-            *   Master reopen 11/28 5pm PST for 1.14 
+            *   Master reopen 11/28 5pm PST for 1.14
             *   Next **1.13.0-beta.1** release on Friday, 11/16 5pm PST (after code freeze)
             *   A few at risk items, release team is working to assess
         *   **CI Signal**
-            *   [Master-blocking](https://k8s-testgrid.appspot.com/sig-release-master-blocking),[ master-upgrade](https://k8s-testgrid.appspot.com/sig-release-master-upgrade) and[ 1.13-blocking](https://k8s-testgrid.appspot.com/sig-release-1.13-blocking#Summary) are mostly Green, with intermittent flakes which could become blocking if they fail days before release 
+            *   [Master-blocking](https://k8s-testgrid.appspot.com/sig-release-master-blocking),[ master-upgrade](https://k8s-testgrid.appspot.com/sig-release-master-upgrade) and[ 1.13-blocking](https://k8s-testgrid.appspot.com/sig-release-1.13-blocking#Summary) are mostly Green, with intermittent flakes which could become blocking if they fail days before release
             *   **Beta.1 Blocking Issues**
                 *   [CSI Alpha Test Failures](https://github.com/kubernetes/kubernetes/issues/70760)
                 *   [CSI Volumes [Driver: com.google.csi.gcepd] flakes](https://github.com/kubernetes/kubernetes/issues/65246)
@@ -990,7 +990,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 *   Patch Release Updates
     *   v1.12.3 cut planned Monday, Nov 26th
     *   V1.10.0 published earlier this week
-*   [ 0:00 ] **Contributor Tip of the Week **[Jeffrey Sica] 
+*   [ 0:00 ] **Contributor Tip of the Week **[Jeffrey Sica]
     *   cs.k8s.io -- Search all repos in seconds
         *   Can _regex_ search across all Kubernetes repos and orgs
         *   Automatically filters out certain types of files, but that can be configured
@@ -1000,7 +1000,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   [Slide template if you need it](https://docs.google.com/presentation/d/1-nTvKCiqu9UvFYUeM6p6RIqHS5-H-u3_x-V4xj_eIWo/edit#slide=id.g401c104a3c_0_0)
     *   Please also check the [SIG Update Schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k)!
     *   SIG IBM Cloud [Richard Theis] (sig confirmed)
-        *   Slides: [https://docs.google.com/presentation/d/11-CASs9mJl1RDwG9aN0UOYxIawNqIVtsMXXwyXWCS0Y/edit?usp=sharing](https://docs.google.com/presentation/d/11-CASs9mJl1RDwG9aN0UOYxIawNqIVtsMXXwyXWCS0Y/edit?usp=sharing) 
+        *   Slides: [https://docs.google.com/presentation/d/11-CASs9mJl1RDwG9aN0UOYxIawNqIVtsMXXwyXWCS0Y/edit?usp=sharing](https://docs.google.com/presentation/d/11-CASs9mJl1RDwG9aN0UOYxIawNqIVtsMXXwyXWCS0Y/edit?usp=sharing)
         *   Upcoming plans:
             *   Upstream IBM cloud provider repo (currently lives in IBM)
             *   Continue testing, bug fixing, etc
@@ -1014,7 +1014,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   Kubecon US is SOLD OUT. If you register now you'll be waitlisted. \
 
     *   Community Meeting Schedule - there are no SIG updates for December.
-        *   11/22 (Thanksgiving in the US) - **Meeting is Still on**, Ihor will be your host! 
+        *   11/22 (Thanksgiving in the US) - **Meeting is Still on**, Ihor will be your host!
         *   12/6 - Release Retro for 1.13 (tentative!)
         *   12/13 - **Kubecon, no community meeting**
         *   12/20 and 12/27 - **No community meetings**
@@ -1041,7 +1041,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 
 *   **Moderators**:  Jorge Castro [SIG Contributor Experience]
 *   **Note Taker**: Solly Ross (Google/SIG AUtoscaling)
-*   [ 0:00 ]**  Demo **--IngressRoute with Contour - Steve Sloka ([steves@heptio.com](mailto:steves@heptio.com)) 
+*   [ 0:00 ]**  Demo **--IngressRoute with Contour - Steve Sloka ([steves@heptio.com](mailto:steves@heptio.com))
     *   Link to slides: [https://docs.google.com/presentation/d/1LAbRU7Fx7fofXolw0GckYw0AckdNk156yUdeBvgndkE/edit?usp=sharing](https://docs.google.com/presentation/d/1LAbRU7Fx7fofXolw0GckYw0AckdNk156yUdeBvgndkE/edit?usp=sharing)
     *   GitHub: [https://j.hept.io/contour](https://j.hept.io/contour)
 *   [ 0:00 ]** Release Updates**
@@ -1049,14 +1049,14 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   We cut Beta0 and the [1.13 Release branch](https://testgrid.k8s.io/sig-release-1.13-blocking) yesterday, 11/7 !
         *   Updated to Go 1.11.2 before Beta.
         *   **Code Slush is this Friday (tomorrow), 11/9**
-            *   All PRs need /priority, /kind, /sig, /milestone labels to merge post 5pm PST 
+            *   All PRs need /priority, /kind, /sig, /milestone labels to merge post 5pm PST
         *   **Code Freeze is just a week away - 11/16**
             *   Handful of Enhancements are pending only tests and docs
             *   There are a couple of Enhancements at risk and a few that have had no activity in past week or so.
-            *   Owners **please update k/enhancement issues with current status** 
+            *   Owners **please update k/enhancement issues with current status**
             *   Please reach out to Release team early on if you think you need to move out your enhancement
         *   **CI Signal**
-            *   [Latest CI Signal Report](https://groups.google.com/forum/#!topic/kubernetes-dev/R7Jf96b2L-8) 
+            *   [Latest CI Signal Report](https://groups.google.com/forum/#!topic/kubernetes-dev/R7Jf96b2L-8)
             *   Status is Yellow
             *   Kudos to Sig **Cluster-Lifecycle** for fixing long stating Upgrade setup issue [#56787](https://github.com/kubernetes/kubernetes/issues/56787), [#70627](https://github.com/kubernetes/kubernetes/issues/70627)
             *   We now have several new ones (in-progress though) that might become** blocking if not addressed soon**
@@ -1067,18 +1067,18 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
                 *   Couple of HPA test fixes awaiting backport to 1.11 and 1.12. ([#70655](https://github.com/kubernetes/kubernetes/issues/70655), [#69444](https://github.com/kubernetes/kubernetes/issues/69444))
         *   **Docs**
             *   Open PRs: 11/22
-            *   Completed PRs: 2/22 
+            *   Completed PRs: 2/22
             *   **We have 7 outstanding PRs**. We will be pinging owners on issues.
         *   **Release Notes**
             *   Sig Leads expect initial draft of the release notes coming your way for review next Monday 11/12
             *   _Please leave early feedback if you can_
         *   Questions:
             *   Where should we send 1.14 volunteers
-                *   Look out for issue for more info, will be linked in next week's update 
+                *   Look out for issue for more info, will be linked in next week's update
     *   Patch Release Updates
         *   x.x
         *   y.x
-*   [ 0:00 ] **Contributor Tip of the Week **[Aaron Crickenberger] 
+*   [ 0:00 ] **Contributor Tip of the Week **[Aaron Crickenberger]
     *   Let's talk about OWNERS, /lgtm and /approve
     *   How do OWNERS files work: [https://go.k8s.io/owners](https://go.k8s.io/owners)
         *   Loosely similar to CODEOWNERS files
@@ -1091,9 +1091,9 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   [https://prow.k8s.io/command-help#approve](https://prow.k8s.io/command-help#approve)
         *   [https://prow.k8s.io/command-help#lgtm](https://prow.k8s.io/command-help#lgtm)
     *   Workflow overview in slide form:
-        *   [https://schd.ws/hosted_files/kccnceu18/88/kubecon-eu-2018-machines-can-do-the-work.pdf](https://schd.ws/hosted_files/kccnceu18/88/kubecon-eu-2018-machines-can-do-the-work.pdf) 
+        *   [https://schd.ws/hosted_files/kccnceu18/88/kubecon-eu-2018-machines-can-do-the-work.pdf](https://schd.ws/hosted_files/kccnceu18/88/kubecon-eu-2018-machines-can-do-the-work.pdf)
     *   BIKESHED TIME
-        *   [https://github.com/kubernetes/test-infra/blob/master/prow/plugins.yaml#L39-L86](https://github.com/kubernetes/test-infra/blob/master/prow/plugins.yaml#L39-L86) 
+        *   [https://github.com/kubernetes/test-infra/blob/master/prow/plugins.yaml#L39-L86](https://github.com/kubernetes/test-infra/blob/master/prow/plugins.yaml#L39-L86)
 *   [ 0:00 ] **SIG Updates**
     *   SIG Leads, check out this set of [recommended topics to cover](https://github.com/kubernetes/community/blob/master/events/community-meeting.md#sig-updates) during your update
     *   [Slide template if you need it](https://docs.google.com/presentation/d/1-nTvKCiqu9UvFYUeM6p6RIqHS5-H-u3_x-V4xj_eIWo/edit#slide=id.g401c104a3c_0_0)
@@ -1140,7 +1140,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   Events:
             *   OpenStack Summit, Berlin (Nov 13-15)
             *   Sessions at KubeCon Seattle
-    *   SIG Auth [Mo Khan ] (confirmed) 
+    *   SIG Auth [Mo Khan ] (confirmed)
         *   [Slides](https://docs.google.com/presentation/d/14lhNK-h4W8W65jRtQtRKztnMygy7Qhk7NNm3CbyFmFM)
         *   Homepage: [https://contributor.kubernetes.io/sigs/sig-cluster-auth/](https://contributor.kubernetes.io/sigs/sig-auth/)
         *   Features
@@ -1152,9 +1152,9 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 *   [ 0:00 ] **?Announcements ?**
     *   Contributor Summit @ Kubecon
         *   Shanghai: Josh is getting on a plane, see you all there!
-        *   Seattle: Chairs and owners, if you haven't confirmed we're running out of time, please let us know. 
+        *   Seattle: Chairs and owners, if you haven't confirmed we're running out of time, please let us know.
     *   Community Meeting Schedule
-        *   11/22 (Thanksgiving in the US) - Meeting is Still on, Ihor will be your host! 
+        *   11/22 (Thanksgiving in the US) - Meeting is Still on, Ihor will be your host!
         *   12/6 - Release Retro for 1.13 (tentative!)
         *   12/13 - **Kubecon, no community meeting**
         *   12/20 and 12/27 - **No community meetings**
@@ -1199,7 +1199,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
             *   Highly dependant on clean CI Signal
             *   Branch fast forwards will happen everyday thereafter
         *   **Code slush is coming up Friday, 11/9**
-            *   Enhancement owners evaluate enhancement readiness based on pending work (code, test and docs) 
+            *   Enhancement owners evaluate enhancement readiness based on pending work (code, test and docs)
             *   **Code Freeze** is just 2 weeks away !
             *   If you need to enhancement adjusted, please work with the Release team
             *   Ensure 1.13 PRs are uptodate on labels (sig, kind, priority, milestone)
@@ -1213,7 +1213,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
             *   **Shuffling jobs in release blocking dashboards**
                 *   We have finalized the[ criteria for Blocking Tests](https://github.com/kubernetes/sig-release/pull/346)
                 *   As first step we are moving GKE upgrade tests from [sig-release-master-upgrade](https://k8s-testgrid.appspot.com/sig-release-master-upgrade#Summary&show-stale-tests=) to [sig-release-master-upgrade-optional](https://k8s-testgrid.appspot.com/sig-release-master-upgrade-optional#Summary&show-stale-tests=) dashboard - [PR#9959](https://github.com/kubernetes/test-infra/pull/9959)
-                *   Expect to see more jobs moved out of "release-blocking" to "release-informing" dashboard 
+                *   Expect to see more jobs moved out of "release-blocking" to "release-informing" dashboard
     *   Patch Release Updates
         *   1.11.4 went out last week
         *   1.12.2 went out last week
@@ -1231,7 +1231,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   [Slide template if you need it](https://docs.google.com/presentation/d/1-nTvKCiqu9UvFYUeM6p6RIqHS5-H-u3_x-V4xj_eIWo/edit#slide=id.g401c104a3c_0_0)
     *   Please also check the [SIG Update Schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k)!
     *   SIG AWS [Nishi Davidson] (confirmed)
-        *   [https://drive.google.com/file/d/1jDR1Esdu2ApnuLrzsGxn7iv1cU3sWc7R/view](https://drive.google.com/file/d/1jDR1Esdu2ApnuLrzsGxn7iv1cU3sWc7R/view) 
+        *   [https://drive.google.com/file/d/1jDR1Esdu2ApnuLrzsGxn7iv1cU3sWc7R/view](https://drive.google.com/file/d/1jDR1Esdu2ApnuLrzsGxn7iv1cU3sWc7R/view)
         *   We currently host 5 subprojects in SIG-AWS
         *   Subprojects aws-alb-ingress-controller, aws-ebs-csi-driver and out-of-tree ccm will be alpha in k8s v1.13
         *   Cloud Provider status
@@ -1310,12 +1310,12 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 *   [ 0:00 ]** Release Updates**
     *   Current Release Development Cycle  [1.13]
         *   [v1.13-alpha2](https://github.com/kubernetes/kubernetes/releases/tag/v1.13.0-alpha.2) was cut yesterday, 10/24
-        *   We are currently in Enhancement freeze with [34 tracked enhancements](https://github.com/kubernetes/enhancements/issues?page=1&q=is%3Aissue+is%3Aopen+milestone%3Av1.13+label%3Atracked%2Fyes&utf8=%E2%9C%93) 
+        *   We are currently in Enhancement freeze with [34 tracked enhancements](https://github.com/kubernetes/enhancements/issues?page=1&q=is%3Aissue+is%3Aopen+milestone%3Av1.13+label%3Atracked%2Fyes&utf8=%E2%9C%93)
         *   Any further additions need to go through a formal [exception process](https://github.com/kubernetes/enhancements/blob/master/EXCEPTIONS.md)
         *   **3 weeks** to Code Freeze (11/16)
         *   Please open **test, docs PRs** and also add about **release notes** to PRs when applicable
         *   **CI Signal  **
-            *   **[Test Failure Report for 10/23](https://groups.google.com/forum/#!topic/kubernetes-dev/_jILqo17Suw)** 
+            *   **[Test Failure Report for 10/23](https://groups.google.com/forum/#!topic/kubernetes-dev/_jILqo17Suw)**
             *   Kudos to SIG** Cluster-Lifecycle** and** Apps **for closing out some long standing failing tests ([69475](https://github.com/kubernetes/kubernetes/issues/69475), [69356](https://github.com/kubernetes/kubernetes/issues/69356)) !!
             *   New [Active Spreadsheet](https://docs.google.com/spreadsheets/d/1TfECf8uSVnHaaCn8KTWK-sMdG3PV7jtW7FggHIUpeUU/edit#gid=781125942) for tracking test failures.  Still in development, but will be more up-to-date than the CI reports.
             *   **<span style="text-decoration:underline;">Beta blocking test failures (11/6)</span>**
@@ -1331,7 +1331,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   Y.x
 *   [ 0:00 ]**  Demo **-- Cluster API AWS Provider ([chuck@heptio.com](mailto:chuck@heptio.com))
     *   [Link to repo](https://github.com/kubernetes-sigs/cluster-api-provider-aws)
-    *   Link to slides or docs or whatever goes here. 
+    *   Link to slides or docs or whatever goes here.
     *   Demo of using the Cluster API to provision AWS.
     *   CLI tool: clusterawsadm
         *   Creates IAM rules, etc.
@@ -1347,7 +1347,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   [HODL](https://i.ytimg.com/vi/c56jGlymb0E/maxresdefault.jpg)
     *   [https://prow.k8s.io/command-help#hold](https://prow.k8s.io/command-help#hold)
         *   Prevents merging
-    *   [http://go.k8s.io/github-labels#do-not-merge/hold](http://go.k8s.io/github-labels#do-not-merge/hold) 
+    *   [http://go.k8s.io/github-labels#do-not-merge/hold](http://go.k8s.io/github-labels#do-not-merge/hold)
     *   /hold to add, /hold cancel to remove
     *   [Good idea / Bad idea](https://cdn-images-1.medium.com/max/814/1*VM4QgVeRrlBxGyvk4F1snw.png)
         *   Good idea: explaining why you're putting on the hold
@@ -1376,11 +1376,11 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   
     *   Upcoming Work:
         *   Renewing our focus on content and quality
-            *   Focusing especially on onboarding 
+            *   Focusing especially on onboarding
         *   Assessing how to remove user journeys and remodel the onboarding experience
         *   Better onboarding docs through graphical models
             *   Dedicated resource from Dominic Tornow (SAP) to generate models
-            *   [https://medium.com/@dominik.tornow/kubernetes-high-availability-d2c9cbbdd864](https://medium.com/@dominik.tornow/kubernetes-high-availability-d2c9cbbdd864) 
+            *   [https://medium.com/@dominik.tornow/kubernetes-high-availability-d2c9cbbdd864](https://medium.com/@dominik.tornow/kubernetes-high-availability-d2c9cbbdd864)
         *   Tim Fogarty (@tfogo) is docs meister for 1.13
 
         Upcoming doc sprints:
@@ -1422,7 +1422,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   Sessions in Seattle, also a "Cloud-native Storage Day"
 *   As part of moving to GA, they need a more robust mechanism than user-modifiable CRDs.  THis includes addressing the downgrade problem.
 *   [ 0:00 ] **?Announcements ?**
-    *   Meet Our Contributors - Nov 7th at 230p and 8p UTC 
+    *   Meet Our Contributors - Nov 7th at 230p and 8p UTC
         *   230pm UTC - 5 Steering Committee Members AMA
         *   8pm UTC - contributor mentors AMA
         *   #meet-our-contributors on slack
@@ -1463,7 +1463,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   Current Release Development Cycle  [Aish Sundar ~ Release 1.13 Lead]
         *   **[v1.13-alpha.1](https://github.com/kubernetes/kubernetes/releases/tag/v1.13.0-alpha.1) **was cut on Monday 10/15
         *   alpha.2 slated for Tuesday 10/23
-        *   **Enhancement Freeze is next Tuesday - 10/23**. 
+        *   **Enhancement Freeze is next Tuesday - 10/23**.
             *   [37 enhancements](https://github.com/kubernetes/features/issues?page=1&q=is%3Aissue+is%3Aopen+milestone%3Av1.13+label%3Atracked%2Fyes&utf8=%E2%9C%93) currently tracked for 1.13
             *   Owners please update your issues in k/features repo to indicate confidence level of the committed work
             *   Provide a list of pending PRs and issues for each enhancement to lohelp us track better
@@ -1482,7 +1482,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   1.11.x - @foxish planning for next week sometime.
         *   1.10.x
 *   [ 0:00 ] **Graph o' the Week **[Aaron Crickenberger]
-    *   Hi I'd like to propose we retire this slot [https://github.com/kubernetes/community/issues/2818](https://github.com/kubernetes/community/issues/2818) 
+    *   Hi I'd like to propose we retire this slot [https://github.com/kubernetes/community/issues/2818](https://github.com/kubernetes/community/issues/2818)
     *   But one last thing before we do? <seinfeld>What's the deal with repository groups?</seinfeld>
     *   [https://github.com/cncf/devstats/pull/145](https://github.com/cncf/devstats/pull/145) - let's use sigs.yaml instead
     *   Compare and contrast for yourselves
@@ -1499,16 +1499,16 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   ~~SIG PM [Stephen Augustus] (confirmed)~~
         *   ~~No show this week~~
     *   SIG Testing [Aaron Crickenberger] (confirmed)
-        *   [https://docs.google.com/presentation/d/1TD7Z07LlJDprD7m5K4bv_PpYZ-rLNOptmoU3Pab-gY8/edit#slide=id.g439b3a360b_0_25](https://docs.google.com/presentation/d/1TD7Z07LlJDprD7m5K4bv_PpYZ-rLNOptmoU3Pab-gY8/edit#slide=id.g439b3a360b_0_25) 
+        *   [https://docs.google.com/presentation/d/1TD7Z07LlJDprD7m5K4bv_PpYZ-rLNOptmoU3Pab-gY8/edit#slide=id.g439b3a360b_0_25](https://docs.google.com/presentation/d/1TD7Z07LlJDprD7m5K4bv_PpYZ-rLNOptmoU3Pab-gY8/edit#slide=id.g439b3a360b_0_25)
     *   SIG Instrumentation [Frederic Branczyk] (confirmed)
 *   [ 0:00 ] **Announcements**
     *   Want to host the community meeting? Come talk to us on #sig-contribex on slack!
-    *   Tickets are really running low on the [Contributor Summit registration for Kubecon](https://github.com/kubernetes/community/tree/master/events/2018/12-contributor-summit). aka last call! 
+    *   Tickets are really running low on the [Contributor Summit registration for Kubecon](https://github.com/kubernetes/community/tree/master/events/2018/12-contributor-summit). aka last call!
     *   [Kubernetes Outreachy Internships are live. ](https://www.outreachy.org/communities/cfp/kubernetes/)
-        *   There are three: two with client libraries and one for a revamp dev guide. Brendan Burns, Nikhita Raghunath, and Paris Pittman are mentors and program owners. Reach out with questions. #outreachy-apps is now open for all Outreachy questions. 
-        *   Interested applicants need to go through the [Outreachy](https://www.outreachy.org/) application process FIRST and then they will be engaged in the rest of the process. 
+        *   There are three: two with client libraries and one for a revamp dev guide. Brendan Burns, Nikhita Raghunath, and Paris Pittman are mentors and program owners. Reach out with questions. #outreachy-apps is now open for all Outreachy questions.
+        *   Interested applicants need to go through the [Outreachy](https://www.outreachy.org/) application process FIRST and then they will be engaged in the rest of the process.
         *   They will be required to make a first time contribution as part of the application process. Please try to use the good-first-issue where possible or you will see an increase in spelling error PRs.
-    *   ?NCF Awards Nominations are open! Please nominate folks - [https://www.cncf.io/blog/2018/10/08/annual-cncf-community-awards-nominations-kick-off-winners-to-be-recognized-at-kubecon-cloudnativecon-seattle/](https://www.cncf.io/blog/2018/10/08/annual-cncf-community-awards-nominations-kick-off-winners-to-be-recognized-at-kubecon-cloudnativecon-seattle/) 
+    *   ?NCF Awards Nominations are open! Please nominate folks - [https://www.cncf.io/blog/2018/10/08/annual-cncf-community-awards-nominations-kick-off-winners-to-be-recognized-at-kubecon-cloudnativecon-seattle/](https://www.cncf.io/blog/2018/10/08/annual-cncf-community-awards-nominations-kick-off-winners-to-be-recognized-at-kubecon-cloudnativecon-seattle/)
     *   Shoutouts this week (Check in #shoutouts on slack) (or we'll do it live!)
         *   Shoutouts from @jdumars to #sig-testing for all the work they do
         *   Shouts from @guineversaenger to @cjwagner and @fejta for being helpful and responsive to all questions testing related
@@ -1520,14 +1520,14 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 
 
 *   **Moderators**: Paris Pittman [SIG-ContribEx]
-*   **Note Taker**: ??? 
+*   **Note Taker**: ???
 *   [ 0:00 ] **Demo: **Encrypted Container Images for k8s
     *   Brandon from IBM to upload slides, URLs, materials, etc.
         *   Presentation: [https://ibm.box.com/s/ctzxk6iu25ras975zwu2h4eijqk9ljmh](https://ibm.box.com/s/ctzxk6iu25ras975zwu2h4eijqk9ljmh)
-        *   Design Doc: [https://docs.google.com/document/d/146Eaj7_r1B0Q_2KylVHbXhxcuogsnlSbqjwGTORB8iw/edit](https://docs.google.com/document/d/146Eaj7_r1B0Q_2KylVHbXhxcuogsnlSbqjwGTORB8iw/edit) 
+        *   Design Doc: [https://docs.google.com/document/d/146Eaj7_r1B0Q_2KylVHbXhxcuogsnlSbqjwGTORB8iw/edit](https://docs.google.com/document/d/146Eaj7_r1B0Q_2KylVHbXhxcuogsnlSbqjwGTORB8iw/edit)
         *   Discussion Issue: [https://github.com/opencontainers/image-spec/issues/747](https://github.com/opencontainers/image-spec/issues/747)
         *   Dev Branch: [https://github.com/stefanberger/containerd/tree/image-encryption.v3](https://github.com/stefanberger/containerd/tree/image-encryption.v3)
-*   [ 0:00 ]** Release Updates** 
+*   [ 0:00 ]** Release Updates**
     *   1.13 release
     *   **Enhancement **collection underway since Oct 8th
         *   Currently [37 issues](https://github.com/kubernetes/features/issues?utf8=?&q=is%3Aissue+is%3Aopen+milestone%3Av1.13+label%3Atracked%2Fyes+) under k/features repo. Please keep the labels (kind, priority, sig) up-to-todate on the issues. Please also indicate level of confidence and what's pending in terms of code, test and docs.
@@ -1554,9 +1554,9 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   We will have a waiting list up soon
         *   Related to this: we have #cn-dev on Slack and will have a Chinese section of discuss.kubernetes.io soon.
     *   Seattle Contributor Summit [Jorge] - this is your low ticket warning. RSVP to a track and watch as [we build out the schedule](https://github.com/kubernetes/community/tree/master/events/2018/12-contributor-summit).
-    *   CNCF Awards - nominations are open! Please, check out the blog post (announcement) for details - [https://www.cncf.io/blog/2018/10/08/annual-cncf-community-awards-nominations-kick-off-winners-to-be-recognized-at-kubecon-cloudnativecon-seattle/](https://www.cncf.io/blog/2018/10/08/annual-cncf-community-awards-nominations-kick-off-winners-to-be-recognized-at-kubecon-cloudnativecon-seattle/) 
+    *   CNCF Awards - nominations are open! Please, check out the blog post (announcement) for details - [https://www.cncf.io/blog/2018/10/08/annual-cncf-community-awards-nominations-kick-off-winners-to-be-recognized-at-kubecon-cloudnativecon-seattle/](https://www.cncf.io/blog/2018/10/08/annual-cncf-community-awards-nominations-kick-off-winners-to-be-recognized-at-kubecon-cloudnativecon-seattle/)
     *   [Kubernetes Office Hours](https://github.com/kubernetes/community/blob/master/events/office-hours.md) [Jorge] is next week.
-        *   We're short two folks forth both the European and Western editions again this week. If you can help ping @jorge on slack. 
+        *   We're short two folks forth both the European and Western editions again this week. If you can help ping @jorge on slack.
     *   Meet Our Contributors is also looking for more mentors to sit in on a one hour monthly Q&A session. [Watch @sttts do a super quick code base tour.](https://youtu.be/yqB_le-N6EE)(clip of the show) [paris]
         *   230p and 8p UTC; first Weds of the month
     *   **?Shoutouts this week (Check in #shoutouts on slack) ?**
@@ -1569,14 +1569,14 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
 
 
 *   **Moderators**: Jeffrey Sica [SIG-UI]
-*   **Note Taker**: ??? 
+*   **Note Taker**: ???
 *   [ 0:00 ] **?Announcements ?**
-    *   [ 0:00 ]** Release Updates** 
+    *   [ 0:00 ]** Release Updates**
         *   1.13 release cycle started this Monday, 10/1: see [https://github.com/kubernetes/sig-release/tree/master/releases/release-1.13](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.13) for detail schedule
             *   Short release (10 weeks)
             *   Code freeze on Nov 15th
             *   Anticipated release on 12/3
-            *   SIGs and leads, please plan 1.13 enhancements load accordingly for example prioritizing stability and bug fixing ahead of features. 
+            *   SIGs and leads, please plan 1.13 enhancements load accordingly for example prioritizing stability and bug fixing ahead of features.
             *   Two key items known currently:
                 *   removal of etcd2
                 *   Move to go 1.11.1
@@ -1589,8 +1589,8 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   ?Shoutouts this week (Check in #shoutouts on slack) ?
         *   bentheelder - Shoutout to @mrhohn @neolit123 @justinsb and @liggitt for each helping me in turn to track down https://github.com/kubernetes/kubernetes/issues/69195 This one was tricky to pin down! :sweat_smile:
         *   paris - shouts to @justaugustus @krzyzacy @mrbobbytables and @jeefy (filing in for @jorge) for being mentors in our first episode of our October #meet-our-contributors :k8s: :heart_eyes_k8s:
-        *   paris - shouts to @brendanburns @timothysc and @spiffxp for spending time with us answering questions on #meet-our-contributors this week :k8s: :heart_eyes_k8s: 
-*   [ 0:00 ] **Release v1.12 Retrospective:** link [http://bit.ly/k8s112-retro](http://bit.ly/k8s112-retro) 
+        *   paris - shouts to @brendanburns @timothysc and @spiffxp for spending time with us answering questions on #meet-our-contributors this week :k8s: :heart_eyes_k8s:
+*   [ 0:00 ] **Release v1.12 Retrospective:** link [http://bit.ly/k8s112-retro](http://bit.ly/k8s112-retro)
 
 
 ## September 27, 2018 - recording
@@ -1656,16 +1656,16 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
             *   taint node by condition feature which lead to notably slower start up.
             *   CoreDNS regression was masked by other regressions until very late in the release cycle, leaving insufficient time to debug safely and feature dropped (CoreDNS is not the default on GCE yet..1.13?)
 *   [ 0:32 ] **?Announcements ?**
-    *   ?Steering Committee Election Announcement ? 
-        *   less than one week to vote! Election closes October 3rd @ 6pm PT. 
-        *   Check email for CIVS ballot email titled: "Poll: Kubernetes Steering Committee Election for 2018". 
+    *   ?Steering Committee Election Announcement ?
+        *   less than one week to vote! Election closes October 3rd @ 6pm PT.
+        *   Check email for CIVS ballot email titled: "Poll: Kubernetes Steering Committee Election for 2018".
         *   Voters Guide [https://git.k8s.io/community/events/elections/2018 ](https://git.k8s.io/community/events/elections/2018)
         *   229 of 681 people have voted! We had 309 votes last year.
-        *   Mail [community@kubernetes.io](mailto:community@kubernetes.io) if you have any issues/concerns. 
+        *   Mail [community@kubernetes.io](mailto:community@kubernetes.io) if you have any issues/concerns.
     *   [https://www.surveymonkey.com/r/k8s-contributor-2018](https://www.surveymonkey.com/r/k8s-contributor-2018) -> Contributor Experience survey that will shape our direction and close feedback loops. K8s water bottle for your time today!
     *   SIG Chairs/Leads/TLs/Keepers of Zoom and YouTube - check your email for issues relating to those two services. Approx. 40% of our community are not using the correct zoom license.  Many, many meetings missing from YouTube channel, which is a negative on transparency.
     *   Contributor Summit (Kubecon / CloudNativeCon Seattle) - registration will say waitlist, but: **We are not sold out, yet. Please sign up anyway**. We are working through a registration issue. There is a possibility we will pull registration from the KubeCon site into a separate registration process. If you have signed up already, you will not need to sign up again.  If you are waitlisted, you will be contacted to sort out this issue. Join #contributor-summit on slack for real time info and [GH LINK](https://github.com/kubernetes/community/tree/master/events/2018/12-contributor-summit) for published information. Initial content will be listed next week.
-        *   [Draft Agenda for Content](https://docs.google.com/document/d/17StTsUSCh1XxPjF-TpCnhXvZalHs7lwhSrVIgNpFwLU/edit) - still looking for feedback on the sessions/content you'd like to see. 
+        *   [Draft Agenda for Content](https://docs.google.com/document/d/17StTsUSCh1XxPjF-TpCnhXvZalHs7lwhSrVIgNpFwLU/edit) - still looking for feedback on the sessions/content you'd like to see.
     *   ?Shoutouts this week (Check in #shoutouts on slack) ?
         *   @dims: Big shoutout to @jonasrosland to getting the CNCF meetup off the ground in boston and @abe for his talk on The Kubernetes Release Cycle ( https://www.meetup.com/Cloud-Native-Computing-Boston/ )
         *   @timothysc: Huge shoutout to the whole release team and everyone else whose put in crazy effort to make RC2!
@@ -1701,9 +1701,9 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
             *   Don't want more in the upstream code
             *   Want level playing field
             *   In the process of moving providers to plugins
-            *   Minimum requirements to add a provider, is it documented? Do they post results to testgrid? So that users have some assurance that they'll have a positive experience. 
+            *   Minimum requirements to add a provider, is it documented? Do they post results to testgrid? So that users have some assurance that they'll have a positive experience.
         *   In 1.12:
-            *   Added new providers to SIG-CP: Alibaba. DigitalOcean and Baidu in progress. 
+            *   Added new providers to SIG-CP: Alibaba. DigitalOcean and Baidu in progress.
             *   Started work on removing the in-tree providers
                 *   [https://zoom.us/j/9941605205](https://zoom.us/j/9941605205)
                 *   [https://docs.google.com/document/d/1nBwl3BmF4IOZwxakJyePJA9b-Gme7al2RyXWy4JNCMc/edit?usp=sharing](https://docs.google.com/document/d/1nBwl3BmF4IOZwxakJyePJA9b-Gme7al2RyXWy4JNCMc/edit?usp=sharing)
@@ -1724,10 +1724,10 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   What we do
             *   Manage and maintain architectural consistency over time
             *   Manage subprojects:
-                *   [API review process](https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md) 
-                *   [KEP reviews](https://github.com/kubernetes-sigs/architecture-tracking/projects/2) (architectural lens) 
+                *   [API review process](https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md)
+                *   [KEP reviews](https://github.com/kubernetes-sigs/architecture-tracking/projects/2) (architectural lens)
                 *   [Conformance test](https://github.com/kubernetes-sigs/architecture-tracking/projects/1) definition and implementation
-                *   Charter in progress due to complex processes we manage, so there are not many defined subprojects yet. 
+                *   Charter in progress due to complex processes we manage, so there are not many defined subprojects yet.
             *   Manage policy and governance
                 *   API governance (guidance docs and the review process)
                 *   Deprecation policy
@@ -1778,12 +1778,12 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   Actual votes cast thus far: 144
         *   If you are in [voters.md](https://github.com/kubernetes/community/blob/master/events/elections/2018/voters.md) but have not received a ballot please mail [community@kubernetes.io](mailto:community@kubernetes.io)
         *   Election ends on October 3.
-*   Kubernetes Contributor Summit is happening [Jorge] 
+*   Kubernetes Contributor Summit is happening [Jorge]
     *   [Information](https://github.com/kubernetes/community/tree/master/events/2018/12-contributor-summit)
     *   [Content is in draft](https://docs.google.com/document/d/17StTsUSCh1XxPjF-TpCnhXvZalHs7lwhSrVIgNpFwLU/edit), SIG leads and TLs, please review and comment
     *   Register as part of your Kubecon registration (check the box for collocated events); you will get a follow up email about RSVPing for tracks and
 
-                Sunday dinner and fun @ garage in Seattle 
+                Sunday dinner and fun @ garage in Seattle
 
         *   Contributor Social Shanghai: 11/13, 6pm, at the convention center
             *   Will have panel on contributing from China
@@ -1791,9 +1791,9 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   [https://www.surveymonkey.com/r/k8s-contributor-2018](https://www.surveymonkey.com/r/k8s-contributor-2018)
 *   [Jorge] October 1st marks the start of Hacktoberfest, a month-long celebration of open source software. This is an opportunity to welcome new Kubernetes contributors to the community. Please help by making an extra effort this month to add more issues with the good-first-issue label. If you have any large tasks that could use help from a lot of contributors, now would be the perfect time to create an issue for it. You can learn more about Hacktoberfest here: [https://hacktoberfest.digitalocean.com/](https://hacktoberfest.digitalocean.com/)
     *   ContribEx will be generating a 404 report for new users so they will have a place to go.
-    *   SIGs, consider updating your good-first-issue labels. 
-    *   SIG Leads, we've put together some recommendations for how to give an [update for this meeting](https://github.com/kubernetes/community/blob/master/events/community-meeting.md#sig-updates), the host will be reminding you from now on before your update. 
-    *   Last call for Outreachy intern requests! 
+    *   SIGs, consider updating your good-first-issue labels.
+    *   SIG Leads, we've put together some recommendations for how to give an [update for this meeting](https://github.com/kubernetes/community/blob/master/events/community-meeting.md#sig-updates), the host will be reminding you from now on before your update.
+    *   Last call for Outreachy intern requests!
 *   #Shoutouts!_ (want to say thanks? Use the #shoutouts channel in slack)_
         *   @vlad Shlosberg: Huge shoutout to @jorge, @mrbobbytables, @paris, @hubt and a bunch of other for helping make @Foqal a success. Working with me on feedback, helping promote the project, submitting helpful answers, and everything else you guys have done!
         *   @bentheelder: Shoutout to @mrhohn for being eternally responsive to networking issues on everything from PR reviews to sig-network test configs, dns images, the network e2es, and answering questions related to network issues in the infra and helping debug! Thanks for helping get the kube-dns manifest images out the door for 1.12! Zihong is always fixing things for us over in #sig-testing :slightly_smiling_face: and now over in #sig-release
@@ -1895,7 +1895,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   @Justaugustus: Shoutout to @dougm, @dims, @bentheelder, @sttts, and anyone I might've missed for working the weekend to test our Release Engineering tooling ahead of the next beta cut!
         *   @misty: @lucperkins for adding per-heading anchor links to the docs so people can share an in-page section at any level, without having to go back to the TOC to find the link!
         *   @neolit123: thanks to @timothysc and @fabrizio.pandini who helper with debugging a release blocking e2e test for sig-cluster-lifecycle!
-        *   @mkumatag: Now we have `v1.12.0-beta.2` release images are all fat manifest.. This made all other architectures first class citizens.. Thanks @dims @dougm @ixdy @luxas @calebamiles @tpepper @bentheelder 
+        *   @mkumatag: Now we have `v1.12.0-beta.2` release images are all fat manifest.. This made all other architectures first class citizens.. Thanks @dims @dougm @ixdy @luxas @calebamiles @tpepper @bentheelder
         *   @paris: shout to @ameukam for helping contribex with our communication platform discovery and doing the hard work. perfect example of chopping wood and carrying water.
         *   @tpepper: huge shout out to @bentheelder for working late late last night and right back to it this morning on diagnosing/resolving build pipeline issues in support of 1.12 release
 
@@ -1914,7 +1914,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   Code Freeze arrived this week.  See [here](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-release/release.md#tldr) for TLDR what do I do to get a merge
         *   Release target Sept. 25
         *   Release at risk currently due to poor CI Signal ([sig-release-1.12-all](https://k8s-testgrid.appspot.com/sig-release-1.12-all) & [sig-release-1.12-blocking](https://k8s-testgrid.appspot.com/sig-release-1.12-blocking) & [sig-release-master-blocking](https://k8s-testgrid.appspot.com/sig-release-master-blocking) & [sig-release-master-upgrade](https://k8s-testgrid.appspot.com/sig-release-master-upgrade)).  Considering kicking out all GKE blocking tests.  Also significant GCE issues.  Blurs the signal when the hosting is unstable.
-        *   Tide...looking to move to it on Monday. 
+        *   Tide...looking to move to it on Monday.
         *   Patch Release Updates
             *   X.x
             *   Y.x
@@ -1928,8 +1928,8 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   Since there is no queue, there is no [ordering determined by one of 8 different things](https://submit-queue.k8s.io/#/info), ie: applying queue/fix has no effect
         *   Tide will always rerun tests prior to merge, we have an [open issue around ways to support merging without tests](https://github.com/kubernetes/test-infra/issues/5334), ie: applying retest-not-required has no effect
     *   If you used the submit queue UI
-        *   [https://submit-queue.k8s.io/#/prs](https://submit-queue.k8s.io/#/prs) -> [https://prow.k8s.io/pr](https://prow.k8s.io/pr) 
-        *   [https://submit-queue.k8s.io/#/queue](https://submit-queue.k8s.io/#/queue) -> [https://prow.k8s.io/tide.html](https://prow.k8s.io/tide.html) 
+        *   [https://submit-queue.k8s.io/#/prs](https://submit-queue.k8s.io/#/prs) -> [https://prow.k8s.io/pr](https://prow.k8s.io/pr)
+        *   [https://submit-queue.k8s.io/#/queue](https://submit-queue.k8s.io/#/queue) -> [https://prow.k8s.io/tide.html](https://prow.k8s.io/tide.html)
         *   [https://submit-queue.k8s.io/#/history](https://submit-queue.k8s.io/#/history) -> n/a
         *   [https://submit-queue.k8s.io/#/ci](https://submit-queue.k8s.io/#/ci) -> [http://velodrome.k8s.io/dashboard/db/monitoring?orgId=1](http://velodrome.k8s.io/dashboard/db/monitoring?orgId=1)
     *   Rollout plan
@@ -1946,32 +1946,32 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   Re-organized Devstats
     *   Fewer charts, [main dashboard](https://k8s.devstats.cncf.io/d/12/dashboards?refresh=15m&orgId=1) organized into groups
     *   [Consolidated Github stats](https://k8s.devstats.cncf.io/d/49/github-stats-by-repository?orgId=1) for Repos and Repo Groups
-        *   [PRs Merged in Dashboard](https://k8s.devstats.cncf.io/d/49/github-stats-by-repository?orgId=1&from=now-2y&to=now&var-period=w&var-repos=%22kubernetes%2Fdashboard%22&var-stat=prmerged), shows dropoff in developmentanyway, 
+        *   [PRs Merged in Dashboard](https://k8s.devstats.cncf.io/d/49/github-stats-by-repository?orgId=1&from=now-2y&to=now&var-period=w&var-repos=%22kubernetes%2Fdashboard%22&var-stat=prmerged), shows dropoff in developmentanyway,
         *   [Issues Opened in Storage](https://k8s.devstats.cncf.io/d/48/github-stats-by-repository-group?orgId=1&from=now-1y&to=now&var-period=w&var-repogroups=%22CSI%22&var-repogroups=%22Storage%22&var-stat=iopened), shows how increasingly issues are CSI-related
 *   [ 0:00 ] **SIG Updates** (estimate ~ 7 minutes)
-    *   SIG VMware [ Steve Wong confirmed, Loc Nguyen will co-present  ] 
+    *   SIG VMware [ Steve Wong confirmed, Loc Nguyen will co-present  ]
         *   Deck [link](https://docs.google.com/presentation/d/13Zn2nvd2nyQ2WG3xETxw4V0wHsvPyIPfC8WSaEIBFQU/edit#slide=id.p)
 *   [ 0:00 ] **Announcements**
     *   Bug Bounty Program [Jess]
-        *   [https://github.com/kubernetes/community/pull/2620](https://github.com/kubernetes/community/pull/2620) 
+        *   [https://github.com/kubernetes/community/pull/2620](https://github.com/kubernetes/community/pull/2620)
     *   Election Update [Paris/Jorge/Ihor]
         *   8 days until next important deadline - Sept 14th (attn nominations and eligible voting forms)
     *   [If you are not on this list](https://github.com/kubernetes/community/blob/master/events/elections/2018/voters.md), you are not eligible to vote. Eligible voters are those with 50+ contributions to the project in the last year. If you feel like you have done other ways to contribute upstream in the last year that is outside of GitHub events, [please fill out this form](https://www.surveymonkey.com/r/k8s-sc-election-2018).
     *   Resources:[1] [Steering Committee](https://github.com/kubernetes/steering) - who sits on the committee and terms, their projects and meetings info
         *   [2] [Steering Committee Charter](https://git.k8s.io/steering/charter.md) - this is a great read if you're interested in running (or assessing for the best candidates!)
         *   [3] [Election Process](https://git.k8s.io/steering/elections.md)
-        *   [4] **[Voters Guide!](https://git.k8s.io/community/events/elections/2018)** - Updated on a rolling basis. This guide will always have the latest information throughout the election cycle. The complete schedule of events and candidate bios will be housed here. 
-    *   [etcd minimum versions updated](https://discuss.kubernetes.io/t/etcd-minimum-versions-3-1-11-3-2-10-3-3-0/2637) - please read if you're running etcd in production, this one's important! 
-    *   [Contributor Role Board](https://discuss.kubernetes.io/c/contributors/role-board) [Jorge] 
+        *   [4] **[Voters Guide!](https://git.k8s.io/community/events/elections/2018)** - Updated on a rolling basis. This guide will always have the latest information throughout the election cycle. The complete schedule of events and candidate bios will be housed here.
+    *   [etcd minimum versions updated](https://discuss.kubernetes.io/t/etcd-minimum-versions-3-1-11-3-2-10-3-3-0/2637) - please read if you're running etcd in production, this one's important!
+    *   [Contributor Role Board](https://discuss.kubernetes.io/c/contributors/role-board) [Jorge]
         *   A place for SIGs and volunteers to link up.
         *   [Example role posting](https://discuss.kubernetes.io/t/kubernetes-needs-a-stack-overflow-shepharding-team/2558)
         *   [Example volunteer posting](https://discuss.kubernetes.io/t/experienced-front-end-developer-looking-for-front-end-work/1417)
         *   SIGs, please start posting available roles, especially shadow roles, we've sketched out [some guidelines here](https://discuss.kubernetes.io/t/about-the-contributor-role-board/1336) and the board has a template, all feedback welcome.
-        *   Try to think of meaty roles, easy light roles are welcome, but it would be a shame if it was only just "notetakers". 
+        *   Try to think of meaty roles, easy light roles are welcome, but it would be a shame if it was only just "notetakers".
     *   Kubernetes 1.13 Release Team is forming! Contact @AishSundar or @tpepper if you want to know more. Watch this GitHub issue for updates: [https://github.com/kubernetes/sig-release/issues/280](https://github.com/kubernetes/sig-release/issues/280)
-    *   Outreachy call for mentors and projects. [Check k-dev@ for complete info](https://groups.google.com/d/msgid/kubernetes-dev/CAJRwiqR6Oz6L_jAUh-AMq7syvbb4Q3oitpAqUoq70koAZPBhNQ%40mail.gmail.com.). 
-    *   Shoutouts this week (Check in #shoutouts on slack) 
-        *   chrishein - Big shoutout to @liggitt @sttts @directxman12 for helping to get support for HPA and the metrics-server in EKS 
+    *   Outreachy call for mentors and projects. [Check k-dev@ for complete info](https://groups.google.com/d/msgid/kubernetes-dev/CAJRwiqR6Oz6L_jAUh-AMq7syvbb4Q3oitpAqUoq70koAZPBhNQ%40mail.gmail.com.).
+    *   Shoutouts this week (Check in #shoutouts on slack)
+        *   chrishein - Big shoutout to @liggitt @sttts @directxman12 for helping to get support for HPA and the metrics-server in EKS
         *   zparnold - Shout out to @june.yi @claudiajkang for taking me in like family on a long layover in Seoul. Your amazing Korean translations (also shoutoutable) are only matched by your generous hospitality. I love this Kubermunity even more! (edited)
         *   jdumars - Big shout out to @paris and the Meet our Contributors AUA/Group mentoring!!  Yet another way Kubernetes is setting the standard of excellence in open source communities!  
         *   bentheelder - @paris! Meet our Contributors is awesome \
@@ -2006,7 +2006,7 @@ Also @jorge for all the live stream work! You two rock
     *   Demo: Sample CLI Plugin [https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/sample-cli-plugin](https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/sample-cli-plugin)
 *   [ 0:00 ] **SIG Updates**
     *   SIG Cluster Lifecycle [Tim St. Clair] (confirmed)
-        *   A number of new sub-projets have been brought into the fold 
+        *   A number of new sub-projets have been brought into the fold
 *   Kubeadm-dind-cluster
 *   [Cluster-api ](https://github.com/kubernetes-sigs/cluster-api-provider-aws)
                 *   The Cluster API is a programming framework to rally different providers around a core set of primitives and concepts for declaratively managing api-driven cluster deployments.
@@ -2014,44 +2014,44 @@ Also @jorge for all the live stream work! You two rock
                 *   Switching from aggregation api to CRDs
 *   Shared Ownership of cluster api implementations for multiple providers (and SIGs)
     *   aws, gcp, openstack and vmware
-    *   Kubeadm 
-        *   Bug fixes, 1.11 was a big shift 
-            *   Kubelet config 
-            *   Kubeadm v1alpha2 config changes 
+    *   Kubeadm
+        *   Bug fixes, 1.11 was a big shift
+            *   Kubelet config
+            *   Kubeadm v1alpha2 config changes
             *   HA instructions
-        *   HA configurations are being updated control-plane join 
+        *   HA configurations are being updated control-plane join
         *   Certs cleanup & renewal
-        *   Config changes for v1alpha3 goal is to hit beta in 1.13 
-    *   Our charter has been reviewed and LGTM'd by a number of parties we're only waiting on final approval from bgrant 
-        *   For folks wanting to know more we recommend looking at 
-            *   [https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle](https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle) 
+        *   Config changes for v1alpha3 goal is to hit beta in 1.13
+    *   Our charter has been reviewed and LGTM'd by a number of parties we're only waiting on final approval from bgrant
+        *   For folks wanting to know more we recommend looking at
+            *   [https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle](https://github.com/kubernetes/community/tree/master/sig-cluster-lifecycle)
 *   [ 0:00 ] **Announcements**
-    *   Shoutouts this week (Check in #shoutouts on slack) 
+    *   Shoutouts this week (Check in #shoutouts on slack)
         *   neolit123 - big shoutout to @bentheelder for helping newcomers to understand how the Kubernetes test infrastructure works.
         *   bentheelder - shoutout to @neolit123 for keeping after fixes for kubeadm e2e testing, Lubomir's work should help stabilize this a bit :tada:
         *   nikhita: shoutout to @cblecker for EVERYTHING that he does for the community and especially for keeping the project sane with :bash_fire:
         *   paris and cblecker: shouts to @dims, @neolit123 and @nikhita for [adding labels to OWNERS files](https://github.com/kubernetes/kubernetes/pull/67672)
-        *   Jorge: Thanks to everyone involved in our infrastructure teams transitioning CI/CD over to the CNCF. 
+        *   Jorge: Thanks to everyone involved in our infrastructure teams transitioning CI/CD over to the CNCF.
     *   Election Update [Paris/Jorge/Ihor]
         *   15 days until next important deadline - Sept 14th (attn nominations and eligible voting forms)
-        *   6 people are officially nominated, have accepted, and need to have bios checked in to the voters guide by the above deadline. 
+        *   6 people are officially nominated, have accepted, and need to have bios checked in to the voters guide by the above deadline.
         *   [If you are not on this list](https://github.com/kubernetes/community/blob/master/events/elections/2018/voters.md), you are not eligible to vote. Eligible voters are those with 50+ contributions to the project in the last year. If you feel like you have done other ways to contribute upstream in the last year that is outside of GitHub events, [please fill out this form](https://www.surveymonkey.com/r/k8s-sc-election-2018).
         *   Resources:
             *   [1] [Steering Committee](https://github.com/kubernetes/steering) - who sits on the committee and terms, their projects and meetings info
             *   [2] [Steering Committee Charter](https://git.k8s.io/steering/charter.md) - this is a great read if you're interested in running (or assessing for the best candidates!)
             *   [3] [Election Process](https://git.k8s.io/steering/elections.md)
-            *   [4] **[Voters Guide!](https://git.k8s.io/community/events/elections/2018)** - Updated on a rolling basis. This guide will always have the latest information throughout the election cycle. The complete schedule of events and candidate bios will be housed here. 
-    *   [Contributor Role Board](https://discuss.kubernetes.io/c/contributors/role-board) [Jorge] 
+            *   [4] **[Voters Guide!](https://git.k8s.io/community/events/elections/2018)** - Updated on a rolling basis. This guide will always have the latest information throughout the election cycle. The complete schedule of events and candidate bios will be housed here.
+    *   [Contributor Role Board](https://discuss.kubernetes.io/c/contributors/role-board) [Jorge]
         *   A place for SIGs and volunteers to link up.
         *   [Example role posting](https://discuss.kubernetes.io/t/kubernetes-needs-a-stack-overflow-shepharding-team/2558)
         *   [Example volunteer posting](https://discuss.kubernetes.io/t/experienced-front-end-developer-looking-for-front-end-work/1417)
         *   SIGs, please start posting available roles, especially shadow roles, we've sketched out [some guidelines here](https://discuss.kubernetes.io/t/about-the-contributor-role-board/1336) and the board has a template, all feedback welcome.
-        *   Try to think of meaty roles, easy light roles are welcome, but it would be a shame if it was only just "notetakers". 
+        *   Try to think of meaty roles, easy light roles are welcome, but it would be a shame if it was only just "notetakers".
     *   [Stackoverflow Top Users](https://stackoverflow.com/tags/kubernetes/topusers) for August
         *   [Matthew L Daniel, Ryan Dawson, Marcin Romaszewicz, Radek 'Goblin' Pieczonka, Kun Li, Nicola Ben, jaxxstorm, VAS, Harshal Shah](https://stackoverflow.com/users/225016/matthew-l-daniel), and [mikejoh](https://stackoverflow.com/users/1547081/mikejoh)
     *   Kubernetes Slide Deck Template [Ihor]
         *   The Kubernetes-branded Slide Deck Template revealed and available to everyone at http://bit.ly/k8s-slide-template.
-        *   Details: [https://groups.google.com/forum/#!topic/kubernetes-dev/CzpfB9QK-  7g](https://groups.google.com/forum/#!topic/kubernetes-dev/CzpfB9QK-7g) 
+        *   Details: [https://groups.google.com/forum/#!topic/kubernetes-dev/CzpfB9QK-  7g](https://groups.google.com/forum/#!topic/kubernetes-dev/CzpfB9QK-7g)
 
 
 ## Aug 23, 2018 - (recording)
@@ -2108,7 +2108,7 @@ Also @jorge for all the live stream work! You two rock
         *   We're moving away from mungegithub so you won't see this much more, [moving to Tide for merging](https://github.com/kubernetes/test-infra/issues/3866).
 *   [ 0:22 ] **KEP o' the Week powered by SIG PM<sup>?</sup>**
     *   tallclair@ - [KEP](https://github.com/kubernetes/community/blob/master/keps/sig-node/0014-runtime-class.md) 0014-runtime-class
-    *   RuntimeClass - Define a generic way for a runtime to be defined, where in the past it was opaque to the control plane beyond kubelet 
+    *   RuntimeClass - Define a generic way for a runtime to be defined, where in the past it was opaque to the control plane beyond kubelet
     *   Motivation is to support new runtimes, like katacontainers, GVisor and maybe future stuff like serverless runtimes or GPUs
     *   There's a podspec for the RunTimeClass, to decouple the configuration and node-level implementation from the name users need to use
         *   We could end up with more than one class spec for the same runtime
@@ -2125,7 +2125,7 @@ Also @jorge for all the live stream work! You two rock
         *   Completed in the last cycle:
             *   CloudProvider Openstack, added conformance testing, lots of bug fixes, sync'd with in-tree provider
             *   Planned to remove the in-tree provider in 1.12, but has been delayed to 1.13 to give users time to move to external provider.
-            *   Added Manilla Storage Provisioner for shared storage (NFS) 
+            *   Added Manilla Storage Provisioner for shared storage (NFS)
             *   Added keystone authenticator for mapping multiple projects to accounts
             *   Added extensive documentation, including general docs for Cloud Providers
             *   Began work for transitioning to WG Openstack of SIG Cloud Provider
@@ -2133,7 +2133,7 @@ Also @jorge for all the live stream work! You two rock
             *   [Magnum](https://wiki.openstack.org/wiki/Magnum) (OpenStack's service for container orchestrators) conformance & cert testing toward getting it certified as a k8s installer
             *   Driver work: autoscaling drivers, [barbican](https://wiki.openstack.org/wiki/Barbican) driver for key management
     *   **Storage **(Saad Ali, confirmed)
-        *   [https://docs.google.com/presentation/d/1TFX6BDCod6E0PJRusQ1zntOX36kDyuO5iycpSfH8pL4/edit?usp=sharing](https://docs.google.com/presentation/d/1TFX6BDCod6E0PJRusQ1zntOX36kDyuO5iycpSfH8pL4/edit?usp=sharing) 
+        *   [https://docs.google.com/presentation/d/1TFX6BDCod6E0PJRusQ1zntOX36kDyuO5iycpSfH8pL4/edit?usp=sharing](https://docs.google.com/presentation/d/1TFX6BDCod6E0PJRusQ1zntOX36kDyuO5iycpSfH8pL4/edit?usp=sharing)
         *   For 1.12:
             *   Topology-aware volume scheduling, since not all volumes work on all nodes, old version was based only on cloud providers.  Moved it to a generic interface both in Kubernetes and in CSI.
             *   This quarter moving in-tree storage to topology, and for all CSI plugins.
@@ -2142,13 +2142,13 @@ Also @jorge for all the live stream work! You two rock
             *   Snapshots / restore functionality (CSI, Kubernetes internal & external)
             *   Drive CSI to GA/Stable
         *   Preparing for CSI (Out of tree volume extension mechanism) for GA / Stable Q4
-        *   This Quarter: Support of ephemeral volumes (eg: secret volume, configmap volume). 
+        *   This Quarter: Support of ephemeral volumes (eg: secret volume, configmap volume).
         *   Moving Kubelet Device Registration to beta
         *   Adding conformance testing for storage to kubernetes storage suite
-        *   Block volume support moving to Beta 
+        *   Block volume support moving to Beta
     *   **Apps (**Matt Farina, confirmed**)**
         *   [https://docs.google.com/presentation/d/1jbEDX4GDeCssT4D42Q1iajDSLU3sz_RQgPwDCkR2J1c/edit?usp=sharing](https://docs.google.com/presentation/d/1jbEDX4GDeCssT4D42Q1iajDSLU3sz_RQgPwDCkR2J1c/edit?usp=sharing)** **
-        *   Active projects: 
+        *   Active projects:
             *   Application CRD & Controller
             *   Workload API
             *   Kompose
@@ -2156,7 +2156,7 @@ Also @jorge for all the live stream work! You two rock
         *   SIG Apps Charter: WIP, should be ready for review soon
         *   Recently merged: [Recommended labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/) merged into Helm documentation as well.
         *   [Application CRD & Controller](https://github.com/kubernetes-sigs/application): Cross tool way to describe an application.
-        *   Workloads API: Looking at Lifecycle Hooks, Pod disruption budget & Deployments, Jobs with deterministic pod names. 
+        *   Workloads API: Looking at Lifecycle Hooks, Pod disruption budget & Deployments, Jobs with deterministic pod names.
         *   Time split between Workloads API & Developer tooling week by week.
         *   Kompose:  Converts Docker Compose to Kubernetes objects, actively being worked on
         *   Helm moved to CNCF - Everything from kubernetes-helm has moved to the Helm org. Charts is still using prow/tide automation
@@ -2164,7 +2164,7 @@ Also @jorge for all the live stream work! You two rock
 *   [ 0:00 ] **Announcements**
     *   Shoutouts this week (pulled from #shoutouts in slack weekly)
         *   Nikhita: shoutout to @jorge for his video on how to use discuss.kubernetes.io: https://www.youtube.com/watch?v=7wTLgeM25Pk. It's incredibly detailed and helpful in gaining a quick understanding on how to use the website! :raised_hands:
-        *   Paris: shouts to @dims for improving the contributor experience. Script dims created will reduce some of the manual assignment of sigs to pr(s) - [https://github.com/kubernetes/kubernetes/pull/67672](https://github.com/kubernetes/kubernetes/pull/67672) 
+        *   Paris: shouts to @dims for improving the contributor experience. Script dims created will reduce some of the manual assignment of sigs to pr(s) - [https://github.com/kubernetes/kubernetes/pull/67672](https://github.com/kubernetes/kubernetes/pull/67672)
         *   Cblecker: also to @neolit123 and @nikhita who have been doing the same ^^
         *   Nikhita: shoutout to @cblecker for EVERYTHING that he does for the community and especially for keeping the project sane with fires
     *   [kubernetes-client/typescript has been moved to kubernetes-retired](https://groups.google.com/forum/#!topic/kubernetes-dev/nlc7SKJc9Bg) [spiffxp]
@@ -2183,7 +2183,7 @@ Also @jorge for all the live stream work! You two rock
         *   A place for volunteers to declare interest
         *   A place for SIGs/WGs/others to post roles for volunteers.
         *   Pairs volunteers with mentors.
-        *   SIGs, we'd love to get some postings from you! 
+        *   SIGs, we'd love to get some postings from you!
     *   We will have a Contributor Discussion Social at Kubecon Shanghai, on the evening of November 13th.  This will include drinks, snacks, and a panel Q&A on contributing to Kubernetes from China /Asia.  Anyone who contributes to Kubernetes and is at Kubecon Shanghai is invited.  Venue/schedule details TBA.
         *   If you are a Chinese contributor to Kubernetes, we are still looking for panelists.
         *   This is in addition to the New Contributor Workshop and the Doc Sprints during the day, which you can register for with your Shanghai registration.
@@ -2274,7 +2274,7 @@ Also @jorge for all the live stream work! You two rock
 *   [ 0:00 ] <strong>KEP o' the Week </strong>[Chris Hoge, @hogepodge, on behalf of Nishi Davidson, @d-nishi]
     *   Part of SIG Cloud Provider
         *   Coordinates stuff among all cloud providers
-    *   [https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0019-cloud-provider-documentation.md](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0019-cloud-provider-documentation.md)  - Accepted 
+    *   [https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0019-cloud-provider-documentation.md](https://github.com/kubernetes/community/blob/master/keps/sig-cloud-provider/0019-cloud-provider-documentation.md)  - Accepted
         *   Transfer responsibility of maintaining docs to cloud providers
         *   Provide documentation on how to activate any out-of-tree cloud provider
         *   Set minimum standards for cloud provider documentation
@@ -2350,7 +2350,7 @@ Also @jorge for all the live stream work! You two rock
         *   Next week, email will go out with eligibility, etc information on kubernetes-dev ML
         *   There will be a voters guide checked into GitHub as a single source of truth
     *   Changing how we do GitHub membership - file an issue instead of send an e-mail [spiffxp]
-        *   [https://github.com/kubernetes/community/pull/2521](https://github.com/kubernetes/community/pull/2521) 
+        *   [https://github.com/kubernetes/community/pull/2521](https://github.com/kubernetes/community/pull/2521)
         *   Path to Kubernetes membership used to involve sending an email
         *   Now moving to issue-based system (file issue from template to [kubernetes/org](https://github.com/kubernetes/org) repo) : [Membership issue template](https://github.com/kubernetes/org/blob/master/.github/ISSUE_TEMPLATE/membership.md)
         *   Currently manual, may be automated in the future with filing a PR
@@ -2361,7 +2361,7 @@ Also @jorge for all the live stream work! You two rock
             *   Common label colors to easily recognize things
         *   [All repos in orgs we manage should be in sigs.yaml](https://github.com/kubernetes/community/issues/2464)
         *   [All repos in orgs we manage should have OWNERS](https://github.com/kubernetes/community/issues/1721) (what are OWNERS and how do we use them? [https://go.k8s.io/owners](https://go.k8s.io/owners) )
-        *   [All repos in orgs we manage should have at least these labels](https://github.com/kubernetes/test-infra/pull/9054) (what labels? [https://go.k8s.io/github-labels](https://go.k8s.io/github-labels) 
+        *   [All repos in orgs we manage should have at least these labels](https://github.com/kubernetes/test-infra/pull/9054) (what labels? [https://go.k8s.io/github-labels](https://go.k8s.io/github-labels)
         *   [All repos in orgs we manage should use the same merge automation](https://github.com/kubernetes/test-infra/issues/6227) (with some configurable settings)
         *   Should all repos have the /retest commenter enabled?
         *   Should all repos have the /lifecycle stale|rotten|/close commenter enabled?
@@ -2396,7 +2396,7 @@ Also @jorge for all the live stream work! You two rock
         *   Recent work toward improving tools for scale testing:
             *   "Clusterloader" rewrite (in [perf-tests](https://github.com/kubernetes/perf-tests) repo) for declarative cluster setup and measurements. [[Discussion](https://groups.google.com/forum/#!topic/kubernetes-sig-scale/2G6lNidNuaU)] Thanks @sejug for the awesome initial version of the tool.
             *   "perfdash" (code also in [perf-tests](https://github.com/kubernetes/perf-tests) repo) dashboard output to [http://perf-dash.k8s.io/](http://perf-dash.k8s.io/)
-        *   For 1.12 kubelet watches for secrets instead of polling, making a big perf win, can scale to a 100k namespaces currently. 
+        *   For 1.12 kubelet watches for secrets instead of polling, making a big perf win, can scale to a 100k namespaces currently.
         *   Kubelet heartbeat changes to reduce etcd interactions (see [KEP 0009 node heartbeat](https://github.com/kubernetes/community/blob/master/keps/sig-node/0009-node-heartbeat.md))
             *   Moving node heartbeat to another API
             *   Current node heartbeat produces a LOT of etcd version history, bloating the etcd database
@@ -2405,14 +2405,14 @@ Also @jorge for all the live stream work! You two rock
             *   Solving 1.12 regression
     *   SIG Architecture [Brian Grant] (confirmed)
         *   Meeting time has move to 11am Pacific, immediately following this community meeting
-        *   Work tracking methods are changing: 
+        *   Work tracking methods are changing:
             *   [API Reviews](https://github.com/kubernetes-sigs/architecture-tracking/projects/3)
             *   [KEP Tracking](https://github.com/kubernetes-sigs/architecture-tracking/projects/2)
-            *   [ tracking boards](https://github.com/kubernetes-sigs/architecture-tracking/projects) 
+            *   [ tracking boards](https://github.com/kubernetes-sigs/architecture-tracking/projects)
 
         GitHub notifications don't work for most and slack also is lossy.  Use mailing list.
 
-        *   [Tracking boards ](https://github.com/kubernetes-sigs/architecture-tracking/projects)- if you want to get on the SIG Arch radar, please get onto the project board so you can get on the agenda. Feel free to use the sig-architecture mailing list to reach out to us. (Slack is too ephemeral, please use the list as the primary point of contact.) 
+        *   [Tracking boards ](https://github.com/kubernetes-sigs/architecture-tracking/projects)- if you want to get on the SIG Arch radar, please get onto the project board so you can get on the agenda. Feel free to use the sig-architecture mailing list to reach out to us. (Slack is too ephemeral, please use the list as the primary point of contact.)
         *   Pushing back on newly compiled-in APIs, reviewing those more closely.
         *   Will post to k-dev on the engagement model for interacting with API changes ? **important**
     *   SIG CLI [Sean Sullivan] (confirmed)
@@ -2424,10 +2424,10 @@ Also @jorge for all the live stream work! You two rock
             *   [Agenda Notes](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing)
             *   Slack Channel [#sig-cli](https://kubernetes.slack.com/messages/sig-cli)
             *   [Google Group](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
-            *   [Testing Playbook](https://docs.google.com/document/d/1Z3teqtOLvjAtE-eo0G9tjyZbgNc6bMhYGZmOx76v6oM/edit#) 
+            *   [Testing Playbook](https://docs.google.com/document/d/1Z3teqtOLvjAtE-eo0G9tjyZbgNc6bMhYGZmOx76v6oM/edit#)
             *   [Test Grid](https://k8s-testgrid.appspot.com/sig-cli-master)
         *   kustomize repo is under [kubernetes-sigs](https://github.com/kubernetes/community/blob/master/github-management/kubernetes-repositories.md)
-            *   Project-wide tip, kubernetes-sigs is the repo that holds things for SIGs that shouldn't be in core but need to be managed by SIGs. It's the evolution of the old kubernetes incubator module. 
+            *   Project-wide tip, kubernetes-sigs is the repo that holds things for SIGs that shouldn't be in core but need to be managed by SIGs. It's the evolution of the old kubernetes incubator module.
     *   SIG AWS [Nishi Davidson] (confirmed)
         *   Slides link
         *   Looking to upstream more, especially documentation and testing
@@ -2475,15 +2475,15 @@ Also @jorge for all the live stream work! You two rock
         *   [We setup domain verification for the kubernetes GitHub org](https://github.com/kubernetes/org/issues/4)
         *   If you need something done by GH admins, then you file an issue on the kubernetes/org GH repo.  There's an SLO for responses.
     *   Subprojects [Aaron @spiffxp]
-        *   A subproject is 1 or N repos or packages 
+        *   A subproject is 1 or N repos or packages
         *   [All repos must have OWNERS](https://github.com/kubernetes/community/issues/1721)
         *   [All repos must be called out in sigs.yaml](https://github.com/kubernetes/community/issues/2464)
         *   I will eventually be asking why repos in kubernetes-incubator can't instead live in kubernetes-sigs
     *   Sunsetting Kubernetes SIG service accounts [Ihor]
         *   We are not enforcing SIG's to create&use the service accounts anymore, and sunsetting the existing procedure;
         *   If you are an owner of the credentials for `k8s-mirror-foo-*` GitHub users and/or `kubernetes-sig-foo-*` mailing lists, please, work on deleting them
-        *   Details - [https://groups.google.com/d/msg/kubernetes-dev/Fg_dWVV0eIQ/bvv64v46CwAJ](https://groups.google.com/d/msg/kubernetes-dev/Fg_dWVV0eIQ/bvv64v46CwAJ) 
-    *   Shoutouts this week (Check in #shoutouts on slack) 
+        *   Details - [https://groups.google.com/d/msg/kubernetes-dev/Fg_dWVV0eIQ/bvv64v46CwAJ](https://groups.google.com/d/msg/kubernetes-dev/Fg_dWVV0eIQ/bvv64v46CwAJ)
+    *   Shoutouts this week (Check in #shoutouts on slack)
         *   paris: thanks to @tpepper (Tim Pepper) @jeefy (Jeffrey Sica) @bentheelder (Benjamin Elder) @rdodev (Ruben Orduz) for great responses and their time on #meet-our-contributors yesterday! :tada:  solid examples of good mentors
         *   spiffxp: thanks to @mhb (Morgan Bauer) for his efforts in working with #sig-testing to get service-catalog all hooked up to prow :prow: and tide
         *   Jerickar (Jeremy Rickard): what @spiffxp said!  tide and prow are dope and we love using the now
@@ -2504,7 +2504,7 @@ Also @jorge for all the live stream work! You two rock
     *   [Slides](https://docs.google.com/presentation/d/14CaYbhH_mhrhLg2ULm4fXMfwWOYS_A_EjZwl6olUKWc/edit?usp=sharing )
     *   Build off of grafeas
     *   Test assertions before deploying containers
-    *   Can validate / do vulnerability scanning 
+    *   Can validate / do vulnerability scanning
     *   Cron schedule that is constantly monitoring to ensure images are never fall out of sync
     *   CRD based configuration
         *   Supports whitelisting images
@@ -2528,7 +2528,7 @@ Also @jorge for all the live stream work! You two rock
             *   ~50 features captured
             *   Implementation (code, test cases, docs drafts)deadline is "Code Freeze" on Sept. 4
         *   v1.12.0-alpha.1 release cut yesterday Aug. 1.  Is a major milestone in that along with 1.11.1 we are transitioning from Google employees running the build/release mechanism to community members.  The transition has had a few issues, but is rapidly improving.  Expecting first beta to be smooth.
-        *   More details and links at [http://bit.ly/k8s112-release-info](http://bit.ly/k8s112-release-info) 
+        *   More details and links at [http://bit.ly/k8s112-release-info](http://bit.ly/k8s112-release-info)
     *   Patch Release Updates
         *   1.11.2 Scheduled for the Aug 11th (cherry picks should be up by Friday, August 3rd)
 *   [ 0:00 ] **Open KEPs**
@@ -2541,7 +2541,7 @@ Also @jorge for all the live stream work! You two rock
         *   Can be used to compute API coverage on a running cluster.  Previously it was not possible to alter the audit config of a running cluster.  Dynamic audit config allows you to turn on API coverage calculator and compute the API usage for a period of time.
 *   [ 0:00 ] **SIG Updates**
     *   SIG UI [Jeffrey Sica] (confirmed) \
-[https://docs.google.com/presentation/d/1f6dI2mP_5SZeuJd9i3e6y6jx44i6ouFZGvFAfYT1BsA/edit?usp=sharing](https://docs.google.com/presentation/d/1f6dI2mP_5SZeuJd9i3e6y6jx44i6ouFZGvFAfYT1BsA/edit?usp=sharing) 
+[https://docs.google.com/presentation/d/1f6dI2mP_5SZeuJd9i3e6y6jx44i6ouFZGvFAfYT1BsA/edit?usp=sharing](https://docs.google.com/presentation/d/1f6dI2mP_5SZeuJd9i3e6y6jx44i6ouFZGvFAfYT1BsA/edit?usp=sharing)
         *   New release coming soon (2-3 weeks)
             *   Many bug fixes
             *   Will use 1.8.10 client-go
@@ -2563,7 +2563,7 @@ Also @jorge for all the live stream work! You two rock
     *   SIG Service Catalog [Jeremy Rickard] (confirmed)
         *   SIG Charter recently approved
         *   SIG Chairs have changed recently (insert names later)
-        *   Working actively on improving contributor experience 
+        *   Working actively on improving contributor experience
             *   active in labeling issues
             *   improving contributor guide
         *   Moving to prow
@@ -2574,7 +2574,7 @@ Also @jorge for all the live stream work! You two rock
     *   [Kubecon CFP deadline](https://events.linuxfoundation.org/events/kubecon-cloudnativecon-north-america-2018/program/call-for-proposals-cfp/)
     *   Save the Date: Kubernetes Contributor Summit, 10 December, right before Kubecon.
         *   Sunday, 9 December will likely  
-    *   Shoutouts this week (Check in #shoutouts on slack) 
+    *   Shoutouts this week (Check in #shoutouts on slack)
         *   thanks to @mhb for his efforts in working with #sig-testing to get service-catalog all hooked up to prow :prow: and tide
         *   thanks to @tpepper @jeefy @bentheelder @rdodev for great responses and their time on #meet-our-contributors yesterday! :tada:  solid examples of good mentors
         *   Shout out to @neolit123 for quick responses and status updates to failing ci tests in cluster lifecycle
@@ -2584,4 +2584,3 @@ Also @jorge for all the live stream work! You two rock
     *   Turning off bot for 1.12 release, last artifact of munge github (missed 1st part of this)
     *   Contributor Experience is looking for new contributors
     *   SIG leads have an email regarding zoom
-

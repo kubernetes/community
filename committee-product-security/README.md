@@ -6,9 +6,9 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 --->
-# Product Security Committee
+# Security Response Committee
 
-The Kubernetes Product Security Committee is the body that is responsible for receiving and responding to reports of security issues in Kubernetes products.
+The Kubernetes Security Response Committee is the body that is responsible for receiving and responding to reports of security issues in Kubernetes products.
 
 
 ## Members
@@ -23,15 +23,15 @@ The Kubernetes Product Security Committee is the body that is responsible for re
 
 ## Contact
 - Private Mailing List: security@kubernetes.io
-- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fproduct-security)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fsecurity-response)
 - GitHub Teams:
-    - [@kubernetes/product-security-committee](https://github.com/orgs/kubernetes/teams/product-security-committee) - General Discussion
+    - [@kubernetes/product-security-committee](https://github.com/orgs/kubernetes/teams/security--response-committee) - General Discussion
 
 ## Subprojects
 
-The following [subprojects][subproject-definition] are owned by the Product Security Committee:
+The following [subprojects][subproject-definition] are owned by the Security Response Committee:
 ### security
-Policies and documentation for the Product Security Committee
+Policies and documentation for the Security Response Committee
 - **Owners:**
   - [kubernetes/security](https://github.com/kubernetes/security/blob/master/OWNERS)
 

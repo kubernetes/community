@@ -431,7 +431,7 @@
 *   Issues of note:
 *   Designs of note
 *   Discussion topic
-    *   [cjcullen] Product Security Committee handling of ~Medium severity vulns: https://github.com/kubernetes/security/pull/28
+    *   [cjcullen] Security Response Committee handling of ~Medium severity vulns: https://github.com/kubernetes/security/pull/28
         *   Open thread on [kubernetes-security-discuss](https://groups.google.com/forum/#!forum/kubernetes-security-discuss) (cc sig-auth)
         *   Might be worth adding a sentence on the availability metric of CVSS as well
         *   Ask security audit team if a threat model is being produced

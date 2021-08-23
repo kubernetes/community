@@ -15,11 +15,11 @@ repo
 - Record meetings and make them publicly available on the
 [Kubernetes Community YouTube playlist]  
 - Report activity with the community via the kubernetes-dev@ mailing list at
-least once a year. 
+least once a year.
   - Each SIG is assigned an update during the [monthly community meeting]
   throughout the year from sig-contributor-experience. The meeting host will publish the notes to the
   kubernetes-dev mailing list with the update.  
-  - This is separate from the [annual report]. 
+  - This is separate from the [annual report].
 - Participate in release planning meetings and retrospectives, and burndown
 meetings, as needed
 - Ensure related work happens in a project-owned github org and repository, with
@@ -85,7 +85,7 @@ Subproject contributors (as applicable).
 - Number: 2-3
 - Membership tracked in [sigs.yaml]  
   - If no tech lead role is present, Chair assumes responsibilities from [#tech-lead] section.
-  
+
   In addition, run operations and processes governing the SIG:
 
 - *SHOULD* define how priorities and commitments are managed and delegate to other leads as needed
@@ -157,7 +157,7 @@ within 30 days from the date of their appointment.
 ### Security Contact
 
 - Security Contact
-  - *MUST* be a contact point for the Product Security Committee to reach out to
+  - *MUST* be a contact point for the Security Response Committee to reach out to
    for triaging and handling of incoming issues
   - *MUST* accept the [Embargo Policy]
   - Defined in `SECURITY_CONTACTS` files, this is only relevant to the root file
@@ -165,12 +165,12 @@ within 30 days from the date of their appointment.
 
 ### Other Roles
 This governance document outlines the required roles for SIGs: Chair and Tech
-Lead; however, SIGs are allowed to operate how they see fit outside of minimum 
-governance requirements, including defining more roles to sustain the group. If 
+Lead; however, SIGs are allowed to operate how they see fit outside of minimum
+governance requirements, including defining more roles to sustain the group. If
 a SIG needs to change the Chair and Tech Lead position to include or remove
 duties, this needs to be approved by the Steering Committee. Newly created roles
 that don't assume any responsibility of Chair and/or Tech Lead should follow
-the governing processes in the SIGs charter. 
+the governing processes in the SIGs charter.
 
 Example of SIG roles created to help operations:
 
@@ -178,18 +178,18 @@ Example of SIG roles created to help operations:
 - [API Reviewer and Moderator]   
 - [Production Readiness Reviewer]  
 - [Events Lead]  
-- [PR Wrangler] 
+- [PR Wrangler]
 - [Editor]
 
 Other roles...
 - *MUST* be tracked on the SIGs README with a link to the role definition
 - *MUST* have the Steering Committees approval to proceed with roles that assume
-duties from Chairs and/or Tech Leads on a non-temporary basis 
+duties from Chairs and/or Tech Leads on a non-temporary basis
 - *SHOULD* be documented in SIG charters if the role has delegation away from a
-sig-governance.md listed role 
-- *SHOULD* be sent to kubernetes-dev@googlegroups.com for awareness as a notice 
-and a lazy consensus period when they are newly created 
-- *MAY* Fill in for another named role on a temporary basis 
+sig-governance.md listed role
+- *SHOULD* be sent to kubernetes-dev@googlegroups.com for awareness as a notice
+and a lazy consensus period when they are newly created
+- *MAY* Fill in for another named role on a temporary basis
 #### Subproject Creation
 
 ---
