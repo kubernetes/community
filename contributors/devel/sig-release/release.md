@@ -348,6 +348,6 @@ issue kind labels must be set:
 [enhancements-freeze]: https://git.k8s.io/sig-release/releases/release_phases.md#enhancements-freeze
 [exceptions]: https://git.k8s.io/sig-release/releases/release_phases.md#exceptions
 [keps]: https://git.k8s.io/enhancements/keps
-[release-managers]: https://git.k8s.io/sig-release/release-managers.md
+[release-managers]: https://kubernetes.io/releases/release-managers/
 [release-team]: https://git.k8s.io/sig-release/release-team
 [sig-list]: /sig-list.md

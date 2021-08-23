@@ -476,5 +476,5 @@ version marker, and more specifically, skew and upgrade jobs.
 (Fixed in https://github.com/kubernetes/test-infra/pull/15612.)
 
 
-[release-managers]: https://git.k8s.io/sig-release/release-managers.md
+[release-managers]: https://kubernetes.io/releases/release-managers/
 [test_config.yaml]: https://github.com/kubernetes/test-infra/blob/master/releng/test_config.yaml

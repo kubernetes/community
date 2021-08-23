@@ -1865,9 +1865,6 @@ sigs:
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
       company: Mattermost
-    - github: hasheddan
-      name: Daniel Mangum
-      company: Upbound
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Apple
@@ -1879,6 +1876,8 @@ sigs:
       name: Jorge Alarcon Ochoa
     - github: calebamiles
       name: Caleb Miles
+    - github: hasheddan
+      name: Daniel Mangum
     - github: jdumars
       name: Jaice Singer DuMars
     - github: tpepper
@@ -1889,21 +1888,27 @@ sigs:
     time: "14:30"
     tz: UTC
     frequency: biweekly
-    url: https://zoom.us/j/327142148
+    url: https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09
     archive_url: https://bit.ly/k8s-sig-release-meeting
     recordings_url: https://bit.ly/k8s-sig-release-videos
   contact:
     slack: sig-release
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-release
     teams:
-    - name: kubernetes-milestone-maintainers
-      description: Milestone Maintainers
+    - name: milestone-maintainers
+      description: '[Milestone Maintainers](https://git.k8s.io/sig-release/release-team#milestone-maintainers)'
     - name: release-managers
-      description: Release Managers
+      description: '[Release Managers](https://kubernetes.io/releases/release-managers/)'
+    - name: release-team
+      description: Members of the current Release Team and subproject owners
+    - name: release-team-leads
+      description: Release Team Leads for the current Kubernetes release cycle
     - name: sig-release
       description: SIG Release Members
     - name: sig-release-admins
       description: Admins for SIG Release repositories
+    - name: sig-release-leads
+      description: Chairs, Technical Leads, and Program Managers for SIG Release
     liaison:
       github: dims
       name: Davanum Srinivas
@@ -1930,7 +1935,7 @@ sigs:
       time: "14:30"
       tz: UTC
       frequency: biweekly
-      url: https://zoom.us/j/240812475
+      url: https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09
       archive_url: https://bit.ly/k8s-releng-meeting
       recordings_url: https://bit.ly/k8s-sig-release-videos
   - name: Release Team
