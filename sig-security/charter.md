@@ -14,7 +14,7 @@ SIG Security continues to manage the third-party security audits, while serving 
 
 #### Vulnerability Management Process
 
-Work with the Kubernetes [Security Response Committee (SRC)](https://github.com/kubernetes/security#product-security-committee-src) to define the processes for fixing and disclosing vulnerabilities, as outlined in https://github.com/kubernetes/security. For example:
+Work with the Kubernetes [Security Response Committee (SRC)](https://github.com/kubernetes/security#security-response-committee-src) to define the processes for fixing and disclosing vulnerabilities, as outlined in https://github.com/kubernetes/security. For example:
 
 - When the private fix & release process is invoked
 - How vulnerabilities are rated

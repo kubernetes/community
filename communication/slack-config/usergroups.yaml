@@ -43,11 +43,11 @@ usergroups:
       - Jason
 
   # Should match the membership of the following teams at all times:
-  # - https://git.k8s.io/security/#product-security-committee-src
+  # - https://git.k8s.io/security/#security-response-committee-src
   #
   # Ensure any changes are also reflected in the Security Release Team
   # usergroup (within the SIG Release config directory).
-  - name: product-security-committee
+  - name: security-response-committee
     long_name: Security Response Committee
     description: |-
       The Security Response Committee (SRC) is responsible for triaging and

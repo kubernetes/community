@@ -84,7 +84,7 @@ usergroups:
       - saschagrunert # SIG Release Chair
 
   # Should match the membership of the following teams at all times:
-  # - https://git.k8s.io/security/#product-security-committee-src
+  # - https://git.k8s.io/security/#security-response-committee-src
   # - https://git.k8s.io/sig-release/release-managers.md#release-managers
   - name: security-rel-team
     long_name: Security Release Team

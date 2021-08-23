@@ -25,7 +25,7 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 - Private Mailing List: security@kubernetes.io
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fsecurity-response)
 - GitHub Teams:
-    - [@kubernetes/product-security-committee](https://github.com/orgs/kubernetes/teams/security--response-committee) - General Discussion
+    - [@kubernetes/security--response-committee](https://github.com/orgs/kubernetes/teams/security-response-committee) - General Discussion
 
 ## Subprojects
 
@@ -38,7 +38,7 @@ Policies and documentation for the Security Response Committee
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 **Note**: Information on how members are selected can be found
-[here](https://git.k8s.io/security/security-release-process.md#product-security-committee-membership).
+[here](https://git.k8s.io/security/security-release-process.md#security-response-committee-membership).
 
 _To report a security issue, please email the private security@kubernetes.io list with the security details and the details expected for all Kubernetes bug reports._
 <!-- END CUSTOM CONTENT -->
