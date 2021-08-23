@@ -1865,9 +1865,6 @@ sigs:
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
       company: Mattermost
-    - github: hasheddan
-      name: Daniel Mangum
-      company: Upbound
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Apple
@@ -1879,6 +1876,8 @@ sigs:
       name: Jorge Alarcon Ochoa
     - github: calebamiles
       name: Caleb Miles
+    - github: hasheddan
+      name: Daniel Mangum
     - github: jdumars
       name: Jaice Singer DuMars
     - github: tpepper

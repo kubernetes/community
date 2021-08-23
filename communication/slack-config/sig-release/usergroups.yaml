@@ -16,7 +16,6 @@ usergroups:
     members:
       - ameukam # Release Manager Associate
       - cpanato # Release Manager
-      - hasheddan # subproject owner / Release Manager
       - jimangel # Release Manager Associate
       - justaugustus # subproject owner / Release Manager
       - mkorbi # Release Manager Associate
@@ -52,7 +51,6 @@ usergroups:
       - sig-release
     members:
       - cpanato # SIG Release Technical Lead
-      - hasheddan # SIG Release Technical Lead
       - JamesLaverack # 1.23 Release Team Lead Shadow
       - jeremyrickard # SIG Release Technical Lead /  1.23 Release Team EA
       - jrsapi # 1.23 Release Team Lead Shadow
@@ -76,7 +74,6 @@ usergroups:
       - sig-release
     members:
       - cpanato # SIG Release Technical Lead
-      - hasheddan # SIG Release Technical Lead
       - jeremyrickard # SIG Release Technical Lead
       - justaugustus # SIG Release Chair
       - LappleApple # SIG Release Program Manager
@@ -97,7 +94,6 @@ usergroups:
     members:
       - cjcullen # Product Security Committee
       - cpanato # Release Manager
-      - hasheddan # subproject owner / Release Manager
       - joelsmith # Product Security Committee
       - justaugustus # subproject owner / Release Manager
       - lukehinds # Product Security Committee
