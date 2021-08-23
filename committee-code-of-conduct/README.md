@@ -14,11 +14,11 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 ## Members
 
-* Aeva Black (**[@AevaOnline](https://github.com/AevaOnline)**), Microsoft
 * Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), CNCF
 * Karen Chu (**[@karenhchu](https://github.com/karenhchu)**), Microsoft
-* Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
+* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
 * Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
+* Vallery Lancey (**[@vllry](https://github.com/vllry)**), Apple
 
 ## Contact
 - Slack: [#code-of-conduct](https://kubernetes.slack.com/messages/code-of-conduct)
@@ -40,16 +40,16 @@ Our [Incident Report Handling Procedures](incident-process.md) describes how we 
 
 The members and their terms are as follows:
 
-### Term ends on August 7, 2021
-
-- Aeva Black (Microsoft)
-- Tasha Drew (VMware)
-
 ### Term ends on August 7, 2022
 
 - Karen Chu (Microsoft)
 - Celeste Horgan (CNCF)
 - Tim Pepper (VMware)
+
+### Term ends on August 23, 2023
+
+- Vallery Lancey (Apple)
+- Nabarun Pal (VMware)
 
 Please see the [bootstrapping document](./bootstrapping-process.md) and [election process guidelines](election.md) for more information on how members are picked and their responsibilities.
 
@@ -61,5 +61,7 @@ The Code of Conduct Committee sincerely thanks our emeritus committee members fo
 - Jennifer Rondeau (Stripe)
 - Carolyn Van Slyck (Microsoft)
 - Paris Pittman (Apple)
+- Aeva Black (Microsoft)
+- Tasha Drew (VMware)
 
 <!-- END CUSTOM CONTENT -->
