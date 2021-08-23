@@ -13,7 +13,7 @@ Ensure quality Kubernetes releases
 The [charter](charter.md) defines the scope and governance of the Release Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 14:30 UTC](https://zoom.us/j/327142148) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
+* Regular SIG Meeting: [Tuesdays at 14:30 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-release-meeting).
   * [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 
@@ -46,10 +46,13 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-release)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Frelease)
 - GitHub Teams:
-    - [@kubernetes/kubernetes-milestone-maintainers](https://github.com/orgs/kubernetes/teams/kubernetes-milestone-maintainers) - Milestone Maintainers
-    - [@kubernetes/release-managers](https://github.com/orgs/kubernetes/teams/release-managers) - Release Managers
+    - [@kubernetes/milestone-maintainers](https://github.com/orgs/kubernetes/teams/milestone-maintainers) - [Milestone Maintainers](https://git.k8s.io/sig-release/release-team#milestone-maintainers)
+    - [@kubernetes/release-managers](https://github.com/orgs/kubernetes/teams/release-managers) - [Release Managers](https://kubernetes.io/releases/release-managers/)
+    - [@kubernetes/release-team](https://github.com/orgs/kubernetes/teams/release-team) - Members of the current Release Team and subproject owners
+    - [@kubernetes/release-team-leads](https://github.com/orgs/kubernetes/teams/release-team-leads) - Release Team Leads for the current Kubernetes release cycle
     - [@kubernetes/sig-release](https://github.com/orgs/kubernetes/teams/sig-release) - SIG Release Members
     - [@kubernetes/sig-release-admins](https://github.com/orgs/kubernetes/teams/sig-release-admins) - Admins for SIG Release repositories
+    - [@kubernetes/sig-release-leads](https://github.com/orgs/kubernetes/teams/sig-release-leads) - Chairs, Technical Leads, and Program Managers for SIG Release
 - Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
 
 ## Subprojects
@@ -71,7 +74,7 @@ The Release Engineering subproject is responsible for the [process/procedures](h
 - **Contact:**
   - Slack: [#release-management](https://kubernetes.slack.com/messages/release-management)
 - **Meetings:**
-  - Release Engineering: [Tuesdays at 14:30 UTC](https://zoom.us/j/240812475) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
+  - Release Engineering: [Tuesdays at 14:30 UTC](https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
     - [Meeting notes and Agenda](https://bit.ly/k8s-releng-meeting).
     - [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 ### Release Team
@@ -93,6 +96,6 @@ and kubernetes/test-infra.
 <!-- BEGIN CUSTOM CONTENT -->
 ---
 
-_The canonical location for SIG Release information is [k/sig-release](https://github.com/kubernetes/sig-release)._
+_The canonical location for SIG Release information is [kubernetes/sig-release](https://github.com/kubernetes/sig-release)._
 
 <!-- END CUSTOM CONTENT -->
