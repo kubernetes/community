@@ -225,4 +225,4 @@ A note about the specific case in [#72860](https://github.com/kubernetes/kuberne
   unsupported
 
 [cherry-pick-script]: https://git.k8s.io/kubernetes/hack/cherry_pick_pull.sh
-[release-managers]: https://git.k8s.io/sig-release/release-managers.md
+[release-managers]: https://kubernetes.io/releases/release-managers/
