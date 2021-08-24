@@ -415,7 +415,7 @@
         *   [Slides](https://docs.google.com/presentation/d/1VuS06RJWccA8ceSlu5a3hIIsVb2mge6Zz5YDpxHiBFY/edit#slide=id.g401c104a3c_0_0)
     *   SIG Apps  [Ken Owens]
         *   [Slides](https://docs.google.com/presentation/d/18UcJQs3ThW6Vdgl_mdc1984uU16GwuIhuD0Pujl42xU/edit?usp=sharing)
-    *   Security Response Committee [Tim Allclair]
+    *   Product Security Committee [Tim Allclair]
         *   [Slides](https://docs.google.com/presentation/d/1TJQevF8wLRsjVRNQuUiRgwI5EO2mdt03RfifYwDoGrc/preview)
     *   SIG Architecture [John Belamaric]
         *   [Slides](https://docs.google.com/presentation/d/1NytMrpVYKzFo7rLcEEHnFl8zOx05fnjs3xBSZXVE0nI/edit#slide=id.g401c104a3c_0_0)
@@ -465,7 +465,7 @@
         *   [Slides](https://docs.google.com/presentation/d/1VuS06RJWccA8ceSlu5a3hIIsVb2mge6Zz5YDpxHiBFY/edit#slide=id.g401c104a3c_0_0)
     *   SIG Apps  [Ken Owens]
         *   [Slides](https://docs.google.com/presentation/d/18UcJQs3ThW6Vdgl_mdc1984uU16GwuIhuD0Pujl42xU/edit?usp=sharing)
-    *   Security Response Committee [Tim Allclair]
+    *   Product Security Committee [Tim Allclair]
         *   [Slides](https://docs.google.com/presentation/d/1TJQevF8wLRsjVRNQuUiRgwI5EO2mdt03RfifYwDoGrc/preview)
     *   SIG Architecture [John Belamaric]
         *   [Slides](https://docs.google.com/presentation/d/1NytMrpVYKzFo7rLcEEHnFl8zOx05fnjs3xBSZXVE0nI/edit#slide=id.g401c104a3c_0_0)
@@ -978,8 +978,8 @@ I want to call out [@karenb](https://kubernetes.slack.com/team/UCLQ9GKSP) dealin
                 *   Help identify areas of technical debt
                 *   Give feedback on areas that should be considered for production readiness review
                     *   Reach out to John Belamaric
-    *   Security Response Committee (PST) [Liggitt][[Slides](https://docs.google.com/presentation/d/1tWwBOEm66pIiYuQ_XPhvZL3Qt2pSq5loFZFgjerrUzk/edit#slide=id.g6c0dff12cb_0_0)]
-        *   SRC responds to security notifications
+    *   Product Security Committee (PST) [Liggitt][[Slides](https://docs.google.com/presentation/d/1tWwBOEm66pIiYuQ_XPhvZL3Qt2pSq5loFZFgjerrUzk/edit#slide=id.g6c0dff12cb_0_0)]
+        *   PSC responds to security notifications
         *   Members include:
             *   CJ Cullen (@cjcullen)
             *   Joel Smith (@joelsmith)

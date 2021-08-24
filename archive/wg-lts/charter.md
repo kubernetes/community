@@ -79,7 +79,7 @@ There is yet another set of developers of Kubernetes internals who are
 those involved in meta-topics:
 * SIG Release: production of supported release artifacts
 * SIG Testing: how we can most effectively test Kubernetes
-* Security Response Committee (SRC): security vulnerability handling
+* Product Security  Committee (PSC): security vulnerability handling
 * SIG Architecture: maintains and evolves the design principles of Kubernetes, and provides a consistent body of expertise necessary to ensure architectural consistency over time.  Also defines conformance testing.
 * Steering Committee: scope includes deciding how and when official releases of Kubernetes artifacts are made and what they include
 

@@ -56,7 +56,7 @@
         *   Test cleanup and deletion continues
         *   Release Managers Group
             *   [https://github.com/kubernetes/sig-release/blob/master/release-managers.md](https://github.com/kubernetes/sig-release/blob/master/release-managers.md)
-            *   Dotted line to Security Response Committee
+            *   Dotted line to Product Security Committee
         *   Release Engineering
             *   Onboarding process improvements
             *   Wiring Release Engineering jobs in CI
@@ -888,7 +888,7 @@ Twitter | [Sep 19th](https://twitter.com/stephenaugustus/status/1174797710043430
     *   SIG Leads, check out this set of [recommended topics to cover](https://github.com/kubernetes/community/blob/master/events/community-meeting.md#sig-updates) during your update
     *   [Slide template if you need it](https://docs.google.com/presentation/d/1-nTvKCiqu9UvFYUeM6p6RIqHS5-H-u3_x-V4xj_eIWo/edit#slide=id.g401c104a3c_0_0)
     *   Please also check the [SIG Update Schedule](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k)!
-    *   Security Response Committee [Jonathan Pulsifer]
+    *   Product Security Committee [Jonathan Pulsifer]
         *   [https://docs.google.com/presentation/d/1ym-eIi0ZxIyuP3WccVbmgjIDCFimfVV8Riimb04VWvs/edit#](https://docs.google.com/presentation/d/1ym-eIi0ZxIyuP3WccVbmgjIDCFimfVV8Riimb04VWvs/edit#)
     *   SIG Instrumentation [Piotr Szczesniak] (confirmed)
         *   [Slides](https://docs.google.com/presentation/d/1F3gmnDQ1uetEWRu5ex1S_phDcbELrtu3QqlySgWDGcs/edit)
@@ -978,7 +978,7 @@ Twitter | [Sep 19th](https://twitter.com/stephenaugustus/status/1174797710043430
     *   [ 0:00 ] **📣Announcements 📣**
         *   Don’t forget about the [API deprecations](https://kubernetes.io/blog/2019/07/18/api-deprecations-in-1-16/)!
         *   Protip - book your Kubecon travel if you’re planning to attend. :D
-        *   SIG instrumentation, SIG Storage, SIG Docs, and the Security Response Committee will be giving their updates next week.
+        *   SIG instrumentation, SIG Storage, SIG Docs, and the Procuct Security Committee will be giving their updates next week.
         *   Want to help host this meeting? Ping @castrojo, we’re always looking for new people to help run this meeting!
     *   **👏 **Shoutouts this week (Check in #shoutouts on slack) **👏**
 *   **[Bentheelder](https://app.slack.com/team/U1P7T516X)** (Benjamin Elder) - Shoutout again to [@aojea](https://kubernetes.slack.com/team/U7CK9A960) (Antonio Ojea), thanks to his work we finally have CI passing all conformance tests with an IPv6 [#kind](https://kubernetes.slack.com/archives/CEKK1KTN2) cluster!

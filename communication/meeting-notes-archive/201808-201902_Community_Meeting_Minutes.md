@@ -456,7 +456,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   Placeholder for Steering [spiffxp]
         *   (updates summary not formally approved)
         *   New steering committee, first meeting was very productive
-        *   [Security Response Team to become a Committee](https://github.com/kubernetes/steering/issues/89)
+        *   [Product Security Team to become a Committee](https://github.com/kubernetes/steering/issues/89)
             *   now has rules on who's on it and how it relates to the project
         *   WG-k8s-infra now exists, for migrating stuff off of Google ownership mainly
             *   very early stages, don't even know how stuff will work yet
