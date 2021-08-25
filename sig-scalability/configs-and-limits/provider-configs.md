@@ -161,4 +161,4 @@ Motivated by many of the issues above, an alternative configuration is reasonabl
 
 CoreOS commentary on etcd sizing.
 
-[Hardware guidelines for administering etcd clusters](https://github.com/etcd-io/website/blob/master/content/docs/v3.4/op-guide/hardware.md)
+[Hardware guidelines for administering etcd clusters](https://github.com/etcd-io/website/blob/master/content/en/docs/v3.4/op-guide/hardware.md)
