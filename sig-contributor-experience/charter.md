@@ -61,7 +61,7 @@ We cross-cut all SIGs and WGs to deliver the following processes:
     - Socialize on kubernetes-sig-contribex@googlegroups.com and our weekly update calls
     - Seek [lazy consensus] with a time box of at least 72 business hours with a GitHub issue link (or proposal if not applicable) to the following mailing lists:
         - [kubernetes-sig-contribex@]googlegroups.com
-        - sig-leads@googlegroups.com
+        - leads@kubernetes.io
         - [kubernetes-dev@]googlegroups.com with the GitHub issue link including the subject [NOTICE]: $announcement
         - We will also announce it at the Kubernetes Community Meeting
 - Depending on how wide of an ecosystem change this is, we may also slack, blog, tweet, and use other channels to get the word out.
