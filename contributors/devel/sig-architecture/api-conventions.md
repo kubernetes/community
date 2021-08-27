@@ -1005,6 +1005,55 @@ fooRef:
 
 Although not always necessary to help a controller identify a resource type, “group” is included to avoid ambiguity when the resource exists in multiple groups. It also provides clarity to end users and enables copy-pasting of a reference without the referenced type changing due to a different controller handling the reference.
 
+##### Kind vs. Resource
+
+A common point of confusion in object references is whether to construct
+references with a "kind" or "resource" field. Historically most object
+references in Kubernetes have used "kind". This is not as precise as "resource".
+Although each combination of "group" and "resource" must be unique within
+Kubernetes, the same is not always true for "group" and "kind". It is possible
+for multiple resources to make use of the same "kind".
+
+Typically all objects in Kubernetes have a canonical primary resource - such as
+“pods” representing the way to create and delete resources of the “Pod” schema.
+While it is possible a resource schema cannot be directly created, such as a
+“Scale” object which is only used within the “scale” subresource of a number of
+workloads, most object references address the primary resource via its schema.
+In the context of object references, "kind" refers to the schema, not the
+resource.
+
+If implementations of an object reference will always have a clear way to map
+kinds to resources, it is acceptable to use "kind" in the object reference. In
+general, this requires implementations to have a predefined mapping between
+kinds and resources (this is the case for built-in references which use "kind").
+Relying on dynamic kind to resource mapping is not safe. Even if a "kind" only
+dynamically maps to a single resource initially, it's possible for another
+resource to be mounted that refers to the same "kind", potentially breaking any
+dynamic resource mapping.
+
+If an object reference may be used to reference resources of arbitrary types and
+the mapping between kind and resource could be ambiguous, "resource" should be
+used in the object reference.
+
+The Ingress API provides a good example of where "kind" is acceptable for an
+object reference. The API supports a backend reference as an extension point.
+Implementations can use this to support forwarding traffic to custom targets
+such as a storage bucket. Importantly, the supported target types are clearly
+defined by each implementation of the API and there is no ambiguity for which
+resource a kind maps to. This is because each Ingress implementation has a
+hard-coded mapping of kind to resource.
+
+The object reference above would look like this if it were using "kind" instead
+of "resource":
+
+```yaml
+fooRef:
+    group: sns.services.k8s.aws
+    kind: Topic
+    name: foo
+    namespace: foo-namespace
+```
+
 ##### Controller behavior
 
 The operator can store a map of (group,resource) to the version of that resource it desires. From there, it can construct the full path to the resource, and retrieve the object.
