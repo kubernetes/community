@@ -109,6 +109,10 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-openstack
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-openstack](https://github.com/kubernetes-sigs/cluster-api-provider-openstack/blob/master/OWNERS)
+- **Meetings:**
+  - Cluster API Provider Openstack Office Hours: [Mondays at 16:00 UTC](https://zoom.us/j/91929881559?pwd=WllxazhTUzBFN1BNWTRadTA3NGtQQT09) (Monday 4PM GTM+1 London, every 4 weeks starting September 20th 2021, Wednesday 9PM UTC, every 4 weeks starting September 8th 2021). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=UTC).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/10aTeq2lhXW_3aFQAd_MdGjY8PtZPslKhZCCcXxFp3_Q/edit).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-packet
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-packet](https://github.com/kubernetes-sigs/cluster-api-provider-packet/blob/master/OWNERS)

@@ -1054,6 +1054,16 @@ sigs:
   - name: cluster-api-provider-openstack
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
+    meetings:
+    - description: Cluster API Provider Openstack Office Hours
+      day: Monday
+      time: "16:00"
+      tz: UTC
+      frequency: Monday 4PM GTM+1 London, every 4 weeks starting September 20th 2021,
+        Wednesday 9PM UTC, every 4 weeks starting September 8th 2021
+      url: https://zoom.us/j/91929881559?pwd=WllxazhTUzBFN1BNWTRadTA3NGtQQT09
+      archive_url: https://docs.google.com/document/d/10aTeq2lhXW_3aFQAd_MdGjY8PtZPslKhZCCcXxFp3_Q/edit
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-packet
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-packet/master/OWNERS
