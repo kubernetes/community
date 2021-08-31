@@ -6,6 +6,17 @@ The role of this election is to fill out the four (4) seats due for
 reelection this year on the [Kubernetes Steering Committee]. Each elected
 member will serve a two (2) year term.
 
+## Changes
+
+This year is the first year we will be using [Elekto] to conduct the election.
+Elekto is a new application, commissioned as an internship by the CNCF.  As
+well as having a new, shiny web UI, it relies entirely on GitHub Oauth for
+voting, and as such does not use email at all.  Elekto also handles exceptions,
+eligibility checks, and other aspects of the election.
+
+This does mean some changes to the nomination, running, and voter exception
+process, so please read below.
+
 ## Background
 
 This election will shape the future of Kubernetes as a community and project.
@@ -37,7 +48,7 @@ Please refer to the [Steering Committee Election Charter] for [Eligibility for c
 Eligibility for voting in 2021 is defined as:
 
 * People who had at least 50 contributions to the Kubernetes project over
-  the past year, according to a snapshot taken 2021-MM-DD of the data driving
+  the past year, according to a snapshot taken 2021-09-15 of the data driving
   the [devstats developer activity counts dashboard][devstats-dashboard],
   who are also [Org Members].
   Contributions include GitHub events like creating issues, creating PRs,
@@ -90,18 +101,17 @@ Examples of contributions that would NOT be considered:
 
 | Date         | Event                    |
 | ------------ | ------------------------ |
-| July 1       | Steering Committee selects Election Committee |
-| August XX    | Announcement of Election and publication of voters.md |
-| August XX    | Steering Committee Meeting with Q+A with the candidates and community |
-| September XX | All candidate bios due by 0000 UTC (5pm PST) |
-| ~1 week      | Election prep week (voters.md validation and CIVS setup and testing)
-| September XX | Election Begins via email ballots |
-| October XX   | Deadline to submit voter exception forms and request a replacement ballot |
-| October XX   | Election Closes by 0000 UTC (5pm PST) |
-| October XX   | Private announcement of Results to SC members not up for election |
-| October XX   | Private announcement of Results to all candidates |
-| October XX   | Public announcement of Results at Public Steering Committee Meeting |
-| October XX   | Election Retro |
+| August 19    | Steering Committee selects Election Committee |
+| September 21 | Announcement of Election and publication of voters.md |
+| September XX | Steering Committee Meeting with Q+A with the candidates and community |
+| October 6    | All candidate bios due by 0000 UTC (5pm PST) |
+| October 8    | Election Begins via email ballots |
+| October 24   | Deadline to submit voter exception forms and request a replacement ballot |
+| October 27   | Election Closes by 0000 UTC (5pm PST) |
+| October 28   | Private announcement of Results to SC members not up for election |
+| October 30   | Private announcement of Results to all candidates |
+| November 1   | Public announcement of Results at Public Steering Committee Meeting |
+| November 4?   | Election Retro |
 
 ## Candidacy Process
 
@@ -127,8 +137,12 @@ nomination on GitHub, as +1s via email will not count. Here's an example email:
 **issue** saying something like "I accept the nomination".
 
 4. Finally, the candidate closes the **issue** (`#NNN`) by opening a Pull Request
-to add their bio. The PR body must contain the text `Fixes #NNN` to automatically
-close the issue once the PR is merged.
+to add their bio (see below). The PR body must contain the text `Fixes #NNN` to 
+automatically close the issue once the PR is merged.
+
+5. Create the PR for your bio by copying the `nomination-template.md` file in
+this directory, and creating a new file titled `candidate-YourName.md`.  Fill 
+out all the fields in the template, but avoid making and format changes.
 
 **Endorsement**
 
@@ -152,14 +166,19 @@ Election Officers will announce that on the GitHub issue.
 **Running**
 
 Eligible candidates can submit a pull request with a biography in this
-directory with their platform and intent to run. This statement is
-**limited to 300 words** and must follow the format of `firstnamelastname.md`.
-The word limit applies to the source markdown file and the [`hack/verify-steering-election.sh`]
-script can be used to check the word count.
+directory with their platform and intent to run. This PR will copy `nomination-template.md`
+to a file named `candidate-YourName.md`.  It will fill out the fields in
+that template.
 
-Please refer to the [2020 candidate bios] for examples. Biography statements are optional.
+All biographical statements should be brief and to the point, with a guideline of around 
+**300 words** total for all text. If your statement is excessively long, you 
+will be asked to abbreviate it before it is merged.
 
-Missed deadlines by the candidates will be addressed by steering on a per case basis to determine eligibility.
+Please refer to the [2020 candidate bios] for examples of content, although
+the formatting should support the new templates. Biography statements are optional.
+
+Missed deadlines by the candidates will be addressed by the election committee
+on a per case basis to determine eligibility.
 
 **Campaigning**
 
@@ -174,14 +193,16 @@ roles you may hold.
 
 ## Voting Process
 
-Eligible voters will receive a ballot via email. If you are
-not on that list and feel you have worked on Kubernetes in a way that is NOT
-reflected in GitHub contributions, you can use the [voter exception form] to ask
-to participate in the election.
+Contributors may check their voter eligibility at any time once the election
+process starts, by going to the [election app], logging in, navigating to
+the 2021 election, and seeing if the screen there says that they are eligible.
 
-Elections will be held using time-limited [Condorcet] ranking on [CIVS]
-using the [IRV method]. The top vote getters will be elected to the open
-seats.
+If the app does not say that you are eligible, because you have worked on 
+Kubernetes in a way that is NOT reflected in GitHub contributions, you can use 
+the exception form built into the same app to ask to participate in the election.
+
+Elections will be held using time-limited [Condorcet] ranking on [Elekto]. 
+The most preferred candidates will be elected to the open seats.
 
 Employer diversity is encouraged, and thus maximal representation will be
 enforced as spelled out in the [Steering Committee Election Charter].
@@ -189,21 +210,19 @@ enforced as spelled out in the [Steering Committee Election Charter].
 You will be ranking your choices of the candidates with an option for
 "no opinion". In the event of a tie, a coin will be flipped.
 
-The election will open for voting starting September XX via email and
-end three weeks after on October XX, 2021 at 00:00am UTC. You will receive
-an email to the address on file at the start of the election from "Kubernetes
-(CIVS Poll Supervisor) `<civs@cs.cornell.edu>`, please add to the list of addresses
-you don't spam filter. Detailed voting instructions will be addressed in email
-and the CIVS polling page. Please note that email ballots might be unreliable,
-so you are encouraged to contact the election officials if you do not receive a
-ballot by September XX.
-
-If you do not receive your ballot, request a new one via the [Ballot Replacement Form].
+The election will open for voting starting on the dates specified on the calendar
+at the top of this document. You will be reminded that voting has opened by an
+email to kubernetes-dev, but no email is required for you to vote.
 
 ### Officers
 
 The Steering Committee has selected the following people as [election officers]:
-- Name, GitHub handle, Affiliation
+
+- Alison Dowdney, @alisondy
+- Josh Berkus, @jberkus
+- Noah Kantrowitz, @coderanger
+
+In addition, Arnaud M is serving as our Infra Team liaison for this election.
 
 Please direct any questions via email to <election@k8s.io>.
 
@@ -212,8 +231,8 @@ Please direct any questions via email to <election@k8s.io>.
 - First, the results are privately announced to the incumbent Steering Committee
 members (who are not up for election) and all the candidates.
 
-- The newly elected body will be publicly announced in the monthly
-[public Steering Committee Meeting] on October XX, 2021.
+- The newly elected body will be publicly announced in the scheduled monthly
+[public Steering Committee Meeting].
 
 - Following the meeting, the raw voting results and winners will be published on the
 [Kubernetes Blog].
@@ -223,13 +242,7 @@ the [Steering Committee Election Charter]
 
 ## Nominees
 
-The nominee list is filled in by the Election Officers after all bios have been
-submitted. Please do not edit the following table.
-
-
-|                    Name                    | Organization/Company |                        GitHub                        |
-|:------------------------------------------:|:--------------------:|:----------------------------------------------------:|
-| [Jane Containerface](./biotemplate.md)     |      ExampleCo       | [@github](https://github.com)                        |
+Nominees may be found in the [election app].
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
@@ -243,19 +256,13 @@ submitted. Please do not edit the following table.
 [pledge to recuse]: https://github.com/kubernetes/steering/blob/master/elections.md#steering-committee-and-election-officer-recusal
 
 [Condorcet]: https://en.wikipedia.org/wiki/Condorcet_method
-[CIVS]: http://civs.cs.cornell.edu/
-[IRV method]: https://www.daneckam.com/?p=374
-
-[`hack/verify-steering-election.sh`]: https://git.k8s.io/community/hack/verify-steering-election.sh
 [2020 candidate bios]: https://github.com/kubernetes/community/tree/master/events/elections/2020
 [election officers]: https://github.com/kubernetes/community/tree/master/events/elections#election-officers
 [Kubernetes Community Meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
 [Kubernetes Blog]: https://kubernetes.io/blog/
-[eligible voters]: ./voters.md
-[voter exception form]: https://www.surveymonkey.com/r/k8s-sc-election-2021
-[voters.md]: ./voters.md
 
 [devstats-sql]: https://github.com/cncf/devstats/blob/master/metrics/shared/project_developer_stats.sql
 [devstats-dashboard]: https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All
 [Org Members]: https://github.com/kubernetes/community/blob/master/community-membership.md
-[Ballot Replacement Form]: https://www.surveymonkey.com/r/kubernetes-sc-2021-ballot
+[Elekto]: https://elekto.dev
+[election app]: https://election.k8s.io

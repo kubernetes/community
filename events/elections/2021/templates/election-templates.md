@@ -4,31 +4,35 @@ Adjust this template as necessary:
 
 It’s that time of year again!
 
+It's also new!  This is the first year we will be using Elekto[0] for the Kubernetes Steering elections.  Elekto was commissioned as an internship project for us by the CNCF.  You'll find it has a much more modern UI, and does not rely on email at all to enable voting.
+
 As is now customary, this fall is election season for Kubernetes. Three(3) elected members (bobkillen, dims, liggitt) will stay on for the remaining year of their terms, and there will be four(4) positions open for election. Every election term will be 2 years. We will be posting regular updates to kubernetes-dev with deadlines and instructions as well as providing quick updates during the regular Thursday community meetings until completion of the election.
 
-If you’d like to vote or run for a seat, all details and next steps are outlined in the election process doc[3] and voters guide.[4] The voters guide will be the single source of truth of information for this cycle. It will be updated live as new bios of candidates flow through over the next four weeks. Please pay attention to the scheduled dates:
+If you’d like to vote or run for a seat, all details and next steps are outlined in the election process doc[3] and the Elekto application[7]. The application will be the single source of truth of information for this cycle. It will be updated live as new bios of candidates flow through. Please pay attention to the scheduled dates:
 
-| schedule here |
+| Start Date | End Date | Activity |
+| ---------- | -------- | -----------------|
+| 2021-09-21 | 2021-10-07 | Nominate Candidates |
+| 2021-09-21 | 2021-10-24 | Request voter exceptions |
+| 2021-10-09 | 2021-10-28 | Vote |
 
-As mentioned in the process doc, eligibility for voting will be determined by 50 contributions to a Kubernetes project over the past year and Kubernetes Org membership[5], which will result in you getting a ballot emailed to you when the election starts. All contributors who will receive a ballot are listed in voters.md[6]; if your name is not there, you will need an exception to vote.
-
-For those of you doing work within the Kubernetes project/community that is NOT measured in GitHub, or if you have 50 contributions but not Org Membership, you can apply for participation via the voter exception form[7]. This is to ensure that non-code contributors can participate, so please don’t hesitate to use the form.
+As mentioned in the process doc, eligibility for voting will be determined by 50 contributions to a Kubernetes project over the past year and Kubernetes Org membership[5].  Eligible voters will be shown as such when by the Elekto application[7].  If you should be eligible, but are not, you may also file for an exception through the same application. For those of you doing work within the Kubernetes project/community that is NOT measured in GitHub, or if you have 50 contributions but not Org Membership, you can apply for participation via the voter exception form[7] in the Elekto app. This is to ensure that non-code contributors can participate, so please don’t hesitate to use the form.
 
 Resources:
 
 
+[0] Elekto: https://elekto.dev
 [1] Steering Committee:  https://github.com/kubernetes/steering - who sits on the committee and terms, their projects and meeting info
 [2] Steering Committee Charter: https://github.com/kubernetes/steering/blob/master/charter.md  - this is a great read if you’re interested in running (or assessing for the best candidates!)
 [3] Election Process: https://git.k8s.io/steering/elections.md 
-[4] Voters Guide: https://github.com/kubernetes/community/tree/master/events/elections/2021 - Updated on a rolling basis. This guide will always have the latest information throughout the election cycle. The complete schedule of events and candidate bios will be housed here.
+[4] Voters Guide: https://elections.k8s.io - Updated on a rolling basis. This guide will always have the latest information throughout the election cycle. The complete schedule of events and candidate bios will be housed here.
 [5] Contributor Ladder: https://github.com/kubernetes/community/blob/master/community-membership.md -  explains Org Membership as well as all of the higher levels
-[6] Voters.md: https://github.com/kubernetes/community/blob/master/events/elections/2021/voters.md -  list of contributors who will automatically receive a ballot
-[7] exception Form: https://www.surveymonkey.com/r/k8s-sc-election-2021
+[7] Elekto Application: https://elections.k8s.io
 
 
 On behalf of the election officers,
 
-Name (github), Name (github), etc
+Alison Dowdney (@alisondy), Josh Berkus (@jberkus), Noah Kantrowitz (@coderanger)
 
 If you have questions, please feel free to ask on the list; otherwise, you can reach the Election Officials at election@kubernetes.io.
 
