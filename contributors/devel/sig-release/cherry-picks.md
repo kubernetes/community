@@ -24,10 +24,11 @@ branches.
   kubernetes `origin` fork on GitHub and making a pull request against a
   configured remote `upstream` that tracks
   `https://github.com/kubernetes/kubernetes.git`, including `GITHUB_USER`.
-- Have `hub` installed, which is most easily installed via
-  `go get github.com/github/hub` assuming you have a standard golang
-  development environment.
-- A github personal access token which has permissions to access public repositories.
+- Have GitHub CLI (`gh`) installed following [installation instructions](https://github.com/cli/cli#installation).
+- A github personal access token which has permissions "repo" and "read:org".
+  Permissions are required for [gh auth login](https://cli.github.com/manual/gh_auth_login)
+  and not used for anything unrelated to cherry-pick creation process
+  (creating a branch and initiating PR).
 
 ## What Kind of PRs are Good for Cherry Picks
 
