@@ -179,7 +179,7 @@ Example of SIG roles created to help operations:
 - [Production Readiness Reviewer]  
 - [Events Lead]  
 - [PR Wrangler] 
-- [Editor]
+- [Marketing Council]
 
 Other roles...
 - *MUST* be tracked on the SIGs README with a link to the role definition
@@ -273,7 +273,7 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [The Release Team: Bug Triage, CI Signal, and more]: https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks
 [Production Readiness Reviewer]: https://github.com/kubernetes/community/blob/master/sig-architecture/production-readiness.md#becoming-a-prod-readiness-reviewer-or-approver
 [API Reviewer and Moderator]: https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md#expanding-the-reviewer-and-approver-pool
-[Editor]: https://github.com/kubernetes/community/blob/master/communication/marketing-team/role-handbooks/editor.md
+[Marketing Council]: https://github.com/kubernetes/community/blob/master/communication/marketing-team/role-handbooks/council.md
 [Events Lead]: https://github.com/kubernetes/community/blob/master/events/events-team/events-lead.md
 [PR Wrangler]: https://kubernetes.io/docs/contribute/participate/pr-wranglers/
 [monthly community meeting]: /events/community-meeting.md
