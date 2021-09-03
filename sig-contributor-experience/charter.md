@@ -112,11 +112,11 @@ Chairs and Technical Leads
 [kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev
 [@kubernetesio]: https://www.twitter.com/kubernetesio
 [r/kubernetes]: https://kubernetes.reddit.com
-[Google Summer of Code]: https://git.k8s.io/community/mentoring/google-summer-of-code.md
-[Outreachy]: https://git.k8s.io/community/mentoring/outreachy.md
-[Meet Our Contributors]:  https://git.k8s.io/community/mentoring/meet-our-contributors.md
-[Group Mentoring - WIP]:  https://git.k8s.io/community/mentoring/group-mentoring.md
-[The 1:1 Hour - WIP]: https://git.k8s.io/community/mentoring/the1-on-1hour.md
+[Google Summer of Code]: https://git.k8s.io/community/mentoring/programs/google-summer-of-code.md
+[Outreachy]: https://git.k8s.io/community/mentoring/programs/outreachy.md
+[Meet Our Contributors]:  https://git.k8s.io/community/mentoring/programs/meet-our-contributors.md
+[Group Mentoring - WIP]:  https://git.k8s.io/community/mentoring/programs/group-mentoring.md
+[The 1:1 Hour - WIP]: https://git.k8s.io/community/mentoring/programs/the1-on-1hour.md
 [kubernetes/community]: https://git.k8s.io/community/
 [Contributor Summit(s)]: https://git.k8s.io/community/events/2018/12-contributor-summit
 [contributor summits]: https://git.k8s.io/community/events/2018/12-contributor-summit
