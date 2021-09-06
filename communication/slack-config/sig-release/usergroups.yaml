@@ -35,7 +35,7 @@ usergroups:
   # - Emeritus Adviser
   # - SIG Release leads
   #
-  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.22/release_team.md
+  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.23/release-team.md
   - name: release-team-leads
     long_name: Release Team Leads
     description: >-
