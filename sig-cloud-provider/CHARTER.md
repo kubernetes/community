@@ -14,7 +14,7 @@ SIG Cloud Provider’s mission is to simplify, develop, and maintain cloud provi
 - Extension points between Kubernetes and any cloud provider
 - APIs/interfaces for efficiently provisioning/de-provisioning cloud resources (nodes, routes, load balancers, etc)
 - Configuration of cluster components to enable cloud provider integrations
-- Testing and testing frameworks to ensure vendor neutrality across all cloud providers
+- Testing frameworks to ensure vendor neutrality across all cloud providers
 
 #### Code, Binaries and Services
 
