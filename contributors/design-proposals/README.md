@@ -13,4 +13,4 @@ Note that a number of these documents are historical and may be out of date or u
 TODO: Add the current status to each document and clearly indicate which are up to date.
 
 
-[keps]: http://git.k8s.io/enhancements/keps/0001a-meta-kep-implementation.md#meta-kep-implementation
+[keps]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-architecture/0000-kep-process
