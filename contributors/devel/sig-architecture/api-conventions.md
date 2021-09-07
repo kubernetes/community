@@ -1609,3 +1609,27 @@ Example: "must be greater than \`request\`".
 be less than 256", "must be greater than or equal to 0".  Do not use words
 like "larger than", "bigger than", "more than", "higher than", etc.
 * When specifying numeric ranges, use inclusive ranges when possible.
+
+
+## Automatic Resource Allocation And Deallocation
+
+API objects often are [union](#Unions) object containing the following:
+1. One or more fields identifying the `Type` specific to API object (aka the `discriminator`).
+2. A set of N fields, only one of which should be set at any given time - effectively a union.
+
+Controllers operating on the API type often allocate resources based on 
+the `Type` and/or some additional data provided by user. A canonical example 
+of this is the `Service` API object where resources such as IPs and network ports 
+will be set in the API object based on `Type`. When the user does not specify 
+resources, they will be allocated, and when the user specifies exact value, they will 
+be reserved or rejected.
+
+When the user chooses to change the `discriminator` value (e.g., from `Type X` to `Type Y`) without 
+changing any other fields then the system should clear the fields that were used to represent `Type X` 
+in the union along with releasing resources that were attached to `Type X`. This should automatically 
+happen irrespective of how these values and resources were allocated (i.e., reserved by the user or 
+automatically allocated by the system. A concrete example of this is again `Service` API. The system 
+allocates resources such as `NodePorts` and `ClusterIPs` and automatically fill in the fields that 
+represent them in case of the service is of type `NodePort` or `ClusterIP` (`discriminator` values). 
+These resources and the fields representing them are automatically cleared when  the users changes 
+service type to `ExternalName` where these resources and field values no longer apply. 	
