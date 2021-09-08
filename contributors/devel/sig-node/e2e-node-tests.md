@@ -53,6 +53,7 @@ Prerequisites:
 - Install and setup the [gcloud sdk](https://cloud.google.com/sdk/downloads)
   - Set your project and a zone by running `gcloud config set project $PROJECT` and `gcloud config set compute/zone $zone`
   - Verify the sdk is setup correctly by running `gcloud compute instances list` and `gcloud compute images list --project kubernetes-node-e2e-images`
+  - Configure credentials for the same project that you configured above for "application defaults". This can be done with `gcloud auth application-default login` or by setting the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to a path to a credentials file.
 
 Run:
 
