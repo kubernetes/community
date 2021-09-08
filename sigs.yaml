@@ -843,22 +843,14 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/blobfuse-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-azure/master/OWNERS
     meetings:
-    - description: Azure Subproject Meeting (every four weeks)
+    - description: Azure Subproject Meeting
       day: Monday
       time: "18:00"
       tz: PT (Pacific Time)
-      frequency: biweekly
+      frequency: monthly - third Monday
       url: https://zoom.us/j/586836662
       archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
-      recordings_url: https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4
-    - description: Azure Subproject Meeting (every four weeks)
-      day: Thursday
-      time: "8:30"
-      tz: PT (Pacific Time)
-      frequency: biweekly
-      url: https://zoom.us/j/586836662
-      archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
-      recordings_url: https://www.youtube.com/watch?v=yQLeUKi_dwg&list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4
   - name: provider-baiducloud
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-baiducloud/master/OWNERS
