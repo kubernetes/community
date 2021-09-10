@@ -155,8 +155,8 @@ line of the multiple-line entry.
 For example,
 ```
 2016-10-06T00:17:09.669794202Z stdout F The content of the log entry 1
-2016-10-06T00:17:09.669794202Z stdout P First line of log entry 2
-2016-10-06T00:17:09.669794202Z stdout P Second line of the log entry 2
+2016-10-06T00:17:09.113242941Z stdout P First line of log entry 2
+2016-10-06T00:17:09.113242941Z stdout P Second line of the log entry 2
 2016-10-06T00:17:10.113242941Z stderr F Last line of the log entry 2
 ```
 
