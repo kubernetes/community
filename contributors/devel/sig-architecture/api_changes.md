@@ -9,6 +9,10 @@ found at [API Conventions](api-conventions.md).
 - [So you want to change the API?](#so-you-want-to-change-the-api)
 - [Operational overview](#operational-overview)
 - [On compatibility](#on-compatibility)
+  - [Adding a field](#adding-a-field)
+  - [Making a singular field plural](#making-a-singular-field-plural)
+    - [Single-Dual ambiguity](#single-dual-ambiguity)
+  - [Multiple API versions](multiple-api-versions)
 - [Backward compatibility gotchas](#backward-compatibility-gotchas)
 - [Incompatible API changes](#incompatible-api-changes)
 - [Changing versioned APIs](#changing-versioned-apis)
@@ -144,6 +148,8 @@ made in extreme cases (e.g. security or obvious bugs).
 
 Let's consider some examples.
 
+### Adding a field
+
 In a hypothetical API (assume we're at version v6), the `Frobber` struct looks
 something like this:
 
@@ -171,6 +177,8 @@ The onus is on you to define a sane default value for `Width` such that rules
 #1 and #2 above are true - API calls and stored objects that used to work must
 continue to work.
 
+### Making a singular field plural
+
 For your next change you want to allow multiple `Param` values. You can not
 simply remove `Param string` and add `Params []string` (without creating a
 whole new API version) - that fails rules #1, #2, #3, and #6.  Nor can you
@@ -191,24 +199,105 @@ type Frobber struct {
 
 This new field must be inclusive of the singular field.  In order to satisfy
 the compatibility rules you must handle all the cases of version skew, multiple
-clients, and rollbacks.  This can be handled by defaulting or admission control
-logic linking the fields together with context from the API operation to get as
-close as possible to the user's intentions.
+clients, and rollbacks.  This can be handled by admission control or API
+registry logic (e.g. strategy) linking the fields together with context from
+the API operation to get as close as possible to the user's intentions.
 
-Upon any mutating API operation:
+Upon any read operation:
+  * If plural is not populated, API logic must populate plural as a one-element
+    list, with plural[0] set to the singular value.
+
+Upon any create operation:
   * If only the singular field is specified (e.g. an older client), API logic
-    must populate plural[0] from the singular value, and de-dup the plural
-    field.
-  * If only the plural field is specified (e.g. a newer client), API logic must
-    populate the singular value from plural[0].
+    must populate plural as a one-element list, with plural[0] set to the
+    singular value.  Rationale: It's an old client and they get compatible
+    behavior.
   * If both the singular and plural fields are specified, API logic must
-    validate that the singular value matches plural[0].
-  * Any other case is an error and must be rejected.
+    validate that plural[0] matches the singular value.
+  * Any other case is an error and must be rejected.  This includes the case of
+    the plural field being specified and the singular not.  Rationale: In an
+    update, it's impossible to tell the difference between an old client
+    clearing the singular field via patch and a new client setting the plural
+    field.  For compatibility, we must assume the former, and we don't want
+    update semantics to differ from create (see [Single-Dual
+    ambiguity](#single_dual_ambiguity) below.
 
-For this purpose "is specified" means the following:
-  * On a create or patch operation: the field is present in the user-provided input
-  * On an update operation: the field is present and has changed from the
-    current value
+For the above: "is specified" means the field is present in the user-provided
+input (including defaulted fields).
+
+Upon any update operation (including patch):
+  * If singular is cleared and plural is not changed, API logic must clear
+    plural.  Rationale: It's an old client clearing the field it knows about.
+  * If plural is cleared and singular is not changed, API logic must populate
+    the new plural with the same values as the old.  Rationale: It's an old
+    client which can't send fields it doesn't know about.
+  * If the singular field is changed (but not cleared) and the plural field is
+    not changed, API logic must populate plural as a one-element list, with
+    plural[0] set to the singular value.  Rationale: It's an old client
+    changing the field they know about.
+
+Expressed as code, this looks like the following:
+
+```
+// normalizeParams adjusts Params based on Param.  This must not consider
+// any other fields.
+func normalizeParams(after, before *api.Frobber) {
+     // Validation  will be called on the new object soon enough.  All this
+     // needs to do is try to divine what user meant with these linked fields.
+     // The below is verbosely written for clarity.
+
+     // **** IMPORTANT *****
+     // As a governing rule. User must either:
+     //   a) Use singular field only (old client)
+     //   b) Use singular *and* plural fields (new client)
+
+     if before == nil {
+         // This was a create operation.
+
+         // User specified singular and not plural (an old client), so we can
+         // init plural for them.
+         if len(after.Param) > 0 && len(after.Params) == 0 {
+             after.Params = []string{after.Param}
+             return
+         }
+
+         // Either both were specified or both were not.  Catch this in
+         // validation.
+         return
+     }
+
+     // This was an update operation.
+
+     // Plural was cleared by an old client which was trying to patch
+     // some field and didn't provide it.
+     if len(before.Params) > 0 && len(after.Params) == 0 {
+         // If singular is unchanged, then it is an old client trying to
+         // patch, and didn't provide plural.  Bring the old value forward.
+         if before.Param == after.Param {
+             after.Params = before.Params
+         }
+     }
+
+     if before.Param != after.Param {
+         // Singular is changed.
+
+         if len(before.Param) > 0 && len(after.Param) == 0 {
+             // If singular was cleared and plural is unchanged, then we can
+             // clear plural to match.
+             if sameStringSlice(before.Params, after.Params) {
+                 after.Params = nil
+             }
+             // Else they also changed plural - check it in validation.
+         } else {
+             // If singular was changed (but not cleared) and plural was not,
+             // then we can set plural based on singular (same as create).
+             if sameStringSlice(before.Params, after.Params) {
+                 after.Params = []string{after.Param}
+             }
+         }
+     }
+ }
+```
 
 Older clients that only know the singular field will continue to succeed and
 produce the same results as before the change.  Newer clients can use your
@@ -232,9 +321,68 @@ The code that converts to/from versioned APIs can decode this into the
 compatible structure. Eventually, a new API version, e.g. v7beta1,
 will be forked and it can drop the singular field entirely.
 
+#### Single-Dual ambiguity
+
+Assume the user starts with:
+
+```
+kind: Frobber
+height: 42
+width: 3
+param: "super"
+```
+
+On create we can set `params: ["super"]`.
+
+On an unrelated POST (aka replace), an old client would send:
+
+```
+kind: Frobber
+height: 3
+width: 42
+param: "super"
+```
+
+If we don't require new clients to use both singular and plural fields, a new
+client would send:
+
+```
+kind: Frobber
+height: 3
+width: 42
+params: ["super"]
+```
+
+That seems clear enough - we can assume `param: "super"`.
+
+But the old client could send this, via patch:
+
+```
+PATCH  /frobbers/1
+{ param: "" }
+```
+
+That gets applied to the old object before registry code can see it, and we end up with:
+
+```
+kind: Frobber
+height: 42
+width: 3
+params: ["super"]
+```
+
+By the previous logic, we would copy `params[0]` to `param` and end up with
+`param: "super"`.  But that's not what the user wanted and more importantly is
+different than what happened before we pluralized.
+
+To disambiguate that, we require users of plural to always specify singular,
+too.
+
+### Multiple API versions
+
 We've seen how to satisfy rules #1, #2, and #3. Rule #4 means that you can not
 extend one versioned API without also extending the others. For example, an
-API call might POST an object in API v7beta1 format, which uses the cleaner
+API call might POST an object in API v7beta1 format, which uses the new
 `Params` field, but the API server might store that object in trusty old v6
 form (since v7beta1 is "beta"). When the user reads the object back in the
 v7beta1 API it would be unacceptable to have lost all but `Params[0]`. This
