@@ -30,7 +30,7 @@ want to eventually migrate all storage users to CSI.
 
 In order to do this we need to migrate the internals of the in-tree plugins to
 call out to CSI Plugins because we will be unable to deprecate the current
-internal plugin API’s due to Kubernetes API deprecation policies. This will
+internal plugin APIs due to Kubernetes API deprecation policies. This will
 lower cost of development as we only have to maintain one version of each
 plugin, as well as ease the transition to CSI when we are able to deprecate the
 internal APIs.
@@ -49,7 +49,7 @@ CSIMigrationAWS) is enabled for the Kubernetes Controller Manager and Kubelet.
 In case the Kubelet on a specific node does not have the above feature flags enabled
 (or running an old version that does not support the above feature flags), the in-tree
 plugin code will be executed for operations like attachment/detachment
-and mount/dismount of volumes. To support this, ProbeVolumePlugins function for
+and mount/unmount of volumes. To support this, ProbeVolumePlugins function for
 in-tree plugin packages will continue to be invoked (as is the case today). This
 will result in all in-tree plugins added to the list of plugins whose methods
 can be invoked by the Kubelet and Kubernetes cluster-wide volume
