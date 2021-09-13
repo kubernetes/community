@@ -3230,10 +3230,10 @@ committees:
     - name: security-response-committee
       description: General Discussion
   subprojects:
-  - name: security
+  - name: committee-security-response
     description: Policies and documentation for the Security Response Committee
     owners:
-    - https://raw.githubusercontent.com/kubernetes/security/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/committee-security-response/master/OWNERS
 - dir: committee-steering
   name: Steering
   mission_statement: >

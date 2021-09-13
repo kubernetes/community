@@ -30,10 +30,10 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by the Security Response Committee:
-### security
+### committee-security-response
 Policies and documentation for the Security Response Committee
 - **Owners:**
-  - [kubernetes/security](https://github.com/kubernetes/security/blob/master/OWNERS)
+  - [kubernetes/committee-security-response](https://github.com/kubernetes/committee-security-response/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
