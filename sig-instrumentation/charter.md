@@ -30,7 +30,7 @@ APIs).
 
 - Components required for any Kubernetes cluster in regards to observability. Also referred to as the [core metrics pipeline][core-metrics-pipeline], meaning metrics that are to be consumed by the scheduler, kubectl and autoscaling. ([kubernetes-sigs/metrics-server](https://github.com/kubernetes-sigs/metrics-server), [kubernetes/heapster](https://github.com/kubernetes/heapster))
 - Interfaces/API definitions required for any Kubernetes cluster in regards to observability. These the APIs defined in order to interface external system (such as Prometheus, Stackdriver, etc.) to be exposed to Kubernetes as a common interface, in order for Kubernetes to be able to treat metric sources as a generic metrics API. ([kubernetes/metrics](https://github.com/kubernetes/metrics), [kubernetes-sigs/custom-metrics-apiserver](https://github.com/kubernetes-sigs/custom-metrics-apiserver))
-- Well established but optional components or adapters for Kubernetes clusters, if endorsed by members. Each component must have two or more members as maintainers. ([kubernetes/kube-state-metrics](https://github.com/kubernetes/kube-state-metrics), not yet officially owned by SIG-Instrumentation, but an example prospect for this category: [DirectXMan12/k8s-prometheus-adapter](https://github.com/DirectXMan12/k8s-prometheus-adapter))
+- Well established but optional components or adapters for Kubernetes clusters, if endorsed by members. Each component must have two or more members as maintainers. ([kubernetes/kube-state-metrics](https://github.com/kubernetes/kube-state-metrics) and [kubernetes-sigs/prometheus-adapter](https://github.com/kubernetes-sigs/prometheus-adapter) are an example for this category)
 
 #### Cross-cutting and Externally Facing Processes
 
