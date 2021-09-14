@@ -53,6 +53,12 @@ Development and Enhancements of Security Tooling
   - [kubernetes/community/sig-security/sig-security-tooling](https://github.com/kubernetes/community/blob/master/sig-security/sig-security-tooling/OWNERS)
 - **Contact:**
   - Slack: [#sig-security-tooling](https://kubernetes.slack.com/messages/sig-security-tooling)
+### sig-security
+SIG Security discussions, documents, processes and other artifacts
+- **Owners:**
+  - [kubernetes/sig-security](https://github.com/kubernetes/sig-security/blob/master/OWNERS)
+- **Contact:**
+  - Slack: [#sig-security](https://kubernetes.slack.com/messages/sig-security)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

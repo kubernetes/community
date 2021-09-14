@@ -2170,6 +2170,12 @@ sigs:
       slack: sig-security-tooling
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-security/sig-security-tooling/OWNERS
+  - name: sig-security
+    description: SIG Security discussions, documents, processes and other artifacts
+    contact:
+      slack: sig-security
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/sig-security/master/OWNERS
 - dir: sig-service-catalog
   name: Service Catalog
   mission_statement: >
