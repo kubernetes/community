@@ -105,11 +105,11 @@ sigs:
   - name: server-binaries
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/cloud-controller-manager/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/controller-manager/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-apiserver/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-controller-manager/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubeapiserver/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/controller-manager/OWNERS
   - name: server-crd
     owners:
     - https://raw.githubusercontent.com/kubernetes/apiextensions-apiserver/master/OWNERS
