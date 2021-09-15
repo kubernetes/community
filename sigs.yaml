@@ -3064,7 +3064,7 @@ workinggroups:
   meetings:
   - description: Regular Meeting
     day: Thursday
-    time: "15:00"
+    time: "14:30"
     tz: UTC
     frequency: biweekly
     url: https://zoom.us/j/96716142646?pwd=VmgrN29sbmhDREp3R0NtZlpGSlZ4Zz09
