@@ -10,7 +10,7 @@ must be taken in setting up the cluster to make the intended measurements. In
 addition to taking the following steps into consideration, it is important to
 document precisely which setup was used. For example, performance can vary
 wildly from commit-to-commit, so it is very important to **document which commit
-or version** of Kubernetes was used, which Docker version was used, etc.
+or version** of Kubernetes was used, which container runtime version was used, etc.
 
 ### Addon pods
 
@@ -54,8 +54,10 @@ environment etc. with a single node to worry about. On the other hand, having
 multiple nodes will let you gather more data in parallel for more robust
 sampling.
 
-## E2E Performance Test
+## Performance Dashboard
+Since Kubernetes release 1.22 kubelet resource usage is also being tracked via [k8s performance dashboard](http://perf-dash.k8s.io/).
 
+## E2E Performance Test
 There is an end-to-end test for collecting overall resource usage of node
 components: [kubelet_perf.go](https://git.k8s.io/kubernetes/test/e2e/node/kubelet_perf.go). To
 run the test, simply make sure you have an e2e cluster running (`kubetest --up`) and [set up](#cluster-set-up) correctly.
@@ -63,9 +65,22 @@ run the test, simply make sure you have an e2e cluster running (`kubetest --up`)
 Run the test with `kubetest --test --test_args="--ginkgo.focus=resource\susage\stracking"`. You may also wish to customise the number of pods or other parameters of the test (remember to rerun
 `make WHAT=test/e2e/e2e.test` after you do).
 
+Note: Due to the amount of time those tests consume they are not currently running in CI, see [issue](https://github.com/kubernetes/kubernetes/issues/81490).
+
+## Node E2E Peformance Test
+These node e2e tests measure node performance after deploying performance sensitive workloads. 
+
+source: https://github.com/kubernetes/kubernetes/blob/master/test/e2e_node/node_perf_test.go
+
+testgrid : https://testgrid.k8s.io/sig-node-kubelet#node-performance-test
+
+To run theses tests follow [node e2e setup guide](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/e2e-node-tests.md) and run
+```make test-e2e-node FOCUS="Node Performance Testing" SKIP="" PARALLELISM=1```
+
 ## Profiling
 
-Kubelet installs the [go pprof handlers](https://golang.org/pkg/net/http/pprof/), which can be queried for CPU profiles:
+Kubelet installs the [go pprof handlers](https://golang.org/pkg/net/http/pprof/), which can be queried for CPU profiles.
+To enable the pprof endpint for kubelet pass  `--enable-debugging-handlers=true` as kubelet flag or `EnableDebuggingHandlers=true` as a kubelet configuration option.
 
 ```console
 $ kubectl proxy &
