@@ -36,6 +36,8 @@ Make the following changes _before_ renaming the branch the `master` branch.
 Note: There might be additional changes required that have not been
 covered in this checklist.
 
+Note: There might be additional information available in the umbrella issue via [kubernetes/org#2222].
+
 ### Anytime
 
 These changes are **non-disruptive**  and can be made anytime before renaming
