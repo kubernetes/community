@@ -2702,52 +2702,6 @@ workinggroups:
     liaison:
       github: liggitt
       name: Jordan Liggitt
-- dir: wg-component-standard
-  name: Component Standard
-  mission_statement: >
-    Develop a standard foundation (philosophy and libraries) for core Kubernetes components
-    to build on top of. Areas to standardize include configuration (flags, ComponentConfig
-    APIs, ...), status endpoints (healthz, configz, ...), integration points (delegated
-    authn/z, ...), and logging. Details are outlined in KEP 0032: https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycle/wgs/0032-create-a-k8s-io-component-repo.md.
-
-  stakeholder_sigs:
-  - API Machinery
-  - Architecture
-  - Cluster Lifecycle
-  label: component-standard
-  leadership:
-    chairs:
-    - github: mtaufen
-      name: Michael Taufen
-      company: Google
-    - github: stealthybox
-      name: Leigh Capili
-      company: Weaveworks
-  meetings:
-  - description: Regular WG Meeting (please join kubernetes-dev@googlegroups.com or
-      kubernetes-wg-component-standard@googlegroups.com to access the notes)
-    day: Tuesday
-    time: "08:30"
-    tz: PT (Pacific Time)
-    frequency: weekly
-    url: https://zoom.us/j/8027741546
-    archive_url: https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI
-  - description: Weekly Mentorship Office Hours - Come ask questions and get help
-    day: Tuesday
-    time: "10:00"
-    tz: PT (Pacific Time)
-    frequency: weekly
-    url: https://zoom.us/j/8027741546
-    archive_url: https://docs.google.com/document/d/1iVBnMAdiTE1Ej_O4P809MCHGVVUkfYmPx6zlSLG0hOg
-  contact:
-    slack: wg-component-standard
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-component-standard
-    teams:
-    - name: wg-component-standard
-      description: Component Standard Discussion
-    liaison:
-      github: cblecker
-      name: Christoph Blecker
 - dir: wg-data-protection
   name: Data Protection
   mission_statement: >

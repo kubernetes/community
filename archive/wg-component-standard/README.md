@@ -8,6 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Component Standard Working Group
 
+The Component Standard Working Group was disbanded in September 2021 due to lack of activity. This page remains for archival purposes.
 Develop a standard foundation (philosophy and libraries) for core Kubernetes components to build on top of. Areas to standardize include configuration (flags, ComponentConfig APIs, ...), status endpoints (healthz, configz, ...), integration points (delegated authn/z, ...), and logging. Details are outlined in KEP 0032: https://github.com/kubernetes/enhancements/blob/master/keps/sig-cluster-lifecycle/wgs/0032-create-a-k8s-io-component-repo.md.
 
 ## Stakeholder SIGs
@@ -16,15 +17,17 @@ Develop a standard foundation (philosophy and libraries) for core Kubernetes com
 * SIG Cluster Lifecycle
 
 ## Meetings
-* Regular WG Meeting (please join kubernetes-dev@googlegroups.com or kubernetes-wg-component-standard@googlegroups.com to access the notes): [Tuesdays at 08:30 PT (Pacific Time)](https://zoom.us/j/8027741546) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting (please join kubernetes-dev@googlegroups.com or kubernetes-wg-component-standard@googlegroups.com to access the notes): [Tuesdays at 08:30 PT (Pacific Time)](https://zoom.us/j/8027741546) (no longer active). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI).
-* Weekly Mentorship Office Hours - Come ask questions and get help: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/8027741546) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+* Weekly Mentorship Office Hours - Come ask questions and get help: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/8027741546) (no longer active). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1iVBnMAdiTE1Ej_O4P809MCHGVVUkfYmPx6zlSLG0hOg).
 
-## Organizers
+## Emeritus Organizers
 
-* Michael Taufen (**[@mtaufen](https://github.com/mtaufen)**), Google
-* Leigh Capili (**[@stealthybox](https://github.com/stealthybox)**), Weaveworks
+* Lucas Käldström (**[@luxas](https://github.com/luxas)**)
+* Michael Taufen (**[@mtaufen](https://github.com/mtaufen)**)
+* Leigh Capili (**[@stealthybox](https://github.com/stealthybox)**)
+* Dr. Stefan Schimanski (**[@sttts](https://github.com/sttts)**)
 
 ## Contact
 - Slack: [#wg-component-standard](https://kubernetes.slack.com/messages/wg-component-standard)

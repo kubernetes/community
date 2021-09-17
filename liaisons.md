@@ -48,7 +48,6 @@ of SIGs, WGs and UGs.
 | [SIG Usability](sig-usability/README.md) | Davanum Srinivas (**[@dims](https://github.com/dims)**) |
 | [SIG Windows](sig-windows/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [WG API Expression](wg-api-expression/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
-| [WG Component Standard](wg-component-standard/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG Data Protection](wg-data-protection/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
 | [WG IoT Edge](wg-iot-edge/README.md) | Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**) |
 | [WG K8s Infra](wg-k8s-infra/README.md) | Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**) |
