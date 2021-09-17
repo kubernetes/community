@@ -15,6 +15,7 @@
 - Are there any funny / cool / TIL anecdotes that you could tell us?
 - Would you like to shout out to any individuals or profile folks doing work within this SIG/WG?
 - What’s a SIG or WG related accomplishment that you are really proud of?
+- What are some recent `help-wanted` issues for your SIG (to give readers an idea of what problems they will solve by joining)?
 - What’s the biggest misconception people have about the SIG or WG?
 - What are some guidelines that influence the decisions made in your SIG or WG? Where can we find them?
 - Who should people contact if they want to get started helping out/contributing to this WG? 
