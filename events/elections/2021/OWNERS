@@ -3,5 +3,9 @@
 # replace with election officers once election starts
 approvers:
   - committee-steering
+  - alisondy
+  - ameukam
+  - jberkus
+  - coderanger
 labels:
   - committee/steering
