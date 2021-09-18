@@ -139,7 +139,7 @@ the Windows Command Prompt.
 
 1. If you're using Windows 10, Version 2004, Build 19041 or higher,
    you can use Windows Subsystem for Linux (WSL) to build
-   Kubernetes. [Follow these instructions to install WSL2.](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+   Kubernetes. [Follow these instructions to install WSL2.](https://docs.microsoft.com/en-us/windows/wsl/install-win10). After that we need to install Ubuntu on Windows Subsystem for Linux (WSL) · Enable WSL on Windows 10. [Follow these instructions to install Ubuntu and enabling wsl2.](https://ubuntu.com/wsl). Now you should clone the repo inside ubuntu and you are ready.
 2. If you're using an earlier version of Windows, then create a Linux
    virtual machine with at least 8GB of memory and 60GB of disk space. 
 
