@@ -12,7 +12,7 @@ description: |
 <!-- omit in toc -->
 # Kubernetes Contributor Cheat Sheet
 
-[Deutsch](README-de.md) | [Français](README-fr.md) | [Bahasa Indonesia](README-id.md) | [日本語](README-ja.md) | [한국어](README-ko.md) | [Português](README-pt.md) | [中文](README-zh.md) | [Українська](README-uk.md) | [Italian](README-it.md)
+[Deutsch](README-de.md) | [Français](README-fr.md) | [Bahasa Indonesia](README-id.md) | [日本語](README-ja.md) | [한국어](README-ko.md) | [Português](README-pt.md) | [中文](README-zh.md) | [Українська](README-uk.md) | [Italian](README-it.md) | [हिन्दी](README-hi.md)
 
 A list of common resources when contributing to Kubernetes, tips, tricks, and
 common best practices used within the Kubernetes project. It is a "TL;DR" or
