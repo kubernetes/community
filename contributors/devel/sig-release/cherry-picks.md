@@ -42,6 +42,11 @@ Again, the emphasis is on critical bug fixes, e.g.,
 - Panic, crash, hang
 - Security
 
+As a counter example, we would not support backporting a bug fix to an alpha
+feature in general. One condition where we would consider is if that bug caused
+an issue for in another part of the system even when the alpha feature was
+switched off / not in use.
+
 If you are proposing a cherry pick and it is not a clear and obvious critical
 bug fix, please reconsider. If upon reflection you wish to continue, bolster
 your case by supplementing your PR with e.g.,
