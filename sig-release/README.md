@@ -62,8 +62,8 @@ The following [subprojects][subproject-definition] are owned by sig-release:
 The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
 - **Owners:**
   - [kubernetes-sigs/downloadkubernetes](https://github.com/kubernetes-sigs/downloadkubernetes/blob/master/OWNERS)
-  - [kubernetes-sigs/k8s-container-image-promoter](https://github.com/kubernetes-sigs/k8s-container-image-promoter/blob/master/OWNERS)
   - [kubernetes-sigs/mdtoc](https://github.com/kubernetes-sigs/mdtoc/blob/master/OWNERS)
+  - [kubernetes-sigs/promo-tools](https://github.com/kubernetes-sigs/promo-tools/blob/main/OWNERS)
   - [kubernetes-sigs/release-notes](https://github.com/kubernetes-sigs/release-notes/blob/master/OWNERS)
   - [kubernetes-sigs/release-sdk](https://github.com/kubernetes-sigs/release-sdk/blob/main/OWNERS)
   - [kubernetes-sigs/release-utils](https://github.com/kubernetes-sigs/release-utils/blob/main/OWNERS)
@@ -71,6 +71,8 @@ The Release Engineering subproject is responsible for the [process/procedures](h
   - [kubernetes/publishing-bot](https://github.com/kubernetes/publishing-bot/blob/master/OWNERS)
   - [kubernetes/release](https://github.com/kubernetes/release/blob/master/OWNERS)
   - [kubernetes/sig-release/release-engineering](https://github.com/kubernetes/sig-release/blob/master/release-engineering/OWNERS)
+  - [kubernetes/website/content/en/releases](https://github.com/kubernetes/website/blob/main/content/en/releases/OWNERS)
+  - [kubernetes/website/data/releases](https://github.com/kubernetes/website/blob/main/data/releases/OWNERS)
 - **Contact:**
   - Slack: [#release-management](https://kubernetes.slack.com/messages/release-management)
 - **Meetings:**
