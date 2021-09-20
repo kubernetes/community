@@ -1552,10 +1552,14 @@ sigs:
 - dir: sig-k8s-infra
   name: K8s Infra
   mission_statement: >
-    We are interested in the successful migration of all project infrastructure
-    from Google (or elsewhere) to the CNCF, such that the project is able to
-    sustainably operate itself without direct assistance from entities such as
-    Google or Red Hat.
+    SIG K8s Infra is interested in the successful migration of ownership and management
+    of all Kubernetes project infrastructure from the google.com GCP Organization
+    (or elsewhere) to the CNCF, such that the Kubernetes project is able to sustainably
+    operate itself without direct assistance from external vendors or entities.
+
+    In other words, we seek to eradicate usage of the phrase "oh that's something
+    that only an employee of Vendor X can do, we're blocked until they respond."
+
   charter_link: charter.md
   label: k8s-infra
   leadership:
@@ -1597,9 +1601,19 @@ sigs:
       github: nikhita
       name: Nikhita Raghunath
   subprojects:
+  - name: k8s-infra-dns
+    description: Code and configuration to manage DNS records for domains owned by
+      the Kubernetes project such as k8s.io and kubernetes.io
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/k8s.io/main/dns/OWNERS
+  - name: k8s-infra-groups
+    description: Code and configuration to manage Google Groups for domains owned
+      by the Kubernetes project such kubernetes.io
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/k8s.io/main/groups/OWNERS
   - name: k8s.io
-    description: Code and configuration to manage Kubernetes project
-      infrastructure, including various *.k8s.io sites
+    description: Code and configuration to manage Kubernetes project infrastructure,
+      including various *.k8s.io sites
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/OWNERS
 - dir: sig-multicluster
