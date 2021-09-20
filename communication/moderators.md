@@ -63,9 +63,9 @@ Primary moderators seats: 6
 
 Moderators pro tempore seats: 5
 
-| Name   | Kubernetes Slack ID | Region | Timezone |
-| ------ | ------------------- | ------ | -------- |
-| _Open_ | _Open_              |        |          |
+| Name                | Kubernetes Slack ID | Region | Timezone                                            |
+| ------------------- | ------------------- | ------ | -------- ------------------------------------------ |
+| Debabrata Panigrahi |  @deba              | APAC   | [IST - Indian Standard Time](https://time.is/India) |
 
 ## GitHub
 
