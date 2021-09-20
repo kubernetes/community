@@ -34,6 +34,7 @@ of SIGs, WGs and UGs.
 | [SIG Contributor Experience](sig-contributor-experience/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Docs](sig-docs/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [SIG Instrumentation](sig-instrumentation/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
+| [SIG K8s Infra](sig-k8s-infra/README.md) | Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**) |
 | [SIG Multicluster](sig-multicluster/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
 | [SIG Network](sig-network/README.md) | Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**) |
 | [SIG Node](sig-node/README.md) | Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**) |
@@ -51,7 +52,6 @@ of SIGs, WGs and UGs.
 | [WG Component Standard](wg-component-standard/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG Data Protection](wg-data-protection/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
 | [WG IoT Edge](wg-iot-edge/README.md) | Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**) |
-| [WG K8s Infra](wg-k8s-infra/README.md) | Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**) |
 | [WG Multitenancy](wg-multitenancy/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [WG Naming](wg-naming/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [WG Policy](wg-policy/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |

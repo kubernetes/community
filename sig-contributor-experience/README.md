@@ -114,10 +114,6 @@ Manages and controls Github permissions, repos, and groups, including Org Member
   - GitHub Administration Subproject: [Thursdays at 09:30 PT (Pacific Time)](https://zoom.us/j/442435463?pwd=Rk1PWWpSSTJDaWJKdzRYb2EyTlkvZz09) (Monthly on 4th Thursday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:30&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
-### k8s.io
-Creates and maintains shortcuts and automation apps running in the k8s.io domain.
-- **Owners:**
-  - [kubernetes/k8s.io](https://github.com/kubernetes/k8s.io/blob/main/OWNERS)
 ### mentoring
 Oversees and develops programs for helping contributors ascend the contributor ladder, including the New Contributor Workshops, Meet Our Contributors, and other programs.
 - **Owners:**
