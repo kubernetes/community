@@ -87,9 +87,6 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
   - Cluster API Provider DigitalOcean office hours: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/91312171751?pwd=bndnMDdJMkhySDVncjZoR1VhdFBTZz09) (monthly, second Thursday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](http://bit.ly/k8s-capdo-agenda).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
-### cluster-api-provider-docker
-- **Owners:**
-  - [kubernetes-sigs/cluster-api-provider-docker](https://github.com/kubernetes-sigs/cluster-api-provider-docker/blob/master/OWNERS)
 ### cluster-api-provider-gcp
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-gcp](https://github.com/kubernetes-sigs/cluster-api-provider-gcp/blob/master/OWNERS)
