@@ -1979,8 +1979,8 @@ sigs:
       slack: release-management
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/downloadkubernetes/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/k8s-container-image-promoter/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/mdtoc/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/promo-tools/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-sdk/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-utils/main/OWNERS
@@ -1988,6 +1988,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/website/main/content/en/releases/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/website/main/data/releases/OWNERS
     meetings:
     - description: Release Engineering
       day: Tuesday
