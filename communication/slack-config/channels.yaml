@@ -34,6 +34,7 @@ channels:
   - name: chartcenter
   - name: chartmuseum
   - name: charts
+  - name: chile
   - name: cka-exam-prep
   - name: ckad-exam-prep
   - name: cks-exam-prep
