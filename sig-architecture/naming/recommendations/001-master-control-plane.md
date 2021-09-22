@@ -1,6 +1,6 @@
 # Recommendation: master -> control plane
 
-**Last Updated**: 2020-10-16 
+**Last Updated**: 2020-10-16
 
 **Status**: Accepted
 
@@ -15,6 +15,7 @@ when talking about individual components or the roles they serve.
 ## Suggested Alternatives
 
 ### Control Plane
+
 - e.g. "The control plane is the set of all components responsible for
   controlling a kubernetes cluster"
 - e.g. "The control plane is the thing that can be communicated with in order to
@@ -26,19 +27,26 @@ when talking about individual components or the roles they serve.
 other"
   - instance, e.g. "we are going to create multiple control plane apiserver
     instances; we will talk only to this specific instance"
-  - <component name>, e.g. "we will simulate an etcd fault by running this
+  - <component-name>, e.g. "we will simulate an etcd fault by running this
     command on instances where etcd is hosted"
 
 ### Control Plane Node
-- "A node that hosts components that are part of the control plane", e.g.
-  - https://github.com/kubernetes/enhancements/tree/master/keps/sig-cluster-lifecycle/kubeadm/2067-rename-master-label-taint
+
+- "A node that hosts components that are part of the control plane"
+
+  Examples:
+  - https://git.k8s.io/enhancements/keps/sig-cluster-lifecycle/kubeadm/2067-rename-master-label-taint
   - https://github.com/kubernetes/kubernetes/pull/95053/files#diff-b4f6256abfd125f7ce69fd1ba1eaf595R886
-- Also relevant for terms other than node, e.g. control plane machine, control
-  plane host, control plane vm, control plane instance, e.g.
+
+- Also relevant for terms other than node e.g., "control plane machine",
+  "control plane host", "control plane VM", "control plane instance"
+
+  Example:
   - https://github.com/kubernetes/kubernetes/blob/99cc89b7da32d9c06916deb50b27fdb46934b777/cluster/gce/gci/master-helper.sh#L33
     should be `create-control-plane-instance`
 
 ### Leader
+
 - e.g. "The leader is the winner of a leader election"
 - When using an adjective instead of a noun to describe this concept, there is
   likely a more specific term:
@@ -47,6 +55,7 @@ other"
   - primary/replica
 
 ## Other Considerations
+
 - if the api field, flag, code, command etc. uses the literal word 'master' and
   cannot be immediately changed or has no alternative available, use this word
 only in direct reference to the code item
@@ -71,11 +80,13 @@ control plane?
 
 Master raises first-order concerns according to [our language evaluation
 framework][framework]:
+
 - it is overtly racist (ref: [django][django-master], [Drupal][drupal-master],
   [IETF][ietf-master],
 [Google][https://developers.google.com/style/word-list#master])
 
 Master also raises third-order concerns:
+
 - within kubernetes it is used to represent a variety of overlapping or
   unrelated concepts (see the variety of suggested alternatives)
 - one class of usage represents a set of false assumptions:
@@ -85,6 +96,7 @@ Master also raises third-order concerns:
     on certain ports, etc.)
 
 Prior discussions:
+
 - [kubernetes-wg-naming@ - proposal: master/slave
   alternatives][wg-naming-thread]
 - [kubernetes-sig-architecture@ - Re: the way we discuss control plane
@@ -92,22 +104,20 @@ Prior discussions:
 
 ## Consequences
 
-TODO
+## TODO
 
-- hound search that approximates excluding some master-branch-in-docs
-  references, and references in vendor/:
-https://cs.k8s.io/?q=master%5B%5E%2F%5D&i=nope&files=%5E%5B%5Ev%5D&repos=
-- references to master in test/e2e/framework
-  (https://github.com/kubernetes/kubernetes/issues/94901)
-- references to master in test/integration
-  (https://github.com/kubernetes/kubernetes/issues/94900)
+- [hound search](https://cs.k8s.io/?q=master%5B%5E%2F%5D&i=nope&files=%5E%5B%5Ev%5D&repos=)
+  that approximates excluding some master-branch-in-docs references, and
+  references in `vendor/`
+- [references to "master" in `test/e2e/framework`](https://github.com/kubernetes/kubernetes/issues/94901)
+- [references to "master" in `test/integration`](https://github.com/kubernetes/kubernetes/issues/94900)
 - known names/flags/fields/labels/annotations that may take time to change
-  - `"system:masters"` aka
+  - `"system:masters"` AKA
     [k8s.io/apiserver/pkg/authentication/user.SystemPrivilegedGroup][system-privileged-group]
-  - `node-role.kubernetes.io/master` (tracking issue for KEP
-    https://github.com/kubernetes/enhancements/issues/2067)
+  - `node-role.kubernetes.io/master`
+    ([enhancement tracking issue](https://github.com/kubernetes/enhancements/issues/2067))
   - `--endpoint-reconciler-type master-count`
-  - probably more
+  - ...probably more
 
 [architecture]: https://git.k8s.io/community/contributors/design-proposals/architecture/architecture.md#architecture
 [wg-naming-thread]: https://groups.google.com/g/kubernetes-wg-naming/c/VqrBCdUHdPc
