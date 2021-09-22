@@ -2654,9 +2654,9 @@ sigs:
       name: Mark Rossetti
       company: Microsoft
     tech_leads:
-    - github: ddebroy
-      name: Deep Debroy
-      company: Apple
+    - github: claudiubelu
+      name: Claudiu Belu
+      company: Cloudbase Solutions
     - github: jayunit100
       name: Jay Vyas
       company: VMware
@@ -2668,6 +2668,8 @@ sigs:
       name: Patrick Lang
     - github: benmoss
       name: Ben Moss
+    - github: ddebroy
+      name: Deep Debroy
     - github: michmike
       name: Michael Michael
   meetings:
