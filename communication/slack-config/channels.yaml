@@ -29,6 +29,7 @@ channels:
   - name: camptocamp-devops-stack
   - name: cdk
   - name: cert-manager
+  - name: cert-manager-aws-privateca-issuer
   - name: cert-manager-dev
   - name: chairs-and-techleads
   - name: chartcenter
