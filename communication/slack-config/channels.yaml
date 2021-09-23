@@ -415,7 +415,9 @@ channels:
   - name: wg-apply
     archived: true
   - name: wg-component-standard
+    archived: true
   - name: wg-component-standard-mentorship
+    archived: true
   - name: wg-data-protection
   - name: wg-iot-edge
   - name: sig-k8s-infra
