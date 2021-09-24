@@ -49,6 +49,7 @@ channels:
   - name: cluster-api-docker
     archived: true
   - name: cluster-api-gcp
+  - name: cluster-api-ibmcloud
   - name: cluster-api-kubevirt
   - name: cluster-api-nested
   - name: cluster-api-openstack
