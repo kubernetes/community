@@ -1870,9 +1870,6 @@ sigs:
   - name: cri-tools
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
-  - name: frakti
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/frakti/master/OWNERS
   - name: kubelet
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubelet/OWNERS

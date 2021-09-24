@@ -51,9 +51,6 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### cri-tools
 - **Owners:**
   - [kubernetes-sigs/cri-tools](https://github.com/kubernetes-sigs/cri-tools/blob/master/OWNERS)
-### frakti
-- **Owners:**
-  - [kubernetes/frakti](https://github.com/kubernetes/frakti/blob/master/OWNERS)
 ### kubelet
 - **Owners:**
   - [kubernetes/kubernetes/cmd/kubelet](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubelet/OWNERS)
