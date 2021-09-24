@@ -5,8 +5,8 @@
 The SIG Security External Audit subproject (subproject, henceforth) is responsible for coordinating regular, 
 comprehensive, third-party security audits.
 The subproject publishes the deliverables of the audit after abiding to the 
-[Security Release Process](https://github.com/kubernetes/security/blob/master/security-release-process.md) and 
-[embargo policy](https://github.com/kubernetes/security/blob/master/private-distributors-list.md#embargo-policy).
+[Security Release Process](https://github.com/kubernetes/committee-security-response/blob/main/security-release-process.md) and 
+[embargo policy](https://github.com/kubernetes/committee-security-response/blob/main/private-distributors-list.md#embargo-policy).
 
   - [Request for Proposal (RFP)](#rfp)
     - [Security Audit Scope](#security-audit-scope)
@@ -53,8 +53,8 @@ The question period is typically open between the RFP's opening date and closing
 Proposals are reviewed by the subproject proposal reviewers after the RFP closing date. An understanding of security audits is required to be a proposal reviewer.
 
 All proposal reviewers must agree to abide by the 
-**[Security Release Process](https://github.com/kubernetes/security/blob/master/security-release-process.md)**, 
-**[embargo policy](https://github.com/kubernetes/security/blob/master/private-distributors-list.md#embargo-policy)**, 
+**[Security Release Process](https://github.com/kubernetes/committee-security-response/blob/main/security-release-process.md)**, 
+**[embargo policy](https://github.com/kubernetes/committee-security-response/blob/main/private-distributors-list.md#embargo-policy)**, 
 and have no [conflict of interest](#conflict-of-interest) the tracking issue. 
 This is done by placing a comment on the issue associated with the security audit. 
 e.g. `I agree to abide by the guidelines set forth in the Security Release Process, specifically the embargo on CVE 
