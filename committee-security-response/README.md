@@ -33,7 +33,7 @@ The following [subprojects][subproject-definition] are owned by the Security Res
 ### committee-security-response
 Policies and documentation for the Security Response Committee
 - **Owners:**
-  - [kubernetes/committee-security-response](https://github.com/kubernetes/committee-security-response/blob/master/OWNERS)
+  - [kubernetes/committee-security-response](https://github.com/kubernetes/committee-security-response/blob/main/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

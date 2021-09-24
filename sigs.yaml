@@ -3233,7 +3233,7 @@ committees:
   - name: committee-security-response
     description: Policies and documentation for the Security Response Committee
     owners:
-    - https://raw.githubusercontent.com/kubernetes/committee-security-response/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/committee-security-response/main/OWNERS
 - dir: committee-steering
   name: Steering
   mission_statement: >
