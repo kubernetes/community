@@ -267,6 +267,10 @@ right configuration options to Salt when not using the script is tricky: the
 plan here is to simplify this by having Kubernetes take on more node
 configuration, and even potentially remove Salt altogether.
 
+### Object subresources
+
+Amazon S3 defines a set of subresources associated with buckets and objects. Subresources are subordinates to objects. This means that subresources don't exist on their own. They are always associated with some other entity, such as an object or a bucket.
+
 ### Manual infrastructure creation
 
 While this work is not yet complete, advanced users might choose to manually
