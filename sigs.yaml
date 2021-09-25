@@ -1329,6 +1329,9 @@ sigs:
   label: docs
   leadership:
     chairs:
+    - github: divya-mohan0209
+      name: Divya Mohan
+      company: HSBC
     - github: jimangel
       name: Jim Angel
       company: Google
