@@ -1028,6 +1028,9 @@ sigs:
   - name: cluster-api-provider-kubemark
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-kubemark/master/OWNERS
+  - name: cluster-api-provider-kubevirt
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-kubevirt/main/OWNERS
   - name: cluster-api-provider-nested
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-nested/master/OWNERS
