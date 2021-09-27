@@ -63,10 +63,10 @@ Primary moderators seats: 6
 
 Moderators pro tempore seats: 5
 
-| Name           | Kubernetes Slack ID | Region | Timezone                                            |
-| -------------- | ------------------- | ------ | --------------------------------------------------- |
-| Atharva Shinde | @Atharva            | APAC   | [IST - Indian Standard Time](https://time.is/India) |
-
+| Name                | Kubernetes Slack ID | Region | Timezone                                            |
+| --------------------| ------------------- | ------ | --------------------------------------------------- |
+| Atharva Shinde      | @Atharva            | APAC   | [IST - Indian Standard Time](https://time.is/India) |
+| Debabrata Panigrahi | @deba               | APAC   | [IST - Indian Standard Time](https://time.is/India) |
 ## GitHub
 
 Note that this team is not only responsible for the project's Github
