@@ -1,7 +1,7 @@
 name: 2021 Steering Committee Election
 organization: Kubernetes
-start_datetime: 2021-10-07 00:00:01
-end_datetime: 2021-10-28 23:59:00
+start_datetime: 2021-10-14 00:00:01
+end_datetime: 2021-11-04 23:59:00
 no_winners: 4
 allow_no_opinion: True
 delete_after: True
@@ -14,4 +14,4 @@ election_officers:
   - coderanger
 eligibility: Kubernetes Org members with 50 or more contributions in the last year can vote.  See [the election guide](https://github.com/kubernetes/community/tree/master/events/elections/2021)
 exception_description: Not all contributions are measured by DevStats.  If you have contributions that are not so measured, then please request an exception to allow you to vote via the Elekto application.
-exception_due: 2021-10-24 10:00:00
+exception_due: 2021-10-31 10:00:00

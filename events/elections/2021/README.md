@@ -10,7 +10,7 @@ member will serve a two (2) year term.
 
 This year is the first year we will be using [Elekto] to conduct the election.
 Elekto is a new application, commissioned as an internship by the CNCF.  As
-well as having a new, shiny web UI, it relies entirely on GitHub Oauth for
+well as having a new web UI, it relies entirely on GitHub Oauth for
 voting, and as such does not use email at all.  Elekto also handles exceptions,
 eligibility checks, and other aspects of the election.
 
@@ -102,16 +102,16 @@ Examples of contributions that would NOT be considered:
 | Date         | Event                    |
 | ------------ | ------------------------ |
 | August 19    | Steering Committee selects Election Committee |
-| September 21 | Announcement of Election and publication of voters.md |
+| September 28 | Announcement of Election and publication of voters.md |
 | September XX | Steering Committee Meeting with Q+A with the candidates and community |
-| October 6    | All candidate bios due by 0000 UTC (5pm PST) |
-| October 8    | Election Begins via email ballots |
-| October 24   | Deadline to submit voter exception forms and request a replacement ballot |
-| October 27   | Election Closes by 0000 UTC (5pm PST) |
-| October 28   | Private announcement of Results to SC members not up for election |
-| October 30   | Private announcement of Results to all candidates |
-| November 1   | Public announcement of Results at Public Steering Committee Meeting |
-| November 4?   | Election Retro |
+| October 14    | All candidate bios due by 0000 UTC (5pm PST) |
+| October 18    | Election Begins via email ballots |
+| October 31   | Deadline to submit voter exception requests |
+| November 4   | Election Closes by 0000 UTC (5pm PST) |
+| November 5  | Private announcement of Results to SC members not up for election |
+| November 6   | Private announcement of Results to all candidates |
+| November 7   | Public announcement of Results at Public Steering Committee Meeting |
+| November 10?   | Election Retro |
 
 ## Candidacy Process
 
@@ -196,6 +196,7 @@ roles you may hold.
 Contributors may check their voter eligibility at any time once the election
 process starts, by going to the [election app], logging in, navigating to
 the 2021 election, and seeing if the screen there says that they are eligible.
+That screen takes its data from the [voters.yaml] file.
 
 If the app does not say that you are eligible, because you have worked on 
 Kubernetes in a way that is NOT reflected in GitHub contributions, you can use 
@@ -208,7 +209,8 @@ Employer diversity is encouraged, and thus maximal representation will be
 enforced as spelled out in the [Steering Committee Election Charter].
 
 You will be ranking your choices of the candidates with an option for
-"no opinion". In the event of a tie, a coin will be flipped.
+"no opinion". In the event of a tie, a non-involved SC member will flip
+a coin.
 
 The election will open for voting starting on the dates specified on the calendar
 at the top of this document. You will be reminded that voting has opened by an
@@ -266,3 +268,4 @@ Nominees may be found in the [election app].
 [Org Members]: https://github.com/kubernetes/community/blob/master/community-membership.md
 [Elekto]: https://elekto.dev
 [election app]: https://election.k8s.io
+[voters.yaml]: https://github.com/kubernetes/community/blob/master/events/elections/2021/voters.yaml
