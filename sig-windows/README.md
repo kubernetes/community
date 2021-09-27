@@ -31,7 +31,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Deep Debroy (**[@ddebroy](https://github.com/ddebroy)**), Apple
+* Claudiu Belu (**[@claudiubelu](https://github.com/claudiubelu)**), Cloudbase Solutions
 * Jay Vyas (**[@jayunit100](https://github.com/jayunit100)**), VMware
 * James Sturtevant (**[@jsturtevant](https://github.com/jsturtevant)**), Microsoft
 
@@ -39,6 +39,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Patrick Lang (**[@PatrickLang](https://github.com/PatrickLang)**)
 * Ben Moss (**[@benmoss](https://github.com/benmoss)**)
+* Deep Debroy (**[@ddebroy](https://github.com/ddebroy)**)
 * Michael Michael (**[@michmike](https://github.com/michmike)**)
 
 ## Contact
