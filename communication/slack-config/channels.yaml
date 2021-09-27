@@ -27,6 +27,7 @@ channels:
     archived: true
   - name: brigade
   - name: camptocamp-devops-stack
+  - name: cartographer
   - name: cdk
   - name: cert-manager
   - name: cert-manager-aws-privateca-issuer
