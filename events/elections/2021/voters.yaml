@@ -11,6 +11,7 @@
 # History:
 # 2021-09-21: Initial voter list prepared using devstats data provided Lukasz Gryglicki
 #   and current organization membership status.
+# 2021-09-29: Deduplicate redundant entries from people with multiple devstats records.
 #
 
 eligible_voters:
@@ -122,8 +123,6 @@ eligible_voters:
 - ChiefAlexander
 - chizhg
 - chrigl
-- chrigl
-- chris-short
 - chris-short
 - chrischdi
 - chrishenzie
@@ -144,8 +143,6 @@ eligible_voters:
 - coffeepac
 - cofyc
 - corneliusweig
-- cpanato
-- cpanato
 - cpanato
 - cwdsuzhou
 - Cweiping
@@ -195,7 +192,6 @@ eligible_voters:
 - elmiko
 - ElvinEfendi
 - endocrimes
-- endocrimes
 - enj
 - enxebre
 - EppO
@@ -221,7 +217,6 @@ eligible_voters:
 - freehan
 - fromanirh
 - gab-satchi
-- gautierdelorme
 - gautierdelorme
 - gavinfish
 - geoffcline
@@ -297,7 +292,6 @@ eligible_voters:
 - jeremyje
 - JeremyOT
 - jeremyrickard
-- jeremyrickard
 - Jerry-Ge
 - jhrozek
 - jhvhs
@@ -331,7 +325,6 @@ eligible_voters:
 - julianvmodesto
 - jupblb
 - justaugustus
-- justaugustus
 - justinsb
 - kakts
 - karan
@@ -340,7 +333,6 @@ eligible_voters:
 - kaslin
 - kbasv
 - kbhawkey
-- kcmartin
 - kcmartin
 - kerthcet
 - kevindelgado
@@ -392,7 +384,6 @@ eligible_voters:
 - maciaszczykm
 - MaciekPytel
 - MadhavJivrajani
-- MadhavJivrajani
 - makkes
 - makocchi-git
 - maplain
@@ -430,7 +421,6 @@ eligible_voters:
 - mikedanese
 - MikeSpreitzer
 - Miouge1
-- mirwan
 - mirwan
 - mittalyashu
 - mkimuram
@@ -478,7 +468,6 @@ eligible_voters:
 - njuptlzf
 - nodo
 - nprokopic
-- nprokopic
 - odinuge
 - oke-py
 - olemarkus
@@ -486,7 +475,6 @@ eligible_voters:
 - oomichi
 - p0lyn0mial
 - pacoxu
-- palnabarun
 - palnabarun
 - pandaamanda
 - parispittman
@@ -540,8 +528,6 @@ eligible_voters:
 - richardcase
 - rifelpet
 - rikatz
-- rikatz
-- RinkiyaKeDad
 - RinkiyaKeDad
 - ritazh
 - rjbez17
@@ -562,12 +548,10 @@ eligible_voters:
 - sanposhiho
 - SaranBalaji90
 - saschagrunert
-- saschagrunert
 - SataQiu
 - savitharaghunathan
 - sayanchowdhury
 - sbangari
-- sbueringer
 - sbueringer
 - scottrigby
 - ScrapCodes
@@ -671,7 +655,6 @@ eligible_voters:
 - xing-yang
 - xinydev
 - xmudrii
-- xunpan
 - xunpan
 - Xunzhuo
 - yangjunmyfm192085
