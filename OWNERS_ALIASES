@@ -165,9 +165,9 @@ aliases:
     - parispittman
 ## BEGIN CUSTOM CONTENT
   provider-aws:
-    - d-nishi
     - justinsb
-    - kris-nova
+    - nckturner
+    - wongma7
   provider-azure:
     - craiglpeters
     - justaugustus
