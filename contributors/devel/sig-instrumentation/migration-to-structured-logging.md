@@ -259,7 +259,7 @@ For example migration of
 klog.Errorf("unable to determine dual-stack status. Falling back to single-stack %v", err)
 ```
 
-should be changes to 
+should be changed to 
 ```go
 klog.ErrorS(err, "Unable to determine dual-stack status, falling back to single-stack")
 ```
