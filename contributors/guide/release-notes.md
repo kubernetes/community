@@ -56,7 +56,6 @@ A release note needs a clear, concise description of the change. This includes:
 4. a link to relevant user documentation about the enhancement/feature
 
 ## Applying a Release Note
-slug: "adding-release-notes"
 
 On the kubernetes/kubernetes repository, release notes are required for any pull request with  [user-visible changes](#--user-facing-critical-bug-fixes).
 
