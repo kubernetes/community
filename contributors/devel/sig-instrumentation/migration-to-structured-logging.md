@@ -227,6 +227,7 @@ Additionally we can improve messages to comply with good practices:
   the subject would be the program itself ("Could not do B").
 * Use past tense ("Could not delete B" instead of "Cannot delete B")
 * When referring to an object, state what type of object it is. ("Deleted pod" instead of "Deleted")
+* Avoid usage of a period whenever possible, try to use a comma instead (see the example below)
 
 For example
 ```go
@@ -251,6 +252,21 @@ should be changed to
 func LogHTTP(r *http.Request) {
    klog.InfoS("Received HTTP request", ...)
 }
+```
+
+For example migration of
+```go
+klog.Errorf("unable to determine dual-stack status. Falling back to single-stack %v", err)
+```
+
+should be changes to 
+```go
+klog.ErrorS(err, "Unable to determine dual-stack status, falling back to single-stack")
+```
+
+and should NOT be changed to
+```go
+klog.ErrorS(err, "Unable to determine dual-stack status. Falling back to single-stack")
 ```
 
 ### Name arguments
