@@ -61,6 +61,7 @@ channels:
   - name: cn-users
   - name: code-of-conduct
   - name: community-sites
+    archived: true
   - name: compliance-hipaa
   - name: contour
   - name: contributor-summit
