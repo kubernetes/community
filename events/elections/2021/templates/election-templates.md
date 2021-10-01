@@ -36,6 +36,12 @@ Alison Dowdney (@alisondy), Josh Berkus (@jberkus), Noah Kantrowitz (@coderanger
 
 If you have questions, please feel free to ask on the list; otherwise, you can reach the Election Officials at election@kubernetes.io.
 
+## Candidate Qualification
+
+Per the requirements of the [candidate process](https://git.k8s.io/steering/elections.md), I have verified that {name of candidate} has the necessary endorsements to qualify to run for steering committee.
+
+{candidate}, please prepare a bio for yourself based on the `nomination-template` file in the election directory and submit a PR before October 14th.
+
 ## Election Status Updates
 
 Post these weekly to kubernetes-dev
