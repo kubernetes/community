@@ -9,6 +9,28 @@ See the [Steering Committee Election Charter](https://git.k8s.io/steering/electi
 for more information of how the committee decides when to have elections,
 eligibility for voting, eligibility for candidacy, maximal representation, etc.
 
+## Updated instructions
+
+## Election Process
+
+### Qualifying Candidates
+
+In order to qualify to run for SC, each candidate must meet three requirements:
+
+1. Be themselves eligible to vote (including exceptions)
+2. Have endorsements from two eligible voters who work for a different employer than the candidate
+
+As such, as each candidate files an issue, someone on the EC will need to check those two qualifications:
+
+1. Search voters.yaml and verify that the candidate themselves is in it.  If they are not, contact the candidate and suggest that they file an Exception.
+2. Look over the +1 in the issue and find two endorsers who work for a different employer than the candidate according to their Github profiles.  For each of these, check if they are in voters.yaml.  If they are not, keep going down the list of endorsers until you find someone who works for a different company who is.
+
+It is highly unusual for candidates not to qualify to run.  In the event that you reach the end of the list of endorsements and the candidate has still not qualified, mention that on SIG-contribex Slack.  It is likely that some member of SIG-Contribex will decide to endorse the candidate so that they can run.
+
+When a candidate qualifies, post a comment on the issue based on the Candidate Qualification template.  Do not close the issue at this time; the issue should close when the PR with the candidate bio merges.
+
+## Out-of-date materials below this line
+
 ## Steering Committee chooses Election Officers
 
 - Steering Committee selects the Election Officers
