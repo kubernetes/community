@@ -31,7 +31,7 @@ These are roles that either span the project as a whole, or span several areas o
     - [Slack](https://kubernetes.slack.com/messages/C6RFQ3T5H/)
     - [Discuss](https://discuss.kubernetes.io/tags/office-hours)
     - [YouTube](https://www.youtube.com/playlist?list=PL69nYSiGNLP3azFUvYJjGn45YbF6C-uIg)
-  - [Meet Our Contributors](https://github.com/kubernetes/community/blob/master/mentoring/meet-our-contributors.md)
+  - [Meet Our Contributors](https://github.com/kubernetes/community/blob/master/mentoring/programs/meet-our-contributors.md)
     - [Slack](https://kubernetes.slack.com/messages/C8WRR2BB9/) 
     - [YouTube](https://www.youtube.com/playlist?list=PL69nYSiGNLP3QpQrhZq_sLYo77BVKv09F)
   - Onboarding new contributors
