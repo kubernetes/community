@@ -118,10 +118,6 @@ aliases:
   wg-multitenancy-leads:
     - srampal
     - tashimi
-  wg-naming-leads:
-    - celestehorgan
-    - jdumars
-    - justaugustus
   wg-policy-leads:
     - JimBugwadia
     - rficcaglia
