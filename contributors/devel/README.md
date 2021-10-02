@@ -155,7 +155,7 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 * **Integration Testing in Kubernetes** [integration-tests.md](sig-testing/integration-tests.md)
 
-* **End-to-End Testing in Kubernetes** [e2e-tests.md](sig-testing/e2e-tests.md)
+* **End-to-End Testing in Kubernetes** [e2e-tests.md](sig-testing/e2e-tests.md) and [e2e-tests-kubetest2.md](sig-testing/e2e-tests-kubetest2.md) 
 
 * **Debugging with Gubernator** [gubernator.md](sig-testing/gubernator.md)
 
