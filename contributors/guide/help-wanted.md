@@ -49,6 +49,8 @@ Items marked with the `help wanted` label need to ensure that they are:
   Often these issues become obsolete and have already been done, are no longer
   desired, no longer make sense, have changed priority or difficulty , etc.
 
+Example of a Help Wanted issue description can be found here: [kubernetes/test-infra#21356 (comment)](https://github.com/kubernetes/test-infra/issues/21356#issuecomment-799972711).
+
 Related commands:
 
 - `/help` : Adds the `help wanted` label to an issue.
@@ -101,6 +103,8 @@ labels (above) in addition to meeting the following criteria:
   There should be existing tests that can be modified, or existing test cases
   fit to be copied. If the area of code doesn't have tests, before labeling the
   issue, add a test fixture. This prep often makes a great `help wanted` task!
+
+Example of a Good First Issue description can be found here: [kubernetes/kubernetes#68231](https://github.com/kubernetes/kubernetes/issues/68231).
 
 Related commands:
 
