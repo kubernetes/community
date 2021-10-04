@@ -391,6 +391,7 @@ channels:
   - name: submariner
   - name: summit-staff
   - name: suse-caasp
+  - name: tanzu-community-edition
   - name: talk-proposals
   - name: terraform-providers
   - name: test-failures
