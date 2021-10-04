@@ -392,6 +392,7 @@ channels:
   - name: summit-staff
   - name: suse-caasp
   - name: talk-proposals
+  - name: tanzu-community-edition
   - name: terraform-providers
   - name: test-failures
   - name: tilt
