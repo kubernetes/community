@@ -31,8 +31,8 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
-* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
-* Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
+* Alvaro Aleman (**[@alvaroaleman](https://github.com/alvaroaleman)**), Red Hat
+* Cole Wagner (**[@cjwagner](https://github.com/cjwagner)**), Google
 
 ## Emeritus Leads
 
