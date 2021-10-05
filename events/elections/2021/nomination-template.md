@@ -6,7 +6,7 @@ info:
   - slack: slack handle
 -------------------------------------------------------------
 
-<!-- Please make a copy of this template as "candidate-yourname.md" and save it to
+<!-- Please make a copy of this template as "candidate-githubid.md" and save it to
 the election directory -->
 
 ## SIGS
