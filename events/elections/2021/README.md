@@ -267,5 +267,5 @@ Nominees may be found in the [election app].
 [devstats-dashboard]: https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All
 [Org Members]: https://github.com/kubernetes/community/blob/master/community-membership.md
 [Elekto]: https://elekto.dev
-[election app]: https://election.k8s.io
+[election app]: https://elections.k8s.io
 [voters.yaml]: https://github.com/kubernetes/community/blob/master/events/elections/2021/voters.yaml
