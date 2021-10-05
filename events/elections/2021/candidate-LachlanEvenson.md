@@ -1,6 +1,6 @@
 -------------------------------------------------------------
 name: Lachlan Evenson
-ID: @lachie83
+ID: lachie83
 info:
   - employer: Microsoft
   - slack: @lachie83

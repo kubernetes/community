@@ -1,6 +1,6 @@
 -------------------------------------------------------------
 name: 
-ID: @GitHubID
+ID: GitHubID
 info:
   - employer: Your Employer or "Independent"
   - slack: slack handle
