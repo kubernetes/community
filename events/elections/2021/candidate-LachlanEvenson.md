@@ -3,7 +3,7 @@ name: Lachlan Evenson
 ID: lachie83
 info:
   - employer: Microsoft
-  - slack: @lachie83
+  - slack: lachie83
 -------------------------------------------------------------
 
 <!-- Please make a copy of this template as "candidate-yourname.md" and save it to
