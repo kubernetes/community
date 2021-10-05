@@ -108,30 +108,10 @@ bash variables.
 
 ### `verify-bazel`
 
-This verification script validates whehter the removal of `bazel`
-related files is still needed or not. This script after setting the
-temporary directories for gopath and kube-related path, runs
-`[update-bazel.sh]()`. And once executed, `update-bazel` deletes all
-the bazel related files which are either not there in vendor and some
-additional one-off files. After execution, the `verify-bazel` script
-again calculates diff to check the earlier output. And if the diff
-result is non-zero then script `update-bazel.sh` is run again for the
-files that might be left.  
-
-Following are the files that are searched for deletion as part of this
-script:
-
-```bash
-  "${KUBE_ROOT}/build/root/BUILD.root" \
-  "${KUBE_ROOT}/WORKSPACE" \
-  "${KUBE_ROOT}/build/root/WORKSPACE" \
-  "${KUBE_ROOT}/.bazelrc" \
-  "${KUBE_ROOT}/build/root/.bazelrc" \
-  "${KUBE_ROOT}/.bazelversion" \
-  "${KUBE_ROOT}/build/root/.bazelversion" \
-  "${KUBE_ROOT}/.kazelcfg.json" \
-  "${KUBE_ROOT}/build/root/.kazelcfg.json"
-```
+This verify-bazel script validates the removal of bazel related
+files. The script ensures no bazel related temporary, intermediate or
+output files remain as part of
+[KEP-2420](https://github.com/kubernetes/enhancements/issues/2420).
 
 ## `verify-boilerplate`
 
