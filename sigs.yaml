@@ -82,6 +82,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/gengo/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kube-openapi/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/code-generator/OWNERS
+  - name: json
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/json/main/OWNERS
   - name: kubernetes-clients
     owners:
     - https://raw.githubusercontent.com/kubernetes-client/c/master/OWNERS
