@@ -25,6 +25,7 @@ mailing list. At a minimum, the email should contain:
   - [ ] [kubernetes/org]: `OWNERS_ALIASES`, [milestone-maintainers team],
         kubernetes and kubernetes-sigs [team configs]
   - [ ] [kubernetes/enhancements]: `OWNERS_ALIASES`
+  - [ ] [kubernetes/k8s.io](https://github.com/kubernetes/k8s.io): `groups/groups.yaml` - leads email group members
 
 - [ ] Update all communication properties used by the community group.
       See [sig-wg-lifecycle.md] for details.
