@@ -163,3 +163,21 @@ k8s.io/metrics
 
 Once it completes checking for code updates, later the script calls
 `update-codegen.sh` scripts.
+
+
+## `verify-structured-logging`
+
+This script verifies if a package is properly migrated to structured
+logging or not. The script involves verification steps based on new
+klog methods which have few disallowed keywords like,
+
+```bash
+* klog.Infof, klog.Info, klog.Infoln
+* klog.InfoDepth
+* klog.WarningDepth
+* klog.Error, klog.Errorf, klog.Errorln
+* klog.ErrorDepth
+```
+
+More info is available
+[here](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/migration-to-structured-logging.md#change-log-functions-to-structured-equivalent).
