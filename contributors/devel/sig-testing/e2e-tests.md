@@ -576,6 +576,13 @@ to be eligible for this tag. This tag does not supersed any other labels.
 (e.g.: seLinuxOptions) or is unable to run on Windows nodes, it is labeled
 `[LinuxOnly]`. When using Windows nodes, this tag should be added to the
 `skip` argument.
+  - `[Exclude:WindowsDocker]`: Windows Kubelet supports both Docker and Containerd,
+however, Containerd has a few additional features (e.g.: Single file mapping). This
+means that there are tests that can run on Containerd Windows nodes, but they will
+fail on Docker Windows nodes. These tests are labeled `[Exclude:WindowsDocker]`, thus,
+when using Windows Docker nodes, this tag should be added to the `skip` argument. This
+tag is intended to be removed when Containerd becomes the default for Windows nodes in
+1.24 (https://github.com/kubernetes/community/issues/6123)
 
   - The following tags are not considered to be exhaustively applied, but are
 intended to further categorize existing `[Conformance]` tests, or tests that are
