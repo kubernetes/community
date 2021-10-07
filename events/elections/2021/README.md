@@ -1,5 +1,28 @@
 # 2021 VOTERS GUIDE - KUBERNETES STEERING COMMITTEE ELECTION
 
+## Important Links
+
+* [Kubernetes Steering Committee]
+* [Steering Committee Election Charter]
+* [election app]
+* [election page]
+* [voter exception form]
+* [schedule](#schedule)
+
+## Table of Contents
+
+* [Purpose](#purpose)
+* [Changes](#changes)
+* [Background](#background)
+* [Eligibility](#eligibility)
+  * [Voter Exception](#voter-exception)
+* [Schedule](#schedule)
+* [Candidacy](#candidacy-process)
+* [Voting](#voting-process)
+* [Officers](#officers)
+  * [Election Decision](#decision)
+* [Nominees](#nominees)
+
 ## Purpose
 
 The role of this election is to fill out the four (4) seats due for
@@ -75,12 +98,16 @@ If you otherwise qualify to vote but have not yet applied for Org Membership,
 then please [request an exception][voter exception form] (and please apply for
 Org Membership as well).
 
+Note that, if you are already eligible, instead of the voter exception form you
+will see "You are already eligible to vote in the election."
+
 Only contributions to projects and artifacts that fall under Steering
 Committee's governance will be considered for voter exception.
 
 Examples of contributions that would be considered:
 * Slack admins who are not active in GitHub
 * Code of Conduct Committee members whose actions are private by default
+* Working Group or User Group leads without a lot of GitHub activity
 
 Examples of contributions that would NOT be considered:
 * Contributions to ecosystem projects and products
@@ -269,3 +296,5 @@ Nominees may be found in the [election app].
 [Elekto]: https://elekto.dev
 [election app]: https://elections.k8s.io
 [voters.yaml]: https://github.com/kubernetes/community/blob/master/events/elections/2021/voters.yaml
+[election page]: https://elections.k8s.io/app/elections/2021
+[voter exception form]: https://elections.k8s.io/app/elections/2021/exception
