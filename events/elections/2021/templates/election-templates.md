@@ -42,6 +42,24 @@ Per the requirements of the [candidate process](https://git.k8s.io/steering/elec
 
 {candidate}, please prepare a bio for yourself based on the `nomination-template` file in the election directory and submit a PR before October 14th.
 
+## Reminder 1 week before the end of nominations:
+
+Kubernetes Devs:
+
+Election update!
+
+We have 12 candidates[1] who have been nominated to run for Steering Committee, which is already a lot!  But you have until October 14th to nominate additional candidates, using the nomination process[2].
+
+Contributors, now is also the time to check your eligibility by visiting the elections app[3] and seeing if you are marked Eligible.  If you are not and should be, you can request an exception[4] in that app.
+
+Candidates, you have through October 14th to submit your candidate profiles[2] with a PR to the community repo.  Please do this as soon as you can.
+
+[1] https://github.com/kubernetes/community/issues?q=is%3Aissue+%22Steering+Committee+Nomination%3A%22+in%3Atitle
+[2] https://github.com/kubernetes/community/tree/master/events/elections/2021#candidacy-process)
+[3] https://elections.k8s.io
+[4] https://github.com/kubernetes/community/tree/master/events/elections/2021#voter-exception
+
+
 ## Election Status Updates
 
 Post these weekly to kubernetes-dev
