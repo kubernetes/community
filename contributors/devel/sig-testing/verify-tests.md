@@ -181,3 +181,13 @@ klog methods which have few disallowed keywords like,
 
 More info is available
 [here](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/migration-to-structured-logging.md#change-log-functions-to-structured-equivalent).
+
+
+## `verify-gofmt`
+
+This script is used to check whether the go source code needs to be
+formatted or not using, the gofmt tool. Gofmt tool automatically
+formats the code and the formatted code is easier to read, write and
+maintain.
+
+
