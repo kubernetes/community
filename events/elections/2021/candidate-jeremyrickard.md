@@ -1,9 +1,9 @@
 -------------------------------------------------------------
 name: Jeremy Rickard
-ID: @jeremyrickard
+ID: jeremyrickard
 info:
   - employer: Apple
-  - slack: @jerickar
+  - slack: jerickar
 -------------------------------------------------------------
 
 <!-- Please make a copy of this template as "candidate-yourname.md" and save it to
