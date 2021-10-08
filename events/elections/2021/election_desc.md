@@ -4,8 +4,8 @@ As is now customary, this fall is [Steering Committee](https://github.com/kubern
 
 If you’d like to vote or run for a seat, all details and next steps are outlined in the [election process doc](https://git.k8s.io/steering/elections.md) and this application. The application will be the single source of truth of information for this cycle. It will be updated live as new bios of candidates get committed. Please pay attention to the scheduled dates:
 
-September 28 to October 14 - Nominate candidates
-Septebmer 28 to October 31 - Request voting exceptions
-October 18 to November 4 - Vote
+* September 28 to October 14 - Nominate candidates
+* Septebmer 28 to October 31 - Request voting exceptions
+* October 18 to November 4 - Vote
 
 Eligibility for voting will be determined by 50 contributions to a Kubernetes project over the past year and [Kubernetes Org membership](https://github.com/kubernetes/community/blob/master/community-membership.md).  Eligible voters will be shown as such by this site when logged in.  If you should be eligible, but are not, you may also [file for an exception](https://elections.k8s.io/app/elections/2021/exception).

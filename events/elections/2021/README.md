@@ -168,7 +168,7 @@ to add their bio (see below). The PR body must contain the text `Fixes #NNN` to
 automatically close the issue once the PR is merged.
 
 5. Create the PR for your bio by copying the `nomination-template.md` file in
-this directory, and creating a new file titled `candidate-YourName.md`.  Fill 
+this directory, and creating a new file titled `candidate-githubid.md`.  Fill 
 out all the fields in the template, but avoid making and format changes.
 
 **Endorsement**
