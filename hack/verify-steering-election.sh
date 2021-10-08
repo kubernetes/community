@@ -21,7 +21,7 @@ set -o pipefail
 shopt -s extglob
 
 # exclude bios before 2021 since some of them have more than 300 words
-STEERING_ELECTION_BIOS="$(pwd)/events/elections/!(2017|2018|2019|2020)/!(README|RESULTS|voters).md"
+STEERING_ELECTION_BIOS="$(pwd)/events/elections/!(2017|2018|2019|2020)/candidate-*.md"
 
 invalid_bios=0
 break=$(printf "=%.0s" $(seq 1 68))
@@ -29,7 +29,7 @@ break=$(printf "=%.0s" $(seq 1 68))
 for bio in ${STEERING_ELECTION_BIOS} ; do
   [[ -f $bio ]] || continue
   word_count=$(wc -w < "$bio")
-  if [[ ${word_count} -gt "300" ]]; then
+  if [[ ${word_count} -gt "450" ]]; then
     echo "${bio} has ${word_count} words."
     invalid_bios=$((invalid_bios+1))
   fi
@@ -39,7 +39,7 @@ if [[ ${invalid_bios} -gt "0" ]]; then
   echo ""
   echo "${break}"
   echo "${invalid_bios} invalid Steering Committee election bio(s) detected."
-  echo "All bios must be limited to 300 words."
+  echo "Bios should be limited to around 300 words, excluding headers."
   echo "${break}"
   exit 1;
 fi
