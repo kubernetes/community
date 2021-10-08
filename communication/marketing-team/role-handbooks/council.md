@@ -6,7 +6,7 @@ The Marketing Council is made up of multiple individuals working to bring multip
 
 #### How It Works
 
-The ideal Marketing Council is made up of one of each of the leadship roles with one shadow for each. In practice, Coucil members can cover multiple roles but with the intention of finding someone else to fill the position. Coverage is outlined in the [project README].
+The ideal Marketing Council is made up of one of each of the leadship roles with one shadow for each. In practice, Council members can cover multiple roles but with the intention of finding someone else to fill the position. Coverage is outlined in the [project README].
 
 ## Responsibilities
 
