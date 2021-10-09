@@ -19,6 +19,7 @@ Develop a standard foundation (philosophy and libraries) for core Kubernetes com
 ## Meetings
 * Regular WG Meeting (please join kubernetes-dev@googlegroups.com or kubernetes-wg-component-standard@googlegroups.com to access the notes): [Tuesdays at 08:30 PT (Pacific Time)](https://zoom.us/j/8027741546) (no longer active). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/18TsodX0fqQgViQ7HHUTAhiAwkf6bNhPXH4vNVTI7GwI).
+  * [Recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2-UwxeTIxb_QRXTk7nJg0h)
 * Weekly Mentorship Office Hours - Come ask questions and get help: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/8027741546) (no longer active). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1iVBnMAdiTE1Ej_O4P809MCHGVVUkfYmPx6zlSLG0hOg).
 
