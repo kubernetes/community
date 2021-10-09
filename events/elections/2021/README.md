@@ -35,7 +35,8 @@ This year is the first year we will be using [Elekto] to conduct the election.
 Elekto is a new application, commissioned as an internship by the CNCF.  As
 well as having a new web UI, it relies entirely on GitHub Oauth for
 voting, and as such does not use email at all.  Elekto also handles exceptions,
-eligibility checks, and other aspects of the election.
+eligibility checks, and other aspects of the election. See the [Elekto voting documentation]
+for how to use it.
 
 This does mean some changes to the nomination, running, and voter exception
 process, so please read below.
@@ -295,6 +296,7 @@ Nominees may be found in the [election app].
 [Org Members]: https://github.com/kubernetes/community/blob/master/community-membership.md
 [Elekto]: https://elekto.dev
 [election app]: https://elections.k8s.io
+[Elekto documentation]: https://elekto.dev/docs/voting/
 [voters.yaml]: https://github.com/kubernetes/community/blob/master/events/elections/2021/voters.yaml
 [election page]: https://elections.k8s.io/app/elections/2021
 [voter exception form]: https://elections.k8s.io/app/elections/2021/exception
