@@ -191,3 +191,10 @@ formats the code and the formatted code is easier to read, write and
 maintain.
 
 
+## `verify-spelling`
+
+This script uses `client9/misspell` package to search and correct
+commonly misspelled words as per the English language in all the files
+and directories under `kubernetes/kubernetes`.
+
+
