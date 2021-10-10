@@ -42,5 +42,5 @@ developers, operators, users, and also vendor stakeholders.
 
 ## Resources About Me
 
-- YouTube playlist of recorded presentations: https://www.youtube.com/playlist?list=PLMSHg5KCD7nEd_qAf2_JSIYsLZCi0qW4l
-- Twitter: https://twitter.com/pythomit
+- YouTube playlist of recorded presentations: [https://www.youtube.com/playlist?list=PLMSHg5KCD7nEd_qAf2_JSIYsLZCi0qW4l](https://www.youtube.com/playlist?list=PLMSHg5KCD7nEd_qAf2_JSIYsLZCi0qW4l)
+- Twitter: [https://twitter.com/pythomit](https://twitter.com/pythomit)
