@@ -19,7 +19,7 @@ the election directory -->
 
 ## What I have done
 
-I have been involved in the community since 2017, initially as an end user and then as a member of [Service Catalog](https://github.com/kubernetes-sigs/service-catalog). I then joined SIG Release, working on a number of Release Teams, eventually becoming Release Lead for 1.20 and now a tech lead. 
+I have been involved in the community since 2017, initially as an end user and then as a member of [Service Catalog](https://github.com/kubernetes-sigs/service-catalog). I then joined SIG Release, working on a number of Release Teams, eventually becoming Release Lead for 1.20 and now a tech lead.
 
 As release lead, I focused on improving processes and facilitating a more inclusive culture by [requiring unconscious bias training for release leads](https://github.com/kubernetes/sig-release/issues/1251), implementing more asynchronous communication, and driving the creation of meetings in APAC/EMEA friendly times. Since then, I continue to focus on release team improvements and have worked across SIGs to build consensus and drive the adoption of [a release cadence change](https://github.com/kubernetes/enhancements/pull/2567).
 
@@ -33,12 +33,11 @@ I have seen first hand the impact burnout can have on projects, especially after
 ## Resources About Me
 
 * KubeCon Talks and other things:
-https://www.youtube.com/watch?v=cuaWIpUNvNo
-https://www.youtube.com/watch?v=SuicCBXJRPg
-https://www.youtube.com/watch?v=zVuM7F_BTyc
-https://www.cncf.io/online-programs/cncf-live-webinar-kubernetes-1-20/
-https://www.youtube.com/watch?v=T6WRsQGP8Rc
-
-- Links to social media
-* https://twitter.com/jrrickard
+  * [https://www.youtube.com/watch?v=cuaWIpUNvNo](https://www.youtube.com/watch?v=cuaWIpUNvNo)
+  * [https://www.youtube.com/watch?v=SuicCBXJRPg](https://www.youtube.com/watch?v=SuicCBXJRPg)
+  * [https://www.youtube.com/watch?v=zVuM7F_BTyc](https://www.youtube.com/watch?v=zVuM7F_BTyc)
+  * [https://www.cncf.io/online-programs/cncf-live-webinar-kubernetes-1-20/](https://www.cncf.io/online-programs/cncf-live-webinar-kubernetes-1-20/)
+  * [https://www.youtube.com/watch?v=T6WRsQGP8Rc](https://www.youtube.com/watch?v=T6WRsQGP8Rc)
+* Links to social media:
+  * [https://twitter.com/jrrickard](https://twitter.com/jrrickard)
 
