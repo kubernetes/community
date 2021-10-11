@@ -2909,6 +2909,7 @@ workinggroups:
   - Multicluster
   - Network
   - Node
+  - Security
   - Scheduling
   - Storage
   label: policy
@@ -2925,7 +2926,7 @@ workinggroups:
     day: Wednesday
     time: "8:00"
     tz: PT (Pacific Time)
-    frequency: semimonthly
+    frequency: biweekly
     url: https://zoom.us/j/7375677271
     archive_url: https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing
   contact:
@@ -2934,6 +2935,8 @@ workinggroups:
     liaison:
       github: cblecker
       name: Christoph Blecker
+  projects:
+    git: https://github.com/kubernetes-sigs/wg-policy-prototypes
 - dir: wg-reliability
   name: Reliability
   mission_statement: >
