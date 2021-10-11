@@ -20,7 +20,7 @@ pandoc --variable urlcolor=blue --variable geometry:margin=1in --from gfm -o kub
 
 ### Contributions
 
-Updates to the whitepaper, suggestions for updates, or discussion for updates should initiate with an issue submitted to the [Policy WG repo](https://github.com/kubernetes/community/tree/master/wg-policy) and labeled with "suggestion" and "Kubernetes policy management paper".
+Updates to the whitepaper, suggestions for updates, or discussion for updates should initiate with an issue submitted to the [Policy WG repo](https://github.com/kubernetes-sigs/wg-policy-prototypes) and labeled with "suggestion" and "Kubernetes Policy Panagement Paper".
 
 
 
