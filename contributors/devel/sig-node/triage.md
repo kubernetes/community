@@ -65,7 +65,6 @@ Anyone can add these [labels].
 - **kind/bug:** related to a bug
 - **kind/cleanup:** cleaning up code, process, or technical debt
 - **kind/deprecation:** deprecation, that will require special API review
-- **kind/design:** related to design. not commonly used
 - **kind/documentation:** related to documentation (including code comments)
 - **kind/failing-test:** related to a consistently or frequently failing test
 - **kind/feature:** related to a new feature or enhancement; should have an
