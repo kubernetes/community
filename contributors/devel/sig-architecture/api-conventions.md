@@ -129,7 +129,7 @@ lists should support filtering by fields (see
    Examples: `PodList`, `ServiceList`, `NodeList`.
 
 Note that`kubectl` and other tools sometimes output collections of resources
-as `kind: List`. Keep in mind that `kind: List`" is not part of the Kubernetes API; it is
+as `kind: List`. Keep in mind that `kind: List` is not part of the Kubernetes API; it is
 exposing an implementation detail from client-side code in those tools, used to
 handle groups of mixed resources.
 
