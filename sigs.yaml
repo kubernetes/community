@@ -2909,8 +2909,8 @@ workinggroups:
   - Multicluster
   - Network
   - Node
-  - Security
   - Scheduling
+  - Security
   - Storage
   label: policy
   leadership:
@@ -2935,8 +2935,6 @@ workinggroups:
     liaison:
       github: cblecker
       name: Christoph Blecker
-  projects:
-    git: https://github.com/kubernetes-sigs/wg-policy-prototypes
 - dir: wg-reliability
   name: Reliability
   mission_statement: >

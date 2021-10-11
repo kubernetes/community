@@ -17,10 +17,11 @@ Provide an overall architecture that describes both the current policy related i
 * SIG Network
 * SIG Node
 * SIG Scheduling
+* SIG Security
 * SIG Storage
 
 ## Meetings
-* Regular WG Meeting: [Wednesdays at 8:00 PT (Pacific Time)](https://zoom.us/j/7375677271) (semimonthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Wednesdays at 8:00 PT (Pacific Time)](https://zoom.us/j/7375677271) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing).
 
 ## Organizers
@@ -34,5 +35,6 @@ Provide an overall architecture that describes both the current policy related i
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fpolicy)
 - Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 <!-- BEGIN CUSTOM CONTENT -->
-
+## Projects
+- Git: https://github.com/kubernetes-sigs/wg-policy-prototypes
 <!-- END CUSTOM CONTENT -->
