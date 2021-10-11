@@ -6,7 +6,7 @@ The Kubernetes Policy Management paper is a [Policy Working Group](https://githu
 
 ## Updates
 
-The paper is intended to be a living document that is mantained for the community, by its members. The paper is housed in this Git repository.
+The paper is intended to be a living document that is maintained for the community, by its members. The paper is housed in this Git repository.
 
 ### Format
 
