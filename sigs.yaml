@@ -2990,12 +2990,12 @@ workinggroups:
   label: structured-logging
   leadership:
     chairs:
+    - github: pohly
+      name: Patrick Ohly
+      company: Intel
     - github: serathius
       name: Marek Siarkowicz
       company: Google
-    - github: shubheksha
-      name: Shubheksha Jalan
-      company: Apple
   meetings:
   - description: Regular Meeting
     day: Thursday
