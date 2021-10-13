@@ -40,7 +40,7 @@ remain active contributors to the community.
 
 - Enabled [two-factor authentication] on their GitHub account
 - Have made multiple contributions to the project or community.  Contribution may include, but is not limited to:
-    - Authoring or reviewing PRs on GitHub
+    - Authoring or reviewing PRs on GitHub. At least one PR must be **merged**.
     - Filing or commenting on issues on GitHub
     - Contributing to SIG, subproject, or community discussions (e.g. meetings, Slack, email discussion
       forums, Stack Overflow)
