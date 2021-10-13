@@ -311,6 +311,7 @@ channels:
   - name: openshift-users
   - name: openstack-helm
   - name: openstack-kolla
+  - name: operator-builder
   - name: operator-sdk-dev
   - name: ops-status
     archived: true
