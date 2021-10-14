@@ -32,7 +32,7 @@ I will continue to advocate for K8s in my existing avenues (meetups, YouTube, bl
 
 I will be bringing my Kubernetes at scale experience to help in the aspects like autoscaling, auditing, and metrics that will help the project be more resilient and scalable.
 
-I have been part of this fantastic community and used it in different roles in my career. As part of the steering committee, I would be ecstatic to contribute to the project that has made my career successful and give back to the community by making the project more resilient, and allowing it to scale even better.
+I have been part of this fantastic community and used it in different roles in my career. As part of the steering committee, I would be ecstatic to contribute to the project that has made my career successful and give back more to the community.
 
 ## Resources About Me
 
