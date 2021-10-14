@@ -38,4 +38,3 @@ I have been part of this fantastic community and used it in different roles in m
 
 [Youtube]: https://youtube.com/saiyam911
 [Twitter]: https://twitter.com/saiyampathak
-[Author]: https://saiyampathak.com/book
