@@ -84,9 +84,9 @@ community.
 See [sig governance] for more details about current SIG operating
 mechanics, such as mailing lists, meeting times, etc.
 
-More information:  
-[SIG Governance Requirements]  
-[SIG Lifecycle] - for a tactical checklist on creation and retirement  
+More information:
+[SIG Governance Requirements]
+[SIG Lifecycle] - for a tactical checklist on creation and retirement
 
 ### Subprojects
 
@@ -162,14 +162,14 @@ User Groups.
 To facilitate discoverability and engagement,
 user groups are documented in [sigs.yaml]
 
-## Community Group Annual Reports   
+## Community Group Annual Reports
 As you can see in the descriptions above, the project is robust with diverse
-groups of contributors and their varying degrees of expected communications.     
+groups of contributors and their varying degrees of expected communications.
 
 The annual community group health check will establish an opportunity for deeper
  dialogue and broader communication across the chairs of each group and the
  Steering Committee. By including this reporting with the existing community
- meeting structure, we can focus on the goals outlined in the [Annual Report] doc.  
+ meeting structure, we can focus on the goals outlined in the [Annual Report] doc.
 
 ## Cross-project Communication and Coordination
 
