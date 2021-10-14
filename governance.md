@@ -84,9 +84,9 @@ community.
 See [sig governance] for more details about current SIG operating
 mechanics, such as mailing lists, meeting times, etc.
 
-More information:  
-[SIG Governance Requirements]  
-[SIG Lifecycle] - for a tactical checklist on creation and retirement  
+More information:
+[SIG Governance Requirements]
+[SIG Lifecycle] - for a tactical checklist on creation and retirement
 
 ### Subprojects
 
@@ -162,14 +162,14 @@ User Groups.
 To facilitate discoverability and engagement,
 user groups are documented in [sigs.yaml]
 
-## Community Group Annual Reports   
+## Community Group Annual Reports
 As you can see in the descriptions above, the project is robust with diverse
-groups of contributors and their varying degrees of expected communications.     
+groups of contributors and their varying degrees of expected communications.
 
 The annual community group health check will establish an opportunity for deeper
  dialogue and broader communication across the chairs of each group and the
  Steering Committee. By including this reporting with the existing community
- meeting structure, we can focus on the goals outlined in the [Annual Report] doc.  
+ meeting structure, we can focus on the goals outlined in the [Annual Report] doc.
 
 ## Cross-project Communication and Coordination
 
@@ -194,7 +194,7 @@ to its charter, will own the decision. In the case of extended debate
 or deadlock, decisions may be escalated to the Steering Committee,
 which is expected to be uncommon.
 
-The [KEP process] is being developed as a way to facilitate definition, agreement and communication of efforts that cross SIG boundaries.
+The [KEP process] facilitates definition, agreement and communication of efforts that cross SIG boundaries.
 SIGs are encouraged to use this process for larger efforts.
 This process is also available for smaller efforts within a SIG.
 
@@ -225,3 +225,4 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [SIG Governance Requirements]: /committee-steering/governance/sig-governance-requirements.md
 [Annual Report]: /committee-steering/governance/annual-reports.md
 [monthly community meeting]: /events/community-meeting.md
+[KEP process]: https://github.com/kubernetes/enhancements/tree/master/keps#kubernetes-enhancement-proposals-keps
