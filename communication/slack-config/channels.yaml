@@ -450,3 +450,4 @@ channels:
     archived: true
   - name: windows-containerd
   - name: workshop-chat
+  - name: yaml-overlay-tool
