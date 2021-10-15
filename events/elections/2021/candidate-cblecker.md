@@ -15,9 +15,9 @@ info:
 
 ## What I have done
 
-I got involved in the Kubernetes project in 2016, became a member/reviewer/approver in 2017, and a [maintainer] in 2018.
+I got involved in the Kubernetes project in 2016, became a member/reviewer/approver in 2017, and a [maintainer](https://github.com/orgs/kubernetes/teams/kubernetes-maintainers/discussions/2) in 2018.
 
-I'm a Technical Lead for [SIG Contributor Experience], and have always been a passionate advocate for both new and experienced contributors.
+I'm a Technical Lead for [SIG Contributor Experience](https://git.k8s.io/community/sig-contributor-experience), and have always been a passionate advocate for both new and experienced contributors.
 
 In 2018, I was a recipient of the Chop Wood / Carry Water award.
 
@@ -45,6 +45,3 @@ If re-elected to a second and final term on the Steering Committee, I would love
 
 - [Twitter](https://twitter.com/cblecker)
 - [KubeCon Talks](https://github.com/cblecker/cblecker/blob/master/speaking.md)
-
-[SIG Contributor Experience]: https://git.k8s.io/community/sig-contributor-experience
-[maintainer]: https://github.com/orgs/kubernetes/teams/kubernetes-maintainers/discussions/2
