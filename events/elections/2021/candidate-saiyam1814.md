@@ -36,5 +36,5 @@ I have been part of this fantastic community and used it in different roles in m
 
 ## Resources About Me
 
-[Youtube]: https://youtube.com/saiyam911
-[Twitter]: https://twitter.com/saiyampathak
+* Youtube: https://youtube.com/saiyam911
+* Twitter: https://twitter.com/saiyampathak

@@ -40,4 +40,4 @@ it is still in a young age and I'll work to keep it growing, evolving and being 
 - [Deep Dive: KIND - Benjamin Elder & Antonio Ojea](https://kccncna19.sched.com/event/Uah7/deep-dive-kind-benjamin-elder-google-antonio-ojea-garcia-suse)
 - [SIG-Network and SIG-Testing Award 2020](https://www.youtube.com/watch?v=XCRkzgMTaJU)
 - [Google Open Source Peer Bonus 2021](https://opensource.googleblog.com/2021/04/announcing-first-group-of-google-open-source-peer-bonus-winners.html)
-- Twitter: https://twitter.com/Itsuugo
+- Twitter: [https://twitter.com/Itsuugo](https://twitter.com/Itsuugo)

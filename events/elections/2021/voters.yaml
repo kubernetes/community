@@ -14,6 +14,7 @@
 # 2021-09-29: Deduplicate redundant entries from people with multiple devstats records.
 # 2021-09-30: Adding from exception requests.
 # 2021-10-10: Adding from exception requests.
+# 2021-10-16: Adding from exception requests.
 #
 
 eligible_voters:
@@ -26,6 +27,7 @@ eligible_voters:
 - adrianchiris
 - adrianludwin
 - adtac
+- AevaOnline
 - afbjorklund
 - ahg-g
 - ahmetb
@@ -574,6 +576,7 @@ eligible_voters:
 - sharifelgamal
 - shekhar-rajak
 - Shell32-Natsu
+- shivanshu1333
 - shivi28
 - shu-mutou
 - shubheksha

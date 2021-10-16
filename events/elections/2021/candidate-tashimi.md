@@ -24,6 +24,6 @@ I think we're at our best when we're working to enable ourselves and our new com
 
 ## Resources About Me
 
-- YouTube play list of Kubecon Talks (not all inclusive): https://www.youtube.com/watch?v=Byn0N_ZstE0&list=PL-mpFr3enLwNXd7yzmbB6tt0adbyGgly_ 
-- Twitter: https://twitter.com/TashaDrew
-- LinkedIn: https://www.linkedin.com/in/tashy/
+- YouTube play list of Kubecon Talks (not all inclusive): [https://www.youtube.com/watch?v=Byn0N_ZstE0&list=PL-mpFr3enLwNXd7yzmbB6tt0adbyGgly_](https://www.youtube.com/watch?v=Byn0N_ZstE0&list=PL-mpFr3enLwNXd7yzmbB6tt0adbyGgly_)
+- Twitter: [https://twitter.com/TashaDrew](https://twitter.com/TashaDrew)
+- LinkedIn: [https://www.linkedin.com/in/tashy/](https://www.linkedin.com/in/tashy/)
