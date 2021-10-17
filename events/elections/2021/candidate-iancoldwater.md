@@ -3,7 +3,7 @@ name: Ian Coldwater
 ID: IanColdwater
 info:
   - employer: Twilio
-  - slack: @coldwater
+  - slack: coldwater
 -------------------------------------------------------------
 
 ## SIGS
