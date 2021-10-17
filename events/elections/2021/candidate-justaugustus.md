@@ -20,11 +20,11 @@ info:
 
 - Helping to build and nurture the Release Team for several cycles
 - Founded and currently leading the Release Managers group
-- Shepherding the [KEP](KEP) process through numerous improvements
+- Shepherding the [KEP][KEP] process through numerous improvements
 - Identified and assisted with the donation and maintenance of several subprojects
   - [Cluster API Azure][capz]
   - [https://downloadkubernetes.com/][downloadkubernetes]
-  - [zeitgeist](zeitgeist)
+  - [zeitgeist][zeitgeist]
 - Driving discussions on community-wide issue/PR triage optimization
 
 As a Chair for CNCF SIG Contributor Strategy and a
