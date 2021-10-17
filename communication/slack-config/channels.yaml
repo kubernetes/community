@@ -172,6 +172,7 @@ channels:
   - name: kilo
   - name: kiosk
   - name: kcli
+  - name: kcna-exam-prep
   - name: klog
   - name: knative
   - name: ko-project
