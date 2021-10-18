@@ -296,7 +296,9 @@ Nominees may be found in the [election app].
 [Org Members]: https://github.com/kubernetes/community/blob/master/community-membership.md
 [Elekto]: https://elekto.dev
 [election app]: https://elections.k8s.io
-[Elekto documentation]: https://elekto.dev/docs/voting/
+[Elekto voting documentation]: https://elekto.dev/docs/voting/
 [voters.yaml]: https://github.com/kubernetes/community/blob/master/events/elections/2021/voters.yaml
 [election page]: https://elections.k8s.io/app/elections/2021
 [voter exception form]: https://elections.k8s.io/app/elections/2021/exception
+[public Steering Committee Meeting]: https://github.com/kubernetes/steering/#meetings
+[Eligible voters]: https://github.com/kubernetes/community/tree/master/events/elections/2021#eligibility
