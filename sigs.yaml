@@ -880,7 +880,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-huaweicloud/master/OWNERS
   - name: provider-ibmcloud
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/ibm-vpc-block-csi-driver/master/OWNERS
     meetings:
     - description: Regular IBM Subproject Meeting
@@ -1032,7 +1032,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
   - name: cluster-api-provider-ibmcloud
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/main/OWNERS
   - name: cluster-api-provider-kubemark
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-kubemark/master/OWNERS
