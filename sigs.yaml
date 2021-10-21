@@ -2122,6 +2122,16 @@ sigs:
     - github: ahg-g
       name: Abdullah Gharaibeh
       company: Google
+    tech_leads:
+    - github: Huang-Wei
+      name: Wei Huang
+      company: IBM
+    - github: ahg-g
+      name: Abdullah Gharaibeh
+      company: Google
+    - github: alculquicondor
+      name: Aldo Culquicondor
+      company: Google
     emeritus_leads:
     - github: bsalamat
       name: Bobby (Babak) Salamat
