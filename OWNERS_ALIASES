@@ -129,8 +129,8 @@ aliases:
     - stevekuznetsov
     - wojtek-t
   wg-structured-logging-leads:
+    - pohly
     - serathius
-    - shubheksha
   ug-big-data-leads:
     - erikerlandson
     - foxish
