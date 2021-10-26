@@ -17,6 +17,7 @@
 # 2021-10-16: Adding from exception requests.
 # 2021-10-19: Adding from exception requests.
 # 2021-10-21: Adding from exception requests.
+# 2021-10-26: Adding from exception requests. Removing one voter due to account swap.
 #
 
 eligible_voters:
@@ -67,6 +68,7 @@ eligible_voters:
 - arghya88
 - Arhell
 - ariscahyadi
+- arschles
 - arunmk
 - Arvinderpal
 - asalkeld
@@ -159,7 +161,7 @@ eligible_voters:
 - danehans
 - DangerOnTheRanger
 - Danil-Grigorev
-- danpopSD
+- danpopnyc
 - danwinship
 - dashpole
 - dcbw
