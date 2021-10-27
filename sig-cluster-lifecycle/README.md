@@ -150,7 +150,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### kubeadm
 - **Owners:**
   - [kubernetes/cluster-bootstrap](https://github.com/kubernetes/cluster-bootstrap/blob/master/OWNERS)
-  - [kubernetes/kubeadm](https://github.com/kubernetes/kubeadm/blob/master/OWNERS)
+  - [kubernetes/kubeadm](https://github.com/kubernetes/kubeadm/blob/main/OWNERS)
   - [kubernetes/kubernetes/cmd/kubeadm](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubeadm/OWNERS)
   - [kubernetes/system-validators](https://github.com/kubernetes/system-validators/blob/master/OWNERS)
 - **Contact:**
