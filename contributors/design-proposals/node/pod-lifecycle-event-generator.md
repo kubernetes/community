@@ -62,7 +62,7 @@ type PodLifecycleEvent struct {
 ```
 
 Using Docker as an example, starting of a POD infra container would be
-translated to a NetworkSetupCompleted`pod lifecycle event.
+translated to a `NetworkSetupCompleted`pod lifecycle event.
 
 
 ## Detect Changes in Container States Via Relisting
