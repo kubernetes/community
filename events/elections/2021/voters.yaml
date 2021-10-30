@@ -18,6 +18,7 @@
 # 2021-10-19: Adding from exception requests.
 # 2021-10-21: Adding from exception requests.
 # 2021-10-26: Adding from exception requests. Removing one voter due to account swap.
+# 2021-10-29: Adding from exception requests.
 #
 
 eligible_voters:
@@ -342,6 +343,7 @@ eligible_voters:
 - justinsb
 - kakts
 - karan
+- karenhchu
 - karlkfi
 - Kartik494
 - kaslin
@@ -558,6 +560,7 @@ eligible_voters:
 - s-kawamura-w664
 - s-urbaniak
 - saad-ali
+- sahilvv
 - saikat-royc
 - salaxander
 - SandeepPissay
