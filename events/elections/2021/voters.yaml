@@ -18,6 +18,8 @@
 # 2021-10-19: Adding from exception requests.
 # 2021-10-21: Adding from exception requests.
 # 2021-10-26: Adding from exception requests. Removing one voter due to account swap.
+# 2021-10-29: Adding from exception requests.
+# 2021-10-31: Adding from exception requests. Adding from CoCC.
 #
 
 eligible_voters:
@@ -75,6 +77,7 @@ eligible_voters:
 - ash2k
 - ashish-amarnath
 - astoycos
+- Atharva-Shinde
 - atoato88
 - Aut0R3V
 - aveshagarwal
@@ -115,6 +118,7 @@ eligible_voters:
 - castrojo
 - cblecker
 - CecileRobertMichon
+- celanthe
 - celestehorgan
 - champtar
 - changshuchao
@@ -342,6 +346,7 @@ eligible_voters:
 - justinsb
 - kakts
 - karan
+- karenhchu
 - karlkfi
 - Kartik494
 - kaslin
@@ -413,6 +418,7 @@ eligible_voters:
 - mattcary
 - mattfenwick
 - matthyx
+- mauilion
 - mauriciopoppe
 - MaxRink
 - mayankshah1607
@@ -558,6 +564,7 @@ eligible_voters:
 - s-kawamura-w664
 - s-urbaniak
 - saad-ali
+- sahilvv
 - saikat-royc
 - salaxander
 - SandeepPissay
@@ -654,6 +661,7 @@ eligible_voters:
 - vincepri
 - vivekbagade
 - vladimirvivien
+- vllry
 - vteratipally
 - wangyx1992
 - wangyysde
