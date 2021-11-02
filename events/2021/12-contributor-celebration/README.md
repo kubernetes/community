@@ -6,7 +6,7 @@ An end of year online event to celebrate and get together with folks in the Kube
 
 ## When and Where
 
-The dates of the Contributor Celebration are currently TBD, but will be held on Discord again, similar to last year. See https://www.kubernetes.dev/events/kcc2020/ for more information.
+The dates of the Contributor Celebration are currently TBD, but will be held on Discord again, similar to last year. See https://www.kubernetes.dev/events/past-events/2020/kcc2020/ for more information.
 
 ## Team
 
