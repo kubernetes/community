@@ -59,7 +59,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
     - [Meeting notes and Agenda](https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit).
 ### cluster-api
 - **Owners:**
-  - [kubernetes-sigs/cluster-api](https://github.com/kubernetes-sigs/cluster-api/blob/master/OWNERS)
+  - [kubernetes-sigs/cluster-api](https://github.com/kubernetes-sigs/cluster-api/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
 - **Meetings:**
