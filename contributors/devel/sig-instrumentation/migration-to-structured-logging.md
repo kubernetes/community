@@ -166,7 +166,7 @@ type KMetadata interface {
 	GetNamespace() string
 }
 ```
-Logging header formats are in [here](https://github.com/golang/glog/blob/23def4e6c14b4da8ac2ed8007337bc5eb5007998/glog.go#L523-L533)
+Logging header formats are in [here](https://github.com/kubernetes/klog/blob/9ad246211af1ed84621ee94a26fcce0038b69cd1/klog.go#L581-L597)
 
 ## Migration
 
