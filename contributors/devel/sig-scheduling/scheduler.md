@@ -11,7 +11,7 @@ We are dividing scheduler into three layers from high level:
   This is the main() entry that does initialization before calling the scheduler framework.
 - [pkg/scheduler/scheduler.go](http://releases.k8s.io/HEAD/pkg/scheduler/scheduler.go):
   This is the scheduler framework that handles stuff (e.g. binding) beyond the scheduling algorithm.
-- [pkg/scheduler/core/generic_scheduler.go](http://releases.k8s.io/HEAD/pkg/scheduler/core/generic_scheduler.go):
+- [pkg/scheduler/generic_scheduler.go](http://releases.k8s.io/HEAD/pkg/scheduler/generic_scheduler.go):
   The scheduling algorithm that assigns nodes for pods.
 
 ## The scheduling algorithm
@@ -63,7 +63,7 @@ For given pod:
 The Scheduler tries to find a node for each Pod, one at a time.
 - First it applies a set of "predicates" to filter out inappropriate nodes. For example, if the PodSpec specifies resource requests, then the scheduler will filter out nodes that don't have at least that much resources available (computed as the capacity of the node minus the sum of the resource requests of the containers that are already running on the node).
 - Second, it applies a set of "priority functions" that rank the nodes that weren't filtered out by the predicate check. For example, it tries to spread Pods across nodes and zones while at the same time favoring the least (theoretically) loaded nodes (where "load" - in theory - is measured as the sum of the resource requests of the containers running on the node, divided by the node's capacity).
-- Finally, the node with the highest priority is chosen (or, if there are multiple such nodes, then one of them is chosen at random). The code for this main scheduling loop is in the function `Schedule()` in [pkg/scheduler/core/generic_scheduler.go](http://releases.k8s.io/HEAD/pkg/scheduler/core/generic_scheduler.go).
+- Finally, the node with the highest priority is chosen (or, if there are multiple such nodes, then one of them is chosen at random). The code for this main scheduling loop is in the function `Schedule()` in [pkg/scheduler/generic_scheduler.go](http://releases.k8s.io/HEAD/pkg/scheduler/generic_scheduler.go).
 
 ### Predicates and priorities policies
 
