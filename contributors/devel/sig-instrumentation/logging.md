@@ -47,6 +47,7 @@ I0528 19:15:22.737538   47512 logtest.go:52] msg...
 ```
 
 This log line have this form:
+```
 	Lmmdd hh:mm:ss.uuuuuu threadid file:line] msg...
 where the fields are defined as follows:
 	L                A single character, representing the log level (eg 'I' for INFO)
@@ -57,5 +58,5 @@ where the fields are defined as follows:
 	file             The file name
 	line             The line number
 	msg              The user-supplied message
-
+```
 See more in [here](https://github.com/kubernetes/klog/blob/9ad246211af1ed84621ee94a26fcce0038b69cd1/klog.go#L581-L597)
