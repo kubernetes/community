@@ -1226,15 +1226,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/discuss-theme/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
-    meetings:
-    - description: APAC Coordinator Meeting
-      day: Thursday
-      time: "5:00"
-      tz: UTC
-      frequency: biweekly
-      url: https://zoom.us/j/144440337?pwd=VEVBejdPYkE2MGdUSDZZZnVlNFdrdz09
-      archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
-      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: contributor-comms
     description: |
       Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
