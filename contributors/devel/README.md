@@ -117,9 +117,13 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 ### SIG Scheduling
 
-* **Understanding the Kubernetes Scheduler** [scheduler.md](sig-scheduling/scheduler.md)
+* **Understanding the Kubernetes Scheduler** [scheduling_code_hierarchy_overview.md](sig-scheduling/scheduling_code_hierarchy_overview.md)
 
 * **Scheduler Algorithm in Kubernetes** [scheduler_algorithm.md](sig-scheduling/scheduler_algorithm.md)
+
+* **Understanding how Pods are queued in Kubernetes Scheduler** [scheduler_queues.md](sig-scheduling/scheduler_queues.md)
+
+* **Extending with scheduler framework plugins** [scheduler_framework_plugins.md](sig-scheduling/scheduler_framework_plugins.md)
 
 * **Scheduler Benchmarking** [scheduler_benchmarking.md](sig-scheduling/scheduler_benchmarking.md)
 
