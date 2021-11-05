@@ -62,10 +62,6 @@ Manages operations and policy for upstream community group communication platfor
 - **Owners:**
   - [kubernetes-sigs/discuss-theme](https://github.com/kubernetes-sigs/discuss-theme/blob/master/OWNERS)
   - [kubernetes/community/communication](https://github.com/kubernetes/community/blob/master/communication/OWNERS)
-- **Meetings:**
-  - APAC Coordinator Meeting: [Thursdays at 5:00 UTC](https://zoom.us/j/144440337?pwd=VEVBejdPYkE2MGdUSDZZZnVlNFdrdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
-    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### contributor-comms
 Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
 - **Owners:**
