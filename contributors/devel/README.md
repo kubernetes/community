@@ -123,8 +123,6 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 * **Understanding how Pods are queued in Kubernetes Scheduler** [scheduler_queues.md](sig-scheduling/scheduler_queues.md)
 
-* **Extending with scheduler framework plugins** [scheduler_framework_plugins.md](sig-scheduling/scheduler_framework_plugins.md)
-
 * **Scheduler Benchmarking** [scheduler_benchmarking.md](sig-scheduling/scheduler_benchmarking.md)
 
 ### SIG Architecture

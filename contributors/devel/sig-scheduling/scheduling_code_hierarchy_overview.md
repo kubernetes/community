@@ -66,22 +66,6 @@ Consists of the following four steps ran in the same order:
 In case of processing of any of the extension points fails, `Unreserve` operation
 of all `Reserve` plugins is invoked (e.g. free resources allocated for a gang of pods).
 
-## Scheduler extensibility
-
-The scheduler is extensible: the cluster administrator can choose which of the pre-defined scheduling policies to apply, and can add new ones.
-
-### Modifying policies
-
-The policies that are applied when scheduling can be chosen in one of two ways.
-The default policies used are selected by the fields `DefaultPredicates` and `DefaultPriorities` in
-[pkg/scheduler/framework/plugins/legacy_registry.go]. However, the choice of policies can be overridden by passing the command-line flag `--policy-config-file` to the scheduler, pointing to a JSON file specifying which scheduling policies to use. See [examples/scheduler-policy-config.json](https://git.k8s.io/examples/staging/scheduler-policy/scheduler-policy-config.json) for an example
-config file. (Note that the config file format is versioned; the API is defined in [pkg/scheduler/apis](http://releases.k8s.io/HEAD/pkg/scheduler/apis/)).
-Thus to add a new scheduling policy, you should: 
-1. Modify the available predicates or add to the priorities, both which are present in [pkg/scheduler/framework/plugins/legacy_registry.go].
-2. Either register the policy in `DefaultPredicates` or `DefaultPriorities` both of which can be found in [pkg/scheduler/framework/plugins/legacy_registry.go], or use a policy config file.
-
-[pkg/scheduler/framework/plugins/legacy_registry.go]: https://releases.k8s.io/HEAD/pkg/scheduler/framework/plugins/legacy_registry.go
-
 ## Configuring and assembling the scheduler
 
 The scheduler codebase spans across various locations. Last but not least to mention:
