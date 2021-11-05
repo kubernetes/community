@@ -137,8 +137,8 @@ Examples of contributions that would NOT be considered:
 | October 31   | Deadline to submit voter exception requests |
 | November 4   | Election Closes by 0000 UTC (5pm PST) |
 | November 5  | Private announcement of Results to SC members not up for election |
-| November 6   | Private announcement of Results to all candidates |
-| November 7   | Public announcement of Results at Public Steering Committee Meeting |
+| November 7   | Private announcement of Results to all candidates |
+| November 8   | Public announcement of Results at Public Steering Committee Meeting |
 | November 10?   | Election Retro |
 
 ## Candidacy Process
