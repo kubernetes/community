@@ -7,6 +7,7 @@
   - [Etcd test data](#etcd-test-data)
   - [Run integration tests](#run-integration-tests)
   - [Run a specific integration test](#run-a-specific-integration-test)
+  - [Integration testing in CI](#integration-testing-in-ci)
 
 This assumes you already read the [testing guide](testing.md).
 
@@ -76,3 +77,13 @@ make test-integration WHAT=./test/integration/pods GOFLAGS="-v" KUBE_TEST_ARGS="
 
 If you set `KUBE_TEST_ARGS`, the test case will be run with only the `v1` API
 version and the watch cache test is skipped.
+
+### Integration testing in CI
+
+The CI job named `pull-kubernetes-integration`, which is defined in
+[https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-testing/integration.yaml],
+runs [k/k
+hack/jenkins/test-dockerized.sh](https://github.com/kubernetes/kubernetes/blob/master/hack/jenkins/test-dockerized.sh)
+in a
+[kubekins](https://github.com/kubernetes/test-infra/tree/master/images/kubekins-e2e)
+container.
