@@ -156,12 +156,12 @@ aliases:
     - tallclair
   committee-steering:
     - cblecker
-    - derekwaynecarr
     - dims
+    - justaugustus
     - liggitt
     - mrbobbytables
-    - nikhita
     - parispittman
+    - tpepper
 ## BEGIN CUSTOM CONTENT
   provider-aws:
     - justinsb
