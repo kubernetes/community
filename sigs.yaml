@@ -3188,24 +3188,24 @@ committees:
     - github: cblecker
       name: Christoph Blecker
       company: Red Hat
-    - github: derekwaynecarr
-      name: Derek Carr
-      company: Red Hat
     - github: dims
       name: Davanum Srinivas
       company: VMware
+    - github: justaugustus
+      name: Stephen Augustus
+      company: Cisco
     - github: liggitt
       name: Jordan Liggitt
       company: Google
     - github: mrbobbytables
       name: Bob Killen
       company: Google
-    - github: nikhita
-      name: Nikhita Raghunath
-      company: VMware
     - github: parispittman
       name: Paris Pittman
       company: Apple
+    - github: tpepper
+      name: Tim Pepper
+      company: VMware
   meetings:
   - description: Private Steering Committee Meeting
     day: third Monday

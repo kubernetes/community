@@ -185,12 +185,12 @@ usergroups:
       - steering-committee
     members:
       - cblecker
-      - derekwaynecarr
       - dims
+      - justaugustus
       - liggitt
       - mrbobbytables
-      - nikhita
       - paris
+      - tpepper
 
   - name: grafana-operator-maintainers
     long_name: Grafana Operator Maintainers
