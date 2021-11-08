@@ -394,7 +394,7 @@ Policies managed in a Kubernetes cluster benefit both the security _operations_ 
 
 The key to a successful interlock between the operations and the compliance roles is recognizing the difference of expertise and expectations between the two: operational admins prefer a report of non-compliant assets or resources, while the compliance officers prefer a report of deficient or missing control implementations and the corresponding risks to the system and data. 
 
-A standardized assessment result format addresses this dichotomy of perspective and objectives and enables end to end automation if using a schema whose formats aim and support the standardization across diverse assets and systems. OSCAL is such a standard schema, with many layers (see below). 
+A standardized assessment result format addresses this dichotomy of perspective and objectives. This enables end to end automation, if using a schema whose formats aim and support the standardization across diverse assets and systems. OSCAL is such a standard schema, with many layers (see below). 
 
 ![alt_text](images/OSCAL-layers.png "OSCAL Layers")
 
