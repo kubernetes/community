@@ -27,6 +27,7 @@ channels:
     archived: true
   - name: brigade
   - name: camptocamp-devops-stack
+  - name: cartographer
   - name: cdk
   - name: cert-manager
   - name: cert-manager-aws-privateca-issuer
@@ -171,6 +172,7 @@ channels:
   - name: kilo
   - name: kiosk
   - name: kcli
+  - name: kcna-exam-prep
   - name: klog
   - name: knative
   - name: ko-project
@@ -310,6 +312,7 @@ channels:
   - name: openshift-users
   - name: openstack-helm
   - name: openstack-kolla
+  - name: operator-builder
   - name: operator-sdk-dev
   - name: ops-status
     archived: true
@@ -448,3 +451,4 @@ channels:
     archived: true
   - name: windows-containerd
   - name: workshop-chat
+  - name: yaml-overlay-tool

@@ -92,7 +92,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
   - [kubernetes-sigs/cluster-api-provider-gcp](https://github.com/kubernetes-sigs/cluster-api-provider-gcp/blob/master/OWNERS)
 ### cluster-api-provider-ibmcloud
 - **Owners:**
-  - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/master/OWNERS)
+  - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/main/OWNERS)
 ### cluster-api-provider-kubemark
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-kubemark](https://github.com/kubernetes-sigs/cluster-api-provider-kubemark/blob/master/OWNERS)
@@ -150,7 +150,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### kubeadm
 - **Owners:**
   - [kubernetes/cluster-bootstrap](https://github.com/kubernetes/cluster-bootstrap/blob/master/OWNERS)
-  - [kubernetes/kubeadm](https://github.com/kubernetes/kubeadm/blob/master/OWNERS)
+  - [kubernetes/kubeadm](https://github.com/kubernetes/kubeadm/blob/main/OWNERS)
   - [kubernetes/kubernetes/cmd/kubeadm](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubeadm/OWNERS)
   - [kubernetes/system-validators](https://github.com/kubernetes/system-validators/blob/master/OWNERS)
 - **Contact:**

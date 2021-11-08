@@ -198,11 +198,11 @@ Those pieces of information should be normalized into an info-level metric
 which is always set to 1. For example:
 
 ```
-kube_pod_info{pod=...,namespace=...,pod_ip=...,host_ip=..,node=..., ...}
+kube_pod_info{pod=...,namespace=...,pod_ip=...,host_ip=..,node=..., ...} 1
 ```
 
 The metric system can later denormalize those along the identifying labels
-“pod” and “namespace” labels. This leads to...
+“pod” and “namespace” labels.
 
 ## Resource Referencing
 

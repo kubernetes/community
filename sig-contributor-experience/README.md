@@ -22,7 +22,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Alison Dowdney (**[@alisondy](https://github.com/alisondy)**), Weaveworks
+* Alison Dowdney (**[@alisondy](https://github.com/alisondy)**), Independent
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
 
 ### Technical Leads
@@ -62,10 +62,6 @@ Manages operations and policy for upstream community group communication platfor
 - **Owners:**
   - [kubernetes-sigs/discuss-theme](https://github.com/kubernetes-sigs/discuss-theme/blob/master/OWNERS)
   - [kubernetes/community/communication](https://github.com/kubernetes/community/blob/master/communication/OWNERS)
-- **Meetings:**
-  - APAC Coordinator Meeting: [Thursdays at 5:00 UTC](https://zoom.us/j/144440337?pwd=VEVBejdPYkE2MGdUSDZZZnVlNFdrdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
-    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### contributor-comms
 Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
 - **Owners:**
@@ -155,6 +151,8 @@ This is the work we've done this past cycle and plan to work on in the future:
 
 We give our SIG status at every KubeCon, here are our most current talks:
 
+- [SIG Contributor Experience Deep Dive, North America 2021](https://youtu.be/QOiyWWFjG5Q) - Alison Dowdney, Christoph Blecker
+- [SIG Contributor Experience Deep Dive, Europe 2021](https://youtu.be/vPK3QmVOE4Y) - Bob Killen, Alison Dowdney, Christoph Blecker, Nikhita Raghunath
 - [Introdution to Contributor Experience 2020](https://youtu.be/VeCMQoNHFMU) - Bob Killen, Jorge Castro 
 - [Introduction to Contributor Experience 2019](https://www.youtube.com/watch?v=U1YJlgRLbKk) - Elsie Phillips, Paris Pittman
 - [Contributor Experience Deep Dive 2019](https://www.youtube.com/watch?v=0d97Wna4qOs) - Christoph Blecker, Nikhita Raghunath

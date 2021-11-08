@@ -25,6 +25,14 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), IBM
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
 
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), IBM
+* Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
+* Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**), Google
+
 ## Emeritus Leads
 
 * Bobby (Babak) Salamat (**[@bsalamat](https://github.com/bsalamat)**)

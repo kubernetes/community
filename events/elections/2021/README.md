@@ -137,8 +137,8 @@ Examples of contributions that would NOT be considered:
 | October 31   | Deadline to submit voter exception requests |
 | November 4   | Election Closes by 0000 UTC (5pm PST) |
 | November 5  | Private announcement of Results to SC members not up for election |
-| November 6   | Private announcement of Results to all candidates |
-| November 7   | Public announcement of Results at Public Steering Committee Meeting |
+| November 7   | Private announcement of Results to all candidates |
+| November 8   | Public announcement of Results at Public Steering Committee Meeting |
 | November 10?   | Election Retro |
 
 ## Candidacy Process
@@ -296,7 +296,9 @@ Nominees may be found in the [election app].
 [Org Members]: https://github.com/kubernetes/community/blob/master/community-membership.md
 [Elekto]: https://elekto.dev
 [election app]: https://elections.k8s.io
-[Elekto documentation]: https://elekto.dev/docs/voting/
+[Elekto voting documentation]: https://elekto.dev/docs/voting/
 [voters.yaml]: https://github.com/kubernetes/community/blob/master/events/elections/2021/voters.yaml
 [election page]: https://elections.k8s.io/app/elections/2021
 [voter exception form]: https://elections.k8s.io/app/elections/2021/exception
+[public Steering Committee Meeting]: https://github.com/kubernetes/steering/#meetings
+[Eligible voters]: https://github.com/kubernetes/community/tree/master/events/elections/2021#eligibility

@@ -29,8 +29,8 @@ The [charter](charter.md) defines the scope and governance of the Structured Log
 
 ## Organizers
 
+* Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel
 * Marek Siarkowicz (**[@serathius](https://github.com/serathius)**), Google
-* Shubheksha Jalan (**[@shubheksha](https://github.com/shubheksha)**), Apple
 
 ## Contact
 - Slack: [#wg-structured-logging](https://kubernetes.slack.com/messages/wg-structured-logging)

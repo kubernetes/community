@@ -880,7 +880,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-huaweicloud/master/OWNERS
   - name: provider-ibmcloud
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/ibm-vpc-block-csi-driver/master/OWNERS
     meetings:
     - description: Regular IBM Subproject Meeting
@@ -1032,7 +1032,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
   - name: cluster-api-provider-ibmcloud
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/main/OWNERS
   - name: cluster-api-provider-kubemark
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-kubemark/master/OWNERS
@@ -1117,7 +1117,7 @@ sigs:
       slack: kubeadm
     owners:
     - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubeadm/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubeadm/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
     - https://raw.githubusercontent.com/kubernetes/system-validators/master/OWNERS
     meetings:
@@ -1170,7 +1170,7 @@ sigs:
     chairs:
     - github: alisondy
       name: Alison Dowdney
-      company: Weaveworks
+      company: Independent
     - github: mrbobbytables
       name: Bob Killen
       company: Google
@@ -1226,15 +1226,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/discuss-theme/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
-    meetings:
-    - description: APAC Coordinator Meeting
-      day: Thursday
-      time: "5:00"
-      tz: UTC
-      frequency: biweekly
-      url: https://zoom.us/j/144440337?pwd=VEVBejdPYkE2MGdUSDZZZnVlNFdrdz09
-      archive_url: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/
-      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: contributor-comms
     description: |
       Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
@@ -1653,7 +1644,7 @@ sigs:
     day: Tuesday
     time: "9:30"
     tz: PT (Pacific Time)
-    frequency: weekly
+    frequency: bi-weekly
     url: https://zoom.us/my/k8s.mc
     archive_url: https://tinyurl.com/sig-multicluster-notes
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
@@ -2121,6 +2112,16 @@ sigs:
       company: IBM
     - github: ahg-g
       name: Abdullah Gharaibeh
+      company: Google
+    tech_leads:
+    - github: Huang-Wei
+      name: Wei Huang
+      company: IBM
+    - github: ahg-g
+      name: Abdullah Gharaibeh
+      company: Google
+    - github: alculquicondor
+      name: Aldo Culquicondor
       company: Google
     emeritus_leads:
     - github: bsalamat
@@ -2990,12 +2991,12 @@ workinggroups:
   label: structured-logging
   leadership:
     chairs:
+    - github: pohly
+      name: Patrick Ohly
+      company: Intel
     - github: serathius
       name: Marek Siarkowicz
       company: Google
-    - github: shubheksha
-      name: Shubheksha Jalan
-      company: Apple
   meetings:
   - description: Regular Meeting
     day: Thursday
@@ -3187,24 +3188,24 @@ committees:
     - github: cblecker
       name: Christoph Blecker
       company: Red Hat
-    - github: derekwaynecarr
-      name: Derek Carr
-      company: Red Hat
     - github: dims
       name: Davanum Srinivas
       company: VMware
+    - github: justaugustus
+      name: Stephen Augustus
+      company: Cisco
     - github: liggitt
       name: Jordan Liggitt
       company: Google
     - github: mrbobbytables
       name: Bob Killen
       company: Google
-    - github: nikhita
-      name: Nikhita Raghunath
-      company: VMware
     - github: parispittman
       name: Paris Pittman
       company: Apple
+    - github: tpepper
+      name: Tim Pepper
+      company: VMware
   meetings:
   - description: Private Steering Committee Meeting
     day: third Monday

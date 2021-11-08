@@ -22,6 +22,7 @@ Contributor Summit sessions.
   - [Descriptions & Playlists](#descriptions--playlists)
   - [Thumbnails](#thumbnails)
   - [Streaming Events](#streaming-events)
+  - [Migrating Content](#migrating-content)
 
 ## Code of Conduct
 
@@ -208,7 +209,22 @@ Kubernetes Community events such as the weekly [Community Meeting],
 [Office Hours], [Meet our Contributors], or other publicly streamed events. For
 detailed information about streaming, see our [Streaming Config]
 
+### Migrating Content
 
+In certain cases, such as archiving an inactive SIG or Working Group it might be
+useful to grab content from other channels. It is currently NOT POSSIBLE to move
+content from one YouTube channel to another, so the content must be downloaded
+and then reuploaded to the Kubernetes channel
+
+1. Download [youtube-dl], which makes it easier to bulk download videos.
+2. Download the channel or playlist with: `youtube-dl <url>` 
+3. Clean up the filenames as they are used to generate new titles. Do this
+   locally since it is easier than doing it per video in the YouTube web UI.
+4. Create a new playlist for the content on the Kubernetes channel, set it to Private.
+5. Upload the videos to the Kubernetes Channel.
+6. Ensure titles and metadata are accurate, allow time to pass for YouTube to
+   generate thumbnails and process the videos. 
+7. Once videos are finalized, set the playlist to Public to publish them.
 
 
 [coc]: /code-of-conduct.md
@@ -227,3 +243,4 @@ detailed information about streaming, see our [Streaming Config]
 [Subprojects]: /governance.md#subprojects
 [moderation guidelines]: /communication/moderation.md
 [zoom guidelines]:/communication/zoom-guidelines.md
+[youtube-dl]: https://ytdl-org.github.io/youtube-dl/index.html

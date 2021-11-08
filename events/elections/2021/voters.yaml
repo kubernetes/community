@@ -13,6 +13,13 @@
 #   and current organization membership status.
 # 2021-09-29: Deduplicate redundant entries from people with multiple devstats records.
 # 2021-09-30: Adding from exception requests.
+# 2021-10-10: Adding from exception requests.
+# 2021-10-16: Adding from exception requests.
+# 2021-10-19: Adding from exception requests.
+# 2021-10-21: Adding from exception requests.
+# 2021-10-26: Adding from exception requests. Removing one voter due to account swap.
+# 2021-10-29: Adding from exception requests.
+# 2021-10-31: Adding from exception requests. Adding from CoCC.
 #
 
 eligible_voters:
@@ -25,6 +32,7 @@ eligible_voters:
 - adrianchiris
 - adrianludwin
 - adtac
+- AevaOnline
 - afbjorklund
 - ahg-g
 - ahmetb
@@ -62,12 +70,14 @@ eligible_voters:
 - arghya88
 - Arhell
 - ariscahyadi
+- arschles
 - arunmk
 - Arvinderpal
 - asalkeld
 - ash2k
 - ashish-amarnath
 - astoycos
+- Atharva-Shinde
 - atoato88
 - Aut0R3V
 - aveshagarwal
@@ -108,6 +118,7 @@ eligible_voters:
 - castrojo
 - cblecker
 - CecileRobertMichon
+- celanthe
 - celestehorgan
 - champtar
 - changshuchao
@@ -132,6 +143,7 @@ eligible_voters:
 - christopherhein
 - chymy
 - cici37
+- CIPHERTron
 - cjcullen
 - cjwagner
 - CKchen0726
@@ -153,6 +165,7 @@ eligible_voters:
 - danehans
 - DangerOnTheRanger
 - Danil-Grigorev
+- danpopnyc
 - danwinship
 - dashpole
 - dcbw
@@ -182,6 +195,7 @@ eligible_voters:
 - drubin
 - dthorsen
 - dvonthenen
+- DylanGraham
 - eddiezane
 - eddycharly
 - edreed
@@ -232,6 +246,7 @@ eligible_voters:
 - gnufied
 - gochist
 - gracenng
+- guineveresaenger
 - gyliu513
 - habibrosyad
 - haircommander
@@ -287,6 +302,7 @@ eligible_voters:
 - jberkus
 - jcjesus
 - jdef
+- jdumars
 - jeefy
 - Jefftree
 - jeffvance
@@ -330,6 +346,7 @@ eligible_voters:
 - justinsb
 - kakts
 - karan
+- karenhchu
 - karlkfi
 - Kartik494
 - kaslin
@@ -401,6 +418,7 @@ eligible_voters:
 - mattcary
 - mattfenwick
 - matthyx
+- mauilion
 - mauriciopoppe
 - MaxRink
 - mayankshah1607
@@ -460,6 +478,7 @@ eligible_voters:
 - ncdc
 - nckturner
 - nearora-msft
+- nehaLohia27
 - neolit123
 - nicolehanjing
 - nikhita
@@ -535,6 +554,7 @@ eligible_voters:
 - rjbez17
 - RobertKielty
 - robscott
+- rothgar
 - roycaihw
 - rphillips
 - rrati
@@ -544,6 +564,7 @@ eligible_voters:
 - s-kawamura-w664
 - s-urbaniak
 - saad-ali
+- sahilvv
 - saikat-royc
 - salaxander
 - SandeepPissay
@@ -573,6 +594,7 @@ eligible_voters:
 - sharifelgamal
 - shekhar-rajak
 - Shell32-Natsu
+- shivanshu1333
 - shivi28
 - shu-mutou
 - shubheksha
@@ -635,9 +657,11 @@ eligible_voters:
 - verb
 - verult
 - vinayakankugoyal
+- vinaykul
 - vincepri
 - vivekbagade
 - vladimirvivien
+- vllry
 - vteratipally
 - wangyx1992
 - wangyysde
