@@ -151,6 +151,8 @@ This is the work we've done this past cycle and plan to work on in the future:
 
 We give our SIG status at every KubeCon, here are our most current talks:
 
+- [SIG Contributor Experience Deep Dive, North America 2021](https://youtu.be/QOiyWWFjG5Q) - Alison Dowdney, Christoph Blecker
+- [SIG Contributor Experience Deep Dive, Europe 2021](https://youtu.be/vPK3QmVOE4Y) - Bob Killen, Alison Dowdney, Christoph Blecker, Nikhita Raghunath
 - [Introdution to Contributor Experience 2020](https://youtu.be/VeCMQoNHFMU) - Bob Killen, Jorge Castro 
 - [Introduction to Contributor Experience 2019](https://www.youtube.com/watch?v=U1YJlgRLbKk) - Elsie Phillips, Paris Pittman
 - [Contributor Experience Deep Dive 2019](https://www.youtube.com/watch?v=0d97Wna4qOs) - Christoph Blecker, Nikhita Raghunath
