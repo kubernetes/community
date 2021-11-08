@@ -81,7 +81,7 @@ The authors also wish to thank the chairs and members of the CNCF [TAG Security]
 
 ## Target Audience
 
-This paper is intended for Kubernetes administrators, Site Reliability Engineers (SREs), and other practitioners wanting to Kubernetes clusters and workloads in compliance to organizational standards as well as regulatory compliance standards for security, resiliency, and best practices. 
+This paper is intended for Kubernetes administrators, Site Reliability Engineers (SREs), and other practitioners wanting to create Kubernetes clusters and workloads in compliance with organizational standards as well as regulatory compliance standards for security, resiliency, and best practices. 
 
 Additional stakeholders include Chief Security Officers (CSOs), Chief Information Security Officers (CISOs), Chief Technology Officers (CTOs), Security and Compliance personnel, and Auditors of organizations using Kubernetes. This paper also serves as a reference for anyone interested in Kubernetes security, compliance, and governance.
 
