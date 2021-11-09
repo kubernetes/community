@@ -116,7 +116,7 @@ This paper focuses on the policy management concepts and not on the classificati
 
 **XACML** (eXtensible Access Control Markup Language) is a standard from **OASIS** (Organization for the Advancement of Structured Information Standards) that defines a policy language, architecture and processing model. The XACML architecture provides a good starting point for defining a policy management architecture for Kubernetes.
 
-In the XACML architecture, the **Policy Administration Point (PAP)** creates a **Policy** or a **PolicySet** and makes it available to a **Policy Decision Point (PDP)**. User requests are intercepted by a **Policy Enforcement Point (PEP)**, which communicates with the PDP to determine how the request should be handled. The PDP may enrich policy data with attribute values from the **Policy Information Point (PIP)** and will apply the configured policies. The PDP then instructs the PEP how to proceed, for example if the request should be allowed or denied.
+In the XACML architecture, the **Policy Administration Point (PAP)** creates a **Policy** or a **PolicySet** and makes it available to a **Policy Decision Point (PDP)**. User requests are intercepted by a **Policy Enforcement Point (PEP)**, which communicates with the PDP to determine how the request should be handled. The PDP enriches policy data with attribute values from the **Policy Information Point (PIP)** and will apply the configured policies. The PDP then instructs the PEP how to proceed, for example if the request should be allowed or denied.
 
 The figure below shows a simplified diagram of the XACML components and their interactions. Please refer to the OASIS [eXtensible Access Control Markup Language (XACML) Version 3.0](http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.html) for complete details.
 
@@ -129,11 +129,11 @@ The following sections detail how the XACML architecture can be applied to Kuber
 
 ## Policy Administration Point (PAP)
 
-When applied to Kubernetes, the role of a Policy Administration Point (PAP) is typically fulfilled by a central management system that is used to define and distribute policies across a fleet of clusters. The PAP may integrate with backing version control systems or [OCI-compliant](https://opencontainers.org/) registries to store policy definitions. By allowing policies to be managed as versioned code artifacts, a PAP can enable best practices that allow policy definitions to be managed like code artifacts in a software delivery pipeline. The approach of using software development best practices, such as version control and pre-deployment testing and validation, etc. for managing policies, is referred to as “Policy as Code (PaC)”. As the set of policies grow, policy administrators should try to organize policy documents logically by service or domain or control concern, possibly by managing multiple smaller code documents and having the application or service query for specific policy documents, or by dynamic lookup via design patterns, such as composition. For example policies can be organized based on control categories of specific compliance standards and by specific security domains. 
+When applied to Kubernetes, the role of a Policy Administration Point (PAP) is typically fulfilled by a central management system that is used to define and distribute policies across a fleet of clusters. The PAP integrates with backing version control systems or [OCI-compliant](https://opencontainers.org/) registries to store policy definitions. By allowing policies to be managed as versioned code artifacts, a PAP can enable best practices that allow policy definitions to be managed like code artifacts in a software delivery pipeline. The approach of using software development best practices, such as version control and pre-deployment testing and validation, etc. for managing policies, is referred to as “Policy as Code (PaC)”. As the set of policies grow, policy administrators should try to organize policy documents logically by service or domain or control concern, possibly by managing multiple smaller code documents and having the application or service query for specific policy documents, or by dynamic lookup via design patterns, such as composition. For example policies can be organized based on control categories of specific compliance standards and by specific security domains. 
 
 Policies are configured using interfaces provided by the PAP which provides multi cluster policy management, enabling policies to be bound to managed clusters. The PAP deploys the policies to the managed clusters based on this binding. A flexible approach of doing so is by associating labels with the clusters and applying policies to clusters that meet certain placement rules derived from these labels.
 
-The PAP  is used for authoring, deploying, and managing policy changes. However, most real world implementations of a policy management system will also provide capabilities to manage compliance mappings, manage policy results, provide workflows for process automation, enable collaboration across teams, and provide integrations into other enterprise systems such as for identity management, version control, and notifications. In addition to managing and distributing policies, a PAP may perform several other useful functions:
+The PAP  is used for authoring, deploying, and managing policy changes. However, most real world implementations of a policy management system will also provide capabilities to manage compliance mappings, manage policy results, provide workflows for process automation, enable collaboration across teams, and provide integrations into other enterprise systems such as for identity management, version control, and notifications. In addition to managing and distributing policies, a PAP performs several other useful functions like:
 
 * Consolidate policy results and violations across clusters into graphical views along with contextual data to enable collaboration across various personas such as developer, SRE/cluster administrator, and SecOps. 
 * Externalize multi cluster policy violation details using standardized policy report format for easy integration with other IT tools so each managed cluster does not need to integrate individually with each such IT tool.
@@ -210,7 +210,7 @@ Prior to instantiation, policies can be used at admission controls to audit or e
 
 Runtime enforcement provides an additional layer of security by detecting insecure and unexpected behaviors, such as access to a protected filesystem, for running workloads and providing ways to prevent such behaviors.
 
-In some cases, such as when a new policy is applied to existing workloads, it may be desirable to report policy violations without blocking requests or otherwise impacting critical workloads. A PEP should provide this flexibility on a granular basis.
+In some cases, such as when a new policy is applied to existing workloads, it is desirable to report policy violations without blocking requests or otherwise impacting critical workloads. A PEP should provide this flexibility on a granular basis.
 
 There are two distinct threat actors for container runtimes: 
 
@@ -225,7 +225,7 @@ Runtime policy engines can also restrict (authorized, expected) Kubernetes API a
 
 Runtime policies can include periodic conformance checks to container security standards such as the [CIS Benchmark for Kubernetes](https://www.cisecurity.org/benchmark/kubernetes/). Compliance operators can implement and automate the CIS benchmark policies checks, enforce the policy, or simply provide monitoring and report violations.
 
-Security teams may wish to integrate Policy Report data with Kubernetes API audit event streams, to get situational awareness of orchestrator actions.
+Security teams can integrate Policy Report data with Kubernetes API audit event streams, to get situational awareness of orchestrator actions.
 
 In addition to these enforcement mechanisms, the cloud-native universe is increasingly adopting a “Shift Left” approach to security wherein anyone embracing GitOps for instance should consider evaluating policies in CI and on developer laptops to ensure developers get early feedback on policy evaluation. We'll cover this in more detail in the "Develop" section.
 
@@ -236,7 +236,7 @@ Policy engines act as a Policy Decision Point (PDP). Policy engines can run duri
 
 When a policy is specified in “inform” or “audit” mode, the PDP detects any mismatches of the control state against the details specified in the policy and conveys these results to the PEP.
 
-A policy engine may have its own language for defining and managing policies. The policy language may be a Domain Specific Language (DSL), a general purpose language, or declarative configuration. In all cases, policy definitions will eventually have to be accessible within the Kubernetes cluster and best practice to externalize them as Kubernetes custom resources.
+A policy engine can have its own language for defining and managing policies. The policy language may be a Domain Specific Language (DSL), a general purpose language, or declarative configuration. In all cases, policy definitions will eventually have to be accessible within the Kubernetes cluster and best practice to externalize them as Kubernetes custom resources.
 
 The [Kubernetes Policy Working Group](https://github.com/kubernetes/community/tree/master/wg-policy) has defined a flexible and reusable definition for reporting policy results. The Policy Report Custom Resource Definition (CRD) is a Kubernetes API object that can be used by any PDP to report policy execution results, and by any PAP to retrieve, store, and report on current and real-time policy data. The PAP can also use Policy Report CR to externalize the overall multi-cluster policy violation details so it can be integrated into external operational tools used for incident management, security operations, and governance/risk/compliance (GRC) for further mapping to regulations and standards controls.
 
@@ -246,7 +246,7 @@ Remediation involves fixing any policy violations so the control in question is 
 
 Policy decisions often also require other metadata and configuration data. For example, a policy rule may be selectively applied to resources based on namespace labels, which requires a lookup of labels configured on the target namespace. Other examples include looking up existing resource configuration data from the API server to check for limits and other enforceable properties.
 
-Kubernetes policy engines typically leverage the Kubernetes API server to query additional information for data-driven policy decisions. Some policy engines may also allow calls to external systems, for additional information. As with any other API calls, such access should be performant and properly secured. 
+Kubernetes policy engines typically leverage the Kubernetes API server to query additional information for data-driven policy decisions. Some policy engines allow calls to external systems for additional information. As with any other API calls, such access should be performant and properly secured. 
 
 # Lifecycle Phases
 
@@ -372,7 +372,7 @@ Thus, the _policy mapping_ allows the cluster administrator persona and the appl
 * Ensure that etcd encryption is enabled
 * Ensure that secret store encryption is enabled
 
-These controls in turn can then be encoded in the Kubernetes policy engine language. Further, for reuse, policy declarations may implement _parameters_, which the provider defines together with the potential baseline or default and possible alternatives for varying risk tolerances (aka profiles).
+These controls in turn can then be encoded in the Kubernetes policy engine language. Further, for reuse, policy declarations can implement _parameters_, which the provider defines together with the potential baseline or default and possible alternatives for varying risk tolerances (aka profiles).
 
 Once the policy mapping is complete, with the associated parameters’ values - typically tailored by customers with their specific choice of parameter values - it is ready for deployment and validation against the actual Kubernetes configurations and containers.
 
@@ -402,7 +402,7 @@ Policy based operations of Kubernetes helps address these challenges by providin
 A comprehensive Kubernetes policy management strategy follows three guidelines:
 
 1. Use [Kubernetes policy objects](https://kubernetes.io/docs/concepts/policy/) such as pod security, limit ranges, quotas, as well other security related resources such as namespaces, role and role-bindings, and network policies. 
-2. Use admission controls to audit and enforce the proper use of Kubernetes policy and security resources, and apply additional policies across cluster-wide and workload configurations for security and automation. As a best practice, the same policy sets are also applied as part of a continious delivery pipeline to report violations to workload owners in familiar tools.
+2. Use admission controls to audit and enforce the proper use of Kubernetes policy and security resources, and apply additional policies across cluster-wide and workload configurations for security and automation. As a best practice, the same policy sets are also applied as part of a continuous delivery pipeline to report violations to workload owners in familiar tools.
 3. Use a run-time detection and enforcement tool to find, report, and block insecure runtime behaviors that are not prevented using configuration policies, or bypassed due to misconfigurations.
 
 Policy reports and violations from various enforcement points are routed to a Policy Administration Point (PAP), which then integrates with incident response systems and the SOC for rapid resolution. 
