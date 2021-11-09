@@ -186,6 +186,7 @@ channels:
   - name: kpt
   - name: kr-dev
   - name: kr-users
+  - name: krafternetes
   - name: kraken
   - name: krane
   - name: krator
