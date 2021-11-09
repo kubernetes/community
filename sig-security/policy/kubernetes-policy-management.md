@@ -1,7 +1,7 @@
 Kubernetes Policy Management
 ==============================
 
-With the fast growing and widespread adoption of Kubernetes, this paper aims to provide a clear understanding of why Kubernetes policy management is becoming necessary for security and automation. It also describes what problems Kubernetes policies can help solve, and how Kubernetes policies are implemented.
+This paper aims to provide a clear understanding of why Kubernetes policy management is becoming necessary for security and automation of Kubernetes clusters and workloads. It also describes what problems Kubernetes policies can help solve and how Kubernetes policies are implemented.
 
 # Contents
 
@@ -37,11 +37,11 @@ With the fast growing and widespread adoption of Kubernetes, this paper aims to 
 
 # Introduction
 
-A policy is a set of rules adopted by an organization to help achieve desired outcomes. Policies can be used to define rules or guidelines to help achieve desired behaviors across wide ranging concerns like costs, security, and productivity. For example, a corporate expense policy defines guidelines for employee purchases that the finance team can audit. 
+A policy is a set of rules adopted by an organization to help achieve its desired outcomes. Policies can help guide behaviors across wide ranging concerns like costs, security, and productivity. For example, a corporate expense policy defines guidelines for employee purchases that the finance team can audit.
 
-In Information Technology (IT), policies define rules for system configurations and behaviors across domains like security, scale, resilience, and best practices. Policies that define rules for system controls can help represent these recommended practices in a declarative manner. Cloud native systems like Kubernetes are extensible, integrating policy management into the system configuration itself. Policy conformace is measured by reports which show the enforcement or audit of the desired system configuration state. This approach enables policy based governance of systems to realize overall audit readiness goals.
+In Information Technology (IT), policies define rules for system configurations and behaviors across domains like security, scale, resilience, and best practices. Policies that define rules for system controls can help represent these recommended practices in a declarative manner. Cloud native systems like Kubernetes are extensible and allow integrating policy management into the system configuration itself. Policy conformace is measured by reports which show the enforcement or audit of the desired system configuration state. This approach enables policy based governance of systems to realize overall audit readiness goals.
 
-A policy in Kubernetes serves as a digital contract between application owners, cluster administrators, and security stakeholders. Kubernetes administrators deploy policies that describe what configurations and behaviors are allowed based on the organization’s security and compliance requirements. The policies are configured to allow, deny, or audit the configurations or behaviours of interest. Such policies are typically authored collaboratively by operators and information security teams. A best practice is to manage the policies as versioned source code in an auditable fashion.
+In Kubernetes, a policy serves as a digital contract between application owners, cluster administrators, and security stakeholders. Kubernetes administrators deploy policies that describe what configurations and behaviors are allowed based on the organization’s security and compliance requirements. The policies are configured to allow, deny, or audit the configurations and behaviours of interest. Such policies are typically authored collaboratively by operators and information security teams. A best practice is to manage the policies as versioned source code in an auditable fashion.
 
 Kubernetes has policy constructs as part of its [APIs](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) (e.g. a [NetworkPolicy](https://kubernetes.io/docs/concepts/services-networking/network-policies/)), and also allows external policy engines to run as part of the Kubernetes [control plane](https://kubernetes.io/docs/reference/glossary/?all=true#term-control-plane) via [dynamic admission control](https://kubernetes.io/docs/reference/access-authn-authz/extensible-admission-controllers/) capabilities. This paper discusses both types of Kubernetes policies.
 
@@ -92,12 +92,12 @@ The Kubernetes documentation defines the “[The 4C's of Cloud Native Security](
 
 ![alt_text](images/4c.png "The 4C's of Cloud Native Security")
 
-Policies in Kubernetes are concerned with the middle two layers - Containers and Clusters. This paper focuses on these two layers. While code and cloud are not in scope for this paper, these two layers deserve consideration as part of an overall security strategy. This implies that in addition to securing the Containers and Clusters:
+Policies in Kubernetes are concerned with the middle two layers - Containers and Clusters. This paper focuses on these two layers. While code and cloud are not in scope for this paper, these other two layers deserve consideration as part of an overall security strategy. This implies that in addition to securing the Containers and Clusters:
 
 * Cloud, or other infrastructure, security must be enabled and managed
 * Application code and 3rd party dependencies running inside of containers must also be secured
 
-In the 4C’s model, Code [refers to the application code running inside a container](https://kubernetes.io/docs/concepts/security/overview/#code). The Kubernetes configurations are a set of desired state declarations for resources. The configuration for an application is typically defined as a set of YAML files referred to as resource manifests. While it's a best practice to manage Kubernetes resource manifests “as code” (i.e. use version control, reviews testing, etc.) these resource manifests are used to describe how containerized applications should be run in a Kubernetes cluster. Hence they are mapped to the Containers layer in the 4C’s model.
+In the 4C’s model, Code [refers to the application code running inside a container](https://kubernetes.io/docs/concepts/security/overview/#code). The Kubernetes configurations are a set of desired state declarations for resources. The configuration for an application is typically defined as a set of YAML files referred to as resource manifests. While it's a best practice to manage Kubernetes resource manifests “as code” (i.e. use version control, reviews, testing, etc.) these resource manifests are used to describe how containerized applications should be run in a Kubernetes cluster. Hence, they are mapped to the Containers layer in the 4C’s model.
 
 ## Out of Scope
 
@@ -148,9 +148,9 @@ The PAP  is used for authoring, deploying, and managing policy changes. However,
 
 ## Policy Enforcement Point (PEP)
 
-PEPs help enforce policies that ensure that the current state of a Kubernetes cluster matches the desired state as codified by the policy. They can also help to audit the cluster and alert on any API-server resources that violate policy. Policy enforcement in  in Kubernetes can broadly be performed using:
+PEPs help enforce policies that ensure that the current states of Kubernetes workloads and clusters match the desired state as codified by the policy. They can also help audit configurations and alert on any API resources that violate configured policies. 
 
-
+Policy enforcement in Kubernetes is performed using:
 
 1. Built-in policy objects
 2. Kubernetes extensions operating as admission controllers
@@ -160,12 +160,9 @@ Note that these options are not mutually exclusive, and all three are recommende
 
 Each of these types of enforcement is described below.
 
-
 ### Kubernetes Policy Objects
 
 Kubernetes has several resources that act as policies or provide a foundation for applying policies. These resources are implemented by Kubernetes controllers.
-
-
 
 * **Namespaces**: Kubernetes namespaces ([documentation link](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)) allow API level segmentation of resources and provide a way to share clusters across workloads and teams. Even when clusters are dedicated to a team or application, namespaces should be used as a security boundary to restrict cluster-wide access. 
 * **Role Based Access Controls (RBAC)**: Kubernetes allows cluster-wide and namespaced definitions of roles, with granular permissions, and role-bindings to map users or service accounts to roles ([documentation link](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)).
@@ -195,7 +192,7 @@ Admission controls can be used to validate or modify data. For example, the buil
  \
 In addition to the built-in admission controllers, Kubernetes is designed to allow the secure registration of external controllers as mutating or validating webhooks (as webhook is a software component that receives and responds to HTTP requests). This allows external policy engines to validate and mutate all Kubernetes API requests. Policy Engines can act as a defense-in-depth mechanism to address the commonly used fail-open admission control settings. Policy management can be used to ensure Kubernetes policies are in place enforced by various admission control constructs including various policy engines.
 
-Prior to instantiation, policies can be used at admission controls to audit or enforce a large variety of checks such as:#
+Prior to instantiation, policies can be used at admission controls to audit or enforce a large variety of checks and modifications such as:
 
 * Verifying use of trusted image registries
 * Verifying image signatures
@@ -241,21 +238,15 @@ When a policy is specified in “inform” or “audit” mode, the PDP detects 
 
 A policy engine may have its own language for defining and managing policies. The policy language may be a Domain Specific Language (DSL), a general purpose language, or declarative configuration. In all cases, policy definitions will eventually have to be accessible within the Kubernetes cluster and best practice to externalize them as Kubernetes custom resources.
 
-The [Kubernetes Policy Working Group](https://github.com/kubernetes/community/tree/master/wg-policy) has defined a flexible and reusable definition for reporting policy results. The Policy Report Custom Resource Definition (CRD) is a Kubernetes API object that can be used by any PDP to report policy execution results, and by any PAP to retrieve, store, and report on current and real-time policy data. The PAP can also use Policy Report CR to externalize the overall multi-cluster policy violation details so it can be integrated into external operational tools used for incident management, security operations, and governance/risk/compliance (GRC) for further mapping to regulations and standards controls
-
-In the interlock with external tools, it is useful to consider the personas operating those tools, as we may move from a Kubernetes centric administrator focused operational realm to a compliance focused realm managed by compliance officers and engineers. The key to a successful interlock with the compliance team’s tools such as Compliance Operations and Governance, Risk, and Compliance (GRC) tools is recognizing the difference of expertise and expectations between the two personas: the admins prefer a report by non-compliant inventory assets and severity of affected systems, while the compliance officers prefer a report of failing regulation controls and risk of affected policies. 
-
-To address these dual requirements, this WG designed a reporting policy results schema for the operational interest of the administrator and at the same time, it followed the industry [NIST OSCAL](https://pages.nist.gov/OSCAL/) [oscal] standard terminology. In particular, the CRD schema is mapping to the OSCAL assessment results observations element such that the expected translation of the Kubernetes reporting policy results can be straightforwardly translated to the OSCAL schema.
+The [Kubernetes Policy Working Group](https://github.com/kubernetes/community/tree/master/wg-policy) has defined a flexible and reusable definition for reporting policy results. The Policy Report Custom Resource Definition (CRD) is a Kubernetes API object that can be used by any PDP to report policy execution results, and by any PAP to retrieve, store, and report on current and real-time policy data. The PAP can also use Policy Report CR to externalize the overall multi-cluster policy violation details so it can be integrated into external operational tools used for incident management, security operations, and governance/risk/compliance (GRC) for further mapping to regulations and standards controls.
 
 Remediation involves fixing any policy violations so the control in question is operating to best practices specified in the policy. When the policy is specified in 'enforce' mode, the PEP performs remediation when it finds any mismatches. When the policy is specified in 'inform' mode, the PEP reports mismatches as policy violations to the PAP which can then trigger remediation or route an alert to an incident management system or security operations center (for security related policies) which in turn can initiate remediation actions.
-
 
 ## Policy Information Point (PIP)
 
 Policy decisions often also require other metadata and configuration data. For example, a policy rule may be selectively applied to resources based on namespace labels, which requires a lookup of labels configured on the target namespace. Other examples include looking up existing resource configuration data from the API server to check for limits and other enforceable properties.
 
 Kubernetes policy engines typically leverage the Kubernetes API server to query additional information for data-driven policy decisions. Some policy engines may also allow calls to external systems, for additional information. As with any other API calls, such access should be performant and properly secured. 
-
 
 # Lifecycle Phases
 
@@ -321,20 +312,17 @@ Runtime policy engines also monitor for abnormal and unexpected behaviors, such 
 
 # Security Mappings
 
-Policies act as a bridge between operations and security domains within cloud native organizations. This section discusses how Kubernetes policies map to other security functions and can provide the assurance of organizational security and compliance. 
+Policies act as a bridge between operations and other security domains within cloud native organizations. This section discusses how Kubernetes policies map to these other security functions. 
 
 ## Security Assurance
 
-A policy-based governance approach can be integrated with existing tools used by IT Operations personnel to realize various use cases to conform to enterprise operational standards and enterprise security requirements. In this section, we provide examples of such use cases. 
-
 Security Assurance requires a holistic approach that addresses unique security requirements across all stages of the platform and application design and lifecycle, spanning the build, infrastructure, and runtime. As part of a secure development lifecycle, the first step is to develop a threat model for the platform and the workloads.
-
 
 ### Threat Modeling
 
 In an enterprise context, key risks can be mitigated by defining controls and policies in layers that can provide defense-in-depth. Enforcing policy controls, and governing them through sufficient monitoring is important in a dynamic cloud-native environment. Governance enforced via policies allows representation of best practices for various controls as policies that in turn result in controls being configured to the desired configuration state. Detection of policy violations e.g. Kubernetes workload configurations with root user and host access can feed into data for threat modeling exercises. In this manner, threat models are based on actual state and configurations, and policy violations identified can help enrich information based on which a threat model is produced.  
 
-A policy based approach to managing Kubernetes clusters and workloads can help simplify managing vulnerabilities and threats within the 2Cs (containers and clusters) of the cloud native security model. It is important to define policies for workload isolation and segmentation so that the impact of vulnerabilities is contained and defenses are in place to  minimize the impact of such vulnerabilities. A policy management framework for Kubernetes should be derived from a clear security impact analysis of the threat model across all clusters and containers, and the images and configurations deployed for workloads. Security impact analysis requires understanding of the usage model for workloads, nodes, and clusters. Such information can be explicitly defined using metadata such as labels or annotations. The use of metadata can be governed using policies. For example, DevOps engineers creating a pod controller can label workloads that manage PCI sensitive data (ie cardholder data) to be considered a higher risk and critical asset. 
+A policy based approach to managing Kubernetes clusters and workloads can help simplify managing vulnerabilities and threats within the 2Cs of the cloud native security model that are in-scope (i.e. containers and clusters). It is important to define policies for workload isolation and segmentation so that the impact of vulnerabilities is contained and defenses are in place to  minimize the impact of such vulnerabilities. A policy management framework for Kubernetes should be derived from a clear security impact analysis of the threat model across all clusters and containers, and the images and configurations deployed for workloads. Security impact analysis requires understanding of the usage model for workloads, nodes, and clusters. Such information can be explicitly defined using metadata such as labels or annotations. The use of metadata can be governed using policies. For example, DevOps engineers creating a pod controller can label workloads that manage PCI sensitive data (ie cardholder data) to be considered a higher risk and critical asset. 
 
 
 ### Security assurance in the delivery pipeline
@@ -346,7 +334,6 @@ Misconfigurations can lead to privilege escalation, vulnerable images, images fr
 Attackers are increasingly developing new  ways to infiltrate into the software supply chain with malware to carry out sophisticated attacks that can evade traditional application security controls. Software supply chain can be secured using a number of key policies that can be enforced in the CI-CD pipeline, especially validating the identity of the software provider by validating digital signatures, Code integrity, the software bill of materials and contents of the images etc. in addition to scanning the software in a sandboxed environment before introducing it in the enterprise repositories. The [Software Supply Chain Best Practices](https://github.com/cncf/tag-security/blob/main/supply-chain-security/supply-chain-security-paper/CNCF_SSCP_v1.pdf) published by TAG security provides more detailed information on supply chain security.
 
 Assurance that the software being consumed by an Enterprise whether it is inbuilt or procured from a 3rd party is secure is a must and policy based enforcement and detection of violation of these policies is key from an overall security assurance perspective.
-
 
 ### Security assurance at runtime
 
@@ -369,16 +356,15 @@ Some examples of runtime Kubernetes security policies are:
 
 ### Incident Response
 
-While incident response is primarily a human process, in this section we discuss how Kuberenetes policy management impacts it. Kubernetes  incident response should be aligned with established DevSecOps operating principles with an emphasis on recognizing the declarative state, ephemeral nature of workloads, and automated controls.
+While incident response is primarily a human process, in this section we discuss how Kuberenetes policy management impacts it. Kubernetes incident response should be aligned with established DevSecOps operating principles with an emphasis on recognizing the declarative state, ephemeral nature of workloads, and automated controls.
 
-Kubernetes introduces new challenges for planning incident response. The volume of telemetry data required to effectively identify and detect attacks is larger due to the short lifespan of containers, and since the persistence of resources is not guaranteed. Telemetry and audit logs need to be ingested and processed automatically instead of manual review and enrichment so that automation workflows can manage and respond to operational status changes in the infrastructure by extracting actionable events out of raw telemetry data. Existing SIEM and SOAR platforms may not be up to the challenge, having focused on manual human operations.
+Kubernetes and cloud native technologies introduce new challenges for planning incident response. The volume of telemetry data required to effectively identify and detect attacks is larger due to the short lifespan of containers, and since the persistence of resources is not guaranteed. Telemetry and audit logs need to be ingested and processed automatically instead of manual review and enrichment so that automation workflows can manage and respond to operational status changes in the infrastructure by extracting actionable events out of raw telemetry data. Existing SIEM and SOAR platforms may not be up to the challenge, having focused on manual human operations.
 
 Increasing adoption of [Chaos Engineering](https://en.wikipedia.org/wiki/Chaos_engineering) into Kubernetes incident response planning and simulation helps surface new threats and design better monitors and telemetry ingestion flows. ML-based telemetry analysis can help proactively identify anomaly scenarios and edge cases. It is increasingly important to build automated remediation, using policy-as-code, and to curate and train ML models so that these tools adapt as attackers evolve. Kubernetes policy reports can provide additional data, with long term data collected and stored in the PAP.
 
-
 ## Compliance
 
-Kubernetes policies can help define compliance controls. For a given regulatory or industry set of requirements (or “controls”) such as PCI, NIST 800-30, NIST 800-53, NIST 800-190, or HIPAA, the concept _policy mapping_ represents the essential glue that links the _compliance objective_ in human terms in the standards documentation or regulatory guidance, to the _technical controls_ for Kubernetes that are specific configuration or runtime requirements, and also how Kubernetes features themselves also help to implement the controls. 
+Kubernetes policies can help automate compliance controls. For a given regulatory standard or industry set of requirements such as PCI, NIST 800-30, NIST 800-53, NIST 800-190, HIPAA, etc. _policy mapping_ represents the essential glue that links the documented _compliance objective_ to the _technical controls_ in the cluster or workload configurations.
 
 Thus, the _policy mapping_ allows the cluster administrator persona and the application owner persona to define in code how the controls are implemented. For instance, NIST 800-53 control _SC-28 PROTECTION OF INFORMATION AT REST_ (“This control addresses the confidentiality and integrity of information at rest and covers user information and system information.”) can be mapped as follows to technical Kubernetes controls:
 
@@ -386,22 +372,22 @@ Thus, the _policy mapping_ allows the cluster administrator persona and the appl
 * Ensure that etcd encryption is enabled
 * Ensure that secret store encryption is enabled
 
-Which can in turn be encoded in the Kubernetes policy engine language. Further, for reuse, policy declarations may implement _parameters_, which the provider defines together with the potential baseline or default and possible alternatives for varying risk tolerances (aka profiles). 
+These controls in turn can then be encoded in the Kubernetes policy engine language. Further, for reuse, policy declarations may implement _parameters_, which the provider defines together with the potential baseline or default and possible alternatives for varying risk tolerances (aka profiles).
 
 Once the policy mapping is complete, with the associated parameters’ values - typically tailored by customers with their specific choice of parameter values - it is ready for deployment and validation against the actual Kubernetes configurations and containers.
 
 Policies managed in a Kubernetes cluster benefit both the security _operations_ team (i.e., cluster admins) as well as the _regulatory_ team (i.e., compliance officers). As a cluster administrator, you need to validate the secure configuration and provisioning of clusters and containers, based on published compliance benchmarks, but a compliance person also wants to assess and share the _regulatory_ _compliance_ of the cluster and containers through the lens of their regulatory specific profile. 
 
-The key to a successful interlock between the operations and the compliance roles is recognizing the difference of expertise and expectations between the two: operational admins prefer a report of non-compliant assets or resources, while the compliance officers prefer a report of deficient or missing control implementations and the corresponding risks to the system and data. 
+The key to a successful interlock between the operations and the compliance roles is recognizing the difference of expertise and expectations between the two: operational administrators prefer a report of non-compliant assets or resources, while the compliance officers prefer a report of deficient or missing control implementations and the corresponding risks to the system and data. 
 
-A standardized assessment result format addresses this dichotomy of perspective and objectives. This enables end to end automation, if using a schema whose formats aim and support the standardization across diverse assets and systems. OSCAL is such a standard schema, with many layers (see below). 
+A standardized assessment result format, such as the previously discussed [Policy Report CRD](https://github.com/kubernetes-sigs/wg-policy-prototypes/tree/master/policy-report), addresses this dichotomy of perspective and objectives. This enables end to end automation, if using a schema whose formats aim and support the standardization across diverse assets and systems. OSCAL is such a standard schema, with many layers (see below). 
 
 ![alt_text](images/OSCAL-layers.png "OSCAL Layers")
 
 
 [https://pages.nist.gov/OSCAL/documentation/schema/](https://pages.nist.gov/OSCAL/documentation/schema/)
 
-The [OSCAL Assessment Results model](https://pages.nist.gov/OSCAL/documentation/schema/assessment-results-layer/assessment-results/) defines structured, machine-readable JSON, and YAML representations of the information contained within an assessments report. This model is used by anyone performing assessment or continuous monitoring activities on a system to determine the degree to which that system complies with one or more frameworks. This is especially helpful if looking for increased remediation automation. The Policy WG CRD specification is designed to allow a tool developer or operator with some scripting to extract fields from a Policy Report and generate OSCAL if desired.
+The [OSCAL Assessment Results model](https://pages.nist.gov/OSCAL/documentation/schema/assessment-results-layer/assessment-results/) defines structured, machine-readable JSON, and YAML representations of the information contained within an assessments report. This model is used by anyone performing assessment or continuous monitoring activities on a system to determine the degree to which that system complies with one or more frameworks. This is especially helpful if looking for increased remediation automation. 
 
 In essence, compliant clusters are managed using Kubernetes policies. A policy based approach increases automation and reduces the overall compliance burden by allowing an organization to focus on making their applications and development processes.
 
@@ -409,17 +395,25 @@ Formal methods of policy and compliance state verification remain work in progre
 
 # Conclusion
 
-As organizations transform from traditional infrastructure to cloud native approaches, they are adopting Kubernetes to standardize their operations and management practices and increase agility. 
+Cloud native organizations are adopting Kubernetes to increase agility and standardize their operations and management practices. However, security and automation remains a challenge. In a recent [cloud native security survey](https://www.cncf.io/wp-content/uploads/2021/10/Cloud-Native-Security-Microsurvey-rev.pdf), over 80% of respondents stated that they are looking for modern security systems with open source software, citing lack of expertise, mismatch with existing tools, and complexity of management as major pain points.
 
-While Kubernetes enables organizations to move faster at scale, they still need to abide by internal standards for security, resiliency, and software engineering and comply with external regulatory standards. All of this typically requires multiple audits annually. No single role that uses or manage Kubernetes platforms has expertise in all the areas of security, resiliency, and best practice controls necessary to operate such platforms which tend to evolve rapidly. Securing clusters and workloads can become a complex and cumbersome task.
+Policy based operations of Kubernetes helps address these challenges by providing separation of concerns across development, operations, and security roles. Subject matter experts for respective controls represent recommended practices and guidelines for various configuration controls as policies that are deployed across clusters using cloud-native best practices. 
 
-Policy based operations addresses this challenge by providing separating concerns across development, operations, and security roles. Subject matter experts for respective controls represent recommended practices and guidelines for various configuration controls as policies that are deployed across clusters using cloud-native best practices. Kubernetes policies are best enforced in the delivery pipeline and in the cluster using admission controls and runtime scans. Violations can be  routed to the Policy Administration Point (PAP), which integrates with incident response systems and the SOC for rapid resolution. 
+A comprehensive Kubernetes policy management strategy follows three guidelines:
 
-By adopting policy based governance, organizations can realize their goal to be measurably more secure and audit ready, without compromising on agility and self-service.
+1. Use [Kubernetes policy objects](https://kubernetes.io/docs/concepts/policy/) such as pod security, limit ranges, quotas, as well other security related resources such as namespaces, role and role-bindings, and network policies. 
+2. Use admission controls to audit and enforce the proper use of Kubernetes policy and security resources, and apply additional policies across cluster-wide and workload configurations for security and automation. As a best practice, the same policy sets are also applied as part of a continious delivery pipeline to report violations to workload owners in familiar tools.
+3. Use a run-time detection and enforcement tool to find, report, and block insecure runtime behaviors that are not prevented using configuration policies, or bypassed due to misconfigurations.
+
+Policy reports and violations from various enforcement points are routed to a Policy Administration Point (PAP), which then integrates with incident response systems and the SOC for rapid resolution. 
+
+The [Security and Compliance category of the CNCF Cloud Native Interactive Landscape](https://landscape.cncf.io/card-mode?category=security-compliance&grouping=category) provides a listing of related projects and tools.  
+
+Cloud native organizations can utilize Kubernetes policies to define mappings between operational controls and other security areas with the aim of automating governance and compliance processes. By adopting policy-based operations, organizations can realize their goal to be more secure and compliant without compromising developer agility and self-service.
 
 # Roadmap
 
-This document is intended to be a living document that will be updated as Kubernetes evolves. 
+This document is intended to be a living document that will be updated as Kubernetes and its ecosystem evolves. 
 
 To discuss proposals and ideas, or contribute in any other way, join the [Kubernetes Policy Working Group](https://github.com/kubernetes/community/tree/master/wg-policy).
 
