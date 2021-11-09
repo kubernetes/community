@@ -2253,9 +2253,6 @@ sigs:
   label: service-catalog
   leadership:
     chairs:
-    - github: jberkhahn
-      name: Jonathan Berkhahn
-      company: IBM
     - github: jhvhs
       name: Konstantin Semenov
       company: VMware
@@ -2266,6 +2263,8 @@ sigs:
       name: Carolyn Van Slyck
     - github: duglin
       name: Doug Davis
+    - github: jberkhahn
+      name: Jonathan Berkhahn
     - github: jboyd01
       name: Jay Boyd
     - github: kibbles-n-bytes
