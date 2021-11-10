@@ -32,6 +32,9 @@ Different actions on this list must be carried out by different members:
 
     - [ ] `conduct@kubernetes.io` mailing list
     - [ ] Google drive
+- [ ] Update `kubernetes/org`:
+  - [ ] [`OWNERS_ALIASES`](https://git.k8s.io/org/OWNERS_ALIASES)
+  - [ ] [`config/kubernetes/org.yaml`](https://git.k8s.io/org/config/kubernetes/org.yaml)
 
 ## Communications 
 
