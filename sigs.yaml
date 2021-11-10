@@ -981,7 +981,7 @@ sigs:
     contact:
       slack: cluster-api
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/main/OWNERS
     meetings:
     - description: Cluster API office hours
       day: Wednesday
