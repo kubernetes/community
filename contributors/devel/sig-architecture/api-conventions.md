@@ -150,7 +150,7 @@ sub-resources. Common subresources include:
    * `/binding`: Used to bind a resource representing a user request (e.g., Pod,
 PersistentVolumeClaim) to a cluster infrastructure resource (e.g., Node,
 PersistentVolume).
-   * `/status`: Used to write just the status portion of a resource. For
+   * `/status`: Used to write just the `status` portion of a resource. For
 example, the `/pods` endpoint only allows updates to `metadata` and `spec`,
 since those reflect end-user intent. An automated process should be able to
 modify status for users to see by sending an updated Pod kind to the server to
@@ -250,9 +250,9 @@ tooling to decorate objects with additional metadata for their own use.
 #### Spec and Status
 
 By convention, the Kubernetes API makes a distinction between the specification
-of the desired state of an object (a nested object field called "spec") and the
+of the desired state of an object (a nested object field called `spec`) and the
 status of the object at the current time (a nested object field called
-"status"). The specification is a complete description of the desired state,
+`status`). The specification is a complete description of the desired state,
 including configuration settings provided by the user,
 [default values](#defaulting) expanded by the system, and properties initialized
 or otherwise changed after creation by other ecosystem components (e.g.,
@@ -260,25 +260,25 @@ schedulers, auto-scalers), and is persisted in stable storage with the API
 object. If the specification is deleted, the object will be purged from the
 system.
 
-The status summarizes the current state of the object in the system, and is
+The `status` summarizes the current state of the object in the system, and is
 usually persisted with the object by automated processes but may be generated
-on the fly.  As a general guideline, fields in status should be the most recent
+on the fly.  As a general guideline, fields in `status` should be the most recent
 observations of actual state, but they may contain information such as the
 results of allocations or similar operations which are executed in response to
-the object's spec.  See [below](#representing-allocated-values) for more
+the object's `spec`.  See [below](#representing-allocated-values) for more
 details.
 
-Types with both spec and status stanzas can (and usually should) have distinct
+Types with both `spec` and `status` stanzas can (and usually should) have distinct
 authorization scopes for them.  This allows users to be granted full write
-access to spec and read-only access to status, while relevant controllers are
-granted read-only access to spec but full write access to status.
+access to `spec` and read-only access to status, while relevant controllers are
+granted read-only access to `spec` but full write access to status.
 
-When a new version of an object is POSTed or PUT, the "spec" is updated and
-available immediately. Over time the system will work to bring the "status" into
-line with the "spec". The system will drive toward the most recent "spec"
+When a new version of an object is POSTed or PUT, the `spec` is updated and
+available immediately. Over time the system will work to bring the `status` into
+line with the `spec`. The system will drive toward the most recent `spec`
 regardless of previous versions of that stanza. For example, if a value is
 changed from 2 to 5 in one PUT and then back down to 3 in another PUT the system
-is not required to 'touch base' at 5 before changing the "status" to 3. In other
+is not required to 'touch base' at 5 before changing the `status` to 3. In other
 words, the system's behavior is *level-based* rather than *edge-based*. This
 enables robust behavior in the presence of missed intermediate state changes.
 
@@ -289,8 +289,8 @@ specification should have declarative rather than imperative names and
 semantics -- they represent the desired state, not actions intended to yield the
 desired state.
 
-The PUT and POST verbs on objects MUST ignore the "status" values, to avoid
-accidentally overwriting the status in read-modify-write scenarios. A `/status`
+The PUT and POST verbs on objects MUST ignore the `status` values, to avoid
+accidentally overwriting the `status` in read-modify-write scenarios. A `/status`
 subresource MUST be provided to enable system components to update statuses of
 resources they manage.
 
@@ -305,17 +305,17 @@ alternative resource representations that allow mutation of the status, or
 performing custom actions on the object.
 
 All objects that represent a physical resource whose state may vary from the
-user's desired intent SHOULD have a "spec" and a "status". Objects whose state
-cannot vary from the user's desired intent MAY have only "spec", and MAY rename
-"spec" to a more appropriate name.
+user's desired intent SHOULD have a `spec` and a `status`. Objects whose state
+cannot vary from the user's desired intent MAY have only `spec`, and MAY rename
+`spec` to a more appropriate name.
 
-Objects that contain both spec and status should not contain additional
+Objects that contain both `spec` and `status` should not contain additional
 top-level fields other than the standard metadata fields.
 
 Some objects which are not persisted in the system - such as `SubjectAccessReview`
-and other webhook style calls - may choose to add spec and status to encapsulate
-a "call and response" pattern. The spec is the request (often a request for
-information) and the status is the response. For these RPC like objects the only
+and other webhook style calls - may choose to add `spec` and `status` to encapsulate
+a "call and response" pattern. The `spec` is the request (often a request for
+information) and the `status` is the response. For these RPC like objects the only
 operation may be POST, but having a consistent schema between submission and
 response reduces the complexity of these clients.
 
@@ -352,7 +352,7 @@ Conditions are most useful when they follow some consistent conventions:
 
    * Not all controllers will observe the previous advice about reporting
      "Unknown" or "False" values. For known conditions, the absence of a
-     condition status should be interpreted the same as `Unknown`, and
+     condition `status` should be interpreted the same as `Unknown`, and
      typically indicates that reconciliation has not yet finished (or that the
      resource state may not yet be observable).
 
@@ -374,7 +374,7 @@ Conditions are most useful when they follow some consistent conventions:
   resource, rather than describing the current state transitions. This
   typically means that the name should be an adjective ("Ready", "OutOfDisk")
   or a past-tense verb ("Succeeded", "Failed") rather than a present-tense verb
-  ("Deploying"). Intermediate states may be indicated by setting the status of
+  ("Deploying"). Intermediate states may be indicated by setting the `status` of
   the condition to `Unknown`.
 
   * For state transitions which take a long period of time (e.g. more than 1
@@ -423,7 +423,7 @@ can cause a large fan-out effect for some resources.
 Condition types should be named in PascalCase. Short condition names are
 preferred (e.g. "Ready" over "MyResourceReady").
 
-Condition status values may be `True`, `False`, or `Unknown`. The absence of a
+Condition `status` values may be `True`, `False`, or `Unknown`. The absence of a
 condition should be interpreted the same as `Unknown`.  How controllers handle
 `Unknown` depends on the Condition in question.
 
@@ -495,7 +495,7 @@ referring object's status.
 
 For references to specific objects, see [Object references](#object-references).
 
-References in the status of the referee to the referrer may be permitted, when
+References in the `status` of the referee to the referrer may be permitted, when
 the references are one-to-one and do not need to be frequently updated,
 particularly in an edge-based manner.
 
@@ -1765,7 +1765,7 @@ pattern.  This is appropriate when:
   this type will have a value)
 * the schema and controller are known a priori (i.e. it's not an extension)
 * it is "safe" to allow the controller(s) to write to `status` (i.e.
-  there's low risk of them causing problems viaa other `status` fields).
+  there's low risk of them causing problems via other `status` fields).
 
 Consumers of such values can look at the `status` field for the "final" value.
 
