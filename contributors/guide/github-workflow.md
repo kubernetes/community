@@ -55,7 +55,7 @@ cd $working_dir/kubernetes
 git remote add upstream https://github.com/kubernetes/kubernetes.git
 # or: git remote add upstream git@github.com:kubernetes/kubernetes.git
 
-# Never push to upstream master
+# Never push to upstream main
 git remote set-url --push upstream no_push
 
 # Confirm that your remotes make sense:
@@ -64,13 +64,13 @@ git remote -v
 
 ### 3 Branch
 
-Get your local master up to date:
+Get your local main up to date:
 
 ```sh
 cd $working_dir/kubernetes
 git fetch upstream
-git checkout master
-git rebase upstream/master
+git checkout main
+git rebase upstream/main
 ```
 
 Branch from it:
@@ -89,7 +89,7 @@ This workflow is process-specific; for quick start build instructions for [kuber
 ```sh
 # While on your myfeature branch
 git fetch upstream
-git rebase upstream/master
+git rebase upstream/main
 ```
 
 Please don't use `git pull` instead of the above `fetch` / `rebase`. `git pull`
@@ -217,7 +217,7 @@ rebase](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History):
 
    ...
 
-  Successfully rebased and updated refs/heads/master.
+  Successfully rebased and updated refs/heads/main.
   ```
 4. Force push your changes to your remote branch:
 
@@ -251,7 +251,7 @@ will create the PR branch inside the main repository rather than inside your for
 
   # sync the branch with upstream
   git fetch upstream
-  git rebase upstream/master
+  git rebase upstream/main
   ```
 - If the commit you wish to revert is a:<br>
   - **merge commit:**
