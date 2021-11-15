@@ -67,6 +67,7 @@ channels:
   - name: compliance-hipaa
   - name: contour
   - name: contributor-summit
+  - name: controller-runtime
   - name: craft
   - name: crash-diagnostics
   - name: crd-installation
