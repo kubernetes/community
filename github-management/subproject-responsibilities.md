@@ -12,7 +12,7 @@ This subproject will be responsible for:
 - Establishing a "GitHub Administration team" that will oversee the execution of
   GitHub management tasks (inviting new members to the org, creating repos,
   executing moderation decisions, auditing permissions)
-- Working with other sigs and interested parties in the project to execute
+- Working with other *sigs* and interested parties in the project to execute
   GitHub tasks where required
 
 This subproject will explicitly not be responsible for:
