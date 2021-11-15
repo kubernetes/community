@@ -41,7 +41,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-multicluster-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-multicluster-pr-reviews) - PR Reviews
     - [@kubernetes/sig-multicluster-test-failures](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) - Test Failures and Triage
     - [@kubernetes/sig-mutlicluster-proposals](https://github.com/orgs/kubernetes/teams/sig-mutlicluster-proposals) - Design Proposals
-- Steering Committee Liaison: Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
+- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
 ## Subprojects
 
