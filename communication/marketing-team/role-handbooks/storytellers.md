@@ -2,19 +2,23 @@
 
 ## Overview
 
-It's no secret that governance and technical documentation can be kind of on the boring side. And that's ok - it's not there to put on a circus but provide valuable information and get you were you need to go.
+Upstream Marketing depends on great storytelling to get the message out about our amazing community.
 
-In this role, Storytellers are here for both! Storytellers will take us on journeys through words and visuals to help us craft...
-TODO add more here
+It's no secret that governance and technical documentation can be kind of on the boring side. And that's ok–it's not always there for entertainment purposes. It is about providing valuable information and get you were you need to go. But that said, an important message can be lost without an entertaining messenger. 
+
+In this role, Storytellers are here to help Kubernetes contributors hear the latest news in the most entertianing ways. Storytellers will take us on journeys through words and visuals to help us craft.
 
 ## Workflow ⚡️
+
+Storytelling is welcome in any medium that can be supported by the Upstream Marketing team. This includes but is not limited to written word–as outlined in [blogging guidelines]–or through video following our [YouTube guidelines]. 
+
+Storytellers are constantly building new ways to share, and these resources are gathered in the [storytelling resources folder]. 
 
 ### Upstream Marketing Process
 
 #### Idea Paths
 
 There are multiple ways to successfully contribute a Kubernetes blog post. Here are some of the common paths to help you do so:
-
 
 **To start:** 
 
@@ -45,21 +49,21 @@ Or if you already have everything you think you need you can:
 
 ### Tips
 
-Converting gdoc to markdown?
+Converting a Google Doc to markdown? Here is a helpful way to do so:
 
 * go to: https://discuss.kubernetes.io/
 * Open a new topic
-* Paste gdoc into new topic window
+* Paste the Google Doc into new topic window
   * Discourse will automatically convert it to markdown 🎉 
 * Now you can copy the markdown text, with all its original formatting, and paste it into your blog post file (this will often be a text file you are editing on your computer from a text editor like VS Code)
 * Be sure to add the syntax required at the top of the blog post (see links above)
 * Now you are ready to submit it as a PR
 
-## Minimum Skills and Experience
+## Minimum Skills and Requirements
 
 - Have a passion for telling stories, technical writing, journalism, and painting pictures with words
 - Desire to be a Kubernetes Org Member and if not already, work your way towards membership
-- Comfortable with working with GitHub workflows or working in a collaborative doc tool with the Editor  
+- Helpful but not required: Comfortable with working with GitHub workflows or working in a collaborative document like Hackmd.io
 
 ## Expectations
 
@@ -72,6 +76,9 @@ If you would like to be listed as a member of the team, here are the expectation
 3. Remain non-partial: if you receive a request to write about a project, an individual, or a group of people from your employer, you should ask an impartial blogger to write it.
 4. As with all contribution to Kubernetes, adhere to the [code of conduct](/code-of-conduct.md), values, and principles of the project.
 
-There is no shadow roles for Storytellers. If Storytellers are interested in
-becoming the teams sig-docs-liaison they should follow the process for the
-community role on the sig-docs-blog team. TODO add link here
+There is no shadow roles for Storytellers. If Storytellers are interested in becoming a shadow they can read more about it in the [Marketing Council Handbook].
+
+[blogging guidelines]: ../storytelling-resources/blog-guidelines.md
+[YouTube guidelines]: /communication/youtube/youtube-guidelines.md
+[storytelling resources folder]: ../storytelling-resources/
+[Marketing Council Handbook]: ../council.md
