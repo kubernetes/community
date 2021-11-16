@@ -27,35 +27,35 @@ of SIGs, WGs and UGs.
 | [SIG Apps](sig-apps/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Architecture](sig-architecture/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [SIG Auth](sig-auth/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
-| [SIG Autoscaling](sig-autoscaling/README.md) | Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**) |
-| [SIG CLI](sig-cli/README.md) | Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**) |
-| [SIG Cloud Provider](sig-cloud-provider/README.md) | Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**) |
+| [SIG Autoscaling](sig-autoscaling/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
+| [SIG CLI](sig-cli/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
+| [SIG Cloud Provider](sig-cloud-provider/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG Cluster Lifecycle](sig-cluster-lifecycle/README.md) | Davanum Srinivas (**[@dims](https://github.com/dims)**) |
 | [SIG Contributor Experience](sig-contributor-experience/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
-| [SIG Docs](sig-docs/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
+| [SIG Docs](sig-docs/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
 | [SIG Instrumentation](sig-instrumentation/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
-| [SIG K8s Infra](sig-k8s-infra/README.md) | Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**) |
-| [SIG Multicluster](sig-multicluster/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
-| [SIG Network](sig-network/README.md) | Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**) |
-| [SIG Node](sig-node/README.md) | Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**) |
+| [SIG K8s Infra](sig-k8s-infra/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
+| [SIG Multicluster](sig-multicluster/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
+| [SIG Network](sig-network/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
+| [SIG Node](sig-node/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
 | [SIG Release](sig-release/README.md) | Davanum Srinivas (**[@dims](https://github.com/dims)**) |
 | [SIG Scalability](sig-scalability/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Scheduling](sig-scheduling/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [SIG Security](sig-security/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
-| [SIG Service Catalog](sig-service-catalog/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
+| [SIG Service Catalog](sig-service-catalog/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Storage](sig-storage/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
 | [SIG Testing](sig-testing/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
-| [SIG UI](sig-ui/README.md) | Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**) |
+| [SIG UI](sig-ui/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG Usability](sig-usability/README.md) | Davanum Srinivas (**[@dims](https://github.com/dims)**) |
 | [SIG Windows](sig-windows/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [WG API Expression](wg-api-expression/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
-| [WG Data Protection](wg-data-protection/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
-| [WG IoT Edge](wg-iot-edge/README.md) | Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**) |
+| [WG Data Protection](wg-data-protection/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
+| [WG IoT Edge](wg-iot-edge/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG Multitenancy](wg-multitenancy/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [WG Policy](wg-policy/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG Structured Logging](wg-structured-logging/README.md) | Davanum Srinivas (**[@dims](https://github.com/dims)**) |
-| [UG Big Data](ug-big-data/README.md) | Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**) |
-| [UG VMware Users](ug-vmware-users/README.md) | Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**) |
+| [UG Big Data](ug-big-data/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
+| [UG VMware Users](ug-vmware-users/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

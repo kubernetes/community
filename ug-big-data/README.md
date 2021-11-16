@@ -27,7 +27,7 @@ Serve as a community resource for advising big data and data science related sof
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fbig-data)
 - GitHub Teams:
     - [@kubernetes/ug-big-data](https://github.com/orgs/kubernetes/teams/ug-big-data) - General Discussion
-- Steering Committee Liaison: Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**)
+- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 ### Goals

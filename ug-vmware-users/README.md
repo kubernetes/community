@@ -22,7 +22,7 @@ The VMware User Group facilitates communication among Kubernetes users and contr
 - Slack: [#ug-vmware](https://kubernetes.slack.com/messages/ug-vmware)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-ug-vmware)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fvmware-users)
-- Steering Committee Liaison: Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
+- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

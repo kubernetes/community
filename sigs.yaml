@@ -596,8 +596,8 @@ sigs:
     - name: sig-autoscaling-test-failures
       description: Test Failures and Triage
     liaison:
-      github: derekwaynecarr
-      name: Derek Carr
+      github: tpepper
+      name: Tim Pepper
   subprojects:
   - name: addon-resizer
     owners:
@@ -699,8 +699,8 @@ sigs:
     - name: sig-cli-test-failures
       description: Test Failures and Triage
     liaison:
-      github: derekwaynecarr
-      name: Derek Carr
+      github: justaugustus
+      name: Stephen Augustus
   subprojects:
   - name: cli-experimental
     owners:
@@ -788,8 +788,8 @@ sigs:
     - name: sig-cloud-providers-misc
       description: General Discussion
     liaison:
-      github: nikhita
-      name: Nikhita Raghunath
+      github: justaugustus
+      name: Stephen Augustus
   subprojects:
   - name: cloud-provider-extraction-migration
     owners:
@@ -1438,8 +1438,8 @@ sigs:
     - name: sig-docs-zh-owners
       description: Chinese language content
     liaison:
-      github: liggitt
-      name: Jordan Liggitt
+      github: parispittman
+      name: Paris Pittman
   subprojects:
   - name: kubernetes-blog
     owners:
@@ -1595,8 +1595,8 @@ sigs:
     - name: sig-k8s-infra-leads
       description: sig-k8s-infra chairs and tech leads
     liaison:
-      github: nikhita
-      name: Nikhita Raghunath
+      github: justaugustus
+      name: Stephen Augustus
   subprojects:
   - name: k8s-infra-dns
     description: Code and configuration to manage DNS records for domains owned by
@@ -1667,8 +1667,8 @@ sigs:
     - name: sig-mutlicluster-proposals
       description: Design Proposals
     liaison:
-      github: parispittman
-      name: Paris Pittman
+      github: mrbobbytables
+      name: Bob Killen
   subprojects:
   - name: Kubefed
     owners:
@@ -1766,8 +1766,8 @@ sigs:
     - name: sig-network-test-failures
       description: Test Failures and Triage
     liaison:
-      github: derekwaynecarr
-      name: Derek Carr
+      github: tpepper
+      name: Tim Pepper
   subprojects:
   - name: cluster-proportional-autoscaler
     owners:
@@ -1866,8 +1866,8 @@ sigs:
     - name: sig-node-test-failures
       description: Test Failures and Triage
     liaison:
-      github: nikhita
-      name: Nikhita Raghunath
+      github: tpepper
+      name: Tim Pepper
   subprojects:
   - name: cri-api
     owners:
@@ -2304,8 +2304,8 @@ sigs:
     - name: sig-service-catalog-test-failures
       description: Test Failures and Triage
     liaison:
-      github: cblecker
-      name: Christoph Blecker
+      github: mrbobbytables
+      name: Bob Killen
   subprojects:
   - name: minibroker
     owners:
@@ -2587,8 +2587,8 @@ sigs:
     slack: sig-ui
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
     liaison:
-      github: nikhita
-      name: Nikhita Raghunath
+      github: justaugustus
+      name: Stephen Augustus
   subprojects:
   - name: dashboard
     owners:
@@ -2807,8 +2807,8 @@ workinggroups:
     slack: wg-data-protection
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-data-protection
     liaison:
-      github: parispittman
-      name: Paris Pittman
+      github: cblecker
+      name: Christoph Blecker
 - dir: wg-iot-edge
   name: IoT Edge
   mission_statement: >
@@ -2852,8 +2852,8 @@ workinggroups:
     slack: wg-iot-edge
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge
     liaison:
-      github: derekwaynecarr
-      name: Derek Carr
+      github: cblecker
+      name: Christoph Blecker
 - dir: wg-multitenancy
   name: Multitenancy
   mission_statement: >
@@ -3049,8 +3049,8 @@ usergroups:
     - name: ug-big-data
       description: General Discussion
     liaison:
-      github: derekwaynecarr
-      name: Derek Carr
+      github: tpepper
+      name: Tim Pepper
 - dir: ug-vmware-users
   name: VMware Users
   mission_statement: >
@@ -3084,8 +3084,8 @@ usergroups:
     slack: ug-vmware
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-ug-vmware
     liaison:
-      github: nikhita
-      name: Nikhita Raghunath
+      github: tpepper
+      name: Tim Pepper
 committees:
 - dir: committee-code-of-conduct
   name: Code of Conduct

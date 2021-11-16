@@ -34,7 +34,7 @@ A Working Group dedicated to discussing, designing and documenting using Kuberne
 - Slack: [#wg-iot-edge](https://kubernetes.slack.com/messages/wg-iot-edge)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fiot-edge)
-- Steering Committee Liaison: Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**)
+- Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 <!-- BEGIN CUSTOM CONTENT -->
 This working group is a cross-SIG effort currently sponsored by _sig-networking_ and _sig-multicluster_ with
 a focus on improving Kubernetes IoT and Edge deployments. Community members are encouraged to share their ideas in this working group to reach broad consensus across the SIGs. Once consensus is reached, the enhancements

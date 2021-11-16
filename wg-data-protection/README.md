@@ -31,7 +31,7 @@ The [charter](charter.md) defines the scope and governance of the Data Protectio
 - Slack: [#wg-data-protection](https://kubernetes.slack.com/messages/wg-data-protection)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-data-protection)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fdata-protection)
-- Steering Committee Liaison: Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
+- Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

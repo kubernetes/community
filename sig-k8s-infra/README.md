@@ -44,7 +44,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - GitHub Teams:
     - [@kubernetes/sig-k8s-infra](https://github.com/orgs/kubernetes/teams/sig-k8s-infra) - active contributors in sig-k8s-infra
     - [@kubernetes/sig-k8s-infra-leads](https://github.com/orgs/kubernetes/teams/sig-k8s-infra-leads) - sig-k8s-infra chairs and tech leads
-- Steering Committee Liaison: Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
+- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
 
 ## Subprojects
 

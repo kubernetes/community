@@ -48,7 +48,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-network-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-network-pr-reviews) - PR Reviews
     - [@kubernetes/sig-network-proposals](https://github.com/orgs/kubernetes/teams/sig-network-proposals) - Design Proposals
     - [@kubernetes/sig-network-test-failures](https://github.com/orgs/kubernetes/teams/sig-network-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**)
+- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 
 ## Subprojects
 

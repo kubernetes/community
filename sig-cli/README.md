@@ -59,7 +59,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-cli-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-cli-pr-reviews) - PR Reviews
     - [@kubernetes/sig-cli-proposals](https://github.com/orgs/kubernetes/teams/sig-cli-proposals) - Design Proposals
     - [@kubernetes/sig-cli-test-failures](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**)
+- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
 
 ## Subprojects
 
