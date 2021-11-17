@@ -402,8 +402,8 @@ Policy based operations of Kubernetes helps address these challenges by providin
 A comprehensive Kubernetes policy management strategy follows three guidelines:
 
 1. Use [Kubernetes policy objects](https://kubernetes.io/docs/concepts/policy/) such as pod security, limit ranges, quotas, as well other security related resources such as namespaces, role and role-bindings, and network policies. 
-2. Use admission controls to audit and enforce the proper use of Kubernetes policy and security resources, and apply additional policies across cluster-wide and workload configurations for security and automation. As a best practice, the same policy sets are also applied as part of a continuous delivery pipeline to report violations to workload owners in familiar tools.
-3. Use a run-time detection and enforcement tool to find, report, and block insecure runtime behaviors that are not prevented using configuration policies, or bypassed due to misconfigurations.
+2. Use admission controls to audit and enforce the proper use of Kubernetes policy and security resources, and apply additional policies across cluster-wide and workload configurations for security and automation. As a best practice, the same policy sets are also applied as part of a continuous delivery pipeline to report violations to workload owners in familiar systems.
+3. Use a run-time detection and enforcement tool to find, report, and block insecure runtime behaviors that are not prevented using configuration policies, or bypassed due to misconfigurations. Periodic configuration scans are also necessary for managing policy changes for existing workloads. 
 
 Policy reports and violations from various enforcement points are routed to a Policy Administration Point (PAP), which then integrates with incident response systems and the SOC for rapid resolution. 
 
