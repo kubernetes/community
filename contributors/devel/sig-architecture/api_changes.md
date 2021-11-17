@@ -966,7 +966,7 @@ cluster; removing the upgradability concern allows developers to make rapid
 progress; in particular, API versions can increment faster than the minor
 release cadence and the developer need not maintain multiple versions;
 developers should still increment the API version when object schema or
-semantics change in an [incompatible way](#on-compatibility)
+semantics change in an [incompatible way](#on-compatibility). Users should not expect that alpha objects or fields will behave the same during or after a rolling upgrade to a version of Kubernetes with the object or field enabled as beta.
   - Cluster Reliability: because the feature is relatively new, and may lack
 complete end-to-end tests, enabling the feature via a flag might expose bugs
 with destabilize the cluster (e.g. a bug in a control loop might rapidly create
@@ -1182,10 +1182,13 @@ provides some details
     }
     ```
 
+    Because validation is always on, the field can be changed from a previously invalid value to a valid value, or cleared, even if the feature gate is disabled, but the field cannot be updated to be invalid, and an invalid value will prevent other changes to the object.
+
 In future Kubernetes versions:
 
 * if the feature progresses to beta or stable status, the feature gate can be removed or be enabled by default.
 * if the schema of the alpha field must change in an incompatible way, a new field name must be used.
+* if the validation rules of the alpha field are changed across versions (including from a release where a field is alpha to a release where a field is beta), it is the user's responsibility to update their fields to be valid.
 * if the feature is abandoned, or the field name is changed, the field should be removed from the go struct, with a tombstone comment ensuring the field name and protobuf tag are not reused:
 
     ```go
