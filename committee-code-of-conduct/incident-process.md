@@ -47,7 +47,7 @@ At times we encourage community members to email us if an incident is ongoing an
 
 The Code of Conduct Committee's primary means of contact is our email address, conduct@kubernetes.io. 
 
-We can also be reached via Slack direct messages to individual committee members (see [member list](https://github.com/kubernetes/community/tree/master/committee-code-of-conduct#members)) or otherwise, though we might direct you to contact us via email. 
+We can also be reached via Slack direct messages to individual CoCC members (see [member list](https://github.com/kubernetes/community/tree/master/committee-code-of-conduct#members)) or otherwise, though we might direct you to contact us via email. 
 
 ### How is the privacy of a report protected?
 
@@ -121,7 +121,7 @@ When deciding how to address an incident, the Code of Conduct Committee follows 
 - Prioritizing education and coaching for those involved, when possible
 - Prioritizing the protection of contributing members of the Kubernetes project over external parties. This does not mean that we protect people with a higher number of commits or more seniority in the project, however.
 
-In general, the committee strives for unanimous consensus before taking an action.
+In general, the CoCC strives for unanimous consensus before taking an action.
 
 For example, we may choose to do nothing, to issue a private warning, to offer coaching, to recommend organizational changes, or to ban someone from a community platform. 
 
