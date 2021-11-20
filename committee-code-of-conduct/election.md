@@ -30,7 +30,7 @@ The Steering Committee will announce a request for nominations some time in July
 The Steering Committee will accept nominations for at least 1 week. Though the Steering
 Committee may choose to accept nominations for longer.  After the announced nomination
 period the Steering Committee will hold a private ballot election using time-limited
-[Condorcet] ranking use the [Schulze method] to break ties. The Steering Committee
+[Condorcet] ranking with the [Schulze method] to break ties. The Steering Committee
 will publicly announce the results of the election.
 
 #### Nomination process
@@ -53,6 +53,20 @@ Prior to the voting process, Steering Committee must:
 
 Maximal representation of a single employer is `QUORUM - 1`. With a five person committee,
 that limits the number of members employed by the same company to two.
+
+### Committee Conflict of Interest
+
+As project committees have unique charters, there is a possibility
+for a conflict of interest to arise.  While multiple scenarios may
+be possible now or in the future, one known example of such conflict
+of interest is where a member of the Code of Conduct Committee is
+elected to the Steering Committee.
+
+Such conflict will be resolved by the applicable election committee
+reaching out to the newly-elected member and facilitating a decision
+regarding on which committee the individual will continue.  The
+committee where that individual vacated their seat will fill that
+vacancy as per existing election or committee vacancy rules.
 
 ### Election Cycles
 
@@ -80,11 +94,11 @@ at the time of the special election). A CoCC member elected in a special
 election will serve out the remainder of the term for the person they are
 replacing, regardless of the length of that remainder.
 
-In the event that the CoCC votes to dissolve in its entirety an entirely
+In the event that the CoCC votes to dissolve in its entirety, an entirely
 new special election will he held by the Steering Committee instead of filling
 with names from the previous election. Those elected will complete the remaining
-terms of the previous, dissolved CoCC's members. With those receiving the highest
-votes receiving the longest term.
+terms of the previous, dissolved CoCC's members. Those receiving the highest
+votes will receive the longest term.
 
 [Condorcet]: https://en.wikipedia.org/wiki/Condorcet_method
 [Schulze method]: https://en.wikipedia.org/wiki/Schulze_method
