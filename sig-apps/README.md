@@ -110,7 +110,7 @@ The core workloads API, which is composed of the CronJob, DaemonSet, Deployment,
 
 ## [Helm](https://helm.sh) and [Charts](https://github.com/kubernetes/charts)
 
-Helm, Charts and its other subprojects have [moved to the CNCF](https://github.com/cncf/toc/blob/master/proposals/helm.adoc).
+Helm, Charts and its other subprojects have [moved to the CNCF](https://github.com/cncf/toc/blob/main/proposals/incubation/helm.adoc).
 See Helm's [community repository](https://github.com/kubernetes-helm/community) for information about the Helm project.
 
 <!-- END CUSTOM CONTENT -->
