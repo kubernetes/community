@@ -141,9 +141,9 @@ aliases:
     - phenixblue
   committee-code-of-conduct:
     - celestehorgan
+    - cpanato
     - karenhchu
     - palnabarun
-    - tpepper
     - vllry
   committee-security-response:
     - cjcullen

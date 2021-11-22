@@ -3096,14 +3096,14 @@ committees:
     - github: celestehorgan
       name: Celeste Horgan
       company: CNCF
+    - github: cpanato
+      name: Carlos Tadeu Panato Jr.
+      company: Mattermost
     - github: karenhchu
       name: Karen Chu
       company: Microsoft
     - github: palnabarun
       name: Nabarun Pal
-      company: VMware
-    - github: tpepper
-      name: Tim Pepper
       company: VMware
     - github: vllry
       name: Vallery Lancey
@@ -3121,6 +3121,8 @@ committees:
       name: Paris Pittman
     - github: tashimi
       name: Tasha Drew
+    - github: tpepper
+      name: Tim Pepper
   meetings: []
   contact:
     slack: code-of-conduct
