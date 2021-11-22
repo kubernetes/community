@@ -16,6 +16,10 @@ involved, and that the process is never perfect by nature of its need to serve
 everyone in the community equally. That said, the committee is oriented toward
 the protection of our community and takes that duty seriously.
 
+## Accountability
+
+All participants in the project at all levels, from one-time GitHub commenter to Steering Committee member, are accountable to the code of conduct and any actions the Code of Conduct Committee decides to take. 
+
 ## Communication with the committee
 The committee maintains a private mailing list for reporting incidents, asking
 confidential questions, and internal committee communication:
