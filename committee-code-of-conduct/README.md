@@ -15,9 +15,9 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 ## Members
 
 * Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), CNCF
+* Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**), Mattermost
 * Karen Chu (**[@karenhchu](https://github.com/karenhchu)**), Microsoft
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
-* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
 * Vallery Lancey (**[@vllry](https://github.com/vllry)**), Apple
 
 ## Contact
@@ -44,7 +44,7 @@ The members and their terms are as follows:
 
 - Karen Chu (Microsoft)
 - Celeste Horgan (CNCF)
-- Tim Pepper (VMware)
+- Carlos Tadeu Panato Jr. (Mattermost)
 
 ### Term ends on August 23, 2023
 
@@ -63,5 +63,6 @@ The Code of Conduct Committee sincerely thanks our emeritus committee members fo
 - Paris Pittman (Apple)
 - Aeva Black (Microsoft)
 - Tasha Drew (VMware)
+- Tim Pepper (VMware)
 
 <!-- END CUSTOM CONTENT -->
