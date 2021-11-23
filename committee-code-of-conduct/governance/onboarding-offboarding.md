@@ -1,12 +1,12 @@
 # Onboarding and offboarding new Code of Conduct Committee members
 
-Different actions on this list must be carried out by different members: 
+Different actions on this list must be carried out by different members:
 
 - **Outgoing members:** members who are ending their term
 - **Incoming members:** members beginning their term
 - **Carryover members:** members mid-way through their term
 
-## Permissions 
+## Permissions
 
 ### Slack Channel Membership
 
@@ -23,17 +23,20 @@ Different actions on this list must be carried out by different members:
 
 ### Kubernetes/community permissions and google permissions
 
-**Who executes:** Carryover members should ensure that outgoing members are removed and incoming members are invited. 
+**Who executes:** Carryover members should ensure that outgoing members are removed and incoming members are invited.
 
-- [ ] Update `kubernetes/community` [`sigs.yaml`](https://github.com/kubernetes/community/blob/master/sigs.yaml) 
-- [ ] Update `kubernetes/k8s.io` [`groups.yaml`](https://github.com/kubernetes/k8s.io/blob/main/groups/groups.yaml)
-
+- [ ] Update `kubernetes/community` [`sigs.yaml`](/sigs.yaml)
+- [ ] Update `kubernetes/k8s.io`:
+  - [ ] [`OWNERS_ALIASES`](https://git.k8s.io/k8s.io/OWNERS_ALIASES)
+  - [ ] [`groups.yaml`](https://git.k8s.io/k8s.io/groups/committee-code-of-conduct/groups.yaml)
     > **Note:** This file controls access to the mailing list and Google Drive! If you do not update this file, adding people manually (via the UIs) continually revert until this file is updated.
-
     - [ ] `conduct@kubernetes.io` mailing list
     - [ ] Google drive
+- [ ] Update `kubernetes/org`:
+  - [ ] [`OWNERS_ALIASES`](https://git.k8s.io/org/OWNERS_ALIASES)
+  - [ ] [`config/kubernetes/org.yaml`](https://git.k8s.io/org/config/kubernetes/org.yaml)
 
-## Communications 
+## Communications
 
 **Who executes:** Anyone but outgoing members!
 
