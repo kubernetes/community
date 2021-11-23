@@ -6,8 +6,7 @@ body:
 - type: input
   attributes:
     label: Group Requesting
-    description: The SIG, WG, team, subproject, or other Kubernetes community group wanting
-the survey to be conducted.
+    description: The SIG, WG, team, subproject, or other Kubernetes community group wanting the survey to be conducted.
   validations:
     required: true
 - type: input
