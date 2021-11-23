@@ -26,10 +26,12 @@ Different actions on this list must be carried out by different members:
 **Who executes:** Carryover members should ensure that outgoing members are removed and incoming members are invited.
 
 - [ ] Update `kubernetes/community` [`sigs.yaml`](/sigs.yaml)
-- [ ] Update `kubernetes/k8s.io` [`groups.yaml`](https://git.k8s.io/k8s.io/groups/committee-code-of-conduct/groups.yaml)
-  > **Note:** This file controls access to the mailing list and Google Drive! If you do not update this file, adding people manually (via the UIs) continually revert until this file is updated.
-  - [ ] `conduct@kubernetes.io` mailing list
-  - [ ] Google drive
+- [ ] Update `kubernetes/k8s.io`:
+  - [ ] [`OWNERS_ALIASES`](https://git.k8s.io/k8s.io/OWNERS_ALIASES)
+  - [ ] [`groups.yaml`](https://git.k8s.io/k8s.io/groups/committee-code-of-conduct/groups.yaml)
+    > **Note:** This file controls access to the mailing list and Google Drive! If you do not update this file, adding people manually (via the UIs) continually revert until this file is updated.
+    - [ ] `conduct@kubernetes.io` mailing list
+    - [ ] Google drive
 - [ ] Update `kubernetes/org`:
   - [ ] [`OWNERS_ALIASES`](https://git.k8s.io/org/OWNERS_ALIASES)
   - [ ] [`config/kubernetes/org.yaml`](https://git.k8s.io/org/config/kubernetes/org.yaml)
