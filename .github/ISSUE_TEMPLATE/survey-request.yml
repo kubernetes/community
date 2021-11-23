@@ -2,7 +2,6 @@ name: Community Survey Request
 description : Create and distribute a survey of the Kubernetes community, for the Kubernetes community
 title: 'SURVEY REQUEST: <topic>'
 labels: area/contributor-comms, sig/contributor-experience
-assignees:
 body:
 - type: input
   attributes:
