@@ -2,7 +2,6 @@ name: Community Moderator Request
 description: Request moderator privileges on a Kubernetes property
 title: 'REQUEST: New moderator for <your-GH-handle> of <k8s property>'
 labels: area/community-management, sig/contributor-experience
-assignees:
 body:
 - id: github
   type: input

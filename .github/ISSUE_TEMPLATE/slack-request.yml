@@ -2,7 +2,6 @@ name: Slack Request
 description: Request a Channel, User Group, Bot, Token, or Webhook
 title: 'REQUEST: New Slack <[channel|usergroup|bot|token|webhook]> <[channel|usergroup|bot|token|webhook] name>'
 labels: area/community-management, area/slack-management, sig/contributor-experience
-assignees:
 body:
 - id: github
   type: input
