@@ -9,4 +9,5 @@ body:
     label: What do you want send out?(Please include a link to a draft)
     description: Gists, Hackmd.io, or Google Doc preferred. Include any artwork, pics, diagrams, or any other assets with public links. 
     We use a combination of mailing lists, Slack messages, and Twitter to get the word out.
-  
+  validations:
+    required: true
