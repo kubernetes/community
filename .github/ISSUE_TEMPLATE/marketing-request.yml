@@ -1,0 +1,12 @@
+name: Contributor Comms Request
+description: Get support on sending a message out to our community through coordinated outreach on email, Slack, social media, and other public channels.
+title: 'REQUEST: New communication about <topic>'
+labels: area/contributor-comms, sig/contributor-experience
+assignees:
+
+body:
+  - type: input
+    label: What do you want send out?(Please include a link to a draft)
+    description: Gists, Hackmd.io, or Google Doc preferred. Include any artwork, pics, diagrams, or any other assets with public links. 
+    We use a combination of mailing lists, Slack messages, and Twitter to get the word out.
+  

@@ -1,0 +1,26 @@
+name: General Support
+description: Permissions issues, repository issues, etc
+body:
+- id: org_repo
+  type: input
+  attributes:
+    label: Organization or Repo
+    description: What Org or Repo does this apply to?
+    placeholder: e.g. kubernetes/community
+  validations:
+    required: false
+- id: user
+  type: input
+  attributes:
+    label: User affected
+    description: What user is impacted?
+    placeholder: e.g. @example_user
+  validations:
+    required: false
+- id: problem
+  type: textarea
+  attributes:
+    label: Describe the issue
+    placeholder: A clear and concise description of what you need assistance with.
+  validations:
+    required: true
