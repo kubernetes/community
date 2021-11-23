@@ -1,0 +1,21 @@
+name: General Issue
+description: Open a general issue in the kubernetes/community repository
+body: 
+- type: textarea
+  id: community-repo
+  attributes:
+    label: Describe the issue
+    description:
+        Please provide as much information as possible.
+  validations:
+    required: false
+- id: group-category
+  type: input
+  attributes:
+    label: Subgroup concerned
+    description: Which Special Interest Group/Working Group/Committee/User Group does this issue fall under?
+    placeholder: e.g. SIG contributor experience
+  validations:
+    required: false
+  
+
