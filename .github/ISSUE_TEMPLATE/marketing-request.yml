@@ -9,3 +9,7 @@ body:
     description: Gists, Hackmd.io, or Google Doc preferred. Include any artwork, pics, diagrams, or any other assets with public links. We use a combination of mailing lists, Slack messages, and Twitter to get the word out.
   validations:
     required: true
+- type: markdown
+  attributes:
+    label: Want to learn more about Contributor Comms? 
+    description: We started the Upstream Marketing Team to focus on contributor-to-contributor communication throughout Kubernetes. Read about our charter here- https://github.com/kubernetes/community/blob/master/communication/marketing-team/CHARTER.md Or about the team- https://github.com/kubernetes/community/blob/master/communication/marketing-team And thanks for reaching out! We're here to help.
