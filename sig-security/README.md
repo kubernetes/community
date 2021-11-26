@@ -40,17 +40,17 @@ The following [subprojects][subproject-definition] are owned by sig-security:
 ### security-audit
 Third Party Security Audit
 - **Owners:**
-  - [kubernetes/community/sig-security/sig-security-external-audit](https://github.com/kubernetes/community/blob/master/sig-security/sig-security-external-audit/OWNERS)
+  - [kubernetes/sig-security/sig-security-external-audit](https://github.com/kubernetes/sig-security/blob/main/sig-security-external-audit/OWNERS)
 ### security-docs
 Security Documents and Documentation
 - **Owners:**
-  - [kubernetes/community/sig-security/sig-security-docs](https://github.com/kubernetes/community/blob/master/sig-security/sig-security-docs/OWNERS)
+  - [kubernetes/sig-security/sig-security-docs](https://github.com/kubernetes/sig-security/blob/main/sig-security-docs/OWNERS)
 - **Contact:**
   - Slack: [#sig-security-docs](https://kubernetes.slack.com/messages/sig-security-docs)
 ### security-tooling
 Development and Enhancements of Security Tooling
 - **Owners:**
-  - [kubernetes/community/sig-security/sig-security-tooling](https://github.com/kubernetes/community/blob/master/sig-security/sig-security-tooling/OWNERS)
+  - [kubernetes/sig-security/sig-security-tooling](https://github.com/kubernetes/sig-security/blob/main/sig-security-tooling/OWNERS)
 - **Contact:**
   - Slack: [#sig-security-tooling](https://kubernetes.slack.com/messages/sig-security-tooling)
 ### sig-security
