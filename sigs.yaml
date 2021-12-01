@@ -1726,6 +1726,12 @@ sigs:
     url: https://zoom.us/j/98377891310
     archive_url: https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit
     recordings_url: https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X
+  - description: SIG Network KPNG APAC Meeting
+    day: Wednesday
+    time: "19:00"
+    tz: IST (Indian Standard Time)
+    frequency: weekly
+    url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
   - description: SIG Network Kube Proxy Meeting
     day: Friday
     time: "8:30"
