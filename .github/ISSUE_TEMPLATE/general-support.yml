@@ -1,7 +1,7 @@
-name: General Support
+name: General Issue
 description: Permissions issues, repository issues, etc
 body:
-- id: org_repo
+- id: community_repo
   type: input
   attributes:
     label: Organization or Repo
