@@ -171,12 +171,11 @@ usergroups:
       - pinniped
     members:
       - enj
-      - mattmoyer
-      - ankeesler
       - cfryanr
       - margocrawf
       - microwavables
-      - pabloschuhmacher
+      - anjaltelang
+      - shamus
 
   - name: steering-members
     long_name: Kubernetes Steering Committee
