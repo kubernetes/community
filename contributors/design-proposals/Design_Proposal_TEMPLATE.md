@@ -1,38 +1,6 @@
-# <Title>
+Design proposals have been archived.
 
-Status: Pending
+To view the last version of this document, see the [Design Proposals Archive Repo](https://github.com/kubernetes/design-proposals-archive/).
 
-Version: Alpha | Beta | GA
 
-Implementation Owner: TBD
-
-## Motivation
-
-<2-6 sentences about why this is needed>
-
-## Proposal
-
-<4-6 description of the proposed solution>
-
-## User Experience
-
-### Use Cases
-
-<enumerated list of use cases for this feature>
-
-<in depth description of user experience>
-
-<*include full examples*>
-
-## Implementation
-
-<in depth description of how the feature will be implemented.  in some cases this may be very simple.>
-
-### Client/Server Backwards/Forwards compatibility
-
-<define behavior when using a kubectl client with an older or newer version of the apiserver (+-1 version)>
-
-## Alternatives considered
-
-<short description of alternative solutions to be considered>
-
+Please remove after 2022-04-01 or the release of Kubernetes 1.24, whichever comes first.
