@@ -1,8 +1,0 @@
-# See the OWNERS docs at https://go.k8s.io/owners
-
-reviewers:
-  - provider-gcp
-approvers:
-  - provider-gcp
-labels:
-  - sig/gcp
