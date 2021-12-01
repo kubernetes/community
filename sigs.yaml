@@ -331,7 +331,7 @@ sigs:
     description: '[Described below](#architecture-and-api-governance-1)'
     owners:
     - https://raw.githubusercontent.com/kubernetes/api/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/community/master/contributors/design-proposals/architecture/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/design-proposals-archive/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/OWNERS
   - name: code-organization
     description: '[Described below](#code-organization-1)'
