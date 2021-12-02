@@ -3130,6 +3130,9 @@ committees:
     teams:
     - name: code-of-conduct-committee
       description: General Discussion
+    liaison:
+      github: tpepper
+      name: Tim Pepper
 - dir: committee-security-response
   name: Security Response
   mission_statement: >
@@ -3166,6 +3169,9 @@ committees:
     teams:
     - name: security-response-committee
       description: General Discussion
+    liaison:
+      github: justaugustus
+      name: Stephen Augustus
   subprojects:
   - name: committee-security-response
     description: Policies and documentation for the Security Response Committee
