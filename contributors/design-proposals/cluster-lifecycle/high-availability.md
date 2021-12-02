@@ -1,4 +1,6 @@
-# High Availability of Scheduling and Controller Components in Kubernetes
+Design proposals have been archived.
 
-This document is deprecated. For more details about running a highly available
-cluster master, please see the [admin instructions document](https://kubernetes.io/docs/admin/high-availability/).
+To view the last version of this document, see the [Design Proposals Archive Repo](https://github.com/kubernetes/design-proposals-archive/).
+
+
+Please remove after 2022-04-01 or the release of Kubernetes 1.24, whichever comes first.

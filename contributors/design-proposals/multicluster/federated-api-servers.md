@@ -1,4 +1,6 @@
-# Federated API Servers
+Design proposals have been archived.
 
-Moved to [aggregated-api-servers.md](../api-machinery/aggregated-api-servers.md) since cluster
-federation stole the word "federation" from this effort and it was very confusing.
+To view the last version of this document, see the [Design Proposals Archive Repo](https://github.com/kubernetes/design-proposals-archive/).
+
+
+Please remove after 2022-04-01 or the release of Kubernetes 1.24, whichever comes first.
