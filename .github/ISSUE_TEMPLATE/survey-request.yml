@@ -48,8 +48,8 @@ body:
     label: Publicity Help Wanted?
     description: Do you need help from Contributor Communications in publicizing this survey?
     options:
-      - Yes
-      - No
+        - Yes
+        - No
   validations:
     required: true
 - type: dropdown
@@ -57,8 +57,8 @@ body:
     label: Data Analysis Wanted?
     description: Do you want help creating charts or cross-checking data? Help is sometimes available.
     options:
-      - Yes
-      - No
+        - Yes
+        - No
   validations:
     required: true
 - type: input
