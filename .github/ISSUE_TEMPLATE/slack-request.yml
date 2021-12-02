@@ -29,7 +29,7 @@ body:
     label: Name of Requested Resource
   validations:
     required: false
-- type: input
+- type: textarea
   attributes:
     label: Description of Request
   validations:

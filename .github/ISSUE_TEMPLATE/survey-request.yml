@@ -14,7 +14,7 @@ body:
     label: Title of Survey
   validations:
     required: true
-- type: input
+- type: textarea
   attributes:
     label: Goal of Survey
     description: what is the main thing you want this survey to determine?
@@ -43,18 +43,22 @@ body:
     label: Date Survey Ends
   validations:
     required: true
-- type: input
+- type: dropdown
   attributes:
     label: Publicity Help Wanted?
     description: Do you need help from Contributor Communications in publicizing this survey?
-    placeholder: Y / N
+    options:
+      - Yes
+      - No
   validations:
     required: true
-- type: input
+- type: dropdown
   attributes:
     label: Data Analysis Wanted?
     description: Do you want help creating charts or cross-checking data? Help is sometimes available.
-    placeholder: Y / N
+    options:
+      - Yes
+      - No
   validations:
     required: true
 - type: input

@@ -1,5 +1,5 @@
 name: General Issue
-description: Permissions issues, repository issues, etc
+description: Open a general issue in the kubernetes/community repo
 body:
 - id: community_repo
   type: input
