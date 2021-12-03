@@ -791,7 +791,7 @@ read/modify/write cycle, by verifying that the current value of resourceVersion
 matches the specified value.
 
 The resourceVersion is currently backed by [etcd's
-modifiedIndex](https://coreos.com/etcd/docs/latest/v2/api.html).
+mod_revision](https://etcd.io/docs/latest/learning/api/#key-value-pair).
 However, it's important to note that the application should *not* rely on the
 implementation details of the versioning system maintained by Kubernetes. We may
 change the implementation of resourceVersion in the future, such as to change it
