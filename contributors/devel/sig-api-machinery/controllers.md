@@ -177,7 +177,7 @@ func (c *Controller) processNextWorkItem() bool {
 	// there was a failure so be sure to report it.  This method allows for
 	// pluggable error handling which can be used for things like
 	// cluster-monitoring
-	utilruntime.HandleError(fmt.Errorf("%v failed with : %v", key, err))
+	utilruntime.HandleError(fmt.Errorf("%v failed with : %w", key, err))
 
 	// since we failed, we should requeue the item to work on later.  This
 	// method will add a backoff to avoid hotlooping on particular items
