@@ -73,6 +73,7 @@ When you're writing controllers, there are few guidelines that will help make su
 Overall, your controller should look something like this:
 
 ```go
+// Controller works on pod changes.
 type Controller struct {
 	// pods gives cached access to pods.
 	pods informers.PodLister
@@ -83,6 +84,7 @@ type Controller struct {
 	queue workqueue.RateLimitingInterface
 }
 
+// NewController returns a new Controller.
 func NewController(pods informers.PodInformer) *Controller {
 	c := &Controller{
 		pods: pods.Lister(),
@@ -117,7 +119,9 @@ func NewController(pods informers.PodInformer) *Controller {
 	return c
 }
 
-func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
+// Run launches the controller with threadiness workers and blocks
+// until the workers complete.
+func (c *Controller) Run(ctx context.Context, threadiness int) error {
 	// don't let panics crash the process
 	defer utilruntime.HandleCrash()
 	// make sure the work queue is shutdown which will trigger workers to end
@@ -126,58 +130,85 @@ func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
 	klog.Infof("Starting <NAME> controller")
 
 	// wait for your secondary caches to fill before starting your work
-	if !cache.WaitForCacheSync(stopCh, c.podsSynced) {
+	if !cache.WaitForCacheSync(ctx.Done(), c.podsSynced) {
 		return
 	}
+
+	// If you only have one worker with no threadiness
+	// configuration, you can skip Group and the results channel and
+	// just use:
+	//err := wait.PollImmediateUntilWithContext(ctx, time.Second, c.runWorker)
+	//klog.Infof("Shutting down <NAME> controller")
+	//return err
+
+	g := wait.Group{}
+	results := make(chan error, threadiness)
 
 	// start up your worker threads based on threadiness.  Some controllers
 	// have multiple kinds of workers
 	for i := 0; i < threadiness; i++ {
-		// runWorker will loop until "something bad" happens.  The .Until will
+		// runWorker will loop until "something bad" happens.  The poller will
 		// then rekick the worker after one second
-		go wait.Until(c.runWorker, time.Second, stopCh)
+		g.StartWithContext(ctx, func(ctx context.Context) {
+			if err := wait.PollImmediateUntilWithContext(ctx, time.Second, c.runWorker); err != nil {
+				results <- err
+			}
+		})
 	}
 
-	// wait until we're told to stop
-	<-stopCh
+	g.Wait()
+	results.Close()
+	errs := []error{}
+	for err := range results {
+		errs = append(errs, err)
+	}
+
 	klog.Infof("Shutting down <NAME> controller")
+	return errors.NewAggregate(errs)
 }
 
-func (c *Controller) runWorker() {
+// runWorker handles a single worker poll round, processing as many
+// work items as possible, and returning done when there will be no
+// more work.
+func (c *Controller) runWorker(ctx context.Context) (done bool, err error) {
 	// hot loop until we're told to stop.  processNextWorkItem will
 	// automatically wait until there's work available, so we don't worry
 	// about secondary waits
-	for c.processNextWorkItem() {
+	for done, err := c.processNextWorkItem(); if done || err != nil {
+		return done, err
 	}
 }
 
-// processNextWorkItem deals with one key off the queue.  It returns false
-// when it's time to quit.
-func (c *Controller) processNextWorkItem() bool {
+// processNextWorkItem deals with one key off the queue.  It returns
+// done when there will be no more work.
+func (c *Controller) processNextWorkItem(ctx context.Context) (done bool, error) {
 	// pull the next work item from queue.  It should be a key we use to lookup
 	// something in a cache
 	key, quit := c.queue.Get()
 	if quit {
-		return false
+		return true, nil
 	}
 	// you always have to indicate to the queue that you've completed a piece of
 	// work
 	defer c.queue.Done(key)
 
 	// do your work on the key.  This method will contains your "do stuff" logic
-	err := c.syncHandler(key.(string))
+	done, err := c.syncHandler(ctx, key.(string))
 	if err == nil {
 		// if you had no error, tell the queue to stop tracking history for your
 		// key. This will reset things like failure counts for per-item rate
 		// limiting
 		c.queue.Forget(key)
-		return true
+		return done, nil
 	}
 
 	// there was a failure so be sure to report it.  This method allows for
 	// pluggable error handling which can be used for things like
 	// cluster-monitoring
 	utilruntime.HandleError(fmt.Errorf("%v failed with : %v", key, err))
+
+	// if you consider the error non-recoverable, you might want:
+	//   return done, err
 
 	// since we failed, we should requeue the item to work on later.  This
 	// method will add a backoff to avoid hotlooping on particular items
@@ -186,6 +217,6 @@ func (c *Controller) processNextWorkItem() bool {
 	// needs to calm down or it can starve other useful work) cases.
 	c.queue.AddRateLimited(key)
 
-	return true
+	return done, nil
 }
 ```
