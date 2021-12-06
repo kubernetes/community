@@ -1039,6 +1039,14 @@ sigs:
   - name: cluster-api-provider-kubevirt
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-kubevirt/main/OWNERS
+    meetings:
+    - description: Cluster API Provider KubeVirt Syncup Meetings
+      day: Tuesday
+      time: "8:00"
+      tz: PT (Pacific Time)
+      frequency: weekly starting Tuesday December 7th, 2021
+      url: https://zoom.us/j/94685513559?pwd=cnI3RUQyZ3RrckpOc1BQNDA1Q1BrZz09
+      archive_url: https://docs.google.com/document/d/1ZAnRLCKOVbDqrsrYis2OR0aZIAlqp576gCJVCkMNiHM/edit?usp=sharing
   - name: cluster-api-provider-nested
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-nested/master/OWNERS

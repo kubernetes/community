@@ -100,6 +100,9 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-kubevirt
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-kubevirt](https://github.com/kubernetes-sigs/cluster-api-provider-kubevirt/blob/main/OWNERS)
+- **Meetings:**
+  - Cluster API Provider KubeVirt Syncup Meetings: [Tuesdays at 8:00 PT (Pacific Time)](https://zoom.us/j/94685513559?pwd=cnI3RUQyZ3RrckpOc1BQNDA1Q1BrZz09) (weekly starting Tuesday December 7th, 2021). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1ZAnRLCKOVbDqrsrYis2OR0aZIAlqp576gCJVCkMNiHM/edit?usp=sharing).
 ### cluster-api-provider-nested
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-nested](https://github.com/kubernetes-sigs/cluster-api-provider-nested/blob/master/OWNERS)
