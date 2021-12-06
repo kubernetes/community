@@ -18,7 +18,7 @@ This team operates independently from Cloud Native Computing Foundation (CNCF) o
 
 ## Governance
 
-Leadership is divided up between [Marketing Council](/communication/marketing-team/role-handbooks/council.md) team members. This group of leaders divide up the core responsibilities of the team and look to further optimize the experience of both code and non-code contributors. 
+Leadership is divided up between Marketing Council team members. This group of leaders divide up the core responsibilities of the team and look to further optimize the experience of both code and non-code contributors. 
 
 ### Roles
 
@@ -26,7 +26,7 @@ Roles are divided up between Marketing Council members and other members, notabl
 
 ### Decision Making
 
-Decisions affecting all of Contributor Comms are made primarily led by the program lead as defined in the [Marketing Council](/communication/marketing-team/role-handbooks/council.md). They come to decision by lazy consensus with the goal of everyone getting a say, but they are responsible for making the decision. If other council members do not agree with one or more decisions made on behalf of the team, this should be raised to the advisors as well as the SIG Contributor Experience leads to facilitate a resolution. 
+Decisions affecting all of Contributor Comms are made primarily led by the program lead as defined in the Marketing Council. They come to decision by lazy consensus with the goal of everyone getting a say, but they are responsible for making the decision. If other council members do not agree with one or more decisions made on behalf of the team, this should be raised to the advisors as well as the SIG Contributor Experience leads to facilitate a resolution. 
 
 Other council leads have the responsibility and autonomy to decide what is right for their portion of the council's division of work. The same escalation path can be used in case of disagreement that cannot be resolved by internal discussion. 
 
