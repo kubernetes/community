@@ -72,6 +72,7 @@ project
 | [kubernetes](https://github.com/kubernetes) | Core |
 | [kubernetes-client](https://github.com/kubernetes-client) | API Client Libraries |
 | [kubernetes-csi](https://github.com/kubernetes-csi) | Container Storage Interface Components |
+| [kubernetes-nightly](https://github.com/kubernetes-nightly) | Testing org for [publishing-bot](https://github.com/kubernetes/publishing-bot) tooling |
 | [kubernetes-retired](https://github.com/kubernetes-retired) | Retired/Archived Projects |
 | [kubernetes-security](https://github.com/kubernetes-security) | Private Security Fix Mirror |
 | [kubernetes-sigs](https://github.com/kubernetes-sigs) | SIG-related Projects |
