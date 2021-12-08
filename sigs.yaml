@@ -1324,6 +1324,7 @@ sigs:
       contributor ladder, including the New Contributor Workshops, Meet Our Contributors,
       and other programs.
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/contributor-katacoda/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
     meetings:
