@@ -1308,7 +1308,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
-    - https://github.com/kubernetes-sigs/contributor-katacoda/blob/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/contributor-katacoda/main/OWNERS
     meetings:
     - description: Mentoring Subproject Meeting
       day: Monday
