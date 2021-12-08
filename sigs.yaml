@@ -662,6 +662,14 @@ sigs:
     url: https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09
     archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
+  - description: KRM Functions Subproject Meeting
+    day: Wednesday
+    time: "10:30"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09
+    archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
   - description: Kustomize Bug Scrub
     day: Wednesday
     time: "09:00"
@@ -722,6 +730,9 @@ sigs:
     description: Centralized plugin index for krew.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
+  - name: krm-functions
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/krm-functions-registry/main/OWNERS
   - name: kubectl
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
