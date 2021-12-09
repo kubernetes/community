@@ -19,7 +19,7 @@ With organized, milestone-based, large-scale migration we try to target delivera
 
 For non-organized migrations, the onus is, generally, on the individual contributors.
 
-* Organized Migration
+#### Organized Migration
 
 Organized migration is carried out in a two state cycle aligning with the cadence of Kubernetes releases. 
 
@@ -27,7 +27,7 @@ In the first stage, we pick a particular migration milestone & create an issue t
 
 In the second milestone, we take a break from migration to analyze results & improve our existing processes. Adding structured information to logs is a very costly & time-consuming affair. Setting aside time in the second stage to collect feedback, analyze the impact of changes on the log volume & performance, and better our PR review process helps us avoid mistakes and duplicate efforts.
 
-* Non-organized migration
+#### Non-organized migration
 
 As aforementioned, our non-organized migration efforts are spearheaded by individual contributors who need to migrate particular code sections to utilize new features early. 
 
@@ -40,7 +40,8 @@ Before sending a PR our way, please ensure that there isn't one already in place
 ### Current status
 
 * 1.21 Kubelet was migrated
-* 1.22 We are collecting feedback and making improvements to the migration process.
+* 1.22 Collected feedback and improved the process.
+* 1.23 kube-scheduler and kube-proxy were migrated.
 
 ## Sending a Structured Logging Migration Pull Request
 
@@ -172,7 +173,7 @@ type KMetadata interface {
 1. Change log functions to structured equivalent
 1. Remove string formatting from log message
 1. Name arguments
-1. Use `klog.KObj` and `klog.KRef` for Kubernetes objects references
+1. Ensure that value is properly passed
 1. Verify log output
 
 ## Change log functions to structured equivalent
@@ -378,32 +379,35 @@ func ChangePodStatus(newStatus, currentStatus string) {
 [lowerCamelCase]: https://en.wiktionary.org/wiki/lowerCamelCase
 [alphanumeric]: https://en.wikipedia.org/wiki/Alphanumeric
 
-### Use `klog.KObj` and `klog.KRef` for Kubernetes objects
+## Good practice for passing values in structured logging
 
-As part of structured logging migration we want to ensure that kubernetes objects references are consistent within the
-codebase. Two new utility functions were introduced to klog `klog.KObj` and `klog.KRef`. Any reference
-(name, uid, namespace) to Kubernetes Object (Pod, Node, Deployment, CRD) should be rewritten to utilize those functions.
-In situations when object `UID` is would be beneficial for log, it should be added as separate field with `UID` suffix.
+When passing a value for a key-value pair, please use following rules:
+* Prefer using Kubernetes objects (for example `*v1.Pod`) and log them using `klog.KObj`
+  * When the original object is not available, use `klog.KRef` instead
+* Pass structured values directly (avoid calling `.String()` on them first)
+* When the goal is to log a `[]byte` array as string, explicitly convert with `string(<byte array>)`.
+
+### Prefer using Kubernetes objects (for example `*v1.Pod`) and log them using `klog.KObj`
+
+As part of the structured logging migration, we want to ensure that Kubernetes object references are
+consistent within the
+codebase. Two new utility functions were introduced to klog: `klog.KObj` and `klog.KRef`.
+
+Any existing logging code that makes a reference (such as name, namespace) to a Kubernetes
+object (for example: Pod, Node, Deployment, CustomResourceDefinition) should be rewritten to
+utilize the new functions.
+
+Logging using this method will ensure that log output include a proper and correctly formatted reference
+to that object. The formatting / serialization is automatically selected depending on the output log format.
+For example, the same object could be represented as `<namespace>/<name>` in
+plain text and as `{"namespace": "<namespace>", "name": "<name>"}` in JSON.
+In situations when object `UID` is would be beneficial for log, it should be added as separate key with `UID` suffix.
 
 For example
 ```go
 func updatePod(pod *covev1.Pod) {
    ...
-   klog.Infof("Updated pod %s in namespace %s", pod.Name, pod.Namespace)
-}
-```
-should be changed to
-```go
-func updatePod(pod *covev1.Pod) {
-   ...
-   klog.InfoS("Updated pod", "pod", klog.KObj(pod))
-}
-```
-And
-```go
-func updatePod(pod *covev1.Pod) {
-   ...
-   klog.Infof("Updated pod with uid: %s", pod.Uid)
+   klog.Infof("Updated pod(%s) with name %s in namespace %s", pod.Uid, pod.Name, pod.Namespace)
 }
 ```
 should be changed to
@@ -414,6 +418,7 @@ func updatePod(pod *covev1.Pod) {
 }
 ```
 
+### When the original object is not available, use `klog.KRef` instead
 `klog.KObj` requires passing a kubernetes object (struct implementing `metav1.Object` interface). In situations where
 the object is not available, we can use `klog.KRef`. Still it is suggested to rewrite the code to use object pointer
 instead of strings where possible.
@@ -434,7 +439,13 @@ func updateNode(nodeName string) {
 }
 ```
 
-### Verify log output
+### Pass structured values directly
+
+By passing whole structure without any marshalling we can allow logging library to make the decision for us.
+This is especially beneficial when Kubernetes supports different log format, so the logging library can make decision based on that.
+For example using `<namespace>/<name>` when writing in text format and `{"namespace": "<namespace>", "name": "<name>"}` for json format.
+
+## Verify log output
 
 With the introduction of structured functions log arguments will be formatted automatically instead of depending on the
 caller. This means that we can remove the burden of picking the format by caller and ensure greater log consistency, but during
