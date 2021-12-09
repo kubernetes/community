@@ -64,6 +64,6 @@ body:
 - type: input
   attributes:
     label: Link to Draft Questions
-    description: ideally, HackMD page, Google Doc, or some other format that supports comments so that we can help you improve your survey.
+    description: Ideally, HackMD page, Google Doc, or some other format that supports comments so that we can help you improve your survey.
   validations:
     required: true
