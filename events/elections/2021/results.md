@@ -17,10 +17,3 @@ Two year term:
 4. Tim Pepper
 
 Proportional representation limits were not invoked for this election.
-
-## Alternates
-
-Should one or more steering members need to step down during 2022, the alternates based on ranking from this election are, in order:
-
-1. David Eads
-2. Antonio Ojea
