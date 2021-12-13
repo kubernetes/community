@@ -26,34 +26,29 @@ to make this an agenda item of topic to discuss together. Chairs and Organizers
 ensure that reports are complete, accurate, and submitted to the Steering
 Committee.
 
-1. Steering Committee liaison reaches out to group leads to kick off
-2. Chairs/Organizers will:
-  - share with their groups (see tips below) and begin to 
-compile the doc due April 8th - final version
-  - use these [questions]
-  - submit a pull request with at least the template questions against the set 
-  issue to the groups documentation in the community repo by March 8th
-  - verify that Steering Liaison has reviewed
-  - post a call for comments period with your groups mailing list and a complete 
-  questionnaire; you can follow your charter communication period if you have
-  one but no less than 72 hours 
-  - if there are private matters to address with Steering before submitting the 
-pull request, share a copy with your liaison and wait until comments are
-addressed before submitting.
-3. The March edition of the "Chairs, Tech Leads, and Organizers" meetings will 
-be used as follow up for the community groups that have questions from/to 
-Steering and a retrospective
-4. The Steering Committee liaison will work directly with groups that have 
-follow up items and update Steering during regular monthly meetings. The liaison
-will also coordinate time with the Chairs (as a group). If you'd like to meet 
-1:1 instead, please let your liaison know.
-We'd like to hear about the following:  
-  - goals you have for the group, your experience in the role so far - 
-  challenges, wins, things you didn’t know before but wish you did, 
-  - continue in the role or help finding a replacement if you've already asked 
-  the group, 
-  - any feedback you have for us as a body and how we can help Chairs and 
-Organizers succeed and feel comfortable in your role. 
+1. Early January (of the following year)
+   * Steering Committee finalizes [questions] and generates draft 
+     `annual-report-YYYY.md` templates for each group in the community repo
+   * Steering Committee liaison reaches out to group leads to kick off
+2. January-February
+   * Chairs/Organizers work with their group (see tips below) to open
+     a pull request to the group's documentation in the community repo,
+     updating the draft to complete the questions
+   * post a call for comments period on the PR with your group's mailing list;
+     you can follow your charter communication period if you have one,
+     but no less than 72 hours
+   * verify that Steering Liaison has reviewed
+   * merge a completed report by the end of February
+3. March
+   * Steering Committee produces a project-wide annual report,
+     summarizing and highlighting elements from the individual group reports.
+   * The Steering Committee liaison will work directly with groups that have 
+     follow up items and update Steering during regular monthly meetings. The liaison
+     will also coordinate time with the Chairs (as a group). If you'd like to meet 
+     1:1 instead, please let your liaison know.
+   * The March edition of the "Chairs, Tech Leads, and Organizers" meetings will 
+     be used as follow up for the community groups that have questions from/to 
+     Steering and a retrospective
 
 ### Tips for Chairs and Working Group Organizers:      
 - Work together with your groups roles and community members to complete;
@@ -63,9 +58,6 @@ owners or other community members
 - All questions require a response. 
 - End users and other members of the community will read these. Err on the side
 of being more explicit than using our upstream shorthand or abbreviations. 
-- If there are any private matters that you'd like to discuss as part of the
-questions, share the document with us at steering-private@kubernetes.io before 
-submitting the pull request. 
 - The [questions] can be forked into whatever medium you wish to
 collaborate with your community: gdocs, hackmd, etc - it will all land back into
 a pull request at the end. 
