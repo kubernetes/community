@@ -31,7 +31,7 @@ Committee.
 2. Chairs/Organizers will:
   - share with their groups (see tips below) and begin to 
 compile the doc due April 8th - final version
-  - use this [question template]
+  - use these [questions]
   - submit a pull request with at least the template questions against the set 
   issue to the groups documentation in the community repo by March 8th
   - verify that Steering Liaison has reviewed
@@ -88,11 +88,11 @@ of being more explicit than using our upstream shorthand or abbreviations.
 - If there are any private matters that you'd like to discuss as part of the
 questions, share the document with us at steering-private@kubernetes.io before 
 submitting the pull request. 
-- The [question template] can be forked into whatever medium you wish to
+- The [questions] can be forked into whatever medium you wish to
 collaborate with your community: gdocs, hackmd, etc - it will all land back into
 a pull request at the end. 
 
-## Questions for report:
+## Questions for report: {#questions}
 
 #### Special Interest Groups:
 ##### Operational 
@@ -155,4 +155,4 @@ https://www.apache.org/foundation/board/reporting
 [WG]: https://git.k8s.io/community/committee-steering/governance/wg-governance.md
 [UG]: https://git.k8s.io/community/committee-steering/governance/ug-governance.md
 [governance]: https://git.k8s.io/community/governance.md
-[question template]: https://docs.google.com/document/d/1HeABRzhgF9NNpM0xGKLDhhc6bRfQuulsIsb59AjyS9M/edit#
+[questions]: #questions
