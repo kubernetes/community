@@ -83,11 +83,17 @@ usergroups:
       - sig-contribex
     members:
       - alisondy
-      - castrojo
       - jeefy
       - mrbobbytables
       - onlydole
+      - chrisshort
+      - danpopSD
       - paris
+      - markyjackson-taulia
+      - nigel
+      - Pritish
+      - bhumij
+      - Sandipan
 
   - name: zoom-admins
     long_name: Zoom Admins
