@@ -1,8 +1,8 @@
 # Kubernetes Community Group Annual Reports
 
-This document outlines the bootstrap process for an annual reporting and
-communication structure for Special Interest Groups (SIGs), Working Groups (WGs)
-, User Groups (UGs), and Committees
+This document outlines the process for an annual reporting and
+communication structure for Special Interest Groups (SIGs), Working Groups (WGs),
+User Groups (UGs), and Committees.
 All policy updates will be in their respective [SIG], [WG], and [UG]
  governance docs as well as the general [governance] guidance.
 
@@ -26,7 +26,6 @@ to make this an agenda item of topic to discuss together. Chairs and Organizers
 ensure that reports are complete, accurate, and submitted to the Steering
 Committee.
 
-### 2021 and on:
 1. Steering Committee liaison reaches out to group leads to kick off
 2. Chairs/Organizers will:
   - share with their groups (see tips below) and begin to 
@@ -55,27 +54,6 @@ We'd like to hear about the following:
   the group, 
   - any feedback you have for us as a body and how we can help Chairs and 
 Organizers succeed and feel comfortable in your role. 
-
-### 2020:
-Due to playing catch up with 37 community groups, we will have a slightly
-modified timeline bootstrap process this year and then will follow the process
-outlined for 2021. Working Groups, due to their temporary nature, will be the 
-only group to submit for 2020.   
-
-1. Steering Committee will assign one member as a liaison to each community 
-group for kick off, help, or guidance needed throughout the process during the 
-first week of July
-2. Working Group Organizers create one report and send it to/share it with 
-steering-private@kubernetes.io for review; reports should take ~30 days to 
-complete (work with your liaison on timeline)
-3. Steering will schedule private meetings to follow up on anything denoted as
-a private matter on the report; reports are not made public until all private
-comments have been addressed
-4. Once reviewed and follow ups are completed, the liaison will ask the 
-organizer(s) of the group to submit a pull request to that groups documentation 
-in the community repo
-5. The Steering Committee liaison will work directly with groups that have 
-follow up items and update Steering during regular monthly meetings. 
 
 ### Tips for Chairs and Working Group Organizers:      
 - Work together with your groups roles and community members to complete;
