@@ -1633,6 +1633,9 @@ sigs:
       including various *.k8s.io sites
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/OWNERS
+  - name: oci-proxy
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/oci-proxy/main/OWNERS
 - dir: sig-multicluster
   name: Multicluster
   mission_statement: >

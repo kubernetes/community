@@ -62,6 +62,9 @@ Code and configuration to manage Google Groups for domains owned by the Kubernet
 Code and configuration to manage Kubernetes project infrastructure, including various *.k8s.io sites
 - **Owners:**
   - [kubernetes/k8s.io](https://github.com/kubernetes/k8s.io/blob/main/OWNERS)
+### oci-proxy
+- **Owners:**
+  - [kubernetes-sigs/oci-proxy](https://github.com/kubernetes-sigs/oci-proxy/blob/main/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
