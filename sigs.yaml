@@ -629,7 +629,7 @@ sigs:
     chairs:
     - github: KnVerey
       name: Katrina Verey
-      company: Apple
+      company: Shopify
     - github: eddiezane
       name: Eddie Zaneski
       company: Amazon
@@ -642,7 +642,7 @@ sigs:
     tech_leads:
     - github: KnVerey
       name: Katrina Verey
-      company: Apple
+      company: Shopify
     - github: soltysh
       name: Maciej Szulik
       company: Red Hat
