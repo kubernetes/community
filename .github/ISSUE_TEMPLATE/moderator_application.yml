@@ -1,0 +1,65 @@
+name: Community Moderator Request
+description: Request moderator privileges on a Kubernetes property
+title: 'REQUEST: New moderator for <your-GH-handle> of <k8s property>'
+labels: area/community-management, sig/contributor-experience
+body:
+- id: github
+  type: input
+  attributes:
+    label: GitHub Username
+    placeholder: e.g. @example_user
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Property you'd like to Moderate
+    placeholder: e.g. discuss.k8s.io, kubernetes-dev
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Username on Property Requested
+    placeholder: e.g. (at)property_user
+  validations:
+    required: true
+- id: requirements
+  type: checkboxes
+  attributes:
+    label: Requirements
+    options:
+    - label: I am a Kubernetes Org member already
+      required: true
+    - label: I have [enabled 2FA on my GitHub account](https://github.com/settings/security)
+      required: true
+    - label: I have read and will abide by the policies mentioned in the [Moderation Guidelines](https://git.k8s.io/community/communication/moderation.md)
+      required: true
+    - label: I have two sponsors that meet the sponsor requirements listed in the moderator guidelines
+      required: true
+    - label: I have spoken to my sponsors ahead of this application, and they have agreed to sponsor my application
+      required: true
+- id: sponsor_1
+  type: input
+  attributes:
+    label: "Sponsor 1"
+    description: GitHub handle of your sponsor
+    placeholder: e.g. @sponsor-1
+  validations:
+    required: true
+- id: sponsor_2
+  type: input
+  attributes:
+    label: "Sponsor 2"
+    description: GitHub handle of your sponsor
+    placeholder: e.g. @sponsor-2
+  validations:
+    required: true
+- id: qualifications
+  type: textarea
+  attributes:
+    label: List of qualifications for this position
+    placeholder: |
+      - Prior moderation experience
+      - Links to public discussions showing your moderation experience (if available)
+      - Any other qualifications
+  validations:
+    required: true
