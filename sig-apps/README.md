@@ -49,6 +49,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-apps:
+* [WG Batch](/wg-batch)
 * [WG Data Protection](/wg-data-protection)
 
 

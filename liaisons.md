@@ -56,6 +56,7 @@ members will assume one of the departing members groups.
 | [SIG Usability](sig-usability/README.md) | Davanum Srinivas (**[@dims](https://github.com/dims)**) |
 | [SIG Windows](sig-windows/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [WG API Expression](wg-api-expression/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
+| [WG Batch](wg-batch/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [WG Data Protection](wg-data-protection/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG IoT Edge](wg-iot-edge/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG Multitenancy](wg-multitenancy/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
