@@ -25,6 +25,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Andrew Sy Kim (**[@andrewsykim](https://github.com/andrewsykim)**), VMware
 * Walter Fender (**[@cheftako](https://github.com/cheftako)**), Google
+* Nick Turner (**[@nckturner](https://github.com/nckturner)**), Amazon
 
 ## Emeritus Leads
 

@@ -764,6 +764,9 @@ sigs:
     - github: cheftako
       name: Walter Fender
       company: Google
+    - github: nckturner
+      name: Nick Turner
+      company: Amazon
     emeritus_leads:
     - github: hogepodge
       name: Chris Hoge
