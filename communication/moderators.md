@@ -156,9 +156,9 @@ Moderators seats: 10
 | Dan “POP” Papandrea | @danpopSD      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Marky Jackson| @markyjackson-taulia  | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Nigel Brown    | @nigel              | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
-| Bhumij Gupta   | @bhumij             |  |  |
-| Pritish Samal  | @Pritish            |  |  |
-| Sandipan Panda | @Sandipan           |  |  |
+| Bhumij Gupta   | @bhumij             | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
+| Pritish Samal  | @Pritish            | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
+| Sandipan Panda | @Sandipan           | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
 
 ### Moderators Pro Tempore
 
