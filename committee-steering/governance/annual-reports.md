@@ -62,7 +62,7 @@ of being more explicit than using our upstream shorthand or abbreviations.
 collaborate with your community: gdocs, hackmd, etc - it will all land back into
 a pull request at the end. 
 
-## Questions for report: {#questions}
+## Questions for report:
 
 #### Special Interest Groups:
 ##### Operational 
@@ -125,4 +125,4 @@ https://www.apache.org/foundation/board/reporting
 [WG]: https://git.k8s.io/community/committee-steering/governance/wg-governance.md
 [UG]: https://git.k8s.io/community/committee-steering/governance/ug-governance.md
 [governance]: https://git.k8s.io/community/governance.md
-[questions]: #questions
+[questions]: #questions-for-report
