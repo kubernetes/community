@@ -87,13 +87,13 @@ usergroups:
       - mrbobbytables
       - onlydole
       - chrisshort
-      - danpopSD
+      - danpopnyc
       - paris
       - markyjackson-taulia
-      - nigel
-      - Pritish
-      - bhumij
-      - Sandipan
+      - pnbrown
+      - CIPHERtron
+      - bhumijgupta
+      - sandipanpanda
 
   - name: zoom-admins
     long_name: Zoom Admins
