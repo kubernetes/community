@@ -1013,6 +1013,11 @@ sigs:
       url: https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09
       archive_url: https://docs.google.com/document/d/1LdooNTbb9PZMFWy3_F-XAsl7Og5F2lvG3tCgQvoB5e4/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+  - name: cluster-api-operator
+    contact:
+      slack: cluster-api-operator
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-operator/main/OWNERS
   - name: cluster-api-provider-aws
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
