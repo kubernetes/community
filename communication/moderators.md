@@ -149,14 +149,16 @@ Moderators seats: 10
 | Name           | Kubernetes Slack ID | Region   | Timezone                                                |
 | -------------- | ------------------- | -------- | ------------------------------------------------------- |
 | Alison Dowdney | @alisondy           | EMEA     | [GMT - Greenwich Mean Time](https://time.is/GMT)        |
-| Jorge Castro   | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jeffrey Sica   | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen     | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Chris Short    | @chrisshort         | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Taylor Dolezal | @onlydole           | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| David McKay    | @rawkode            | EMEA     | [GMT - Greenwich Mean Time](https://time.is/GMT)        |
-| Dan “POP” Papandrea | @danpopSD      |Americas  | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Dan “POP” Papandrea | @danpopSD      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Marky Jackson| @markyjackson-taulia  | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Nigel Brown    | @nigel              | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
+| Bhumij Gupta   | @bhumij             | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
+| Pritish Samal  | @Pritish            | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
+| Sandipan Panda | @Sandipan           | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
 
 ### Moderators Pro Tempore
 
