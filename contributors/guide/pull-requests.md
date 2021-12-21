@@ -444,7 +444,7 @@ commit message will automatically apply the `do-not-merge/invalid-commit-message
 label to your PR preventing it from being merged. 
 
 [GitHub keywords] in a PR to close issues is considered a convenience item, but
-can have unexpected side-effects; often closing something they shouldn't. 
+can have unexpected side-effects *when used in a commit message*; often closing something they shouldn't.
 
 **Blocked Keywords:**
 - close
