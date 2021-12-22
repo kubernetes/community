@@ -96,7 +96,7 @@ Additional requirements:
 - [sigs.yaml] must be updated to include subproject information and OWNERS files with subproject chairs
 
 
-[KEP]: https://git.k8s.io/enhancements/keps/YYYYMMDD-kep-template.md
+[KEP]: https://github.com/kubernetes/enhancements/blob/master/keps/NNNN-kep-template/README.md
 [Kubernetes Charter README]: /committee-steering/governance/README.md
 [lazy-consensus]: https://communitymgt.fandom.com/wiki/Lazy_consensus
 [sig-governance]: /committee-steering/governance/sig-governance.md
