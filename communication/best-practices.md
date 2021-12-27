@@ -36,7 +36,7 @@ Create a filter following the procedure below:
     label by choosing **New label...** in the dropdown list.
   - Click on the **Create filter**.
 - Create filter directly for lists:
-  - **Matches:** list:"kubernetes-dev@googlegroups.com"
+  - **Matches:** list:"dev@kubernetes.io"
   - **Do this:** Apply label "lists/kubernetes-dev"
 
 

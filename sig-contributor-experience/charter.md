@@ -15,7 +15,7 @@ We do this by listening - whether it’s through our roadshows to SIG meetings, 
 - Establish policies, standards and procedures for the use, [moderation], and management of all public platforms officially used by the project, including but not limited to:
   - [discuss.kubernetes.io]
   - [GitHub Management]
-  - [Mailing lists] / Google groups for the project as a whole (eg: kubernetes-dev@googlegroups.com) and for individual sigs and wgs where the Chairs have provided us ownership
+  - [Mailing lists] / Google groups for the project as a whole (eg: dev@kubernetes.io) and for individual sigs and wgs where the Chairs have provided us ownership
   - [Slack]
   - [/kubernetescommunity] YouTube channel
   - [Zoom]
@@ -56,13 +56,13 @@ We cross-cut all SIGs and WGs to deliver the following processes:
   When implementing policy changes we strive to balance responding quickly to the needs of the community and ensuring a disruption-free experience for project contributors. As such, the amount of notice we provide and the amount of consensus we seek is driven by our estimation of risk. We don't measure risk objectively at this time, but estimate it based on these parameters:
   - Low-risk changes impact a small number (<4) of SIGs, WGs, or repos, do not break existing contributor workflows, and are easy to roll back. When implementing low-risk changes we:
     - Socialize on kubernetes-sig-contribex@googlegroups.com and our weekly update calls
-    - We will go to each lead, their mailing lists, slack channel, and/or their update meetings and ask for feedback and a [lazy consensus] process. We will follow up with a post to [kubernetes-dev@]googlegroups.com mailing list
+    - We will go to each lead, their mailing lists, slack channel, and/or their update meetings and ask for feedback and a [lazy consensus] process. We will follow up with a post to [dev@kubernetes.io]googlegroups.com mailing list
   - High-risk changes impact a large number (>4) of SIGs, WGs, or repos, break existing contributor workflows, and are not easy to roll back. When implementing high-risk changes we:
     - Socialize on kubernetes-sig-contribex@googlegroups.com and our weekly update calls
     - Seek [lazy consensus] with a time box of at least 72 business hours with a GitHub issue link (or proposal if not applicable) to the following mailing lists:
         - [kubernetes-sig-contribex@]googlegroups.com
         - leads@kubernetes.io
-        - [kubernetes-dev@]googlegroups.com with the GitHub issue link including the subject [NOTICE]: $announcement
+        - [dev@kubernetes.io]googlegroups.com with the GitHub issue link including the subject [NOTICE]: $announcement
         - We will also announce it at the Kubernetes Community Meeting
 - Depending on how wide of an ecosystem change this is, we may also slack, blog, tweet, and use other channels to get the word out.
 - Our standard time box is 72 business hours; however, there may be situations where we need to act quickly but the time period will always be clear and upfront.
@@ -109,7 +109,7 @@ Chairs and Technical Leads
 [Kubernetes Charter README]: https://git.k8s.io/community/committee-steering/governance/README.md
 [lazy consensus]: http://en.osswiki.info/concepts/lazy_consensus
 [Contributor Experience Special Interest Group]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
-[kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[dev@kubernetes.io]: https://groups.google.com/a/kubernetes.io/group/dev
 [@kubernetesio]: https://www.twitter.com/kubernetesio
 [r/kubernetes]: https://kubernetes.reddit.com
 [Google Summer of Code]: https://git.k8s.io/community/mentoring/programs/google-summer-of-code.md

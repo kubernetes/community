@@ -516,7 +516,7 @@ eventually removed wholesale, as described in the [deprecation policy](https://k
 
 If your change is going to be backward incompatible or might be a breaking
 change for API consumers, please send an announcement to
-`kubernetes-dev@googlegroups.com` before the change gets in. If you are unsure,
+`dev@kubernetes.io` before the change gets in. If you are unsure,
 ask. Also make sure that the change gets documented in the release notes for the
 next release by labeling the PR with the "release-note-action-required" github label.
 

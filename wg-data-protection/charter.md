@@ -79,6 +79,6 @@ This WG will be producing documents as described in the `In Scope` section. If s
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 [lazy consensus]: http://en.osswiki.info/concepts/lazy_consensus
 
-[kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[dev@kubernetes.io]: https://groups.google.com/a/kubernetes.io/group/dev
 [wg-data-protection@]: https://groups.google.com/forum/#!forum/kubernetes-wg-data-protection
 [kubernetes/k8s.io]: https://git.k8s.io/k8s.io

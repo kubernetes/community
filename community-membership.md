@@ -44,7 +44,7 @@ remain active contributors to the community.
     - Filing or commenting on issues on GitHub
     - Contributing to SIG, subproject, or community discussions (e.g. meetings, Slack, email discussion
       forums, Stack Overflow)
-- Subscribed to [kubernetes-dev@googlegroups.com]
+- Subscribed to [dev@kubernetes.io]
 - Have read the [contributor guide]
 - Actively contributing to 1 or more subprojects.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
@@ -263,7 +263,7 @@ before being able to contribute effectively.
 [Kubernetes GitHub Admin team]: /github-management/README.md#github-administration-team
 [Kubernetes GitHub organizations]: /github-management#actively-used-github-organizations
 [Kubernetes org]: https://github.com/kubernetes
-[kubernetes-dev@googlegroups.com]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[dev@kubernetes.io]: https://groups.google.com/a/kubernetes.io/group/dev
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
 [membership request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-membership&template=membership.yml&title=REQUEST%3A+New+membership+for+%3Cyour-GH-handle%3E
 [membership template]: https://github.com/kubernetes/org/blob/main/.github/ISSUE_TEMPLATE/membership.yml
