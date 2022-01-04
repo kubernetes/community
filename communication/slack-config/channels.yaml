@@ -157,8 +157,8 @@ channels:
   - name: carvel
     id: CH8KCCKA5
   - name: kalm
-  - name: karpenter
   - name: kaniko
+  - name: karpenter
   - name: k8s-dual-stack
     archived: true
   - name: k8s-infra-alerts
