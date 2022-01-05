@@ -246,7 +246,7 @@ invites on the shared calendar for an invite to be sent to members of the group.
 - Create and share your _"meeting notes"_ Google doc with the following
   permissions settings:
   - **Can edit** for members of the newly created Mailing List.
-  - **Can comment** for `kubernetes-dev@googlegroups.com`
+  - **Can comment** for `dev@kubernetes.io`
   - **View only** for anyone with the link. **NOTE:** Depending on
     employer organization policy, this may not be possible to configure. The
     document should be copied over to an account without the restriction and 

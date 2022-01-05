@@ -43,7 +43,7 @@ As part of this we will define roles for the [OARP] process (Owners, Approvers, 
   If more substantial changes are desired it is advisable to socialize those before drafting a PR.
     - The steering committee will be looking to ensure the scope of the SIG as represented in the charter is reasonable (and within the scope of Kubernetes) and that processes are fair.
 - For large changes alert the rest of the Kubernetes community (Participants) as the scope of the changes becomes clear.
-  Sending mail to [kubernetes-dev@googlegroups.com] and/or announcing at the community meeting are a good ways to do this.
+  Sending mail to [dev@kubernetes.io] and/or announcing at the community meeting are a good ways to do this.
 
 If there are questions about this process please reach out to the steering committee at [steering@kubernetes.io].
 
@@ -68,4 +68,4 @@ See [frequently asked questions]
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
 [sig-architecture example]: ../../sig-architecture/charter.md
 [steering@kubernetes.io]: mailto:steering@kubernetes.io
-[kubernetes-dev@googlegroups.com]: mailto:kubernetes-dev@googlegroups.com
+[dev@kubernetes.io]: mailto:dev@kubernetes.io

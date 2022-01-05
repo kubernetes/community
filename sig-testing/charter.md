@@ -75,12 +75,12 @@ time.
 - **Medium risk** changes may impact existing contributor workflows, should be
   easy to roll back, and may impact all of the project's repos. These should
   be shared with SIG Contributor Experience, may require a lazy consensus
-  issue with [kubernetes-dev@] notice.
+  issue with [dev@kubernetes.io] notice.
 
 - **High risk changes** likely break existing contributor workflows, may be
   difficult to roll back, and likely impact all of the project's repos. These
   require a consultation with SIG Contributor Experience, and a lazy consensus
-  issue with [kubernetes-dev@] notice.
+  issue with [dev@kubernetes.io] notice.
 
 ### Out of Scope
 
@@ -131,6 +131,6 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 [triage]: https://go.k8s.io/triage
 
 [Release Team test-infra role]: https://git.k8s.io/sig-release/release-team/role-handbooks/test-infra
-[kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[dev@kubernetes.io]: https://groups.google.com/a/kubernetes.io/group/dev
 [kubernetes-sig-testing@]: https://groups.google.com/forum/#!forum/kubernetes-sig-testing
 [kubernetes/test-infra]: https://git.k8s.io/test-infra
