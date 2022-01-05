@@ -35,7 +35,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Shopify
 * Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Amazon
 * Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing

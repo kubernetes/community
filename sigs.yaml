@@ -642,9 +642,6 @@ sigs:
     - github: seans3
       name: Sean Sullivan
       company: Google
-    - github: soltysh
-      name: Maciej Szulik
-      company: Red Hat
     tech_leads:
     - github: KnVerey
       name: Katrina Verey
