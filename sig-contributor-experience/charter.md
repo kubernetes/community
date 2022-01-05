@@ -56,13 +56,13 @@ We cross-cut all SIGs and WGs to deliver the following processes:
   When implementing policy changes we strive to balance responding quickly to the needs of the community and ensuring a disruption-free experience for project contributors. As such, the amount of notice we provide and the amount of consensus we seek is driven by our estimation of risk. We don't measure risk objectively at this time, but estimate it based on these parameters:
   - Low-risk changes impact a small number (<4) of SIGs, WGs, or repos, do not break existing contributor workflows, and are easy to roll back. When implementing low-risk changes we:
     - Socialize on kubernetes-sig-contribex@googlegroups.com and our weekly update calls
-    - We will go to each lead, their mailing lists, slack channel, and/or their update meetings and ask for feedback and a [lazy consensus] process. We will follow up with a post to [dev@kubernetes.io]googlegroups.com mailing list
+    - We will go to each lead, their mailing lists, slack channel, and/or their update meetings and ask for feedback and a [lazy consensus] process. We will follow up with a post to [dev@kubernetes.io] mailing list
   - High-risk changes impact a large number (>4) of SIGs, WGs, or repos, break existing contributor workflows, and are not easy to roll back. When implementing high-risk changes we:
     - Socialize on kubernetes-sig-contribex@googlegroups.com and our weekly update calls
     - Seek [lazy consensus] with a time box of at least 72 business hours with a GitHub issue link (or proposal if not applicable) to the following mailing lists:
         - [kubernetes-sig-contribex@]googlegroups.com
         - leads@kubernetes.io
-        - [dev@kubernetes.io]googlegroups.com with the GitHub issue link including the subject [NOTICE]: $announcement
+        - [dev@kubernetes.io] with the GitHub issue link including the subject [NOTICE]: $announcement
         - We will also announce it at the Kubernetes Community Meeting
 - Depending on how wide of an ecosystem change this is, we may also slack, blog, tweet, and use other channels to get the word out.
 - Our standard time box is 72 business hours; however, there may be situations where we need to act quickly but the time period will always be clear and upfront.
