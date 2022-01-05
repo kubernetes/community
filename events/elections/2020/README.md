@@ -70,7 +70,7 @@ Corporate affiliation is applied after the election. If an organization finds it
 
 **Nomination**
 
-If you want to stand for election, send an email to dev@kubernetes.io
+If you want to stand for election, send an email to kubernetes-dev@googlegroups.com
 with the subject line "Steering Committee Nomination: Your Name (@yourgithub)".
 
 If you want to nominate someone else, you may do so, but PLEASE talk to them
