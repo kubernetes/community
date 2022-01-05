@@ -27,9 +27,10 @@ Here are a few suggestions or ideas that make for a good award nominee:
   - Awards are affiliation-free and earned by individuals, we do not mention vendors at all as part of this process
   - Vendors are encouraged to celebrate individuals via their own social properties, the awards themselves will remain neutral
 - Spread the Wealth
-   - Should consider lookin at underserved areas of the project
+   - Should consider looking at underserved areas of the project
    - For every "rock star" there's probably a few people quietly doing excellent work.
    - Should consider past awards, having the same person winning the award repeatedly shouldn't be the norm. 
+   - As a rule, current SIG Leads, SC members, and other titled community leaders should be considered ineligible for the contributor awards, as their achievements are already recognized.
 
 ## Process
 
