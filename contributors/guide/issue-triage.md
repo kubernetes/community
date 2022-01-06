@@ -242,7 +242,7 @@ These should be directed to the following:
 
 ### User Support Response: Example
 
-If you see support questions on kubernetes-dev@googlegroups.com or issues asking for
+If you see support questions on dev@kubernetes.io or issues asking for
 support, try to redirect them to Discuss. Example response:
 
 ```code

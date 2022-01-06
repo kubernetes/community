@@ -13,6 +13,11 @@ The [charter]({{.CharterLink}}) defines the scope and governance of the {{.Name}
 {{ end }}
 {{ if .Meetings -}}
 ## Meetings
+
+{{- if .Contact.MailingList }}
+*Joining the [mailing list]({{.Contact.MailingList}}) for the group will typically add invites for the following meetings to your calendar.*
+{{- end }}
+
 {{- range .Meetings }}
 * {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}}]({{.URL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time}}&tz={{.TZ | tzUrlEncode}}).
 {{- if .ArchiveURL }}

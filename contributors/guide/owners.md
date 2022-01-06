@@ -115,6 +115,24 @@ emeritus_approvers:
 - emily    # 2019-01-05
 ```
 
+#### Cleanup
+
+In addition to the Emeritus process above, from time to time, it is necessary
+to prune inactive members from OWNERS files. A core principle in maintaining a
+healthy community is encouraging active participation. OWNERS have a higher
+activity requirement, as they directly impact the ability of others to contribute.
+If an owner should become inactive, they will be removed but may be added back
+should they become active again.
+
+
+An inactive OWNER is defined as someone with less than 10 Devstats recorded
+contributions within the past year, as shown by this [dashboard]. This is a
+conservative metric but should ensure only the removal of the most inactive
+OWNERS.
+- PR comments are less than 10 and Devstats count is less than 10 for a year
+
+
+
 ### OWNERS_ALIASES
 
 Each repo may contain at its root an OWNERS_ALIASES file.
@@ -317,3 +335,4 @@ Good examples of OWNERS usage:
 [chromium-owners]: https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md
 [github-codeowners]: https://help.github.com/articles/about-codeowners/
 [pr-workflow]: /contributors/guide/pull-requests.md#the-testing-and-merge-workflow
+[dashboard]: https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All&var-repo_name=kubernetes%2Fkubernetes&var-country_name=All

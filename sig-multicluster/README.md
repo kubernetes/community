@@ -13,7 +13,8 @@ A Special Interest Group focused on solving common challenges related to the man
 The [charter](charter.md) defines the scope and governance of the Multicluster Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster) for the group will typically add invites for the following meetings to your calendar.*
+* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://tinyurl.com/sig-multicluster-notes).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
 
@@ -41,7 +42,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-multicluster-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-multicluster-pr-reviews) - PR Reviews
     - [@kubernetes/sig-multicluster-test-failures](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) - Test Failures and Triage
     - [@kubernetes/sig-mutlicluster-proposals](https://github.com/orgs/kubernetes/teams/sig-mutlicluster-proposals) - Design Proposals
-- Steering Committee Liaison: Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
+- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
 ## Subprojects
 

@@ -163,3 +163,38 @@ k8s.io/metrics
 
 Once it completes checking for code updates, later the script calls
 `update-codegen.sh` scripts.
+
+
+## `verify-structured-logging`
+
+This script verifies if a package is properly migrated to structured
+logging or not. The script involves verification steps based on new
+klog methods which have few disallowed keywords like,
+
+```bash
+* klog.Infof, klog.Info, klog.Infoln
+* klog.InfoDepth
+* klog.WarningDepth
+* klog.Error, klog.Errorf, klog.Errorln
+* klog.ErrorDepth
+```
+
+More info is available
+[here](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-instrumentation/migration-to-structured-logging.md#change-log-functions-to-structured-equivalent).
+
+
+## `verify-gofmt`
+
+This script is used to check whether the go source code needs to be
+formatted or not using, the gofmt tool. Gofmt tool automatically
+formats the code and the formatted code is easier to read, write and
+maintain.
+
+
+## `verify-spelling`
+
+This script uses `client9/misspell` package to search and correct
+commonly misspelled words as per the English language in all the files
+and directories under `kubernetes/kubernetes`.
+
+

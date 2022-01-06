@@ -47,7 +47,7 @@ make test-e2e-node PRINT_HELP=y
 Why run tests *remotely*? Tests will be run in a customized testing environment. This environment closely mimics the pre- and post- submit testing performed by the project.
 
 Prerequisites:
-- [Join the googlegroup](https://groups.google.com/forum/#!forum/kubernetes-dev) `kubernetes-dev@googlegroups.com`
+- [Join the googlegroup](https://groups.google.com/a/kubernetes.io/group/dev) `dev@kubernetes.io`
   - *This provides read access to the node test images.*
 - Setup a [Google Cloud Platform](https://cloud.google.com/) account and project with Google Compute Engine enabled
 - Install and setup the [gcloud sdk](https://cloud.google.com/sdk/downloads)

@@ -65,7 +65,7 @@ TODO: add more here
 	- #meet-our-contributors
 	- #pr-reviews
 - mailing lists
-	- kubernetes-dev@googlegroups.com
+	- dev@kubernetes.io
 	- your respective sig (ie - kubernetes-sig-cli@googlegroups.com)
 - contributor office hours
 	- Kubernetes Community Office Hours

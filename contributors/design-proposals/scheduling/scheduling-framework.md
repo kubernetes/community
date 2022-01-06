@@ -1,9 +1,6 @@
-  
-Status: Draft  
-Created: 2018-04-09   /  Last updated: 2019-03-01
-Author: bsalamat  
-Contributors: misterikkit
+Design proposals have been archived.
 
----
+To view the last version of this document, see the [Design Proposals Archive Repo](https://github.com/kubernetes/design-proposals-archive/).
 
-The scheduling framework design has moved to https://github.com/kubernetes/enhancements/blob/master/keps/sig-scheduling/20180409-scheduling-framework.md
+
+Please remove after 2022-04-01 or the release of Kubernetes 1.24, whichever comes first.

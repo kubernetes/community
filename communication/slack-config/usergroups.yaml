@@ -83,11 +83,17 @@ usergroups:
       - sig-contribex
     members:
       - alisondy
-      - castrojo
       - jeefy
       - mrbobbytables
       - onlydole
+      - chrisshort
+      - danpopnyc
       - paris
+      - markyjackson-taulia
+      - pnbrown
+      - CIPHERTron
+      - bhumijgupta
+      - sandipanpanda
 
   - name: zoom-admins
     long_name: Zoom Admins
@@ -171,12 +177,11 @@ usergroups:
       - pinniped
     members:
       - enj
-      - mattmoyer
-      - ankeesler
       - cfryanr
       - margocrawf
       - microwavables
-      - pabloschuhmacher
+      - anjaltelang
+      - shamus
 
   - name: steering-members
     long_name: Kubernetes Steering Committee
@@ -185,12 +190,12 @@ usergroups:
       - steering-committee
     members:
       - cblecker
-      - derekwaynecarr
       - dims
+      - justaugustus
       - liggitt
       - mrbobbytables
-      - nikhita
       - paris
+      - tpepper
 
   - name: grafana-operator-maintainers
     long_name: Grafana Operator Maintainers

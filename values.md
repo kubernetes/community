@@ -2,7 +2,7 @@
 title: "Kubernetes Community Values"
 weight: 2
 description: |
-  This page indexes all of the mentoring initiatives for contributing to the Kubernetes project. For end user mentoring initiatives, check out KubeCon and other CNCF events and programs.
+  The Kubernetes Community values are the keystone to the ongoing success of the project. These principles guide every aspect of the Kubernetes project.
 ---
 
 # Kubernetes Community Values

@@ -1,8 +1,0 @@
-# See the OWNERS docs at https://go.k8s.io/owners
-
-reviewers:
-  - sig-service-catalog-leads
-approvers:
-  - sig-service-catalog-leads
-labels:
-  - sig/service-catalog

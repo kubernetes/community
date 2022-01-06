@@ -13,6 +13,7 @@ Covers development and maintenance of components for automated scaling in Kubern
 The [charter](charter.md) defines the scope and governance of the Autoscaling Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Mondays at 16:00 Poland](https://zoom.us/j/944410904) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=Poland).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
 
@@ -36,7 +37,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-autoscaling-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-autoscaling-pr-reviews) - PR Reviews
     - [@kubernetes/sig-autoscaling-proposals](https://github.com/orgs/kubernetes/teams/sig-autoscaling-proposals) - Design Proposals
     - [@kubernetes/sig-autoscaling-test-failures](https://github.com/orgs/kubernetes/teams/sig-autoscaling-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**)
+- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 
 ## Subprojects
 

@@ -13,6 +13,7 @@ SIG Scalability is responsible for defining and driving scalability goals for Ku
 The [charter](charter.md) defines the scope and governance of the Scalability Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scale) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Thursdays at 10:30 PT (Pacific Time)](https://zoom.us/j/94252896018?pwd=cTlMMlBoTHZqUEdjRm9VY2NWNUg5dz09) (bi-weekly ([upcoming meeting dates](#upcoming-meeting-dates))). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
   * [Meeting recordings](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
@@ -22,7 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Scalability Sp
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
+* Marcel Zieba (**[@marseel](https://github.com/marseel)**), Google
 * Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), AWS
 
 ### Technical Leads
@@ -30,6 +31,10 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
+
+## Emeritus Leads
+
+* Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**)
 
 ## Contact
 - Slack: [#sig-scalability](https://kubernetes.slack.com/messages/sig-scalability)

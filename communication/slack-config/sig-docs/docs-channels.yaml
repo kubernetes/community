@@ -20,6 +20,7 @@ channels:
   - name: kubernetes-docs-uk
   - name: sig-docs
   - name: sig-docs-blog
+  - name: sig-docs-dockershim
   - name: sig-docs-localizations
   - name: sig-docs-maintainers
   - name: sig-docs-modeling

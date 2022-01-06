@@ -1,16 +1,9 @@
-# Kubernetes Design Documents and Proposals
+Design proposals have been archived.
 
-**The Design Proposal process has been deprecated in favor of [Kubernetes Enhancement Proposals (KEP)][keps]. These documents are here for historical purposes only.**
+To view the last version of this document, see the [Design Proposals Archive Repo](https://github.com/kubernetes/design-proposals-archive/).
 
----
-
-This directory contains Kubernetes design documents and accepted design proposals. 
-
-For a design overview, please see [the architecture document](architecture/architecture.md).
-
-Note that a number of these documents are historical and may be out of date or unimplemented. 
-
-TODO: Add the current status to each document and clearly indicate which are up to date.
+For information on the replacement design proposal process, see the [Kubernetes Enhancement Proposals (KEP)](https://github.com/kubernetes/enhancements/tree/master/keps/sig-architecture/0000-kep-process) process.
 
 
-[keps]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-architecture/0000-kep-process
+Please remove after 2022-04-01 or the release of Kubernetes 1.24, whichever comes first.
+

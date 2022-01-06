@@ -13,13 +13,13 @@ All Kubernetes SIGs must define a charter defining the scope and governance of t
 3. Fill out the template for your SIG
 4. Update [sigs.yaml] with the individuals holding the roles as defined in the template.
 5. Add subprojects owned by your SIG in the [sigs.yaml]
-5. Create a pull request with a draft of your charter.md and sigs.yaml changes.  Communicate it within your SIG
+6. Create a pull request with a draft of your charter.md and sigs.yaml changes. Communicate it within your SIG
    and get feedback as needed.
-6. Send the SIG Charter out for review to steering@kubernetes.io.  Include the subject "SIG Charter Proposal: YOURSIG"
+7. Send the SIG Charter out for review to steering@kubernetes.io. Include the subject "SIG Charter Proposal: YOURSIG"
    and a link to the PR in the body.
-7. Typically expect feedback within a week of sending your draft.  Expect longer time if it falls over an
-   event such as KubeCon/CloudNativeCon or holidays.  Make any necessary changes.
-8. Once accepted, the steering committee will ratify the PR by merging it.
+8. Typically expect feedback within a week of sending your draft. Expect longer time if it falls over an
+   event such as KubeCon/CloudNativeCon or holidays. Make any necessary changes.
+9. Once accepted, the steering committee will ratify the PR by merging it.
 
 ## Steps to update an existing SIG charter
 
@@ -43,7 +43,7 @@ As part of this we will define roles for the [OARP] process (Owners, Approvers, 
   If more substantial changes are desired it is advisable to socialize those before drafting a PR.
     - The steering committee will be looking to ensure the scope of the SIG as represented in the charter is reasonable (and within the scope of Kubernetes) and that processes are fair.
 - For large changes alert the rest of the Kubernetes community (Participants) as the scope of the changes becomes clear.
-  Sending mail to [kubernetes-dev@googlegroups.com] and/or announcing at the community meeting are a good ways to do this.
+  Sending mail to [dev@kubernetes.io] and/or announcing at the community meeting are a good ways to do this.
 
 If there are questions about this process please reach out to the steering committee at [steering@kubernetes.io].
 
@@ -68,4 +68,4 @@ See [frequently asked questions]
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
 [sig-architecture example]: ../../sig-architecture/charter.md
 [steering@kubernetes.io]: mailto:steering@kubernetes.io
-[kubernetes-dev@googlegroups.com]: mailto:kubernetes-dev@googlegroups.com
+[dev@kubernetes.io]: mailto:dev@kubernetes.io

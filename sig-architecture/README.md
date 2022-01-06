@@ -13,6 +13,7 @@ The Architecture SIG maintains and evolves the design principles of Kubernetes, 
 The [charter](charter.md) defines the scope and governance of the Architecture Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-architecture) for the group will typically add invites for the following meetings to your calendar.*
 * Enhancements Subproject Meeting: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/95357819945) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://bit.ly/k8s-enhancements-agenda).
   * [Meeting recordings](TBD).
@@ -59,7 +60,7 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
 [Described below](#architecture-and-api-governance-1)
 - **Owners:**
   - [kubernetes/api](https://github.com/kubernetes/api/blob/master/OWNERS)
-  - [kubernetes/community/contributors/design-proposals/architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/OWNERS)
+  - [kubernetes/design-proposals-archive](https://github.com/kubernetes/design-proposals-archive/blob/main/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/api](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/OWNERS)
 ### code-organization
 [Described below](#code-organization-1)

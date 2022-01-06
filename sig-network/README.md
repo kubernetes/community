@@ -13,15 +13,15 @@ Covers networking in Kubernetes.
 The [charter](charter.md) defines the scope and governance of the Network Special Interest Group.
 
 ## Meetings
-* Gateway API Meeting (APAC Friendly): [Mondays at 15:00 PT (Pacific Time)](https://zoom.us/j/441530404) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
-* Gateway API Meeting (EMEA Friendly): [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/441530404) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network) for the group will typically add invites for the following meetings to your calendar.*
+* Gateway API Meeting: [Mondays at 15:00 PT (Pacific Time)](https://zoom.us/j/441530404) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
 * Network Policy API Meeting: [Mondays at 13:00 PT (Pacific Time)](https://zoom.us/j/96264742248) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs).
 * SIG Network Ingress NGINX Meeting: [Tuesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/98377891310) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X).
+* SIG Network KPNG APAC Meeting: [Wednesdays at 19:00 IST (Indian Standard Time)](https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=IST%20%28Indian%20Standard%20Time%29).
 * SIG Network Kube Proxy Meeting: [Fridays at 8:30 PT (Pacific Time)](https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
 * SIG Network Meeting: [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/361123509) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
@@ -48,7 +48,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-network-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-network-pr-reviews) - PR Reviews
     - [@kubernetes/sig-network-proposals](https://github.com/orgs/kubernetes/teams/sig-network-proposals) - Design Proposals
     - [@kubernetes/sig-network-test-failures](https://github.com/orgs/kubernetes/teams/sig-network-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**)
+- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 
 ## Subprojects
 

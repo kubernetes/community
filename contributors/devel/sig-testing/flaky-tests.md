@@ -215,6 +215,10 @@ Finally, you can stress test the unit test using the
 with this command: 
 
 ```sh
+# go version 1.17 and later
+go install golang.org/x/tools/cmd/stress@latest
+
+# go version prior to 1.17
 go get golang.org/x/tools/cmd/stress
 ```
 

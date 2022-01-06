@@ -67,6 +67,9 @@ git remote -v
 Get your local master up to date:
 
 ```sh
+# Depending on which repository you are working from,
+# the default branch may be called 'main' instead of 'master'.
+
 cd $working_dir/kubernetes
 git fetch upstream
 git checkout master
@@ -87,6 +90,9 @@ This workflow is process-specific; for quick start build instructions for [kuber
 ### 4 Keep your branch in sync
 
 ```sh
+# Depending on which repository you are working from,
+# the default branch may be called 'main' instead of 'master'.
+
 # While on your myfeature branch
 git fetch upstream
 git rebase upstream/master
@@ -246,6 +252,9 @@ will create the PR branch inside the main repository rather than inside your for
 - Create a branch and sync it with upstream.
 
   ```sh
+  # Depending on which repository you are working from,
+  # the default branch may be called 'main' instead of 'master'.
+  
   # create a branch
   git checkout -b myrevert
 

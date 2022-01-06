@@ -13,6 +13,7 @@ The Kubernetes Steering Committee is the governing body of the Kubernetes projec
 The [charter](https://git.k8s.io/steering/charter.md) defines the scope and governance of the Steering Committee.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/forum/#!forum/steering) for the group will typically add invites for the following meetings to your calendar.*
 * Private Steering Committee Meeting: [third Mondays at 9:30 PT (Pacific Time)](https://bit.ly/k8s-steering-wd) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting recordings](https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM).
 * Public Steering Committee Meeting: [first Mondays at 9:30 PT (Pacific Time)](https://bit.ly/k8s-steering-wd) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
@@ -21,12 +22,12 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 ## Members
 
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
-* Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
+* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Cisco
 * Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
-* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**), VMware
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Apple
+* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
 
 ## Contact
 - Slack: [#steering-committee](https://kubernetes.slack.com/messages/steering-committee)

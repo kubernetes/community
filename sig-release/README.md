@@ -13,6 +13,7 @@ Ensure quality Kubernetes releases
 The [charter](charter.md) defines the scope and governance of the Release Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-release) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Tuesdays at 14:30 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-release-meeting).
   * [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
@@ -61,6 +62,7 @@ The following [subprojects][subproject-definition] are owned by sig-release:
 ### Release Engineering
 The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
 - **Owners:**
+  - [kubernetes-sigs/bom](https://github.com/kubernetes-sigs/bom/blob/main/OWNERS)
   - [kubernetes-sigs/downloadkubernetes](https://github.com/kubernetes-sigs/downloadkubernetes/blob/master/OWNERS)
   - [kubernetes-sigs/mdtoc](https://github.com/kubernetes-sigs/mdtoc/blob/master/OWNERS)
   - [kubernetes-sigs/promo-tools](https://github.com/kubernetes-sigs/promo-tools/blob/main/OWNERS)

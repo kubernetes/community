@@ -23,14 +23,15 @@ The [charter](charter.md) defines the scope and governance of the Structured Log
 * SIG Storage
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-structured-logging) for the group will typically add invites for the following meetings to your calendar.*
 * Regular Meeting: [Thursdays at 14:30 UTC](https://zoom.us/j/96716142646?pwd=VmgrN29sbmhDREp3R0NtZlpGSlZ4Zz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1R9bZ34L9vR1ftH0dFeOp-j50lLh5ijKVwwXJ3LDrY4I/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2GY3so1z2Cnkvkt5A_x1Aw).
 
 ## Organizers
 
+* Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel
 * Marek Siarkowicz (**[@serathius](https://github.com/serathius)**), Google
-* Shubheksha Jalan (**[@shubheksha](https://github.com/shubheksha)**), Apple
 
 ## Contact
 - Slack: [#wg-structured-logging](https://kubernetes.slack.com/messages/wg-structured-logging)

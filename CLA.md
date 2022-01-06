@@ -27,15 +27,16 @@ Once you get to the sign in form, click "Log in with GitHub":
 
 ![CNCFCLA1](http://i.imgur.com/tEk2x3j.png)
 
-#### 2. Create Linux Foundation ID Portal account with correct e-mail address
+#### 2. Create Linux Foundation ID Portal account
 
-Ensure that the e-mail address you use when completing this form matches the one
-you will use for your commits.
+After entering the various names, click "Submit":
 
 If you are signing up as an employee, you must use your official
-person@organization.domain email address in the CNCF account registration page.
+person@organization.domain email address as your default GitHub
+address or configure it as an alias of your LF identify.
 
-![CNCFCLA2](http://i.imgur.com/t3WAtrz.png)
+
+![CNCFCLA2](https://i.imgur.com/9vxe9mA.png)
 
 #### 3. Complete signing process
 

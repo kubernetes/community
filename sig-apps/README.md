@@ -13,6 +13,7 @@ Covers deploying and operating applications in Kubernetes. We focus on the devel
 The [charter](charter.md) defines the scope and governance of the Apps Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-apps) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Mondays at 9:00 PT (Pacific Time)](https://zoom.us/j/739385290?pwd=ekVmNGRjT214MGJkY1JUUUpPMVlJUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3).
@@ -110,7 +111,7 @@ The core workloads API, which is composed of the CronJob, DaemonSet, Deployment,
 
 ## [Helm](https://helm.sh) and [Charts](https://github.com/kubernetes/charts)
 
-Helm, Charts and its other subprojects have [moved to the CNCF](https://github.com/cncf/toc/blob/master/proposals/helm.adoc).
+Helm, Charts and its other subprojects have [moved to the CNCF](https://github.com/cncf/toc/blob/main/proposals/incubation/helm.adoc).
 See Helm's [community repository](https://github.com/kubernetes-helm/community) for information about the Helm project.
 
 <!-- END CUSTOM CONTENT -->

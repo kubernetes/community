@@ -1,0 +1,69 @@
+name: Community Survey Request
+description : Create and distribute a survey of the Kubernetes community, for the Kubernetes community
+title: 'SURVEY REQUEST: <topic>'
+labels: area/contributor-comms, sig/contributor-experience
+body:
+- type: input
+  attributes:
+    label: Group Requesting
+    description: The SIG, WG, team, subproject, or other Kubernetes community group wanting the survey to be conducted.
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Title of Survey
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Goal of Survey
+    description: what is the main thing you want this survey to determine?
+    placeholder: Examples- "To research how end users are using this feature", "To decide when to host our SIG summit" 
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Target Audience
+    description: who in the Kubernetes ecosystem should know about, and take, this survey?
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Results Recipients
+    description: list of individuals who are going to be able to see the raw data of the responses. This needs to be a short list of individuals, not a team alias, for GDPR reasons.
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Date Survey Starts
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Date Survey Ends
+  validations:
+    required: true
+- type: dropdown
+  attributes:
+    label: Publicity Help Wanted?
+    description: Do you need help from Contributor Communications in publicizing this survey?
+    options:
+        - "Yes"
+        - "No"
+  validations:
+    required: true
+- type: dropdown
+  attributes:
+    label: Data Analysis Wanted?
+    description: Do you want help creating charts or cross-checking data? Help is sometimes available.
+    options:
+        - "Yes"
+        - "No"
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Link to Draft Questions
+    description: Ideally, HackMD page, Google Doc, or some other format that supports comments so that we can help you improve your survey.
+  validations:
+    required: true

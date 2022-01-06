@@ -13,7 +13,11 @@ Covers kubectl and related tools. We focus on the development and standardizatio
 The [charter](charter.md) defines the scope and governance of the CLI Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli) for the group will typically add invites for the following meetings to your calendar.*
 * Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
+* KRM Functions Subproject Meeting: [Wednesdays at 10:30 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
 * Kustomize Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
@@ -28,7 +32,7 @@ The [charter](charter.md) defines the scope and governance of the CLI Special In
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Apple
+* Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Shopify
 * Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Amazon
 * Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
@@ -37,7 +41,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Apple
+* Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Shopify
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 
 ## Emeritus Leads
@@ -59,7 +63,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-cli-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-cli-pr-reviews) - PR Reviews
     - [@kubernetes/sig-cli-proposals](https://github.com/orgs/kubernetes/teams/sig-cli-proposals) - Design Proposals
     - [@kubernetes/sig-cli-test-failures](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**)
+- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
 
 ## Subprojects
 
@@ -84,6 +88,9 @@ Plugin manager for kubectl.
 Centralized plugin index for krew.
 - **Owners:**
   - [kubernetes-sigs/krew-index](https://github.com/kubernetes-sigs/krew-index/blob/master/OWNERS)
+### krm-functions
+- **Owners:**
+  - [kubernetes-sigs/krm-functions-registry](https://github.com/kubernetes-sigs/krm-functions-registry/blob/main/OWNERS)
 ### kubectl
 - **Owners:**
   - [kubernetes/kubectl](https://github.com/kubernetes/kubectl/blob/master/OWNERS)
