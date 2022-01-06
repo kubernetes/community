@@ -31,11 +31,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Frederic Branczyk (**[@brancz](https://github.com/brancz)**), Polar Signals
 * David Ashpole (**[@dashpole](https://github.com/dashpole)**), Google
+* Damien Grisonnet (**[@dgrisonnet](https://github.com/dgrisonnet)**), Red Hat
 
 ## Emeritus Leads
 
+* Frederic Branczyk (**[@brancz](https://github.com/brancz)**)
 * Piotr Szczesniak (**[@piosz](https://github.com/piosz)**)
 
 ## Contact
