@@ -1,0 +1,10 @@
+name: General Issue
+description: Open a general issue in the kubernetes/community repo
+body:
+- id: problem
+  type: textarea
+  attributes:
+    label: Describe the issue
+    placeholder: A clear and concise description of what you need assistance with.
+  validations:
+    required: true

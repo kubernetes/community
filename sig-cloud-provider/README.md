@@ -13,6 +13,7 @@ Ensures that the Kubernetes ecosystem is evolving in a way that is neutral to al
 The [charter](CHARTER.md) defines the scope and governance of the Cloud Provider Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cloud-provider) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Wednesdays at 13:00 PT (Pacific Time)](https://zoom.us/j/508079177?pwd=ZmEvMksxdTFTc0N1eXFLRm91QUlyUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1OZE-ub-v6B8y-GuaWejL-vU_f9jsjBbrim4LtTfxssw/edit#heading=h.w7i4ksrweimp).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3dXLcYbRKCbpPCN-8CDFAB).
@@ -43,7 +44,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-cloud-provider-proposals](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-proposals) - Design Proposals
     - [@kubernetes/sig-cloud-provider-test-failures](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-test-failures) - Test Failures and Triage
     - [@kubernetes/sig-cloud-providers-misc](https://github.com/orgs/kubernetes/teams/sig-cloud-providers-misc) - General Discussion
-- Steering Committee Liaison: Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
+- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
 
 ## Subprojects
 
@@ -111,7 +112,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - [kubernetes-sigs/cloud-provider-huaweicloud](https://github.com/kubernetes-sigs/cloud-provider-huaweicloud/blob/master/OWNERS)
 ### provider-ibmcloud
 - **Owners:**
-  - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/master/OWNERS)
+  - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/main/OWNERS)
   - [kubernetes-sigs/ibm-vpc-block-csi-driver](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/blob/master/OWNERS)
 - **Meetings:**
   - Regular IBM Subproject Meeting: [Wednesdays at 14:00 EST](https://zoom.us/j/9392903494) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).

@@ -1,8 +1,6 @@
-# Troubleshoot Running Pods
+Design proposals have been archived.
 
-*   Status: Superseded
-*   Version: N/A
-*   Implementation Owner: @verb
+To view the last version of this document, see the [Design Proposals Archive Repo](https://github.com/kubernetes/design-proposals-archive/).
 
-The Troubleshooting Running Pods proposal has moved to the
-[Ephemeral Containers KEP](https://git.k8s.io/enhancements/keps/sig-node/20190212-ephemeral-containers.md).
+
+Please remove after 2022-04-01 or the release of Kubernetes 1.24, whichever comes first.

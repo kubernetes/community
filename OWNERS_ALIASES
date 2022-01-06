@@ -71,17 +71,17 @@ aliases:
     - puerco
     - saschagrunert
   sig-scalability-leads:
-    - mm4tt
+    - marseel
     - shyamjvs
     - wojtek-t
   sig-scheduling-leads:
     - Huang-Wei
     - ahg-g
+    - alculquicondor
   sig-security-leads:
     - IanColdwater
     - tabbysable
   sig-service-catalog-leads:
-    - jberkhahn
     - jhvhs
   sig-storage-leads:
     - jsafrane
@@ -128,8 +128,8 @@ aliases:
     - stevekuznetsov
     - wojtek-t
   wg-structured-logging-leads:
+    - pohly
     - serathius
-    - shubheksha
   ug-big-data-leads:
     - erikerlandson
     - foxish
@@ -141,9 +141,9 @@ aliases:
     - phenixblue
   committee-code-of-conduct:
     - celestehorgan
+    - cpanato
     - karenhchu
     - palnabarun
-    - tpepper
     - vllry
   committee-security-response:
     - cjcullen
@@ -155,12 +155,12 @@ aliases:
     - tallclair
   committee-steering:
     - cblecker
-    - derekwaynecarr
     - dims
+    - justaugustus
     - liggitt
     - mrbobbytables
-    - nikhita
     - parispittman
+    - tpepper
 ## BEGIN CUSTOM CONTENT
   provider-aws:
     - justinsb
@@ -168,7 +168,6 @@ aliases:
     - wongma7
   provider-azure:
     - craiglpeters
-    - justaugustus
     - feiskyer
     - khenidak
   provider-gcp:

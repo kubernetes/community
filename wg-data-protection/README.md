@@ -18,6 +18,7 @@ The [charter](charter.md) defines the scope and governance of the Data Protectio
 * SIG Storage
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-data-protection) for the group will typically add invites for the following meetings to your calendar.*
 * Regular WG Meeting: [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/6933410772) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/15tLCV3csvjHbKb16DVk-mfUmFry_Rlwo-2uG6KNGsfw/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP336DulLgPdlWJ_gzRz1iL5).
@@ -31,7 +32,7 @@ The [charter](charter.md) defines the scope and governance of the Data Protectio
 - Slack: [#wg-data-protection](https://kubernetes.slack.com/messages/wg-data-protection)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-data-protection)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fdata-protection)
-- Steering Committee Liaison: Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
+- Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

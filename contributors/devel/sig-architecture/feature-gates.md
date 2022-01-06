@@ -12,6 +12,16 @@ The majority of features will go through all three stages, but occasionally ther
 
 When we add a feature flag, we basically add if/else conditions to ensure that a feature is ONLY activated when either the default is on or if the deployer has switched it on explicitly. When a feature gate is disabled, the system should behave as if the feature doesn't exist. The only exception to this is [API input validation](https://kubernetes.io/docs/reference/using-api/deprecation-policy/#deprecating-parts-of-the-api) on updates, which should preserve and validate data if and only if it was present before the update (which could occur in case of a version rollback).
 
+There is no supported way to trigger a feature gate at runtime for production Kubernetes use. A feature gate is typically toggled by a component restart.
+
+Unless an exception is granted for a particular feature, as documented and approved as part of [Production Readiness Review], it is expected that:
+
+- Toggling a feature gate will not affect other components, i.e. disabling a feature gate in the API server will work independently of disabling that same feature gate in the kubelet or scheduler, and no coordination between components is needed.
+- The effects of toggling a feature gate should be limited to the scope of the feature. Enabling or disabling a feature gate should not affect workloads that do not use the feature gate.
+- Toggling feature gates should not result in fanout effects or cascading interactions in a cluster.
+
+[Production Readiness Review]: /sig-architecture/production-readiness.md
+
 ## Specification Fields
 	// Default is the default enablement state for the feature. Possible values are true/false.
 	Default bool

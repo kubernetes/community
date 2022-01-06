@@ -13,6 +13,7 @@ Service Catalog is a Kubernetes extension project that implements the [Open Serv
 The [charter](charter.md) defines the scope and governance of the Service Catalog Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Mondays at 10:00 PT (Pacific Time)](https://zoom.us/j/7201225346) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs).
@@ -22,7 +23,6 @@ The [charter](charter.md) defines the scope and governance of the Service Catalo
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jonathan Berkhahn (**[@jberkhahn](https://github.com/jberkhahn)**), IBM
 * Konstantin Semenov (**[@jhvhs](https://github.com/jhvhs)**), VMware
 
 ## Emeritus Leads
@@ -30,6 +30,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Aaron Schlesinger (**[@arschles](https://github.com/arschles)**)
 * Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**)
 * Doug Davis (**[@duglin](https://github.com/duglin)**)
+* Jonathan Berkhahn (**[@jberkhahn](https://github.com/jberkhahn)**)
 * Jay Boyd (**[@jboyd01](https://github.com/jboyd01)**)
 * Michael Kibbe (**[@kibbles-n-bytes](https://github.com/kibbles-n-bytes)**)
 * Mateusz Szostok (**[@mszostok](https://github.com/mszostok)**)
@@ -48,7 +49,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-service-catalog-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-service-catalog-pr-reviews) - PR Reviews
     - [@kubernetes/sig-service-catalog-proposals](https://github.com/orgs/kubernetes/teams/sig-service-catalog-proposals) - Design Proposals
     - [@kubernetes/sig-service-catalog-test-failures](https://github.com/orgs/kubernetes/teams/sig-service-catalog-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
+- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
 ## Subprojects
 

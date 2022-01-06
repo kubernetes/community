@@ -13,6 +13,7 @@ The Cluster Lifecycle SIG examines how we should change Kubernetes to make it ea
 The [charter](charter.md) defines the scope and governance of the Cluster Lifecycle Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
@@ -59,7 +60,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
     - [Meeting notes and Agenda](https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit).
 ### cluster-api
 - **Owners:**
-  - [kubernetes-sigs/cluster-api](https://github.com/kubernetes-sigs/cluster-api/blob/master/OWNERS)
+  - [kubernetes-sigs/cluster-api](https://github.com/kubernetes-sigs/cluster-api/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
 - **Meetings:**
@@ -92,13 +93,16 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
   - [kubernetes-sigs/cluster-api-provider-gcp](https://github.com/kubernetes-sigs/cluster-api-provider-gcp/blob/master/OWNERS)
 ### cluster-api-provider-ibmcloud
 - **Owners:**
-  - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/master/OWNERS)
+  - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/main/OWNERS)
 ### cluster-api-provider-kubemark
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-kubemark](https://github.com/kubernetes-sigs/cluster-api-provider-kubemark/blob/master/OWNERS)
 ### cluster-api-provider-kubevirt
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-kubevirt](https://github.com/kubernetes-sigs/cluster-api-provider-kubevirt/blob/main/OWNERS)
+- **Meetings:**
+  - Cluster API Provider KubeVirt Syncup Meetings: [Tuesdays at 8:00 PT (Pacific Time)](https://zoom.us/j/94685513559?pwd=cnI3RUQyZ3RrckpOc1BQNDA1Q1BrZz09) (weekly starting Tuesday December 7th, 2021). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1ZAnRLCKOVbDqrsrYis2OR0aZIAlqp576gCJVCkMNiHM/edit?usp=sharing).
 ### cluster-api-provider-nested
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-nested](https://github.com/kubernetes-sigs/cluster-api-provider-nested/blob/master/OWNERS)
@@ -150,7 +154,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### kubeadm
 - **Owners:**
   - [kubernetes/cluster-bootstrap](https://github.com/kubernetes/cluster-bootstrap/blob/master/OWNERS)
-  - [kubernetes/kubeadm](https://github.com/kubernetes/kubeadm/blob/master/OWNERS)
+  - [kubernetes/kubeadm](https://github.com/kubernetes/kubeadm/blob/main/OWNERS)
   - [kubernetes/kubernetes/cmd/kubeadm](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubeadm/OWNERS)
   - [kubernetes/system-validators](https://github.com/kubernetes/system-validators/blob/master/OWNERS)
 - **Contact:**

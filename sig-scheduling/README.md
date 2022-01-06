@@ -13,6 +13,7 @@ SIG Scheduling is responsible for the components that make Pod placement decisio
 The [charter](charter.md) defines the scope and governance of the Scheduling Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling) for the group will typically add invites for the following meetings to your calendar.*
 * 10AM PT Meeting: [Thursdays at 17:00 UTC](https://zoom.us/j/841218129) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
@@ -24,6 +25,14 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), IBM
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), IBM
+* Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
+* Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**), Google
 
 ## Emeritus Leads
 
@@ -58,7 +67,7 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
   - [kubernetes-sigs/kube-batch](https://github.com/kubernetes-sigs/kube-batch/blob/master/OWNERS)
 ### kube-scheduler-simulator
 - **Owners:**
-  - [kubernetes-sigs/kube-scheduler-simulator](https://github.com/kubernetes-sigs/kube-scheduler-simulator/blob/main/OWNERS)
+  - [kubernetes-sigs/kube-scheduler-simulator](https://github.com/kubernetes-sigs/kube-scheduler-simulator/blob/master/OWNERS)
 ### poseidon
 - **Owners:**
   - [kubernetes-sigs/poseidon](https://github.com/kubernetes-sigs/poseidon/blob/master/OWNERS)

@@ -1,6 +1,6 @@
 # Scheduler Algorithm in Kubernetes
 
-For each unscheduled Pod, the Kubernetes scheduler tries to find a node across the cluster according to a set of rules. A general introduction to the Kubernetes scheduler can be found at [scheduler.md](scheduler.md). In this document, the algorithm of how to select a node for the Pod is explained. There are two steps before a destination node of a Pod is chosen. The first step is filtering all the nodes and the second is ranking the remaining nodes to find a best fit for the Pod.
+For each unscheduled Pod, the Kubernetes scheduler tries to find a node across the cluster according to a set of rules. A general introduction to the Kubernetes scheduler can be found at [scheduling_code_hierarchy_overview.md](scheduling_code_hierarchy_overview.md). In this document, the algorithm of how to select a node for the Pod is explained. There are two steps before a destination node of a Pod is chosen. The first step is filtering all the nodes and the second is ranking the remaining nodes to find a best fit for the Pod.
 
 ## Filtering the nodes
 

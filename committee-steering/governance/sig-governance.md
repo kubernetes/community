@@ -14,7 +14,7 @@ December
 repo
 - Record meetings and make them publicly available on the
 [Kubernetes Community YouTube playlist]  
-- Report activity with the community via the kubernetes-dev@ mailing list at
+- Report activity with the community via the dev@kubernetes.io mailing list at
 least once a year. 
   - Each SIG is assigned an update during the [monthly community meeting]
   throughout the year from sig-contributor-experience. The meeting host will publish the notes to the
@@ -179,7 +179,7 @@ Example of SIG roles created to help operations:
 - [Production Readiness Reviewer]  
 - [Events Lead]  
 - [PR Wrangler] 
-- [Editor]
+- [Marketing Council]
 
 Other roles...
 - *MUST* be tracked on the SIGs README with a link to the role definition
@@ -187,7 +187,7 @@ Other roles...
 duties from Chairs and/or Tech Leads on a non-temporary basis 
 - *SHOULD* be documented in SIG charters if the role has delegation away from a
 sig-governance.md listed role 
-- *SHOULD* be sent to kubernetes-dev@googlegroups.com for awareness as a notice 
+- *SHOULD* be sent to dev@kubernetes.io for awareness as a notice 
 and a lazy consensus period when they are newly created 
 - *MAY* Fill in for another named role on a temporary basis 
 #### Subproject Creation
@@ -255,7 +255,7 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [lazy-consensus]: http://en.osswiki.info/concepts/lazy_consensus
 [super-majority]: https://en.wikipedia.org/wiki/Supermajority#Two-thirds_vote
 [KEP]: https://git.k8s.io/enhancements/keps/NNNN-kep-template/README.md
-[sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
+[sigs.yaml]: /sigs.yaml
 [OWNERS]: contributors/devel/owners.md
 [SIG Charter process]: https://git.k8s.io/community/committee-steering/governance/README.md
 [Kubernetes Charter README]: https://git.k8s.io/community/committee-steering/governance/README.md
@@ -271,10 +271,10 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [Google group]: https://groups.google.com/forum/#!forum/kubernetes-sig-config
 [dashboard]: https://testgrid.k8s.io/
 [The Release Team: Bug Triage, CI Signal, and more]: https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks
-[Production Readiness Reviewer]: https://github.com/kubernetes/community/blob/master/sig-architecture/production-readiness.md#becoming-a-prod-readiness-reviewer-or-approver
-[API Reviewer and Moderator]: https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md#expanding-the-reviewer-and-approver-pool
-[Editor]: https://github.com/kubernetes/community/blob/master/communication/marketing-team/role-handbooks/editor.md
-[Events Lead]: https://github.com/kubernetes/community/blob/master/events/events-team/events-lead.md
+[Production Readiness Reviewer]: /sig-architecture/production-readiness.md#becoming-a-prod-readiness-reviewer-or-approver
+[API Reviewer and Moderator]: /sig-architecture/api-review-process.md#expanding-the-reviewer-and-approver-pool
+[Marketing Council]: /communication/marketing-team/role-handbooks/council.md
+[Events Lead]: /events/events-team/events-lead.md
 [PR Wrangler]: https://kubernetes.io/docs/contribute/participate/pr-wranglers/
 [monthly community meeting]: /events/community-meeting.md
 [Inclusive Open Source Community Orientation course]: https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/

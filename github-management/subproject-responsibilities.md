@@ -7,12 +7,12 @@ This subproject will be responsible for:
 - Establishing a policy around "Org Owner" permissions, and grant/limit these
   privileges accordingly
 - Establishing policies and best practices for bot accounts, service accounts,
-  webooks, and third-party integrations
+  webhooks, and third-party integrations
 - Maintaining documentation related to the above
 - Establishing a "GitHub Administration team" that will oversee the execution of
   GitHub management tasks (inviting new members to the org, creating repos,
   executing moderation decisions, auditing permissions)
-- Working with other sigs and interested parties in the project to execute
+- Working with other *sigs* and interested parties in the project to execute
   GitHub tasks where required
 
 This subproject will explicitly not be responsible for:

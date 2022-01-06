@@ -172,7 +172,7 @@ type KMetadata interface {
 1. Change log functions to structured equivalent
 1. Remove string formatting from log message
 1. Name arguments
-1. Use `klog.KObj` and `klog.KRef` for Kubernetes object references
+1. Use `klog.KObj` and `klog.KRef` for Kubernetes objects references
 1. Verify log output
 
 ## Change log functions to structured equivalent
@@ -210,6 +210,25 @@ Use of Fatal should be discouraged and it's not available in new functions. Inst
 the process, you should call `os.Exit()` yourself.
 
 Fatal calls use a default exit code of 255. When migrating, please use an exit code of 1 and include an "ACTION REQUIRED:" release note.
+
+For example
+```go
+func validateFlags(cfg *config.Config, flags *pflag.FlagSet) error {
+	if err := cfg.ReadAndValidate(flags); err != nil {
+		klog.FatalF("Error in reading and validating flags %s", err)
+      os.Exit(1)
+	}
+}
+```
+should be changed to
+```go
+func validateFlags(cfg *config.Config, flags *pflag.FlagSet) error {
+	if err := cfg.ReadAndValidate(flags); err != nil {
+		klog.ErrorS(err, "Error in reading and validating flags")
+      os.Exit(1)
+	}
+}
+```
 
 ## Remove string formatting from log message
 

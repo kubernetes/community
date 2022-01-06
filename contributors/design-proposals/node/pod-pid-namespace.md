@@ -1,10 +1,6 @@
-# Shared PID Namespace
+Design proposals have been archived.
 
-*   Status: Superseded
-*   Version: N/A
-*   Implementation Owner: [@verb](https://github.com/verb)
+To view the last version of this document, see the [Design Proposals Archive Repo](https://github.com/kubernetes/design-proposals-archive/).
 
-The Shared PID Namespace proposal has moved to the
-[Shared PID Namespace KEP][shared-pid-kep].
 
-[shared-pid-kep]: https://git.k8s.io/enhancements/keps/sig-node/20190920-pod-pid-namespace.md
+Please remove after 2022-04-01 or the release of Kubernetes 1.24, whichever comes first.

@@ -13,6 +13,7 @@ Covers all things UI related. Efforts are centered around Kubernetes Dashboard: 
 The [charter](charter.md) defines the scope and governance of the UI Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Thursdays at 09:00 PT (Pacific Time)](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/watch?v=r3pL8i3wPhk&list=PL69nYSiGNLP35H5MZbg9OU6pqpfWgtbLm).
@@ -35,7 +36,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 - Slack: [#sig-ui](https://kubernetes.slack.com/messages/sig-ui)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fui)
-- Steering Committee Liaison: Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
+- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
 
 ## Subprojects
 

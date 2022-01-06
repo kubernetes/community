@@ -134,10 +134,9 @@ implicitly by Docker or ContainerD, not by the kubelet. Do not check properties 
 - Storage
   - File permissions cannot be set on volumes. Tests using `DefaultMode` or `Mode` and checking the resulting permissions will fail.
   - Only NTFS volumes are supported. Volume mounts specifying other filesystems (ext4, xfs) or mediums (memory) are not supported
-  - Mappings of individual files are not supported. Tests which are mounting or expecting such files to be mounted (including /etc/hosts, /etc/resolv.conf, /dev/termination-log) will fail.
   - Bidirectional mount propagation, specifically propagating mounts from a container to host, does not work.
 - Networking
-  - Pods set `HostNetwork=true`. Is not supported on Windows, and the Pod will not start.
+  - Pods set `HostNetwork=true`. For Windows, this can only be enabled for Windows Privileged Containers. In other cases, the Pod will not start.
   - Network and DNS settings must be passed through CNI. Windows does not use `/etc/resolv.conf`, so tests should not rely on reading that file to check DNS settings.
     - If you to check network settings such as dns search lists, please use [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) to output needed data from the container.
   - Windows treats all DNS lookups with a `.` to be FQDN, not PQDN. For example `kubernetes` will resolve as a PQDN,
