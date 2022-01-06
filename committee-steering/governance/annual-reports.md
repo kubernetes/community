@@ -34,11 +34,12 @@ Committee.
    * Chairs/Organizers work with their group (see tips below) to open
      a pull request to the group's documentation in the community repo,
      updating the draft to complete the questions
+   * draft ready for review by February 14
    * post a call for comments period on the PR with your group's mailing list;
      you can follow your charter communication period if you have one,
      but no less than 72 hours
    * verify that Steering Liaison has reviewed
-   * merge a completed report by the end of February
+   * merge a completed report by March 1
 3. March
    * Steering Committee produces a project-wide annual report,
      summarizing and highlighting elements from the individual group reports.
@@ -46,6 +47,8 @@ Committee.
      follow up items and update Steering during regular monthly meetings. The liaison
      will also coordinate time with the Chairs (as a group). If you'd like to meet 
      1:1 instead, please let your liaison know.
+   * Draft summary for tech writer / editor review: March 15
+   * Publication date on cncf.io/reports: March 30
    * The March edition of the "Chairs, Tech Leads, and Organizers" meetings will 
      be used as follow up for the community groups that have questions from/to 
      Steering and a retrospective
