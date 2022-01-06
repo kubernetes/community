@@ -716,7 +716,7 @@ top of the generated file and should be checked with the
 script at a later stage of the build.
 
 To invoke these generators, you can run `make update`, which runs a bunch of
-[scripts](https://github.com/kubernetes/kubernetes/blob/v1.8.0-alpha.2/hack/update-all.sh#L63-L78).
+[scripts](https://github.com/kubernetes/kubernetes/blob/release-1.23/hack/make-rules/update.sh#L47-L55).
 Please continue to read the next a few sections, because some generators have
 prerequisites, also because they introduce how to invoke the generators
 individually if you find `make update` takes too long to run.
@@ -763,7 +763,7 @@ Note that you can use the optional `// +groupGoName=` to specify a CamelCase
 custom Golang identifier to de-conflict e.g. `policy.authorization.k8s.io` and
 `policy.k8s.io`. These two would both map to `Policy()` in clientsets.
 
-client-gen is flexible. See [this document](generating-clientset.md) if you need
+client-gen is flexible. See [this document](../sig-api-machinery/generating-clientset.md) if you need
 client-gen for non-kubernetes API.
 
 ### Generate Listers
