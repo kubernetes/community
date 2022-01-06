@@ -158,6 +158,7 @@ channels:
     id: CH8KCCKA5
   - name: kalm
   - name: kaniko
+  - name: karpenter
   - name: k8s-dual-stack
     archived: true
   - name: k8s-infra-alerts
