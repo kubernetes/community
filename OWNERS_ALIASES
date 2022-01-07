@@ -28,6 +28,7 @@ aliases:
   sig-cloud-provider-leads:
     - andrewsykim
     - cheftako
+    - nckturner
   sig-cluster-lifecycle-leads:
     - fabriziopandini
     - justinsb
