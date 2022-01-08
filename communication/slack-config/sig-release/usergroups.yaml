@@ -49,7 +49,6 @@ usergroups:
       - release-enhancements
       - release-management
       - release-notes
-      - release-leads
       - sig-release
     members:
       - cpanato # SIG Release Technical Lead
