@@ -1386,7 +1386,7 @@ sigs:
   meetings:
   - description: APAC SIG Meeting
     day: Wednesday
-    time: "01:00"
+    time: "05:30"
     tz: UTC
     frequency: monthly - Wednesday, after the fourth Tuesday, every month
     url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
