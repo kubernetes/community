@@ -1720,7 +1720,7 @@ Some examples:
 
 * Service `clusterIP`: Users may request a specific IP in `spec` or will be
   allocated one (in the same `spec` field).  If a specific IP is requested, the
-  apiserver will wither confirm that IP is available or, failing that, will
+  apiserver will either confirm that IP is available or, failing that, will
   reject the API operation synchronously (rare).  Consumers read the result
   from `spec`.  This is safe because the value is either valid or it is never
   stored.
@@ -1734,8 +1734,11 @@ Some examples:
   is requested, the volume controller will either ensure that the volume is
   available or report failure asynchronously.  Consumers read the result by
   examining both the PVC and the PV.  This is more complicated than the others
-  because the `spec` value is stored before being confirmed, which could lead
-  to a user accessing someone else's PV.
+  because the `spec` value is stored before being confirmed, which could
+  (hypothetically, thanks to extra checking) lead to a user accessing someone
+  else's PV.
+* VolumeSnapshots: Users may request a particular source to be snaphotted in
+  `spec`.  The details of the resulting snapshot is reflected in `status`.
 
 A counter-example:
 
@@ -1767,7 +1770,8 @@ pattern.  This is appropriate when:
 * it is "safe" to allow the controller(s) to write to `status` (i.e.
   there's low risk of them causing problems via other `status` fields).
 
-Consumers of such values can look at the `status` field for the "final" value.
+Consumers of such values can look at the `status` field for the "final" value
+or an error or condition indicating why the allocation could not be performed.
 
 #### Sequencing operations
 
@@ -1784,7 +1788,11 @@ acknowledge, then actuate, then update to a "final" value.
 
 Controllers must take care to consider how a `status` field will be handled in
 the case of interrupted control loops (e.g. controller crash and restart), and
-must act idempotently and consistently.
+must act idempotently and consistently.  This is particularly important when
+using an informer-fed cache, which might not be updated with recent writes.
+Using a resourceVersion precondition to detect the "conflict" is the common
+pattern in this case.  See [this issue](http://issue.k8s.io/105199) for an
+example.
 
 ### When to use a different type
 
