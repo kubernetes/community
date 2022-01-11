@@ -23,14 +23,14 @@ The [charter](charter.md) defines the scope and governance of the Scheduling Spe
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), IBM
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), Apple
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), IBM
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), Apple
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
 * Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**), Google
 
