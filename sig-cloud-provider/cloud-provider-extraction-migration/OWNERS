@@ -8,7 +8,7 @@ approvers:
   - andrewsykim
   - cheftako
   - nckturner
-emeritus_reviewers:
+emeritus_approvers:
   - mcrute
 labels:
   - sig/cloud-provider
