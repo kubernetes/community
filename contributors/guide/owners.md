@@ -121,7 +121,7 @@ emeritus_approvers:
 
 In addition to the Emeritus process above, from time to time, it is necessary
 to prune inactive folks from OWNERS files. A core principle in maintaining a
-healthy community is encouraging active participation. folks listed in OWNERS files
+healthy community is encouraging active participation. Those listed in OWNERS files
 have a higher activity requirement, as they directly impact the ability of others
 to contribute. If anyone listed in OWNERS files should become inactive, here is
 what we will do:
