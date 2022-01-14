@@ -65,57 +65,220 @@ of being more explicit than using our upstream shorthand or abbreviations.
 collaborate with your community: gdocs, hackmd, etc - it will all land back into
 a pull request at the end. 
 
-## Questions for report: {#questions}
+## Questions for report:
 
-#### Special Interest Groups:
-##### Operational 
-- How are you doing with operational tasks in [SIG]-governance.md?
-  - Is your README accurate? have a CONTRIBUTING.md file?
-  - All subprojects correctly mapped and listed in sigs.yaml?
-  - What’s your meeting culture? Large/small, active/quiet, learnings? Meeting 
-  notes up to date? Are you keeping recordings up to date/trends in community 
-  members watching recordings?
-- How does the group get updates, reports, or feedback from subprojects? Are 
-there any springing up or being retired? Are OWNERS.md files up to date in these
- areas?
-- Same question as above but for working groups.
-- When was your last public community-wide update? (provide link to deck and/or
- recording)
+### Special Interest Groups:
 
-##### Membership
-- Are all listed SIG leaders (chairs, tech leads, and subproject owners) active?
-- How do you measure membership? By mailing list members, OWNERs, or something
-else?
-- How does the group measure reviewer and approver bandwidth? Do you need help
-in any area now? What are you doing about it?
-- Is there a healthy onboarding and growth path for contributors in your SIG?
-What are some activities that the group does to encourage this? What programs
-are you participating in to grow contributors throughout the contributor ladder?
-- What programs do you participate in for new contributors?
-- Does the group have contributors from multiple companies/affiliations? Can end
- users/companies contribute in some way that they currently are not?
+```
+# $sig-name - $YYYY annual report
 
-##### Current initiatives and project health
-- What are initiatives that should be highlighted, lauded, shout outs, that
-your group is proud of? Currently underway? What are some of the longer tail
-projects that your group is working on?
-- Year to date KEP work: What's now stable? Beta? Alpha? Road to alpha?
-- What initiatives are you working on that aren't being tracked in KEPs?
-- What areas and/or subprojects does the group need the most help with?
-- What metrics/community health stats does your group care about and/or measure?
-Examples?     
+## Current initiatives
+
+1. What work did the SIG do this year that should be highlighted?
+
+   - 
+   - 
+   - 
+
+2. What initiatives are you working on that aren't being tracked in KEPs?
+
+   - 
+   - 
+   - 
+
+3. KEP work in $YYYY (1.x, 1.y, 1.z):
+
+<!-- 
+Generated from kubernetes/enhancements kep.yaml files
+1. with SIG as owning-sig or in participating-sigs
+2. listing 1.x, 1.y, or 1.z in milestones or in latest-milestone
+-->
+
+   - Stable
+      - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
+      - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
+   - Beta
+      - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
+      - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
+   - Alpha
+      - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
+      - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
+   - Pre-alpha
+      - [$kep-number - $title](https://git.k8s.io/community/$link/README.md)
+
+## Project health
+
+1. What areas and/or subprojects does your group need the most help with?
+   Any areas with 2 or fewer OWNERs? (link to more details)
+
+   - 
+   - 
+   - 
+
+2. What metrics/community health stats does your group care about and/or measure?
+
+   - 
+   - 
+   - 
+
+3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing 
+   to activities or programs that provide useful context or allow easy participation?
+
+   - 
+
+4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
+   does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
+
+   - 
+
+5. Does the group have contributors from multiple companies/affiliations?
+
+   - 
+
+6. Are there ways end users/companies can contribute that they currently are not?
+   If one of those ways is more full time support, what would they work on and why?
+
+   - 
+   - 
+
+## Membership
+
+- Primary slack channel member count: 
+- Primary mailing list member count: 
+- Primary meeting attendee count (estimated, if needed): 
+- Primary meeting participant count (estimated, if needed): 
+- Unique reviewers for SIG-owned packages: {generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files}
+- Unique approvers for SIG-owned packages: {generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files}
+
+Include any other ways you measure group membership
+
+## Subprojects
+
+<!--
+Generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
+Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
+-->
+
+New in $YYYY:
+- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
+- 
+
+Retired in $YYYY:
+- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
+- 
+
+Continuing:
+- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
+- 
+
+## Working groups
+
+<!--
+Generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
+Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
+-->
+
+New in $YYYY:
+- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
+- 
+
+Retired in $YYYY:
+- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
+- 
+
+Continuing:
+- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
+- 
+
+## Operational
+
+Operational tasks in [sig-governance.md]:
+
+[ ] [README.md] reviewed for accuracy and updated if needed
+[ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+    (or created if missing and your contributor steps and experience are different or more
+    in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
+[ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+[ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
+[ ] Meeting notes and recordings for $YYYY are linked from [README.md] and updated/uploaded if needed
+[ ] Did you have community-wide updates in $YYYY (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+    - 
+    - 
+
+[CONTRIBUTING.md]: https://git.k8s.io/community/$sig-id/CONTRIBUTING.md
+[contributor ladder]: https://git.k8s.io/community/community-membership.md
+[sig-governance.md]: https://git.k8s.io/community/committee-steering/governance/sig-governance.md
+[README.md]: https://git.k8s.io/community/$sig-id/README.md
+[sigs.yaml]: https://git.k8s.io/community/sigs.yaml
+[contributor guide]: https://git.k8s.io/community/contributors/guide/README.md
+[devel]: https://git.k8s.io/community/contributors/devel/README.md
+```
 
 ### Working Groups:
-Working Group Organizers are responsible for submitting this report but may
-delegate to members to curate  
-- What was the initial mission of the group and if it's changed, how?
-- What’s the current roadmap until completion?
-- Have you produced any artifacts, reports, white papers to date?
-- Is the group active? healthy? contributors from multiple companies and/or end
-user companies?
-- Is everything in your readme accurate? posting meetings on youtube?
-- Do you have regular check-ins with your sponsoring SIGs?
 
+```
+# $wg-name - $YYYY annual report
+
+## Current initiatives
+
+1. What work did the WG do this year that should be highlighted?
+   For example, artifacts, reports, white papers produced this year.
+
+   - 
+   - 
+   - 
+
+2. What initiatives are you working on that aren't being tracked in KEPs?
+
+   - 
+   - 
+   - 
+
+## Project health
+
+1. What’s the current roadmap until completion of the working group?
+
+   - 
+   - 
+   - 
+
+2. Does the group have contributors from multiple companies/affiliations?
+
+   - 
+
+3. Are there ways end users/companies can contribute that they currently are not?
+   If one of those ways is more full time support, what would they work on and why?
+
+   - 
+   - 
+
+## Membership
+
+- Primary slack channel member count: 
+- Primary mailing list member count: 
+- Primary meeting attendee count (estimated, if needed): 
+- Primary meeting participant count (estimated, if needed): 
+
+Include any other ways you measure group membership
+
+## Operational
+
+Operational tasks in [wg-governance.md]:
+
+[ ] [README.md] reviewed for accuracy and updated if needed
+[ ] WG leaders in [sigs.yaml] are accurate and active, and updated if needed
+[ ] Meeting notes and recordings for $YYYY are linked from [README.md] and updated/uploaded if needed
+[ ] Updates provided to sponsoring SIGs in $YYYY
+    - [$sig-name](https://git.k8s.io/community/$sig-id/)
+      - links to email, meeting notes, slides, or recordings, etc
+    - [$sig-name](https://git.k8s.io/community/$sig-id/)
+      - links to email, meeting notes, slides, or recordings, etc
+    - 
+
+[wg-governance.md]: https://git.k8s.io/community/committee-steering/governance/wg-governance.md
+[README.md]: https://git.k8s.io/community/$wg-id/README.md
+[sigs.yaml]: https://git.k8s.io/community/sigs.yaml
+```
 
 ### Thanks   
 Thanks to the Apache Software Foundation for their open guidance on PMC 
@@ -128,4 +291,4 @@ https://www.apache.org/foundation/board/reporting
 [WG]: https://git.k8s.io/community/committee-steering/governance/wg-governance.md
 [UG]: https://git.k8s.io/community/committee-steering/governance/ug-governance.md
 [governance]: https://git.k8s.io/community/governance.md
-[questions]: #questions
+[questions]: #questions-for-report
