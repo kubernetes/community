@@ -298,6 +298,7 @@ channels:
   - name: navigator
     archived: true
   - name: ncw-staff
+  - name: netmaker
   - name: nl-users
   - name: node-feature-discovery
   - name: node-problem-detector
