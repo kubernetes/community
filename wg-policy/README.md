@@ -17,6 +17,7 @@ Provide an overall architecture that describes both the current policy related i
 * SIG Network
 * SIG Node
 * SIG Scheduling
+* SIG Security
 * SIG Storage
 
 ## Meetings
@@ -35,5 +36,6 @@ Provide an overall architecture that describes both the current policy related i
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fpolicy)
 - Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 <!-- BEGIN CUSTOM CONTENT -->
-
+## Projects
+- Git: https://github.com/kubernetes-sigs/wg-policy-prototypes
 <!-- END CUSTOM CONTENT -->

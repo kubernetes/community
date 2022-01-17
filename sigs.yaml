@@ -2934,6 +2934,7 @@ workinggroups:
   - Network
   - Node
   - Scheduling
+  - Security
   - Storage
   label: policy
   leadership:
@@ -2949,7 +2950,7 @@ workinggroups:
     day: Wednesday
     time: "8:00"
     tz: PT (Pacific Time)
-    frequency: semimonthly
+    frequency: biweekly
     url: https://zoom.us/j/7375677271
     archive_url: https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing
   contact:
