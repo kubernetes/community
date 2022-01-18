@@ -186,6 +186,7 @@ channels:
   - name: kops-users
   - name: kots
     id: CFFKXV0JZ
+  - name: kpack
   - name: kpt
   - name: kr-dev
   - name: kr-users
