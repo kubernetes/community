@@ -46,8 +46,8 @@ aliases:
     - onlydole
     - sftim
   sig-instrumentation-leads:
-    - brancz
     - dashpole
+    - dgrisonnet
     - ehashman
     - logicalhan
   sig-k8s-infra-leads:

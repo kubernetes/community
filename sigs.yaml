@@ -1494,13 +1494,15 @@ sigs:
       name: Han Kang
       company: Google
     tech_leads:
-    - github: brancz
-      name: Frederic Branczyk
-      company: Polar Signals
     - github: dashpole
       name: David Ashpole
       company: Google
+    - github: dgrisonnet
+      name: Damien Grisonnet
+      company: Red Hat
     emeritus_leads:
+    - github: brancz
+      name: Frederic Branczyk
     - github: piosz
       name: Piotr Szczesniak
   meetings:
