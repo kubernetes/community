@@ -111,5 +111,5 @@ announcements for when nominations are open.
 [Contributor Summit]: https://github.com/kubernetes/community/blob/master/events/awards/playbook.md
 [CNCF Awards]: https://github.com/cncf/awards 
 [cncf swag store]: (https://store.cncf.io/collections/kubernetes) 
-[calendar template]: https://github.com/kubernetes/community/blob/master/communication/calendar-guidelines.md#calendar-event-template)
+[calendar template]: https://github.com/kubernetes/community/blob/master/communication/calendar-guidelines.md#calendar-event-template
 [leads@kubernetes.io]: https://github.com/kubernetes/k8s.io/blob/aa1214087863c7a850bf84936bd1d1b67d0064a9/groups/groups.yaml#L6
