@@ -65,7 +65,7 @@ Application metadata descriptor CRD
 - **Contact:**
   - Slack: [#kompose](https://kubernetes.slack.com/messages/kompose)
 ### workloads-api
-The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, and StatefulSet kinds
+The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, PodDisruptionBudget and StatefulSet kinds
 - **Owners:**
   - [kubernetes/kubernetes/pkg/apis/apps](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/apps/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/batch](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/batch/OWNERS)
