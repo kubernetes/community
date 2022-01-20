@@ -219,12 +219,14 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
   - name: workloads-api
     description: The core workloads API, which is composed of the CronJob, DaemonSet,
-      Deployment, Job, ReplicaSet, ReplicationController, and StatefulSet kinds
+      Deployment, Job, ReplicaSet, ReplicationController, PodDisruptionBudget and
+      StatefulSet kinds
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/core/v1/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/extensions/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/policy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/cronjob/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/daemon/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/deployment/OWNERS
@@ -241,6 +243,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/batch/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/core/v1/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/extensions/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/policy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/apps/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/daemonset/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/integration/deployment/OWNERS
@@ -341,6 +344,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/depstat/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/component-helpers/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-helpers/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/third_party/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/vendor/OWNERS
