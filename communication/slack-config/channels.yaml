@@ -400,6 +400,7 @@ channels:
   - name: sre
   - name: steering-committee
   - name: submariner
+  - name: surveys
   - name: summit-staff
   - name: suse-caasp
   - name: talk-proposals
