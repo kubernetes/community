@@ -1,13 +1,27 @@
+# Resources for community group leads 
 Home for chairs and tech leads resources and materials for onboarding,
 offboarding, operations, and more.
+## Operations
 
-## Resources for community group leads: 
+Meeting/calendar invites  
+[calendar template]
 
-### Operations
+Meeting agenda doc structure  
+Top of doc:  
+- name of group, linked to your README, and a link to charter  
+- repo(s), links to project boards  
+- date and time of meetings, link to shared calendar  
+- how to add topics to agenda  
+- leads, best contact info  
+- slack channel(s)  
+- new contributor information so you don't have to repeat yourself  
+  examples: last kubecon update video, your contributor guide
 
-In case you are not sure what to include in a meeting invite, here is a [Calendar template](https://github.com/kubernetes/community/blob/master/communication/calendar-guidelines.md#calendar-event-template).
-
-TODO - [Meeting agenda templates]     
+Other best practices: 
+- include a host guide for when you aren't there to host  
+- link to meeting note archives  
+- make an area for new folks to introduce themselves  
+- include community wide and contributor experience related announcements 
   
 ## Important Governance Documentation
   
@@ -15,52 +29,73 @@ TODO - [Meeting agenda templates]
   - [sig-governanace.md]
   - [wg-governanace.md]
   
-  [Code of Conduct]
+[Code of Conduct]
   - conduct@kubernetes.io if you need anything from them or to report
   - may have training or guidance - ask!
   
   [Kubernetes values]  
   [Governance Principles]
-  
-  ## Communication and feedback loops:
-  
-  - [Need to know email archive]
+## Communication and feedback loops:
+
+Place for leads to get info, talk to other leads, best practices, demos, and
+more: 
   - [Monthly meeting]
-  
-  - Time:
-    * 2nd Tuesday of the Month 12:30pm PT [830pmUTC]
-    * 2nd Thursday of the Month 09:00am PT [5pmUTC]
+    - Time:
+      * 2nd Tuesday of the Month 12:30pm PT [830pmUTC]
+      * 2nd Thursday of the Month 09:00am PT [5pmUTC]
    
-  Slack: #chairs-and-techleads, #sig-contribex  
-  Mailing list: leads@kubernetes.io  
-  Github: File issues against kubernetes/community  
+  Slack: #chairs-and-techleads   
+  [other related/useful] #sig-contribex (operations), #steering 
+  (governance) 
   
+  Mailing list: [leads@kubernetes.io]
+  [other must join] dev@kubernetes.io  
+  
+  Github: File issues against kubernetes/community  
+
+### Updates
+According to [governance](#important-governance-documentation), leads need to 
+provide a community update. Most do this through KubeCon update sessions and 
+sign up forms come through as 'Maintainer Track' to the leads@ list. There is 
+also an option for a deep dive session that is longer duration for larger 
+community discussion. 
   ## Community Programs
   
   ### Mentoring
      
    - [group-mentoring.md]
+     - Great for growing contributor ladder roles 
    - [mentoring-programs]
-    
-- Resources from SIG Contributor Experience
-  - Swag
-    - The Project can provide you with K8s tshirts, stickers, and other
+
+### Recogition 
+
+Is someone in your group deserving of recognition? Great! There are a few ways
+to do this depending on the situation and end goals. Our community is built
+on the ethos of chop wood, carry water; reward and recognize often! 
+
+The quickest way is a "Thanks!" in an issue or PR. Want a wider audience?
+Try #shoutouts on the Kubernetes slack!  
+#### Swag
+- [cncf swag store]
+  - ContribEx can help connect you to K8s tshirts, stickers, and other
       marketing materials.
-    - If someone in your SIG is doing a great job and you want to recognize them
-      a tshirt is a great way to do that, especially for folks unable to attend
-      conferences.
     - K8s baby onesies are also available but usually take longer.
-    - In most cases we need to sync with that person's employer so that we can
-      send them swag without having to manage people's private information, so
-      please sync with SIG Contributor Experience as early as reasonably
-      possible.
-    - Silly gift practical jokes or anything involving googly eyes that make
-      people smile will be given the appropriate level of priority.
-- Resources from the CNCF
+    - Custom items can be done for certain occasions. Silly gift practical 
+      jokes or anything involving googly eyes that make people smile will be 
+      given the appropriate level of priority.
+#### Awards
+There are a few times a year that Kubernetes and the larger CNCF community 
+intentionally recognizes members of the commuity for certain roles and 
+accomplishments. The leads@ mailing list and slack channel will have 
+announcements for when nominations are open. 
+- [Contributor Summit] Awards
+- [CNCF Awards]
+  - most relevant: committer, documentarian, chop wood carry water 
+### CNCF resources
   - [maintainers-circle]
 
 
-[Need to Know email archive]: https://docs.google.com/document/d/1ivmV-ouim7YcTnmv21m0pP6prmj-FFZxcRBuWbT706c/edit
+
 [Monthly meeting]: https://docs.google.com/document/d/1Jio9rEtYxlBbntF8mRGmj6Q1JAdzZ9fTDo3ru1HK_LI/edit
 [values]: https://github.com/kubernetes/community/blob/master/values.md
 [Governance Principles]: https://github.com/kubernetes/community/blob/master/governance.md#principles
@@ -73,4 +108,8 @@ TODO - [Meeting agenda templates]
 [group-mentoring.md]: https://github.com/kubernetes/community/blob/master/mentoring/processes/group-mentoring.md
 [mentoring-programs]: https://github.com/kubernetes/community/tree/master/mentoring/programs
 [maintainers-circle]: https://github.com/cncf/sig-contributor-strategy/tree/master/maintainers-circle
-
+[Contributor Summit]: https://github.com/kubernetes/community/blob/master/events/awards/playbook.md
+[CNCF Awards]: https://github.com/cncf/awards 
+[cncf swag store]: (https://store.cncf.io/collections/kubernetes) 
+[calendar template]: https://github.com/kubernetes/community/blob/master/communication/calendar-guidelines.md#calendar-event-template)
+[leads@kubernetes.io]: https://github.com/kubernetes/k8s.io/blob/aa1214087863c7a850bf84936bd1d1b67d0064a9/groups/groups.yaml#L6
