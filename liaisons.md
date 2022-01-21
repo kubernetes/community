@@ -9,17 +9,24 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 # Liaisons
 
-Each community group in Kubernetes is assigned a Steering Committee
-liaison. Liaisons act as a point of contact from steering, engage with
-their respective community groups to ensure they are healthy and
-facilitate communication for [annual reports](committee-steering/governance/annual-reports.md).
+Steering Committee members are elected representatives of the Kubernetes
+project contributor base. It’s important that we make sure ensure a good
+flow of governance information and feedback loops to and from the 
+groups. With over 35 community groups and 100+ leads, it can be hard to 
+connect for communitywide consensus and to help with this, each group 
+is assigned a Steering Committee liaison. 
+
+Leads may call on liaisons to act as a point of contact from Steering, 
+be an advisor for governance or community health matters, and kick
+things off and consult throughout the process for [annual reports](committee-steering/governance/annual-reports.md).
 
 Liaisons do not make decisions for the community group or on behalf of
 the Steering Committee.
 
 Liaisons are assigned community groups at random (adjustments can be
 made, if needed) with each member having an (almost) equal distribution
-of SIGs, WGs and UGs.
+of SIGs, WGs and UGs. Each year after Steering Committee elections, new 
+members will assume one of the departing members groups. 
 
 | Community Group            | Steering Committee Liaison |
 | -------------------------- | -------------------------- |
@@ -59,5 +66,40 @@ of SIGs, WGs and UGs.
 | [Committee Code of Conduct](committee-code-of-conduct/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
 | [Committee Security Response](committee-security-response/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 <!-- BEGIN CUSTOM CONTENT -->
+## Expectations
+### Liaison will: 
+- Alert leads the Annual Report process is starting, expectations, and timeline
+- Check-ins with their groups at least once a quarter. This could mean a group DM
+with Chairs, a visit to a group meeting, or some other connection. Get a pulse 
+on health of the following:
+  - Contributor base
+    - Chairs and other leads: How are they?
+    - Contributors, reviewers, approvers: How are they?
+    - Newcomers: able to efficiently join and contribute?
+  - Operational Health
+    - Transparency of meetings and decision processes (eg: published meeting 
+  agendas, minutes, and video recordings)
+    - Communication best practices for shared status and decision making across 
+  a WG and its sponsor SIG(s) and a SIG and its subprojects
+    - Provide consultation on how to improve operational health
+  - Gap Analysis
+    - Where is the group now and where do they want/need to be?
+- Act as conduit for incoming cross-cutting deliverables requirements, such as 
+ones relative to test, infra, org, docs, etc.
+- Check that sustainability is a priority. 
+  - What is the group doing to ensure contributions are sustainable? 
+  - What does the group need in order to keep things going? 
+  - Are there areas of concern?
+- Update Steering Committee keep the Steering Committee in the loop and keep 
+track of trackable (ie: not sensitive) work in public issues.
+- Advise on funding matters - how to request and other inquiries 
+- Connect leads to whatever they need, when they ask. (if possible!)
+
+### Liaisons should:
+- Communicate with their groups on important business that happens at Steering 
+level (via our meetings, etc) in order for Steering to achieve a pulse on the 
+work we are doing and acknowledge governance changes. 
+  - Example: if Steering is crafting a new policy, check in with the chairs to 
+see how it would fare with their groups.
 
 <!-- END CUSTOM CONTENT -->
