@@ -1749,7 +1749,7 @@ sigs:
     day: Monday
     time: "13:00"
     tz: PT (Pacific Time)
-    frequency: weekly
+    frequency: bi-weekly
     url: https://zoom.us/j/96264742248
     archive_url: https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs
   - description: SIG Network Ingress NGINX Meeting
@@ -1836,6 +1836,8 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
   - name: network-policy
+    contact:
+      slack: sig-network-policy-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
