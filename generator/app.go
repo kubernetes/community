@@ -27,16 +27,20 @@ import (
 	"sort"
 	"strings"
 	"text/template"
+	"time"
 
 	yaml "gopkg.in/yaml.v3"
 )
 
 const (
-	readmeTemplate   = "readme.tmpl"
-	listTemplate     = "list.tmpl"
-	aliasesTemplate  = "aliases.tmpl"
-	liaisonsTemplate = "liaisons.tmpl"
-	headerTemplate   = "header.tmpl"
+	readmeTemplate            = "readme.tmpl"
+	listTemplate              = "list.tmpl"
+	aliasesTemplate           = "aliases.tmpl"
+	liaisonsTemplate          = "liaisons.tmpl"
+	headerTemplate            = "header.tmpl"
+	annualReportIssueTemplate = "annual-report/github_issue.tmpl"
+	annualReportSIGTemplate   = "annual-report/sig_report.tmpl"
+	annualReportWGTemplate    = "annual-report/wg_report.tmpl"
 
 	sigsYamlFile     = "sigs.yaml"
 	sigListOutput    = "sig-list.md"
@@ -155,6 +159,7 @@ func (g *LeadershipGroup) Owners() []Person {
 // Group represents either a Special Interest Group (SIG) or a Working Group (WG)
 type Group struct {
 	Dir              string
+	Prefix           string `yaml:",omitempty"`
 	Name             string
 	MissionStatement FoldedString `yaml:"mission_statement,omitempty"`
 	CharterLink      string       `yaml:"charter_link,omitempty"`
@@ -377,6 +382,14 @@ var funcMap = template.FuncMap{
 	"trimSuffix":  strings.TrimSuffix,
 	"githubURL":   githubURL,
 	"orgRepoPath": orgRepoPath,
+	"now":         time.Now,
+	"lastYear":    lastYear,
+	"toUpper":     strings.ToUpper,
+}
+
+// lastYear returns the last year as a string
+func lastYear() string {
+	return time.Now().AddDate(-1, 0, 0).Format("2006")
 }
 
 // githubURL converts a raw GitHub url (links directly to file contents) into a
@@ -510,6 +523,91 @@ func createGroupReadme(groups []Group, prefix string) error {
 	return nil
 }
 
+func createAnnualReportIssue(groups []Group, prefix string) error {
+	// figure out if the user wants to generate one group
+	var selectedGroupName *string
+	if envVal, ok := os.LookupEnv("WHAT"); ok {
+		selectedGroupName = &envVal
+	}
+
+	for _, group := range groups {
+		switch prefix {
+		case "sig":
+			group.Prefix = "sig"
+		case "wg":
+			group.Prefix = "wg"
+		default:
+			continue
+
+		}
+
+		outputDir := filepath.Join(baseGeneratorDir, "generator/generated")
+
+		// skip generation if the user specified only one group
+		if selectedGroupName != nil && !strings.HasSuffix(group.Dir, *selectedGroupName) {
+			fmt.Printf("Skipping %s/%s_%s.md\n", outputDir, lastYear(), group.Dir)
+			continue
+		}
+
+		fmt.Printf("Generating %s/%s_%s.md\n", outputDir, lastYear(), group.Dir)
+		if err := createDirIfNotExists(outputDir); err != nil {
+			return err
+		}
+
+		outputPath := filepath.Join(outputDir, fmt.Sprintf("%s_%s.md", lastYear(), group.Dir))
+		templatePath := filepath.Join(baseGeneratorDir, templateDir, annualReportIssueTemplate)
+		if err := writeTemplate(templatePath, outputPath, "markdown", group); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+func createAnnualReport(groups []Group, prefix string) error {
+	// figure out if the user wants to generate one group
+	var selectedGroupName *string
+	var templateFile string
+	if envVal, ok := os.LookupEnv("WHAT"); ok {
+		selectedGroupName = &envVal
+	}
+
+	for _, group := range groups {
+		switch prefix {
+		case "sig":
+			group.Prefix = "sig"
+			templateFile = annualReportSIGTemplate
+		case "wg":
+			group.Prefix = "wg"
+			templateFile = annualReportWGTemplate
+		default:
+			continue
+
+		}
+
+		outputDir := filepath.Join(baseGeneratorDir, group.Dir)
+
+		// skip generation if the user specified only one group
+		if selectedGroupName != nil && !strings.HasSuffix(group.Dir, *selectedGroupName) {
+			fmt.Printf("Skipping %s/annual-report-%s.md\n", outputDir, lastYear())
+			continue
+		}
+
+		fmt.Printf("Generating %s/annual-report-%s.md\n", outputDir, lastYear())
+		if err := createDirIfNotExists(outputDir); err != nil {
+			return err
+		}
+
+		outputPath := filepath.Join(outputDir, fmt.Sprintf("annual-report-%s.md", lastYear()))
+		templatePath := filepath.Join(baseGeneratorDir, templateDir, templateFile)
+		if err := writeTemplate(templatePath, outputPath, "markdown", group); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
 // readSigsYaml decodes yaml stored in a file at path into the
 // specified yaml.Node
 func readYaml(path string, data interface{}) error {
@@ -567,6 +665,20 @@ func main() {
 		err = createGroupReadme(groups, prefix)
 		if err != nil {
 			log.Fatal(err)
+		}
+	}
+
+	if envVal, ok := os.LookupEnv("ANNUAL_REPORT"); ok && envVal == "true" {
+		fmt.Println("Generating annual reports")
+		for prefix, groups := range ctx.PrefixToGroupMap() {
+			err = createAnnualReportIssue(groups, prefix)
+			if err != nil {
+				log.Fatal(err)
+			}
+			err = createAnnualReport(groups, prefix)
+			if err != nil {
+				log.Fatal(err)
+			}
 		}
 	}
 
