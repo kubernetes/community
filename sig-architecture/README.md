@@ -79,6 +79,7 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
 [Described below](#conformance-definition-1)
 - **Owners:**
   - [kubernetes/kubernetes/test/conformance](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/OWNERS)
+  - [kubernetes/kubernetes/test/conformance/image](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/image/OWNERS)
   - [kubernetes/kubernetes/test/conformance/testdata](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS)
 - **Contact:**
   - Slack: [#k8s-conformance](https://kubernetes.slack.com/messages/k8s-conformance)
