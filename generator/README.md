@@ -67,6 +67,23 @@ make WHAT=container-identity
 
 where the `WHAT` var refers to the directory being built.
 
+
+To generate the annual report template for a specific year:
+
+```bash
+make ANNUAL_REPORT=true
+```
+
+This will generate the annual report template for the previous year, as well as
+drop GitHub issue templates into the `generator/generated/` directory.
+
+You can generate the issues from these templates by running:
+
+```bash
+ls -1 generator/generated/*.md | xargs -L1 hub issue create -F
+```
+
+
 ## Adding custom content
 
 ### README
