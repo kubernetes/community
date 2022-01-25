@@ -71,12 +71,17 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 
 ## Membership
 
-- Primary slack channel member count:
-- Primary mailing list member count:
-- Primary meeting attendee count (estimated, if needed):
-- Primary meeting participant count (estimated, if needed):
-- Unique reviewers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
-- Unique approvers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
+Accurate of 2022-02-14.
+Stats are primarily pulled from kubernetes/release, the primary repository for
+Release Engineering tooling/work, which serves as a reasonable representation
+of reviewers/approvers across SIG Release repositories.
+
+- Primary Slack channel member count: 2458
+- Primary mailing list member count: 501
+- Primary meeting attendee count (estimated, if needed): 20
+- Primary meeting participant count (estimated, if needed): 10
+- Unique reviewers for SIG-owned packages (from kubernetes/release): 24
+- Unique approvers for SIG-owned packages (from kubernetes/release): 7
 
 Include any other ways you measure group membership
 
@@ -140,4 +145,6 @@ Operational tasks in [sig-governance.md]:
 [sigs.yaml]: https://git.k8s.io/community/sigs.yaml
 [contributor guide]: https://git.k8s.io/community/contributors/guide/README.md
 [devel]: https://git.k8s.io/community/contributors/devel/README.md
+<!-- BEGIN CUSTOM CONTENT -->
 
+<!-- END CUSTOM CONTENT -->
