@@ -357,6 +357,7 @@ channels:
   - name: sig-api-machinery-cel-dev
   - name: sig-apps
   - name: sig-auth
+  - name: sig-auth-kms-dev
   - name: sig-autoscaling
   - name: sig-autoscaling-api
   - name: sig-cli
