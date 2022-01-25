@@ -1,4 +1,4 @@
-# {{lastYear}} Annual Report: {{.Prefix | toUpper}} {{.Name}}
+# 2021 Annual Report: SIG Docs
 
 ## Current initiatives
 
@@ -14,7 +14,7 @@
    -
    -
 
-3. KEP work in {{lastYear}} (1.x, 1.y, 1.z):
+3. KEP work in 2021 (1.x, 1.y, 1.z):
 
 <!--
 In future, this will be generated from kubernetes/enhancements kep.yaml files
@@ -128,15 +128,16 @@ Operational tasks in [sig-governance.md]:
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
 - [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
 - [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for {{lastYear}} are linked from [README.md] and updated/uploaded if needed
-- [ ] Did you have community-wide updates in {{lastYear}} (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+- [ ] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
+- [ ] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
       -
       -
 
-[CONTRIBUTING.md]: https://git.k8s.io/community/{{.Dir}}/CONTRIBUTING.md
+[CONTRIBUTING.md]: https://git.k8s.io/community/sig-docs/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
 [sig-governance.md]: https://git.k8s.io/community/committee-steering/governance/sig-governance.md
-[README.md]: https://git.k8s.io/community/{{.Dir}}/README.md
+[README.md]: https://git.k8s.io/community/sig-docs/README.md
 [sigs.yaml]: https://git.k8s.io/community/sigs.yaml
 [contributor guide]: https://git.k8s.io/community/contributors/guide/README.md
 [devel]: https://git.k8s.io/community/contributors/devel/README.md
+
