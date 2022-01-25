@@ -645,7 +645,10 @@ overrides a default grace period, including the zero grace period ("now").
 * DELETE /&lt;resourceNamePlural&gt; - Deletes a list of type
 &lt;resourceName&gt;, e.g. DELETE /pods a list of Pods.
 * PUT /&lt;resourceNamePlural&gt;/&lt;name&gt; - Update or create the resource
-with the given name with the JSON object provided by the client.
+with the given name with the JSON object provided by the client. Whether a
+resource can be created with a PUT request depends on the particular resource's
+storage strategy configuration, specifically the `AllowCreateOnUpdate()` return
+value. Most built-in types do not allow this.
 * PATCH /&lt;resourceNamePlural&gt;/&lt;name&gt; - Selectively modify the
 specified fields of the resource. See more information [below](#patch-operations).
 * GET /&lt;resourceNamePlural&gt;&quest;watch=true - Receive a stream of JSON
