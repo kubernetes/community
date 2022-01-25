@@ -1,4 +1,4 @@
-# {{lastYear}} Annual Report: {{.Prefix | toUpper}} {{.Name}}
+# 2021 Annual Report: WG Data Protection
 
 ## Current initiatives
 
@@ -48,8 +48,8 @@ Operational tasks in [wg-governance.md]:
 
 - [ ] [README.md] reviewed for accuracy and updated if needed
 - [ ] WG leaders in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for {{lastYear}} are linked from [README.md] and updated/uploaded if needed
-- [ ] Updates provided to sponsoring SIGs in {{lastYear}}
+- [ ] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
+- [ ] Updates provided to sponsoring SIGs in 2021
       - [$sig-name](https://git.k8s.io/community/$sig-id/)
         - links to email, meeting notes, slides, or recordings, etc
       - [$sig-name](https://git.k8s.io/community/$sig-id/)
@@ -57,5 +57,6 @@ Operational tasks in [wg-governance.md]:
       -
 
 [wg-governance.md]: https://git.k8s.io/community/committee-steering/governance/wg-governance.md
-[README.md]: https://git.k8s.io/community/{{.Dir}}/README.md
+[README.md]: https://git.k8s.io/community/wg-data-protection/README.md
 [sigs.yaml]: https://git.k8s.io/community/sigs.yaml
+
