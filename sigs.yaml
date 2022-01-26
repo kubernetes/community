@@ -66,6 +66,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/legacyflag/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/component-base/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/version/OWNERS
   - name: control-plane-features
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kube-storage-version-migrator/master/OWNERS
@@ -357,6 +358,7 @@ sigs:
       - name: cncf-conformance-wg
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/image/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
   - name: enhancements
     description: '[Described below](#enhancement-proposals)'
@@ -1975,15 +1977,10 @@ sigs:
   contact:
     slack: sig-release
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-release
+    private_mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-release-leads
     teams:
     - name: milestone-maintainers
       description: '[Milestone Maintainers](https://git.k8s.io/sig-release/release-team#milestone-maintainers)'
-    - name: release-managers
-      description: '[Release Managers](https://kubernetes.io/releases/release-managers/)'
-    - name: release-team
-      description: Members of the current Release Team and subproject owners
-    - name: release-team-leads
-      description: Release Team Leads for the current Kubernetes release cycle
     - name: sig-release
       description: SIG Release Members
     - name: sig-release-admins
@@ -1999,6 +1996,17 @@ sigs:
       The Release Engineering subproject is responsible for the [process/procedures](https://github.com/kubernetes/sig-release/tree/master/release-engineering) and [tools](https://github.com/kubernetes/release) used to create/maintain Kubernetes release artifacts.
     contact:
       slack: release-management
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/release-managers
+      private_mailing_list: https://groups.google.com/a/kubernetes.io/g/release-managers-private
+      teams:
+      - name: build-admins
+      - name: publishing-bot-admins
+      - name: publishing-bot-maintainers
+      - name: release-engineering
+      - name: release-managers
+        description: '[Release Managers](https://kubernetes.io/releases/release-managers/)'
+      - name: repo-infra-admins
+      - name: repo-infra-maintainers
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/bom/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/downloadkubernetes/master/OWNERS
@@ -2008,8 +2016,12 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/release-sdk/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-utils/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/zeitgeist/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/CHANGELOG/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/build-image/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/publishing/OWNERS
     - https://raw.githubusercontent.com/kubernetes/publishing-bot/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/release/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
     - https://raw.githubusercontent.com/kubernetes/website/main/content/en/releases/OWNERS
     - https://raw.githubusercontent.com/kubernetes/website/main/data/releases/OWNERS
@@ -2025,6 +2037,14 @@ sigs:
   - name: Release Team
     description: |
       The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
+    contact:
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/release-team
+      teams:
+      - name: ci-signal
+      - name: release-team
+        description: Members of the current Release Team and subproject owners
+      - name: release-team-leads
+        description: Release Team Leads for the current Kubernetes release cycle
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
   - name: SIG Release Process Documentation
@@ -2032,13 +2052,6 @@ sigs:
       Documents and processes related to SIG Release
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/OWNERS
-  - name: kubernetes/repo-infra
-    description: |
-      Creates and maintains tools and templates for Kubernetes org repositories.
-      Includes bazel tooling for managing dependencies for kubernetes/kubernetes
-      and kubernetes/test-infra.
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/repo-infra/master/OWNERS
 - dir: sig-scalability
   name: Scalability
   mission_statement: >

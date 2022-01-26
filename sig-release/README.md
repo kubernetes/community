@@ -48,9 +48,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Frelease)
 - GitHub Teams:
     - [@kubernetes/milestone-maintainers](https://github.com/orgs/kubernetes/teams/milestone-maintainers) - [Milestone Maintainers](https://git.k8s.io/sig-release/release-team#milestone-maintainers)
-    - [@kubernetes/release-managers](https://github.com/orgs/kubernetes/teams/release-managers) - [Release Managers](https://kubernetes.io/releases/release-managers/)
-    - [@kubernetes/release-team](https://github.com/orgs/kubernetes/teams/release-team) - Members of the current Release Team and subproject owners
-    - [@kubernetes/release-team-leads](https://github.com/orgs/kubernetes/teams/release-team-leads) - Release Team Leads for the current Kubernetes release cycle
     - [@kubernetes/sig-release](https://github.com/orgs/kubernetes/teams/sig-release) - SIG Release Members
     - [@kubernetes/sig-release-admins](https://github.com/orgs/kubernetes/teams/sig-release-admins) - Admins for SIG Release repositories
     - [@kubernetes/sig-release-leads](https://github.com/orgs/kubernetes/teams/sig-release-leads) - Chairs, Technical Leads, and Program Managers for SIG Release
@@ -70,13 +67,26 @@ The Release Engineering subproject is responsible for the [process/procedures](h
   - [kubernetes-sigs/release-sdk](https://github.com/kubernetes-sigs/release-sdk/blob/main/OWNERS)
   - [kubernetes-sigs/release-utils](https://github.com/kubernetes-sigs/release-utils/blob/main/OWNERS)
   - [kubernetes-sigs/zeitgeist](https://github.com/kubernetes-sigs/zeitgeist/blob/master/OWNERS)
+  - [kubernetes/kubernetes/CHANGELOG](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/OWNERS)
+  - [kubernetes/kubernetes/build/build-image](https://github.com/kubernetes/kubernetes/blob/master/build/build-image/OWNERS)
+  - [kubernetes/kubernetes/staging/publishing](https://github.com/kubernetes/kubernetes/blob/master/staging/publishing/OWNERS)
   - [kubernetes/publishing-bot](https://github.com/kubernetes/publishing-bot/blob/master/OWNERS)
   - [kubernetes/release](https://github.com/kubernetes/release/blob/master/OWNERS)
+  - [kubernetes/repo-infra](https://github.com/kubernetes/repo-infra/blob/master/OWNERS)
   - [kubernetes/sig-release/release-engineering](https://github.com/kubernetes/sig-release/blob/master/release-engineering/OWNERS)
   - [kubernetes/website/content/en/releases](https://github.com/kubernetes/website/blob/main/content/en/releases/OWNERS)
   - [kubernetes/website/data/releases](https://github.com/kubernetes/website/blob/main/data/releases/OWNERS)
 - **Contact:**
   - Slack: [#release-management](https://kubernetes.slack.com/messages/release-management)
+  - [Mailing List](https://groups.google.com/a/kubernetes.io/g/release-managers)
+  - GitHub Teams:
+    - [@kubernetes/build-admins](https://github.com/orgs/kubernetes/teams/build-admins)
+    - [@kubernetes/publishing-bot-admins](https://github.com/orgs/kubernetes/teams/publishing-bot-admins)
+    - [@kubernetes/publishing-bot-maintainers](https://github.com/orgs/kubernetes/teams/publishing-bot-maintainers)
+    - [@kubernetes/release-engineering](https://github.com/orgs/kubernetes/teams/release-engineering)
+    - [@kubernetes/release-managers](https://github.com/orgs/kubernetes/teams/release-managers) - [Release Managers](https://kubernetes.io/releases/release-managers/)
+    - [@kubernetes/repo-infra-admins](https://github.com/orgs/kubernetes/teams/repo-infra-admins)
+    - [@kubernetes/repo-infra-maintainers](https://github.com/orgs/kubernetes/teams/repo-infra-maintainers)
 - **Meetings:**
   - Release Engineering: [Tuesdays at 14:30 UTC](https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
     - [Meeting notes and Agenda](https://bit.ly/k8s-releng-meeting).
@@ -85,16 +95,16 @@ The Release Engineering subproject is responsible for the [process/procedures](h
 The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
 - **Owners:**
   - [kubernetes/sig-release/release-team](https://github.com/kubernetes/sig-release/blob/master/release-team/OWNERS)
+- **Contact:**
+  - [Mailing List](https://groups.google.com/a/kubernetes.io/g/release-team)
+  - GitHub Teams:
+    - [@kubernetes/ci-signal](https://github.com/orgs/kubernetes/teams/ci-signal)
+    - [@kubernetes/release-team](https://github.com/orgs/kubernetes/teams/release-team) - Members of the current Release Team and subproject owners
+    - [@kubernetes/release-team-leads](https://github.com/orgs/kubernetes/teams/release-team-leads) - Release Team Leads for the current Kubernetes release cycle
 ### SIG Release Process Documentation
 Documents and processes related to SIG Release
 - **Owners:**
   - [kubernetes/sig-release](https://github.com/kubernetes/sig-release/blob/master/OWNERS)
-### kubernetes/repo-infra
-Creates and maintains tools and templates for Kubernetes org repositories.
-Includes bazel tooling for managing dependencies for kubernetes/kubernetes
-and kubernetes/test-infra.
-- **Owners:**
-  - [kubernetes/repo-infra](https://github.com/kubernetes/repo-infra/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->

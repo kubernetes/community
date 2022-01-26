@@ -57,6 +57,7 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
   - [kubernetes-sigs/legacyflag](https://github.com/kubernetes-sigs/legacyflag/blob/master/OWNERS)
   - [kubernetes/component-base](https://github.com/kubernetes/component-base/blob/master/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/component-base](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/component-base/version](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/version/OWNERS)
 ### control-plane-features
 - **Owners:**
   - [kubernetes-sigs/kube-storage-version-migrator](https://github.com/kubernetes-sigs/kube-storage-version-migrator/blob/master/OWNERS)
