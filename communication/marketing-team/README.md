@@ -10,7 +10,7 @@ To better inform the Kubernetes contributor community and highlight their work t
 | Area & Handbook Link | Team | Notes |
 | --- | --- | --- |
 | [Marketing Council] Program Lead | @mbbroberg, shadow: @JasonMorgan,|  advisors: @parispittman, @chris-short |
-| [Marketing Council] Promotion Lead |@kaslin, shadow: @Debanitrkl |  advisors: @parispittman, @chris-short. Shadow role is available. |
+| [Marketing Council] Promotion Lead |@kaslin, shadow: @Debanitrkl |  advisors: @parispittman, @chris-short |
 | [Marketing Council] Liaison Lead | @rajula96reddy, shadow: `OPEN` |  Shadow role is available. |
 | Liaisons | release: @rajula96reddy, docs: `OPEN` | Are you a SIG that wants support from Contributor Comms? Ping the liaison lead! |
 | [Storytellers] & other members | @kunal-kushwaha, @gkarthiks, @dewan-ahmed, @joelbyronbarker, Sladyn Nunes | New to Contributor Comms? Add your name here!
