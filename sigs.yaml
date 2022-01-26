@@ -979,14 +979,17 @@ sigs:
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     teams:
     - name: sig-cluster-lifecycle
-      description: Notify group
+      description: SIG Cluster Lifecycle mailing list
     liaison:
       github: dims
       name: Davanum Srinivas
   subprojects:
   - name: cluster-addons
+    description: A project for figuring out the best way to install, manage and deliver
+      cluster addons
     contact:
       slack: cluster-addons
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-addons/master/OWNERS
     meetings:
@@ -998,8 +1001,11 @@ sigs:
       url: https://zoom.us/j/130096731?pwd=U3pzWloxZ0lpbEtadTZGSERRdENrZz09
       archive_url: https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit
   - name: cluster-api
+    description: A project focused on providing declarative APIs and tooling to simplify
+      provisioning, upgrading, and operating multiple Kubernetes clusters
     contact:
       slack: cluster-api
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/main/OWNERS
     meetings:
@@ -1012,11 +1018,18 @@ sigs:
       archive_url: https://docs.google.com/document/d/1ushaVqAKYnZ2VN_aa3GyKlS4kEd6bSug13xaXOakAQI/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-operator
+    description: Leverages a declarative API and an operator to empower admins to
+      handle the lifecycle of Cluster API providers within the management cluster
     contact:
       slack: cluster-api-operator
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-operator/main/OWNERS
   - name: cluster-api-provider-aws
+    description: Cluster API infrastructure provider for AWS
+    contact:
+      slack: cluster-api-aws
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
     meetings:
@@ -1029,6 +1042,10 @@ sigs:
       archive_url: https://docs.google.com/document/d/1iW-kqcX-IhzVGFrRKTSPGBPOc-0aUvygOVoJ5ETfEZU/
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-azure
+    description: Cluster API infrastructure provider for Azure
+    contact:
+      slack: cluster-api-azure
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
     meetings:
@@ -1041,6 +1058,10 @@ sigs:
       archive_url: http://bit.ly/k8s-capz-agenda
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-digitalocean
+    description: Cluster API infrastructure provider for DigitalOcean
+    contact:
+      slack: cluster-api-digitalocean
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
     meetings:
@@ -1053,11 +1074,17 @@ sigs:
       archive_url: http://bit.ly/k8s-capdo-agenda
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-gcp
+    description: Cluster API infrastructure provider for GCP
+    contact:
+      slack: cluster-api-gcp
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
   - name: cluster-api-provider-ibmcloud
+    description: Cluster API infrastructure provider for IBM Cloud
     contact:
       slack: cluster-api-ibmcloud
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/main/OWNERS
     meetings:
@@ -1070,9 +1097,17 @@ sigs:
       archive_url: https://docs.google.com/document/d/1oWnqXy1VFv0E3kovQoZfS6IlVP0L4eaQsN-2HYC_6_A
       recordings_url: https://www.youtube.com/playlist?list=PLcYv3LH7qY9Nvx4lNaeOeBrfBZa777h3m
   - name: cluster-api-provider-kubemark
+    description: Cluster API infrastructure provider for Kubemark
+    contact:
+      slack: cluster-api-kubemark
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-kubemark/master/OWNERS
   - name: cluster-api-provider-kubevirt
+    description: Cluster API infrastructure provider for KubeVirt
+    contact:
+      slack: cluster-api-kubevirt
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-kubevirt/main/OWNERS
     meetings:
@@ -1084,6 +1119,10 @@ sigs:
       url: https://zoom.us/j/94685513559?pwd=cnI3RUQyZ3RrckpOc1BQNDA1Q1BrZz09
       archive_url: https://docs.google.com/document/d/1ZAnRLCKOVbDqrsrYis2OR0aZIAlqp576gCJVCkMNiHM/edit?usp=sharing
   - name: cluster-api-provider-nested
+    description: Cluster API infrastructure provider for Nested Clusters
+    contact:
+      slack: cluster-api-nested
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-nested/master/OWNERS
     meetings:
@@ -1096,16 +1135,24 @@ sigs:
       archive_url: https://docs.google.com/document/d/10aTeq2lhXW_3aFQAd_MdGjY8PtZPslKhZCCcXxFp3_Q/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-openstack
+    description: Cluster API infrastructure provider for OpenStack
+    contact:
+      slack: cluster-api-openstack
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
   - name: cluster-api-provider-packet
+    description: Cluster API infrastructure provider for Packet
     contact:
       slack: cluster-api-packet
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-packet/master/OWNERS
   - name: cluster-api-provider-vsphere
+    description: Cluster API infrastructure provider for vSphere
     contact:
       slack: cluster-api-vsphere
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
     meetings:
@@ -1118,8 +1165,10 @@ sigs:
       archive_url: https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu
   - name: etcdadm
+    description: A command-line tool for operating etcd clusters
     contact:
       slack: etcdadm
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
     meetings:
@@ -1131,8 +1180,11 @@ sigs:
       url: https://zoom.us/j/612375927?pwd=MldxRnRSOExCVW1rbjM4ZzBSc3MvUT09
       archive_url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit
   - name: image-builder
+    description: A collection of cross-provider Kubernetes virtual machine image building
+      utilities
     contact:
       slack: image-builder
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/image-builder/master/OWNERS
     meetings:
@@ -1144,27 +1196,37 @@ sigs:
       url: https://zoom.us/j/807524571?pwd=WEFTeDJzeWU3bVFkcWQ0UEdZRkRCdz09
       archive_url: https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
-  - name: kops
+  - name: kOps
+    description: A tool for creating, destroying, upgrading and maintaining production-grade,
+      highly available, Kubernetes cluster that also provisions infrastructure
+    contact:
+      slack: kops-dev
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
     meetings:
-    - description: kops Office Hours
+    - description: kOps Office Hours
       day: Friday
       time: "09:00"
       tz: PT (Pacific Time)
       frequency: biweekly
       url: https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09
       archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
-  - name: kube-up
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/OWNERS
   - name: kubeadm
+    description: A tool that performs the actions necessary to get a minimum viable,
+      secure cluster up and running in a user friendly way
     contact:
       slack: kubeadm
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubeadm/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubeadm/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cluster-bootstrap/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/configz/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/featuregate/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/lifecycle/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e_kubeadm/OWNERS
     - https://raw.githubusercontent.com/kubernetes/system-validators/master/OWNERS
     meetings:
     - description: kubeadm Office Hours
@@ -1176,13 +1238,19 @@ sigs:
       archive_url: https://docs.google.com/document/d/1ONcoy8bOw8SWPUwXxnKeRZST3lnUxYpUv4Y6466h9Ek/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: kubespray
+    description: A project that uses Ansible / Vagrant for deploying production ready
+      clusters on different infrastructure
     contact:
       slack: kubespray
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
   - name: minikube
+    description: Implements a local Kubernetes cluster for application development
+      on macOS, Linux, and Windows
     contact:
       slack: minikube
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
     meetings:
