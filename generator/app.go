@@ -163,7 +163,7 @@ type Group struct {
 	Name             string
 	MissionStatement FoldedString `yaml:"mission_statement,omitempty"`
 	CharterLink      string       `yaml:"charter_link,omitempty"`
-	StakeholderSIGs  []string     `yaml:"stakeholder_sigs,omitempty"`
+	StakeholderSIGs  []SIGName    `yaml:"stakeholder_sigs,omitempty"`
 	Label            string
 	Leadership       LeadershipGroup `yaml:"leadership"`
 	Meetings         []Meeting
@@ -171,11 +171,21 @@ type Group struct {
 	Subprojects      []Subproject `yaml:",omitempty"`
 }
 
+type SIGName string
+
+func (n SIGName) DirName() string {
+	return DirName("sig", string(n))
+}
+
 // DirName returns the directory that a group's documentation will be
 // generated into. It is composed of a prefix (sig for SIGs and wg for WGs),
 // and a formatted version of the group's name (in kebab case).
 func (g *Group) DirName(prefix string) string {
-	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(g.Name, " ", "-", -1)))
+	return DirName(prefix, g.Name)
+}
+
+func DirName(prefix, name string) string {
+	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(name, " ", "-", -1)))
 }
 
 // LabelName returns the expected label for a given group
@@ -217,7 +227,9 @@ func (c *Context) Sort() {
 			return groups[i].Dir < groups[j].Dir
 		})
 		for _, group := range groups {
-			sort.Strings(group.StakeholderSIGs)
+			sort.Slice(group.StakeholderSIGs, func(i, j int) bool {
+				return group.StakeholderSIGs[i] < group.StakeholderSIGs[j]
+			})
 			for _, people := range [][]Person{
 				group.Leadership.Chairs,
 				group.Leadership.TechnicalLeads,
@@ -285,7 +297,7 @@ func (c *Context) Validate() []error {
 			if len(group.StakeholderSIGs) != 0 {
 				if prefix == "wg" {
 					for _, name := range group.StakeholderSIGs {
-						if index(c.Sigs, func(g Group) bool { return g.Name == name }) == -1 {
+						if index(c.Sigs, func(g Group) bool { return g.Name == string(name) }) == -1 {
 							errors = append(errors, fmt.Errorf("%s: invalid stakeholder sig name %s", group.Dir, name))
 						}
 					}
