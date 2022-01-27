@@ -1980,6 +1980,9 @@ sigs:
       slack: security-profiles-operator
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/security-profiles-operator/master/OWNERS
+  - name: special-resource-operator
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/special-resource-operator/main/OWNERS
 - dir: sig-release
   name: Release
   mission_statement: >
