@@ -13,14 +13,14 @@ Modernize logging in Kubernetes core components, allowing users to efficiently c
 The [charter](charter.md) defines the scope and governance of the Structured Logging Working Group.
 
 ## Stakeholder SIGs
-* SIG API Machinery
-* SIG Architecture
-* SIG Cloud Provider
-* SIG Instrumentation
-* SIG Network
-* SIG Node
-* SIG Scheduling
-* SIG Storage
+* [SIG API Machinery](/sig-api-machinery)
+* [SIG Architecture](/sig-architecture)
+* [SIG Cloud Provider](/sig-cloud-provider)
+* [SIG Instrumentation](/sig-instrumentation)
+* [SIG Network](/sig-network)
+* [SIG Node](/sig-node)
+* [SIG Scheduling](/sig-scheduling)
+* [SIG Storage](/sig-storage)
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-structured-logging) for the group will typically add invites for the following meetings to your calendar.*
