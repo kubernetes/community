@@ -49,6 +49,12 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-instrumentation-members](https://github.com/orgs/kubernetes/teams/sig-instrumentation-members) - SIG Membership Roster
 - Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-instrumentation:
+* [WG Structured Logging](/wg-structured-logging)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-instrumentation:
@@ -93,6 +99,7 @@ Organization of SIG Instrumentation subprojects
   - [kubernetes/kubernetes/staging/src/k8s.io/component-base/logs](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/logs/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

@@ -96,6 +96,7 @@ Experimental project for OCI distribution
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

@@ -47,6 +47,12 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-cluster-lifecycle](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle) - Notify group
 - Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-cluster-lifecycle:
+* [WG Reliability](/wg-reliability)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-cluster-lifecycle:
@@ -181,6 +187,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit).
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

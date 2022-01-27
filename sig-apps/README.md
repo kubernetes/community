@@ -46,6 +46,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-apps-test-failures](https://github.com/orgs/kubernetes/teams/sig-apps-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-apps:
+* [WG Data Protection](/wg-data-protection)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-apps:
@@ -94,6 +100,7 @@ The core workloads API, which is composed of the CronJob, DaemonSet, Deployment,
   - [kubernetes/kubernetes/test/integration/deployment](https://github.com/kubernetes/kubernetes/blob/master/test/integration/deployment/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Goals
