@@ -1622,6 +1622,7 @@ sigs:
   contact:
     slack: sig-k8s-infra
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+    private_mailing_list: sig-k8s-infra-private@kubernetes.io
     teams:
     - name: sig-k8s-infra
       description: active contributors in sig-k8s-infra
@@ -1630,25 +1631,75 @@ sigs:
     liaison:
       github: justaugustus
       name: Stephen Augustus
+      company: Cisco
   subprojects:
   - name: k8s-infra-dns
     description: Code and configuration to manage DNS records for domains owned by
       the Kubernetes project such as k8s.io and kubernetes.io
+    contact:
+      slack: sig-k8s-infra
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/dns/OWNERS
+    meetings:
+    - description: Regular SIG Meeting
+      day: Wednesday
+      time: "20:00"
+      tz: UTC
+      frequency: bi-weekly
+      url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
+      archive_url: http://bit.ly/sig-k8s-infra-notes
+      recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: k8s-infra-groups
     description: Code and configuration to manage Google Groups for domains owned
       by the Kubernetes project such kubernetes.io
+    contact:
+      slack: sig-k8s-infra
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/groups/OWNERS
+    meetings:
+    - description: Regular SIG Meeting
+      day: Wednesday
+      time: "20:00"
+      tz: UTC
+      frequency: bi-weekly
+      url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
+      archive_url: http://bit.ly/sig-k8s-infra-notes
+      recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: k8s.io
     description: Code and configuration to manage Kubernetes project infrastructure,
       including various *.k8s.io sites
+    contact:
+      slack: sig-k8s-infra
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/OWNERS
+    meetings:
+    - description: Regular SIG Meeting
+      day: Wednesday
+      time: "20:00"
+      tz: UTC
+      frequency: bi-weekly
+      url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
+      archive_url: http://bit.ly/sig-k8s-infra-notes
+      recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: oci-proxy
+    description: Experimental project for OCI distribution
+    contact:
+      slack: sig-k8s-infra
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/oci-proxy/main/OWNERS
+    meetings:
+    - description: Regular SIG Meeting
+      day: Wednesday
+      time: "20:00"
+      tz: UTC
+      frequency: bi-weekly
+      url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
+      archive_url: http://bit.ly/sig-k8s-infra-notes
+      recordings_url: http://bit.ly/sig-k8s-infra-playlist
 - dir: sig-multicluster
   name: Multicluster
   mission_statement: >
