@@ -56,6 +56,7 @@ channels:
   - name: cluster-api-kubevirt
   - name: cluster-api-nested
   - name: cluster-api-openstack
+  - name: cluster-api-operator
   - name: cluster-api-packet
   - name: cluster-api-vsphere
   - name: cn-dev
