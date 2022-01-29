@@ -18,7 +18,9 @@ Contains a list of common resources when contributing in the effort to support W
 
 ## Joining the community of other contributors
 
-The best way to get in contact with the contributors working on Windows support is through the Kubernetes Slack. To get a Slack invite, visit [http://slack.k8s.io/](http://slack.k8s.io/) . Once you're logged in, join us in the [#SIG-Windows](https://kubernetes.slack.com/messages/sig-windows) channel. You can also use the [Kubernetes Community Forums](https://discuss.kubernetes.io/c/general-discussions/windows) to chat about Windows containers on Kubernetes.
+The best way to get in contact with the contributors working on Windows support is through the Kubernetes Slack.
+
+To get a Slack invite, visit [http://slack.k8s.io/](http://slack.k8s.io/) . Once you're logged in, join us in the [#SIG-Windows](https://kubernetes.slack.com/messages/sig-windows) channel. You can also use the [Kubernetes Community Forums](https://discuss.kubernetes.io/c/general-discussions/windows) to chat about Windows containers on Kubernetes.
 
 To get access to shared documents, meeting calendar, and additional discussions, be sure to also join the [SIG-Windows Google Group](https://groups.google.com/forum/#!forum/kubernetes-sig-windows). 
 
@@ -32,7 +34,10 @@ View the SIG-Windows project board, tracking detailed [issues across Kubernetes 
 
 ## Building Kubernetes for Windows from Source
 
-The Kubernetes build scripts have not been ported to Windows, so it's best to run in a Linux VM where you can run the same Docker container used in the official Kubernetes builds. This simplifies the steps, but means that you cannot build under Windows Subsystem for Linux (WSL). 
+There are two easy ways to quickly start building and using Kubernetes on Windows, from source:
+
+- The https://github.com/kubernetes-sigs/sig-windows-dev-tools/ project gives you an onramp for testing and building Kubernetes in a fully automatic fashion, with a Windows node you can test, ssh into, and hack around in.
+- Manually using the Kubernetes build scripts (must be done in a Linux VM with Docker).  This simplifies the steps, but means that you cannot build under Windows Subsystem for Linux (WSL). 
 
 It's best to skim over the [Building Kubernetes](https://github.com/kubernetes/kubernetes/blob/master/build/README.md) guide if you have never built Kubernetes before to get the latest info. These steps are a summary focused on cross-building the Windows node binaries (kubelet & kube-proxy).
 
