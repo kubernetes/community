@@ -3,120 +3,66 @@
 ## Current initiatives
 
 1. What work did the SIG do this year that should be highlighted?
-
-   -
-   -
-   -
-
+   - Lead the transition to hostProcess containers.
+   - Defined the `kubectl node logs` command interface.
+   - Made the developer UX for windows transparent with sig-windows-dev-tools.
+   - Defined windows operational readiness standards.
+   
 2. What initiatives are you working on that aren't being tracked in KEPs?
-
-   -
-   -
-   -
+   - Migration of the windows kube-proxy to KPNG (led by amim).
+   - ...
 
 3. KEP work in 2021 (1.x, 1.y, 1.z):
-
-<!--
-In future, this will be generated from kubernetes/enhancements kep.yaml files
-1. with SIG as owning-sig or in participating-sigs
-2. listing 1.x, 1.y, or 1.z in milestones or in latest-milestone
--->
-
    - Stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
+     - [1122 - windows-csi-support](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1122-windows-csi-support/kep.yaml)
    - Beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
+     - [1981 - Windows Privileged Container Support](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1981-windows-privileged-container-support/README.md)
    - Alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
+     - [2258 - Node service log viewer](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/2258-node-service-log-viewer/README.md)
    - Pre-alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md)
+     - [2578 - Windows Conformance](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/2578-windows-conformance/kep.yaml)
 
 ## Project health
 
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
-
-   -
-   -
-   -
-
+   - csi-proxy and storage: this seems like an underserved area for windows
 2. What metrics/community health stats does your group care about and/or measure?
-
-   -
-   -
-   -
-
+   - n/a
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
-
-   -
-
+   - yes
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
-
-   -
+   - yes
 
 5. Does the group have contributors from multiple companies/affiliations?
-
-   -
+   - yes
 
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
-
-   -
-   -
+   - testing hostProcess implementations on several windows apps
+   - improving our dev tools enviornment to grow the commnunity
+   - hardening the CSI proxy and CSI support ecosystem
+   - performance testing Kuberentes on Windows extensively and publishing results
 
 ## Membership
-
-- Primary slack channel member count:
-- Primary mailing list member count:
-- Primary meeting attendee count (estimated, if needed):
-- Primary meeting participant count (estimated, if needed):
-- Unique reviewers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
-- Unique approvers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
+- Primary slack channel member count: 1507
+- Primary mailing list member count: 188
+- Primary meeting attendee count (estimated, if needed): 10
+- Primary meeting participant count (estimated, if needed): 10
+- Unique reviewers for SIG-owned packages: 6
+- Unique approvers for SIG-owned packages: 4
 
 Include any other ways you measure group membership
 
 ## Subprojects
 
-<!--
-In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
-Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
--->
-
-New in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
-
-Retired in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
-
-Continuing:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+Subprojects for sig-windows are inactive now and all major work happens in the sig-windows channel.
 
 ## Working groups
 
-<!--
-In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
-Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
--->
-
-New in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
-
-Retired in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
-
-Continuing:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+Same as above.
 
 ## Operational
 
@@ -140,4 +86,3 @@ Operational tasks in [sig-governance.md]:
 [sigs.yaml]: https://git.k8s.io/community/sigs.yaml
 [contributor guide]: https://git.k8s.io/community/contributors/guide/README.md
 [devel]: https://git.k8s.io/community/contributors/devel/README.md
-
