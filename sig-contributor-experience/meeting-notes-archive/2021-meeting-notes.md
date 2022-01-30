@@ -1,0 +1,1919 @@
+
+# 2021
+
+## December 8
+
+- Host: Bob Killen
+- Notetaker:
+- Attendees:
+    - Laura Santamaria
+    - Atharva Shinde
+    - Rey Lejano
+    - Xander Grzywinski
+    - Avinesh Tripathi
+    - nigel brown
+    - Pritish
+    - Oshi Gupta
+    - Paris
+    - Debabrata
+    - Chris Short
+    - Sreekaran Srinath
+    - Shrikanta
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [PoP/Rawkode]
+        - Paris still needs to talk to them about taking this project and its docs (preserving) to cncf and out of contribex
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Blocked on kdev migration (still)
+    - Contributor Summit(s) [Bob]
+        - Contributor Summit EU 2022
+            - Need to reserve space by EoY
+                - Do we have a reasonable situation that Kubecon EU will be different from Kubecon NA?
+                - Let’s try to put the registration up by early Jan
+                - Speaker submissions are way down
+                - Should we have “maybe” as an option?
+                    - Yes
+                    - We should have multiple maybe(s) - travel restrictions, etc
+                - Go for 1 or 2 rooms (1 decent sized room, 1 small room)
+            - Looking for lead and need to think about assembling the team Jan 2022
+            - Doc sprint by #sig-docs (a board room will suffice)
+        - Contributor Celebration
+            - On track for next week, please social boost [https://k8s.dev/celebration](https://k8s.dev/celebration)
+            - [Bob] Most of the part is tagging along at this point
+            - It’s structured for impromptu activities. If you want to organize something, hop-in the discord and drop it there.
+            - We should start documenting how Contributor Celebration is organized.
+            - [Paris] We should resume contributor summit and discontinue Contributor Celebration
+    - Steering Election:
+        - 
+    - Other/Discussion:
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Blocked on kdev migration
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Erik/Joel will take on in the new year
+    - Contributor Katacoda setup complete
+        - [https://github.com/kubernetes-sigs/contributor-katacoda](https://github.com/kubernetes-sigs/contributor-katacoda)
+        - [https://katacoda.com/k8scontributors](https://katacoda.com/k8scontributors)
+        - [https://github.com/kubernetes-sigs/contributor-katacoda/pull/1](https://github.com/kubernetes-sigs/contributor-katacoda/pull/1)
+            - This PR needs to be merged for the scenario to work
+    - 
+- Community-management:
+    - Community management lead / lead moderator role
+        - [https://github.com/kubernetes/community/pull/6242#issuecomment-976880828](https://github.com/kubernetes/community/pull/6242#issuecomment-976880828) - need a lgtm here
+        - [group name for new k-dev mailing list](https://github.com/kubernetes/community/issues/6274)
+        - Need to approve the timeline of [Proposal: Migrating k-dev to a managed kubernetes.io account](https://github.com/kubernetes/community/issues/5877)
+        - [Post migration before go-live: kdev mailing list](https://github.com/kubernetes/community/issues/6275)
+    - Youtube stuff
+        - We need to figure out the zoom log in
+    - Kdev migration - paris
+        - Plan and timeline approved?
+        - Name
+- Devstats [Bob]
+    - 
+- Marketing [Kaslin/Chris]
+    - 
+- Contributor-documentation:
+    - Contributor Guide [Bob]
+        - Erik/Joel will be starting work on revamping the contributor guide in Q1 2022
+    - Developer Guide [Erik/Joel]
+        - Erik/Joel will be working on this after the Contributor Guide and Workshop are complete. Working backwards from the devel guide audit late last year
+    - Contributor Site [Bob]
+        - **HELP WANTED:** someone with go, regex, markdown and bash experience to rewrite bash script that handles the way content is ingested on the contributor site.
+        - Issue: [https://github.com/kubernetes/contributor-site/issues/93](https://github.com/kubernetes/contributor-site/issues/93)
+        - WIP PR: [https://github.com/kubernetes/contributor-site/pull/223](https://github.com/kubernetes/contributor-site/pull/223)
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - EasyCLA rollout delayed until 2022
+    - Dec 23rd meeting cancelled; see you all in new year
+    - Kubernetes-nightly GitHub org used for publishing bot to be added under officially managed GitHub orgs
+- Slack-infra [Jeefy]:
+    - 
+- Open Mic/Discussion
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+    - 
+
+## November 10th
+
+- Host: Bob Killen
+- Notetaker: Rey Lejano, Josh Berkus
+- Attendees:
+    - Nigel Brown
+    - Josh Berkus
+    - Chris Short
+    - Rey Lejano
+    - Paris Pittman
+    - Debabrata
+    - Bhargav Krishna
+    - Kendall Nelson
+    - Paris Pittman
+    - Purneswar Prasad
+    - Bhargav Krishna
+    - Atharva Shinde
+    - Pranshu Srivastava
+    - Sandipan Panda
+    - Kaslin Fields
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - [Bob] Blocked until mailing list issues are sorted out, once mailing list issues are sorted then we’ll start up again
+    - Contributor Summit(s) [Bob]
+        - Bob will be stepping in to lead the summit
+        - [Bob] Plan is still to use Discord, use what we learned last year to make it smoother/easier this time around. We’ll get the site up relatively soon
+        - [Chris] Will the scope be tighter?
+        - [Bob] Will do the bakeoff and art (Josh to organize)
+        - [Rey] Rey, Cody, Mars, Purneswar are working on the awards
+        - [Josh] Starting an artist group for Kubernetes, new Slack channel called [‘Krafternetes’](https://kubernetes.slack.com/archives/C02LM67B3GA), this gives us a pool of people to sign up for things like designing an awards plaque
+        - [Bob] Last year, took till June to send out awards and Canada was the hardest. May use KubeCon Valencia to distribute awards
+        - [Paris] DevOps party games will contribute
+        - [Bob] Jack Box games allows you to do personal questions
+        - [Bob] Meeting invite for Celebration went out on Monday and we’ll use that as the main touchpoint
+    - Steering Election:
+        - [Josh] Steering election is over. Retro is still being scheduled. Probably next Thursday then will share it with Steering. One thing that came out is a technical to-do list that should be fixed in the platform
+        - [Bob] Dawn wrote a script that will scrape GitHubs and commits to get the emails of the voters
+        - [Josh] Link to the election retro[https://docs.google.com/document/d/1edqfsSNk_p746PcXlbHTJa8ZHNlnw3QEqNPzlVDJmUc/edit?usp=sharing](https://docs.google.com/document/d/1edqfsSNk_p746PcXlbHTJa8ZHNlnw3QEqNPzlVDJmUc/edit?usp=sharing)
+        - [Josh] Need to define roles
+    - Other/Discussion:
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Blocked on kdev migration - same as community meeting
+            - https://github.com/kubernetes/community/issues/5877
+        - [Bob] Need to have a k-dev admin to create this
+        - [Paris] Will start on this today
+        - [Josh] Biggest thing is to change permissions on the documents. Need to blast out to all the SIGs
+        - [Paris] Will get a timeline on an issue: first tell the leads for a heads up about the docs, then an email to k-dev, then continue on
+        - [Bob] Do this after the 1.23 release (Dec 7)
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - [Bob] The contract is done for hiring the tech writers, PO is cut. Hopefully content will be produced soon and updating the Contributor Guide. We can engage more directly when the PO is done
+- Community-management:
+    - [Bob] YouTube Admin responsibilities
+        - [Paris] Has 4 mentees ready to go , but have not heard from current admins about roadmap (Chris is a YT admin and can help). Need to share the load more and think of the automation.
+            - [Bob] Even if we solve importing of videos, need to publish with correct date and correct name for each of those and that takes the longest
+            - [Chris] Agrees that it is the longest process of updating and uploading to YT
+            - [Bob] All SIG leads need to make sure all meetings are named correctly
+            - [Josh] Can we quickly automate uploads (with wrong name and categorization) - yes from Paris. Then have folks rename and categorize videos after
+            - [Paris] Still have a pipeline issue (using Splain, third-party exporter) and a human issue
+            - [Paris] Need an ok from the admins to onboard mentees - yes from Chris and Bob
+            - [Paris] It’s a trusted role, have to be cautious with deletions since they’re permanent
+            - [Bob] Some sensitive things can be uploaded so we state that it’ll be at least 24 hours until a video is uploaded for videos to be sanitized
+            - [Chris] We need more folks for marketing
+                - [Kaslin] We have a good number of folks, but need clear shadowing roles/processes
+            - [Paris] Broadcast to k-dev
+            - [Josh] Bring it up to the mentoring session, there are a lot of mentees wanting an opportunity
+            - [Chris] Marketing meeting is on Fridays at 11am Eastern
+        - Need to get a meeting with all admins - only mentees responded to the doodle
+        - [https://doodle.com/poll/c88mdse773ruxi7z?utm_source=poll&utm_medium=link](https://doodle.com/poll/c88mdse773ruxi7z?utm_source=poll&utm_medium=link)
+        - [Nigel] Prior art for automation
+            - [https://github.com/Welltory/Zoom2Youtube](https://github.com/Welltory/Zoom2Youtube)
+            - [https://github.com/marketlytics/zoom-youtube-integration](https://github.com/marketlytics/zoom-youtube-integration)
+            - [https://marketplace.zoom.us/apps/WPKzwuoLQDuj_gPs68AQxw](https://marketplace.zoom.us/apps/WPKzwuoLQDuj_gPs68AQxw)
+- Marketing [Kaslin/Chris]
+    - Discussion/Update
+    - [Kaslin] Matt is stepping out of his role, then revamping roles to have a leadership council. Chris, Kaslin, Jason, Kunal will be the council. PR is in to update and define the roles. Part of that is to create a shadowing program.
+    - [Chris] Doing a lot of work to increase discoverability of kubernetes.dev
+    Rey and Chris created a few PRs
+    Still trying to get access to search console
+- Contributor-documentation:
+    - Contributor Guide [Bob]
+    - Developer Guide [Erik/Joel]
+    - Contributor Site [Bob]
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - Discussion/Update:
+    - Big issues with EasyCLA, which Bob is working on.
+        - Hoping to switch after 1.23
+        - Technical issues have largely been resolved
+        - Can't do dual-system, will have to cut over entirely
+        - Still have limitations on the LF side for having multiple admins; currently only Bob and Aaron.
+    - Sandipan brought up the hyperlinks issue: [https://github.com/kubernetes/community/issues/5994](https://github.com/kubernetes/community/issues/5994)
+    - Atharva volunteered to help with GH automation.
+        - Contributor Marketing’s [tweets repo](https://github.com/kubernetes-sigs/contributor-tweets) needs help
+            - Setting up a scheduling system for tweets
+            - Creating auto-pr’s for k-dev emails
+            - Creating auto-pr’s for blog posts
+    - (missed 5 min of discussion because notes were frozen)
+- Slack-infra [Jeefy]:
+    - Discussion/Update
+- Open Mic/Discussion
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+    - [deba] [https://github.com/kubernetes/community/issues/6003](https://github.com/kubernetes/community/issues/6003)
+        - Need to open a new repository
+        - Need a SIG to take ownership
+        - Try out this [https://www.katacoda.com/debanitrkl](https://www.katacoda.com/debanitrkl) it’s the scenario
+        - Ready for upstream developers
+    - [paris] [https://github.com/kubernetes/community/issues/6200](https://github.com/kubernetes/community/issues/6200)
+        - want to survey folks who have named roles
+        - will try to get ready for the celebration
+        - Paris to get started on that this week
+- [Kaslin] Contributor Celebration
+    - End of year bug bash idea from past meeting?
+    - Also, maybe: master-->main switch?
+        - Blocker: must be an admin to actually do that.
+        - Goal is to have all repos on main by end of year
+        - May not be able to push this along side doc re-attribution effort
+        - just list it as a bug bash item?
+- [Josh] Archiving the notes
+
+## 
+
+## October 27th
+
+- Host: Alison
+- Notetaker:
+- Attendees:
+    - Bob Killen
+    - Debabrata Panigrahi
+    - Sandipan Panda
+    - Madhav Jivrajani
+    - Kaslin Fields
+    - Alison
+    - Pritish Samal
+    - Laura Santamaria (late!)
+    - Chris Short
+    - Purneswar Prasad
+    - Naren (First time Attendee 👋🎉)
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [PoP/Rawkode]
+        - Things are going well
+        - Potentially looking for other people to help
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Discussion yet to be finished
+        - Still coming up with KubeCon NA
+        - We’ll punt to next year so we can focus on the mailing list migration.
+        - Do we have a discussion about the whole mailing list migration agenda?
+
+> To be added below.
+> 
+- Contributor Summit(s) [Bob]
+    - We need to archive the contributor summit website
+        - Will be a pretty good GFI(good-first-issue) - Eg: MD links addition
+        - Ex. PR - [https://github.com/kubernetes/contributor-site/pull/196](https://github.com/kubernetes/contributor-site/pull/196)
+- Contributor celebration:
+    - We’ve to plan the kickoff contributor celebration?
+    - Emails need to go out
+    - Alison is leading.
+    - Will kick off next week
+    - Shadows and more help welcome and encouraged
+    - Josh in for food and craft shenanigans
+    - Lots of hand raises for activities
+    - Need to get awards going ASAP
+    - Will be on Discord
+    - TODO: Alison to define shadowing
+- Steering Election:
+    - Josh: We’re in the middle of the voting period which closes on Nov 4
+    - Ability for voter exceptions closed friday
+    - Think of creative ways to get the word out to eligible contributors that they need to vote
+        - 160 ballots - exactly half of our target
+        - We haven’t used the slack bot to send the text in all channels
+        - Emailing all the sig mailing lists
+        - A sort of video or something to advertise steering elections
+        - Since there are a lot of companies that have employees as contributors to k8s, can we send out mail through them? - It’s already done (Eg: Redhat, Google, Vmware)
+        - The election email address can apparently send out emails; some work needs to be done to set that up to reach SIG mailing lists without getting a ton of notifications
+        - 
+    - Other/Discussion:
+        - APAC coordinator meeting - that meeting has been canceled for a while; there was a coordinated sprint for a different APAC initiative (the blog, I think), but that sprint has finished
+- Mentoring:
+    - Meet Our Contributors [Paris]
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - Currently collecting the mid-term evaluations of the mentees
+        - Virtual mentees showcase - those who have successfully graduated from LFX this year or the year before. [IDEA]
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Tech writers are working on it
+- Community-management:
+    - K8s dev migration
+    - Contributor documentation - rotated around lifecycle periods - SIG Docs is refusing to redirect contributor docs because of the need for localization (translation to other languages)
+        - The contributor site does support localization, just no one has done it yet.
+        - Need someone to start working on that localization
+            - [https://github.com/kubernetes/contributor-site/issues/167](https://github.com/kubernetes/contributor-site/issues/167)
+        - Needs links from other sites (SEO work, too) to get the website there
+        - Great first-time contributor work ;) Need familiarity with Hugo
+            - [https://github.com/kubernetes/contributor-site/issues/202](https://github.com/kubernetes/contributor-site/issues/202)
+            - Maybe falls under the Marketing Team’s purview?
+        - Bob: Localized contributor cheatsheet
+- Marketing [Matt/Kaslin]
+    - Had to cancel last week meeting - Several senior contributors were out or occupied
+    - Next meeting will focus on role updates
+        - Shadowing process for helping new folks grow into those roles
+    - Steering Election
+        - Have released at least one tweet, another 2 coming this week.
+        - More important - Slack bot. We’ll work on getting a notice sent out to all SIGs via the Slack bot.
+    - Contrib Site SEO
+        - Should Marketing Team take this on?
+        - [https://github.com/kubernetes/contributor-site/issues/202](https://github.com/kubernetes/contributor-site/issues/202)
+- Contributor-documentation:
+    - Contributor Guide [Bob]
+    - Developer Guide [Erik/Joel]
+    - Contributor Site [Bob]
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - There’s a meeting tomorrow - Easy CLA
+    - There’s an open PR by Nikhita - rotating of membership coordinators
+        - [https://github.com/kubernetes/community/pull/6185](https://github.com/kubernetes/community/pull/6185)
+- Slack-infra [Jeefy]:
+    - No updates
+- Open Mic/Discussion
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+    - [Deba][https://github.com/kubernetes/community/issues/5576#issuecomment-949753480](https://github.com/kubernetes/community/issues/5576#issuecomment-949753480)
+    - [All] Mailing list migration
+        - Migrating k-dev to a managed kubernetes.io account : [Issue](https://github.com/kubernetes/community/issues/5877)
+        - The big thing is teasing out the comms schedule
+        - Aaron was working on GSuite automation; could migrate all docs to each SIGs Google Drive to make permissions easier
+        - Also should migrate all SIG mailing lists (Gdrive doesn’t require mailing list migration)
+
+## September 29th
+
+- Host: Bob Killen
+- Notetaker:
+- Attendees:
+    - Pritish Samal
+    - Arnaud Meukam
+    - Josh Berkus
+    - Alison Downdey
+    - Chris Short
+    - Ihor Dvorestskyi
+    - Avinesh Tripathi
+    - Debabrata Panigrahi
+    - Anubhav Vardhan
+    - David Espejo
+    - Madhav Jivrajani
+    - Kaslin Fields
+    - Sandipan Panda
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [PoP/Rawkode]
+        - Still going well 👍
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Solve mailing list problem then we can revisit
+        - AI: find issue in k/community and push to discuss
+    - Contributor Summit(s) [Bob]
+        - AI: kick off the end of year celebration
+    - Steering Election: [Alison/Josh/Noah]
+        - Comms have been sent out
+        - Delay of 1 week due to technical issues
+    - Other/Discussion:
+- Mentoring:
+    - Meet Our Contributors [Paris]
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - No current updates
+        - Continue to be blocked on mentor time, can bring up in chair and TL meeting
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Going to docs sprint at kubecon to help with that
+    - Going to move mentoring meeting to a slack meeting
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+- Devstats [Bob]
+- Marketing [Matt/Kaslin]
+    - Meet our Contributors blog series ongoing and doing well
+- Contributor-documentation:
+    - Contributor Guide [Bob]
+    - Developer Guide [Erik/Joel]
+    - Contributor Site [Bob]
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - Discussion/Update:
+- Slack-infra [Josh]:
+    - Nothing exciting this week.
+    - Contingency chat: Ansible project folks have picked Matrix as their new chat platform for community management reasons. Would be good to find out why they chose it over Discord. Josh will ask.
+- Open Mic/Discussion
+    - [arnaud] Adoption of [https://cs.k8s.io](https://cs.k8s.io/) : [https://github.com/kubernetes/k8s.io/issues/2182](https://github.com/kubernetes/k8s.io/issues/2182)
+        - Current status : running on a Equinix baremetal instance: [https://github.com/cncf/cluster/issues/67](https://github.com/cncf/cluster/issues/67)
+        - Working on migration to community-owned infrastructure: [https://github.com/kubernetes/k8s.io/pull/2513](https://github.com/kubernetes/k8s.io/pull/2513)
+        - If moving to community-owned infra, which SIG should own it? Contribex or Infra?
+            - Bob things Infra, but need to check with Nikita/Christoph
+        - If we give up this Equinix server, we should use it for something else.
+    - [David E] Where to start to help with [#222](https://github.com/kubernetes/contributor-site/pull/222)?
+    - [paris] should elections be its own subproject?
+        - Needs an area/label now
+        - Has its own tooling
+        - Has its own documentation
+        - Putting a pin in this until after the steering election
+    - [paris] should we have a moderator and admin
+    - [paris] should we have some kind of leads coordinator role in contribex?
+        - Bob and i currently do a lot of this right now
+        - Run monthly sig chair and tl meeting
+
+## 
+
+## September 15th
+
+- Host: Alison
+- Notetaker: Bob
+- Attendees:
+    - Avinesh Tripathi
+    - Debabrata
+    - Laura Santamaria
+    - Kendall Nelson
+    - Alison
+    - Bob
+    - Paris
+    - Lakshya
+    - Neo for Adena Shao
+    - Sandipan Panda
+    - David Espejo
+    - Shivam Tyagi
+    - Kaslin Fields
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [PoP/Rawkode]
+        - Discuss with Pop/Rawkode about potentially moving Office Hours over to the CNCF
+        - Follow up with an item on our mailing list
+        - AI: Paris to reach out about it
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - There have been issues with conflicting zoom meeting IDs and people winding up in different locations.
+        - Shortlink routes to a different zoom link, old meeting ID has a different zoom ID
+        - Goal to sort out current zoom ID issues before bringing up restarting the community meeting again
+        - [https://zoom.us/j/91768411674?pwd=MVpqL0ZHbGFYMnpXVXpybTBvalFRQT09](https://zoom.us/j/91768411674?pwd=MVpqL0ZHbGFYMnpXVXpybTBvalFRQT09) - this is the original zoom link
+        - Rethink the community meeting, maybe a newsletter - repurpose lwkd and send it to kdev every week
+        - Use the time at kubecon to bust through a lot of the open items
+        - September will not be going on this round because of all of the Zoom stuff
+    - Contributor Summit(s) [Bob]
+        - Summit now more of a get together with a social in the evening
+        - There still will be room for people to come chill and hang out for a day (and work on stuff together)
+        - No formal content
+        - Need to start planning the end of year Virtual Contributor Celebration
+            - Master to main rename party
+    - Steering Election:
+        - [PR opened to add election info](https://github.com/kubernetes/community/pull/5986)
+        - Steering discussion going on about changing start date for SC members to accommodate KubeCon date changes
+    - Other/Discussion:
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Dependency - Need a calendar invite before can staff it, so no cal invites until kdev migration
+        - Ready to staff it
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - No updates
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - No updates
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+- Devstats [Lauri]
+    - No updates
+- Marketing [Matt/Kaslin]
+    - Discussion/Update
+        - Quite a few new folks
+        - Group working on Meet Our Contributors APAC (as a blog series)
+        - Tweets going out around annual survey
+    - Would be great to get more automation built for marketing team (CTA to get put together)
+    - Also *really* need zoom to youtube automation (discussion down under open mic)
+- Contributor-documentation:
+    - Contributor Guide [Bob]
+        - No updates
+    - Developer Guide [Erik/Joel]
+        - No updates
+    - Contributor Site [Bob]
+        - No updates
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - EasyCLA
+        - Doing a 2nd round of testing to see if enabling it is a blocker or not as a failed check. If yes, there will need to be more coordination around a cut over date. If no, can soft roll it out and then flip over to it later.
+- Slack-infra [Jeefy]:
+    - Discussion/Update
+    - No update
+- Open Mic/Discussion
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+    - Week-long Tech Debt Community Hackathon idea
+        - Part of contributor celebration (lead up to it)?
+        - Big way for new folks to join
+        - End of year would be great, no pressure to get into release, etc.
+        - Frame as Tech Debt Burndown, SIG leads likely will be more interested in
+            - Good signal to big cloud providers/companies to encourage no-meeting weeks
+        - 
+
+## August 18th
+
+- Host:
+- Notetaker:
+- Attendees:
+    - Madhav Jivrajani
+    - Vedant Kakde
+    - Dawn Foster
+    - Kim Schlesinger
+    - Sahdev Zala
+    - Arnaud Meukam
+    - Josh Berkus
+    - Madhi Chaker
+    - Nigel
+    - Kaslin Fields
+    - Debabrata
+    - Rodolfo Martínez
+    - Ihor
+    - Pritish Samal
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [PoP/Rawkode]
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+    - Contributor Summit(s) [Bob]
+    - Steering Election[]
+        - Need to propose committee to steering
+    - Other/Discussion:
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Apac focused meet our contributors - blog post style
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+- Devstats [Lauri]
+- Marketing [Matt/Kaslin]
+    - Discussion/Update
+    - Great collab in our last meeting around the Meet Our Contributors APAC effort
+    - 2 SIG-Profile blog posts in progress
+    - Comms efforts ongoing/in planning for KubeCon, Contrib Summit, and Steering Committee Elections
+        - Keeping an eye on EasyCLA migration
+- Contributor-documentation:
+    - Contributor Guide [Bob]
+    - Developer Guide [Erik/Joel]
+    - Contributor Site [Bob]
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - Discussion/Update:
+- Slack-infra [Jeefy]:
+    - Discussion/Update
+- Open Mic/Discussion
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+    - Josh Berkus - Steering Elections. We have a committee. Josh, Alison, and Noah, with Arnaud acting as liaison to Infra for use of Electa (for the first time).
+        - Need to set an election calendar and get things going.
+    - [https://github.com/kubernetes-sigs/contributor-tweets/issues/59](https://github.com/kubernetes-sigs/contributor-tweets/issues/59) [Debabrata]
+        - The K8sContributors tweet automation is not able to create tweet threads (as far as Kaslin is aware). Such a usecase would have to be addressed manually. But please reach out and tell us more @contributor-comms on Slack or in our meeting!
+    - Remove kind/design label: https://github.com/kubernetes/community/issues/5641
+
+## August 4th
+
+- Host: Bob
+- Notetaker: Laura (if no one else wants it)
+- Attendees:
+    - Laura Santamaria
+    - Kim Schlesinger
+    - Madhav Jivrajani
+    - Arnaud Meukam
+    - Josh Berkus
+    - Bob Killen
+    - Ihor Dvoretskyi
+    - Alison Dowdney
+    - Kim Schlesigner
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [POP/Rawkode]
+        - Seems to be going well?
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - August is going to be the release retro
+        - There was another discussion about whether the community meeting is worth persisting with the current model. Do we want to discuss that here?
+            - Biggest problem is updating people’s calendars
+            - We can export k-dev now! So should make a managed account easier to avoid the API limits :) We’re working on that. Comms is now the big thing. We need to define a plan for cutover. Laura will talk with comms to figure that plan out.
+    - Contributor Summit(s) [Bob]
+        - Going well!
+        - Reg form is live. Comms and Website updates are incoming
+        - Original plan/idea is still being followed.
+        - Next big decision: Where to host social
+        - Separate meeting on Mondays (you will get the invite if you’re on the contribex mailing list--join to get it added, or ask in the Slack channel)
+        - SIG meet and greet spaces are available on Wednesday at some point.
+    - Steering Election [Josh]
+        - SC Elections: need EC members (first step)
+            - Normally 3-person election committee, all from different employers
+            - Josh: tech implementation
+                - Using Electo
+            - ??: Voter management
+                - Maintaining list
+            - ??: Comms
+                - Sending out messages
+                - Will reach out to the marketing team and ask (note can’t be Broberg or Short because they work at the same company as Josh)
+            - If you’re interested in joining the committee, let Josh and Bob know
+    - Other/Discussion:
+        - N/A
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Now have Streamyard :tada:
+        - Still need calendars to get figured out, like with the community meeting
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - Kicking off the fall cycle soon (LFX mentoring)
+            - [https://github.com/cncf/mentoring/tree/main/lfx-mentorship/2021/03-Fall](https://github.com/cncf/mentoring/tree/main/lfx-mentorship/2021/03-Fall)
+            - Dates are Sept 1 to end of Nov
+            - Call for Projects going out soon
+        - No updates for GSOC. End of program is end of August. 17 mentees this round.
+            - Last year was ~18-19
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) Course [Alison]
+        - Good chat about everything on Monday
+        - Potentially getting tech writers from budget from Google (yay help!)
+        - Still need to set up page layout, then need to translate current stuff to guide format (currently in talks and slides format)
+        - There are a bunch of open issues in GitHub (prefix: NCW2). Jump on in! Mentoring meeting is on the SIG Contribex calendar.
+        - This upcoming Summit in North America isn’t running a New Contributor Workshop, as a side note (and likely won’t do one at KubeCon again due to low usefulness/amount of people actually sticking around. Seems to be better with local Meetups).
+        - As a replacement, see SIG Meet & Greet above in the contributor summit section.
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+        - Several things on the docket:
+            - Contributor Summit stuff
+            - Steering election reminder
+            - General discussion around making tech leads mandatory along with terms and term limits
+            - K-dev migration! Send it to *everything*
+                - We need to set a timeframe. Set it to after the steering election? But calendar issues are acute right now.
+                - If we do it now, we would need to start comms right now and do the cutover in August
+                - We’d do a straight cutover. And we can remove bouncing emails, thankfully.
+                - Elections wouldn’t be too affected *other than* permissions on Google Docs.
+                - Moderation queues would be a big deal to get started. Every single new person posting would need to be approved, which would be everyone on a new Google Group.
+                - Need a minimum of 5-6 people
+                - We’d also need to block posting to that list at some point to help move over to the new list.
+                - Biggest thing is coordinating the comms. We’re migrating, and k-dev will be first.
+                - We can create the list now and start moving over docs and all while still in the initial comms phase.
+                - How about migrating sig-contribex first? Or having a starting list to move to catch things...
+                - Note that this migration is the Google Workspace Automation issue on GitHub
+                - We also can do it for any list; the person who exports the list has to have admin access to the list.
+                - Offer: k8s-infra as a guinea pig. Especially since the working group is becoming a SIG.
+                - TODO: Recruit Team
+                - TODO: Draft comms
+                - TODO: Test with k8s-infra/contribex
+                - TODO: Consolidate to one GitHub issue
+- Devstats [Lauri]
+    - No updates
+- Marketing [Matt/Kaslin]
+    - Discussion/Update
+    - Quite a bit of work coming up!
+    - Lots of asks moved over to the marketing agenda (thanks, Kaslin!)
+    - Couple of articles in progress (SIG-Node and Contributor Summit)
+    - Comms for registration and contributor summit stuff
+    - Bart Farrell is doing great work with a video series from contributors
+    - If you need help, ping the group at contributor-comms on Slack, join the meetings, or ping Kaslin!
+- Contributor-documentation:
+    - Contributor Guide [Bob]
+        - No updates
+    - Developer Guide [Erik/Joel]
+        - No updates
+    - Contributor Site [Bob]
+        - No updates
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - EasyCLA Migration
+        - Biggest thing. We still want to try for next week, but the PR to add the support to the CI is still open. Has not been tested yet. A lot of back and forth going on.
+            - [https://github.com/kubernetes/test-infra/pull/22742](https://github.com/kubernetes/test-infra/pull/22742) (as soon as that merges, test so we can get it going :) )
+            - Aaron is watching it
+            - Theoretically, seamless migration.
+            - Will loop in comms when we’re ready to launch
+    - Recently, there are a lot of good first issues, but a lot of people aren’t giving enough context to make them good first issues. So a lot of people who pick up an issue are stuck and need help. Madhav has been trying to help and pinging authors for context. Has there been any discussion to have better prompts or otherwise encourage better context on the good-first-issue labels (versus just tagging it and not having enough context)?
+        - Not really yet, but good question.
+        - Anyone can tag. Probably would be good to send a reminder out.
+        - Probably no better way to do it than the one at a time situation, unfortunately. The original author or someone with strong knowledge of the code needs to do it.
+        - If you do it, feel free to note that you’re doing it on behalf of SIG Contributor Experience. And feel free to add the context if you already know. Be sure to ping on GitHub and Slack both.
+        - What about a good-first-issue template? Checklists and everything. Might be hard to create across all of the repos, but yes
+        - Note that a lot of issues start out as regular issues and then get flagged later.
+        - A comment from a bot would probably help.
+        - Contributor comms would be helpful here, too :) Kaslin added to the marketing agenda
+- Slack-infra [Jeefy]:
+    - Discussion/Update
+        - Huddles are awful. The end.
+        - Josh disabled a bunch and is working through them all.
+- Open Mic/Discussion
+    - [arnaud] domain validation for Search Console.
+        - Last year, we were talking about this. Did we do this, or is it still needed?
+        - Project was to improve the SEO of the .io website.
+        - Arnaud has access to the console now (yay)
+        - ~Probably need to reach out to docs~
+        - We actually mean the shortcut links, so ignore some of the above comments. We’re talking about k8s.io
+        - There is a problem here since we use so many short links
+        - We can add text records in the management stuff.
+        - Arnaud’s got this :) No big rush, though.
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+
+## 
+
+## July 21st
+
+- Host: Alison
+- Notetaker:
+- Attendees:
+    - Arnaud Meukam
+    - Kim Schlesinger
+    - Josh Berkus
+    - Christoph Blecker
+    - Sahdev Zala
+    - Paris Pittman
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [Jorge]
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Do we have a template / structure to the agenda -
+            - Agenda template for moderator
+    - Contributor Summit(s) [Bob]
+        - 
+    - Steering Election[]
+    - Other/Discussion:
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Streamyard is now available
+        - Just need calendar and streamyard
+        - Follow up on slack with Bob and Josh
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Got the pr into the community/.mentoring
+        - Need t o get pr into community website
+        - 
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+    - Couple things to send out next week when reg is announced for CS
+    - Can sponsor non org members to go to CS
+    - Half day mini summits like sig storage ones back in day, can do that just got to let us now
+- Devstats [Lauri]
+- Marketing [Matt/Kaslin]
+    - Discussion/Update
+- Contributor-documentation:
+    - Contributor Guide [Bob]
+    - Developer Guide [Erik/Joel]
+    - Contributor Site [Bob]
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - Discussion/Update:
+    - Easy cla support for prow
+    - Once feedback is addredssed we can go to second round of testing
+    - Monthly github pmanagement meeting is tomorrow
+- Slack-infra [Jeefy]:
+    - Discussion/Update
+- Open Mic/Discussion
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+    - 1password
+    - Community management group mentoring
+        - Bring up new members in the sig to help out
+
+## July 7th Meeting
+
+- Host:
+- Notetaker:
+- Attendees:
+    - Arsh Sharma
+    - Bob Killen
+    - Chris Short
+    - Kendall Nelson
+    - Laura Santamaria
+    - Alison Dowdney
+    - Cody Crudgington (LATE)
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Contributor-documentation:
+    - Contributor Guide [Bob]
+    - Developer Guide [Erik/Joel]
+    - Contributor Site [Bob]
+    - Content ingestion script [@arsh] - second regex detecting https links too now, how to generate the actual url?
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Still waiting on the Streamyard licensing to get completed for MOC
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - [https://github.com/kubernetes/community/pull/5775](https://github.com/kubernetes/community/pull/5775) needs lgtm
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+    - [Community Health Metrics](https://docs.google.com/spreadsheets/d/14GU565kurmyXpj3cr2klwyp2QfkS207ENrIecV9rwak/edit?usp=sharing)
+- Devstats [Lauri]
+- Marketing [Matt/Kaslin]
+    - Discussion/Update
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - Discussion/Update:
+- Slack-infra [Jeefy]:
+    - Discussion/Update
+- Events:
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Open PR: [https://github.com/kubernetes/community/pull/5845](https://github.com/kubernetes/community/pull/5845)
+        - Issue regarding migrating k-dev
+    - Contributor Summit(s) [Bob]
+    - Steering Election[]
+        - Need to kick off process sooner rather than later
+    - Other/Discussion:
+
+## June 30th Slack Meeting
+
+- Mentoring
+    - NCW at KCD Bangalore had over 75 attendees and 50+ people submitted their first PRs in contributor-playground!
+    - Still need to get streamyard licensed for MoC
+- Events
+    - Community Meeting
+        - Still hunting for July's host; call is out on Slack in #sig-contribex and #kubernetes-contributors (looking for another engaged host for the first handful of events, which is why this isn't an email out to k-dev just yet).
+            - Paris volunteered as backup
+        - Calendars are still a sore point
+        - Some tentative topics are on the docket already for July
+        - Still evaluating the format as our attendance has been low in comparison; as a reminder/note, we're thinking a lot of the problem is Zoom fatigue more than the format not working
+    - Summit planning kicking off soon separately from main meeting
+- Community Management
+    - Kick off meeting with 1password scheduled, will begin plan of rollout soon
+- GitHub Management
+    - [Retain LGTM through squash](https://github.com/kubernetes/test-infra/pull/22663)
+    - [EasyCLA Migration](https://github.com/kubernetes/org/issues/2778)
+        - LF has been provided a dump of org members and anyone that has opened a PR within the past year to validate cla status
+        - [WIP PR adding support for the different CLA context to the prow plugin](https://github.com/kubernetes/test-infra/pull/22742)
+        - Assuming both the groups and plugin can be done and tested, current target time frame is the week of August 9th
+- Slack Infra
+    - Slack Moderator Plugin went into CrashLoopBackOff
+        - K8s infra working on monitoring solution
+
+## 
+
+## June 23rd Meeting
+
+- Host: Alison/Bob
+- Notetaker: Laura
+- Attendees:
+    - Kendall Nelson (diablo_rojo)
+    - Laura Santamaria
+    - Kaslin Fields
+    - Alison Dowdney
+    - Josh Berkus
+    - Ihor Dvoretskyi
+    - Bob AKA Kubernetes Zoom
+    - Arsh Sharma
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [Jorge]
+        - No updates? See notes on streaming
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Updates to guide, website, etc (open PRs)
+        - Concern about a lot of work put on the hosts again. How can we get away from the requirement of the hosts needing to be majorly plugged in?
+        - Also, count? ~30 people on the call. Publicity blitz didn't really get the turnout we'd like to see. There were no good discussions or questions.
+        - Has the new format experiment failed?
+            - Hard to get people to come when it's optional right now, also hard with calendar invite not being able to go out.
+            - It probably will be a full year before the Zoom burnout ends.
+            - Let's start with the calendar invite problem? We've basically lost the constant communication channel and people live by their calendars.
+            - We really need to migrate k-dev to a managed kubernetes.io address… This is a lot of work to do.
+                - KEP?
+                - Might be a great first issue set for updating docs and such across the project. Hackday! The Google docs will possibly be the hardest part.
+                - TODO: Create an issue and start talking about all of the things that need to happen for this migration.
+    - Contributor Summit(s) [Bob/Deb]
+        - Graphics finalization
+            - Survey Monkey. Support request was sent in because the survey results were by number that didn't match the image… We're still waiting to hear back from SM Support (Ihor)
+            - Clear winner is #2, but we don't know what 2 is. Deb will vote and we can see which one incremented by one.
+        - Timeline for registration to launch?
+            - We should start scheduling a meeting and have a team together to plan.
+            - Recruit the full team :D
+            - Then Doodle for a date. Guess probably is end of July/early August.
+            - Then we can start programming
+        - Reception search
+            - Deb's working on venue search now
+        - Video of space at venue will be coming in a month or so.
+        - Result from online v in-person. 20% (24) in-person no matter restrictions; 26% (32) if company restrictions lifted, 18% (22) in person if international ok. 28% (34) virtually. 2% (3) don't plan to attend.
+            - Guess: ~200. Think ⅔ of folks we're used to.
+            - Google has explicitly allowed KubeCon
+            - RH individual exception requests
+            - Little startups mainly are as you feel comfortable
+        - If these numbers flip because of variants or something, we're already planning for hybrid, so *should* be an easy switch for content. The things that will change are food/beverage, giveaways, etc.
+    - Steering Election [Josh]
+        - Get Electo properly packaged for Kubernetes infrastructure.
+            - Could host on Equinix Metal cluster…
+            - Go to test infra team? WG-k8s-infra?
+            - There's a lot of options
+            - Managed Google MySQL instance
+                - This is ~$75/mo
+        - Election in September
+        - Announcements not quite yet. Later part of July.
+        - Will pull list of contributors from devstats
+        - Community repo is where election stuff will keep living
+    - Other/Discussion:
+        - Streaming platform (Streamyard)
+            - Update to double-check the login. Once it's paid for, we're good to go.
+            - Can someone log in without creating an account? Can we pass credentials off to fill out finance data as an example?
+                - They'll send an email with a passcode. You can pass that to someone else to login.
+                - Currently set up to the [stream-team@kubernetes.io](mailto:stream-team@kubernetes.io) address
+                - TODO: Ihor will get back to the group on this
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Semi-blocked on Streamyard and calendar issues (see community meeting)
+        - July clashes with US holiday
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - No major updatesl next milestone in a couple weeks
+        - GSOC is in progress, as is LFX Mentoring
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Tidied up the PR and all. Next to update the website PR to remove contributing folder
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+    - The potential k-dev migration and the planning involved!
+        - We want to test switching with contribex. Probably step 1.
+    - Coming up, lots of various small stuff for all of the SIGs (fallout from the annual reports)
+        - We will probably get pinged to help with solving the YouTube uploads, getting meetings scheduled, etc. etc.
+        - Not now, but soon.
+    - Community survey [Josh]
+        - Josh putting graphs together.
+        - Anyone really want to poke around in the data and look for things? Ping Josh.
+        - TODO: Export raw data into csv for the contribex raw results collection
+        - TODO: PII-scrubbed version to get merged to k/community
+- Devstats [Lauri]
+    - There will be ability to filter by SIG and WG labels (issue link)
+- Marketing [Matt/Kaslin]
+    - A few requests coming in through Slack; good to work with the community meeting.
+    - Talking about process, limitations, etc.
+    - How to enable more people is a big conversation, so keep an eye out for that getting shared
+    - Savita from the release team joined after hearing about marketing in the community meeting, and that communication channel is a big win!
+- Contributor-documentation:
+    - Contributor Guide [Bob]
+        - No updates
+    - Developer Guide [Erik/Joel]
+        - No updates
+    - Contributor Site [Bob]
+        - No updates
+        - Two open working things
+            - WIP preview of listing the enhancements on the page ([https://github.com/kubernetes/contributor-site/pull/222](https://github.com/kubernetes/contributor-site/pull/222))
+            - Arsh - Ingestion stuff
+                - Currently can specify in YAML the repo URL and files to copy over. Still stuck on links.
+                - Detecting the links in the files is part of the current line of work.
+                - Next steps for the content ingestion script [@arsh]
+                    - Bash script uses regexes; no issues currently because we haven't imported content that has links in code blocks.
+                    - Next step should be looking for libraries that can pass links in markdown. Laura will hunt.
+                    - Goal: Search for links and then get them all corrected, then drop them in the correct location in the repo.
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - Upcoming: Issue in k/org - EasyCLA migration. Original timeframe was after code freeze, but right now, too little time to communicate and test. Now probably headed to the backup date. In short, in the works, but moving back.
+- Slack-infra [Bob/Josh]:
+    - No updates
+- Open Mic/Discussion
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+
+## June 9th Meeting
+
+- Host: Alison
+- Notetaker: Laura
+- Attendees:
+    - Alison Dowdney
+    - Laura Santamaria
+    - Arsh Sharma
+    - Eddie Zaneski
+    - Sahdev Zala
+    - Josh Berkus
+    - Sheetal Joshi
+    - Deb Giles
+    - Bob Killen
+    - Kendall Nelson
+    - Cody Crudgington
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Open Mic/Discussion
+    - Script to ingest external content into the contributor site [#93](https://github.com/kubernetes/contributor-site/issues/93), [Slack thread](https://kubernetes.slack.com/archives/C1TU9EB9S/p1622097259050400) [@arsh]
+        - Context: Current contrib site uses a lot of regex to find and fix links from a bunch of extra repos and sources. We want to replace the regex.
+        - Current plan: First clone the repos and then rename to drop the directories and all to just have the .md info.
+- Where are the rules for renaming the file coming from? Is there anything to keep in mind?
+    - Outside of renaming the files, once you get to updating the links, then you have to do the fuzzy replace of the directory location to where it will exist in Hugo (on the contributor site)
+    - The logs are the data to follow to help understand it.
+- For now is it fine if we follow this structure -> clone, rename, replace links
+    - Yep! Sounds about right. Review happening in a 1:1
+- How would I know the URLs to be used for the links?
+    - This is where the regexes come in, to look for links in the markdown docs. We want to get away from that to use the markdown library to do that (since regex picks up links in codeblocks that we don't want to change - e.g., links to a repo)
+    - Bob will resync with Arsh after he has a moment to go back through the code.
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+- Events:
+    - Office hours [POP]
+        - It is still set to go, that's what we know :)
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - On the to-dos: Update the site page to mirror current process. Hope to get that PR in this week.
+        - Josh volunteered to host June; happily will take more people signing up for other months!
+        - Eddie's KEP!
+            - [https://github.com/kubernetes/enhancements/pull/2777](https://github.com/kubernetes/enhancements/pull/2777)
+        - TODO - Ping contributor comms to ping all the slack channels (and add that to the hosting guide)
+    - Contributor Summit(s) [Bob/Deb]
+        - Don't forget the poll! Update: 99 people responded so far. Everyone wants something in person; 21 attend no matter what, 28 people if company travel lifted, 19 people attend if international, 26 virtual, 3 not planning on doing so. Only 15 people responded to the late-add question. Generally, people want to attend in person, and some will attend virtual if needed.
+        - Registration released sometime in the next week or two.
+        - Helpful: save the date. Can we get that up?
+            - Yes, but put it on the contributor site to keep everything together.
+            - Graphic options are available (for branding). The contrib site doesn't exactly have a theme, but happy to put up a banner! Watch Slack for options. LA theme
+                - Put it to a vote at the community meeting! Deb will connect with Josh.
+            - Hotel: JW Marriott
+            - TODO: All details to get dropped in Slack so the site can get updated
+        - Next: When should we do this? Day -1, Day 0?
+            - Guess what, the colo events will happen both Monday and Tuesday :uh-oh:
+            - Monday is probably our best bet still (Day -1)
+            - Picking Monday, will disperse on Tuesday.
+            - Will want to look into social activities for Monday night.
+            - Maybe need rooms on Tuesday for a SIG to say they want a bit of time to meet
+        - Maintainer track CFP still TBD
+        - Planning for now will still be part of this meeting until we eventually need to meet separately.
+    - Other/Discussion:
+        - N/A
+- Mentoring:
+    - Meet Our Contributors [Alison]
+        - Didn’t go ahead; event was missing on calendar and other issues like rescheduling the mentoring meeting so it doesn't conflict with MOC.
+        - Need to sort out streamer for this or streamyard (aka who can host July?)
+            - At this point, for streamyard, we're going to get there. Bob's looking up how to make this happen for a shared account. (Also working on 1Password - the OSS version)
+        - Issue for July: First Monday is July 5, which is problematic for US folks.
+            - Need to explore the right day/time for July being different.
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - N/A
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Updated the PR that was in motion :tada: Should be all squared away soon. Please review the PR if you're able/supposed to.
+        - Aiming to get all the bootstrap stuff done by end of the week
+        - Goal: Get Done by KubeCon NA, so October
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+        - Drop an item in there if you need to
+- Devstats [Lauri]
+    - Updated to support individual repos/SIGs stats!
+    - Pick dashboards we want to offer in a curated fashion to SIG/Subproject leads to embed in the contrib site (with interpretation info)
+- Marketing [Matt/Kaslin]
+    - Discussion/Update
+        - Soon, there will be the ability to request tweets by opening an issue (which will do all the automation for the PR for you)
+        - Note that it will not support image embeds as that's a limitation of the tool. Ping contrib-comms manually still for those
+- Contributor-documentation:
+    - Contributor Guide [Bob]
+        - No updates
+    - Developer Guide [Erik/Joel]
+        - No updates
+    - Contributor Site [Bob]
+        - No updates
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - Discussion/Update:
+        - The big thing is the migration to EasyCLA (to replace current CLA bot). CNCF is vetting the bot with a random examination of the contrib base, and also ensure all org members exist in all systems.
+        - Target (soft target): Week after code freeze (when fewest PRs to k8s/k8s). May punt.
+- Slack-infra [Jeefy]:
+    - Discussion/Update
+        - The switch on for the official Slack pronoun field (yay!). Not as much flak/negativity this time around, so that's good.
+- Any other notes?
+    - N/A
+
+## May 26th Meeting
+
+- Host: Bob Killen
+- Notetaker: Josh Berkus
+- Attendees:
+    - Arsh Sharma
+    - Deb Giles
+    - Kaslin Fields
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [Jorge]
+        - Request for funding for streamyard opened
+        - They're trying to get us on an org account, but pricing is unreasonable
+        - Setup for shared account is in progress
+        - Cloudnative.TV folks will carry Office Hours
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Still having calendar issues, Ggroup won't let us send invites
+            - Need to migrate group to k.io owned group
+            - Should we do an opt-in migration? Would remove inactive accounts
+            - Should we audit kdev members? Josh says "no".
+        - Alison hosted (thank you!); Laura needs to finalize the notes and post to the community
+        - Archive of the older notes complete
+        - Looking for the June host if anyone's interested
+            - Josh can host
+    - Contributor Summit(s) [Bob]
+        - Leads would like to host something
+        - Have not notified/solicited anyone yet because most companies have not changed their policy yet
+        - Probably hangout space + unconference sessions
+        - Would really like Hybrid
+            - Streaming + Interaction
+            - or streaming + chat? with dedicated facilitators
+            - Space requirements?
+                - 1 big welcome room/hangout space
+                - smaller unconference rooms -- maybe 4 total
+                    - May release depending on prospective attendance
+                - Docs wants space on monday
+                - Social event? Folks are more interested in the social than they are in the sessions, but don't know what possibilities are until COVID restrictions change June 15.
+                    - Monday night
+                - Won't have numbers until August
+            - Will ALSO do a virtual contributor celebration in December.
+                - Will give contributor awards there
+                - Did star charts there last year, CNCF shipped
+                - Shipping was a serious problem
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Still waiting for streamyard
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - 
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - [Readme](https://github.com/ykakarap/test-infra/blob/approve2/prow/plugins/approve2/approvers/README.md)
+        - [POC PR](https://github.com/kubernetes/test-infra/pull/21398)
+        - Stub documents for NCW
+        - Complete by Kubecon LA?
+- Devstats [Lauri]
+    - Progress on setting up pages for devstats
+- Marketing [Matt/Kaslin]
+    - Working with cloudnative.tv folks
+    - Annual report summary is in progress
+    - Developer story blogs
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - Some changes to github, expect minimal impact for most contributors
+    - Ability to xref PRs between orgs is coming
+    - 
+- Slack-infra [Jeefy]:
+    - Has real pronoun fields now. Should we enable?
+        - Josh is ready to do so
+        - Also need to let people know to migrate their custom one
+- Open Mic/Discussion
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+    - LWKD migration just waiting on Bob/Nikhita availability
+        - will open a funding ticket for post-mailchimp
+    - Arsh to work on [golang issue](https://github.com/kubernetes/contributor-site/issues/93)
+
+## May 19th Slack Meeting
+
+- Events:
+    - Contributor Summit(s) [Bob]
+        - Event is shaping up to be unconference event, follow up is to send an item to k-dev for commentary
+- Mentoring:
+    - NCW content has been re-organized in two separate PRs
+        - k/community - [Contributor workshop update mentoring information](https://github.com/kubernetes/community/pull/5775)
+        - k/contributor-site - [Stub Worksho](https://github.com/kubernetes/contributor-site/pull/220)
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - Branch rename updates:
+        - [k/website is moving forward with branch rename](https://github.com/kubernetes/website/issues/21749#issuecomment-841722918)
+        - Prow (as of 2 months ago) will not retrigger presubmits when a branch is renamed
+    - Approve Plugin rewrite
+        - Significant progress has been made
+        - [Readme](https://github.com/ykakarap/test-infra/blob/approve2/prow/plugins/approve2/approvers/README.md)
+        - [POC PR](https://github.com/kubernetes/test-infra/pull/21398)
+    - “Undocumented” orgs
+        - There are a few orgs that don’t follow our regular pattern of managing orgs (k, k-sigs etc), but are used for specific purposes and these should be documented
+        - [Kubernetes-purgatory](https://github.com/kubernetes-purgatory) - Used by GitHub admins to transfer repos into the project.
+        - [kubernetes-nightly](https://github.com/kubernetes-nightly) - Not owned by GitHub admins, but should be (sttts is the current owner), the org is used for producing nightly snapshots
+- Slack-infra []:
+    - Open question regarding Private slack channels, should they be publicly documented? There are previous issues discussing creation of specific ones, but there is no current (public) index.
+
+## 
+
+## May 12th Meeting
+
+- Host: Alison
+- Notetaker:
+- Attendees:
+    - Arsh Sharma
+    - Arnaud Meukam
+    - Joel Barker
+    - Sahdev Zala
+    - Christoph Blecker
+    - Bob Killen
+    - Nabarun Pal
+    - Laura Santamaria (late)
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours
+        - Need to open a funding ticket for streamyard
+        - Establish the users for streamyard
+    - Community Meeting [Laura]
+        - Alison will host on May 20th (thanks!)
+        - Workaround for calendar invite problem is to send an ICS out as an attachment
+        - Laura will sync with Alison afterward
+    - Contributor Summit(s) [Bob]
+        - Following up with previous discussion with leads
+        - More or less in agreement with hosting in person but will be very loose unconference style
+        - There was support for hybrid, have to coordinate with deb
+        - Confirming those details in tomorrow's leads meeting
+        - Committing to virtual event as well
+- Mentoring:
+    - Meet Our Contributors [Alison]
+        - Did not do it this month as it clashed with KubeCon
+        - Will pick up next month with the first Monday of the month
+        - Need to wrangle panelists
+        - Reach out to upstream marketing
+        - Reach out to sigs and advertise focused contributing for specific SIGs e.g. the SIG CLI MoC, SIG Network MoC etc.
+    - Playground, gsoc, outreachy, LFX Mentorship Program
+        - Need to follow up with CNCF on creating a central pool of proposals for any program
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Updated guides
+            - [Contributor Workshop Update PR](https://github.com/kubernetes/community/pull/5775)
+            - [Contributor Site Workshop PR](https://github.com/kubernetes/contributor-site/pull/220)
+        - CTA contribex mailing list for friday
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+- Marketing [Matt/Kaslin]
+    - Multiple stories in flight
+        - SIG Usability
+        - Intro to user stories
+            - Chris’s story
+- Contributor-documentation:
+    - Developer Guide audit almost complete, only one remaining SIG
+
+## April 28th Meeting
+
+- Host: Bob
+- Notetaker: Chris Short
+- Attendees:
+    - Chris Short
+    - Bob Killen
+    - Alison Dowdney
+    - Josh Berkus
+    - Carlos Panato
+    - Kunal Kushwaha
+    - Christoph Blecker
+    - Deb Giles
+    - Ihor Dvoretskyi
+    - Josh Berkus
+    - Jason DeTiberus
+    - Kaslin Fields
+    - Rodolfo Martínez
+    - Madhav Jivrajani
+    - Peeyush Gupta
+    - Matt Broberg
+- Contributor Summit
+    - Space Monday October 11th/12th
+    - We should do something but probably scaled back and smaller than normal
+    - Room capacities are currently limited to 25% which is subject to change
+    - Christoph: Concerns about exclusivity especially if we breakout into sigs
+        - Suggests talking with Chairs/TLs
+    - Corporate policy will dictate people's travel plans
+    - Bob: Survey again for potential attendees
+    - Deb: Contributor celebration could be a mask off event so CNCF is still figuring out logistics
+    - Matt: The online experience last year was good; but we have to consider how those left out might feel
+    - Kaslin: Something that involves everyone but can be done remotely/virtually as well
+    - Alison: Cookie decorating
+    - Josh: Make space for teams to work together on-site
+    - Jason: If you're the only remote person in a meeting there's a disconnect
+    - Matt: Someone curating events on behalf of virtual attendees
+    - Deb: We have space to do what we like, but we need to know some requirements in the next few weeks
+        - A/V will be improved due to the hybrid experience
+        - Someone to MC/move about with mic
+    - Christoph: What are the timelines?
+        - Deb: Will provide timelines in the next week or so
+        - **Space decisions need to be made by end of May**
+    - Virtual celebration
+        - Similar to what we did last year with less Discord rooms
+        - Took about a month of prep
+    - TODO:
+        - Survey community
+            - Determine limitations
+            - Determine what they'd like to see
+            - Josh will help with survey
+        - Discuss at next SIG/TLs meeting
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [Jorge]
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - The Community Meeting went well, folks participated and we filled the 30min time slot.
+        - Calendar event will be an issue till we mgirate k-dev and others to use a gsuite managed mailing list.
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - AI: Update Meet our Contributors page in k/community
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - [GSoC] Mentors must select mentees by next Monday
+        - [LFX] Summer Cycle starting up
+        - Setup a list or location where mentor projects can be suggested agnostic of whichever mentor program would use them
+        - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+- Marketing [Matt/Kaslin]
+    - Ready to publish to k8s.dev blog with personal narratives focused on contribution
+        - To confirm: Bob do you like that scope? Can I [Matt] document it in the repo?
+        - Go live on the .dev domain? Yes, sayeth the Bob.
+        - Please share your stories with us!!!
+    - [Kunal] Almost done with the blog on SIG-Usability. Got proofread by Jason. Should be out this week (before KubeCon as that’s what the blog consists of).
+        - Plans on doing a Contribex blog looking for folks to speak with
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - GitHub Forms overview (in beta) could be incredibly helpful
+    - If involved in a subproject that's interested let GitHub Admins know
+- Slack-infra [Jeefy]:
+    - Slack Word Moderator has been deployed \o/
+
+## April 14th Meeting
+
+- Host: Alison Dowdney
+- Notetaker:
+- Attendees:
+    - Marky Jackson
+    - Alison Dowdney
+    - Laura Santamaria
+    - Bob
+    - Eddie Zaneski
+    - Joel Barker
+    - Josh Berkus
+    - Sandhya Dalavi
+    - Matthew Broberg
+    - Sladyn Nunes
+    - Madhav Jivrajani
+    - Sahdev Zala
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [Jorge]
+        - need to ping Jorge
+        - POP and Rawkode be taking over?
+        - Need to request a streamyard account
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Updated our hosting guide for the community meeting: [https://docs.google.com/document/d/1g7fR5cvCGFq15SJ4iQMclbj0QIeREKu_QP8ftnSaJ4o/edit?usp=sharing](https://docs.google.com/document/d/1g7fR5cvCGFq15SJ4iQMclbj0QIeREKu_QP8ftnSaJ4o/edit?usp=sharing)
+        - Need to update the calendar
+        - Going to do the 4th Thursday this month (because we didn't realize the 3rd one is tomorrow…)
+        - Joel and Josh volunteered to help moderate Zoom next week while Laura hosts
+        - Laura tracking down other people to help keep conversations moving
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Need to update calendar event
+        - Alison to host
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - outreachy - we only had one team come forward with a project
+        - project was for separate cncf project
+        - outreachy mentors collectively decided not to approve it
+        - We have one credit that we are returning to the outreachy fund
+        - We could use some new people in the outreachy mentoring team
+        - 
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Was supposed to move meeting to this week,
+        - Meeting next week will clash with MOC
+        - Calendars
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+        - Not enough updates to send one out
+    - APAC coordinator update [who dis?]:
+- Devstats [Lauri]
+    - Adding a bunch of boards to be useful
+    - Delayed due to issues
+    - might pick back up next week
+- Marketing [Matt/Kaslin]
+    - Adding new regulars to our Slack group
+        - We have 6 new people!
+    - Handful of contributor story articles in progress (ex: [https://github.com/kubernetes/contributor-site/pull/205](https://github.com/kubernetes/contributor-site/pull/205))
+        - Building a different narrative form .io, .io user focused, .dev is contributor focused
+        - We’d love to help you write one too! DM or @contributor-comms in Slack
+        - Recorded a talk for Kubecon EU!
+- Contributor-documentation:
+    - Contributor Guide [Bob/Jorge]
+    - Developer Guide [Erik/Joel]
+    - Contributor Site [Bob/Jorge]
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - nw
+- Slack-infra [Jorge/Jeefy]:
+    - new bot released,
+- Open Mic/Discussion
+    - [Need to assign follow up actions to to subproject prioritization](https://docs.google.com/spreadsheets/d/1glhdFcUdqYAByW16hujxK1X_0k9mt_nrkCO4POeDNbs/edit)
+    - Sent out priorities with staffing level
+    - If folks can follow up with people who are more familiar with subprojects
+    - Ask people to add their GitHub handles if they have one so we can follow up in a GitHub issue for tracking
+    - [https://github.com/kubernetes/community](https://github.com/kubernetes/community) - new contributors, find the sig you’re interested in, sign up for their mailing list, sig meetings are a good point of call for more questions about how to contribute to a particular sig
+
+## March 31 Meeting
+
+- Host: Alison
+- Notetaker:
+- Attendees:
+    - Joel Barker
+    - Ihor Dvoretskyi
+    - Marky Jackson
+    - Kendall Nelson
+    - Bob Killen
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - (Laura: I can't make it today, so here are some notes)
+        - First-time reminder email going out tomorrow for the community meeting topic submissions
+        - Paris suggested some changes for the agenda to ensure folks see the change (embed the table, etc.). Need to do that before the reminder email goes out
+        - Still needed: Update the host instructions to match the new meeting layout.
+        - Potentially reach out to the marketing team to use slack bot to push announcements to channels.
+        - Potentially go through KEPs to raise items that require more general discussion about a week before the event
+    - Other/Discussion:
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Scheduled for next week Monday at 8am?
+        - AI: Alison and Bob to test stream setup
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Switching to more of a focus on written content, as it has a better chance of getting done as well as easier to assign work.
+        - AI: remove evening APAC Mentoring meeting
+    - Other: Looking for folks to help with CODE2040 and other partnerships that will help us with diversity, specifically that back up our BLM statements and our values [Paris]
+        - Ideally, training on Kubernetes (it’s important that folks are users or around the space) and ultimately a new contributor workshop)
+            - Conversion to slides is secondary to getting the content down.
+        - Who else is involved with Kubernetes Community Days in Africa?
+        - Targeted outreach groups - Contributor Training, Kubernetes hands on training
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+- Devstats [Bob]
+    - [Dashboards in the process of being updated to support per-repo and per-sig stats](https://github.com/cncf/devstats/issues/289).
+- Marketing [Joel]
+    - Few blogs moving forward
+    - Survey
+        - Should we close the survey - ask Matt, or Bob
+        - Surveys now closed
+- Contributor-documentation:
+    - Contributor Guide [Bob/Jorge]
+        - No Season of Docs this time around due to complications with the CNCF and allocations and projects
+    - Developer Guide [Erik/Joel]
+        - Annual report pushing sigs to do audit, more complete list of what needs to be updated in the developer guide
+        - Most sigs have been proactive and pring in changes where needed
+        - Issue tracking developer guide audit : [https://github.com/kubernetes/community/issues/5229](https://github.com/kubernetes/community/issues/5229)
+    - Contributor Site [Bob/Jorge]
+        - [New community section added](http://k8s.dev/community)
+            - Added values, mentoring
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - GitHub is rolling out [new Issue form templates](https://gh-community.github.io/issue-template-feedback/welcome/#how-do-i-get-started) (beta), looking to test with the k/org repo.
+- Slack-infra [Jorge/Jeefy]:
+    - Discussion/Update
+    - New bot being rolled out that can privately message on keywords
+- Open Mic/Discussion
+    - [Annual Report, please get reviews in by EoD](https://github.com/kubernetes/community/pull/5573) [Bob]
+    - [Should we add LF unconscious bias training as an Org member requirement?](https://training.linuxfoundation.org/training/inclusive-speaker-orientation/) [Bob]
+        - Could potentially restrict potential org members It could discourage URMs from applying.
+            - We do not want to create obstructions for other people
+        - There isn’t a good way of enforcing it at levels at reviewer/approver level.
+        - Add it in as optional for org member applications
+        - Add a survey question as a follow-up in the annual survey to ask followup and their thoughts on it.
+        - Optional for now, and highly encourage folks to take the training
+        - Look into getting aggregate information from those that have contributed to the project from the LF
+
+## 
+
+## March 24th Slack Meeting
+
+- Events:
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Email sent to k-dev announcing the new experimental community meeting format with a sheet to enter topics into. No topics added yet; planning on dropping a reminder at the top of the month
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Spinning back up, now scheduled for 8:30AM PT on the first Monday of each month.
+- Community-management:
+    - [Several people have started to be onboarded for the areas highlighted in the program initiative and spreadsheet](https://docs.google.com/spreadsheets/d/1glhdFcUdqYAByW16hujxK1X_0k9mt_nrkCO4POeDNbs/edit#gid=0)
+- Marketing [Matt/Kaslin]
+    - The Slack messages and additional marketing helped get an additional 100+ survey respondents
+    - Quite a few stories in flight
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - [Looking into setting up ArtifactHub orgs for kubernetes/kubernetes-sigs](https://github.com/kubernetes/org/issues/2587)
+    - [Discussing the removal of the label kind/design](https://github.com/kubernetes/community/issues/5641)
+        - Some repos do make use of the label despite the overlap with others
+        - Currently leaning towards removing in kubernetes/kubernetes repo only
+- Slack-infra [Jeefy]:
+    - Working through some issues on getting the slack moderator word list in place.
+
+## 
+
+## March 17th Weekly Meeting
+
+- Host: Bob Killen
+- Notetaker: Laura Santamaria and whoever else wants to join in :)
+- Attendees:
+    - Alex Lovell-Troy
+    - Alison Dowdney
+    - Bob Killen
+    - Chris Short
+    - Eddie Zaneski
+    - Josh Berkus
+    - Lau
+    - Laura Santamaria
+    - Matthew Broberg
+    - Paris
+    - Rajula
+    - Tim Pepper
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+        - We all did intros :D
+- Events:
+    - Office hours [Jorge]
+        - It happened today! No details, but it happened!
+        - People were asking questions and it was engaging. We actually had *too* many volunteers for once
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Email draft done and ready to go to review, along with a Google sheet
+        - WIll try to rekick in April.
+        - Will need to ensure there's a host and moderator each month.
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Hasn't really happened in a bit. Will talk more about the contributor sheet and this topic later.
+        - Doodle is going out later today. Several folks said they can host, so that will be kicking up again.
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - There was a call for mentors and projects. Lots of applicants, but no specific projects or mentors. Very few mentors with well-scoped projects in general in the past, so same problem here.
+        - For the most part, we're reaching out to other groups and asking for bandwidth. The bandwidth problem has been a big one this past year.
+        - Next mentoring meeting is on Monday 5p UTC/11a ET/8a PT
+        - Mentoring PRs are coming in for group mentoring for reviewer pool
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Will be one of the big focuses for the upcoming mentoring meeting
+        - Lots of stuff spec'd out (slides and presentations), but need to decide what stuff needs to be recorded. Some of the smaller bite-sized stuff can be written tutorials right now. Just need to figure out the logistics.
+        - Lack of people able to record and produce content for workshops.
+        - See [https://github.com/kubernetes/community/labels/area%2Fnew-contributor-track](https://github.com/kubernetes/community/labels/area%2Fnew-contributor-track)
+        - Do we need a producer to track people down? Potentially. Do people need help editing? Potentially. Review at next mentoring meeting (see note above about timeframe for that meeting)
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+        - No immediate things that need to go in there outside of the contributor survey and annual reports
+    - APAC coordinator update [who dis?]:
+        - No update. Lost bandwidth; going async for now
+- Devstats [Lauri]
+    - https://k8s.devstats.cncf.io/
+    - Very soon, devstats will be able to go down to per repo and per SIG. Update coming. See [https://github.com/cncf/devstats/issues/289](https://github.com/cncf/devstats/issues/289) (should land in next week or two)
+    - Want to add a section where we can add dashboards with our annotations on how to interpret data and make it useful. Brief WIP: [https://deploy-preview-194--kubernetes-contributor.netlify.app/resources/dashboards/](https://deploy-preview-194--kubernetes-contributor.netlify.app/resources/dashboards/) (embed in iframe)
+- Marketing [Matt/Kaslin]
+    - (Goal is no-code message) Message of low/no code is helping with recruits! 2 new consistent members. 🎉
+    - Helping push the Contributor Survey (Q: How many submissions do we have?)
+        - [https://groups.google.com/g/kubernetes-dev/c/S--Ia5Pjmmg?pli=1](https://groups.google.com/g/kubernetes-dev/c/S--Ia5Pjmmg?pli=1)
+        - [https://twitter.com/K8sContributors/status/1371535294227390464](https://twitter.com/K8sContributors/status/1371535294227390464)
+        - Results: as of yesterday: 55 respondees… One way to get more respondents is getting cofounders of the project/people with decent followings to post about it. But the hard thing is the non-contributors answering.
+        - Opportunity to increase reach / fills:
+            - Reinforce the impact
+            - Reinforce that “this looks familiar, but it’s incredibly important to us”
+        - 130 response min because 10% of org stat
+        - Definitely prefer quality over quantity.
+        - Going to push to various Slack channels tomorrow (draft message going up today-ish)
+        - Ideas welcome!
+    - Articles in progress updated here: [https://github.com/orgs/kubernetes/projects/41](https://github.com/orgs/kubernetes/projects/41)
+        - Series on contributor contribution in progress for k8s.dev (target KubeCon EU)
+        - PR inbound on Michelle (https://twitter.com/michellenoorali)
+        - Reach out with any more ideas :)
+    - Archiving 1y+ umbrella issues in favor of systems as part of the group
+        - Document programs that we have in GitHub
+- Contributor-documentation:
+    - Contributor Guide [Bob/Jorge]
+        - No updates
+    - Developer Guide [Erik/Joel]
+        - Audit is still progressing
+        - If you happen to be involved in any other SIGs, please remind for reviewing outstanding issues to call out out-of-date or missing docs
+    - Contributor Site [Bob/Jorge]
+        - Got moved over to the Kubernetes org!
+        - There is interest in localizing that content, and that will start up soon-ish (probably)
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - Discussion/Update:
+        - Only big thing is we are really in progress with renaming repos. Comms about k8s.dev rename. Please refer people to k8s.dev/rename for more info
+- Slack-infra [Jorge/Jeefy]:
+    - Discussion/Update
+        - No real update
+- Open Mic/Discussion
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+    - [eddiezane] Code freeze notifications on PR?
+        - There have been a bunch of new contributors asking about getting merged during code freeze. What about more notifications?
+        - Example: [https://github.com/kubernetes/kubernetes/pull/99892#issuecomment-800862933](https://github.com/kubernetes/kubernetes/pull/99892#issuecomment-800862933)
+        - Lots of people don't seem to read the bot notifications.
+        - We should look at our other bot messages, but something does seem to be needed.
+        - Release schedule is at k8s.dev/release. Maybe a banner would be helpful when a freeze is in effect?
+    - [Bob] Prioritization spreadsheet
+        - [https://docs.google.com/spreadsheets/d/1glhdFcUdqYAByW16hujxK1X_0k9mt_nrkCO4POeDNbs/edit#gid=0](https://docs.google.com/spreadsheets/d/1glhdFcUdqYAByW16hujxK1X_0k9mt_nrkCO4POeDNbs/edit#gid=0)
+        - There's been some holes that have come up over the past year for various reasons.
+        - Automation would be really helpful if possible over trying to find more/new people.
+
+## March 3rd Weekly Meeting
+
+- Host: Alison Dowdney
+- Notetaker: Bob Killen
+- Attendees:
+    - Kendall Nelson
+    - Bob Killen
+    - Nikhita Raghunath
+    - Matt Broberg
+    - Alison Dowdney
+    - Christoph Blecker
+    - Ihor Dvoretskyi
+- Welcome and recurring business [Host]
+    - CoC [Host]
+- Events:
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Going to try a discussion centric meeting
+- Mentoring:
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - Call for outreachy interns due the 7th of March
+            - There's interest, but no one has proposed a project yet that they want to push forward.
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Plan to add a calendar event for the meeting
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+    - APAC coordinator update [nikhita]:
+        - No updates
+- Devstats [Lauri]
+    - [bob] going to open an issue with asks
+        - Filter by repo vs repo_group
+        - Filter by labels
+        - Filter by Organization (OSPO Hat on)
+- Marketing [Matt/Kaslin]
+    - Great discussion around PSP articles -- next steps Tabitha/Ian working on an article / [Blog on PSP deprecation by kaslin · Pull Request #26279 · kubernetes/website](https://github.com/kubernetes/website/pull/26279)
+    - Other articles in progress: [https://docs.google.com/document/d/1KDoqbw2A6W7rLSbIRuOlqH8gkoOnp2IHHuV9KyJDD2c/edit#](https://docs.google.com/document/d/1KDoqbw2A6W7rLSbIRuOlqH8gkoOnp2IHHuV9KyJDD2c/edit#)
+- Contributor-documentation:
+    - Contributor Guide [Bob/Jorge]
+    - Developer Guide [Erik/Joel]
+        - AI: Follow up pinging people to complete their audit
+    - Contributor Site [Bob/Jorge]
+        - Plan to migrate it to the kubernetes org within the next 2 weeks
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - Lots of discussion on the master -> main branch rename
+        - Prow recently updated the trigger plugin which could be turned off on a per repo basis to help mitigate webhook storm
+- Slack-infra [Jorge/Jeefy]:
+    - [nikhita] will follow up with jeff and bob to deploy the slack-moderator-words bot
+- Open Mic/Discussion
+    - [Annual Report](https://hackmd.io/9jRC1zNfQDaN8wAv_nzb5Q)
+    - Lack of ContribEx bandwidth to keep all programs going
+        - Need to evaluate projects with must/should etc
+        - Need help by trusted contributors to drive the critical things (e.g. zoom -> YT automation)
+        - Asynchronous call to action, google doc with whats the scenario, whats we plan to do, and how to feedback
+        - AI: Send a spreadsheet with projects and initiatives to prioritize.
+
+## February 24th Slack Weekly Meeting
+
+- Events:
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Test discussion based community meeting with general call out for items.
+- Mentoring:
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - **Call for outreachy interns due Monday March 1st.**
+            - Reach out to Nikhita or Josh with ideas.
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+- Marketing [Matt/Kaslin]
+    - Contributor Comms engaged with notification for [Annual Contributor Survey](https://www.surveymonkey.com/r/k8scommsurvey2021).
+    - Initial announcement was to be sent from [community@kubenretes.io](mailto:community@kubenretes.io) however a group cannot cc another group
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - [Update k/k issue template for kind/feature](https://github.com/kubernetes/kubernetes/pull/98867) based on feedback that feature issues in k/k are rarely triaged or implemented. Please provide feedback on the issue itself.
+    - [Add functionality for prow to respond to issues by label](https://github.com/kubernetes/test-infra/pull/20868). This could enable auto-closing of issues that are tagged by members with kind/support.
+- Slack-infra:
+    - Add functionality to auto-respond to users when certain words are said
+        - [https://github.com/kubernetes/k8s.io/pull/1696](https://github.com/kubernetes/k8s.io/pull/1696)
+        - [https://github.com/kubernetes-sigs/slack-infra/pull/41](https://github.com/kubernetes-sigs/slack-infra/pull/41)
+        - [https://github.com/kubernetes/k8s.io/pull/1719](https://github.com/kubernetes/k8s.io/pull/1719)
+- Open Mic/Discussion
+    - [2021 Audit of ContribEx owners, subprojects, github groups etc.](https://github.com/kubernetes/community/issues/5444)
+
+## February 17th Weekly Meeting
+
+- Host: Alison
+- Notetaker: Bob Killen
+- Attendees:
+    - Joel Barker
+    - Bob Killen
+    - Alison Dowdney
+    - Jason Morgan
+    - Sahdev Zala
+    - Ihor Dvoretskyi
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [Jorge]
+        - Jorge has been getting Pop and Rawkode involved to help host
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - Discussed at chair and TL meeting, still sorta TBD
+- Mentoring:
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - LFX Mentoring Programs are in the stage of selecting their mentees
+            - Make your selection before the 26th
+        - CNCF participating in GSoC, final confirmation from Google is expected after the 19th
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Alison]
+        - Update on scheduling meeting - [doodle](https://doodle.com/poll/zsmtkgit2capbq7v)
+            - AI: Reach out to former active mentoring contributors about time for the meeting.
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+    - [Annual report](https://github.com/kubernetes/community/blob/master/committee-steering/governance/annual-reports.md)
+        - Need to open draft PR ideally by the end of the month and complete as a group before April.
+    - Annual survey status
+        - Currently locked out of survey account, Amye from CNCF will fix account
+- Marketing [Chris]
+    - PSP blog post is in flight, now coordinating with SIG Auth
+    - Further automation in progress for twitter feeds
+    - Looking for content, people to interview.
+        - Reach out to @contributor-comms in slack or open an issue in k/community
+- Contributor-documentation:
+    - Contributor Guide [Bob/Jorge]
+    - Developer Guide [Erik/Joel]
+        - Developer Guide Audit
+            - SIGs are actively working on their audit, aiming to complete by 1.21 release
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - [nikhita] Updates to enhancement issue template + automation. Needs review:
+        - Issue template - [https://github.com/kubernetes/kubernetes/pull/98867](https://github.com/kubernetes/kubernetes/pull/98867)
+        - Automation - [https://github.com/kubernetes/test-infra/pull/20868](https://github.com/kubernetes/test-infra/pull/20868)
+- Slack-infra [Jorge/Jeefy]:
+    - [nikhita] Need review on slack bot that will display a message to the author if they use non-inclusive language
+        - PR - [https://github.com/kubernetes-sigs/slack-infra/pull/41](https://github.com/kubernetes-sigs/slack-infra/pull/41)
+        - Sent an [email](https://groups.google.com/g/kubernetes-wg-naming/c/d5JyKPUXA0g) to WG Naming for review too
+- Open Mic/Discussion
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+    - [sahdev] Issue with people claiming good first issue issues after they’ve already been claimed
+        - Example: [https://github.com/kubernetes/community/issues/5451](https://github.com/kubernetes/community/issues/5451)
+        - AI: Add item to triage guidelines, expect a draft PR open within 2 weeks before
+
+## February 10th Slack Meeting
+
+- Events:
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - [Meeting comms sheet from polling chair/TL](https://docs.google.com/spreadsheets/d/1UP4zOZOFxiwE5J98y0f-LorrPztadPvg-wfYrS0DjRA/edit#gid=0)
+        - Remove SIG updates and move to discussions / demos etc
+- Marketing
+    - Contributor Profiles
+        - Need to reach out to Michelle Noorali, and do a profile of her and her GB experiences
+- Annual Contributor Survey
+    - Survey is largely done - should be ready to send out next week
+
+## 
+
+## February 3rd Weekly Meeting
+
+**HELP WANTED:** Help with inactive OWNER PRs. See [parent inactive owner issue](https://github.com/kubernetes/org/issues/2456) for details and examples of what it looks like.
+
+- Host: Bob Killen
+- Notetaker: Chris Short
+- Attendees:
+    - Chris Short
+    - Matt Broberg
+    - Joel Barker
+    - Sahdev Zala
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- Events:
+    - Office hours [Jorge]
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura - Can't make it in person today due to double-booked meetings]
+        - Opened [https://github.com/kubernetes/community/issues/5462](https://github.com/kubernetes/community/issues/5462) for more discussion. If I missed any context from last week's meeting, please feel free to correct me.
+        - Also reached out to Paris separately re: SIG reporting updates as there's a discussion around changing the SIG reporting structure. Summarized the notes in [https://github.com/kubernetes/community/issues/5462#issuecomment-772656560](https://github.com/kubernetes/community/issues/5462#issuecomment-772656560), but basically steering is looking to increase async comms and reduce meeting load. There's already a lot of duplicated reporting with the annual report, kubecon updates, and weekly/biweekly/triweekly SIG meetings.
+        - February community meeting: Should we move forward with the prior format? Current schedule is the working/user groups, and I was going to add in committees and SIG Arch from January's schedule if we're moving forward.
+    - Other/Discussion:
+- Mentoring:
+    - Meet Our Contributors [Paris]
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - [LFX Mentee program launched](https://www.cncf.io/blog/2021/02/03/cncf-lfx-projects-are-open-for-spring-term-2021-apply-now-for-a-mentorship-opportunity/)
+        - Season of Docs starting soon? ContribEx will want to participate
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Josh/Alison]
+    - New meeting [Doodle for EU/APAC friendly meeting](https://doodle.com/poll/zsmtkgit2capbq7v)
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit) [Bob/Alison]
+        - Comms about change in annual reports due date, draft opened by March, completed by April
+    - APAC coordinator update [who dis?]:
+- Devstats [Lauri]
+- Marketing [Matt/Kaslin]
+    - PSP article waiting for review [https://github.com/kubernetes/website/pull/26279](https://github.com/kubernetes/website/pull/26279)
+    - Making progress on contributor stories!
+        - Chris Short on non-code contribution
+        - Matt Broberg on timeboxing contribution
+        - Peeyush Gupta on contributing across time zones
+        - Sladyn Nunes on learning new skills
+        - Kaslin TBD
+        - Need MAOR :)
+    - SIG Profiling? Can we bring that back?
+        - Right now: backburner idea -- we always offer it up to potential authors but it tends to fall behind and not get all the way to publication.
+        - Thoughts to improve?
+            - Not necessarily reach out to leads
+            - Cover more subgroups
+        - Consider focusing on the individual and their experience in the SIG to reduce the feedback churn (and sense that it has to be 100% representative of the experience)
+    - Some follow up ideas
+        - Disclaimer on articles -- personal experience and not representative of the entire community experience
+        - Long-living SIG Profiling Quotes document where we get a few quotes, then theme them into an article on Friday meetings (AI: Matt to bring this back to Marketing on Friday)
+- Contributor-documentation:
+    - Contributor Guide [Bob/Alison]
+    - Developer Guide [Erik/Joel]
+    - Contributor Site [Bob/Alison]
+        - Going to move to kubernetes org from kubernetes-sigs
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - [GitHub default branch rename: master -> main](https://github.com/kubernetes/org/issues)
+        - Migrated k/org repo - migration did trigger rerunning of pre and postsubmits.
+- Slack-infra [Jorge/Jeefy]:
+    - Discussion/Update
+- Open Mic/Discussion
+    - [Bob] Alternate zoom/slack meetings
+    - [Bob] Annual Survey demographic data will not be asked. Should try and get the survey out ASAP.
+    - [your name and topic here - should this be an issue against kubernetes/community?]
+
+## 
+
+## January 27th Weekly Meeting
+
+HELP WANTED: Help with inactive OWNER PRs. See [parent inactive owner issue](https://github.com/kubernetes/org/issues/2456) for details and examples of what it looks like.
+
+- Host: Bob Killen
+- Notetaker:
+- Attendees:
+    - Alison D
+    - Matt Broberg
+    - Kendall Nelson
+    - Rey Lejano
+    - Cody Crudgington
+- Welcome and recurring business [Host]
+    - CoC [Host]
+    - New Contributor Intro here \o/ [Everyone]
+- ContribEx Updates:
+    - Lazy consensus period over for Alison to become chair \o/
+    - [Meeting looking to be moved 30min early](https://groups.google.com/g/kubernetes-sig-contribex/c/OYYklOzZemU/m/YC-MT5TmDgAJ)+1
+- Events:
+    - Office hours [Jorge]
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Laura]
+        - SIGs schedule their own public sessions, getting updates from SIGs independently
+            - It was dropped as it’d be difficult for attendees
+        - Openstack approaches community meetings by letting folks record video updates, We could approach folks to record video updates every quarter and then compile them together
+        - 
+        - Considering the “why” of the meeting
+            - A front door for new members (or campfire aspect of news)
+            - A ‘what’s new for current members’
+            - Would we be able to keep the same vibe with a different medium
+                - Maybe podcast, maybe youtube
+        - Issue with the community meeting was there was no discussion
+        - Fixing calendar issue - port the mailing list to gsuite
+            - Is google groups adequate? A whole other can of worms
+        - TODO : Create a GitHub issue for further discussion
+        - 
+    - Contributor Summit(s) [Bob]
+        - Potentially do something for Kubecon EU
+            - If we do something it will be separate from kubecon
+    - Other/Discussion:
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Still looking for folks to get involved with helping out, mailing list
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - If you plan to be a mentor, the deadline is January 31
+        - Info is in the cncf repo
+    - [New Contributor Workshop](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit#heading=h.vs8waxtx792q) [Josh]
+        - Progress has been made with making an interactive environment for build and test
+        - Progress is slow but steady
+        - Calendar Invite
+            - Josh to create doodle to find new eu friendly meeting time
+- Community-management:
+    - [Need to Know Chairs/TLs email](https://docs.google.com/document/d/1cC799hHZpo8JJfwvUa94uiPfUpo17oTTJDFobxNLL7c/edit#heading=h.j2likm89by0n) [Bob/Jorge]
+        - Need to send this email out
+        - More folks need to see this and take a look
+    - APAC coordinator update [who dis?]:
+    - [Annual Contributor Survey](https://github.com/kubernetes/community/issues/5153)
+        - [Survey questions](https://docs.google.com/document/d/1IERzLwPBJkw5IYnolJ0UnS3ueWNEhePpoeRtTzIlrqs/edit)
+        - Demographic data is desired to help establish a baseline of contributor diversity. Questions have been sent to CoCC for comment.
+        - Questions have been locked in, except for the demographic ones
+        - Code of conduct committee are reviewing demographic questions
+- Devstats [Lauri]
+- Marketing [Matt/Kaslin]
+    - Content push right now --- asking anyone and everything to write up a few paragraphs on how they contribute to kubernetes
+        - Signed up:
+            - Chris Short on “non-code contribution”
+            - Matt Broberg on “lurker to contributor in 4 hours a week”
+            - Sladyn Nunes on joining marketing to learn a new skill
+            - Interested?
+    - Draft in progress on PSP deprecation - [https://github.com/kubernetes/website/issues/26202#issuecomment-766901866](https://github.com/kubernetes/website/issues/26202#issuecomment-766901866)
+    - Going to talk about the Community meeting next :)
+- Contributor-documentation:
+    - Contributor Guide [Bob/Jorge]
+    - Developer Guide [Erik/Joel]
+    - Contributor Site [Bob/Jorge]
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - [Jan 2021 Inactive Member clean up](https://github.com/kubernetes/org/issues/2456)
+        - Removes 60~ people from the org
+        - HELP WANTED: Need assistance with follow up OWNER files clean up.
+        - Is there any Automation we would like around this?
+            - There is some automation we would like to do in the long term
+- Slack-infra [Jorge/Jeefy]:
+    - Discussion/Update
+    - Finished renaming the kubernetes contributor channel
+        - Positive changes seen, most comments are on topic
+- Open Mic/Discussion
+    - Slack “meeting” feedback [Bob]
+        - Positives, we were able to get responses from people in many different time zones
+        - Negatives: Slack threading made things hard to follow
+        - Needed to bound the conversation times more formally- conclude comments by X date/time
+        - Potentially create a separate channel for the meetings
+        - Alternating slack meetings with video meetings could be a good approach if we work out the technical issues
+        - Actual things that need to be decisions/discussions to be placed on a separate thread
+            - Decisions section of the notes
+            - Here are the decisions, send them out to the mailing list to get feedback
+            - Potential integration [https://fellow.app/blog/2020/effective-meetings-with-fellow-and-slack/](https://fellow.app/blog/2020/effective-meetings-with-fellow-and-slack/)
+    - Review 1.20 / 1.21 milestone [Bob]
+        - Managed to clear out a bunch of issues in 1.20
+        - New Contributor Workshop to be the focus of the next release cycle
+
+## January 20th Slack Weekly Meeting
+
+HELP WANTED: Paris is looking for someone to help host Meet Our Contributors in February.
+
+- Events:
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810)
+        - Cancelled January session. Calendar invites are broken for k-dev.
+        - AI: Laura to sync with steering on scheduling remainder of sessions for the year.
+- Mentoring:
+    - Meet Our Contributors
+        - Paris is looking for someone to help host Meet Our Contributors in February.
+    - Playground, gsoc, outreachy, LFX Mentorship Program [Ihor]
+        - LFX mentoring starting for spring, due **Jan 31st.**
+        - [Open PR adding project idea in CNCF Mentoring Repo](https://github.com/cncf/mentoring/blob/master/lfx-mentorship/2021/01-Spring/project_ideas.md).
+- Community-management:
+    - [Kubernetes-dev slack channel to be renamed kubernetes-contributors.](https://groups.google.com/g/kubernetes-dev/c/ShYNQY90k5c/m/JB1VPmbwDAAJ)
+    - APAC coordinator update:
+        - Have put a timebox on replies for APAC meet our contributors blog series. Plan to start adding them soon.
+- Contributor-documentation:
+    - Contributor Site
+        - The contributor-site is going to be migrated from the kubernetes-sigs org to kubernetes.
+            - Should streamline localization and support other community groups looking to create documentation there directly.
+            - [Link to approved sign-off from SIG Arch](https://groups.google.com/g/kubernetes-sig-architecture/c/FYmPPdMNq8w/m/RIhCXA88DQAJ)
+- Open Mic/Discussion
+    - Annual Contributor Survey
+        - Plan to add demographic questions to the annual contributor survey.
+            - should help us better establish a baseline of the current diversity and representation within our community.
+            - Demographic data will NOT be shared publicly and will be treated like PII.
+            - Aggregate or summary data will be made available assuming summary results cannot be linked back to an individual.
+
+# January 14th APAC Biweekly Meeting
+
+[Peeyush] Cancelled as Holiday in India and lack of attendance
+
+## January 13th Slack Weekly Meeting
+
+HELP WANTED: Paris is looking for someone to help host Meet Our Contributors in February.
+
+- Events:
+    - [Community Meeting](https://docs.google.com/spreadsheets/d/1adztrJ05mQ_cjatYSnvyiy85KjuI6-GuXsRsP-T2R3k/edit#gid=932627810) [Jorge]
+        - Laura going to start scheduling SIGs to meetings, but needs to sync with steering.
+- Mentoring:
+    - Meet Our Contributors [Paris]
+        - Paris is looking for someone to help host MoC
+            - Josh and Bob are backups
+- Marketing [Matt/Kaslin]
+    - Paris plans to open up some PRs with governance related tweets
+- Contributor-documentation:
+    - Contributor Site [Bob/Jorge]
+        - Adding comms guidelines to docs portion of site:
+            - [k/contributor-site PR](https://github.com/kubernetes-sigs/contributor-site/pull/200)
+            - [k/community PR](https://github.com/kubernetes/community/pull/5397)
+        - Adding a top level [Community section](https://github.com/kubernetes-sigs/contributor-site/issues/201) to house community and governance related items such as the CoC and values.
+        - [Need to improve overall SEO and discoverability of the site](https://github.com/kubernetes-sigs/contributor-site/issues/202)
+- GitHub-management [Bob/Nikhita/Christoph]:
+    - No action at this time, but need to monitor [GitHub’s migration path for existing](https://github.com/github/renaming#creating-a-seamless-move-for-existing-repositories-) repositories master -> main
+- Open Mic/Discussion
+    - Annual Survey
+        - [Tracking Issue](https://github.com/kubernetes/community/issues/5153)
+        - [Questions](https://docs.google.com/document/d/1IERzLwPBJkw5IYnolJ0UnS3ueWNEhePpoeRtTzIlrqs/edit)
+        - Questions are close to being finalized
+        - Marketing to help with messaging and broadcasting to all sig mailing lists.
+    -
