@@ -4,13 +4,15 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-   -
-   -
-   -
+   - [Migrating K-Dev to a managed kubernetes.io account](https://github.com/kubernetes/community/issues/5877)
+   - Steering Election with Elekto
+      - Major change to how we do elections
+      - There were some hiccups but overall it's a step in the right direction
+   - 
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
-   -
+   - 
    -
    -
 
@@ -39,7 +41,7 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
 
-   -
+   - 
    -
    -
 
@@ -71,10 +73,10 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 
 ## Membership
 
-- Primary slack channel member count:
-- Primary mailing list member count:
-- Primary meeting attendee count (estimated, if needed):
-- Primary meeting participant count (estimated, if needed):
+- Primary slack channel member count: 1895
+- Primary mailing list member count: 366 
+- Primary meeting attendee count (estimated, if needed): 
+- Primary meeting participant count (estimated, if needed): 
 - Unique reviewers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
 - Unique approvers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
 
