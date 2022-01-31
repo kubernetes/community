@@ -33,7 +33,7 @@ For quick reference on contributor resources, we have a handy [contributor cheat
 
 ### Communication
 
-It is best to contact your [SIG](#learn-about-sigs) for issues related to the SIG's topic. Your SIG will be able to help you much more quickly than a general question would.
+It is best to contact your [SIG](first-contribution.md#learn-about-sigs) for issues related to the SIG's topic. Your SIG will be able to help you much more quickly than a general question would.
 
 For general questions and troubleshooting, use the [standard lines of communication](/communication/README.md) and work through the [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/).
 
@@ -61,7 +61,7 @@ Refer to its [command reference documentation](https://go.k8s.io/bot-commands).
 Common new contributor PR issues are:
 
 * not having correctly signed the CLA ahead of your first PR. See the [CLA page](/CLA.md) for troubleshooting help, in some cases you might need to file a ticket with the CNCF to resolve a CLA problem.  
-* finding the right SIG or reviewer(s) for the PR (see [Code Review](#code-review) section) and following any SIG or repository specific contributing guidelines (see [Learn about SIGs](#learn-about-sigs) section)
+* finding the right SIG or reviewer(s) for the PR (see [Code Review](#code-review) section) and following any SIG or repository specific contributing guidelines (see [Learn about SIGs](first-contribution.md#learn-about-sigs) section)
 * dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](/contributors/devel/sig-testing/flaky-tests.md))
 * Not following [scalability good practices](scalability-good-practices.md)
 * Include mentions (like @person) and [keywords](https://help.github.com/en/articles/closing-issues-using-keywords) which could close the issue (like fixes #xxxx) in commit messages.
