@@ -116,6 +116,8 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-packet
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-packet](https://github.com/kubernetes-sigs/cluster-api-provider-packet/blob/master/OWNERS)
+- **Contact:**
+  - Slack: [#cluster-api-packet](https://kubernetes.slack.com/messages/cluster-api-packet)
 ### cluster-api-provider-vsphere
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-vsphere](https://github.com/kubernetes-sigs/cluster-api-provider-vsphere/blob/master/OWNERS)
