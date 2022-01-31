@@ -303,7 +303,7 @@ sigs:
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP03VEluzh0wpSRPzgve8kI5
   - description: conformance office Hours
     day: Wednesday
-    time: "19:00"
+    time: "18:00"
     tz: UTC
     frequency: First Wednesday of the month
     url: https://zoom.us/j/427337923
