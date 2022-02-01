@@ -57,10 +57,10 @@ usergroups:
       - sig-release
     members:
       - cjcullen
+      - enj
       - joelsmith
       - lukehinds
       - micahhausler
-      - swamymsft
       - tabbysable
       - tallclair
 

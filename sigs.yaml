@@ -3245,6 +3245,9 @@ committees:
     - github: cjcullen
       name: CJ Cullen
       company: Google
+    - github: enj
+      name: Mo Khan
+      company: VMware
     - github: joelsmith
       name: Joel Smith
       company: Red Hat
@@ -3254,15 +3257,15 @@ committees:
     - github: micahhausler
       name: Micah Hausler
       company: Amazon
-    - github: swamymsft
-      name: Swamy Shivaganga Nagaraju
-      company: Microsoft
     - github: tabbysable
       name: Tabitha Sable
       company: Datadog
     - github: tallclair
       name: Tim Allclair
       company: Apple
+    emeritus_leads:
+    - github: swamymsft
+      name: Swamy Shivaganga Nagaraju
   meetings: []
   contact:
     private_mailing_list: security@kubernetes.io
