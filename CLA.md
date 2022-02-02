@@ -76,7 +76,7 @@ Canonical until 2017-03-31
 
 ## Troubleshooting
 
-If you have any problem signing the CLA and need any further assistance  you can log a ticket by clicking on the "please submit a support request ticket".
+If you have any problem signing the CLA and need any further assistance  you can log a ticket by clicking on the link [please submit a support request ticket](https://jira.linuxfoundation.org/plugins/servlet/theme/portal/4) of easycla bot.
 
 If you encounter any problems signing the CLA, log a ticket with the Linux
 Foundation ID group through the [Linux Foundation Support Site].
