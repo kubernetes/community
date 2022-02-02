@@ -18,6 +18,9 @@ After creating your first Pull Request you will be see a prompt response from li
 <img width="1065" alt="EasyCLA bot" src="https://user-images.githubusercontent.com/69111235/152226443-f6fe61ee-0e92-46c5-b6ea-c0deb718a585.png">
 
 #### 1. Authorize the access to your account to Linux Foundation
+
+<img width="554" alt="GitHub EasyCLA Authorization" src="https://user-images.githubusercontent.com/69111235/152228712-7d22f9d0-9f3c-4226-9ee0-bacba4b47725.png">
+
 Click on the "Please click here to be authorized" link to navigate to the GitHub Authorize Linux Foundation: EasyCLA page. Then click Authorize LF-Engineering to give Linux Foundation access to your GitHub account.
 
 #### 2. Select from the two types of contributor
@@ -32,11 +35,9 @@ Select either one:
 
 #### 3. Sign the CLA
 
-Once you select your type of contributor proceed to Sign the CLA.
+Once you select your type of contributor proceed to Sign the CLA and follow the instructions to complete the signing process through DocuSign.
 
-Follow the instructions to complete the signing process through DocuSign.
-
-##### Ensure your GitHub e-mail address matches e-mail address used to sign CLA
+**Ensure your GitHub e-mail address matches e-mail address used to sign CLA**
 
 After you have carefully filled up the information, Click "Finish" and you will be redirected to your GitHub Pull Request page.
 
