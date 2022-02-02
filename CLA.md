@@ -16,9 +16,7 @@ It is important to read and understand this legal agreement.
 After creating your first Pull Request you will be see a prompt response from linux-foundation-easycla bot.
 
 #### 1. Authorize the access of your account to Linux Foundation
-Click on the "Please click here to be authorized" link to navigate to the GitHub Authorize Linux Foundation: EasyCLA page.
-
-Click Authorize LF-Engineering to give Linux Foundation access to your GitHub account.
+Click on the "Please click here to be authorized" link to navigate to the GitHub Authorize Linux Foundation: EasyCLA page. Then click Authorize LF-Engineering to give Linux Foundation access to your GitHub account.
 
 #### 2. Select from the two types of contributor
 
