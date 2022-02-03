@@ -58,7 +58,7 @@ After you have carefully filled up the information, Click "Finish" and you will 
 
 #### 5. Validate your CLA
 
-Once you are redirected to your GitHub Pull Request, enter `/easycla` to check whether your CLA was signed successfully or not.
+Once you are redirected back to your GitHub Pull Request, reply with a comment `/easycla` to update the CLA status of your PR.
 
 
 ## Changing your Affiliation
