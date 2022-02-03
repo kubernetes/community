@@ -13,7 +13,7 @@
    - Migration of testgrid reporting jobs from aks-engine to cluster-api/cluster-api-provder-azure.
    - Dockershim removal / validation for Windows nodes.
 
-3. KEP work in 2021 (1.x, 1.y, 1.z):
+3. KEP work in 2021 (1.21, 1.22, 1.23):
    - Stable
      - (1.22) [1122 - windows-csi-support](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1122-windows-csi-support/README.md)
    - Beta
