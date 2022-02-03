@@ -21,7 +21,7 @@ After creating your first Pull Request the linux-foundation-easycla bot will res
 
 <img width="554" alt="GitHub EasyCLA Authorization" src="https://user-images.githubusercontent.com/69111235/152228712-7d22f9d0-9f3c-4226-9ee0-bacba4b47725.png">
 
-Click on the "Please click here to be authorized" link to navigate to the GitHub Authorize Linux Foundation: EasyCLA page. Then click Authorize LF-Engineering to give Linux Foundation access to your GitHub account.
+Click on the "Please click here to be authorized" link to navigate to the GitHub Authorize Linux Foundation: EasyCLA page. Then click Authorize LF-Engineering to give the Linux Foundation read-only access to list the email addresses associated with your GitHub account.
 
 #### 2. Select from the two types of contributor
 
