@@ -30,8 +30,8 @@ Click on the "Please click here to be authorized" link to navigate to the GitHub
 
 After authorizing EasyCLA, you will be redirected to a page to identify which type of contributor you are. 
 Select the most appropriate option:
-  * Individual Contributor: To sign up as an individual or as an employee of a signed organization.
-  * Corporate Contributor: To sign as a corporation representative and manage signups from your organization.
+  * Individual Contributor: You are contributing as yourself, and not as part of another organization.
+  * Corporate Contributor: You are contributing on behalf of your employer or other organization.
 
 #### 3. Sign the CLA
 
