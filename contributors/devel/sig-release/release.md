@@ -124,7 +124,7 @@ The general labeling process should be consistent across artifact types.
 
 ## The Release Cycle
 
-![Image of one Kubernetes release cycle](release-cycle.png)
+![Image of one Kubernetes release cycle](release-cycle.jpg)
 
 Kubernetes releases currently happen approximately three times per year.
 
