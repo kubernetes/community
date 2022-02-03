@@ -39,7 +39,7 @@ Once you select the type of contributor, proceed to Sign the CLA and follow the 
 
 **Ensure your GitHub e-mail address matches e-mail address used to sign CLA**
 
-After you have carefully filled up the information, Click "Finish" and you will be redirected to your GitHub Pull Request page.
+After you have filled out  the information, Click "Finish" and you will be redirected back to your Pull Request.
 
 #### 4. Look for an email indicating successful signup.
 
