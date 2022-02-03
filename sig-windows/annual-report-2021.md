@@ -13,16 +13,16 @@
    - Migration of testgrid reporting jobs from aks-engine to cluster-api/cluster-api-provder-azure.
    - Dockershim removal / validation for Windows nodes.
 
-3. KEP work in 2021 (1.21, 1.22, 1.23):
+3. KEP work in 2021 (1.x, 1.y, 1.z):
    - Stable
      - (1.22) [1122 - windows-csi-support](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1122-windows-csi-support/README.md)
    - Beta
      - (1.23) [1981 - Windows Privileged Container Support](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1981-windows-privileged-container-support/README.md)
+     - (1.23) https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/2802-identify-windows-pods-apiserver-admission/kep.yaml
    - Alpha
      - (1.22) [1981 - Windows Privileged Container Support](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1981-windows-privileged-container-support/README.md)
      - (1.23) [2802 -Identify Windows pods at API admission level authoritatively](https://github.com/kubernetes/enhancements/tree/master/keps/sig-windows/2802-identify-windows-pods-apiserver-admission/README.md)
    - Pre-alpha (Targeting 1.24)
-     - [2258 - Node service log viewer](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/2258-node-service-log-viewer/README.md)
      - [2578 - Windows Conformance](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/2578-windows-conformance/kep.yaml)
 
 ## Project health
@@ -30,6 +30,7 @@
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
    - csi-proxy and storage: this seems like an underserved area for windows
+   https://github.com/kubernetes-csi/csi-proxy (meeting info is there).
 2. What metrics/community health stats does your group care about and/or measure?
    - stars for ksigs/windows specific repos
      - sig-windows-dev-tools   
@@ -51,9 +52,9 @@
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
    - testing hostProcess implementations on several windows apps
-   - improving our dev tools enviornment to grow the commnunity
+   - improving our dev tools environment to grow the community
    - hardening the CSI proxy and CSI support ecosystem
-   - performance testing Kuberentes on Windows extensively and publishing results
+   - performance testing Kubernetes on Windows extensively and publishing results
 
 ## Membership
 - Primary slack channel member count: 1507
@@ -67,11 +68,9 @@ Include any other ways you measure group membership
 
 ## Subprojects
 
-- Subprojects for sig-windows are inactive now and all major work happens in the sig-windows channel.
-- windows csi-proxy subproject is active and healthy
+- windows csi-proxy subproject is active and healthy https://github.com/kubernetes-csi/csi-proxy
     - meetings going well
     - new optimization issue came up recently community engaged on it across companies vmware,rancher
-    - 
 
 
 ## Working groups
