@@ -35,7 +35,7 @@ Select the most appropriate option:
 
 #### 3. Sign the CLA
 
-Once you select your type of contributor proceed to Sign the CLA and follow the instructions to complete the signing process through DocuSign.
+Once you select the type of contributor, proceed to Sign the CLA and follow the instructions to complete the signing process through DocuSign.
 
 **Ensure your GitHub e-mail address matches e-mail address used to sign CLA**
 
