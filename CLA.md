@@ -28,7 +28,7 @@ Click on the "Please click here to be authorized" link to navigate to the GitHub
 <img width="1407" alt="EasyCLA" src="https://user-images.githubusercontent.com/69111235/152224818-1246453a-b086-4a57-9d14-c10d62ad438f.png">
 
 
-After authorizing Linux Foundation you will be redirected to a page for assigning yourself as one of the following types of contributor. 
+After authorizing EasyCLA, you will be redirected to a page to identify which type of contributor you are. 
 Select either one:
   * Individual Contributor: To sign up as an individual or as an employee of a signed organization.
   * Corporate Contributor: To sign as a corporation representative and manage signups from your organization.
