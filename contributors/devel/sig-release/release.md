@@ -5,9 +5,9 @@ create an enhancement, issue, or pull request which targets a specific release
 milestone.
 
 - [TL;DR](#tldr)
-  - [Normal Dev (Weeks 1-8)](#normal-dev-weeks-1-11)
-  - [Code Freeze (Weeks 9-11)](#code-freeze-weeks-12-14)
-  - [Post-Release (Weeks 11+)](#post-release-weeks-14+)
+  - [Normal Dev (Weeks 1-11)](#normal-dev-weeks-1-11)
+  - [Code Freeze (Weeks 12-14)](#code-freeze-weeks-12-14)
+  - [Post-Release (Weeks 14+)](#post-release-weeks-14+)
 - [Definitions](#definitions)
 - [The Release Cycle](#the-release-cycle)
 - [Removal Of Items From The Milestone](#removal-of-items-from-the-milestone)
