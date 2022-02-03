@@ -17,7 +17,7 @@ After creating your first Pull Request the linux-foundation-easycla bot will res
 
 <img width="1065" alt="EasyCLA bot" src="https://user-images.githubusercontent.com/69111235/152226443-f6fe61ee-0e92-46c5-b6ea-c0deb718a585.png">
 
-#### 1. Authorize the access to your account to Linux Foundation
+#### 1. Authorize EasyCLA to read some of your GitHub information
 
 <img width="554" alt="GitHub EasyCLA Authorization" src="https://user-images.githubusercontent.com/69111235/152228712-7d22f9d0-9f3c-4226-9ee0-bacba4b47725.png">
 
