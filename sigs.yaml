@@ -1024,7 +1024,7 @@ sigs:
     meetings:
     - description: Cluster API Provider AWS office hours
       day: Monday
-      time: "10:00"
+      time: "09:00"
       tz: PT (Pacific Time)
       frequency: biweekly
       url: https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09
