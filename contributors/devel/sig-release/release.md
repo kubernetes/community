@@ -192,7 +192,7 @@ back to the release branch. The release is built from the release branch.
 
 Each release is part of a broader Kubernetes lifecycle:
 
-![Image of Kubernetes release lifecycle spanning three releases](release-lifecycle.png)
+![Image of Kubernetes release lifecycle spanning three releases](release-lifecycle.jpg)
 
 ## Removal Of Items From The Milestone
 
