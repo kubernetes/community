@@ -35,7 +35,7 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Divya Mohan (**[@divya-mohan0209](https://github.com/divya-mohan0209)**), HSBC
+* Divya Mohan (**[@divya-mohan0209](https://github.com/divya-mohan0209)**), SUSE
 * Jim Angel (**[@jimangel](https://github.com/jimangel)**), Google
 
 ### Technical Leads
