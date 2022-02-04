@@ -1013,13 +1013,18 @@ sigs:
       url: https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09
       archive_url: https://docs.google.com/document/d/1LdooNTbb9PZMFWy3_F-XAsl7Og5F2lvG3tCgQvoB5e4/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+  - name: cluster-api-operator
+    contact:
+      slack: cluster-api-operator
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-operator/main/OWNERS
   - name: cluster-api-provider-aws
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
     meetings:
     - description: Cluster API Provider AWS office hours
       day: Monday
-      time: "10:00"
+      time: "09:00"
       tz: PT (Pacific Time)
       frequency: biweekly
       url: https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09
@@ -1085,6 +1090,8 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
   - name: cluster-api-provider-packet
+    contact:
+      slack: cluster-api-packet
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-packet/master/OWNERS
   - name: cluster-api-provider-vsphere
