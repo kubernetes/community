@@ -84,12 +84,16 @@ in the purpose or pinned docs of that channel.
 - `#kubernetes-contributors` - Questions and discourse around upstream
   contributions and development to kubernetes.
 - `#kubernetes-careers` - Job openings for positions working with/on/around
-  Kubernetes. Postings
+  Kubernetes. This is the only channel where job postings are permitted. Postings
   must include:
   - A link to the posting or job description.
   - The business name that will employ the Kubernetes hire.
   - The location of the role or if remote is OK.
-
+- `#surveys` - third-party surveys, posted by vendors, recruiters, and researchers.
+  Ecosystem members may post relevant surveys here.  They may *not* post them in
+  any other channel; only surveys authored by official Kubernetes teams may be
+  shared in other channels.
+  
 
 ### Escalating and/or Reporting a Problem
 
