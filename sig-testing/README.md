@@ -80,6 +80,7 @@ It is the next significant iteration of kubetest. We will be deprecating kubetes
 ### prow
 Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action for the Kubernetes project
 - **Owners:**
+  - [kubernetes-sigs/prow](https://github.com/kubernetes-sigs/prow/blob/main/OWNERS)
   - [kubernetes/test-infra/prow](https://github.com/kubernetes/test-infra/blob/master/prow/OWNERS)
 - **Contact:**
   - Slack: [#prow](https://kubernetes.slack.com/messages/prow)
