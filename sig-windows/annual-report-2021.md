@@ -33,8 +33,7 @@
 
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
-   - csi-proxy and storage: this seems like an underserved area for windows
-   https://github.com/kubernetes-csi/csi-proxy (meeting info is there).
+   - csi-proxy and storage: this seems like an underserved area for windows https://github.com/kubernetes-csi/csi-proxy (meeting info is there).
 2. What metrics/community health stats does your group care about and/or measure?
    - stars for ksigs/windows specific repos
      - sig-windows-dev-tools   
