@@ -3,7 +3,10 @@
 ## Current initiatives
 
 1. What work did the SIG do this year that should be highlighted?
-   - Lead the transition to hostProcess containers.
+   - Implemented hostProcess container support in Kubernetes (now in beta) and pomoted adoption in multiple open source communities
+     - https://github.com/kubernetes-sigs/sig-windows-tools/tree/master/hostprocess - for examples of running flannel, calico, csi-proxy, kube-proxy as hostPorcess containers
+     - https://github.com/weaveworks/kured/pull/460  - KuReD Windows support
+     - https://github.com/prometheus-community/windows_exporter/pull/864 - node exporter support
    - Defined the `kubectl node logs` command interface.
    - Made the developer UX for windows transparent with sig-windows-dev-tools.
    - Defined windows operational readiness standards.
