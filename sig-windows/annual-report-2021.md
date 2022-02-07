@@ -9,7 +9,7 @@
    - Defined windows operational readiness standards.
    
 2. What initiatives are you working on that aren't being tracked in KEPs?
-   - Migration of the windows kube-proxy to KPNG (led by amim).
+   - Migration of the windows kube-proxy to KPNG.
    - Migration of testgrid reporting jobs from aks-engine to cluster-api/cluster-api-provder-azure.
    - Dockershim removal / validation for Windows nodes.
 
