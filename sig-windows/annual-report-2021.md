@@ -10,6 +10,7 @@
    - Defined the `kubectl node logs` command interface.
    - Made the developer UX for windows transparent with sig-windows-dev-tools.
    - Defined windows operational readiness standards.
+   - Defined the pod OS field.
    
 2. What initiatives are you working on that aren't being tracked in KEPs?
    - Migration of the windows kube-proxy to KPNG.
