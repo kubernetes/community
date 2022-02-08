@@ -60,6 +60,7 @@ The following [subprojects][subproject-definition] are owned by sig-autoscaling:
   - [kubernetes/autoscaler](https://github.com/kubernetes/autoscaler/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Concerns
 * autoscaling of clusters,

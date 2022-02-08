@@ -53,6 +53,15 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-architecture-test-failures](https://github.com/orgs/kubernetes/teams/sig-architecture-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-architecture:
+* [WG API Expression](/wg-api-expression)
+* [WG Policy](/wg-policy)
+* [WG Reliability](/wg-reliability)
+* [WG Structured Logging](/wg-structured-logging)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-architecture:
@@ -99,6 +108,7 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
   - Slack: [#prod-readiness](https://kubernetes.slack.com/messages/prod-readiness)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 # Details about SIG-Architecture sub-projects

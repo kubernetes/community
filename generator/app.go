@@ -163,7 +163,8 @@ type Group struct {
 	Name             string
 	MissionStatement FoldedString `yaml:"mission_statement,omitempty"`
 	CharterLink      string       `yaml:"charter_link,omitempty"`
-	StakeholderSIGs  []string     `yaml:"stakeholder_sigs,omitempty"`
+	ReportingWGs     []WGName     `yaml:"-"` // populated by Context#Complete()
+	StakeholderSIGs  []SIGName    `yaml:"stakeholder_sigs,omitempty"`
 	Label            string
 	Leadership       LeadershipGroup `yaml:"leadership"`
 	Meetings         []Meeting
@@ -171,11 +172,27 @@ type Group struct {
 	Subprojects      []Subproject `yaml:",omitempty"`
 }
 
+type WGName string
+
+func (n WGName) DirName() string {
+	return DirName("wg", string(n))
+}
+
+type SIGName string
+
+func (n SIGName) DirName() string {
+	return DirName("sig", string(n))
+}
+
 // DirName returns the directory that a group's documentation will be
 // generated into. It is composed of a prefix (sig for SIGs and wg for WGs),
 // and a formatted version of the group's name (in kebab case).
 func (g *Group) DirName(prefix string) string {
-	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(g.Name, " ", "-", -1)))
+	return DirName(prefix, g.Name)
+}
+
+func DirName(prefix, name string) string {
+	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(name, " ", "-", -1)))
 }
 
 // LabelName returns the expected label for a given group
@@ -210,6 +227,20 @@ func (c *Context) PrefixToGroupMap() map[string][]Group {
 	}
 }
 
+// Complete populates derived portions of the Context struct
+func (c *Context) Complete() {
+	// Copy working group names into ReportingWGs list of their stakeholder sigs
+	for _, wg := range c.WorkingGroups {
+		for _, stakeholderSIG := range wg.StakeholderSIGs {
+			for i, sig := range c.Sigs {
+				if sig.Name == string(stakeholderSIG) {
+					c.Sigs[i].ReportingWGs = append(c.Sigs[i].ReportingWGs, WGName(wg.Name))
+				}
+			}
+		}
+	}
+}
+
 // Sort sorts all lists within the Context struct
 func (c *Context) Sort() {
 	for _, groups := range c.PrefixToGroupMap() {
@@ -217,7 +248,12 @@ func (c *Context) Sort() {
 			return groups[i].Dir < groups[j].Dir
 		})
 		for _, group := range groups {
-			sort.Strings(group.StakeholderSIGs)
+			sort.Slice(group.ReportingWGs, func(i, j int) bool {
+				return group.ReportingWGs[i] < group.ReportingWGs[j]
+			})
+			sort.Slice(group.StakeholderSIGs, func(i, j int) bool {
+				return group.StakeholderSIGs[i] < group.StakeholderSIGs[j]
+			})
 			for _, people := range [][]Person{
 				group.Leadership.Chairs,
 				group.Leadership.TechnicalLeads,
@@ -282,15 +318,30 @@ func (c *Context) Validate() []error {
 					}
 				}
 			}
+			if len(group.ReportingWGs) != 0 {
+				if prefix == "sig" {
+					for _, name := range group.ReportingWGs {
+						if index(c.WorkingGroups, func(g Group) bool { return g.Name == string(name) }) == -1 {
+							errors = append(errors, fmt.Errorf("%s: invalid reporting working group name %s", group.Dir, name))
+						}
+					}
+				} else {
+					errors = append(errors, fmt.Errorf("%s: only SIGs may have reporting WGs", group.Dir))
+				}
+			}
 			if len(group.StakeholderSIGs) != 0 {
 				if prefix == "wg" {
 					for _, name := range group.StakeholderSIGs {
-						if index(c.Sigs, func(g Group) bool { return g.Name == name }) == -1 {
+						if index(c.Sigs, func(g Group) bool { return g.Name == string(name) }) == -1 {
 							errors = append(errors, fmt.Errorf("%s: invalid stakeholder sig name %s", group.Dir, name))
 						}
 					}
 				} else {
 					errors = append(errors, fmt.Errorf("%s: only WGs may have stakeholder_sigs", group.Dir))
+				}
+			} else {
+				if prefix == "wg" {
+					errors = append(errors, fmt.Errorf("%s: WGs must have stakeholder_sigs", group.Dir))
 				}
 			}
 			if prefix == "sig" {
@@ -642,6 +693,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	ctx.Complete()
 
 	ctx.Sort()
 

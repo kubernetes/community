@@ -47,6 +47,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-cloud-providers-misc](https://github.com/orgs/kubernetes/teams/sig-cloud-providers-misc) - General Discussion
 - Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-cloud-provider:
+* [WG Structured Logging](/wg-structured-logging)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-cloud-provider:
@@ -135,6 +141,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR).
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

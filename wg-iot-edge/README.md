@@ -11,8 +11,8 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 A Working Group dedicated to discussing, designing and documenting using Kubernetes for developing and deploying IoT and Edge specific applications
 
 ## Stakeholder SIGs
-* SIG Multicluster
-* SIG Network
+* [SIG Multicluster](/sig-multicluster)
+* [SIG Network](/sig-network)
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge) for the group will typically add invites for the following meetings to your calendar.*

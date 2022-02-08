@@ -50,6 +50,12 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-scalability-test-failures](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-scalability:
+* [WG Reliability](/wg-reliability)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-scalability:
@@ -82,6 +88,7 @@ The following [subprojects][subproject-definition] are owned by sig-scalability:
   - [kubernetes/perf-tests/clusterloader2](https://github.com/kubernetes/perf-tests/blob/master/clusterloader2/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 # Scalability Regression - Contact Points
 

@@ -44,6 +44,13 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-mutlicluster-proposals](https://github.com/orgs/kubernetes/teams/sig-mutlicluster-proposals) - Design Proposals
 - Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-multicluster:
+* [WG IoT Edge](/wg-iot-edge)
+* [WG Policy](/wg-policy)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-multicluster:
@@ -64,6 +71,7 @@ The following [subprojects][subproject-definition] are owned by sig-multicluster
   - [kubernetes-sigs/work-api](https://github.com/kubernetes-sigs/work-api/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Subprojects
 

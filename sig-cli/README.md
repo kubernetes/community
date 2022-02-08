@@ -108,6 +108,7 @@ Hybrid command-line/UI development experience for cloud-native development
   - Slack: [#kustomize](https://kubernetes.slack.com/messages/kustomize)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

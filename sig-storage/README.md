@@ -51,6 +51,15 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-storage-test-failures](https://github.com/orgs/kubernetes/teams/sig-storage-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-storage:
+* [WG Data Protection](/wg-data-protection)
+* [WG Multitenancy](/wg-multitenancy)
+* [WG Policy](/wg-policy)
+* [WG Structured Logging](/wg-structured-logging)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-storage:
@@ -120,6 +129,7 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - [kubernetes/kubernetes/pkg/volume](https://github.com/kubernetes/kubernetes/blob/master/pkg/volume/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Details

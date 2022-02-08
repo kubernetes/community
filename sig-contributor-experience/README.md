@@ -129,6 +129,7 @@ Creates and maintains tools and automation for Kubernetes Slack.
   - Slack: [#slack-infra](https://kubernetes.slack.com/messages/slack-infra)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Relevant Presentations

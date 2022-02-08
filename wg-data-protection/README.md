@@ -14,8 +14,8 @@ This [work-in-progress doc](https://docs.google.com/document/d/1yHbW0hxHehQzdaL7
 The [charter](charter.md) defines the scope and governance of the Data Protection Working Group.
 
 ## Stakeholder SIGs
-* SIG Apps
-* SIG Storage
+* [SIG Apps](/sig-apps)
+* [SIG Storage](/sig-storage)
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-data-protection) for the group will typically add invites for the following meetings to your calendar.*

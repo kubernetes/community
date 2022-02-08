@@ -50,6 +50,15 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-network-test-failures](https://github.com/orgs/kubernetes/teams/sig-network-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-network:
+* [WG IoT Edge](/wg-iot-edge)
+* [WG Multitenancy](/wg-multitenancy)
+* [WG Policy](/wg-policy)
+* [WG Structured Logging](/wg-structured-logging)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-network:
@@ -98,6 +107,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - [kubernetes/kubernetes/pkg/kubelet/network](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/network/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Areas of Responsibility
 
