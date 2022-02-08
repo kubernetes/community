@@ -2026,7 +2026,7 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Tuesday
-    time: "14:30"
+    time: "15:30"
     tz: UTC
     frequency: biweekly
     url: https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09
@@ -2086,7 +2086,7 @@ sigs:
     meetings:
     - description: Release Engineering
       day: Tuesday
-      time: "14:30"
+      time: "15:30"
       tz: UTC
       frequency: biweekly
       url: https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09
