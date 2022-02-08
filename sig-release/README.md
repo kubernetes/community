@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Release Specia
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-release) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Tuesdays at 14:30 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
+* Regular SIG Meeting: [Tuesdays at 15:30 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-release-meeting).
   * [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 
@@ -94,7 +94,7 @@ The Release Engineering subproject is responsible for the [process/procedures](h
     - [@kubernetes/repo-infra-admins](https://github.com/orgs/kubernetes/teams/repo-infra-admins)
     - [@kubernetes/repo-infra-maintainers](https://github.com/orgs/kubernetes/teams/repo-infra-maintainers)
 - **Meetings:**
-  - Release Engineering: [Tuesdays at 14:30 UTC](https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
+  - Release Engineering: [Tuesdays at 15:30 UTC](https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
     - [Meeting notes and Agenda](https://bit.ly/k8s-releng-meeting).
     - [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 ### Release Team
