@@ -187,9 +187,6 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
   - [kubernetes-sigs/kubespray](https://github.com/kubernetes-sigs/kubespray/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#kubespray](https://kubernetes.slack.com/messages/kubespray)
-- **Meetings:**
-  - Kubespray Office Hours: [Wednesdays at 08:00 PT (Pacific Time)](https://zoom.us/j/532465189?pwd=THMvL2MzdjZXWG55eHpJMkU2dkI1dz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit).
 ### minikube
 - **Owners:**
   - [kubernetes/minikube](https://github.com/kubernetes/minikube/blob/master/OWNERS)

@@ -1180,14 +1180,6 @@ sigs:
       slack: kubespray
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
-    meetings:
-    - description: Kubespray Office Hours
-      day: Wednesday
-      time: "08:00"
-      tz: PT (Pacific Time)
-      frequency: biweekly
-      url: https://zoom.us/j/532465189?pwd=THMvL2MzdjZXWG55eHpJMkU2dkI1dz09
-      archive_url: https://docs.google.com/document/d/1oDI1rTwla393k6nEMkqz0RU9rUl3J1hov0kQfNcl-4o/edit
   - name: minikube
     contact:
       slack: minikube
