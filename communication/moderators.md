@@ -144,21 +144,23 @@ Email: contributors@kubernetes.io
 
 ### Primary Moderators
 
-Moderators seats: 10
+Moderators seats: 12
 
-| Name           | Kubernetes Slack ID | Region   | Timezone                                                |
-| -------------- | ------------------- | -------- | ------------------------------------------------------- |
-| Alison Dowdney | @alisondy           | EMEA     | [GMT - Greenwich Mean Time](https://time.is/GMT)        |
-| Jeffrey Sica   | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Bob Killen     | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Chris Short    | @chrisshort         | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Taylor Dolezal | @onlydole           | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Dan “POP” Papandrea | @danpopSD      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Marky Jackson| @markyjackson-taulia  | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Nigel Brown    | @nigel              | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
-| Bhumij Gupta   | @bhumij             | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
-| Pritish Samal  | @Pritish            | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
-| Sandipan Panda | @Sandipan           | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
+| Name                | Kubernetes Slack ID   | Region   | Timezone                                                |
+| ------------------- | --------------------- | -------- | ------------------------------------------------------- |
+| Alison Dowdney      | @alisondy             | EMEA     | [GMT - Greenwich Mean Time](https://time.is/GMT)        |
+| Jeffrey Sica        | @jeefy                | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Bob Killen          | @mrbobbytables        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Chris Short         | @chrisshort           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Taylor Dolezal      | @onlydole             | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Dan “POP” Papandrea | @danpopSD             | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Marky Jackson       | @markyjackson-taulia  | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Nigel Brown         | @nigel                | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
+| Bhumij Gupta        | @bhumij               | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
+| Pritish Samal       | @Pritish              | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
+| Sandipan Panda      | @Sandipan             | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
+| Carlos Santana      | @csantanapr           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| _Open_              | _Open_                | _Open_   | _Open_                                                  |
 
 ### Moderators Pro Tempore
 
