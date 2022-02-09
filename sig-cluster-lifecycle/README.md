@@ -71,7 +71,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
   - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
 - **Meetings:**
   - Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1LdooNTbb9PZMFWy3_F-XAsl7Og5F2lvG3tCgQvoB5e4/edit).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1ushaVqAKYnZ2VN_aa3GyKlS4kEd6bSug13xaXOakAQI/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-operator
 - **Owners:**
