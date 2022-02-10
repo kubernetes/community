@@ -248,6 +248,7 @@ channels:
   - name: kurl
   - name: kustomize
   - name: kyverno
+  - name: kyverno-dev
   - name: leadership-summit
     archived: true
   - name: linode
