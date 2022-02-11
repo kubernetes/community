@@ -37,6 +37,8 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Divya Mohan (**[@divya-mohan0209](https://github.com/divya-mohan0209)**), SUSE
 * Jim Angel (**[@jimangel](https://github.com/jimangel)**), Google
+* Natali Vlatko (**[@natalisucks](https://github.com/natalisucks)**), Wayfair
+* Rey Lejano (**[@reylejano](https://github.com/reylejano)**), SUSE
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -45,6 +47,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Karen Bradshaw (**[@kbhawkey](https://github.com/kbhawkey)**), Independent
 * Taylor Dolezal (**[@onlydole](https://github.com/onlydole)**), Independent
 * Tim Bannister (**[@sftim](https://github.com/sftim)**), The Scale Factory
+* Qiming Teng (**[@tengqm](https://github.com/tengqm)**), Sangfor Technologies
 
 ## Emeritus Leads
 

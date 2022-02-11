@@ -1375,6 +1375,12 @@ sigs:
     - github: jimangel
       name: Jim Angel
       company: Google
+    - github: natalisucks
+      name: Natali Vlatko
+      company: Wayfair
+    - github: reylejano
+      name: Rey Lejano
+      company: SUSE
     tech_leads:
     - github: kbhawkey
       name: Karen Bradshaw
@@ -1385,6 +1391,9 @@ sigs:
     - github: sftim
       name: Tim Bannister
       company: The Scale Factory
+    - github: tengqm
+      name: Qiming Teng
+      company: Sangfor Technologies
     emeritus_leads:
     - github: Bradamant3
       name: Jennifer Rondeau
