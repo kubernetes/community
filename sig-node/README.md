@@ -44,6 +44,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-node:
+* [WG Batch](/wg-batch)
 * [WG Multitenancy](/wg-multitenancy)
 * [WG Policy](/wg-policy)
 * [WG Structured Logging](/wg-structured-logging)

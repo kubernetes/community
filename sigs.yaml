@@ -2873,6 +2873,52 @@ workinggroups:
     liaison:
       github: liggitt
       name: Jordan Liggitt
+- dir: wg-batch
+  name: Batch
+  mission_statement: >
+    Discuss and enhance the support for Batch (eg. HPC, AI/ML, data analytics, CI)
+    workloads in core Kubernetes. We want to unify the way users deploy batch workloads
+    to improve portability and to simplify supportability for Kubernetes providers.
+
+  charter_link: charter.md
+  stakeholder_sigs:
+  - Apps
+  - Autoscaling
+  - Node
+  - Scheduling
+  label: batch
+  leadership:
+    chairs:
+    - github: Huang-Wei
+      name: Wei Huang
+      company: Apple
+    - github: ahg-g
+      name: Abdullah Gharaibeh
+      company: Google
+    - github: endocrimes
+      name: Danielle Lancashire
+      company: VMware
+    - github: soltysh
+      name: Maciej Szulik
+      company: Red Hat
+    - github: swatisehgal
+      name: Swati Sehgal
+      company: Intel
+  meetings:
+  - description: Regular Meeting
+    day: TBD
+    time: TBD
+    tz: UTC
+    frequency: biweekly
+    url: TBD
+    archive_url: TBD
+    recordings_url: TBD
+  contact:
+    slack: wg-batch
+    mailing_list: TBD
+    liaison:
+      github: mrbobbytables
+      name: Bob Killen
 - dir: wg-data-protection
   name: Data Protection
   mission_statement: >
