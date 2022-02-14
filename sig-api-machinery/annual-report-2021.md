@@ -7,7 +7,7 @@
    - Server Side Apply promoted to GA
    - Deprecated v1beta1 of Custom Resources and Webhooks (in favor of GA version)
    - API Priority and Fairness introduced v1beta2
-   - A massive ammount of improvements in the API Expression WG
+   - A massive amount of improvements in the API Expression WG
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
