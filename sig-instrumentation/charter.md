@@ -5,9 +5,9 @@ the Roles and Organization Management outlined in [sig-governance].
 
 ## Scope
 
-Owns best practices for cluster observability through metrics and logging
-across all Kubernetes components and development of components required for all
-Kubernetes clusters (eg. heapster, metrics-server).
+Owns best practices for cluster observability through metrics, logging, events,
+and traces across all Kubernetes components and development of components
+required for all Kubernetes clusters (eg. klog, kube-state-metrics).
 
 ### In scope
 

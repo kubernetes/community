@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Instrumentation Special Interest Group
 
-Covers best practices for cluster observability through metrics, logging, and events across all Kubernetes components and development of relevant components such as Heapster and kube-state-metrics. Coordinates metric requirements of different SIGs for other components through finding common APIs.
+Covers best practices for cluster observability through metrics, logging, events, and traces across all Kubernetes components and development of relevant components such as klog and kube-state-metrics. Coordinates metric requirements of different SIGs for other components through finding common APIs.
 
 The [charter](charter.md) defines the scope and governance of the Instrumentation Special Interest Group.
 
