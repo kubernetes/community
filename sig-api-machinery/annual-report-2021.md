@@ -74,7 +74,7 @@ On the inclusion health of the SIG, we look at:
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
 
-   - No, it can be improved. The main concern has always been the large ammount of investment that is required to ramp up new contributors
+   - No, it can be improved. The main concern has always been the large amount of investment that is required to ramp up new contributors
 
 5. Does the group have contributors from multiple companies/affiliations?
 
