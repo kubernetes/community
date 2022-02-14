@@ -4,17 +4,13 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-   -
-   -
-   -
+   - TBD
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
-   -
-   -
-   -
+   - TBD
 
-3. KEP work in 2021 (1.x, 1.y, 1.z):
+3. KEP work in 2021 (1.x, 1.y, 1.z): TBD
 
 <!--
 In future, this will be generated from kubernetes/enhancements kep.yaml files
@@ -39,44 +35,39 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
 
-   -
-   -
-   -
+   - TBD
 
 2. What metrics/community health stats does your group care about and/or measure?
 
-   -
-   -
-   -
+   - TBD
 
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
 
-   -
+   - TBD
 
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
 
-   -
+   - TBD
 
 5. Does the group have contributors from multiple companies/affiliations?
 
-   -
+   - TBD
 
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
-   -
-   -
+   - TBD
 
 ## Membership
 
-- Primary slack channel member count:
-- Primary mailing list member count:
-- Primary meeting attendee count (estimated, if needed):
-- Primary meeting participant count (estimated, if needed):
-- Unique reviewers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
-- Unique approvers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
+- Primary slack channel member count: TBD
+- Primary mailing list member count: TBD
+- Primary meeting attendee count (estimated, if needed): TBD
+- Primary meeting participant count (estimated, if needed): TBD
+- Unique reviewers for SIG-owned packages: TBD<!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
+- Unique approvers for SIG-owned packages: TBD <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
 
 Include any other ways you measure group membership
 
@@ -86,6 +77,8 @@ Include any other ways you measure group membership
 In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
 Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
 -->
+
+ - TBD
 
 New in $YYYY:
 - [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
@@ -106,6 +99,8 @@ In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $Y
 Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
 -->
 
+ - TBD
+
 New in $YYYY:
 - [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
 -
@@ -120,7 +115,7 @@ Continuing:
 
 ## Operational
 
-Operational tasks in [sig-governance.md]:
+Operational tasks in [sig-governance.md]: TBD
 
 - [ ] [README.md] reviewed for accuracy and updated if needed
 - [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
