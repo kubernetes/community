@@ -182,6 +182,7 @@ usergroups:
       - microwavables
       - anjaltelang
       - shamus
+      - pnbrown
 
   - name: steering-members
     long_name: Kubernetes Steering Committee
