@@ -39,9 +39,15 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
 
-   -
-   -
-   -
+   All of the following areas are reviewed by the Release Engineering
+   subproject, but we could always use more help here:
+
+   - [kubernetes-sigs/bom](https://github.com/kubernetes-sigs/bom/blob/main/OWNERS)
+   - [kubernetes-sigs/downloadkubernetes](https://github.com/kubernetes-sigs/downloadkubernetes/blob/master/OWNERS)
+   - [kubernetes-sigs/mdtoc](https://github.com/kubernetes-sigs/mdtoc/blob/master/OWNERS)
+   - [kubernetes-sigs/release-notes](https://github.com/kubernetes-sigs/release-notes/blob/master/OWNERS)
+   - [kubernetes-sigs/zeitgeist](https://github.com/kubernetes-sigs/zeitgeist/blob/master/OWNERS)
+   - [kubernetes/repo-infra](https://github.com/kubernetes/repo-infra/blob/master/OWNERS)
 
 2. What metrics/community health stats does your group care about and/or measure?
 
@@ -106,41 +112,28 @@ Include any other ways you measure group membership
 
 ## Subprojects
 
-<!--
-In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
-Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
--->
+Retired in 2021:
 
-New in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
-
-Retired in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+- [Licensing](https://git.k8s.io/community/sig-release#licensing)
 
 Continuing:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+
+- [Release Engineering](https://git.k8s.io/community/sig-release#release-engineering)
+- [Release Team](https://git.k8s.io/community/sig-release#release-team)
 
 ## Working groups
 
-<!--
-In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
-Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
--->
+New in 2021:
 
-New in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+- [WG Reliability](https://git.k8s.io/community/wg-reliability/) ([2021 report](https://git.k8s.io/community/wg-reliability/annual-report-2021.md))
 
-Retired in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+Retired in 2021:
+
+WG K8s Infra was converted into [SIG K8s Infra](https://git.k8s.io/community/sig-k8s-infra) in 2021.
 
 Continuing:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+
+- [WG Reliability](https://git.k8s.io/community/wg-reliability/) ([2021 report](https://git.k8s.io/community/wg-reliability/annual-report-2021.md))
 
 ## Operational
 
