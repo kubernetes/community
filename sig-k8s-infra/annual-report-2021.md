@@ -4,15 +4,11 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-   -
-   -
-   -
+   - TBD
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
-   -
-   -
-   -
+   - TBD
 
 3. KEP work in 2021 (1.x, 1.y, 1.z):
 
@@ -39,44 +35,43 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
 
-   -
-   -
-   -
+   - TBD
 
 2. What metrics/community health stats does your group care about and/or measure?
 
-   -
-   -
-   -
+   - TBD
 
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
 
-   -
+   - TBD
 
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
 
-   -
+   - TBD
 
 5. Does the group have contributors from multiple companies/affiliations?
 
-   -
+   - TBD
 
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
-   -
-   -
+   - AWS
+   - Google
+   - II Coop
+   - Independent
+   - VMware
 
 ## Membership
 
-- Primary slack channel member count:
-- Primary mailing list member count:
-- Primary meeting attendee count (estimated, if needed):
-- Primary meeting participant count (estimated, if needed):
-- Unique reviewers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
-- Unique approvers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
+- Primary slack channel member count: 837
+- Primary mailing list member count: 248
+- Primary meeting attendee count (estimated, if needed): TBD
+- Primary meeting participant count (estimated, if needed): TBD
+- Unique reviewers for SIG-owned packages: TBD <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
+- Unique approvers for SIG-owned packages: TBD <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
 
 Include any other ways you measure group membership
 
@@ -127,7 +122,7 @@ Operational tasks in [sig-governance.md]:
       (or created if missing and your contributor steps and experience are different or more
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
 - [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
+- [X] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
 - [ ] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
 - [ ] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
       -
