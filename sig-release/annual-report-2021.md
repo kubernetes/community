@@ -57,11 +57,30 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
 
-   -
+   - [Release Team](https://github.com/kubernetes/sig-release/tree/master/release-team)
+   - [Release Engineering](https://github.com/kubernetes/sig-release/tree/master/release-engineering)
 
 5. Does the group have contributors from multiple companies/affiliations?
 
-   -
+   - Yes, over the past two years, we've had contributors from the following companies (non-exhaustive, gathered from [here](https://k8s.devstats.cncf.io/d/55/company-prs-in-repository-groups?orgId=1&var-period_name=Last%202%20years&var-repogroups=SIG%20Release&var-repos=All&var-companies=All&var-countries=All)):
+     - Red Hat
+     - Cisco
+     - Chainguard
+     - Mattermost
+     - Apple
+     - SUSE
+     - VMware
+     - Upbound
+     - Google
+     - Jetstack
+     - Kubermatic
+     - IBM
+     - HashiCorp
+     - SAP
+     - HSBC
+     - Huawei
+     - Intel
+     - Autodesk
 
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
