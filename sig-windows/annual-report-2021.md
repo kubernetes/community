@@ -78,7 +78,7 @@ Include any other ways you measure group membership
 
 ## Working groups
 
-Same as above.
+n/a
 
 ## Operational
 
