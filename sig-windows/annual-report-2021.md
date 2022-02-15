@@ -27,7 +27,7 @@
      - (1.22) [1981 - Windows Privileged Container Support](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1981-windows-privileged-container-support/README.md)
      - (1.23) [2802 -Identify Windows pods at API admission level authoritatively](https://github.com/kubernetes/enhancements/tree/master/keps/sig-windows/2802-identify-windows-pods-apiserver-admission/README.md)
    - Pre-alpha (Targeting 1.24)
-     - [2578 - Windows Conformance](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/2578-windows-conformance/kep.yaml)
+     - [2578 - Windows Operational Readiness](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/2578-windows-conformance/kep.yaml)
 
 ## Project health
 
