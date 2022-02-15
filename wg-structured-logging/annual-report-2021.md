@@ -6,12 +6,12 @@
    For example, artifacts, reports, white papers produced this year.
 
    - Graduated [Structured Logging](https://github.com/kubernetes/enhancements/issues/1602) to Beta
-   - Graduated [Derecation of klog specific flags](https://github.com/kubernetes/enhancements/issues/2845) to Beta
-   - Created draft proposal for [Contextual logging](https://docs.google.com/document/d/1FaDj3_MvLWSuUtlVapgfTUglhYjBem1LNcpdd_OyBwU/edit?usp=sharing)
+   - Graduated [Deprecation of klog specific flags](https://github.com/kubernetes/enhancements/issues/2845) to Beta
+   - Created prototype and KEP for [Contextual logging](https://github.com/kubernetes/enhancements/pull/3078)
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
-   - Continiusly migrating kubernetes/kubernetes repository to structured logging. In 2021 kubelet, kube-scheduler, kube-proxy were migrated.
+   - Continuously migrating kubernetes/kubernetes repository to structured logging. In 2021 kubelet, kube-scheduler, kube-proxy were migrated.
 
 
 ## Project health
@@ -19,13 +19,13 @@
 1. What's the current roadmap until completion of the working group?
 
    - Graduate [Contextual Logging](https://github.com/kubernetes/enhancements/issues/3077) to Beta and GA
-   - Graduate [Derecation of klog specific flags](https://github.com/kubernetes/enhancements/issues/2845) to GA
+   - Graduate [Deprecation of klog specific flags](https://github.com/kubernetes/enhancements/issues/2845) to GA
    - Graduated [Structured Logging](https://github.com/kubernetes/enhancements/issues/1602) to GA
    - All code in kubernetes/kubernetes repository is migrated to Structured Logging API
 
 2. Does the group have contributors from multiple companies/affiliations?
 
-   - Yes, current members are from 1 ZTE, 1 Appdynamics, 1 Google, 3 VMware, 1 Intel and 2 unaffiliated.
+   - Yes, current members are from 1 ZTE, 1 AppDynamics, 1 Google, 3 VMware, 1 Intel and 2 unaffiliated.
 
 3. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
