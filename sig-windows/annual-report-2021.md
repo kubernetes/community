@@ -57,7 +57,7 @@
    - testing hostProcess implementations on several windows apps
    - improving our dev tools environment to grow the community
    - hardening the CSI proxy and CSI support ecosystem
-   - performance testing Kubernetes on Windows extensively and publishing results
+   - performance testing Kubernetes on Windows extensively and publishing results in cncf blog posts
 
 ## Membership
 - Primary slack channel member count: 1507
