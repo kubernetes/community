@@ -24,7 +24,7 @@ Enable API authors to better serve API consumers, by improving and documenting a
 ## Organizers
 
 * Antoine Pelisse (**[@apelisse](https://github.com/apelisse)**), Google
-* Kevin Wiesmueller (**[@kwiesmueller](https://github.com/kwiesmueller)**), //SEIBERT/MEDIA GmbH
+* Kevin Wiesmueller (**[@kwiesmueller](https://github.com/kwiesmueller)**), Google
 
 ## Contact
 - Slack: [#wg-api-expression](https://kubernetes.slack.com/messages/wg-api-expression)
