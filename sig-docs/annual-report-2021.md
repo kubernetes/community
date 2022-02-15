@@ -4,17 +4,15 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-   -
-   -
-   -
+   - SIG Docs put meaningful effort into growing its contributor and reviewer base in 2021, introducing a shadow program for PR Wrangling as well as dedicating more time to being active via our Slack community channel. This is an ongoing effort to grow our contributor base to a stable number, alongside easing the burden on our small group of reviewers and approvers.
+   - Alongside growing our contributor base, SIG Docs also worked on a leadership transition strategy to bring community members into leadership roles. Via a specialized six month mentorship program expertly led by Steering Committee member Paris Pittman, SIG Docs was able to grow its leadership cohort for the main SIG, as well as some of its subgroups, adding new co-chairs and tech leads.
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
-   -
-   -
-   -
+   - Localization Subproject: SIG Docs is working on formalizing the localization work that has been ongoing for some time, with appointed leads of this initiative as well as recognizing the contributions of various community members across the different languages the Kubernetes website has been translated into. This subproject will be finalized by Q1 2022, with all active localizations informed and updated.
+   - New Contributor Ambassador Program: As a continuation of our push to grow the SIG Docs contributor base, we're working on a specalized role that aims to support new and would-be contributors get up to speed with our processes and workflows. This role would be capped at six months for it to be shared amongst the community, with this feeding into a possible reviewer funnel as contributors get more comfortable with providing feedback to others.
 
-3. KEP work in 2021 (1.x, 1.y, 1.z):
+3. KEP work in 2021 (continuous and does not target any release):
 
 <!--
 In future, this will be generated from kubernetes/enhancements kep.yaml files
@@ -22,61 +20,56 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 2. listing 1.x, 1.y, or 1.z in milestones or in latest-milestone
 -->
 
-   - Stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-   - Beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-   - Alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-   - Pre-alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md)
+   - [1326 - Doc policies for third party content](https://git.k8s.io/enhancements/keps/sig-docs/1326-third-party-content-in-docs/README.md)
+
 
 ## Project health
 
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
 
-   -
-   -
-   -
+   - Require more contributors to form a stable pool for SIG Docs
+   - Require guidelines on how we could ramp up folks nominated to the New Contributor Ambassador role specific to SIG Docs.
 
 2. What metrics/community health stats does your group care about and/or measure?
 
-   -
-   -
-   -
+
+   - SIG Docs has a [dashboard](https://datastudio.google.com/u/0/reporting/fede2672-b2fd-402a-91d2-7473bdb10f04/page/567IC) available with site anyaltics. Some highlights include: 
+       - 2021 Pages views: 111,565,437
+       - Top pages for 2021 (excluding the home page): 
+           - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+           - https://kubernetes.io/docs/concepts/services-networking/service/
+           - https://kubernetes.io/docs/concepts/services-networking/ingress/
+   - PR velocity and open PR age is tracked in [Devstat](https://k8s.devstats.cncf.io/d/25/open-pr-age-by-repository-group?orgId=1&var-period=q&var-repogroup_name=SIG%20Docs&var-kind_name=All). We aim to have < 100 open PRs for the English localization, and will take steps as needed if we see the figure climbing much above that. For example, based on 12/31/2020 data, we have: Average number of opened PRs 368 with the median opened PRs age 5 days 21 hours 26 minutes 42 seconds
 
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
 
-   -
+   - It's updated to the best of our knowledge.
 
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
 
-   -
+   - We have a [well-documented guide](https://kubernetes.io/docs/contribute/#:~:text=Anyone%20can%20open%20an%20issue,the%20CNCF%20Contributor%20License%20Agreement.) that details how folks can get started and the various ways in which they can scale the contributor ladder.
+   - We actively assign good-first-issue labels to issues that we think early-lifecycle contributors could begin with. During KubeCons we also do introduction presentations and mentoring sessions to try and funnel contributors in to our SIG.
 
 5. Does the group have contributors from multiple companies/affiliations?
 
-   -
+   - [98 companies](https://k8s.devstats.cncf.io/d/8/company-statistics-by-repository-group?orgId=1&var-period=y&var-metric=contributions&var-repogroup_name=SIG%20Docs&var-repo_name=kubernetes%2Fkubernetes&var-companies=All&from=1609455600000&to=1639350000000)
 
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
-   -
-   -
+   - We're in the process of formalizing the localization subproject. We aim for it to, potentially, provide more avenues for contribution. More details around leadership for the localization supbproject can be found in [this message](https://groups.google.com/a/kubernetes.io/g/dev/c/SP6weMvx3wg/m/l8LAL-OFCQAJ) sent to dev@kubernetes.io 
 
 ## Membership
 
-- Primary slack channel member count:
-- Primary mailing list member count:
-- Primary meeting attendee count (estimated, if needed):
-- Primary meeting participant count (estimated, if needed):
-- Unique reviewers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
-- Unique approvers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
+- Primary slack channel member count: 1876
+- Primary mailing list member count: 453
+- Primary meeting attendee count (estimated, if needed): 10
+- Primary meeting participant count (estimated, if needed): 6
+- Unique reviewers for SIG-owned packages: 76 <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
+- Unique approvers for SIG-owned packages: 93<!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
 
 Include any other ways you measure group membership
 
@@ -87,51 +80,28 @@ In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $Y
 Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
 -->
 
-New in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
-
-Retired in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
-
 Continuing:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+- [kubernetes-blog](https://git.k8s.io/community/sig-docs#kubernetes-blog)
+- [reference-docs](https://git.k8s.io/community/sig-docs#reference-docs)
+- [website](https://git.k8s.io/community/sig-docs#website)
 
-## Working groups
-
-<!--
-In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
-Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
--->
-
-New in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
-
-Retired in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
-
-Continuing:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+In 2021, SIG Docs started to formalize the localization subgroup into an official subproject.
 
 ## Operational
 
 Operational tasks in [sig-governance.md]:
 
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
+- [X] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
       (or created if missing and your contributor steps and experience are different or more
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
-- [ ] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
-      -
-      -
+- [X] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [X] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
+- [x] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+      - [Kubernetes SIG Docs: A Deep Dive](https://www.youtube.com/watch?v=GDfcBF5et3Q), presented at KubeCon NA, 2021
+      - [SIG Docs: New roles & leadership nominations to dev@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/dev/c/SP6weMvx3wg/m/l8LAL-OFCQAJ)
+      - [SIG Docs APAC Meeting has changed to 1 AM IST/5.30 AM UTC on the last Wednesday of every month to kubernetes-sig-docs@googlegroups.com](https://groups.google.com/g/kubernetes-sig-docs/c/P7iLejmEIFA/m/-dPsBOpoDAAJ)
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-docs/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
