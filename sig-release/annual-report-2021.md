@@ -2,19 +2,38 @@
 
 ## Current initiatives
 
-1. What work did the SIG do this year that should be highlighted?
+### 1. What work did the SIG do this year that should be highlighted?
 
-   -
-   -
-   -
+#### Release Engineering
 
-2. What initiatives are you working on that aren't being tracked in KEPs?
+After finalizing the rewrite of the release process from bash into golang,
+the release engineering team has been focusing its efforts on two main
+areas:
 
-   -
-   -
-   -
+   1. Improving the release automation on two fronts:
+      1. Adding new features, tests and checks to the release process which
+         were missing from the original anago (binary verification, CVE
+         disclosure, building from custom branches and repositories).
+      1. Consolidating the codebases of new repositories which SIG Release
+         brought under its responsibility. The range of new repositories we
+         are consolidating go from critical projects (like the image promoter)
+         to less important repositories (like downloadkubernetes.com) 
+   1. Hardening the Kubernetes Supply Chain via key efforts:
+      1. SBOM Generation
+      1. SLSA 3 compliance
+      1. Artifact signing 
 
-3. KEP work in 2021 (1.x, 1.y, 1.z):
+#### Release Team
+
+### 2. What initiatives are you working on that aren't being tracked in KEPs?
+
+The most important change currently under development not tracked in a KEP is
+the new automated branch forward. Tests are currently underway and we aim to
+have automated forward of the release branch during code freeze by the 1.25 cycle.
+[A recent announcement sent to the dev mailing list](https://groups.google.com/a/kubernetes.io/g/dev/c/qbHPJjUF3s8)
+has more details about the plan.
+
+### 3. KEP work in 2021 (1.x, 1.y, 1.z):
 
 <!--
 In future, this will be generated from kubernetes/enhancements kep.yaml files
@@ -22,17 +41,11 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 2. listing 1.x, 1.y, or 1.z in milestones or in latest-milestone
 -->
 
-   - Stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-   - Beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
    - Alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-   - Pre-alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md)
+     - [KEP-2853 - Kubernetes repository branch rename](https://github.com/kubernetes/enhancements/blob/master/keps/sig-release/2853-k-core-branch-rename/README.md) - $milestone.stable
+     - [KEP-3027 - SLSA Level 3 Compliance in the Kubernetes Release Process](https://github.com/kubernetes/enhancements/blob/master/keps/sig-release/3027-slsa-compliance/README.md) - $milestone.stable
+     - [KEP-3031: Signing release artifacts](https://github.com/kubernetes/enhancements/blob/master/keps/sig-release/3031-signing-release-artifacts/README.mdhttps://git.k8s.io/community/$link/README.md) - $milestone.beta
+     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
 
 ## Project health
 
@@ -139,16 +152,16 @@ Continuing:
 
 Operational tasks in [sig-governance.md]:
 
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
       (or created if missing and your contributor steps and experience are different or more
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
-- [ ] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
-      -
-      -
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
+- [x] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+
+      - [Hardening the Kubernetes Software Supply Chain Through Better Transparency](https://www.youtube.com/watch?v=W6hUXv66rRc) KubeCon + CloudNativeCon NA 2021
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-release/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
