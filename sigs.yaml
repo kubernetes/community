@@ -2283,6 +2283,9 @@ sigs:
   - name: kube-scheduler-simulator
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kube-scheduler-simulator/master/OWNERS
+  - name: kueue
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
   - name: poseidon
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
