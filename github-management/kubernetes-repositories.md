@@ -94,6 +94,7 @@ demonstrate that:
    * All contributors must have signed the [CNCF Individual
      CLA](https://github.com/cncf/cla/blob/master/individual-cla.pdf) or [CNCF
 Corporate CLA](https://github.com/cncf/cla/blob/master/corporate-cla.pdf)
+     See [The Contributor License Agreement](https://github.com/kubernetes/community/blob/master/CLA.md)
    * If (a) contributor(s) have not signed the CLA and could not be reached, a
      NOTICE file should be added referencing section 7 of the CLA with a list of
 the developers who could not be reached
