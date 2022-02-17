@@ -57,7 +57,7 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
 
-   -
+   - We don't have our own CONTRIBUTING.md as the overall one is suitable for our SIG. However, we have [filed an issue](https://github.com/kubernetes/community/issues/6462) to create one to better document how to get involved with our subprojects.
 
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
@@ -71,8 +71,34 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
-   - Yes
-   -
+SIG leads performed a [staffing and gap analysis](https://docs.google.com/document/d/1qeoP6i7GBTVJuJE1AGY5iU9dqmAOxrjqkfNQ2-rBeyI/edit#heading=h.849b7ydpl7ip) for the SIG's projects. We definitely can use more help, and need more part-time/full-time contributors.
+
+### Summary
+
+- **KTLO:** 4 leads at 5%, 2 maintainers at 10% for core, 9-10 maintainers at 5% for 5 subprojects (can have overlap between roles, but need a minimum of 3-4 part-time contributors at 25%)
+- **Feature work:** needs significant ongoing additional investment, minimum of 2-3 FT devs or features will continue to slip
+
+### Details
+
+- **KTLO:** Requires two experienced part-time maintainers at 10% (e.g. 2x4h = 8h/wk) in addition to the SIG leadership (chairs/TLs @ minimum of 2h/wk)
+  - Chairs/TLs currently perform the bulk of this work but even amongst the four of them, **do not** have 8h total weekly allocated
+- **Feature work:** requires significantly more investment from development and review time. 
+  - E.g. Structured logging initiative requires a minimum of 2 FT staff for the duration of feature development from beta -> GA
+  - Additional metric stability classes and graduation: 1PT maintainer at 25% for the duration of feature development
+  - SIG currently owns a number of KEPs stuck in alpha/beta due to lack of dev resources:
+      - https://github.com/kubernetes/enhancements/issues/383 
+      - https://github.com/kubernetes/enhancements/issues/1668
+      - https://github.com/kubernetes/enhancements/issues/1753 
+      - https://github.com/kubernetes/enhancements/issues/2305 
+
+### Subprojects
+
+- Subprojects are currently mature/stable and mainly have KTLO needs
+- kube-state-metrics: 2-3 experienced maintainers at 5%, currently staffed
+- Metrics-server: 2 experienced maintainers at 5%, currently staffed
+- Custom-metrics-apiserver: 1 experienced maintainer at 5%, currently staffed
+- Klog: 2 experienced maintainers at 5%, has **no current staffing**
+- Prometheus-adapter: 2 experienced maintainers at 5%, has **no current staffing**
 
 ## Membership
 
@@ -99,7 +125,6 @@ New in 2021:
 - [instrumentation-addons](https://github.com/kubernetes-sigs/instrumentation-addons)
 
 Retired in 2021:
-- [heapster](https://github.com/kubernetes-retired/heapster)
 - [mutating-trace-admission-controller](https://github.com/kubernetes-retired/mutating-trace-admission-controller)
 
 Continuing:
