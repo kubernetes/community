@@ -34,7 +34,7 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 2. What metrics/community health stats does your group care about and/or measure?
 
 
-   - SIG Docs has a [dashboard](https://datastudio.google.com/u/0/reporting/fede2672-b2fd-402a-91d2-7473bdb10f04/page/567IC) available with site anyaltics. Some highlights include: 
+   - SIG Docs has a [dashboard](https://datastudio.google.com/u/0/reporting/fede2672-b2fd-402a-91d2-7473bdb10f04/page/567IC) available with site analytics. Some highlights include: 
        - 2021 Pages views: 111,565,437
        - Top pages for 2021 (excluding the home page): 
            - https://kubernetes.io/docs/reference/kubectl/cheatsheet/
