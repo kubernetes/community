@@ -174,10 +174,9 @@ a new repository are described below.
     `OWNERS_ALIASES` file.
     * Update the OWNERS file as per the request. If the repo is a
     [SIG Repository], add a labels entry for the SIG that the repo belongs to.
-    * Update the `SECURITY_CONTACTS` file as per the request. Note that aliases
+    * Update the `security_contacts` field in the `OWNERS` file as per the request. Note that aliases
     cannot be used in this case so expand the team, if specified.
-    * Create a new commit with the message *Update OWNERS, OWNERS_ALIASES and
-    SECURITY_CONTACTS*.
+    * Create a new commit with the message *Update OWNERS and OWNERS_ALIASES*.
   * Push the new commit directly to the master branch.
   * If the repo is a [SIG Repository], add a new topic of the form
   `k8s-sig-<sig-name-repo-belongs-to>` using the *Manage Topics* option.

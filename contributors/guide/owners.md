@@ -42,6 +42,7 @@ OWNERS files are in YAML format and support the following keys:
 - `reviewers`: a list of GitHub usernames or aliases that are good candidates to `/lgtm` a PR
 - `emeritus_approvers` a list of GitHub usernames of folks who were previously in the `approvers` section,
    but are no longer actively approving code. please see [below](#emeritus) for more details.
+- `security_contacts`: a list of GitHub usernames the **[Kubernetes SRC][SRC]** can contact for security issues
 
 The above keys constitute a *simple OWNERS configuration*.
 
@@ -58,6 +59,9 @@ reviewers:
   - carol
   - david   # this is another comment
   - sig-foo # this is an alias
+security_contacts:
+  - alice
+  - fred
 ```
 
 #### Filters
@@ -340,3 +344,4 @@ Good examples of OWNERS usage:
 [github-codeowners]: https://help.github.com/articles/about-codeowners/
 [pr-workflow]: /contributors/guide/pull-requests.md#the-testing-and-merge-workflow
 [dashboard]: https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All&var-repo_name=kubernetes%2Fkubernetes&var-country_name=All
+[SRC]: https://github.com/kubernetes/committee-security-response

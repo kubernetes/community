@@ -113,9 +113,7 @@ roles. We do not have the Tech Lead role, and have a honorary Emeritus Chair rol
   - Must be a maintainer.
   - Must accept and adhere to the Kubernetes [Embargo
     Policy](https://git.k8s.io/security/private-distributors-list.md#embargo-policy).
-  - Defined in
-    [SECURITY_CONTACTS](https://github.com/kubernetes-sigs/service-catalog/blob/master/SECURITY_CONTACTS)
-    file.
+  - Defined in [OWNERS](https://raw.githubusercontent.com/kubernetes-sigs/service-catalog/master/OWNERS) in the `security_contacts` field.
 
 ## Organizational management
 
