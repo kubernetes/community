@@ -89,6 +89,8 @@ In order to meet SLOs, you have to use extensibility features "wisely".
 The more precise formulation is to-be-defined, but this includes things like:
 - webhooks have to provide high availability and low latency
 - CRDs and CRs have to be kept within thresholds
+- Applications running in the cluster should use Informers where applicable (rather than making repeated 
+  LIST calls to the API Server). Most [officially-supported client libraries](https://kubernetes.io/docs/reference/using-api/client-libraries/#officially-supported-kubernetes-client-libraries) offer Informers.
 - ...
 
 ## Kubernetes SLIs/SLOs
