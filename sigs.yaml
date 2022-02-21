@@ -1059,8 +1059,19 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
   - name: cluster-api-provider-ibmcloud
+    contact:
+      slack: cluster-api-ibmcloud
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/main/OWNERS
+    meetings:
+    - description: Cluster API Provider IBM Cloud office hours
+      day: Friday
+      time: "09:00"
+      tz: IST
+      frequency: weekly
+      url: https://zoom.us/j/9392903494
+      archive_url: https://docs.google.com/document/d/1oWnqXy1VFv0E3kovQoZfS6IlVP0L4eaQsN-2HYC_6_A
+      recordings_url: https://www.youtube.com/playlist?list=PLcYv3LH7qY9Nvx4lNaeOeBrfBZa777h3m
   - name: cluster-api-provider-kubemark
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-kubemark/master/OWNERS
