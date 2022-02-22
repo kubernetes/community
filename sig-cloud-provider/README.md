@@ -123,7 +123,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - [kubernetes-sigs/ibm-powervs-block-csi-driver](https://github.com/kubernetes-sigs/ibm-powervs-block-csi-driver/blob/main/OWNERS)
   - [kubernetes-sigs/ibm-vpc-block-csi-driver](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/blob/master/OWNERS)
 - **Meetings:**
-  - Regular IBM Subproject Meeting: [Wednesdays at 14:00 EST](https://zoom.us/j/9392903494) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
+  - Regular IBM Subproject Meeting: [Wednesdays at 14:00 ET (Eastern Time)](https://zoom.us/j/9392903494) (monthly - last Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=ET%20%28Eastern%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit).
 ### provider-openstack
 - **Owners:**
