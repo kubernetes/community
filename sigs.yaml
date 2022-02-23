@@ -766,6 +766,13 @@ sigs:
     - github: andrewsykim
       name: Andrew Sy Kim
       company: Google
+    - github: nckturner
+      name: Nick Turner
+      company: Amazon
+    tech_leads:
+    - github: andrewsykim
+      name: Andrew Sy Kim
+      company: Google
     - github: cheftako
       name: Walter Fender
       company: Google
