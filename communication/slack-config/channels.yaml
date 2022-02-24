@@ -317,6 +317,7 @@ channels:
   - name: openebs-dev
   - name: openkruise
   - name: openshift-dev
+    archived: true
   - name: openshift-users
   - name: openstack-helm
   - name: openstack-kolla

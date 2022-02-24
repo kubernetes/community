@@ -120,6 +120,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 ### provider-ibmcloud
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/main/OWNERS)
+  - [kubernetes-sigs/ibm-powervs-block-csi-driver](https://github.com/kubernetes-sigs/ibm-powervs-block-csi-driver/blob/main/OWNERS)
   - [kubernetes-sigs/ibm-vpc-block-csi-driver](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/blob/master/OWNERS)
 - **Meetings:**
   - Regular IBM Subproject Meeting: [Wednesdays at 14:00 EST](https://zoom.us/j/9392903494) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
