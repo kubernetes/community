@@ -45,7 +45,7 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
 
-   - It's updated to the best of our knowledge.
+   - [It's updated](https://kubernetes.io/docs/contribute/) to the best of our knowledge.
 
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
