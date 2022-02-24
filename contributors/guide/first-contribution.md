@@ -30,7 +30,7 @@ Here are some things you can do today to get started contributing:
 * Help triage issues
 
 If the above suggestions don't appeal to you, you can browse the 
-[Contributor Role Board] to see who is looking for help. Those interested 
+[Community Issues] to see who is looking for help. Those interested 
 in contributing without writing code can also find ideas in the 
 [Non-Code Contributions Guide].
 
@@ -127,7 +127,7 @@ subrepository. For example, a documentation issue should be opened in
 [kubernetes/website]. Make sure to adhere to the prompted submission guidelines 
 while opening an issue. Check the [issue triage guide] for more information.
 
-[Contributor Role Board]: https://discuss.kubernetes.io/c/contributors/role-board
+[Community Issues]: https://github.com/kubernetes/community/issues
 [k8s-ci-robot]: https://github.com/k8s-ci-robot
 [Non-Code Contributions Guide]: ./non-code-contributions.md
 [multiple repositories]: https://github.com/kubernetes/
