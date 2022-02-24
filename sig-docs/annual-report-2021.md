@@ -50,7 +50,7 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
 
-   - We have a [well-documented guide](https://kubernetes.io/docs/contribute/#:~:text=Anyone%20can%20open%20an%20issue,the%20CNCF%20Contributor%20License%20Agreement.) that details how folks can get started and the various ways in which they can scale the contributor ladder.
+   - We have a [well-documented guide](https://kubernetes.io/docs/contribute/) that details how folks can get started and the various ways in which they can scale the contributor ladder.
    - We actively assign good-first-issue labels to issues that we think early-lifecycle contributors could begin with. During KubeCons we also do introduction presentations and mentoring sessions to try and funnel contributors in to our SIG.
 
 5. Does the group have contributors from multiple companies/affiliations?
