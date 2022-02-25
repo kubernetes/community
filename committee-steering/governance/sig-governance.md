@@ -160,7 +160,10 @@ within 30 days from the date of their appointment.
   - *MUST* be a contact point for the Product Security Committee to reach out to
    for triaging and handling of incoming issues
   - *MUST* accept the [Embargo Policy]
+  - *SHOULD* have a public email address
   - Defined in `security_contacts` field of `OWNERS` files
+
+If no Security Contacts are specified, the [Security Response Committee] will default to contacting the top-level project approvers.
 
 ### Other Roles
 This governance document outlines the required roles for SIGs: Chair and Tech
@@ -277,3 +280,4 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [monthly community meeting]: /events/community-meeting.md
 [Inclusive Open Source Community Orientation course]: https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/
 [technical-lead.md]: /contributors/chairs-and-techleads/technical-lead.md
+[Security Response Committee]: https://github.com/kubernetes/committee-security-response
