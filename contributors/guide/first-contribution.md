@@ -30,7 +30,7 @@ Here are some things you can do today to get started contributing:
 * Help triage issues
 
 If the above suggestions don't appeal to you, you can browse the 
-[Community Issues] to see who is looking for help. Those interested 
+[issues labeled as a good first issue] to see who is looking for help. Those interested 
 in contributing without writing code can also find ideas in the 
 [Non-Code Contributions Guide].
 
