@@ -8,77 +8,101 @@
    - Steering Election with Elekto
       - Major change to how we do elections
       - There were some hiccups but overall it's a step in the right direction
-   - 
+   - Community meeting overhaul
+   - EasyCLA migration
+   - Contributor Summit north america
+   - Contributor Celebration
+   - Restaffed up teams
+      - Moderation
+      - Youtube Admin
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
-   - 
-   -
-   -
+Contribex is a service and program orientated SIG. Most of our initiatives cover long term services for the Kubernetes project.
 
-3. KEP work in 2021 (1.x, 1.y, 1.z):
 
-<!--
-In future, this will be generated from kubernetes/enhancements kep.yaml files
-1. with SIG as owning-sig or in participating-sigs
-2. listing 1.x, 1.y, or 1.z in milestones or in latest-milestone
--->
-
-   - Stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-   - Beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-   - Alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-   - Pre-alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md)
+  |         Subproject        |          Initiative / Program          |
+  |:-------------------------:|:--------------------------------------:|
+  | Community                 | Community Repo Stewardship             |
+  | Community Management      | Annual Contributor Survey              |
+  | Community Management      | Calendar Admin                         |
+  | Community Management      | Chair and TL Meetings + Docs           |
+  | Community Management      | Discuss Admin                          |
+  | Community Management      | Mailing List Admin                     |
+  | Community Management      | Slack Admin                            |
+  | Community Management      | Zoom / YouTube Admin                   |
+  | Contributor Documentation | Contributor Guide Stewardship          |
+  | Contributor Documentation | Contributor Site                       |
+  | Contributor Documentation | Developer Guide Audit                  |
+  | Contributor Documentation | Developer Guide Stewardship            |
+  | Contributors Comms        | Contributor / SIG Profiling            |
+  | Contributors Comms        | Stewardship of k8scontributors twitter |
+  | Devstats                  | Devstats Dashboard Update              |
+  | Events                    | Monthly Community Meeting              |
+  | Events                    | Office Hours                           |
+  | Events                    | Elections                              |
+  | GitHub Management         | GitHub Admin / Moderation              |
+  | GitHub Management         | GitHub Master -> Main rename           |
+  | GitHub Management         | GitHub New Membership Coordinator      |
+  | Mentoring                 | Google Summer of Code                  |
+  | Mentoring                 | Group Mentoring                        |
+  | Mentoring                 | LFX Mentor Program                     |
+  | Mentoring                 | Meet our Contributors                  |
+  | Mentoring                 | Outreachy                              |
+  | Slack Infra               | slack-infra                            |
 
 ## Project health
 
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
-
-   - 
-   -
-   -
+   
+   - GitHub Admin Subproject
+      - Looking to bring on more membership co-ordinators 
+   - Community Management Automation
+      - [Zoom to Youtube](https://github.com/kubernetes/community/issues/5201)
+      - [Workspace Automation](https://github.com/kubernetes/steering/issues/213)
+         - Mailing list management
+         - Calendar management
+         - Shared drives
+      - [Mailing list migration](https://github.com/kubernetes/community/issues/6353)
 
 2. What metrics/community health stats does your group care about and/or measure?
 
-   -
-   -
-   -
+   - Issue Velocity
+      - We are a service orientated sig, Issues are the main form of how we track work.
 
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
 
-   -
+   - We don't have a CONTRIBUTING.md as our SIG's contributing proccess does not differ from the proccess in the Contributor Guide.
 
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
 
-   -
+   - N/A
 
 5. Does the group have contributors from multiple companies/affiliations?
 
-   -
+   - Yes. [25+ Different groups](https://k8s.devstats.cncf.io/d/8/company-statistics-by-repository-group?orgId=1&var-period=d7&var-metric=contributions&var-repogroup_name=SIG%20Contributor%20Experience&var-repo_name=kubernetes%2Fkubernetes&var-companies=All&from=1577854800000&to=1640926800000&viewPanel=1)
 
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
-   -
-   -
+   - More full time support for the items under bullet point 1.
+    - This work will reduce toil for not only contributor experience, but all groups in the project.
 
 ## Membership
 
+Statistics were retrived on 2021-01-30
+
 - Primary slack channel member count: 1895
 - Primary mailing list member count: 366 
-- Primary meeting attendee count (estimated, if needed): 
-- Primary meeting participant count (estimated, if needed): 
+- Primary meeting attendee count (estimated, if needed): 10-15 
+- Primary meeting participant count (estimated, if needed): 5
 - Unique reviewers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
+<!-- use dims tool, look over all the links to owners files, manual consolidation -->
 - Unique approvers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
+<!-- use dims tool, look over all links to owners files manual -->
 
 Include any other ways you measure group membership
 
@@ -89,17 +113,32 @@ In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $Y
 Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
 -->
 
-New in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
-
-Retired in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+New in 2021:
+   N/A
+Retired in 2021:
+   N/A
 
 Continuing:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+
+ - community
+Owns and manages overall community repo, including community group documentation and operations.
+ - community-management
+Manages operations and policy for upstream community group communication platforms.
+ - contributor-comms
+Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
+ - contributors-documentation
+writes and maintains documentation around contributing to Kubernetes, including the Contributor's Guide, Developer's Guide, and contributor website.
+ - devstats
+Maintains and updates https://k8s.devstats.cncf.io, including taking requests for new charts.
+ - events
+Creates and runs contributor-focused events, such as the Contributor Summit.  Event Teams are part of this subproject.
+ - github-management
+Manages and controls Github permissions, repos, and groups, including Org Membership.
+ - mentoring
+Oversees and develops programs for helping contributors ascend the contributor ladder, including the New Contributor Workshops, Meet Our Contributors, and other programs.
+ - slack-infra
+Creates and maintains tools and automation for Kubernetes Slack.
+<!-- BEGIN CUSTOM CONTENT -->
 
 ## Working groups
 
@@ -142,4 +181,3 @@ Operational tasks in [sig-governance.md]:
 [sigs.yaml]: https://git.k8s.io/community/sigs.yaml
 [contributor guide]: https://git.k8s.io/community/contributors/guide/README.md
 [devel]: https://git.k8s.io/community/contributors/devel/README.md
-
