@@ -16,7 +16,7 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network) for the group will typically add invites for the following meetings to your calendar.*
 * Gateway API Meeting: [Mondays at 15:00 PT (Pacific Time)](https://zoom.us/j/441530404) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
-* Network Policy API Meeting: [Mondays at 13:00 PT (Pacific Time)](https://zoom.us/j/96264742248) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
+* Network Policy API Meeting: [Mondays at 13:00 PT (Pacific Time)](https://zoom.us/j/96264742248) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs).
 * SIG Network Ingress NGINX Meeting: [Tuesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/98377891310) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit).
@@ -49,6 +49,15 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-network-proposals](https://github.com/orgs/kubernetes/teams/sig-network-proposals) - Design Proposals
     - [@kubernetes/sig-network-test-failures](https://github.com/orgs/kubernetes/teams/sig-network-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-network:
+* [WG IoT Edge](/wg-iot-edge)
+* [WG Multitenancy](/wg-multitenancy)
+* [WG Policy](/wg-policy)
+* [WG Structured Logging](/wg-structured-logging)
+
 
 ## Subprojects
 
@@ -90,12 +99,15 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 - **Owners:**
   - [kubernetes-sigs/network-policy-api](https://github.com/kubernetes-sigs/network-policy-api/blob/master/OWNERS)
   - [kubernetes/api/networking](https://github.com/kubernetes/api/blob/master/networking/OWNERS)
+- **Contact:**
+  - Slack: [#sig-network-policy-api](https://kubernetes.slack.com/messages/sig-network-policy-api)
 ### pod-networking
 - **Owners:**
   - [kubernetes-sigs/ip-masq-agent](https://github.com/kubernetes-sigs/ip-masq-agent/blob/master/OWNERS)
   - [kubernetes/kubernetes/pkg/kubelet/network](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/network/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Areas of Responsibility
 

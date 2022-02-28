@@ -203,7 +203,7 @@ expect from a globally distributed open source project.
 [Kubernetes Charter README]: https://git.k8s.io/community/committee-steering/governance/README.md
 [lazy consensus]: http://en.osswiki.info/concepts/lazy_consensus
 
-[kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[dev@kubernetes.io]: https://groups.google.com/a/kubernetes.io/group/dev
 [sig-k8s-infra@]: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
 [kubernetes/k8s.io]: https://git.k8s.io/k8s.io
 [`sigs.yaml`]: https://git.k8s.io/community/sigs.yaml

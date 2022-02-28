@@ -18,7 +18,7 @@ This team operates independently from Cloud Native Computing Foundation (CNCF) o
 
 ## Governance
 
-Leadership is divided up between [Marketing Council] team members. This group of leaders divide up the core responsibilities of the team and look to further optimize the experience of both code and non-code contributors. 
+Leadership is divided up between [Marketing Council] team members. This group of leaders divide up the core responsibilities of the team and look to further optimize the experience of both code and non-code contributors.
 
 ### Roles
 
@@ -26,14 +26,14 @@ Roles are divided up between Marketing Council members and other members, notabl
 
 ### Decision Making
 
-Decisions affecting all of Contributor Comms are made primarily led by the program lead as defined in the [Marketing Council]. They come to decision by lazy consensus with the goal of everyone getting a say, but they are responsible for making the decision. If other council members do not agree with one or more decisions made on behalf of the team, this should be raised to the advisors as well as the SIG Contributor Experience leads to facilitate a resolution. 
+Decisions affecting all of Contributor Comms are made primarily led by the program lead as defined in the [Marketing Council]. They come to decision by lazy consensus with the goal of everyone getting a say, but they are responsible for making the decision. If other council members do not agree with one or more decisions made on behalf of the team, this should be raised to the advisors as well as the SIG Contributor Experience leads to facilitate a resolution.
 
-Other council leads have the responsibility and autonomy to decide what is right for their portion of the council's division of work. The same escalation path can be used in case of disagreement that cannot be resolved by internal discussion. 
+Other council leads have the responsibility and autonomy to decide what is right for their portion of the council's division of work. The same escalation path can be used in case of disagreement that cannot be resolved by internal discussion.
 
 ### Off-Ramp
 
 Things change, priorities get optimized, life happens. Having an easy on and off ramp is important to this team. If a lead needs to take an extended absence or leave the team, a shadow would be offered the lead position prior to seeking a lead elsewhere. Therefore moving from shadow to lead and vice versa should be made as simply as possible by continued communications from this team about its members, roles, successes, and failures.
 
-In the case where no shadow is available, other Marketing Council team members have the responsibility to cover the role. Concerns for time or ability to cover work can be escalated to advisors and SIG Contributor Experience leads as necessary. 
+In the case where no shadow is available, other Marketing Council team members have the responsibility to cover the role. Concerns for time or ability to cover work can be escalated to advisors and SIG Contributor Experience leads as necessary.
 
-[Marketing Council]: ../role-handbooks/council.md
+[Marketing Council](/communication/marketing-team/role-handbooks/council.md)

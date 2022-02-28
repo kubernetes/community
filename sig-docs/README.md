@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs) for the group will typically add invites for the following meetings to your calendar.*
-* APAC SIG Meeting: [Wednesdays at 01:00 UTC](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit) (monthly - Wednesday, after the fourth Tuesday, every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=01:00&tz=UTC).
+* APAC SIG Meeting: [Wednesdays at 05:30 UTC](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit) (monthly - Wednesday, after the fourth Tuesday, every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=05:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 * Korean Team Meeting: [Thursdays at 13:00 UTC](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=UTC).
@@ -35,8 +35,10 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Divya Mohan (**[@divya-mohan0209](https://github.com/divya-mohan0209)**), HSBC
+* Divya Mohan (**[@divya-mohan0209](https://github.com/divya-mohan0209)**), SUSE
 * Jim Angel (**[@jimangel](https://github.com/jimangel)**), Google
+* Natali Vlatko (**[@natalisucks](https://github.com/natalisucks)**), Wayfair
+* Rey Lejano (**[@reylejano](https://github.com/reylejano)**), SUSE
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -45,6 +47,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Karen Bradshaw (**[@kbhawkey](https://github.com/kbhawkey)**), Independent
 * Taylor Dolezal (**[@onlydole](https://github.com/onlydole)**), Independent
 * Tim Bannister (**[@sftim](https://github.com/sftim)**), The Scale Factory
+* Qiming Teng (**[@tengqm](https://github.com/tengqm)**), Sangfor Technologies
 
 ## Emeritus Leads
 
@@ -88,6 +91,7 @@ The following [subprojects][subproject-definition] are owned by sig-docs:
   - [kubernetes/website](https://github.com/kubernetes/website/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 * Discuss documentation and docs issues for kubernetes.io

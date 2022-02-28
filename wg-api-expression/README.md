@@ -12,8 +12,8 @@ Enable API authors to better serve API consumers, by improving and documenting a
 [See full Mission Statement](https://docs.google.com/document/d/1XYbQXfge2qKM9psksfC5XZnW8hybtLqL1EcJLU4JwKg).
 
 ## Stakeholder SIGs
-* SIG API Machinery
-* SIG Architecture
+* [SIG API Machinery](/sig-api-machinery)
+* [SIG Architecture](/sig-architecture)
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-api-expression) for the group will typically add invites for the following meetings to your calendar.*
@@ -24,7 +24,7 @@ Enable API authors to better serve API consumers, by improving and documenting a
 ## Organizers
 
 * Antoine Pelisse (**[@apelisse](https://github.com/apelisse)**), Google
-* Kevin Wiesmueller (**[@kwiesmueller](https://github.com/kwiesmueller)**), //SEIBERT/MEDIA GmbH
+* Kevin Wiesmueller (**[@kwiesmueller](https://github.com/kwiesmueller)**), Google
 
 ## Contact
 - Slack: [#wg-api-expression](https://kubernetes.slack.com/messages/wg-api-expression)

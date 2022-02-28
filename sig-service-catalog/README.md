@@ -63,6 +63,7 @@ The following [subprojects][subproject-definition] are owned by sig-service-cata
   - [kubernetes-sigs/service-catalog](https://github.com/kubernetes-sigs/service-catalog/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

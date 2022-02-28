@@ -26,7 +26,7 @@ The [charter](charter.md) defines the scope and governance of the Architecture S
 * code organization Office Hours: [Thursdays at 14:00 PT (Pacific Time)](https://zoom.us/j/159990793) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1HtTI0rJEGP_MSf6eO87aCmx_tzpovPAAg7U2Zxwm8FE/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP03VEluzh0wpSRPzgve8kI5).
-* conformance office Hours: [Wednesdays at 19:00 UTC](https://zoom.us/j/427337923) (First Wednesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=UTC).
+* conformance office Hours: [Wednesdays at 18:00 UTC](https://zoom.us/j/427337923) (First Wednesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1W31nXh9RYAb_VaYkwuPLd1hFxuRX3iU0DmaQ4lkCsX8/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g).
 
@@ -53,6 +53,15 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-architecture-test-failures](https://github.com/orgs/kubernetes/teams/sig-architecture-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-architecture:
+* [WG API Expression](/wg-api-expression)
+* [WG Policy](/wg-policy)
+* [WG Reliability](/wg-reliability)
+* [WG Structured Logging](/wg-structured-logging)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-architecture:
@@ -68,6 +77,7 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
   - [kubernetes-sigs/depstat](https://github.com/kubernetes-sigs/depstat/blob/master/OWNERS)
   - [kubernetes/component-helpers](https://github.com/kubernetes/component-helpers/blob/master/OWNERS)
   - [kubernetes/kubernetes/staging](https://github.com/kubernetes/kubernetes/blob/master/staging/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/component-base](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/component-helpers](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-helpers/OWNERS)
   - [kubernetes/kubernetes/third_party](https://github.com/kubernetes/kubernetes/blob/master/third_party/OWNERS)
   - [kubernetes/kubernetes/vendor](https://github.com/kubernetes/kubernetes/blob/master/vendor/OWNERS)
@@ -78,6 +88,7 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
 [Described below](#conformance-definition-1)
 - **Owners:**
   - [kubernetes/kubernetes/test/conformance](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/OWNERS)
+  - [kubernetes/kubernetes/test/conformance/image](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/image/OWNERS)
   - [kubernetes/kubernetes/test/conformance/testdata](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS)
 - **Contact:**
   - Slack: [#k8s-conformance](https://kubernetes.slack.com/messages/k8s-conformance)
@@ -97,6 +108,7 @@ The following [subprojects][subproject-definition] are owned by sig-architecture
   - Slack: [#prod-readiness](https://kubernetes.slack.com/messages/prod-readiness)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 # Details about SIG-Architecture sub-projects

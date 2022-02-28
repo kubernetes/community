@@ -13,7 +13,7 @@ Regular Blog Meeting: Tuesdays at 19:30 UTC (biweekly). [Convert Your Timezone](
 
 ## Leadership
 
-- **Technical Editors:** [Bob Killen](https://github.com/mrbobbytables), [Taylor Dolezal](https://github.com/onlydole)
+- **Technical Editors:** [Bob Killen](https://github.com/mrbobbytables), [Taylor Dolezal](https://github.com/onlydole), [Tim Bannister](https://github.com/sftim)
 
 ## Contact
 

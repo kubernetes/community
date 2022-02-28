@@ -1,0 +1,31 @@
+{{lastYear}} Annual Report: {{.Prefix | toUpper}} {{.Name}}
+
+Chairs: {{range .Leadership.Chairs}}@{{.GitHub}} {{end}}
+Liaison: @{{.Contact.Liaison.GitHub}}
+
+Actions for the chair/organizer of the community group:
+- [ ] Consult your community group to complete draft of report
+- [ ] If needed, consult with Steering Committee liaison on any private issues or concerns that arrise while completing report
+- [ ] Submit PR to git.k8s.io/community repo with copy of report, assigning your Steering Committee liaison for review
+- [ ] Steering Committee reviews report, and may make comments/ask questions
+- [ ] Once all comments are addressed, Steering Committee will approve report to merge
+- [ ] If needed, any follow up items may be brought to the "Chairs, Tech Leads, and Organizers" meeting in April
+
+Once all the above items are complete, this issue may be `/close`'d
+
+Key dates:
+- Initial PR to communtiy repo should be opened by February 14, {{now.UTC.Year}}
+- PR should be reviewed and merged by March 1st, {{now.UTC.Year}}
+
+More detailed information on the annual reports process is available [here](https://git.k8s.io/community/committee-steering/governance/annual-reports.md).
+
+Your group's report template is available here: https://git.k8s.io/community/{{.Dir}}/annual-report-{{lastYear}}.md
+
+If you have any questions or concerns about this process, you may reach the Steering Committee via the following methods:
+- Slack/E-mail your liaison directly
+- The public #steering-committee channel in Slack
+- The public mailing list steering@kubernetes.io
+- The private mailing list steering-private@kubernetes.io for any private or sensitive issues.
+
+/{{.Prefix}} {{.Label}}
+/committee steering

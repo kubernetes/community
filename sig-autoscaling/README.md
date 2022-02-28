@@ -39,6 +39,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-autoscaling-test-failures](https://github.com/orgs/kubernetes/teams/sig-autoscaling-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-autoscaling:
+* [WG Batch](/wg-batch)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-autoscaling:
@@ -60,6 +66,7 @@ The following [subprojects][subproject-definition] are owned by sig-autoscaling:
   - [kubernetes/autoscaler](https://github.com/kubernetes/autoscaler/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Concerns
 * autoscaling of clusters,

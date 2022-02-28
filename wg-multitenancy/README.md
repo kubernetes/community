@@ -11,12 +11,12 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Define the models of multitenancy that Kubernetes will support. Discuss and execute upon any remaining work that needs to be done to support these models. Create conformance tests that will prove that these models can be built and used in production environments.
 
 ## Stakeholder SIGs
-* SIG API Machinery
-* SIG Auth
-* SIG Network
-* SIG Node
-* SIG Scheduling
-* SIG Storage
+* [SIG API Machinery](/sig-api-machinery)
+* [SIG Auth](/sig-auth)
+* [SIG Network](/sig-network)
+* [SIG Node](/sig-node)
+* [SIG Scheduling](/sig-scheduling)
+* [SIG Storage](/sig-storage)
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy) for the group will typically add invites for the following meetings to your calendar.*

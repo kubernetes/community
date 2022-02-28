@@ -56,6 +56,7 @@ channels:
   - name: cluster-api-kubevirt
   - name: cluster-api-nested
   - name: cluster-api-openstack
+  - name: cluster-api-operator
   - name: cluster-api-packet
   - name: cluster-api-vsphere
   - name: cn-dev
@@ -76,6 +77,7 @@ channels:
   - name: csi-secrets-store #this channel is for secrets-store-csi-driver which is a subproject of sig-auth
   - name: de-events
   - name: de-users
+  - name: devfile
   - name: devspace
   - name: devstats
   - name: dexidp
@@ -158,6 +160,7 @@ channels:
     id: CH8KCCKA5
   - name: kalm
   - name: kaniko
+  - name: karpenter
   - name: k8s-dual-stack
     archived: true
   - name: k8s-infra-alerts
@@ -184,6 +187,7 @@ channels:
   - name: kops-users
   - name: kots
     id: CFFKXV0JZ
+  - name: kpack
   - name: kpt
   - name: kr-dev
   - name: kr-users
@@ -244,6 +248,7 @@ channels:
   - name: kurl
   - name: kustomize
   - name: kyverno
+  - name: kyverno-dev
   - name: leadership-summit
     archived: true
   - name: linode
@@ -296,6 +301,7 @@ channels:
   - name: navigator
     archived: true
   - name: ncw-staff
+  - name: netmaker
   - name: nl-users
   - name: node-feature-discovery
   - name: node-problem-detector
@@ -311,6 +317,7 @@ channels:
   - name: openebs-dev
   - name: openkruise
   - name: openshift-dev
+    archived: true
   - name: openshift-users
   - name: openstack-helm
   - name: openstack-kolla
@@ -350,11 +357,14 @@ channels:
   - name: shipwright
   - name: shoutouts
   - name: sig-api-machinery
+  - name: sig-api-machinery-cel-dev
   - name: sig-apps
   - name: sig-auth
+  - name: sig-auth-kms-dev
   - name: sig-autoscaling
   - name: sig-autoscaling-api
   - name: sig-cli
+  - name: sig-cli-krm-functions
   - name: sig-clstr-life-leads
   - name: sig-cluster-lifecycle
   - name: sig-cluster-ops
@@ -375,6 +385,7 @@ channels:
   - name: sig-node-bug-scrub
   - name: sig-node-rkt
     archived: true
+  - name: sig-node-swap
   - name: sig-scalability
   - name: sig-scheduling
   # sig-security* channels are defined in sig-security/
@@ -394,6 +405,7 @@ channels:
   - name: sre
   - name: steering-committee
   - name: submariner
+  - name: surveys
   - name: summit-staff
   - name: suse-caasp
   - name: talk-proposals
@@ -426,6 +438,7 @@ channels:
   - name: wg-api-expression
   - name: wg-apply
     archived: true
+  - name: wg-batch
   - name: wg-component-standard
     archived: true
   - name: wg-component-standard-mentorship

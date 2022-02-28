@@ -13,7 +13,7 @@ Our motive is as follows:
 
 ## Outbound and inbound communications
 
-All outbound communications will have a single source of truth in kubernetes-dev@googlegroups.com.
+All outbound communications will have a single source of truth in dev@kubernetes.io.
 
 Justification for this canonical location:
 
@@ -53,7 +53,7 @@ Based on these tiers, communication will flow through different channels and may
 
 These channels will be used for written communication and tips for using them effectively:
 
-* kubernetes-dev@googlegroups.com
+* dev@kubernetes.io
   * Single source of truth
   * Make sure you're not burying the lead, action items should be clearly stated
 * Slack

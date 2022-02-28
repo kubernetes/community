@@ -25,6 +25,7 @@ keeping changes well tested and developers unblocked.
 
 - [kubernetes/kubernetes][k-k-repo]
 - [kubernetes/test-infra][k-infra-repo]
+- [kubernetes/k8s.io][k-k8s.io]
 
 #### Second level (kubernetes-sigs)
 
@@ -42,7 +43,9 @@ keeping changes well tested and developers unblocked.
 
 [k-k-repo]: https://github.com/kubernetes/kubernetes
 [k-infra-repo]: https://github.com/kubernetes/test-infra
+[k-k8s.io]: https://github.com/kubernetes/k8s.io
 [ks-kind]: https://github.com/kubernetes-sigs/kind
+[ks-image-builder]: https://github.com/kubernetes-sigs/image-builder
 [crio]: https://github.com/cri-o/cri-o
 [containerd]: https://github.com/containerd/containerd
 [k-minikube]: https://github.com/kubernetes/minikube

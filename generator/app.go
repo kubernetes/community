@@ -27,16 +27,20 @@ import (
 	"sort"
 	"strings"
 	"text/template"
+	"time"
 
 	yaml "gopkg.in/yaml.v3"
 )
 
 const (
-	readmeTemplate   = "readme.tmpl"
-	listTemplate     = "list.tmpl"
-	aliasesTemplate  = "aliases.tmpl"
-	liaisonsTemplate = "liaisons.tmpl"
-	headerTemplate   = "header.tmpl"
+	readmeTemplate            = "readme.tmpl"
+	listTemplate              = "list.tmpl"
+	aliasesTemplate           = "aliases.tmpl"
+	liaisonsTemplate          = "liaisons.tmpl"
+	headerTemplate            = "header.tmpl"
+	annualReportIssueTemplate = "annual-report/github_issue.tmpl"
+	annualReportSIGTemplate   = "annual-report/sig_report.tmpl"
+	annualReportWGTemplate    = "annual-report/wg_report.tmpl"
 
 	sigsYamlFile     = "sigs.yaml"
 	sigListOutput    = "sig-list.md"
@@ -155,10 +159,12 @@ func (g *LeadershipGroup) Owners() []Person {
 // Group represents either a Special Interest Group (SIG) or a Working Group (WG)
 type Group struct {
 	Dir              string
+	Prefix           string `yaml:",omitempty"`
 	Name             string
 	MissionStatement FoldedString `yaml:"mission_statement,omitempty"`
 	CharterLink      string       `yaml:"charter_link,omitempty"`
-	StakeholderSIGs  []string     `yaml:"stakeholder_sigs,omitempty"`
+	ReportingWGs     []WGName     `yaml:"-"` // populated by Context#Complete()
+	StakeholderSIGs  []SIGName    `yaml:"stakeholder_sigs,omitempty"`
 	Label            string
 	Leadership       LeadershipGroup `yaml:"leadership"`
 	Meetings         []Meeting
@@ -166,11 +172,27 @@ type Group struct {
 	Subprojects      []Subproject `yaml:",omitempty"`
 }
 
+type WGName string
+
+func (n WGName) DirName() string {
+	return DirName("wg", string(n))
+}
+
+type SIGName string
+
+func (n SIGName) DirName() string {
+	return DirName("sig", string(n))
+}
+
 // DirName returns the directory that a group's documentation will be
 // generated into. It is composed of a prefix (sig for SIGs and wg for WGs),
 // and a formatted version of the group's name (in kebab case).
 func (g *Group) DirName(prefix string) string {
-	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(g.Name, " ", "-", -1)))
+	return DirName(prefix, g.Name)
+}
+
+func DirName(prefix, name string) string {
+	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(name, " ", "-", -1)))
 }
 
 // LabelName returns the expected label for a given group
@@ -205,6 +227,20 @@ func (c *Context) PrefixToGroupMap() map[string][]Group {
 	}
 }
 
+// Complete populates derived portions of the Context struct
+func (c *Context) Complete() {
+	// Copy working group names into ReportingWGs list of their stakeholder sigs
+	for _, wg := range c.WorkingGroups {
+		for _, stakeholderSIG := range wg.StakeholderSIGs {
+			for i, sig := range c.Sigs {
+				if sig.Name == string(stakeholderSIG) {
+					c.Sigs[i].ReportingWGs = append(c.Sigs[i].ReportingWGs, WGName(wg.Name))
+				}
+			}
+		}
+	}
+}
+
 // Sort sorts all lists within the Context struct
 func (c *Context) Sort() {
 	for _, groups := range c.PrefixToGroupMap() {
@@ -212,7 +248,12 @@ func (c *Context) Sort() {
 			return groups[i].Dir < groups[j].Dir
 		})
 		for _, group := range groups {
-			sort.Strings(group.StakeholderSIGs)
+			sort.Slice(group.ReportingWGs, func(i, j int) bool {
+				return group.ReportingWGs[i] < group.ReportingWGs[j]
+			})
+			sort.Slice(group.StakeholderSIGs, func(i, j int) bool {
+				return group.StakeholderSIGs[i] < group.StakeholderSIGs[j]
+			})
 			for _, people := range [][]Person{
 				group.Leadership.Chairs,
 				group.Leadership.TechnicalLeads,
@@ -277,15 +318,30 @@ func (c *Context) Validate() []error {
 					}
 				}
 			}
+			if len(group.ReportingWGs) != 0 {
+				if prefix == "sig" {
+					for _, name := range group.ReportingWGs {
+						if index(c.WorkingGroups, func(g Group) bool { return g.Name == string(name) }) == -1 {
+							errors = append(errors, fmt.Errorf("%s: invalid reporting working group name %s", group.Dir, name))
+						}
+					}
+				} else {
+					errors = append(errors, fmt.Errorf("%s: only SIGs may have reporting WGs", group.Dir))
+				}
+			}
 			if len(group.StakeholderSIGs) != 0 {
 				if prefix == "wg" {
 					for _, name := range group.StakeholderSIGs {
-						if index(c.Sigs, func(g Group) bool { return g.Name == name }) == -1 {
+						if index(c.Sigs, func(g Group) bool { return g.Name == string(name) }) == -1 {
 							errors = append(errors, fmt.Errorf("%s: invalid stakeholder sig name %s", group.Dir, name))
 						}
 					}
 				} else {
 					errors = append(errors, fmt.Errorf("%s: only WGs may have stakeholder_sigs", group.Dir))
+				}
+			} else {
+				if prefix == "wg" {
+					errors = append(errors, fmt.Errorf("%s: WGs must have stakeholder_sigs", group.Dir))
 				}
 			}
 			if prefix == "sig" {
@@ -377,6 +433,14 @@ var funcMap = template.FuncMap{
 	"trimSuffix":  strings.TrimSuffix,
 	"githubURL":   githubURL,
 	"orgRepoPath": orgRepoPath,
+	"now":         time.Now,
+	"lastYear":    lastYear,
+	"toUpper":     strings.ToUpper,
+}
+
+// lastYear returns the last year as a string
+func lastYear() string {
+	return time.Now().AddDate(-1, 0, 0).Format("2006")
 }
 
 // githubURL converts a raw GitHub url (links directly to file contents) into a
@@ -510,6 +574,91 @@ func createGroupReadme(groups []Group, prefix string) error {
 	return nil
 }
 
+func createAnnualReportIssue(groups []Group, prefix string) error {
+	// figure out if the user wants to generate one group
+	var selectedGroupName *string
+	if envVal, ok := os.LookupEnv("WHAT"); ok {
+		selectedGroupName = &envVal
+	}
+
+	for _, group := range groups {
+		switch prefix {
+		case "sig":
+			group.Prefix = "sig"
+		case "wg":
+			group.Prefix = "wg"
+		default:
+			continue
+
+		}
+
+		outputDir := filepath.Join(baseGeneratorDir, "generator/generated")
+
+		// skip generation if the user specified only one group
+		if selectedGroupName != nil && !strings.HasSuffix(group.Dir, *selectedGroupName) {
+			fmt.Printf("Skipping %s/%s_%s.md\n", outputDir, lastYear(), group.Dir)
+			continue
+		}
+
+		fmt.Printf("Generating %s/%s_%s.md\n", outputDir, lastYear(), group.Dir)
+		if err := createDirIfNotExists(outputDir); err != nil {
+			return err
+		}
+
+		outputPath := filepath.Join(outputDir, fmt.Sprintf("%s_%s.md", lastYear(), group.Dir))
+		templatePath := filepath.Join(baseGeneratorDir, templateDir, annualReportIssueTemplate)
+		if err := writeTemplate(templatePath, outputPath, "markdown", group); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+func createAnnualReport(groups []Group, prefix string) error {
+	// figure out if the user wants to generate one group
+	var selectedGroupName *string
+	var templateFile string
+	if envVal, ok := os.LookupEnv("WHAT"); ok {
+		selectedGroupName = &envVal
+	}
+
+	for _, group := range groups {
+		switch prefix {
+		case "sig":
+			group.Prefix = "sig"
+			templateFile = annualReportSIGTemplate
+		case "wg":
+			group.Prefix = "wg"
+			templateFile = annualReportWGTemplate
+		default:
+			continue
+
+		}
+
+		outputDir := filepath.Join(baseGeneratorDir, group.Dir)
+
+		// skip generation if the user specified only one group
+		if selectedGroupName != nil && !strings.HasSuffix(group.Dir, *selectedGroupName) {
+			fmt.Printf("Skipping %s/annual-report-%s.md\n", outputDir, lastYear())
+			continue
+		}
+
+		fmt.Printf("Generating %s/annual-report-%s.md\n", outputDir, lastYear())
+		if err := createDirIfNotExists(outputDir); err != nil {
+			return err
+		}
+
+		outputPath := filepath.Join(outputDir, fmt.Sprintf("annual-report-%s.md", lastYear()))
+		templatePath := filepath.Join(baseGeneratorDir, templateDir, templateFile)
+		if err := writeTemplate(templatePath, outputPath, "markdown", group); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
 // readSigsYaml decodes yaml stored in a file at path into the
 // specified yaml.Node
 func readYaml(path string, data interface{}) error {
@@ -545,6 +694,8 @@ func main() {
 		log.Fatal(err)
 	}
 
+	ctx.Complete()
+
 	ctx.Sort()
 
 	fmt.Printf("Validating %s\n", yamlPath)
@@ -567,6 +718,20 @@ func main() {
 		err = createGroupReadme(groups, prefix)
 		if err != nil {
 			log.Fatal(err)
+		}
+	}
+
+	if envVal, ok := os.LookupEnv("ANNUAL_REPORT"); ok && envVal == "true" {
+		fmt.Println("Generating annual reports")
+		for prefix, groups := range ctx.PrefixToGroupMap() {
+			err = createAnnualReportIssue(groups, prefix)
+			if err != nil {
+				log.Fatal(err)
+			}
+			err = createAnnualReport(groups, prefix)
+			if err != nil {
+				log.Fatal(err)
+			}
 		}
 	}
 

@@ -23,7 +23,7 @@ This [slide deck](https://docs.google.com/presentation/d/1JqcALpsg07eH665ZXQrIvO
 
 ## Communication
 
-- Mailing List: development announcements and discussions appear on the Google group `kubernetes-dev` (send mail to kubernetes-dev@googlegroups.com).
+- Mailing List: development announcements and discussions appear on the Google group `kubernetes-dev` (send mail to dev@kubernetes.io).
 - Slack: #gsoc-apps channel on the Kubernetes Slack. You can get an invite [here](http://slack.k8s.io/).
 
 ## Contribute

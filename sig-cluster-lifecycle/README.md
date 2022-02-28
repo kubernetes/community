@@ -47,6 +47,12 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-cluster-lifecycle](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle) - Notify group
 - Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-cluster-lifecycle:
+* [WG Reliability](/wg-reliability)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-cluster-lifecycle:
@@ -65,13 +71,18 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
   - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
 - **Meetings:**
   - Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1LdooNTbb9PZMFWy3_F-XAsl7Og5F2lvG3tCgQvoB5e4/edit).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1ushaVqAKYnZ2VN_aa3GyKlS4kEd6bSug13xaXOakAQI/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
+### cluster-api-operator
+- **Owners:**
+  - [kubernetes-sigs/cluster-api-operator](https://github.com/kubernetes-sigs/cluster-api-operator/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#cluster-api-operator](https://kubernetes.slack.com/messages/cluster-api-operator)
 ### cluster-api-provider-aws
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-aws](https://github.com/kubernetes-sigs/cluster-api-provider-aws/blob/master/OWNERS)
 - **Meetings:**
-  - Cluster API Provider AWS office hours: [Mondays at 10:00 PT (Pacific Time)](https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API Provider AWS office hours: [Mondays at 09:00 PT (Pacific Time)](https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1iW-kqcX-IhzVGFrRKTSPGBPOc-0aUvygOVoJ5ETfEZU/).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-azure
@@ -94,6 +105,12 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-ibmcloud
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#cluster-api-ibmcloud](https://kubernetes.slack.com/messages/cluster-api-ibmcloud)
+- **Meetings:**
+  - Cluster API Provider IBM Cloud office hours: [Fridays at 09:00 IST](https://zoom.us/j/9392903494) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=IST).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1oWnqXy1VFv0E3kovQoZfS6IlVP0L4eaQsN-2HYC_6_A).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PLcYv3LH7qY9Nvx4lNaeOeBrfBZa777h3m).
 ### cluster-api-provider-kubemark
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-kubemark](https://github.com/kubernetes-sigs/cluster-api-provider-kubemark/blob/master/OWNERS)
@@ -116,6 +133,8 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-packet
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-packet](https://github.com/kubernetes-sigs/cluster-api-provider-packet/blob/master/OWNERS)
+- **Contact:**
+  - Slack: [#cluster-api-packet](https://kubernetes.slack.com/messages/cluster-api-packet)
 ### cluster-api-provider-vsphere
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-vsphere](https://github.com/kubernetes-sigs/cluster-api-provider-vsphere/blob/master/OWNERS)
@@ -181,6 +200,7 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit).
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

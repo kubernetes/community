@@ -31,11 +31,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Frederic Branczyk (**[@brancz](https://github.com/brancz)**), Polar Signals
 * David Ashpole (**[@dashpole](https://github.com/dashpole)**), Google
+* Damien Grisonnet (**[@dgrisonnet](https://github.com/dgrisonnet)**), Red Hat
 
 ## Emeritus Leads
 
+* Frederic Branczyk (**[@brancz](https://github.com/brancz)**)
 * Piotr Szczesniak (**[@piosz](https://github.com/piosz)**)
 
 ## Contact
@@ -47,6 +48,12 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-instrumentation-leads](https://github.com/orgs/kubernetes/teams/sig-instrumentation-leads) - SIG Chairs and Tech Leads
     - [@kubernetes/sig-instrumentation-members](https://github.com/orgs/kubernetes/teams/sig-instrumentation-members) - SIG Membership Roster
 - Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-instrumentation:
+* [WG Structured Logging](/wg-structured-logging)
+
 
 ## Subprojects
 
@@ -92,6 +99,7 @@ Organization of SIG Instrumentation subprojects
   - [kubernetes/kubernetes/staging/src/k8s.io/component-base/logs](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/logs/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

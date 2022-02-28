@@ -49,6 +49,14 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-api-machinery-test-failures](https://github.com/orgs/kubernetes/teams/sig-api-machinery-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-api-machinery:
+* [WG API Expression](/wg-api-expression)
+* [WG Multitenancy](/wg-multitenancy)
+* [WG Structured Logging](/wg-structured-logging)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-api-machinery:
@@ -57,6 +65,7 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
   - [kubernetes-sigs/legacyflag](https://github.com/kubernetes-sigs/legacyflag/blob/master/OWNERS)
   - [kubernetes/component-base](https://github.com/kubernetes/component-base/blob/master/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/component-base](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/component-base/version](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/version/OWNERS)
 ### control-plane-features
 - **Owners:**
   - [kubernetes-sigs/kube-storage-version-migrator](https://github.com/kubernetes-sigs/kube-storage-version-migrator/blob/master/OWNERS)
@@ -138,6 +147,7 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
   - [kubernetes-sigs/yaml](https://github.com/kubernetes-sigs/yaml/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Additional links
 

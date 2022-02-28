@@ -23,14 +23,14 @@ The [charter](charter.md) defines the scope and governance of the Scheduling Spe
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), IBM
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), Apple
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), IBM
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), Apple
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
 * Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**), Google
 
@@ -53,6 +53,15 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-scheduling-test-failures](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-scheduling:
+* [WG Batch](/wg-batch)
+* [WG Multitenancy](/wg-multitenancy)
+* [WG Policy](/wg-policy)
+* [WG Structured Logging](/wg-structured-logging)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-scheduling:
@@ -67,7 +76,10 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
   - [kubernetes-sigs/kube-batch](https://github.com/kubernetes-sigs/kube-batch/blob/master/OWNERS)
 ### kube-scheduler-simulator
 - **Owners:**
-  - [kubernetes-sigs/kube-scheduler-simulator](https://github.com/kubernetes-sigs/kube-scheduler-simulator/blob/main/OWNERS)
+  - [kubernetes-sigs/kube-scheduler-simulator](https://github.com/kubernetes-sigs/kube-scheduler-simulator/blob/master/OWNERS)
+### kueue
+- **Owners:**
+  - [kubernetes-sigs/kueue](https://github.com/kubernetes-sigs/kueue/blob/main/OWNERS)
 ### poseidon
 - **Owners:**
   - [kubernetes-sigs/poseidon](https://github.com/kubernetes-sigs/poseidon/blob/master/OWNERS)
@@ -80,6 +92,7 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
   - [kubernetes-sigs/scheduler-plugins](https://github.com/kubernetes-sigs/scheduler-plugins/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

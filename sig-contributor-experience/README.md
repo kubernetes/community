@@ -16,7 +16,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1CBz8qV_mD6rbDmTsMuosTOQGRXGhN3d8UrcULUI6Vkw/edit).
-  * [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 
 ## Leadership
 
@@ -72,7 +72,7 @@ Contributor Communications focuses on amplifying the success of Kubernetes contr
 - **Meetings:**
   - Contributor Comms - Upstream Marketing Team Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/596959769?pwd=TURBNlZPb3BEWVFmbWlCYXlMVVJiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1KDoqbw2A6W7rLSbIRuOlqH8gkoOnp2IHHuV9KyJDD2c/edit).
-    - [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### contributors-documentation
 writes and maintains documentation around contributing to Kubernetes, including the Contributor's Guide, Developer's Guide, and contributor website.
 - **Owners:**
@@ -120,7 +120,7 @@ Oversees and develops programs for helping contributors ascend the contributor l
 - **Meetings:**
   - Mentoring Subproject Meeting: [Mondays at 08:00 PT](https://zoom.us/j/95894431386?pwd=RFdmQzlZeVZDVWJzcFVXZXR5djNwUT09) (Biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit).
-    - [Meeting recordings](https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### slack-infra
 Creates and maintains tools and automation for Kubernetes Slack.
 - **Owners:**
@@ -129,6 +129,7 @@ Creates and maintains tools and automation for Kubernetes Slack.
   - Slack: [#slack-infra](https://kubernetes.slack.com/messages/slack-infra)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Relevant Presentations

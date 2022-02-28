@@ -35,7 +35,7 @@ usergroups:
   # - Emeritus Adviser
   # - SIG Release leads
   #
-  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.23/release-team.md
+  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.24/release-team.md
   - name: release-team-leads
     long_name: Release Team Leads
     description: >-
@@ -51,17 +51,17 @@ usergroups:
       - release-notes
       - sig-release
     members:
+      - cici37 # 1.24 Release Team Lead Shadow
       - cpanato # SIG Release Technical Lead
-      - JamesLaverack # 1.23 Release Team Lead Shadow
+      - JamesLaverack # 1.24 Release Team Lead
       - jeremyrickard # SIG Release Technical Lead / 1.23 Release Team EA
-      - jrsapi # 1.23 Release Team Lead Shadow
+      - Jesse Butler # 1.24 Release Team Lead Shadow
       - justaugustus # SIG Release Chair
       - LappleApple # SIG Release Program Manager
-      - mkorbi # 1.23 Release Team Lead Shadow
-      - MonzElmasry # 1.23 Release Team Lead Shadow
+      - mkorbi # 1.24 Release Team Lead Shadow
       - puerco # SIG Release Technical Lead
-      - reylejano # 1.23 Release Team Lead
       - saschagrunert # SIG Release Chair
+      - Xander # 1.24 Release Team Lead Shadow
 
   # Should match SIG Release Leads at all times:
   # https://git.k8s.io/community/sig-release/README.md#leadership
@@ -99,9 +99,11 @@ usergroups:
       - justaugustus # subproject owner / Release Manager
       - lukehinds # Product Security Committee
       - micahhausler # Product Security Committee
+      - palnabarun # Release Manager
       - puerco # Release Manager
       - saschagrunert # subproject owner / Release Manager
       - swamymsft # Product Security Committee
       - tabbysable # Product Security Committee
       - tallclair # Product Security Committee
       - xmudrii # Release Manager
+      - Verolop # Release Manager

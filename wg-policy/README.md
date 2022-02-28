@@ -11,13 +11,13 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Provide an overall architecture that describes both the current policy related implementations as well as future policy related proposals in Kubernetes. Through a collaborative method, we want to present both dev and end user a universal view of policy architecture in Kubernetes.
 
 ## Stakeholder SIGs
-* SIG Architecture
-* SIG Auth
-* SIG Multicluster
-* SIG Network
-* SIG Node
-* SIG Scheduling
-* SIG Storage
+* [SIG Architecture](/sig-architecture)
+* [SIG Auth](/sig-auth)
+* [SIG Multicluster](/sig-multicluster)
+* [SIG Network](/sig-network)
+* [SIG Node](/sig-node)
+* [SIG Scheduling](/sig-scheduling)
+* [SIG Storage](/sig-storage)
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-policy) for the group will typically add invites for the following meetings to your calendar.*

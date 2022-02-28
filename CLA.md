@@ -13,64 +13,53 @@ It is important to read and understand this legal agreement.
 
 ## How do I sign?
 
-If your work is done as an employee of your company, contact your company's legal department and ask to be put on the list of approved contributors for the CNCF CLA. Below, we have included steps for "Corporation signup" in case your company does not have a company agreement and would like to have one.
+After creating your first Pull Request the linux-foundation-easycla bot will respond with information regarding your CLA status along with a link to sign the CLA.
 
-#### 1. Log in to the Linux Foundation ID Portal with GitHub
+<img width="1065" alt="EasyCLA bot" src="https://user-images.githubusercontent.com/69111235/152226443-f6fe61ee-0e92-46c5-b6ea-c0deb718a585.png">
 
-Click one of:
-  * [Individual signup](https://identity.linuxfoundation.org/projects/cncf) to
-  sign up as an individual or as an employee of a signed organization.
-  * [Corporation signup](https://identity.linuxfoundation.org/node/285/organization-signup)
-  to sign as a corporation representative and manage signups from your organization.
+#### 1. Authorize EasyCLA to read some of your GitHub information
 
-Once you get to the sign in form, click "Log in with GitHub":
+<img width="554" alt="GitHub EasyCLA Authorization" src="https://user-images.githubusercontent.com/69111235/152228712-7d22f9d0-9f3c-4226-9ee0-bacba4b47725.png">
 
-![CNCFCLA1](http://i.imgur.com/tEk2x3j.png)
+Click on the "Please click here to be authorized" link to navigate to the GitHub Authorize Linux Foundation: EasyCLA page. Then click Authorize LF-Engineering to give the Linux Foundation read-only access to list the email addresses associated with your GitHub account.
 
-#### 2. Create Linux Foundation ID Portal account
+#### 2. Select from the two types of contributor
 
-After entering the various names, click "Submit":
-
-If you are signing up as an employee, you must use your official
-person@organization.domain email address as your default GitHub
-address or configure it as an alias of your LF identify.
+<img width="1407" alt="EasyCLA" src="https://user-images.githubusercontent.com/69111235/152224818-1246453a-b086-4a57-9d14-c10d62ad438f.png">
 
 
-![CNCFCLA2](https://i.imgur.com/9vxe9mA.png)
+After authorizing EasyCLA, you will be redirected to a page to identify which type of contributor you are. 
+Select the most appropriate option:
+  * Individual Contributor: You are contributing as yourself, and not as part of another organization.
+  * Corporate Contributor: You are contributing on behalf of your employer or other organization.
 
-#### 3. Complete signing process
+#### 3. Sign the CLA
 
-After creating your account, follow the instructions to complete the
-signing process through HelloSign.
+Once you select the type of contributor, proceed to Sign the CLA and follow the instructions to complete the signing process through DocuSign.
 
-If you did not receive an email from HelloSign, [then request it here](https://identity.linuxfoundation.org/projects/cncf).
+**Ensure your GitHub e-mail address matches e-mail address used to sign CLA**
 
-#### 4. Ensure your GitHub e-mail address matches address used to sign CLA
+After you have filled out  the information, Click "Finish" and you will be redirected back to your Pull Request.
 
-Your GitHub email address __must match__ the same address you use when signing
-the CLA. GitHub has [documentation](https://help.github.com/articles/setting-your-commit-email-address-on-github/)
-on setting email addresses.
+#### 4. Look for an email indicating successful signup.
 
-You must also set your [git e-mail](https://help.github.com/articles/setting-your-email-in-git)
-to match this e-mail address as well.
-
-If you already submitted a PR you can correct your user.name and user.email
-and then use `git commit --amend --reset-author` and then `git push --force` to
-correct the PR.
-
-#### 5. Look for an email indicating successful signup.
-
-> The Linux Foundation
->
 > Hello,
->
-> You have signed CNCF Individual Contributor License Agreement.
-> You can see your document anytime by clicking View on HelloSign.
->
+> 
+> This is a notification email from EasyCLA regarding the project Cloud Native Computing > Foundation (CNCF).
+> 
+> The CLA has now been signed. You can download the signed CLA as a PDF here.
+> 
+> If you need help or have questions about EasyCLA, you can read the documentation or reach out to us for support.
+> 
+> Thanks,
+> EasyCLA Support Team
 
-Once you have this, the CLA authorizer bot will authorize your PRs.
 
-![CNCFCLA3](http://i.imgur.com/C5ZsNN6.png)
+
+#### 5. Validate your CLA
+
+Once you are redirected back to your GitHub Pull Request, reply with a comment `/easycla` to update the CLA status of your PR.
+
 
 ## Changing your Affiliation
 
@@ -88,13 +77,10 @@ Canonical until 2017-03-31
 
 ## Troubleshooting
 
-If you encounter any problems signing the CLA, log a ticket with the Linux
-Foundation ID group through the [Linux Foundation Support Site].
+If you encounter any problems signing the CLA and need further assistance, log a ticket by clicking on the link [please submit a support request ticket](https://jira.linuxfoundation.org/plugins/servlet/theme/portal/4) from the EasyCLA bot's response. Someone from the CNCF will respond to your ticket to help.
 
 Should you have any issues using the LF Support Site, send a message to the
 backup e-mail support address <login-issues@jira.linuxfoundation.org>
-
-Someone from the CNCF will respond to your ticket to help.
 
 ## Setting up the CNCF CLA check
 

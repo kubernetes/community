@@ -14,7 +14,7 @@ December
 repo
 - Record meetings and make them publicly available on the
 [Kubernetes Community YouTube playlist]  
-- Report activity with the community via the kubernetes-dev@ mailing list at
+- Report activity with the community via the dev@kubernetes.io mailing list at
 least once a year. 
   - Each SIG is assigned an update during the [monthly community meeting]
   throughout the year from sig-contributor-experience. The meeting host will publish the notes to the
@@ -187,7 +187,7 @@ Other roles...
 duties from Chairs and/or Tech Leads on a non-temporary basis 
 - *SHOULD* be documented in SIG charters if the role has delegation away from a
 sig-governance.md listed role 
-- *SHOULD* be sent to kubernetes-dev@googlegroups.com for awareness as a notice 
+- *SHOULD* be sent to dev@kubernetes.io for awareness as a notice 
 and a lazy consensus period when they are newly created 
 - *MAY* Fill in for another named role on a temporary basis 
 #### Subproject Creation

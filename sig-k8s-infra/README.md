@@ -54,16 +54,49 @@ The following [subprojects][subproject-definition] are owned by sig-k8s-infra:
 Code and configuration to manage DNS records for domains owned by the Kubernetes project such as k8s.io and kubernetes.io
 - **Owners:**
   - [kubernetes/k8s.io/dns](https://github.com/kubernetes/k8s.io/blob/main/dns/OWNERS)
+- **Contact:**
+  - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
+  - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
+- **Meetings:**
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+    - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
+    - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 ### k8s-infra-groups
 Code and configuration to manage Google Groups for domains owned by the Kubernetes project such kubernetes.io
 - **Owners:**
   - [kubernetes/k8s.io/groups](https://github.com/kubernetes/k8s.io/blob/main/groups/OWNERS)
+- **Contact:**
+  - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
+  - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
+- **Meetings:**
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+    - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
+    - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 ### k8s.io
 Code and configuration to manage Kubernetes project infrastructure, including various *.k8s.io sites
 - **Owners:**
   - [kubernetes/k8s.io](https://github.com/kubernetes/k8s.io/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
+  - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
+- **Meetings:**
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+    - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
+    - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
+### oci-proxy
+Experimental project for OCI distribution
+- **Owners:**
+  - [kubernetes-sigs/oci-proxy](https://github.com/kubernetes-sigs/oci-proxy/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
+  - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
+- **Meetings:**
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+    - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
+    - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

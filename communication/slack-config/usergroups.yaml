@@ -26,21 +26,16 @@ usergroups:
     channels:
       - sig-contribex
     members:
+      - Atharva-Shinde
+      - AvineshTripathi
       - chrisshort
-      - mbbroberg
-      - onlydole
-      - paris
-      - "Rin Oliver"
-      - simplytunde
-      - Tunde
-      - kaslin
-      - rajula96reddy
-      - "Sladyn Nunes"
-      - "Kunal Kushwaha"
-      - "Bart Farrell"
-      - pensu91
-      - "Joel Barker"
+      - Debanitrkl
       - Jason
+      - kaslin
+      - mbbroberg
+      - paris
+      - PurneswarPrasad
+      - rajula96reddy
 
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
@@ -57,10 +52,10 @@ usergroups:
       - sig-release
     members:
       - cjcullen
+      - enj
       - joelsmith
       - lukehinds
       - micahhausler
-      - swamymsft
       - tabbysable
       - tallclair
 
@@ -182,6 +177,7 @@ usergroups:
       - microwavables
       - anjaltelang
       - shamus
+      - pnbrown
 
   - name: steering-members
     long_name: Kubernetes Steering Committee

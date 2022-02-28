@@ -44,18 +44,13 @@ remain active contributors to the community.
     - Filing or commenting on issues on GitHub
     - Contributing to SIG, subproject, or community discussions (e.g. meetings, Slack, email discussion
       forums, Stack Overflow)
-- Subscribed to [kubernetes-dev@googlegroups.com]
+- Subscribed to [dev@kubernetes.io]
 - Have read the [contributor guide]
 - Actively contributing to 1 or more subprojects.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
     - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating
       on issues, etc.
-    - Sponsors must be reviewers or approvers in at least 1 OWNERS file either in any repo in the [Kubernetes org],
-    or the org they are sponsoring for.
-      - An approver/reviewer in the [Kubernetes org] may sponsor someone for the [Kubernetes org]
-      or any of the related [Kubernetes GitHub organizations]; as long as it's a project they're involved with.
-      - A sponsor who is an approver/reviewer in any of the related [Kubernetes GitHub organizations]
-      but not in the [Kubernetes org] can only sponsor someone for the orgs they are associated with.
+    - Sponsors must be reviewers or approvers in at least one OWNERS file within one of the [Kubernetes GitHub organizations]*.
     - Sponsors must be from multiple member companies to demonstrate integration across community.
 - **[Open an issue][membership request] against the kubernetes/org repo**
    - Ensure your sponsors are @mentioned on the issue
@@ -64,19 +59,21 @@ remain active contributors to the community.
 - Have your sponsoring reviewers reply confirmation of sponsorship: `+1`
 - Once your sponsors have responded, your request will be reviewed by the [Kubernetes GitHub Admin team], in accordance with their [SLO]. Any missing information will be requested.
 
+\* _Excluding the [Contributor Playground repository]. It is configured to allow
+non-org members to be included in OWNERS files for contributor tutorials and
+workshops._
+
+
 ### Kubernetes Ecosystem
 
 There are related [Kubernetes GitHub organizations], such as [kubernetes-sigs].
 We are currently working on automation that would transfer membership in the
 Kubernetes organization to any related orgs automatically, but such is not the
-case currently. If you are a Kubernetes org member, you are implicitly eligible
-for membership in related orgs, and can request membership when it becomes
-relevant, by creating a PR directly or [opening an issue][membership request]
+case currently. If you are a member of one of these Orgs, you are implicitly
+eligible for membership in related orgs, and can request membership when it
+becomes relevant, by creating a PR directly or [opening an issue][membership request]
 against the kubernetes/org repo, as above.
 
-However, if you are a member of any of the related
-[Kubernetes GitHub organizations] but not of the [Kubernetes org],
-you will need explicit sponsorship for your membership request.
 
 ### Responsibilities and privileges
 
@@ -263,10 +260,11 @@ before being able to contribute effectively.
 [Kubernetes GitHub Admin team]: /github-management/README.md#github-administration-team
 [Kubernetes GitHub organizations]: /github-management#actively-used-github-organizations
 [Kubernetes org]: https://github.com/kubernetes
-[kubernetes-dev@googlegroups.com]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[dev@kubernetes.io]: https://groups.google.com/a/kubernetes.io/group/dev
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
 [membership request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-membership&template=membership.yml&title=REQUEST%3A+New+membership+for+%3Cyour-GH-handle%3E
 [membership template]: https://github.com/kubernetes/org/blob/main/.github/ISSUE_TEMPLATE/membership.yml
+[Contributor Playground repository]: https://github.com/kubernetes-sigs/contributor-playground
 [New contributors]: /CONTRIBUTING.md
 [OWNERS]: /contributors/guide/owners.md
 [sigs.yaml]: /sigs.yaml

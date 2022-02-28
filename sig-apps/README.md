@@ -46,6 +46,13 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-apps-test-failures](https://github.com/orgs/kubernetes/teams/sig-apps-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-apps:
+* [WG Batch](/wg-batch)
+* [WG Data Protection](/wg-data-protection)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-apps:
@@ -65,12 +72,13 @@ Application metadata descriptor CRD
 - **Contact:**
   - Slack: [#kompose](https://kubernetes.slack.com/messages/kompose)
 ### workloads-api
-The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, and StatefulSet kinds
+The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, PodDisruptionBudget and StatefulSet kinds
 - **Owners:**
   - [kubernetes/kubernetes/pkg/apis/apps](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/apps/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/batch](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/batch/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/core/v1](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/core/v1/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/extensions](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/extensions/OWNERS)
+  - [kubernetes/kubernetes/pkg/apis/policy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/policy/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/cronjob](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/cronjob/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/daemon](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/daemon/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/deployment](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/deployment/OWNERS)
@@ -87,11 +95,13 @@ The core workloads API, which is composed of the CronJob, DaemonSet, Deployment,
   - [kubernetes/kubernetes/staging/src/k8s.io/api/batch](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/batch/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/api/core/v1](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/core/v1/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/api/extensions](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/extensions/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/policy](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/policy/OWNERS)
   - [kubernetes/kubernetes/test/e2e/apps](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/apps/OWNERS)
   - [kubernetes/kubernetes/test/integration/daemonset](https://github.com/kubernetes/kubernetes/blob/master/test/integration/daemonset/OWNERS)
   - [kubernetes/kubernetes/test/integration/deployment](https://github.com/kubernetes/kubernetes/blob/master/test/integration/deployment/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Goals

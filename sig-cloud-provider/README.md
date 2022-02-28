@@ -23,8 +23,9 @@ The [charter](CHARTER.md) defines the scope and governance of the Cloud Provider
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Andrew Sy Kim (**[@andrewsykim](https://github.com/andrewsykim)**), VMware
+* Andrew Sy Kim (**[@andrewsykim](https://github.com/andrewsykim)**), Google
 * Walter Fender (**[@cheftako](https://github.com/cheftako)**), Google
+* Nick Turner (**[@nckturner](https://github.com/nckturner)**), Amazon
 
 ## Emeritus Leads
 
@@ -45,6 +46,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-cloud-provider-test-failures](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-test-failures) - Test Failures and Triage
     - [@kubernetes/sig-cloud-providers-misc](https://github.com/orgs/kubernetes/teams/sig-cloud-providers-misc) - General Discussion
 - Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-cloud-provider:
+* [WG Structured Logging](/wg-structured-logging)
+
 
 ## Subprojects
 
@@ -113,6 +120,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 ### provider-ibmcloud
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/main/OWNERS)
+  - [kubernetes-sigs/ibm-powervs-block-csi-driver](https://github.com/kubernetes-sigs/ibm-powervs-block-csi-driver/blob/main/OWNERS)
   - [kubernetes-sigs/ibm-vpc-block-csi-driver](https://github.com/kubernetes-sigs/ibm-vpc-block-csi-driver/blob/master/OWNERS)
 - **Meetings:**
   - Regular IBM Subproject Meeting: [Wednesdays at 14:00 EST](https://zoom.us/j/9392903494) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=EST).
@@ -134,6 +142,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIpOT4bOfuO3MEMHvU1tRqyR).
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

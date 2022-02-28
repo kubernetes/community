@@ -28,6 +28,7 @@ aliases:
   sig-cloud-provider-leads:
     - andrewsykim
     - cheftako
+    - nckturner
   sig-cluster-lifecycle-leads:
     - fabriziopandini
     - justinsb
@@ -42,11 +43,14 @@ aliases:
     - divya-mohan0209
     - jimangel
     - kbhawkey
+    - natalisucks
     - onlydole
+    - reylejano
     - sftim
+    - tengqm
   sig-instrumentation-leads:
-    - brancz
     - dashpole
+    - dgrisonnet
     - ehashman
     - logicalhan
   sig-k8s-infra-leads:
@@ -110,6 +114,12 @@ aliases:
   wg-api-expression-leads:
     - apelisse
     - kwiesmueller
+  wg-batch-leads:
+    - Huang-Wei
+    - ahg-g
+    - endocrimes
+    - soltysh
+    - swatisehgal
   wg-data-protection-leads:
     - xing-yang
     - yuxiangqian
@@ -147,10 +157,10 @@ aliases:
     - vllry
   committee-security-response:
     - cjcullen
+    - enj
     - joelsmith
     - lukehinds
     - micahhausler
-    - swamymsft
     - tabbysable
     - tallclair
   committee-steering:
