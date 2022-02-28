@@ -62,7 +62,7 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 
 5. Does the group have contributors from multiple companies/affiliations?
 
-   - We have a contributor base spread across [98 companies](https://k8s.devstats.cncf.io/d/8/company-statistics-by-repository-group?orgId=1&var-period=y&var-metric=contributions&var-repogroup_name=SIG%20Docs&var-repo_name=kubernetes%2Fkubernetes&var-companies=All&from=1609455600000&to=1639350000000) with top 50% contributions coming our way from IBM, Google, VMWare, RedHat, and NEC Corporation. We are al
+   - We have a contributor base spread across [98 companies](https://k8s.devstats.cncf.io/d/8/company-statistics-by-repository-group?orgId=1&var-period=y&var-metric=contributions&var-repogroup_name=SIG%20Docs&var-repo_name=kubernetes%2Fkubernetes&var-companies=All&from=1609455600000&to=1639350000000) with top 50% contributions coming our way from IBM, Google, VMWare, RedHat, and NEC Corporation. A special mention for all the independent contributors who feature third on the list in terms of number of contributions.
 
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
