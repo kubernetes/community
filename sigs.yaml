@@ -1464,8 +1464,6 @@ sigs:
     slack: sig-docs
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
     teams:
-    - name: kubernetes-blog
-      description: Kubernetes blog maintainers
     - name: sig-docs-de-owners
       description: German language content
     - name: sig-docs-en-owners
@@ -1500,9 +1498,6 @@ sigs:
       github: parispittman
       name: Paris Pittman
   subprojects:
-  - name: kubernetes-blog
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
   - name: reference-docs
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/reference-docs/master/OWNERS
