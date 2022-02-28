@@ -105,6 +105,12 @@ The following [subprojects][subproject-definition] are owned by sig-cluster-life
 ### cluster-api-provider-ibmcloud
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-ibmcloud](https://github.com/kubernetes-sigs/cluster-api-provider-ibmcloud/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#cluster-api-ibmcloud](https://kubernetes.slack.com/messages/cluster-api-ibmcloud)
+- **Meetings:**
+  - Cluster API Provider IBM Cloud office hours: [Fridays at 09:00 IST](https://zoom.us/j/9392903494) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=IST).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1oWnqXy1VFv0E3kovQoZfS6IlVP0L4eaQsN-2HYC_6_A).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PLcYv3LH7qY9Nvx4lNaeOeBrfBZa777h3m).
 ### cluster-api-provider-kubemark
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-kubemark](https://github.com/kubernetes-sigs/cluster-api-provider-kubemark/blob/master/OWNERS)
