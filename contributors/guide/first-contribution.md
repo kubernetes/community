@@ -127,7 +127,7 @@ subrepository. For example, a documentation issue should be opened in
 [kubernetes/website]. Make sure to adhere to the prompted submission guidelines 
 while opening an issue. Check the [issue triage guide] for more information.
 
-[Community Issues]: https://github.com/kubernetes/community/issues
+[issues labeled as a good first issue]: https://go.k8s.io/good-first-issue
 [k8s-ci-robot]: https://github.com/k8s-ci-robot
 [Non-Code Contributions Guide]: ./non-code-contributions.md
 [multiple repositories]: https://github.com/kubernetes/
