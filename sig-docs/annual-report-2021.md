@@ -5,6 +5,7 @@
 1. What work did the SIG do this year that should be highlighted?
 
    - SIG Docs put meaningful effort into growing its contributor and reviewer base in 2021, introducing [a shadow program for PR Wrangling](https://github.com/kubernetes/website/issues/31956) as well as dedicating more time to being active via our Slack community channel. This is an ongoing effort to grow our contributor base to a stable number, alongside easing the burden on our small group of reviewers and approvers.
+   - Ahead of the [dockershim removal](https://kubernetes.io/blog/2022/02/17/dockershim-faq/) in the Kubernetes 1.24 release, SIG Docs has been collaborating with various community members and the CNCF towards ensuring updation and creation of content in the form of documentation, blog posts etc. With weekly meetings and a [project board](https://github.com/orgs/kubernetes/projects/67) to track progress, this has allowed for us to invite contributors across experience levels to help us keep the Kubernetes website updated and relevant ahead of the major change.
    - Alongside growing our contributor base, SIG Docs also worked on a leadership transition strategy to bring community members into leadership roles. Via a specialized six month mentorship program expertly led by Steering Committee member Paris Pittman, SIG Docs was able to grow its leadership cohort for the main SIG, as well as some of its subgroups, adding new co-chairs and tech leads.
       - [SIG Docs google group](https://groups.google.com/g/kubernetes-sig-docs/)
       - [Call for help sent to dev@kubernetes.io, kubernetes-sig-leads, kubernetes-sig-docs](https://groups.google.com/g/kubernetes-sig-docs/c/hspG6mzgkrs)
@@ -12,7 +13,7 @@
 
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
-
+   - One of our main initiatives is to ensure consistent maintenance of the Kubernetes documentation website and blog. As an existing subproject within SIG Docs, we have a [project board](https://github.com/kubernetes/website/projects/11) tracking our efforts for the Kubernetes blog. 
    - Localization Subproject: SIG Docs is working on formalizing the localization work that has been ongoing for some time, with appointed leads of this initiative as well as recognizing the contributions of various community members across the different languages the Kubernetes website has been translated into. This subproject will be finalized by Q1 2022, with all active localizations informed and updated. The issue tracking the formalizing process can be viewed [here](https://github.com/kubernetes/website/issues/31955).
    - New Contributor Ambassador Program: As a continuation of our push to grow the SIG Docs contributor base, we're working on a specalized role that aims to support new and would-be contributors get up to speed with our processes and workflows. This role would be capped at six months for it to be shared amongst the community, with this feeding into a possible reviewer funnel as contributors get more comfortable with providing feedback to others. The issue tracking the formalization and documentation of this role can be viewed [here](https://github.com/kubernetes/website/issues/31946).
 
