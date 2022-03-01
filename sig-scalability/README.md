@@ -104,7 +104,7 @@ Also do not hesitate to contact those SIG members for status update:
 * Jacek Kaniuk (**[@jkaniuk](https://github.com/jkaniuk)**), Google
 * Jakub Przychodzeń (**[@jprzychodzen](https://github.com/jprzychodzen)**), Google
 * Maciej Borsz (**[@mborsz](https://github.com/mborsz)**), Google
-* Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
+* Marcel Zięba (**[@marseel](https://github.com/marseel)**), Google
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 
 ## Upcoming Meeting Dates
@@ -161,7 +161,10 @@ more generalized benchmarking scenarios.
 
 Ensuring that all tests necessary to validate Kubernetes scalability and
 performance exists (ideally by providing easy-to-use frameworks and working
-with SIGs to provide them), having environment and resources to run them.
+with SIGs to provide them), having environment and resources to run them:
+
+* [Official tests](https://github.com/kubernetes/perf-tests/tree/master/clusterloader2/testing)
+* [Testgrid](https://k8s-testgrid.appspot.com/sig-scalability)
 
 Ensuring that tests are being executed according to calendar and ensuring that
 each official Kubernetes release satisfies all scalability and performance
@@ -171,9 +174,5 @@ of scalability and performance regressions:
 
 * [Processes](https://github.com/kubernetes/community/tree/master/sig-scalability/processes)
 
-We are in progress to migrating tests to new framework:
-
-* [Still official tests](https://github.com/kubernetes/kubernetes/tree/master/test/e2e/scalability)
-* [Soon to be official tests](https://github.com/kubernetes/perf-tests/tree/master/clusterloader2/testing)
 
 <!-- END CUSTOM CONTENT -->
