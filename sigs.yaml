@@ -2926,17 +2926,23 @@ workinggroups:
       name: Swati Sehgal
       company: Intel
   meetings:
-  - description: Regular Meeting
-    day: TBD
-    time: TBD
-    tz: UTC
+  - description: Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com))
+    day: Thursdays (starting March 10th 2022)
+    time: 3PM
+    tz: PT (Pacific Time)
     frequency: biweekly
-    url: TBD
-    archive_url: TBD
+    url: https://zoom.us/j/93540621078?pwd=cUNEWDYwMSt5c09DdXJyQ2R5dHlHUT09
+    recordings_url: TBD
+  - description: Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com))
+    day: Thursdays (starting March 3rd 2022)
+    time: 7AM
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/98329676612?pwd=c0N2bVV1aTh2VzltckdXSitaZXBKQT09
     recordings_url: TBD
   contact:
     slack: wg-batch
-    mailing_list: TBD
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-batch
     liaison:
       github: mrbobbytables
       name: Bob Killen

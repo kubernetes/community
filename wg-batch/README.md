@@ -19,9 +19,10 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 * [SIG Scheduling](/sig-scheduling)
 
 ## Meetings
-*Joining the [mailing list](TBD) for the group will typically add invites for the following meetings to your calendar.*
-* Regular Meeting: [TBDs at TBD UTC](TBD) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=TBD&tz=UTC).
-  * [Meeting notes and Agenda](TBD).
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-batch) for the group will typically add invites for the following meetings to your calendar.*
+* Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com)): [Thursdays (starting March 10th 2022)s at 3PM PT (Pacific Time)](https://zoom.us/j/93540621078?pwd=cUNEWDYwMSt5c09DdXJyQ2R5dHlHUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=3PM&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting recordings](TBD).
+* Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com)): [Thursdays (starting March 3rd 2022)s at 7AM PT (Pacific Time)](https://zoom.us/j/98329676612?pwd=c0N2bVV1aTh2VzltckdXSitaZXBKQT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7AM&tz=PT%20%28Pacific%20Time%29).
   * [Meeting recordings](TBD).
 
 ## Organizers
@@ -34,7 +35,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 
 ## Contact
 - Slack: [#wg-batch](https://kubernetes.slack.com/messages/wg-batch)
-- [Mailing list](TBD)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-batch)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fbatch)
 - Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 <!-- BEGIN CUSTOM CONTENT -->
