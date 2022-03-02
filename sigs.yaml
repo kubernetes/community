@@ -1975,6 +1975,13 @@ sigs:
       github: tpepper
       name: Tim Pepper
   subprojects:
+  - name: ci-testing
+    contact:
+      mailing_list: https://groups.google.com/g/kubernetes-sig-node-test-failures
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e_node/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/jobs/kubernetes/sig-node/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/test-infra/master/jobs/e2e_node/OWNERS
   - name: cri-api
     owners:
     - https://raw.githubusercontent.com/kubernetes/cri-api/master/OWNERS
