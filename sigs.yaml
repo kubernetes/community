@@ -2343,6 +2343,12 @@ sigs:
       github: parispittman
       name: Paris Pittman
   subprojects:
+  - name: security-assessments
+    description: Security focussed Assessments of Kubernetes Sub-projects
+    contact:
+      slack: sig-security-assess-capi
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/sig-security/main/sig-security-assessments/OWNERS
   - name: security-audit
     description: Third Party Security Audit
     owners:
