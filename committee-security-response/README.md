@@ -19,7 +19,7 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 * Luke Hinds (**[@lukehinds](https://github.com/lukehinds)**), Red Hat
 * Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
 * Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
-* Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Apple
+* Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
 
 ## Contact
 - Private Mailing List: security@kubernetes.io
