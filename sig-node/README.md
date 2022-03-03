@@ -53,6 +53,13 @@ The following [working groups][working-group-definition] are sponsored by sig-no
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-node:
+### ci-testing
+- **Owners:**
+  - [kubernetes/kubernetes/test/e2e_node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e_node/OWNERS)
+  - [kubernetes/test-infra/config/jobs/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-node/OWNERS)
+  - [kubernetes/test-infra/jobs/e2e_node](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/OWNERS)
+- **Contact:**
+  - [Mailing List](https://groups.google.com/g/kubernetes-sig-node-test-failures)
 ### cri-api
 - **Owners:**
   - [kubernetes/cri-api](https://github.com/kubernetes/cri-api/blob/master/OWNERS)
