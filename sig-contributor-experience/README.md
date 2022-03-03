@@ -101,6 +101,7 @@ Manages and controls Github permissions, repos, and groups, including Org Member
   - [kubernetes-client/.github](https://github.com/kubernetes-client/.github/blob/master/OWNERS)
   - [kubernetes-csi/.github](https://github.com/kubernetes-csi/.github/blob/master/OWNERS)
   - [kubernetes-sigs/.github](https://github.com/kubernetes-sigs/.github/blob/master/OWNERS)
+  - [kubernetes-sigs/maintainers](https://github.com/kubernetes-sigs/maintainers/blob/main/OWNERS)
   - [kubernetes/.github](https://github.com/kubernetes/.github/blob/master/OWNERS)
   - [kubernetes/community/github-management](https://github.com/kubernetes/community/blob/master/github-management/OWNERS)
   - [kubernetes/kubernetes-template-project](https://github.com/kubernetes/kubernetes-template-project/blob/master/OWNERS)

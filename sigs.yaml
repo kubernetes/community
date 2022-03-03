@@ -1333,6 +1333,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-client/.github/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/.github/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/.github/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/maintainers/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/.github/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
