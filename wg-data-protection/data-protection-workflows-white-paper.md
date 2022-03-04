@@ -5,80 +5,81 @@
 This document answers the following questions: why do we need data protection in Kubernetes, what is currently available in Kubernetes, what functionalities are missing in Kubernetes to support data protection? We will describe how to identify resources for data protection, what is the volume backup and restore workflow, and what is the application snapshot, backup, and restore workflow.
 
 <!-- toc -->
-- [Data Protection Definition](#data-protection-definition)
-- [Why do we need Data Protection in Kubernetes?](#why-do-we-need-data-protection-in-kubernetes)
-  - [Cloud Native Applications vs Traditional Data Protection](#cloud-native-applications-vs-traditional-data-protection)
-    - [Application Evolution](#application-evolution)
-    - [Legacy Technologies](#legacy-technologies)
-  - [Stateful vs Stateless Applications](#stateful-vs-stateless-applications)
-  - [Roles and Scopes in IT](#roles-and-scopes-in-it)
-- [Use Cases](#use-cases)
-  - [User Personas in Kubernetes Data Protection](#user-personas-in-kubernetes-data-protection)
-    - [Application Protection](#application-protection)
-      - [Application Definition](#application-definition)
-      - [Application Backup Definition](#application-backup-definition)
-      - [Application Disaster Recovery](#application-disaster-recovery)
-      - [Application Rollback](#application-rollback)
-      - [Application Migration](#application-migration)
-      - [Application Cloning](#application-cloning)
-      - [Application Retrieval](#application-retrieval)
-      - [Resource Recovery](#resource-recovery)
-    - [Namespace Protection](#namespace-protection)
-    - [Cluster Protection](#cluster-protection)
-- [What is currently available in Kubernetes?](#what-is-currently-available-in-kubernetes)
-- [What are the missing building blocks in Kubernetes?](#what-are-the-missing-building-blocks-in-kubernetes)
-  - [Volume Backups](#volume-backups)
-    - [Motivation](#motivation)
-    - [Desirable Characteristics of Volume Backups](#desirable-characteristics-of-volume-backups)
-  - [CBT](#cbt)
-    - [Motivation](#motivation-1)
-    - [Sample Backup workflow with Differential Snapshots Service](#sample-backup-workflow-with-differential-snapshots-service)
-  - [Volume Populator](#volume-populator)
-    - [Motivation](#motivation-2)
-    - [Status](#status)
-  - [Quiesce and Unquiesce Hooks](#quiesce-and-unquiesce-hooks)
-    - [Motivation](#motivation-3)
-    - [Background](#background)
-    - [Container Notifier](#container-notifier)
-  - [Volume Group and Group Snapshot](#volume-group-and-group-snapshot)
-    - [Motivation](#motivation-4)
-    - [Goals](#goals)
-    - [Status](#status-1)
-  - [Backup Repositories](#backup-repositories)
-    - [Why do we need backup repositories](#why-do-we-need-backup-repositories)
-    - [Motivation/Objective](#motivationobjective)
-  - [Application Snapshots and Backups](#application-snapshots-and-backups)
-    - [Motivation](#motivation-5)
-    - [Goals](#goals-1)
-    - [Status](#status-2)
-  - [Backup Application workflows](#backup-application-workflows)
-  - [Restore Application workflows](#restore-application-workflows)
+  - [Data Protection Definition](#data-protection-definition)
+  - [Why do we need Data Protection in Kubernetes?](#why-do-we-need-data-protection-in-kubernetes)
+    - [Cloud Native Applications vs Traditional Data Protection](#cloud-native-applications-vs-traditional-data-protection)
+      - [Application Evolution](#application-evolution)
+      - [Legacy Technologies](#legacy-technologies)
+    - [Stateful vs Stateless Applications](#stateful-vs-stateless-applications)
+    - [Roles and Scopes in IT](#roles-and-scopes-in-it)
+  - [Use Cases](#use-cases)
+    - [User Personas in Kubernetes Data Protection](#user-personas-in-kubernetes-data-protection)
+      - [Application Protection](#application-protection)
+        - [Application Definition](#application-definition)
+        - [Application Backup Definition](#application-backup-definition)
+        - [Application Disaster Recovery](#application-disaster-recovery)
+        - [Application Rollback](#application-rollback)
+        - [Application Migration](#application-migration)
+        - [Application Cloning](#application-cloning)
+        - [Application Retrieval](#application-retrieval)
+        - [Resource Recovery](#resource-recovery)
+      - [Namespace Protection](#namespace-protection)
+      - [Cluster Protection](#cluster-protection)
+  - [What is currently available in Kubernetes?](#what-is-currently-available-in-kubernetes)
+  - [What are the missing building blocks in Kubernetes?](#what-are-the-missing-building-blocks-in-kubernetes)
+    - [Volume Backups](#volume-backups)
+      - [Motivation](#motivation)
+      - [Desirable Characteristics of Volume Backups](#desirable-characteristics-of-volume-backups)
+    - [Change Block Tracking](#change-block-tracking)
+      - [Motivation](#motivation-1)
+      - [Sample Backup workflow with Differential Snapshots Service](#sample-backup-workflow-with-differential-snapshots-service)
+    - [Volume Populator](#volume-populator)
+      - [Motivation](#motivation-2)
+      - [Status](#status)
+    - [Quiesce and Unquiesce Hooks](#quiesce-and-unquiesce-hooks)
+      - [Motivation](#motivation-3)
+      - [Background](#background)
+      - [Container Notifier](#container-notifier)
+    - [Volume Group and Group Snapshot](#volume-group-and-group-snapshot)
+      - [Motivation](#motivation-4)
+      - [Goals](#goals)
+      - [Status](#status-1)
+    - [Backup Repositories](#backup-repositories)
+      - [Why do we need backup repositories](#why-do-we-need-backup-repositories)
+      - [Motivation/Objective](#motivationobjective)
+    - [Application Snapshots and Backups](#application-snapshots-and-backups)
+      - [Motivation](#motivation-5)
+      - [Goals](#goals-1)
+      - [Status](#status-2)
+- [Application Backup and Restore workflows](#application-backup-and-restore-workflows)
+  - [Application Backup workflows](#application-backup-workflows)
+  - [Application Restore workflows](#application-restore-workflows)
     - [Workflow for restore PVC-snapshot](#workflow-for-restore-pvc-snapshot)
       - [Restore To New](#restore-to-new)
       - [Restore to Production (partial restore)](#restore-to-production-partial-restore)
     - [Workflow for restore logical-dump](#workflow-for-restore-logical-dump)
       - [Restore to New](#restore-to-new-1)
       - [Restore to Production](#restore-to-production)
-- [Appendix](#appendix)
-  - [Backup and Restore of Different Databases](#backup-and-restore-of-different-databases)
-    - [Relational](#relational)
-      - [Mysql](#mysql)
-    - [Time series](#time-series)
-      - [NuoDB](#nuodb)
-      - [Prometheus](#prometheus)
-      - [InfluxDB](#influxdb)
-    - [Key value store](#key-value-store)
-      - [etcd](#etcd)
-    - [Message queues](#message-queues)
-      - [Kafka](#kafka)
-    - [Distributed databases](#distributed-databases)
-      - [Mongo](#mongo)
-- [References](#references)
+  - [Appendix](#appendix)
+    - [Backup and Restore of Different Databases](#backup-and-restore-of-different-databases)
+      - [Relational](#relational)
+        - [Mysql](#mysql)
+      - [Time series](#time-series)
+        - [NuoDB](#nuodb)
+        - [Prometheus](#prometheus)
+        - [InfluxDB](#influxdb)
+      - [Key value store](#key-value-store)
+        - [etcd](#etcd)
+      - [Message queues](#message-queues)
+        - [Kafka](#kafka)
+      - [Distributed databases](#distributed-databases)
+        - [Mongo](#mongo)
+  - [References](#references)
 <!-- /toc -->
 
 ## Data Protection Definition
 
-The **_ Data Protection_** term in the Kubernetes context is the process of protecting valuable data and configs of applications running in a Kubernetes cluster. The result of the data protection process is typically called as a backup. When unexpected scenarios occur, for example data corruption by a malfunctioning software, data loss during a disaster, such a backup can be used to restore the protected workload to the states preserved in the backup.
+The **Data Protection** term in the Kubernetes context is the process of protecting valuable data and configs of applications running in a Kubernetes cluster. The result of the data protection process is typically called as a backup. When unexpected scenarios occur, for example data corruption by a malfunctioning software, data loss during a disaster, such a backup can be used to restore the protected workload to the states preserved in the backup.
 
 In Kubernetes, a stateful application contains two primarily pieces of data:
 
@@ -385,7 +386,7 @@ For brevity's sake, `snapshot` will be used to mean `volume snapshot` and `backu
 
 8. It might be desirable to try and standardize some common attributes of backups (e.g., object storage buckets, regions where backups are stored, number of copies of each backup, etc.).  However, zeal for pursuing a deep level of such standardization should be tempered by the desire to open up a marketplace of competitive offerings that allow for a healthy degree of freedom for innovation and opportunities for competitive discrimination.
 
-### CBT
+### Change Block Tracking
 
 #### Motivation
 
@@ -649,15 +650,14 @@ Proposes a Kubernetes API for stateful application data management that supports
 
 This KEP (https://github.com/kubernetes/enhancements/pull/1051) proposes a Kubernetes Stateful Application Data Management API consisting of a set of [CustomResourceDefinitions (CRD)](https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/) that collectively define the notion of stateful applications, i.e., applications that maintain persistent state, and a set of data management semantics on stateful applications such as snapshot, backup, restoration, and clone. A snapshot of a stateful application is defined as a point-in-time capture of the state of the application, taken in an application-consistent manner. It captures both the application configurations (definitions of Kubernetes resources that make up the application, e.g., StatefulSets, Services, ConfigMaps, Secrets, etc.) and persistent data contained within the application (via persistent volumes).
 
-# 
-Application Backup and Restore workflow
+# Application Backup and Restore workflows
 
-Since there are 2 general methods of backup and restore applications: logical-dump operation and PVC-snapshot, the backup and restore also have types of 2 workflows:
+Since there are 2 general methods of backup and restore applications: logical-dump operation and PVC-snapshot, the backup and restore also have 2 types of workflows:
 
 * Logical dump workflows for backup and restore
 * PVC-snapshot workflow for backup and restore
 
-### Backup Application workflows
+## Application Backup workflows
 
 The application backup workflows are facilitated by a Data Protection Controller which listens to Backup object creation on the Kubernetes API Server and executes a backup workflow to backup an application. The workflow may involve a component called a “data-mover” pod which can connect to backup devices (backup repositories) to backup an application’s persistent volume data. 
 
@@ -678,13 +678,13 @@ An application backup workflow may involve the following steps:
             * Controller then deletes the data mover pod and the snapshot.
 4. Application level action such as execute command to enable load balance after the backup data step has been done regardless of whether the backup succeeds or not.  This step is only needed if step 2 is executed.
 
-### Restore Application workflows
+## Application Restore workflows
 
 Restore application in general does not require quiesce and unquiesce. One potential scenario in which quiesce might need to take place is for applications using ReadWriteMany PVCs(discussed below). The restore workflows are executed by the Data Protection Controller and it involves a component called a “data-mover” pod which can connect to backup devices (backup repositories) to retrieve metadata and data of the backup images.  This data-mover pod will have to be created on-demand to be able to access PVCs to restore data.
 
-#### Workflow for restore PVC-snapshot
+### Workflow for restore PVC-snapshot
 
-##### Restore To New
+#### Restore To New
 
 The general application restore to new process is done as following
 
@@ -696,7 +696,7 @@ The general application restore to new process is done as following
     * Controller then terminates the data-mover pod thus unmounts all PVCs.
 * Then restore pods, statefulsets, services etc. which use those PVCs being restored in previous steps.
 
-##### Restore to Production (partial restore)
+#### Restore to Production (partial restore)
 
 However, when we restore to an existing/production environment where the application is running, if the application uses PVCs with access mode ReadWriteOne (most common), we cannot directly restore data to those PVCs.  The step would be as followings:
 
@@ -709,17 +709,17 @@ However, when we restore to an existing/production environment where the applica
     * Controller then terminate the data-move pod, effectively umount all PVCs
 * Finally the controller scales up the application deployment to the original replica.  (Skip this step if PVCs are ReadWriteMany).
 
-#### Workflow for restore logical-dump
+### Workflow for restore logical-dump
 
 This workflow is much simpler and it can be done by the controller itself because the logical dump operations can be done via network connection to the application server pod without the need to access the application PVCs.  Most applications that support logical-dump operation also support the same operation in reverse direction.  The backup images are generally local files or file streams from remote backup devices.
 
-##### Restore to New
+#### Restore to New
 
 * First, controller restores the namespace, cluster resources etc. will be used by the application
 * Controller then restores application pods/deployments.
 * Then the controller runs a database/application client with these local files/file streams as input and executes the logical-dump operation in the reserve direction back to the database/application.
 
-##### Restore to Production
+#### Restore to Production
 
 * Controller simply runs the logical-dump operation in the reserve direction as mentioned above.
 
