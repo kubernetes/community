@@ -33,7 +33,14 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
 
-   - Require more contributors to form a stable pool for the blog subproject, in particular and SIG Docs, generally.
+   - The blog subproject is particularly short on resources and attention. At the moment a very
+     small pool of active editors are the constraint / most critical resource for article publication. One editor
+     is involved in the majority of published articles;  other editors are perhaps even more stretched with other
+     Kubernetes contributions and involvement with other SIGs.
+     - Whilst there is work under way to move other people along the contribution ladder, the blog subproject
+       remains constrained.
+   - SIG Docs would welcome more contributors to form a stable pool for the blog subproject in particular and
+     for SIG Docs, generally.
    - Require guidelines on how we could ramp up folks nominated to the New Contributor Ambassador role specific to SIG Docs. 
     - One localization (Ukrainian) is primarily worked on by people based in Ukraine,
       where the ongoing and intensifying conflict creates challenges that take priority over
