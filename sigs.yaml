@@ -3351,7 +3351,7 @@ committees:
       company: Datadog
     - github: tallclair
       name: Tim Allclair
-      company: Apple
+      company: Google
     emeritus_leads:
     - github: swamymsft
       name: Swamy Shivaganga Nagaraju
