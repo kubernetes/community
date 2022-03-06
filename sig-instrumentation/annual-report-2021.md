@@ -153,7 +153,7 @@ New in 2021:
 Operational tasks in [sig-governance.md]:
 
 - [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
       (or created if missing and your contributor steps and experience are different or more
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
 - [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
