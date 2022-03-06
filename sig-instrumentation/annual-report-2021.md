@@ -66,7 +66,7 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 
 5. Does the group have contributors from multiple companies/affiliations?
 
-   - Yes: Red Hat, Google, Intel, ...
+   - Yes: Google, Red Hat, Sony, VMware, Intel, independent contributors, and more
 
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
