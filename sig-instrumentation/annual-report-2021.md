@@ -39,8 +39,6 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
 
-   - [kubernetes-sigs/custom-metrics-apiserver](https://github.com/kubernetes-sigs/custom-metrics-apiserver/blob/master/OWNERS) has 1 active approver
-   - [kubernetes-sigs/metrics-server](https://github.com/kubernetes-sigs/metrics-server/blob/master/OWNERS) has 1 active approver
    - [kubernetes-sigs/prometheus-adapter](https://github.com/kubernetes-sigs/prometheus-adapter/blob/master/OWNERS_ALIASES) has 1 active approver
 
 2. What metrics/community health stats does your group care about and/or measure?
