@@ -8,13 +8,19 @@
    - Steering Election with Elekto
       - Elekto was created by Manish Sahani as part of an LFX internship. It allows us to run Elections on our own infrastructure.
       - Voters can login using their github credentials and vote from the election site.
-      - TODO : Write about how implementing elekto helped us overcome challenges with CiVS
+      - The previous method of holding elections was prone to issues when it came to the following:
+         - Obtaining the list of elegible voters 
+         - Sending ballots out via email
+      - Elekto automated the proccess of obtaining the list of elegible voters
+      - Ballots are no longer sent out via email, and instead contributors log in to the elections site to submit their ballots.
+      - More information can be found in [community issue #5096](https://github.com/kubernetes/community/issues/5096)
    - Community meeting overhaul and reboot
-   - EasyCLA migration
-      - TODO : Describe impact, Value
+   - [EasyCLA migration](https://github.com/kubernetes/test-infra/issues/22721#issuecomment-1031561862)
+      - The CLA service provided to us by the Linux Foundation was being deprecated.
+      - We needed to migrate to EasyCLA2 to ensure continuity of service for our 75,000+ active committers.
    - Contributor Summit North America
    - Contributor Celebration
-   - Restaffed up teams
+   - Restaffed teams
       - Moderation
       - Youtube Admin
    - Ran three group mentoring cohorts to grow contributors in named roles (50% graduation rate) for contribex, docs, and a 'chair' cohort for multiple SIGs
@@ -26,40 +32,43 @@
 
 Contribex is a service and program orientated SIG. Most of our initiatives cover long term services for the Kubernetes project.
 
+|                                                  **Subproject**                                                 |                                                **Initiative / Program**                                               |
+|:---------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------:|
+| [Community](https://git.k8s.io/community/sig-contributor-experience#community)                                  | [Community Repo Stewardship](https://git.k8s.io/community)                                                            |
+| [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | [Calendar Admin]()                                                                                                    |
+| [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | [Leadership Operations]()                                                                                             |
+| [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | [discuss.k8s.io End User Forum Admin](https://discuss.k8s.io)                                                         |
+| [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | [Mailing List Admin](https://k8s.dev/docs/comms/moderation/)                                                          |
+| [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | [Slack Admin](https://k8s.dev/docs/comms/slack/)                                                                      |
+| [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | [Zoom](https://k8s.dev/docs/comms/zoom) / [YouTube Admin](https://k8s.dev/docs/comms/youtube/#admin-responsibilities) |
+| [Contributor Documentation](https://git.k8s.io/community/sig-contributor-experience#contributors-documentation) | [Contributor Guide Stewardship](https://k8s.dev/guide)                                                                |
+| [Contributor Documentation](https://git.k8s.io/community/sig-contributor-experience#contributors-documentation) | [Contributor Site](https://git.k8s.io/contributor-site)                                                               |
+| [Contributor Documentation](https://git.k8s.io/community/sig-contributor-experience#contributors-documentation) | [Developer Guide Audit](https://github.com/kubernetes/community/issues/5229)                                          |
+| [Contributor Documentation](https://git.k8s.io/community/sig-contributor-experience#contributors-documentation) | [Developer Guide Stewardship](https://github.com/kubernetes/community/tree/master/contributors/devel)                 |
+| [Contributor Comms](https://git.k8s.io/community/sig-contributor-experience#contributor-comms)                  | Contributor / SIG Profiling                                                                                           |
+| [Contributor Comms](https://git.k8s.io/community/sig-contributor-experience#contributor-comms)                  | SIG Outreach and Support                                                                                              |
+| [Contributor Comms](https://git.k8s.io/community/sig-contributor-experience#contributor-comms)                  | Contributor Events Outreach                                                                                           |
+| [Contributor Comms](https://git.k8s.io/community/sig-contributor-experience#contributor-comms)                  | [Stewardship of k8scontributors twitter](https://twitter.com/k8scontributors)                                         |
+| [Devstats](https://git.k8s.io/community/sig-contributor-experience#devstats)                                    | [Devstats Dashboard Update](https://github.com/cncf/devstats/issues/289)                                              |
+| [Events](https://git.k8s.io/community/sig-contributor-experience#events)                                        | Monthly Community Meeting                                                                                             |
+| [Events](https://git.k8s.io/community/sig-contributor-experience#events)                                        | Office Hours                                                                                                          |
+| [Events](https://git.k8s.io/community/sig-contributor-experience#events)                                        | [Elections](git.k8s.io/community/events/elections)                                                                    |
+| [Events](https://git.k8s.io/community/sig-contributor-experience#events)                                        | [Contributor Summits](https://k8s.dev/events/past-events/2021/)                                                       |
+| [GitHub Management](https://git.k8s.io/community/sig-contributor-experience#github-management)                  | [GitHub Admin / Moderation](https://git.k8s.io/community/github-management#github-management)                         |
+| [GitHub Management](https://git.k8s.io/community/sig-contributor-experience#github-management)                  | [GitHub Master -> Main rename](https://github.com/kubernetes/org/issues/2222)                                         |
+| [GitHub Management](https://git.k8s.io/community/sig-contributor-experience#github-management)                  | [GitHub New Membership Coordinator](https://git.k8s.io/community/github-management/README.md#other-roles)             |
+| [Mentoring](https://git.k8s.io/community/sig-contributor-experience#mentoring)                                  | [Group Mentoring](https://git.k8s.io/community/mentoring/programs/group-mentoring.md)                                 |
+| [Mentoring](https://git.k8s.io/community/sig-contributor-experience#mentoring)                                  | [LFX Mentor Program](https://git.k8s.io/community/mentoring/programs/lfx-mentoring.md)                                |
+| [Slack Infra](https://git.k8s.io/community/sig-contributor-experience#slack-infra)                              | [slack-infra](https://sigs.k8s.io/slack-infra)                                                                        |
+
+  We put the following initiatives on hold, and will be revisiting these at a later date.
 
   |         Subproject        |          Initiative / Program          |
   |:-------------------------:|:--------------------------------------:|
-  | Community                 | Community Repo Stewardship             |
-  | Community Management      | Annual Contributor Survey              |
-  | Community Management      | Calendar Admin                         |
-  | Community Management      | Leadership Operations                  |
-  | Community Management      | discuss.k8s.io Admin                   |
-  | Community Management      | Mailing List Admin                     |
-  | Community Management      | Slack Admin                            |
-  | Community Management      | Zoom / YouTube Admin                   |
-  | Contributor Documentation | Contributor Guide Stewardship          |
-  | Contributor Documentation | Contributor Site                       |
-  | Contributor Documentation | Developer Guide Audit                  |
-  | Contributor Documentation | Developer Guide Stewardship            |
-  | Contributor Comms         | Contributor / SIG Profiling            |
-  | Contributor Comms         | SIG Outreach and Support               |
-  | Contributor Comms         | Contributor Events Outreach            |
-  | Contributor Comms         | Stewardship of k8scontributors twitter |
-  | Devstats                  | Devstats Dashboard Update              |
-  | Events                    | Monthly Community Meeting              |
-  | Events                    | Office Hours                           |
-  | Events                    | Elections                              |
-  | Events                    | Contributor Summits                    |
-  | GitHub Management         | GitHub Admin / Moderation              |
-  | GitHub Management         | GitHub Master -> Main rename           |
-  | GitHub Management         | GitHub New Membership Coordinator      |
-  | Mentoring                 | Google Summer of Code                  |
-  | Mentoring                 | Group Mentoring                        |
-  | Mentoring                 | LFX Mentor Program                     |
   | Mentoring                 | Meet our Contributors                  |
   | Mentoring                 | Outreachy                              |
   | Mentoring                 | New Contributor Workshop               |
-  | Slack Infra               | slack-infra                            |
+  | Mentoring                 | Google Summer of Code                  |
 
 ## Project health
 
@@ -67,10 +76,8 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
    Any areas with 2 or fewer OWNERs? (link to more details)
    
    - GitHub Admin Subproject
-      - We need to bring on more membership co-ordinators.
-         - These membership co-ordinators will be current contributors.
-         <!-- TODO : Link to requirements -->
-         - A full list of requirements can be found here 
+      - We need to bring on more new membership co-ordinators.
+         - New Membership Coordinators are current contributors to the Kubernetes project that help serve as a friendly face to newer, prospective community members, guiding them through the process to request membership to a Kubernetes GitHub organization.
    - Community Management Automation
       - [Zoom to Youtube](https://github.com/kubernetes/community/issues/5201)
       - [Workspace Automation](https://github.com/kubernetes/steering/issues/213)
