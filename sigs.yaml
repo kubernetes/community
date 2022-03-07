@@ -1216,7 +1216,7 @@ sigs:
     chairs:
     - github: alisondy
       name: Alison Dowdney
-      company: Independent
+      company: Kasten
     - github: mrbobbytables
       name: Bob Killen
       company: Google
@@ -1241,7 +1241,7 @@ sigs:
     day: Wednesday
     time: "9:00"
     tz: PT (Pacific Time)
-    frequency: biweekly
+    frequency: weekly alternating slack/zoom
     url: https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09
     archive_url: https://docs.google.com/document/d/1CBz8qV_mD6rbDmTsMuosTOQGRXGhN3d8UrcULUI6Vkw/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
@@ -1251,8 +1251,6 @@ sigs:
     teams:
     - name: sig-contributor-experience
       description: General Discussion
-    - name: sig-contributor-experience-apac-coordinators
-      description: APAC Coordinator Team
     - name: sig-contributor-experience-leads
       description: Chairs and Technical Leads
     - name: sig-contributor-experience-pr-reviews
@@ -1355,15 +1353,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-katacoda/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
-    meetings:
-    - description: Mentoring Subproject Meeting
-      day: Monday
-      time: "08:00"
-      tz: PT
-      frequency: Biweekly
-      url: https://zoom.us/j/95894431386?pwd=RFdmQzlZeVZDVWJzcFVXZXR5djNwUT09
-      archive_url: https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit
-      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: slack-infra
     description: Creates and maintains tools and automation for Kubernetes Slack.
     contact:
