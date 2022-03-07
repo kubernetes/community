@@ -85,7 +85,6 @@ SIG leads performed a [staffing and gap analysis](https://docs.google.com/docume
   - Additional metric stability classes and graduation: 1PT maintainer at 25% for the duration of feature development
   - SIG currently owns a number of KEPs stuck in alpha/beta due to lack of dev resources:
       - https://github.com/kubernetes/enhancements/issues/383 
-      - https://github.com/kubernetes/enhancements/issues/1668
       - https://github.com/kubernetes/enhancements/issues/1753 
       - https://github.com/kubernetes/enhancements/issues/2305 
 
