@@ -6,15 +6,21 @@
 
    - [Migrating K-Dev to a managed kubernetes.io account](https://github.com/kubernetes/community/issues/5877)
    - Steering Election with Elekto
-      - Major change to how we do elections
-      - There were some hiccups but overall it's a step in the right direction
-   - Community meeting overhaul
+      - Elekto was created by Manish Sahani as part of an LFX internship. It allows us to run Elections on our own infrastructure.
+      - Voters can login using their github credentials and vote from the election site.
+      - TODO : Write about how implementing elekto helped us overcome challenges with CiVS
+   - Community meeting overhaul and reboot
    - EasyCLA migration
-   - Contributor Summit north america
+      - TODO : Describe impact, Value
+   - Contributor Summit North America
    - Contributor Celebration
    - Restaffed up teams
       - Moderation
       - Youtube Admin
+   - Ran three group mentoring cohorts to grow contributors in named roles (50% graduation rate) for contribex, docs, and a 'chair' cohort for multiple SIGs
+   - Grew @k8scontributors twitter account to 5,700 followers
+   - Created documentation geared towards Chairs and Tech Leads to help grow and support their roles and groups operations
+   - Curated and ran 8 months of Leads meetings (16 meetings total)
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
@@ -26,8 +32,8 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
   | Community                 | Community Repo Stewardship             |
   | Community Management      | Annual Contributor Survey              |
   | Community Management      | Calendar Admin                         |
-  | Community Management      | Chair and TL Meetings + Docs           |
-  | Community Management      | Discuss Admin                          |
+  | Community Management      | Leadership Operations                  |
+  | Community Management      | discuss.k8s.io Admin                   |
   | Community Management      | Mailing List Admin                     |
   | Community Management      | Slack Admin                            |
   | Community Management      | Zoom / YouTube Admin                   |
@@ -35,12 +41,15 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
   | Contributor Documentation | Contributor Site                       |
   | Contributor Documentation | Developer Guide Audit                  |
   | Contributor Documentation | Developer Guide Stewardship            |
-  | Contributors Comms        | Contributor / SIG Profiling            |
-  | Contributors Comms        | Stewardship of k8scontributors twitter |
+  | Contributor Comms         | Contributor / SIG Profiling            |
+  | Contributor Comms         | SIG Outreach and Support               |
+  | Contributor Comms         | Contributor Events Outreach            |
+  | Contributor Comms         | Stewardship of k8scontributors twitter |
   | Devstats                  | Devstats Dashboard Update              |
   | Events                    | Monthly Community Meeting              |
   | Events                    | Office Hours                           |
   | Events                    | Elections                              |
+  | Events                    | Contributor Summits                    |
   | GitHub Management         | GitHub Admin / Moderation              |
   | GitHub Management         | GitHub Master -> Main rename           |
   | GitHub Management         | GitHub New Membership Coordinator      |
@@ -49,6 +58,7 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
   | Mentoring                 | LFX Mentor Program                     |
   | Mentoring                 | Meet our Contributors                  |
   | Mentoring                 | Outreachy                              |
+  | Mentoring                 | New Contributor Workshop               |
   | Slack Infra               | slack-infra                            |
 
 ## Project health
@@ -57,19 +67,26 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
    Any areas with 2 or fewer OWNERs? (link to more details)
    
    - GitHub Admin Subproject
-      - Looking to bring on more membership co-ordinators 
+      - We need to bring on more membership co-ordinators.
+         - These membership co-ordinators will be current contributors.
+         <!-- TODO : Link to requirements -->
+         - A full list of requirements can be found here 
    - Community Management Automation
       - [Zoom to Youtube](https://github.com/kubernetes/community/issues/5201)
       - [Workspace Automation](https://github.com/kubernetes/steering/issues/213)
          - Mailing list management
          - Calendar management
          - Shared drives
-      - [Mailing list migration](https://github.com/kubernetes/community/issues/6353)
+   - Mentoring Program Management and new Roles
+      - We need a [Group Mentoring Coordinator](https://github.com/kubernetes/community/issues/6517)
+      - We need a [3rd Party Mentoring Coordinator](https://github.com/kubernetes/community/issues/6471)
 
 2. What metrics/community health stats does your group care about and/or measure?
 
    - Issue Velocity
       - We are a service orientated sig, Issues are the main form of how we track work.
+      - [Dashboard for SIG Contributor Experience issue velocity, Devstats](https://k8s.devstats.cncf.io/d/15/issues-age-by-sig-and-repository-groups?orgId=1&var-period=d7&var-repogroup_name=SIG%20Contributor%20Experience&var-repo_name=kubernetes%2Fkubernetes&var-repo=kuberneteskubernetes&var-sig_name=All&var-kind_name=All&var-prio_name=All&from=now-1y%2Fy&to=now-1y%2Fy_)
+      
 
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
@@ -88,12 +105,13 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
+   - A full time community manager who can maintain several subprojects and help with the overall direction of the group
    - More full time support for the items under bullet point 1.
     - This work will reduce toil for not only contributor experience, but all groups in the project.
 
 ## Membership
 
-Statistics were retrived on 2021-01-30
+Statistics were retrived on 2022-01-30
 
 - Primary slack channel member count: 1895
 - Primary mailing list member count: 366 
@@ -164,15 +182,17 @@ Continuing:
 Operational tasks in [sig-governance.md]:
 
 - [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
-      (or created if missing and your contributor steps and experience are different or more
-      in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
+   - TODO : Update the README to account for slack meetings
 - [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+   - TODO : Update sigs.yaml
 - [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
+   - TODO : Review this
+- [X] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
+   - 
 - [ ] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
       -
       -
+      - TODO : Gather links for all these
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-contributor-experience/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
