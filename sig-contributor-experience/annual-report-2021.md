@@ -15,7 +15,7 @@
       - Ballots are no longer sent out via email, and instead contributors log in to the elections site to submit their ballots.
       - More information can be found in [community issue #5096](https://github.com/kubernetes/community/issues/5096)
    - Community meeting overhaul and reboot
-   - [EasyCLA migration](https://github.com/kubernetes/test-infra/issues/22721#issuecomment-1031561862)
+   - [EasyCLA migration](https://github.com/kubernetes/org/issues/2778)
       - The CLA service provided to us by the Linux Foundation was being deprecated.
       - We needed to migrate to EasyCLA2 to ensure continuity of service for our 75,000+ active committers.
    - Contributor Summit North America
@@ -35,8 +35,8 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
 |                                                  **Subproject**                                                 |                                                **Initiative / Program**                                               |
 |:---------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------:|
 | [Community](https://git.k8s.io/community/sig-contributor-experience#community)                                  | [Community Repo Stewardship](https://git.k8s.io/community)                                                            |
-| [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | [Calendar Admin]()                                                                                                    |
-| [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | [Leadership Operations]()                                                                                             |
+| [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | Calendar Admin                                                                                                    |
+| [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | Leadership Operations                                                                                             |
 | [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | [discuss.k8s.io End User Forum Admin](https://discuss.k8s.io)                                                         |
 | [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | [Mailing List Admin](https://k8s.dev/docs/comms/moderation/)                                                          |
 | [Community Management](https://git.k8s.io/community/sig-contributor-experience#community-management)            | [Slack Admin](https://k8s.dev/docs/comms/slack/)                                                                      |
@@ -91,8 +91,7 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
 2. What metrics/community health stats does your group care about and/or measure?
 
    - Issue Velocity
-      - We are a service orientated sig, Issues are the main form of how we track work.
-      - [Dashboard for SIG Contributor Experience issue velocity, Devstats](https://k8s.devstats.cncf.io/d/15/issues-age-by-sig-and-repository-groups?orgId=1&var-period=d7&var-repogroup_name=SIG%20Contributor%20Experience&var-repo_name=kubernetes%2Fkubernetes&var-repo=kuberneteskubernetes&var-sig_name=All&var-kind_name=All&var-prio_name=All&from=now-1y%2Fy&to=now-1y%2Fy_)
+      - [We are a service orientated sig, Issues are the main form of how we track work.](https://k8s.devstats.cncf.io/d/73/inactive-issues-by-sig?orgId=1&var-sigs=%22contributor-experience%22&from=1609459200000&to=1640995199000)
       
 
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
@@ -173,33 +172,27 @@ Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/
 -->
 
 New in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+N/A
 
 Retired in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+- [wg-naming](https://git.k8s.io/community/archive/wg-naming)
 
 Continuing:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+N/A
 
 ## Operational
 
 Operational tasks in [sig-governance.md]:
 
-- [ ] [README.md] reviewed for accuracy and updated if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
    - TODO : Update the README to account for slack meetings
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-   - TODO : Update sigs.yaml
-- [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
-   - TODO : Review this
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
 - [X] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
-   - 
-- [ ] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
-      -
-      -
-      - TODO : Gather links for all these
+- [X] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+   - [SIG Contributor Experience Deep Dive - KubeCon EU 2021](https://www.youtube.com/watch?v=vPK3QmVOE4Y)
+   - [SIG Contributor Experience Deep Dive - KubeCon NA 2021](https://www.youtube.com/watch?v=QOiyWWFjG5Q)
+
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-contributor-experience/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
