@@ -11,7 +11,7 @@
    - Made the developer UX for windows transparent with sig-windows-dev-tools.
    - Defined windows operational readiness standards.
    - Defined the pod OS field.
-   
+
 2. What initiatives are you working on that aren't being tracked in KEPs?
    - Migration of the windows kube-proxy to KPNG.
    - Migration of testgrid reporting jobs from aks-engine to cluster-api/cluster-api-provder-azure.
@@ -22,7 +22,7 @@
      - (1.22) [1122 - windows-csi-support](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1122-windows-csi-support/README.md)
    - Beta
      - (1.23) [1981 - Windows Privileged Container Support](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1981-windows-privileged-container-support/README.md)
-     - (1.23) https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/2802-identify-windows-pods-apiserver-admission/kep.yaml
+     - (1.23) [2802 -Identify Windows pods at API admission level authoritatively](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/2802-identify-windows-pods-apiserver-admission/kep.yaml)
    - Alpha
      - (1.22) [1981 - Windows Privileged Container Support](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1981-windows-privileged-container-support/README.md)
      - (1.23) [2802 -Identify Windows pods at API admission level authoritatively](https://github.com/kubernetes/enhancements/tree/master/keps/sig-windows/2802-identify-windows-pods-apiserver-admission/README.md)
@@ -36,7 +36,7 @@
    - csi-proxy and storage: this seems like an underserved area for windows https://github.com/kubernetes-csi/csi-proxy (meeting info is there).
 2. What metrics/community health stats does your group care about and/or measure?
    - stars for ksigs/windows specific repos
-     - sig-windows-dev-tools   
+     - sig-windows-dev-tools
        - https://github.com/kubernetes-sigs/sig-windows-dev-tools -> up to 46, represents interest
      - sig-windows-tools
        - represents people trying to install windows on k8s nodes
@@ -60,6 +60,7 @@
    - performance testing Kubernetes on Windows extensively and publishing results in cncf blog posts
 
 ## Membership
+
 - Primary slack channel member count: 1507
 - Primary mailing list member count: 188
 - Primary meeting attendee count (estimated, if needed): 10
@@ -72,9 +73,8 @@ Include any other ways you measure group membership
 ## Subprojects
 
 - windows csi-proxy subproject is active and healthy https://github.com/kubernetes-csi/csi-proxy
-    - meetings going well
-    - new optimization issue came up recently community engaged on it across companies vmware,rancher
-
+  - meetings going well
+  - new optimization issue came up recently community engaged on it across companies vmware,rancher
 
 ## Working groups
 
@@ -84,16 +84,16 @@ n/a
 
 Operational tasks in [sig-governance.md]:
 
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
       (or created if missing and your contributor steps and experience are different or more
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
-- [ ] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
-      -
-     
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
+- [x] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+  - [KubeCon EU 2021 virtual talk](https://www.youtube.com/watch?v=zJw4lrB7kKs)
+  - [KubeCon NA 2021 virtual talk](https://www.youtube.com/watch?v=fSmDmwKwFfQ)
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-windows/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
