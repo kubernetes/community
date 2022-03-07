@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09) (weekly alternating slack/zoom). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1CBz8qV_mD6rbDmTsMuosTOQGRXGhN3d8UrcULUI6Vkw/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 
@@ -46,7 +46,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcontributor-experience)
 - GitHub Teams:
     - [@kubernetes/sig-contributor-experience](https://github.com/orgs/kubernetes/teams/sig-contributor-experience) - General Discussion
-    - [@kubernetes/sig-contributor-experience-apac-coordinators](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-apac-coordinators) - APAC Coordinator Team
     - [@kubernetes/sig-contributor-experience-leads](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-leads) - Chairs and Technical Leads
     - [@kubernetes/sig-contributor-experience-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-pr-reviews) - PR Reviews
 - Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
@@ -117,10 +116,6 @@ Oversees and develops programs for helping contributors ascend the contributor l
   - [kubernetes-sigs/contributor-katacoda](https://github.com/kubernetes-sigs/contributor-katacoda/blob/main/OWNERS)
   - [kubernetes-sigs/contributor-playground](https://github.com/kubernetes-sigs/contributor-playground/blob/master/OWNERS)
   - [kubernetes/community/mentoring](https://github.com/kubernetes/community/blob/master/mentoring/OWNERS)
-- **Meetings:**
-  - Mentoring Subproject Meeting: [Mondays at 08:00 PT](https://zoom.us/j/95894431386?pwd=RFdmQzlZeVZDVWJzcFVXZXR5djNwUT09) (Biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit).
-    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### slack-infra
 Creates and maintains tools and automation for Kubernetes Slack.
 - **Owners:**
