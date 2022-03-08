@@ -123,10 +123,8 @@ Statistics were retrived on 2022-01-30
 - Primary mailing list member count: 366 
 - Primary meeting attendee count (estimated, if needed): 10-15 
 - Primary meeting participant count (estimated, if needed): 5
-- Unique reviewers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
-<!-- use dims tool, look over all the links to owners files, manual consolidation -->
-- Unique approvers for SIG-owned packages: <!-- in future, this will be generated from OWNERS files referenced from subprojects, expanded with OWNERS_ALIASES files -->
-<!-- use dims tool, look over all links to owners files manual -->
+- Unique reviewers for SIG-owned packages: 20
+- Unique approvers for SIG-owned packages: 28
 
 Include any other ways you measure group membership
 
@@ -171,10 +169,10 @@ In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $Y
 Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
 -->
 
-New in $YYYY:
+New in 2021:
 N/A
 
-Retired in $YYYY:
+Retired in 2021:
 - [wg-naming](https://git.k8s.io/community/archive/wg-naming)
 
 Continuing:
