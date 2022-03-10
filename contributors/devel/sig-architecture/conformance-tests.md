@@ -190,7 +190,7 @@ appropriate endpoint and credentials.
 kind build node-image
 ```
 
-3. Create your kind e2e cluster config kind-config-yaml:
+3. Create your kind e2e cluster config kind-config.yaml:
 
 ```yaml
 # necessary for conformance
