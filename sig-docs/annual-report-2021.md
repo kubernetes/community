@@ -42,9 +42,9 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
    - SIG Docs would welcome more contributors to form a stable pool for the blog subproject in particular and
      for SIG Docs, generally.
    - Require guidelines on how we could ramp up folks nominated to the New Contributor Ambassador role specific to SIG Docs. 
-    - One localization (Ukrainian) is primarily worked on by people based in Ukraine,
-      where the ongoing and intensifying conflict creates challenges that take priority over
-      open source contribution.
+   - One localization (Ukrainian) is primarily worked on by people based in Ukraine,
+     where the ongoing and intensifying conflict creates challenges that take priority over
+     open source contribution.
 2. What metrics/community health stats does your group care about and/or measure?
 
 
