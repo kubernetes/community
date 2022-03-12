@@ -120,8 +120,8 @@ Kubernetes is a large project, and compiling it can use a lot of
 resources. We recommend the following for any physical or virtual
 machine being used for building Kubernetes.
 
-    - 8GB of RAM
-    - 50GB of free disk space
+- 8GB of RAM
+- 50GB of free disk space
 
 ### Preparing Your Local Operating System
 
