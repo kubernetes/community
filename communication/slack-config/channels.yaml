@@ -403,6 +403,7 @@ channels:
   - name: spark-operator
   - name: spinnaker
   - name: sre
+  - name: sro
   - name: steering-committee
   - name: submariner
   - name: surveys
