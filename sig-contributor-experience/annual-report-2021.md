@@ -6,7 +6,9 @@
 
    - Continuing to provide critical services to enable the work of over 75,000+ contributors
    - [Migrating K-Dev to a managed kubernetes.io account](https://github.com/kubernetes/community/issues/5877)
-      - TODO - Explain this more
+      -  We encountered a problem with the k-dev mailing list where we couldn't send out community-wide meeting invites, due to restrictions on public google groups.
+      - In order to overcome this issue, we migrated to Google Workspace.
+      - It took over 80+ hours across the Contribex team to complete this migration.
    - Steering Election with Elekto
       - Elekto was created by Manish Sahani as part of an LFX internship. It allows us to run Elections on our own infrastructure.
       - Voters can login using their github credentials and vote from the election site.
@@ -16,8 +18,7 @@
       - Elekto automated the proccess of obtaining the list of elegible voters
       - Ballots are no longer sent out via email, and instead contributors log in to the elections site to submit their ballots.
       - More information can be found in [community issue #5096](https://github.com/kubernetes/community/issues/5096)
-   - Community meeting overhaul and reboot
-      
+   - Community meeting overhaul and reboot  
    - [EasyCLA migration](https://github.com/kubernetes/org/issues/2778)
       - The CLA service provided to us by the Linux Foundation was being deprecated.
       - We needed to migrate to EasyCLA2 to ensure continuity of service for our 75,000+ active committers.
