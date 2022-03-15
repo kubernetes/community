@@ -818,8 +818,8 @@ reviewers to see what has changed between the two versions:
 Due to the fast changing nature of the project, the following content is probably out-dated:
 * You must add the version to
   [pkg/controlplane/instance.go](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/controlplane/instance.go#L662)
-  is be enabled by default for beta and stable versions, or disabled by default
-  for alpha versions.
+  is be enabled by default for stable versions, or disabled by default
+  for alpha and beta versions.
 * You must add the new version to
   `pkg/apis/group_name/install/install.go` (for example, [pkg/apis/apps/install/install.go](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/apis/apps/install/install.go)).
 * You must add the new version to
@@ -845,6 +845,13 @@ local-up-cluster.sh, kind, etc) and running `kubectl get
 <resource>.<version>.<group>`.
 * [Integration tests](../sig-testing/integration-tests.md)
 are also good for testing the full CRUD lifecycle along with the controller.
+  * To write integration tests for beta APIs you will need to selectively enable the resources you need.
+    You can do this using [cmd/kube-apiserver/app/testing/testserver.go#StartTestServerOrDie](https://github.com/kubernetes/kubernetes/blob/2b1b849d6a8bdeb7dc0807438cfd0ff2a9d752c1/cmd/kube-apiserver/app/testing/testserver.go#L325).
+    You will then pass the `--runtime-config=groupname/v1beta1/resourcename` as a flag to enable the beta API.
+* For beta APIs, e2e tests need to perform discovery checks against the kube-apiserver to determine if
+  a beta API is enabled or not.  See [test/e2e/apimachinery/discovery.go](https://github.com/kubernetes/kubernetes/blob/2b1b849d6a8bdeb7dc0807438cfd0ff2a9d752c1/test/e2e/apimachinery/discovery.go#L50)
+  for an example.
+  There is a [prow dashboard for beta API jobs](https://prow.k8s.io/?job=*betaapis*) to watch your results.
 
 ## Making a new API Group
 
