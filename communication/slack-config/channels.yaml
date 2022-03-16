@@ -386,6 +386,7 @@ channels:
   - name: sig-node-bug-scrub
   - name: sig-node-rkt
     archived: true
+  - name: sig-node-sro
   - name: sig-node-swap
   - name: sig-scalability
   - name: sig-scheduling
