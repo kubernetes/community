@@ -1602,6 +1602,8 @@ Kubernetes components and tools:
     project.
     - Such keys are effectively part of the kubernetes API and may be subject
       to deprecation and compatibility policies.
+    - "kubernetes.io" is the preferred form for labels and annotations, "k8s.io" should not be used
+      for new map keys.
   - Key names, including prefixes, should be precise enough that a user could
     plausibly understand where it came from and what it is for.
   - Key prefixes should carry as much context as possible.
