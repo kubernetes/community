@@ -376,13 +376,13 @@ For brevity's sake, `snapshot` will be used to mean `volume snapshot` and `backu
     Some aspects of this may be appropriate to surface within Kubernetes (e.g., security keys for encryption, etc.).
 
 7. The backup architecture should allow for a separation of concerns between primary storage and backup responsibilities. In particular, it should be possible to support the following “modes”:
-  1. Backup:
-    1. Performed by the primary storage system.
-    1. Performed by a third-party component, which relies upon the ability to gain access to a quiescent copy of the volume (likely via snapshotting or volume cloning) and provides an out-of-band method for calculating differences between the latest volume and the previous backup.
-    1. Performed by a third-party component, which relies upon a (not yet fully specified) “here are the changed blocks since your last snapshot/backup” feature to be implemented by primary storage.
-  1. Restore:
-    1. Primary storage performs volume provisioning and population from backup in one logical operation from the user’s perspective (similar to the existing snapshot model).
-    1. Similar user experience as above, but primary storage performs volume provisioning, while a third-party component provides volume population.
+   1. Backup:
+      1. Performed by the primary storage system.
+      2. Performed by a third-party component, which relies upon the ability to gain access to a quiescent copy of the volume (likely via snapshotting or volume cloning) and provides an out-of-band method for calculating differences between the latest volume and the previous backup.
+      3. Performed by a third-party component, which relies upon a (not yet fully specified) “here are the changed blocks since your last snapshot/backup” feature to be implemented by primary storage.
+   2. Restore:
+      1. Primary storage performs volume provisioning and population from backup in one logical operation from the user’s perspective (similar to the existing snapshot model).
+      2. Similar user experience as above, but primary storage performs volume provisioning, while a third-party component provides volume population.
 
 8. It might be desirable to try and standardize some common attributes of backups (e.g., object storage buckets, regions where backups are stored, number of copies of each backup, etc.).  However, zeal for pursuing a deep level of such standardization should be tempered by the desire to open up a marketplace of competitive offerings that allow for a healthy degree of freedom for innovation and opportunities for competitive discrimination.
 
