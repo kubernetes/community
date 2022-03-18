@@ -85,6 +85,10 @@ For this types of metric exposition, the
 [exporter guidelines](https://prometheus.io/docs/instrumenting/writing_exporters/)
 apply additionally.
 
+## Metrics Stability
+
+Please see our documentation on Kubernetes [metrics stability](/contributors/devel/sig-instrumentation/metric-stability.md).
+
 ## Naming 
 
 General [metric and label naming best practices](https://prometheus.io/docs/practices/naming/) apply.
