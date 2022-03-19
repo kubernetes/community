@@ -88,7 +88,7 @@ Creates and runs contributor-focused events, such as the Contributor Summit.  Ev
 - **Owners:**
   - [kubernetes/community/events](https://github.com/kubernetes/community/blob/master/events/OWNERS)
 - **Contact:**
-  - Slack: [#events](https://kubernetes.slack.com/messages/events)
+  - Slack: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)
 - **Meetings:**
   - Office Hours European Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 09:00 ET (Eastern Time)](https://hackmd.io/@k8s/office-hours) (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=ET%20%28Eastern%20Time%29).
   - Office Hours Western Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 12:00 ET (Eastern Time)]() (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=ET%20%28Eastern%20Time%29).
