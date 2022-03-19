@@ -80,7 +80,7 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
    Any areas with 2 or fewer OWNERs? (link to more details)
    
    - GitHub Admin Subproject
-      - We need to bring on more new membership co-ordinators.
+      - We need to bring on more [new membership co-ordinators](https://cs.github.com/kubernetes/community/blob/cf77df8935eb5460d8d2856c40009d981691ec2f/github-management/README.md#L49).
          - New Membership Coordinators are current contributors to the Kubernetes project that help serve as a friendly face to newer, prospective community members, guiding them through the process to request membership to a Kubernetes GitHub organization.
    - Community Management Automation
       - [Zoom to Youtube](https://github.com/kubernetes/community/issues/5201)
@@ -117,7 +117,7 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
 
    - A full time community manager who can maintain several subprojects and help with the overall direction of the group
    - More full time support for the items under bullet point 1.
-    - This work will reduce toil for not only contributor experience, but all groups in the project.
+    - This work will reduce toil for contributor experience and all groups in the project.
 
 ## Membership
 
