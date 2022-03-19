@@ -15,7 +15,7 @@
       - The previous method of holding elections was prone to issues when it came to the following:
          - Obtaining the list of elegible voters from 75,000+ contributors 
          - Sending ballots out via email
-      - Elekto automated the proccess of obtaining the list of elegible voters
+      - Elekto automated the process of obtaining the list of elegible voters
       - Ballots are no longer sent out via email, and instead contributors log in to the elections site to submit their ballots.
       - More information can be found in [community issue #5096](https://github.com/kubernetes/community/issues/5096)
    - Community meeting overhaul and reboot  
@@ -101,7 +101,7 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
 
-   - We don't have a CONTRIBUTING.md as our SIG's contributing proccess does not differ from the proccess in the Contributor Guide.
+   - We don't have a CONTRIBUTING.md as our SIG's contributing process does not differ from the process in the Contributor Guide.
 
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
@@ -121,7 +121,7 @@ Contribex is a service and program orientated SIG. Most of our initiatives cover
 
 ## Membership
 
-Statistics were retrived on 2022-01-30
+Statistics were retrieved on 2022-01-30
 
 - Primary slack channel member count: 1895
 - Primary mailing list member count: 366 
