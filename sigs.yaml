@@ -1303,7 +1303,7 @@ sigs:
     description: Creates and runs contributor-focused events, such as the Contributor
       Summit.  Event Teams are part of this subproject.
     contact:
-      slack: events
+      slack: sig-contribex
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
     meetings:
