@@ -393,27 +393,46 @@ Conditions are most useful when they follow some consistent conventions:
   consistent standard, the `Ready` and `Succeeded` condition types may be used
   by API designers for long-running and bounded-execution objects, respectively.
 
-The `FooCondition` type for some resource type `Foo` may include a subset of the
-following fields, but must contain at least `type` and `status` fields:
+Conditions should follow the standard schema included in [k8s.io/apimachinery/pkg/apis/meta/v1/types.go](https://github.com/kubernetes/apimachinery/blob/release-1.23/pkg/apis/meta/v1/types.go#L1432-L1492).
+It should be included as a top level element in status, similar to
+```go
+Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,1,rep,name=conditions"`
+```
+
+The `metav1.Conditions` includes the following fields
 
 ```go
-  Type               FooConditionType   `json:"type" description:"type of Foo condition"`
-  Status             ConditionStatus    `json:"status" description:"status of the condition, one of True, False, Unknown"`
-
-  // +optional
-  Reason             *string            `json:"reason,omitempty" description:"one-word CamelCase reason for the condition's last transition"`
-  // +optional
-  Message            *string            `json:"message,omitempty" description:"human-readable message indicating details about last transition"`
-
-  // +optional
-  LastTransitionTime *unversioned.Time  `json:"lastTransitionTime,omitempty" description:"last time the condition transit from one status to another"`
+// type of condition in CamelCase or in foo.example.com/CamelCase.
+// +required
+Type string `json:"type" protobuf:"bytes,1,opt,name=type"`
+// status of the condition, one of True, False, Unknown.
+// +required
+Status ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status"`
+// observedGeneration represents the .metadata.generation that the condition was set based upon.
+// For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date
+// with respect to the current state of the instance.
+// +optional
+ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
+// lastTransitionTime is the last time the condition transitioned from one status to another.
+// This should be when the underlying condition changed.  If that is not known, then using the time when the API field changed is acceptable.
+// +required
+LastTransitionTime Time `json:"lastTransitionTime" protobuf:"bytes,4,opt,name=lastTransitionTime"`
+// reason contains a programmatic identifier indicating the reason for the condition's last transition.
+// Producers of specific condition types may define expected values and meanings for this field,
+// and whether the values are considered a guaranteed API.
+// The value should be a CamelCase string.
+// This field may not be empty.
+// +required
+Reason string `json:"reason" protobuf:"bytes,5,opt,name=reason"`
+// message is a human readable message indicating details about the transition.
+// This may be an empty string.
+// +required
+Message string `json:"message" protobuf:"bytes,6,opt,name=message"`
 ```
 
 Additional fields may be added in the future.
 
-Do not use fields that you don't need - simpler is better.
-
-Use of the `Reason` field is encouraged.
+Use of the `Reason` field is required.
 
 Condition types should be named in PascalCase. Short condition names are
 preferred (e.g. "Ready" over "MyResourceReady").
