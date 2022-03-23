@@ -406,8 +406,6 @@ following fields, but must contain at least `type` and `status` fields:
   Message            *string            `json:"message,omitempty" description:"human-readable message indicating details about last transition"`
 
   // +optional
-  LastHeartbeatTime  *unversioned.Time  `json:"lastHeartbeatTime,omitempty" description:"last time we got an update on a given condition"`
-  // +optional
   LastTransitionTime *unversioned.Time  `json:"lastTransitionTime,omitempty" description:"last time the condition transit from one status to another"`
 ```
 
@@ -416,9 +414,6 @@ Additional fields may be added in the future.
 Do not use fields that you don't need - simpler is better.
 
 Use of the `Reason` field is encouraged.
-
-Use the `LastHeartbeatTime` with great caution - frequent changes to this field
-can cause a large fan-out effect for some resources.
 
 Condition types should be named in PascalCase. Short condition names are
 preferred (e.g. "Ready" over "MyResourceReady").
