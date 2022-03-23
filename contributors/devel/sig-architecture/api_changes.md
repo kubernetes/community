@@ -828,6 +828,7 @@ Due to the fast changing nature of the project, the following content is probabl
   [cmd/kube-apiserver/app#apiVersionPriorities](https://github.com/kubernetes/kubernetes/blob/v1.21.2/cmd/kube-apiserver/app/aggregator.go#L247).
 * You must setup storage for the new version in
   `pkg/registry/group_name/rest` (for example, [pkg/registry/authentication/rest](https://github.com/kubernetes/kubernetes/blob/v1.21.2/pkg/registry/authentication/rest/storage_authentication.go)).
+* For `kubectl get` you must add a table definition to [pkg/printers/internalversion/printers.go](https://github.com/kubernetes/kubernetes/blob/v1.23.0/pkg/printers/internalversion/printers.go). Integration tests for this are in [test/integration/apiserver/print_test.go](https://github.com/kubernetes/kubernetes/blob/v1.23.0/test/integration/apiserver/print_test.go).
 
 You need to regenerate the generated code as instructed in the sections above.
 
