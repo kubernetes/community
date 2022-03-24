@@ -24,8 +24,8 @@ A Working Group dedicated to discussing, designing and documenting using Kuberne
 ## Organizers
 
 * Steve Wong (**[@cantbewong](https://github.com/cantbewong)**), VMware
-* Cindy Xing (**[@cindyxing](https://github.com/cindyxing)**), Microsoft
 * Dejan Bosanac (**[@dejanb](https://github.com/dejanb)**), Red Hat
+* Kate Goldenring (**[@kate-goldenring](https://github.com/kate-goldenring)**), Microsoft
 
 ## Emeritus Organizers
 

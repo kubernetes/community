@@ -3001,12 +3001,12 @@ workinggroups:
     - github: cantbewong
       name: Steve Wong
       company: VMware
-    - github: cindyxing
-      name: Cindy Xing
-      company: Microsoft
     - github: dejanb
       name: Dejan Bosanac
       company: Red Hat
+    - github: kate-goldenring
+      name: Kate Goldenring
+      company: Microsoft
     emeritus_leads:
     - github: ptone
       name: Preston Holmes
