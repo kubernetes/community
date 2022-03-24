@@ -164,7 +164,7 @@ release-blocking flakes. Therefore we have the following guidelines:
 
 If you are reporting a flake, it is important to include enough information for
 others to reproduce the issue. When filing the issue, use the
-[flaking test template](https://github.com/kubernetes/kubernetes/issues/new?labels=kind%2Fflake&template=flaking-test.md). In
+[flaking test template](https://github.com/kubernetes/kubernetes/issues/new?labels=kind%2Fflake&template=flaking-test.yaml). In
 your issue, answer these following questions:
 
 - Is this flaking in multiple jobs? You can search for the flaking test or error
