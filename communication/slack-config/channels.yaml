@@ -345,6 +345,7 @@ channels:
   - name: reddit-mods
   - name: rktnetes
   - name: ro-users
+  - name: rukpak-dev
   - name: ru-users
   - name: scaleway-k8s
   - name: schemahero
