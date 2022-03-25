@@ -89,7 +89,7 @@ apply additionally.
 
 Please see our documentation on Kubernetes [metrics stability](/contributors/devel/sig-instrumentation/metric-stability.md).
 
-## Naming 
+## Naming
 
 General [metric and label naming best practices](https://prometheus.io/docs/practices/naming/) apply.
 Beyond that, metrics added directly by application or package code should have a unique name. 
@@ -242,3 +242,7 @@ metric could look as follows:
 ```
 kube_pod_restarts and on(namespace, pod) kube_pod_info{uuid=”ABC”}
 ```
+
+## Deprecating Metrics
+
+The process of metric deprecation is outlined in the official [Kubernetes Deprecation Policy](https://kubernetes.io/docs/reference/using-api/deprecation-policy/). When deprecating a metric, one must set the deprecated version for a version which is in the future from which point that metric will be considered deprecated. If there is a replacement metric, please note that in the help text of the deprecated metric as well as in the corresponding release note of the relevant pull request. 
