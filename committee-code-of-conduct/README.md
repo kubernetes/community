@@ -15,7 +15,7 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 ## Members
 
 * Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), Independent
-* Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**), Mattermost
+* Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**), Chainguard, Inc
 * Karen Chu (**[@karenhchu](https://github.com/karenhchu)**), Microsoft
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
 * Vallery Lancey (**[@vllry](https://github.com/vllry)**), Apple
@@ -45,7 +45,7 @@ The members and their terms are as follows:
 
 - Karen Chu (Microsoft)
 - Celeste Horgan (Independent)
-- Carlos Tadeu Panato Jr. (Mattermost)
+- Carlos Tadeu Panato Jr. (Chainguard, Inc)
 
 ### Term ends on August 23, 2023
 
