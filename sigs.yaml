@@ -2023,7 +2023,7 @@ sigs:
     tech_leads:
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
-      company: Mattermost
+      company: Chainguard, Inc
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Apple
@@ -3279,7 +3279,7 @@ committees:
       company: Independent
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
-      company: Mattermost
+      company: Chainguard, Inc
     - github: karenhchu
       name: Karen Chu
       company: Microsoft
