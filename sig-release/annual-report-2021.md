@@ -64,14 +64,13 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 
 2. What metrics/community health stats does your group care about and/or measure?
 
-   -
-   -
-   -
+   Some data tracking efforts that SIG Release performs include monitoring release team applications,
+   release manager activities and code commits to ensure timely release cuts in our repos.
 
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
 
-   -
+   - The `CONTRIBUTING.md` was recently revamped and includes a Getting Started section with links to mentoring opportunities.
 
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
@@ -104,8 +103,8 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
-   -
-   -
+   - We've been considering offering internships to help us round the rough edges 
+     in some repositories such as the Kuebrnetes SBOM Tool.
 
 ## Membership
 
