@@ -33,7 +33,7 @@ The [charter](charter.md) defines the scope and governance of the CLI Special In
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Shopify
-* Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Amazon
+* Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Chainguard, Inc
 * Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
 
 ### Technical Leads
