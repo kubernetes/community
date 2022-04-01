@@ -939,7 +939,6 @@ an example to illustrate your change.
 Make sure you update the swagger and OpenAPI spec by running:
 
 ```sh
-hack/update-swagger-spec.sh
 hack/update-openapi-spec.sh
 ```
 
