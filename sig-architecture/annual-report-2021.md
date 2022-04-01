@@ -222,9 +222,9 @@ Operational tasks in [sig-governance.md]:
 		- [ ] Last SIG Recording uploaded Jul 2021 
 - [ ] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
       - 2021 Kubecon EU Virtual Kubernetes Conformance
-[A talk on what Kubernetes Conformance is and how to contribute to it by Zach Mandeville and Caleb Woodbine.](https://www.youtube.com/watch?v=05NMwOhD6Ks)
+        [A talk on what Kubernetes Conformance is and how to contribute to it](https://www.youtube.com/watch?v=05NMwOhD6Ks) by Zach Mandeville and Caleb Woodbine.
       - 2021 Kubecon NA Virtual - Kubernetes Conformance
-[A talk on the tooling that has been used the community to bring Kubernetes Conformance coverage up to 77% by Stephen Heywood and Caleb Woodbine](https://www.youtube.com/watch?v=IQsBahak7PQ)
+        [A talk on the tooling that has been used the community to bring Kubernetes Conformance coverage up to 77%](https://www.youtube.com/watch?v=IQsBahak7PQ) by Stephen Heywood and Caleb Woodbine.
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-architecture/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
