@@ -43,7 +43,7 @@
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
 
-   - TODO: Riaan
+   - Yes. it is [here](https://github.com/kubernetes/community/blob/master/sig-architecture/CONTRIBUTING.md)
 
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
