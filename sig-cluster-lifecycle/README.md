@@ -124,6 +124,10 @@ Cluster API infrastructure provider for GCP
 - **Contact:**
   - Slack: [#cluster-api-gcp](https://kubernetes.slack.com/messages/cluster-api-gcp)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
+- **Meetings:**
+  - Cluster API Provider GCP office hours: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/96963829102?pwd=WjBZcmwvZFZsUU93aVZieUk1L3FnZz09) (monthly on 1st Thursday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](http://bit.ly/k8s-capg-agenda).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-ibmcloud
 Cluster API infrastructure provider for IBM Cloud
 - **Owners:**
