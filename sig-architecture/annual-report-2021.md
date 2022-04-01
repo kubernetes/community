@@ -157,12 +157,12 @@ Continuing:
     - Each SIG can identify 2-3 people to be involved in API reviews - https://github.com/kubernetes/kubernetes/blob/v1.23.0/OWNERS_ALIASES#L451-L452
 - [Conformance Definition](https://github.com/kubernetes/community/tree/master/sig-architecture#conformance-definition-1)
     - We started 2021 with 128 endpoints remaining without conformance test.(69.13% conformance tested)
-    - The current count is [51 endpoints](https://apisnoop.cncf.io/conformance-progress/endpoints/1.24.0/?filter=untested) 
+    - The current count is [51 endpoints](https://apisnoop.cncf.io/conformance-progress/endpoints/1.24.0/?filter=untested)
       remaining without conformance tests putting us at [87.25%](https://apisnoop.cncf.io/?conformance-only=true) conformance tested.
     - In the last 12 months
-	    - Tests for 75 endpoints was promoted to conformance 
-	    - 34 Endpoints was promoted to GA with conformance tests.
-	    - No new technical debt was incurred
+        - Tests for 75 endpoints was promoted to conformance
+        - 34 Endpoints was promoted to GA with conformance tests
+        - No new technical debt was incurred
     - We moved the Conformance Office Hours Meeting from Bi-weekly to monthly in Aug 2021 to reduce the strain on attendee's calendars and increase engagement.
     - At the start of 2021 the tracking of ineligible endpoints for conformance was moved to
       [`ineligible_endpoints.yaml`](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/ineligible_endpoints.yaml) file.
@@ -187,7 +187,9 @@ Continuing:
     - Production readiness review [became mandatory] for enhancements in 2021, starting with the 1.21 release cycle.
     - We added a fourth approver, Elana Hashman, who joined the team after shadowing in 1.21.
     - We created documentation on the [lifecycle of feature gates].
-    - We reviewed data from the 2020 Production Readiness Survey, and prepared a 2021 survey, whose [responses we analyzed]. # **TODO:** @dims to update link to point to YouTube recording
+      - We reviewed data from the 2020 Production Readiness Survey, and prepared a 2021 survey, whose [responses we analyzed].
+        - Survey report URL: https://datastudio.google.com/reporting/2e9c7439-202b-48a9-8c57-4459e0d69c8d/page/GC5HB
+        - YouTube recording: https://youtu.be/9GM28aAyRQs
     - The team implemented a [soft deadline] to set expectations around what can be reviewed in time for enhancements freeze.
     - We reviewed a total of 171 KEPs in 2021, averaging 16 per approver per release:
         - 51 KEPs in 1.21 (3 approvers)
@@ -211,7 +213,7 @@ TODO: dims to send email to WG asking them to talk to us sync of async
 Operational tasks in [sig-governance.md]:
 
 - [x] [README.md](https://github.com/kubernetes/community/blob/master/sig-architecture/README.md) reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md](https://hackmd.io/GY081dMNThS16WWWB46unw) reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md](https://github.com/kubernetes/community/blob/master/sig-architecture/CONTRIBUTING.md) reviewed for accuracy and updated if needed
       (or created if missing and your contributor steps and experience are different or more
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
 	  **We need to create this:**
