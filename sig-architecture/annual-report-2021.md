@@ -171,7 +171,11 @@ Continuing:
     - Our target for 2022 is to clean up the last 51 endpoint and then move over to Conformance profiles 
       to further increase the value added by conformance testing.
 - [Code Organization](https://github.com/kubernetes/community/tree/master/sig-architecture#code-organization-1)
-     
+    - Added [Snyk based scanning](https://testgrid.k8s.io/sig-security-snyk-scan#ci-kubernetes-snyk-master) for kubernetes/kubernetes repository
+    - Updated license tooling for dependencies to generate a directory tree of licenses instead of a single file
+    - Cleaned up go.mod/sum contents and tooling removing a whole lot of transitive dependecies and even a couple of recursive dependencies
+    - Added tooling to exclude unwanted dependencies
+    - Use new tools like golangci-lint for better code health
 - [Enhancements](https://github.com/kubernetes/community/tree/master/sig-architecture#enhancement-proposals)
     - In 2021, the subproject was mainly focused on improving the contributor experience via automation and thoughtful ui/ux changes making visible changes to the KEP process.
     - Major efforts were put into improving tooling on the enhancements repo throughout the year allowing us to automate more validation lessening the burden on individual approvers and resulting in more accurate information reflected in the document. All KEPs were migrated to the new template which now includes a key.yaml file.
