@@ -30,7 +30,7 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
      - [1412 - Immutable Secrets and ConfigMaps](https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/1412-immutable-secrets-and-configmaps) - stable
      - [1472 - Storage Capacity Constraints for Pod Scheduling](https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/1472-storage-capacity-tracking) - stable
      - [1682 - Skip Volume Ownership Change](https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/1682-csi-driver-skip-permission) - stable
-     - [1698 - generic ephemeral inline volumes] (https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/1698-generic-ephemeral-volumes) - stable
+     - [1698 - generic ephemeral inline volumes](https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/1698-generic-ephemeral-volumes) - stable
      - [1855 - Service Account Token for CSI Driver](https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/1855-csi-driver-service-account-token) - stable
      - [1122 - CSI Windows](https://github.com/kubernetes/enhancements/blob/master/keps/sig-windows/1122-windows-csi-support) - stable
 
@@ -227,7 +227,6 @@ Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/
 -->
 
 Continuing:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
 - [Kubernetes Data Protection WG](https://github.com/kubernetes/community/tree/master/wg-data-protection)
   - [2020 report](https://github.com/kubernetes/community/blob/master/wg-data-protection/annual-report-2020.md)
   - [2021 report](https://github.com/kubernetes/community/blob/master/wg-data-protection/annual-report-2021.md)
