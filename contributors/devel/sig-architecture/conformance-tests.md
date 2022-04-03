@@ -67,6 +67,7 @@ Examples of features which are not currently eligible for conformance tests:
 - cloud-provider-specific features, eg: GCE monitoring, S3 Bucketing, etc.
 - anything that requires a non-default admission plugin
 - features that are pending deprecation, eg: componentstatus
+- any endpoints that are operational tools, rather than application-oriented, should not be part of conformance, eg: apiserver logs. 
 
 Conformance tests are intended to be stable and backwards compatible according to
 the standard API deprecation policies. Therefore any test that relies on specific
