@@ -218,7 +218,7 @@ If you can extract whole ideas from your pull request and send those as pull req
 
 Kubernetes is a fast-moving codebase - lock in your changes ASAP with your small pull request, and make merges be someone else's problem.
 
-Multiple small pull requests are often better than multiple commits.
+Multiple small pull requests with fewer commits are often better than single pull requests with many commits.
 Don't worry about flooding us with pull requests. We'd rather have 100 small,obvious pull requests than 10 unreviewable monoliths.
 
 We want every pull request to be useful on its own, so use your best judgment on what should be a pull request vs. a commit.
