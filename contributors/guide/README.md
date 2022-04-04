@@ -15,6 +15,7 @@ description:
   - [Welcome](#welcome)
   - [Contributor Guide](#contributor-guide)
   - [Prerequisites](#prerequisites)
+    - [Create a GitHub account](#create-a-github-account)
     - [Sign the CLA](#sign-the-cla)
     - [Code of Conduct](#code-of-conduct)
     - [Setting up your development environment](#setting-up-your-development-environment)
@@ -59,6 +60,10 @@ Before submitting code to Kubernetes, you should first complete the following
 prerequisites. These steps are checked automatically by [a bot] during your
 first submission.  Completing these steps will make your first contribution
 easier: 
+
+### Create a GitHub account
+
+Before you get started, you will need to [signup](http://github.com/signup) for a GitHub user account. 
 
 ### Sign the CLA
 
