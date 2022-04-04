@@ -18,12 +18,13 @@ maintainer responsibilities, and direct engagement from maintainers is a finite 
 
 ## SIG Cluster Lifecycle explained
 
-Read the SIG mission outlined in the SIG [charter][https://git.k8s.io/community/sig-cluster-lifecycle/charter.md].
+Read the SIG mission outlined in the SIG [charter](https://git.k8s.io/community/sig-cluster-lifecycle/charter.md).
 
 Video resources:
 - [SIG introduction at KubeCon NA 2020](https://www.youtube.com/watch?v=qi-X-Wszetc)
   - [Slides](https://docs.google.com/presentation/d/18I1YvBUegWegc7oBJiLLxwA2I1c9VVjH)
 - [SIG contributor onboarding](https://www.youtube.com/watch?v=Bof9aveB3rA)
+- [SIG meeting VOD archive](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4)
 
 ## Get in touch with the SIG
 
