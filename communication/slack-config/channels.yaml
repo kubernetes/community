@@ -340,6 +340,7 @@ channels:
   - name: pt_br-users
   - name: purelb-users
   - name: raksh
+    archived: true
   - name: rancher
   - name: random
     archived: true
