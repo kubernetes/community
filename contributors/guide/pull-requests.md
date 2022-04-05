@@ -466,6 +466,14 @@ will continually do so each time the PR is updated.
 
 
 <!-- omit in toc -->
+#### Update a PR with `do-not-merge/invalid-commit-message` label.
+
+If you accidentally used `closes #NNNN` or @-mention, you need to rewrite the git history
+of your branch to remove the `do-not-merge/invalid-commit-message` label. 
+See [Rewriting History](https://git-scm.com/book/en/v2/Git-Tools-Rewriting-History).
+
+
+<!-- omit in toc -->
 ### Use the commit message body to explain the _what_ and _why_ of the commit
 
 Commits and their commit messages are the _"permanent record"_ of the changes
