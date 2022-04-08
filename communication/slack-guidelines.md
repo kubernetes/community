@@ -72,7 +72,7 @@ and selecting **Report message**.
 
 This will open a new dialog prompt where you may describe the problem. When
 done, it will send the reported message and your comments to **BOTH** the
-[Slack admins][admins] and [Code of Conduct Committee (CoCC)][].
+[Slack admins][admins] and [Code of Conduct Committee (CoCC)][cocc].
 
 A Slack admin or CoCC member will work to resolve the issue or reach out for
 more information.
@@ -300,7 +300,7 @@ sub-projects, community topics, and other things related to Kubernetes programs
 and projects.
 
 For Kubernetes project centric requests, validate them against the
-[sig-list][SIGs, WGs, UGs], or request a link to a related issue/PR, or mailing
+[sig-list], or request a link to a related issue/PR, or mailing
 list discussion for the requested Channel.
 
 Small external projects are encouraged to use the channel of the SIG, WG, or UG
@@ -384,7 +384,7 @@ past "X" minutes/hours.
 Report any actions taken to the other slack admins, and if needed the 
 [Code of Conduct Committee][cocc].
 
-  [Code of Conduct]: /code-of-conduct.md
+  [coc]: /code-of-conduct.md
   [admins]: ./moderators.md#Slack
   [Slack Archive Download]: https://drive.google.com/drive/folders/1Xnkwsxis3tu0pT7rwp-crRq4IciZ5b1o?usp=sharing
   [cocc]: /committee-code-of-conduct/README.md
