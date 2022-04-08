@@ -3111,22 +3111,22 @@ workinggroups:
   label: multitenancy
   leadership:
     chairs:
-    - github: srampal
-      name: Sanjeev Rampal
-      company: Cisco
-    - github: tashimi
+     - github: tashimi
       name: Tasha Drew
       company: VMware
     emeritus_leads:
     - github: davidopp
       name: David Oppenheimer
+    - github: srampal
+      name: Sanjeev Rampal
+      company: Cisco
   meetings:
   - description: Regular WG Meeting
     day: Tuesday
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/my/k8s.sig.auth
+    url: https://zoom.us/j/93752451148?pwd=WW5YaHJuMW1MUFNnazV4WVhTRDlqZz09 
     archive_url: https://docs.google.com/document/d/1fj3yzmeU2eU8ZNBCUJG97dk_wC7228-e_MmdcmTNrZY/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1tBA0W8zEe6UwPsabGQk-j
   contact:
