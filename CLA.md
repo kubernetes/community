@@ -37,6 +37,8 @@ Select the most appropriate option:
 
 Once you select the type of contributor, proceed to Sign the CLA and follow the instructions to complete the signing process through DocuSign.
 
+If you are signing up as a corporate contributor, ensure that you have linked your corporate email address to your GitHub profile (it doesn't have to be your primary email address for GitHub) or else it can lead to issues with the CLA system. For more information, see [Adding an email address to your GitHub account](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-user-account/managing-email-preferences/adding-an-email-address-to-your-github-account).
+
 **Ensure your GitHub e-mail address matches e-mail address used to sign CLA**
 
 After you have filled out  the information, Click "Finish" and you will be redirected back to your Pull Request.
