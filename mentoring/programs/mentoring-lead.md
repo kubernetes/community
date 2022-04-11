@@ -1,10 +1,10 @@
-# Third Party Mentoring Lead Handbook
+# Internship Mentoring Lead Handbook
 
 ## Overview
 
 The Mentoring Lead role is created to help upstream Kubernetes contributors to participates in various mentorship programs like [GSoC](https://github.com/kubernetes/community/blob/master/mentoring/programs/google-summer-of-code.md), [GSoD](https://github.com/kubernetes/community/blob/master/mentoring/programs/google-season-of-docs.md), [LFX Mentorship](https://github.com/kubernetes/community/blob/master/mentoring/programs/lfx-mentorship.md) and many more as an independent organisation or under Cloud Native Computing Foundation(CNCF). 
 
-## Role Description
+## Responsibilities
  The role lead should:
 
 - Keep a calendar of dates for each program (when to submit our project name, when to submit the project scope, when selecting period is, etc) throughout the   year and
@@ -14,7 +14,7 @@ The Mentoring Lead role is created to help upstream Kubernetes contributors to p
 - Help off board interns to the k8s specific community items like demo at monthly community meeting
 
 
-### Responsibilities
+### Role Description
 
 Major responsibilities includes a commitment to: 
 
