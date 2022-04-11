@@ -154,8 +154,7 @@ Note that adding labels requires Kubernetes GitHub org membership. If you are no
 
 GitHub allows you to filter out types of issues and pull requests, which helps you discover items in need of triaging. This table includes some predetermined searches for convenience:
 
-<!--- NOTE: Table syntax is for the Hugo rendered page -->
-{{< table caption="Example issue and pull request searches" >}}
+
 | Search                                                                                                       | What it sorts                                           |
 |--------------------------------------------------------------------------------------------------------------|---------------------------------------------------------|
 | [created-asc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acreated-asc)     | Untriaged issues by age                                 |
@@ -163,7 +162,7 @@ GitHub allows you to filter out types of issues and pull requests, which helps y
 | [`is:open is:issue`](https://github.com/kubernetes/kubernetes/issues?q=is%3Aopen+is%3Aissue)                 | Newest incoming issues                                  |
 | [comments-desc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-desc) | Busiest untriaged issues, sorted by # of comments       |
 | [comments-asc](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+sort%3Acomments-asc)   | Issues that need more attention, based on # of comments |
-{{</ table >}}
+
 
 We suggest preparing your triage by filtering out the oldest, unlabelled issues and pull requests first.
 
@@ -223,8 +222,7 @@ We use GitHub labels for prioritization. If an issue lacks a `priority` label, t
 
 We aim for consistency across the entire project. However, if you notice an issue that you believe to be incorrectly prioritized, please leave a comment offering your counter-proposal and we will evaluate it.
 
-<!--- NOTE: Table syntax is for the Hugo rendered page -->
-{{< table caption="Priority labels for issues" >}}
+
 |Priority label|What it means|Examples|
 |---|---|---|
 | `priority/critical-urgent` | Team leaders are responsible for making sure that these issues (in their area) are being actively worked on—i.e., drop what you're doing. Stuff is burning. These should be fixed before the next release. | user-visible bugs in core features <br> broken builds <br> tests and critical security issues | 
@@ -232,7 +230,7 @@ We aim for consistency across the entire project. However, if you notice an issu
 | `priority/important-longterm` | Important over the long term, but may not be currently staffed and/or may require multiple releases to complete. Wouldn't block a release. | [**XXXX**]|
 | `priority/backlog`  | General agreement that this is a nice-to-have, but no one's available to work on it anytime soon. Community contributions would be most welcome in the meantime, though it might take a while to get them reviewed if reviewers are fully occupied with higher-priority issues—for example, immediately before a release.| [**XXXX**]  | 
 | `priority/awaiting-more-evidence` | Possibly useful, but not yet enough support to actually get it done. | Mostly placeholders for potentially good ideas, so that they don't get completely forgotten, and can be referenced or deduped every time they come up | 
-{{< /table >}}
+
 
 ## Step Four: Find and Set the Right SIG(s) to Own an Issue 
 
