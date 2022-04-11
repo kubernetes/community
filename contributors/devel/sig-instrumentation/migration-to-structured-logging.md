@@ -1,17 +1,20 @@
-# Structured Logging migration instructions
+# Structured and Contextual Logging migration instructions
 
-This document describes instructions for migration proposed by [Structured Logging KEP]. It describes new structured
+This document describes instructions for the migration proposed by [Structured Logging KEP] and [Contextual Logging KEP]. It describes new
 functions introduced in `klog` (Kubernetes logging library) and how log calls should be changed to utilize new features.
-This document was written for the initial migration of `kubernetes/kubernetes` repository proposed for Alpha stage, but
+This document was written for the initial migration of `kubernetes/kubernetes` repository proposed for Alpha stage of structured logging, but
 should be applicable at later stages or for other projects using `klog` logging library.
 
 [Structured Logging KEP]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/1602-structured-logging
+[Contextual Logging KEP]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/3077-contextual-logging
 
 ## How to contribute
 
 ### About the migration
 
-We would like for the Kubernetes community to settle on one preferred log message structure, that will be enforced by new klog methods. The goal of the migration is to switch C like format string logs to structured logs with explicit metadata about parameters.
+We would like for the Kubernetes community to settle on one preferred log message structure and log calls as defined by [logr].
+The goal of the migration is to switch C-like format string logs to structured logs with explicit metadata about parameters and
+to remove the global logger in klog with a `logr.Logger` instance that gets chosen by the caller of a function.
 
 Migration within the structured logging working group happens in two different ways - organized & non-organized. 
 
@@ -42,6 +45,7 @@ Before sending a PR our way, please ensure that there isn't one already in place
 * 1.21 Kubelet was migrated
 * 1.22 Collected feedback and improved the process.
 * 1.23 kube-scheduler and kube-proxy were migrated.
+* 1.24 Contextual logging infrastructure (updated klog, component-base/logs enables it) in place.
 
 ## Sending a Structured Logging Migration Pull Request
 
@@ -78,7 +82,7 @@ Migrate <directory/file> to structured logging
 
 ### Why my PR was rejected?
 
-Even though the Kubernetes project is organizing migration of Structured Logging, this doesn't mean that we are able to accept all the PRs that come our way. We reserve the right to reject the Pull Request in situations listed below:
+Even though the Kubernetes project is organizing migration of logging, this doesn't mean that we are able to accept all the PRs that come our way. We reserve the right to reject the Pull Request in situations listed below:
 
 * Pull request is below minimum quality standards and clearly shows that author hasn't read the guide at all, for example PR just renames `Infof` to `InfoS`.
 * Pull request migrates components that the owners have decided against migrating. List of those components:
@@ -168,20 +172,86 @@ type KMetadata interface {
 }
 ```
 
+## Contextual logging in Kubernetes
+
+Contextual logging builds on top of structured logging because the parameters
+for individual log calls are the same. The difference is that different
+functions need to be used:
+
+- `klog.ErrorS` -> `logger.Error`
+- `klog.InfoS` -> `logger.Info`
+- `klog.V().InfoS` -> `logger.V().Info`
+
+In all of these cases, `logger` is a `logr.Logger` instance. `klog.Logger` is
+an alias for that type. Determining where that instance comes from is the main
+challenge when migrating code to contextual logging.
+
+Several new klog functions help with that:
+
+- [`klog.FromContext`](https://pkg.go.dev/k8s.io/klog/v2#FromContext)
+- [`klog.Background`](https://pkg.go.dev/k8s.io/klog/v2#Background)
+- [`klog.TODO`](https://pkg.go.dev/k8s.io/klog/v2#TODO)
+
+The preferred approach is to retrieve the instance with `klog.FromContext` from
+a `ctx context` parameter. If a function or method does not have one, consider
+adding it. This API change then implies that all callers also need to be
+updated. If there are any `context.TODO` calls in the modified functions,
+replace with the new `ctx` parameter.
+
+In performance critical code it may be faster to add a `logger klog.Logger`
+parameter. This needs to be decided on a case-by-case basis.
+
+When such API changes trickle up to a unit test, then enable contextual logging
+with per-test output with
+[`ktesting`](https://pkg.go.dev/k8s.io/klog/v2@v2.60.1/ktesting):
+
+```go
+import (
+    "testing"
+
+    "k8s.io/klog/v2/ktesting"
+    _ "k8s.io/klog/v2/ktesting/init" # Add command line flags for ktesting.
+)
+
+func TestFoo(t *testing.T) {
+   _, ctx := ktesting.NewTestContext(t)
+   doSomething(ctx)
+}
+```
+
+If a logger instance is needed instead, then use:
+
+```go
+   logger, _ := ktesting.NewTestContext(t)
+```
+
+The KEP has further instructions about the [transition to contextual
+logging](https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/3077-contextual-logging#transition). It
+also lists several
+[pitfalls](https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/3077-contextual-logging#pitfalls-during-usage)
+that developers and reviewers need to be aware of.
+
 ## Migration
 
-1. Change log functions to structured equivalent
+1. Optional: find code locations that need to be changed:
+
+   - `(cd hack/tools && go install k8s.io/klog/hack/tools/logcheck)`
+   - structured logging: `$GOPATH/bin/logcheck -check-structured ./pkg/controller/...`
+   - contextual logging: `$GOPATH/bin/logcheck -check-contextual ./pkg/scheduler/...`
+
+1. Change log functions to structured or (better!) contextual equivalent
 1. Remove string formatting from log message
 1. Name arguments
 1. Ensure that value is properly passed
 1. Verify log output
+1. Prevent re-adding banned functions after migration
 
-## Change log functions to structured equivalent
+## Change log functions
 
 Structured logging functions follow a different logging interface design than other functions in `klog`. They follow
 minimal design from [logr] thus there is no one-to-one mapping.
 
-Simplified mapping between functions:
+Simplified mapping between functions for structured logging:
 * `klog.Infof`, `klog.Info`, `klog.Infoln` -> `klog.InfoS`
 * `klog.InfoDepth` -> `klog.InfoSDepth`
 * `klog.V(N).Infof`, `klog.V(N).Info`, `klog.V(N).Infoln` -> `klog.V(N).InfoS`
@@ -189,26 +259,42 @@ Simplified mapping between functions:
 * `klog.WarningDepth` -> `klog.InfoSDepth`
 * `klog.Error`, `klog.Errorf`, `klog.Errorln` -> `klog.ErrorS`
 * `klog.ErrorDepth` -> `klog.ErrorSDepth`
-* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln` -> `klog.ErrorS` followed by `os.Exit(1)` ([see below])
-* `klog.FatalDepth` -> `klog.ErrorDepth` followed by `os.Exit(1)` ([see below])
+* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln` -> `klog.ErrorS` followed by `klog.FlushAndExit(klog.ExitFlushTimeout, klog.1)` ([see below])
+* `klog.FatalDepth` -> `klog.ErrorDepth` followed by `klog.FlushAndExit(klog.ExitFlushTimeout, klog.1)` ([see below])
+
+For contextual logging, replace furthermore:
+
+- `klog.ErrorS` -> `logger.Error`
+- `klog.InfoS` -> `logger.Info`
+- `klog.V().InfoS` -> `logger.V().Info`
 
 [see below]: #replacing-fatal-calls
 
-### Using ErrorS
+### Using ErrorS or logger.Error
 
 With `klog` structured logging borrowing the interface from [logr] it also inherits it's differences in semantic of
 error function. Logs generated by `ErrorS` command may be enhanced with additional debug information
 (such as stack traces) or be additionally sent to special error recording tools. Errors should be used to indicate
 unexpected behaviours in code, like unexpected errors returned by subroutine function calls.
+In contrast to info log calls, error log calls always record the log entry, regardless of the current verbosity
+settings.
 
-Calling `ErrorS` with `nil` as error is semi-acceptable if there is error condition that deserves a stack trace at this
-origin point. For expected errors (`errors` that can happen during routine operations) please consider using
+Calling `ErrorS` with `nil` as error is acceptable if there is an error condition that deserves a stack trace at this
+origin point or always must be logged. For expected errors (`errors` that can happen during routine operations) please consider using
 `klog.InfoS` and pass error in `err` key instead.
 
 ### Replacing Fatal calls
 
 Use of Fatal should be discouraged and it's not available in new functions. Instead of depending on the logger to exit
-the process, you should call `os.Exit()` yourself.
+the process, you should:
+- rewrite code to return an `error` and let the caller deal with it or, if that is not feasible,
+- log and exit separately.
+
+`os.Exit` should be avoided because it skips log data flushing. Instead use
+[`klog.FlushAndExit`](https://pkg.go.dev/k8s.io/klog/v2#FlushAndExit). The first
+parameter determines how long the program is allowed to flush log data before
+`os.Exit` is called. If unsure, use `klog.ExitFlushTimeout`, the value used
+by `klog.Fatal`.
 
 Fatal calls use a default exit code of 255. When migrating, please use an exit code of 1 and include an "ACTION REQUIRED:" release note.
 
@@ -217,7 +303,6 @@ For example
 func validateFlags(cfg *config.Config, flags *pflag.FlagSet) error {
 	if err := cfg.ReadAndValidate(flags); err != nil {
 		klog.FatalF("Error in reading and validating flags %s", err)
-      os.Exit(1)
 	}
 }
 ```
@@ -226,7 +311,7 @@ should be changed to
 func validateFlags(cfg *config.Config, flags *pflag.FlagSet) error {
 	if err := cfg.ReadAndValidate(flags); err != nil {
 		klog.ErrorS(err, "Error in reading and validating flags")
-      os.Exit(1)
+		klog.FlushAndExit(klog.ExitFlushTimeout, 1)
 	}
 }
 ```
@@ -526,3 +611,27 @@ After
 ```
 I0528 19:15:22.737588   47512 logtest.go:55] "Received HTTP request" verb="GET" URI="/metrics" latency="1s" resp=200 userAgent="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0. 2272.118 Safari/537.36." srcIP="127.0.0.1"
 ```
+
+## Prevent re-adding banned functions after migration
+
+After a package has been migrated to structured and/or contextual logging, we
+want to ensure that all log calls that get added in future PRs are structured
+resp. contextual.
+
+For structured logging, the list of migrated packages in
+[`hack/logcheck.conf`](https://github.com/kubernetes/kubernetes/blob/b9792a9daef4d978c5c30b6d10cbcdfa77a9b6ac/hack/logcheck.conf#L16-L22)
+can be extended.
+
+For contextual logging, a new list can be added at the bottom once the code is
+ready, with content like this:
+
+```
+# Packages that have been migrated to contextual logging:
+contextual k8s.io/kubernetes/pkg/scheduler/.*
+```
+
+The corresponding line with `structured k8s.io/kubernetes/pkg/scheduler/.*`
+then is redundant and can be removed because "contextual" implies "structured".
+
+Both lists should be sorted alphabetically. That reduces the risk of code
+conflicts and makes the file more readable.
