@@ -2356,9 +2356,6 @@ sigs:
   - name: kueue
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
-  - name: poseidon
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
   - name: scheduler
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
