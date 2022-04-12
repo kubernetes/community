@@ -2182,6 +2182,7 @@ sigs:
       - name: release-team-leads
         description: Release Team Leads for the current Kubernetes release cycle
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/release-team-shadow-stats/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
   - name: SIG Release Process Documentation
     description: |

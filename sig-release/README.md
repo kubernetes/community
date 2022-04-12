@@ -100,6 +100,7 @@ The Release Engineering subproject is responsible for the [process/procedures](h
 ### Release Team
 The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
 - **Owners:**
+  - [kubernetes-sigs/release-team-shadow-stats](https://github.com/kubernetes-sigs/release-team-shadow-stats/blob/main/OWNERS)
   - [kubernetes/sig-release/release-team](https://github.com/kubernetes/sig-release/blob/master/release-team/OWNERS)
 - **Contact:**
   - [Mailing List](https://groups.google.com/a/kubernetes.io/g/release-team)
