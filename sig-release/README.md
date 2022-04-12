@@ -72,6 +72,7 @@ The Release Engineering subproject is responsible for the [process/procedures](h
   - [kubernetes-sigs/release-notes](https://github.com/kubernetes-sigs/release-notes/blob/master/OWNERS)
   - [kubernetes-sigs/release-sdk](https://github.com/kubernetes-sigs/release-sdk/blob/main/OWNERS)
   - [kubernetes-sigs/release-utils](https://github.com/kubernetes-sigs/release-utils/blob/main/OWNERS)
+  - [kubernetes-sigs/testgrid-json-exporter](https://github.com/kubernetes-sigs/testgrid-json-exporter/blob/main/OWNERS)
   - [kubernetes-sigs/zeitgeist](https://github.com/kubernetes-sigs/zeitgeist/blob/master/OWNERS)
   - [kubernetes/kubernetes/CHANGELOG](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/OWNERS)
   - [kubernetes/kubernetes/build/build-image](https://github.com/kubernetes/kubernetes/blob/master/build/build-image/OWNERS)
