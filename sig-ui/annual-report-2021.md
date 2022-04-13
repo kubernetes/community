@@ -12,7 +12,9 @@
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
-   - There have been no KEPs opened as part of SIG-UI.
+   - [[WIP] Design and create new API](https://github.com/kubernetes/dashboard/pull/5449)
+   - [Improve resource support](https://github.com/kubernetes/dashboard/issues/5232)
+   - Also, keep the project up to date with Kubernetes releases and fix bugs.
 
 3. KEP work in 2021 (1.x, 1.y, 1.z):
 
