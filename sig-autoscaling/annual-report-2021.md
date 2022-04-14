@@ -4,9 +4,9 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-   - Promotion of autoscaling v2 API to GA
-   - Continued improvements of VPA via community feedback
-   - Improved extensibility of Cluster Autoscaler
+   - [Promotion of autoscaling v2 API to GA.](https://github.com/kubernetes/enhancements/pull/2703)
+   - [Continued improvements of VPA via community feedback](https://github.com/kubernetes/autoscaler/issues/3913)
+   - [Improved extensibility of Cluster Autoscaler](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/proposals/plugable-provider-grpc.md)
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
@@ -37,7 +37,7 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 
    - Code contributors and reviewers
    - Issue triage/response
-   - Whilst there are no areas with explicitly 2 or few owners, there are a number of areas where we have this few subject matter experts, acting as a significant bottleneck for significant changes
+   - Whilst there are no areas with explicitly 2 or few owners, there are a number of areas where we have this few subject matter experts, acting as a significant bottleneck for significant changes. These currently include the core Cluster Autoscaler code, as well as the HPA controller.
 
 2. What metrics/community health stats does your group care about and/or measure?
 
@@ -57,12 +57,12 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 
 5. Does the group have contributors from multiple companies/affiliations?
 
-   - Yes - though the core approvers are almost all from a single company.
+   - Yes - though the core approvers are almost all from a single company (Google). Other contributors/code owners are from a variety of companies, including end users (Datadog, Airbnb, Skyscanner...) and vendors (Microsoft, Red Hat, Amazon...), particularly for Cluster Autoscaler cloud provider implementations.
 
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
-   - Increased support for some cloud provider implementations for the Cluster Autoscaler
+   - Increased support for some cloud provider implementations for the Cluster Autoscaler. See e.g. [issues](https://github.com/kubernetes/autoscaler/issues?q=is%3Aopen+is%3Aissue+label%3Aarea%2Fprovider%2Faws+) and [pull requests](https://github.com/kubernetes/autoscaler/pulls?q=is%3Aopen+is%3Apr+label%3Aarea%2Fprovider%2Fhetzner) which can be queried by cloud provider for starting points. (Modify the label filter as appropriate from the above links.)
    - Responding to issues - the SIG currently lacks the capacity to respond to all issues raised
 
 ## Membership
