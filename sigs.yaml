@@ -1891,9 +1891,9 @@ sigs:
     tz: IST (Indian Standard Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
-  - description: SIG Network Kube Proxy Meeting
+  - description: SIG Network KPNG Meeting
     day: Friday
-    time: "8:30"
+    time: "7:30"
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
