@@ -157,12 +157,12 @@ usergroups:
       - cdrage
       - dharmit
       - mohammedzee1000
-      - mik-dass
       - prietyc123
       - kadel
       - feloy
       - anandrkskd
       - rnapoles-rh
+      - rm3l
 
   - name: pinniped-dev
     long_name: Pinniped Development Team
