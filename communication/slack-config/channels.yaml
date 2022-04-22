@@ -472,3 +472,5 @@ channels:
   - name: windows-containerd
   - name: workshop-chat
   - name: yaml-overlay-tool
+  - name: zarf
+  - name: zarf-dev

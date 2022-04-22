@@ -31,7 +31,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**), Chainguard, Inc
-* Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Apple
+* Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
 * Adolfo García Veytia (**[@puerco](https://github.com/puerco)**), Chainguard, Inc
 
 ## Emeritus Leads
@@ -100,6 +100,7 @@ The Release Engineering subproject is responsible for the [process/procedures](h
 ### Release Team
 The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
 - **Owners:**
+  - [kubernetes-sigs/release-team-shadow-stats](https://github.com/kubernetes-sigs/release-team-shadow-stats/blob/main/OWNERS)
   - [kubernetes/sig-release/release-team](https://github.com/kubernetes/sig-release/blob/master/release-team/OWNERS)
 - **Contact:**
   - [Mailing List](https://groups.google.com/a/kubernetes.io/g/release-team)

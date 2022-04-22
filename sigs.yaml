@@ -906,8 +906,8 @@ sigs:
     - description: Regular IBM Subproject Meeting
       day: Wednesday
       time: "14:00"
-      tz: EST
-      frequency: biweekly
+      tz: ET (Eastern Time)
+      frequency: monthly - last Wednesday every month
       url: https://zoom.us/j/9392903494
       archive_url: https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit
   - name: provider-openstack
@@ -2086,7 +2086,7 @@ sigs:
       company: Chainguard, Inc
     - github: jeremyrickard
       name: Jeremy Rickard
-      company: Apple
+      company: Microsoft
     - github: puerco
       name: Adolfo García Veytia
       company: Chainguard, Inc
@@ -2182,6 +2182,7 @@ sigs:
       - name: release-team-leads
         description: Release Team Leads for the current Kubernetes release cycle
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/release-team-shadow-stats/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
   - name: SIG Release Process Documentation
     description: |
@@ -2355,9 +2356,6 @@ sigs:
   - name: kueue
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
-  - name: poseidon
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
   - name: scheduler
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
