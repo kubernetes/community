@@ -2985,14 +2985,6 @@ workinggroups:
       company: Intel
   meetings:
   - description: Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com))
-    day: Thursdays (starting March 10th 2022)
-    time: 3PM
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/93540621078?pwd=cUNEWDYwMSt5c09DdXJyQ2R5dHlHUT09
-    archive_url: https://docs.google.com/document/d/1XOeUN-K0aKmJJNq7H07r74n-mGgSFyiEDQ3ecwsGhec/edit
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP05eEikq0j8PcSehEdM4mj7&jct=s4irZjLuvQ2WrUYAGxyRYjs3a2aysg
-  - description: Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com))
     day: Thursdays (starting March 3rd 2022)
     time: 7AM
     tz: PT (Pacific Time)
