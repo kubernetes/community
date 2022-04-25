@@ -9,7 +9,7 @@ The Mentoring Lead role is created to help upstream Kubernetes contributors to p
 
 - Keep a calendar of dates for each program (when to submit our project name, when to submit the project scope, when selecting period is, etc) throughout the   year and
 - Reach out to SIGs to submit proposals/projects so as to ensure healthy number of projects for an internship cohort.
-- Coordinate all submissions and participation in each one, responsibe for following up with mentors during evaluation period.
+- Coordinate all submissions and participation in each one, responsible for following up with mentors during evaluation period.
 - Go to sig meetings and slack channels to proactively help with scoping and planning work / job descriptions.
 - Help onboard interns to the k8s specific community items like coordinate a hello for them at the k8s monthly community meeting, 
 - Help off board interns to the k8s specific community items like demo at monthly community meeting.
