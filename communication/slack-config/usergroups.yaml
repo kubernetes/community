@@ -163,6 +163,7 @@ usergroups:
       - anandrkskd
       - rnapoles-rh
       - rm3l
+      - valaparthvi
 
   - name: pinniped-dev
     long_name: Pinniped Development Team
