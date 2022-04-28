@@ -30,7 +30,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
 * Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), VMware
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
-* Swati Sehgal (**[@swatisehgal](https://github.com/swatisehgal)**), Intel
+* Swati Sehgal (**[@swatisehgal](https://github.com/swatisehgal)**), Red Hat
 
 ## Contact
 - Slack: [#wg-batch](https://kubernetes.slack.com/messages/wg-batch)
