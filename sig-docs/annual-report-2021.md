@@ -115,11 +115,11 @@ Operational tasks in [sig-governance.md]:
 - [X] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
 - [x] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
 - [x] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
-      - [Kubernetes SIG Docs: A Deep Dive](https://www.youtube.com/watch?v=GDfcBF5et3Q), presented at KubeCon NA, 2021
-      - [SIG Docs needs your help! to dev@kubernetes.io](https://groups.google.com/g/kubernetes-sig-docs/c/hspG6mzgkrs)
-      - [SIG Docs Co-Chair Nomination: Divya Mohan to dev@kubernetes.io](https://groups.google.com/g/kubernetes-sig-docs/c/_1R7sh-_iiQ)
-      - [SIG Docs: New roles & leadership nominations to dev@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/dev/c/SP6weMvx3wg/m/l8LAL-OFCQAJ)
-      - [SIG Docs APAC Meeting has changed to 1 AM IST/5.30 AM UTC on the last Wednesday of every month to kubernetes-sig-docs@googlegroups.com](https://groups.google.com/g/kubernetes-sig-docs/c/P7iLejmEIFA/m/-dPsBOpoDAAJ)
+   - [Kubernetes SIG Docs: A Deep Dive](https://www.youtube.com/watch?v=GDfcBF5et3Q), presented at KubeCon NA, 2021
+   - [SIG Docs needs your help! to dev@kubernetes.io](https://groups.google.com/g/kubernetes-sig-docs/c/hspG6mzgkrs)
+   - [SIG Docs Co-Chair Nomination: Divya Mohan to dev@kubernetes.io](https://groups.google.com/g/kubernetes-sig-docs/c/_1R7sh-_iiQ)
+   - [SIG Docs: New roles & leadership nominations to dev@kubernetes.io](https://groups.google.com/a/kubernetes.io/g/dev/c/SP6weMvx3wg/m/l8LAL-OFCQAJ)
+   - [SIG Docs APAC Meeting has changed to 1 AM IST/5.30 AM UTC on the last Wednesday of every month to kubernetes-sig-docs@googlegroups.com](https://groups.google.com/g/kubernetes-sig-docs/c/P7iLejmEIFA/m/-dPsBOpoDAAJ)
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-docs/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
