@@ -49,7 +49,6 @@ members will assume one of the departing members groups.
 | [SIG Scalability](sig-scalability/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Scheduling](sig-scheduling/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [SIG Security](sig-security/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
-| [SIG Service Catalog](sig-service-catalog/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Storage](sig-storage/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
 | [SIG Testing](sig-testing/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
 | [SIG UI](sig-ui/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
