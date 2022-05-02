@@ -138,8 +138,7 @@ This is useful if you want to create your own host image in another project and 
 make test-e2e-node REMOTE=true IMAGE_PROJECT="<name-of-project-with-images>" IMAGES="<image-name>"
 ```
 
-Setting up your own host image may require additional steps such as installing etcd or docker.  See
-[setup_host.sh](https://git.k8s.io/kubernetes/test/e2e_node/environment/setup_host.sh) for common steps to setup hosts to run node tests.
+Setting up your own host image may require additional steps such as installing etcd or docker.
 
 ## Create instances using a different instance name prefix
 
