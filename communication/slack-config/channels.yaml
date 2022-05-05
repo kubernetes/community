@@ -102,6 +102,7 @@ channels:
   - name: external-secrets
   - name: falco
   - name: fiaas
+   -name: finops
   - name: fi-users
   - name: flink-operator
   - name: fr-events
