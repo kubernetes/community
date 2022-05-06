@@ -103,6 +103,7 @@ channels:
   - name: falco
   - name: fiaas
   - name: fi-users
+  - name: flatcar
   - name: flink-operator
   - name: fr-events
   - name: fr-users
