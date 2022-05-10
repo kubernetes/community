@@ -15,6 +15,7 @@ The Mentoring Lead role is created to help upstream Kubernetes contributors to p
 - Help off board interns to the k8s specific community items like demo at monthly community meeting.
 - Be a point of contact (unless delegated otherwise) for applicants and mentees, and should respond to queries within a reasonable amount of time.
 - Should try and delegate work among shadows and mentor the shadows along the way.
+- Should train and pass on the responsibility to a shadow in 24 months time period. 
 
 
 ### Role Description
