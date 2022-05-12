@@ -21,3 +21,5 @@ workinggroups:
   - dir: wg-baz
     name: Baz
     label: baz
+    stakeholder_sigs:
+    - Foo
