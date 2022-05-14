@@ -34,8 +34,6 @@ health of the project.
   [peribolos] and [label_sync]
 - Tools that facilitate local testing of kubernetes such as [greenhouse]
   and [kind]
-- Jobs that automate away project toil, such as [periodic jobs that run as
-  @fejta-bot]
 - Ensuring all of the above is kept running on a best effort basis
 - Tools, frameworks and libraries that make it possible to write tests against
   kubernetes such as e2e\* or integration test frameworks.
@@ -113,7 +111,6 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 [lazy consensus]: http://en.osswiki.info/concepts/lazy_consensus
 
-[periodic jobs that run as @fejta-bot]: https://git.k8s.io/test-infra/config/jobs/kubernetes/test-infra/fejta-bot-periodics.yaml
 [boskos]: https://git.k8s.io/test-infra/boskos
 [ghproxy]: https://git.k8s.io/test-infra/ghproxy
 [greenhouse]: https://git.k8s.io/test-infra/greenhouse
