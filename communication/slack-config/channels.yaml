@@ -409,6 +409,7 @@ channels:
   - name: spinnaker
   - name: sre
   - name: steering-committee
+  - name: streaming-runtime
   - name: submariner
   - name: surveys
   - name: summit-staff
