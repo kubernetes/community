@@ -416,6 +416,7 @@ channels:
   - name: talk-proposals
   - name: tanzu-community-edition
   - name: terraform-providers
+  - name: terranetes
   - name: test-failures
   - name: tilt
   - name: tn-users
