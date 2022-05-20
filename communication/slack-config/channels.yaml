@@ -409,13 +409,13 @@ channels:
   - name: spinnaker
   - name: sre
   - name: steering-committee
-  - name: streaming-runtime
   - name: submariner
   - name: surveys
   - name: summit-staff
   - name: suse-caasp
   - name: talk-proposals
   - name: tanzu-community-edition
+  - name: tanzu-streaming-runtimes
   - name: terraform-providers
   - name: test-failures
   - name: tilt
