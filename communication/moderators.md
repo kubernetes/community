@@ -232,7 +232,7 @@ Administrators seats: 6
 | Jeffrey Sica    | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Ihor Dvoretskyi | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
 | Marky Jackson   | @markyjackson-taulia| Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| _Open_          | _Open_              |          |                                                         |
+| Nigel Brown     | @nigel              | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
 
 - License and main account controlled by the CNCF
 
