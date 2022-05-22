@@ -417,6 +417,7 @@ channels:
   - name: tanzu-community-edition
   - name: tanzu-streaming-runtimes
   - name: terraform-providers
+  - name: terranetes
   - name: test-failures
   - name: tilt
   - name: tn-users
