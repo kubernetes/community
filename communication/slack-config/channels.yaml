@@ -169,6 +169,7 @@ channels:
   - name: k8s-release
     archived: true
   - name: k8spin
+  - name: kamaji
   - name: kapitan
   - name: kcp-prototype
   - name: keda
