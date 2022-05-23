@@ -27,6 +27,7 @@ channels:
     archived: true
   - name: brigade
   - name: camptocamp-devops-stack
+  - name: capsule
   - name: cartographer
   - name: cdk
   - name: cert-manager
