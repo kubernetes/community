@@ -279,6 +279,7 @@ channels:
   - name: meetup-nyc
   - name: meetup-dc
   - name: meetup-paris
+  - name: meetup-philadelphia
   - name: meetup-pittsburgh
   - name: meetup-sacramento
   - name: meetup-sanantonio
