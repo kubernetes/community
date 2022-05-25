@@ -7,6 +7,8 @@ below in the set up instructions. This difference is also reflected in our
 
 ## Discovery of Needs
 
+Group Mentoring Coordinators should proactively ask groups but Chair or Tech Lead to approve the need and initiate is required.
+  
 Cadence:  
 ContribEx sets an issue in k/community requesting SIGs to participate preceding 
 the next release by one month.
@@ -22,7 +24,9 @@ suggestions:
   
 *Reviewer*  
 - Enhancements  
-- Overview of Release Cycle  
+- Overview of Release Cycle
+- Overview of groups subprojects
+- Reviewing code detailed walk thrus   
 - Development
   - Triage
   - Reviews
@@ -54,10 +58,13 @@ Examples:
 0. Need is established and SIG provides a mentor*
 1. ContribEx kicks off two issues, sets a target start and end date, and selects
 a coordinator
-  - issue #1: outreach issue to collect folks who are interested, issue will 
-  close when there are the max participants needed
-  - issue #2 setting up infra - template here: [TODO link to example]
-2. ContribEx or SIG member posts the issue to the following places:
+  - issue #1: outreach issue to collect folks who are interested and set up infra,
+ issue will close when there are the max participants needed  
+ example: https://github.com/kubernetes/community/issues/5962  
+ key bits of info: target, start/end date, sign up and requirements, slack info, mentors, coordinators 
+ - issue #2: structure of sessions and assign guest speakers 
+ start with a hackmd to coordinate with mentors and then set issue
+2. ContribEx Coordinator(s) posts issue #1 to the following places:
   - SIG and k-dev mailing lists
   - #diversity, #kubernetes-contributors, #sig-[name], and other slack channels
 3. Coordinator arranges a doodle for the kick off meeting and days/times that 
