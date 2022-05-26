@@ -7,7 +7,7 @@
 
    - Hierarchical Namespace Controller: work continued (reached 1.0 in April 2022), moved into its own k8s repo out of WG incubation in a major project milestone
    -- https://github.com/kubernetes-sigs/hierarchical-namespaces 
-   - Vertical Cluster Project: moved out of WG incubation and into its own k8s repo in a major milestone 
+   - Virtual Cluster Project: moved out of WG incubation and into its own k8s repo in a major milestone 
    -- Now called "Cluster API Provider Nested" 
    -- https://github.com/kubernetes-sigs/cluster-api-provider-nested/tree/main/virtualcluster 
    - Multi-tenancy Benchmark Project: continued 

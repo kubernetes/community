@@ -3111,7 +3111,7 @@ workinggroups:
   label: multitenancy
   leadership:
     chairs:
-     - github: tashimi
+    - github: tashimi
       name: Tasha Drew
       company: VMware
     emeritus_leads:
