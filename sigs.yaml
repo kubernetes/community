@@ -1899,7 +1899,7 @@ sigs:
     url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
   - description: SIG Network Meeting
     day: Thursday
-    time: "14:00"
+    time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/361123509
