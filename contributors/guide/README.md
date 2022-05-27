@@ -32,8 +32,8 @@ description:
 ## Welcome
 
 Have you ever wanted to contribute to the coolest cloud technology?
-This guide will help you understand the overall organization of the Kubernetes
-project, and direct you to the best places to get started contributing. You'll
+This guide will help you understand the overall organization of the [Kubernetes
+project](https://kubernetes.io/), and direct you to the best places to get started contributing. You'll
 be able to pick up issues, write code to fix them, and get your work reviewed
 and merged.
 
