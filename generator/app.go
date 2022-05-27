@@ -702,7 +702,7 @@ func main() {
 	errs := ctx.Validate()
 	if len(errs) != 0 {
 		for _, err := range errs {
-			fmt.Printf("ERROR: %s\n", err.Error())
+			fmt.Fprintf(os.Stderr, "ERROR: %s\n", err.Error())
 		}
 		os.Exit(1)
 	}
