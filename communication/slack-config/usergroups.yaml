@@ -62,13 +62,16 @@ usergroups:
     long_name: Velero Maintainers
     description: Velero Maintainers group.
     channels:
-      # - velero-dev
+      - velero-dev
       - velero-users
     members:
       - Dave Smith-Uchida
       - jiangd
       - yinw
-      - zubron
+      - ming-qiu
+      - shubham-pampattiwar
+      - xun-jiang
+      - scott-seago
 
   - name: youtube-admins
     long_name: YouTube Admins
