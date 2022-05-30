@@ -1,0 +1,229 @@
+CKS Resources
+
+https://kubernetes.io/docs/ and their subdomains
+https://github.com/kubernetes/ and their subdomains
+https://kubernetes.io/blog/ and their subdomains
+
+Trivy documentation https://aquasecurity.github.io/trivy/
+Falco documentation https://falco.org/docs/
+
+App Armor: https://gitlab.com/apparmor/apparmor/-/wikis/Documentation
+
+CIS-BENCHMARK
+https://github.com/aquasecurity/kube-bench
+Kube-bench:  https://github.com/aquasecurity/kube-bench/blob/main/docs/installation.md
+
+Linux Version: cat /etc/os-release
+
+https://kubernetes.io/docs/tutorials/security/seccomp/
+Seccomp Profiles path: /var/lib/kubelet/seccomp/profiles/
+
+Load AppArmor Profiles: apparmor_parser -q /etc/apparmor.d/{filename}
+Verify loaded profile: aa-status
+
+
+Extract Secret Data: kubectl -n orion get secrets a-safe-secret -o jsonpath='{.data.CONNECTOR_PASSWORD}' | base64 —decode
+
+Get all images of pods in namespace: kubectl -n namespace get pods -o json | jq -r '.items[].spec.containers[].image’
+
+Scan image: trivy image --severity CRITICAL kodekloud/webapp-delwayed-start
+
+Falco:
+Enable file_output in /etc/falco/falco.yaml on the controlplane node, make sure log file always exists, otherwise create it:
+file_output:
+  enabled: true
+  keep_alive: false
+  filename: /path/to/file
+Next, add the updated rule under the /etc/falco/falco_rules.local.yaml and hot reload the Falco service:  kill -1 $(cat /var/run/falco.pid) or systemctl restart falco
+
+
+/sys/kernel/security/apparmor/profiles
+
+kubectl -n kubernetes-dashboard get secret $(kubectl -n kubernetes-dashboard get sa/readonly-user -o jsonpath="{.secrets[0].name}") -o go-template="{{.data.token | base64decode}}”
+
+kubesec scan file.yaml
+
+Identify running process on port:  netstat -nlp | grep 8080
+
+######################################################
+
+When seccomp profile located at /var/lib/kubelet/seccomp/custom-profile.json
+—>
+securityContext:
+      seccompProfile:
+        localhostProfile: custom-profile.json
+        type: Localhost
+
+######################################################
+
+Update the Pod to use the field automountServiceAccountToken: false
+
+Using this option makes sure that the service account token secret is not mounted in the pod at the location /var/run/secrets/kubernetes.io/serviceaccount
+
+apiVersion: v1
+kind: Pod
+metadata:
+  ...
+spec:
+  containers:
+  ...
+  serviceAccountName: cluster-view
+  automountServiceAccountToken: false
+
+######################################################
+
+Admission Configuration:
+apiVersion: apiserver.config.k8s.io/v1
+kind: AdmissionConfiguration
+plugins:
+- name: ImagePolicyWebhook
+  configuration:
+    imagePolicy:
+      kubeConfigFile: /etc/admission-controllers/admission-kubeconfig.yaml
+      allowTTL: 50
+      denyTTL: 50
+      retryBackoff: 500
+      defaultAllow: false
+
+
+Enabled the adminssion in kube-apiserver
+- --admission-control-config-file=/etc/admission-controllers/admission-configuration.yaml
+- --enable-admission-plugins=NodeRestriction,ImagePolicyWebhook
+
+######################################################
+
+Falco: https://falco.org/docs/rules/supported-fields/#evt-field-class
+%evt.time.s,%user.uid,%container.id,%container.image.repository
+
+Check the process which is bound to port 8088 on this node using netstat:
+netstat -natulp | grep 8088
+
+This shows that the the process openlitespeed is the one which is using this port. Check if any service is running with the same name:
+systemctl list-units  -t service --state active | grep -i openlitespeed
+
+This shows that a service called openlitespeed is managed by lshttpd.service which is currently active.
+Next, stop the service and disable it:
+systemctl stop lshttpd
+systemctl disable lshttpd
+
+Finally, check for the package by the same name:
+apt list --installed | grep openlitespeed
+
+Uninstall the package:
+apt remove openlitespeed -y
+
+######################################################
+
+Create Pod
+kubectl -n seth run secure-nginx-pod --image gcr.io/google-containers/nginx 
+
+######################################################
+
+Changes to the /var/lib/kubelet/config.yaml
+authorization:
+  mode: Webhook
+protectKernelDefaults: true
+
+######################################################
+
+Add PodSecurityPolicy admission controller to --enable-admission-plugins list to /etc/kubernetes/manifests/kube-apiserver.yaml
+- --enable-admission-plugins=NodeRestriction,PodSecurityPolicy
+Deploy pod security policy file
+Evil: runAsUser: 0
+
+######################################################
+
+Immutable pods: readOnlyRootFilesystem: true and/or privileged: false
+Non Immutable pods: privileged: true or readOnlyRootFilesystem: true is not defined
+
+Docker: docker build -t tag-name .
+
+kubectl exec --stdin --tty shell-demo -- /bin/bash
+
+echo "$SHELL"
+readlink /proc/$$/exe
+
+tar -xvf file.tar -C /path/to/directory
+
+######################################################
+
+cd /root/Assessor-CLI
+sh ./Assessor-CLI.sh -i -rd /var/www/html/ -nts -rp index
+
+
+######################################################
+
+Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml on the master node and set the --terminated-pod-gc-threshold=10.
+It should look like below after modification
+  containers:
+  - command:
+    - kube-controller-manager
+    - --allocate-node-cidrs=true
+    - --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf
+    - --authorization-kubeconfig=/etc/kubernetes/controller-manager.conf
+    - --bind-address=127.0.0.1
+    - --client-ca-file=/etc/kubernetes/pki/ca.crt
+    - --cluster-cidr=10.244.0.0/16
+    - --cluster-name=kubernetes
+    - --cluster-signing-cert-file=/etc/kubernetes/pki/ca.crt
+    - --cluster-signing-key-file=/etc/kubernetes/pki/ca.key
+    - --controllers=*,bootstrapsigner,tokencleaner
+    - --kubeconfig=/etc/kubernetes/controller-manager.conf
+    - --leader-elect=true
+    - --port=0
+    - --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt
+    - --root-ca-file=/etc/kubernetes/pki/ca.crt
+    - --service-account-private-key-file=/etc/kubernetes/pki/sa.key
+    - --service-cluster-ip-range=10.96.0.0/12
+    - --use-service-account-credentials=true
+    - --terminated-pod-gc-threshold=10
+    - --feature-gates=RotateKubeletServerCertificate=true
+
+
+Set --profiling=false in /etc/kubernetes/manifests/kube-scheduler.yaml so it looks like below
+  - command:
+    - kube-scheduler
+    - --authentication-kubeconfig=/etc/kubernetes/scheduler.conf
+    - --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
+    - --bind-address=127.0.0.1
+    - --kubeconfig=/etc/kubernetes/scheduler.conf
+    - --leader-elect=true
+    - --port=0
+    - --profiling=false
+
+######################################################
+
+
+ - --audit-policy-file=/etc/kubernetes/prod-audit.yaml
+ - --audit-log-path=/var/log/prod-secrets.log
+ - --audit-log-maxage=30
+Then, add volumes and volume mounts as shown in the below snippets. make sure log file always exists, otherwise create it
+
+volumes:
+
+  - name: audit
+    hostPath:
+      path: /etc/kubernetes/prod-audit.yaml
+      type: File
+
+  - name: audit-log
+    hostPath:
+      path: /var/log/prod-secrets.log
+      type: FileOrCreate
+
+volumeMounts:
+
+  - mountPath: /etc/kubernetes/prod-audit.yaml
+    name: audit
+    readOnly: true
+  - mountPath: /var/log/prod-secrets.log
+    name: audit-log
+    readOnly: false
+
+######################################################
+From network policy man could have different labels under matchLabels:
+
+matchLabels:
+    name: app1
+    tier: frontend
+
