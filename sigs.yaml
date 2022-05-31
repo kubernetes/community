@@ -3119,7 +3119,6 @@ workinggroups:
       name: David Oppenheimer
     - github: srampal
       name: Sanjeev Rampal
-      company: Cisco
   meetings:
   - description: Regular WG Meeting
     day: Tuesday
