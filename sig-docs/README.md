@@ -29,6 +29,8 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 * Spanish Team Meeting: [Tuesdays at 15:30 UTC](https://zoom.us/j/95918289494?pwd=Wk9Oa0xZUkFXSDV5OTFoZEZsTURCZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1jOTK1tqBRwlNQJUB88wfDnGxpdInxMJ7lIFDZy9cMGY).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
+* New Contributors Meet and Greet: [First Tuesday at 10:30 UTC](https://zoom.us/j/95949750563?pwd=Rm51bGd0WFVQc2tPQWY3bEVuL0Fzdz09) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/).
 
 ## Leadership
 
