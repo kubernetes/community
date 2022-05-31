@@ -19,8 +19,8 @@ Define the models of multitenancy that Kubernetes will support. Discuss and exec
 * [SIG Storage](/sig-storage)
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy) for the group will  add invites for the following meetings to your calendar.*
-* Regular WG Meeting: [Every Other Tuesday at 11:00 PT (Pacific Time)](https://zoom.us/j/93752451148?pwd=WW5YaHJuMW1MUFNnazV4WVhTRDlqZz09 ) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy) for the group will typically add invites for the following meetings to your calendar.*
+* Regular WG Meeting: [Tuesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/93752451148?pwd=WW5YaHJuMW1MUFNnazV4WVhTRDlqZz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1fj3yzmeU2eU8ZNBCUJG97dk_wC7228-e_MmdcmTNrZY/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1tBA0W8zEe6UwPsabGQk-j).
 
@@ -31,7 +31,7 @@ Define the models of multitenancy that Kubernetes will support. Discuss and exec
 ## Emeritus Organizers
 
 * David Oppenheimer (**[@davidopp](https://github.com/davidopp)**)
-* Sanjeev Rampal (**[@srampal](https://github.com/srampal)**), Cisco
+* Sanjeev Rampal (**[@srampal](https://github.com/srampal)**)
 
 ## Contact
 - Slack: [#wg-multitenancy](https://kubernetes.slack.com/messages/wg-multitenancy)
