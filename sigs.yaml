@@ -1491,6 +1491,13 @@ sigs:
     url: https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/
     archive_url: https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
+  - description: New Contributors Meet and Greet
+    day: Tuesday
+    time: "10:30"
+    tz: UTC
+    frequency: monthly
+    url: https://zoom.us/j/95949750563?pwd=Rm51bGd0WFVQc2tPQWY3bEVuL0Fzdz09
+    archive_url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/
   - description: Regular SIG Meeting
     day: Tuesday
     time: "17:30"
@@ -1507,13 +1514,6 @@ sigs:
     url: https://zoom.us/j/95918289494?pwd=Wk9Oa0xZUkFXSDV5OTFoZEZsTURCZz09
     archive_url: https://docs.google.com/document/d/1jOTK1tqBRwlNQJUB88wfDnGxpdInxMJ7lIFDZy9cMGY
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
-  - description: New Contributors Meet and Greet:
-    day: Tuesday
-    time: "10:30"
-    tz: UTC
-    frequency: monthly
-    url: https://zoom.us/j/95949750563?pwd=Rm51bGd0WFVQc2tPQWY3bEVuL0Fzdz09
-    archive_url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/
   contact:
     slack: sig-docs
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
