@@ -162,8 +162,10 @@ To add a channel, open a Pull Request (PR) updating the [slack-config][].
     -   Special accommodations will be made where necessary.
 
 After you submit your request the Slack Admins will review and follow-up with
-any questions in the PR itself. Once it is signed off and merged, the channel
-will be created.
+any questions in the PR itself. 
+There are two approvals needed. `/lgtm` and `/approved`. Once one moderator give the `/lgtm`, a hold will be placed on the PR using `/hold`. This hold will remain in place until one or more moderators reviews 
+and add the `/approve` label as well as `/hold cancel`, which will remove the hold on the PR.
+Once it is signed off and merged, the channel will be created.
 
 For further information, see the [Slack Config Documentation][].
 
