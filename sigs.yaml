@@ -1498,6 +1498,7 @@ sigs:
     frequency: monthly
     url: https://zoom.us/j/95949750563?pwd=Rm51bGd0WFVQc2tPQWY3bEVuL0Fzdz09
     archive_url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
   - description: Regular SIG Meeting
     day: Tuesday
     time: "17:30"
