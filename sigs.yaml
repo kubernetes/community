@@ -1878,8 +1878,8 @@ sigs:
     url: https://zoom.us/j/96264742248
     archive_url: https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs
   - description: SIG Network Ingress NGINX Meeting
-    day: Tuesday
-    time: "9:00"
+    day: Thursday
+    time: "8:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/98377891310
