@@ -40,7 +40,7 @@ description: |
  - [Further Notes](#further-notes)
    - [Support Requests: Channels](#support-requests-channels)
    - [User Support Response: Example](#user-support-response-example)
-  
+
 ## Scope
 
 These guidelines serve as a primary document for triaging incoming issues to Kubernetes. SIGs and projects are encouraged to use this guidance as a starting point, and customize to address specific triaging needs.
@@ -51,7 +51,7 @@ These guidelines serve as a primary document for triaging incoming issues to Kub
 
 Issue triage is a process by which a SIG intakes and reviews new GitHub issues and requests, and organizes them to be actioned—either by its own members, or by other SIGs. Triaging involves categorizing issues and pull requests based on factors such as priority/urgency, SIG ownership of the issue, and the issue kind (bug, feature, etc.).
 
-Triage can happen asynchronously and continuously, or in regularly scheduled meetings. Several Kubernetes SIGs and projects have adopted their own approaches to triaging. 
+Triage can happen asynchronously and continuously, or in regularly scheduled meetings. Several Kubernetes SIGs and projects have adopted their own approaches to triaging.
 
 ## Why Is Triaging Beneficial?
 
@@ -65,11 +65,11 @@ SIGs who triage regularly say it offers a number of benefits, such as:
 - Building prioritization, negotiation and decision-making skills, which are critical to most tech roles
 - Reinforcement of SIG community and culture
 
-People who enjoy product management and iterating on processes tend to enjoy triaging because it empowers their SIGs to maintain a steady, continuous flow of work that is assessed and prioritized based on feedback and value. 
+People who enjoy product management and iterating on processes tend to enjoy triaging because it empowers their SIGs to maintain a steady, continuous flow of work that is assessed and prioritized based on feedback and value.
 
 # How to Triage: A Step-by-Step Flow
 
-This guide walks you through a standard triaging process, beginning with tools and tips. 
+This guide walks you through a standard triaging process, beginning with tools and tips.
 
 ## Triage-Related Tools
 
@@ -85,7 +85,7 @@ Opening new issues and leaving comments on other people's issues are possible fo
 
 ### Triage Party
 
-[Triage Party](https://github.com/google/triage-party) is a tool for triaging incoming GitHub issues for large open-source projects, built with the GitHub API. Made public in April 2020, it facilitates "massively multi-player GitHub triage" and reduces contributor response latency. 
+[Triage Party](https://github.com/google/triage-party) is a tool for triaging incoming GitHub issues for large open-source projects, built with the GitHub API. Made public in April 2020, it facilitates "massively multi-player GitHub triage" and reduces contributor response latency.
 
 Its features include:
 - Queries across multiple repositories
@@ -101,7 +101,7 @@ Its features include:
 
 ### GitHub Project Boards
 
-GitHub offers project boards, set up like [kanban boards](https://en.wikipedia.org/wiki/Kanban), to help teams organize and track their workflow in order to get work done. The Release Team has come to depend on [their project board](https://github.com/orgs/kubernetes/projects/29) for planning new Kubernetes releases; they also use it as an archive to show the work done for past releases. 
+GitHub offers project boards, set up like [kanban boards](https://en.wikipedia.org/wiki/Kanban), to help teams organize and track their workflow in order to get work done. The Release Team has come to depend on [their project board](https://github.com/orgs/kubernetes/projects/29) for planning new Kubernetes releases; they also use it as an archive to show the work done for past releases.
 
 Other SIGs are also using project boards:
 - [Contributor Experience](https://github.com/orgs/kubernetes/projects/1)
@@ -122,7 +122,7 @@ Several SIGs consistently meet weekly or monthly to triage issues. Here are some
 
 ### Running a Triage Meeting: Tips from api-machinery
 
-The [api-machinery SIG](/sig-api-machinery) has found that triage meetings offer valuable opportunities for newcomers to listen, learn, and start contributing. The SIG hold triage meetings every Tuesday and Thursday and archive recordings via their [YouTube playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R).  [Watch an example of one of their meetings.](https://www.youtube.com/watch?v=bRptR9vd4S8&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R&index=2&t=13s)
+The [api-machinery SIG](/sig-api-machinery) has found that triage meetings offer valuable opportunities for newcomers to listen, learn, and start contributing. The SIG hold triage meetings every Tuesday and Thursday and archive recordings via their [YouTube playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R).  [Watch an example of one of their meetings](https://www.youtube.com/watch?v=bRptR9vd4S8&list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R&index=2&t=13s).
 
 In a typical triage meeting, api-machinery members sort through every issue that they haven't triaged since the previous meeting, using a simple query and issue number to track open PRs and issues. They usually follow this process:
 1. Read through the comments and the code briefly to understand what the issue is about.
@@ -135,7 +135,7 @@ The api-machinery SIG has found that consistently meeting on a regular, fixed sc
 - We try to balance the load, and ask people if they are okay taking on an issue before assigning it to them.
 - We skip issues that are closed.
 - We also skip cherrypicks, because we consider that the code change was reviewed in the original PR.
-- We ensure participation from the entire SIG and support company diversity. 
+- We ensure participation from the entire SIG and support company diversity.
 - We use this opportunity to add [`help wanted` and `good first issue`](#help-wantedgood-first-issues) labels.
 
 ### Triage Guide by cluster-lifecycle
@@ -144,7 +144,7 @@ The cluster-lifecycle SIG has developed a [triaging page](/sig-cluster-lifecycle
 
 ## Step One: Review Newly Created Open Issues
 
-The first step in a successful triage meeting is reviewing newly created open issues. Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). Labels are the primary tools for triaging. [Here's a comprehensive label list.](https://github.com/kubernetes/kubernetes/labels)
+The first step in a successful triage meeting is reviewing newly created open issues. Kubernetes issues are listed [here](https://github.com/kubernetes/kubernetes/issues). Labels are the primary tools for triaging. [Here's a comprehensive label list](https://github.com/kubernetes/kubernetes/labels).
 
 New issues are automatically assigned a `needs-triage` label indicating that these issues are currently awaiting triage. After triaging an issue, the issue owning SIG will use the bot command `/triage accepted`. This command removes the `needs-triage` label and adds the `triage/accepted` label.
 
@@ -171,7 +171,7 @@ We suggest preparing your triage by filtering out the oldest, unlabelled issues 
 Use [these `triage/` and `kind/support` labels](https://github.com/kubernetes/kubernetes/labels?utf8=%E2%9C%93&q=triage%2F+kind%2Fsupport) to find open issues that can be quickly closed. A triage engineer can add the appropriate labels.
 
 Depending on your permissions, either close or comment on any issues that are identified as support requests, duplicates, or not-reproducible bugs, or that lack enough information from the reporter.
- 
+
 ### Support Requests
 
 Some people mistakenly use GitHub issues to file support requests. Usually they are asking for help configuring some aspect of Kubernetes. To handle such an issue, direct the author to use our [support request channels](#support-requests-channels). Then apply the `kind/support` label, which is directed to our support structures, and apply the `close` label.
@@ -191,7 +191,7 @@ The `triage/needs-information` label indicates an issue needs more information i
 First, validate if the problem is a bug by trying to reproduce it.
 
 If you can reproduce it:
-* [Define its priority.](##step-three-define-priority)
+* [Define its priority](#step-three-define-priority).
 * Search for duplicates to see if the issue has been reported already. If a duplicate is found, let the issue reporter know, reference the original issue, and close the duplicate.
 
 If you can't reproduce it:
@@ -218,28 +218,28 @@ Usually the `kind` label is applied by the person submitting the issue. Issues t
 
 ## Step Three: Define Priority
 
-We use GitHub labels for prioritization. If an issue lacks a `priority` label, this means it has not been reviewed and prioritized yet. 
+We use GitHub labels for prioritization. If an issue lacks a `priority` label, this means it has not been reviewed and prioritized yet.
 
 We aim for consistency across the entire project. However, if you notice an issue that you believe to be incorrectly prioritized, please leave a comment offering your counter-proposal and we will evaluate it.
 
 
 |Priority label|What it means|Examples|
 |---|---|---|
-| `priority/critical-urgent` | Team leaders are responsible for making sure that these issues (in their area) are being actively worked on—i.e., drop what you're doing. Stuff is burning. These should be fixed before the next release. | user-visible bugs in core features <br> broken builds <br> tests and critical security issues | 
+| `priority/critical-urgent` | Team leaders are responsible for making sure that these issues (in their area) are being actively worked on—i.e., drop what you're doing. Stuff is burning. These should be fixed before the next release. | user-visible bugs in core features <br> broken builds <br> tests and critical security issues |
 | `priority/important-soon` | Must be staffed and worked on either currently or very soon—ideally in time for the next release. Important, but wouldn't block a release. | [**XXXX**] |
 | `priority/important-longterm` | Important over the long term, but may not be currently staffed and/or may require multiple releases to complete. Wouldn't block a release. | [**XXXX**]|
-| `priority/backlog`  | General agreement that this is a nice-to-have, but no one's available to work on it anytime soon. Community contributions would be most welcome in the meantime, though it might take a while to get them reviewed if reviewers are fully occupied with higher-priority issues—for example, immediately before a release.| [**XXXX**]  | 
-| `priority/awaiting-more-evidence` | Possibly useful, but not yet enough support to actually get it done. | Mostly placeholders for potentially good ideas, so that they don't get completely forgotten, and can be referenced or deduped every time they come up | 
+| `priority/backlog`  | General agreement that this is a nice-to-have, but no one's available to work on it anytime soon. Community contributions would be most welcome in the meantime, though it might take a while to get them reviewed if reviewers are fully occupied with higher-priority issues—for example, immediately before a release.| [**XXXX**]  |
+| `priority/awaiting-more-evidence` | Possibly useful, but not yet enough support to actually get it done. | Mostly placeholders for potentially good ideas, so that they don't get completely forgotten, and can be referenced or deduped every time they come up |
 
 
-## Step Four: Find and Set the Right SIG(s) to Own an Issue 
+## Step Four: Find and Set the Right SIG(s) to Own an Issue
 
 Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [The bot](https://go.k8s.io/bot-commands) assists in finding a proper SIG to own an issue.
 
 * For example, typing `/sig network` in a comment should add the `sig/network` label.
 * Multiword SIGs use dashes: for example, `/sig cluster-lifecycle`.
 * Keep in mind that these commands must be on their own lines, and at the front of the comment.
-* If you are not sure about who should own an issue, defer to the SIG label only. 
+* If you are not sure about who should own an issue, defer to the SIG label only.
 * If you feel an issue should warrant a notification, ping a team with an `@` mention, in this format: `@kubernetes/sig-<group-name>-<group-suffix>`. Here, the `<group-suffix>` can be one of:
     - `bugs`
     - `feature-requests`
@@ -252,7 +252,7 @@ Components are divided among [Special Interest Groups (SIGs)](/sig-list.md). [Th
 
 If you think you can fix the issue, assign it to yourself with *just* the `/assign` command. If you cannot self-assign for permissions-related reasons, leave a comment that you'd like to claim it and [begin working on a PR](github-workflow.md).
 
-When an issue already has an assignee, **do not** assign it to yourself or create a PR without talking to the existing assignee or going through the [Follow Up](#Step-Five:-Follow-Up) steps as described in this document. Creating a PR when someone else is already working on an issue is not a good practice and is discouraged.
+When an issue already has an assignee, **do not** assign it to yourself or create a PR without talking to the existing assignee or going through the [Follow Up](#step-five-follow-up) steps as described in this document. Creating a PR when someone else is already working on an issue is not a good practice and is discouraged.
 
 ## Step Five: Follow Up
 
@@ -266,7 +266,7 @@ If you find an issue with a SIG label assigned, but there's no evidence of movem
 
 ### If an Issue Has No Activity After 90 Days
 
-When an issue goes 90 days without activity, the [k8s-triage-robot](https://github.com/k8s-triage-robot) adds the `lifecycle/stale` label to that issue. You can block the bot by applying the `/lifecycle frozen` label preemptively, or remove the label with the `/remove-lifecycle stale` command. The k8s-triage-robot adds comments in the issue that include additional details. If you take neither step, the issue will eventually be auto-closed. 
+When an issue goes 90 days without activity, the [k8s-triage-robot](https://github.com/k8s-triage-robot) adds the `lifecycle/stale` label to that issue. You can block the bot by applying the `/lifecycle frozen` label preemptively, or remove the label with the `/remove-lifecycle stale` command. The k8s-triage-robot adds comments in the issue that include additional details. If you take neither step, the issue will eventually be auto-closed.
 
 ## Further Notes
 
@@ -274,8 +274,8 @@ When an issue goes 90 days without activity, the [k8s-triage-robot](https://gith
 
 These should be directed to the following:
 * [User documentation](https://kubernetes.io/docs/home/) and
-[troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
-* [Slack](https://kubernetes.slack.com) ([registration](http://slack.k8s.io))
+[troubleshooting guide](https://kubernetes.io/docs/tasks/debug/)
+* [Slack](https://kubernetes.slack.com) ([registration](https://slack.k8s.io))
 * [Discussion forums](https://discuss.kubernetes.io)
 
 ### User Support Response: Example
@@ -300,7 +300,7 @@ support, try to redirect them to Discuss. Here is an example response:
 > to similar questions, and also familiarize yourself with:
 >
 >  * [user documentation](https://kubernetes.io/docs/home/)
->  * [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/)
+>  * [troubleshooting guide](https://kubernetes.io/docs/tasks/debug/)
 >
 > Again, thanks for using Kubernetes.
 >
