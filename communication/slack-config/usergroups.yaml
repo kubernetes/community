@@ -101,6 +101,7 @@ usergroups:
       - nzoueidi
       - onlydole
       - paris
+      - pnbrown
 
   - name: k8satl-hosts
     long_name: Kubernetes Atlanta Meetup Hosts
