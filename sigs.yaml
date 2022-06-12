@@ -867,6 +867,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/azurelustre-csi-driver/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/blobfuse-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-azure/master/OWNERS
     meetings:

@@ -97,6 +97,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 - **Owners:**
   - [kubernetes-sigs/azuredisk-csi-driver](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/OWNERS)
   - [kubernetes-sigs/azurefile-csi-driver](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/master/OWNERS)
+  - [kubernetes-sigs/azurelustre-csi-driver](https://github.com/kubernetes-sigs/azurelustre-csi-driver/blob/main/OWNERS)
   - [kubernetes-sigs/blobfuse-csi-driver](https://github.com/kubernetes-sigs/blobfuse-csi-driver/blob/master/OWNERS)
   - [kubernetes-sigs/cloud-provider-azure](https://github.com/kubernetes-sigs/cloud-provider-azure/blob/master/OWNERS)
 - **Meetings:**
