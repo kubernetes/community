@@ -1658,6 +1658,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/prometheus-adapter/master/OWNERS
   - name: structured-logging
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/logtools/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/logs/OWNERS
 - dir: sig-k8s-infra
   name: K8s Infra

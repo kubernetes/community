@@ -96,6 +96,7 @@ Organization of SIG Instrumentation subprojects
   - [kubernetes-sigs/prometheus-adapter](https://github.com/kubernetes-sigs/prometheus-adapter/blob/master/OWNERS)
 ### structured-logging
 - **Owners:**
+  - [kubernetes-sigs/logtools](https://github.com/kubernetes-sigs/logtools/blob/main/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/component-base/logs](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/logs/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
