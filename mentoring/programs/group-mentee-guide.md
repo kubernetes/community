@@ -85,4 +85,4 @@ guidance as a founding member of this program!
 [community membership requirements doc]: /community-membership.md
 [SIG List]: /sig-list.md
 [Code Review Expectations]: /contributors/guide/expectations.md
-[Collaboration on k8s]: /contributors/guide/collab.md
+[Collaboration on k8s]: /contributors/guide/contributing.md

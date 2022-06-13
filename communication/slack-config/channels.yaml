@@ -27,6 +27,7 @@ channels:
     archived: true
   - name: brigade
   - name: camptocamp-devops-stack
+  - name: capsule
   - name: cartographer
   - name: cdk
   - name: cert-manager
@@ -97,12 +98,14 @@ channels:
   - name: es-users
   - name: etcd
   - name: etcdadm
+  - name: evented-pleg
   - name: events
   - name: external-dns
   - name: external-secrets
   - name: falco
   - name: fiaas
   - name: fi-users
+  - name: flatcar
   - name: flink-operator
   - name: fr-events
   - name: fr-users
@@ -169,6 +172,7 @@ channels:
   - name: k8s-release
     archived: true
   - name: k8spin
+  - name: kamaji
   - name: kapitan
   - name: kcp-prototype
   - name: keda
@@ -279,6 +283,7 @@ channels:
   - name: meetup-nyc
   - name: meetup-dc
   - name: meetup-paris
+  - name: meetup-philadelphia
   - name: meetup-pittsburgh
   - name: meetup-sacramento
   - name: meetup-sanantonio
@@ -340,6 +345,7 @@ channels:
   - name: pt_br-users
   - name: purelb-users
   - name: raksh
+    archived: true
   - name: rancher
   - name: random
     archived: true
@@ -394,6 +400,7 @@ channels:
   - name: sig-scheduling
   # sig-security* channels are defined in sig-security/
   - name: sig-service-catalog
+    archived: true
   # sig-testing channels are defined in sig-testing/
   - name: sig-ui
   - name: sig-usability
@@ -414,7 +421,9 @@ channels:
   - name: suse-caasp
   - name: talk-proposals
   - name: tanzu-community-edition
+  - name: tanzu-streaming-runtimes
   - name: terraform-providers
+  - name: terranetes
   - name: test-failures
   - name: tilt
   - name: tn-users
@@ -471,3 +480,5 @@ channels:
   - name: windows-containerd
   - name: workshop-chat
   - name: yaml-overlay-tool
+  - name: zarf
+  - name: zarf-dev

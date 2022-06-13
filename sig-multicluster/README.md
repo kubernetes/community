@@ -60,9 +60,6 @@ The following [subprojects][subproject-definition] are owned by sig-multicluster
 ### about-api
 - **Owners:**
   - [kubernetes-sigs/about-api](https://github.com/kubernetes-sigs/about-api/blob/master/OWNERS)
-### kubemci
-- **Owners:**
-  - [GoogleCloudPlatform/k8s-multicluster-ingress](https://github.com/GoogleCloudPlatform/k8s-multicluster-ingress/blob/master/OWNERS)
 ### mcs-api
 - **Owners:**
   - [kubernetes-sigs/mcs-api](https://github.com/kubernetes-sigs/mcs-api/blob/master/OWNERS)

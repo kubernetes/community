@@ -20,9 +20,6 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-batch) for the group will typically add invites for the following meetings to your calendar.*
-* Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com)): [Thursdays (starting March 10th 2022)s at 3PM PT (Pacific Time)](https://zoom.us/j/93540621078?pwd=cUNEWDYwMSt5c09DdXJyQ2R5dHlHUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=3PM&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1XOeUN-K0aKmJJNq7H07r74n-mGgSFyiEDQ3ecwsGhec/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP05eEikq0j8PcSehEdM4mj7&jct=s4irZjLuvQ2WrUYAGxyRYjs3a2aysg).
 * Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com)): [Thursdays (starting March 3rd 2022)s at 7AM PT (Pacific Time)](https://zoom.us/j/98329676612?pwd=c0N2bVV1aTh2VzltckdXSitaZXBKQT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7AM&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1XOeUN-K0aKmJJNq7H07r74n-mGgSFyiEDQ3ecwsGhec/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP05eEikq0j8PcSehEdM4mj7&jct=s4irZjLuvQ2WrUYAGxyRYjs3a2aysg).
@@ -33,7 +30,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
 * Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), VMware
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
-* Swati Sehgal (**[@swatisehgal](https://github.com/swatisehgal)**), Intel
+* Swati Sehgal (**[@swatisehgal](https://github.com/swatisehgal)**), Red Hat
 
 ## Contact
 - Slack: [#wg-batch](https://kubernetes.slack.com/messages/wg-batch)

@@ -155,14 +155,14 @@ system. [Follow these directions to install the tools](https://ryanparman.com/po
 In particular, this command installs the necessary packages:
 
 ```sh
-brew install coreutils ed findutils gawk gnu-sed gnu-tar grep make
+brew install coreutils ed findutils gawk gnu-sed gnu-tar grep make jq
 ```
 
 You will want to include this block or something similar at the end of
 your `.bashrc` or shell init script:
 
 ```sh
-GNUBINS="$(find /usr/local/opt -type d -follow -name gnubin -print)"
+GNUBINS="$(find `brew --prefix`/opt -type d -follow -name gnubin -print)"
 
 for bindir in ${GNUBINS[@]}
 do
@@ -284,7 +284,8 @@ different versions of Kubernetes.
 | 1.17 - 1.18    | 1.13.15     |
 | 1.19 - 1.20    | 1.15.5      |
 | 1.21 - 1.22    | 1.16.7      |
-| 1.23+          | 1.17        |
+| 1.23           | 1.17        |
+| 1.24+          | 1.18        |
 
 ##### A Note on Changing Go Versions
 

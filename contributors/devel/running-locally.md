@@ -156,7 +156,7 @@ change the service-cluster-ip-range flag to something else.
 
 ### I cannot create a replication controller with replica size greater than 1!  What gives?
 
-You are running a single node setup.  This has the limitation of only supporting a single replica of a given pod.  If you are interested in running with larger replica sizes, we encourage you to try the local vagrant setup or one of the cloud providers.
+You are running a single node setup.  This has the limitation of only supporting a single replica of a given pod.  If you are interested in running with larger replica sizes, we encourage you to try Kind or one of the cloud providers.
 
 ### I changed Kubernetes code, how do I run it?
 

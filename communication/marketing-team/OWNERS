@@ -4,13 +4,13 @@ reviewers:
   - chris-short
   - onlydole
   - parispittman
-  - mbbroberg
 approvers:
   - parispittman
-  - mbbroberg
   - Pensu
   - rajula96reddy
   - kaslin
+emeritus_approvers:
+  - mbbroberg
 labels:
   - sig/contributor-experience
   - area/contributor-comms

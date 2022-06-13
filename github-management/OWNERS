@@ -2,13 +2,13 @@
 
 approvers:
   - cblecker
-  - spiffxp
-
-reviewers:
-  - fejta
-  - idvoretskyi
   - mrbobbytables
   - nikhita
+
+reviewers:
+  - ameukam
+  - idvoretskyi
+  - palnabarun
 
 labels:
   - sig/contributor-experience

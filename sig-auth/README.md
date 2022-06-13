@@ -141,6 +141,7 @@ Node identity management (co-owned with sig-lifecycle), and authorization restri
 ### policy-management
 API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
 - **Owners:**
+  - [kubernetes-sigs/pspmigrator](https://github.com/kubernetes-sigs/pspmigrator/blob/main/OWNERS)
   - [kubernetes-sigs/wg-policy-prototypes](https://github.com/kubernetes-sigs/wg-policy-prototypes/blob/master/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/imagepolicy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/imagepolicy/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/policy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/policy/OWNERS)

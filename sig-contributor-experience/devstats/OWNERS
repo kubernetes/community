@@ -1,13 +1,12 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
-reviewers:
-  - dims
-  - nikhita
 approvers:
-  - lukaszgryglicki
+  - dims
   - jberkus
   - LappleApple
+  - mrbobbytables
 emeritus_approvers:
+  - lukaszgryglicki
   - Phillels
   - spiffxp
 labels:

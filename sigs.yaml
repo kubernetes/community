@@ -531,6 +531,7 @@ sigs:
     description: |
       API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/pspmigrator/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/wg-policy-prototypes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/policy/OWNERS
@@ -867,6 +868,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/azurelustre-csi-driver/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/blobfuse-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-azure/master/OWNERS
     meetings:
@@ -906,8 +908,8 @@ sigs:
     - description: Regular IBM Subproject Meeting
       day: Wednesday
       time: "14:00"
-      tz: EST
-      frequency: biweekly
+      tz: ET (Eastern Time)
+      frequency: monthly - last Wednesday every month
       url: https://zoom.us/j/9392903494
       archive_url: https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit
   - name: provider-openstack
@@ -1057,6 +1059,10 @@ sigs:
       url: https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09
       archive_url: http://bit.ly/k8s-capz-agenda
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+  - name: cluster-api-provider-cloudstack
+    description: Cluster API provider for Apache Cloudstack
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-cloudstack/master/OWNERS
   - name: cluster-api-provider-digitalocean
     description: Cluster API infrastructure provider for DigitalOcean
     contact:
@@ -1653,6 +1659,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/prometheus-adapter/master/OWNERS
   - name: structured-logging
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/logtools/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/logs/OWNERS
 - dir: sig-k8s-infra
   name: K8s Infra
@@ -1838,9 +1845,6 @@ sigs:
   - name: about-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/about-api/master/OWNERS
-  - name: kubemci
-    owners:
-    - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
   - name: mcs-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
@@ -1881,8 +1885,8 @@ sigs:
     url: https://zoom.us/j/96264742248
     archive_url: https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs
   - description: SIG Network Ingress NGINX Meeting
-    day: Tuesday
-    time: "9:00"
+    day: Thursday
+    time: "8:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/98377891310
@@ -1894,15 +1898,15 @@ sigs:
     tz: IST (Indian Standard Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
-  - description: SIG Network Kube Proxy Meeting
+  - description: SIG Network KPNG Meeting
     day: Friday
-    time: "8:30"
+    time: "7:30"
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
   - description: SIG Network Meeting
     day: Thursday
-    time: "14:00"
+    time: "09:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/361123509
@@ -2029,8 +2033,11 @@ sigs:
     contact:
       mailing_list: https://groups.google.com/g/kubernetes-sig-node-test-failures
     owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/common/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/node/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e_node/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/jobs/kubernetes/sig-node/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/testgrids/kubernetes/sig-node/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/jobs/e2e_node/OWNERS
   - name: cri-api
     owners:
@@ -2054,6 +2061,7 @@ sigs:
       slack: node-problem-detector
     owners:
     - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/jobs/kubernetes/node-problem-detector/OWNERS
   - name: noderesourcetopology-api
     owners:
     - https://raw.githubusercontent.com/kubernetes/noderesourcetopology-api/master/OWNERS
@@ -2086,7 +2094,7 @@ sigs:
       company: Chainguard, Inc
     - github: jeremyrickard
       name: Jeremy Rickard
-      company: Apple
+      company: Microsoft
     - github: puerco
       name: Adolfo García Veytia
       company: Chainguard, Inc
@@ -2151,6 +2159,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-sdk/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-utils/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/testgrid-json-exporter/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/zeitgeist/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/CHANGELOG/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/build/build-image/OWNERS
@@ -2182,6 +2191,7 @@ sigs:
       - name: release-team-leads
         description: Release Team Leads for the current Kubernetes release cycle
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/release-team-shadow-stats/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
   - name: SIG Release Process Documentation
     description: |
@@ -2355,9 +2365,6 @@ sigs:
   - name: kueue
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
-  - name: poseidon
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
   - name: scheduler
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
@@ -2425,78 +2432,6 @@ sigs:
       slack: sig-security
     owners:
     - https://raw.githubusercontent.com/kubernetes/sig-security/master/OWNERS
-- dir: sig-service-catalog
-  name: Service Catalog
-  mission_statement: >
-    Service Catalog is a Kubernetes extension project that implements the [Open Service
-    Broker API](https://www.openservicebrokerapi.org/) (OSBAPI). It allows application
-    developers the ability to provision and consume cloud services natively from within
-    Kubernetes.
-
-  charter_link: charter.md
-  label: service-catalog
-  leadership:
-    chairs:
-    - github: jhvhs
-      name: Konstantin Semenov
-      company: VMware
-    emeritus_leads:
-    - github: arschles
-      name: Aaron Schlesinger
-    - github: carolynvs
-      name: Carolyn Van Slyck
-    - github: duglin
-      name: Doug Davis
-    - github: jberkhahn
-      name: Jonathan Berkhahn
-    - github: jboyd01
-      name: Jay Boyd
-    - github: kibbles-n-bytes
-      name: Michael Kibbe
-    - github: mszostok
-      name: Mateusz Szostok
-    - github: pmorie
-      name: Paul Morie
-    - github: vaikas-google
-      name: Ville Aikas
-  meetings:
-  - description: Regular SIG Meeting
-    day: Monday
-    time: "10:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/7201225346
-    archive_url: https://docs.google.com/document/d/17xlpkoEbPR5M6P5VDzNx17q6-IPFxKyebEekCGYiIKM/edit
-    recordings_url: https://www.youtube.com/watch?v=ukPj1sFFkr0&list=PL69nYSiGNLP2k9ZXx9E1MvRSotFDoHUWs
-  contact:
-    slack: sig-service-catalog
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-service-catalog
-    teams:
-    - name: sig-service-catalog-api-reviews
-      description: API Changes and Reviews
-    - name: sig-service-catalog-bugs
-      description: Bug Triage and Troubleshooting
-    - name: sig-service-catalog-feature-requests
-      description: Feature Requests
-    - name: sig-service-catalog-misc
-      description: General Discussion
-    - name: sig-service-catalog-pr-reviews
-      description: PR Reviews
-    - name: sig-service-catalog-proposals
-      description: Design Proposals
-    - name: sig-service-catalog-test-failures
-      description: Test Failures and Triage
-    liaison:
-      github: mrbobbytables
-      name: Bob Killen
-  subprojects:
-  - name: minibroker
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/minibroker/master/OWNERS
-  - name: service-catalog
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/go-open-service-broker-client/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/service-catalog/master/OWNERS
 - dir: sig-storage
   name: Storage
   mission_statement: >
@@ -2984,16 +2919,8 @@ workinggroups:
       company: Red Hat
     - github: swatisehgal
       name: Swati Sehgal
-      company: Intel
+      company: Red Hat
   meetings:
-  - description: Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com))
-    day: Thursdays (starting March 10th 2022)
-    time: 3PM
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/93540621078?pwd=cUNEWDYwMSt5c09DdXJyQ2R5dHlHUT09
-    archive_url: https://docs.google.com/document/d/1XOeUN-K0aKmJJNq7H07r74n-mGgSFyiEDQ3ecwsGhec/edit
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP05eEikq0j8PcSehEdM4mj7&jct=s4irZjLuvQ2WrUYAGxyRYjs3a2aysg
   - description: Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com))
     day: Thursdays (starting March 3rd 2022)
     time: 7AM

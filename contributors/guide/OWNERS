@@ -1,13 +1,10 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
-reviewers:
-  - castrojo
-  - guineveresaenger
-  - idvoretskyi
-  - tpepper
 approvers:
-  - castrojo
+  - mrbobbytables
   - parispittman
+emeritus_approvers:
+  - castrojo
   - guineveresaenger
 labels:
   - sig/contributor-experience

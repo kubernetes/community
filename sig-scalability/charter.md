@@ -28,7 +28,7 @@ Kubernetes.
   - [Cluster loader](https://github.com/kubernetes/perf-tests/tree/master/clusterloader2)
   - [Kubemark](https://github.com/kubernetes/kubernetes/tree/master/cmd/kubemark)
 - Scalability and performance tests:
-  - [Tests](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/scalability/)
+  - [Tests](https://github.com/kubernetes/perf-tests/tree/master/clusterloader2/testing/)
   - [Jobs running those](https://github.com/kubernetes/test-infra/tree/master/config/jobs/kubernetes/sig-scalability)
 
 #### Cross-cutting and Externally Facing Processes
