@@ -49,23 +49,6 @@ Technical leads seeded by legacy SIG chairs from existing subproject owners
 
 N/A
 
-### Deviations from [sig-governance]
-
-#### Sub-project Repo Creation
-
-The following individuals may approve kubernetes-sigs repo creation requests to be owned by any api-machinery
-sub-projects:
-
-- @cheftako
-- @sttts
-
-The following individuals may approve kubernetes-sigs repo creation requests to be owned by specific api-machinery
-sub-projects:
-
-- server-sdk
-  - @pwittrock
-
-
 ### Subproject Creation
 
 SIG delegates subproject approval to Technical Leads. See [Subproject creation - Option 1.]
