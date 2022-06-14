@@ -1479,7 +1479,7 @@ sigs:
     tz: UTC
     frequency: monthly - Wednesday, after the fourth Tuesday, every month
     url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
-    archive_url: https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit
+    archive_url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
   - description: Korean Team Meeting
     day: Thursday
@@ -1503,7 +1503,7 @@ sigs:
     tz: UTC
     frequency: weekly - except fourth Tuesday every month
     url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
-    archive_url: https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit
+    archive_url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
   - description: Spanish Team Meeting
     day: Tuesday
