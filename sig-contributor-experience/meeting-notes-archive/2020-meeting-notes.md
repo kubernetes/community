@@ -1852,7 +1852,7 @@ Agenda:
             * [Some docs need to be updated](https://github.com/kubernetes/community/issues/4904)
         * [https://hackmd.io/@dz39yKwDRheGNhkOnAiykw/r1wNy_86U](https://hackmd.io/@dz39yKwDRheGNhkOnAiykw/r1wNy_86U) - template from rajula on marketing team 
     * Marketing update [paris]
-        * Need more storytellers [https://github.com/kubernetes/community/blob/master/communication/marketing-team/role-handbooks/storytellers.md](https://github.com/kubernetes/community/blob/master/communication/marketing-team/role-handbooks/storytellers.md)
+        * Need more storytellers [https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/storytellers.md](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/storytellers.md)
         * Follow us on [@k8scontributors](https://twitter.com/K8sContributors)
     * APAC coordinator update:
         * No updates, @idealhack sends his regrets
@@ -3711,7 +3711,7 @@ Agenda:
         * Still at the miner&kasch firm; will hear by Friday with next steps
     * Marketing [Paris]
         * Still looking for at least ~4 more people to help us
-        * [charter, focus areas, blogging guidelines - here](https://github.com/kubernetes/community/tree/master/communication/marketing-team)
+        * [charter, focus areas, blogging guidelines - here](https://github.com/kubernetes/community/tree/master/communication/contributor-comms)
         * Working on the following: sending a vote to kdev for the contributor twitter handle, social media guidelines, social media tool research, internal comms plans and programmatic strategies (community meeting, MOC), rolebooks
         * Need to PR in a team for slack @contributor-comms with the current team 
         * How to get a hold of us: Jonas and internal comms team is working on a standard form, we have an issue and pr label `area/contributor-comms`, or slack team (tbu)

@@ -2201,7 +2201,7 @@ Agenda:
     *   Waiting on steering to resolve the working groups sigs.yaml, as the owners of the last WG is unresponsive: [https://github.com/kubernetes/community/issues/3188](https://github.com/kubernetes/community/issues/3188)
     *   Sahdev and Nikhita - Building a team for triage handling, 3-4 people
         *   Creating a PR to get some information around triage guidelines, triage captain responsibilities with shadow, and more: [https://github.com/kubernetes/community/issues/3364](https://github.com/kubernetes/community/issues/3364)
-    *   Create more roles for contribex (event-team, marketing-team etc): [https://github.com/kubernetes/community/issues/3076](https://github.com/kubernetes/community/issues/3076)
+    *   Create more roles for contribex (event-team, contributor-comms etc): [https://github.com/kubernetes/community/issues/3076](https://github.com/kubernetes/community/issues/3076)
         *   Adding marketing + new contrib ambassador: [https://github.com/kubernetes/community/pull/3460](https://github.com/kubernetes/community/pull/3460)
 *   Open Mic/Discussion
     *   [spiffxp] Proposal to enable `review_acts_as_lgtm` in the kubernetes/test-infra repo. See the [slack post](https://kubernetes.slack.com/archives/C09QZ4DQB/p1553208058692200) for details
@@ -5138,7 +5138,7 @@ Agenda:
     *   Waiting on steering to resolve the working groups sigs.yaml, as the owners of the last WG is unresponsive: [https://github.com/kubernetes/community/issues/3188](https://github.com/kubernetes/community/issues/3188)
     *   Sahdev and Nikhita - Building a team for triage handling, 3-4 people
         *   Creating a PR to get some information around triage guidelines, triage captain responsibilities with shadow, and more: [https://github.com/kubernetes/community/issues/3364](https://github.com/kubernetes/community/issues/3364)
-    *   Create more roles for contribex (event-team, marketing-team etc): [https://github.com/kubernetes/community/issues/3076](https://github.com/kubernetes/community/issues/3076)
+    *   Create more roles for contribex (event-team, contributor-comms etc): [https://github.com/kubernetes/community/issues/3076](https://github.com/kubernetes/community/issues/3076)
         *   Adding marketing + new contrib ambassador: [https://github.com/kubernetes/community/pull/3460](https://github.com/kubernetes/community/pull/3460)
 *   Open Mic/Discussion
     *   [spiffxp] Proposal to enable `review_acts_as_lgtm` in the kubernetes/test-infra repo. See the [slack post](https://kubernetes.slack.com/archives/C09QZ4DQB/p1553208058692200) for details

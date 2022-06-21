@@ -16,7 +16,7 @@
 Most of my work within the Kubernetes org relates to pruning and editing - whether it be processes or their underlying documentation.
 
 - Dedicated contributor to k/website repository
-- k8s storyteller on the upstream marketing team - https://github.com/kubernetes/community/tree/master/communication/marketing-team
+- k8s storyteller on the upstream marketing team - https://github.com/kubernetes/community/tree/master/communication/contributor-comms
 - Release 1.19 Docs shadow - https://github.com/kubernetes/sig-release/blob/master/releases/release-1.19/release_team.md
 - Working on RT Prioritization items for bettering our release processes
 

@@ -34,7 +34,7 @@ community by its contributors. Promoting the work and helping fill the needs of 
 force behind the Kubernetes Upstream Marketing Team. The goal of this work is to improve the overall sustainability of 
 the project by giving or elevating information to contributors so they stay well informed.
 
-The list of roles and duties can be found [here](https://github.com/kubernetes/community/blob/master/communication/marketing-team/CHARTER.md)
+The list of roles and duties can be found [here](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/CHARTER.md)
 
 ## SIG-Docs-Blog  
 The Kubernetes Blog Subproject is owned by SIG-Docs and run by the Editorial Team.

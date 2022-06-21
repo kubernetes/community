@@ -269,7 +269,7 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [The Release Team: Bug Triage, CI Signal, and more]: https://github.com/kubernetes/sig-release/tree/master/release-team/role-handbooks
 [Production Readiness Reviewer]: /sig-architecture/production-readiness.md#becoming-a-prod-readiness-reviewer-or-approver
 [API Reviewer and Moderator]: /sig-architecture/api-review-process.md#expanding-the-reviewer-and-approver-pool
-[Marketing Council]: /communication/marketing-team/role-handbooks/council.md
+[Marketing Council]: /communication/contributor-comms/role-handbooks/council.md
 [Events Lead]: /events/events-team/events-lead.md
 [PR Wrangler]: https://kubernetes.io/docs/contribute/participate/pr-wranglers/
 [Inclusive Open Source Community Orientation course]: https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/

@@ -86,4 +86,4 @@ the Lead.
 [@K8sContributors]: https://twitter.com/K8sContributors
 [@Kubernetesio]: https://twitter.com/kubernetesio
 [CNCF]: https://www.cncf.io/
-[upstream marketing team]: /communication/marketing-team/README.md
+[upstream marketing team]: /communication/contributor-comms/README.md
