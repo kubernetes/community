@@ -67,10 +67,6 @@ Boskos is a resource manager service that handles different kinds of resources a
 An experimental e2e testing framework for Kubernetes clusters.
 - **Owners:**
   - [kubernetes-sigs/e2e-framework](https://github.com/kubernetes-sigs/e2e-framework/blob/master/OWNERS)
-### k8s-gsm-tools
-Controllers to sync and rotate kubernetes secrets with google cloud secret manager
-- **Owners:**
-  - [kubernetes-sigs/k8s-gsm-tools](https://github.com/kubernetes-sigs/k8s-gsm-tools/blob/master/OWNERS)
 ### kind
 Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
 - **Owners:**
