@@ -1349,7 +1349,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-tweets/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/lwkd/main/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/community/master/communication/marketing-team/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/communication/contributor-comms/OWNERS
     meetings:
     - description: Contributor Comms - Upstream Marketing Team Meeting
       day: Friday
