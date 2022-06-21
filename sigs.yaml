@@ -2633,11 +2633,6 @@ sigs:
       An experimental e2e testing framework for Kubernetes clusters.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/e2e-framework/master/OWNERS
-  - name: k8s-gsm-tools
-    description: |
-      Controllers to sync and rotate kubernetes secrets with google cloud secret manager
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/k8s-gsm-tools/master/OWNERS
   - name: kind
     description: |
       Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
