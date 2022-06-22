@@ -1290,6 +1290,9 @@ sigs:
     - github: alisondy
       name: Alison Dowdney
       company: Kasten
+    - github: jberkus
+      name: Josh Berkus
+      company: Red Hat
     - github: mrbobbytables
       name: Bob Killen
       company: Google

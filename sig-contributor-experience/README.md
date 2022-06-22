@@ -24,6 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Alison Dowdney (**[@alisondy](https://github.com/alisondy)**), Kasten
+* Josh Berkus (**[@jberkus](https://github.com/jberkus)**), Red Hat
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
 
 ### Technical Leads
