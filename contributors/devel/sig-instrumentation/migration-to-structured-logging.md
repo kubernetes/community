@@ -156,6 +156,15 @@ func KObj(obj KMetadata) ObjectRef
 // >> I1025 00:15:15.525108       1 controller_utils.go:116] "Pod status updated" pod="kube-system/kubedns" status="ready"
 func KRef(namespace, name string) ObjectRef
 
+// KObjSlice takes a slice of objects that implement the KMetadata interface
+// and returns an object that gets logged as a slice of ObjectRef values or a
+// string containing those values, depending on whether the logger prefers text
+// output or structured output.
+// >> klog.InfoS("Pods status updated", "pods", klog.KObjSlice(pods), "status", "ready")
+// output:
+// >> I1025 00:15:15.525108       1 controller_utils.go:116] "Pods status updated" pods="[kube-system/kubedns kube-system/metrics-server]" status="ready"
+func KObjSlice(arg interface{}) interface{} 
+
 // ObjectRef represents a reference to a kubernetes object used for logging purpose
 // In text logs it is serialized into "{namespace}/{name}" or "{name}" if namespace is empty
 type ObjectRef struct {
@@ -467,16 +476,18 @@ func ChangePodStatus(newStatus, currentStatus string) {
 ## Good practice for passing values in structured logging
 
 When passing a value for a key-value pair, please use following rules:
-* Prefer using Kubernetes objects (for example `*v1.Pod`) and log them using `klog.KObj`
+* Prefer using Kubernetes objects and log them using `klog.KObj` or `klog.KObjSlice`
   * When the original object is not available, use `klog.KRef` instead
+  * when only one object (for example `*v1.Pod`), we use`klog.KObj` 
+  * When type is object slice (for example `[]*v1.Pod`), we use `klog.KObjSlice`
 * Pass structured values directly (avoid calling `.String()` on them first)
 * When the goal is to log a `[]byte` array as string, explicitly convert with `string(<byte array>)`.
 
-### Prefer using Kubernetes objects (for example `*v1.Pod`) and log them using `klog.KObj`
+### Prefer using Kubernetes objects (for example `*v1.Pod` or `[]*v1.Pod`) and log them using `klog.KObj` or `klog.KObjSlice`
 
 As part of the structured logging migration, we want to ensure that Kubernetes object references are
 consistent within the
-codebase. Two new utility functions were introduced to klog: `klog.KObj` and `klog.KRef`.
+codebase. Three new utility functions were introduced to klog: `klog.KObj` `klog.KObjSlice` and `klog.KRef`.
 
 Any existing logging code that makes a reference (such as name, namespace) to a Kubernetes
 object (for example: Pod, Node, Deployment, CustomResourceDefinition) should be rewritten to
