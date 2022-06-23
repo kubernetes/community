@@ -249,6 +249,7 @@ channels:
   - name: kubespray-dev
   - name: kubevirt-dev
   - name: kubewarden
+  - name: kubewarden-dev
   - name: kubicorn
   - name: kudo
   - name: kurl
@@ -382,6 +383,7 @@ channels:
     archived: true
   - name: sig-contribex
   - name: sig-contribex-meetings
+  - name: sig-contribex-comms
   - name: sig-contribex-triage
     archived: true
   # sig-docs* channels are defined in sig-docs/
@@ -400,6 +402,7 @@ channels:
   - name: sig-scheduling
   # sig-security* channels are defined in sig-security/
   - name: sig-service-catalog
+    archived: true
   # sig-testing channels are defined in sig-testing/
   - name: sig-ui
   - name: sig-usability

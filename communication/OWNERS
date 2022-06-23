@@ -2,16 +2,17 @@
 
 reviewers:
   - parispittman
-  - castrojo
   - jdumars
   - idvoretskyi
   - jeefy
   - mrbobbytables
   - markyjackson-taulia
 approvers:
-  - castrojo
+  - mrbobbytables
   - parispittman
   - sig-contributor-experience-leads
+emeritus_approvers:
+  - castrojo
 labels:
   - sig/contributor-experience
   - area/community-management

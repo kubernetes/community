@@ -106,6 +106,10 @@ Cluster API infrastructure provider for Azure
   - Cluster API Provider Azure office hours: [Thursdays at 08:00 PT (Pacific Time)](https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](http://bit.ly/k8s-capz-agenda).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
+### cluster-api-provider-cloudstack
+Cluster API provider for Apache Cloudstack
+- **Owners:**
+  - [kubernetes-sigs/cluster-api-provider-cloudstack](https://github.com/kubernetes-sigs/cluster-api-provider-cloudstack/blob/master/OWNERS)
 ### cluster-api-provider-digitalocean
 Cluster API infrastructure provider for DigitalOcean
 - **Owners:**
