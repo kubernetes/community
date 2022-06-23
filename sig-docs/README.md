@@ -100,11 +100,5 @@ The following [subprojects][subproject-definition] are owned by sig-docs:
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
-## Goals
-* Discuss documentation and docs issues for kubernetes.io
-* Content for the official Kubernetes blog
-* Lead docs releases for Kubernetes
-* Suggest improvements to user onboarding through better documentation on kubernetes.io
-* Documentation metrics and user feedback
-* Help community contributors get involved in Kubernetes documentation
+
 <!-- END CUSTOM CONTENT -->
