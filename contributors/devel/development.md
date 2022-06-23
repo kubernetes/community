@@ -155,14 +155,14 @@ system. [Follow these directions to install the tools](https://ryanparman.com/po
 In particular, this command installs the necessary packages:
 
 ```sh
-brew install coreutils ed findutils gawk gnu-sed gnu-tar grep make
+brew install coreutils ed findutils gawk gnu-sed gnu-tar grep make jq
 ```
 
 You will want to include this block or something similar at the end of
 your `.bashrc` or shell init script:
 
 ```sh
-GNUBINS="$(find /usr/local/opt -type d -follow -name gnubin -print)"
+GNUBINS="$(find `brew --prefix`/opt -type d -follow -name gnubin -print)"
 
 for bindir in ${GNUBINS[@]}
 do

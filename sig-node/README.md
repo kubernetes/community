@@ -55,8 +55,11 @@ The following [working groups][working-group-definition] are sponsored by sig-no
 The following [subprojects][subproject-definition] are owned by sig-node:
 ### ci-testing
 - **Owners:**
+  - [kubernetes/kubernetes/test/e2e/common](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/common/OWNERS)
+  - [kubernetes/kubernetes/test/e2e/node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/node/OWNERS)
   - [kubernetes/kubernetes/test/e2e_node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e_node/OWNERS)
   - [kubernetes/test-infra/config/jobs/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-node/OWNERS)
+  - [kubernetes/test-infra/config/testgrids/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/testgrids/kubernetes/sig-node/OWNERS)
   - [kubernetes/test-infra/jobs/e2e_node](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/OWNERS)
 - **Contact:**
   - [Mailing List](https://groups.google.com/g/kubernetes-sig-node-test-failures)
@@ -80,6 +83,7 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### node-problem-detector
 - **Owners:**
   - [kubernetes/node-problem-detector](https://github.com/kubernetes/node-problem-detector/blob/master/OWNERS)
+  - [kubernetes/test-infra/config/jobs/kubernetes/node-problem-detector](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/node-problem-detector/OWNERS)
 - **Contact:**
   - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
 ### noderesourcetopology-api

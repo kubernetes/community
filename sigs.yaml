@@ -531,6 +531,7 @@ sigs:
     description: |
       API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/pspmigrator/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/wg-policy-prototypes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/policy/OWNERS
@@ -766,6 +767,13 @@ sigs:
     - github: andrewsykim
       name: Andrew Sy Kim
       company: Google
+    - github: nckturner
+      name: Nick Turner
+      company: Amazon
+    tech_leads:
+    - github: andrewsykim
+      name: Andrew Sy Kim
+      company: Google
     - github: cheftako
       name: Walter Fender
       company: Google
@@ -867,6 +875,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/azuredisk-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/azurefile-csi-driver/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/azurelustre-csi-driver/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/blobfuse-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-azure/master/OWNERS
     meetings:
@@ -1057,6 +1066,10 @@ sigs:
       url: https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09
       archive_url: http://bit.ly/k8s-capz-agenda
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+  - name: cluster-api-provider-cloudstack
+    description: Cluster API provider for Apache Cloudstack
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-cloudstack/master/OWNERS
   - name: cluster-api-provider-digitalocean
     description: Cluster API infrastructure provider for DigitalOcean
     contact:
@@ -1277,6 +1290,9 @@ sigs:
     - github: alisondy
       name: Alison Dowdney
       company: Kasten
+    - github: jberkus
+      name: Josh Berkus
+      company: Red Hat
     - github: mrbobbytables
       name: Bob Killen
       company: Google
@@ -1473,7 +1489,7 @@ sigs:
     tz: UTC
     frequency: monthly - Wednesday, after the fourth Tuesday, every month
     url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
-    archive_url: https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit
+    archive_url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
   - description: Korean Team Meeting
     day: Thursday
@@ -1505,7 +1521,7 @@ sigs:
     tz: UTC
     frequency: weekly - except fourth Tuesday every month
     url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
-    archive_url: https://docs.google.com/document/d/1ddHwLK3kUMX1wVFIwlksjTk0MsqitBnWPe1LRa1Rx5A/edit
+    archive_url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
   - description: Spanish Team Meeting
     day: Tuesday
@@ -1661,6 +1677,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/prometheus-adapter/master/OWNERS
   - name: structured-logging
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/logtools/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/logs/OWNERS
 - dir: sig-k8s-infra
   name: K8s Infra
@@ -1886,8 +1903,8 @@ sigs:
     url: https://zoom.us/j/96264742248
     archive_url: https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs
   - description: SIG Network Ingress NGINX Meeting
-    day: Tuesday
-    time: "9:00"
+    day: Thursday
+    time: "8:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/98377891310
@@ -1899,9 +1916,9 @@ sigs:
     tz: IST (Indian Standard Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
-  - description: SIG Network Kube Proxy Meeting
+  - description: SIG Network KPNG Meeting
     day: Friday
-    time: "8:30"
+    time: "7:30"
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
@@ -2034,8 +2051,11 @@ sigs:
     contact:
       mailing_list: https://groups.google.com/g/kubernetes-sig-node-test-failures
     owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/common/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/node/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e_node/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/jobs/kubernetes/sig-node/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/testgrids/kubernetes/sig-node/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/jobs/e2e_node/OWNERS
   - name: cri-api
     owners:
@@ -2059,6 +2079,7 @@ sigs:
       slack: node-problem-detector
     owners:
     - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/jobs/kubernetes/node-problem-detector/OWNERS
   - name: noderesourcetopology-api
     owners:
     - https://raw.githubusercontent.com/kubernetes/noderesourcetopology-api/master/OWNERS
@@ -2623,11 +2644,6 @@ sigs:
       An experimental e2e testing framework for Kubernetes clusters.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/e2e-framework/master/OWNERS
-  - name: k8s-gsm-tools
-    description: |
-      Controllers to sync and rotate kubernetes secrets with google cloud secret manager
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/k8s-gsm-tools/master/OWNERS
   - name: kind
     description: |
       Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
