@@ -3,6 +3,7 @@ channels:
   - name: prow
   - name: prow-alerts
   - name: sig-testing
+  - name: testgrid
   - name: testing-commons
     archived: true
   - name: testing-ops
