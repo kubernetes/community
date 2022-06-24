@@ -109,7 +109,7 @@ Manages and controls Github permissions, repos, and groups, including Org Member
 - **Contact:**
   - Slack: [#github-management](https://kubernetes.slack.com/messages/github-management)
 - **Meetings:**
-  - GitHub Administration Subproject: [Thursdays at 09:30 PT (Pacific Time)](https://zoom.us/j/442435463?pwd=Rk1PWWpSSTJDaWJKdzRYb2EyTlkvZz09) (Monthly on 4th Thursday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:30&tz=PT%20%28Pacific%20Time%29).
+  - GitHub Administration Subproject: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/442435463?pwd=Rk1PWWpSSTJDaWJKdzRYb2EyTlkvZz09) (Monthly on 4th Thursday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### mentoring
