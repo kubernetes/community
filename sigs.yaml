@@ -1415,7 +1415,7 @@ sigs:
     meetings:
     - description: GitHub Administration Subproject
       day: Thursday
-      time: "09:30"
+      time: "09:00"
       tz: PT (Pacific Time)
       frequency: Monthly on 4th Thursday
       url: https://zoom.us/j/442435463?pwd=Rk1PWWpSSTJDaWJKdzRYb2EyTlkvZz09
