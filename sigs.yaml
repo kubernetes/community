@@ -1372,6 +1372,13 @@ sigs:
       slack: devstats
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
+  - name: elections
+    description: Oversees running elections in the community. Maintains documentation
+      and software for elections.
+    contact:
+      slack: sig-contribex
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/elections/OWNERS
   - name: events
     description: Creates and runs contributor-focused events, such as the Contributor
       Summit.  Event Teams are part of this subproject.
