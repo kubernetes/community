@@ -178,6 +178,7 @@ channels:
   - name: kcp-prototype
   - name: keda
   - name: keda-dev
+  - name: keda-docs
   - name: keel
   - name: kiam
   - name: kilo
