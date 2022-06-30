@@ -56,6 +56,7 @@ The following [working groups][working-group-definition] are sponsored by sig-ne
 * [WG IoT Edge](/wg-iot-edge)
 * [WG Multitenancy](/wg-multitenancy)
 * [WG Policy](/wg-policy)
+* [WG Service Mesh](/wg-service-mesh)
 * [WG Structured Logging](/wg-structured-logging)
 
 

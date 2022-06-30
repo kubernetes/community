@@ -136,6 +136,10 @@ aliases:
     - deads2k
     - stevekuznetsov
     - wojtek-t
+  wg-service-mesh-leads:
+    - howardjohn
+    - keithmattix
+    - mikemorris
   wg-structured-logging-leads:
     - pohly
     - serathius

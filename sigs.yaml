@@ -3143,6 +3143,42 @@ workinggroups:
   contact:
     slack: wg-reliability
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-reliability
+- dir: wg-service-mesh
+  name: Service Mesh
+  mission_statement: >-
+    This group's goal is to investigate, design, and track Kubernetes networking resources,
+    APIs, and other artifacts related to service mesh technology and use-cases. Furthermore,
+    we strive to advocate for consistency between implementations of the Gateway API
+    by service mesh projects.
+  stakeholder_sigs:
+  - Network
+  label: service-mesh
+  leadership:
+    chairs:
+    - github: howardjohn
+      name: John Howard
+      company: Google
+    - github: keithmattix
+      name: Keith Mattix
+      company: Microsoft
+    - github: mikemorris
+      name: Mike Morris
+      company: Hashicorp
+  meetings:
+  - description: Regular WG Meeting
+    day: TBD
+    time: TBD
+    tz: UTC
+    frequency: biweekly
+    url: TBD
+    archive_url: TBD
+    recordings_url: TBD
+  contact:
+    slack: wg-service-mesh
+    mailing_list: TBD
+    liaison:
+      github: TBD
+      name: TBD
 - dir: wg-structured-logging
   name: Structured Logging
   mission_statement: >

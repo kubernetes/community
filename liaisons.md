@@ -60,6 +60,7 @@ members will assume one of the departing members groups.
 | [WG IoT Edge](wg-iot-edge/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG Multitenancy](wg-multitenancy/README.md) | Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**) |
 | [WG Policy](wg-policy/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
+| [WG Service Mesh](wg-service-mesh/README.md) | TBD (**[@TBD](https://github.com/TBD)**) |
 | [WG Structured Logging](wg-structured-logging/README.md) | Davanum Srinivas (**[@dims](https://github.com/dims)**) |
 | [UG Big Data](ug-big-data/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
 | [UG VMware Users](ug-vmware-users/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
