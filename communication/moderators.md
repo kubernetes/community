@@ -65,7 +65,7 @@ Moderators pro tempore seats: 5
 
 | Name                | Kubernetes Slack ID | Region | Timezone                                            |
 | --------------------| ------------------- | ------ | --------------------------------------------------- |
-| Atharva Shinde      | @Atharva            | APAC   | [IST - Indian Standard Time](https://time.is/India) |
+| Atharva Shinde      | @Atharva Shinde     | APAC   | [IST - Indian Standard Time](https://time.is/India) |
 | Debabrata Panigrahi | @deba               | APAC   | [IST - Indian Standard Time](https://time.is/India) |
 ## GitHub
 
