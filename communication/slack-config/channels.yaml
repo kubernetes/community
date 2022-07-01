@@ -28,9 +28,10 @@ channels:
     archived: true
   - name: brigade
   - name: camptocamp-devops-stack
+  - name: canonical-kubernetes
+    id: CG1V2CAMB
   - name: capsule
   - name: cartographer
-  - name: cdk
   - name: cert-manager
   - name: cert-manager-aws-privateca-issuer
   - name: cert-manager-dev
