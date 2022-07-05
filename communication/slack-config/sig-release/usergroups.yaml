@@ -51,16 +51,16 @@ usergroups:
       - release-notes
       - sig-release
     members:
-      - cici37 # 1.24 Release Team Lead Shadow
+      - cici37 # 1.25 Release Team Lead
       - cpanato # SIG Release Technical Lead
-      - JamesLaverack # 1.24 Release Team Lead
+      - gracenng # 1.25 RT Lead Shadow
       - jeremyrickard # SIG Release Technical Lead / 1.23 Release Team EA
-      - Jesse Butler # 1.24 Release Team Lead Shadow
+      - jlbutler # 1.25 RT Lead Shadow
       - justaugustus # SIG Release Chair
-      - mkorbi # 1.24 Release Team Lead Shadow
+      - leonardpahlke # 1.25 RT Lead Shadow
       - puerco # SIG Release Technical Lead
+      - salaxander # 1.25 RT Lead Shadow
       - saschagrunert # SIG Release Chair
-      - Xander # 1.24 Release Team Lead Shadow
 
   # Should match SIG Release Leads at all times:
   # https://git.k8s.io/community/sig-release/README.md#leadership
