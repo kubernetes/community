@@ -97,6 +97,7 @@ channels:
     archived: true
   - name: emea-dev
   - name: emea-users
+  - name: eraser
   - name: es-users
   - name: etcd
   - name: etcdadm
