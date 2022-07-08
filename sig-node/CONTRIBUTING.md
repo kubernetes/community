@@ -6,6 +6,8 @@ Welcome!
 
 https://github.com/kubernetes/community/tree/master/contributors/guide#contributor-guide
 
+If you aspire to grow scope in the SIG, please review the [SIG Node contributor ladder](./sig-node-contributor-ladder.md) for SIG specific guidance.
+
 ### For Enhancements 
 
 https://github.com/kubernetes/enhancements/tree/master/keps/sig-node
@@ -32,7 +34,6 @@ https://github.com/kubernetes/community/tree/master/sig-node#subprojects
 
 Triage:
 https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/triage.md 
-
 
 ## Getting Started
 
