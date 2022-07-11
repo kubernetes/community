@@ -1,0 +1,68 @@
+name: Team Election Request
+description : Create an election for your SIG/WG/Subproject/Team
+title: 'ELECTION REQUEST: <topic>'
+labels: area/elections, sig/contributor-experience
+body:
+- type: input
+  attributes:
+    label: Group Requesting
+    description: The SIG, WG, team, subproject, or other Kubernetes community group wanting the election.
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Title of Election
+    description: The name of what's being decided.  If this is a recurring election, include the year/period.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Election Description
+    description: Please write a full description of the election, suitable for those voting in it.  Include dates and contact info.
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Administrators
+    description: Supply a list of GitHub IDs of the members of your team who will be administering this election. Min 1, Max 5
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Voters
+    description: Describe who the eligible voters in this election are. If you have the voters as a list, please paste a list of GitHub IDs here or attach a file listing the IDs (1 per line).
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Date/Time Candidates may file
+    description: Date and UTC time that candidates may start submitting profiles for the election.  If you already have all of the profiles, that date is now.
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Date/Time Candidates Due
+    description: Date and UTC time that candidates must have completed their profiles.  If you already have all of the profiles, that date is now.
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Date/Time Voting Begins
+    description: Date and UTC time that voting should begin.
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Date/Time Voting Ends
+    description: Date and UTC time that voting closes.
+  validations:
+    required: true
+- type: dropdown
+  attributes:
+    label: Publicity Help Wanted?
+    description: Is this an election that goes beyond your team, such that you want help from Contributor Comms in advertising it?
+    options:
+        - "Yes"
+        - "No"
+  validations:
+    required: true

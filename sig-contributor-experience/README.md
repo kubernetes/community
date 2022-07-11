@@ -84,6 +84,12 @@ Maintains and updates https://k8s.devstats.cncf.io, including taking requests fo
   - [kubernetes/community/sig-contributor-experience/devstats](https://github.com/kubernetes/community/blob/master/sig-contributor-experience/devstats/OWNERS)
 - **Contact:**
   - Slack: [#devstats](https://kubernetes.slack.com/messages/devstats)
+### elections
+Oversees running elections in the community. Maintains documentation and software for elections.
+- **Owners:**
+  - [kubernetes/community/elections](https://github.com/kubernetes/community/blob/master/elections/OWNERS)
+- **Contact:**
+  - Slack: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)
 ### events
 Creates and runs contributor-focused events, such as the Contributor Summit.  Event Teams are part of this subproject.
 - **Owners:**

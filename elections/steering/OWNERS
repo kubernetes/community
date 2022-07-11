@@ -1,0 +1,12 @@
+# See the OWNERS docs at https://go.k8s.io/owners
+
+approvers:
+  - jberkus
+  - parispittman
+  - jdumars
+  - committee-steering
+  - sig-contributor-experience-leads
+  - coderanger
+  - dims
+labels:
+  - committee/steering
