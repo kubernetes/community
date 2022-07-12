@@ -198,7 +198,7 @@ procedures:
 
 In the event of a violation of the Code of Conduct, the moderators will use the following procedures to escalate the issue to the Code of Conduct Committee:
 
-If you believe that a poster is violating the Kubernetes Slack Community Code of Conduct, escalate the matter to the [Code of Conduct Committee]. Include the following to the best of your ability in that message:
+If you believe that a poster is violating the Kubernetes Community Code of Conduct, escalate the matter to the [Code of Conduct Committee]. Include the following to the best of your ability in that message:
 
 - A statement of the seriousness of the matter, what is the urgency of response?
 - A statement of the nature of the violation with links to the offensive posts. It is useful to take a screenshot to preserve potentially ephemeral evidence.
