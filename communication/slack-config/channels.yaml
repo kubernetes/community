@@ -2,6 +2,7 @@
 # This includes archived channels, which are marked with `archived: true`.
 
 channels:
+  - name: africa-dev
   - name: airflow-operator
   - name: akri
   - name: aks-engine-users
