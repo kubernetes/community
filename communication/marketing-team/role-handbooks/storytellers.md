@@ -81,4 +81,4 @@ There is no shadow roles for Storytellers. If Storytellers are interested in bec
 [blogging guidelines]: ../storytelling-resources/blog-guidelines.md
 [YouTube guidelines]: /communication/youtube/youtube-guidelines.md
 [storytelling resources folder]: ../storytelling-resources/
-[Marketing Council Handbook]: ../council.md
+[Marketing Council Handbook]: ../role-handbooks/council.md
