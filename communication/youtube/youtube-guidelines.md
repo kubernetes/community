@@ -21,15 +21,15 @@ and includes all communications such as YouTube.
 
 ## Meeting Playlists
 
-The [Kubernetes YouTube Channel][] has separate playlists for each SIG, WG, UG
+The [Kubernetes YouTube Channel] has separate playlists for each SIG, WG, UG
 meeting recordings, as well as recordings of other recurring events such as the
-Kubernetes [community meeting][], [Office Hours][], [Meet our Contributors][]
+Kubernetes [community meeting], [Office Hours], [Meet our Contributors]
 and others.
 
-[Subprojects][], in addition to SIGs, WGs, UGs may request their own playlists
+[Subprojects], in addition to SIGs, WGs, UGs may request their own playlists
 to better target their contributors and increase general discoverability.
 
-To better serve the community, [collaboration][] has been enabled to share the
+To better serve the community, [collaboration] has been enabled to share the
 management of the playlists. Anyone with the appropriate link to the particular
 playlist can upload videos *to that particular playlist* (links & playlists are
 one-to-one).
@@ -41,9 +41,9 @@ Hours, will be shared with the appropriate point(s) of contact.
 ### Uploading Guidelines for Collaborators
 
 **NOTE:** If you're using a Google Workspace account (formerly known as G Suite)
-you may need to [update the permissions in your YouTube settings][]. If you have
-any questions, reach out to the [YouTube admins][] or
-[SIG Contributor Experience][]. You may need to reach out to someone at your
+you may need to [update the permissions in your YouTube settings]. If you have
+any questions, reach out to the [YouTube admins] or
+[SIG Contributor Experience]. You may need to reach out to someone at your
 organization if you do not have access to Google Workspace Admin permissions.
 
 **NOTE:** Both public and private steering meeting recordings should be made
@@ -103,7 +103,7 @@ our governance documents.
 ### Moderator Expectations and Guidelines
 
 Moderators should adhere to the general Kubernetes project
-[moderation guidelines][].
+[moderation guidelines].
 
 Moderation responsibilities for YouTube admins is minimal and is centered around
 checking and removing any potential comments that would violate the
@@ -112,7 +112,7 @@ checking and removing any potential comments that would violate the
 
 ### Trimming and Editing Recordings
 
-YouTube admins are asked to help [trim][] and [edit][] recordings that come into
+YouTube admins are asked to help [trim] and [edit] recordings that come into
 the video queue.
 
 #### Examples:
@@ -149,7 +149,7 @@ the steps outlined below.
     you or reset it to a new one.
 -   Kubernetes YouTube admin permissions
 -   A correctly set up recurring meeting with a start and end time (this is
-    important) - check [Zoom guidelines][] for more details
+    important) - check [Zoom guidelines] for more details
 
 **Steps:**
 
@@ -166,13 +166,13 @@ the steps outlined below.
 
 The following SIGs and groups are currently running splain.io:
 
--   [SIG Auth][]
--   [SIG Contributor Experience][]
--   [SIG Docs][]
--   [SIG Network][]
--   [SIG Release][]
--   [Steering Committee][]
--   [WG Data Protection][]
+-   [SIG Auth]
+-   [SIG Contributor Experience]
+-   [SIG Docs]
+-   [SIG Network]
+-   [SIG Release]
+-   [Steering Committee]
+-   [WG Data Protection]
 -   The main Zoom admin account which holds Meet Our Contributors and others (if
     you log in to splain using this account, all of the other accounts will be
     logged here)
@@ -214,9 +214,9 @@ to hear from you.
 ### Streaming Events
 
 YouTube admins with a system capable of streaming may be asked to stream public
-Kubernetes Community events such as the weekly [Community Meeting][], 
-[Office Hours][], [Meet our Contributors][], or other publicly streamed
-events. For detailed information about streaming, see our [Streaming Config][].
+Kubernetes Community events such as the weekly [Community Meeting], 
+[Office Hours], [Meet our Contributors], or other publicly streamed
+events. For detailed information about streaming, see our [Streaming Config].
 
 ### Migrating Content
 
@@ -225,7 +225,7 @@ be useful to grab content from other channels. It is currently NOT POSSIBLE to
 move content from one YouTube channel to another, so the content must be
 downloaded and then reuploaded to the Kubernetes channel.
 
-1.  Download [youtube-dl][], which makes it easier to bulk download videos.
+1.  Download [youtube-dl], which makes it easier to bulk download videos.
 2.  Download the channel or playlist with: `youtube-dl <url>`
 3.  Clean up the filenames as they are used to generate new titles. Do this
     locally since it is easier than doing it per video in the YouTube web UI.

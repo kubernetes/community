@@ -5,34 +5,34 @@ description: |
 ---
 
 Zoom is the main video communication platform for Kubernetes. It is used for
-running the [community meeting][], [SIG/WG meetings][], [Office Hours][], 
-[Meet Our Contributors][] and many other Kubernetes online events. Since the Zoom
+running the [community meeting], [SIG/WG meetings], [Office Hours], 
+[Meet Our Contributors] and many other Kubernetes online events. Since the Zoom
 meetings are open to the general public, a Zoom host or co-host has to moderate
 a meeting in all senses of the word, from starting and stopping the meeting to
-acting on [Kubernetes code of conduct][] issues.
+acting on [Kubernetes code of conduct] issues.
 
 These guidelines are meant as a tool to help Kubernetes members manage their
 Zoom resources.
 
-Check the main [moderation][] page for more information on other tools
+Check the main [moderation] page for more information on other tools
 and general moderation guidelines.
 
 
 ## Code of conduct
 
-The Kubernetes project adheres to the [Kubernetes Code of Conduct][]
+The Kubernetes project adheres to the [Kubernetes Code of Conduct]
 throughout all platforms and includes all communication mediums.
 
 ## Zoom license management
 
-Zoom licenses are managed by the [CNCF Service Desk][] through the
-[Zoom Admins][] listed in the  [centralized list of administrators][].
+Zoom licenses are managed by the [CNCF Service Desk] through the
+[Zoom Admins] listed in the  [centralized list of administrators].
 
 ### Obtaining a Zoom license
 
 Ensure that all SIG/WG leads, chairs, and any other necessary trusted owners
 have access to the `k-sig-<foo>-leads@googlegroups.com` account as described in
-the [sig creation procedure][]. Once done, contact one of the [Zoom Admins][] to
+the [sig creation procedure]. Once done, contact one of the [Zoom Admins] to
 obtain a Zoom license.
 
 ## Setting up your meeting and moderation
@@ -42,9 +42,9 @@ and others who would intentionally attempt to disrupt your Zoom call.
 
 To create a meeting with **moderation** enabled, ensure the following:
 
--   Have the [latest version][] of the Zoom client installed.
+-   Have the [latest version] of the Zoom client installed.
 -   Be logged in as the leads account associated with the meeting **OR** use the
-    [host key][] to "claim host".
+    [host key] to "claim host".
 -   Configure a meeting setup through the "Meeting" menu in the leads Zoom
     account. **NOTE:** Do **NOT** use the "Personal Meeting ID". This will
     create an "ad-hoc" meeting that is time-bounded and without moderation
@@ -64,7 +64,7 @@ After the meeting has started:
 If you're dealing with a troll or bad actor:
 
 -   Put the troll or bad actor on **hold**. The participant will be put into a
-    [waiting room][] and will not be able to participate in the call until the
+    [waiting room] and will not be able to participate in the call until the
     host removes the hold.
     -   **NOTE:** Depending on your client version this will be called "**Put in
         Waiting Room**" instead of on **hold**.
@@ -75,7 +75,7 @@ If you're dealing with a troll or bad actor:
     remove.
 -   After an action has been taken, use the **lock meeting** feature so that no
     one else can come into the meeting. If that fails, end the call
-    immediately, and contact the [Zoom Admins][] to report the issue.
+    immediately, and contact the [Zoom Admins] to report the issue.
 
 **NOTE:** You can find these actions when clicking on the **more** or **"..."**
 options after scrolling over the participants name/information.
@@ -83,21 +83,21 @@ options after scrolling over the participants name/information.
 Hosts **must** be comfortable with how to use these moderation tools and the
 Zoom settings in general. Make sure whoever is running your meeting is equipped
 with the right knowledge and skills. If you have any questions or concerns,
-reach out to the [Zoom Admins][] and they will be able to provide further
+reach out to the [Zoom Admins] and they will be able to provide further
 guidance and training.
 
 #### Related moderation documentation
 
--   Zoom has [documentation on how to use their moderation tools][].
+-   Zoom has [documentation on how to use their moderation tools].
 -   Members of the _leads@_ group have access to an extensive 
-    [best practices doc][] with screenshots going over the community Zoom best
+    [best practices doc] with screenshots going over the community Zoom best
     practices.
 
 ### Escalating and Reporting a Problem
 
 Issues that cannot be handled via normal moderation, or with the assistance of
-the [Zoom Admins][] should be escalated to the Kubernetes 
-[Code of Conduct Committee][] at conduct@kubernetes.io.
+the [Zoom Admins] should be escalated to the Kubernetes 
+[Code of Conduct Committee] at conduct@kubernetes.io.
 
 To contact the admin group in Slack, ping `@zoom-admins` in the `#sig-contribex`
 Slack channel.
@@ -105,17 +105,17 @@ Slack channel.
 ## Meeting recordings
 
 Chairs and TLs are responsible for posting all update meetings to their playlist
-on YouTube. [Please follow this guideline for more details][].
+on YouTube. [Please follow this guideline for more details].
 
 If a violation has been addressed by a host and it has been recorded by Zoom,
-the video should be edited before being posted on the [Kubernetes channel][].
+the video should be edited before being posted on the [Kubernetes channel].
 
-Contact [SIG Contributor Experience][] if you need help to edit a video
+Contact [SIG Contributor Experience] if you need help to edit a video
 before posting it to the public.
 
 ## Screen sharing guidelines and recommendations
 
-Zoom has [documentation on how to use their screen sharing feature][].
+Zoom has [documentation on how to use their screen sharing feature].
 
 Recommendations:
 
@@ -129,7 +129,7 @@ Recommendations:
 ## Audio/Video quality recommendations
 
 While video conferencing has been a real boon to productivity there are still
-[lots of things that can go wrong][] during a conference video call.
+[lots of things that can go wrong] during a conference video call.
 
 There are some things that are just plain out of your control, but there are
 some things that you can control. Here are some tips if you're just getting into
@@ -142,8 +142,8 @@ favor.
 -   **A dedicated microphone** - This is the number one upgrade you can do.
     Sound is one of those things that can immediately change the quality of
     your call. If you plan on being here for the long haul, something like a
-    [Blue Yeti][] will work great due to the simplicity of using USB
-    audio and having a hardware mute button. Consider a [pop filter][]
+    [Blue Yeti] will work great due to the simplicity of using USB
+    audio and having a hardware mute button. Consider a [pop filter]
     as well if necessary.
 -   **A Video Camera** - A bad image can be worked around if the audio is good.
     Certain models have noise canceling dual-microphones, which are a great
@@ -165,7 +165,7 @@ for which models work best.
 
 ### Pro-tips
 
--   [Join on muted audio and video][] in order to prevent noise to those
+-   [Join on muted audio and video] in order to prevent noise to those
     already in a call.
 -   If you don't have anything to say at that moment, **MUTE**. This is a common
     problem. You can help out a teammate by mentioning it on Zoom chat or
