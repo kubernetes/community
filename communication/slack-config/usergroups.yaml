@@ -171,12 +171,10 @@ usergroups:
     channels:
       - pinniped
     members:
-      - enj
-      - cfryanr
-      - margocrawf
-      - microwavables
       - anjaltelang
-      - shamus
+      - benjaminapetersen
+      - cfryanr
+      - jonasrosland
       - pnbrown
 
   - name: steering-members
