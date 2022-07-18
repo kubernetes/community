@@ -249,6 +249,7 @@ channels:
   - name: kubernetes-streaming
   - name: kubernetes-teachers
   - name: kubernetes-users
+  - name: kubeslice
   - name: kubespray
   - name: kubespray-dev
   - name: kubevirt-dev
