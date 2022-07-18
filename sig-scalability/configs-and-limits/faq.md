@@ -27,6 +27,42 @@ that is set up the same way may have troubles handling small tens of
 QPS if the requests are fairly expensive.
 
 
+### What is the ideal size for API objects we should target?
+
+Technically, the only hard limit that we have is the one of 1.5MB for
+the size of individual objects. That said, approaching that limit is
+definitely not recommended unless absolutely necessary.
+
+In typical usecases, huge majority of objects doesn't exceed ~20KB of
+size and this is the usecase that is best tested and many optimizations
+assume (which are done based on existing tests) silently assume that.
+
+If we look into individual objects larger than 20kB, significant majority
+of cases that we've seen were representing a single pattern of grouping
+multiple "subobjects" into a single object. The best example of that
+from the core Kubernetes is `Endpoints` API, which is effectively grouping
+all endpoints backing a given Kubernetes Service into a single object.
+Those kind of APIs proved to be problematic for multiple different reasons,
+including:
+- the objects become large and even small change (of a single subobject)
+  becomes expensive from the system perspective
+- they become a contention point if different agents are updating different
+  subobjects
+- they become wasteful as we are able to get/watch only full objects and
+  many agents may not need information about all subobjects
+As a result, this pattern should really be avoided.
+In case of `Endpoints` API, we introduce the `EndpointSlice` API and if
+singular objects are problematic for your usecase, this is the pattern
+you should explore.
+
+So from scalability/performance perspective, the rule of thumb can be
+summarized as:
+- try to keep your object size below ~20kB
+- if really needed, you can get to 100kB if it's not changing frequently
+- if you can't keep your object size below 100kB, reach out to SIG
+  Scalability and discuss the usecase to see how we can make it performant
+
+
 ### How do you setup clusters for scalability testing?
 
 We are testing Kubernetes on two levels of scale: 100 nodes and 5000 nodes.
