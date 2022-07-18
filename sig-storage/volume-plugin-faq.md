@@ -47,8 +47,7 @@ One of the goals of SIG Storage is to eventually have a CSI-compatible plugin fo
 For more details on that effort see:
 
 *   https://github.com/kubernetes/enhancements/issues/625
-*   https://github.com/kubernetes/community/blob/master/contributors/design-proposals/storage/csi-migration.md
-*   https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/20190129-csi-migration.md
+*   https://kubernetes.io/blog/2021/12/10/storage-in-tree-to-csi-migration-status-update/
 
 ## Container Storage Interface (CSI)
 
