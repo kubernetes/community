@@ -388,6 +388,7 @@ channels:
   - name: sig-contribex
   - name: sig-contribex-meetings
   - name: sig-contribex-comms
+  - name: sig-contribex-elections
   - name: sig-contribex-triage
     archived: true
   # sig-docs* channels are defined in sig-docs/
