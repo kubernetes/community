@@ -194,6 +194,18 @@ procedures:
   - Slack: emoji audit
   - (More per-property steps to be added as we learn them)
 
+### Escalation to Code of Conduct Committee Procedures
+
+In the event of a violation of the Code of Conduct, the moderators will use the following procedures to escalate the issue to the Code of Conduct Committee:
+
+If you believe that a poster is violating the Kubernetes Community Code of Conduct, escalate the matter to the [Code of Conduct Committee]. Include the following to the best of your ability in that message:
+
+- A statement of the seriousness of the matter, what is the urgency of response?
+- A statement of the nature of the violation with links to the offensive posts. It is useful to take a screenshot to preserve potentially ephemeral evidence.
+- Include the contents of whatever conversations you have had with the poster in your capacity as moderator that are relevant to this matter.
+- If there are historical details that are relevant also mention them.
+
+
 
 ## Platform Specific Guidelines
 
