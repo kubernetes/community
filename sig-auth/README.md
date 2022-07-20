@@ -22,6 +22,7 @@ The [charter](charter.md) defines the scope and governance of the Auth Special I
 * Secrets Store CSI Meeting: [Thursdays at 8:00 PT (Pacific Time)](https://zoom.us/j/91272289538) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1q74nboAg0GSPcom3kLWCIoWg43Qg3mr306KNL58f2hg/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0PCFJrlpV6_nR_j_3RtnwI).
+* Weekly Issues/PR Triage Meeting: [Mondays at 9:00 PT (Pacific Time)](https://zoom.us/j/264572674) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
 
 ## Leadership
 
