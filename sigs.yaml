@@ -1893,6 +1893,20 @@ sigs:
       name: Tim Hockin
       company: Google
   meetings:
+  - description: Gateway API GAMMA Meeting (APAC Friendly)
+    day: Tuesday
+    time: "15:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/96951309977
+    archive_url: https://docs.google.com/document/d/1s5hQU0CB9ehjFukRmRHQ41f1FA8GX5_1Rv6nHW6NWAA/edit
+  - description: Gateway API GAMMA Meeting (EMEA Friendly)
+    day: Tuesday
+    time: "08:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/96951309977
+    archive_url: https://docs.google.com/document/d/1s5hQU0CB9ehjFukRmRHQ41f1FA8GX5_1Rv6nHW6NWAA/edit
   - description: Gateway API Meeting
     day: Monday
     time: "15:00"
