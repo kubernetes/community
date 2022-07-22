@@ -1,4 +1,5 @@
-# 2021 VOTERS GUIDE - KUBERNETES STEERING COMMITTEE ELECTION
+# 2022 VOTERS GUIDE - KUBERNETES STEERING COMMITTEE ELECTION
+# DRAFT -- INCOMPLETE -- GUIDE IS IN PROGRESS
 
 ## Important Links
 
@@ -31,7 +32,7 @@ member will serve a two (2) year term.
 
 ## Changes
 
-This year is the first year we will be using [Elekto] to conduct the election.
+This year is the second year we will be using [Elekto] to conduct the election.
 Elekto is a new application, commissioned as an internship by the CNCF.  As
 well as having a new web UI, it relies entirely on GitHub Oauth for
 voting, and as such does not use email at all.  Elekto also handles exceptions,
@@ -127,19 +128,19 @@ Examples of contributions that would NOT be considered:
   public announcement is a weekend.
 -->
 
-| Date         | Event                    |
-| ------------ | ------------------------ |
-| August 19    | Steering Committee selects Election Committee |
-| September 28 | Announcement of Election and publication of voters.md |
-| September XX | Steering Committee Meeting with Q+A with the candidates and community |
-| October 14    | All candidate bios due by 0000 UTC (5pm PST) |
-| October 18    | Election Begins via email ballots |
-| October 31   | Deadline to submit voter exception requests |
-| November 4   | Election Closes by 0000 UTC (5pm PST) |
-| November 5  | Private announcement of Results to SC members not up for election |
-| November 7   | Private announcement of Results to all candidates |
-| November 8   | Public announcement of Results at Public Steering Committee Meeting |
-| November 10?   | Election Retro |
+| Date    | Event                                                                 |
+|:--------|:----------------------------------------------------------------------|
+| July 22 | Steering Committee selects Election Committee                         |
+|         | Announcement of Election and publication of voters.md                 |
+|         | Steering Committee Meeting with Q+A with the candidates and community |
+|         | All candidate bios due by 0000 UTC (5pm PST)                          |
+|         | Election Begins via email ballots                                     |
+|         | Deadline to submit voter exception requests                           |
+|         | Election Closes by 0000 UTC (5pm PST)                                 |
+|         | Private announcement of Results to SC members not up for election     |
+|         | Private announcement of Results to all candidates                     |
+|         | Public announcement of Results at Public Steering Committee Meeting   |
+|         | Election Retro                                                        |
 
 ## Candidacy Process
 
@@ -202,8 +203,8 @@ All biographical statements should be brief and to the point, with a guideline o
 **300 words** total for all text. If your statement is excessively long, you 
 will be asked to abbreviate it before it is merged.
 
-Please refer to the [2020 candidate bios] for examples of content, although
-the formatting should support the new templates. Biography statements are optional.
+Please refer to the [2021 candidate bios] for examples of content.
+Biography statements are optional.
 
 Missed deadlines by the candidates will be addressed by the election committee
 on a per case basis to determine eligibility.
@@ -223,7 +224,7 @@ roles you may hold.
 
 Contributors may check their voter eligibility at any time once the election
 process starts, by going to the [election app], logging in, navigating to
-the 2021 election, and seeing if the screen there says that they are eligible.
+the 2022 election, and seeing if the screen there says that they are eligible.
 That screen takes its data from the [voters.yaml] file.
 
 If the app does not say that you are eligible, because you have worked on 
@@ -248,11 +249,15 @@ email to kubernetes-dev, but no email is required for you to vote.
 
 The Steering Committee has selected the following people as [election officers]:
 
-- Alison Dowdney, @alisondy
-- Josh Berkus, @jberkus
 - Noah Kantrowitz, @coderanger
+- Davanum Srinivas, @dims
+- Kaslin Fields, @kaslin
 
-In addition, Arnaud M is serving as our Infra Team liaison for this election.
+In addition, the following contributors are helping with the election:
+
+- Alternate Officer: Bridget Kromhout, @bridgetkromhout
+- Infra Liaison: TBD
+- Contributor Comms Liaison: TBD
 
 Please direct any questions via email to <election@k8s.io>.
 
@@ -286,7 +291,7 @@ Nominees may be found in the [election app].
 [pledge to recuse]: https://github.com/kubernetes/steering/blob/master/elections.md#steering-committee-and-election-officer-recusal
 
 [Condorcet]: https://en.wikipedia.org/wiki/Condorcet_method
-[2020 candidate bios]: https://github.com/kubernetes/community/tree/master/elections/steering/2020
+[2021 candidate bios]: https://github.com/kubernetes/community/tree/master/elections/steering/2021
 [election officers]: https://github.com/kubernetes/community/tree/master/elections#election-officers
 [Kubernetes Community Meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
 [Kubernetes Blog]: https://kubernetes.io/blog/
@@ -297,8 +302,8 @@ Nominees may be found in the [election app].
 [Elekto]: https://elekto.dev
 [election app]: https://elections.k8s.io
 [Elekto voting documentation]: https://elekto.dev/docs/voting/
-[voters.yaml]: https://github.com/kubernetes/community/blob/master/elections/steering/2021/voters.yaml
-[election page]: https://elections.k8s.io/app/elections/steering/2021
-[voter exception form]: https://elections.k8s.io/app/elections/steering/2021/exception
+[voters.yaml]: https://github.com/kubernetes/community/blob/master/elections/steering/2022/voters.yaml
+[election page]: https://elections.k8s.io/app/elections/steering---2022
+[voter exception form]: https://elections.k8s.io/app/elections/steering---2022/exception
 [public Steering Committee Meeting]: https://github.com/kubernetes/steering/#meetings
 [Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2021#eligibility

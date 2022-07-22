@@ -148,8 +148,8 @@ Name | Organization/Company | GitHub
 [CIVS]: http://civs.cs.cornell.edu/
 [Schulze method]: https://en.wikipedia.org/wiki/Schulze_method
 
-[2017 candidate bios]: https://github.com/kubernetes/community/tree/master/events/elections/2017
-[election officers]: https://github.com/kubernetes/community/tree/master/events/elections#election-officers
+[2017 candidate bios]: https://github.com/kubernetes/community/tree/master/elections/steering/2017
+[election officers]: https://github.com/kubernetes/community/tree/master/elections#election-officers
 [Kubernetes Community Meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
 [Kubernetes Blog]: https://kubernetes.io/blog/
-[eligible voters]: https://github.com/kubernetes/community/blob/master/events/elections/2018/voters.md
+[eligible voters]: https://github.com/kubernetes/community/blob/master/elections/steering/2018/voters.md

@@ -103,7 +103,7 @@ When a candidate qualifies, post a comment on the issue based on the Candidate Q
   - Mail results of the election to the incumbent Steering Committee members who are NOT running in the election
   - Steering Committee announces the results to the entire community at once at the end of the election, currently during the Community Meeting
   - Submit election results blog to the official Kubernetes blog after the announcement
-- Push election results into the community repo under events/elections _after_ the Steering Commmittee has announced the results, typically a week after the election
+- Push election results into the community repo under elections _after_ the Steering Commmittee has announced the results, typically a week after the election
 
 ## Roles and Responsibilities:
 

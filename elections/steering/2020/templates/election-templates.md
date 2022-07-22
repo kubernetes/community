@@ -36,15 +36,15 @@ The Kubernetes Steering Committee Election begins today/is underway! Here's what
     Ballots are going out today via email. Expect a mail from "Kubernetes Election Officers (CIVS poll supervisor) <ci...@cs.cornell.edu>" with a subject like "Poll: Kubernetes Steering Committee Election 2020"
         Email can be unreliable, so generally expect them this morning, if you haven't received one by the end of the day let us know, sending you a new ballot is easy for us.
 
-The candidates and links to their bios are all available here: https://git.k8s.io/community/events/elections/2020
+The candidates and links to their bios are all available here: https://git.k8s.io/community/elections/steering/2020
 
 // Voting
 
-- You should check to see if you are in voters.md. Your github handle MUST BE IN THIS DOCUMENT to vote: https://github.com/kubernetes/community/blob/master/events/elections/2020/voters.md
+- You should check to see if you are in voters.md. Your github handle MUST BE IN THIS DOCUMENT to vote: https://github.com/kubernetes/community/blob/master/elections/steering/2020/voters.md
 
 - If you feel you have made enough contributions to be able to vote but you are NOT in voters.md, you need to fill out this form by XXX: https://www.surveymonkey.com/r/k8s-sc-election-2019
 
-- If you are planning on running for Steering Committee please see this section of the documentation, you need to PR your biography into the repo by XXX: https://github.com/kubernetes/community/tree/master/events/elections/2019#candidacy-process
+- If you are planning on running for Steering Committee please see this section of the documentation, you need to PR your biography into the repo by XXX: https://github.com/kubernetes/community/tree/master/elections/steering/2019#candidacy-process
 
 
 // Schedule
@@ -59,7 +59,7 @@ The next deadline is XXX , you have until then to complete your ballot. If you h
 
 // Resources
 
-Voters Guide - https://git.k8s.io/community/events/elections/2020
+Voters Guide - https://git.k8s.io/community/elections/steering/2020
 Steering Committee -  https://git.k8s.io/steering
 Steering Committee Charter - https://git.k8s.io/steering/charter.md
 Election Process - https://git.k8s.io/steering/elections.md
@@ -71,9 +71,9 @@ If you have questions, please feel free to ask on the list; otherwise, you can r
 
 ## Election Poll Header
 
-Welcome to the 2020 annual Kubernetes Steering Committee election.  More information, including candidates, links to candidate bios, deadlines and procedures, can be found <a href="https://github.com/kubernetes/community/tree/master/events/elections/2020">on the 2020 election page.</a>
+Welcome to the 2020 annual Kubernetes Steering Committee election.  More information, including candidates, links to candidate bios, deadlines and procedures, can be found <a href="https://github.com/kubernetes/community/tree/master/elections/steering/2020">on the 2020 election page.</a>
 <br /><br />
-All eligible <a href="https://github.com/kubernetes/community/blob/master/events/elections/2020/voters.md">voters</a> for this election should have received individual ballots by email.  Please do not use a ballot that was forwarded to you by another contributor, as that will invalidate your vote.
+All eligible <a href="https://github.com/kubernetes/community/blob/master/elections/steering/2020/voters.md">voters</a> for this election should have received individual ballots by email.  Please do not use a ballot that was forwarded to you by another contributor, as that will invalidate your vote.
 <br /><br />
 The Steering Committee Election is a preference election.  Please arrange the candidates in the order you would prefer them.  Three members of the committee will be elected this year.  PLEASE NOTE: "No opinion" is also a voting option if you do not feel comfortable ranking every single candidate.
 <br /><br />
