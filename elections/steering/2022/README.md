@@ -79,6 +79,9 @@ Eligibility for voting in 2021 is defined as:
   Contributions include GitHub events like creating issues, creating PRs,
   reviewing PRs, commenting on issues, etc. For full details see
   [the SQL query used by devstats for developer activity counts][devstats-sql].
+  
+* Full members of the Code of Conduct Committee (CoCC) and Security Response Committee
+  (SRC), as listed in [SIGs.yaml], regardless of contribution count.
 
 * People who have submitted the [voter exception form] and are accepted by
   the election committee.
@@ -307,3 +310,4 @@ Nominees may be found in the [election app].
 [voter exception form]: https://elections.k8s.io/app/elections/steering---2022/exception
 [public Steering Committee Meeting]: https://github.com/kubernetes/steering/#meetings
 [Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2021#eligibility
+[SIGs.yaml]: https://github.com/kubernetes/community/tree/master/sigs.yaml
