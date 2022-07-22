@@ -164,10 +164,10 @@ the [Steering Committee Election Charter]
 [CIVS]: http://civs.cs.cornell.edu/
 [IRV method]: https://www.daneckam.com/?p=374
 
-[2018 candidate bios]: https://github.com/kubernetes/community/tree/master/events/elections/2018
-[election officers]: https://github.com/kubernetes/community/tree/master/events/elections#election-officers
+[2018 candidate bios]: https://github.com/kubernetes/community/tree/master/elections/steering/2018
+[election officers]: https://github.com/kubernetes/community/tree/master/elections#election-officers
 [Kubernetes Community Meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
 [Kubernetes Blog]: https://kubernetes.io/blog/
-[eligible voters]: https://github.com/kubernetes/community/blob/master/events/elections/2019/voters.md
+[eligible voters]: https://github.com/kubernetes/community/blob/master/elections/steering/2019/voters.md
 [voter exemption form]: https://www.surveymonkey.com/r/k8s-sc-election-2019
 [voters.md]: ./voters.md

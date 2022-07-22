@@ -2,7 +2,7 @@
 
 ### Eligible Voters List
 
-The eligible voter process can be found in the [2020 elections folder](/events/elections/2020/README.md).
+The eligible voter process can be found in the [2020 elections folder](/elections/steering/2020/README.md).
 
 - **2020-08-02** - List of eligible voters derived by taking an export of Devstats contributions provided by Lukasz Gryglicki, combined with Org Members list taken from github.com/kubernetes/org via git clone
 - **2020-08-03** - 68 voters who were excluded due to upper casing mismatches added to voters file
