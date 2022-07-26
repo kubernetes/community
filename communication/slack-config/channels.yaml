@@ -448,6 +448,7 @@ channels:
   - name: ug-vmware
   - name: undistro
   - name: vcluster
+  - name: velero-data-mover
   - name: velero-dev
   - name: velero-users
     id: C6VCGP4MT
