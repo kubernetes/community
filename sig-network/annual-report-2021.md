@@ -7,7 +7,7 @@
 - [Dual-stack IPv4/IPv6 networking feature reaches GA](https://kubernetes.io/blog/2021/12/08/dual-stack-networking-ga/) 
 - [KPNG](https://github.com/kubernetes-sigs/kpng)
 - [AdminNetworkPolicy KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-network/2091-admin-network-policy)
-- [Gateway API](https://gateway-api.sigs.k8s.io/)
+- Service APIs was renamed to [Gateway API](https://gateway-api.sigs.k8s.io/), has progressed to [v1alpha2](https://gateway-api.sigs.k8s.io/blog/2021/introducing-v1alpha2/), and is now supported by a dozen [implementations](https://gateway-api.sigs.k8s.io/implementations).
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
