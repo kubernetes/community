@@ -11,7 +11,7 @@
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
-- Gateway API: https://gateway-api.sigs.k8s.io/
+- [Gateway API](https://gateway-api.sigs.k8s.io/) has defined its own [GEP process](https://gateway-api.sigs.k8s.io/contributing/gep/) for tracking enhancements. See below for some 2021 highlights. The group is currently working towards its upcoming [v1beta1 milestone](https://github.com/kubernetes-sigs/gateway-api/issues?q=is%3Aopen+is%3Aissue+milestone%3Av1beta1).
 
 3. KEP work in 2021:
 
