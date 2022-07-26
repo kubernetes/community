@@ -131,19 +131,19 @@ Examples of contributions that would NOT be considered:
   public announcement is a weekend.
 -->
 
-| Date    | Event                                                                 |
-|:--------|:----------------------------------------------------------------------|
-| July 22 | Steering Committee selects Election Committee                         |
-|         | Announcement of Election and publication of voters.md                 |
-|         | Steering Committee Meeting with Q+A with the candidates and community |
-|         | All candidate bios due by 0000 UTC (5pm PST)                          |
-|         | Election Begins via email ballots                                     |
-|         | Deadline to submit voter exception requests                           |
-|         | Election Closes by 0000 UTC (5pm PST)                                 |
-|         | Private announcement of Results to SC members not up for election     |
-|         | Private announcement of Results to all candidates                     |
-|         | Public announcement of Results at Public Steering Committee Meeting   |
-|         | Election Retro                                                        |
+| Date                    | Event                                                                 |
+|:------------------------|:----------------------------------------------------------------------|
+| Friday, July 22         | Steering Committee selects Election Committee                         |
+| Monday, August 15       | Announcement of Election and publication of voters.md                 |
+| ???, August ??          | Steering Committee Meeting with Q+A with the candidates and community |
+| Friday, September 2     | All candidate bios due by 0000 UTC (5pm PST)                          |
+| Tuesday, September 6    | Election Begins via email ballots                                     |
+| Friday, September 16    | Deadline to submit voter exception requests                           |
+| Sunday, September 25    | Election Closes by 0000 UTC (5pm PST)                                 |
+| Monday, September 26    | Private announcement of Results to SC members not up for election     |
+| Wednesday, September 28 | Private announcement of Results to all candidates                     |
+| Thursday, September 29  | Public announcement of Results at Public Steering Committee Meeting   |
+| Tuesday, October 4 ???  | Election Retro                                                        |
 
 ## Candidacy Process
 
@@ -169,11 +169,11 @@ nomination on GitHub, as +1s via email will not count. Here's an example email:
 **issue** saying something like "I accept the nomination".
 
 4. Finally, the candidate closes the **issue** (`#NNN`) by opening a Pull Request
-to add their bio (see below). The PR body must contain the text `Fixes #NNN` to 
+to add their bio (see below). The PR body must contain the text `Fixes #NNN` to
 automatically close the issue once the PR is merged.
 
 5. Create the PR for your bio by copying the `nomination-template.md` file in
-this directory, and creating a new file titled `candidate-githubid.md`.  Fill 
+this directory, and creating a new file titled `candidate-githubid.md`.  Fill
 out all the fields in the template, but avoid making and format changes.
 
 **Endorsement**
@@ -202,8 +202,8 @@ directory with their platform and intent to run. This PR will copy `nomination-t
 to a file named `candidate-YourName.md`.  It will fill out the fields in
 that template.
 
-All biographical statements should be brief and to the point, with a guideline of around 
-**300 words** total for all text. If your statement is excessively long, you 
+All biographical statements should be brief and to the point, with a guideline of around
+**300 words** total for all text. If your statement is excessively long, you
 will be asked to abbreviate it before it is merged.
 
 Please refer to the [2021 candidate bios] for examples of content.
@@ -230,11 +230,11 @@ process starts, by going to the [election app], logging in, navigating to
 the 2022 election, and seeing if the screen there says that they are eligible.
 That screen takes its data from the [voters.yaml] file.
 
-If the app does not say that you are eligible, because you have worked on 
-Kubernetes in a way that is NOT reflected in GitHub contributions, you can use 
+If the app does not say that you are eligible, because you have worked on
+Kubernetes in a way that is NOT reflected in GitHub contributions, you can use
 the exception form built into the same app to ask to participate in the election.
 
-Elections will be held using time-limited [Condorcet] ranking on [Elekto]. 
+Elections will be held using time-limited [Condorcet] ranking on [Elekto].
 The most preferred candidates will be elected to the open seats.
 
 Employer diversity is encouraged, and thus maximal representation will be
