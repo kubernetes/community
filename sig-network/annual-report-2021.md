@@ -33,7 +33,17 @@
 
      - [1435 - Mixed protocol LB](https://github.com/kubernetes/enhancements/tree/master/keps/sig-network/1435-mixed-protocol-lb)
      - [2595 - Expanded DNS config](https://github.com/kubernetes/enhancements/tree/master/keps/sig-network/2595-expanded-dns-config)
+Gateway API Enhancements:
 
+* v1alpha2 highlights:
+    * Transitioned to new `gateway.networking.k8s.io` API group to reflect its status as an official Kubernetes API.
+    * [GEP-724](https://gateway-api.sigs.k8s.io/geps/gep-724/): Simpler Route-Gateway binding.
+    * [GEP-709](https://gateway-api.sigs.k8s.io/geps/gep-709/): Safe cross namespace references.
+    * [GEP-713](https://gateway-api.sigs.k8s.io/geps/gep-713/): Policy attachment.
+* Other notable initiatives:
+    * [GEP-917](https://gateway-api.sigs.k8s.io/geps/gep-917/): Gateway API conformance testing.
+    * [GEP-922](https://gateway-api.sigs.k8s.io/geps/gep-922/): Gateway API conformance versioning.
+    * [Validating admission webhook](https://github.com/kubernetes-sigs/gateway-api/issues/487).
 ## Project health
 
 1. What areas and/or subprojects does your group need the most help with? Any areas with 2 or fewer OWNERs? (link to more details)
