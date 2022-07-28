@@ -80,6 +80,9 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
 ### kueue
 - **Owners:**
   - [kubernetes-sigs/kueue](https://github.com/kubernetes-sigs/kueue/blob/main/OWNERS)
+### kwok
+- **Owners:**
+  - [kubernetes-sigs/kwok](https://github.com/kubernetes-sigs/kwok/blob/main/OWNERS)
 ### scheduler
 - **Owners:**
   - [kubernetes/kubernetes/cmd/kube-scheduler](https://github.com/kubernetes/kubernetes/blob/master/cmd/kube-scheduler/OWNERS)
