@@ -75,4 +75,4 @@ The following are helpful resources for authoring articles:
 
 ## Review Process
 
-This process is initiated in [#sig-contribex-comms](https://kubernetes.slack.com/archives/C03KT3SUJ20) and uses the processes from the sig-docs blog [subproject](/sig-docs/blog-subproject/README.md). Please ask for review from community liaisons on the sig-docs-blog team or let the team in [#sig-contribex-comms](https://kubernetes.slack.com/archives/C03KT3SUJ20) know you need help.
+This process is initiated in [#sig-contribex-comms](https://kubernetes.slack.com/archives/C03KT3SUJ20) and uses the processes from the SIG Docs blog [subproject](/sig-docs/blog-subproject/README.md). Please ask for review from community liaisons on the sig-docs-blog team or let the team in [#sig-contribex-comms](https://kubernetes.slack.com/archives/C03KT3SUJ20) know you need help.
