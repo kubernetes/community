@@ -16,7 +16,7 @@ Other types of content, like Kubernetes capabilities and tutorials, are better s
 
 The quickest way to get involved is to let the team in [#sig-contribex-comms](https://kubernetes.slack.com/archives/C03KT3SUJ20) know that you have an idea for an article.
 
-For now, our official process is to use [SIG-Doc's system](/sig-docs/blog-subproject/README.md), with one change: instead of directly creating the file in the Kubernetes site repository, as instructed abovem, it's initially created in the [contributor-site](https://github.com/kubernetes/contributor-site), in the appropriate folder (i.e. the right year in `contributor-site/content/en/blog/`). This will lead to an initial review process before it gets mirrored to the main Kubernetes site. 
+For now, our official process is to use [SIG Docs' system](/sig-docs/blog-subproject/README.md), with one change: instead of directly creating the file in the Kubernetes site repository, as instructed abovem it's initially created in the [contributor-site](https://github.com/kubernetes/contributor-site), in the appropriate folder (i.e. the right year in `contributor-site/content/en/blog/`). This will lead to an initial review process before it gets mirrored to the main Kubernetes site.
 
 ## Blogger Expectations, Responsibilities, and Info
 
