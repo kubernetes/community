@@ -8,6 +8,7 @@ Social Media leads' contributions further the Contributor Comms team's efforts t
 
 Any Kubernetes contributor can write tweets to be distributed through the twitter handle by utilizing the [kubernetes-sigs/contributor-tweets repo](https://github.com/kubernetes-sigs/contributor-tweets). This repo utilizes the open source [twitter-together](https://github.com/gr2m/twitter-together) project to automate tweeting approved from the @K8sContributor handle. The repo also features automation to convert issues into PRs, to make it easier to create tweets with minimal interaction with Github's PR process.
 
+Do note that tweets targeting the greater Kubernetes community should potentially use the @Kubernetesio account. Tweets using this account must be coordinated with the CNCF. Ownership of @Kubernetesio does not reside within the Contributor Comms team. For any tweets to be coordinated with @Kubernetesio, you will need to make contact with CNCF marketing members in charge of the account. Tweets using the @kubernetesio account are often limited in the content and quantity that may be sent.
 
 ## Minimum Skills and Requirements
 
@@ -17,8 +18,8 @@ Any Kubernetes contributor can write tweets to be distributed through the twitte
 
 ### Expected Time Investment
 
-Team leads: ~3 hours per week.
-Team members: ~1 hour per week.
+Team leads: 3-5 hours per week.
+Team members: 1-3 hour per week.
 
 ## General Expectations
 
@@ -26,6 +27,7 @@ Team members: ~1 hour per week.
 - Be welcoming, be yourself
 - Understanding, communicating, and setting/adjusting [social guidelines](https://github.com/kubernetes/community/blob/master/communication/marketing-team/storytelling-resources/social-guidelines.md)
 - Coordinating work to create tweets, ensuring tweet requests are fulfilled
+- Working with other Contributor Comms leads, such as the Event Coordinator Lead, on social media tasks
 - Approving tweet PRs on [kubernetes-sigs/contributor-tweets](https://github.com/kubernetes-sigs/contributor-tweets)
 - Training new leads
 
