@@ -16,7 +16,20 @@ Other types of content, like Kubernetes capabilities and tutorials, are better s
 
 The quickest way to get involved is to let the team in [#sig-contribex-comms](https://kubernetes.slack.com/archives/C03KT3SUJ20) know that you have an idea for an article.
 
+To reduce the amount of editing done directly in GitHub, a two-stage approach is highly recommended:
+
+1. Create your proposal draft in [Google Docs](https://docs.google.com/) or
+   HackMD (https://hackmd.io), and ask for a review in
+   [#sig-contribex-comms](https://kubernetes.slack.com/archives/C03KT3SUJ20).
+   This will allow easier editing, especially if major changes or restructuring
+   is needed.
+2. Once you have reflected any feedback in the proposal draft, submit the
+   revised article as a Pull Request. Additional changes can still be made
+   during the PR review process, but they should be more about details than
+   major modifications.
+
 For now, our official process is to use [SIG Docs' system](/sig-docs/blog-subproject/README.md), with one change: instead of directly creating the file in the Kubernetes site repository, as instructed abovem it's initially created in the [contributor-site](https://github.com/kubernetes/contributor-site), in the appropriate folder (i.e. the right year in `contributor-site/content/en/blog/`). This will lead to an initial review process before it gets mirrored to the main Kubernetes site.
+
 
 ## Blogger Expectations, Responsibilities, and Info
 
