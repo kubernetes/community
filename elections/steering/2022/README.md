@@ -135,7 +135,8 @@ Examples of contributions that would NOT be considered:
 |:------------------------|:----------------------------------------------------------------------|
 | Friday, July 22         | Steering Committee selects Election Committee                         |
 | Monday, August 15       | Announcement of Election and publication of voters.md                 |
-| ???, August ??          | Steering Committee Meeting with Q+A with the candidates and community |
+| ???, August ??          | Steering Committee Q+A for the candidates                             |
+| Tuesday, August 30      | Candidate nominations due at the end of the day in AoE time           |
 | Friday, September 2     | All candidate bios due at the end of the day in AoE time              |
 | Tuesday, September 6    | Election Begins via email ballots                                     |
 | Friday, September 16    | Deadline to submit voter exception requests                           |
@@ -145,7 +146,7 @@ Examples of contributions that would NOT be considered:
 | Thursday, September 29  | Public announcement of Results at Public Steering Committee Meeting   |
 | Tuesday, October 4 ???  | Election Retro                                                        |
 
-Candidate bio and election close deadlines will be done using Anywhere on Earth timing, meaning it is still valid to submit new bios or votes as long as it is still the last day anywhere on the planet (i.e. at the end of the day in UTC-12).
+Candidate nomination, bio, and election close deadlines will be done using Anywhere on Earth timing, meaning it is still valid to submit new nominations/bios/votes as long as it is still the last day anywhere on the planet (i.e. at the end of that day in UTC-12).
 
 ## Candidacy Process
 
