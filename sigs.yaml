@@ -1512,7 +1512,7 @@ sigs:
     url: https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit
     archive_url: https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit
     recordings_url: https://www.youtube.com/playlist?list=PLAOP7m08QDCWZ7RwGca6cU4vzrOMw3ht7
-  - description: Localization Subgroup Meeting
+  - description: Localization Subproject Meeting
     day: Monday
     time: "15:00"
     tz: UTC
@@ -1579,6 +1579,9 @@ sigs:
   - name: kubernetes-blog
     owners:
     - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
+  - name: localization
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
   - name: reference-docs
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/reference-docs/master/OWNERS
