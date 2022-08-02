@@ -1,7 +1,7 @@
 
 # Kubernetes Volume Plugin FAQ for Storage Vendors
 
-Last Updated: 2022/07/18
+Last Updated: 2022/08/02
 
 **What is Kubernetes volume plugin?**
 
@@ -47,6 +47,7 @@ One of the goals of SIG Storage is to eventually have a CSI-compatible plugin fo
 For more details on that effort see:
 
 *   https://github.com/kubernetes/enhancements/issues/625
+*   https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/625-csi-migration
 *   https://kubernetes.io/blog/2021/12/10/storage-in-tree-to-csi-migration-status-update/
 
 ## Container Storage Interface (CSI)
