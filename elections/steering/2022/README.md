@@ -137,10 +137,10 @@ Examples of contributions that would NOT be considered:
 | Friday, September 2     | All candidate bios due at the end of the day in AoE time              |
 | Tuesday, September 6    | Election Begins via email ballots                                     |
 | Friday, September 16    | Deadline to submit voter exception requests                           |
-| Sunday, September 25    | Election Closes at the end of the day in AoE time                     |
-| Monday, September 26    | Private announcement of Results to SC members not up for election     |
-| Wednesday, September 28 | Private announcement of Results to all candidates                     |
-| Thursday, September 29  | Public announcement of Results at Public Steering Committee Meeting   |
+| Thursday, September 29  | Election Closes at the end of the day in AoE time                     |
+| Friday, September 30    | Private announcement of Results to SC members not up for election     |
+| Sunday, October 2       | Private announcement of Results to all candidates                     |
+| Monday, October 3       | Public announcement of Results at Public Steering Committee Meeting   |
 | Tuesday, October 4 ???  | Election Retro                                                        |
 
 Candidate nomination, bio, and election close deadlines will be done using Anywhere on Earth timing, meaning it is still valid to submit new nominations/bios/votes as long as it is still the last day anywhere on the planet (i.e. at the end of that day in UTC-12).
