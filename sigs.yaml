@@ -2402,6 +2402,9 @@ sigs:
   - name: kueue
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
+  - name: kwok
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kwok/main/OWNERS
   - name: scheduler
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
