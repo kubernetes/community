@@ -361,7 +361,7 @@ Conformance test results, by provider and releases, can be viewed in the
 [testgrid conformance dashboard]. If you wish to contribute test results
 for your provider, please see the [testgrid conformance README]
 
-[kubernetes versioning policy]: /contributors/design-proposals/release/versioning.md#supported-releases-and-component-skew
+[kubernetes versioning policy]: https://git.k8s.io/design-proposals-archive/release/versioning.md#supported-releases-and-component-skew
 [Conformance Test Review board]: https://github.com/orgs/kubernetes/projects/9
 [Conformance test reviewers]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS
 [conformance test requirements]: #conformance-test-requirements

@@ -112,7 +112,7 @@ The general labeling process should be consistent across artifact types.
   referring to a release MAJOR.MINOR `vX.Y` version.
 
   See also
-  [release versioning](/contributors/design-proposals/release/versioning.md).
+  [release versioning](https://git.k8s.io/design-proposals-archive/release/versioning.md).
 
 - *release branch*: Git branch `release-X.Y` created for the `vX.Y` milestone.
 

@@ -23,9 +23,9 @@ progression to augment CRI to serve container metrics to eliminate a separate
 integration point.
 
 *See the [core metrics design
-proposal](/contributors/design-proposals/instrumentation/core-metrics-pipeline.md)
+proposal](https://git.k8s.io/design-proposals-archive/instrumentation/core-metrics-pipeline.md)
 for more information on metrics exposed by Kubelet, and [monitoring
-architecture](/contributors/design-proposals/instrumentation/monitoring_architecture.md)
+architecture](https://git.k8s.io/design-proposals-archive/instrumentation/monitoring_architecture.md)
 for the evolving monitoring pipeline in Kubernetes.*
 
 # Container Metrics

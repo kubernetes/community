@@ -213,7 +213,7 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [SIG Lifecycle]: /sig-wg-lifecycle.md
 [We have them!]: /values.md
 [Kubernetes code of conduct]: /code-of-conduct.md
-[design principles]: /contributors/design-proposals/architecture/principles.md
+[design principles]: https://git.k8s.io/design-proposals-archive/architecture/principles.md
 [scope]: https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
 [community members]: /community-membership.md
 [sig governance]: /committee-steering/governance/sig-governance.md
