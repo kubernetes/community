@@ -2082,6 +2082,9 @@ sigs:
   - name: cri-tools
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
+  - name: kernel-module-management
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kernel-module-management/main/OWNERS
   - name: kubelet
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubelet/OWNERS
@@ -2107,9 +2110,6 @@ sigs:
       slack: security-profiles-operator
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/security-profiles-operator/master/OWNERS
-  - name: special-resource-operator
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/special-resource-operator/main/OWNERS
 - dir: sig-release
   name: Release
   mission_statement: >
