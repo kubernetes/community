@@ -388,7 +388,7 @@ sigs:
     chairs:
     - github: enj
       name: Mo Khan
-      company: VMware
+      company: Microsoft
     - github: mikedanese
       name: Mike Danese
       company: Google
@@ -3355,7 +3355,7 @@ committees:
       company: Google
     - github: enj
       name: Mo Khan
-      company: VMware
+      company: Microsoft
     - github: joelsmith
       name: Joel Smith
       company: Red Hat
