@@ -178,7 +178,8 @@ channels:
   - name: k8spin
   - name: kamaji
   - name: kapitan
-  - name: kcp-prototype
+  - name: kcp-dev
+    id: C021U8WSAFK
   - name: keda
   - name: keda-dev
   - name: keda-docs
