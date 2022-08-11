@@ -85,7 +85,7 @@ for that should be:
 
 Election Officers should be chosen from among regular, trusted contributors to the 
 Kubernetes project, with an eye towards employer, demographic, and geographic
-diversity.
+diversity.  Further requirements can be found in the [Steering Election documentation].
 
 Election Officers are considered part of the Elections Subproject.
 
@@ -114,3 +114,4 @@ meeting.
 [elections app]: https://elections.k8s.io
 [requesting an election]: teams/README.md
 [K8s-Infra]: /sig-k8s-infra/README.md
+[Steering Election documentation]: /elections/steering/README.md
