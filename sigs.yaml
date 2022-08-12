@@ -2109,7 +2109,7 @@ sigs:
     contact:
       slack: security-profiles-operator
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/security-profiles-operator/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/security-profiles-operator/main/OWNERS
 - dir: sig-release
   name: Release
   mission_statement: >
