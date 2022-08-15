@@ -4,6 +4,8 @@ As is now customary, this fall is [Steering Committee](https://github.com/kubern
 
 Instructions on using Elekto can be found [in its docs site](https://elekto.dev/docs/voting/)
 
-If you’d like to vote or run for a seat, all details and next steps are outlined in the [election process doc](https://git.k8s.io/steering/elections.md) and this application. The application will be the single source of truth of information for this cycle. It will be updated live as new bios of candidates get committed. Please pay attention to the [scheduled dates](https://github.com/kubernetes/community/tree/master/elections/steering/2022#schedule):
+If you’d like to vote or run for a seat, all details and next steps are outlined in the [election process doc](https://git.k8s.io/steering/elections.md) and this application. The application will be the single source of truth of information for this cycle. It will be updated live as new bios of candidates get committed.
+
+Please pay attention to the [scheduled dates](https://github.com/kubernetes/community/tree/master/elections/steering/2022#schedule)
 
 Eligibility for voting will be determined by 50 contributions to a Kubernetes project over the past year and [Kubernetes Org membership](https://github.com/kubernetes/community/blob/master/community-membership.md).  Eligible voters will be shown as such by this site when logged in.  If you should be eligible, but are not, you may also [file for an exception](https://elections.k8s.io/app/elections/steering/2022/exception).
