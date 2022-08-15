@@ -73,7 +73,7 @@ Please refer to the [Steering Committee Election Charter] for [Eligibility for c
 Eligibility for voting in 2021 is defined as:
 
 * People who had at least 50 contributions to the Kubernetes project over
-  the past year, according to a snapshot taken 2021-09-15 of the data driving
+  the past year, according to a snapshot taken 2022-08-12 of the data driving
   the [devstats developer activity counts dashboard][devstats-dashboard],
   who are also [Org Members].
   Contributions include GitHub events like creating issues, creating PRs,
