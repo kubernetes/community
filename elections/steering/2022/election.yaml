@@ -1,0 +1,17 @@
+name: 2022 Steering Committee Election
+organization: Kubernetes
+start_datetime: 2022-09-06 00:00:01
+end_datetime: 2022-09-30 11:59:59
+no_winners: 3
+allow_no_opinion: True
+delete_after: True
+show_candidate_fields:
+  - employer
+  - slack
+election_officers:
+  - dims
+  - kaslin
+  - coderanger
+eligibility: Kubernetes Org members with 50 or more contributions in the last year can vote.  See [the election guide](https://github.com/kubernetes/community/tree/master/elections/steering/2022)
+exception_description: Not all contributions are measured by DevStats.  If you have contributions that are not so measured, then please request an exception to allow you to vote via the Elekto application.
+exception_due: 2022-09-17 11:59:59

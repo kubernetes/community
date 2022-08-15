@@ -70,7 +70,7 @@ previous [governance meeting video] which led to this whole process.
 
 Please refer to the [Steering Committee Election Charter] for [Eligibility for candidacy]
 
-Eligibility for voting in 2021 is defined as:
+Eligibility for voting in 2022 is defined as:
 
 * People who had at least 50 contributions to the Kubernetes project over
   the past year, according to a snapshot taken 2022-08-12 of the data driving
@@ -312,5 +312,5 @@ Nominees may be found in the [election app].
 [election page]: https://elections.k8s.io/app/elections/steering---2022
 [voter exception form]: https://elections.k8s.io/app/elections/steering---2022/exception
 [public Steering Committee Meeting]: https://github.com/kubernetes/steering/#meetings
-[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2021#eligibility
+[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2022#eligibility
 [SIGs.yaml]: https://github.com/kubernetes/community/tree/master/sigs.yaml
