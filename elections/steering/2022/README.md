@@ -81,7 +81,8 @@ Eligibility for voting in 2022 is defined as:
   [the SQL query used by devstats for developer activity counts][devstats-sql].
   
 * Full members of the Code of Conduct Committee (CoCC) and Security Response Committee
-  (SRC), as listed in [SIGs.yaml], regardless of contribution count.
+  (SRC), as listed in [SIGs.yaml], at any time between August 2021 and August 2022, 
+  regardless of contribution count.
 
 * People who have submitted the [voter exception form] and are accepted by
   the election committee.
