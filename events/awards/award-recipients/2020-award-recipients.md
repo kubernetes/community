@@ -25,7 +25,7 @@ By Special Interest Group (SIG)
 #### CLI
 
 - Yao Zhou
-- Brian Pursely
+- Brian Pursley
 - Syam Sundar Kirubakaran
 
 #### Cloud Provider 
