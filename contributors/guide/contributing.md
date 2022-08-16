@@ -1,7 +1,7 @@
 ---
-Title: "Contributing to Kubernetes"
-Weight: 4
-Description: |
+title: "Contributing to Kubernetes"
+weight: 4
+description: |
   An entrypoint to getting started with contributing to the Kubernetes project.
 ---
 
