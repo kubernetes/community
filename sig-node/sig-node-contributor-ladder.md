@@ -13,7 +13,7 @@ If you are a community member that wants to suggest changes, please do!
 
 SIG Node welcomes new contributors to the community, help is always desired.  Not all contributors are able to provide sustained contribution, but each contribution is always welcome.  This document intends to capture a leadership path for contributors that intend to provide a sustained contribution to the SIG and its associated code base by taking on reviewer and approver responsibilities at various levels.
 
-Please review the list of [sub-projects](./README.mdmd#subprojects) for areas to engage!
+Please review the list of [sub-projects](./README.md#subprojects) for areas to engage!
 
 ## SIG Node reviewers and approvers
 
