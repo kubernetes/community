@@ -7,40 +7,66 @@ An introduction to using resources with kubectl can be found in [the object mana
 
 **Table of Contents**
 
-
-  - [Types (Kinds)](#types-kinds)
-    - [Resources](#resources)
-    - [Objects](#objects)
-      - [Metadata](#metadata)
-      - [Spec and Status](#spec-and-status)
-        - [Typical status properties](#typical-status-properties)
-      - [References to related objects](#references-to-related-objects)
-      - [Lists of named subobjects preferred over maps](#lists-of-named-subobjects-preferred-over-maps)
-      - [Primitive types](#primitive-types)
-      - [Constants](#constants)
-      - [Unions](#unions)
-    - [Lists and Simple kinds](#lists-and-simple-kinds)
-  - [Differing Representations](#differing-representations)
-  - [Verbs on Resources](#verbs-on-resources)
-    - [PATCH operations](#patch-operations)
-  - [Idempotency](#idempotency)
-  - [Optional vs. Required](#optional-vs-required)
-  - [Defaulting](#defaulting)
-  - [Late Initialization](#late-initialization)
-  - [Concurrency Control and Consistency](#concurrency-control-and-consistency)
-  - [Serialization Format](#serialization-format)
-  - [Units](#units)
-  - [Selecting Fields](#selecting-fields)
-  - [Object references](#object-references)
-  - [HTTP Status codes](#http-status-codes)
-      - [Success codes](#success-codes)
-      - [Error codes](#error-codes)
-  - [Response Status Kind](#response-status-kind)
-  - [Events](#events)
-  - [Naming conventions](#naming-conventions)
-  - [Label, selector, and annotation conventions](#label-selector-and-annotation-conventions)
-  - [WebSockets and SPDY](#websockets-and-spdy)
-  - [Validation](#validation)
+- [Types (Kinds)](#types-kinds)
+  - [Resources](#resources)
+  - [Objects](#objects)
+    - [Metadata](#metadata)
+    - [Spec and Status](#spec-and-status)
+      - [Typical status properties](#typical-status-properties)
+    - [References to related objects](#references-to-related-objects)
+    - [Lists of named subobjects preferred over maps](#lists-of-named-subobjects-preferred-over-maps)
+    - [Primitive types](#primitive-types)
+    - [Constants](#constants)
+    - [Unions](#unions)
+  - [Lists and Simple kinds](#lists-and-simple-kinds)
+- [Differing Representations](#differing-representations)
+- [Verbs on Resources](#verbs-on-resources)
+  - [PATCH operations](#patch-operations)
+- [Idempotency](#idempotency)
+- [Optional vs. Required](#optional-vs-required)
+- [Defaulting](#defaulting)
+  - [Static Defaults](#static-defaults)
+  - [Admission Controlled Defaults](#admission-controlled-defaults)
+  - [Controller-Assigned Defaults (aka Late Initialization)](#controller-assigned-defaults-aka-late-initialization)
+  - [What May Be Defaulted](#what-may-be-defaulted)
+  - [Considerations For PUT Operations](#considerations-for-put-operations)
+- [Concurrency Control and Consistency](#concurrency-control-and-consistency)
+- [Serialization Format](#serialization-format)
+- [Units](#units)
+- [Selecting Fields](#selecting-fields)
+- [Object references](#object-references)
+  - [Naming of the reference field](#naming-of-the-reference-field)
+  - [Referencing resources with multiple versions](#referencing-resources-with-multiple-versions)
+  - [Handling of resources that do not exist](#handling-of-resources-that-do-not-exist)
+  - [Validation of fields](#validation-of-fields)
+  - [Do not modify the referred object](#do-not-modify-the-referred-object)
+  - [Minimize copying or printing values to the referrer object](#minimize-copying-or-printing-values-to-the-referrer-object)
+  - [Object References Examples](#object-references-examples)
+    - [Single resource reference](#single-resource-reference)
+      - [Controller behavior](#controller-behavior)
+    - [Multiple resource reference](#multiple-resource-reference)
+      - [Kind vs. Resource](#kind-vs-resource)
+      - [Controller behavior](#controller-behavior-1)
+    - [Generic object reference](#generic-object-reference)
+      - [Controller behavior](#controller-behavior-2)
+    - [Field reference](#field-reference)
+      - [Controller behavior](#controller-behavior-3)
+- [HTTP Status codes](#http-status-codes)
+    - [Success codes](#success-codes)
+    - [Error codes](#error-codes)
+- [Response Status Kind](#response-status-kind)
+- [Events](#events)
+- [Naming conventions](#naming-conventions)
+  - [Namespace Names](#namespace-names)
+- [Label, selector, and annotation conventions](#label-selector-and-annotation-conventions)
+- [WebSockets and SPDY](#websockets-and-spdy)
+- [Validation](#validation)
+- [Automatic Resource Allocation And Deallocation](#automatic-resource-allocation-and-deallocation)
+- [Representing Allocated Values](#representing-allocated-values)
+  - [When to use a <code>spec</code> field](#when-to-use-a-spec-field)
+  - [When to use a <code>status</code> field](#when-to-use-a-status-field)
+    - [Sequencing operations](#sequencing-operations)
+  - [When to use a different type](#when-to-use-a-different-type)
 
 
 The conventions of the [Kubernetes API](https://kubernetes.io/docs/api/) (and related APIs in the
@@ -742,51 +768,181 @@ have a built-in `nil` value.
 
 ## Defaulting
 
-Default resource values are API version-specific, and they are applied during
-the conversion from API-versioned declarative configuration to internal objects
-representing the desired state (`Spec`) of the resource. Subsequent GETs of the
-resource will include the default values explicitly.
+In general we want default values to be explicitly represented in our APIs,
+rather than asserting that "unspecified fields get the default behavior".  This
+is important so that:
+ - default values can evolve and change in newer API versions
+ - the stored configuration depicts the full desired state, making it easier
+   for the system to determine how to achieve the state, and for the user to
+   know what to anticipate
 
-Incorporating the default values into the `Spec` ensures that `Spec` depicts the
-full desired state so that it is easier for the system to determine how to
-achieve the state, and for the user to know what to anticipate.
+There are 3 distinct ways that default values can be applied when creating or
+updating (including patch and apply) a resource:
+
+ 1. static: based on the requested API version and possibly other fields in the
+    resource, fields can be assigned values during the API call
+ 2. admission control: based on the configured admission controllers and
+    possibly other state in or out of the cluster, fields can be assigned
+    values during the API call
+ 3. controllers: arbitrary changes (within the bounds of what is allowed) can
+    be made to a resource after the API call has completed
+
+Some care is required when deciding which mechanism to use and managing the
+semantics.
+
+### Static Defaults
+
+Static default values are specific to each API version.  The default field
+values applied when creating an object with the "v1" API may be different than
+the values applied when using the "v2" API.  In most cases, these values are
+defined as literal values by the API version (e.g. "if this field is not
+specified it defaults to 0").
+
+In some cases, these values may be conditional on or deterministically derived
+from other fields (e.g. "if otherField is X then this field defaults to 0" or
+"this field defaults to the value of otherField").  Note that such derived
+defaults present a hazard in the face of updates - if the "other" field
+changes, the derived field may have to change, too.  The static defaulting
+logic is unaware of updates and has no concept of "previous value", which means
+this inter-field relationship becomes the user's problem - they must update
+both the field they care about and the "other" field.
+
+In very rare cases, these values may be allocated from some pool or determined
+by some other method (e.g. Service's IP and IP-family related fields need to
+consider other configuration settings).
+
+These values are applied synchronously by the API server when decoding
+versioned data.  For CREATE and UPDATE operations this is fairly
+straight-forward - when the API server receives a (versioned) request, the
+default values are immediately applied before any further processing.  When the
+API call completes, all static defaults will have been set and stored.
+Subsequent GETs of the resource will include the default values explicitly.
+However, static defaults also apply when an object is read from storage (i.e.
+GET operations).  This means that when someone GETs an "older" stored object,
+any fields which have been added to the API since that object was stored will
+be defaulted and returned according to the API version that is stored.
+
+Static defaults are the best choice for values which are logically required,
+but which have a value that works well for most users.  Static defaulting
+must not consider any state except the object being operated upon (and the
+complexity of Service API stands as an example of why).
 
 Default values can be specified on a field using the `+default=` tag. Primitives
 will have their values directly assigned while structs will go through the
 JSON unmarshalling process. Fields that do not have an `omitempty` json tag will
 default to the zero value of their corresponding type if no default is assigned.
 
-Refer to [defaulting docs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#defaulting) for more information.
+Refer to [defaulting docs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#defaulting)
+for more information.
 
-API version-specific default values are set by the API server.
+### Admission Controlled Defaults
 
-## Late Initialization
+In some cases, it is useful to set a default value which is not derived from
+the object in question.  For example, when creating a PersistentVolumeClaim,
+the storage class must be specified.  For many users, the best answer is
+"whatever the cluster admin has decided for the default".  StorageClass is a
+different API than PersistentVolumeClaim, and which one is denoted as the
+default may change at any time.  Thus this is not eligible for static
+defaulting.
+
+Instead, we can provide a built-in admission controller or a
+MutatingWebhookConfiguration.  Unlike static defaults, these may consider
+external state (such as annotations on StorageClass objects) when deciding
+default values, and must handle things like race conditions (e.g. a
+StorageClass is designated the default, but the admission controller has not
+yet seen that update).  These admission controllers are strictly optional and
+can be disabled.  As such, fields which are initialized this way must be
+strictly optional.
+
+Like static defaults, these are run synchronously to the API operation in
+question, and when the API call completes, all static defaults will have been
+set.  Subsequent GETs of the resource will include the default values
+explicitly.
+
+### Controller-Assigned Defaults (aka Late Initialization)
 
 Late initialization is when resource fields are set by a system controller
-after an object is created/updated.
+after an object is created/updated (asynchronously).  For example, the
+scheduler sets the `pod.spec.nodeName` field after the pod is created.  It's
+a stretch to call this "defaulting" but since it is so common and useful, it is
+included here.
 
-For example, the scheduler sets the `pod.spec.nodeName` field after the pod is
-created.
+Like admission controlled defaults, these controllers may consider external
+state when deciding what values to set, must handle race conditions, and can be
+disabled.  Fields which are initialized this way must be strictly optional
+(meaning observers will see the object without these fields set, and that is
+allowable and semantically correct).
 
-Late-initializers should only make the following types of modifications:
+Like all controllers, care must be taken to not clobber unrelated fields or
+values (e.g. in an array).  Using one of the patch or apply mechanisms is
+recommended to facilitate composition and concurrency of controllers.
+
+### What May Be Defaulted
+
+All forms of defaulting should only make the following types of modifications:
  - Setting previously unset fields
  - Adding keys to maps
  - Adding values to arrays which have mergeable semantics
-(`patchStrategy:"merge"` attribute in the type definition).
+   (`patchStrategy:"merge"` attribute in the type definition)
 
-These conventions:
- 1. allow a user (with sufficient privilege) to override any system-default
- behaviors by setting the fields that would otherwise have been defaulted.
- 1. enables updates from users to be merged with changes made during late
-initialization, using strategic merge patch, as opposed to clobbering the
-change.
- 1. allow the component which does the late-initialization to use strategic
-merge patch, which facilitates composition and concurrency of such components.
+In particular we never want to change or override a value that was provided by
+the user.  If they requested something invalid, they should get an error.
 
-Although the apiserver Admission Control stage acts prior to object creation,
-Admission Control plugins should follow the Late Initialization conventions
-too, to allow their implementation to be later moved to a 'controller', or to
-client libraries.
+These rules ensure that:
+ 1. a user (with sufficient privilege) can override any system-default
+    behaviors by explicitly setting the fields that would otherwise have been
+    defaulted
+ 1. updates from users can be merged with default values
+
+### Considerations For PUT Operations
+
+Once an object has been created and defaults have been applied, it's very
+common for updates to happen over time.  Kubernetes offers several ways of
+updating an object which preserve existing values in fields other than those
+being updated (e.g. strategic merge patch and server-side apply).  There is,
+however, a less obvious way of updating objects which can have bad interactions
+with default values - PUT (aka `kubectl replace`).
+
+The goal is that, for a given input (e.g. YAML file), PUT on an existing object
+should produce the same result as if you used that input to create the object.
+Calling PUT a second time with the same input should be idempotent and should
+not change the resource.  Even a read-modify-write cycle is not a perfect
+solution in the face of version skew.
+
+When an object is updated with a PUT, the API server will see the "old" object
+with previously assigned defaults and the "new" object with newly assigned
+defaults.  For static defaults this can be a problem if the CREATE and the PUT
+used different API versions.  For example, "v1" of an API might default a field
+to `false`, while "v2" defaults it to `true`.  If an object was created via API
+v1 (field = `false`) and then replaced via API v2, the field will attempt to
+change to `true`.  This can also be a problem when the values are allocated or
+derived from a source outside of the object in question (e.g. Service IPs).
+
+For some APIs this is acceptable and actionable.  For others, this may be
+disallowed by validation.  In the latter case, the user will get an error about
+an attempt to change a field which is not even present in their YAML.  This is
+especially dangerous when adding new fields - an older client may not even know
+about the existence of the field, making even a read-modify-write cycle fail.
+While it is "correct" (in the sense that it is really what they asked for with
+PUT), it is not helpful and is a bad UX.
+
+When adding a field with a static or admission controlled default, this must be
+considered.  If the field is immutable after creation, consider adding logic to
+manually "patch" the value from the "old" object into the "new" one when it has
+been "unset", rather than returning an error or allocating a different value
+(e.g.  Service IPs).  This will very often be what the user meant, even if it
+is not what they said.  This may require setting the default in a different way
+(e.g.  in the registry code which understands updates instead of in the
+versioned defaulting code which does not).  Be careful to detect and report
+legitimate errors where the "new" value is specified but is different from the
+"old" value.
+
+For controller-defaulted fields, the situation is even more unpleasant.
+Controllers do not have an opportunity to "patch" the value before the API
+operation is committed.  If the "unset" value is allowed then it will be saved,
+and any watch clients will be notified.  If the "unset" value is not allowed or
+mutations are otherwise disallowed, the user will get an error, and there's
+simply nothing we can do about it.
 
 ## Concurrency Control and Consistency
 
