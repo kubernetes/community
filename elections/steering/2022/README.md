@@ -158,7 +158,7 @@ Candidate nomination, bio, and election close deadlines will be done using Anywh
 If you want to nominate someone else, you may do so, but PLEASE talk to them
 first.
 
-2. After creating the issue, send an email to kubernetes-dev@googlegroups.com
+2. After creating the issue, send an email to dev@kubernetes.io
 with a link to the issue. The subject line of the email should be same as
 the title of the issue. This email should encourage people to second your
 nomination on GitHub, as +1s via email will not count. Here's an example email:
