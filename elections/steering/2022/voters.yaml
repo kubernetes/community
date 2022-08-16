@@ -11,7 +11,7 @@
 # History:
 # 2022-08-13: Initial voter list prepared using devstats data provided Lukasz Gryglicki
 #   and current organization membership status.
-# 2022-08-15: Add incoing CoCC members and exception link.
+# 2022-08-15: Add incoming CoCC members and exception link.
 #
 eligible_voters:
 - 196Ikuchil
