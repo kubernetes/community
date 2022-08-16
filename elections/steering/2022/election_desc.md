@@ -8,4 +8,4 @@ If you’d like to vote or run for a seat, all details and next steps are outlin
 
 Please pay attention to the [scheduled dates](https://github.com/kubernetes/community/tree/master/elections/steering/2022#schedule).
 
-Eligibility for voting will be determined by 50 contributions to a Kubernetes project over the past year and [Kubernetes Org membership](https://github.com/kubernetes/community/blob/master/community-membership.md).  Eligible voters will be shown as such by this site when logged in.  If you should be eligible, but are not, you may also [file for an exception](https://elections.k8s.io/app/elections/steering/2022/exception).
+Eligibility for voting will be determined by 50 contributions to a Kubernetes project over the past year and [Kubernetes Org membership](https://github.com/kubernetes/community/blob/master/community-membership.md).  Eligible voters will be shown as such by this site when logged in.  If you should be eligible, but are not, you may also [file for an exception](https://elections.k8s.io/app/elections/steering---2022/exception).
