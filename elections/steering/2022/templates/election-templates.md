@@ -17,7 +17,7 @@ If you would like to nominate yourself or someone else for one of the three avai
 
 ## Exceptions
 
-The full list of current voters by GitHub username is posted in the election repository: https://github.com/kubernetes/community/blob/master/events/elections/2022/voters.yaml [4]
+The full list of current voters by GitHub username is posted in the election repository: https://github.com/kubernetes/community/blob/master/elections/steering/2022/voters.yaml [4]
 
 The requirements for voting are to have had at least 50 project contributions in the last year and being a current member of a Kubernetes GitHub organization. We do our best to source contribution data from many areas however we know that many types of contributions to the project are difficult to measure and we apologize for any not counted. If we've missed you for any reason, please file an exception request[3] and we'll take a look as soon as possible.
 
@@ -47,7 +47,8 @@ We will be posting regular updates to dev@kubernetes during the election as well
 
 [3] Exception Request: https://elections.k8s.io/app/elections/2022/exception - form to fill out to get added as a voter if we've missed you
 
-[4] Voters List: https://github.com/kubernetes/community/blob/master/events/elections/2022/voters.yaml - GitHub usernames for everyone qualified to vote in this election
+[4] Voters List: https://github.com/kubernetes/community/blob/master/elections/steering/2022/voters.yaml - GitHub usernames for everyone qualified to vote in this election
+
 [5] Elekto: https://elekto.dev - Our elections platform
 
 Thank you from all your election officers. If you have any questions, you can reach us via election@k8s.io, or message us on Slack any time.
