@@ -2665,14 +2665,14 @@ sigs:
     description: |
       An experimental e2e testing framework for Kubernetes clusters.
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/e2e-framework/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/e2e-framework/main/OWNERS
   - name: kind
     description: |
       Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
     contact:
       slack: kind
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/kind/main/OWNERS
   - name: kubetest2
     description: |
       Kubetest2 is the framework for launching and running end-to-end tests on kubernetes.
