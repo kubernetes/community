@@ -24,7 +24,7 @@ cherry-picked to previous releases must be [triaged], prioritized, LGTM'd, and
 approved by the deadline.
 
 [patch releases]: https://github.com/kubernetes/sig-release/blob/master/release-engineering/versioning.md#patch-releases
-[target dates]: https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md#upcoming-monthly-releases
+[target dates]: https://github.com/kubernetes/website/blob/main/content/en/releases/patch-releases.md#upcoming-monthly-releases
 [triaged]: triage.md
 
 ## Monthly cherry-pick process

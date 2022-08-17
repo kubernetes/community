@@ -12,7 +12,7 @@ Historically Kubelet relied on the [cAdvisor](https://github.com/google/cadvisor
 library, an open-source project hosted in a separate repository, to retrieve
 container metrics such as CPU and memory usage. These metrics are then aggregated
 and exposed through Kubelet's [Summary
-API](https://git.k8s.io/kubernetes/pkg/kubelet/apis/stats/v1alpha1/types.go)
+API](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubelet/pkg/apis/stats/v1alpha1/types.go)
 for the monitoring pipeline (and other components) to consume. Any container
 runtime (e.g., Docker and Rkt) integrated with Kubernetes needed to add a
 corresponding package in cAdvisor to support tracking container and image file
@@ -23,9 +23,9 @@ progression to augment CRI to serve container metrics to eliminate a separate
 integration point.
 
 *See the [core metrics design
-proposal](/contributors/design-proposals/instrumentation/core-metrics-pipeline.md)
+proposal](https://github.com/kubernetes/design-proposals-archive/blob/main/instrumentation/core-metrics-pipeline.md)
 for more information on metrics exposed by Kubelet, and [monitoring
-architecture](/contributors/design-proposals/instrumentation/monitoring_architecture.md)
+architecture](https://github.com/kubernetes/design-proposals-archive/blob/main/instrumentation/monitoring_architecture.md)
 for the evolving monitoring pipeline in Kubernetes.*
 
 # Container Metrics
