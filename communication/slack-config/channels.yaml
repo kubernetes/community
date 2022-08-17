@@ -402,9 +402,10 @@ channels:
   - name: sig-network
   - name: sig-node
   - name: sig-node-bug-scrub
+  - name: sig-node-kmm
+    id: C037RE58RED
   - name: sig-node-rkt
     archived: true
-  - name: sig-node-sro
   - name: sig-node-swap
   - name: sig-scalability
   - name: sig-scheduling
