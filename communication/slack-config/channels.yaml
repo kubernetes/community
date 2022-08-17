@@ -337,6 +337,7 @@ channels:
   - name: openstack-helm
   - name: openstack-kolla
   - name: operator-builder
+  - name: operator-framework-community
   - name: operator-sdk-dev
   - name: ops-status
     archived: true
