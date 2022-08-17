@@ -28,7 +28,7 @@ Here are a few suggestions or ideas that make for a good award nominee:
    - Remember that non-code contributions are important! 
 - Community Input
   - Leads should take input from other SIG members, larger SIGs might consider mentioning the awards ahead of time to allow members to communicate nominations to leads. 
-    - Some examples of taking community input from SIG memebers are:
+    - Some examples of taking community input from SIG members are:
       - A call for nominations on the SIG's mailing list, SIG's Slack channel, on SIG meetings
       - A vote on the SIG's mailing list, SIG's Slack channel, on SIG meetings
 - Celebrate the Individuals as people
