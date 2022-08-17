@@ -3301,21 +3301,21 @@ committees:
   label: code-of-conduct
   leadership:
     chairs:
-    - github: celestehorgan
-      name: Celeste Horgan
-      company: Independent
-    - github: cpanato
-      name: Carlos Tadeu Panato Jr.
-      company: Chainguard, Inc
-    - github: karenhchu
-      name: Karen Chu
+    - github: endocrimes
+      name: Danielle Lancashire
+      company: VMware
+    - github: hlipsig
+      name: Hilliary Lipsig
+      company: RedHat
+    - github: jeremyrickard
+      name: Jeremy Rickard
       company: Microsoft
     - github: palnabarun
       name: Nabarun Pal
       company: VMware
-    - github: vllry
-      name: Vallery Lancey
-      company: Apple
+    - github: salaxander
+      name: Xander Grzywinski
+      company: Microsoft
     emeritus_leads:
     - github: AevaOnline
       name: Aeva Black
@@ -3323,14 +3323,22 @@ committees:
       name: Jennifer Rondeau
     - github: carolynvs
       name: Carolyn Van Slyck
+    - github: celestehorgan
+      name: Celeste Horgan
+    - github: cpanato
+      name: Carlos Tadeu Panato Jr.
     - github: jdumars
       name: Jaice Singer DuMars
+    - github: karenhchu
+      name: Karen Chu
     - github: parispittman
       name: Paris Pittman
     - github: tashimi
       name: Tasha Drew
     - github: tpepper
       name: Tim Pepper
+    - github: vllry
+      name: Vallery Lancey
   meetings: []
   contact:
     slack: code-of-conduct

@@ -14,11 +14,11 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 ## Members
 
-* Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), Independent
-* Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**), Chainguard, Inc
-* Karen Chu (**[@karenhchu](https://github.com/karenhchu)**), Microsoft
+* Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), VMware
+* Hilliary Lipsig (**[@hlipsig](https://github.com/hlipsig)**), RedHat
+* Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
-* Vallery Lancey (**[@vllry](https://github.com/vllry)**), Apple
+* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Microsoft
 
 ## Contact
 - Slack: [#code-of-conduct](https://kubernetes.slack.com/messages/code-of-conduct)
@@ -41,16 +41,16 @@ Our [Incident Report Handling Procedures](incident-process.md) describes how we 
 
 The members and their terms are as follows:
 
-### Term ends on August 7, 2022
-
-- Karen Chu (Microsoft)
-- Celeste Horgan (Independent)
-- Carlos Tadeu Panato Jr. (Chainguard, Inc)
-
 ### Term ends on August 23, 2023
 
-- Vallery Lancey (Apple)
+- Jeremy Rickard (Microsoft)
 - Nabarun Pal (VMware)
+
+### Term ends on August 17, 2024
+
+- Danielle Lancashire (VMware)
+- Hilliary Lipsig (RedHat)
+- Xander Grzywinski (Microsoft)
 
 Please see the [bootstrapping document](./bootstrapping-process.md) and [election process guidelines](election.md) for more information on how members are picked and their responsibilities.
 
@@ -65,5 +65,9 @@ The Code of Conduct Committee sincerely thanks our emeritus committee members fo
 - Aeva Black (Microsoft)
 - Tasha Drew (VMware)
 - Tim Pepper (VMware)
+- Karen Chu (Microsoft)
+- Celeste Horgan (Independent)
+- Carlos Tadeu Panato Jr. (Chainguard, Inc)
+- Vallery Lancey (Apple)
 
 <!-- END CUSTOM CONTENT -->
