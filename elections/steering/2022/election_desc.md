@@ -1,6 +1,6 @@
 # Vote for the 2022-2023 Steering Committee
 
-As is now customary, this fall is [Steering Committee](https://github.com/kubernetes/steering) election season for Kubernetes. Four(4) elected members (@cblecker, @justaugustus, @parispittman, @tpepper) will stay on for the remaining year of their terms, and there will be four(4) positions open for election. Every election term will be 2 years. More complete information on the election may be found [in the voter's guide](https://github.com/kubernetes/community/tree/master/elections/steering/2022).
+As is now customary, this fall is [Steering Committee](https://github.com/kubernetes/steering) election season for Kubernetes. Four(4) elected members (@cblecker, @justaugustus, @parispittman, @tpepper) will stay on for the remaining year of their terms, and there will be three (3) positions open for election. Every election term will be 2 years. More complete information on the election may be found [in the voter's guide](https://github.com/kubernetes/community/tree/master/elections/steering/2022).
 
 Instructions on using Elekto can be found [in its docs site](https://elekto.dev/docs/voting/)
 
