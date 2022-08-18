@@ -191,7 +191,8 @@ channels:
   - name: kcna-exam-prep
   - name: klog
   - name: knative
-  - name: ko-project
+  - name: ko-build
+    id: C01T7DTP65S
   - name: kompose
   - name: kong
   - name: konveyor
