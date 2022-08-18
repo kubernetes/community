@@ -23,7 +23,7 @@ The requirements for voting are to have had at least 50 project contributions in
 
 ## New Voting System
 
-This is the second year we will be using Elekto[5] for the Kubernetes Steering elections. Elekto was commissioned as an internship project for us by the CNCF. You'll find it has a much more modern UI, and does not rely on email at all to enable voting. It uses GitHub authentication so all we need to know is your GitHub username. If you log in to Elekto at https://elections.k8s.io/app/elections/2022, you can also directly check your eligibility if you don't want to search through the YAML file linked above.
+This is the second year we will be using Elekto[5] for the Kubernetes Steering elections. Elekto was commissioned as an internship project for us by the CNCF. You'll find it has a much more modern UI, and does not rely on email at all to enable voting. It uses GitHub authentication so all we need to know is your GitHub username. If you log in to Elekto at https://elections.k8s.io/app/elections/2022, you can also directly check your eligibility to vote if you don't want to search through the YAML file linked above.
 
 ## Schedule
 
@@ -51,7 +51,7 @@ We will be posting regular updates to dev@kubernetes during the election as well
 
 [5] Elekto: https://elekto.dev - Our elections platform
 
-Thank you from all your election officers. If you have any questions, you can reach us via election@k8s.io, or message us on Slack any time.
+Thank you from all your election officials. If you have any questions, you can reach us via election@k8s.io, or message us on Slack any time.
 
 Noah Kantrowitz
 Kaslin Fields
@@ -88,15 +88,15 @@ $greeting,
 
 The Kubernetes Steering Committee Election begins today/is underway! Please visit https://elections.k8s.io/app/elections and watch out for announcements as well.
 
-The candidates and links to their bios are all available here: https://git.k8s.io/community/elections/steering/2022
+The list of candidates and links to their bios are all available here: https://git.k8s.io/community/elections/steering/2022
 
 // Voting
 
 * You should check to see if you are in voters.md. Your github handle MUST BE IN THIS DOCUMENT to vote: https://github.com/kubernetes/community/blob/master/elections/steering/2022/voters.yaml
 
-* If you feel you have made enough contributions to be able to vote but you are NOT in voters.yaml, you file an exception https://elections.k8s.io/app/elections/steering---2022/exception[here]
+* If you feel you have made enough contributions (50+ as counted in DevStats) to be able to vote but you are NOT in voters.yaml, you file an exception https://elections.k8s.io/app/elections/steering---2022/exception[here]
 
-* If you are planning on running for Steering Committee please see this section of the documentation, you need to PR your biography into the repo by September 2nd: https://github.com/kubernetes/community/tree/master/elections/steering/2022#candidacy-process
+* If you are planning on running for Steering Committee please see this section of the documentation; you need to PR your biography into the repo by September 2nd: https://github.com/kubernetes/community/tree/master/elections/steering/2022#candidacy-process
 
 // Schedule
 
@@ -115,7 +115,7 @@ Steering Committee - https://git.k8s.io/steering
 Steering Committee Charter - https://git.k8s.io/steering/charter.md
 Election Process - https://git.k8s.io/steering/elections.md
 
-On behalf of the election officers,
+On behalf of the election officials,
 Name (github), Name (github), etc
 
 If you have questions, please feel free to ask on the list; otherwise, you can reach the Election Officials at election@k8s.io or #sig-contribex-elections on kubernetes slack
