@@ -125,7 +125,7 @@ an [OWNERS] file (for repos using the bot).
 The following apply to the part of codebase for which one would be a reviewer in
 an [OWNERS] file (for repos using the bot).
 
-- Tests are automatically run for PullRequests from members of the Kubernetes GitHub organization
+- Tests are automatically run for Pull Requests from members of the Kubernetes GitHub organization
 - Code reviewer status may be a precondition to accepting large code contributions
 - Responsible for project quality control via [code reviews]
   - Focus on code quality and correctness, including testing and factoring
@@ -233,7 +233,7 @@ an [elevated set of permissions]. These capabilities should not be used by those
 that are not familiar with the current state of the Kubernetes project.
 
 Therefore members with an extended period away from the project with no activity
-will be removed from the Kubernetes Github Organizations and will be required to
+will be removed from the Kubernetes GitHub Organizations and will be required to
 go through the org membership process again after re-familiarizing themselves
 with the current state.
 
