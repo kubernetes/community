@@ -33,7 +33,7 @@ You will need a [Container Runtime](https://kubernetes.io/docs/setup/production-
 
 ### etcd
 
-You need [etcd](https://github.com/coreos/etcd/releases) installed and in your `$PATH`. [Check here](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#install-etcd) for instructions on installing a local copy.
+You need [etcd](https://github.com/coreos/etcd/releases) installed and in your `$PATH`. [Check here](https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#etcd) for instructions on installing a local copy.
 
 ### go
 

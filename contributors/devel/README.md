@@ -73,7 +73,7 @@ Guide](http://kubernetes.io/docs/admin/).
   Authorization applies to all HTTP requests on the main apiserver port.
   This doc explains the available authorization implementations.
 
-* **Admission Control Plugins** ([admission_control](/contributors/design-proposals/api-machinery/admission_control.md))
+* **Admission Control Plugins** ([admission_control](https://github.com/kubernetes/design-proposals-archive/blob/main/api-machinery/admission_control.md))
 
 
 ## Building releases
