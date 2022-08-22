@@ -1995,4 +1995,3 @@ need human evaluation to decide.  For example, Service `clusterIP` is highly
 coupled to the rest of Service and most instances use it.  But it also is
 strictly optional and has an increasingly complicated schema of related fields.
 An argument could be made for either path.
->>>>>>> 49012588 (Loosen the meaning of status in API conventions)
