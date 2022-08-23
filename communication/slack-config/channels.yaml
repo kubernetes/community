@@ -400,6 +400,7 @@ channels:
   - name: sig-instrumentation
   - name: sig-multicluster
   - name: sig-network
+  - name: sig-network-multi-network
   - name: sig-node
   - name: sig-node-bug-scrub
   - name: sig-node-kmm
