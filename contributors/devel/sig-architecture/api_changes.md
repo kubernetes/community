@@ -921,11 +921,8 @@ doing!
 
 Check out the [E2E docs](../sig-testing/e2e-tests.md) for detailed information about how to
 write end-to-end tests for your feature.
-Make sure the E2E tests are running in the default presubmits for a feature that
-is being promoted to Beta (disabled by default, make sure to enable with flag).
-This behavior changed with Kubernetes v1.24 (see the 
-[KEP](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/3136-beta-apis-off-by-default/README.md) 
-for more details) and only applies to new beta API introduced after v1.24.
+Make sure the E2E tests are running in the default presubmits for a feature/API that
+is enabled by default.
 
 ## Examples and docs
 
@@ -988,11 +985,10 @@ complexity of upgradeability and lack of long-term support and lack of
 upgradability.
 - Beta level:
   - Object Versioning: API version name contains `beta` (e.g. `v2beta3`)
-  - Availability: in official Kubernetes releases; feature is disabled by default, 
-but may be enabled by flag. This applies to new beta API introduced after v1.24 
-(see [KEP](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/3136-beta-apis-off-by-default/README.md) 
-for more deatils). Beta APIs which were introduced before v1.24 are enabled by 
-default.
+  - Availability: in official Kubernetes releases; API is disabled by default 
+but may be enabled by a flag.
+(Note: beta APIs introduced before v1.24 were enabled by default, but this 
+[changed for new beta APIs](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/3136-beta-apis-off-by-default/README.md))
   - Audience: users interested in providing feedback on features
   - Completeness: all API operations, CLI commands, and UI support should be
 implemented; end-to-end tests complete; the API has had a thorough API review
@@ -1198,7 +1194,7 @@ provides some details
 
 In future Kubernetes versions:
 
-* if the feature progresses to stable status, the feature gate can be removed or be enabled by default.
+* if the feature progresses to beta or stable status, the feature gate can be removed or be enabled by default.
 * if the schema of the alpha field must change in an incompatible way, a new field name must be used.
 * if the feature is abandoned, or the field name is changed, the field should be removed from the go struct, with a tombstone comment ensuring the field name and protobuf tag are not reused:
 
@@ -1260,12 +1256,7 @@ This ensures a cluster with multiple servers at skewed releases (which happens d
 will not allow data to be persisted which the previous release of the API server would choke on.
 
 Typically, a feature gate is used to do this rollout, starting in alpha and disabled by default in release 1,
-and graduating to stable and enabled by default in release 2.
-With beta as an intermediate step, release 3 (stable) would enable the feature gate by default.
-The behavior changed with Kubernetes v1.24 
-(for details see the [KEP](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/3136-beta-apis-off-by-default/README.md)).
-Beta APIs introduced before v1.24 will be enabled by default.
-Beta API introduced after v1.24 will be disabled by default.
+and graduating to beta and enabled by default in release 2.
 
 1. Add a feature gate to the API server to control enablement of the new enum value (and associated function):
 
@@ -1354,7 +1345,7 @@ The recommended place to do this is in the REST storage strategy's Validate/Vali
     }
     ```
 
-5. After at least one release, the feature can be promoted to beta or GA. But it will only be enabled by default for GA.
+5. After at least one release, the feature can be promoted to beta or GA and enabled by default.
 
     In [staging/src/k8s.io/apiserver/pkg/features/kube_features.go](https://git.k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/features/kube_features.go):
 
