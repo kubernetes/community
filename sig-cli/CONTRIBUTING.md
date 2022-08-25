@@ -404,8 +404,8 @@ See the sig-cli [community page] for points of contact and meeting times:
 [communication]:  /sig-cli/README.md#contact
 [community page]: /sig-cli
 [design proposal]: #design-proposals
-[design repo]: /contributors/design-proposals/cli
-[design template]: /contributors/design-proposals/Design_Proposal_TEMPLATE.md
+[design repo]: https://git.k8s.io/design-proposals-archive/cli
+[design template]: https://git.k8s.io/design-proposals-archive/Design_Proposal_TEMPLATE.md
 [development guide]: /contributors/devel/development.md
 [existing issue]: #adopt-an-issue
 [feature repo]: https://github.com/kubernetes/features

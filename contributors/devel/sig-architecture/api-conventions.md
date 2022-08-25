@@ -111,7 +111,7 @@ its sole use. When choosing a group name, we recommend selecting a subdomain
 your group or organization owns, such as "widget.mycompany.com".
 
 Version strings should match
-[DNS_LABEL](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/identifiers.md)
+[DNS_LABEL](https://git.k8s.io/design-proposals-archive/architecture/identifiers.md)
 format.
 
 
@@ -1670,7 +1670,7 @@ called `Fooable`, not `IsFooable`.
 
 ### Namespace Names
 * The name of a namespace must be a
-[DNS_LABEL](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/identifiers.md).
+[DNS_LABEL](https://git.k8s.io/design-proposals-archive/architecture/identifiers.md).
 * The `kube-` prefix is reserved for Kubernetes system namespaces, e.g. `kube-system` and `kube-public`.
 * See
 [the namespace docs](https://kubernetes.io/docs/user-guide/namespaces/) for more information.

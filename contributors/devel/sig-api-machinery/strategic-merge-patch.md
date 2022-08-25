@@ -223,7 +223,7 @@ item that has duplicates will delete all matching items.
 
 `setElementOrder` directive provides a way to specify the order of a list.
 The relative order specified in this directive will be retained.
-Please refer to [proposal](/contributors/design-proposals/cli/preserve-order-in-strategic-merge-patch.md) for more information.
+Please refer to [proposal](https://git.k8s.io/design-proposals-archive/cli/preserve-order-in-strategic-merge-patch.md) for more information.
 
 ### Syntax
 
@@ -302,7 +302,7 @@ containers:
 
 `retainKeys` directive provides a mechanism for union types to clear mutual exclusive fields.
 When this directive is present in the patch, all the fields not in this directive will be cleared.
-Please refer to [proposal](/contributors/design-proposals/api-machinery/add-new-patchStrategy-to-clear-fields-not-present-in-patch.md) for more information.
+Please refer to [proposal](https://git.k8s.io/design-proposals-archive/api-machinery/add-new-patchStrategy-to-clear-fields-not-present-in-patch.md) for more information.
 
 ### Syntax
 

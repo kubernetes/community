@@ -85,7 +85,7 @@ Control Plane for newer Multicluster-specific APIs. Discussions are ongoing to f
 | Meeting Agenda | https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY |
 
 ### Cluster Registry
-Common abstraction for a Registry of Clusters that can store per-Cluster metadata and supports Kubernetes label selection. The Cluster Registry can be deployed as a standalone or an aggregated API server and currently provides a Registry of Clusters without any actively reconciling Kubernetes controller. The API design is documented [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/multicluster/cluster-registry/api-design.md) and is intended to serve as a basis to develop multicluster controllers.
+Common abstraction for a Registry of Clusters that can store per-Cluster metadata and supports Kubernetes label selection. The Cluster Registry can be deployed as a standalone or an aggregated API server and currently provides a Registry of Clusters without any actively reconciling Kubernetes controller. The API design is documented [here](https://git.k8s.io/design-proposals-archive/multicluster/cluster-registry/api-design.md) and is intended to serve as a basis to develop multicluster controllers.
 
 |  |  |
 | -------------- |:-------|

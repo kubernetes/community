@@ -275,8 +275,8 @@ See the sig-multicluster [community page] for points of contact and meeting time
 [community page]: /sig-multicluster
 [contributors guide]: /contributors/guide
 [design proposal]: #design-proposals
-[design repo]: /contributors/design-proposals/multicluster
-[design template]: /contributors/design-proposals/Design_Proposal_TEMPLATE.md
+[design repo]: https://git.k8s.io/design-proposals-archive/multicluster
+[design template]: https://git.k8s.io/design-proposals-archive/Design_Proposal_TEMPLATE.md
 [development guide]: /contributors/devel/development.md
 [existing issue]: #adopt-an-issue
 [feature repo]: https://github.com/kubernetes/features
