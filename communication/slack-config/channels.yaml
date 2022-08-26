@@ -90,6 +90,7 @@ channels:
   - name: digitalocean-k8s
   - name: distroless
   - name: diversity
+  - name: dra
   - name: draft-dev
   - name: draft-users
   - name: eks
