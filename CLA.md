@@ -4,6 +4,7 @@ The [Cloud Native Computing Foundation](https://www.cncf.io) (CNCF) defines
 the legal status of the contributed code in two different types of _Contributor License Agreements_
 (CLAs), [individual contributors](https://github.com/cncf/cla/blob/master/individual-cla.pdf) and [corporations](https://github.com/cncf/cla/blob/master/corporate-cla.pdf).
 
+
 Kubernetes can only accept original source code from CLA signatories.
 
 This policy does not apply to [third_party](https://git.k8s.io/kubernetes/third_party)
