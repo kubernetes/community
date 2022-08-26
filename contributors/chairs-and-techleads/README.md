@@ -37,7 +37,7 @@ Other best practices:
   [Governance Principles]
 ## Communication and feedback loops:
 
-Place for leads to get info, talk to other leads, best practices, demos, and
+A Place for leads to get info, talk to other leads, best practices, demos, and
 more: 
   - [Monthly meeting]
     - Time:
@@ -67,7 +67,7 @@ community discussion.
      - Great for growing contributor ladder roles 
    - [mentoring-programs]
 
-### Recogition 
+### Recognition 
 
 Is someone in your group deserving of recognition? Great! There are a few ways
 to do this depending on the situation and end goals. Our community is built
@@ -85,8 +85,8 @@ Try #shoutouts on the Kubernetes slack!
       given the appropriate level of priority.
 #### Awards
 There are a few times a year that Kubernetes and the larger CNCF community 
-intentionally recognizes members of the commuity for certain roles and 
-accomplishments. The leads@ mailing list and slack channel will have 
+intentionally recognizes members of the community for certain roles and 
+accomplishments. The leads@ mailing list and the slack channel will have 
 announcements for when nominations are open. 
 - [Contributor Summit] Awards
 - [CNCF Awards]
