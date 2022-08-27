@@ -1,7 +1,7 @@
 # Communication
 
 The Kubernetes community abides by the [Kubernetes code of conduct] on all of
-communication platforms that we moderate listed below with noted exceptions.  
+the communication platforms that we moderate listed below with noted exceptions.  
 Here is an excerpt from the code of conduct:
 
 > _As contributors and maintainers of this project, and in the interest
@@ -27,11 +27,11 @@ agenda/notes, and can be found on their READMEs and on the community
 groups/[SIGs] page.
 
 You can actively or passively participate in one of the following ways:
-- The community groups public meeting(s) listed in the above community groups page
+- The community group's public meeting(s) listed on the above community groups page
 - Every Third Thursday at our [monthly community meeting] over [zoom] at [10am US Pacific Time]
 - Intro sessions at KubeCon/CloudNativeCon live or [recordings on YouTube]
 
-Nevertheless, below find a list of many general channels, groups and meetings
+Nevertheless, below find a list of many general channels, groups, and meetings
 devoted to the Kubernetes project. Please check the guidelines and any relevant
 chat/conversation history before posting. Spam and sales pitches are not tolerated
 on these platforms.
@@ -44,13 +44,13 @@ Note that commercial content is allowed, unsolicited commercial content mostly i
 
 Examples of inappropriate content:
 - Posting unsolicited content of a commercial nature on Slack or other community forums
-- Messaging people individually on a platform with content of an unsolicited commercial nature
+- Messaging people individually on a platform with the content of an unsolicited commercial nature
 - Unsolicited pitching of commercial products during a Kubernetes meeting
 
 Examples of appropriate content:
 - Asking about commercial products in an appropriate channel. For example most clouds have a channel in Slack, asking how to use GKE on the GKE channel or AKS on the Azure channels is fine.
 - "Does anyone have experience with project foo?" is fine
-- Some OSS projects are also hosted on the Kubernetes Slack that also have a commercial offering, these are allowed.
+- Some OSS projects are also hosted on the Kubernetes Slack which also has a commercial offering, these are allowed.
 
 ## Decisions Are Made Here
 
@@ -76,7 +76,7 @@ We talk a lot, too.
 
 ### Slack
 
-Our real-time platform with Kubernetes enthusiasts spread across 250+ channels.
+Our real-time platform with Kubernetes enthusiasts is spread across 250+ channels.
 Owned and operated by sig-contributor-experience.
 
 [Join] | [Slack Guidelines] | [slack moderators] | [#kubernetes-contributors]
@@ -98,7 +98,7 @@ and security issues
 - [Discuss Kubernetes] is a forum where Kubernetes users trade notes with sections
 for contributors and all kinds of ecosystem related content
 - Additional Google groups exist and can be joined for discussion related to each
-community groups as noted above.  These are linked from the [SIG list][SIGs].
+community group as noted above.  These are linked from the [SIG list][SIGs].
 
 ### Calendar & Meetings
 
@@ -146,22 +146,22 @@ Office hours are held once a month. Please refer to [the docs][office-hours]
 to learn more. Join the conversation on slack under [#office-hours].
 
 ### Other
-- [r/kubernetes] - reddit channel owned and operated by community members and
-not an official channel for the project.
+- [r/kubernetes] - reddit channel is owned and operated by community members and
+is not an official channel for the project.
 - [awesome kubernetes list] - not an official repo; maintained by a community member.
 a repo with a huge collection of links to books, talks, and other Kubernetes learning
 resources.
 - [kubeweekly] - owned by cncf and curated by community members listed on the site.
 Collection of news, blogs, talks, and events for all things Kubernetes.
 send submissions to kubeweekly@cncf.io
-- [LWKD] - weekly newsletter that summarizes changes to Kubernetes code, development,
+- [LWKD] - a weekly newsletter that summarizes changes to Kubernetes code, development,
  and release schedules.  Written by two members of SIG-Contribex.
 
 ### Conferences, Meetups, Summits, and Face to Face Meetings
 
 CNCF is the main driver for all KubeCon + CloudNativeCons, Kubernetes Forums,
 and the [Kubernetes Meetup Pro] program on meetup.com. KubeCon + CloudNativeCon,
-held every spring in Europe, summer in China, and winter in North America.
+is held every spring in Europe, summer in China, and winter in North America.
 Information about these and other community events is available on the CNCF [events]
 pages.
 
