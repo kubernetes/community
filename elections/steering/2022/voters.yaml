@@ -12,6 +12,7 @@
 # 2022-08-13: Initial voter list prepared using devstats data provided Lukasz Gryglicki
 #   and current organization membership status.
 # 2022-08-15: Add incoming CoCC members and exception link.
+# 2022-08-28: Add voters from exception requests.
 #
 eligible_voters:
 - 196Ikuchil
@@ -508,6 +509,7 @@ eligible_voters:
 - PushkarJ
 - pydctw
 - qabpea
+- qedrakmar
 - RA489
 - raelga
 - Raffo
@@ -531,6 +533,7 @@ eligible_voters:
 - riita10069
 - rikatz
 - RinkiyaKeDad
+- Rishit-dagli
 - ritazh
 - rjbez17
 - rmohr
