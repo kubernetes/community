@@ -76,7 +76,7 @@ We talk a lot, too.
 
 ### Slack
 
-Our real-time platform with Kubernetes enthusiasts is spread across 250+ channels.
+Our real-time platform with Kubernetes enthusiasts spread across 250+ channels.
 Owned and operated by sig-contributor-experience.
 
 [Join] | [Slack Guidelines] | [slack moderators] | [#kubernetes-contributors]
@@ -146,8 +146,7 @@ Office hours are held once a month. Please refer to [the docs][office-hours]
 to learn more. Join the conversation on slack under [#office-hours].
 
 ### Other
-- [r/kubernetes] - reddit channel is owned and operated by community members and
-is not an official channel for the project.
+- [r/kubernetes] - reddit channel owned and operated by community members and not an official channel for the project.
 - [awesome kubernetes list] - not an official repo; maintained by a community member.
 a repo with a huge collection of links to books, talks, and other Kubernetes learning
 resources.
