@@ -23,6 +23,7 @@ channels:
   - name: aus-nz-users
   - name: awesome-kubernetes
   - name: aws-authenticator
+  - name: aws-controllers-k8s
   - name: bazel
   - name: bindings-discuss
   - name: bootkube
