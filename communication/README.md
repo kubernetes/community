@@ -50,7 +50,7 @@ Examples of inappropriate content:
 Examples of appropriate content:
 - Asking about commercial products in an appropriate channel. For example most clouds have a channel in Slack, asking how to use GKE on the GKE channel or AKS on the Azure channels is fine.
 - "Does anyone have experience with project foo?" is fine
-- Some OSS projects are also hosted on the Kubernetes Slack which also has a commercial offering, these are allowed.
+- Some OSS projects are also hosted on the Kubernetes Slack that also have a commercial offering, these are allowed.
 
 ## Decisions Are Made Here
 
