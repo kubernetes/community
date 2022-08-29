@@ -44,7 +44,7 @@ Note that commercial content is allowed, unsolicited commercial content mostly i
 
 Examples of inappropriate content:
 - Posting unsolicited content of a commercial nature on Slack or other community forums
-- Messaging people individually on a platform with the content of an unsolicited commercial nature
+- Messaging people individually on a platform with content of an unsolicited commercial nature
 - Unsolicited pitching of commercial products during a Kubernetes meeting
 
 Examples of appropriate content:
