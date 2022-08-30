@@ -1066,9 +1066,9 @@ sigs:
     meetings:
     - description: Cluster API Provider Azure office hours
       day: Thursday
-      time: "08:00"
+      time: "09:00"
       tz: PT (Pacific Time)
-      frequency: bi-weekly
+      frequency: weekly
       url: https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09
       archive_url: http://bit.ly/k8s-capz-agenda
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
