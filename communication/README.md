@@ -146,7 +146,8 @@ Office hours are held once a month. Please refer to [the docs][office-hours]
 to learn more. Join the conversation on slack under [#office-hours].
 
 ### Other
-- [r/kubernetes] - reddit channel owned and operated by community members and not an official channel for the project.
+- [r/kubernetes] - reddit channel owned and operated by community members and
+not an official channel for the project.
 - [awesome kubernetes list] - not an official repo; maintained by a community member.
 a repo with a huge collection of links to books, talks, and other Kubernetes learning
 resources.
