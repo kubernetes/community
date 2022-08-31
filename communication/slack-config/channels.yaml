@@ -23,6 +23,7 @@ channels:
   - name: aus-nz-users
   - name: awesome-kubernetes
   - name: aws-authenticator
+  - name: aws-controllers-k8s
   - name: bazel
   - name: bindings-discuss
   - name: bootkube
@@ -90,6 +91,7 @@ channels:
   - name: digitalocean-k8s
   - name: distroless
   - name: diversity
+  - name: dra
   - name: draft-dev
   - name: draft-users
   - name: eks
@@ -337,6 +339,7 @@ channels:
   - name: openstack-helm
   - name: openstack-kolla
   - name: operator-builder
+  - name: operator-framework-community
   - name: operator-sdk-dev
   - name: ops-status
     archived: true

@@ -94,7 +94,7 @@ The following [subprojects][subproject-definition] are owned by sig-node:
   - [kubernetes/noderesourcetopology-api](https://github.com/kubernetes/noderesourcetopology-api/blob/master/OWNERS)
 ### security-profiles-operator
 - **Owners:**
-  - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/master/OWNERS)
+  - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#security-profiles-operator](https://kubernetes.slack.com/messages/security-profiles-operator)
 
