@@ -1,7 +1,7 @@
 # Communication
 
-The Kubernetes community abides by the [Kubernetes code of conduct] on all of 
-the communication platforms that we moderate listed below with noted exceptions.  
+The Kubernetes community abides by the [Kubernetes code of conduct] on all of
+the communication platforms that we moderate listed below with noted exceptions.
 Here is an excerpt from the code of conduct:
 
 > _As contributors and maintainers of this project, and in the interest
