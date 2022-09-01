@@ -160,7 +160,7 @@ send submissions to kubeweekly@cncf.io
 ### Conferences, Meetups, Summits, and Face to Face Meetings
 
 CNCF is the main driver for all KubeCon + CloudNativeCons, Kubernetes Forums,
-and the [Kubernetes Meetup Pro] program on meetup.com. KubeCon + CloudNativeCon, 
+and the [Kubernetes Meetup Pro] program on meetup.com. KubeCon + CloudNativeCon,
 is held every spring in Europe, summer in China, and winter in North America.
 Information about these and other community events is available on the CNCF [events]
 pages.
