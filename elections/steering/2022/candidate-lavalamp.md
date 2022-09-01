@@ -2,10 +2,10 @@
 -------------------------------------------------------------
 ```
 name: Daniel Smith
-ID: @lavalamp
+ID: lavalamp
 info:
   - employer: Google
-  - slack: @lavalamp
+  - slack: lavalamp
 ```
 -------------------------------------------------------------
 
