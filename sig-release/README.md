@@ -97,10 +97,6 @@ The Release Engineering subproject is responsible for the [process/procedures](h
     - [@kubernetes/release-managers](https://github.com/orgs/kubernetes/teams/release-managers) - [Release Managers](https://kubernetes.io/releases/release-managers/)
     - [@kubernetes/repo-infra-admins](https://github.com/orgs/kubernetes/teams/repo-infra-admins)
     - [@kubernetes/repo-infra-maintainers](https://github.com/orgs/kubernetes/teams/repo-infra-maintainers)
-- **Meetings:**
-  - Release Engineering: [Tuesdays at 15:30 UTC](https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
-    - [Meeting notes and Agenda](https://bit.ly/k8s-releng-meeting).
-    - [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 ### Release Team
 The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
 - **Owners:**

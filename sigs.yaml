@@ -2215,15 +2215,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
     - https://raw.githubusercontent.com/kubernetes/website/main/content/en/releases/OWNERS
     - https://raw.githubusercontent.com/kubernetes/website/main/data/releases/OWNERS
-    meetings:
-    - description: Release Engineering
-      day: Tuesday
-      time: "15:30"
-      tz: UTC
-      frequency: biweekly
-      url: https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09
-      archive_url: https://bit.ly/k8s-releng-meeting
-      recordings_url: https://bit.ly/k8s-sig-release-videos
   - name: Release Team
     description: |
       The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
