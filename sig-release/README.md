@@ -14,7 +14,10 @@ The [charter](charter.md) defines the scope and governance of the Release Specia
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-release) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Tuesdays at 15:30 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
+* Regular SIG Meeting APAC/EU Oriented Time: [Tuesdays at 15:30 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
+  * [Meeting notes and Agenda](https://bit.ly/k8s-sig-release-meeting).
+  * [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
+* Regular SIG Meeting US Oriented Time: [Tuesdays at 17:00 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-release-meeting).
   * [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 
@@ -94,10 +97,6 @@ The Release Engineering subproject is responsible for the [process/procedures](h
     - [@kubernetes/release-managers](https://github.com/orgs/kubernetes/teams/release-managers) - [Release Managers](https://kubernetes.io/releases/release-managers/)
     - [@kubernetes/repo-infra-admins](https://github.com/orgs/kubernetes/teams/repo-infra-admins)
     - [@kubernetes/repo-infra-maintainers](https://github.com/orgs/kubernetes/teams/repo-infra-maintainers)
-- **Meetings:**
-  - Release Engineering: [Tuesdays at 15:30 UTC](https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
-    - [Meeting notes and Agenda](https://bit.ly/k8s-releng-meeting).
-    - [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 ### Release Team
 The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
 - **Owners:**
