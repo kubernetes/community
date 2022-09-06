@@ -19,31 +19,31 @@ Most of my tenure as a contributor in the project has been focused on growing
 and sustaining a safe & healthy contributor community within the project.
 
 A few notable things include:
-- [Defined policy around inactive members], and routinely pruned OWNERS to
+- [Defined policy around inactive members][Defined policy around inactive members], and routinely pruned OWNERS to
   ensure an active reviewer/approver pool.
-- Rolled out [improved triage automation & workflow] practices across the org.
+- Rolled out [improved triage automation & workflow][improved triage automation & workflow] practices across the org.
 - I have helped run every Contributor Summit since 2018, and have served as lead
-  for [NA 2021], [NA 2022] along with leading both virtual Celebrations
+  for [NA 2021][NA 2021], [NA 2022][NA 2022] along with leading both virtual Celebrations
   ([1][c1], [2][c2]) during the Pandemic.
-- Trusted member of the [GitHub Admin Team], including acting as representative
+- Trusted member of the [GitHub Admin Team][GitHub Admin Team], including acting as representative
   to GitHub for the project.
-- [Moderator of all our communications platforms]
+- [Moderator of all our communications platforms][Moderator of all our communications platforms]
 - Leading the development of an online "New Contributor Course" to serve as
   a replacement for the New Contributor Workshop (Slated to launch before
   KubeCon)
-- As a represenative of the Steering Committee, presented a [Keynote talk] with
+- As a represenative of the Steering Committee, presented a [Keynote talk][Keynote talk] with
   Aeva Black (@AevaOnline) from the Code of Conduct Committee @ KubeCon 2019 on
   shaping the Kubernetes Community Culture.
-- Dogfooding leadership succession mentoring by co-leading in the 
-  [SIG ContribEx lead shadow program], bringing on 6 potential future chairs
+- Dogfooding leadership succession mentoring by co-leading in the
+  [SIG ContribEx lead shadow program][SIG ContribEx lead shadow program], bringing on 6 potential future chairs
   and TLs.
 
 Outside of Kubernetes, I have also been involved heavily with the CNCF as an
-[Ambassador], co-chair of the [Research User Group], and a Program Committee
+[Ambassador][Ambassador], co-chair of the [Research User Group], and a Program Committee
 Member of KubeCon and various other colo events since 2018.
 
 My efforts both for Kubernetes and the broader community were recognized in
-2019 when I received the [CNCF Chop Wood Carry Water Award].
+2019 when I received the [CNCF Chop Wood Carry Water Award][CNCF Chop Wood Carry Water Award].
 
 [NA 2021]: https://www.kubernetes.dev/events/2021/kcsna/
 [NA 2022]: https://www.kubernetes.dev/events/2022/kcsna/
@@ -71,7 +71,7 @@ understand the frustrations and boons that have come with each role.
 
 These experiences come heavily into play as we look toward developing
 strategies for the project's long-term success. Steering has recognized that the
-time of the [9 to 5 contributor] has past, and we need to develop policies and
+time of the [9 to 5 contributor][9 to 5 contributor] has past, and we need to develop policies and
 processes to ensure we can continue to grow new contributors, reviewers,
 approvers, and our future SIG/WG/Committee leaders.
 
