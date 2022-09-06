@@ -13,6 +13,7 @@
 #   and current organization membership status.
 # 2022-08-15: Add incoming CoCC members and exception link.
 # 2022-08-28: Add voters from exception requests.
+# 2022-09-05: Add voters from exception requests.
 #
 eligible_voters:
 - 196Ikuchil
@@ -356,6 +357,7 @@ eligible_voters:
 - krmayankk
 - kundan2707
 - kvaps
+- lachie83
 - landreasyan
 - lauchokyip
 - lauralorenz
