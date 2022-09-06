@@ -50,7 +50,7 @@ The [CFSSL](https://cfssl.org/) binaries (cfssl, cfssljson) must be installed an
 The easiest way to get it is to run these shell commands:
 
 ```sh
-go get -u github.com/cloudflare/cfssl/cmd/...
+go install github.com/cloudflare/cfssl/cmd/...@latest
 PATH=$PATH:$GOPATH/bin
 ```
 
