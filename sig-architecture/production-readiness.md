@@ -20,9 +20,11 @@ As of 1.21, PRRs are now blocking. PRR _approval_ is required for the enhancemen
 to be part of the release. This means that any KEPs targeting the release for any
 stage will require production readiness approval by the *Enhancements Freeze Date*.
 
-Introduced in 1.23, *Product Readiness Freeze* happens a week before *Enhancements Freeze Date*. All KEPs must be opted in by this date to help PRR reviewers provision their workload. 
-KEPs opted in after the *Product Readiness Freeze* are at risk
-of not being reviewed by the PRR team, depending on bandwidth.
+Introduced in 1.23, *Product Readiness Freeze* happens a week before *Enhancements 
+Freeze Date*. All KEPs must be opted in by this date to help PRR reviewers provision 
+their workload. KEPs opted in after the *Product Readiness Freeze* are at risk of not 
+being reviewed by the PRR team, depending on bandwidth. KEP owners can file an 
+[Exception request](https://github.com/kubernetes/sig-release/blob/master/releases/EXCEPTIONS.md) if the PRR has not been completed post Enhancements Freeze.
 
 Note that some of the questions in the [KEP template] should be answered in both
 the KEP's README.md and the `kep.yaml`, in order to support automated checks on
