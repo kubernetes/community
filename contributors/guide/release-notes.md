@@ -73,7 +73,7 @@ Here are some pull requests with examples of exemplary release notes:
 - https://github.com/kubernetes/kubernetes/pull/97252
 - https://github.com/kubernetes/kubernetes/pull/105517
 
-For more tips on writing good release notes, check out the [Release Notes Handbook][].
+For more tips on writing good release notes, check out the [Release Notes Handbook].
 
 ## Applying a Release Note
 
