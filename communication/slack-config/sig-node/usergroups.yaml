@@ -1,0 +1,17 @@
+# This file contains a list of all Slack User Groups that are managed by SIG Node.
+
+usergroups:
+  - name: dra-dev
+    long_name: dynamic resource allocation developers
+    description: Developers working on or with the dynamic resource allocation KEP.
+    channels:
+      - sig-node
+    members:
+      # Entries are GitHub handles. They must be listed under ../users.yaml.
+      # Sorted alphabetically!
+      - bart0sh
+      - byako
+      - elezar
+      - klihub
+      - klueska # subproject owner
+      - pohly # subproject owner

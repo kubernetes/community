@@ -404,13 +404,7 @@ channels:
   - name: sig-multicluster
   - name: sig-network
   - name: sig-network-multi-network
-  - name: sig-node
-  - name: sig-node-bug-scrub
-  - name: sig-node-kmm
-    id: C037RE58RED
-  - name: sig-node-rkt
-    archived: true
-  - name: sig-node-swap
+  # sig-node channels are defined in sig-node/
   - name: sig-scalability
   - name: sig-scheduling
   # sig-security* channels are defined in sig-security/
