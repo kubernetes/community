@@ -2372,6 +2372,14 @@ sigs:
     url: https://zoom.us/j/841218129
     archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
     recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
+  - description: descheduler biweekly meeting
+    day: Tuesday
+    time: "17:00"
+    tz: UTC
+    frequency: biweekly starting Tuesday September 13, 2022
+    url: https://zoom.us/j/841218129
+    archive_url: https://docs.google.com/document/d/1Ang5shAFxuylO2RXMFGO7uxSe-IX3Y3PxoKIn1yPIEQ
+    recordings_url: https://youtube.com/playlist?list=PLEafaZMk8MYYqoSncOkL8uutIcTsUQE_g
   - description: monthly meeting (APAC)
     day: first Thursday
     time: "02:00"
