@@ -14,10 +14,11 @@
 # 2022-08-15: Add incoming CoCC members and exception link.
 # 2022-08-28: Add voters from exception requests.
 # 2022-09-05: Add voters from exception requests.
+# 2022-09-09: Add voters from exception requests.
 #
 eligible_voters:
-- 196Ikuchil
 - '249043822'
+- 196Ikuchil
 - a7i
 - aartij17
 - Abirdcfly
@@ -63,6 +64,7 @@ eligible_voters:
 - aravindhp
 - ardaguclu
 - Arhell
+- ArkaSaha30
 - Arvinderpal
 - asalkeld
 - ash2k
@@ -286,6 +288,7 @@ eligible_voters:
 - jbartosik
 - jberkus
 - jcjesus
+- jeefy
 - Jefftree
 - jeffvance
 - jeremyrickard
@@ -487,6 +490,7 @@ eligible_voters:
 - parispittman
 - parul5sahoo
 - pawbana
+- pchan
 - perithompson
 - petr-muller
 - phenixblue
@@ -550,6 +554,7 @@ eligible_voters:
 - RyanAoh
 - s-kawamura-w664
 - s-urbaniak
+- saad-ali
 - saikat-royc
 - salaxander
 - sallyom
@@ -654,6 +659,7 @@ eligible_voters:
 - Verolop
 - verult
 - vinayakankugoyal
+- vinaykul
 - vincepri
 - vladimirvivien
 - vllry
