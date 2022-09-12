@@ -2519,6 +2519,13 @@ sigs:
     - github: childsb
       name: Bradley Childs
   meetings:
+  - description: Regular CSI Implementation meeting
+    day: Monday and Wednesday
+    time: "10:00"
+    tz: PT (Pacific Time)
+    frequency: weekly
+    url: https://zoom.us/j/614261834
+    archive_url: https://docs.google.com/document/d/1_hvq3nleqQEYatH9V_Gfep39jMzaFJRSN2ioA0PFq-Q/edit#
   - description: Regular SIG Meeting
     day: Thursday
     time: "9:00"
