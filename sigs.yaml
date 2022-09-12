@@ -388,7 +388,7 @@ sigs:
     chairs:
     - github: enj
       name: Mo Khan
-      company: VMware
+      company: Microsoft
     - github: mikedanese
       name: Mike Danese
       company: Google
@@ -1066,9 +1066,9 @@ sigs:
     meetings:
     - description: Cluster API Provider Azure office hours
       day: Thursday
-      time: "08:00"
+      time: "09:00"
       tz: PT (Pacific Time)
-      frequency: bi-weekly
+      frequency: weekly
       url: https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09
       archive_url: http://bit.ly/k8s-capz-agenda
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
@@ -1516,9 +1516,17 @@ sigs:
     day: Monday
     time: "15:00"
     tz: UTC
-    frequency: monthly
+    frequency: first Tuesday of the month
     url: https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/
     archive_url: https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
+  - description: New Contributor Meet and Greet
+    day: Tuesday
+    time: "10:30"
+    tz: UTC
+    frequency: first Tuesday of the month
+    url: https://zoom.us/j/92822621820?pwd=S1p4RnB1RmNSZ3JjYlRRUVd4UjFPZz09
+    archive_url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
   - description: Regular SIG Meeting
     day: Tuesday
@@ -1934,7 +1942,7 @@ sigs:
     recordings_url: https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X
   - description: SIG Network KPNG APAC Meeting
     day: Wednesday
-    time: "19:00"
+    time: "16:00"
     tz: IST (Indian Standard Time)
     frequency: weekly
     url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
@@ -2085,6 +2093,9 @@ sigs:
   - name: cri-tools
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
+  - name: kernel-module-management
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kernel-module-management/main/OWNERS
   - name: kubelet
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubelet/OWNERS
@@ -2109,10 +2120,7 @@ sigs:
     contact:
       slack: security-profiles-operator
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/security-profiles-operator/master/OWNERS
-  - name: special-resource-operator
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/special-resource-operator/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/security-profiles-operator/main/OWNERS
 - dir: sig-release
   name: Release
   mission_statement: >
@@ -2150,9 +2158,17 @@ sigs:
     - github: tpepper
       name: Tim Pepper
   meetings:
-  - description: Regular SIG Meeting
+  - description: Regular SIG Meeting APAC/EU Oriented Time
     day: Tuesday
     time: "15:30"
+    tz: UTC
+    frequency: biweekly
+    url: https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09
+    archive_url: https://bit.ly/k8s-sig-release-meeting
+    recordings_url: https://bit.ly/k8s-sig-release-videos
+  - description: Regular SIG Meeting US Oriented Time
+    day: Tuesday
+    time: "17:00"
     tz: UTC
     frequency: biweekly
     url: https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09
@@ -2210,15 +2226,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
     - https://raw.githubusercontent.com/kubernetes/website/main/content/en/releases/OWNERS
     - https://raw.githubusercontent.com/kubernetes/website/main/data/releases/OWNERS
-    meetings:
-    - description: Release Engineering
-      day: Tuesday
-      time: "15:30"
-      tz: UTC
-      frequency: biweekly
-      url: https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09
-      archive_url: https://bit.ly/k8s-releng-meeting
-      recordings_url: https://bit.ly/k8s-sig-release-videos
   - name: Release Team
     description: |
       The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
@@ -2360,11 +2367,19 @@ sigs:
     - github: k82cn
       name: Klaus Ma
   meetings:
-  - description: 10AM PT Meeting
+  - description: biweekly meeting (NA & Europe)
     day: Thursday
     time: "17:00"
     tz: UTC
     frequency: biweekly starting Thursday June 7, 2018
+    url: https://zoom.us/j/841218129
+    archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
+    recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
+  - description: monthly meeting (APAC)
+    day: first Thursday
+    time: "02:00"
+    tz: UTC
+    frequency: monthly
     url: https://zoom.us/j/841218129
     archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
     recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
@@ -2405,6 +2420,9 @@ sigs:
   - name: kueue
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
+  - name: kwok
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kwok/main/OWNERS
   - name: scheduler
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
@@ -2665,14 +2683,14 @@ sigs:
     description: |
       An experimental e2e testing framework for Kubernetes clusters.
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/e2e-framework/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/e2e-framework/main/OWNERS
   - name: kind
     description: |
       Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
     contact:
       slack: kind
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/kind/main/OWNERS
   - name: kubetest2
     description: |
       Kubetest2 is the framework for launching and running end-to-end tests on kubernetes.
@@ -2878,6 +2896,9 @@ sigs:
   - name: windows-gmsa
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/windows-gmsa/master/OWNERS
+  - name: windows-operational-readiness
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/windows-operational-readiness/main/OWNERS
   - name: windows-samples
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-samples/master/OWNERS
@@ -3298,21 +3319,21 @@ committees:
   label: code-of-conduct
   leadership:
     chairs:
-    - github: celestehorgan
-      name: Celeste Horgan
-      company: Independent
-    - github: cpanato
-      name: Carlos Tadeu Panato Jr.
-      company: Chainguard, Inc
-    - github: karenhchu
-      name: Karen Chu
+    - github: endocrimes
+      name: Danielle Lancashire
+      company: VMware
+    - github: hlipsig
+      name: Hilliary Lipsig
+      company: RedHat
+    - github: jeremyrickard
+      name: Jeremy Rickard
       company: Microsoft
     - github: palnabarun
       name: Nabarun Pal
       company: VMware
-    - github: vllry
-      name: Vallery Lancey
-      company: Apple
+    - github: salaxander
+      name: Xander Grzywinski
+      company: Microsoft
     emeritus_leads:
     - github: AevaOnline
       name: Aeva Black
@@ -3320,14 +3341,22 @@ committees:
       name: Jennifer Rondeau
     - github: carolynvs
       name: Carolyn Van Slyck
+    - github: celestehorgan
+      name: Celeste Horgan
+    - github: cpanato
+      name: Carlos Tadeu Panato Jr.
     - github: jdumars
       name: Jaice Singer DuMars
+    - github: karenhchu
+      name: Karen Chu
     - github: parispittman
       name: Paris Pittman
     - github: tashimi
       name: Tasha Drew
     - github: tpepper
       name: Tim Pepper
+    - github: vllry
+      name: Vallery Lancey
   meetings: []
   contact:
     slack: code-of-conduct
@@ -3352,7 +3381,7 @@ committees:
       company: Google
     - github: enj
       name: Mo Khan
-      company: VMware
+      company: Microsoft
     - github: joelsmith
       name: Joel Smith
       company: Red Hat

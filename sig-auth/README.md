@@ -29,7 +29,7 @@ The [charter](charter.md) defines the scope and governance of the Auth Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Mo Khan (**[@enj](https://github.com/enj)**), VMware
+* Mo Khan (**[@enj](https://github.com/enj)**), Microsoft
 * Mike Danese (**[@mikedanese](https://github.com/mikedanese)**), Google
 * Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
 

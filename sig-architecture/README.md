@@ -119,13 +119,13 @@ Establishing and documenting design principles, documenting and evolving the sys
 
 Establishing and documenting conventions for system and user-facing APIs, define and operate the APl review process, final API implementation consistency validation, co-own top-level API directories with API machinery; maintaining, evolving, and enforcing the deprecation policy
 
-* [Kubernetes Design and Architecture](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/architecture.md)
-* [Design principles](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/principles.md)
+* [Kubernetes Design and Architecture](https://git.k8s.io/design-proposals-archive/architecture/architecture.md)
+* [Design principles](https://git.k8s.io/design-proposals-archive/architecture/principles.md)
 * [API conventions](/contributors/devel/sig-architecture/api-conventions.md)
 * [API Review process](https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md)
 * [Deprecation policy](https://kubernetes.io/docs/reference/deprecation-policy/)
 
-Please see the [API Reviews](https://github.com/orgs/kubernetes/projects/13) tracking board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/OWNERS) file if you are interested in joining this effort.
+Please see the [API Reviews](https://github.com/orgs/kubernetes/projects/13) tracking board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://git.k8s.io/design-proposals-archive/architecture/OWNERS) file if you are interested in joining this effort.
 
 ## Enhancement Proposals
 

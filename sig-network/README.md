@@ -25,7 +25,7 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 * SIG Network Ingress NGINX Meeting: [Thursdays at 8:00 PT (Pacific Time)](https://zoom.us/j/98377891310) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X).
-* SIG Network KPNG APAC Meeting: [Wednesdays at 19:00 IST (Indian Standard Time)](https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19:00&tz=IST%20%28Indian%20Standard%20Time%29).
+* SIG Network KPNG APAC Meeting: [Wednesdays at 16:00 IST (Indian Standard Time)](https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=IST%20%28Indian%20Standard%20Time%29).
 * SIG Network KPNG Meeting: [Fridays at 7:30 PT (Pacific Time)](https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7:30&tz=PT%20%28Pacific%20Time%29).
 * SIG Network Meeting: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/361123509) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).

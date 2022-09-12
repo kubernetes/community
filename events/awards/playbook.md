@@ -7,8 +7,13 @@ The CNCF typically has awards as part of KubeCon + CloudNativeCon, the Kubernete
 
 ## Ideals and Values
 
-Typically each SIG will nominate two(2) recipients for an award. 
+Typically each SIG will nominate two (2) recipients for an award. 
 Ultimately the individual SIGs are responsible for their award nominations, in certain cases there may be an example of excellent work that requires more than two awards, co-chairs should use their judgement to determine if this is the case. 
+
+SIGs can model their award(s) to the types of contributions a SIG encourages. Some examples are:
+  - Most reviews, best reviewer, or PR wrangler
+  - Issue triager
+  - KEP wrangler
 
 Here are a few suggestions or ideas that make for a good award nominee: 
 
@@ -23,6 +28,9 @@ Here are a few suggestions or ideas that make for a good award nominee:
    - Remember that non-code contributions are important! 
 - Community Input
   - Leads should take input from other SIG members, larger SIGs might consider mentioning the awards ahead of time to allow members to communicate nominations to leads. 
+    - Some examples of taking community input from SIG members are:
+      - A call for nominations on the SIG's mailing list, SIG's Slack channel, on SIG meetings
+      - A vote on the SIG's mailing list, SIG's Slack channel, on SIG meetings
 - Celebrate the Individuals as people
   - Awards are affiliation-free and earned by individuals, we do not mention vendors at all as part of this process
   - Vendors are encouraged to celebrate individuals via their own social properties, the awards themselves will remain neutral
@@ -64,7 +72,7 @@ Our community is spread all over the world, so when choosing a vendor consider i
 - [ ] Contributor Summit Planning Begins
 - [ ] Event Team should assign someone as the Awards Lead and one or two shadows
 - [ ] Awards Team determines what kind of award for that Contributor Summit
-- [ ] Awards team should plan for 3 weeks of vendor research
+- [ ] Awards Team should plan for 3 weeks of vendor research
 - [ ] Once an Award has been selected, the vendor needs to be approved by the CNCF Representative
     - [ ] Can they ship to the countries we need?
     - [ ] Do they accept our payment options?

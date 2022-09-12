@@ -103,7 +103,7 @@ Cluster API infrastructure provider for Azure
   - Slack: [#cluster-api-azure](https://kubernetes.slack.com/messages/cluster-api-azure)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API Provider Azure office hours: [Thursdays at 08:00 PT (Pacific Time)](https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API Provider Azure office hours: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](http://bit.ly/k8s-capz-agenda).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-cloudstack

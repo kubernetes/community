@@ -921,8 +921,8 @@ doing!
 
 Check out the [E2E docs](../sig-testing/e2e-tests.md) for detailed information about how to
 write end-to-end tests for your feature.
-Make sure the E2E tests are running in the default presubmits for a feature that
-is being promoted to Beta (enabled by default).
+Make sure the E2E tests are running in the default presubmits for a feature/API that
+is enabled by default.
 
 ## Examples and docs
 
@@ -939,8 +939,7 @@ an example to illustrate your change.
 Make sure you update the swagger and OpenAPI spec by running:
 
 ```sh
-hack/update-swagger-spec.sh
-hack/update-openapi-spec.sh
+make update
 ```
 
 The API spec changes should be in a commit separate from your other changes.
@@ -985,7 +984,10 @@ complexity of upgradeability and lack of long-term support and lack of
 upgradability.
 - Beta level:
   - Object Versioning: API version name contains `beta` (e.g. `v2beta3`)
-  - Availability: in official Kubernetes releases, and enabled by default
+  - Availability: in official Kubernetes releases; API is disabled by default 
+but may be enabled by a flag.
+(Note: beta APIs introduced before v1.24 were enabled by default, but this 
+[changed for new beta APIs](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/3136-beta-apis-off-by-default/README.md))
   - Audience: users interested in providing feedback on features
   - Completeness: all API operations, CLI commands, and UI support should be
 implemented; end-to-end tests complete; the API has had a thorough API review

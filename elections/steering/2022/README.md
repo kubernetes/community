@@ -1,5 +1,4 @@
 # 2022 VOTERS GUIDE - KUBERNETES STEERING COMMITTEE ELECTION
-# DRAFT -- INCOMPLETE -- GUIDE IS IN PROGRESS
 
 ## Important Links
 
@@ -26,7 +25,7 @@
 
 ## Purpose
 
-The role of this election is to fill out the four (4) seats due for
+The role of this election is to fill out the three (3) seats due for
 reelection this year on the [Kubernetes Steering Committee]. Each elected
 member will serve a two (2) year term.
 
@@ -70,10 +69,10 @@ previous [governance meeting video] which led to this whole process.
 
 Please refer to the [Steering Committee Election Charter] for [Eligibility for candidacy]
 
-Eligibility for voting in 2021 is defined as:
+Eligibility for voting in 2022 is defined as:
 
 * People who had at least 50 contributions to the Kubernetes project over
-  the past year, according to a snapshot taken 2021-09-15 of the data driving
+  the past year, according to a snapshot taken 2022-08-12 of the data driving
   the [devstats developer activity counts dashboard][devstats-dashboard],
   who are also [Org Members].
   Contributions include GitHub events like creating issues, creating PRs,
@@ -81,7 +80,8 @@ Eligibility for voting in 2021 is defined as:
   [the SQL query used by devstats for developer activity counts][devstats-sql].
   
 * Full members of the Code of Conduct Committee (CoCC) and Security Response Committee
-  (SRC), as listed in [SIGs.yaml], regardless of contribution count.
+  (SRC), as listed in [SIGs.yaml], at any time between August 2021 and August 2022, 
+  regardless of contribution count.
 
 * People who have submitted the [voter exception form] and are accepted by
   the election committee.
@@ -131,19 +131,22 @@ Examples of contributions that would NOT be considered:
   public announcement is a weekend.
 -->
 
-| Date    | Event                                                                 |
-|:--------|:----------------------------------------------------------------------|
-| July 22 | Steering Committee selects Election Committee                         |
-|         | Announcement of Election and publication of voters.md                 |
-|         | Steering Committee Meeting with Q+A with the candidates and community |
-|         | All candidate bios due by 0000 UTC (5pm PST)                          |
-|         | Election Begins via email ballots                                     |
-|         | Deadline to submit voter exception requests                           |
-|         | Election Closes by 0000 UTC (5pm PST)                                 |
-|         | Private announcement of Results to SC members not up for election     |
-|         | Private announcement of Results to all candidates                     |
-|         | Public announcement of Results at Public Steering Committee Meeting   |
-|         | Election Retro                                                        |
+| Date                    | Event                                                                 |
+|:------------------------|:----------------------------------------------------------------------|
+| Friday, July 22         | Steering Committee selects Election Committee                         |
+| Monday, August 15       | Announcement of Election and publication of voters.md                 |
+| Monday, August 29       | Steering Committee Q+A for the candidates                             |
+| Tuesday, August 30      | Candidate nominations due at the end of the day in AoE time           |
+| Friday, September 2     | All candidate bios due at the end of the day in AoE time              |
+| Tuesday, September 6    | Election Begins via email ballots                                     |
+| Friday, September 16    | Deadline to submit voter exception requests                           |
+| Thursday, September 29  | Election Closes at the end of the day in AoE time                     |
+| Friday, September 30    | Private announcement of Results to SC members not up for election     |
+| Sunday, October 2       | Private announcement of Results to all candidates                     |
+| Monday, October 3       | Public announcement of Results at Public Steering Committee Meeting   |
+| Tuesday, October 4 ???  | Election Retro                                                        |
+
+Candidate nomination, bio, and election close deadlines will be done using Anywhere on Earth timing, meaning it is still valid to submit new nominations/bios/votes as long as it is still the last day anywhere on the planet (i.e. at the end of that day in UTC-12).
 
 ## Candidacy Process
 
@@ -154,7 +157,7 @@ Examples of contributions that would NOT be considered:
 If you want to nominate someone else, you may do so, but PLEASE talk to them
 first.
 
-2. After creating the issue, send an email to kubernetes-dev@googlegroups.com
+2. After creating the issue, send an email to dev@kubernetes.io
 with a link to the issue. The subject line of the email should be same as
 the title of the issue. This email should encourage people to second your
 nomination on GitHub, as +1s via email will not count. Here's an example email:
@@ -169,11 +172,11 @@ nomination on GitHub, as +1s via email will not count. Here's an example email:
 **issue** saying something like "I accept the nomination".
 
 4. Finally, the candidate closes the **issue** (`#NNN`) by opening a Pull Request
-to add their bio (see below). The PR body must contain the text `Fixes #NNN` to 
+to add their bio (see below). The PR body must contain the text `Fixes #NNN` to
 automatically close the issue once the PR is merged.
 
 5. Create the PR for your bio by copying the `nomination-template.md` file in
-this directory, and creating a new file titled `candidate-githubid.md`.  Fill 
+this directory, and creating a new file titled `candidate-githubid.md`.  Fill
 out all the fields in the template, but avoid making and format changes.
 
 **Endorsement**
@@ -202,8 +205,8 @@ directory with their platform and intent to run. This PR will copy `nomination-t
 to a file named `candidate-YourName.md`.  It will fill out the fields in
 that template.
 
-All biographical statements should be brief and to the point, with a guideline of around 
-**300 words** total for all text. If your statement is excessively long, you 
+All biographical statements should be brief and to the point, with a guideline of around
+**300 words** total for all text. If your statement is excessively long, you
 will be asked to abbreviate it before it is merged.
 
 Please refer to the [2021 candidate bios] for examples of content.
@@ -230,11 +233,11 @@ process starts, by going to the [election app], logging in, navigating to
 the 2022 election, and seeing if the screen there says that they are eligible.
 That screen takes its data from the [voters.yaml] file.
 
-If the app does not say that you are eligible, because you have worked on 
-Kubernetes in a way that is NOT reflected in GitHub contributions, you can use 
+If the app does not say that you are eligible, because you have worked on
+Kubernetes in a way that is NOT reflected in GitHub contributions, you can use
 the exception form built into the same app to ask to participate in the election.
 
-Elections will be held using time-limited [Condorcet] ranking on [Elekto]. 
+Elections will be held using time-limited [Condorcet] ranking on [Elekto].
 The most preferred candidates will be elected to the open seats.
 
 Employer diversity is encouraged, and thus maximal representation will be
@@ -309,5 +312,5 @@ Nominees may be found in the [election app].
 [election page]: https://elections.k8s.io/app/elections/steering---2022
 [voter exception form]: https://elections.k8s.io/app/elections/steering---2022/exception
 [public Steering Committee Meeting]: https://github.com/kubernetes/steering/#meetings
-[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2021#eligibility
+[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2022#eligibility
 [SIGs.yaml]: https://github.com/kubernetes/community/tree/master/sigs.yaml

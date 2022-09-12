@@ -66,11 +66,11 @@ Boskos is a resource manager service that handles different kinds of resources a
 ### e2e-framework
 An experimental e2e testing framework for Kubernetes clusters.
 - **Owners:**
-  - [kubernetes-sigs/e2e-framework](https://github.com/kubernetes-sigs/e2e-framework/blob/master/OWNERS)
+  - [kubernetes-sigs/e2e-framework](https://github.com/kubernetes-sigs/e2e-framework/blob/main/OWNERS)
 ### kind
 Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
 - **Owners:**
-  - [kubernetes-sigs/kind](https://github.com/kubernetes-sigs/kind/blob/master/OWNERS)
+  - [kubernetes-sigs/kind](https://github.com/kubernetes-sigs/kind/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#kind](https://kubernetes.slack.com/messages/kind)
 ### kubetest2
