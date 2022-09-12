@@ -19,7 +19,6 @@ channels:
     archived: true
   - name: argentina
   - name: arm64
-  - name: armory-k8s
   - name: aus-nz-dev
   - name: aus-nz-users
   - name: awesome-kubernetes
@@ -453,6 +452,7 @@ channels:
   - name: ug-big-data
     id: C0ELB338T
   - name: ug-vmware
+  - name: ug-armory
   - name: undistro
   - name: vcluster
   - name: velero-dev
