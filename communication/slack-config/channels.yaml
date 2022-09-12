@@ -449,10 +449,10 @@ channels:
   - name: traefik
   - name: travis-ci
   - name: tw-users
+  - name: ug-armory
   - name: ug-big-data
     id: C0ELB338T
   - name: ug-vmware
-  - name: ug-armory
   - name: undistro
   - name: vcluster
   - name: velero-dev
