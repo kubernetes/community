@@ -27,6 +27,11 @@ restrictions:
   - path: "sig-network/*.yaml"
     channels:
       - "^sig-network-.*$"
+  - path: "sig-node/*.yaml"
+    channels:
+      - "^sig-node"
+    usergroups:
+      - "^dra-dev$"
   - path: "sig-release/*.yaml"
     channels:
       - "^sig-release$"
