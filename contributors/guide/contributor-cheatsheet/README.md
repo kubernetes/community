@@ -415,7 +415,7 @@ git push --force
 [GitHub workflow]: /contributors/guide/github-workflow.md#3-branch
 [squashing commits]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
 [owners]: /contributors/guide/owners.md
-[testing locally]: /contributors/guide/README.md#testing
+[testing locally]: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/testing.md
 [Atlassian git tutorial]: https://www.atlassian.com/git/tutorials
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [Security and Disclosure Information]: https://kubernetes.io/docs/reference/issues-security/security/
