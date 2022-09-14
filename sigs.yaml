@@ -1797,13 +1797,14 @@ sigs:
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
       archive_url: http://bit.ly/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
-  - name: oci-proxy
-    description: Experimental project for OCI distribution
+  - name: registry.k8s.io
+    description: A custom HTTP redirector serving Kubernetes container image blobs
+      from existing vendor supported container registries.
     contact:
       slack: sig-k8s-infra
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/oci-proxy/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/registry.k8s.io/main/OWNERS
     meetings:
     - description: Regular SIG Meeting
       day: Wednesday

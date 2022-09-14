@@ -83,10 +83,10 @@ Code and configuration to manage Kubernetes project infrastructure, including va
   - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
-### oci-proxy
-Experimental project for OCI distribution
+### registry.k8s.io
+A custom HTTP redirector serving Kubernetes container image blobs from existing vendor supported container registries.
 - **Owners:**
-  - [kubernetes-sigs/oci-proxy](https://github.com/kubernetes-sigs/oci-proxy/blob/main/OWNERS)
+  - [kubernetes/registry.k8s.io](https://github.com/kubernetes/registry.k8s.io/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
