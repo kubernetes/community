@@ -12,7 +12,7 @@ Historically Kubelet relied on the [cAdvisor](https://github.com/google/cadvisor
 library, an open-source project hosted in a separate repository, to retrieve
 container metrics such as CPU and memory usage. These metrics are then aggregated
 and exposed through Kubelet's [Summary
-API](https://github.com/kubernetes/kubernetes/blob/release-1.19/pkg/kubelet/apis/stats/v1alpha1/types.go)
+API](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubelet/pkg/apis/stats/v1alpha1/types.go)
 for the monitoring pipeline (and other components) to consume. Any container
 runtime (e.g., Docker and Rkt) integrated with Kubernetes needed to add a
 corresponding package in cAdvisor to support tracking container and image file
