@@ -20,7 +20,7 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 * Korean Team Meeting: [Thursdays at 13:00 UTC](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLAOP7m08QDCWZ7RwGca6cU4vzrOMw3ht7).
-* Localization Subproject Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/) (first Tuesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+* Localization Subproject Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/) (first Monday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 * New Contributor Meet and Greet: [Tuesdays at 10:30 UTC](https://zoom.us/j/92822621820?pwd=S1p4RnB1RmNSZ3JjYlRRUVd4UjFPZz09) (first Tuesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=UTC).
