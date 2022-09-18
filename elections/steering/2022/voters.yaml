@@ -15,6 +15,7 @@
 # 2022-08-28: Add voters from exception requests.
 # 2022-09-05: Add voters from exception requests.
 # 2022-09-09: Add voters from exception requests.
+# 2022-09-14: Add voters from exception requests.
 #
 eligible_voters:
 - '249043822'
@@ -141,6 +142,7 @@ eligible_voters:
 - corneliusweig
 - cpanato
 - cprivitere
+- craigbox
 - cristicalin
 - csantanapr
 - cyclinder
@@ -261,6 +263,7 @@ eligible_voters:
 - hzxuzhonghu
 - iamemilio
 - iamNoah1
+- IanColdwater
 - ianychoi
 - ibabou
 - idvoretskyi
@@ -336,6 +339,7 @@ eligible_voters:
 - Karthik-K-N
 - Kartik494
 - kaslin
+- katcosgrove
 - kavyashree-r
 - kbhawkey
 - kcmartin
@@ -521,6 +525,7 @@ eligible_voters:
 - Raffo
 - RainbowMango
 - Rajalakshmi-Girish
+- rajaskakodkar
 - ramineni
 - ramrodo
 - Random-Liu
