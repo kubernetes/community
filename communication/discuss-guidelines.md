@@ -47,7 +47,7 @@ throughout the project, and includes all communication mediums.
 
 ## Privacy Policy
 
-Discuss adheres to the the [Linux Foundation Privacy Policy].
+Discuss adheres to the [Linux Foundation Privacy Policy].
 
 
 ## Admins

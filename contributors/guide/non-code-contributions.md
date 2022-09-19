@@ -3,7 +3,7 @@ title: "Non-code Contributions"
 weight: 11
 description: |
   Looking for a good entrance into the project? or to do something different?
-  There are many ways to contribute to the the Kubernetes project without having
+  There are many ways to contribute to the Kubernetes project without having
   to have coding experience: issue triage, writing documentation, joining the
   release team and much more.
 ---
