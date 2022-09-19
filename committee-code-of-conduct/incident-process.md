@@ -3,7 +3,7 @@ title: "Code of Conduct Committee Incident Reporting and Response Process"
 weight: 550
 aliases: [ "/coc-process" ]
 description: | 
-  Overview of the the Code of Conduct Committee's workflow when receiving and
+  Overview of the Code of Conduct Committee's workflow when receiving and
   responding to an incident report.
 ---
 

@@ -7,7 +7,7 @@ way.
 Conformance tests are promoted from existing e2e tests which have
 been proven to be stable and "non-flaky".
 
-Please read the the ["Writing good e2e tests"](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/writing-good-e2e-tests.md) guide as a supplement to this document.
+Please read the ["Writing good e2e tests"](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/writing-good-e2e-tests.md) guide as a supplement to this document.
 
 ### Requirements  ###
 

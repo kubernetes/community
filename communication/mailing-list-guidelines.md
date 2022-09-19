@@ -136,7 +136,7 @@ list, and again for the members mailing list.
 
   Click **Next**.
   
-2. Fill out the the **Choose privacy settings** with these options: 
+2. Fill out the **Choose privacy settings** with these options:
   
   | Field | Leads ML value | Members ML value | 
   | --- | --- | --- |
