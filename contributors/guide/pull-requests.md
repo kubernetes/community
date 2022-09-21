@@ -552,7 +552,7 @@ Pull requests by Kubernetes organization [members](/community-membership.md) do 
 
     1. Automatic tests run. See the current list of tests at this [link](https://prow.k8s.io/?repo=kubernetes%2Fkubernetes&type=presubmit)
     1. If tests fail, resolve issues by pushing edits to your pull request branch
-    1. If the failure is a flake, anyone on trusted pull requests can comment `/retest` to rerun failed tests
+    1. If the failure is a fluke, anyone on trusted pull requests can comment `/retest` to rerun failed tests
 
 1. Reviewer suggests edits
 1. Push edits to your pull request branch
