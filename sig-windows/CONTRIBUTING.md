@@ -26,10 +26,12 @@ View the leadership team in SIG-Windows and other subprojects in the [getting st
 
 ## Find work in progress
 
-View the SIG-Windows [project board](https://github.com/orgs/kubernetes/projects/8).
-This project board is updated during our [bi-weekly backlog refinement meeting](https://github.com/kubernetes/community/tree/master/sig-windows#meetings).
+View the SIG-Windows project boards:
 
-View current [outstanding PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Apr+is%3Aopen+label%3Asig%2Fwindows) and [open issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fwindows).
+- [Open Issues](https://github.com/orgs/kubernetes/projects/82)
+- [Open PRs](https://github.com/orgs/kubernetes/projects/99)
+
+Items are added to these boards automatically and these boards are reviewed during our [bi-weekly backlog refinement meeting](https://github.com/kubernetes/community/tree/master/sig-windows#meetings).
 
 ## Building Kubernetes for Windows from Source
 
