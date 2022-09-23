@@ -16,7 +16,7 @@ As mentioned, the focus of the Contributor Experience articles is targeted at th
 
 1. Article is just for [k8s.dev](http://k8s.dev/blog): this is when it is relevant for the contributor community, and not necessarily for Kubernetes end-users. An example is an article explaining how to use some specific tool or automation that helps with the Kubernetes development process.
 2. Article is just for [kubernetes.io](https://kubernetes.io/blog/): when the article targets Kubernetes end-users, and not specifically the contributor community. Examples include most technical articles on Kubernetes features, updates on new features and deprecations, etc.
-3. Article is relevant for both: sometimes, an article will be revelant to both the Kubernetes end-users, and the contributor community. Examples include interviews with SIGs and WGs, articles on technical aspects that are important for the contributor community, etc.
+3. Article is relevant for both: sometimes, an article will be relevant to both the Kubernetes end-users, and the contributor community. Examples include interviews with SIGs and WGs, articles on technical aspects that are important for the contributor community, etc.
 
 The decision on what is the right option will be made jointly by the SIG Contribex Comms and the SIG Docs Blogging editorial team: as a content writer you shouldn't be overly concerned about it, expect in how it can change the approval process, as described below.
 
