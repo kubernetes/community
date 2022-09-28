@@ -1294,9 +1294,6 @@ sigs:
   label: contributor-experience
   leadership:
     chairs:
-    - github: alisondy
-      name: Alison Dowdney
-      company: Kasten
     - github: jberkus
       name: Josh Berkus
       company: Red Hat
@@ -1313,6 +1310,8 @@ sigs:
     emeritus_leads:
     - github: Phillels
       name: Elsie Phillips
+    - github: alisondy
+      name: Alison Dowdney
     - github: castrojo
       name: Jorge Castro
     - github: grodrigues3
