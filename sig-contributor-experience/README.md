@@ -23,7 +23,6 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Alison Dowdney (**[@alisondy](https://github.com/alisondy)**), Kasten
 * Josh Berkus (**[@jberkus](https://github.com/jberkus)**), Red Hat
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
 
@@ -37,6 +36,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Emeritus Leads
 
 * Elsie Phillips (**[@Phillels](https://github.com/Phillels)**)
+* Alison Dowdney (**[@alisondy](https://github.com/alisondy)**)
 * Jorge Castro (**[@castrojo](https://github.com/castrojo)**)
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**)
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
