@@ -926,17 +926,6 @@ sigs:
       frequency: monthly - last Wednesday every month
       url: https://zoom.us/j/9392903494
       archive_url: https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit
-  - name: provider-oci
-    owners:
-    - https://github.com/oracle/cluster-api-provider-oci/blob/main/OWNERS
-    meetings:
-    - description: Regular Oracle Cloud Subproject Meeting
-      day: Tuesday
-      time: "06:00"
-      tz: PT (Pacific Time)
-      frequency: First Tuesday of each month
-      url: https://oracle.zoom.us/j/99910180651?pwd=MjhhVC9jZjU3eGIxdjNTYm1UU3V6dz09
-      archive_url: https://docs.google.com/document/d/1mgZxjDbnSv74Vut1aHtWplG6vsR9zu5sqXvQN8SPgCc
   - name: provider-openstack
     owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
@@ -1165,6 +1154,17 @@ sigs:
       url: https://zoom.us/j/91929881559?pwd=WllxazhTUzBFN1BNWTRadTA3NGtQQT09
       archive_url: https://docs.google.com/document/d/10aTeq2lhXW_3aFQAd_MdGjY8PtZPslKhZCCcXxFp3_Q/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+  - name: cluster-api-provider-oci
+    owners:
+    - https://github.com/oracle/cluster-api-provider-oci/blob/main/OWNERS
+    meetings:
+    - description: Cluster API Provider Oracle Cloud Infrastructure
+      day: Tuesday
+      time: "06:00"
+      tz: PT (Pacific Time)
+      frequency: First Tuesday of each month
+      url: https://oracle.zoom.us/j/99910180651?pwd=MjhhVC9jZjU3eGIxdjNTYm1UU3V6dz09
+      archive_url: https://docs.google.com/document/d/1mgZxjDbnSv74Vut1aHtWplG6vsR9zu5sqXvQN8SPgCc
   - name: cluster-api-provider-openstack
     description: Cluster API infrastructure provider for OpenStack
     contact:

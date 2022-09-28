@@ -167,6 +167,12 @@ Cluster API infrastructure provider for Nested Clusters
   - Cluster API Provider Nested Office Hours: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/91929881559?pwd=WllxazhTUzBFN1BNWTRadTA3NGtQQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/10aTeq2lhXW_3aFQAd_MdGjY8PtZPslKhZCCcXxFp3_Q/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
+### cluster-api-provider-oci
+- **Owners:**
+  - [oracle/cluster-api-provider-oci](https://github.com/oracle/cluster-api-provider-oci/blob/main/OWNERS)
+- **Meetings:**
+  - Cluster API Provider Oracle Cloud Infrastructure: [Tuesdays at 06:00 PT (Pacific Time)](https://oracle.zoom.us/j/99910180651?pwd=MjhhVC9jZjU3eGIxdjNTYm1UU3V6dz09) (First Tuesday of each month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=06:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1mgZxjDbnSv74Vut1aHtWplG6vsR9zu5sqXvQN8SPgCc).
 ### cluster-api-provider-openstack
 Cluster API infrastructure provider for OpenStack
 - **Owners:**
