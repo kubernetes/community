@@ -86,7 +86,7 @@ Try #shoutouts on the Kubernetes slack!
 #### Awards
 There are a few times a year that Kubernetes and the larger CNCF community 
 intentionally recognizes members of the community for certain roles and 
-accomplishments. The leads@ mailing list and the slack channel will have 
+accomplishments. The leads@ mailing list and slack channel will have 
 announcements for when nominations are open. 
 - [Contributor Summit] Awards
 - [CNCF Awards]
