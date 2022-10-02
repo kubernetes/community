@@ -110,6 +110,7 @@ channels:
   - name: external-secrets
   - name: falco
   - name: fiaas
+  - name: finops
   - name: fi-users
   - name: flatcar
   - name: flink-operator
