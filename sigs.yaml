@@ -2244,7 +2244,12 @@ sigs:
     contact:
       mailing_list: https://groups.google.com/a/kubernetes.io/g/release-team
       teams:
-      - name: ci-signal
+      - name: release-team-bug-triage
+      - name: release-team-comms
+      - name: release-team-docs
+      - name: release-team-enhancements
+      - name: release-ci-signal
+      - name: release-team-release-notes
       - name: release-team
         description: Members of the current Release Team and subproject owners
       - name: release-team-leads
