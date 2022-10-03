@@ -3453,21 +3453,21 @@ committees:
   label: steering
   leadership:
     chairs:
+    - github: BenTheElder
+      name: Benjamin Elder
+      company: Google
     - github: cblecker
       name: Christoph Blecker
       company: Red Hat
-    - github: dims
-      name: Davanum Srinivas
-      company: VMware
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
-    - github: liggitt
-      name: Jordan Liggitt
-      company: Google
     - github: mrbobbytables
       name: Bob Killen
       company: Google
+    - github: palnabarun
+      name: Nabarun Pal
+      company: VMware
     - github: parispittman
       name: Paris Pittman
       company: Apple
