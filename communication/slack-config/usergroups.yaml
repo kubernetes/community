@@ -186,11 +186,11 @@ usergroups:
     channels:
       - steering-committee
     members:
+      - bentheelder
       - cblecker
-      - dims
       - justaugustus
-      - liggitt
       - mrbobbytables
+      - palnabarun
       - paris
       - tpepper
 
