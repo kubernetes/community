@@ -1,4 +1,4 @@
-# Event Co-ordinator Role Handbook 
+# Comms Events Lead Role Handbook 
 
 ## Overview
 
@@ -24,7 +24,7 @@ Time Commitment:
 
 ## Expectations and tasjs
 
-The core task for the role would be to stay current on [upcoming]() events. Planning should be done with the team about the event, target audience, mode of communication, timeline, etc. This could be coordinated via a call or async conversatios. Sometimes, some big events might require you to join a weekly or bi-weekly call. The following are the possible tasks to perform (may vary depending upon the event).
+The core task for the role would be to stay current on [upcoming](https://www.kubernetes.dev/events/) events. Planning should be done with the team about the event, target audience, mode of communication, timeline, etc. This could be coordinated via a call or async conversatios. Sometimes, some big events might require you to join a weekly or bi-weekly call. The following are the possible tasks to perform (may vary depending upon the event).
 
 - Creating a communication schedule - what, when, how, who
 - Promoting on different platforms like 
