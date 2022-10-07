@@ -12,7 +12,7 @@ Historically Kubelet relied on the [cAdvisor](https://github.com/google/cadvisor
 library, an open-source project hosted in a separate repository, to retrieve
 container metrics such as CPU and memory usage. These metrics are then aggregated
 and exposed through Kubelet's [Summary
-API](https://git.k8s.io/kubernetes/pkg/kubelet/apis/stats/v1alpha1/types.go)
+API](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubelet/pkg/apis/stats/v1alpha1/types.go)
 for the monitoring pipeline (and other components) to consume. Any container
 runtime (e.g., Docker and Rkt) integrated with Kubernetes needed to add a
 corresponding package in cAdvisor to support tracking container and image file
@@ -86,7 +86,7 @@ message FilesystemUsage {
     // The underlying storage of the filesystem.
     StorageIdentifier storage_id = 2;
     // UsedBytes represents the bytes used for images on the filesystem.
-    // This may differ from the total bytes used on the filesystem and may not 
+    // This may differ from the total bytes used on the filesystem and may not
     // equal CapacityBytes - AvailableBytes.
     UInt64Value used_bytes = 3;
     // InodesUsed represents the inodes used by the images.

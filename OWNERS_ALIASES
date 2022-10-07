@@ -35,7 +35,6 @@ aliases:
     - neolit123
     - vincepri
   sig-contributor-experience-leads:
-    - alisondy
     - cblecker
     - jberkus
     - mrbobbytables
@@ -163,11 +162,11 @@ aliases:
     - tabbysable
     - tallclair
   committee-steering:
+    - BenTheElder
     - cblecker
-    - dims
     - justaugustus
-    - liggitt
     - mrbobbytables
+    - palnabarun
     - parispittman
     - tpepper
 ## BEGIN CUSTOM CONTENT

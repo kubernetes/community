@@ -133,6 +133,12 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 - **Meetings:**
   - Regular IBM Subproject Meeting: [Wednesdays at 14:00 ET (Eastern Time)](https://zoom.us/j/9392903494) (monthly - last Wednesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=ET%20%28Eastern%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit).
+### provider-oci
+- **Owners:**
+  - [oracle/cluster-api-provider-oci](https://github.com/oracle/cluster-api-provider-oci/blob/main/OWNERS)
+- **Meetings:**
+  - Regular Oracle Cloud Subproject Meeting: [Tuesdays at 06:00 PT (Pacific Time)](https://oracle.zoom.us/j/99910180651?pwd=MjhhVC9jZjU3eGIxdjNTYm1UU3V6dz09) (First Tuesday of each month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=06:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1mgZxjDbnSv74Vut1aHtWplG6vsR9zu5sqXvQN8SPgCc).
 ### provider-openstack
 - **Owners:**
   - [kubernetes/cloud-provider-openstack](https://github.com/kubernetes/cloud-provider-openstack/blob/master/OWNERS)

@@ -144,6 +144,7 @@ API validation and policies enforced during admission, such as PodSecurityPolicy
 - **Owners:**
   - [kubernetes-sigs/pspmigrator](https://github.com/kubernetes-sigs/pspmigrator/blob/main/OWNERS)
   - [kubernetes-sigs/wg-policy-prototypes](https://github.com/kubernetes-sigs/wg-policy-prototypes/blob/master/OWNERS)
+  - [kubernetes/kms](https://github.com/kubernetes/kms/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/imagepolicy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/imagepolicy/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/policy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/policy/OWNERS)
   - [kubernetes/kubernetes/pkg/registry/policy](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/policy/OWNERS)

@@ -13,6 +13,7 @@ Different actions on this list must be carried out by different members:
 **Who executes:** When offboarding, outgoing members must remove themselves from Slack channels. When onboarding, carryover members must add incoming members.
 
 - [ ] Code of conduct committee Slack channel(s) (public and private) on `kubernetes.slack.com`
+- [ ] `#kubernetes-moderators` and `#slack-reports` private channels on `kubernetes.slack.com` 
 - [ ] Code of conduct sync Slack channel on `cloud-native.slack.com`
 
 ### Slack Channel Admin Privileges

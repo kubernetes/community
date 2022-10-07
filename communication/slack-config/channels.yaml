@@ -84,6 +84,7 @@ channels:
   - name: csi-secrets-store #this channel is for secrets-store-csi-driver which is a subproject of sig-auth
   - name: de-events
   - name: de-users
+  - name: deppy-dev
   - name: devfile
   - name: devspace
   - name: devstats
@@ -110,6 +111,7 @@ channels:
   - name: external-secrets
   - name: falco
   - name: fiaas
+  - name: finops
   - name: fi-users
   - name: flatcar
   - name: flink-operator
@@ -353,6 +355,7 @@ channels:
   - name: prometheus
   - name: prometheus-operator
   - name: prometheus-operator-dev
+  - name: provider-oci
   - name: pt_br-users
   - name: purelb-users
   - name: raksh

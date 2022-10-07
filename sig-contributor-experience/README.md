@@ -23,7 +23,6 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Alison Dowdney (**[@alisondy](https://github.com/alisondy)**), Kasten
 * Josh Berkus (**[@jberkus](https://github.com/jberkus)**), Red Hat
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
 
@@ -37,6 +36,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Emeritus Leads
 
 * Elsie Phillips (**[@Phillels](https://github.com/Phillels)**)
+* Alison Dowdney (**[@alisondy](https://github.com/alisondy)**)
 * Jorge Castro (**[@castrojo](https://github.com/castrojo)**)
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**)
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
@@ -68,7 +68,7 @@ Contributor Communications focuses on amplifying the success of Kubernetes contr
 - **Owners:**
   - [kubernetes-sigs/contributor-tweets](https://github.com/kubernetes-sigs/contributor-tweets/blob/master/OWNERS)
   - [kubernetes-sigs/lwkd](https://github.com/kubernetes-sigs/lwkd/blob/main/OWNERS)
-  - [kubernetes/community/communication/marketing-team](https://github.com/kubernetes/community/blob/master/communication/marketing-team/OWNERS)
+  - [kubernetes/community/communication/contributor-comms](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/OWNERS)
 - **Meetings:**
   - Contributor Comms - Upstream Marketing Team Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/596959769?pwd=TURBNlZPb3BEWVFmbWlCYXlMVVJiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1KDoqbw2A6W7rLSbIRuOlqH8gkoOnp2IHHuV9KyJDD2c/edit).

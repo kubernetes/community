@@ -539,6 +539,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/pspmigrator/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/wg-policy-prototypes/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kms/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/policy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/policy/OWNERS
@@ -925,6 +926,17 @@ sigs:
       frequency: monthly - last Wednesday every month
       url: https://zoom.us/j/9392903494
       archive_url: https://docs.google.com/document/d/1qd_LTu5GFaxUhSWTHigowHt3XwjJVf1L57kupj8lnwg/edit
+  - name: provider-oci
+    owners:
+    - https://github.com/oracle/cluster-api-provider-oci/blob/main/OWNERS
+    meetings:
+    - description: Regular Oracle Cloud Subproject Meeting
+      day: Tuesday
+      time: "06:00"
+      tz: PT (Pacific Time)
+      frequency: First Tuesday of each month
+      url: https://oracle.zoom.us/j/99910180651?pwd=MjhhVC9jZjU3eGIxdjNTYm1UU3V6dz09
+      archive_url: https://docs.google.com/document/d/1mgZxjDbnSv74Vut1aHtWplG6vsR9zu5sqXvQN8SPgCc
   - name: provider-openstack
     owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-openstack/master/OWNERS
@@ -1293,9 +1305,6 @@ sigs:
   label: contributor-experience
   leadership:
     chairs:
-    - github: alisondy
-      name: Alison Dowdney
-      company: Kasten
     - github: jberkus
       name: Josh Berkus
       company: Red Hat
@@ -1312,6 +1321,8 @@ sigs:
     emeritus_leads:
     - github: Phillels
       name: Elsie Phillips
+    - github: alisondy
+      name: Alison Dowdney
     - github: castrojo
       name: Jorge Castro
     - github: grodrigues3
@@ -1358,7 +1369,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-tweets/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/lwkd/main/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/community/master/communication/marketing-team/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/community/master/communication/contributor-comms/OWNERS
     meetings:
     - description: Contributor Comms - Upstream Marketing Team Meeting
       day: Friday
@@ -1512,11 +1523,11 @@ sigs:
     url: https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit
     archive_url: https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit
     recordings_url: https://www.youtube.com/playlist?list=PLAOP7m08QDCWZ7RwGca6cU4vzrOMw3ht7
-  - description: Localization Subgroup Meeting
+  - description: Localization Subproject Meeting
     day: Monday
     time: "15:00"
     tz: UTC
-    frequency: first Tuesday of the month
+    frequency: first Monday of the month
     url: https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/
     archive_url: https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
@@ -1587,6 +1598,9 @@ sigs:
   - name: kubernetes-blog
     owners:
     - https://raw.githubusercontent.com/kubernetes/website/master/content/en/blog/OWNERS
+  - name: localization
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
   - name: reference-docs
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/reference-docs/master/OWNERS
@@ -2373,6 +2387,14 @@ sigs:
     url: https://zoom.us/j/841218129
     archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
     recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
+  - description: descheduler biweekly meeting
+    day: Tuesday
+    time: "17:00"
+    tz: UTC
+    frequency: biweekly starting Tuesday September 13, 2022
+    url: https://zoom.us/j/841218129
+    archive_url: https://docs.google.com/document/d/1Ang5shAFxuylO2RXMFGO7uxSe-IX3Y3PxoKIn1yPIEQ
+    recordings_url: https://youtube.com/playlist?list=PLEafaZMk8MYYqoSncOkL8uutIcTsUQE_g
   - description: monthly meeting (APAC)
     day: first Thursday
     time: "02:00"
@@ -3431,21 +3453,21 @@ committees:
   label: steering
   leadership:
     chairs:
+    - github: BenTheElder
+      name: Benjamin Elder
+      company: Google
     - github: cblecker
       name: Christoph Blecker
       company: Red Hat
-    - github: dims
-      name: Davanum Srinivas
-      company: VMware
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
-    - github: liggitt
-      name: Jordan Liggitt
-      company: Google
     - github: mrbobbytables
       name: Bob Killen
       company: Google
+    - github: palnabarun
+      name: Nabarun Pal
+      company: VMware
     - github: parispittman
       name: Paris Pittman
       company: Apple
