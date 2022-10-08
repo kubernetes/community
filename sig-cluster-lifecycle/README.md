@@ -45,7 +45,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcluster-lifecycle)
 - GitHub Teams:
     - [@kubernetes/sig-cluster-lifecycle](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle) - SIG Cluster Lifecycle mailing list
-- Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
+- Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
 
 ## Working Groups
 
