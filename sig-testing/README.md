@@ -24,6 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Testing Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
+* Michelle Shepardson (**[@michelle192837](https://github.com/michelle192837)**), Google
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
 
@@ -33,7 +34,9 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
 * Alvaro Aleman (**[@alvaroaleman](https://github.com/alvaroaleman)**), Red Hat
+* Antonio Ojea (**[@aojea](https://github.com/aojea)**), Google
 * Cole Wagner (**[@cjwagner](https://github.com/cjwagner)**), Google
+* Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel
 
 ## Emeritus Leads
 
