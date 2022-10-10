@@ -57,7 +57,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-scheduling-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-scheduling-pr-reviews) - PR Reviews
     - [@kubernetes/sig-scheduling-proposals](https://github.com/orgs/kubernetes/teams/sig-scheduling-proposals) - Design Proposals
     - [@kubernetes/sig-scheduling-test-failures](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
+- Steering Committee Liaison: Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**)
 
 ## Working Groups
 

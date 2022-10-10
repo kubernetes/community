@@ -58,8 +58,8 @@ sigs:
     - name: sig-api-machinery-test-failures
       description: Test Failures and Triage
     liaison:
-      github: dims
-      name: Davanum Srinivas
+      github: palnabarun
+      name: Nabarun Pal
   subprojects:
   - name: component-base
     owners:
@@ -328,8 +328,8 @@ sigs:
     - name: sig-architecture-test-failures
       description: Test Failures and Triage
     liaison:
-      github: liggitt
-      name: Jordan Liggitt
+      github: BenTheElder
+      name: Benjamin Elder
   subprojects:
   - name: architecture-and-api-governance
     description: '[Described below](#architecture-and-api-governance-1)'
@@ -1008,8 +1008,8 @@ sigs:
     - name: sig-cluster-lifecycle
       description: SIG Cluster Lifecycle mailing list
     liaison:
-      github: dims
-      name: Davanum Srinivas
+      github: palnabarun
+      name: Nabarun Pal
   subprojects:
   - name: cluster-addons
     description: A project for figuring out the best way to install, manage and deliver
@@ -2200,8 +2200,8 @@ sigs:
     - name: sig-release-leads
       description: Chairs, Technical Leads, and Program Managers for SIG Release
     liaison:
-      github: dims
-      name: Davanum Srinivas
+      github: palnabarun
+      name: Nabarun Pal
   subprojects:
   - name: Release Engineering
     description: |
@@ -2422,8 +2422,8 @@ sigs:
     - name: sig-scheduling-test-failures
       description: Test Failures and Triage
     liaison:
-      github: liggitt
-      name: Jordan Liggitt
+      github: BenTheElder
+      name: Benjamin Elder
   subprojects:
   - name: cluster-capacity
     owners:
@@ -2658,6 +2658,9 @@ sigs:
     - github: BenTheElder
       name: Benjamin Elder
       company: Google
+    - github: michelle192837
+      name: Michelle Shepardson
+      company: Google
     - github: spiffxp
       name: Aaron Crickenberger
       company: Google
@@ -2671,9 +2674,15 @@ sigs:
     - github: alvaroaleman
       name: Alvaro Aleman
       company: Red Hat
+    - github: aojea
+      name: Antonio Ojea
+      company: Google
     - github: cjwagner
       name: Cole Wagner
       company: Google
+    - github: pohly
+      name: Patrick Ohly
+      company: Intel
     emeritus_leads:
     - github: fejta
       name: Erick Fejta
@@ -2847,8 +2856,8 @@ sigs:
     - name: sig-usability-proposals
       description: Design Proposals
     liaison:
-      github: dims
-      name: Davanum Srinivas
+      github: palnabarun
+      name: Nabarun Pal
   subprojects:
   - name: sig-usability
     owners:
@@ -2917,8 +2926,8 @@ sigs:
     - name: sig-windows-misc
       description: General Discussion
     liaison:
-      github: liggitt
-      name: Jordan Liggitt
+      github: BenTheElder
+      name: Benjamin Elder
   subprojects:
   - name: windows-gmsa
     owners:
@@ -2970,8 +2979,8 @@ workinggroups:
     slack: wg-api-expression
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-api-expression
     liaison:
-      github: liggitt
-      name: Jordan Liggitt
+      github: BenTheElder
+      name: Benjamin Elder
 - dir: wg-batch
   name: Batch
   mission_statement: >
@@ -3143,8 +3152,8 @@ workinggroups:
     slack: wg-multitenancy
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-multitenancy
     liaison:
-      github: liggitt
-      name: Jordan Liggitt
+      github: BenTheElder
+      name: Benjamin Elder
 - dir: wg-policy
   name: Policy
   mission_statement: >
@@ -3259,8 +3268,8 @@ workinggroups:
     slack: wg-structured-logging
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-structured-logging
     liaison:
-      github: dims
-      name: Davanum Srinivas
+      github: palnabarun
+      name: Nabarun Pal
 usergroups:
 - dir: ug-big-data
   name: Big Data

@@ -47,7 +47,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-api-machinery-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-api-machinery-pr-reviews) - PR Reviews
     - [@kubernetes/sig-api-machinery-proposals](https://github.com/orgs/kubernetes/teams/sig-api-machinery-proposals) - Design Proposals
     - [@kubernetes/sig-api-machinery-test-failures](https://github.com/orgs/kubernetes/teams/sig-api-machinery-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
+- Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
 
 ## Working Groups
 

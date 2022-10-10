@@ -51,7 +51,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-windows-bugs](https://github.com/orgs/kubernetes/teams/sig-windows-bugs) - Bug Triage and Troubleshooting
     - [@kubernetes/sig-windows-feature-requests](https://github.com/orgs/kubernetes/teams/sig-windows-feature-requests) - Feature Requests
     - [@kubernetes/sig-windows-misc](https://github.com/orgs/kubernetes/teams/sig-windows-misc) - General Discussion
-- Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
+- Steering Committee Liaison: Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**)
 
 ## Subprojects
 
