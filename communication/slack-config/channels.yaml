@@ -24,6 +24,7 @@ channels:
   - name: awesome-kubernetes
   - name: aws-authenticator
   - name: aws-controllers-k8s
+  - name: aws-vpc-cni
   - name: bazel
   - name: bindings-discuss
   - name: bootkube
