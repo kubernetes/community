@@ -25,6 +25,7 @@ channels:
   - name: aws-authenticator
   - name: aws-controllers-k8s
   - name: aws-vpc-cni
+  - name: azure-service-operator
   - name: bazel
   - name: bindings-discuss
   - name: bootkube
