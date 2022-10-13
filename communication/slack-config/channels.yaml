@@ -109,6 +109,7 @@ channels:
   - name: events
   - name: external-dns
   - name: external-secrets
+  - name: external-secrets-dev
   - name: falco
   - name: fiaas
   - name: finops
