@@ -2244,16 +2244,16 @@ sigs:
     contact:
       mailing_list: https://groups.google.com/a/kubernetes.io/g/release-team
       teams:
+      - name: release-ci-signal
+      - name: release-team
+        description: Members of the current Release Team and subproject owners
       - name: release-team-bug-triage
       - name: release-team-comms
       - name: release-team-docs
       - name: release-team-enhancements
-      - name: release-ci-signal
-      - name: release-team-release-notes
-      - name: release-team
-        description: Members of the current Release Team and subproject owners
       - name: release-team-leads
         description: Release Team Leads for the current Kubernetes release cycle
+      - name: release-team-release-notes
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/release-team-shadow-stats/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS

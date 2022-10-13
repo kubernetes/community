@@ -105,12 +105,12 @@ The Kubernetes Release Team is responsible for the day-to-day work required to s
 - **Contact:**
   - [Mailing List](https://groups.google.com/a/kubernetes.io/g/release-team)
   - GitHub Teams:
+    - [@kubernetes/release-ci-signal](https://github.com/orgs/kubernetes/teams/release-ci-signal)
+    - [@kubernetes/release-team](https://github.com/orgs/kubernetes/teams/release-team) - Members of the current Release Team and subproject owners
     - [@kubernetes/release-team-bug-triage](https://github.com/orgs/kubernetes/teams/release-team-bug-triage)
     - [@kubernetes/release-team-comms](https://github.com/orgs/kubernetes/teams/release-team-comms)
     - [@kubernetes/release-team-docs](https://github.com/orgs/kubernetes/teams/release-team-docs)
     - [@kubernetes/release-team-enhancements](https://github.com/orgs/kubernetes/teams/release-team-enhancements)
-    - [@kubernetes/release-ci-signal](https://github.com/orgs/kubernetes/teams/release-ci-signal)
-    - [@kubernetes/release-team](https://github.com/orgs/kubernetes/teams/release-team) - Members of the current Release Team and subproject owners
     - [@kubernetes/release-team-leads](https://github.com/orgs/kubernetes/teams/release-team-leads) - Release Team Leads for the current Kubernetes release cycle
     - [@kubernetes/release-team-release-notes](https://github.com/orgs/kubernetes/teams/release-team-release-notes)
 ### SIG Release Process Documentation
