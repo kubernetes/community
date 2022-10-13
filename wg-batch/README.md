@@ -28,7 +28,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 
 * Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), Apple
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
-* Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), VMware
+* Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), Independent
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 * Swati Sehgal (**[@swatisehgal](https://github.com/swatisehgal)**), Red Hat
 
