@@ -14,10 +14,10 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 ## Members
 
+* Jason DeTiberus (**[@detiber](https://github.com/detiber)**), Cisco
 * Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), VMware
 * Hilliary Lipsig (**[@hlipsig](https://github.com/hlipsig)**), RedHat
 * Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
-* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
 * Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Microsoft
 
 ## Contact

@@ -3355,6 +3355,9 @@ committees:
   label: code-of-conduct
   leadership:
     chairs:
+    - github: detiber
+      name: Jason DeTiberus
+      company: Cisco
     - github: endocrimes
       name: Danielle Lancashire
       company: VMware
@@ -3364,9 +3367,6 @@ committees:
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Microsoft
-    - github: palnabarun
-      name: Nabarun Pal
-      company: VMware
     - github: salaxander
       name: Xander Grzywinski
       company: Microsoft
@@ -3385,6 +3385,8 @@ committees:
       name: Jaice Singer DuMars
     - github: karenhchu
       name: Karen Chu
+    - github: palnabarun
+      name: Nabarun Pal
     - github: parispittman
       name: Paris Pittman
     - github: tashimi
