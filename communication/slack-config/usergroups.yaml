@@ -21,8 +21,8 @@ usergroups:
       - TaoBeier
 
   - name: contributor-comms
-    long_name: Upstream Marketing
-    description: Upstream Marketing group.
+    long_name: Contributor Communications
+    description: Contributor Communications group.
     channels:
       - sig-contribex
     members:
