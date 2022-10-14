@@ -36,4 +36,4 @@ Things change, priorities get optimized, life happens. Having an easy on and off
 
 In the case where no shadow is available, other Marketing Council team members have the responsibility to cover the role. Concerns for time or ability to cover work can be escalated to advisors and SIG Contributor Experience leads as necessary.
 
-[Marketing Council](/communication/marketing-team/role-handbooks/council.md)
+[Marketing Council](/communication/contributor-comms/role-handbooks/council.md)

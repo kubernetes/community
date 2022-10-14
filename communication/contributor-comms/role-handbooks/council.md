@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Marketing Council is made up of multiple individuals working to bring multiple functions together to ensure Kubernetes contributors have a wealth of robust content and communications. The Marketing Council act as joint leaders to the Upstream Marketing team and its key responsibilities to the entire Kubernetes contributor base.
+The Marketing Council is made up of multiple individuals working to bring multiple functions together to ensure Kubernetes contributors have a wealth of robust content and communications. The Marketing Council act as joint leaders to the Contributor Comms team and its key responsibilities to the entire Kubernetes contributor base.
 
 #### How It Works
 
@@ -47,7 +47,7 @@ Responsibilities are categorized by the division of contribution among Marketing
   - Contributors
 - Working with the liaison team members to manage communications and workflows between the groups
 - Create new liaison positions as needed to coordinate key initiatives across the Kubernetes community
-- Audit the experience of engaging with the Upstream Marketing team and propose opportunities for improvement
+- Audit the experience of engaging with the Contributor Comms team and propose opportunities for improvement
 
 ### Minimum Skills and Requirements
 
@@ -60,7 +60,7 @@ Skills:
 Requirements:
 
 - Member of the [Kubernetes GitHub Org]
-- [Reviewer] in the marketing team folder
+- [Reviewer] in the contributor-comms folder
 - Shadowed under a lead in any role on the team for 6 months total (could be a combination of roles during that time period)
 
 #### Expected Time Investment
