@@ -8,7 +8,7 @@ Writing and sharing articles is one of the ways through which Kubernetes contrib
 2. Help contributors to navigate the existing publishing processes
 3. Assist in determining the final publishing targets of the content.
 4. Coordinate with SIG-Docs in the publishing process, namely by following and improving the Blogging Guidelines.
-6. Coordinate with the rest of the Contributor Comms team, and specifically the Social Media Coordinator, in the best ways to broaden external awareness of published content.
+5. Coordinate with the rest of the Contributor Comms team, and specifically the Social Media Coordinator, in the best ways to broaden external awareness of published content.
 
 The [Kubernetes Contributor Blog](https://www.kubernetes.dev/blog/) is one of the most direct points of entry for those that want to share with a wider audience. The role of the Blog Coordinator is to guide those that want to contribute in the best way to do so, while coordinating with the rest of the team (including other Contributor Comms team members) to assign editors, reviewers and other roles to new submissions.
 
