@@ -217,6 +217,7 @@ channels:
   - name: krex
   - name: krustlet
   - name: kube-aws
+  - name: kube-bind
   - name: kube-deploy
     archived: true
   - name: kube-monkey
