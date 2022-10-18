@@ -1126,7 +1126,7 @@ and on update if the existing object does not already have a value in the field.
 This prevents new usage of the feature while it is disabled, while ensuring existing data is preserved.
 Ensuring existing data is preserved is needed so that when the feature is enabled by default in a future version *n*
 and data is unconditionally allowed to be persisted in the field, an *n-1* API server
-(with the feature still disabled by default) will not drop the data on update.
+(with the feature still disabled by default) should allow data changes for the field to be persisted on update.
 The recommended place to do this is in the REST storage strategy's PrepareForCreate/PrepareForUpdate methods:
 
     ```go
