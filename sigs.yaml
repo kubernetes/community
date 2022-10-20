@@ -264,7 +264,7 @@ sigs:
       company: Red Hat
     - github: dims
       name: Davanum Srinivas
-      company: VMware
+      company: Amazon Web Services
     - github: johnbelamaric
       name: John Belamaric
       company: Google
@@ -1726,7 +1726,7 @@ sigs:
       company: Alter Way
     - github: dims
       name: Davanum Srinivas
-      company: VMware
+      company: Amazon Web Services
     tech_leads:
     - github: spiffxp
       name: Aaron Crickenberger
