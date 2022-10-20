@@ -679,15 +679,15 @@ Once all the necessary manually written conversions are added, you need to
 regenerate auto-generated ones. To regenerate them run:
 
 ```sh
-make clean && make generated_files
+make clean && hack/update-codegen.sh
 ```
 
 `make clean` is important, otherwise the generated files might be stale, because
 the build system uses custom cache.
 
-`make all` will invoke `make generated_files` as well.
+`make all` will invoke `hack/update-codegen.sh` as well.
 
-The `make generated_files` will also regenerate the `zz_generated.deepcopy.go`,
+The `hack/update-codegen.sh` will also regenerate the `zz_generated.deepcopy.go`,
 `zz_generated.defaults.go`, and `api/openapi-spec/swagger.json`.
 
 If regeneration is somehow not possible due to compile errors, the easiest
