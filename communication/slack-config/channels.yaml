@@ -436,7 +436,6 @@ channels:
   - name: summit-staff
   - name: suse-caasp
   - name: talk-proposals
-  - name: tanzu-community-edition
   - name: tanzu-streaming-runtimes
   - name: terraform-providers
   - name: terranetes
