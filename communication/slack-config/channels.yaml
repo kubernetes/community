@@ -437,6 +437,7 @@ channels:
   - name: suse-caasp
   - name: talk-proposals
   - name: tanzu-community-edition
+    archived: true
   - name: tanzu-streaming-runtimes
   - name: terraform-providers
   - name: terranetes
