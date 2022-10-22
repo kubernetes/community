@@ -224,6 +224,7 @@ channels:
     archived: true
   - name: kube-monkey
   - name: kube-oidc-proxy
+  - name: kube-operating-systems-dev
   - name: kube-router
   - name: kube-score
   - name: kube-spawn
