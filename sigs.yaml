@@ -2227,6 +2227,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-sdk/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-utils/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/tejolote/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/testgrid-json-exporter/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/zeitgeist/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/CHANGELOG/OWNERS
