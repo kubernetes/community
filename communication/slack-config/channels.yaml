@@ -63,6 +63,7 @@ channels:
   - name: cluster-api-kubemark
   - name: cluster-api-kubevirt
   - name: cluster-api-nested
+  - name: cluster-api-nutanix
   - name: cluster-api-oci
   - name: cluster-api-openstack
   - name: cluster-api-operator
