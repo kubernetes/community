@@ -180,6 +180,16 @@ usergroups:
       - jonasrosland
       - pnbrown
 
+  - name: podman-desktop-devs
+    long_name: Podman Desktop Dev Team
+    description: Active developers of Podman Desktop on #podman-desktop
+    channels:
+      - podman-desktop
+    members:
+      - cdrage
+      - benoitf
+      - vzhukovs
+
   - name: steering-members
     long_name: Kubernetes Steering Committee
     description: Members of the Kubernetes Steering Committee
