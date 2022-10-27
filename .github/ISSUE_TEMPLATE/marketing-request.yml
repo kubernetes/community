@@ -1,5 +1,5 @@
 name: Contributor Comms Request
-description: Get support on sending a message out to our community through coordinated outreach on email, Slack, social media, and other public channels.
+description: Get support on sending a message out to our community through coordinated outreach on email, Slack, social media, and other public channels. @contributor-comms
 title: 'REQUEST: New communication about <topic>'
 labels: area/contributor-comms, sig/contributor-experience
 body:
