@@ -1,7 +1,6 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 reviewers:
-  - parispittman
   - jdumars
   - idvoretskyi
   - jeefy
@@ -9,10 +8,10 @@ reviewers:
   - markyjackson-taulia
 approvers:
   - mrbobbytables
-  - parispittman
   - sig-contributor-experience-leads
 emeritus_approvers:
   - castrojo
+  - parispittman
 labels:
   - sig/contributor-experience
   - area/community-management

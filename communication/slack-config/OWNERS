@@ -8,11 +8,12 @@ approvers:
   - mrbobbytables
   - alejandrox1
   - jdumars
-  - parispitmann
   - coderanger
   - idvoretskyi
   - idealhack
   - munnerz
   - DylanGraham
+emeritus_approvers:
+  - parispitmann
 labels:
   - area/slack-management

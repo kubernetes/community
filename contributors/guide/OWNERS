@@ -2,10 +2,10 @@
 
 approvers:
   - mrbobbytables
-  - parispittman
 emeritus_approvers:
   - castrojo
   - guineveresaenger
+  - parispittman
 labels:
   - sig/contributor-experience
   - area/contributor-guide
