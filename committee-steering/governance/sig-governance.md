@@ -82,7 +82,21 @@ Subproject contributors (as applicable).
 
 ### Chair
 
+From governance.md:
+> SIG Chairs are intended to be organizers and facilitators, responsible for 
+> the operation of the SIG and for communication and coordination with the 
+> other SIGs, the Steering Committee, and the broader community. 
+
 - Number: 2-3
+- Term: 3 years
+  - 90 days before term is up, Chair will send an email to the SIG mailing list,
+    announce at the regularly scheduled meeting, and send a note to the slack
+    channel asking for interested individuals to step forward. This provides
+    time for outreach, training, and onboarding. 
+  - If no one steps up in 90 days, the current Chair can assume another one (1)
+    year position as Chair while looking for a replacement.
+  Note: The Chair could rotate to Technical Lead (TL) if other TLs agree 
+    and all usual processes are followed. 
 - Membership tracked in [sigs.yaml]  
   - If no tech lead role is present, Chair assumes responsibilities from [#tech-lead] section.
   

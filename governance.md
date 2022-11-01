@@ -63,7 +63,8 @@ SIGs must have at least one and ideally two SIG chairs at any given
 time. SIG chairs are intended to be organizers and facilitators,
 responsible for the operation of the SIG and for communication and
 coordination with the other SIGs, the Steering Committee, and the
-broader community.
+broader community. Chairs have a term of 3 years and process to be followed can
+be found in [sig governance] documentation. 
 
 Each SIG must have a charter that specifies its scope (topics,
 subsystems, code repos and directories), responsibilities, areas of
