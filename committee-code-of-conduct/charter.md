@@ -92,8 +92,10 @@ recusal, quorum is 2.
 
 ### Policy change ratification
 Any changes to the charter require explicit LGTM or Approve from all
-committee members. For pull requests, a /hold will be applied until all
-approvals are present. Any changes merged without consensus will be reverted. 
+code of conduct and steering committee members 
+(see the [SIG charter approval process](https://github.com/kubernetes/community/tree/master/committee-steering/governance#sig-charter-approval-process)). 
+For pull requests, a /hold will be applied until all approvals are present. Any changes merged without 
+consensus will be reverted. 
 
 ### Incident report confidentiality
 The Code of Conduct committee will keep your report confidential. The CoCC may
@@ -146,5 +148,13 @@ If a committee member chooses not to continue in their role, for whatever
 self-elected reason, they must notify the committee as well as the steering
 committee in writing. As a courtesy, such notifications should be given at least
 30 calendar days in advance of their departure.
+
+### Participation in the Kubernetes steering committee
+Participation in both of these committees represents a conflict of interest.
+If a current code of conduct committee member chooses to run for the Kubernetes steering committee, 
+they are required to announce their resignation from the code of conduct committee upon the 
+announcement of their candidacy for steering (not after the election takes place). Their resignation 
+would then take effect on the date the steering election concludes to allow notice time for a replacement 
+member to be appointed.
 
 [email]: conduct@kubernetes.io
