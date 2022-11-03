@@ -2010,6 +2010,7 @@ sigs:
       slack: sig-network-gateway-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/ingress2gateway/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/controllers/service/OWNERS

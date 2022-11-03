@@ -80,6 +80,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### gateway-api
 - **Owners:**
   - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
+  - [kubernetes-sigs/ingress2gateway](https://github.com/kubernetes-sigs/ingress2gateway/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/endpoint](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/endpoint/OWNERS)
   - [kubernetes/kubernetes/pkg/proxy](https://github.com/kubernetes/kubernetes/blob/master/pkg/proxy/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/cloud-provider/controllers/service](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cloud-provider/controllers/service/OWNERS)
