@@ -168,6 +168,10 @@ Infrastructure implementing Kubernetes service account based workload identity.
   - [kubernetes/kubernetes/pkg/kubelet/token](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/token/OWNERS)
   - [kubernetes/kubernetes/pkg/serviceaccount](https://github.com/kubernetes/kubernetes/blob/master/pkg/serviceaccount/OWNERS)
   - [kubernetes/kubernetes/plugin/pkg/admission/serviceaccount](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/admission/serviceaccount/OWNERS)
+### sig-auth-tools
+Tooling to automate the SIG Auth project boards
+- **Owners:**
+  - [kubernetes-sigs/sig-auth-tools](https://github.com/kubernetes-sigs/sig-auth-tools/blob/main/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups

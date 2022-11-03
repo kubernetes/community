@@ -565,6 +565,11 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/token/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/serviceaccount/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/serviceaccount/OWNERS
+  - name: sig-auth-tools
+    description: |
+      Tooling to automate the SIG Auth project boards
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/sig-auth-tools/main/OWNERS
 - dir: sig-autoscaling
   name: Autoscaling
   mission_statement: >
