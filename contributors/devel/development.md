@@ -3,7 +3,7 @@
 This document is the canonical source of truth for things like supported
 toolchain versions for building Kubernetes.
 
-Please submit an [issue] on Github if you
+Please submit an [issue] on GitHub if you
 * Notice a requirement that this doc does not capture.
 * Find a different doc that specifies requirements (the doc should instead link
   here).
