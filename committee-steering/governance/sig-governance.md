@@ -94,11 +94,10 @@ From governance.md:
     channel asking for interested individuals to step forward. This provides
     time for outreach, training, and onboarding. 
   - If no one steps up in 90 days, the current Chair can assume another one (1)
-    year position as Chair while looking for a replacement.
-  Note: The Chair could rotate to Technical Lead (TL) if other TLs agree 
-    and all usual processes are followed. 
+    year position as Chair while looking for a replacement.  
 - Membership tracked in [sigs.yaml]  
-  - If no tech lead role is present, Chair assumes responsibilities from [#tech-lead] section.
+  - If no tech lead role is present, Chair assumes responsibilities from 
+    [#tech-lead] section.
   
   In addition, run operations and processes governing the SIG:
 
