@@ -160,7 +160,7 @@ See [user group governance] for more details about forming and disbanding
 User Groups.
 
 To facilitate discoverability and engagement,
-user groups are documented in [sigs.yaml]
+user groups are documented in [sigs.yaml].
 
 ## Community Group Annual Reports
 As you can see in the descriptions above, the project is robust with diverse
