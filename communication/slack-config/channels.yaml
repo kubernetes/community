@@ -358,6 +358,7 @@ channels:
   - name: pharmer
   - name: pinniped
   - name: pl-users
+  - name: ppc64le
   - name: pr-reviews
   - name: prometheus
   - name: prometheus-operator
