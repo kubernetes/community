@@ -1811,6 +1811,23 @@ sigs:
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
       archive_url: http://bit.ly/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
+  - name: porche
+    description: A custom HTTP redirector serving Kubernetes binaries from existing
+      vendor supported and approved storage services.
+    contact:
+      slack: sig-k8s-infra
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/porche/main/OWNERS
+    meetings:
+    - description: Regular SIG Meeting
+      day: Wednesday
+      time: "20:00"
+      tz: UTC
+      frequency: bi-weekly
+      url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
+      archive_url: http://bit.ly/sig-k8s-infra-notes
+      recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: registry.k8s.io
     description: A custom HTTP redirector serving Kubernetes container image blobs
       from existing vendor supported container registries.
