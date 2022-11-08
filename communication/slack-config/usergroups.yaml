@@ -234,3 +234,21 @@ usergroups:
       - rtaniwa
       - schultzp2020
       - yangcao77
+
+  - name: cluster-api-release-team
+    long_name: Cluster API Release Team
+    description: Members of the Cluster API Release Team
+    members:
+      - alexander-demicev
+      - aniruddha2000
+      - CecileRobertMichon
+      - cpanato
+      - dntosas
+      - furkatgofurov7
+      - hackeramitkumar
+      - nawazkh
+      - oscr
+      - sayantani11
+      - sbueringer
+      - VibhorChinda
+      - ykakarap
