@@ -44,7 +44,6 @@ Administrator seats: 3
 | ------------------- | ------------------- | -------- | ------------------------------------------------------- |
 | Aaron Crickenberger | @spiffxp            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Davanum Srinivas    | @dims               | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 #### Primary Moderators
 
@@ -175,11 +174,13 @@ Moderators pro tempore seats: 3
 
 ### Owner
 
-Owners seats (non-admin role): 1
+Owners seats (non-admin role): 3
 
-| Name            | Kubernetes Slack ID | Region   | Timezone                                             |
-| --------------- | ------------------- | -------- | ---------------------------------------------------- |
-| Chris Aniszczyk | @caniszczyk         | Americas | [CT - Central Time (US Central)](https://time.is/CT) |
+| Name            | Kubernetes Slack ID | Region   | Timezone                                                |
+| --------------- | ------------------- | -------- | ----------------------------------------------------    |
+| Chris Aniszczyk | @caniszczyk         | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
+| Bob Killen      | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Ihor Dvoretskyi | @ihor.dvoretskyi    | Europe   | [EET - Eastern European Time](https://time.is/EET)      |
 
 ### Moderators
 
@@ -193,7 +194,6 @@ Moderators seats: 10
 | Jorge Alarcon       | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Katharine Berry     | @Katharine          | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Paris Pittman       | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Noah Kantrowitz     | @coderanger         | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
 | Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
@@ -225,7 +225,6 @@ Administrators seats: 6
 | Jorge Castro    | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen      | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jorge Alarcon   | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Paris Pittman   | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Naeil Ezzoueidi | @nzoueidi           | EMEA     | [CET - Central European Time](https://time.is/CET)      |
 | Yang Li         | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
 | Taylor Dolezal  | @onlydole           | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
