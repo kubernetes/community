@@ -3287,8 +3287,8 @@ workinggroups:
   meetings:
   - description: Regular Meeting
     day: Thursday
-    time: "14:30"
-    tz: UTC
+    time: "15:30"
+    tz: London-UK
     frequency: biweekly
     url: https://zoom.us/j/96716142646?pwd=VmgrN29sbmhDREp3R0NtZlpGSlZ4Zz09
     archive_url: https://docs.google.com/document/d/1R9bZ34L9vR1ftH0dFeOp-j50lLh5ijKVwwXJ3LDrY4I/edit?usp=sharing
