@@ -35,6 +35,7 @@ usergroups:
       - paris
       - PurneswarPrasad
       - rajula96reddy
+      - imran
 
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
