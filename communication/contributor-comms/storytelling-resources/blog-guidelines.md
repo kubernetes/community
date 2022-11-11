@@ -1,6 +1,6 @@
-# Upstream Marketing Blog Guidelines
+# Contributor Comms Blog Guidelines
 
-This initiative falls under the [Upstream Marketing Charter](./CHARTER.md).
+This initiative falls under the [Contributor Comms Charter](./CHARTER.md).
 
 We are looking for Kubernetes-curious community members who are **interested in writing** and **care about getting the word out** to our huge community of users, developers, and contributors of all types. Here's how to get involved.
 
@@ -55,7 +55,7 @@ Anyone is welcome to contribute when they have time.
 If you would like to be listed as a member of the team, here are the expectations:
 
 1. Be prepared to write one blog a quarter and participate in edits to other articles. The time commitment is typically 5-10 hours per quarter depending on the number of blog posts in the review queue.
-2. Bloggers are expected to attend at least one upstream marketing team meeting a month or check-in to remain active.
+2. Bloggers are expected to attend at least one Contributor Comms team meeting a month or check-in to remain active.
 3. Remain non-partial: if you receive a request to write about a project, an individual, or a group of people from your employer, you should ask an impartial blogger to write it.
 4. As with all contribution to Kubernetes, adhere to the [code of conduct](/code-of-conduct.md), values, and principles of the project.
 
