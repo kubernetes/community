@@ -2175,6 +2175,9 @@ sigs:
       name: Sascha Grunert
       company: Red Hat
     tech_leads:
+    - github: Verolop
+      name: Verónica López
+      company: PlanetScale
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
       company: Chainguard, Inc

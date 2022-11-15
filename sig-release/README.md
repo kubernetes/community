@@ -34,6 +34,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
+* Verónica López (**[@Verolop](https://github.com/Verolop)**), PlanetScale
 * Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**), Chainguard, Inc
 * Adolfo García Veytia (**[@puerco](https://github.com/puerco)**), Chainguard, Inc
 
