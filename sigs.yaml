@@ -2165,6 +2165,9 @@ sigs:
   label: release
   leadership:
     chairs:
+    - github: jeremyrickard
+      name: Jeremy Rickard
+      company: Microsoft
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
@@ -2175,9 +2178,6 @@ sigs:
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
       company: Chainguard, Inc
-    - github: jeremyrickard
-      name: Jeremy Rickard
-      company: Microsoft
     - github: puerco
       name: Adolfo García Veytia
       company: Chainguard, Inc
