@@ -24,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Spec
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), Alter Way
+* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), VMware
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon Web Services
 
 ### Technical Leads
