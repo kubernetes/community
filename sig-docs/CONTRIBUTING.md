@@ -18,7 +18,7 @@ Before opening a pull request, contributors must sign the [CNCF Contributor Lice
 
 Contributors should be familiar with the following:
 - [kubernetes/website repo](https://github.com/kubernetes/website)
-- [Reference docs repo](https://github.com/kubernetes-sigs/reference-docs))
+- [Reference docs repo](https://github.com/kubernetes-sigs/reference-docs)
 - [Hugo static site generator](https://gohugo.io/)
 - [Documentation content guide](https://kubernetes.io/docs/contribute/style/content-guide/)
   - [What's allowed](https://kubernetes.io/docs/contribute/style/content-guide/#what-s-allowed)
