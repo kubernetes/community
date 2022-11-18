@@ -2150,7 +2150,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/jobs/kubernetes/node-problem-detector/OWNERS
   - name: resource-management
     owners:
-    - https://raw.githubusercontent.com/kubernetes/dynamic-resource-allocation/master/OWNERS
+    - https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS
     - https://raw.githubusercontent.com/kubernetes/noderesourcetopology-api/master/OWNERS
   - name: security-profiles-operator
     contact:
