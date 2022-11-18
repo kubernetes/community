@@ -1,7 +1,6 @@
-# Upstream Marketing
+# Contributor Communications
 
-The Upstream Contributor Communications team (Contributor Comms for short) is part of the `community-management` subproject in
-[Contributor Experience]. View our [charter] to learn more about us.
+The Contributor Communications team (Contributor Comms for short) is part of the `community-management` subproject in [Contributor Experience]. View our [charter] to learn more about us.
 
 ## Purpose
 
