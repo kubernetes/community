@@ -2148,8 +2148,9 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/jobs/kubernetes/node-problem-detector/OWNERS
-  - name: noderesourcetopology-api
+  - name: resource-management
     owners:
+    - https://raw.githubusercontent.com/kubernetes/dynamic-resource-allocation/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/noderesourcetopology-api/master/OWNERS
   - name: security-profiles-operator
     contact:
