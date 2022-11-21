@@ -198,10 +198,10 @@ usergroups:
     members:
       - bentheelder
       - cblecker
+      - cpanato
       - justaugustus
       - mrbobbytables
       - palnabarun
-      - paris
       - tpepper
 
   - name: grafana-operator-maintainers
