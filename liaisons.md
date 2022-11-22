@@ -39,7 +39,7 @@ members will assume one of the departing members groups.
 | [SIG Cloud Provider](sig-cloud-provider/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG Cluster Lifecycle](sig-cluster-lifecycle/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [SIG Contributor Experience](sig-contributor-experience/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
-| [SIG Docs](sig-docs/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
+| [SIG Docs](sig-docs/README.md) | Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**) |
 | [SIG Instrumentation](sig-instrumentation/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [SIG K8s Infra](sig-k8s-infra/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG Multicluster](sig-multicluster/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
@@ -48,9 +48,9 @@ members will assume one of the departing members groups.
 | [SIG Release](sig-release/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [SIG Scalability](sig-scalability/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Scheduling](sig-scheduling/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
-| [SIG Security](sig-security/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
-| [SIG Storage](sig-storage/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
-| [SIG Testing](sig-testing/README.md) | Paris Pittman (**[@parispittman](https://github.com/parispittman)**) |
+| [SIG Security](sig-security/README.md) | Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**) |
+| [SIG Storage](sig-storage/README.md) | Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**) |
+| [SIG Testing](sig-testing/README.md) | Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**) |
 | [SIG UI](sig-ui/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG Usability](sig-usability/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [SIG Windows](sig-windows/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |

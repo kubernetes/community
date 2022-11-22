@@ -167,10 +167,10 @@ aliases:
   committee-steering:
     - BenTheElder
     - cblecker
+    - cpanato
     - justaugustus
     - mrbobbytables
     - palnabarun
-    - parispittman
     - tpepper
 ## BEGIN CUSTOM CONTENT
   provider-aws:

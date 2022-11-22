@@ -1597,8 +1597,8 @@ sigs:
     - name: sig-docs-zh-owners
       description: Chinese language content
     liaison:
-      github: parispittman
-      name: Paris Pittman
+      github: cpanato
+      name: Carlos Tadeu Panato Jr.
   subprojects:
   - name: kubernetes-blog
     owners:
@@ -2515,8 +2515,8 @@ sigs:
     - name: sig-security-pr-reviews
       description: SIG Security PR review notifications
     liaison:
-      github: parispittman
-      name: Paris Pittman
+      github: cpanato
+      name: Carlos Tadeu Panato Jr.
   subprojects:
   - name: security-audit
     description: Third Party Security Audit
@@ -2606,8 +2606,8 @@ sigs:
     - name: sig-storage-test-failures
       description: Test Failures and Triage
     liaison:
-      github: parispittman
-      name: Paris Pittman
+      github: cpanato
+      name: Carlos Tadeu Panato Jr.
   subprojects:
   - name: external-storage
     owners:
@@ -2736,8 +2736,8 @@ sigs:
     - name: sig-testing-pr-reviews
       description: PR Reviews
     liaison:
-      github: parispittman
-      name: Paris Pittman
+      github: cpanato
+      name: Carlos Tadeu Panato Jr.
   subprojects:
   - name: boskos
     description: |
@@ -3500,6 +3500,9 @@ committees:
     - github: cblecker
       name: Christoph Blecker
       company: Red Hat
+    - github: cpanato
+      name: Carlos Tadeu Panato Jr.
+      company: Chainguard, Inc
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
@@ -3509,9 +3512,6 @@ committees:
     - github: palnabarun
       name: Nabarun Pal
       company: VMware
-    - github: parispittman
-      name: Paris Pittman
-      company: Apple
     - github: tpepper
       name: Tim Pepper
       company: VMware
