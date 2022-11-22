@@ -2151,6 +2151,7 @@ sigs:
   - name: resource-management
     owners:
     - https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/dra-example-driver/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/noderesourcetopology-api/master/OWNERS
   - name: security-profiles-operator
     contact:

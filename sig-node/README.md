@@ -92,6 +92,7 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### resource-management
 - **Owners:**
   - [kubernetes/kubernetes/staging/src/k8s.io/dynamic-resource-allocation](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS)
+  - [kubernetes-sigs/dra-example-driver](https://github.com/kubernetes-sigs/dra-example-driver/blob/main/OWNERS)
   - [kubernetes/noderesourcetopology-api](https://github.com/kubernetes/noderesourcetopology-api/blob/master/OWNERS)
 ### security-profiles-operator
 - **Owners:**
