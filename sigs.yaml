@@ -1288,6 +1288,7 @@ sigs:
       slack: minikube
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/minikube-gui/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
     meetings:
     - description: minikube office hours
