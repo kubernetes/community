@@ -15,7 +15,7 @@
 # limitations under the License.
 
 """
-Output devstats repo_groups.sql based on subproject defintions in sigs.yaml
+Output devstats repo_groups.sql based on subproject definitions in sigs.yaml
 
 This is likely missing a few repos because:
     - some repos lack an owner (eg: kubernetes/kubernetes)

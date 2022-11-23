@@ -51,15 +51,15 @@ usergroups:
       - release-notes
       - sig-release
     members:
-      - cici37 # 1.25 Release Team Lead
       - cpanato # SIG Release Technical Lead
-      - gracenng # 1.25 RT Lead Shadow
-      - jeremyrickard # SIG Release Technical Lead / 1.23 Release Team EA
-      - jlbutler # 1.25 RT Lead Shadow
+      - gracenng # 1.26 RT Lead Shadow
+      - jeremyrickard # SIG Release Technical Lead
       - justaugustus # SIG Release Chair
-      - leonardpahlke # 1.25 RT Lead Shadow
+      - katcosgrove # 1.26 RT Lead Shadow
+      - leonardpahlke # 1.26 RT Lead
+      - nate-double-u # 1.26 RT Lead Shadow
       - puerco # SIG Release Technical Lead
-      - salaxander # 1.25 RT Lead Shadow
+      - psaggu # 1.26 RT Lead Shadow
       - saschagrunert # SIG Release Chair
 
   # Should match SIG Release Leads at all times:

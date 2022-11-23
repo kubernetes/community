@@ -14,7 +14,13 @@ The [charter](charter.md) defines the scope and governance of the Scheduling Spe
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling) for the group will typically add invites for the following meetings to your calendar.*
-* 10AM PT Meeting: [Thursdays at 17:00 UTC](https://zoom.us/j/841218129) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
+* biweekly meeting (NA & Europe): [Thursdays at 17:00 UTC](https://zoom.us/j/841218129) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
+  * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
+* descheduler biweekly meeting: [Tuesdays at 17:00 UTC](https://zoom.us/j/841218129) (biweekly starting Tuesday September 13, 2022). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ang5shAFxuylO2RXMFGO7uxSe-IX3Y3PxoKIn1yPIEQ).
+  * [Meeting recordings](https://youtube.com/playlist?list=PLEafaZMk8MYYqoSncOkL8uutIcTsUQE_g).
+* monthly meeting (APAC): [first Thursdays at 02:00 UTC](https://zoom.us/j/841218129) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=02:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
 
@@ -51,7 +57,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-scheduling-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-scheduling-pr-reviews) - PR Reviews
     - [@kubernetes/sig-scheduling-proposals](https://github.com/orgs/kubernetes/teams/sig-scheduling-proposals) - Design Proposals
     - [@kubernetes/sig-scheduling-test-failures](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**)
+- Steering Committee Liaison: Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**)
 
 ## Working Groups
 

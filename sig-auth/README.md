@@ -144,6 +144,7 @@ API validation and policies enforced during admission, such as PodSecurityPolicy
 - **Owners:**
   - [kubernetes-sigs/pspmigrator](https://github.com/kubernetes-sigs/pspmigrator/blob/main/OWNERS)
   - [kubernetes-sigs/wg-policy-prototypes](https://github.com/kubernetes-sigs/wg-policy-prototypes/blob/master/OWNERS)
+  - [kubernetes/kms](https://github.com/kubernetes/kms/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/imagepolicy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/imagepolicy/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/policy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/policy/OWNERS)
   - [kubernetes/kubernetes/pkg/registry/policy](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/policy/OWNERS)
@@ -167,6 +168,10 @@ Infrastructure implementing Kubernetes service account based workload identity.
   - [kubernetes/kubernetes/pkg/kubelet/token](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/token/OWNERS)
   - [kubernetes/kubernetes/pkg/serviceaccount](https://github.com/kubernetes/kubernetes/blob/master/pkg/serviceaccount/OWNERS)
   - [kubernetes/kubernetes/plugin/pkg/admission/serviceaccount](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/admission/serviceaccount/OWNERS)
+### sig-auth-tools
+Tooling to automate the SIG Auth project boards
+- **Owners:**
+  - [kubernetes-sigs/sig-auth-tools](https://github.com/kubernetes-sigs/sig-auth-tools/blob/main/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups

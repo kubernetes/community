@@ -21,8 +21,8 @@ usergroups:
       - TaoBeier
 
   - name: contributor-comms
-    long_name: Upstream Marketing
-    description: Upstream Marketing group.
+    long_name: Contributor Communications
+    description: Contributor Communications group.
     channels:
       - sig-contribex
     members:
@@ -180,18 +180,28 @@ usergroups:
       - jonasrosland
       - pnbrown
 
+  - name: podman-desktop-devs
+    long_name: Podman Desktop Dev Team
+    description: Active developers of Podman Desktop on #podman-desktop
+    channels:
+      - podman-desktop
+    members:
+      - cdrage
+      - benoitf
+      - vzhukovs
+
   - name: steering-members
     long_name: Kubernetes Steering Committee
     description: Members of the Kubernetes Steering Committee
     channels:
       - steering-committee
     members:
+      - bentheelder
       - cblecker
-      - dims
+      - cpanato
       - justaugustus
-      - liggitt
       - mrbobbytables
-      - paris
+      - palnabarun
       - tpepper
 
   - name: grafana-operator-maintainers
@@ -208,3 +218,38 @@ usergroups:
       - robshelly
       - vladimirmukhin
       - wurbanski
+
+  - name: devfile-devs
+    long_name: Devfile Development Team
+    description: Active developers of Devfile on #devfile
+    channels:
+      - devfile
+    members:
+      - elsony
+      - johnmcollier
+      - kim-tsao
+      - maysunfaisal
+      - michael-valdron
+      - mike-hoang
+      - rtaniwa
+      - schultzp2020
+      - yangcao77
+
+  - name: cluster-api-release-team
+    long_name: Cluster API Release Team
+    description: Members of the Cluster API Release Team
+    members:
+      - alexander-demicev
+      - aniruddha2000
+      - CecileRobertMichon
+      - cpanato
+      - dntosas
+      - furkatgofurov7
+      - hackeramitkumar
+      - joekr
+      - nawazkh
+      - oscr
+      - sayantani11
+      - sbueringer
+      - VibhorChinda
+      - ykakarap

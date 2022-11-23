@@ -14,6 +14,8 @@ The [charter](charter.md) defines the scope and governance of the Storage Specia
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-storage) for the group will typically add invites for the following meetings to your calendar.*
+* Regular CSI Implementation meeting: [Monday and Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/614261834) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1_hvq3nleqQEYatH9V_Gfep39jMzaFJRSN2ioA0PFq-Q/edit#).
 * Regular SIG Meeting: [Thursdays at 9:00 PT (Pacific Time)](https://zoom.us/j/614261834) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq).
@@ -49,7 +51,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-storage-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-storage-pr-reviews) - PR Reviews
     - [@kubernetes/sig-storage-proposals](https://github.com/orgs/kubernetes/teams/sig-storage-proposals) - Design Proposals
     - [@kubernetes/sig-storage-test-failures](https://github.com/orgs/kubernetes/teams/sig-storage-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
+- Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
 
 ## Working Groups
 

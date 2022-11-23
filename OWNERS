@@ -1,7 +1,6 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 approvers:
-  - alisondy
   - cblecker
   - idvoretskyi
   - jdumars
@@ -11,6 +10,7 @@ approvers:
   - sig-contributor-experience-leads
   - committee-steering
 emeritus_approvers:
+  - alisondy
   - castrojo
   - calebamiles
   - grodrigues3

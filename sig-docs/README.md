@@ -20,8 +20,11 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 * Korean Team Meeting: [Thursdays at 13:00 UTC](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLAOP7m08QDCWZ7RwGca6cU4vzrOMw3ht7).
-* Localization Subgroup Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
+* Localization Subproject Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/) (first Monday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
+* New Contributor Meet and Greet: [Tuesdays at 10:30 UTC](https://zoom.us/j/92822621820?pwd=S1p4RnB1RmNSZ3JjYlRRUVd4UjFPZz09) (first Tuesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 * Regular SIG Meeting: [Tuesdays at 17:30 UTC](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit) (weekly - except fourth Tuesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit).
@@ -79,7 +82,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-docs-pt-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) - Portuguese language content
     - [@kubernetes/sig-docs-uk-owners](https://github.com/orgs/kubernetes/teams/sig-docs-uk-owners) - Ukrainian language content
     - [@kubernetes/sig-docs-zh-owners](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) - Chinese language content
-- Steering Committee Liaison: Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
+- Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
 
 ## Subprojects
 
@@ -87,6 +90,9 @@ The following [subprojects][subproject-definition] are owned by sig-docs:
 ### kubernetes-blog
 - **Owners:**
   - [kubernetes/website/content/en/blog](https://github.com/kubernetes/website/blob/master/content/en/blog/OWNERS)
+### localization
+- **Owners:**
+  - [kubernetes/website](https://github.com/kubernetes/website/blob/master/OWNERS)
 ### reference-docs
 - **Owners:**
   - [kubernetes-sigs/reference-docs](https://github.com/kubernetes-sigs/reference-docs/blob/master/OWNERS)
@@ -97,11 +103,5 @@ The following [subprojects][subproject-definition] are owned by sig-docs:
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
-## Goals
-* Discuss documentation and docs issues for kubernetes.io
-* Content for the official Kubernetes blog
-* Lead docs releases for Kubernetes
-* Suggest improvements to user onboarding through better documentation on kubernetes.io
-* Documentation metrics and user feedback
-* Help community contributors get involved in Kubernetes documentation
+
 <!-- END CUSTOM CONTENT -->

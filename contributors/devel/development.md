@@ -3,7 +3,7 @@
 This document is the canonical source of truth for things like supported
 toolchain versions for building Kubernetes.
 
-Please submit an [issue] on Github if you
+Please submit an [issue] on GitHub if you
 * Notice a requirement that this doc does not capture.
 * Find a different doc that specifies requirements (the doc should instead link
   here).
@@ -321,6 +321,10 @@ this permanent, add this to your `.bashrc` or login script:
 ```sh
 export PATH="$GOPATH/src/k8s.io/kubernetes/third_party/etcd:${PATH}"
 ```
+
+##### BASH version requirement
+
+To successfully run unit tests in Kubernetes, you will need bash version installed to be >4.3.
 
 Once you have installed all required software, you can proceed to the
 [Building Kubernetes](#building-kubernetes) section to test if it all works properly.

@@ -24,6 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Testing Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
+* Michelle Shepardson (**[@michelle192837](https://github.com/michelle192837)**), Google
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
 
@@ -33,7 +34,9 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
 * Alvaro Aleman (**[@alvaroaleman](https://github.com/alvaroaleman)**), Red Hat
+* Antonio Ojea (**[@aojea](https://github.com/aojea)**), Google
 * Cole Wagner (**[@cjwagner](https://github.com/cjwagner)**), Google
+* Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel
 
 ## Emeritus Leads
 
@@ -47,7 +50,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - GitHub Teams:
     - [@kubernetes/sig-testing](https://github.com/orgs/kubernetes/teams/sig-testing) - General Discussion
     - [@kubernetes/sig-testing-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-testing-pr-reviews) - PR Reviews
-- Steering Committee Liaison: Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
+- Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
 
 ## Working Groups
 
@@ -66,11 +69,11 @@ Boskos is a resource manager service that handles different kinds of resources a
 ### e2e-framework
 An experimental e2e testing framework for Kubernetes clusters.
 - **Owners:**
-  - [kubernetes-sigs/e2e-framework](https://github.com/kubernetes-sigs/e2e-framework/blob/master/OWNERS)
+  - [kubernetes-sigs/e2e-framework](https://github.com/kubernetes-sigs/e2e-framework/blob/main/OWNERS)
 ### kind
 Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
 - **Owners:**
-  - [kubernetes-sigs/kind](https://github.com/kubernetes-sigs/kind/blob/master/OWNERS)
+  - [kubernetes-sigs/kind](https://github.com/kubernetes-sigs/kind/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#kind](https://kubernetes.slack.com/messages/kind)
 ### kubetest2

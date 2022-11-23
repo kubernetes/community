@@ -45,7 +45,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcluster-lifecycle)
 - GitHub Teams:
     - [@kubernetes/sig-cluster-lifecycle](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle) - SIG Cluster Lifecycle mailing list
-- Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
+- Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
 
 ## Working Groups
 
@@ -103,7 +103,7 @@ Cluster API infrastructure provider for Azure
   - Slack: [#cluster-api-azure](https://kubernetes.slack.com/messages/cluster-api-azure)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API Provider Azure office hours: [Thursdays at 08:00 PT (Pacific Time)](https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API Provider Azure office hours: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](http://bit.ly/k8s-capz-agenda).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-cloudstack
@@ -252,6 +252,7 @@ A project that uses Ansible / Vagrant for deploying production ready clusters on
 ### minikube
 Implements a local Kubernetes cluster for application development on macOS, Linux, and Windows
 - **Owners:**
+  - [kubernetes-sigs/minikube-gui](https://github.com/kubernetes-sigs/minikube-gui/blob/main/OWNERS)
   - [kubernetes/minikube](https://github.com/kubernetes/minikube/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#minikube](https://kubernetes.slack.com/messages/minikube)

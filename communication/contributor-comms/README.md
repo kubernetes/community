@@ -1,7 +1,6 @@
-# Upstream Marketing
+# Contributor Communications
 
-The Upstream Marketing Contributor Communications team (Contributor Comms for short) is part of the `community-management` subproject in
-[Contributor Experience]. View our [charter] to learn more about us.
+The Contributor Communications team (Contributor Comms for short) is part of the `community-management` subproject in [Contributor Experience]. View our [charter] to learn more about us.
 
 ## Purpose
 
@@ -9,11 +8,13 @@ To better inform the Kubernetes contributor community and highlight their work t
 
 | Area & Handbook Link | Team | Notes |
 | --- | --- | --- |
-| [Marketing Council] Program Lead | @mbbroberg, shadow: @JasonMorgan,|  advisors: @parispittman, @chris-short |
-| [Marketing Council] Promotion Lead |@kaslin, shadow: @Debanitrkl |  advisors: @parispittman, @chris-short |
-| [Marketing Council] Liaison Lead | @rajula96reddy, shadow: `OPEN` |  Shadow role is available. |
-| Liaisons | release: @rajula96reddy, docs: `OPEN` | Are you a SIG that wants support from Contributor Comms? Ping the liaison lead! |
-| [Storytellers] & other members | @kunal-kushwaha, @gkarthiks, @dewan-ahmed, @joelbyronbarker, Sladyn Nunes, @hpopal11 | New to Contributor Comms? Add your name here!
+| Subproject Lead | @kaslin, @chris-short | Shadow role is available. |
+| [Social Media Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Social-Media.md) |@kaslin | Shadow role is available. |
+| [Comms Tech Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Tech-Lead.md) | @imnmo |  Shadow role is available. |
+| [Comms Event Lead] | @AvineshTripathi | Shadow role is available. |
+| [Comms Blog Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/blog-coordinator.md) | @fsmunoz |  Shadow role is available. |
+| [Storytellers] & other members | @hpopal11, @Atharva-Shinde | New to Contributor Comms? Add your name here! |
+| Emeritus | @parispittman, @mbbroberg |
 
 ## Contact Us!
 
@@ -38,9 +39,11 @@ Let us know you are interested and if you have any questions.
 [charter]: ./CHARTER.md
 [Could be you!]: #could-be-you
 [Contributor Experience]: /sig-contributor-experience
-[Marketing Council]: ./role-handbooks/editor.md
 [Internal Communications]: ./role-handbooks/internal-marketing.md
 [Social Media]: ./role-handbooks/social-media.md
+[Comms Tech Lead]: ./role-handbooks/Comms-Tech-Lead.md
+[Comms Event Lead]: ./role-handbooks/Comms-Event-Lead.md
+[Comms Blog Coordinator]: ./role-handbooks/blog-coordinator.md
 [Storytellers]: ./role-handbooks/storytellers.md
 [Designer]: ./role-handbooks/wip-roles.md
 [kubernetes/community]: https://github.com/kubernetes/community/issues

@@ -24,8 +24,8 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Spec
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), Alter Way
-* Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
+* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), VMware
+* Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon Web Services
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -83,10 +83,21 @@ Code and configuration to manage Kubernetes project infrastructure, including va
   - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
-### oci-proxy
-Experimental project for OCI distribution
+### porche
+A custom HTTP redirector serving Kubernetes binaries from existing vendor supported and approved storage services.
 - **Owners:**
-  - [kubernetes-sigs/oci-proxy](https://github.com/kubernetes-sigs/oci-proxy/blob/main/OWNERS)
+  - [kubernetes-sigs/porche](https://github.com/kubernetes-sigs/porche/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
+  - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
+- **Meetings:**
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+    - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
+    - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
+### registry.k8s.io
+A custom HTTP redirector serving Kubernetes container image blobs from existing vendor supported container registries.
+- **Owners:**
+  - [kubernetes/registry.k8s.io](https://github.com/kubernetes/registry.k8s.io/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)

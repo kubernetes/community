@@ -14,7 +14,10 @@ The [charter](charter.md) defines the scope and governance of the Release Specia
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-release) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Tuesdays at 15:30 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
+* Regular SIG Meeting APAC/EU Oriented Time: [Tuesdays at 15:30 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
+  * [Meeting notes and Agenda](https://bit.ly/k8s-sig-release-meeting).
+  * [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
+* Regular SIG Meeting US Oriented Time: [Tuesdays at 17:00 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-release-meeting).
   * [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 
@@ -51,7 +54,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-release](https://github.com/orgs/kubernetes/teams/sig-release) - SIG Release Members
     - [@kubernetes/sig-release-admins](https://github.com/orgs/kubernetes/teams/sig-release-admins) - Admins for SIG Release repositories
     - [@kubernetes/sig-release-leads](https://github.com/orgs/kubernetes/teams/sig-release-leads) - Chairs, Technical Leads, and Program Managers for SIG Release
-- Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
+- Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
 
 ## Working Groups
 
@@ -72,6 +75,7 @@ The Release Engineering subproject is responsible for the [process/procedures](h
   - [kubernetes-sigs/release-notes](https://github.com/kubernetes-sigs/release-notes/blob/master/OWNERS)
   - [kubernetes-sigs/release-sdk](https://github.com/kubernetes-sigs/release-sdk/blob/main/OWNERS)
   - [kubernetes-sigs/release-utils](https://github.com/kubernetes-sigs/release-utils/blob/main/OWNERS)
+  - [kubernetes-sigs/tejolote](https://github.com/kubernetes-sigs/tejolote/blob/main/OWNERS)
   - [kubernetes-sigs/testgrid-json-exporter](https://github.com/kubernetes-sigs/testgrid-json-exporter/blob/main/OWNERS)
   - [kubernetes-sigs/zeitgeist](https://github.com/kubernetes-sigs/zeitgeist/blob/master/OWNERS)
   - [kubernetes/kubernetes/CHANGELOG](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/OWNERS)
@@ -94,10 +98,6 @@ The Release Engineering subproject is responsible for the [process/procedures](h
     - [@kubernetes/release-managers](https://github.com/orgs/kubernetes/teams/release-managers) - [Release Managers](https://kubernetes.io/releases/release-managers/)
     - [@kubernetes/repo-infra-admins](https://github.com/orgs/kubernetes/teams/repo-infra-admins)
     - [@kubernetes/repo-infra-maintainers](https://github.com/orgs/kubernetes/teams/repo-infra-maintainers)
-- **Meetings:**
-  - Release Engineering: [Tuesdays at 15:30 UTC](https://zoom.us/j/240812475?pwd=bmhDQjN3N3dhV1dNSm9walJmTG5tUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
-    - [Meeting notes and Agenda](https://bit.ly/k8s-releng-meeting).
-    - [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 ### Release Team
 The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
 - **Owners:**
@@ -106,9 +106,14 @@ The Kubernetes Release Team is responsible for the day-to-day work required to s
 - **Contact:**
   - [Mailing List](https://groups.google.com/a/kubernetes.io/g/release-team)
   - GitHub Teams:
-    - [@kubernetes/ci-signal](https://github.com/orgs/kubernetes/teams/ci-signal)
+    - [@kubernetes/release-ci-signal](https://github.com/orgs/kubernetes/teams/release-ci-signal)
     - [@kubernetes/release-team](https://github.com/orgs/kubernetes/teams/release-team) - Members of the current Release Team and subproject owners
+    - [@kubernetes/release-team-bug-triage](https://github.com/orgs/kubernetes/teams/release-team-bug-triage)
+    - [@kubernetes/release-team-comms](https://github.com/orgs/kubernetes/teams/release-team-comms)
+    - [@kubernetes/release-team-docs](https://github.com/orgs/kubernetes/teams/release-team-docs)
+    - [@kubernetes/release-team-enhancements](https://github.com/orgs/kubernetes/teams/release-team-enhancements)
     - [@kubernetes/release-team-leads](https://github.com/orgs/kubernetes/teams/release-team-leads) - Release Team Leads for the current Kubernetes release cycle
+    - [@kubernetes/release-team-release-notes](https://github.com/orgs/kubernetes/teams/release-team-release-notes)
 ### SIG Release Process Documentation
 Documents and processes related to SIG Release
 - **Owners:**

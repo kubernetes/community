@@ -119,7 +119,7 @@ Prior discussions:
   - `--endpoint-reconciler-type master-count`
   - ...probably more
 
-[architecture]: https://git.k8s.io/community/contributors/design-proposals/architecture/architecture.md#architecture
+[architecture]: https://git.k8s.io/design-proposals-archive/architecture/architecture.md#architecture
 [wg-naming-thread]: https://groups.google.com/g/kubernetes-wg-naming/c/VqrBCdUHdPc
 [sig-arch-thread]: https://groups.google.com/u/1/g/kubernetes-sig-architecture/c/ZKUOPy2PNJ4/m/q3dC6pNtBQAJ
 [framework]: https://git.k8s.io/community/wg-naming/language-evaluation-framework.md

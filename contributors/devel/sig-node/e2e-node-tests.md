@@ -340,7 +340,7 @@ Some topology manager tests require minimal knowledge of the host topology in or
 The required information is to which NUMA node in the system are the SRIOV device attached to.
 The test code tries to autodetect the information it needs, skipping the relevant tests if the autodetection fails.
 
-You can override the autodetection adding annotations to the the config map like this example:
+You can override the autodetection adding annotations to the config map like this example:
 ```yaml
 metadata:
   annotations:

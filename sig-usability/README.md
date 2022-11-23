@@ -43,7 +43,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-usability-misc](https://github.com/orgs/kubernetes/teams/sig-usability-misc) - General Discussion
     - [@kubernetes/sig-usability-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-usability-pr-reviews) - PR Reviews
     - [@kubernetes/sig-usability-proposals](https://github.com/orgs/kubernetes/teams/sig-usability-proposals) - Design Proposals
-- Steering Committee Liaison: Davanum Srinivas (**[@dims](https://github.com/dims)**)
+- Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
 
 ## Subprojects
 

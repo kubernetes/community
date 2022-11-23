@@ -21,12 +21,12 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 
 ## Members
 
+* Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
-* Davanum Srinivas (**[@dims](https://github.com/dims)**), VMware
+* Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**), Chainguard, Inc
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Cisco
-* Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
-* Paris Pittman (**[@parispittman](https://github.com/parispittman)**), Apple
+* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
 * Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
 
 ## Contact

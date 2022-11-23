@@ -35,7 +35,6 @@ aliases:
     - neolit123
     - vincepri
   sig-contributor-experience-leads:
-    - alisondy
     - cblecker
     - jberkus
     - mrbobbytables
@@ -94,7 +93,10 @@ aliases:
   sig-testing-leads:
     - BenTheElder
     - alvaroaleman
+    - aojea
     - cjwagner
+    - michelle192837
+    - pohly
     - spiffxp
     - stevekuznetsov
   sig-ui-leads:
@@ -149,10 +151,10 @@ aliases:
     - mylesagray
     - phenixblue
   committee-code-of-conduct:
+    - detiber
     - endocrimes
     - hlipsig
     - jeremyrickard
-    - palnabarun
     - salaxander
   committee-security-response:
     - cjcullen
@@ -163,12 +165,12 @@ aliases:
     - tabbysable
     - tallclair
   committee-steering:
+    - BenTheElder
     - cblecker
-    - dims
+    - cpanato
     - justaugustus
-    - liggitt
     - mrbobbytables
-    - parispittman
+    - palnabarun
     - tpepper
 ## BEGIN CUSTOM CONTENT
   provider-aws:

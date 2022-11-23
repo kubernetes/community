@@ -38,7 +38,7 @@ message) one privately.
 The Kubernetes Slack Workspace is archived and made available when the
 administrators have time. There is no explicit interval.
 
-[Slack Archive Download][]
+[Slack Archive Download]
 
 ### DM (Direct Message) Conversations
 
@@ -100,7 +100,7 @@ determining if you should request a channel:
 
 -   The channel MUST be Kubernetes related in some way.
     -   Related cloud native projects might be more appropriate on the 
-        [CNCF Slack][].
+        [CNCF Slack].
 -   The project MUST be open source.
     -   Open Source a project BEFORE requesting a channel. We cannot accommodate
         every organization's open sourcing launch plans.
@@ -125,18 +125,18 @@ determining if you should request a channel:
         project channel is too noisy, but please don't create both at the
         start.
     -   If you need private discussion areas for security-sensitive topics, a
-        project-specific Slack or the [CNCF Slack][] may be a better fit.
+        project-specific Slack or the [CNCF Slack] may be a better fit.
 -   Ask in `#slack-admins` or file an issue if you're unsure It never hurts to
     ask.
 
 ## Requesting a Channel
 
-Channels and User Groups are managed by [Tempelis][], a tool that enables
+Channels and User Groups are managed by [Tempelis], a tool that enables
 external management of Slack.
 
-To add a channel, open a Pull Request (PR) updating the [slack-config][].
+To add a channel, open a Pull Request (PR) updating the [slack-config].
 
--   Add the channel to 'channels.yaml' following the [Channel Documentation][]
+-   Add the channel to 'channels.yaml' following the [Channel Documentation]
     -   Channel names must be 21 characters or less in length, limited by Slack
         design.
     -   Channels must not share the same name with a Slack user or user group.
@@ -167,7 +167,7 @@ There are two approvals needed. `/lgtm` and `/approve`. Once one moderator give 
 and add the `/approve` command as well as `/hold cancel`, which will remove the hold on the PR.
 Once it is signed off and merged, the channel will be created.
 
-For further information, see the [Slack Config Documentation][].
+For further information, see the [Slack Config Documentation].
 
 ### Delegating Channel Ownership
 
@@ -177,9 +177,9 @@ Admins to sign-off on all requests and passes the responsibility to the most
 relevant group.
 
 To delegate channel ownership - Open a Pull Request (PR) updating the
-[slack-config][].
+[slack-config].
 
--   Create a sub-directory under the [slack-config][] for your sig or group.
+-   Create a sub-directory under the [slack-config] for your sig or group.
 -   Update restrictions.yaml with an entry targeting yaml config files in the
     sub-directory you created along with one or more regular expressions that
     match the channel names that should be delegated.
@@ -191,7 +191,7 @@ To delegate channel ownership - Open a Pull Request (PR) updating the
           - "^kubernetes-foo-[a-z]{1,3}$" # channel regexp - example match: kubernetes-foo-bar
           - "^foo-[a-zA-Z]+$"             # channel regexp - example match: foo-awesomechannel
         ```
--   Create an [OWNERS][] file in the sub-directory adding the appropriate
+-   Create an [OWNERS] file in the sub-directory adding the appropriate
     reviewers and approvers for the desired channels.
 -   In the directory create one or more channel configs following the Channel
     Documentation
@@ -211,18 +211,18 @@ For further information, see the
 
 ## Requesting a User Group
 
-Channels and User Groups are managed by [Tempelis][], a tool that enables
+Channels and User Groups are managed by [Tempelis], a tool that enables
 external management of Slack.
 
-To add a User Group, open a Pull Request (PR) updating the [slack-config][].
+To add a User Group, open a Pull Request (PR) updating the [slack-config].
 
 -   Add the users to users.yaml. **NOTE:** This must be a mapping of their
     GitHub ID to their Slack Member ID. 
 -   To get a person's Slack Member ID, view their profile. Then click on the
     "**...**" and select **Copy member ID**. It will be a 9 character string of
     uppercase letters and numbers (example: `U1H63D8SZ`).
--   Update [usergroups.yaml][] Follow the guidelines for creating a User Group
-    in the Slack Config [User Group Documentation][].
+-   Update [usergroups.yaml] Follow the guidelines for creating a User Group
+    in the Slack Config [User Group Documentation].
 -   In the PR comments, include details on the User Group and `/cc` the members
     you are adding so that they may sign off and accept being added to the
     group.
@@ -247,7 +247,7 @@ ensure everyone has a great experience.
 Typically approved requests include: GitHub, CNCF requests, or other
 tools/platforms used to aid in the management of Slack itself.
 
--   Create a [GitHub Issue][] using the Slack Request template.
+-   Create a [GitHub Issue] using the Slack Request template.
 -   In the description, describe the request, its intended purpose and benefit
     to the community. Supplying links to supporting content such as a document
     outlining what OAuth scopes that are requested and why are **STRONGLY
@@ -263,7 +263,7 @@ discussed in Slack itself.
 ### Admin Expectations and Guidelines
 
 Admins should adhere to the general Kubernetes project 
-[moderation guidelines][].
+[moderation guidelines].
 
 Additionally, admins should ensure they have 2-factor auth enabled for their
 account and mention they are a Slack admin in the "What I do" portion of their
@@ -315,7 +315,7 @@ In general, use your best judgment.
 Once two Slack admins have reviewed and agreed to sponsor the channel, they will
 sign off on the Channel Request PR. Once merged, the channel will be created.
 
-Channels managed by [Tempelis][] will automatically have default messages
+Channels managed by [Tempelis] will automatically have default messages
 pinned. For any manually-provisioned channels, such as private channels, add the
 below message and pin it.
 
@@ -359,7 +359,7 @@ steps.
 For the reasons listed below, admins may inactivate individual Slack accounts.
 Due to Slack's framework, it does not allow for an account to be banned or
 suspended in the traditional sense, merely inactivated. 
-See [Slack's policy on inactivated accounts][] for more information.
+See [Slack's policy on inactivated accounts] for more information.
 
 #### Reasons to inactivate an account
 

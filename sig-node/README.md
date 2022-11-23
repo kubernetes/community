@@ -89,12 +89,13 @@ The following [subprojects][subproject-definition] are owned by sig-node:
   - [kubernetes/test-infra/config/jobs/kubernetes/node-problem-detector](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/node-problem-detector/OWNERS)
 - **Contact:**
   - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
-### noderesourcetopology-api
+### resource-management
 - **Owners:**
+  - [kubernetes/kubernetes/staging/src/k8s.io/dynamic-resource-allocation](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS)
   - [kubernetes/noderesourcetopology-api](https://github.com/kubernetes/noderesourcetopology-api/blob/master/OWNERS)
 ### security-profiles-operator
 - **Owners:**
-  - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/master/OWNERS)
+  - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#security-profiles-operator](https://kubernetes.slack.com/messages/security-profiles-operator)
 

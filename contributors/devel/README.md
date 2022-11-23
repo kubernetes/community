@@ -73,7 +73,7 @@ Guide](http://kubernetes.io/docs/admin/).
   Authorization applies to all HTTP requests on the main apiserver port.
   This doc explains the available authorization implementations.
 
-* **Admission Control Plugins** ([admission_control](/contributors/design-proposals/api-machinery/admission_control.md))
+* **Admission Control Plugins** ([admission_control](https://git.k8s.io/design-proposals-archive/api-machinery/admission_control.md))
 
 
 ## Building releases
@@ -87,7 +87,7 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
   How cherry picks are managed on release branches within the `kubernetes/kubernetes` repository.
 
 * **Getting Kubernetes Builds** [getting-builds.md](sig-release/getting-builds.md)
-  
+
 * **Targeting enhancements, Issues and PRs to Release Milestones** [release.md](sig-release/release.md)
 
 ### SIG Instrumentation
@@ -119,7 +119,7 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 * **Understanding the Kubernetes Scheduler** [scheduling_code_hierarchy_overview.md](sig-scheduling/scheduling_code_hierarchy_overview.md)
 
-* **Scheduler Algorithm in Kubernetes** [scheduler_algorithm.md](sig-scheduling/scheduler_algorithm.md)
+* **Customizing the Kubernetes Scheduler** [scheduler configuration](https://kubernetes.io/docs/reference/scheduling/config/)
 
 * **Understanding how Pods are queued in Kubernetes Scheduler** [scheduler_queues.md](sig-scheduling/scheduler_queues.md)
 
@@ -157,7 +157,7 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 * **Integration Testing in Kubernetes** [integration-tests.md](sig-testing/integration-tests.md)
 
-* **End-to-End Testing in Kubernetes** [e2e-tests.md](sig-testing/e2e-tests.md) and [e2e-tests-kubetest2.md](sig-testing/e2e-tests-kubetest2.md) 
+* **End-to-End Testing in Kubernetes** [e2e-tests.md](sig-testing/e2e-tests.md) and [e2e-tests-kubetest2.md](sig-testing/e2e-tests-kubetest2.md)
 
 * **Debugging with Gubernator** [gubernator.md](sig-testing/gubernator.md)
 

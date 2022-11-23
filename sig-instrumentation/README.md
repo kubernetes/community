@@ -24,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Instrumentatio
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Elana Hashman (**[@ehashman](https://github.com/ehashman)**), Red Hat
+* Elana Hashman (**[@ehashman](https://github.com/ehashman)**), Apple
 * Han Kang (**[@logicalhan](https://github.com/logicalhan)**), Google
 
 ### Technical Leads

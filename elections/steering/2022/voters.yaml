@@ -2,7 +2,7 @@
 ##################################
 #
 # The process for determining elegible voters can be found in
-# https://github.com/kubernetes/community/tree/master/events/elections/2022
+# https://github.com/kubernetes/community/tree/master/elections/steering/2022
 #
 # If you feel you meet the eligibility criteria but do not see your GitHub username
 # below, please fill out an exception request and the elections team will get back to
@@ -12,10 +12,14 @@
 # 2022-08-13: Initial voter list prepared using devstats data provided Lukasz Gryglicki
 #   and current organization membership status.
 # 2022-08-15: Add incoming CoCC members and exception link.
+# 2022-08-28: Add voters from exception requests.
+# 2022-09-05: Add voters from exception requests.
+# 2022-09-09: Add voters from exception requests.
+# 2022-09-14: Add voters from exception requests.
 #
 eligible_voters:
-- 196Ikuchil
 - '249043822'
+- 196Ikuchil
 - a7i
 - aartij17
 - Abirdcfly
@@ -61,6 +65,7 @@ eligible_voters:
 - aravindhp
 - ardaguclu
 - Arhell
+- ArkaSaha30
 - Arvinderpal
 - asalkeld
 - ash2k
@@ -137,6 +142,7 @@ eligible_voters:
 - corneliusweig
 - cpanato
 - cprivitere
+- craigbox
 - cristicalin
 - csantanapr
 - cyclinder
@@ -257,6 +263,7 @@ eligible_voters:
 - hzxuzhonghu
 - iamemilio
 - iamNoah1
+- IanColdwater
 - ianychoi
 - ibabou
 - idvoretskyi
@@ -284,6 +291,7 @@ eligible_voters:
 - jbartosik
 - jberkus
 - jcjesus
+- jeefy
 - Jefftree
 - jeffvance
 - jeremyrickard
@@ -331,6 +339,7 @@ eligible_voters:
 - Karthik-K-N
 - Kartik494
 - kaslin
+- katcosgrove
 - kavyashree-r
 - kbhawkey
 - kcmartin
@@ -355,6 +364,7 @@ eligible_voters:
 - krmayankk
 - kundan2707
 - kvaps
+- lachie83
 - landreasyan
 - lauchokyip
 - lauralorenz
@@ -484,6 +494,7 @@ eligible_voters:
 - parispittman
 - parul5sahoo
 - pawbana
+- pchan
 - perithompson
 - petr-muller
 - phenixblue
@@ -508,11 +519,13 @@ eligible_voters:
 - PushkarJ
 - pydctw
 - qabpea
+- qedrakmar
 - RA489
 - raelga
 - Raffo
 - RainbowMango
 - Rajalakshmi-Girish
+- rajaskakodkar
 - ramineni
 - ramrodo
 - Random-Liu
@@ -531,6 +544,7 @@ eligible_voters:
 - riita10069
 - rikatz
 - RinkiyaKeDad
+- Rishit-dagli
 - ritazh
 - rjbez17
 - rmohr
@@ -545,6 +559,7 @@ eligible_voters:
 - RyanAoh
 - s-kawamura-w664
 - s-urbaniak
+- saad-ali
 - saikat-royc
 - salaxander
 - sallyom
@@ -649,6 +664,7 @@ eligible_voters:
 - Verolop
 - verult
 - vinayakankugoyal
+- vinaykul
 - vincepri
 - vladimirvivien
 - vllry

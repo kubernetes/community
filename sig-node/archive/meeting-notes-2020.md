@@ -1050,7 +1050,7 @@ Meeting is [canceled](https://groups.google.com/forum/?utm_medium=email&utm_sour
 * [bart0sh] 2 hugepages PRs need review/approval:
   * [Implement support for multiple sizes huge pages](https://github.com/kubernetes/kubernetes/pull/84051) was already reviewed and passed API review. Last signode review is required. This PR is covered by [granted sig-release exception](https://github.com/kubernetes/enhancements/pull/1540#issuecomment-583072382) and is going to be included into 1.18 if merged.
   * [kubelet: sync node allocatable cgroups upon status update](https://github.com/kubernetes/kubernetes/pull/81774) bugfix got lgtm in Oct 2019. It would be great to have it in 1.18.
-* [cynepco3hahue] The KEP [Propose Memory Manager for NUMA awareness](https://github.com/kubernetes/enhancements/pull/1203) needs review, it can be great to get feedback from someone under the the sig-node group.
+* [cynepco3hahue] The KEP [Propose Memory Manager for NUMA awareness](https://github.com/kubernetes/enhancements/pull/1203) needs review, it can be great to get feedback from someone under the sig-node group.
 * [vpickard] ~~Topology Manager CI job PR needs /approve from sig-node owner [https://github.com/kubernetes/test-infra/pull/16062](https://github.com/kubernetes/test-infra/pull/16062)~~
 * [fromani] Topology Manager Upgrade test PR [https://github.com/kubernetes/kubernetes/pull/88107](https://github.com/kubernetes/kubernetes/pull/88107)
 * [dashpole] Distributed Tracing in Kubernete

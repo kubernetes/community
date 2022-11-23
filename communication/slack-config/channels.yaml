@@ -23,6 +23,9 @@ channels:
   - name: aus-nz-users
   - name: awesome-kubernetes
   - name: aws-authenticator
+  - name: aws-controllers-k8s
+  - name: aws-vpc-cni
+  - name: azure-service-operator
   - name: bazel
   - name: bindings-discuss
   - name: bootkube
@@ -60,6 +63,7 @@ channels:
   - name: cluster-api-kubemark
   - name: cluster-api-kubevirt
   - name: cluster-api-nested
+  - name: cluster-api-nutanix
   - name: cluster-api-oci
   - name: cluster-api-openstack
   - name: cluster-api-operator
@@ -83,6 +87,7 @@ channels:
   - name: csi-secrets-store #this channel is for secrets-store-csi-driver which is a subproject of sig-auth
   - name: de-events
   - name: de-users
+  - name: deppy-dev
   - name: devfile
   - name: devspace
   - name: devstats
@@ -90,6 +95,7 @@ channels:
   - name: digitalocean-k8s
   - name: distroless
   - name: diversity
+  - name: dra
   - name: draft-dev
   - name: draft-users
   - name: eks
@@ -106,8 +112,10 @@ channels:
   - name: events
   - name: external-dns
   - name: external-secrets
+  - name: external-secrets-dev
   - name: falco
   - name: fiaas
+  - name: finops
   - name: fi-users
   - name: flatcar
   - name: flink-operator
@@ -191,7 +199,8 @@ channels:
   - name: kcna-exam-prep
   - name: klog
   - name: knative
-  - name: ko-project
+  - name: ko-build
+    id: C01T7DTP65S
   - name: kompose
   - name: kong
   - name: konveyor
@@ -211,10 +220,12 @@ channels:
   - name: krex
   - name: krustlet
   - name: kube-aws
+  - name: kube-bind
   - name: kube-deploy
     archived: true
   - name: kube-monkey
   - name: kube-oidc-proxy
+  - name: kube-operating-systems-dev
   - name: kube-router
   - name: kube-score
   - name: kube-spawn
@@ -337,6 +348,7 @@ channels:
   - name: openstack-helm
   - name: openstack-kolla
   - name: operator-builder
+  - name: operator-framework-community
   - name: operator-sdk-dev
   - name: ops-status
     archived: true
@@ -346,10 +358,12 @@ channels:
   - name: pharmer
   - name: pinniped
   - name: pl-users
+  - name: podman-desktop
   - name: pr-reviews
   - name: prometheus
   - name: prometheus-operator
   - name: prometheus-operator-dev
+  - name: provider-oci
   - name: pt_br-users
   - name: purelb-users
   - name: raksh
@@ -400,13 +414,8 @@ channels:
   - name: sig-instrumentation
   - name: sig-multicluster
   - name: sig-network
-  - name: sig-node
-  - name: sig-node-bug-scrub
-  - name: sig-node-kmm
-    id: C037RE58RED
-  - name: sig-node-rkt
-    archived: true
-  - name: sig-node-swap
+  - name: sig-network-multi-network
+  # sig-node channels are defined in sig-node/
   - name: sig-scalability
   - name: sig-scheduling
   # sig-security* channels are defined in sig-security/
@@ -432,6 +441,7 @@ channels:
   - name: suse-caasp
   - name: talk-proposals
   - name: tanzu-community-edition
+    archived: true
   - name: tanzu-streaming-runtimes
   - name: terraform-providers
   - name: terranetes

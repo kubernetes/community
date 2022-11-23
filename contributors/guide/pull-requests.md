@@ -178,7 +178,7 @@ Are you willing to bet a few days or weeks of work on it?
 
 It's better to get confirmation beforehand.
 
-When you want to make a large or otherwise significant change, you should follow the [Kubernetes Enhancement Proposal process](https://git.k8s.io/enhancements/keps/0001-kubernetes-enhancement-proposal-process.md).
+When you want to make a large or otherwise significant change, you should follow the [Kubernetes Enhancement Proposal process](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/0000-kep-process/README.md).
 
 Even for small changes, it is often a good idea to gather feedback on an issue you filed, or even simply ask in the appropriate SIG's Slack channel to invite discussion and feedback from code owners. 
 Here's a [list of SIGs](/sig-list.md), this includes their public meetings.
