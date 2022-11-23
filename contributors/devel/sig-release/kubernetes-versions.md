@@ -328,6 +328,7 @@ The following generic markers are available:
 - `k8s-stable1`
 - `k8s-stable2`
 - `k8s-stable3`
+- `k8s-stable4`
 
 Generic markers reference cross builds generated via the `ci-kubernetes-build`
 jobs, which run approximately every hour.
@@ -400,6 +401,7 @@ We publish a set of additional generic version markers:
 - `k8s-stable1`
 - `k8s-stable2`
 - `k8s-stable3`
+- `k8s-stable4`
 
 Depending on the point in the release cycle, the meaning of these markers can
 change.
