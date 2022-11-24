@@ -16,6 +16,7 @@ usergroups:
     members:
       - ameukam # Release Manager Associate
       - cpanato # Release Manager
+      - jeremyrickard # Release Manager
       - jimangel # Release Manager Associate
       - justaugustus # subproject owner / Release Manager
       - mkorbi # Release Manager Associate
@@ -53,7 +54,7 @@ usergroups:
     members:
       - cpanato # SIG Release Technical Lead
       - gracenng # 1.26 RT Lead Shadow
-      - jeremyrickard # SIG Release Technical Lead
+      - jeremyrickard # SIG Release Chair
       - justaugustus # SIG Release Chair
       - katcosgrove # 1.26 RT Lead Shadow
       - leonardpahlke # 1.26 RT Lead
@@ -61,6 +62,7 @@ usergroups:
       - puerco # SIG Release Technical Lead
       - psaggu # 1.26 RT Lead Shadow
       - saschagrunert # SIG Release Chair
+      - Verolop # SIG Release Technical Lead
 
   # Should match SIG Release Leads at all times:
   # https://git.k8s.io/community/sig-release/README.md#leadership
@@ -74,10 +76,11 @@ usergroups:
       - sig-release
     members:
       - cpanato # SIG Release Technical Lead
-      - jeremyrickard # SIG Release Technical Lead
+      - jeremyrickard # SIG Release Chair
       - justaugustus # SIG Release Chair
       - puerco # SIG Release Technical Lead
       - saschagrunert # SIG Release Chair
+      - Verolop # SIG Release Technical Lead
 
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
@@ -92,16 +95,17 @@ usergroups:
       - sig-release
     members:
       - cjcullen # Product Security Committee
-      - cpanato # Release Manager
+      - cpanato # subproject owner / Release Manager
+      - jeremyrickard # subproject owner / Release Manager
       - joelsmith # Product Security Committee
       - justaugustus # subproject owner / Release Manager
       - lukehinds # Product Security Committee
       - micahhausler # Product Security Committee
       - palnabarun # Release Manager
-      - puerco # Release Manager
+      - puerco # subproject owner / Release Manager
       - saschagrunert # subproject owner / Release Manager
       - swamymsft # Product Security Committee
       - tabbysable # Product Security Committee
       - tallclair # Product Security Committee
       - xmudrii # Release Manager
-      - Verolop # Release Manager
+      - Verolop # subproject owner / Release Manager
