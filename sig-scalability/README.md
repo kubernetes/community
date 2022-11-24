@@ -13,6 +13,7 @@ SIG Scalability is responsible for defining and driving scalability goals for Ku
 The [charter](charter.md) defines the scope and governance of the Scalability Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scale) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Thursdays at 10:30 PT (Pacific Time)](https://zoom.us/j/94252896018?pwd=cTlMMlBoTHZqUEdjRm9VY2NWNUg5dz09) (bi-weekly ([upcoming meeting dates](#upcoming-meeting-dates))). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/a/bobsplanet.com/document/d/1hEpf25qifVWztaeZPFmjNiJvPo-5JX1z0LSvvVY5G2g/edit?usp=drive_web).
   * [Meeting recordings](https://www.youtube.com/watch?v=NDP1uYyom28&list=PL69nYSiGNLP2X-hzNTqyELU6jYS3p10uL).
@@ -22,7 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Scalability Sp
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
+* Marcel Zieba (**[@marseel](https://github.com/marseel)**), Google
 * Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), AWS
 
 ### Technical Leads
@@ -30,6 +31,10 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
+
+## Emeritus Leads
+
+* Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**)
 
 ## Contact
 - Slack: [#sig-scalability](https://kubernetes.slack.com/messages/sig-scalability)
@@ -43,6 +48,13 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-scalability-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-scalability-pr-reviews) - PR Reviews
     - [@kubernetes/sig-scalability-proprosals](https://github.com/orgs/kubernetes/teams/sig-scalability-proprosals) - Design Proposals
     - [@kubernetes/sig-scalability-test-failures](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) - Test Failures and Triage
+- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-scalability:
+* [WG Reliability](/wg-reliability)
+
 
 ## Subprojects
 
@@ -50,32 +62,33 @@ The following [subprojects][subproject-definition] are owned by sig-scalability:
 ### kubernetes-scalability-and-performance-tests-and-validation
 [Described below](#kubernetes-scalability-and-performance-tests-and-validation)
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/processes/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/scalability/OWNERS
+  - [kubernetes/community/sig-scalability/processes](https://github.com/kubernetes/community/blob/master/sig-scalability/processes/OWNERS)
+  - [kubernetes/kubernetes/test/e2e/scalability](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/scalability/OWNERS)
 ### kubernetes-scalability-bottlenecks-detection
 [Described below](#kubernetes-scalability-bottlenecks-detection)
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/blogs/OWNERS
+  - [kubernetes/community/sig-scalability/blogs](https://github.com/kubernetes/community/blob/master/sig-scalability/blogs/OWNERS)
 ### kubernetes-scalability-definition
 [Described below](#kubernetes-scalability-definition)
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/configs-and-limits/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/slos/OWNERS
+  - [kubernetes/community/sig-scalability/configs-and-limits](https://github.com/kubernetes/community/blob/master/sig-scalability/configs-and-limits/OWNERS)
+  - [kubernetes/community/sig-scalability/slos](https://github.com/kubernetes/community/blob/master/sig-scalability/slos/OWNERS)
 ### kubernetes-scalability-governance
 [Described below](#kubernetes-scalability-governance)
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/governance/OWNERS
+  - [kubernetes/community/sig-scalability/governance](https://github.com/kubernetes/community/blob/master/sig-scalability/governance/OWNERS)
 ### kubernetes-scalability-test-frameworks
 [Described below](#kubernetes-scalability-test-frameworks)
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cluster/images/kubemark/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubemark/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubemark/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/kubemark/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/perf-tests/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/perf-tests/master/clusterloader2/OWNERS
+  - [kubernetes/kubernetes/cluster/images/kubemark](https://github.com/kubernetes/kubernetes/blob/master/cluster/images/kubemark/OWNERS)
+  - [kubernetes/kubernetes/cmd/kubemark](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubemark/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubemark](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubemark/OWNERS)
+  - [kubernetes/kubernetes/test/kubemark](https://github.com/kubernetes/kubernetes/blob/master/test/kubemark/OWNERS)
+  - [kubernetes/perf-tests](https://github.com/kubernetes/perf-tests/blob/master/OWNERS)
+  - [kubernetes/perf-tests/clusterloader2](https://github.com/kubernetes/perf-tests/blob/master/clusterloader2/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 # Scalability Regression - Contact Points
 
@@ -91,7 +104,7 @@ Also do not hesitate to contact those SIG members for status update:
 * Jacek Kaniuk (**[@jkaniuk](https://github.com/jkaniuk)**), Google
 * Jakub Przychodzeń (**[@jprzychodzen](https://github.com/jprzychodzen)**), Google
 * Maciej Borsz (**[@mborsz](https://github.com/mborsz)**), Google
-* Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
+* Marcel Zięba (**[@marseel](https://github.com/marseel)**), Google
 * Wojciech Tyczynski (**[@wojtek-t](https://github.com/wojtek-t)**), Google
 
 ## Upcoming Meeting Dates
@@ -131,7 +144,7 @@ driving architectural changes to eliminate those (if such are required) in
 collaboration with other SIGs or directly delegating non cross-cutting
 improvements to individual SIGs.
 
-* [Scalability issues with Services](.blogs/k8s-services-scalability-issues.md)
+* [Scalability issues with Services](./blogs/k8s-services-scalability-issues.md)
 
 ## Kubernetes scalability test frameworks
 
@@ -148,7 +161,10 @@ more generalized benchmarking scenarios.
 
 Ensuring that all tests necessary to validate Kubernetes scalability and
 performance exists (ideally by providing easy-to-use frameworks and working
-with SIGs to provide them), having environment and resources to run them.
+with SIGs to provide them), having environment and resources to run them:
+
+* [Official tests](https://github.com/kubernetes/perf-tests/tree/master/clusterloader2/testing)
+* [Testgrid](https://k8s-testgrid.appspot.com/sig-scalability)
 
 Ensuring that tests are being executed according to calendar and ensuring that
 each official Kubernetes release satisfies all scalability and performance
@@ -158,9 +174,5 @@ of scalability and performance regressions:
 
 * [Processes](https://github.com/kubernetes/community/tree/master/sig-scalability/processes)
 
-We are in progress to migrating tests to new framework:
-
-* [Still official tests](https://github.com/kubernetes/kubernetes/tree/master/test/e2e/scalability)
-* [Soon to be official tests](https://github.com/kubernetes/perf-tests/tree/master/clusterloader2/testing)
 
 <!-- END CUSTOM CONTENT -->

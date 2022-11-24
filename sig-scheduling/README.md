@@ -13,7 +13,14 @@ SIG Scheduling is responsible for the components that make Pod placement decisio
 The [charter](charter.md) defines the scope and governance of the Scheduling Special Interest Group.
 
 ## Meetings
-* 10AM PT Meeting: [Thursdays at 17:00 UTC](https://zoom.us/j/841218129) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling) for the group will typically add invites for the following meetings to your calendar.*
+* biweekly meeting (NA & Europe): [Thursdays at 17:00 UTC](https://zoom.us/j/841218129) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
+  * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
+* descheduler biweekly meeting: [Tuesdays at 17:00 UTC](https://zoom.us/j/841218129) (biweekly starting Tuesday September 13, 2022). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ang5shAFxuylO2RXMFGO7uxSe-IX3Y3PxoKIn1yPIEQ).
+  * [Meeting recordings](https://youtube.com/playlist?list=PLEafaZMk8MYYqoSncOkL8uutIcTsUQE_g).
+* monthly meeting (APAC): [first Thursdays at 02:00 UTC](https://zoom.us/j/841218129) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=02:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
 
@@ -22,8 +29,16 @@ The [charter](charter.md) defines the scope and governance of the Scheduling Spe
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), IBM
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), Apple
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), Apple
+* Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
+* Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**), Google
 
 ## Emeritus Leads
 
@@ -42,31 +57,48 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-scheduling-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-scheduling-pr-reviews) - PR Reviews
     - [@kubernetes/sig-scheduling-proposals](https://github.com/orgs/kubernetes/teams/sig-scheduling-proposals) - Design Proposals
     - [@kubernetes/sig-scheduling-test-failures](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) - Test Failures and Triage
+- Steering Committee Liaison: Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-scheduling:
+* [WG Batch](/wg-batch)
+* [WG Multitenancy](/wg-multitenancy)
+* [WG Policy](/wg-policy)
+* [WG Structured Logging](/wg-structured-logging)
+
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-scheduling:
 ### cluster-capacity
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cluster-capacity/master/OWNERS
+  - [kubernetes-sigs/cluster-capacity](https://github.com/kubernetes-sigs/cluster-capacity/blob/master/OWNERS)
 ### descheduler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/descheduler/master/OWNERS
+  - [kubernetes-sigs/descheduler](https://github.com/kubernetes-sigs/descheduler/blob/master/OWNERS)
 ### kube-batch
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
-### poseidon
+  - [kubernetes-sigs/kube-batch](https://github.com/kubernetes-sigs/kube-batch/blob/master/OWNERS)
+### kube-scheduler-simulator
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/poseidon/master/OWNERS
+  - [kubernetes-sigs/kube-scheduler-simulator](https://github.com/kubernetes-sigs/kube-scheduler-simulator/blob/master/OWNERS)
+### kueue
+- **Owners:**
+  - [kubernetes-sigs/kueue](https://github.com/kubernetes-sigs/kueue/blob/main/OWNERS)
+### kwok
+- **Owners:**
+  - [kubernetes-sigs/kwok](https://github.com/kubernetes-sigs/kwok/blob/main/OWNERS)
 ### scheduler
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
+  - [kubernetes/kubernetes/cmd/kube-scheduler](https://github.com/kubernetes/kubernetes/blob/master/cmd/kube-scheduler/OWNERS)
+  - [kubernetes/kubernetes/pkg/scheduler](https://github.com/kubernetes/kubernetes/blob/master/pkg/scheduler/OWNERS)
 ### scheduler-plugins
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-plugins/master/OWNERS
+  - [kubernetes-sigs/scheduler-plugins](https://github.com/kubernetes-sigs/scheduler-plugins/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

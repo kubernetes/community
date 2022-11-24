@@ -27,10 +27,10 @@ we have a GitHub Administration team that is responsible for carrying out the
 various tasks.
 
 This team (**[@kubernetes/owners](https://github.com/orgs/kubernetes/teams/owners)**) is as follows:
-* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**, US Pacific)
+* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**, Central European Time)
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**, US Eastern)
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**, CA Pacific)
-* Erick Fejta (**[@fejta](https://github.com/fejta)**, US Pacific)
+* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**, Indian Standard Time)
 * Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**, Indian Standard Time)
 * Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**, UA Eastern European)
 
@@ -72,6 +72,7 @@ project
 | [kubernetes](https://github.com/kubernetes) | Core |
 | [kubernetes-client](https://github.com/kubernetes-client) | API Client Libraries |
 | [kubernetes-csi](https://github.com/kubernetes-csi) | Container Storage Interface Components |
+| [kubernetes-nightly](https://github.com/kubernetes-nightly) | Testing org for [publishing-bot](https://github.com/kubernetes/publishing-bot) tooling |
 | [kubernetes-retired](https://github.com/kubernetes-retired) | Retired/Archived Projects |
 | [kubernetes-security](https://github.com/kubernetes-security) | Private Security Fix Mirror |
 | [kubernetes-sigs](https://github.com/kubernetes-sigs) | SIG-related Projects |

@@ -27,13 +27,13 @@ Please do not ever hesitate to ask a question or send a pull request.
 
 Check out our [community guiding principles](/contributors/guide/expectations.md#code-review) on how to create great code as a big group.
 
-Beginner focused information can be found below in [Open a Pull Request](#open-a-pull-request) and [Code Review](#code-review).
+Beginner focused information can be found below in [Open a Pull Request](#opening-a-pull-request) and [Code Review](#code-review).
 
 For quick reference on contributor resources, we have a handy [contributor cheatsheet](./contributor-cheatsheet/).
 
 ### Communication
 
-It is best to contact your [SIG](#learn-about-sigs) for issues related to the SIG's topic. Your SIG will be able to help you much more quickly than a general question would.
+It is best to contact your [SIG](first-contribution.md#learn-about-sigs) for issues related to the SIG's topic. Your SIG will be able to help you much more quickly than a general question would.
 
 For general questions and troubleshooting, use the [standard lines of communication](/communication/README.md) and work through the [troubleshooting guide](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/).
 
@@ -60,9 +60,9 @@ Refer to its [command reference documentation](https://go.k8s.io/bot-commands).
 
 Common new contributor PR issues are:
 
-* not having correctly signed the CLA ahead of your first PR. See the [CLA page](/CLA.md) for troubleshooting help, in some cases you might need to file a ticket with the CNCF to resolve a CLA problem.  
-* finding the right SIG or reviewer(s) for the PR (see [Code Review](#code-review) section) and following any SIG or repository specific contributing guidelines (see [Learn about SIGs](#learn-about-sigs) section)
-* dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](/contributors/devel/sig-testing/flaky-tests.md))
+* Not having correctly signed the CLA ahead of your first PR. See the [CLA page](/CLA.md) for troubleshooting help, in some cases you might need to file a ticket with the CNCF to resolve a CLA problem.  
+* Finding the right SIG or reviewer(s) for the PR (see [Code Review](#code-review) section) and following any SIG or repository specific contributing guidelines (see [Learn about SIGs](first-contribution.md#learn-about-sigs) section)
+* Dealing with test cases which fail on your PR, unrelated to the changes you introduce (see [Test Flakes](/contributors/devel/sig-testing/flaky-tests.md))
 * Not following [scalability good practices](scalability-good-practices.md)
 * Include mentions (like @person) and [keywords](https://help.github.com/en/articles/closing-issues-using-keywords) which could close the issue (like fixes #xxxx) in commit messages.
 
@@ -73,10 +73,10 @@ There are two aspects of code review: giving and receiving.
 
 To make it easier for your PR to receive reviews, consider the reviewers will need you to:
 
-* follow the project [coding conventions](coding-conventions.md)
-* write [good commit messages](https://chris.beams.io/posts/git-commit/)
-* break large changes into a logical series of smaller patches which individually make easily understandable changes, and in aggregate solve a broader issue
-* label PRs with appropriate SIGs and reviewers: to do this read the messages the bot sends you to guide you through the PR process
+* Follow the project [coding conventions](coding-conventions.md)
+* Write [good commit messages](https://chris.beams.io/posts/git-commit/)
+* Break large changes into a logical series of smaller patches which individually make easily understandable changes, and in aggregate solve a broader issue
+* Label PRs with appropriate SIGs and reviewers: to do this read the messages the bot sends you to guide you through the PR process
 
 Reviewers, the people giving the review, are highly encouraged to revisit the [Code of Conduct](/code-of-conduct.md) as well as [community expectations](./expectations.md#expectations-of-reviewers-review-latency) and must go above and beyond to promote a collaborative, respectful community.
 When reviewing PRs from others [The Gentle Art of Patch Review](http://sage.thesharps.us/2014/09/01/the-gentle-art-of-patch-review/) suggests an iterative series of focuses which is designed to lead new contributors to positive collaboration without inundating them initially with nuances:

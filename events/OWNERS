@@ -1,13 +1,10 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
-reviewers:
-  - parispittman
-  - tpepper
 approvers:
-  - parispittman
   - mrbobbytables
-  - guineveresaenger
   - jberkus
   - sig-contributor-experience-leads
+emeritus_approvers:
+  - parispittman
 labels:
   - sig/contributor-experience

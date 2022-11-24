@@ -20,7 +20,7 @@ This [slide deck](https://docs.google.com/presentation/d/1JqcALpsg07eH665ZXQrIvO
 ## Communication
 
 - Mailing List: development announcements and discussions appear on the [`kubernetes-dev`](https://groups.google.com/forum/#!forum/kubernetes-dev) Google Group.
-- Slack: Please [sign up](http://slack.k8s.io/) for an invite and join the the [#outreachy-apps](https://kubernetes.slack.com/messages/outreachy-apps) channel.
+- Slack: Please [sign up](http://slack.k8s.io/) for an invite and join the [#outreachy-apps](https://kubernetes.slack.com/messages/outreachy-apps) channel.
 
 ## Contribute
 
@@ -35,7 +35,6 @@ The README in the [community repo](https://github.com/kubernetes/community) deta
 |----------|-----------|-----------|
 | [Paris Pittman](https://github.com/parispittman) | @paris |  parispittman@google.com |
 | [Nikhita Raghunath](https://github.com/nikhita) | @nikhita | nikitaraghunath@gmail.com |
-| [Marky Jackson](https://github.com/markyjackson-taulia) | @markyjackson | marky.r.jackson@gmail.com |
 
 The coordinators can be contacted at any time. The easiest way is to send a slack message.
 

@@ -1,3 +1,5 @@
 channels:
-  - name: sig-network-service-apis
+  - name: sig-network-gateway-api
+    id: CR0H13KGA
   - name: sig-network-policy-api
+  - name: sig-network-kpng

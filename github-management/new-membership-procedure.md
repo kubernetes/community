@@ -109,6 +109,6 @@ or the GitHub administration team.
 
 
 [community membership]: /community-membership.md
-[k-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[k-dev]: https://groups.google.com/a/kubernetes.io/group/dev
 [kubernetes/org]: https://git.k8s.io/org/
 [Kubernetes GitHub org]: https://github.com/kubernetes

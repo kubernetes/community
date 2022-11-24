@@ -8,7 +8,7 @@ for CNCF compliance and for the guidelines of the community.
 
 The [GitHub Administration Team] will aim to handle requests in the following
 time frames:
-- Organization invites should be handled within 72 hours of all requirements for
+- Organization invites should be handled within one week of all requirements for
   membership being met (all +1s obtained).
 - Repository creation or migration requests should be responded to within 72
   hours of the issue being opened. There may be information required or specific
@@ -16,7 +16,7 @@ time frames:
   repo should be created within 72 hours.
 - Security or moderation requests should be handled ASAP, and coverage should be
   provided in multiple time zones and countries.
-- All other requests should be responded to within 72 hours of the issue being
+- All other requests should be responded to within a week of the issue being
   opened. The time to resolve these requests will vary depending on the
   specifics of the request.
 
@@ -46,6 +46,21 @@ code in.
 
 It is easier to start new code in a Kubernetes organization than it is to
 transfer in existing code.
+
+## Licensing Guidance
+
+Section 11 of the [CNCF Charter] provides guidance on how to license code and
+documentation owned by the CNCF projects. However, it doesn't explicitly cover
+situations where a repo may have mixed content (such as repos that contain both
+code and documentation living alongside each other).
+
+For clarity, here is the guidance for Kubernetes GitHub organizations:
+- If a repo contains only code, it should be licensed under the
+  [Apache License, Version 2.0].
+- If a repo contains only documentation, it should be licensed under the
+  [Creative Commons Attribution 4.0 International License].
+- If a repo contains both code and documentation, it should be licensed under
+  the [Apache License, Version 2.0].
 
 ## Team Guidance
 
@@ -230,3 +245,6 @@ https://help.github.com/articles/archiving-a-github-repository/
 [kubernetes-template-project]: https://github.com/kubernetes/kubernetes-template-project
 [SIG Repository]: /github-management/kubernetes-repositories.md##sig-repositories
 [template repo]: https://help.github.com/en/articles/creating-a-repository-from-a-template
+[CNCF Charter]: https://github.com/cncf/foundation/blob/main/charter.md
+[Apache License, Version 2.0]: https://www.apache.org/licenses/LICENSE-2.0
+[Creative Commons Attribution 4.0 International License]: https://creativecommons.org/licenses/by/4.0/

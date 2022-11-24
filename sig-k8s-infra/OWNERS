@@ -1,0 +1,8 @@
+# See the OWNERS docs at https://go.k8s.io/owners
+
+reviewers:
+  - sig-k8s-infra-leads
+approvers:
+  - sig-k8s-infra-leads
+labels:
+  - sig/k8s-infra

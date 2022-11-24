@@ -1,5 +1,25 @@
 sigs:
-  - name: Foo
-  - name: Bar
+  - dir: sig-foo
+    name: Foo
+    label: foo
+    charter_link: foo-charter
+    mission_statement: covers foo
+    subprojects:
+    - name: sub-foo
+      owners:
+      - "https://raw.githubusercontent.com/org/foo/main/OWNERS"
+  - dir: sig-bar
+    name: Bar
+    label: bar
+    charter_link: charter-bar
+    mission_statement: owns areas related to bar
+    subprojects:
+    - name: sub-bar
+      owners:
+      - "https://raw.githubusercontent.com/org/bar/main/test/OWNERS"
 workinggroups:
-  - name: Baz
+  - dir: wg-baz
+    name: Baz
+    label: baz
+    stakeholder_sigs:
+    - Foo

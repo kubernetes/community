@@ -16,7 +16,7 @@ mailing list. At a minimum, the email should contain:
 
 - [ ] If nominating another lead, ensure that they
   - [ ] are a Kubernetes GitHub org [member]
-  - [ ] have completed the [Inclusive Leadership Training]
+  - [ ] have completed the [Inclusive Open Source Community Orientation course]
 
 - [ ] Once lazy consensus has been achieved, update the following
       files in the respective repos:
@@ -25,6 +25,7 @@ mailing list. At a minimum, the email should contain:
   - [ ] [kubernetes/org]: `OWNERS_ALIASES`, [milestone-maintainers team],
         kubernetes and kubernetes-sigs [team configs]
   - [ ] [kubernetes/enhancements]: `OWNERS_ALIASES`
+  - [ ] [kubernetes/k8s.io](https://github.com/kubernetes/k8s.io): `groups/groups.yaml` - leads email group members
 
 - [ ] Update all communication properties used by the community group.
       See [sig-wg-lifecycle.md] for details.
@@ -44,5 +45,5 @@ administration of the election.
 [kubernetes/enhancements]: https://github.com/kubernetes/enhancements
 [milestone-maintainers team]: https://git.k8s.io/org/config/kubernetes/sig-release/teams.yaml
 [team configs]: https://git.k8s.io/org/config
-[Inclusive Leadership Training]: https://training.linuxfoundation.org/training/inclusive-speaker-orientation/
+[Inclusive Open Source Community Orientation course]: https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/
 [sig-wg-lifecycle.md]: /sig-wg-lifecycle.md

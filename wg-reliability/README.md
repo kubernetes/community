@@ -13,13 +13,14 @@ Allow users to safely use Kubernetes for managing production workloads by ensuri
 The [charter](charter.md) defines the scope and governance of the Reliability Working Group.
 
 ## Stakeholder SIGs
-* SIG Architecture
-* SIG Cluster Lifecycle
-* SIG Release
-* SIG Scalability
-* SIG Testing
+* [SIG Architecture](/sig-architecture)
+* [SIG Cluster Lifecycle](/sig-cluster-lifecycle)
+* [SIG Release](/sig-release)
+* [SIG Scalability](/sig-scalability)
+* [SIG Testing](/sig-testing)
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-reliability) for the group will typically add invites for the following meetings to your calendar.*
 * Regular WG Meeting: [Mondays at 11:00 PT (Pacific Time)](https://zoom.us/j/97964505804?pwd=R3hzSnArQWJHYmdWUnpSUDh3aXhFUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1KF_kof3rBWzis87wMkwXicetREuutxlPI6dFDSqdWbo/edit).
   * [Meeting recordings](TODO).

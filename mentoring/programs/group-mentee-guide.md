@@ -18,7 +18,7 @@ pilots of the sea - navigational experts - only to our codebase. At the end of
 the three month period, you'll have conversations with the mentors about getting
 into the OWNERs file.
 
-Familiarize yourself with the [community membership requirements doc]including
+Familiarize yourself with the [community membership requirements doc] including
 the requirements needed for your specific journey. You’ll receive sponsorship
 from the mentors and other people you've worked on issues/PRs with upon
 successful completion of the program.
@@ -58,14 +58,14 @@ TODO: add more here
 
 ### Other Help Resources
 - slack
-	- #kubernetes-dev
+	- #kubernetes-contributors
 	- your respective sig or other sigs that could help
 		- [SIG List]
 		- #sig-contribex
 	- #meet-our-contributors
 	- #pr-reviews
 - mailing lists
-	- kubernetes-dev@googlegroups.com
+	- dev@kubernetes.io
 	- your respective sig (ie - kubernetes-sig-cli@googlegroups.com)
 - contributor office hours
 	- Kubernetes Community Office Hours
@@ -85,4 +85,4 @@ guidance as a founding member of this program!
 [community membership requirements doc]: /community-membership.md
 [SIG List]: /sig-list.md
 [Code Review Expectations]: /contributors/guide/expectations.md
-[Collaboration on k8s]: /contributors/guide/collab.md
+[Collaboration on k8s]: /contributors/guide/contributing.md

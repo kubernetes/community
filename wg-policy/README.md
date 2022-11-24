@@ -11,27 +11,29 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Provide an overall architecture that describes both the current policy related implementations as well as future policy related proposals in Kubernetes. Through a collaborative method, we want to present both dev and end user a universal view of policy architecture in Kubernetes.
 
 ## Stakeholder SIGs
-* SIG Architecture
-* SIG Auth
-* SIG Multicluster
-* SIG Network
-* SIG Node
-* SIG Scheduling
-* SIG Storage
+* [SIG Architecture](/sig-architecture)
+* [SIG Auth](/sig-auth)
+* [SIG Multicluster](/sig-multicluster)
+* [SIG Network](/sig-network)
+* [SIG Node](/sig-node)
+* [SIG Scheduling](/sig-scheduling)
+* [SIG Storage](/sig-storage)
 
 ## Meetings
-* Regular WG Meeting: [Wednesdays at 16:00 PT (Pacific Time)](https://zoom.us/j/7375677271) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=PT%20%28Pacific%20Time%29).
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-policy) for the group will typically add invites for the following meetings to your calendar.*
+* Regular WG Meeting: [Wednesdays at 8:00 PT (Pacific Time)](https://zoom.us/j/7375677271) (semimonthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing).
 
 ## Organizers
 
-* Erica von Buelow (**[@ericavonb](https://github.com/ericavonb)**), Red Hat
-* Howard Huang (**[@hannibalhuang](https://github.com/hannibalhuang)**), Huawei
+* Jim Bugwadia (**[@JimBugwadia](https://github.com/JimBugwadia)**), Kyverno/Nirmata
+* Robert Ficcaglia (**[@rficcaglia](https://github.com/rficcaglia)**), SunStone
 
 ## Contact
 - Slack: [#wg-policy](https://kubernetes.slack.com/messages/wg-policy)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-policy)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fpolicy)
+- Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

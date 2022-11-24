@@ -62,9 +62,9 @@ If the event is being held during KubeCon/CloudNativeCon it's important to get a
 The Hallway Track is listed as the favorite track at every event. The social/celebration is a longer hallway track that doesn't interfere with content. The social should have fun activities!  
 
 ## Communication and Advertising  
-[kubernetes-dev@googlegroups.com][k-dev] is our artery for contributor communication and should be the main news network for contributor events.  
+[dev@kubernetes.io][k-dev] is our artery for contributor communication and should be the main news network for contributor events.  
 Other channels:  
-Slack - [#contributor-summit], [#kubecon], [#kubernetes-dev]  
+Slack - [#contributor-summit], [#kubecon], [#kubernetes-contributors]
 [Twitter]  
 [Kubernetes blog]  
 [discuss.kubernetes.io]  
@@ -117,10 +117,10 @@ Links to docs that aren't a fit for markdown:
 [blog post example]: https://kubernetes.io/blog/2018/10/16/kubernetes-2018-north-american-contributor-summit/
 [welcome slides]: https://docs.google.com/presentation/d/11eDR_0Dl_MBbeoMDF_mQaJC3shnnd6buhIVei2Ke0SM/edit#slide=id.p
 [project board]: https://github.com/orgs/kubernetes/projects
-[k-dev]: (https://groups.google.com/forum/#!forum/kubernetes-dev)
+[k-dev]: (https://groups.google.com/a/kubernetes.io/group/dev)
 [#contributor-summit]: (https://kubernetes.slack.com/messages/contributor-summit)
 [#kubecon]: (https://kubernetes.slack.com/messages/kubecon)
-[#kubernetes-dev]: (https://kubernetes.slack.com/messages/kubernetes-dev)
+[#kubernetes-contributors]: (https://kubernetes.slack.com/messages/kubernetes-contributors)
 [Twitter]: (https://twitter.com/kubernetesio)
 [Kubernetes blog]: (https://kubernetes.io/blog/)
 [discuss.kubernetes.io]: (discuss.kubernetes.io)

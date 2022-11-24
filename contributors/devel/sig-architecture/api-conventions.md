@@ -7,40 +7,66 @@ An introduction to using resources with kubectl can be found in [the object mana
 
 **Table of Contents**
 
-
-  - [Types (Kinds)](#types-kinds)
-    - [Resources](#resources)
-    - [Objects](#objects)
-      - [Metadata](#metadata)
-      - [Spec and Status](#spec-and-status)
-        - [Typical status properties](#typical-status-properties)
-      - [References to related objects](#references-to-related-objects)
-      - [Lists of named subobjects preferred over maps](#lists-of-named-subobjects-preferred-over-maps)
-      - [Primitive types](#primitive-types)
-      - [Constants](#constants)
-      - [Unions](#unions)
-    - [Lists and Simple kinds](#lists-and-simple-kinds)
-  - [Differing Representations](#differing-representations)
-  - [Verbs on Resources](#verbs-on-resources)
-    - [PATCH operations](#patch-operations)
-  - [Idempotency](#idempotency)
-  - [Optional vs. Required](#optional-vs-required)
-  - [Defaulting](#defaulting)
-  - [Late Initialization](#late-initialization)
-  - [Concurrency Control and Consistency](#concurrency-control-and-consistency)
-  - [Serialization Format](#serialization-format)
-  - [Units](#units)
-  - [Selecting Fields](#selecting-fields)
-  - [Object references](#object-references)
-  - [HTTP Status codes](#http-status-codes)
-      - [Success codes](#success-codes)
-      - [Error codes](#error-codes)
-  - [Response Status Kind](#response-status-kind)
-  - [Events](#events)
-  - [Naming conventions](#naming-conventions)
-  - [Label, selector, and annotation conventions](#label-selector-and-annotation-conventions)
-  - [WebSockets and SPDY](#websockets-and-spdy)
-  - [Validation](#validation)
+- [Types (Kinds)](#types-kinds)
+  - [Resources](#resources)
+  - [Objects](#objects)
+    - [Metadata](#metadata)
+    - [Spec and Status](#spec-and-status)
+      - [Typical status properties](#typical-status-properties)
+    - [References to related objects](#references-to-related-objects)
+    - [Lists of named subobjects preferred over maps](#lists-of-named-subobjects-preferred-over-maps)
+    - [Primitive types](#primitive-types)
+    - [Constants](#constants)
+    - [Unions](#unions)
+  - [Lists and Simple kinds](#lists-and-simple-kinds)
+- [Differing Representations](#differing-representations)
+- [Verbs on Resources](#verbs-on-resources)
+  - [PATCH operations](#patch-operations)
+- [Idempotency](#idempotency)
+- [Optional vs. Required](#optional-vs-required)
+- [Defaulting](#defaulting)
+  - [Static Defaults](#static-defaults)
+  - [Admission Controlled Defaults](#admission-controlled-defaults)
+  - [Controller-Assigned Defaults (aka Late Initialization)](#controller-assigned-defaults-aka-late-initialization)
+  - [What May Be Defaulted](#what-may-be-defaulted)
+  - [Considerations For PUT Operations](#considerations-for-put-operations)
+- [Concurrency Control and Consistency](#concurrency-control-and-consistency)
+- [Serialization Format](#serialization-format)
+- [Units](#units)
+- [Selecting Fields](#selecting-fields)
+- [Object references](#object-references)
+  - [Naming of the reference field](#naming-of-the-reference-field)
+  - [Referencing resources with multiple versions](#referencing-resources-with-multiple-versions)
+  - [Handling of resources that do not exist](#handling-of-resources-that-do-not-exist)
+  - [Validation of fields](#validation-of-fields)
+  - [Do not modify the referred object](#do-not-modify-the-referred-object)
+  - [Minimize copying or printing values to the referrer object](#minimize-copying-or-printing-values-to-the-referrer-object)
+  - [Object References Examples](#object-references-examples)
+    - [Single resource reference](#single-resource-reference)
+      - [Controller behavior](#controller-behavior)
+    - [Multiple resource reference](#multiple-resource-reference)
+      - [Kind vs. Resource](#kind-vs-resource)
+      - [Controller behavior](#controller-behavior-1)
+    - [Generic object reference](#generic-object-reference)
+      - [Controller behavior](#controller-behavior-2)
+    - [Field reference](#field-reference)
+      - [Controller behavior](#controller-behavior-3)
+- [HTTP Status codes](#http-status-codes)
+    - [Success codes](#success-codes)
+    - [Error codes](#error-codes)
+- [Response Status Kind](#response-status-kind)
+- [Events](#events)
+- [Naming conventions](#naming-conventions)
+  - [Namespace Names](#namespace-names)
+- [Label, selector, and annotation conventions](#label-selector-and-annotation-conventions)
+- [WebSockets and SPDY](#websockets-and-spdy)
+- [Validation](#validation)
+- [Automatic Resource Allocation And Deallocation](#automatic-resource-allocation-and-deallocation)
+- [Representing Allocated Values](#representing-allocated-values)
+  - [When to use a <code>spec</code> field](#when-to-use-a-spec-field)
+  - [When to use a <code>status</code> field](#when-to-use-a-status-field)
+    - [Sequencing operations](#sequencing-operations)
+  - [When to use a different type](#when-to-use-a-different-type)
 
 
 The conventions of the [Kubernetes API](https://kubernetes.io/docs/api/) (and related APIs in the
@@ -65,8 +91,8 @@ kinds would have different attributes and properties)
 via HTTP to the server. Resources are exposed via:
   * Collections - a list of resources of the same type, which may be queryable
   * Elements - an individual resource, addressable via a URL
-* **API Group** a set of resources that are exposed together. Along
-with the version is exposed in the "apiVersion" field as "GROUP/VERSION", e.g.
+* **API Group** a set of resources that are exposed together, along
+with the version exposed in the "apiVersion" field as "GROUP/VERSION", e.g.
 "policy.k8s.io/v1".
 
 Each resource typically accepts and returns data of a single kind. A kind may be
@@ -85,7 +111,7 @@ its sole use. When choosing a group name, we recommend selecting a subdomain
 your group or organization owns, such as "widget.mycompany.com".
 
 Version strings should match
-[DNS_LABEL](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/identifiers.md)
+[DNS_LABEL](https://git.k8s.io/design-proposals-archive/architecture/identifiers.md)
 format.
 
 
@@ -123,11 +149,15 @@ defaults) and may not have lists.
 
    In addition, all lists that return objects with labels should support label
 filtering (see [the labels documentation](https://kubernetes.io/docs/user-guide/labels/)), and most
-lists should support filtering by fields.
+lists should support filtering by fields (see
+[the fields documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/)).
 
-   Examples: `PodLists`, `ServiceLists`, `NodeLists`.
+   Examples: `PodList`, `ServiceList`, `NodeList`.
 
-   TODO: Describe field filtering below or in a separate doc.
+Note that`kubectl` and other tools sometimes output collections of resources
+as `kind: List`. Keep in mind that `kind: List` is not part of the Kubernetes API; it is
+exposing an implementation detail from client-side code in those tools, used to
+handle groups of mixed resources.
 
 3. **Simple** kinds are used for specific actions on objects and for
 non-persistent entities.
@@ -146,7 +176,7 @@ sub-resources. Common subresources include:
    * `/binding`: Used to bind a resource representing a user request (e.g., Pod,
 PersistentVolumeClaim) to a cluster infrastructure resource (e.g., Node,
 PersistentVolume).
-   * `/status`: Used to write just the status portion of a resource. For
+   * `/status`: Used to write just the `status` portion of a resource. For
 example, the `/pods` endpoint only allows updates to `metadata` and `spec`,
 since those reflect end-user intent. An automated process should be able to
 modify status for users to see by sending an updated Pod kind to the server to
@@ -246,25 +276,35 @@ tooling to decorate objects with additional metadata for their own use.
 #### Spec and Status
 
 By convention, the Kubernetes API makes a distinction between the specification
-of the desired state of an object (a nested object field called "spec") and the
+of the desired state of an object (a nested object field called `spec`) and the
 status of the object at the current time (a nested object field called
-"status"). The specification is a complete description of the desired state,
+`status`). The specification is a complete description of the desired state,
 including configuration settings provided by the user,
 [default values](#defaulting) expanded by the system, and properties initialized
 or otherwise changed after creation by other ecosystem components (e.g.,
 schedulers, auto-scalers), and is persisted in stable storage with the API
 object. If the specification is deleted, the object will be purged from the
-system. The status summarizes the current state of the object in the system, and
-is usually persisted with the object by automated processes but may be
-generated on the fly. At some cost and perhaps some temporary degradation in
-behavior, the status could be reconstructed by observation if it were lost.
+system.
 
-When a new version of an object is POSTed or PUT, the "spec" is updated and
-available immediately. Over time the system will work to bring the "status" into
-line with the "spec". The system will drive toward the most recent "spec"
-regardless of previous versions of that stanza. In other words, if a value is
+The `status` summarizes the current state of the object in the system, and is
+usually persisted with the object by automated processes but may be generated
+on the fly.  As a general guideline, fields in `status` should be the most recent
+observations of actual state, but they may contain information such as the
+results of allocations or similar operations which are executed in response to
+the object's `spec`.  See [below](#representing-allocated-values) for more
+details.
+
+Types with both `spec` and `status` stanzas can (and usually should) have distinct
+authorization scopes for them.  This allows users to be granted full write
+access to `spec` and read-only access to status, while relevant controllers are
+granted read-only access to `spec` but full write access to status.
+
+When a new version of an object is POSTed or PUT, the `spec` is updated and
+available immediately. Over time the system will work to bring the `status` into
+line with the `spec`. The system will drive toward the most recent `spec`
+regardless of previous versions of that stanza. For example, if a value is
 changed from 2 to 5 in one PUT and then back down to 3 in another PUT the system
-is not required to 'touch base' at 5 before changing the "status" to 3. In other
+is not required to 'touch base' at 5 before changing the `status` to 3. In other
 words, the system's behavior is *level-based* rather than *edge-based*. This
 enables robust behavior in the presence of missed intermediate state changes.
 
@@ -275,8 +315,8 @@ specification should have declarative rather than imperative names and
 semantics -- they represent the desired state, not actions intended to yield the
 desired state.
 
-The PUT and POST verbs on objects MUST ignore the "status" values, to avoid
-accidentally overwriting the status in read-modify-write scenarios. A `/status`
+The PUT and POST verbs on objects MUST ignore the `status` values, to avoid
+accidentally overwriting the `status` in read-modify-write scenarios. A `/status`
 subresource MUST be provided to enable system components to update statuses of
 resources they manage.
 
@@ -291,20 +331,19 @@ alternative resource representations that allow mutation of the status, or
 performing custom actions on the object.
 
 All objects that represent a physical resource whose state may vary from the
-user's desired intent SHOULD have a "spec" and a "status". Objects whose state
-cannot vary from the user's desired intent MAY have only "spec", and MAY rename
-"spec" to a more appropriate name.
+user's desired intent SHOULD have a `spec` and a `status`. Objects whose state
+cannot vary from the user's desired intent MAY have only `spec`, and MAY rename
+`spec` to a more appropriate name.
 
-Objects that contain both spec and status should not contain additional
+Objects that contain both `spec` and `status` should not contain additional
 top-level fields other than the standard metadata fields.
 
 Some objects which are not persisted in the system - such as `SubjectAccessReview`
-and other webhook style calls - may choose to add spec and status to encapsulate
-a "call and response" pattern. The spec is the request (often a request for
-information) and the status is the response. For these RPC like objects the only
+and other webhook style calls - may choose to add `spec` and `status` to encapsulate
+a "call and response" pattern. The `spec` is the request (often a request for
+information) and the `status` is the response. For these RPC like objects the only
 operation may be POST, but having a consistent schema between submission and
 response reduces the complexity of these clients.
-
 
 ##### Typical status properties
 
@@ -339,7 +378,7 @@ Conditions are most useful when they follow some consistent conventions:
 
    * Not all controllers will observe the previous advice about reporting
      "Unknown" or "False" values. For known conditions, the absence of a
-     condition status should be interpreted the same as `Unknown`, and
+     condition `status` should be interpreted the same as `Unknown`, and
      typically indicates that reconciliation has not yet finished (or that the
      resource state may not yet be observable).
 
@@ -361,10 +400,10 @@ Conditions are most useful when they follow some consistent conventions:
   resource, rather than describing the current state transitions. This
   typically means that the name should be an adjective ("Ready", "OutOfDisk")
   or a past-tense verb ("Succeeded", "Failed") rather than a present-tense verb
-  ("Deploying"). Intermediate states may be indicated by setting the status of
+  ("Deploying"). Intermediate states may be indicated by setting the `status` of
   the condition to `Unknown`.
 
-  * For state transitions which take a long period of time (rule of thumb: > 1
+  * For state transitions which take a long period of time (e.g. more than 1
     minute), it is reasonable to treat the transition itself as an observed
     state. In these cases, the Condition (such as "Resizing") itself should not
     be transient, and should instead be signalled using the
@@ -380,37 +419,51 @@ Conditions are most useful when they follow some consistent conventions:
   consistent standard, the `Ready` and `Succeeded` condition types may be used
   by API designers for long-running and bounded-execution objects, respectively.
 
-The `FooCondition` type for some resource type `Foo` may include a subset of the
-following fields, but must contain at least `type` and `status` fields:
+Conditions should follow the standard schema included in [k8s.io/apimachinery/pkg/apis/meta/v1/types.go](https://github.com/kubernetes/apimachinery/blob/release-1.23/pkg/apis/meta/v1/types.go#L1432-L1492).
+It should be included as a top level element in status, similar to
+```go
+Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,1,rep,name=conditions"`
+```
+
+The `metav1.Conditions` includes the following fields
 
 ```go
-  Type               FooConditionType   `json:"type" description:"type of Foo condition"`
-  Status             ConditionStatus    `json:"status" description:"status of the condition, one of True, False, Unknown"`
-
-  // +optional
-  Reason             *string            `json:"reason,omitempty" description:"one-word CamelCase reason for the condition's last transition"`
-  // +optional
-  Message            *string            `json:"message,omitempty" description:"human-readable message indicating details about last transition"`
-
-  // +optional
-  LastHeartbeatTime  *unversioned.Time  `json:"lastHeartbeatTime,omitempty" description:"last time we got an update on a given condition"`
-  // +optional
-  LastTransitionTime *unversioned.Time  `json:"lastTransitionTime,omitempty" description:"last time the condition transit from one status to another"`
+// type of condition in CamelCase or in foo.example.com/CamelCase.
+// +required
+Type string `json:"type" protobuf:"bytes,1,opt,name=type"`
+// status of the condition, one of True, False, Unknown.
+// +required
+Status ConditionStatus `json:"status" protobuf:"bytes,2,opt,name=status"`
+// observedGeneration represents the .metadata.generation that the condition was set based upon.
+// For instance, if .metadata.generation is currently 12, but the .status.conditions[x].observedGeneration is 9, the condition is out of date
+// with respect to the current state of the instance.
+// +optional
+ObservedGeneration int64 `json:"observedGeneration,omitempty" protobuf:"varint,3,opt,name=observedGeneration"`
+// lastTransitionTime is the last time the condition transitioned from one status to another.
+// This should be when the underlying condition changed.  If that is not known, then using the time when the API field changed is acceptable.
+// +required
+LastTransitionTime Time `json:"lastTransitionTime" protobuf:"bytes,4,opt,name=lastTransitionTime"`
+// reason contains a programmatic identifier indicating the reason for the condition's last transition.
+// Producers of specific condition types may define expected values and meanings for this field,
+// and whether the values are considered a guaranteed API.
+// The value should be a CamelCase string.
+// This field may not be empty.
+// +required
+Reason string `json:"reason" protobuf:"bytes,5,opt,name=reason"`
+// message is a human readable message indicating details about the transition.
+// This may be an empty string.
+// +required
+Message string `json:"message" protobuf:"bytes,6,opt,name=message"`
 ```
 
 Additional fields may be added in the future.
 
-Do not use fields that you don't need - simpler is better.
-
-Use of the `Reason` field is encouraged.
-
-Use the `LastHeartbeatTime` with great caution - frequent changes to this field
-can cause a large fan-out effect for some resources.
+Use of the `Reason` field is required.
 
 Condition types should be named in PascalCase. Short condition names are
 preferred (e.g. "Ready" over "MyResourceReady").
 
-Condition status values may be `True`, `False`, or `Unknown`. The absence of a
+Condition `status` values may be `True`, `False`, or `Unknown`. The absence of a
 condition should be interpreted the same as `Unknown`.  How controllers handle
 `Unknown` depends on the Condition in question.
 
@@ -480,21 +533,20 @@ ensure that GETs of individual objects remain bounded in time and space, these
 sets may be queried via separate API queries, but will not be expanded in the
 referring object's status.
 
-References to specific objects, especially specific resource versions and/or
-specific fields of those objects, are specified using the `ObjectReference` type
-(or other types representing strict subsets of it). Unlike partial URLs, the
-ObjectReference type facilitates flexible defaulting of fields from the
-referring object or other contextual information.
+For references to specific objects, see [Object references](#object-references).
 
-References in the status of the referee to the referrer may be permitted, when
+References in the `status` of the referee to the referrer may be permitted, when
 the references are one-to-one and do not need to be frequently updated,
 particularly in an edge-based manner.
 
 #### Lists of named subobjects preferred over maps
 
-Discussed in [#2004](http://issue.k8s.io/2004) and elsewhere. There are no maps
-of subobjects in any API objects. Instead, the convention is to use a list of
-subobjects containing name fields.
+Discussed in [#2004](http://issue.k8s.io/2004) and elsewhere. There are
+no maps of subobjects in any API objects. Instead, the convention is to
+use a list of subobjects containing name fields. These conventions, and
+how one can change the semantics of lists, structs and maps are
+described in more details in the Kubernetes
+[documentation](https://kubernetes.io/docs/reference/using-api/server-side-apply/#merge-strategy).
 
 For example:
 
@@ -630,11 +682,16 @@ duration in seconds before the object should be deleted. Individual kinds may
 declare fields which provide a default grace period, and different kinds may
 have differing kind-wide default grace periods. A user provided grace period
 overrides a default grace period, including the zero grace period ("now").
+* DELETE /&lt;resourceNamePlural&gt; - Deletes a list of type
+&lt;resourceName&gt;, e.g. DELETE /pods a list of Pods.
 * PUT /&lt;resourceNamePlural&gt;/&lt;name&gt; - Update or create the resource
-with the given name with the JSON object provided by the client.
+with the given name with the JSON object provided by the client. Whether a
+resource can be created with a PUT request depends on the particular resource's
+storage strategy configuration, specifically the `AllowCreateOnUpdate()` return
+value. Most built-in types do not allow this.
 * PATCH /&lt;resourceNamePlural&gt;/&lt;name&gt; - Selectively modify the
 specified fields of the resource. See more information [below](#patch-operations).
-* GET /&lt;resourceNamePlural&gt;&amp;watch=true - Receive a stream of JSON
+* GET /&lt;resourceNamePlural&gt;&quest;watch=true - Receive a stream of JSON
 objects corresponding to changes made to any resource of the given kind over
 time.
 
@@ -691,10 +748,10 @@ have a built-in `nil` value (e.g. maps and slices).
 - The API server should allow POSTing and PUTing a resource with this field
 unset.
 
-In most cases, optional fields should also have the `omitempty` struct tag (the 
+In most cases, optional fields should also have the `omitempty` struct tag (the
 `omitempty` option specifies that the field should be omitted from the json
-encoding if the field has an empty value). However, If you want to have 
-different logic for an optional field which is not provided vs. provided with 
+encoding if the field has an empty value). However, If you want to have
+different logic for an optional field which is not provided vs. provided with
 empty values, do not use `omitempty` (e.g. https://github.com/kubernetes/kubernetes/issues/34641).
 
 Note that for backward compatibility, any field that has the `omitempty` struct
@@ -709,7 +766,7 @@ Required fields have the opposite properties, namely:
 - The API server should not allow POSTing or PUTing a resource with this field
 unset.
 
-Using the `+optional` or the `omitempty` tag causes OpenAPI documentation to 
+Using the `+optional` or the `omitempty` tag causes OpenAPI documentation to
 reflect that the field is optional.
 
 Using a pointer allows distinguishing unset from the zero value for that type.
@@ -730,44 +787,181 @@ have a built-in `nil` value.
 
 ## Defaulting
 
-Default resource values are API version-specific, and they are applied during
-the conversion from API-versioned declarative configuration to internal objects
-representing the desired state (`Spec`) of the resource. Subsequent GETs of the
-resource will include the default values explicitly.
+In general we want default values to be explicitly represented in our APIs,
+rather than asserting that "unspecified fields get the default behavior".  This
+is important so that:
+ - default values can evolve and change in newer API versions
+ - the stored configuration depicts the full desired state, making it easier
+   for the system to determine how to achieve the state, and for the user to
+   know what to anticipate
 
-Incorporating the default values into the `Spec` ensures that `Spec` depicts the
-full desired state so that it is easier for the system to determine how to
-achieve the state, and for the user to know what to anticipate.
+There are 3 distinct ways that default values can be applied when creating or
+updating (including patch and apply) a resource:
 
-API version-specific default values are set by the API server.
+ 1. static: based on the requested API version and possibly other fields in the
+    resource, fields can be assigned values during the API call
+ 2. admission control: based on the configured admission controllers and
+    possibly other state in or out of the cluster, fields can be assigned
+    values during the API call
+ 3. controllers: arbitrary changes (within the bounds of what is allowed) can
+    be made to a resource after the API call has completed
 
-## Late Initialization
+Some care is required when deciding which mechanism to use and managing the
+semantics.
+
+### Static Defaults
+
+Static default values are specific to each API version.  The default field
+values applied when creating an object with the "v1" API may be different than
+the values applied when using the "v2" API.  In most cases, these values are
+defined as literal values by the API version (e.g. "if this field is not
+specified it defaults to 0").
+
+In some cases, these values may be conditional on or deterministically derived
+from other fields (e.g. "if otherField is X then this field defaults to 0" or
+"this field defaults to the value of otherField").  Note that such derived
+defaults present a hazard in the face of updates - if the "other" field
+changes, the derived field may have to change, too.  The static defaulting
+logic is unaware of updates and has no concept of "previous value", which means
+this inter-field relationship becomes the user's problem - they must update
+both the field they care about and the "other" field.
+
+In very rare cases, these values may be allocated from some pool or determined
+by some other method (e.g. Service's IP and IP-family related fields need to
+consider other configuration settings).
+
+These values are applied synchronously by the API server when decoding
+versioned data.  For CREATE and UPDATE operations this is fairly
+straight-forward - when the API server receives a (versioned) request, the
+default values are immediately applied before any further processing.  When the
+API call completes, all static defaults will have been set and stored.
+Subsequent GETs of the resource will include the default values explicitly.
+However, static defaults also apply when an object is read from storage (i.e.
+GET operations).  This means that when someone GETs an "older" stored object,
+any fields which have been added to the API since that object was stored will
+be defaulted and returned according to the API version that is stored.
+
+Static defaults are the best choice for values which are logically required,
+but which have a value that works well for most users.  Static defaulting
+must not consider any state except the object being operated upon (and the
+complexity of Service API stands as an example of why).
+
+Default values can be specified on a field using the `+default=` tag. Primitives
+will have their values directly assigned while structs will go through the
+JSON unmarshalling process. Fields that do not have an `omitempty` json tag will
+default to the zero value of their corresponding type if no default is assigned.
+
+Refer to [defaulting docs](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#defaulting)
+for more information.
+
+### Admission Controlled Defaults
+
+In some cases, it is useful to set a default value which is not derived from
+the object in question.  For example, when creating a PersistentVolumeClaim,
+the storage class must be specified.  For many users, the best answer is
+"whatever the cluster admin has decided for the default".  StorageClass is a
+different API than PersistentVolumeClaim, and which one is denoted as the
+default may change at any time.  Thus this is not eligible for static
+defaulting.
+
+Instead, we can provide a built-in admission controller or a
+MutatingWebhookConfiguration.  Unlike static defaults, these may consider
+external state (such as annotations on StorageClass objects) when deciding
+default values, and must handle things like race conditions (e.g. a
+StorageClass is designated the default, but the admission controller has not
+yet seen that update).  These admission controllers are strictly optional and
+can be disabled.  As such, fields which are initialized this way must be
+strictly optional.
+
+Like static defaults, these are run synchronously to the API operation in
+question, and when the API call completes, all static defaults will have been
+set.  Subsequent GETs of the resource will include the default values
+explicitly.
+
+### Controller-Assigned Defaults (aka Late Initialization)
 
 Late initialization is when resource fields are set by a system controller
-after an object is created/updated.
+after an object is created/updated (asynchronously).  For example, the
+scheduler sets the `pod.spec.nodeName` field after the pod is created.  It's
+a stretch to call this "defaulting" but since it is so common and useful, it is
+included here.
 
-For example, the scheduler sets the `pod.spec.nodeName` field after the pod is
-created.
+Like admission controlled defaults, these controllers may consider external
+state when deciding what values to set, must handle race conditions, and can be
+disabled.  Fields which are initialized this way must be strictly optional
+(meaning observers will see the object without these fields set, and that is
+allowable and semantically correct).
 
-Late-initializers should only make the following types of modifications:
+Like all controllers, care must be taken to not clobber unrelated fields or
+values (e.g. in an array).  Using one of the patch or apply mechanisms is
+recommended to facilitate composition and concurrency of controllers.
+
+### What May Be Defaulted
+
+All forms of defaulting should only make the following types of modifications:
  - Setting previously unset fields
  - Adding keys to maps
  - Adding values to arrays which have mergeable semantics
-(`patchStrategy:"merge"` attribute in the type definition).
+   (`patchStrategy:"merge"` attribute in the type definition)
 
-These conventions:
- 1. allow a user (with sufficient privilege) to override any system-default
- behaviors by setting the fields that would otherwise have been defaulted.
- 1. enables updates from users to be merged with changes made during late
-initialization, using strategic merge patch, as opposed to clobbering the
-change.
- 1. allow the component which does the late-initialization to use strategic
-merge patch, which facilitates composition and concurrency of such components.
+In particular we never want to change or override a value that was provided by
+the user.  If they requested something invalid, they should get an error.
 
-Although the apiserver Admission Control stage acts prior to object creation,
-Admission Control plugins should follow the Late Initialization conventions
-too, to allow their implementation to be later moved to a 'controller', or to
-client libraries.
+These rules ensure that:
+ 1. a user (with sufficient privilege) can override any system-default
+    behaviors by explicitly setting the fields that would otherwise have been
+    defaulted
+ 1. updates from users can be merged with default values
+
+### Considerations For PUT Operations
+
+Once an object has been created and defaults have been applied, it's very
+common for updates to happen over time.  Kubernetes offers several ways of
+updating an object which preserve existing values in fields other than those
+being updated (e.g. strategic merge patch and server-side apply).  There is,
+however, a less obvious way of updating objects which can have bad interactions
+with default values - PUT (aka `kubectl replace`).
+
+The goal is that, for a given input (e.g. YAML file), PUT on an existing object
+should produce the same result as if you used that input to create the object.
+Calling PUT a second time with the same input should be idempotent and should
+not change the resource.  Even a read-modify-write cycle is not a perfect
+solution in the face of version skew.
+
+When an object is updated with a PUT, the API server will see the "old" object
+with previously assigned defaults and the "new" object with newly assigned
+defaults.  For static defaults this can be a problem if the CREATE and the PUT
+used different API versions.  For example, "v1" of an API might default a field
+to `false`, while "v2" defaults it to `true`.  If an object was created via API
+v1 (field = `false`) and then replaced via API v2, the field will attempt to
+change to `true`.  This can also be a problem when the values are allocated or
+derived from a source outside of the object in question (e.g. Service IPs).
+
+For some APIs this is acceptable and actionable.  For others, this may be
+disallowed by validation.  In the latter case, the user will get an error about
+an attempt to change a field which is not even present in their YAML.  This is
+especially dangerous when adding new fields - an older client may not even know
+about the existence of the field, making even a read-modify-write cycle fail.
+While it is "correct" (in the sense that it is really what they asked for with
+PUT), it is not helpful and is a bad UX.
+
+When adding a field with a static or admission controlled default, this must be
+considered.  If the field is immutable after creation, consider adding logic to
+manually "patch" the value from the "old" object into the "new" one when it has
+been "unset", rather than returning an error or allocating a different value
+(e.g.  Service IPs).  This will very often be what the user meant, even if it
+is not what they said.  This may require setting the default in a different way
+(e.g.  in the registry code which understands updates instead of in the
+versioned defaulting code which does not).  Be careful to detect and report
+legitimate errors where the "new" value is specified but is different from the
+"old" value.
+
+For controller-defaulted fields, the situation is even more unpleasant.
+Controllers do not have an opportunity to "patch" the value before the API
+operation is committed.  If the "unset" value is allowed then it will be saved,
+and any watch clients will be notified.  If the "unset" value is not allowed or
+mutations are otherwise disallowed, the user will get an error, and there's
+simply nothing we can do about it.
 
 ## Concurrency Control and Consistency
 
@@ -786,7 +980,7 @@ read/modify/write cycle, by verifying that the current value of resourceVersion
 matches the specified value.
 
 The resourceVersion is currently backed by [etcd's
-modifiedIndex](https://coreos.com/etcd/docs/latest/v2/api.html).
+mod_revision](https://etcd.io/docs/latest/learning/api/#key-value-pair).
 However, it's important to note that the application should *not* rely on the
 implementation details of the versioning system maintained by Kubernetes. We may
 change the implementation of resourceVersion in the future, such as to change it
@@ -870,14 +1064,240 @@ Examples:
 
 ## Object references
 
-Object references should either be called `fooName` if referring to an object of
-kind `Foo` by just the name (within the current namespace, if a namespaced
-resource), or should be called `fooRef`, and should contain a subset of the
-fields of the `ObjectReference` type.
+Object references on a namespaced type should usually refer only to objects in
+the same namespace.  Because namespaces are a security boundary, cross namespace
+references can have unexpected impacts, including:
+ 1. leaking information about one namespace into another namespace. It's natural to place status messages or even bits of
+    content about the referenced object in the original. This is a problem across namespaces.
+ 2. potential invasions into other namespaces. Often references give access to a piece of referred information, so being
+    able to express "give me that one over there" is dangerous across namespaces without additional work for permission checks
+    or opt-in's from both involved namespaces.
+ 3. referential integrity problems that one party cannot solve. Referencing namespace/B from namespace/A doesn't imply the
+    power to control the other namespace. This means that you can refer to a thing you cannot create or update.
+ 4. unclear semantics on deletion. If a namespaced resource  is referenced by other namespaces, should a delete of the
+    referenced resource result in removal or should the referenced resource be force to remain.
+ 5. unclear semantics on creation. If a referenced resource is created after its reference, there is no way to know if it
+    is the one that is expected or if it is a different one created with the same name.
 
+Built-in types and ownerReferences do not support cross namespaces references.
+If a non-built-in types chooses to have cross-namespace references the semantics of the edge cases above should be
+clearly described and the permissions issues should be resolved.
+This could be done with a double opt-in (an opt-in from both the referrer and the refer-ee) or with secondary permissions
+checks performed in admission.
 
-TODO: Plugins, extensions, nested kinds, headers
+### Naming of the reference field
 
+The name of the reference field should be of the format "{field}Ref", with "Ref" always included in the suffix.
+
+The "{field}" component should be named to indicate the purpose of the reference. For example, "targetRef" in an
+endpoint indicates that the object reference specifies the target.
+
+It is okay to have the "{field}" component indicate the resource type. For example, "secretRef" when referencing
+a secret. However, this comes with the risk of the field being a misnomer in the case that the field is expanded to
+reference more than one type.
+
+In the case of a list of object references, the field should be of the format "{field}Refs", with the same guidance
+as the singular case above.
+
+### Referencing resources with multiple versions
+
+Most resources will have multiple versions. For example, core resources
+will undergo version changes as it transitions from alpha to GA.
+
+Controllers should assume that a version of a resource may change, and include appropriate error handling.
+
+### Handling of resources that do not exist
+
+There are multiple scenarios where a desired resource may not exist. Examples include:
+
+- the desired version of the resource does not exist.
+- race condition in the bootstrapping of a cluster resulting a resource not yet added.
+- user error.
+
+Controllers should be authored with the assumption that the referenced resource may not exist, and include
+error handling to make the issue clear to the user.
+
+### Validation of fields
+
+Many of the values used in an object reference are used as part of the API path. For example,
+the object name is used in the path to identify the object. Unsanitized, these values can be used to
+attempt to retrieve other resources, such as by using values with semantic meanings such as  `..` or `/`.
+
+Have the controller validate fields before using them as path segments in an API request, and emit an event to
+tell the user that the validation has failed.
+
+See [Object Names and IDs](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+for more information on legal object names.
+
+### Do not modify the referred object
+
+To minimize potential privilege escalation vectors, do not modify the object that is being referred to,
+or limit modification to objects in the same namespace and constrain the type of modification allowed
+(for example, the HorizontalPodAutoscaler controller only writes to the `/scale` subresource).
+
+### Minimize copying or printing values to the referrer object
+
+As the permissions of the controller can differ from the permissions of the author of the object
+the controller is managing, it is possible that the author of the object may not have permissions to
+view the referred object. As a result, the copying of any values about the referred object to the
+referrer object can be considered permissions escalations, enabling a user to read values that they
+would not have access to previously.
+
+The same scenario applies to writing information about the referred object to events.
+
+In general, do not write or print information retrieved from the referred object to the spec, other objects, or logs.
+
+When it is necessary, consider whether these values would be ones that the
+author of the referrer object would have access to via other means (e.g. already required to
+correctly populate the object reference).
+
+### Object References Examples
+
+The following sections illustrate recommended schemas for various object references scenarios.
+
+The schemas outlined below are designed to enable purely additive fields as the types of referencable
+objects expand, and therefore are backwards compatible.
+
+For example, it is possible to go from a single resource type to multiple resource types without
+a breaking change in the schema.
+
+#### Single resource reference
+
+A single kind object reference is straightforward in that the controller can hard-code most qualifiers needed to identify the object. As such as the only value needed to be provided is the name (and namespace, although cross-namespace references are discouraged):
+
+```yaml
+# for a single resource, the suffix should be Ref, with the field name
+# providing an indication as to the resource type referenced.
+secretRef:
+    name: foo
+    # namespace would generally not be needed and is discouraged,
+    # as explained above.
+    namespace: foo-namespace
+```
+
+This schema should only be used when the intention is to always have the reference only be to a single resource.
+If extending to multiple resource types is possible, use the [multiple resource reference](#multiple-resource-reference).
+
+##### Controller behavior
+
+The operator is expected to know the version, group, and resource name of the object it needs to retrieve the value from, and can use the discovery client or construct the API path directly.
+
+#### Multiple resource reference
+
+Multi-kind object references are used when there is a bounded set of valid resource types that a reference can point to.
+
+As with a single-kind object reference, the operator can supply missing fields, provided that the fields that are present are sufficient to uniquely identify the object resource type among the set of supported types.
+
+```yaml
+# guidance for the field name is the same as a single resource.
+fooRef:
+    group: sns.services.k8s.aws
+    resource: topics
+    name: foo
+    namespace: foo-namespace
+```
+
+Although not always necessary to help a controller identify a resource type, “group” is included to avoid ambiguity when the resource exists in multiple groups. It also provides clarity to end users and enables copy-pasting of a reference without the referenced type changing due to a different controller handling the reference.
+
+##### Kind vs. Resource
+
+A common point of confusion in object references is whether to construct
+references with a "kind" or "resource" field. Historically most object
+references in Kubernetes have used "kind". This is not as precise as "resource".
+Although each combination of "group" and "resource" must be unique within
+Kubernetes, the same is not always true for "group" and "kind". It is possible
+for multiple resources to make use of the same "kind".
+
+Typically all objects in Kubernetes have a canonical primary resource - such as
+“pods” representing the way to create and delete resources of the “Pod” schema.
+While it is possible a resource schema cannot be directly created, such as a
+“Scale” object which is only used within the “scale” subresource of a number of
+workloads, most object references address the primary resource via its schema.
+In the context of object references, "kind" refers to the schema, not the
+resource.
+
+If implementations of an object reference will always have a clear way to map
+kinds to resources, it is acceptable to use "kind" in the object reference. In
+general, this requires implementations to have a predefined mapping between
+kinds and resources (this is the case for built-in references which use "kind").
+Relying on dynamic kind to resource mapping is not safe. Even if a "kind" only
+dynamically maps to a single resource initially, it's possible for another
+resource to be mounted that refers to the same "kind", potentially breaking any
+dynamic resource mapping.
+
+If an object reference may be used to reference resources of arbitrary types and
+the mapping between kind and resource could be ambiguous, "resource" should be
+used in the object reference.
+
+The Ingress API provides a good example of where "kind" is acceptable for an
+object reference. The API supports a backend reference as an extension point.
+Implementations can use this to support forwarding traffic to custom targets
+such as a storage bucket. Importantly, the supported target types are clearly
+defined by each implementation of the API and there is no ambiguity for which
+resource a kind maps to. This is because each Ingress implementation has a
+hard-coded mapping of kind to resource.
+
+The object reference above would look like this if it were using "kind" instead
+of "resource":
+
+```yaml
+fooRef:
+    group: sns.services.k8s.aws
+    kind: Topic
+    name: foo
+    namespace: foo-namespace
+```
+
+##### Controller behavior
+
+The operator can store a map of (group,resource) to the version of that resource it desires. From there, it can construct the full path to the resource, and retrieve the object.
+
+It is also possible to have the controller choose a version that it finds via the discovery client. However, as schemas can vary across different versions
+of a resource, the controller must also handle these differences.
+
+#### Generic object reference
+
+A generic object reference is used when the desire is to provide a pointer to some object to simplify discovery for the user. For example, this could be used to reference a target object for a `core.v1.Event` that occurred.
+
+With a generic object reference, it is not possible to extract any information about the referenced object aside from what is standard (e.g. ObjectMeta). Since any standard fields exist in any version of a resource, it is possible to not include version in this case:
+
+```yaml
+fooObjectRef:
+    group: operator.openshift.io
+    resource: openshiftapiservers
+    name: cluster
+    # namespace is unset if the resource is cluster-scoped, or lives in the
+    # same namespace as the referrer.
+```
+
+##### Controller behavior
+
+The operator would be expected to find the resource via the discovery client (as the version is not supplied). As any retrievable field would be common to all objects, any version of the resource should do.
+
+#### Field reference
+
+A field reference is used when the desire is to extract a value from a specific field in a referenced object.
+
+Field references differ from other reference types, as the operator has no knowledge of the object prior to the reference. Since the schema of an object can differ for different versions of a resource, this means that a “version” is required for this type of reference.
+
+```yaml
+fooFieldRef:
+   version: v1 # version of the resource
+   # group is elided in the ConfigMap example, since it has a blank group in the OpenAPI spec.
+   resource: configmaps
+   fieldPath: data.foo
+```
+
+The fieldPath should point to a single value, and use [the recommended field selector notation](#selecting-fields) to denote the field path.
+
+##### Controller behavior
+
+In this scenario, the user will supply all of the required path elements: group, version, resource, name, and possibly namespace.
+As such, the controller can construct the API prefix and query it without the use of the discovery client:
+
+```
+/apis/{group}/{version}/{resource}/
+```
 
 ## HTTP Status codes
 
@@ -1217,7 +1637,7 @@ reduce data volume, load on the system, and noise exposed to users.
 * Go field names must be PascalCase. JSON field names must be camelCase. Other
 than capitalization of the initial letter, the two should almost always match.
 No underscores or dashes in either.
-* Field and resource names should be declarative, not imperative (SomethingDoer, 
+* Field and resource names should be declarative, not imperative (SomethingDoer,
 DoneBy, DoneAt).
 * Use `Node` where referring to
 the node resource in the context of the cluster. Use `Host` where referring to
@@ -1250,7 +1670,7 @@ called `Fooable`, not `IsFooable`.
 
 ### Namespace Names
 * The name of a namespace must be a
-[DNS_LABEL](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/architecture/identifiers.md).
+[DNS_LABEL](https://git.k8s.io/design-proposals-archive/architecture/identifiers.md).
 * The `kube-` prefix is reserved for Kubernetes system namespaces, e.g. `kube-system` and `kube-public`.
 * See
 [the namespace docs](https://kubernetes.io/docs/user-guide/namespaces/) for more information.
@@ -1351,7 +1771,9 @@ Kubernetes components and tools:
   - Key prefixes under "kubernetes.io" and "k8s.io" are reserved for the Kubernetes
     project.
     - Such keys are effectively part of the kubernetes API and may be subject
-      to deprecation and compatibility policies. 
+      to deprecation and compatibility policies.
+    - "kubernetes.io" is the preferred form for labels and annotations, "k8s.io" should not be used
+      for new map keys.
   - Key names, including prefixes, should be precise enough that a user could
     plausibly understand where it came from and what it is for.
   - Key prefixes should carry as much context as possible.
@@ -1427,9 +1849,149 @@ specified".
 * When referencing a literal string value, indicate the literal in
 single-quotes. Example: "must not contain '..'".
 * When referencing another field name, indicate the name in back-quotes.
-Example: "must be greater than `request`".
+Example: "must be greater than \`request\`".
 * When specifying inequalities, use words rather than symbols.  Examples: "must
 be less than 256", "must be greater than or equal to 0".  Do not use words
 like "larger than", "bigger than", "more than", "higher than", etc.
 * When specifying numeric ranges, use inclusive ranges when possible.
 
+## Automatic Resource Allocation And Deallocation
+
+API objects often are [union](#Unions) object containing the following:
+1. One or more fields identifying the `Type` specific to API object (aka the `discriminator`).
+2. A set of N fields, only one of which should be set at any given time - effectively a union.
+
+Controllers operating on the API type often allocate resources based on
+the `Type` and/or some additional data provided by user. A canonical example
+of this is the `Service` API object where resources such as IPs and network ports
+will be set in the API object based on `Type`. When the user does not specify
+resources, they will be allocated, and when the user specifies exact value, they will
+be reserved or rejected.
+
+When the user chooses to change the `discriminator` value (e.g., from `Type X` to `Type Y`) without
+changing any other fields then the system should clear the fields that were used to represent `Type X`
+in the union along with releasing resources that were attached to `Type X`. This should automatically
+happen irrespective of how these values and resources were allocated (i.e., reserved by the user or
+automatically allocated by the system. A concrete example of this is again `Service` API. The system
+allocates resources such as `NodePorts` and `ClusterIPs` and automatically fill in the fields that
+represent them in case of the service is of type `NodePort` or `ClusterIP` (`discriminator` values).
+These resources and the fields representing them are automatically cleared when  the users changes
+service type to `ExternalName` where these resources and field values no longer apply.
+
+## Representing Allocated Values
+
+Many API types include values that are allocated on behalf of the user from
+some larger space (e.g. IP addresses from a range, or storage bucket names).
+These allocations are usually driven by controllers asynchronously to the
+user's API operations.  Sometimes the user can request a specific value and a
+controller must confirm or reject that request.  There are many examples of
+this in Kubernetes, and there a handful of patterns used to represent it.
+
+The common theme among all of these is that the system should not trust users
+with such fields, and must verify or otherwise confirm such requests before
+using them.
+
+Some examples:
+
+* Service `clusterIP`: Users may request a specific IP in `spec` or will be
+  allocated one (in the same `spec` field).  If a specific IP is requested, the
+  apiserver will either confirm that IP is available or, failing that, will
+  reject the API operation synchronously (rare).  Consumers read the result
+  from `spec`.  This is safe because the value is either valid or it is never
+  stored.
+* Service `loadBalancerIP`: Users may request a specific IP in `spec` or will
+  be allocated one which is reported in `status`.  If a specific IP is
+  requested, the LB controller will either ensure that IP is available or
+  report failure asynchronously.  Consumers read the result from `status`.
+  This is safe because most users do not have acces to write to `status`.
+* PersistentVolumeClaims: Users may request a specific PersistentVolume in
+  `spec` or will be allocated one (in the same `spec` field).  If a specific PV
+  is requested, the volume controller will either ensure that the volume is
+  available or report failure asynchronously.  Consumers read the result by
+  examining both the PVC and the PV.  This is more complicated than the others
+  because the `spec` value is stored before being confirmed, which could
+  (hypothetically, thanks to extra checking) lead to a user accessing someone
+  else's PV.
+* VolumeSnapshots: Users may request a particular source to be snaphotted in
+  `spec`.  The details of the resulting snapshot is reflected in `status`.
+
+A counter-example:
+
+* Service `externalIPs`: Users must specify one or more specific IPs in `spec`.
+  The system cannot easily verify those IPs (by their definition, they are
+  external). Consumers read the result from `spec`.  This is UNSAFE and has
+  caused problems with untrusted users.
+
+In the past, API conventions dictated that `status` fields always come from
+observation, which made some of these cases more complicated than necessary.
+The conventions have been updated to allow `status` to hold such allocated
+values.  This is not a one-size-fits-all solution, though.
+
+### When to use a `spec` field
+
+New APIs should almost never do this.  Instead, they should use `status`.
+PersistentVolumes might have been simpler if we had done this.
+
+### When to use a `status` field
+
+Storing such values in `status` is the easiest and most straight-forward
+pattern.  This is appropriate when:
+
+* the allocated value is highly coupled to the rest of the object (e.g. pod
+  resource allocations)
+* the allocated value is always or almost always needed (i.e. most instances of
+  this type will have a value)
+* the schema and controller are known a priori (i.e. it's not an extension)
+* it is "safe" to allow the controller(s) to write to `status` (i.e.
+  there's low risk of them causing problems via other `status` fields).
+
+Consumers of such values can look at the `status` field for the "final" value
+or an error or condition indicating why the allocation could not be performed.
+
+#### Sequencing operations
+
+Since almost everything is happening asynchronously to almost everything else,
+controller implementations should take care around the ordering of operations.
+For example, whether the controller updates a `status` field before or after it
+actuates a change depends on what guarantees need to be made to observers of
+the system.  In some cases, writing to a `status` field represents an
+acknowledgement or acceptance of a `spec` value, and it is OK to write it before
+actuation.  However, if it would be problematic for a client to observe the
+`status` value before it is actuated then the controller must actuate first and
+update `status` afterward.  In some rarer cases, controllers will need to
+acknowledge, then actuate, then update to a "final" value.
+
+Controllers must take care to consider how a `status` field will be handled in
+the case of interrupted control loops (e.g. controller crash and restart), and
+must act idempotently and consistently.  This is particularly important when
+using an informer-fed cache, which might not be updated with recent writes.
+Using a resourceVersion precondition to detect the "conflict" is the common
+pattern in this case.  See [this issue](http://issue.k8s.io/105199) for an
+example.
+
+### When to use a different type
+
+Storing allocated values in a different type is more complicated but also more
+flexible.  This is most appropriate when:
+
+* the allocated value is optional (i.e. many instances of this type will not
+  have a value at all)
+* the schema and controller are not known a priori (i.e. it's an extension)
+* the schema is sufficiently complicated (i.e. it doesn't make sense to burden
+  the main type with it)
+* access control for this type demands finer granularity than "all of status"
+* the lifecycle of the allocated value is different than the lifecycle of the
+  allocation holder
+
+Services and Endpoints could be considered a form of this pattern, as could
+PersistentVolumes and PersistentVolumeClaims.
+
+When using this pattern, you must account for lifecycle of the allocated
+objects (who cleans them up and when) as well as the "linkage" between them and
+the main type (often using the same name, an object-ref field, or a selector).
+
+There will always be some cases which could follow either path, and these will
+need human evaluation to decide.  For example, Service `clusterIP` is highly
+coupled to the rest of Service and most instances use it.  But it also is
+strictly optional and has an increasingly complicated schema of related fields.
+An argument could be made for either path.

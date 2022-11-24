@@ -3,7 +3,7 @@
 This document is the canonical source of truth for things like supported
 toolchain versions for building Kubernetes.
 
-Please submit an [issue] on Github if you
+Please submit an [issue] on GitHub if you
 * Notice a requirement that this doc does not capture.
 * Find a different doc that specifies requirements (the doc should instead link
   here).
@@ -50,7 +50,7 @@ resilient behavior.  For example: if your patch causes a controller to better
 handle inconsistent data, make a mock object which returns incorrect data a few
 times and verify the controller's new behaviour.
 
-### Is this a performance improvement ?
+### Is this a performance improvement?
 
 Performance bug reports MUST include data that demonstrates the bug.  Without
 data, the issue will be closed.  You can measure performance using kubemark,
@@ -98,7 +98,7 @@ or all of these before you get started.
 Since performance improvements can be empirically measured, you should follow
 the "scientific method" of creating a hypothesis, collecting data, and then
 revising your hypothesis.  The above issues do this transparently, using figures
-and data rather then conjecture. Notice that the problem is analyzed and a
+and data rather than conjecture. Notice that the problem is analyzed and a
 correct solution is created before a single line of code is reviewed.
 
 ## Building Kubernetes with Docker
@@ -120,8 +120,8 @@ Kubernetes is a large project, and compiling it can use a lot of
 resources. We recommend the following for any physical or virtual
 machine being used for building Kubernetes.
 
-    - 8GB of RAM
-    - 50GB of free disk space
+- 8GB of RAM
+- 50GB of free disk space
 
 ### Preparing Your Local Operating System
 
@@ -155,14 +155,14 @@ system. [Follow these directions to install the tools](https://ryanparman.com/po
 In particular, this command installs the necessary packages:
 
 ```sh
-brew install coreutils ed findutils gawk gnu-sed gnu-tar grep make
+brew install coreutils ed findutils gawk gnu-sed gnu-tar grep make jq
 ```
 
 You will want to include this block or something similar at the end of
 your `.bashrc` or shell init script:
 
 ```sh
-GNUBINS="$(find /usr/local/opt -type d -follow -name gnubin -print)"
+GNUBINS="$(find `brew --prefix`/opt -type d -follow -name gnubin -print)"
 
 for bindir in ${GNUBINS[@]}
 do
@@ -197,7 +197,7 @@ distributions and commands used to install these tools are below.
 - Fedora/RHEL/CentOS
   ```sh
   sudo yum update
-  sudo groupinstall "Development Tools"
+  sudo yum groupinstall "Development Tools"
   ```
 - OpenSUSE
   ```sh
@@ -260,7 +260,7 @@ development environment, please follow the instructions in the
 Confirm that your `GOPATH` and `GOBIN` environment variables are
 correctly set as detailed in
 [How to Write Go Code](https://golang.org/doc/code.html) before
-prodeding.
+proceeding.
 
 **Note:** Building and developing Kubernetes requires a very recent
 version of Go. Please install the newest stable version available for
@@ -282,7 +282,10 @@ different versions of Kubernetes.
 | 1.13           | 1.11.13     |
 | 1.14 - 1.16    | 1.12.9      |
 | 1.17 - 1.18    | 1.13.15     |
-| 1.18+          | 1.15        |
+| 1.19 - 1.20    | 1.15.5      |
+| 1.21 - 1.22    | 1.16.7      |
+| 1.23           | 1.17        |
+| 1.24+          | 1.18        |
 
 ##### A Note on Changing Go Versions
 
@@ -306,7 +309,7 @@ You are now ready to clone the Kubernetes git repository. See the [GitHub Workfl
 
 #### etcd
 
-To test Kubernetes, you will need to install a recent version of [etcd](https://etcd.io/), a consistent and highly-available key value store. To install a local version of etcd, run the following command in your Kubernetes working directory.
+To test Kubernetes, you will need to install a recent version of [etcd](https://etcd.io/), a consistent and highly-available key-value store. To install a local version of etcd, run the following command in your Kubernetes working directory.
 
 ```sh
 ./hack/install-etcd.sh
@@ -318,6 +321,10 @@ this permanent, add this to your `.bashrc` or login script:
 ```sh
 export PATH="$GOPATH/src/k8s.io/kubernetes/third_party/etcd:${PATH}"
 ```
+
+##### BASH version requirement
+
+To successfully run unit tests in Kubernetes, you will need bash version installed to be >4.3.
 
 Once you have installed all required software, you can proceed to the
 [Building Kubernetes](#building-kubernetes) section to test if it all works properly.
@@ -374,9 +381,8 @@ make cross KUBE_BUILD_PLATFORMS=windows/amd64
 
 ## A Quick Start for Testing Kubernetes
 
-Kubernetes only merges pull requests when unit, integration, and e2e tests are
-passing, so it is important that your development environment can
-successfully run all tests. While this quick start will get you going,
+Because kubernetes only merges pull requests when unit, integration, and e2e tests are
+passing, your development environment needs to run all tests successfully. While this quick start will get you going,
 to really understand the testing infrastructure, read the
 [Testing Guide](sig-testing/testing.md) and check out the
 [SIG Architecture developer guide material](README.md#sig-testing).
@@ -391,8 +397,7 @@ mentioned here by running `make help`.
 ### Presubmission Verification
 
 Presubmission verification provides a battery of checks and tests to
-give your pull request the best chance of being accepted. It is
-important for developers to run as many verification tests as posible
+give your pull request the best chance of being accepted. Developers need to run as many verification tests as possible
 locally. 
 
 You can view a list of all verification tests in `hack/verify-*.sh`
@@ -426,7 +431,7 @@ make test
 ```
 
 You can also use the `WHAT` option to control which packages and
-subsystems are testing, and use `GOFLAGS` to change how tests are
+subsystems are testing and use `GOFLAGS` to change how tests are
 run. For example, to run unit tests verbosely against just one
 package, use a command like this:
 
@@ -437,7 +442,7 @@ make test WHAT=./pkg/apis/core/helper GOFLAGS=-v
 ### Integration Tests
 
 All integration tests need to pass for a pull request to be
-accepted. Note that for this stage in particular, it is important that
+accepted. Note that for this stage, in particular, it is important that
 [etcd](#etcd) be properly installed. Without it, integration testing
 will fail.
 
@@ -452,7 +457,7 @@ To learn more about integration testing, read the
 
 ### E2E Tests
 
-End-to-end (E2E) tests provide a mechanism to test end-to-end behavior
+End-to-end (E2E) tests provide a mechanism to test the end-to-end behavior
 of the system. The primary objective of the E2E tests is to ensure
 consistent and reliable behavior of the Kubernetes code base,
 especially in areas where unit and integration tests are insufficient.
@@ -461,12 +466,6 @@ E2E tests build test binaries, spin up a test cluster,
 run the tests, and then tear the cluster down.
 
 **Note:** Running all E2E tests takes a *very long time*!
-
-To run E2E tests, use this command:
-
-```sh
-make test-e2e
-```
 
 For more information on E2E tests, including methods for saving time
 by just running specific tests, read
@@ -480,12 +479,6 @@ dependencies.
 
 Developers who need to manage dependencies in the `vendor/` tree should read
 the docs on [using go modules to manage dependencies](/contributors/devel/sig-architecture/vendor.md).
-
-
-## Build with Bazel/Gazel
-
-Building with Bazel is currently experimental.  For more information,
-see [Build with Bazel].
 
 
 ## GitHub workflow
@@ -504,4 +497,3 @@ To check out code to work on, please refer to [this guide](/contributors/guide/g
 [kubectl user guide]: https://kubernetes.io/docs/user-guide/kubectl
 [kubernetes.io]: https://kubernetes.io
 [mercurial]: http://mercurial.selenic.com/wiki/Download
-[Build with Bazel]: sig-testing/bazel.md

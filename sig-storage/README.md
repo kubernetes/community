@@ -13,6 +13,9 @@ SIG Storage is responsible for ensuring that different types of file and block s
 The [charter](charter.md) defines the scope and governance of the Storage Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-storage) for the group will typically add invites for the following meetings to your calendar.*
+* Regular CSI Implementation meeting: [Monday and Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/614261834) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1_hvq3nleqQEYatH9V_Gfep39jMzaFJRSN2ioA0PFq-Q/edit#).
 * Regular SIG Meeting: [Thursdays at 9:00 PT (Pacific Time)](https://zoom.us/j/614261834) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq).
@@ -48,72 +51,87 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-storage-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-storage-pr-reviews) - PR Reviews
     - [@kubernetes/sig-storage-proposals](https://github.com/orgs/kubernetes/teams/sig-storage-proposals) - Design Proposals
     - [@kubernetes/sig-storage-test-failures](https://github.com/orgs/kubernetes/teams/sig-storage-test-failures) - Test Failures and Triage
+- Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-storage:
+* [WG Data Protection](/wg-data-protection)
+* [WG Multitenancy](/wg-multitenancy)
+* [WG Policy](/wg-policy)
+* [WG Structured Logging](/wg-structured-logging)
+
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-storage:
 ### external-storage
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-local-static-provisioner/master/OWNERS
+  - [kubernetes-sigs/sig-storage-lib-external-provisioner](https://github.com/kubernetes-sigs/sig-storage-lib-external-provisioner/blob/master/OWNERS)
+  - [kubernetes-sigs/sig-storage-local-static-provisioner](https://github.com/kubernetes-sigs/sig-storage-local-static-provisioner/blob/master/OWNERS)
 ### git-sync
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/git-sync/master/OWNERS
+  - [kubernetes/git-sync](https://github.com/kubernetes/git-sync/blob/master/OWNERS)
 ### gluster-provisioner
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/gluster-block-external-provisioner/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/gluster-file-external-provisioner/master/OWNERS
+  - [kubernetes-sigs/gluster-block-external-provisioner](https://github.com/kubernetes-sigs/gluster-block-external-provisioner/blob/master/OWNERS)
+  - [kubernetes-sigs/gluster-file-external-provisioner](https://github.com/kubernetes-sigs/gluster-file-external-provisioner/blob/master/OWNERS)
 ### kubernetes-cosi
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-api/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-controller/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-csi-adapter/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-spec/master/OWNERS
+  - [kubernetes-sigs/container-object-storage-interface-api](https://github.com/kubernetes-sigs/container-object-storage-interface-api/blob/master/OWNERS)
+  - [kubernetes-sigs/container-object-storage-interface-controller](https://github.com/kubernetes-sigs/container-object-storage-interface-controller/blob/master/OWNERS)
+  - [kubernetes-sigs/container-object-storage-interface-csi-adapter](https://github.com/kubernetes-sigs/container-object-storage-interface-csi-adapter/blob/master/OWNERS)
+  - [kubernetes-sigs/container-object-storage-interface-provisioner-sidecar](https://github.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar/blob/master/OWNERS)
+  - [kubernetes-sigs/container-object-storage-interface-spec](https://github.com/kubernetes-sigs/container-object-storage-interface-spec/blob/master/OWNERS)
+  - [kubernetes-sigs/cosi-driver-sample](https://github.com/kubernetes-sigs/cosi-driver-sample/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#sig-storage-cosi](https://kubernetes.slack.com/messages/sig-storage-cosi)
 ### kubernetes-csi
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-flex/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-host-path/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-image-populator/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-iscsi/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-smb/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-fc/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-iscsi/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-utils/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-proxy/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-release-tools/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/csi-test/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/docs/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/driver-registrar/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/drivers/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/external-attacher/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/external-health-monitor/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/external-resizer/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi.github.io/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/livenessprobe/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/node-driver-registrar/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/csi-translation-lib/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-translation-lib/OWNERS
+  - [kubernetes-csi/cluster-driver-registrar](https://github.com/kubernetes-csi/cluster-driver-registrar/blob/master/OWNERS)
+  - [kubernetes-csi/csi-driver-host-path](https://github.com/kubernetes-csi/csi-driver-host-path/blob/master/OWNERS)
+  - [kubernetes-csi/csi-driver-image-populator](https://github.com/kubernetes-csi/csi-driver-image-populator/blob/master/OWNERS)
+  - [kubernetes-csi/csi-driver-iscsi](https://github.com/kubernetes-csi/csi-driver-iscsi/blob/master/OWNERS)
+  - [kubernetes-csi/csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs/blob/master/OWNERS)
+  - [kubernetes-csi/csi-driver-nvmf](https://github.com/kubernetes-csi/csi-driver-nvmf/blob/master/OWNERS)
+  - [kubernetes-csi/csi-driver-smb](https://github.com/kubernetes-csi/csi-driver-smb/blob/master/OWNERS)
+  - [kubernetes-csi/csi-lib-fc](https://github.com/kubernetes-csi/csi-lib-fc/blob/master/OWNERS)
+  - [kubernetes-csi/csi-lib-iscsi](https://github.com/kubernetes-csi/csi-lib-iscsi/blob/master/OWNERS)
+  - [kubernetes-csi/csi-lib-utils](https://github.com/kubernetes-csi/csi-lib-utils/blob/master/OWNERS)
+  - [kubernetes-csi/csi-proxy](https://github.com/kubernetes-csi/csi-proxy/blob/master/OWNERS)
+  - [kubernetes-csi/csi-release-tools](https://github.com/kubernetes-csi/csi-release-tools/blob/master/OWNERS)
+  - [kubernetes-csi/csi-test](https://github.com/kubernetes-csi/csi-test/blob/master/OWNERS)
+  - [kubernetes-csi/docs](https://github.com/kubernetes-csi/docs/blob/master/OWNERS)
+  - [kubernetes-csi/driver-registrar](https://github.com/kubernetes-csi/driver-registrar/blob/master/OWNERS)
+  - [kubernetes-csi/external-attacher](https://github.com/kubernetes-csi/external-attacher/blob/master/OWNERS)
+  - [kubernetes-csi/external-health-monitor](https://github.com/kubernetes-csi/external-health-monitor/blob/master/OWNERS)
+  - [kubernetes-csi/external-provisioner](https://github.com/kubernetes-csi/external-provisioner/blob/master/OWNERS)
+  - [kubernetes-csi/external-resizer](https://github.com/kubernetes-csi/external-resizer/blob/master/OWNERS)
+  - [kubernetes-csi/external-snapshotter](https://github.com/kubernetes-csi/external-snapshotter/blob/master/OWNERS)
+  - [kubernetes-csi/kubernetes-csi.github.io](https://github.com/kubernetes-csi/kubernetes-csi.github.io/blob/master/OWNERS)
+  - [kubernetes-csi/livenessprobe](https://github.com/kubernetes-csi/livenessprobe/blob/master/OWNERS)
+  - [kubernetes-csi/node-driver-registrar](https://github.com/kubernetes-csi/node-driver-registrar/blob/master/OWNERS)
+  - [kubernetes/csi-api](https://github.com/kubernetes/csi-api/blob/master/OWNERS)
+  - [kubernetes/csi-translation-lib](https://github.com/kubernetes/csi-translation-lib/blob/master/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/csi-api](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/csi-api/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/csi-translation-lib](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/csi-translation-lib/OWNERS)
 ### mount-utils
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/mount-utils/OWNERS
+  - [kubernetes/kubernetes/staging/src/k8s.io/mount-utils](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/mount-utils/OWNERS)
 ### nfs-provisioner
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/nfs-subdir-external-provisioner/master/OWNERS
+  - [kubernetes-sigs/nfs-ganesha-server-and-external-provisioner](https://github.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner/blob/master/OWNERS)
+  - [kubernetes-sigs/nfs-subdir-external-provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/blob/master/OWNERS)
+### volume-populators
+- **Owners:**
+  - [kubernetes-csi/lib-volume-populator](https://github.com/kubernetes-csi/lib-volume-populator/blob/master/OWNERS)
+  - [kubernetes-csi/volume-data-source-validator](https://github.com/kubernetes-csi/volume-data-source-validator/blob/master/OWNERS)
 ### volumes
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/volume/OWNERS
+  - [kubernetes/kubernetes/pkg/volume](https://github.com/kubernetes/kubernetes/blob/master/pkg/volume/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Details

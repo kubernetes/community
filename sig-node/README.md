@@ -13,9 +13,12 @@ SIG Node is responsible for the components that support the controlled interacti
 The [charter](charter.md) defines the scope and governance of the Node Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-node) for the group will typically add invites for the following meetings to your calendar.*
+* Main SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing).
-  * [Meeting recordings](https://www.youtube.com/watch?v=FbKOI9-x9hI&list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
+* Weekly CI/Triage Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1fb-ugvgdSVIkkuJ388_nhp2pBTy_4HEVg5848Xy7n5U/edit).
 
 ## Leadership
 
@@ -36,46 +39,68 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-node-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-node-pr-reviews) - PR Reviews
     - [@kubernetes/sig-node-proposals](https://github.com/orgs/kubernetes/teams/sig-node-proposals) - Design Proposals
     - [@kubernetes/sig-node-test-failures](https://github.com/orgs/kubernetes/teams/sig-node-test-failures) - Test Failures and Triage
+- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-node:
+* [WG Batch](/wg-batch)
+* [WG Multitenancy](/wg-multitenancy)
+* [WG Policy](/wg-policy)
+* [WG Structured Logging](/wg-structured-logging)
+
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-node:
+### ci-testing
+- **Owners:**
+  - [kubernetes/kubernetes/test/e2e/common](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/common/OWNERS)
+  - [kubernetes/kubernetes/test/e2e/node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/node/OWNERS)
+  - [kubernetes/kubernetes/test/e2e_node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e_node/OWNERS)
+  - [kubernetes/test-infra/config/jobs/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-node/OWNERS)
+  - [kubernetes/test-infra/config/testgrids/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/testgrids/kubernetes/sig-node/OWNERS)
+  - [kubernetes/test-infra/jobs/e2e_node](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/OWNERS)
+- **Contact:**
+  - [Mailing List](https://groups.google.com/g/kubernetes-sig-node-test-failures)
 ### cri-api
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/cri-api/master/OWNERS
+  - [kubernetes/cri-api](https://github.com/kubernetes/cri-api/blob/master/OWNERS)
 ### cri-tools
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
-### frakti
+  - [kubernetes-sigs/cri-tools](https://github.com/kubernetes-sigs/cri-tools/blob/master/OWNERS)
+### kernel-module-management
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/frakti/master/OWNERS
+  - [kubernetes-sigs/kernel-module-management](https://github.com/kubernetes-sigs/kernel-module-management/blob/main/OWNERS)
 ### kubelet
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubelet/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
+  - [kubernetes/kubernetes/cmd/kubelet](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubelet/OWNERS)
+  - [kubernetes/kubernetes/pkg/kubelet](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/OWNERS)
 ### node-api
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/node-api/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/node-api/master/OWNERS
+  - [kubernetes/api/node](https://github.com/kubernetes/api/blob/master/node/OWNERS)
 ### node-feature-discovery
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery-operator/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/OWNERS
+  - [kubernetes-sigs/node-feature-discovery-operator](https://github.com/kubernetes-sigs/node-feature-discovery-operator/blob/master/OWNERS)
+  - [kubernetes-sigs/node-feature-discovery](https://github.com/kubernetes-sigs/node-feature-discovery/blob/master/OWNERS)
 ### node-problem-detector
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
+  - [kubernetes/node-problem-detector](https://github.com/kubernetes/node-problem-detector/blob/master/OWNERS)
+  - [kubernetes/test-infra/config/jobs/kubernetes/node-problem-detector](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/node-problem-detector/OWNERS)
 - **Contact:**
   - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
-### noderesourcetopology-api
+### resource-management
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/noderesourcetopology-api/master/OWNERS
+  - [kubernetes/kubernetes/staging/src/k8s.io/dynamic-resource-allocation](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS)
+  - [kubernetes/noderesourcetopology-api](https://github.com/kubernetes/noderesourcetopology-api/blob/master/OWNERS)
 ### security-profiles-operator
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/security-profiles-operator/master/OWNERS
+  - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#security-profiles-operator](https://kubernetes.slack.com/messages/security-profiles-operator)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 

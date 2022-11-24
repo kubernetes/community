@@ -1,6 +1,6 @@
 # Flexvolume
 
-**NOTE:** Flexvolume is deprecated. Out-of-tree CSI driver is the recommended way to write volume drivers in Kubernetes. See this doc [here]( https://github.com/kubernetes/community/blob/master/sig-storage/volume-plugin-faq) for more information.
+**NOTE:** Flexvolume is deprecated. Out-of-tree CSI driver is the recommended way to write volume drivers in Kubernetes. See this doc [here](https://github.com/kubernetes/community/blob/master/sig-storage/volume-plugin-faq.md#kubernetes-volume-plugin-faq-for-storage-vendors) for more information.
 
 Flexvolume enables users to write their own drivers and add support for their volumes in Kubernetes. Vendor drivers should be installed in the volume plugin path on every node, and on master if the driver requires attach capability (unless `--enable-controller-attach-detach` Kubelet option is set to false, but this is highly discouraged because it is a legacy mode of operation).
 
@@ -16,10 +16,10 @@ The vendor and driver names must match flexVolume.driver in the volume spec, wit
 
 ## Dynamic Plugin Discovery
 Beginning in v1.8, Flexvolume supports the ability to detect drivers on the fly. Instead of requiring drivers to exist at system initialization time or having to restart kubelet or controller manager, drivers can be installed, upgraded/downgraded, and uninstalled while the system is running.
-For more information, please refer to the [design document](/contributors/design-proposals/storage/flexvolume-deployment.md).
+For more information, please refer to the [design document](https://git.k8s.io/design-proposals-archive/storage/flexvolume-deployment.md).
 
 ## Automated Plugin Installation/Upgrade
-One possible way to install and upgrade your Flexvolume drivers is by using a DaemonSet. See [Recommended Driver Deployment Method](/contributors/design-proposals/storage/flexvolume-deployment.md#recommended-driver-deployment-method) for details, and see [here](https://git.k8s.io/examples/staging/volumes/flexvolume/deploy/) for an example.
+One possible way to install and upgrade your Flexvolume drivers is by using a DaemonSet. See [Recommended Driver Deployment Method](https://git.k8s.io/design-proposals-archive/storage/flexvolume-deployment.md#recommended-driver-deployment-method) for details, and see [here](https://git.k8s.io/examples/staging/volumes/flexvolume/deploy/) for an example.
 
 ## Plugin details
 The plugin expects the following call-outs are implemented for the backend drivers. Some call-outs are optional. Call-outs are invoked from Kubelet and Controller Manager.

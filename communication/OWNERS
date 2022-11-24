@@ -1,16 +1,17 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 reviewers:
-  - parispittman
-  - castrojo
   - jdumars
   - idvoretskyi
   - jeefy
   - mrbobbytables
+  - markyjackson-taulia
 approvers:
+  - mrbobbytables
+  - sig-contributor-experience-leads
+emeritus_approvers:
   - castrojo
   - parispittman
-  - sig-contributor-experience-leads
 labels:
   - sig/contributor-experience
   - area/community-management

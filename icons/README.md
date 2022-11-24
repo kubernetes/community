@@ -51,7 +51,7 @@ There is 2 types of icons
 ![](./png/control_plane_components/labeled/sched-128.png)
 
 ## Infrastructure Components icons
-![](./png/infrastructure_components/labeled/master-128.png)
+![](./png/infrastructure_components/labeled/control-plane-128.png)
 ![](./png/infrastructure_components/labeled/node-128.png)
 ![](./png/infrastructure_components/labeled/etcd-128.png)
 
@@ -91,10 +91,6 @@ There is 2 types of icons
 
 #### Exposed Pod with 3 replicas
 ![](./docs/k8s-exposed-pod.png)
-
-### Slide Deck
-
-[Kubernetes_Icons_GSlide](https://docs.google.com/presentation/d/15h_MHjR2fzXIiGZniUdHok_FP07u1L8MAX5cN1r0j4U/edit)
 
 ## License
 The Kubernetes Icons Set is licensed under a choice of either Apache-2.0

@@ -13,10 +13,7 @@ Regular Blog Meeting: Tuesdays at 18:30 UTC (biweekly). [Convert Your Timezone](
 
 ## Leadership
 
-- **Editorial Leads:** [Kaitlyn Barnard](https://github.com/kbarnard10)
-- **Technical Editors:** [Bob Killen](https://github.com/mrbobbytables), [Taylor Dolezal](https://github.com/onlydole)
-- **Copy Editors:** [Alex Handy](https://github.com/vonguard), [Cody Clark](https://github.com/cody-clark)
-- **Blog Community Managers:** [Jorge Castro](https://github.com/castrojo), [Paris Pittman](https://github.com/parispittman) (shadow)
+- **Technical Editors:** [Bob Killen](https://github.com/mrbobbytables), [Taylor Dolezal](https://github.com/onlydole), [Tim Bannister](https://github.com/sftim), [Nate Waddington](https://github.com/nate-double-u)
 
 ## Contact
 
@@ -29,7 +26,7 @@ Regular Blog Meeting: Tuesdays at 18:30 UTC (biweekly). [Convert Your Timezone](
 
 Anyone can write a blog post and submit it for review. Blog posts should not be commercial in nature and should consist of content that will apply broadly to the Kubernetes community.
 
-To submit a blog post, you can either submit it using the [Kubernetes blog submission form](https://docs.google.com/forms/d/e/1FAIpQLSch_phFYMTYlrTDuYziURP6nLMijoXx_f7sLABEU5gWBtxJHQ/viewform), or follow the steps below.
+To submit a blog post, follow the steps below.
 
 1. [Sign the CLA](https://kubernetes.io/docs/contribute/start/#sign-the-cla) if you have not yet done so.
 1. Have a look at the Markdown format for existing blog posts in the [website repository](https://github.com/kubernetes/website/tree/master/content/en/blog/_posts).
@@ -66,7 +63,7 @@ _If a blog post does not contain any technical content (for example, [How You Ca
 
 ### Embargoed Content
 
-The blog repository on GitHub is public, therefore any content that needs to remain confidential until a certain time (for example: release posts, security vulnerabilities) should be submitted via the form directly. On [the form](https://docs.google.com/forms/d/e/1FAIpQLSch_phFYMTYlrTDuYziURP6nLMijoXx_f7sLABEU5gWBtxJHQ/viewform), please note the time that the embargo will be lifted. In this case, the editorial team will do all reviews in Google Docs. If this is time sensitive, please email [blog@kubernetes.io](mailto:blog@kubernetes.io).
+The blog repository on GitHub is public, therefore any content that needs to remain confidential until a certain time (for example: release posts, security vulnerabilities) should be proposed by email message to [blog@kubernetes.io](mailto:blog@kubernetes.io). In your message, please note the time that the embargo will be lifted.
 
 ### SLA
 

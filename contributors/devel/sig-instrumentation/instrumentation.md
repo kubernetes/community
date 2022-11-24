@@ -24,7 +24,7 @@ internal and external.
 
 The following describes the basic steps required to add a new metric (in Go).
 
-1. Import "github.com/prometheus/client_golang/prometheus".
+1. Import "k8s.io/component-base/metrics" for metrics and "k8s.io/component-base/metrics/legacyregistry" to register your declared metrics.
 
 2. Create a top-level var to define the metric. For this, you have to:
 
@@ -39,26 +39,23 @@ the values.
 labels on the metric. If so, add "Vec" to the name of the type of metric you
 want and add a slice of the label names to the definition.
 
-   [Example](https://github.com/kubernetes/kubernetes/blob/cd3299307d44665564e1a5c77d0daa0286603ff5/pkg/apiserver/apiserver.go#L53)
+   [Example](https://github.com/kubernetes/kubernetes/blob/v1.21.1-rc.0/staging/src/k8s.io/apiserver/pkg/endpoints/metrics/metrics.go#L75-L82)
    ```go
-    requestCounter = prometheus.NewCounterVec(
-      prometheus.CounterOpts{
-        Name: "apiserver_request_count",
-        Help: "Counter of apiserver requests broken out for each verb, API resource, client, and HTTP response code.",
-      },
-      []string{"verb", "resource", "client", "code"},
-    )
+	requestCounter = compbasemetrics.NewCounterVec(
+		&compbasemetrics.CounterOpts{
+			Name:           "apiserver_request_total",
+			Help:           "Counter of apiserver requests broken out for each verb, dry run value, group, version, resource, scope, component, and HTTP response code.",
+			StabilityLevel: compbasemetrics.STABLE,
+		},
+		[]string{"verb", "dry_run", "group", "version", "resource", "subresource", "scope", "component", "code"},
+	)
    ```
 
-3. Register the metric so that prometheus will know to export it.
+3. Register the metric so that prometheus will know to export it. This can be done in manually or through an init function.
 
-   [Example](https://github.com/kubernetes/kubernetes/blob/cd3299307d44665564e1a5c77d0daa0286603ff5/pkg/apiserver/apiserver.go#L78)
+   [Example](https://github.com/kubernetes/kubernetes/blob/v1.21.1-rc.0/staging/src/k8s.io/apiserver/pkg/endpoints/metrics/metrics.go#L280)
    ```go
-    func init() {
-      prometheus.MustRegister(requestCounter)
-      prometheus.MustRegister(requestLatencies)
-      prometheus.MustRegister(requestLatenciesSummary)
-    }
+	legacyregistry.MustRegister(metric)
    ```
 
 4. Use the metric by calling the appropriate method for your metric type (Set,
@@ -88,7 +85,11 @@ For this types of metric exposition, the
 [exporter guidelines](https://prometheus.io/docs/instrumenting/writing_exporters/)
 apply additionally.
 
-## Naming 
+## Metrics Stability
+
+Please see our documentation on Kubernetes [metrics stability](/contributors/devel/sig-instrumentation/metric-stability.md).
+
+## Naming
 
 General [metric and label naming best practices](https://prometheus.io/docs/practices/naming/) apply.
 Beyond that, metrics added directly by application or package code should have a unique name. 
@@ -116,6 +117,34 @@ requests.
 Resource objects that occur in names should inherit the spelling that is used
 in kubectl, i.e. daemon sets are `daemonset` rather than `daemon_set`.
 
+### Exception for object state metrics
+
+One exception to the component prefix rule is for metrics derived from
+the state of Kubernetes objects.  From the users' perspective, controllers are an
+implementation detail of object reconciliation.  The collection of controllers
+which comprise a working Kubernetes cluster is viewed as a single system which
+drives objects towards their specified desired state.  Metrics concerning a
+given object should be easily discoverable and comparable even when they are
+produced by different controllers.  Metrics describing the state of a built-in
+Kubernetes object take the form:
+
+```
+kube_<kind>_<metric>
+```
+
+Metrics describing the state of a custom resource avoids collisions by adding a
+group.  Metrics take the form:
+
+```
+kube_[<group>](https://kubernetes.io/docs/reference/using-api/#api-groups)_<kind>_metric
+```
+
+The [Kube-State-Metrics](https://github.com/kubernetes/kube-state-metrics) 
+project introduced the original kube_* prefixed metrics.  For examples of
+kube_* prefixed metrics, refer to the list of 
+[Exposed Metrics](https://github.com/kubernetes/kube-state-metrics/tree/master/docs#exposed-metrics)
+in the Kube-State-Metrics documentation.
+
 ## Dimensionality & Cardinality
 
 Metrics can often replace more expensive logging as they are time-aggregated
@@ -135,8 +164,8 @@ constantly create new ones, with new names. However, they have
 a reasonable upper bound for a given size of infrastructure they refer to and
 its typical frequency of changes.
 
-In general, “external” labels like pod or node name do not belong in the
-instrumentation itself. They are to be attached to metrics by the collecting
+In general, “external” labels like pod name, node name (any object name), & namespace do not belong in the
+instrumentation itself (the exception being kube-state-metrics). They are to be attached to metrics by the collecting
 system that has the external knowledge ([blog post](https://www.robustperception.io/target-labels-are-for-life-not-just-for-christmas/)).
 
 ## Normalization
@@ -173,11 +202,11 @@ Those pieces of information should be normalized into an info-level metric
 which is always set to 1. For example:
 
 ```
-kube_pod_info{pod=...,namespace=...,pod_ip=...,host_ip=..,node=..., ...}
+kube_pod_info{pod=...,namespace=...,pod_ip=...,host_ip=..,node=..., ...} 1
 ```
 
 The metric system can later denormalize those along the identifying labels
-“pod” and “namespace” labels. This leads to...
+“pod” and “namespace” labels.
 
 ## Resource Referencing
 
@@ -214,3 +243,6 @@ metric could look as follows:
 kube_pod_restarts and on(namespace, pod) kube_pod_info{uuid=”ABC”}
 ```
 
+## Deprecating Metrics
+
+The process of metric deprecation is outlined in the official [Kubernetes Deprecation Policy](https://kubernetes.io/docs/reference/using-api/deprecation-policy/). When deprecating a metric, one must set the deprecated version for a version which is in the future from which point that metric will be considered deprecated. If there is a replacement metric, please note that in the help text of the deprecated metric as well as in the corresponding release note of the relevant pull request. 

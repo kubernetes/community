@@ -47,12 +47,13 @@ make test-e2e-node PRINT_HELP=y
 Why run tests *remotely*? Tests will be run in a customized testing environment. This environment closely mimics the pre- and post- submit testing performed by the project.
 
 Prerequisites:
-- [Join the googlegroup](https://groups.google.com/forum/#!forum/kubernetes-dev) `kubernetes-dev@googlegroups.com`
+- [Join the googlegroup](https://groups.google.com/a/kubernetes.io/group/dev) `dev@kubernetes.io`
   - *This provides read access to the node test images.*
 - Setup a [Google Cloud Platform](https://cloud.google.com/) account and project with Google Compute Engine enabled
 - Install and setup the [gcloud sdk](https://cloud.google.com/sdk/downloads)
   - Set your project and a zone by running `gcloud config set project $PROJECT` and `gcloud config set compute/zone $zone`
   - Verify the sdk is setup correctly by running `gcloud compute instances list` and `gcloud compute images list --project kubernetes-node-e2e-images`
+  - Configure credentials for the same project that you configured above for "application defaults". This can be done with `gcloud auth application-default login` or by setting the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to a path to a credentials file.
 
 Run:
 
@@ -339,7 +340,7 @@ Some topology manager tests require minimal knowledge of the host topology in or
 The required information is to which NUMA node in the system are the SRIOV device attached to.
 The test code tries to autodetect the information it needs, skipping the relevant tests if the autodetection fails.
 
-You can override the autodetection adding annotations to the the config map like this example:
+You can override the autodetection adding annotations to the config map like this example:
 ```yaml
 metadata:
   annotations:

@@ -24,6 +24,14 @@ restrictions:
       - "^kubernetes-docs-[a-z]{2}(-maintainers)?$"
       - "^sig-docs$"
       - "^sig-docs-.*$"
+  - path: "sig-network/*.yaml"
+    channels:
+      - "^sig-network-.*$"
+  - path: "sig-node/*.yaml"
+    channels:
+      - "^sig-node"
+    usergroups:
+      - "^dra-dev$"
   - path: "sig-release/*.yaml"
     channels:
       - "^sig-release$"
@@ -31,10 +39,11 @@ restrictions:
     usergroups:
       - "^sig-release-"
       - "^release-"
-      - "^security-release-team$"
-  - path: "sig-network/*.yaml"
+      - "^security-rel-team$"
+  - path: "sig-security/*.yaml"
     channels:
-      - "^sig-network-.*$"
+      - "^sig-security$"
+      - "^sig-security-"
   - path: "sig-storage/*.yaml"
     channels:
       - "^sig-storage$"
@@ -47,4 +56,14 @@ restrictions:
       - "^cloud-provider-extraction$"
       - "^provider-"
       - "^apiserver-network-proxy$"
+  - path: "sig-testing/*.yaml"
+    channels:
+      - "^sig-testing"
+      - "^kind"
+      - "^prow"
+      - "^testgrid"
+      - "^testing"
+    usergroups:
+      - "^test-infra-oncall$"
+      - "^google-build-admin$"
   - path: "**/*" # prevent any other file from containing anything

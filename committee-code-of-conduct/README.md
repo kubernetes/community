@@ -14,36 +14,45 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 ## Members
 
-* Aeva Black (**[@AevaOnline](https://github.com/AevaOnline)**), Microsoft
-* Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**), CNCF
-* Karen Chu (**[@karenhchu](https://github.com/karenhchu)**), Microsoft
-* Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
-* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
+* Jason DeTiberus (**[@detiber](https://github.com/detiber)**), Cisco
+* Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), Independent
+* Hilliary Lipsig (**[@hlipsig](https://github.com/hlipsig)**), RedHat
+* Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
+* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Microsoft
 
 ## Contact
+- Slack: [#code-of-conduct](https://kubernetes.slack.com/messages/code-of-conduct)
 - Private Mailing List: conduct@kubernetes.io
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fcode-of-conduct)
 - GitHub Teams:
     - [@kubernetes/code-of-conduct-committee](https://github.com/orgs/kubernetes/teams/code-of-conduct-committee) - General Discussion
+- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
+
+## Reporting An Incident
+
+Please email conduct@kubernetes.io to initiate an incident report. **_Please do not make reports via our public slack channel._**
+
+Our [Incident Report Handling Procedures](incident-process.md) describes how we handle reports while protecting the safety and confidentiality of all involved parties.
+
 ## Terms
 
 The members and their terms are as follows:
 
-### Term ends on August 7, 2021
+### Term ends on August 23, 2023
 
-- Aeva Black (Microsoft)
-- Tasha Drew (VMware)
+- Jeremy Rickard (Microsoft)
+- Nabarun Pal (VMware)
 
-### Term ends on August 7, 2022
+### Term ends on August 17, 2024
 
-- Karen Chu (Microsoft)
-- Celeste Horgan (CNCF)
-- Tim Pepper (VMware)
+- Danielle Lancashire (VMware)
+- Hilliary Lipsig (RedHat)
+- Xander Grzywinski (Microsoft)
 
-Please see the [bootstrapping document](./bootstrapping-process.md) for more information on how members are picked, their responsibilities, and how the committee will initially function.
+Please see the [bootstrapping document](./bootstrapping-process.md) and [election process guidelines](election.md) for more information on how members are picked and their responsibilities.
 
 ## Emeritus Committee Members
 
@@ -53,6 +62,12 @@ The Code of Conduct Committee sincerely thanks our emeritus committee members fo
 - Jennifer Rondeau (Stripe)
 - Carolyn Van Slyck (Microsoft)
 - Paris Pittman (Apple)
+- Aeva Black (Microsoft)
+- Tasha Drew (VMware)
+- Tim Pepper (VMware)
+- Karen Chu (Microsoft)
+- Celeste Horgan (Independent)
+- Carlos Tadeu Panato Jr. (Chainguard, Inc)
+- Vallery Lancey (Apple)
 
-_More information on conflict resolution process to come in the near future. For now, any Code of Conduct or Code of Conduct Committee concerns can be directed to <conduct@kubernetes.io>_.
 <!-- END CUSTOM CONTENT -->

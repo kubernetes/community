@@ -7,6 +7,11 @@ The [charter]({{.CharterLink}}) defines the scope and governance of the {{.Name}
 {{ end }}
 {{ if .Meetings -}}
 ## Meetings
+
+{{- if .Contact.MailingList }}
+*Joining the [mailing list]({{.Contact.MailingList}}) for the group will typically add invites for the following meetings to your calendar.*
+{{- end }}
+
 {{- range .Meetings }}
 * {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}}]({{.URL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time}}&tz={{.TZ | tzUrlEncode}}).
 {{- if .ArchiveURL }}
@@ -59,6 +64,20 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/{{.Name}}](https://github.com/orgs/kubernetes/teams/{{.Name}}) {{- if .Description }} - {{.Description}} {{- end}}
 {{- end }}
 {{- end }}
+{{- if .Contact.Liaison.Name }}
+- Steering Committee Liaison: {{.Contact.Liaison.Name}} (**[@{{.Contact.Liaison.GitHub}}](https://github.com/{{.Contact.Liaison.GitHub}})**)
+{{- end }}
+
+{{- if .ReportingWGs }}
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-{{.Label}}:
+
+{{- range .ReportingWGs }}
+* [WG {{.}}](/{{.DirName}})
+{{- end }}
+{{ end }}
 
 {{- if .Subprojects }}
 
@@ -73,7 +92,7 @@ The following [subprojects][subproject-definition] are owned by sig-{{.Label}}:
 {{- end }}
 - **Owners:**
 {{- range .Owners }}
-  - {{.}}
+  - [{{trimSuffix (orgRepoPath .) "/OWNERS"}}]({{githubURL .}})
 {{- end }}
 {{- if .Contact }}
 - **Contact:**
@@ -106,3 +125,4 @@ The following [subprojects][subproject-definition] are owned by sig-{{.Label}}:
 {{- end }}
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups

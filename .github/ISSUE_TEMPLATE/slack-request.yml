@@ -1,0 +1,36 @@
+name: Slack Request
+description: Request a Channel, User Group, Bot, Token, or Webhook
+title: 'REQUEST: New Slack <[channel|usergroup|bot|token|webhook]> <[channel|usergroup|bot|token|webhook] name>'
+labels: area/community-management, area/slack-management, sig/contributor-experience
+body:
+- id: github
+  type: input
+  attributes:
+    label: GitHub Username
+    description: The github username of the Channel/Bot/Token/Webhook owner or primary contact.
+    placeholder: e.g. @example_user
+  validations:
+    required: true
+- id: slack
+  type: input
+  attributes:
+    label: Slack Username
+    description: The slack username of the Channel/Bot/Token/Webhook owner or primary contact.
+    placeholder: e.g. @example_user
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: What Type of Request is it (Channel, User Group, Bot, Token, or Webhook)?
+  validations:
+    required: false
+- type: input
+  attributes:
+    label: Name of Requested Resource
+  validations:
+    required: false
+- type: textarea
+  attributes:
+    label: Description of Request
+  validations:
+    required: false

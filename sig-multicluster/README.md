@@ -13,7 +13,8 @@ A Special Interest Group focused on solving common challenges related to the man
 The [charter](charter.md) defines the scope and governance of the Multicluster Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-multicluster) for the group will typically add invites for the following meetings to your calendar.*
+* Regular SIG Meeting: [Tuesdays at 9:30 PT (Pacific Time)](https://zoom.us/my/k8s.mc) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://tinyurl.com/sig-multicluster-notes).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
 
@@ -23,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Multicluster S
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Jeremy Olmsted-Thompson (**[@jeremyot](https://github.com/jeremyot)**), Google
-* Paul Morie (**[@pmorie](https://github.com/pmorie)**), Red Hat
+* Paul Morie (**[@pmorie](https://github.com/pmorie)**), Apple
 
 ## Emeritus Leads
 
@@ -41,27 +42,33 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-multicluster-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-multicluster-pr-reviews) - PR Reviews
     - [@kubernetes/sig-multicluster-test-failures](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) - Test Failures and Triage
     - [@kubernetes/sig-mutlicluster-proposals](https://github.com/orgs/kubernetes/teams/sig-mutlicluster-proposals) - Design Proposals
+- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-multicluster:
+* [WG IoT Edge](/wg-iot-edge)
+* [WG Policy](/wg-policy)
+
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-multicluster:
 ### Kubefed
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/kubefed/master/OWNERS
-### cluster-registry
+  - [kubernetes-sigs/kubefed](https://github.com/kubernetes-sigs/kubefed/blob/master/OWNERS)
+### about-api
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/cluster-registry/master/OWNERS
-### federation-v1
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/federation/master/OWNERS
-### kubemci
-- **Owners:**
-  - https://raw.githubusercontent.com/GoogleCloudPlatform/k8s-multicluster-ingress/master/OWNERS
+  - [kubernetes-sigs/about-api](https://github.com/kubernetes-sigs/about-api/blob/master/OWNERS)
 ### mcs-api
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
+  - [kubernetes-sigs/mcs-api](https://github.com/kubernetes-sigs/mcs-api/blob/master/OWNERS)
+### work-api
+- **Owners:**
+  - [kubernetes-sigs/work-api](https://github.com/kubernetes-sigs/work-api/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Subprojects
 
@@ -78,7 +85,7 @@ Control Plane for newer Multicluster-specific APIs. Discussions are ongoing to f
 | Meeting Agenda | https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY |
 
 ### Cluster Registry
-Common abstraction for a Registry of Clusters that can store per-Cluster metadata and supports Kubernetes label selection. The Cluster Registry can be deployed as a standalone or an aggregated API server and currently provides a Registry of Clusters without any actively reconciling Kubernetes controller. The API design is documented [here](https://github.com/kubernetes/community/blob/master/contributors/design-proposals/multicluster/cluster-registry/api-design.md) and is intended to serve as a basis to develop multicluster controllers.
+Common abstraction for a Registry of Clusters that can store per-Cluster metadata and supports Kubernetes label selection. The Cluster Registry can be deployed as a standalone or an aggregated API server and currently provides a Registry of Clusters without any actively reconciling Kubernetes controller. The API design is documented [here](https://git.k8s.io/design-proposals-archive/multicluster/cluster-registry/api-design.md) and is intended to serve as a basis to develop multicluster controllers.
 
 |  |  |
 | -------------- |:-------|

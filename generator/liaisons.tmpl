@@ -1,0 +1,45 @@
+{{ template "header" }}
+
+# Liaisons
+
+Steering Committee members are elected representatives of the Kubernetes
+project contributor base. It’s important that we make sure ensure a good
+flow of governance information and feedback loops to and from the 
+groups. With over 35 community groups and 100+ leads, it can be hard to 
+connect for communitywide consensus and to help with this, each group 
+is assigned a Steering Committee liaison. 
+
+Leads may call on liaisons to act as a point of contact from Steering, 
+be an advisor for governance or community health matters, and kick
+things off and consult throughout the process for [annual reports](committee-steering/governance/annual-reports.md).
+
+Liaisons do not make decisions for the community group or on behalf of
+the Steering Committee.
+
+Liaisons are assigned community groups at random (adjustments can be
+made, if needed) with each member having an (almost) equal distribution
+of SIGs, WGs and UGs. Each year after Steering Committee elections, new 
+members will assume one of the departing members groups. 
+
+| Community Group            | Steering Committee Liaison |
+| -------------------------- | -------------------------- |
+{{- range .Sigs}}
+{{- if .Contact.Liaison.Name }}
+| [SIG {{.Name}}]({{.Dir}}/README.md) | {{.Contact.Liaison.Name}} (**[@{{.Contact.Liaison.GitHub}}](https://github.com/{{.Contact.Liaison.GitHub}})**) |
+{{- end }}
+{{- end -}}
+{{- range .WorkingGroups}}
+{{- if .Contact.Liaison.Name }}
+| [WG {{.Name}}]({{.Dir}}/README.md) | {{.Contact.Liaison.Name}} (**[@{{.Contact.Liaison.GitHub}}](https://github.com/{{.Contact.Liaison.GitHub}})**) |
+{{- end -}}
+{{- end }}
+{{- range .UserGroups}}
+{{- if .Contact.Liaison.Name }}
+| [UG {{.Name}}]({{.Dir}}/README.md) | {{.Contact.Liaison.Name}} (**[@{{.Contact.Liaison.GitHub}}](https://github.com/{{.Contact.Liaison.GitHub}})**) |
+{{- end -}}
+{{- end }}
+{{- range .Committees}}
+{{- if .Contact.Liaison.Name }}
+| [Committee {{.Name}}]({{.Dir}}/README.md) | {{.Contact.Liaison.Name}} (**[@{{.Contact.Liaison.GitHub}}](https://github.com/{{.Contact.Liaison.GitHub}})**) |
+{{- end -}}
+{{- end }}

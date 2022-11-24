@@ -13,9 +13,13 @@ Focuses on supporting Windows Node and scheduling Windows containers on Kubernet
 The [charter](charter.md) defines the scope and governance of the Windows Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-windows) for the group will typically add invites for the following meetings to your calendar.*
+* Backlog Refinement  / Bug Triage Meeting: [Thursdays at 12:30 Eastern Time (ET)](https://zoom.us/j/94389601840?pwd=MCs2SEJQWG0zUWpBS3Nod0ZNMmVXQT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Time%20%28ET%29).
 * Regular SIG Meeting: [Tuesdays at 12:30 Eastern Time (ET)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Time%20%28ET%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Tjxzjjuy4SQsFSUVXZbvqVb64hjNAG5CQX8bK7Yda9w/edit#heading=h.kbz22d1yc431).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4).
+* Weekly CI Meeting: [Tuesdays at 12:15 Eastern Time (ET)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:15&tz=Eastern%20Time%20%28ET%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1j2XEKXNyGaSO0XZNkSQUliaT48ZQl6StLhrsVurJoco/edit#).
 
 ## Leadership
 
@@ -23,18 +27,21 @@ The [charter](charter.md) defines the scope and governance of the Windows Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Mark Rossetti (**[@marosset](https://github.com/marosset)**), Microsoft
-* Michael Michael (**[@michmike](https://github.com/michmike)**), VMware
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Ben Moss (**[@benmoss](https://github.com/benmoss)**), Pivotal
-* Deep Debroy (**[@ddebroy](https://github.com/ddebroy)**), Docker
+* Claudiu Belu (**[@claudiubelu](https://github.com/claudiubelu)**), Cloudbase Solutions
+* Jay Vyas (**[@jayunit100](https://github.com/jayunit100)**), VMware
+* James Sturtevant (**[@jsturtevant](https://github.com/jsturtevant)**), Microsoft
 
 ## Emeritus Leads
 
 * Patrick Lang (**[@PatrickLang](https://github.com/PatrickLang)**)
+* Ben Moss (**[@benmoss](https://github.com/benmoss)**)
+* Deep Debroy (**[@ddebroy](https://github.com/ddebroy)**)
+* Michael Michael (**[@michmike](https://github.com/michmike)**)
 
 ## Contact
 - Slack: [#sig-windows](https://kubernetes.slack.com/messages/sig-windows)
@@ -44,24 +51,30 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-windows-bugs](https://github.com/orgs/kubernetes/teams/sig-windows-bugs) - Bug Triage and Troubleshooting
     - [@kubernetes/sig-windows-feature-requests](https://github.com/orgs/kubernetes/teams/sig-windows-feature-requests) - Feature Requests
     - [@kubernetes/sig-windows-misc](https://github.com/orgs/kubernetes/teams/sig-windows-misc) - General Discussion
+- Steering Committee Liaison: Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**)
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-windows:
 ### windows-gmsa
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/windows-gmsa/master/OWNERS
+  - [kubernetes-sigs/windows-gmsa](https://github.com/kubernetes-sigs/windows-gmsa/blob/master/OWNERS)
+### windows-operational-readiness
+- **Owners:**
+  - [kubernetes-sigs/windows-operational-readiness](https://github.com/kubernetes-sigs/windows-operational-readiness/blob/main/OWNERS)
 ### windows-samples
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-samples/master/OWNERS
+  - [kubernetes-sigs/sig-windows-samples](https://github.com/kubernetes-sigs/sig-windows-samples/blob/master/OWNERS)
 ### windows-testing
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
+  - [kubernetes-sigs/windows-testing](https://github.com/kubernetes-sigs/windows-testing/blob/master/OWNERS)
 ### windows-tools
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
+  - [kubernetes-sigs/sig-windows-dev-tools](https://github.com/kubernetes-sigs/sig-windows-dev-tools/blob/master/OWNERS)
+  - [kubernetes-sigs/sig-windows-tools](https://github.com/kubernetes-sigs/sig-windows-tools/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Getting Started
 

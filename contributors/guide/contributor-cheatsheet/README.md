@@ -12,7 +12,7 @@ description: |
 <!-- omit in toc -->
 # Kubernetes Contributor Cheat Sheet
 
-[Deutsch](README-de.md) | [Français](README-fr.md) | [Bahasa Indonesia](README-id.md) | [日本語](README-ja.md) | [한국어](README-ko.md) | [Português](README-pt.md) | [中文](README-zh.md) | [Українська](README-uk.md) | [Italian](README-it.md)
+[Deutsch](README-de.md) | [Français](README-fr.md) | [Bahasa Indonesia](README-id.md) | [日本語](README-ja.md) | [한국어](README-ko.md) | [Português](README-pt.md) | [中文](README-zh.md) | [Українська](README-uk.md) | [Italian](README-it.md) | [हिन्दी](README-hi.md)
 
 A list of common resources when contributing to Kubernetes, tips, tricks, and
 common best practices used within the Kubernetes project. It is a "TL;DR" or
@@ -374,7 +374,7 @@ git rebase -i HEAD~3
 git push --force
 ```
 
-
+**Note**: you can also ask your reviewer to add the `tide/merge-method-squash` label to your PR (this can be done by a reviewer by issuing the command: `/label tide/merge-method-squash`), this will let the bot take care of squashing _all_ commits that are part of this PR and will not result in removal of the `LGTM` label (if already applied) or re-run of the CI tests.
 
 [contributor guide]: /contributors/guide/README.md
 [developer guide]: /contributors/devel/README.md
@@ -415,7 +415,7 @@ git push --force
 [GitHub workflow]: /contributors/guide/github-workflow.md#3-branch
 [squashing commits]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
 [owners]: /contributors/guide/owners.md
-[testing locally]: /contributors/guide/README.md#testing
+[testing locally]: /contributors/devel/sig-testing/testing.md
 [Atlassian git tutorial]: https://www.atlassian.com/git/tutorials
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [Security and Disclosure Information]: https://kubernetes.io/docs/reference/issues-security/security/

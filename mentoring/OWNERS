@@ -1,14 +1,11 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
-reviewers:
-  - parispittman
-  - nikhita
-  - markyjackson-taulia
 approvers:
-  - markyjackson-taulia # for community-bridge and meeting bosun
-  - parispittman
   - nikhita
   - sig-contributor-experience-leads
+emeritus_approvers:
+  - markyjackson-taulia # for community-bridge and meeting bosun
+  - parispittman # processes and programs and logos
 labels:
   - sig/contributor-experience
   - area/mentorship-planning

@@ -18,7 +18,7 @@ configurations that Kubernetes supports create `Scalability Envelope`:
 ![Scalability Envelope](./scalability-envelope.png)
 
 Some the properties of the envelope:
-1. It's NOT a kube, because dimensions are sometimes not independent.
+1. It's NOT a cube, because dimensions are sometimes not independent.
 1. It's NOT convex.
 1. As you move farther along one dimension, your cross-section wrt other
    dimensions gets smaller.

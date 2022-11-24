@@ -1,6 +1,6 @@
 # Community membership
 
-**Note:** This document is in progress
+**Note:** This document is a work in progress
 
 This doc outlines the various responsibilities of contributor roles in
 Kubernetes.  The Kubernetes project is subdivided into subprojects under SIGs.
@@ -8,10 +8,10 @@ Responsibilities for most roles are scoped to these subprojects.
 
 | Role | Responsibilities | Requirements | Defined by |
 | -----| ---------------- | ------------ | -------|
-| member | active contributor in the community | sponsored by 2 reviewers.  multiple contributions to the project. | Kubernetes GitHub org member. |
-| reviewer | review contributions from other members | history of review and authorship in a subproject | [OWNERS] file reviewer entry. |
-| approver | approve accepting contributions | highly experienced and active reviewer + contributor to a subproject | [OWNERS] file approver entry|
-| subproject owner | set direction and priorities for a subproject | demonstrated responsibility and excellent technical judgement for the subproject | [sigs.yaml] subproject [OWNERS] file *owners* entry |
+| Member | Active contributor in the community | Sponsored by 2 reviewers and multiple contributions to the project | Kubernetes GitHub org member|
+| Reviewer | Review contributions from other members | History of review and authorship in a subproject | [OWNERS] file reviewer entry |
+| Approver | Contributions acceptance approval| Highly experienced active reviewer and contributor to a subproject | [OWNERS] file approver entry|
+| Subproject owner | Set direction and priorities for a subproject | Demonstrated responsibility and excellent technical judgement for the subproject | [sigs.yaml] subproject [OWNERS] file *owners* entry |
 
 ## New contributors
 
@@ -40,22 +40,17 @@ remain active contributors to the community.
 
 - Enabled [two-factor authentication] on their GitHub account
 - Have made multiple contributions to the project or community.  Contribution may include, but is not limited to:
-    - Authoring or reviewing PRs on GitHub
+    - Authoring or reviewing PRs on GitHub. At least one PR must be **merged**.
     - Filing or commenting on issues on GitHub
     - Contributing to SIG, subproject, or community discussions (e.g. meetings, Slack, email discussion
       forums, Stack Overflow)
-- Subscribed to [kubernetes-dev@googlegroups.com]
+- Subscribed to [dev@kubernetes.io]
 - Have read the [contributor guide]
 - Actively contributing to 1 or more subprojects.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
     - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating
       on issues, etc.
-    - Sponsors must be reviewers or approvers in at least 1 OWNERS file either in any repo in the [Kubernetes org],
-    or the org they are sponsoring for.
-      - An approver/reviewer in the [Kubernetes org] may sponsor someone for the [Kubernetes org]
-      or any of the related [Kubernetes GitHub organizations]; as long as it's a project they're involved with.
-      - A sponsor who is an approver/reviewer in any of the related [Kubernetes GitHub organizations]
-      but not in the [Kubernetes org] can only sponsor someone for the orgs they are associated with.
+    - Sponsors must be reviewers or approvers in at least one OWNERS file within one of the [Kubernetes GitHub organizations]*.
     - Sponsors must be from multiple member companies to demonstrate integration across community.
 - **[Open an issue][membership request] against the kubernetes/org repo**
    - Ensure your sponsors are @mentioned on the issue
@@ -64,19 +59,21 @@ remain active contributors to the community.
 - Have your sponsoring reviewers reply confirmation of sponsorship: `+1`
 - Once your sponsors have responded, your request will be reviewed by the [Kubernetes GitHub Admin team], in accordance with their [SLO]. Any missing information will be requested.
 
+\* _Excluding the [Contributor Playground repository]. It is configured to allow
+non-org members to be included in OWNERS files for contributor tutorials and
+workshops._
+
+
 ### Kubernetes Ecosystem
 
 There are related [Kubernetes GitHub organizations], such as [kubernetes-sigs].
 We are currently working on automation that would transfer membership in the
 Kubernetes organization to any related orgs automatically, but such is not the
-case currently. If you are a Kubernetes org member, you are implicitly eligible
-for membership in related orgs, and can request membership when it becomes
-relevant, by creating a PR directly or [opening an issue][membership request]
+case currently. If you are a member of one of these Orgs, you are implicitly
+eligible for membership in related orgs, and can request membership when it
+becomes relevant, by creating a PR directly or [opening an issue][membership request]
 against the kubernetes/org repo, as above.
 
-However, if you are a member of any of the related
-[Kubernetes GitHub organizations] but not of the [Kubernetes org],
-you will need explicit sponsorship for your membership request.
 
 ### Responsibilities and privileges
 
@@ -128,7 +125,7 @@ an [OWNERS] file (for repos using the bot).
 The following apply to the part of codebase for which one would be a reviewer in
 an [OWNERS] file (for repos using the bot).
 
-- Tests are automatically run for PullRequests from members of the Kubernetes GitHub organization
+- Tests are automatically run for Pull Requests from members of the Kubernetes GitHub organization
 - Code reviewer status may be a precondition to accepting large code contributions
 - Responsible for project quality control via [code reviews]
   - Focus on code quality and correctness, including testing and factoring
@@ -236,7 +233,7 @@ an [elevated set of permissions]. These capabilities should not be used by those
 that are not familiar with the current state of the Kubernetes project.
 
 Therefore members with an extended period away from the project with no activity
-will be removed from the Kubernetes Github Organizations and will be required to
+will be removed from the Kubernetes GitHub Organizations and will be required to
 go through the org membership process again after re-familiarizing themselves
 with the current state.
 
@@ -249,12 +246,12 @@ measured by the CNCF [DevStats project].
 
 **Note:** Devstats does not take into account non-code contributions. If a
 non-code contributing member is accidentally removed this way, they may open an
-issue to quickly be re-instated. 
+issue to quickly be re-instated.
 
 
 After an extended period away from the project with no activity
 those members would need to re-familiarize themselves with the current state
-before being able to contribute effectively. 
+before being able to contribute effectively.
 
 
 [code reviews]: /contributors/guide/expectations.md#code-review
@@ -263,10 +260,11 @@ before being able to contribute effectively.
 [Kubernetes GitHub Admin team]: /github-management/README.md#github-administration-team
 [Kubernetes GitHub organizations]: /github-management#actively-used-github-organizations
 [Kubernetes org]: https://github.com/kubernetes
-[kubernetes-dev@googlegroups.com]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[dev@kubernetes.io]: https://groups.google.com/a/kubernetes.io/group/dev
 [kubernetes-sigs]: https://github.com/kubernetes-sigs
-[membership request]: https://github.com/kubernetes/org/issues/new?template=membership.md&title=REQUEST%3A%20New%20membership%20for%20%3Cyour-GH-handle%3E
-[membership template]: https://git.k8s.io/org/.github/ISSUE_TEMPLATE/membership.md
+[membership request]: https://github.com/kubernetes/org/issues/new?assignees=&labels=area%2Fgithub-membership&template=membership.yml&title=REQUEST%3A+New+membership+for+%3Cyour-GH-handle%3E
+[membership template]: https://github.com/kubernetes/org/blob/main/.github/ISSUE_TEMPLATE/membership.yml
+[Contributor Playground repository]: https://github.com/kubernetes-sigs/contributor-playground
 [New contributors]: /CONTRIBUTING.md
 [OWNERS]: /contributors/guide/owners.md
 [sigs.yaml]: /sigs.yaml

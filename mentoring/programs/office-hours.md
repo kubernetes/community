@@ -14,7 +14,5 @@ title: Office Hours/ Mentoring
     * [kops Office Hours - Biweekly Friday at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit)
     * [kubeadm Office Hours - Biweekly Wednesday at 09:00 PT (Pacific Time)](https://docs.google.com/document/d/130_kiXjG7graFNSnIAgtMS1G8zPDwpkshgfRYS0nggo/edit)
     * [minikube Office Hours - Biweekly Monday at 11:00 PT (Pacific Time)](https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit)
-* Network -
-    * [Service APIs Office Hours - Biweekly Wednesday at 15:00 PT (Pacific Time)](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit)
 * Testing -
     * [SIG Testing Office Hours - Biweekly Tuesday at 10:00 PT (Pacific Time)](https://bit.ly/k8s-sig-testing-notes)

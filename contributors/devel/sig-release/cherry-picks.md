@@ -24,9 +24,11 @@ branches.
   kubernetes `origin` fork on GitHub and making a pull request against a
   configured remote `upstream` that tracks
   `https://github.com/kubernetes/kubernetes.git`, including `GITHUB_USER`.
-- Have `hub` installed, which is most easily installed via
-  `go get github.com/github/hub` assuming you have a standard golang
-  development environment.
+- Have GitHub CLI (`gh`) installed following [installation instructions](https://github.com/cli/cli#installation).
+- A github personal access token which has permissions "repo" and "read:org".
+  Permissions are required for [gh auth login](https://cli.github.com/manual/gh_auth_login)
+  and not used for anything unrelated to cherry-pick creation process
+  (creating a branch and initiating PR).
 
 ## What Kind of PRs are Good for Cherry Picks
 
@@ -39,6 +41,9 @@ Again, the emphasis is on critical bug fixes, e.g.,
 - Memory corruption
 - Panic, crash, hang
 - Security
+
+A bugfix for a functional issue (not a data loss or security issue) that only
+affects an alpha feature does not qualify as a critical bug fix.
 
 If you are proposing a cherry pick and it is not a clear and obvious critical
 bug fix, please reconsider. If upon reflection you wish to continue, bolster
@@ -86,7 +91,16 @@ patch release branches.
     Please see our [recommended Git workflow](/contributors/guide/github-workflow.md#workflow).
 
   - You will need to run the cherry pick script separately for each patch
-    release you want to cherry pick to.
+    release you want to cherry pick to. Cherry picks should be applied to all
+    [active](https://github.com/kubernetes/website/blob/main/content/en/releases/patch-releases.md#detailed-release-history-for-active-branches)
+    release branches where the fix is applicable.
+
+  - If `GITHUB_TOKEN` is not set you will be asked for your github password:
+    provide the github [personal access token](https://github.com/settings/tokens) rather than your actual github
+    password. If you can securely set the environment variable `GITHUB_TOKEN`
+    to your personal access token then you can avoid an interactive prompt.
+    Refer [https://github.com/github/hub/issues/2655#issuecomment-735836048](https://github.com/github/hub/issues/2655#issuecomment-735836048)
+
 
 - Your cherry pick PR will immediately get the
   `do-not-merge/cherry-pick-not-approved` label.
@@ -113,9 +127,25 @@ pull requests on the `master` branch in that they:
 
 - Are by default expected to be `kind/bug` and `priority/critical-urgent`.
 
+- The original change to the `master` branch is expected to be merged for
+  some time and no related CI failures or test flakiness must be discovered.
+
+- The easy way to compare changes from the original change and cherry-pick
+  is to compare PRs `.patch` files. To generate the patch from
+  PR, just add the `.patch` to PR url. For example, for PR #100972 in
+  kubernetes repositry, ptach can be downloaded following this URL:
+
+  `https://github.com/kubernetes/kubernetes/pull/100972.patch`
+
 - Milestones must be set on the PR reflecting the milestone for the target
   release branch (for example, milestone v1.11 for a cherry pick onto branch
   `release-1.11`). This is normally done for you by automation.
+
+- A separate cherry pick pull request should be open for every applicable target
+  branch. This ensures that the fix will be present on every active branch for a
+  given set of patch releases. If a fix is only applicable to a subset of active
+  branches, it is helpful to note why that is the case on the parent pull
+  request or on the cherry pick pull requests to the applicable branches.
 
 - Have one additional level of review in that they must be approved
   specifically for cherry pick by branch approvers.
@@ -199,4 +229,4 @@ A note about the specific case in [#72860](https://github.com/kubernetes/kuberne
   unsupported
 
 [cherry-pick-script]: https://git.k8s.io/kubernetes/hack/cherry_pick_pull.sh
-[release-managers]: https://git.k8s.io/sig-release/release-managers.md
+[release-managers]: https://kubernetes.io/releases/release-managers/

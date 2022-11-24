@@ -40,6 +40,8 @@ OWNERS files are in YAML format and support the following keys:
     Allows the use case where `a/deep/nested/OWNERS` file prevents `a/OWNERS` file from having any
     effect on `a/deep/nested/bit/of/code`
 - `reviewers`: a list of GitHub usernames or aliases that are good candidates to `/lgtm` a PR
+- `emeritus_approvers` a list of GitHub usernames of folks who were previously in the `approvers` section,
+   but are no longer actively approving code. please see [below](#emeritus) for more details.
 
 The above keys constitute a *simple OWNERS configuration*.
 
@@ -53,8 +55,8 @@ approvers:
   - alice
   - bob     # this is a comment
 reviewers:
-  - alice
-  - carol   # this is another comment
+  - carol
+  - david   # this is another comment
   - sig-foo # this is an alias
 ```
 
@@ -115,18 +117,38 @@ emeritus_approvers:
 - emily    # 2019-01-05
 ```
 
+#### Cleanup
+
+In addition to the Emeritus process above, from time to time, it is necessary
+to prune inactive folks from OWNERS files. A core principle in maintaining a
+healthy community is encouraging active participation. Those listed in OWNERS files
+have a higher activity requirement, as they directly impact the ability of others
+to contribute. If anyone listed in OWNERS files should become inactive, here is
+what we will do:
+- if the person is in reviewers section, their GitHub id will be removed from the section
+- if the person is in approvers section, their GitHub id will be moved the `emeritus_approvers` section.
+
+
+An inactive person (listed in an OWNERS file) is defined as someone with less than
+10 Devstats recorded  contributions within the past year, as shown by this [dashboard].
+This is a  conservative metric but should ensure only the removal of the most inactive
+folks from a OWNERS file.
+- PR comments are less than 10 and Devstats count is less than 10 for a year
+
+
+
 ### OWNERS_ALIASES
 
-Each repo may contain at its root an OWNERS_ALIAS file.
+Each repo may contain at its root an OWNERS_ALIASES file.
 
-OWNERS_ALIAS files are in YAML format and support the following keys:
+OWNERS_ALIASES files are in YAML format and support the following keys:
 
 - `aliases`: a mapping of alias name to a list of GitHub usernames
 
 We use aliases for groups instead of GitHub Teams, because changes to GitHub Teams are not
 publicly auditable.
 
-A sample OWNERS_ALISES file looks like:
+A sample OWNERS_ALIASES file looks like:
 
 ```yaml
 aliases:
@@ -317,3 +339,4 @@ Good examples of OWNERS usage:
 [chromium-owners]: https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md
 [github-codeowners]: https://help.github.com/articles/about-codeowners/
 [pr-workflow]: /contributors/guide/pull-requests.md#the-testing-and-merge-workflow
+[dashboard]: https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All&var-repo_name=kubernetes%2Fkubernetes&var-country_name=All

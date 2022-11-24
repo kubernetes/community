@@ -11,6 +11,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 Serve as a community resource for advising big data and data science related software projects on techniques and best practices for integrating with Kubernetes. Represents the concerns of users from big data communities to Kubernetes for the purposes of driving new features and other enhancements, based on big data use cases.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-ug-big-data) for the group will typically add invites for the following meetings to your calendar.*
 * Regular User Group Meeting: [Wednesdays at 18:00 UTC](https://zoom.us/my/ug.big.data) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit).
   * [Meeting recordings](https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit).
@@ -27,6 +28,7 @@ Serve as a community resource for advising big data and data science related sof
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/ug%2Fbig-data)
 - GitHub Teams:
     - [@kubernetes/ug-big-data](https://github.com/orgs/kubernetes/teams/ug-big-data) - General Discussion
+- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 ### Goals

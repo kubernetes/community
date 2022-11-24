@@ -13,16 +13,17 @@ Developing and sustaining a healthy community of contributors is critical to sca
 The [charter](charter.md) defines the scope and governance of the Contributor Experience Special Interest Group.
 
 ## Meetings
-* Regular SIG Meeting: [Wednesdays at 9:30 PT (Pacific Time)](https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex) for the group will typically add invites for the following meetings to your calendar.*
+* Regular SIG Meeting: [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09) (weekly alternating slack/zoom). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1CBz8qV_mD6rbDmTsMuosTOQGRXGhN3d8UrcULUI6Vkw/edit).
-  * [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 
 ## Leadership
 
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Jorge Castro (**[@castrojo](https://github.com/castrojo)**), VMware
+* Josh Berkus (**[@jberkus](https://github.com/jberkus)**), Red Hat
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
 
 ### Technical Leads
@@ -35,6 +36,8 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Emeritus Leads
 
 * Elsie Phillips (**[@Phillels](https://github.com/Phillels)**)
+* Alison Dowdney (**[@alisondy](https://github.com/alisondy)**)
+* Jorge Castro (**[@castrojo](https://github.com/castrojo)**)
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**)
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
 
@@ -44,9 +47,9 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcontributor-experience)
 - GitHub Teams:
     - [@kubernetes/sig-contributor-experience](https://github.com/orgs/kubernetes/teams/sig-contributor-experience) - General Discussion
-    - [@kubernetes/sig-contributor-experience-apac-coordinators](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-apac-coordinators) - APAC Coordinator Team
     - [@kubernetes/sig-contributor-experience-leads](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-leads) - Chairs and Technical Leads
     - [@kubernetes/sig-contributor-experience-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-contributor-experience-pr-reviews) - PR Reviews
+- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
 ## Subprojects
 
@@ -54,42 +57,45 @@ The following [subprojects][subproject-definition] are owned by sig-contributor-
 ### community
 Owns and manages overall community repo, including community group documentation and operations.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/community/master/OWNERS
+  - [kubernetes/community](https://github.com/kubernetes/community/blob/master/OWNERS)
 ### community-management
 Manages operations and policy for upstream community group communication platforms.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/discuss-theme/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
-- **Meetings:**
-  - APAC Coordinator Meeting: [Thursdays at 5:00 UTC](https://zoom.us/j/144440337?pwd=VEVBejdPYkE2MGdUSDZZZnVlNFdrdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5:00&tz=UTC).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/).
-    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
+  - [kubernetes-sigs/discuss-theme](https://github.com/kubernetes-sigs/discuss-theme/blob/master/OWNERS)
+  - [kubernetes/community/communication](https://github.com/kubernetes/community/blob/master/communication/OWNERS)
 ### contributor-comms
 Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/contributor-tweets/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/community/master/communication/marketing-team/OWNERS
+  - [kubernetes-sigs/contributor-tweets](https://github.com/kubernetes-sigs/contributor-tweets/blob/master/OWNERS)
+  - [kubernetes-sigs/lwkd](https://github.com/kubernetes-sigs/lwkd/blob/main/OWNERS)
+  - [kubernetes/community/communication/contributor-comms](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/OWNERS)
 - **Meetings:**
   - Contributor Comms - Upstream Marketing Team Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/596959769?pwd=TURBNlZPb3BEWVFmbWlCYXlMVVJiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1KDoqbw2A6W7rLSbIRuOlqH8gkoOnp2IHHuV9KyJDD2c/edit).
-    - [Meeting recordings](https://www.youtube.com/watch?v=EMGUdOKwSns&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### contributors-documentation
 writes and maintains documentation around contributing to Kubernetes, including the Contributor's Guide, Developer's Guide, and contributor website.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/contributor-site/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
+  - [kubernetes/community/contributors/guide](https://github.com/kubernetes/community/blob/master/contributors/guide/OWNERS)
+  - [kubernetes/contributor-site](https://github.com/kubernetes/contributor-site/blob/master/OWNERS)
 ### devstats
 Maintains and updates https://k8s.devstats.cncf.io, including taking requests for new charts.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
+  - [kubernetes/community/sig-contributor-experience/devstats](https://github.com/kubernetes/community/blob/master/sig-contributor-experience/devstats/OWNERS)
 - **Contact:**
   - Slack: [#devstats](https://kubernetes.slack.com/messages/devstats)
+### elections
+Oversees running elections in the community. Maintains documentation and software for elections.
+- **Owners:**
+  - [kubernetes/community/elections](https://github.com/kubernetes/community/blob/master/elections/OWNERS)
+- **Contact:**
+  - Slack: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)
 ### events
 Creates and runs contributor-focused events, such as the Contributor Summit.  Event Teams are part of this subproject.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
+  - [kubernetes/community/events](https://github.com/kubernetes/community/blob/master/events/OWNERS)
 - **Contact:**
-  - Slack: [#events](https://kubernetes.slack.com/messages/events)
+  - Slack: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)
 - **Meetings:**
   - Office Hours European Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 09:00 ET (Eastern Time)](https://hackmd.io/@k8s/office-hours) (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=ET%20%28Eastern%20Time%29).
   - Office Hours Western Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 12:00 ET (Eastern Time)]() (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=ET%20%28Eastern%20Time%29).
@@ -98,40 +104,35 @@ Creates and runs contributor-focused events, such as the Contributor Summit.  Ev
 ### github-management
 Manages and controls Github permissions, repos, and groups, including Org Membership.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-client/.github/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-csi/.github/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes-sigs/.github/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/.github/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
+  - [kubernetes-client/.github](https://github.com/kubernetes-client/.github/blob/master/OWNERS)
+  - [kubernetes-csi/.github](https://github.com/kubernetes-csi/.github/blob/master/OWNERS)
+  - [kubernetes-sigs/.github](https://github.com/kubernetes-sigs/.github/blob/master/OWNERS)
+  - [kubernetes-sigs/maintainers](https://github.com/kubernetes-sigs/maintainers/blob/main/OWNERS)
+  - [kubernetes/.github](https://github.com/kubernetes/.github/blob/master/OWNERS)
+  - [kubernetes/community/github-management](https://github.com/kubernetes/community/blob/master/github-management/OWNERS)
+  - [kubernetes/kubernetes-template-project](https://github.com/kubernetes/kubernetes-template-project/blob/master/OWNERS)
+  - [kubernetes/org](https://github.com/kubernetes/org/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#github-management](https://kubernetes.slack.com/messages/github-management)
 - **Meetings:**
-  - GitHub Administration Subproject: [Thursdays at 09:30 PT (Pacific Time)](https://zoom.us/j/442435463?pwd=Rk1PWWpSSTJDaWJKdzRYb2EyTlkvZz09) (Monthly on 4th Thursday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:30&tz=PT%20%28Pacific%20Time%29).
+  - GitHub Administration Subproject: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/442435463?pwd=Rk1PWWpSSTJDaWJKdzRYb2EyTlkvZz09) (Monthly on 4th Thursday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
-### k8s.io
-Creates and maintains shortcuts and automation apps running in the k8s.io domain.
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/k8s.io/master/OWNERS
 ### mentoring
 Oversees and develops programs for helping contributors ascend the contributor ladder, including the New Contributor Workshops, Meet Our Contributors, and other programs.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
-- **Meetings:**
-  - Mentoring Subproject Meeting (NA/APAC): [Mondays at 4:00 PT](https://zoom.us/j/95894431386?pwd=RFdmQzlZeVZDVWJzcFVXZXR5djNwUT09) (Biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=4:00&tz=PT).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1XiXjDWCc087VKqX2b6LMGRnlaRyLYGh2-eWQQr6dAmc/edit).
-    - [Meeting recordings](https://www.youtube.com/watch?v=Cqf9dIiS6Ig&list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
+  - [kubernetes-sigs/contributor-katacoda](https://github.com/kubernetes-sigs/contributor-katacoda/blob/main/OWNERS)
+  - [kubernetes-sigs/contributor-playground](https://github.com/kubernetes-sigs/contributor-playground/blob/master/OWNERS)
+  - [kubernetes/community/mentoring](https://github.com/kubernetes/community/blob/master/mentoring/OWNERS)
 ### slack-infra
 Creates and maintains tools and automation for Kubernetes Slack.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/slack-infra/master/OWNERS
+  - [kubernetes-sigs/slack-infra](https://github.com/kubernetes-sigs/slack-infra/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#slack-infra](https://kubernetes.slack.com/messages/slack-infra)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Relevant Presentations
@@ -156,7 +157,9 @@ This is the work we've done this past cycle and plan to work on in the future:
 
 We give our SIG status at every KubeCon, here are our most current talks:
 
-- [Introdution to Contributor Experience 2020](https://docs.google.com/presentation/d/15CaNvfNRDjAaJ1gRmPq2thti5so5m7x5XTCN-NFlPOc/edit?usp=sharing) (Slides only, video will be added once it's published)
+- [SIG Contributor Experience Deep Dive, North America 2021](https://youtu.be/QOiyWWFjG5Q) - Alison Dowdney, Christoph Blecker
+- [SIG Contributor Experience Deep Dive, Europe 2021](https://youtu.be/vPK3QmVOE4Y) - Bob Killen, Alison Dowdney, Christoph Blecker, Nikhita Raghunath
+- [Introdution to Contributor Experience 2020](https://youtu.be/VeCMQoNHFMU) - Bob Killen, Jorge Castro 
 - [Introduction to Contributor Experience 2019](https://www.youtube.com/watch?v=U1YJlgRLbKk) - Elsie Phillips, Paris Pittman
 - [Contributor Experience Deep Dive 2019](https://www.youtube.com/watch?v=0d97Wna4qOs) - Christoph Blecker, Nikhita Raghunath
 

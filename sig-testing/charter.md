@@ -34,8 +34,6 @@ health of the project.
   [peribolos] and [label_sync]
 - Tools that facilitate local testing of kubernetes such as [greenhouse]
   and [kind]
-- Jobs that automate away project toil, such as [periodic jobs that run as
-  @fejta-bot]
 - Ensuring all of the above is kept running on a best effort basis
 - Tools, frameworks and libraries that make it possible to write tests against
   kubernetes such as e2e\* or integration test frameworks.
@@ -75,12 +73,12 @@ time.
 - **Medium risk** changes may impact existing contributor workflows, should be
   easy to roll back, and may impact all of the project's repos. These should
   be shared with SIG Contributor Experience, may require a lazy consensus
-  issue with [kubernetes-dev@] notice.
+  issue with [dev@kubernetes.io] notice.
 
 - **High risk changes** likely break existing contributor workflows, may be
   difficult to roll back, and likely impact all of the project's repos. These
   require a consultation with SIG Contributor Experience, and a lazy consensus
-  issue with [kubernetes-dev@] notice.
+  issue with [dev@kubernetes.io] notice.
 
 ### Out of Scope
 
@@ -97,7 +95,6 @@ This sig adheres to the Roles and Organization Management outlined in
 
 ### Deviations from [sig-governance]
 
-- Chairs also fulfill the role of Tech Lead
 - Proposing and making decisions _MAY_ be done without the use of KEPS so long
   as the decision is documented in a linkable medium. We prefer to use issues
   on [kubernetes/test-infra] to document technical decisions, and mailing list
@@ -110,12 +107,10 @@ This sig adheres to the Roles and Organization Management outlined in
 
 Subprojects are created by Tech Leads following the process defined in [sig-governance]
 
-
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 [lazy consensus]: http://en.osswiki.info/concepts/lazy_consensus
 
-[periodic jobs that run as @fejta-bot]: https://git.k8s.io/test-infra/config/jobs/kubernetes/test-infra/fejta-bot-periodics.yaml
 [boskos]: https://git.k8s.io/test-infra/boskos
 [ghproxy]: https://git.k8s.io/test-infra/ghproxy
 [greenhouse]: https://git.k8s.io/test-infra/greenhouse
@@ -133,6 +128,6 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 [triage]: https://go.k8s.io/triage
 
 [Release Team test-infra role]: https://git.k8s.io/sig-release/release-team/role-handbooks/test-infra
-[kubernetes-dev@]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[dev@kubernetes.io]: https://groups.google.com/a/kubernetes.io/group/dev
 [kubernetes-sig-testing@]: https://groups.google.com/forum/#!forum/kubernetes-sig-testing
 [kubernetes/test-infra]: https://git.k8s.io/test-infra

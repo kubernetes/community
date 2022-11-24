@@ -5,7 +5,7 @@ Getting started locally
 
 - [Requirements](#requirements)
     - [Linux](#linux)
-    - [Docker](#docker)
+    - [Container Runtime](#container-runtime)
     - [etcd](#etcd)
     - [go](#go)
     - [OpenSSL](#openssl)
@@ -27,11 +27,9 @@ Getting started locally
 
 Not running Linux? Consider running [Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/), or on a cloud provider like [Google Compute Engine](https://kubernetes.io/docs/setup/production-environment/turnkey/gce/).
 
-### Docker
+### Container Runtime
 
-You will need [Docker](https://docs.docker.com/get-docker/) installed, at least version 17.03. Check the [Kubernetes release notes](https://kubernetes.io/docs/setup/release/notes/) for information about supported Docker versions.
-
-Ensure the Docker daemon is running and can be contacted with `docker ps`. Some of the Kubernetes components need to run as root, which normally works fine with docker.
+You will need a [Container Runtime](https://kubernetes.io/docs/setup/production-environment/container-runtimes/) like [Containerd](https://github.com/containerd/containerd) or [CRI-O](https://github.com/cri-o/cri-o) installed and running.
 
 ### etcd
 
@@ -52,7 +50,7 @@ The [CFSSL](https://cfssl.org/) binaries (cfssl, cfssljson) must be installed an
 The easiest way to get it is to run these shell commands:
 
 ```sh
-go get -u github.com/cloudflare/cfssl/cmd/...
+go install github.com/cloudflare/cfssl/cmd/...@latest
 PATH=$PATH:$GOPATH/bin
 ```
 
@@ -67,6 +65,11 @@ git clone --depth=1 https://github.com/kubernetes/kubernetes.git
 The `--depth=1` parameter is optional and will ensure a smaller download.
 
 ## Starting the cluster
+
+Set the endpoint for container runtime e.g. containerd
+```sh
+export CONTAINER_RUNTIME_ENDPOINT="unix:///run/containerd/containerd.sock"
+```
 
 In a separate tab of your terminal, run the following:
 
@@ -153,7 +156,7 @@ change the service-cluster-ip-range flag to something else.
 
 ### I cannot create a replication controller with replica size greater than 1!  What gives?
 
-You are running a single node setup.  This has the limitation of only supporting a single replica of a given pod.  If you are interested in running with larger replica sizes, we encourage you to try the local vagrant setup or one of the cloud providers.
+You are running a single node setup.  This has the limitation of only supporting a single replica of a given pod.  If you are interested in running with larger replica sizes, we encourage you to try Kind or one of the cloud providers.
 
 ### I changed Kubernetes code, how do I run it?
 

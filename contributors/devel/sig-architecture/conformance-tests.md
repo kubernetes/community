@@ -67,6 +67,7 @@ Examples of features which are not currently eligible for conformance tests:
 - cloud-provider-specific features, eg: GCE monitoring, S3 Bucketing, etc.
 - anything that requires a non-default admission plugin
 - features that are pending deprecation, eg: componentstatus
+- any endpoints that are operational tools, rather than application-oriented, should not be part of conformance, eg: apiserver logs. 
 
 Conformance tests are intended to be stable and backwards compatible according to
 the standard API deprecation policies. Therefore any test that relies on specific
@@ -106,7 +107,7 @@ Generally speaking, the goals are to:
 - Make sure tests that are already passing remain passing. If new OS-specific
 functionality is added, it should be in a new test.
 - Ensure that new tests covering Linux-specific functionality are tagged with `[LinuxOnly]`
-(see: [Kinds of Tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests),
+(see: [Kinds of Tests](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests.md#kinds-of-tests)).
 - Give future reviewers a reference to an active issue or documentation clarifying why a test
 cannot run on Windows.
 
@@ -114,7 +115,7 @@ The tests that are running today:
 
 - Rely only on container images that already have a multi-architecture manifest
 including Windows versions, or have been ported by SIG-Windows
-(see [kubernetes-sigs/windows-testing/images](https://github.com/kubernetes-sigs/windows-testing/tree/master/images)
+(see [kubernetes-sigs/windows-testing/images](https://github.com/kubernetes-sigs/windows-testing/tree/master/images)).
 - Do not depend on any functionality that is different or not available on Windows. The full list
 is available in the Windows Kubernetes docs under [api](https://kubernetes.io/docs/setup/windows/intro-windows-in-kubernetes/#api).
 A brief summary is included here as a starting point. If the docs are insufficient
@@ -134,12 +135,11 @@ implicitly by Docker or ContainerD, not by the kubelet. Do not check properties 
 - Storage
   - File permissions cannot be set on volumes. Tests using `DefaultMode` or `Mode` and checking the resulting permissions will fail.
   - Only NTFS volumes are supported. Volume mounts specifying other filesystems (ext4, xfs) or mediums (memory) are not supported
-  - Mappings of individual files are not supported. Tests which are mounting or expecting such files to be mounted (including /etc/hosts, /etc/resolv.conf, /dev/termination-log) will fail.
   - Bidirectional mount propagation, specifically propagating mounts from a container to host, does not work.
 - Networking
-  - Pods set `HostNetwork=true`. Is not supported on Windows, and the Pod will not start.
+  - Pods set `HostNetwork=true`. For Windows, this can only be enabled for Windows Privileged Containers. In other cases, the Pod will not start.
   - Network and DNS settings must be passed through CNI. Windows does not use `/etc/resolv.conf`, so tests should not rely on reading that file to check DNS settings.
-    - If you to check network settings such as dns search lists, please use [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) to output needed data from the container.
+    - If you want to check network settings such as dns search lists, please use [agnhost](https://github.com/kubernetes/kubernetes/tree/master/test/images/agnhost) to output needed data from the container.
   - Windows treats all DNS lookups with a `.` to be FQDN, not PQDN. For example `kubernetes` will resolve as a PQDN,
   but `kubernetes.default` will be resolved as a FQDN and fail.
   - ICMP only works between pods on the same network, and are not routable to external networks. TCP/UDP are routable.
@@ -188,14 +188,10 @@ appropriate endpoint and credentials.
 2. Create your kind node image:
 
 ```sh
-# Without bazel
 kind build node-image
-
-# Or with bazel
-kind build node-image --type bazel
 ```
 
-3. Create your kind e2e cluster config kind-config-yaml:
+3. Create your kind e2e cluster config kind-config.yaml:
 
 ```yaml
 # necessary for conformance
@@ -225,21 +221,13 @@ kind create cluster --config kind-config.yaml --image kindest/node:latest -v4
 6. Create your e2e Kubernetes binary (from your Kubernetes src code):
 
 ```sh
-# Without bazel
 make WHAT="test/e2e/e2e.test"
-
-# Or with bazel
-bazel build //test/e2e:e2e.test
 ```
 
 7. Execute your tests:
 
 ```sh
-# Without bazel
 ./_output/bin/e2e.test -context kind-kind -ginkgo.focus="\[sig-network\].*Conformance" -num-nodes 2
-
-# Or with bazel
-./bazel-bin/test/e2e/e2e.test -context kind-kind -ginkgo.focus="\[sig-network\].*Conformance" -num-nodes 2
 ```
 
 ### Running Conformance Tests With kubetest
@@ -288,8 +276,7 @@ this approval process:
 - changes to the conformance criteria or process
 - changes to the conformance infrastructure code
 
-There are six columns in this board. New PRs should enter in the To Triage
-column, and [Conformance test reviewers] will pick it up from there and move it
+New PRs should enter in the To Triage column, and [Conformance test reviewers] will pick it up from there and move it
 through the process. New end-to-end tests that are intended to be promoted to
 conformance tests in the future may be added to this board, but they will not
 move all the way to the Needs Approval column, as that is intended only for the
@@ -312,9 +299,8 @@ To promote a test to the conformance test suite, open a PR as follows:
     than the `framework.It()` function
   - adds a comment immediately before the `ConformanceIt()` call that includes
     all of the required [conformance test comment metadata]
-  - run `bazel build //test/conformance:list_conformance_tests` then
-    `cp bazel-bin/test/conformance/conformance.yaml test/conformance/testdata`
-    which adds the test name to the [conformance.yaml] file
+  - run `hack/update-conformance-yaml.sh` which adds the test name to the [conformance.yaml] file
+    More information [here](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/README.md)
 - add the PR to SIG Architecture's [Conformance Test Review board] in the To
   Triage column
 
@@ -374,7 +360,7 @@ Conformance test results, by provider and releases, can be viewed in the
 [testgrid conformance dashboard]. If you wish to contribute test results
 for your provider, please see the [testgrid conformance README]
 
-[kubernetes versioning policy]: /contributors/design-proposals/release/versioning.md#supported-releases-and-component-skew
+[kubernetes versioning policy]: https://git.k8s.io/design-proposals-archive/release/versioning.md#supported-releases-and-component-skew
 [Conformance Test Review board]: https://github.com/orgs/kubernetes/projects/9
 [Conformance test reviewers]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS
 [conformance test requirements]: #conformance-test-requirements

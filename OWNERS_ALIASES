@@ -6,8 +6,7 @@ aliases:
   sig-apps-leads:
     - janetkuo
     - kow3ns
-    - mattfarina
-    - prydonius
+    - soltysh
   sig-architecture-leads:
     - derekwaynecarr
     - dims
@@ -17,40 +16,48 @@ aliases:
     - enj
     - liggitt
     - mikedanese
-    - tallclair
+    - ritazh
   sig-autoscaling-leads:
     - gjtempleton
     - mwielgus
   sig-cli-leads:
+    - KnVerey
     - eddiezane
-    - pwittrock
     - seans3
     - soltysh
   sig-cloud-provider-leads:
     - andrewsykim
     - cheftako
+    - nckturner
   sig-cluster-lifecycle-leads:
     - fabriziopandini
     - justinsb
     - neolit123
-    - timothysc
+    - vincepri
   sig-contributor-experience-leads:
-    - castrojo
     - cblecker
+    - jberkus
     - mrbobbytables
     - nikhita
   sig-docs-leads:
-    - irvifa
+    - divya-mohan0209
     - jimangel
-    - kbarnard10
     - kbhawkey
+    - natalisucks
     - onlydole
+    - reylejano
     - sftim
+    - tengqm
   sig-instrumentation-leads:
-    - brancz
     - dashpole
+    - dgrisonnet
     - ehashman
     - logicalhan
+  sig-k8s-infra-leads:
+    - ameukam
+    - dims
+    - spiffxp
+    - thockin
   sig-multicluster-leads:
     - jeremyot
     - pmorie
@@ -62,23 +69,22 @@ aliases:
     - dchen1107
     - derekwaynecarr
   sig-release-leads:
-    - alejandrox1
-    - hasheddan
+    - cpanato
+    - jeremyrickard
     - justaugustus
+    - puerco
     - saschagrunert
   sig-scalability-leads:
-    - mm4tt
+    - marseel
     - shyamjvs
     - wojtek-t
   sig-scheduling-leads:
     - Huang-Wei
     - ahg-g
+    - alculquicondor
   sig-security-leads:
-    - iancoldwater
+    - IanColdwater
     - tabbysable
-  sig-service-catalog-leads:
-    - jberkhahn
-    - jhvhs
   sig-storage-leads:
     - jsafrane
     - msau42
@@ -86,26 +92,35 @@ aliases:
     - xing-yang
   sig-testing-leads:
     - BenTheElder
+    - alvaroaleman
+    - aojea
+    - cjwagner
+    - michelle192837
+    - pohly
     - spiffxp
     - stevekuznetsov
   sig-ui-leads:
     - floreks
-    - jeefy
     - maciaszczykm
+    - shu-mutou
   sig-usability-leads:
     - hpandeycodeit
+    - morengab
     - tashimi
   sig-windows-leads:
-    - benmoss
-    - ddebroy
+    - claudiubelu
+    - jayunit100
+    - jsturtevant
     - marosset
-    - michmike
   wg-api-expression-leads:
     - apelisse
     - kwiesmueller
-  wg-component-standard-leads:
-    - mtaufen
-    - stealthybox
+  wg-batch-leads:
+    - Huang-Wei
+    - ahg-g
+    - endocrimes
+    - soltysh
+    - swatisehgal
   wg-data-protection-leads:
     - xing-yang
     - yuxiangqian
@@ -113,25 +128,19 @@ aliases:
     - cantbewong
     - cindyxing
     - dejanb
-  wg-k8s-infra-leads:
-    - bartsmykla
-    - dims
-    - spiffxp
   wg-multitenancy-leads:
     - srampal
     - tashimi
-  wg-naming-leads:
-    - celestehorgan
-    - jdumars
-    - justaugustus
-    - zacharysarah
   wg-policy-leads:
-    - ericavonb
-    - hannibalhuang
+    - JimBugwadia
+    - rficcaglia
   wg-reliability-leads:
     - deads2k
     - stevekuznetsov
     - wojtek-t
+  wg-structured-logging-leads:
+    - pohly
+    - serathius
   ug-big-data-leads:
     - erikerlandson
     - foxish
@@ -142,35 +151,34 @@ aliases:
     - mylesagray
     - phenixblue
   committee-code-of-conduct:
-    - AevaOnline
-    - celestehorgan
-    - karenhchu
-    - tashimi
-    - tpepper
-  committee-product-security:
+    - detiber
+    - endocrimes
+    - hlipsig
+    - jeremyrickard
+    - salaxander
+  committee-security-response:
     - cjcullen
-    - cji
+    - enj
     - joelsmith
     - lukehinds
     - micahhausler
-    - swamymsft
+    - tabbysable
     - tallclair
   committee-steering:
+    - BenTheElder
     - cblecker
-    - derekwaynecarr
-    - dims
-    - liggitt
+    - cpanato
+    - justaugustus
     - mrbobbytables
-    - nikhita
-    - parispittman
+    - palnabarun
+    - tpepper
 ## BEGIN CUSTOM CONTENT
   provider-aws:
-    - d-nishi
     - justinsb
-    - kris-nova
+    - nckturner
+    - wongma7
   provider-azure:
     - craiglpeters
-    - justaugustus
     - feiskyer
     - khenidak
   provider-gcp:

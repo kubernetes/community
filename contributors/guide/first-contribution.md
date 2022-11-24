@@ -30,7 +30,7 @@ Here are some things you can do today to get started contributing:
 * Help triage issues
 
 If the above suggestions don't appeal to you, you can browse the 
-[Contributor Role Board] to see who is looking for help. Those interested 
+[issues labeled as a good first issue] to see who is looking for help. Those interested 
 in contributing without writing code can also find ideas in the 
 [Non-Code Contributions Guide].
 
@@ -69,7 +69,7 @@ to Kubernetes. Check out the [list of SIGs][sl] for contact information.
 
 A SIG is an open, community effort.
 
-Anybody is welcome to jump into a SIG and begin fixing issues, critiqe design 
+Anybody is welcome to jump into a SIG and begin fixing issues, critique design 
 proposals, and review code. SIGs have regular [video meetings] which everyone 
 is welcome to attend. Each SIG has a Slack channel, meeting notes, and their own 
 documentation that is useful to read and understand. There is an entire SIG 
@@ -99,7 +99,7 @@ by typing the following:
 /sig network
 ```
 
-Follow the link in the SIG name column to reach each SIG'ss README. 
+Follow the link in the SIG name column to reach each SIG's README. 
 
 Most SIGs will have a set of GitHub Teams with tags that can be mentioned in a 
 comment on issues and pull requests for higher visibility.  If you are not sure 
@@ -127,7 +127,7 @@ subrepository. For example, a documentation issue should be opened in
 [kubernetes/website]. Make sure to adhere to the prompted submission guidelines 
 while opening an issue. Check the [issue triage guide] for more information.
 
-[Contributor Role Board]: https://discuss.kubernetes.io/c/contributors/role-board
+[issues labeled as a good first issue]: https://go.k8s.io/good-first-issue
 [k8s-ci-robot]: https://github.com/k8s-ci-robot
 [Non-Code Contributions Guide]: ./non-code-contributions.md
 [multiple repositories]: https://github.com/kubernetes/

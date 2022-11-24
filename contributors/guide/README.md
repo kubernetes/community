@@ -12,27 +12,28 @@ description:
 # Getting Started
 
 - [Getting Started](#getting-started)
-- [Welcome](#welcome)
-- [Contributor Guide](#contributor-guide)
-- [Prerequisites](#prerequisites)
-  - [Sign the CLA](#sign-the-cla)
-  - [Code of Conduct](#code-of-conduct)
-  - [Setting Up Your Developer Environment](#setting-up-your-development-environment)
-  - [Community Expectations and Roles](#community-expectations-and-roles)
-- [Contributor Playground](#kubernetes-contributor-playground)
-  - [Contributor Workshops](#contributor-workshops)
-- [Community](#community)
-  - [Communication](#communication)
-  - [Events](#events)
-  - [Meetups](#meetups)
-  - [Mentorship](#mentorship)
-- [Advanced Topics](#advanced-topics)
+  - [Welcome](#welcome)
+  - [Contributor Guide](#contributor-guide)
+  - [Prerequisites](#prerequisites)
+    - [Create a GitHub account](#create-a-github-account)
+    - [Sign the CLA](#sign-the-cla)
+    - [Code of Conduct](#code-of-conduct)
+    - [Setting up your development environment](#setting-up-your-development-environment)
+    - [Community Expectations and Roles](#community-expectations-and-roles)
+  - [Kubernetes Contributor Playground](#kubernetes-contributor-playground)
+    - [Contributor Workshops](#contributor-workshops)
+  - [Community](#community)
+    - [Communication](#communication)
+    - [Events](#events)
+    - [Meetups](#meetups)
+    - [Mentorship](#mentorship)
+  - [Advanced Topics](#advanced-topics)
 
 ## Welcome
 
 Have you ever wanted to contribute to the coolest cloud technology?
-This guide will help you understand the overall organization of the Kubernetes
-project, and direct you to the best places to get started contributing. You'll
+This guide will help you understand the overall organization of the [Kubernetes
+project](https://kubernetes.io/), and direct you to the best places to get started contributing. You'll
 be able to pick up issues, write code to fix them, and get your work reviewed
 and merged.
 
@@ -59,6 +60,10 @@ Before submitting code to Kubernetes, you should first complete the following
 prerequisites. These steps are checked automatically by [a bot] during your
 first submission.  Completing these steps will make your first contribution
 easier: 
+
+### Create a GitHub account
+
+Before you get started, you will need to [signup](http://github.com/signup) for a GitHub user account. 
 
 ### Sign the CLA
 
@@ -103,7 +108,7 @@ outline of the video content can be found [here].
 ## Community
 
 Kubernetes is a large, lively, friendly open-source community. As many open
-ource projects often do, it depends on new people becoming members and regular
+source projects often do, it depends on new people becoming members and regular
 code contributors. The [Community Membership Document][CM] covers membership
 processes and roles. Please consider joining Kubernetes, and making your way
 up the contributor ladder!
@@ -150,7 +155,7 @@ do not need to interact with regularly.
 [CM]: /community-membership.md
 [here]: /events/2019/11-contributor-summit
 [General Information]: /communication
-[mentoring initiatives]: /mentoring/README.md 
+[mentoring initiatives]: /mentoring/README.md
 [Meet Our Contributors]: /mentoring/programs/meet-our-contributors.md
 [OWNERS files]: ./owners.md
 [Cloud Native Computing Foundation Guidelines]: https://github.com/cncf/communitygroups

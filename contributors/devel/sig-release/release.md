@@ -5,9 +5,9 @@ create an enhancement, issue, or pull request which targets a specific release
 milestone.
 
 - [TL;DR](#tldr)
-  - [Normal Dev (Weeks 1-8)](#normal-dev-weeks-1-8)
-  - [Code Freeze (Weeks 9-11)](#code-freeze-weeks-9-11)
-  - [Post-Release (Weeks 11+)](#post-release-weeks-11)
+  - [Normal Dev (Weeks 1-11)](#normal-dev-weeks-1-11)
+  - [Code Freeze (Weeks 12-14)](#code-freeze-weeks-12-14)
+  - [Post-Release (Weeks 14+)](#post-release-weeks-14+)
 - [Definitions](#definitions)
 - [The Release Cycle](#the-release-cycle)
 - [Removal Of Items From The Milestone](#removal-of-items-from-the-milestone)
@@ -42,14 +42,14 @@ requirements exist when the target milestone is a prior release (see
 If you want your PR to get merged, it needs the following required labels and
 milestones, represented here by the Prow /commands it would take to add them:
 
-### Normal Dev (Weeks 1-8)
+### Normal Dev (Weeks 1-11)
 
 - /sig {name}
 - /kind {type}
 - /lgtm
 - /approved
 
-### [Code Freeze][code-freeze] (Weeks 9-11)
+### [Code Freeze][code-freeze] (Weeks 12-14)
 
 - /milestone {v1.y}
 - /sig {name}
@@ -57,7 +57,7 @@ milestones, represented here by the Prow /commands it would take to add them:
 - /lgtm
 - /approved
 
-### Post-Release (Weeks 11+)
+### Post-Release (Weeks 14+)
 
 Return to 'Normal Dev' phase requirements:
 
@@ -112,7 +112,7 @@ The general labeling process should be consistent across artifact types.
   referring to a release MAJOR.MINOR `vX.Y` version.
 
   See also
-  [release versioning](/contributors/design-proposals/release/versioning.md).
+  [release versioning](https://git.k8s.io/sig-release/release-engineering/versioning.md).
 
 - *release branch*: Git branch `release-X.Y` created for the `vX.Y` milestone.
 
@@ -124,9 +124,9 @@ The general labeling process should be consistent across artifact types.
 
 ## The Release Cycle
 
-![Image of one Kubernetes release cycle](release-cycle.png)
+![Image of one Kubernetes release cycle](release-cycle.jpg)
 
-Kubernetes releases currently happen approximately four times per year.
+Kubernetes releases currently happen approximately three times per year.
 
 The release process can be thought of as having three main phases:
 
@@ -177,7 +177,7 @@ under that automation umbrella should be have a milestone applied.
 Implementation and bug fixing is ongoing across the cycle, but culminates in a
 code freeze period.
 
-**[Code Freeze][code-freeze]** starts in week ~10 and continues for ~2 weeks.
+**[Code Freeze][code-freeze]** starts in week ~12 and continues for ~2 weeks.
 Only critical bug fixes are accepted into the release codebase during this
 time.
 
@@ -192,7 +192,7 @@ back to the release branch. The release is built from the release branch.
 
 Each release is part of a broader Kubernetes lifecycle:
 
-![Image of Kubernetes release lifecycle spanning three releases](release-lifecycle.png)
+![Image of Kubernetes release lifecycle spanning three releases](release-lifecycle.jpg)
 
 ## Removal Of Items From The Milestone
 
@@ -348,6 +348,6 @@ issue kind labels must be set:
 [enhancements-freeze]: https://git.k8s.io/sig-release/releases/release_phases.md#enhancements-freeze
 [exceptions]: https://git.k8s.io/sig-release/releases/release_phases.md#exceptions
 [keps]: https://git.k8s.io/enhancements/keps
-[release-managers]: https://git.k8s.io/sig-release/release-managers.md
+[release-managers]: https://kubernetes.io/releases/release-managers/
 [release-team]: https://git.k8s.io/sig-release/release-team
 [sig-list]: /sig-list.md

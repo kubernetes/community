@@ -1,5 +1,15 @@
-{{- template "header" }}
-# SIGs and Working Groups
+---
+title: Community Groups
+linkTitle: Community Groups
+description:  |
+  A list of our community groups: Special Interest Groups, Working Groups, User Groups and Committees.
+weight: 99
+type: docs
+aliases: [ "/groups", "/sigs" ]
+slug: community-groups
+---
+
+{{ template "header" }}
 
 Most community activity is organized into Special Interest Groups (SIGs),
 time bounded Working Groups, and the [community meeting](communication/README.md#weekly-meeting).
@@ -11,12 +21,12 @@ Each group's material is in its subdirectory in this project.
 
 When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 
-### Master SIG List
+### Special Interest Groups
 
 | Name | Label | Chairs | Contact | Meetings |
 |------|-------|--------|---------|----------|
 {{- range .Sigs}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{.Label}}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{- range .Meetings -}}
+|[{{.Name}}]({{.Dir}}/README.md)|[{{.Label}}](https://github.com/kubernetes/kubernetes/labels/sig%2F{{.Label}})|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{- range .Meetings -}}
   * {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>
 {{- end -}}
 {{- range .Subprojects -}}
@@ -27,26 +37,26 @@ When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 {{- end -}}
 {{- end }}
 
-### Master Working Group List
+### Working Groups
 
-| Name | Stakeholder SIGs |Organizers | Contact | Meetings |
-|------|------------------|-----------|---------|----------|
+| Name | Label | Stakeholder SIGs |Organizers | Contact | Meetings |
+|------|-------|------------------|-----------|---------|----------|
 {{- range .WorkingGroups}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{range .StakeholderSIGs}}* {{.}}<br>{{end }}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
+|[{{.Name}}]({{.Dir}}/README.md)|[{{.Label}}](https://github.com/kubernetes/kubernetes/labels/wg%2F{{.Label}})|{{range .StakeholderSIGs}}* {{.}}<br>{{end }}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
 {{- end }}
 
-### Master User Group List
+### User Groups
 
 | Name | Label |Organizers | Contact | Meetings |
 |------|-------|------------|--------|----------|
 {{- range .UserGroups}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{.Label}}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
+|[{{.Name}}]({{.Dir}}/README.md)|[{{.Label}}](https://github.com/kubernetes/kubernetes/labels/ug%2F{{.Label}})|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
 {{- end }}
 
-### Master Committee List
+### Committees
 
 | Name |  Label | Members | Contact |
 |------|--------|---------|---------|
 {{- range .Committees}}
-|[{{.Name}}]({{.Dir}}/README.md)|{{.Label}}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|{{ if .Contact.Slack }}* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>{{ end }}{{ if .Contact.MailingList }}* [Mailing List]({{.Contact.MailingList}})<br>{{ end }}{{ if .Contact.PrivateMailingList }}* [Private Mailing List]({{.Contact.PrivateMailingList}}){{ end }}
+|[{{.Name}}]({{.Dir}}/README.md)|[{{.Label}}](https://github.com/kubernetes/kubernetes/labels/committee%2F{{.Label}})|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|{{ if .Contact.Slack }}* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>{{ end }}{{ if .Contact.MailingList }}* [Mailing List]({{.Contact.MailingList}})<br>{{ end }}{{ if .Contact.PrivateMailingList }}* [Private Mailing List]({{.Contact.PrivateMailingList}}){{ end }}
 {{- end }}

@@ -1,11 +1,94 @@
-# Structured Logging migration instructions
+# Structured and Contextual Logging migration instructions
 
-This document describes instructions for migration proposed by [Structured Logging KEP]. It describes new structured
+This document describes instructions for the migration proposed by [Structured Logging KEP] and [Contextual Logging KEP]. It describes new
 functions introduced in `klog` (Kubernetes logging library) and how log calls should be changed to utilize new features.
-This document was written for the initial migration of `kubernetes/kubernetes` repository proposed for Alpha stage, but
+This document was written for the initial migration of `kubernetes/kubernetes` repository proposed for Alpha stage of structured logging, but
 should be applicable at later stages or for other projects using `klog` logging library.
 
 [Structured Logging KEP]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/1602-structured-logging
+[Contextual Logging KEP]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/3077-contextual-logging
+
+## How to contribute
+
+### About the migration
+
+We would like for the Kubernetes community to settle on one preferred log message structure and log calls as defined by [logr].
+The goal of the migration is to switch C-like format string logs to structured logs with explicit metadata about parameters and
+to remove the global logger in klog with a `logr.Logger` instance that gets chosen by the caller of a function.
+
+Migration within the structured logging working group happens in two different ways - organized & non-organized. 
+
+With organized, milestone-based, large-scale migration we try to target deliverables for a specific Kubernetes release. A good example of such an effort is the migration of the entire Kubelet code in the [#1.21 release](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.21.md#structured-logging-in-kubelet) 
+
+For non-organized migrations, the onus is, generally, on the individual contributors.
+
+#### Organized Migration
+
+Organized migration is carried out in a two state cycle aligning with the cadence of Kubernetes releases. 
+
+In the first stage, we pick a particular migration milestone & create an issue to split the work into smaller chunks (for example, migrating just a single file). This ensures that the work can be easily picked up by multiple individual contributors and also avoids conflicts. After the migration activity is complete, we mark the directory as migrated to avoid regressions with the help of tooling that we have developed. 
+
+In the second milestone, we take a break from migration to analyze results & improve our existing processes. Adding structured information to logs is a very costly & time-consuming affair. Setting aside time in the second stage to collect feedback, analyze the impact of changes on the log volume & performance, and better our PR review process helps us avoid mistakes and duplicate efforts.
+
+#### Non-organized migration
+
+As aforementioned, our non-organized migration efforts are spearheaded by individual contributors who need to migrate particular code sections to utilize new features early. 
+
+Efforts for Kubernetes components not yet marked for migration also fall under this category & we will try our best to review and accept as many PRs as we can, but being a small team, we can't give any time frames for the same. 
+
+The respective component owners have a final say in the acceptance of these contributions. Since this is a non-organized effort there is a high possibility that two contributors could be working on migrating the same code. 
+
+Before sending a PR our way, please ensure that there isn't one already in place created by someone else.
+
+### Current status
+
+* 1.21 Kubelet was migrated
+* 1.22 Collected feedback and improved the process.
+* 1.23 kube-scheduler and kube-proxy were migrated.
+* 1.24 Contextual logging infrastructure (updated klog, component-base/logs enables it) in place.
+
+## Sending a Structured Logging Migration Pull Request
+
+### Before creating the Pull Request
+
+* In case of any questions, please contact us on [#wg-structured-logging](https://kubernetes.slack.com/messages/wg-structured-logging) Slack channel.
+* Check list of [opened PRs](https://github.com/kubernetes/kubernetes/pulls?q=is%3Aopen+label%3Awg%2Fstructured-logging+is%3Apr) to understand if someone is already working on this.
+* Reference: [Pull Request Process](https://www.kubernetes.dev/docs/guide/pull-requests/)
+
+### What to include in the Pull request
+
+To ensure that the PRs are reviewed in a timely manner, we require authors to provide the below information. This helps in proper triaging & reviewing by the concerned knowledgeable parties.
+
+* title: `Migrate <directory/file> to structured logging`
+* WGs: `structured-logging`
+* area: `logging`
+* priority: `important-longterm` for normal PR or `important-soon` for PRs that are part of organized migration of component. 
+* cc: @kubernetes/wg-structured-logging-reviews
+* kind: cleanup
+* release note: `Migrate <directory/file> to structured logging
+`
+To quickly add this information you can comment on PR with below commands:
+
+```
+/retitle Migrate <directory/file> to structured logging
+/wg structured-logging 
+/area logging
+/priority important-longterm
+/kind cleanup
+/cc @kubernetes/wg-structured-logging-reviews
+```
+And edit the top comment to include release note:
+Migrate <directory/file> to structured logging
+
+### Why my PR was rejected?
+
+Even though the Kubernetes project is organizing migration of logging, this doesn't mean that we are able to accept all the PRs that come our way. We reserve the right to reject the Pull Request in situations listed below:
+
+* Pull request is below minimum quality standards and clearly shows that author hasn't read the guide at all, for example PR just renames `Infof` to `InfoS`.
+* Pull request migrates components that the owners have decided against migrating. List of those components:
+   * kubeadm
+
+ 
 
 ## Goal of Alpha migration
 
@@ -40,6 +123,10 @@ package klog
 // >> I1025 00:15:15.525108       1 controller_utils.go:116] "Pod status updated" pod="kube-system/kubedns" status="ready"
 func InfoS(msg string, keysAndValues ...interface{})
 
+// InfoSDepth acts as InfoS but uses depth to determine which call frame to log.
+// InfoSDepth(0, "msg") is the same as InfoS("msg").
+func InfoSDepth(depth int, msg string, keysAndValues ...interface{}) 
+
 // ErrorS structured logs to the ERROR, WARNING, and INFO logs.
 // the err argument used as "err" field of log line.
 // The msg argument used to add constant description to the log line.
@@ -50,6 +137,10 @@ func InfoS(msg string, keysAndValues ...interface{})
 // output:
 // >> E1025 00:15:15.525108       1 controller_utils.go:114] "Failed to update pod status" err="timeout"
 func ErrorS(err error, msg string, keysAndValues ...interface{})
+
+// ErrorSDepth acts as ErrorS but uses depth to determine which call frame to log.
+// ErrorSDepth(0, "msg") is the same as ErrorS("msg").
+func ErrorSDepth(depth int, err error, msg string, keysAndValues ...interface{})
 
 // KObj is used to create ObjectRef when logging information about Kubernetes objects
 // Examples:
@@ -64,6 +155,15 @@ func KObj(obj KMetadata) ObjectRef
 // output:
 // >> I1025 00:15:15.525108       1 controller_utils.go:116] "Pod status updated" pod="kube-system/kubedns" status="ready"
 func KRef(namespace, name string) ObjectRef
+
+// KObjSlice takes a slice of objects that implement the KMetadata interface
+// and returns an object that gets logged as a slice of ObjectRef values or a
+// string containing those values, depending on whether the logger prefers text
+// output or structured output.
+// >> klog.InfoS("Pods status updated", "pods", klog.KObjSlice(pods), "status", "ready")
+// output:
+// >> I1025 00:15:15.525108       1 controller_utils.go:116] "Pods status updated" pods="[kube-system/kubedns kube-system/metrics-server]" status="ready"
+func KObjSlice(arg interface{}) interface{} 
 
 // ObjectRef represents a reference to a kubernetes object used for logging purpose
 // In text logs it is serialized into "{namespace}/{name}" or "{name}" if namespace is empty
@@ -81,74 +181,149 @@ type KMetadata interface {
 }
 ```
 
+## Contextual logging in Kubernetes
+
+Contextual logging builds on top of structured logging because the parameters
+for individual log calls are the same. The difference is that different
+functions need to be used:
+
+- `klog.ErrorS` -> `logger.Error`
+- `klog.InfoS` -> `logger.Info`
+- `klog.V().InfoS` -> `logger.V().Info`
+
+In all of these cases, `logger` is a `logr.Logger` instance. `klog.Logger` is
+an alias for that type. Determining where that instance comes from is the main
+challenge when migrating code to contextual logging.
+
+Several new klog functions help with that:
+
+- [`klog.FromContext`](https://pkg.go.dev/k8s.io/klog/v2#FromContext)
+- [`klog.Background`](https://pkg.go.dev/k8s.io/klog/v2#Background)
+- [`klog.TODO`](https://pkg.go.dev/k8s.io/klog/v2#TODO)
+
+The preferred approach is to retrieve the instance with `klog.FromContext` from
+a `ctx context` parameter. If a function or method does not have one, consider
+adding it. This API change then implies that all callers also need to be
+updated. If there are any `context.TODO` calls in the modified functions,
+replace with the new `ctx` parameter.
+
+In performance critical code it may be faster to add a `logger klog.Logger`
+parameter. This needs to be decided on a case-by-case basis.
+
+When such API changes trickle up to a unit test, then enable contextual logging
+with per-test output with
+[`ktesting`](https://pkg.go.dev/k8s.io/klog/v2@v2.60.1/ktesting):
+
+```go
+import (
+    "testing"
+
+    "k8s.io/klog/v2/ktesting"
+    _ "k8s.io/klog/v2/ktesting/init" # Add command line flags for ktesting.
+)
+
+func TestFoo(t *testing.T) {
+   _, ctx := ktesting.NewTestContext(t)
+   doSomething(ctx)
+}
+```
+
+If a logger instance is needed instead, then use:
+
+```go
+   logger, _ := ktesting.NewTestContext(t)
+```
+
+The KEP has further instructions about the [transition to contextual
+logging](https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/3077-contextual-logging#transition). It
+also lists several
+[pitfalls](https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/3077-contextual-logging#pitfalls-during-usage)
+that developers and reviewers need to be aware of.
+
 ## Migration
 
-1. Change log functions to structured equivalent
+1. Optional: find code locations that need to be changed:
+
+   - `(cd hack/tools && go install k8s.io/klog/hack/tools/logcheck)`
+   - structured logging: `$GOPATH/bin/logcheck -check-structured ./pkg/controller/...`
+   - contextual logging: `$GOPATH/bin/logcheck -check-contextual ./pkg/scheduler/...`
+
+1. Change log functions to structured or (better!) contextual equivalent
 1. Remove string formatting from log message
 1. Name arguments
-1. Use `klog.KObj` and `klog.KRef` for Kubernetes object references
+1. Ensure that value is properly passed
 1. Verify log output
+1. Prevent re-adding banned functions after migration
 
-## Change log functions to structured equivalent
+## Change log functions
 
 Structured logging functions follow a different logging interface design than other functions in `klog`. They follow
 minimal design from [logr] thus there is no one-to-one mapping.
 
-Simplified mapping between functions:
-* `klog.Infof`, `klog.Info`, `klog.Infoln`, `klog.InfoDepth` -> `klog.InfoS`
+Simplified mapping between functions for structured logging:
+* `klog.Infof`, `klog.Info`, `klog.Infoln` -> `klog.InfoS`
+* `klog.InfoDepth` -> `klog.InfoSDepth`
 * `klog.V(N).Infof`, `klog.V(N).Info`, `klog.V(N).Infoln` -> `klog.V(N).InfoS`
-* `klog.Warning`, `klog.Warningf`, `klog.Warningln`, `klog.WarningDepth` -> `klog.InfoS`
-* `klog.Error`, `klog.Errorf`, `klog.Errorln`, `klog.ErrorDepth` -> `klog.ErrorS`
-* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln`, `klog.FatalDepth` -> `klog.ErrorS`
+* `klog.Warning`, `klog.Warningf`, `klog.Warningln` -> `klog.InfoS`
+* `klog.WarningDepth` -> `klog.InfoSDepth`
+* `klog.Error`, `klog.Errorf`, `klog.Errorln` -> `klog.ErrorS`
+* `klog.ErrorDepth` -> `klog.ErrorSDepth`
+* `klog.Fatal`, `klog.Fatalf`, `klog.Fatalln` -> `klog.ErrorS` followed by `klog.FlushAndExit(klog.ExitFlushTimeout, klog.1)` ([see below])
+* `klog.FatalDepth` -> `klog.ErrorDepth` followed by `klog.FlushAndExit(klog.ExitFlushTimeout, klog.1)` ([see below])
 
-### Removing Depth
+For contextual logging, replace furthermore:
 
-Functions with depth (`klog.InfoDepth`, `klog.WarningDepth`, `klog.ErrorDepth`, `klog.FatalDepth`) are used to indicate
-that the source of the log (added as metadata in log) is different than the invocation of logging library. This is
-usually used when implementing logging util functions. As logr interface doesn't support depth, those functions should
-return logging arguments instead of calling `klog` directly.
+- `klog.ErrorS` -> `logger.Error`
+- `klog.InfoS` -> `logger.Info`
+- `klog.V().InfoS` -> `logger.V().Info`
 
-For example
-```go
-func Handle(w http.ReponseWriter, r *http.Request) {
-    logHTTPRequest(r)
-    handle(w, r)
-}
+[see below]: #replacing-fatal-calls
 
-func logHTTPRequest(r *http.Request) {
-    klog.InfoDepth(1, "Received HTTP %s request", r.Method)
-}
-```
-should be replaced with
-```go
-func Handle(w http.ReponseWriter, r *http.Request) {
-    klog.Info("Received HTTP request", httpRequestLog(r)...)
-    handle(w, r)
-}
-
-func httpRequestLog(r *http.Request) []interface{} {
-    return []interface{}{
-        "verb", r.Method,
-    }
-}
-
-```
-
-### Using ErrorS
+### Using ErrorS or logger.Error
 
 With `klog` structured logging borrowing the interface from [logr] it also inherits it's differences in semantic of
 error function. Logs generated by `ErrorS` command may be enhanced with additional debug information
 (such as stack traces) or be additionally sent to special error recording tools. Errors should be used to indicate
 unexpected behaviours in code, like unexpected errors returned by subroutine function calls.
+In contrast to info log calls, error log calls always record the log entry, regardless of the current verbosity
+settings.
 
-Calling `ErrorS` with `nil` as error is semi-acceptable if there is error condition that deserves a stack trace at this
-origin point. For expected errors (`errors` that can happen during routine operations) please consider using
+Calling `ErrorS` with `nil` as error is acceptable if there is an error condition that deserves a stack trace at this
+origin point or always must be logged. For expected errors (`errors` that can happen during routine operations) please consider using
 `klog.InfoS` and pass error in `err` key instead.
 
 ### Replacing Fatal calls
 
 Use of Fatal should be discouraged and it's not available in new functions. Instead of depending on the logger to exit
-the process, you should call `os.Exit()` yourself.
+the process, you should:
+- rewrite code to return an `error` and let the caller deal with it or, if that is not feasible,
+- log and exit separately.
+
+`os.Exit` should be avoided because it skips log data flushing. Instead use
+[`klog.FlushAndExit`](https://pkg.go.dev/k8s.io/klog/v2#FlushAndExit). The first
+parameter determines how long the program is allowed to flush log data before
+`os.Exit` is called. If unsure, use `klog.ExitFlushTimeout`, the value used
+by `klog.Fatal`.
+
+Fatal calls use a default exit code of 255. When migrating, please use an exit code of 1 and include an "ACTION REQUIRED:" release note.
+
+For example
+```go
+func validateFlags(cfg *config.Config, flags *pflag.FlagSet) error {
+	if err := cfg.ReadAndValidate(flags); err != nil {
+		klog.FatalF("Error in reading and validating flags %s", err)
+	}
+}
+```
+should be changed to
+```go
+func validateFlags(cfg *config.Config, flags *pflag.FlagSet) error {
+	if err := cfg.ReadAndValidate(flags); err != nil {
+		klog.ErrorS(err, "Error in reading and validating flags")
+		klog.FlushAndExit(klog.ExitFlushTimeout, 1)
+	}
+}
+```
 
 ## Remove string formatting from log message
 
@@ -173,7 +348,7 @@ klog.Infof("delete pod %s with propagation policy %s", ...)
 ```
 should be changed to
 ```go
-klog.Infof("Deleted pod", ...)
+klog.InfoS("Deleted pod", ...)
 ```
 
 Some logs are constructed solely from string formats. In those cases a message needs to be derived from the context of
@@ -199,6 +374,12 @@ has different meaning for variadic arguments. Instead of just passing arguments,
 argument name and argument value. This means when migrating a log call we need to add an additional string before each
 argument, that will be used as it's name.
 
+How variable arguments should be used:
+
+```go
+klog.InfoS("message", "key1", value1, "key2", "value2")
+```
+
 For example
 ```go
 func LogHTTP(r *http.Request) {
@@ -212,64 +393,117 @@ func LogHTTP(r *http.Request) {
 }
 ```
 
-Names of arguments should use [lowerCamelCase] and be alphanumeric. Arguments names in one log call should be unique.
-Names should be picked based on semantic meaning of value itself, not the context in which is used (log message should
-imply the context). For example names like `status` should be used over (`desiredStatus`, `oldStatus`, `badStatus`) thus
-allowing to query and join different log lines of the `status` field.
+When deciding on names of arguments you should:
+* Always use [lowerCamelCase], for example use `containerName` and not `container name` or `container_name`.
+* Use [alphanumeric] characters: no special characters like `%$*`, non-latin, or unicode characters.
+* Use object kind when referencing Kubernetes objects, for example `deployment`, `pod` and `node`.
+* Describe the type of value stored under the key and use normalized labels:
+  * Don't include implementation-specific details in the labels. Don't use `directory`, do use `path`.
+  * Do not provide additional context for how value is used. Don't use `podIP`, do use `IP`.
+  * With the exception of acronyms like "IP" and the standard "err", don't shorten names. Don't use `addr`, do use `address`.
+  * When names are very ambiguous, try to include context in the label. For example, instead of
+    `key` use `cacheKey` or instead of `version` use `dockerVersion`.
+* Be consistent, for example when logging file path we should always use `path` and not switch between
+  `hostPath`, `path`, `file`.
 
-Kubernetes objects should be referenced using only their kind, no matter their api group or version. Example argument
-names: `deployment`, `pod`, `node`, `replicaSet`. For objects of unknown type, is ok to log them under `object` key with
-addition of `apiVersion` and `kind` fields describing the k8s object type.
+Here are a few exceptions to the rules above---some cases are temporary workarounds that may change if we settle on better solution:
+* Do use `err` rather than `error` to match the key used by `klog.ErrorS`
+* Context in name is acceptable to distinguish between values that normally go under same key. For example using both
+  `status` and `oldStatus` in log that needs to show the change between statuses.
+* When Kubernetes object kind is unknown without runtime checking we should use `object` key. To provide information
+  about kind we should add separate `apiVersion` and `kind` fields.
+* If we cannot use `klog.KObj` nor `klog.KRef` for Kubernetes object, like in cases when we only have access to name or UID,
+  then we should fallback to using object kind with suffix based on value type. For example `podName`, `podUID`.
+* When providing multiple indistinguishable values (for example list of evicted pods), then we can use plural version of
+  argument name. For example we should use `pods` and not `podList`.
 
-In situations when we want to the log value of the same meaning twice (e.g. transition between state) it is ok to name
-an additional argument based on context, but leaving one most current/correct value with canonical name.
+Examples of **good keys** (strongly suggested, will be extended when pattern emerge, no standard schema yet):
+* `cacheKey`
+* `cacheValue`
+* `CIDR`
+* `containerID`
+* `containerName`
+* `controller`
+* `cronJob`
+* `deployment`
+* `dockerVersion`
+* `duration`
+* `err`
+* `job`
+* `object`
+* `pod`
+* `podName`
+* `podUID`
+* `PVC`
+* `PV`
+* `volumeName`
+* `replicaSet`
 
-Examples of keys (strongly suggested, will be extended when pattern emerge, no standard schema yet):
-* `err` - error when using `klog.InfoS`. Used for expected errors that are not `klog.ErrorS`.
-* `object` - reference to k8s objects of unknown type. Should be used with `kind` and `apiVersion`.
-* `kind` - kind of k8s object of unknown type.
-* `apiVersion` -  API version of k8s object of unknown type.
+Examples of **bad** keys:
+* `addr` - replace with `address`
+* `container` - replace with `containerName` or `containerID` depending on value
+* `currentNode` - replace with `node`
+* `directory` - replace with `path`
+* `elapsed` - replace with `duration`
+* `externalIP` - replace  with `IP`
+* `file` - replace with `path`
+* `hostPath` - replace with `path`
+* `ip` - replace with `IP`
+* `key` -  replace with key describing what kind of key it is, for example `cacheKey`
+* `loadBalancerIP` - replace with `IP`
+* `podFullName` - try to rewrite code so that pod name or pod object can be used with `pod` or `podName` keys
+* `podIP` - replace with `IP`
+* `podList` - replace with `pods`
+* `version` - replace with key describing what it belongs to so that it can be compared, for example `dockerVersion`
+* `servicePortName` - replace with `portName`
+* `svc` - replace with `service`
 
-Example:
+Example of using context in to distinguish between two same keys:
 
 ```go
-func ChangeStatus(newStatus, currentStatus string) {
-  err := changeStatus(newStatus)
-  if err != nil {
-    klog.ErrorS(err, "Failed changing status", "desiredStatus", newStatus, "status", currentStatus)
-  }
-  klog.InfoS("Changed status", "previousStatus", currentStatus, "status", newStatus)
+func ChangePodStatus(newStatus, currentStatus string) {
+  klog.InfoS("PodStatusController found pod with status", "status", currentStatus)
+  ...
+  // Logic that changes status
+  ...
+  klog.InfoS("PodStatusController changed pod status", "oldStatus", currentStatus, "status", newStatus)
 }
 ```
 
 [lowerCamelCase]: https://en.wiktionary.org/wiki/lowerCamelCase
+[alphanumeric]: https://en.wikipedia.org/wiki/Alphanumeric
 
-### Use `klog.KObj` and `klog.KRef` for Kubernetes objects
+## Good practice for passing values in structured logging
 
-As part of structured logging migration we want to ensure that kubernetes objects references are consistent within the
-codebase. Two new utility functions were introduced to klog `klog.KObj` and `klog.KRef`. Any reference
-(name, uid, namespace) to Kubernetes Object (Pod, Node, Deployment, CRD) should be rewritten to utilize those functions.
-In situations when object `UID` is would be beneficial for log, it should be added as separate field with `UID` suffix.
+When passing a value for a key-value pair, please use following rules:
+* Prefer using Kubernetes objects and log them using `klog.KObj` or `klog.KObjSlice`
+  * When the original object is not available, use `klog.KRef` instead
+  * when only one object (for example `*v1.Pod`), we use`klog.KObj` 
+  * When type is object slice (for example `[]*v1.Pod`), we use `klog.KObjSlice`
+* Pass structured values directly (avoid calling `.String()` on them first)
+* When the goal is to log a `[]byte` array as string, explicitly convert with `string(<byte array>)`.
+
+### Prefer using Kubernetes objects (for example `*v1.Pod` or `[]*v1.Pod`) and log them using `klog.KObj` or `klog.KObjSlice`
+
+As part of the structured logging migration, we want to ensure that Kubernetes object references are
+consistent within the
+codebase. Three new utility functions were introduced to klog: `klog.KObj` `klog.KObjSlice` and `klog.KRef`.
+
+Any existing logging code that makes a reference (such as name, namespace) to a Kubernetes
+object (for example: Pod, Node, Deployment, CustomResourceDefinition) should be rewritten to
+utilize the new functions.
+
+Logging using this method will ensure that log output include a proper and correctly formatted reference
+to that object. The formatting / serialization is automatically selected depending on the output log format.
+For example, the same object could be represented as `<namespace>/<name>` in
+plain text and as `{"namespace": "<namespace>", "name": "<name>"}` in JSON.
+In situations when object `UID` is would be beneficial for log, it should be added as separate key with `UID` suffix.
 
 For example
 ```go
 func updatePod(pod *covev1.Pod) {
    ...
-   klog.Infof("Updated pod %s in namespace %s", pod.Name, pod.Namespace)
-}
-```
-should be changed to
-```go
-func updatePod(pod *covev1.Pod) {
-   ...
-   klog.InfoS("Updated pod", "pod", klog.KObj(pod))
-}
-```
-And
-```go
-func updatePod(pod *covev1.Pod) {
-   ...
-   klog.Infof("Updated pod with uid: %s", pod.Uid)
+   klog.Infof("Updated pod(%s) with name %s in namespace %s", pod.Uid, pod.Name, pod.Namespace)
 }
 ```
 should be changed to
@@ -280,6 +514,7 @@ func updatePod(pod *covev1.Pod) {
 }
 ```
 
+### When the original object is not available, use `klog.KRef` instead
 `klog.KObj` requires passing a kubernetes object (struct implementing `metav1.Object` interface). In situations where
 the object is not available, we can use `klog.KRef`. Still it is suggested to rewrite the code to use object pointer
 instead of strings where possible.
@@ -300,7 +535,13 @@ func updateNode(nodeName string) {
 }
 ```
 
-### Verify log output
+### Pass structured values directly
+
+By passing whole structure without any marshalling we can allow logging library to make the decision for us.
+This is especially beneficial when Kubernetes supports different log format, so the logging library can make decision based on that.
+For example using `<namespace>/<name>` when writing in text format and `{"namespace": "<namespace>", "name": "<name>"}` for json format.
+
+## Verify log output
 
 With the introduction of structured functions log arguments will be formatted automatically instead of depending on the
 caller. This means that we can remove the burden of picking the format by caller and ensure greater log consistency, but during
@@ -313,7 +554,7 @@ PRs migrating logs should include examples of outputted logs before and after th
 understand the impact of change.
 
 Example code to compare [httplog.go#168](https://github.com/kubernetes/kubernetes/blob/15c3f1b11/staging/src/k8s.io/apiserver/pkg/server/httplog/httplog.go#L168)
-```
+```go
 package main
 
 import (
@@ -381,3 +622,27 @@ After
 ```
 I0528 19:15:22.737588   47512 logtest.go:55] "Received HTTP request" verb="GET" URI="/metrics" latency="1s" resp=200 userAgent="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0. 2272.118 Safari/537.36." srcIP="127.0.0.1"
 ```
+
+## Prevent re-adding banned functions after migration
+
+After a package has been migrated to structured and/or contextual logging, we
+want to ensure that all log calls that get added in future PRs are structured
+resp. contextual.
+
+For structured logging, the list of migrated packages in
+[`hack/logcheck.conf`](https://github.com/kubernetes/kubernetes/blob/b9792a9daef4d978c5c30b6d10cbcdfa77a9b6ac/hack/logcheck.conf#L16-L22)
+can be extended.
+
+For contextual logging, a new list can be added at the bottom once the code is
+ready, with content like this:
+
+```
+# Packages that have been migrated to contextual logging:
+contextual k8s.io/kubernetes/pkg/scheduler/.*
+```
+
+The corresponding line with `structured k8s.io/kubernetes/pkg/scheduler/.*`
+then is redundant and can be removed because "contextual" implies "structured".
+
+Both lists should be sorted alphabetically. That reduces the risk of code
+conflicts and makes the file more readable.

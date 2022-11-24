@@ -73,7 +73,7 @@ Guide](http://kubernetes.io/docs/admin/).
   Authorization applies to all HTTP requests on the main apiserver port.
   This doc explains the available authorization implementations.
 
-* **Admission Control Plugins** ([admission_control](/contributors/design-proposals/api-machinery/admission_control.md))
+* **Admission Control Plugins** ([admission_control](https://git.k8s.io/design-proposals-archive/api-machinery/admission_control.md))
 
 
 ## Building releases
@@ -87,7 +87,7 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
   How cherry picks are managed on release branches within the `kubernetes/kubernetes` repository.
 
 * **Getting Kubernetes Builds** [getting-builds.md](sig-release/getting-builds.md)
-  
+
 * **Targeting enhancements, Issues and PRs to Release Milestones** [release.md](sig-release/release.md)
 
 ### SIG Instrumentation
@@ -100,7 +100,7 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 * **Structured Logging migration instructions** [migration-to-structured-logging.md](sig-instrumentation/migration-to-structured-logging.md)
 
 ### SIG Storage
-* **NOTE** Flexvolume is deprecated. Out-of-tree CSI driver is the recommended way to write volume drivers in Kubernetes. See this doc [here]( https://github.com/kubernetes/community/blob/master/sig-storage/volume-plugin-faq) for more information.
+* **NOTE** Flexvolume is deprecated. Out-of-tree CSI driver is the recommended way to write volume drivers in Kubernetes. See this doc [here]( https://github.com/kubernetes/community/blob/master/sig-storage/volume-plugin-faq.md) for more information.
 
 * **CSI Drivers Doc** [CSI drivers doc](https://kubernetes-csi.github.io/docs/)
   This site documents how to develop, deploy, and test a [Container Storage Interface](https://github.com/container-storage-interface/spec/blob/master/spec.md) (CSI) driver on Kubernetes.
@@ -117,9 +117,11 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 ### SIG Scheduling
 
-* **Understanding the Kubernetes Scheduler** [scheduler.md](sig-scheduling/scheduler.md)
+* **Understanding the Kubernetes Scheduler** [scheduling_code_hierarchy_overview.md](sig-scheduling/scheduling_code_hierarchy_overview.md)
 
-* **Scheduler Algorithm in Kubernetes** [scheduler_algorithm.md](sig-scheduling/scheduler_algorithm.md)
+* **Customizing the Kubernetes Scheduler** [scheduler configuration](https://kubernetes.io/docs/reference/scheduling/config/)
+
+* **Understanding how Pods are queued in Kubernetes Scheduler** [scheduler_queues.md](sig-scheduling/scheduler_queues.md)
 
 * **Scheduler Benchmarking** [scheduler_benchmarking.md](sig-scheduling/scheduler_benchmarking.md)
 
@@ -155,13 +157,11 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 * **Integration Testing in Kubernetes** [integration-tests.md](sig-testing/integration-tests.md)
 
-* **End-to-End Testing in Kubernetes** [e2e-tests.md](sig-testing/e2e-tests.md)
+* **End-to-End Testing in Kubernetes** [e2e-tests.md](sig-testing/e2e-tests.md) and [e2e-tests-kubetest2.md](sig-testing/e2e-tests-kubetest2.md)
 
 * **Debugging with Gubernator** [gubernator.md](sig-testing/gubernator.md)
 
 * **Flaky tests** [flaky-tests.md](sig-testing/flaky-tests.md)
-
-* **Build and test with Bazel** [bazel.md](sig-testing/bazel.md)
 
 ### SIG Node
 

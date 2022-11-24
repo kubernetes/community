@@ -10,6 +10,7 @@
     - [Extracting a specific version of Kubernetes](#extracting-a-specific-version-of-kubernetes)
     - [Bringing up a cluster for testing](#bringing-up-a-cluster-for-testing)
     - [Debugging clusters](#debugging-clusters)
+    - [Debugging an E2E test with a debugger (delve)](#debugging-an-e2e-test-with-a-debugger-delve)
     - [Local clusters](#local-clusters)
       - [Testing against local clusters](#testing-against-local-clusters)
     - [Version-skewed and upgrade testing](#version-skewed-and-upgrade-testing)
@@ -97,6 +98,9 @@ kubetest --test --test_args="--ginkgo.focus=\[Feature:Performance\]" --provider=
 
 # Conversely, exclude tests that match the regex "Pods.*env"
 kubetest --test --test_args="--ginkgo.skip=Pods.*env"
+
+# Exclude tests tha require a certain minimum version of the kubelet
+kubetest --test --test_args="--ginkgo.skip=\[MinimumKubeletVersion:1.20\]"
 
 # Run tests in parallel, skip any that must be run serially
 GINKGO_PARALLEL=y kubetest --test --test_args="--ginkgo.skip=\[Serial\]"
@@ -226,6 +230,7 @@ stale permissions can cause problems.
   - `sudo iptables -F`, clear ip tables rules left by the kube-proxy.
 
 ### Reproducing failures in flaky tests
+
 You can run a test repeatedly until it fails. This is useful when debugging
 flaky tests. In order to do so, you need to set the following environment
 variable:
@@ -255,6 +260,121 @@ the provided directory (which should already exist).
 
 The Google-run Jenkins builds automatically collected these logs for every
 build, saving them in the `artifacts` directory uploaded to GCS.
+
+### Debugging an E2E test with a debugger (delve)
+
+When debugging E2E tests it's sometimes useful to pause in the middle of an E2E test
+to check the value of a variable or to check something in the cluster, instead of adding
+`time.Sleep(...)` we can run the E2E test with `delve`
+
+Requirements:
+
+- delve (https://github.com/go-delve/delve/tree/master/Documentation/installation)
+
+For this example we'll debug a [sig-storage test that will provision storage from a snapshot](https://github.com/kubernetes/kubernetes/blob/3ed71cf190a3d6a6dcb965cf73224538059e8e5e/test/e2e/storage/testsuites/provisioning.go#L200-L236)
+
+First, compile the E2E test suite with additional compiler flags
+
+```sh
+# -N Disable optimizations.
+# -l Disable inlining.
+make WHAT=test/e2e/e2e.test GOGCFLAGS="all=-N -l" GOLDFLAGS=""
+```
+
+Then set the env var `E2E_TEST_DEBUG_TOOL=delve` and then run the test with `./hack/gingko.sh` instead of `kubetest`, you should see the delve command line prompt
+
+```sh
+E2E_TEST_DEBUG_TOOL=delve ./hack/ginkgo-e2e.sh --ginkgo.focus="sig-storage.*csi-hostpath.*Dynamic.PV.*default.fs.*provisioning.should.provision.storage.with.snapshot.data.source" --allowed-not-ready-nodes=10
+---
+Setting up for KUBERNETES_PROVIDER="gce".
+Project: ...
+Network Project: ...
+Zone: ...
+Trying to find master named '...'
+Looking for address '...'
+Using master: ... (external IP: XX.XXX.XXX.XX; internal IP: (not set))
+Type 'help' for list of commands.
+(dlv)
+```
+
+Use the commands described in the [delve command lists](https://github.com/go-delve/delve/blob/master/Documentation/cli/README.md), for our example we'll set a breakpoint at the start of the method
+
+```sh
+(dlv) break test/e2e/storage/testsuites/provisioning.go:201
+Breakpoint 1 set at 0x72856f2 for k8s.io/kubernetes/test/e2e/storage/testsuites.(*provisioningTestSuite).DefineTests.func4() _output/local/go/src/k8s.io/kubernetes/test/e2e/storage/testsuites/provisioning.go:201
+```
+
+When you're done setting breakpoints execute `continue` to continue the test, once the breakpoint hits you have the chance to explore variables in the test
+
+```sh
+(dlv) continue
+Apr 16 20:29:18.724: INFO: Fetching cloud provider for "gce"
+I0416 20:29:18.725327 3669683 gce.go:909] Using DefaultTokenSource &oauth2.reuseTokenSource{new:(*oauth2.tokenRefresher)(0xc002b65d10), mu:sync.Mutex{state:0, sema:0x0}, t:(*oauth2.Token)(0xc0028e43c0)}
+W0416 20:29:18.891866 3669683 gce.go:477] No network name or URL specified.
+I0416 20:29:18.892058 3669683 e2e.go:129] Starting e2e run "ae1b58af-9e9e-4745-b1f4-27d763451f8e" on Ginkgo node 1
+{"msg":"Test Suite starting","total":1,"completed":0,"skipped":0,"failed":0}
+Running Suite: Kubernetes e2e suite
+===================================
+Random Seed: 1618604956 - Will randomize all specs
+Will run 1 of 5745 specs
+...
+------------------------------
+[sig-storage] CSI Volumes [Driver: csi-hostpath] [Testpattern: Dynamic PV (default fs)] provisioning
+  should provision storage with snapshot data source [Feature:VolumeSnapshotDataSource]
+  _output/local/go/src/k8s.io/kubernetes/test/e2e/storage/testsuites/provisioning.go:200
+[BeforeEach] [Testpattern: Dynamic PV (default fs)] provisioning
+  _output/local/go/src/k8s.io/kubernetes/test/e2e/storage/framework/testsuite.go:51
+[BeforeEach] [Testpattern: Dynamic PV (default fs)] provisioning
+  _output/local/go/src/k8s.io/kubernetes/test/e2e/framework/framework.go:185
+STEP: Creating a kubernetes client
+Apr 16 20:29:24.747: INFO: >>> kubeConfig: ...
+STEP: Building a namespace api object, basename provisioning
+W0416 20:29:24.901750 3669683 warnings.go:70] policy/v1beta1 PodSecurityPolicy is deprecated in v1.21+, unavailable in v1.25+
+Apr 16 20:29:24.901: INFO: No PodSecurityPolicies found; assuming PodSecurityPolicy is disabled.
+STEP: Waiting for a default service account to be provisioned in namespace
+[It] should provision storage with snapshot data source [Feature:VolumeSnapshotDataSource]
+  _output/local/go/src/k8s.io/kubernetes/test/e2e/storage/testsuites/provisioning.go:200
+> k8s.io/kubernetes/test/e2e/storage/testsuites.(*provisioningTestSuite).DefineTests.func4() _output/local/go/src/k8s.io/kubernetes/test/e2e/storage/testsuites/provisioning.go:201 (hits goroutine(165):1 total:1) (PC: 0x72856f2)
+Warning: listing may not match stale executable
+   196:
+   197:                 l.testCase.TestDynamicProvisioning()
+   198:         })
+   199:
+   200:         ginkgo.It("should provision storage with snapshot data source [Feature:VolumeSnapshotDataSource]", func() {
+=> 201:                 if !dInfo.Capabilities[storageframework.CapSnapshotDataSource] {
+   202:                         e2eskipper.Skipf("Driver %q does not support populate data from snapshot - skipping", dInfo.Name)
+   203:                 }
+   204:                 if !dInfo.SupportedFsType.Has(pattern.FsType) {
+   205:                         e2eskipper.Skipf("Driver %q does not support %q fs type - skipping", dInfo.Name, pattern.FsType)
+   206:                 }
+(dlv) print dInfo
+*k8s.io/kubernetes/test/e2e/storage/framework.DriverInfo {
+        Name: "csi-hostpath",
+        InTreePluginName: "",
+        FeatureTag: "",
+        MaxFileSize: 104857600,
+        SupportedSizeRange: k8s.io/kubernetes/test/e2e/framework/volume.SizeRange {Max: "", Min: "1Mi"},
+        SupportedFsType: k8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/util/sets.String [
+                "": {},
+        ],
+        SupportedMountOption: k8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/util/sets.String nil,
+        RequiredMountOption: k8s.io/kubernetes/vendor/k8s.io/apimachinery/pkg/util/sets.String nil,
+        Capabilities: map[k8s.io/kubernetes/test/e2e/storage/framework.Capability]bool [
+                "persistence": true,
+                "snapshotDataSource": true,
+                "multipods": true,
+                "block": true,
+                "pvcDataSource": true,
+                "controllerExpansion": true,
+                "singleNodeVolume": true,
+                "volumeLimits": true,
+        ],
+        RequiredAccessModes: []k8s.io/kubernetes/vendor/k8s.io/api/core/v1.PersistentVolumeAccessMode len: 0, cap: 0, nil,
+        TopologyKeys: []string len: 0, cap: 0, nil,
+        NumAllowedTopologies: 0,
+        StressTestOptions: *k8s.io/kubernetes/test/e2e/storage/framework.StressTestOptions {NumPods: 10, NumRestarts: 10},
+        VolumeSnapshotStressTestOptions: *k8s.io/kubernetes/test/e2e/storage/framework.VolumeSnapshotStressTestOptions {NumPods: 10, NumSnapshots: 10},}
+```
 
 ### Local clusters
 
@@ -441,12 +561,18 @@ breaking changes, it does *not* block PR merges, and thus should run in
 some separate test suites owned by the feature owner(s)
 (see [Continuous Integration](#continuous-integration) below).
 
+  - `[MinimumKubeletVersion:.+]`: This label must be set on tests that require
+a minimum version of the kubelet. Invocations of the test suite can then decide
+to `skip` the same tests if kubelets in the cluster do not satisfy the requirement.
+For example, `[MinimumKubeletVersion:(1.20|1.21)]` would `skip` tests with minimum
+kubelet versions `1.20` and `1.21`.
+
   - `[Conformance]`: Designate that this test is included in the Conformance
 test suite for [Conformance Testing](../sig-architecture/conformance-tests.md). This test must
 meet a number of [requirements](../sig-architecture/conformance-tests.md#conformance-test-requirements)
 to be eligible for this tag. This tag does not supersed any other labels.
 
-  - `[LinuxOnly]`: If a test is known to be using Linux-specific features 
+  - `[LinuxOnly]`: If a test is known to be using Linux-specific features
 (e.g.: seLinuxOptions) or is unable to run on Windows nodes, it is labeled
 `[LinuxOnly]`. When using Windows nodes, this tag should be added to the
 `skip` argument.
@@ -477,6 +603,32 @@ To use viper, rather than flags, to configure your tests:
 Note that advanced testing parameters, and hierarchichally defined parameters, are only defined in viper, to see what they are, you can dive into [TestContextType](https://git.k8s.io/kubernetes/test/e2e/framework/test_context.go).
 
 In time, it is our intent to add or autogenerate a sample viper configuration that includes all e2e parameters, to ship with Kubernetes.
+
+### Pod Security Admission
+
+With introducing Pod Security admission in Kubernetes by default, it is desired to execute e2e tests within bounded pod security policy levels. The default pod security policy in e2e tests is [restricted](https://kubernetes.io/docs/concepts/security/pod-security-admission/#pod-security-levels). This is set in https://github.com/kubernetes/kubernetes/blob/master/test/e2e/framework/framework.go. This ensures that e2e tests follow best practices for hardening pods by default.
+
+Two helper functions are available for returning a minimal [restricted pod security context](https://github.com/kubernetes/kubernetes/blob/d7e6eab87d0fd005b238e3ec9b088e37d41a15d3/test/e2e/framework/pod/utils.go#L119) and a [restricted container security context](https://github.com/kubernetes/kubernetes/blob/d7e6eab87d0fd005b238e3ec9b088e37d41a15d3/test/e2e/framework/pod/utils.go#L127). These can be used to initialize pod or container specs to ensure adherence for the most restricted pod security policy.
+
+If pods need to elevate privileges to either `baseline` or `privileged` a new field - `NamespacePodSecurityEnforceLevel` - was introduced to the e2e framework to specify the necessary namespace enforcement level. Note that namespaces get created in the `BeforeEach()` phase of ginkgo tests.
+
+```
+import (
+...
+  admissionapi "k8s.io/pod-security-admission/api"
+...
+)
+
+
+var _ = SIGDescribe("Test", func() {
+  ...
+  f := framework.NewDefaultFramework("test")
+  f.NamespacePodSecurityEnforceLevel = admissionapi.LevelPrivileged
+  ...
+}
+```
+
+This ensures that the namespace returned by `f.Namespace.Name` includes the configured pod security policy level. Note that creating custom namespace names is not encouraged and will not include the configured settings.
 
 ### Conformance tests
 
@@ -543,7 +695,7 @@ If a behavior does not currently have coverage and a developer wishes to add a
 new e2e test, navigate to the ./test/e2e directory and create a new test using
 the existing suite as a guide.
 
-**NOTE:** To build/run with tests in a new directory within ./test/e2e, add the 
+**NOTE:** To build/run with tests in a new directory within ./test/e2e, add the
 directory to import list in ./test/e2e/e2e_test.go
 
 When writing a test, consult #kinds-of-tests above to determine how your test

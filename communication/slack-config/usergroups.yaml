@@ -21,29 +21,26 @@ usergroups:
       - TaoBeier
 
   - name: contributor-comms
-    long_name: Upstream Marketing
-    description: Upstream Marketing group.
+    long_name: Contributor Communications
+    description: Contributor Communications group.
     channels:
       - sig-contribex
     members:
+      - Atharva-Shinde
+      - AvineshTripathi
       - chrisshort
-      - mbbroberg
-      - onlydole
-      - paris
-      - "Rin Oliver"
-      - simplytunde
-      - Tunde
+      - Debanitrkl
+      - Jason
       - kaslin
+      - paris
+      - PurneswarPrasad
       - rajula96reddy
-
-  - name: test-infra-oncall
-    external: true
-
-  - name: google-build-admin
-    external: true
 
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
+  #
+  # Ensure any changes are also reflected in the Security Release Team
+  # usergroup (within the SIG Release config directory).
   - name: product-security-committee
     long_name: Product Security Committee
     description: |-
@@ -54,24 +51,27 @@ usergroups:
       - sig-release
     members:
       - cjcullen
-      - cji
+      - enj
       - joelsmith
       - lukehinds
       - micahhausler
-      - swamymsft
+      - tabbysable
       - tallclair
 
   - name: velero-maintainers
     long_name: Velero Maintainers
     description: Velero Maintainers group.
     channels:
-      - velero 
+      - velero-dev
+      - velero-users
     members:
-      - ashish-amarnath
-      - carlisia
       - Dave Smith-Uchida
-      - nrb
-      - zubron
+      - jiangd
+      - yinw
+      - ming-qiu
+      - shubham-pampattiwar
+      - xun-jiang
+      - scott-seago
 
   - name: youtube-admins
     long_name: YouTube Admins
@@ -79,17 +79,17 @@ usergroups:
     channels:
       - sig-contribex
     members:
-      - alejandrox1
-      - castrojo
-      - idealhack
-      - idvoretskyi
-      - jdumars
+      - alisondy
       - jeefy
-      - markyjackson-taulia
       - mrbobbytables
-      - nzoueidi
       - onlydole
+      - chrisshort
       - paris
+      - markyjackson-taulia
+      - pnbrown
+      - CIPHERTron
+      - bhumijgupta
+      - sandipanpanda
 
   - name: zoom-admins
     long_name: Zoom Admins
@@ -100,11 +100,11 @@ usergroups:
       - alejandrox1
       - castrojo
       - idealhack
-      - markyjackson-taulia
       - mrbobbytables
       - nzoueidi
       - onlydole
       - paris
+      - pnbrown
 
   - name: k8satl-hosts
     long_name: Kubernetes Atlanta Meetup Hosts
@@ -157,11 +157,99 @@ usergroups:
     channels:
       - odo
     members:
-      - adisky
       - cdrage
       - dharmit
-      - girishramnani
       - mohammedzee1000
-      - mik-dass
       - prietyc123
       - kadel
+      - feloy
+      - anandrkskd
+      - rnapoles-rh
+      - rm3l
+      - valaparthvi
+
+  - name: pinniped-dev
+    long_name: Pinniped Development Team
+    description: Active developers of Pinniped @ pinniped.dev
+    channels:
+      - pinniped
+    members:
+      - anjaltelang
+      - benjaminapetersen
+      - cfryanr
+      - jonasrosland
+      - pnbrown
+
+  - name: podman-desktop-devs
+    long_name: Podman Desktop Dev Team
+    description: Active developers of Podman Desktop on #podman-desktop
+    channels:
+      - podman-desktop
+    members:
+      - cdrage
+      - benoitf
+      - vzhukovs
+
+  - name: steering-members
+    long_name: Kubernetes Steering Committee
+    description: Members of the Kubernetes Steering Committee
+    channels:
+      - steering-committee
+    members:
+      - bentheelder
+      - cblecker
+      - cpanato
+      - justaugustus
+      - mrbobbytables
+      - palnabarun
+      - tpepper
+
+  - name: grafana-operator-maintainers
+    long_name: Grafana Operator Maintainers
+    description: Support group for Grafana Operator.
+    channels:
+      - grafana-operator
+    members:
+      - david-martin
+      - grdryn
+      - hubertstefanski
+      - pb82
+      - r-lawton
+      - robshelly
+      - vladimirmukhin
+      - wurbanski
+
+  - name: devfile-devs
+    long_name: Devfile Development Team
+    description: Active developers of Devfile on #devfile
+    channels:
+      - devfile
+    members:
+      - elsony
+      - johnmcollier
+      - kim-tsao
+      - maysunfaisal
+      - michael-valdron
+      - mike-hoang
+      - rtaniwa
+      - schultzp2020
+      - yangcao77
+
+  - name: cluster-api-release-team
+    long_name: Cluster API Release Team
+    description: Members of the Cluster API Release Team
+    members:
+      - alexander-demicev
+      - aniruddha2000
+      - CecileRobertMichon
+      - cpanato
+      - dntosas
+      - furkatgofurov7
+      - hackeramitkumar
+      - joekr
+      - nawazkh
+      - oscr
+      - sayantani11
+      - sbueringer
+      - VibhorChinda
+      - ykakarap

@@ -1,0 +1,8 @@
+channels:
+  - name: sig-node
+  - name: sig-node-bug-scrub
+  - name: sig-node-kmm
+    id: C037RE58RED
+  - name: sig-node-rkt
+    archived: true
+  - name: sig-node-swap

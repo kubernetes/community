@@ -13,6 +13,7 @@ Interested in how we can most effectively test Kubernetes. We're interested spec
 The [charter](charter.md) defines the scope and governance of the Testing Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-testing) for the group will typically add invites for the following meetings to your calendar.*
 * SIG Testing Bi-Weekly Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/135450138?pwd=WGJyaVZzekJCWFBTMGJGTXVjUFJaUT09) (bi-weekly starting Tuesday August 13, 2019). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-testing-notes).
   * [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
@@ -23,8 +24,19 @@ The [charter](charter.md) defines the scope and governance of the Testing Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
+* Michelle Shepardson (**[@michelle192837](https://github.com/michelle192837)**), Google
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
+* Alvaro Aleman (**[@alvaroaleman](https://github.com/alvaroaleman)**), Red Hat
+* Antonio Ojea (**[@aojea](https://github.com/aojea)**), Google
+* Cole Wagner (**[@cjwagner](https://github.com/cjwagner)**), Google
+* Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel
 
 ## Emeritus Leads
 
@@ -38,6 +50,13 @@ The Chairs of the SIG run operations and processes governing the SIG.
 - GitHub Teams:
     - [@kubernetes/sig-testing](https://github.com/orgs/kubernetes/teams/sig-testing) - General Discussion
     - [@kubernetes/sig-testing-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-testing-pr-reviews) - PR Reviews
+- Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-testing:
+* [WG Reliability](/wg-reliability)
+
 
 ## Subprojects
 
@@ -45,50 +64,46 @@ The following [subprojects][subproject-definition] are owned by sig-testing:
 ### boskos
 Boskos is a resource manager service that handles different kinds of resources and transitions between different states. We use it on the Kubernetes project to manage pools of GCP projects for CI/CD.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/boskos/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
+  - [kubernetes-sigs/boskos](https://github.com/kubernetes-sigs/boskos/blob/master/OWNERS)
+  - [kubernetes/test-infra/boskos](https://github.com/kubernetes/test-infra/blob/master/boskos/OWNERS)
 ### e2e-framework
 An experimental e2e testing framework for Kubernetes clusters.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/e2e-framework/master/OWNERS
-### k8s-gsm-tools
-Controllers to sync and rotate kubernetes secrets with google cloud secret manager
-- **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/k8s-gsm-tools/master/OWNERS
+  - [kubernetes-sigs/e2e-framework](https://github.com/kubernetes-sigs/e2e-framework/blob/main/OWNERS)
 ### kind
 Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/kind/master/OWNERS
+  - [kubernetes-sigs/kind](https://github.com/kubernetes-sigs/kind/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#kind](https://kubernetes.slack.com/messages/kind)
 ### kubetest2
 Kubetest2 is the framework for launching and running end-to-end tests on kubernetes.
 It is the next significant iteration of kubetest. We will be deprecating kubetest going forward.
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/kubetest2/master/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/test-infra/master/kubetest/OWNERS
-  - https://raw.githubusercontent.com/kubernetes/test-infra/master/kubetest2/OWNERS
+  - [kubernetes-sigs/kubetest2](https://github.com/kubernetes-sigs/kubetest2/blob/master/OWNERS)
+  - [kubernetes/test-infra/kubetest](https://github.com/kubernetes/test-infra/blob/master/kubetest/OWNERS)
 ### prow
 Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action for the Kubernetes project
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
+  - [kubernetes-sigs/prow](https://github.com/kubernetes-sigs/prow/blob/main/OWNERS)
+  - [kubernetes/test-infra/prow](https://github.com/kubernetes/test-infra/blob/master/prow/OWNERS)
 - **Contact:**
   - Slack: [#prow](https://kubernetes.slack.com/messages/prow)
+### sig-testing
+Home for SIG Testing discussion and documents.
+- **Owners:**
+  - [kubernetes/sig-testing](https://github.com/kubernetes/sig-testing/blob/master/OWNERS)
 ### test-infra
 Miscellaneous tools and configuration to run the testing infrastructure for the Kubernetes project
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/test-infra/master/OWNERS
+  - [kubernetes/test-infra](https://github.com/kubernetes/test-infra/blob/master/OWNERS)
 ### testing-commons
-The Testing Commons is a subproject within the Kubernetes sig-testing community interested code structure, layout, and execution of common test code used throughout the kubernetes project
+**[best-effort]** The testing-commons subproject focuses on matters of code structure, layout, and execution of kubernetes/kubernetes test code. It is currently staffed on a best-effort basis; please bring discussions to the sig-testing slack channel or meeting. For historical context, please see the [former testing-commons meeting agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit) and [archived testing-commons slack channel](https://kubernetes.slack.com/archives/C9NK9KFFW)
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/OWNERS
-- **Contact:**
-  - Slack: [#testing-commons](https://kubernetes.slack.com/messages/testing-commons)
-- **Meetings:**
-  - Testing Commons: [Fridays at 13:00 PT (Pacific Time)](https://zoom.us/j/790505720?pwd=VThEeVJqTnFPY0o1bDFZQk1ZRjJLQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit).
+  - [kubernetes/kubernetes/test](https://github.com/kubernetes/kubernetes/blob/master/test/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Presentations

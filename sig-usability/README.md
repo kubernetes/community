@@ -13,6 +13,7 @@ The scope of SIG usability is the core end-user usability of the Kubernetes proj
 The [charter](charter.md) defines the scope and governance of the Usability Special Interest Group.
 
 ## Meetings
+*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-usability) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Tuesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/3832562240) (every third week). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1gJHgt8RpH4TvqPuC8NtR31-CMqtTYkHy_loxubHq8lg/).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0eY-U8DVJWHBwKvMDEtOxx).
@@ -23,6 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Usability Spec
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Himanshu Pandey (**[@hpandeycodeit](https://github.com/hpandeycodeit)**), VMware
+* Gaby Moreno Cesar (**[@morengab](https://github.com/morengab)**), IBM
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**), VMware
 
 ## Emeritus Leads
@@ -41,15 +43,17 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-usability-misc](https://github.com/orgs/kubernetes/teams/sig-usability-misc) - General Discussion
     - [@kubernetes/sig-usability-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-usability-pr-reviews) - PR Reviews
     - [@kubernetes/sig-usability-proposals](https://github.com/orgs/kubernetes/teams/sig-usability-proposals) - Design Proposals
+- Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-usability:
 ### sig-usability
 - **Owners:**
-  - https://raw.githubusercontent.com/kubernetes-sigs/sig-usability/master/OWNERS
+  - [kubernetes-sigs/sig-usability](https://github.com/kubernetes-sigs/sig-usability/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

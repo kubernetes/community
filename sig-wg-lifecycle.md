@@ -13,12 +13,12 @@ Out of scope for this document: [subproject] creation.
 - [ ] Send an email to the Steering Committee <steering@kubernetes.io> to scope the SIG and get provisional approval
 - [ ] Look at the checklist below for processes and tips that you will need to do while this is going on. It's best to collect this information upfront so you have a smoother process to launch
 - [ ] Follow the [SIG charter process] to propose and obtain approval for a charter
-- [ ] Announce new SIG on kubernetes-dev@googlegroups.com
+- [ ] Announce new SIG on dev@kubernetes.io
 
 ### Prerequisites for a WG
 - [ ] Read [wg-governance.md]
 - [ ] Ensure all WG Organizers, and other leadership roles are [community members]
-- [ ] Send email to [kubernetes-dev@googlegroups.com] titled "WG-Creation-Request: WG Foo" with some of the questions answered from wg-goverance.md and wait for community discourse; ask for SIG sponsorship
+- [ ] Send email to [dev@kubernetes.io] titled "WG-Creation-Request: WG Foo" with some of the questions answered from wg-goverance.md and wait for community discourse; ask for SIG sponsorship
 - [ ] Do the first checklist item in the [GitHub] section below and add a row to the WG section:
   - [ ] Label with committee/steering and wait for a simple majority
   - [ ] Also add sponsoring SIG Chair/Tech Leads as approvers; you'll get this from the community email above
@@ -30,7 +30,7 @@ Out of scope for this document: [subproject] creation.
 - [ ] Require to have 2 Chairs to start a User Group.
 - [ ] Require to have at least 2 members other than chairs to be a part of the User Group.
 - [ ] Requires at least 2 sponsors from steering or lazy consensus (In case of no objection within 7 week days).
-- [ ] Send an email to kubernetes-dev@googlegroups.com and steering@kubernetes.io titled "UG-Creation-Request: UG Foo" answering the following questions and wait for community discourse:
+- [ ] Send an email to dev@kubernetes.io and steering@kubernetes.io titled "UG-Creation-Request: UG Foo" answering the following questions and wait for community discourse:
   - [ ] What topics are in scope for this user group?
   - [ ] What is the meeting cadence?
   - [ ] Who will chair the group, and ensure it continues to meet the requirements?
@@ -90,7 +90,7 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 - [ ] There is no activity on communication channels.
 
 ### Steps:
-- [ ] Send an email to kubernetes-dev@googlegroups.com and community@kubernetes.io alerting the community of your intentions to disband or merge. [example]
+- [ ] Send an email to dev@kubernetes.io and community@kubernetes.io alerting the community of your intentions to disband or merge. [example]
 - This kicks off the process for Contributor Experience’s community managers who will reach out and set an issue against `kubernetes/community` with exact next steps covered below. We can help walk through this when you get there. Most of this is covered in the same creation communication docs as above.
 - [ ] Archive the member and lead/chair mailing lists/[GoogleGroups]
 - [ ] Check the [slack-guidelines.md] for latest process on archiving the slack channel
@@ -130,4 +130,4 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 [update meetings]: /communication/calendar-guidelines.md
 [community members]: /community-membership.md
 [mailing-list-guidelines.md]: /communication/mailing-list-guidelines.md
-[leads@kubernetes.io group]: https://github.com/kubernetes/k8s.io/blob/master/groups/groups.yaml
+[leads@kubernetes.io group]: https://github.com/kubernetes/k8s.io/blob/main/groups/groups.yaml
