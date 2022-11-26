@@ -69,6 +69,7 @@ aliases:
     - dchen1107
     - derekwaynecarr
   sig-release-leads:
+    - Verolop
     - cpanato
     - jeremyrickard
     - justaugustus
