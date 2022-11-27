@@ -98,6 +98,7 @@ channels:
   - name: dra
   - name: draft-dev
   - name: draft-users
+  - name: druid-operator
   - name: eks
   - name: elastickube
   - name: elk-charts
