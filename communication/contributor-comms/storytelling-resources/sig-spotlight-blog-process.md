@@ -7,8 +7,4 @@ The steps to create a SIG Spotlight blog post are as follows:
 3) Interview those people - usually the SIG chairs. We generally recommend doing the interview asynchronously via a Google Doc because written responses are easier to work with. The SIG-Multicluster one was done with a recorded zoom interview but it took a long time to complete.
 4) Write a blog post. The post should be in markdown format and we like to do a round of review on a rough draft before creating a PR. We recommend either hackmd.io or Google Docs for this. Google Docs can be converted to markdown fairly easily.
 
-Example past spotlights:
-
-February 7, 2022 [SIG-Multicluster](https://kubernetes.io/blog/2022/02/07/sig-multicluster-spotlight-2022/)
-
-June 30, 2020 [SIG-Windows](https://kubernetes.io/blog/2020/06/30/sig-windows-spotlight-2020/)
+[Past Spotlights](./sig-spotlights.md)
