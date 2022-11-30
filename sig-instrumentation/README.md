@@ -98,6 +98,9 @@ Organization of SIG Instrumentation subprojects
 - **Owners:**
   - [kubernetes-sigs/logtools](https://github.com/kubernetes-sigs/logtools/blob/main/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/component-base/logs](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/logs/OWNERS)
+### usage-metrics-collector
+- **Owners:**
+  - [kubernetes-sigs/usage-metrics-collector](https://github.com/kubernetes-sigs/usage-metrics-collector/blob/main/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
