@@ -2642,12 +2642,10 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-csi/cluster-driver-registrar/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-host-path/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-image-populator/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-iscsi/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nvmf/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-driver-smb/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-fc/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-iscsi/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-lib-utils/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-proxy/master/OWNERS
@@ -2663,9 +2661,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi.github.io/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/livenessprobe/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/node-driver-registrar/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/csi-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/csi-translation-lib/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-api/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/csi-translation-lib/OWNERS
   - name: mount-utils
     owners:

@@ -90,12 +90,10 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
 - **Owners:**
   - [kubernetes-csi/cluster-driver-registrar](https://github.com/kubernetes-csi/cluster-driver-registrar/blob/master/OWNERS)
   - [kubernetes-csi/csi-driver-host-path](https://github.com/kubernetes-csi/csi-driver-host-path/blob/master/OWNERS)
-  - [kubernetes-csi/csi-driver-image-populator](https://github.com/kubernetes-csi/csi-driver-image-populator/blob/master/OWNERS)
   - [kubernetes-csi/csi-driver-iscsi](https://github.com/kubernetes-csi/csi-driver-iscsi/blob/master/OWNERS)
   - [kubernetes-csi/csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs/blob/master/OWNERS)
   - [kubernetes-csi/csi-driver-nvmf](https://github.com/kubernetes-csi/csi-driver-nvmf/blob/master/OWNERS)
   - [kubernetes-csi/csi-driver-smb](https://github.com/kubernetes-csi/csi-driver-smb/blob/master/OWNERS)
-  - [kubernetes-csi/csi-lib-fc](https://github.com/kubernetes-csi/csi-lib-fc/blob/master/OWNERS)
   - [kubernetes-csi/csi-lib-iscsi](https://github.com/kubernetes-csi/csi-lib-iscsi/blob/master/OWNERS)
   - [kubernetes-csi/csi-lib-utils](https://github.com/kubernetes-csi/csi-lib-utils/blob/master/OWNERS)
   - [kubernetes-csi/csi-proxy](https://github.com/kubernetes-csi/csi-proxy/blob/master/OWNERS)
@@ -111,9 +109,7 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - [kubernetes-csi/kubernetes-csi.github.io](https://github.com/kubernetes-csi/kubernetes-csi.github.io/blob/master/OWNERS)
   - [kubernetes-csi/livenessprobe](https://github.com/kubernetes-csi/livenessprobe/blob/master/OWNERS)
   - [kubernetes-csi/node-driver-registrar](https://github.com/kubernetes-csi/node-driver-registrar/blob/master/OWNERS)
-  - [kubernetes/csi-api](https://github.com/kubernetes/csi-api/blob/master/OWNERS)
   - [kubernetes/csi-translation-lib](https://github.com/kubernetes/csi-translation-lib/blob/master/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/csi-api](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/csi-api/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/csi-translation-lib](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/csi-translation-lib/OWNERS)
 ### mount-utils
 - **Owners:**
