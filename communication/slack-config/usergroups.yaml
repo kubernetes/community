@@ -220,6 +220,14 @@ usergroups:
       - vladimirmukhin
       - wurbanski
 
+  - name: druid-operator-maintainers
+    long_name: Druid Operator Maintainers
+    description: Dev and Support group for Druid Operator.
+    channels:
+      - druid-operator
+    members:
+      - adheipsingh
+
   - name: devfile-devs
     long_name: Devfile Development Team
     description: Active developers of Devfile on #devfile
