@@ -9,17 +9,11 @@ We strongly recommend you to understand the main [Kubernetes Contributor Guide](
 
 You can also check the [Contributor Cheat Sheet](/contributors/guide/contributor-cheatsheet/), with common resources for existing developers.
 
-The process for contributing code to Kubernetes via SIG-CLI [community][community page].
-
 Please be aware that all contributions to Kubernetes require time and commitment from project maintainers to direct and review work. This is done in additional to many other maintainer responsibilities, and direct engagement from maintainers is a finite resource.
 
 ### Learn a bit about the kubectl cli
 
-This is important.
-
-Learn about using kubectl with Kubernetes in the [Kubernetes Basics Tutorial].
-
-Learn about managing configuration in the [kubectl docs].
+Before you start contributing to SIG-CLI it is important to know [Kubernetes Basics] and how to use [kubectl]. 
 
 ## Pick your track
 
@@ -31,23 +25,27 @@ Determine in what capacity you are looking to contribute:
 
 Contributors looking to engage with the SIG cli community for
 a sustained period of time and looking to build working relationships
-with existing members.  Route to becoming a SIG cli member as
-a reviewer or approver.
+with existing members. 
+
+Note, that this is the intended way if you plan to climb up the [contribution ladder].
 
 **How does it work?**
 
-Work items come from a backlog of groomed items provided by SIG cli community members.
-Each items has a stake holder willing to provide limited direction to contributors
-working on it.  Contributors typically need to put in 10x the time per-issue as the
-maintainers providing direction.  Contributors are expected to learn and do research
-to complete the task independently with only periodic direction (~weekly).
+Let's say something more like this: 
+
+* Join the weekly meetings
+* Say hi and show interest in becoming a contributor
+* Pick a task in coordination with one of the maintainers 
+* Contributors are expected to learn and do research
+to complete the task independently
+* Maintainers are willing to provide guidance periodically 
 
 **What is expected of contributors?**
 
-Contributors are expected to make progress on items weekly and
-provide periodic updates to any issue they are working on.
-Contributors are expected exercise ownership of their code by fixing bugs
-that are discovered.
+* Show up in weekly meetings if possible
+* A commitment to work a specific amount of hours per week/month 
+* Make regular progress, keep the maintainers informed
+* Take Ownership for assigned issues
 
 ### Self service
 
@@ -59,30 +57,34 @@ to contribute the solution.
 
 **How does it work?**
 
-Contributors are free to pick up any work items that they like.  Maintainers
-will be focused on directing contributors working on Guided items, so contributors
-picking up non-Guided items will have almost no direction or support from maintainers.
+* Find an issue that you want to work on
+* Or open an issue if you found a bug, or think there is something that can be improved (including feature requests)
+* Assign yourself and start working on the issue
+* Note that choosing this track, you can not expect the same amount of support from the maintainers compared to the guided track (as they will focus their time on supporting contributors who are more dedicated to the project). 
 
 **What is expected of contributors?**
 
-Contributions must be relatively small, simple, well documented and well tested.
+Contributions should be relatively small, simple, well documented and well tested.
 Since maintainers will need to own any code for these contributions, these should
 be very limited in scope and contain minimal risk
 (e.g. simple regression fixes, improved documentation, improved testing).
 
 
-### Modify your own `kubectl` fork
+### Preparation and Familiarizing
 
-Make sure you are ready to immediately get started before you claim any piece of
+Make sure you are ready to get started before you claim any piece of
 work.
 
 - Setup your [development environment][development guide].
   - This is hard.  Sorry.  We want to make this easier.
 - Familiarize yourself with the code:
-  - [kubernetes/cmd/kubectl] is the entry point
-  - [kubernetes/pkg/kubectl] is the implementation
-  - Look at how some of the other commands are implemented
+  - [kubernetes/cmd/kubectl] is the entry point //Not really helpful, would remove it
+  - [kubernetes/pkg/kubectl] Contains the implementation of all commands
+  - Look at how some of the commands are implemented
   - [Codebase Tour]
+  - Make sure that you understand how the unit tests work
+
+//Not sure about this one 
 - Try adding a new command to do something simple:
   - Add `kubectl hello-world`: print "Hello World"
   - Add `kubectl hello-kubernetes -f file`: Print "Hello \<kind of resource\> \<name of resource\>"
@@ -94,15 +96,9 @@ work.
 
 ### Adopt an issue
 
-Pick up an [issue] from the backlog by commenting on the issue that you would like to work on it.
-Be sure to mention the author of the issue as well as the SIG cli members `@seans3` and `@mengqiy`.
+Pick up an [issue] that you want to work and make sure to inform the author and the maintainers, so that they can assign it to you. Best way to do this is to bring it on the table in the biweekly meetings. 
 
-Using the following comment will make it easier for us to search for issues folks want to have
-assigned to them:
-
-`cc @seans3 @mengqiy I would like to take this`
-
-**Note:** Don't do this unless you will start work on the issue within a few days of being assigned.
+Another possibility would be to ping the [leads], commenting the issue using `cc <github-handle>`.
 
 **Note:** GitHub only allows issues to be assigned to GitHub accounts that are part
 of the organization.
@@ -116,7 +112,7 @@ For your first issue, we recommend picking an issue labeled with "good first iss
 Be sure to pick up an issue that is appropriate to the time you are able to commit.
 We recommend first time contributors start with small or medium issues.
 
-Following are very rough estimates, but are best effort only.  They assume you have a
+Following are very rough estimates, but are best effort only. They assume you have a
 development environment already set up and are able to build a kubectl binary and
 use it against a cluster.  These estimates assume some knowledge of Go.
 
@@ -129,13 +125,9 @@ use it against a cluster.  These estimates assume some knowledge of Go.
 - `size/XL`
   - 40-80 hours
 
-Meta/Umbrella issues may have multiple components.  By signing up for a Meta/Umbrella issue,
-you are only committing to one piece of it.  Let the issue author know when you have completed
-some piece of it, and if you would like to continue working on it, or have it unassigned.
+**Picking the right kind of issue** // I think this is too much and would just remove it. 
 
-**Picking the right kind of issue**
-
-Guided issues have a *type* defining the type of work to be done.  Pick up an
+Guided issues have a *type* defining the type of work to be done. Pick up an
 issue that fits your experience level and interest.  Documentation and
 test-coverage issues typically are smaller in scope and easier to complete than
 features and cleanup issues.
@@ -154,8 +146,8 @@ features and cleanup issues.
 
 **Provide periodic status updates**
 
-Once you have requested an issue and it has been accepted, you will be expected
-to provide periodic updates to it.  Do update the issue with your status at least every
+Once you have requested an issue and it has been assigned to you, you will be expected
+to provide periodic updates to it. Do update the issue with your status at least every
 week, and publish your work to a fork so the community can see your progress and
 provide early feedback.
 
@@ -163,24 +155,9 @@ If you find the issue is too challenging, time consuming, or you are no longer a
 this is perfectly acceptable and please let the issue author know.
 If you like, you may pick up a different issue immediately or sometime in the future.
 
-**Summary**:
-
-- Don't pick up an issue until you are ready to start working on it
-- When you want to pick up an issue, be sure to comment `@seans3` and `@mengqiy`.
-  Expect a response within 2 days.
-- Update the issue every week with your progress so we know it is being actively worked on.
-- There is an expectation that some time will be committed to working on the issue each
-  week until it is completed, or you are blocked on a maintainer.
-
 ### Meet the community
 
 Engage with the SIG cli community!  Let us know who you are and how things are going!
-
-- Fill out the [about me form] so we know a bit about you and can direct your work accordingly.
-  - **Note:** After filling out the form, reach out via slack or the googlegroup and let us know.
-
-- Message the [cli mentors] googlegroup and let them know you filled out the form
-  and are looking to get started.
 
 - In [slack][slack-messages] (signup [here][slack-signup]),
   @mention a [lead][leads] and ask if there are any issues you could pick up, or
@@ -194,10 +171,10 @@ and group [meeting] times.
 ## Information about how Features are developed
 
 Once you have made several contributions, you may want to start developing
-features that you come up with.  This section is about how to propose new
+features that you come up with. This section is about how to propose new
 features and get them accepted.
 
-## Feature requests
+### Feature requests
 
 __New contributors:__ Please start by adopting an [existing issue].
 
@@ -206,6 +183,8 @@ A feature request is an [issue] mentioning `@kubernetes/sig-cli-feature-requests
 To encourage readership, the issue description should _concisely_ (2-4 sentence) describe
 the problem that the feature addresses.
 
+
+//Absolutelly not sure about these 2 next sections. Feel super heavyweight though. Is this the way the SIG is working actually? 
 ### Feature lifecycle
 
 Working on a feature without getting approval for the user experience
@@ -288,6 +267,9 @@ Implementation PRs should
 - mention `@kubernetes/sig-cli-pr-reviews`,
 - __include tests__.
 
+
+//Is this the way it should be? 
+
 Small features and flag changes require only unit/integration tests,
 while larger changes require both unit/integration tests and e2e tests.
 
@@ -321,6 +303,7 @@ into a release, it must be fully merged and tested by this time.  If
 your feature is not fully complete, _including tests_, it will have
 to wait until the next release.
 
+//Not Sure if this is beneficial
 ## Merge state meanings
 
 - Merged:
@@ -350,8 +333,8 @@ If an issue isn't getting any attention and is unresolved, mention
 `@kubernetes/sig-cli-feature-requests`.
 
 If a particular issue has a high impact for you or your business,
-make sure this is clear on the bug, and reach out to the sig leads
-directly.  Consider attending the sig meeting to discuss over video
+make sure this is clear on the issue, and reach out to the sig leads
+directly. Consider attending the sig meeting to discuss over video
 conference.
 
 ### If your PR is stuck
@@ -369,7 +352,7 @@ However, if it happens do the following:
   [`PTAL`].
 
 If you are still not able to get any attention after a couple days,
-escalate to sig [leads] by mentioning them.
+escalate to sig [leads] by mentioning them. Also consider to join the biweekly meetings and bring it to the table. 
 
 ### If your design proposal issue is stuck
 
@@ -387,6 +370,8 @@ See the sig-cli [community page] for points of contact and meeting times:
 - message one of the sig leads on [slack][slack-messages] (signup [here][slack-signup])
 - send an email to the _kubernetes-sig-cli@googlegroups.com_ [group].
 
+// Are they even up to date? And used anyway? 
+
 ## Use of [@mentions]
 
 - `@{any lead}` solicit opinion or advice from [leads].
@@ -396,13 +381,14 @@ See the sig-cli [community page] for points of contact and meeting times:
 - `@kubernetes/sig-cli-proposals` flags a design proposal.
 
 [@mentions]: https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams
-[Kubernetes Basics Tutorial]: https://kubernetes.io/docs/tutorials/kubernetes-basics
+[Kubernetes Basics]: https://kubernetes.io/docs/tutorials/kubernetes-basics
 [PR]: https://help.github.com/articles/creating-a-pull-request
 [`PTAL`]: https://en.wiktionary.org/wiki/PTAL
 [agenda]: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit
 [bug]: #bug-lifecycle
 [communication]:  /sig-cli/README.md#contact
 [community page]: /sig-cli
+[contribution ladder]: https://github.com/kubernetes/community/blob/master/community-membership.md
 [design proposal]: #design-proposals
 [design repo]: https://git.k8s.io/design-proposals-archive/cli
 [design template]: https://git.k8s.io/design-proposals-archive/Design_Proposal_TEMPLATE.md
@@ -412,10 +398,10 @@ See the sig-cli [community page] for points of contact and meeting times:
 [feature request]: #feature-requests
 [feature]: https://github.com/kubernetes/features
 [group]: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
-[issue]: https://github.com/kubernetes/kubectl/projects/3
-[kubectl docs]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
+[issue]: https://github.com/kubernetes/kubectl/issues
+[kubectl]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
 [kubernetes/cmd/kubectl]: https://git.k8s.io/kubernetes/cmd/kubectl
-[kubernetes/pkg/kubectl]: https://git.k8s.io/kubernetes/pkg/kubectl
+[kubernetes/pkg/kubectl]: https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/kubectl/pkg/cmd
 [Codebase Tour]:  https://youtu.be/eZeCFRh2uGg?t=538
 [leads]: /sig-cli/README.md#leadership
 [management overview]: https://kubernetes.io/docs/concepts/tools/kubectl/object-management-overview
@@ -424,5 +410,4 @@ See the sig-cli [community page] for points of contact and meeting times:
 [slack-messages]: https://kubernetes.slack.com/messages/sig-cli
 [slack-signup]: http://slack.k8s.io/
 [tests]: /contributors/devel/sig-testing/testing.md
-[cli mentors]: https://groups.google.com/a/google.com/forum/#!forum/kubernetes-sig-cli-mentors
 [about me form]: https://docs.google.com/forms/d/1ID6DX1abiDr9Z9_sXXC0DsMwuyHb_NeFdB3xeRa4Vf0
