@@ -8,8 +8,7 @@ You can also subscribe to an RSS feed of the above using [this link][kubernetes-
 
 ## Reporting a Vulnerability
 
-Instructions for reporting a vulnerability can be found on the
-[Kubernetes Security and Disclosure Information] page.
+Instructions for reporting a vulnerability can be found on the [Kubernetes Security and Disclosure Information] page.
 
 ## Supported Versions
 
