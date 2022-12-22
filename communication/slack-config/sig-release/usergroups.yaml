@@ -48,16 +48,17 @@ usergroups:
       - sig-release
     members:
       - cpanato # SIG Release Technical Lead
-      - gracenng # 1.26 RT Lead Shadow
+      - Heba # 1.27 RT Lead Shadow
+      - hosseinsalahi # 1.27 RT Lead Shadow
+      - JamesLaverack # 1.27 Emeritus Advisor
       - jeremyrickard # SIG Release Chair
       - justaugustus # SIG Release Chair
-      - katcosgrove # 1.26 RT Lead Shadow
-      - leonardpahlke # 1.26 RT Lead
-      - nate-double-u # 1.26 RT Lead Shadow
+      - katcosgrove # 1.27 RT Lead Shadow
       - puerco # SIG Release Technical Lead
-      - psaggu # 1.26 RT Lead Shadow
+      - psaggu # 1.27 RT Lead Shadow
       - saschagrunert # SIG Release Chair
       - Verolop # SIG Release Technical Lead
+      - Xander # 1.27 RT Lead
 
   # Should match SIG Release Leads at all times:
   # https://git.k8s.io/community/sig-release/README.md#leadership
