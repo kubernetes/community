@@ -87,9 +87,7 @@ backup email support address <login-issues@jira.linuxfoundation.org>
 
 ## Setting up the CNCF CLA check
 
-If you are a Kubernetes GitHub organization or repo owner and would like to setup
-
-the Linux Foundation CNCF CLA check for your repositories, kindly read the [docs on setting up the CNCF CLA check](/github-management/setting-up-cla-check.md)
+If you are a Kubernetes GitHub organization or repo owner and would like to setup the Linux Foundation CNCF CLA check for your repositories, [read the docs on setting up the CNCF CLA check](/github-management/setting-up-cla-check.md)
 
 
 [Linux Foundation Support Site]: https://support.linuxfoundation.org/
