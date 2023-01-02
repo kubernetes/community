@@ -80,12 +80,12 @@ Canonical until 2017-03-31
 If you encounter any problems signing the CLA and need further assistance, log a ticket by clicking on the link [please submit a support request ticket](https://jira.linuxfoundation.org/plugins/servlet/theme/portal/4) from the EasyCLA bot's response. Someone from the CNCF will respond to your ticket to help.
 
 Should you have any issues using the LF Support Site, send a message to the
-backup e-mail support address <login-issues@jira.linuxfoundation.org>
+backup email support address <login-issues@jira.linuxfoundation.org>
 
 ## Setting up the CNCF CLA check
 
 If you are a Kubernetes GitHub organization or repo owner and would like to setup
-the Linux Foundation CNCF CLA check for your repositories, [read the docs on setting up the CNCF CLA check](/github-management/setting-up-cla-check.md)
+the Linux Foundation CNCF CLA check for your repositories, [read the docs on setting up the CNCF CLA check](/github-management/setting-up-cla-check.md).
 
 
 [Linux Foundation Support Site]: https://support.linuxfoundation.org/
