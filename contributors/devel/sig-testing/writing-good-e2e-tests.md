@@ -25,8 +25,22 @@ time, and delayed merges.
 
 #### Debuggability ####
 
-If your test fails, it should provide as detailed as possible reasons
-for the failure in its output. "Timeout" is not a useful error
+If your test fails, it should provide as detailed as possible reasons for the
+failure in its failure message. The failure message is the string that gets
+passed (directly or indirectly) to `ginkgo.Fail(f)`. That text is what gets
+shown in the overview of failed tests for a Prow job and what gets aggregated
+by https://go.k8s.io/triage.
+
+A good failure message:
+- identifies the test failure
+- has enough details to provide some initial understanding of what went wrong
+
+It's okay for it to contain information that changes during each test
+run. Aggregation [simplifies the failure message with regular
+expressions](https://github.com/kubernetes/test-infra/blob/d56bc333ae8acf176887a3249f750e7a8e0377f0/triage/summarize/text.go#L39-L69)
+before looking for similar failures.
+
+"Timeout" is not a useful error
 message. "Timed out after 60 seconds waiting for pod xxx to enter
 running state, still in pending state" is much more useful to someone
 trying to figure out why your test failed and what to do about it.
@@ -38,16 +52,314 @@ like the following generates rather useless errors:
 Expect(err).NotTo(HaveOccurred())
 ```
 
-Rather
+Errors returned by client-go can be very detailed. A better way to test for
+errors is with `framework.ExpectNoError` because it logs the full error and
+then includes only the shorter `err.Error()` in the failure message. To make
+that failure message more informative,
 [annotate](https://onsi.github.io/gomega/#annotating-assertions) your assertion with something like this:
 
 ```
-Expect(err).NotTo(HaveOccurred(), "Failed to create %d foobars, only created %d", foobarsReqd, foobarsCreated)
+framework.ExpectNoError(err, "tried creating %d foobars, only created %d", foobarsReqd, foobarsCreated)
 ```
 
 On the other hand, overly verbose logging, particularly of non-error conditions, can make
 it unnecessarily difficult to figure out whether a test failed and if
 so why?  So don't log lots of irrelevant stuff either.
+
+Except for this special case, using Gomega assertions directly is
+encouraged. They are more versatile than the (few) wrappers that were added to
+the E2E framework. Use assertions that match the check in the test. Using Go
+code to evaluate some condition and then checking the result often isn't
+informative. For example this check should be avoided:
+
+```
+gomega.Expect(strings.Contains(actualStr, expectedSubStr)).To(gomega.Equal(true))
+```
+
+Better pass both values to Gomega, which will automatically include them in the
+failure message. Add an annotation that explains what the assertion is about:
+
+```
+gomega.Expect(actualStr).To(gomega.ContainSubstring("xyz"), "checking log output")
+```
+
+This produces the following failure message:
+```
+  [FAILED] checking log output
+  Expected
+      <string>: hello world
+  to contain substring
+      <string>: xyz
+```
+
+If there is no suitable Gomega assertion, call `ginkgo.Failf` directly:
+```
+import "github.com/onsi/gomega/format"
+
+ok := someCustomCheck(abc)
+if !ok {
+    ginkgo.Failf("check xyz failed for object:\n%s", format.Object(abc))
+}
+```
+
+[Comparing a boolean](https://github.com/kubernetes/kubernetes/issues/105678)
+like this against `true` or `false` with `gomega.Equal` or
+`framework.ExpectEqual` is not useful because dumping the actual and expected
+value just distracts from the underlying failure reason.
+
+Dumping structs with `format.Object` is recommended. Starting with Kubernetes
+1.26, `format.Object` will pretty-print Kubernetes API objects or structs [as
+YAML and omit unset
+fields](https://github.com/kubernetes/kubernetes/pull/113384), which is more
+readable than other alternatives like `fmt.Sprintf("%+v")`.
+
+    import (
+        "fmt"
+        "k8s.io/api/core/v1"
+        "k8s.io/kubernetes/test/utils/format"
+    )
+    
+    var pod v1.Pod
+    fmt.Printf("Printf: %+v\n\n", pod)
+    fmt.Printf("format.Object:\n%s", format.Object(pod, 1 /* indent one level */))
+    
+    =>
+    
+    Printf: {TypeMeta:{Kind: APIVersion:} ObjectMeta:{Name: GenerateName: Namespace: SelfLink: UID: ResourceVersion: Generation:0 CreationTimestamp:0001-01-01 00:00:00 +0000 UTC DeletionTimestamp:<nil> DeletionGracePeriodSeconds:<nil> Labels:map[] Annotations:map[] OwnerReferences:[] Finalizers:[] ManagedFields:[]} Spec:{Volumes:[] InitContainers:[] Containers:[] EphemeralContainers:[] RestartPolicy: TerminationGracePeriodSeconds:<nil> ActiveDeadlineSeconds:<nil> DNSPolicy: NodeSelector:map[] ServiceAccountName: DeprecatedServiceAccount: AutomountServiceAccountToken:<nil> NodeName: HostNetwork:false HostPID:false HostIPC:false ShareProcessNamespace:<nil> SecurityContext:nil ImagePullSecrets:[] Hostname: Subdomain: Affinity:nil SchedulerName: Tolerations:[] HostAliases:[] PriorityClassName: Priority:<nil> DNSConfig:nil ReadinessGates:[] RuntimeClassName:<nil> EnableServiceLinks:<nil> PreemptionPolicy:<nil> Overhead:map[] TopologySpreadConstraints:[] SetHostnameAsFQDN:<nil> OS:nil HostUsers:<nil> SchedulingGates:[] ResourceClaims:[]} Status:{Phase: Conditions:[] Message: Reason: NominatedNodeName: HostIP: PodIP: PodIPs:[] StartTime:<nil> InitContainerStatuses:[] ContainerStatuses:[] QOSClass: EphemeralContainerStatuses:[] Resize:}}
+
+    format.Object:
+        <v1.Pod>: 
+            metadata:
+              creationTimestamp: null
+            spec:
+              containers: null
+            status: {}
+
+Consider writing a [Gomega
+matcher](https://onsi.github.io/gomega/#adding-your-own-matchers). It combines
+the custom check and generating the failure messages and can make tests more
+readable.
+
+It is good practice to include details like the object that failed some
+assertion in the failure message because then a) the information is available
+when analyzing a failure that occurred in the CI and b) it only gets logged
+when some assertion fails. Always dumping objects via log messages can make the
+test output very large and may distract from the relevant information.
+
+#### Recovering from test failures ####
+
+All tests should ensure that a cluster is restored to the state that it was in
+before the test ran. [`ginkgo.DeferCleanup`
+](https://pkg.go.dev/github.com/onsi/ginkgo/v2#DeferCleanup) is recommended for
+this because it can be called similar to `defer` directly after setting up
+something. It is better than `defer` because Ginkgo will show additional
+details about which cleanup code is running and (if possible) handle timeouts
+for that code (see next section). Is is better than `ginkgo.AfterEach` because
+it is not necessary to define additional variables and because
+`ginkgo.DeferCleanup` executes code in the more useful last-in-first-out order,
+i.e. things that get set up first get removed last.
+
+Objects created in the test namespace do not need to be deleted because
+deleting the namespace will also delete them. However, if deleting an object
+may fail, then explicitly cleaning it up is better because then failures or
+timeouts related to it will be more obvious.
+
+In cases where the test may have removed the object, `framework.IgnoreNotFound`
+can be used to ignore the "not found" error:
+```
+podClient := f.ClientSet.CoreV1().Pods(f.Namespace.Name)
+pod, err := podClient.Create(ctx, testPod, metav1.CreateOptions{})
+framework.ExpectNoError(err, "create test pod")
+ginkgo.DeferCleanup(framework.IgnoreNotFound(podClient.Delete), pod.Name, metav1.DeleteOptions{})
+```
+
+#### Interrupting tests ####
+
+When aborting a manual `gingko ./test/e2e` invocation with CTRL-C or a signal,
+the currently running test(s) should stop immediately. This gets achieved by
+accepting a `ctx context.Context` as first parameter in the Ginkgo callback
+function and then passing that context through to all code that might
+block. When Ginkgo notices that it needs to shut down, it will cancel that
+context and all code trying to use it will immediately return with a `context
+canceled` error. Cleanup callbacks get a new context which will time out
+eventually to ensure that tests don't get stuck. For a detailed description,
+see https://onsi.github.io/ginkgo/#interrupting-aborting-and-timing-out-suites.
+Most of the E2E tests [were update to use the Ginkgo
+context](https://github.com/kubernetes/kubernetes/pull/112923) at the start of
+the 1.27 development cycle.
+
+There are some gotchas:
+
+- Don't use the `ctx` passed into `ginkgo.It` in a `ginkgo.DeferCleanup`
+  callback because the context will be canceled when the cleanup code
+  runs. This is wrong:
+
+        ginkgo.It("something", func(ctx context.Context) {
+              ...
+              ginkgo.DeferCleanup(func() {
+                  // do something with ctx
+              })
+        })
+
+  Instead, register a function which accepts a new context:
+
+         ginkgo.DeferCleanup(func(ctx context.Context) {
+             // do something with the new ctx
+         })
+
+  Anonymous functions can be avoided by passing some existing function and its
+  parameters directly to `ginkgo.DeferCleanup`. Again, beware to *not* pass the
+  wrong `ctx`. This is wrong:
+
+        ginkgo.It("something", func(ctx context.Context) {
+              ...
+              ginkgo.DeferCleanup(myDeleteFunc, ctx, objName)
+        })
+
+  Instead, just pass the other parameters and let `ginkgo.DeferCleanup`
+  add a new context:
+
+        ginkgo.DeferCleanup(myDeleteFunc, objName)
+
+- When starting some background goroutine in a `ginkgo.BeforeEach` callback,
+  use `context.WithCancel(context.Background())`. The context passed into the
+  callback will get canceled when the callback returns, which would cause the
+  background goroutine to stop before the test runs. This works:
+
+        backgroundCtx, cancel := context.WithCancel(context.Background())
+        ginkgo.DeferCleanup(cancel)
+        _, controller = cache.NewInformer( ... )
+        go controller.Run(backgroundCtx.Done())
+
+- When adding a timeout to the context for one particular operation,
+  beware of overwriting the `ctx` variable. This code here applies
+  the timeout to the next call and everything else that follows:
+
+        ctx, cancel := context.WithTimeout(ctx, 5 * time.Second)
+        defer cancel()
+        someOperation(ctx)
+        ...
+        anotherOperation(ctx)
+
+  Better use some other variable name:
+
+        timeoutCtx, cancel := context.WithTimeout(ctx, 5 * time.Second)
+        defer cancel()
+        someOperation(timeoutCtx)
+
+  When the intention is to set a timeout for the entire callback, use
+  [`ginkgo.NodeTimeout`](https://pkg.go.dev/github.com/onsi/ginkgo/v2#NodeTimeout):
+
+        ginkgo.It("something", ginkgo.NodeTimeout(30 * time.Second), func(ctx context.Context) {
+        })
+
+  There is also a `ginkgo.SpecTimeout`, but that then also includes the time
+  taken for `BeforeEach`, `AfterEach` and `DeferCleanup` callbacks.
+
+#### Polling and timeouts ####
+
+When waiting for something to happen, use a reasonable timeout. Without it, a
+test might keep running until the entire test suite gets killed by the
+CI. Beware that the CI under load may take a lot longer to complete some
+operation compared to running the same test locally. On the other hand, a too
+long timeout can be annoying when trying to debug tests locally.
+
+The framework provides some [common
+timeouts](https://github.com/kubernetes/kubernetes/blob/eba98af1d8b19b120e39f3/test/e2e/framework/timeouts.go#L44-L109)
+through the [framework
+instance](https://github.com/kubernetes/kubernetes/blob/1e84987baccbccf929eba98af1d8b19b120e39f3/test/e2e/framework/framework.go#L122-L123).
+When writing a test, check whether one of those fits before defining a custom
+timeout in the test.
+
+Good code that waits for something to happen meets the following criteria:
+- accepts a context for test timeouts
+- informative during interactive use (i.e. intermediate reports, either
+  periodically or on demand)
+- little to no output during a CI run except when it fails
+- full explanation when it fails: when it observes some state and then
+  encounters errors reading the state, then dumping both the latest
+  observed state and the latest error is useful
+- extension mechanism for writing custom checks
+- early abort when condition cannot be reached anymore
+
+[`gomega.Eventually`](https://pkg.go.dev/github.com/onsi/gomega#Eventually)
+satisfies all of these criteria and therefore is recommended, but not required.
+In https://github.com/kubernetes/kubernetes/pull/113298,
+[test/e2e/framework/pods/wait.go](https://github.com/kubernetes/kubernetes/blob/222f65506252354da012c2e9d5457a6944a4e681/test/e2e/framework/pod/wait.go)
+and the framework were modified to use gomega. Typically, `Eventually` is
+passed a function which gets an object or lists several of them, then `Should`
+checks against the expected result. Errors and retries specific to Kubernetes
+are handled by [wrapping client-go
+functions](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/framework/get.go).
+
+Using gomega assertions in helper packages is problematic for two reasons:
+- The stacktrace associated with the failure starts with the helper unless
+  extra care is take to pass in a stack offset.
+- Additional explanations for a potential failure must be prepared beforehand
+  and passed in.
+
+The E2E framework therefore uses a different approach:
+- [`framework.Gomega()`](https://github.com/kubernetes/kubernetes/blob/222f65506252354da012c2e9d5457a6944a4e681/test/e2e/framework/expect.go#L80-L101)
+  offers similar functions as the `gomega` package, except that they return a
+  normal error instead of failing the test.
+- That error gets wrapped with `fmt.Errorf("<explanation>: %w)` to
+  add additional information, just as in normal Go code.
+- Wrapping the error (`%w` instead of `%v`) is important because then
+  `framework.ExpectNoError` directly uses the error message as failure without
+  additional boiler plate text. It also is able to log the stacktrace where
+  the error occurred and not just where it was finally treated as a test
+  failure.
+
+Some tips for writing and debugging long-running tests:
+
+- Use `ginkgo.By` to record individual steps. Ginkgo will use that information
+  when describing where a test timed out.
+
+- Invoke the `ginkgo` CLI with `--poll-progress-after=30s` or some other
+  suitable duration to [be informed
+  early](https://onsi.github.io/ginkgo/#getting-visibility-into-long-running-specs)
+  why a test doesn't complete and where it is stuck. A SIGINFO or SIGUSR1
+  signal can be sent to the CLI and/or e2e.test processes to trigger an
+  immediate progress report.
+
+- Use [`gomega.Eventually`](https://pkg.go.dev/github.com/onsi/gomega#Eventually)
+  to wait for some condition. When it times out or
+  gets stuck, the last failed assertion will be included in the report
+  automatically. A good way to invoke it is:
+
+        gomega.Eventually(ctx, func(ctx context.Context) (book Book, err error) {
+            // Retrieve book from API server and return it.
+            ...
+         }).WithPolling(5 * time.Second).WithTimeout(30 * time.Second).
+         Should(gomega.HaveField("Author.DOB.Year()", BeNumerically("<", 1900)))
+
+  Avoid testing for some condition inside the callback and returning a boolean
+  because then failure messages are not informative (see above). See
+  https://github.com/kubernetes/kubernetes/pull/114640 for an example where
+  [gomega/gcustom](https://pkg.go.dev/github.com/onsi/gomega@v1.27.2/gcustom)
+  was used to write assertions.
+
+  Some of the E2E framework sub-packages have helper functions that wait for
+  certain domain-specific conditions. Currently most of these functions don't
+  follow best practices (not using gomega.Eventually, error messages not very
+  informative). [Work is
+  planned](https://github.com/kubernetes/kubernetes/issues/106575) in that
+  area, so beware that these APIs may
+  change at some point.
+
+- Use `gomega.Consistently` to ensure that some condition is true
+  for a while. As with `gomega.Eventually`, make assertions about the
+  value instead of checking the value with Go code and then asserting
+  that the code returns true.
+
+- Both `gomega.Consistently` and `gomega.Eventually` can be aborted early via
+  [`gomega.StopPolling`](https://onsi.github.io/gomega/#bailing-out-early---polling-functions).
+
+- Avoid polling with functions that don't take a context (`wait.Poll`,
+  `wait.PollImmediate`, `wait.Until`, ...) and replace with their counterparts
+  that do (`wait.PollWithContext`, `wait.PollImmediateWithContext`,
+  `wait.UntilWithContext`, ...) or even better, with `gomega.Eventually`.
+
 
 #### Ability to run in non-dedicated test clusters ####
 
