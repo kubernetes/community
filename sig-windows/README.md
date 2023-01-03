@@ -65,6 +65,9 @@ The following [subprojects][subproject-definition] are owned by sig-windows:
 ### windows-samples
 - **Owners:**
   - [kubernetes-sigs/sig-windows-samples](https://github.com/kubernetes-sigs/sig-windows-samples/blob/master/OWNERS)
+### windows-service-proxy
+- **Owners:**
+  - [kubernetes-sigs/windows-service-proxy](https://github.com/kubernetes-sigs/windows-service-proxy/blob/main/OWNERS)
 ### windows-testing
 - **Owners:**
   - [kubernetes-sigs/windows-testing](https://github.com/kubernetes-sigs/windows-testing/blob/master/OWNERS)
