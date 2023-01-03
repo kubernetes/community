@@ -2972,6 +2972,9 @@ sigs:
   - name: windows-samples
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-samples/master/OWNERS
+  - name: windows-service-proxy
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/windows-service-proxy/main/OWNERS
   - name: windows-testing
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/windows-testing/master/OWNERS
