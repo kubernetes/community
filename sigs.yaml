@@ -892,10 +892,10 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-azure/master/OWNERS
     meetings:
     - description: Azure Subproject Meeting
-      day: Monday
-      time: "18:00"
+      day: Tuesday
+      time: "16:00"
       tz: PT (Pacific Time)
-      frequency: monthly - third Monday
+      frequency: monthly - third Tuesday
       url: https://zoom.us/j/586836662
       archive_url: https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4
