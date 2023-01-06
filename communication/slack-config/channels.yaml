@@ -181,6 +181,7 @@ channels:
   - name: karpenter
   - name: k8s-dual-stack
     archived: true
+  - name: k8s-image-swapper
   - name: k8s-infra-alerts
   - name: k8s-release
     archived: true
