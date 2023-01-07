@@ -88,12 +88,12 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLWpmsLfcyyD7HAhlLTuwmI9KWuoiaN9nO).
 ### provider-aws
 - **Owners:**
-  - [kubernetes-sigs/aws-alb-ingress-controller](https://github.com/kubernetes-sigs/aws-alb-ingress-controller/blob/master/OWNERS)
   - [kubernetes-sigs/aws-ebs-csi-driver](https://github.com/kubernetes-sigs/aws-ebs-csi-driver/blob/master/OWNERS)
   - [kubernetes-sigs/aws-efs-csi-driver](https://github.com/kubernetes-sigs/aws-efs-csi-driver/blob/master/OWNERS)
   - [kubernetes-sigs/aws-encryption-provider](https://github.com/kubernetes-sigs/aws-encryption-provider/blob/master/OWNERS)
   - [kubernetes-sigs/aws-fsx-csi-driver](https://github.com/kubernetes-sigs/aws-fsx-csi-driver/blob/master/OWNERS)
   - [kubernetes-sigs/aws-iam-authenticator](https://github.com/kubernetes-sigs/aws-iam-authenticator/blob/master/OWNERS)
+  - [kubernetes-sigs/aws-load-balancer-controller](https://github.com/kubernetes-sigs/aws-load-balancer-controller/blob/master/OWNERS)
   - [kubernetes-sigs/provider-aws-test-infra](https://github.com/kubernetes-sigs/provider-aws-test-infra/blob/master/OWNERS)
   - [kubernetes/cloud-provider-aws](https://github.com/kubernetes/cloud-provider-aws/blob/master/OWNERS)
 - **Meetings:**

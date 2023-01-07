@@ -866,12 +866,12 @@ sigs:
       recordings_url: https://www.youtube.com/playlist?list=PLWpmsLfcyyD7HAhlLTuwmI9KWuoiaN9nO
   - name: provider-aws
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/aws-alb-ingress-controller/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-ebs-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-efs-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-iam-authenticator/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/provider-aws-test-infra/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-aws/master/OWNERS
     meetings:
