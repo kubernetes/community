@@ -180,6 +180,7 @@ channels:
   - name: kalm
   - name: kaniko
   - name: karpenter
+  - name: karpenter-dev
   - name: k8s-dual-stack
     archived: true
   - name: k8s-infra-alerts
