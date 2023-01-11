@@ -54,6 +54,7 @@ channels:
   - name: cluster-api-aws-alerts
   - name: cluster-api-azure
   - name: cluster-api-baremetal
+  - name: cluster-api-cloud-director
   - name: cluster-api-cloudstack
   - name: cluster-api-digitalocean
   - name: cluster-api-docker

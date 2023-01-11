@@ -62,6 +62,29 @@ summarized as:
 - if you can't keep your object size below 100kB, reach out to SIG
   Scalability and discuss the usecase to see how we can make it performant
 
+### How should we code client applications to improve scalability?
+
+As noted above, LIST requests can be particularly expensive. So consider the following guidelines when working with lists
+that may have more than a few thousand small objects, or more than a few hundred large ones.
+
+1. When defining a new resource type (new CRD) consider expected numbers 
+of objects that will exist (numbers of CRs).  See guidelines for small, medium and large objects 
+[here](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/95-custom-resource-definitions#scale-targets-for-ga).
+1. When LIST-ing, the load on etcd and API Server depends primarily on the number of objects that _exist_, not the number that are _returned_. So even if you are using a field selector to filter the list and retrieve only a small number of results, these guidelines still apply.  (The only exception is retrieving a single object by `metadata.name`, which is fast.)
+1. If your code needs to hold an up-to-date list of objects in memory,
+avoid repeated LIST calls if possible.  Instead consider using the
+`Informer` classes that are provided in most Kubernetes client 
+libraries.   Informers automatically combine LIST and WATCH functionality
+to efficiently maintain an in-memory collection.
+1. If `Informer`s don't suit your needs, consider whether you really need strong consistency. Do you really need to see the most recent data, up to the _exact moment in time_ when you issued the query?  If you don't need that, set `ResourceVersion=0`. This will cause your request to be served from the API Server's cache instead of from etcd. Read the [documentation about ResourceVersions](https://kubernetes.io/docs/reference/using-api/api-concepts/#resource-versions) carefully to understand how it will affect the freshness of the data you receive. 
+1. If you can't use `Informer`s AND you can't use the API Server cache,
+ then be sure to [read large lists in chunks](https://kubernetes.io/docs/reference/using-api/api-concepts/#retrieving-large-results-sets-in-chunks).
+1. Additionally, if you cannot use `Informer`s, you should also consider how _often_ your application LISTs the resources. In particular, after you read the last object in a large list, do not _immediately_ re-query the same list. Wait a while instead. Don't list more often than you need to.
+1. Consider the number of instances of your client application which will be running. For instance,
+there is a big difference between having 
+just one controller listing objects, versus having pods on every node 
+doing the same thing (e.g. in a daemonset).  If there will be many instances of your client application
+periodically listing large numbers of objects, your solution will NOT scale to large clusters.
 
 ### How do you setup clusters for scalability testing?
 

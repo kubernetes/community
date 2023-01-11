@@ -386,19 +386,19 @@ past "X" minutes/hours.
 Report any actions taken to the other slack admins, and if needed the 
 [Code of Conduct Committee][cocc].
 
-  [coc]: /code-of-conduct.md
-  [admins]: ./moderators.md#Slack
-  [Slack Archive Download]: https://drive.google.com/drive/folders/1Xnkwsxis3tu0pT7rwp-crRq4IciZ5b1o?usp=sharing
-  [cocc]: /committee-code-of-conduct/README.md
-  [CNCF Slack]: https://slack.cncf.io/
-  [Tempelis]: http://sigs.k8s.io/slack-infra/tempelis
-  [slack-config]: ./slack-config/
-  [Channel Documentation]: ./slack-config/README.md
-  [sig-list]: https://www.kubernetes.dev/community/community-groups
-  [Slack Config Documentation]: ./slack-config/README.md
-  [OWNERS]: /contributors/guide/owners
-  [usergroups.yaml]: ./slack-config/usergroups.yaml
-  [User Group Documentation]: ./slack-config/README.md#usergroups
-  [GitHub Issue]: https://github.com/kubernetes/community/issues/new/choose
-  [moderation guidelines]: ./moderation.md
-  [Slack's policy on inactivated accounts]: https://get.slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account
+[coc]: /code-of-conduct.md
+[admins]: ./moderators.md#Slack
+[Slack Archive Download]: https://drive.google.com/drive/folders/1Xnkwsxis3tu0pT7rwp-crRq4IciZ5b1o?usp=sharing
+[cocc]: /committee-code-of-conduct/README.md
+[CNCF Slack]: https://slack.cncf.io/
+[Tempelis]: http://sigs.k8s.io/slack-infra/tempelis
+[slack-config]: ./slack-config/
+[Channel Documentation]: ./slack-config/README.md
+[sig-list]: https://www.kubernetes.dev/community/community-groups
+[Slack Config Documentation]: ./slack-config/README.md
+[OWNERS]: /contributors/guide/OWNERS
+[usergroups.yaml]: ./slack-config/usergroups.yaml
+[User Group Documentation]: ./slack-config/README.md#usergroups
+[GitHub Issue]: https://github.com/kubernetes/community/issues/new/choose
+[moderation guidelines]: ./moderation.md
+[Slack's policy on inactivated accounts]: https://get.slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account

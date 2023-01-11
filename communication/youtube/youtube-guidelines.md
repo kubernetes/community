@@ -236,26 +236,26 @@ downloaded and then reuploaded to the Kubernetes channel.
     generate thumbnails and process the videos.
 7.  Once videos are finalized, set the playlist to Public to publish them.
 
-  [coc]: /code-of-conduct.md
-  [admins]: /communication/moderators.md
-  [Kubernetes YouTube Channel]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
-  [community meeting]: /events/community-meeting.md
-  [Office Hours]: /events/office-hours.md
-  [Meet our Contributors]: /events/meet-our-contributors.md
-  [Subprojects]: /governance.md#subprojects
-  [collaboration]: https://support.google.com/youtube/answer/6109639
-  [update the permissions in your YouTube settings]: https://support.google.com/a/answer/6212415
-  [YouTube admins]: /communication/moderators.md#YouTube-Channel
-  [SIG Contributor Experience]: /sig-contributor-experience/README.md
-  [moderation guidelines]: /communication/moderation.md
-  [trim]: https://support.google.com/youtube/answer/9057455?hl=en
-  [edit]: https://support.google.com/youtube/topic/9257530?hl=en&ref_topic=9257610
-  [Zoom guidelines]: /communication/zoom-guidelines.md
-  [SIG Auth]: /sig-auth/README.md
-  [SIG Docs]: /sig-docs/README.md
-  [SIG Network]: /sig-network/README.md
-  [SIG Release]: /sig-release/README.md
-  [Steering Committee]: /committee-steering/governance/README.md
-  [WG Data Protection]: /wg-data-protection/README.md
-  [Streaming Config]: /communication/youtube/streaming-config.md
-  [youtube-dl]: https://ytdl-org.github.io/youtube-dl/index.html
+[coc]: /code-of-conduct.md
+[admins]: /communication/moderators.md
+[Kubernetes YouTube Channel]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
+[community meeting]: /events/community-meeting.md
+[Office Hours]: /events/office-hours.md
+[Meet our Contributors]: /events/meet-our-contributors.md
+[Subprojects]: /governance.md#subprojects
+[collaboration]: https://support.google.com/youtube/answer/6109639
+[update the permissions in your YouTube settings]: https://support.google.com/a/answer/6212415
+[YouTube admins]: /communication/moderators.md#YouTube-Channel
+[SIG Contributor Experience]: /sig-contributor-experience/README.md
+[moderation guidelines]: /communication/moderation.md
+[trim]: https://support.google.com/youtube/answer/9057455?hl=en
+[edit]: https://support.google.com/youtube/topic/9257530?hl=en&ref_topic=9257610
+[Zoom guidelines]: /communication/zoom-guidelines.md
+[SIG Auth]: /sig-auth/README.md
+[SIG Docs]: /sig-docs/README.md
+[SIG Network]: /sig-network/README.md
+[SIG Release]: /sig-release/README.md
+[Steering Committee]: /committee-steering/governance/README.md
+[WG Data Protection]: /wg-data-protection/README.md
+[Streaming Config]: /communication/youtube/streaming-config.md
+[youtube-dl]: https://ytdl-org.github.io/youtube-dl/index.html
