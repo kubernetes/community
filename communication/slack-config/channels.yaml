@@ -276,6 +276,8 @@ channels:
   - name: kudo
   - name: kurl
   - name: kustomize
+  - name: kwok
+  - name: kwok-dev
   - name: kyverno
   - name: kyverno-dev
   - name: leadership-summit
