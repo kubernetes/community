@@ -14,25 +14,16 @@
    -
    -
 
-3. KEP work in {{lastYear}} (1.x, 1.y, 1.z):
+{{$releases := getReleases}}
+3. KEP work in {{lastYear}} (v{{$releases.Latest}}, v{{$releases.LatestMinusOne}}, v{{$releases.LatestMinusTwo}}):
+{{$owingsig := .Dir}}
+{{- range $stage, $keps := filterKEPs $owingsig $releases}}
+  {{ $stage }}:
+  {{- range $keps}}
+    - [{{.Number}} - {{.Title}}](https://github.com/kubernetes/enhancements/tree/master/keps/{{.OwningSIG}}/{{.Name}}) - {{.LatestMilestone -}}
+  {{ end}}
+{{- end}}
 
-<!--
-In future, this will be generated from kubernetes/enhancements kep.yaml files
-1. with SIG as owning-sig or in participating-sigs
-2. listing 1.x, 1.y, or 1.z in milestones or in latest-milestone
--->
-
-   - Stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-   - Beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-   - Alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-   - Pre-alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md)
 
 ## Project health
 
