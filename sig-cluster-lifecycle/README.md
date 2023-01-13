@@ -77,6 +77,10 @@ A project focused on providing declarative APIs and tooling to simplify provisio
   - Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1ushaVqAKYnZ2VN_aa3GyKlS4kEd6bSug13xaXOakAQI/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
+### cluster-api-addon-provider-helm
+Implementation of Cluster Add-on Provider for Helm, an add-on orchestration solution for Cluster API using Helm.
+- **Owners:**
+  - [kubernetes-sigs/cluster-api-addon-provider-helm](https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/blob/main/OWNERS)
 ### cluster-api-operator
 Leverages a declarative API and an operator to empower admins to handle the lifecycle of Cluster API providers within the management cluster
 - **Owners:**
