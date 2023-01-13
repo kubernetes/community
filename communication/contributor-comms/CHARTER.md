@@ -1,12 +1,12 @@
-# Kubernetes Upstream Marketing Contributor Communications Team Charter
+# Kubernetes Contributor Communications Team Charter
 
 ## Summary
 
-The mission of the Kubernetes Upstream Marketing Contributor Communications team (Contributor Comms for short) is to elevate the hard work being done throughout the Kubernetes community by its contributors. Promoting the work and helping fill the needs of the Kubernetes community is the driving force behind the Contributor Comms team. The goal of this work is to improve the overall sustainability of the project by giving or elevating information to contributors so they stay well informed.
+The mission of the Kubernetes Contributor Communications team (Contributor Comms for short) is to elevate the hard work being done throughout the Kubernetes community by its contributors. Promoting the work of contributors both internally within the contributor community, and externally is at the core of the Contributor Comms team’s work. The goal of this work is to improve the overall sustainability of the project by giving or elevating information to contributors so they stay well informed.
 
 ## Ethos/Vision
 
-This group's work is in support of the upstream Kubernetes community only (the open source project). As such it will adhere to the [Kubernetes Community Values](/values.md#kubernetes-community-values). The core value we feel strongest about is [Community over product or company](/values.md#community-over-product-or-company). The makeup of this team will be from all walks of life including vendors. The work of the Kubernetes community should always be prioritized over vendor created works. Contributor Comms team members are expected to act in the interest of the community and not their employers.
+This group's work is in support of the upstream Kubernetes community only (the open source project). As such it will adhere to the [Kubernetes Community Values](/values.md#kubernetes-community-values). The core value we feel strongest about is [Community over product or company](/values.md#community-over-product-or-company). The makeup of this team will be from all walks of life including vendors. The work of the Kubernetes community should always be prioritized over vendor created works. Contributor Comms team members are expected to act in the interest of the community and not their employers while performing community duties.
 
 ## Goals
 
@@ -18,22 +18,34 @@ This team operates independently from Cloud Native Computing Foundation (CNCF) o
 
 ## Governance
 
-Leadership is divided up between [Marketing Council] team members. This group of leaders divide up the core responsibilities of the team and look to further optimize the experience of both code and non-code contributors.
+The Contributor Comms subproject welcomes and encourages its members to take on leadership roles in their contributions. The group defines the areas of its work such as social media, blogging, etc. and creates associated leadership roles accordingly. Members are encouraged to pursue any interest in specific areas as contributing team members, leads, or shadows. Leadership roles are defined in the subproject’s [role handbooks](../role-handbooks/).
 
-### Roles
+## Roles and Subproject Management
 
-Roles are divided up between Marketing Council members and other members, notably Storytellers. Marketing Council members are scoped to have at least one shadow. All leads should actively recruit shadows for the entire team.
+General subproject leadership is handled by the Contributor Comms Subproject Lead(s). Specific subproject responsibilities are also broken down into areas with their own lead roles, as defined here:
+
+* Contributor Comms Subproject Lead
+* [Social Media Coordinator](../role-handbooks/Social-Media.md)
+* [Comms Tech Lead](../role-handbooks/Comms-Tech-Lead.md)
+* [Comms Event Lead](../role-handbooks/Comms-Event-Lead.md)
+* [Comms Blog Coordinator](../role-handbooks/blog-coordinator.md)
+* [Storytellers](../role-handbooks/storytellers.md) & other members
+* Emeritus (previous team members that we had the privilege of working with)
+
+All roles can have multiple shadows and should have at least one shadow. All leads should actively recruit members and shadows for the entire team.
+
+Roles are flexible and subject to change.
+
+Roles are occupied or available as indicated on our [README.md](https://github.com/kubernetes/community#readme).
 
 ### Decision Making
 
-Decisions affecting all of Contributor Comms are made primarily led by the program lead as defined in the [Marketing Council]. They come to decision by lazy consensus with the goal of everyone getting a say, but they are responsible for making the decision. If other council members do not agree with one or more decisions made on behalf of the team, this should be raised to the advisors as well as the SIG Contributor Experience leads to facilitate a resolution.
+Decisions affecting all of Contributor Comms are made primarily led by the Contributor Comms Subproject Lead[s]. Decisions are generally made by lazy consensus with the goal of everyone getting a say, but leads are ultimately responsible for making the decision. If team members do not agree with one or more decisions made on behalf of the team, this should be raised to the subproject lead[s] as well as the SIG Contributor Experience leads to facilitate a resolution.
 
-Other council leads have the responsibility and autonomy to decide what is right for their portion of the council's division of work. The same escalation path can be used in case of disagreement that cannot be resolved by internal discussion.
+Leads have the responsibility and autonomy to decide what is right for their portion of the group's division of work. The same escalation path can be used in case of disagreement that cannot be resolved by internal discussion.
 
 ### Off-Ramp
 
 Things change, priorities get optimized, life happens. Having an easy on and off ramp is important to this team. If a lead needs to take an extended absence or leave the team, a shadow would be offered the lead position prior to seeking a lead elsewhere. Therefore moving from shadow to lead and vice versa should be made as simply as possible by continued communications from this team about its members, roles, successes, and failures.
 
-In the case where no shadow is available, other Marketing Council team members have the responsibility to cover the role. Concerns for time or ability to cover work can be escalated to advisors and SIG Contributor Experience leads as necessary.
-
-[Marketing Council](/communication/contributor-comms/role-handbooks/council.md)
+In the case where no shadow is available, other team members have the responsibility to cover the role. Concerns for time or ability to cover work can be escalated to advisors and SIG Contributor Experience leads as necessary.
