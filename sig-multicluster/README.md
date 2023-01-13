@@ -63,6 +63,9 @@ The following [subprojects][subproject-definition] are owned by sig-multicluster
 ### mcs-api
 - **Owners:**
   - [kubernetes-sigs/mcs-api](https://github.com/kubernetes-sigs/mcs-api/blob/master/OWNERS)
+### sig-multicluster-site
+- **Owners:**
+  - [kubernetes-sigs/sig-multicluster-site](https://github.com/kubernetes-sigs/sig-multicluster-site/blob/main/OWNERS)
 ### work-api
 - **Owners:**
   - [kubernetes-sigs/work-api](https://github.com/kubernetes-sigs/work-api/blob/master/OWNERS)
