@@ -75,21 +75,13 @@ In a separate tab of your terminal, run the following:
 
 ```sh
 cd kubernetes
-./hack/local-up-cluster.sh
-```
-
-Since root access is sometimes needed to start/stop Kubernetes daemons, `./hack/local-up-cluster.sh` may need to be run as root. If it reports failures, try this instead:
-
-```sh
 sudo ./hack/local-up-cluster.sh
 ```
-
-This will build and start a lightweight local cluster, consisting of a master and a single node. Press Control+C to shut it down.
 
 **Note:** If you've already compiled the Kubernetes components, you can avoid rebuilding them with the `-O` flag.
 
 ```sh
-./hack/local-up-cluster.sh -O
+sudo ./hack/local-up-cluster.sh -O
 ```
 
 You can use the `./cluster/kubectl.sh` script to interact with the local cluster. `./hack/local-up-cluster.sh` will
@@ -163,7 +155,7 @@ You are running a single node setup.  This has the limitation of only supporting
 ```sh
 cd kubernetes
 make
-./hack/local-up-cluster.sh
+sudo ./hack/local-up-cluster.sh
 ```
 
 ### kubectl claims to start a container but `get pods` and `docker ps` don't show it.
