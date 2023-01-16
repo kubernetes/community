@@ -38,7 +38,7 @@ be able to pick up issues, write code to fix them, and get your work reviewed
 and merged.
 
 This document is the single source of truth for how to contribute to the code
-base. Feel free to browse the  [open issues] and file new ones, all feedback
+base. Feel free to browse the [open issues] and file new ones, all feedback
 is welcome!
 
 ## Contributor Guide
@@ -63,7 +63,7 @@ easier:
 
 ### Create a GitHub account
 
-Before you get started, you will need to [signup](http://github.com/signup) for a GitHub user account. 
+Before you get started, you will need to [sign up](http://github.com/signup) for a GitHub user account. 
 
 ### Sign the CLA
 
@@ -86,7 +86,7 @@ for how to set up your environment.
 ### Community Expectations and Roles
 
 Kubernetes is a community project. Consequently, it is wholly dependent on its
-community to provide a productive, friendly and collaborative environment.
+community to provide a productive, friendly, and collaborative environment.
 
 - Read and review the [Community Expectations] for an 
   understanding of code and review expectations.
@@ -120,7 +120,7 @@ up the contributor ladder!
 ### Events
 
 Kubernetes participates in KubeCon + CloudNativeCon, held three times per year
-in China, Europe and in North America. Information about these and other
+in China, Europe, and North America. Information about these and other
 community events is available on the CNCF [Events] pages.
 
 ### Meetups
