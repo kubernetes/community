@@ -17,9 +17,12 @@ limitations under the License.
 package main
 
 import (
+	"context"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"net/url"
 	"os"
 	"path/filepath"
@@ -28,6 +31,10 @@ import (
 	"strings"
 	"text/template"
 	"time"
+
+	"k8s.io/enhancements/api"
+
+	"github.com/google/go-github/v32/github"
 
 	yaml "gopkg.in/yaml.v3"
 )
@@ -55,12 +62,100 @@ const (
 
 	regexRawGitHubURL = "https://raw.githubusercontent.com/(?P<org>[^/]+)/(?P<repo>[^/]+)/(?P<branch>[^/]+)/(?P<path>.*)"
 	regexGitHubURL    = "https://github.com/(?P<org>[^/]+)/(?P<repo>[^/]+)/(blob|tree)/(?P<branch>[^/]+)/(?P<path>.*)"
+
+	// For KEPs automation
+	kepURL = "https://storage.googleapis.com/k8s-keps/keps.json"
 )
 
 var (
 	baseGeneratorDir = ""
 	templateDir      = "generator"
+	releases         = Releases{}
+	cachedKEPs       = []api.Proposal{}
 )
+
+// KEP represents an individual KEP holding its metadata information.
+type KEP struct {
+	Name            string `json:"name"`
+	Title           string `json:"title"`
+	KepNumber       string `json:"kepNumber"`
+	OwningSig       string `json:"owningSig"`
+	Stage           string `json:"stage"`
+	LatestMilestone string `json:"latestMilestone"`
+}
+
+type Releases struct {
+	Latest         string
+	LatestMinusOne string
+	LatestMinusTwo string
+}
+
+// TODO: improve as suggested in https://github.com/kubernetes/community/pull/7038#discussion_r1069456087
+func getLastThreeK8sReleases() (Releases, error) {
+	ctx := context.Background()
+	client := github.NewClient(nil)
+
+	releases, _, err := client.Repositories.ListReleases(ctx, "kubernetes", "kubernetes", nil)
+	if err != nil {
+		return Releases{}, err
+	}
+	var result Releases
+	result.Latest = strings.Split(strings.TrimPrefix(*releases[0].TagName, "v"), ".")[0] + "." + strings.Split(strings.TrimPrefix(*releases[0].TagName, "v"), ".")[1]
+	result.LatestMinusOne = strings.Split(strings.TrimPrefix(*releases[1].TagName, "v"), ".")[0] + "." + strings.Split(strings.TrimPrefix(*releases[1].TagName, "v"), ".")[1]
+	result.LatestMinusTwo = strings.Split(strings.TrimPrefix(*releases[2].TagName, "v"), ".")[0] + "." + strings.Split(strings.TrimPrefix(*releases[2].TagName, "v"), ".")[1]
+	return result, nil
+}
+
+func getReleases() Releases {
+	return releases
+}
+
+func fetchKEPs() error {
+	url, err := url.Parse(kepURL)
+	if err != nil {
+		return fmt.Errorf("Error parsing url: %v", err)
+	}
+
+	req, err := http.NewRequest("GET", url.String(), nil)
+	if err != nil {
+		return fmt.Errorf("Error creating request: %v", err)
+	}
+
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		return fmt.Errorf("Error fetching KEPs: %v", err)
+	}
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		return fmt.Errorf("Error reading KEPs body: %v", err)
+	}
+
+	err = json.Unmarshal(body, &cachedKEPs)
+	if err != nil {
+		return fmt.Errorf("Error unmarshalling KEPs: %v", err)
+	}
+	return nil
+}
+
+func filterKEPs(owningSig string, releases Releases) (map[api.Stage][]api.Proposal, error) {
+	kepsByStage := make(map[api.Stage][]api.Proposal)
+	for _, kep := range cachedKEPs {
+		if kep.OwningSIG == owningSig {
+			for _, stage := range api.ValidStages {
+				if kep.Stage == stage && (strings.HasSuffix(kep.LatestMilestone, releases.Latest) ||
+					strings.HasSuffix(kep.LatestMilestone, releases.LatestMinusOne) ||
+					strings.HasSuffix(kep.LatestMilestone, releases.LatestMinusTwo)) {
+					kepsByStage[stage] = append(kepsByStage[stage], kep)
+				}
+			}
+		}
+	}
+
+	return kepsByStage, nil
+}
 
 // FoldedString is a string that will be serialized in FoldedStyle by go-yaml
 type FoldedString string
@@ -169,7 +264,8 @@ type Group struct {
 	Leadership       LeadershipGroup `yaml:"leadership"`
 	Meetings         []Meeting
 	Contact          Contact
-	Subprojects      []Subproject `yaml:",omitempty"`
+	Subprojects      []Subproject              `yaml:",omitempty"`
+	KEPs             map[string][]api.Proposal `yaml:",omitempty"`
 }
 
 type WGName string
@@ -436,6 +532,8 @@ var funcMap = template.FuncMap{
 	"now":         time.Now,
 	"lastYear":    lastYear,
 	"toUpper":     strings.ToUpper,
+	"filterKEPs":  filterKEPs,
+	"getReleases": getReleases,
 }
 
 // lastYear returns the last year as a string
@@ -456,8 +554,9 @@ func githubURL(url string) string {
 }
 
 // orgRepoPath converts either
-//  - a regular GitHub url of form https://github.com/org/repo/blob/branch/path/to/file
-//  - a raw GitHub url of form https://raw.githubusercontent.com/org/repo/branch/path/to/file
+//   - a regular GitHub url of form https://github.com/org/repo/blob/branch/path/to/file
+//   - a raw GitHub url of form https://raw.githubusercontent.com/org/repo/branch/path/to/file
+//
 // to a string of form 'org/repo/path/to/file'
 func orgRepoPath(url string) string {
 	for _, regex := range []string{regexRawGitHubURL, regexGitHubURL} {
@@ -686,10 +785,22 @@ func writeYaml(data interface{}, path string) error {
 }
 
 func main() {
+
+	// Fetch KEPs and cache them in the keps variable
+	err := fetchKEPs()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	releases, err = getLastThreeK8sReleases()
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	yamlPath := filepath.Join(baseGeneratorDir, sigsYamlFile)
 	var ctx Context
 
-	err := readYaml(yamlPath, &ctx)
+	err = readYaml(yamlPath, &ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
