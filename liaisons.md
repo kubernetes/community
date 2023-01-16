@@ -61,7 +61,6 @@ members will assume one of the departing members groups.
 | [WG Multitenancy](wg-multitenancy/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG Policy](wg-policy/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG Structured Logging](wg-structured-logging/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
-| [UG Big Data](ug-big-data/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
 | [UG VMware Users](ug-vmware-users/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
 | [Committee Code of Conduct](committee-code-of-conduct/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
 | [Committee Security Response](committee-security-response/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
