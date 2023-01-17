@@ -3424,6 +3424,8 @@ committees:
       name: Celeste Horgan
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
+    - github: eparis
+      name: Eric Paris
     - github: jdumars
       name: Jaice Singer DuMars
     - github: karenhchu
