@@ -61,6 +61,7 @@ The Code of Conduct Committee sincerely thanks our emeritus committee members fo
 - Jaice Singer Dumars (Google)
 - Jennifer Rondeau (Stripe)
 - Carolyn Van Slyck (Microsoft)
+- Eric Paris (Red Hat)
 - Paris Pittman (Apple)
 - Aeva Black (Microsoft)
 - Tasha Drew (VMware)
