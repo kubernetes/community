@@ -462,6 +462,7 @@ channels:
   - name: tw-users
   - name: ug-big-data
     id: C0ELB338T
+    archived: true
   - name: ug-vmware
   - name: undistro
   - name: vcluster

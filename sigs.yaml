@@ -3314,44 +3314,6 @@ workinggroups:
       github: palnabarun
       name: Nabarun Pal
 usergroups:
-- dir: ug-big-data
-  name: Big Data
-  mission_statement: >
-    Serve as a community resource for advising big data and data science related software
-    projects on techniques and best practices for integrating with Kubernetes. Represents
-    the concerns of users from big data communities to Kubernetes for the purposes
-    of driving new features and other enhancements, based on big data use cases.
-
-  label: big-data
-  leadership:
-    chairs:
-    - github: erikerlandson
-      name: Erik Erlandson
-      company: Red Hat
-    - github: foxish
-      name: Anirudh Ramanathan
-      company: Rockset
-    - github: liyinan926
-      name: Yinan Li
-      company: Google
-  meetings:
-  - description: Regular User Group Meeting
-    day: Wednesday
-    time: "18:00"
-    tz: UTC
-    frequency: biweekly
-    url: https://zoom.us/my/ug.big.data
-    archive_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
-    recordings_url: https://docs.google.com/document/d/1pnF38NF6N5eM8DlK088XUW85Vms4V2uTsGZvSp8MNIA/edit
-  contact:
-    slack: ug-big-data
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-ug-big-data
-    teams:
-    - name: ug-big-data
-      description: General Discussion
-    liaison:
-      github: tpepper
-      name: Tim Pepper
 - dir: ug-vmware-users
   name: VMware Users
   mission_statement: >
