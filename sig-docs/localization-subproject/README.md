@@ -1,6 +1,6 @@
 # Localization Subproject
 
-The Kubernetes Localization Subproject is owned by [SIG-Docs](https://github.com/kubernetes/community/tree/master/sig-docs) and run by the [Subproject leads](#leadership).
+The Kubernetes Localization Subproject is owned by [SIG Docs](https://github.com/kubernetes/community/tree/master/sig-docs) and run by the [Subproject leads](#leadership).
 
 The Kubernetes documentation has been localized into several different languages. Each localization is owned by a team of individuals that speaks the language.  A localization team is a self-sufficient community responsible for prioritizing work, translating content, and reviewing and merging PRs into the kubernetes/website repo for their localization. 
 
@@ -8,7 +8,7 @@ The Localization Subproject's aim is to provide a place for localization teams t
 
 ## Meetings
 
-Regular Localization Meeting: The first Monday of the month at 15:00 UTC (biweekly). [Convert Your Timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC)
+Regular Localization Meeting: The first Monday of the month at 15:00 UTC (biweekly). [Convert it to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=UTC)
 
 - [Meeting notes and Agenda](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/edit#)
 - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8)
@@ -33,7 +33,7 @@ The Localization Subproject lead is **responsible** for
 - Leading Subproject meetings and taking notes.
 - Driving collaborative discussions and decisions around localization processes and standards.
 - Ensuring the communication of localization and SIG Docs policy changes to localization teams.
-- Advocating for localization friendly practices within SIG Docs and broader Kubernetes community.
+- Advocating for localization-friendly practices within SIG Docs and the broader Kubernetes community.
 - Helping Localization teams understand SIG Docs processes, especially when languages are starting out
 - Making sure that [Localization process documentation](https://kubernetes.io/docs/contribute/localization/) is kept up to date.
 
