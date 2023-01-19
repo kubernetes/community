@@ -1,0 +1,13 @@
+name: 2023 Kubernetes CNCF Governing Board Election
+organization: Kubernetes
+start_datetime: 2023-01-20 00:00:01
+end_datetime: 2022-01-22 11:59:59
+no_winners: 1
+allow_no_opinion: False
+delete_after: True
+election_officers:
+  - mrbobbytables
+  - jberkus
+eligibility: Eligibility is limited to the [current Steering Committee Members](https://github.com/kubernetes/steering/tree/c0e6eafa131bb5918bd24653233568a44439497f#members)
+exception_description: No exception requests accepted for the GB election.
+exception_due: 2023-01-20 00:00:01
