@@ -1,7 +1,7 @@
 name: 2023 Kubernetes CNCF Governing Board Election
 organization: Kubernetes
 start_datetime: 2023-01-19 00:00:01
-end_datetime: 2022-01-22 11:59:59
+end_datetime: 2023-01-22 11:59:59
 no_winners: 1
 allow_no_opinion: False
 delete_after: True
