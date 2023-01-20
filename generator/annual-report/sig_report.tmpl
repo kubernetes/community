@@ -15,8 +15,8 @@
    -
 
 {{$releases := getReleases}}
-3. KEP work in {{lastYear}} (v{{$releases.Latest}}, v{{$releases.LatestMinusOne}}, v{{$releases.LatestMinusTwo}}):
 {{$owingsig := .Dir}}
+3. KEP work in {{lastYear}} (v{{$releases.Latest}}, v{{$releases.LatestMinusOne}}, v{{$releases.LatestMinusTwo}}):
 {{- range $stage, $keps := filterKEPs $owingsig $releases}}
   {{ $stage }}:
   {{- range $keps}}
@@ -71,43 +71,62 @@
 
 Include any other ways you measure group membership
 
-## Subprojects
+## [Subprojects](https://git.k8s.io/community/{{.Dir}}#subprojects)
+{{- define "subprojects" -}}
+{{- $owingsig := .Dir -}}
+{{- if .New}}
 
-<!--
-In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
-Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
--->
+**New in {{lastYear}}:**
+{{range .New}}
+  - {{.}}
+{{- end}}
+{{- end}}
 
-New in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+{{- if .Retired}}
 
-Retired in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+**Retired in {{lastYear}}:**
+{{range .Retired}}
+  - {{.}}
+{{- end}}
+{{- end}}
 
-Continuing:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+{{- if .Continuing}}
 
-## Working groups
+**Continuing:**
+{{range .Continuing}}
+  - {{.}}
+{{- end}}
+{{- end}}
+{{- end}}
 
-<!--
-In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
-Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
--->
+{{ template "subprojects" (getCategorizedSubprojects .Dir) }}
 
-New in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
 
-Retired in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+## [Working groups](https://git.k8s.io/community/{{.Dir}}#working-groups)
+{{ $categorizedWorkingGroups := getCategorizedWorkingGroups .Dir }}
+{{- if $categorizedWorkingGroups.New}}
 
-Continuing:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+**New in {{lastYear}}:**
+{{range $categorizedWorkingGroups.New }}
+ - {{.}}
+{{- end}}
+{{- end}}
+
+{{- if $categorizedWorkingGroups.Retired}}
+
+**Retired in {{lastYear}}:**
+{{range $categorizedWorkingGroups.Retired }}
+ - {{.}}
+{{- end}}
+{{- end}}
+
+{{- if $categorizedWorkingGroups.Continuing}}
+
+**Continuing:**
+{{range $categorizedWorkingGroups.Continuing }}
+ - {{ . }}
+{{- end}}
+{{- end}}
 
 ## Operational
 
