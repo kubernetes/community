@@ -66,8 +66,10 @@ aliases:
     - dcbw
     - thockin
   sig-node-leads:
+    - SergeyKanzhelev
     - dchen1107
     - derekwaynecarr
+    - mrunalp
   sig-release-leads:
     - Verolop
     - cpanato

@@ -2080,11 +2080,21 @@ sigs:
   label: node
   leadership:
     chairs:
+    - github: SergeyKanzhelev
+      name: Sergey Kanzhelev
+      company: Google
+    - github: mrunalp
+      name: Mrunal Patel
+      company: Red Hat
+    tech_leads:
     - github: dchen1107
       name: Dawn Chen
       company: Google
     - github: derekwaynecarr
       name: Derek Carr
+      company: Red Hat
+    - github: mrunalp
+      name: Mrunal Patel
       company: Red Hat
   meetings:
   - description: Main SIG Meeting
