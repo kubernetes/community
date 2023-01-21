@@ -20,6 +20,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -28,6 +29,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"sort"
+	"strconv"
 	"strings"
 	"text/template"
 	"time"
@@ -35,6 +37,10 @@ import (
 	"k8s.io/enhancements/api"
 
 	"github.com/google/go-github/v32/github"
+
+	"github.com/go-git/go-git/v5"
+	"github.com/go-git/go-git/v5/plumbing"
+	"github.com/go-git/go-git/v5/storage/memory"
 
 	yaml "gopkg.in/yaml.v3"
 )
@@ -65,24 +71,22 @@ const (
 
 	// For KEPs automation
 	kepURL = "https://storage.googleapis.com/k8s-keps/keps.json"
+	// For Subprojects automation
+	communityRepoURL = "https://github.com/kubernetes/community.git"
+	localRepoPath    = "."
 )
 
 var (
-	baseGeneratorDir = ""
-	templateDir      = "generator"
-	releases         = Releases{}
-	cachedKEPs       = []api.Proposal{}
+	baseGeneratorDir           = ""
+	templateDir                = "generator"
+	releases                   = Releases{}
+	cachedKEPs                 = []api.Proposal{}
+	repo                       = &git.Repository{}
+	annualReportYear           = time.Time{}
+	currentYear                = time.Time{}
+	commitFromAnnualReportYear = &plumbing.Hash{}
+	commitFromCurrentYear      = &plumbing.Hash{}
 )
-
-// KEP represents an individual KEP holding its metadata information.
-type KEP struct {
-	Name            string `json:"name"`
-	Title           string `json:"title"`
-	KepNumber       string `json:"kepNumber"`
-	OwningSig       string `json:"owningSig"`
-	Stage           string `json:"stage"`
-	LatestMilestone string `json:"latestMilestone"`
-}
 
 type Releases struct {
 	Latest         string
@@ -524,16 +528,18 @@ func getExistingContent(path string, fileFormat string) (string, error) {
 }
 
 var funcMap = template.FuncMap{
-	"tzUrlEncode": tzURLEncode,
-	"trimSpace":   strings.TrimSpace,
-	"trimSuffix":  strings.TrimSuffix,
-	"githubURL":   githubURL,
-	"orgRepoPath": orgRepoPath,
-	"now":         time.Now,
-	"lastYear":    lastYear,
-	"toUpper":     strings.ToUpper,
-	"filterKEPs":  filterKEPs,
-	"getReleases": getReleases,
+	"tzUrlEncode":                 tzURLEncode,
+	"trimSpace":                   strings.TrimSpace,
+	"trimSuffix":                  strings.TrimSuffix,
+	"githubURL":                   githubURL,
+	"orgRepoPath":                 orgRepoPath,
+	"now":                         time.Now,
+	"lastYear":                    lastYear,
+	"toUpper":                     strings.ToUpper,
+	"filterKEPs":                  filterKEPs,
+	"getReleases":                 getReleases,
+	"getCategorizedSubprojects":   getCategorizedSubprojects,
+	"getCategorizedWorkingGroups": getCategorizedWorkingGroups,
 }
 
 // lastYear returns the last year as a string
@@ -784,10 +790,230 @@ func writeYaml(data interface{}, path string) error {
 	return enc.Encode(data)
 }
 
-func main() {
+// get the first commit on a given date
+func getCommitByDate(repo *git.Repository, date time.Time) (*plumbing.Hash, error) {
+	// Get the commit iterator
+	iterator, err := repo.Log(&git.LogOptions{Order: git.LogOrderCommitterTime})
+	if err != nil {
+		return nil, err
+	}
 
-	// Fetch KEPs and cache them in the keps variable
-	err := fetchKEPs()
+	// Iterate through the commits
+	var commit *plumbing.Hash
+	for {
+		// Get the next commit
+		c, err := iterator.Next()
+		if err != nil {
+			if err == io.EOF {
+				break
+			}
+			return nil, err
+		}
+
+		// Check if the commit date is less than or equal to the specified date
+		if c.Committer.When.Before(date) || c.Committer.When.Equal(date) {
+			commit = &c.Hash
+			break
+		}
+	}
+
+	return commit, nil
+}
+
+// get the "sigs.yaml" file from a given commit
+func getFileFromCommit(repo *git.Repository, commit *plumbing.Hash, filename string) ([]byte, error) {
+	// Get the commit object
+	obj, err := repo.CommitObject(*commit)
+	if err != nil {
+		return nil, err
+	}
+
+	// Get the commit tree
+	tree, err := obj.Tree()
+	if err != nil {
+		return nil, err
+	}
+
+	// Get the file from the tree
+	entry, err := tree.FindEntry(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	// Get the file content
+	file, err := repo.BlobObject(entry.Hash)
+	if err != nil {
+		return nil, err
+	}
+
+	reader, err := file.Reader()
+	if err != nil {
+		return nil, err
+	}
+	defer reader.Close()
+
+	content, err := ioutil.ReadAll(reader)
+	if err != nil {
+		return nil, err
+	}
+
+	return content, nil
+}
+
+func getSigsYamlFromCommit(repo *git.Repository, commitFromAnnualReportYear, commitFromCurrentYear plumbing.Hash) (Context, Context, error) {
+	var annualReportYearSigs, currentYearSigs Context
+
+	annualReportYearSigFile, err := getFileFromCommit(repo, &commitFromAnnualReportYear, sigsYamlFile)
+	if err != nil {
+		return Context{}, Context{}, err
+	}
+	err = yaml.Unmarshal([]byte(annualReportYearSigFile), &annualReportYearSigs)
+	if err != nil {
+		return Context{}, Context{}, err
+	}
+
+	currentYearSigFile, err := getFileFromCommit(repo, &commitFromCurrentYear, sigsYamlFile)
+	if err != nil {
+		return Context{}, Context{}, err
+	}
+	err = yaml.Unmarshal([]byte(currentYearSigFile), &currentYearSigs)
+	if err != nil {
+		return Context{}, Context{}, err
+	}
+
+	return annualReportYearSigs, currentYearSigs, nil
+}
+
+func contains(strlist []string, val string) bool {
+	for _, str := range strlist {
+		if str == val {
+			return true
+		}
+	}
+	return false
+}
+
+func getCategorizedSubprojects(dir string) (map[string][]string, error) {
+	subprojectsMap := make(map[string][]string)
+	// set for the subprojects in the annual year
+	annualSubprojects := make(map[string]bool)
+
+	annualReportYearSigs, currentYearSigs, err := getSigsYamlFromCommit(repo, *commitFromAnnualReportYear, *commitFromCurrentYear)
+	if err != nil {
+		return nil, err
+	}
+
+	// iterate over sigs from the annual report year (say 2022)
+	for _, sig1 := range annualReportYearSigs.Sigs {
+		if sig1.Dir != dir {
+			continue
+		}
+		for _, sub1 := range sig1.Subprojects {
+			annualSubprojects[sub1.Name] = true
+		}
+	}
+
+	// iterate over sigs from the current year (say 2023)
+	for _, sig2 := range currentYearSigs.Sigs {
+		if sig2.Dir != dir {
+			continue
+		}
+		for _, sub2 := range sig2.Subprojects {
+			if annualSubprojects[sub2.Name] {
+				subprojectsMap["Continuing"] = append(subprojectsMap["Continuing"], sub2.Name)
+				delete(annualSubprojects, sub2.Name)
+			} else {
+				subprojectsMap["New"] = append(subprojectsMap["New"], sub2.Name)
+			}
+		}
+	}
+
+	for sub := range annualSubprojects {
+		subprojectsMap["Retired"] = append(subprojectsMap["Retired"], sub)
+	}
+
+	return subprojectsMap, nil
+}
+
+func getCategorizedWorkingGroups(dir string) (map[string][]string, error) {
+	workingGroupsMap := make(map[string][]string)
+
+	// set for the working groups in the annual year
+	annualWGs := make(map[string]bool)
+	annualReportYearSigs, currentYearSigs, err := getSigsYamlFromCommit(repo, *commitFromAnnualReportYear, *commitFromCurrentYear)
+	if err != nil {
+		return nil, err
+	}
+
+	annualReportYearSigs.Complete()
+	annualReportYearSigs.Sort()
+	currentYearSigs.Complete()
+	currentYearSigs.Sort()
+
+	// iterate over the ReportingWGs from the annual report year (say 2022)
+	for _, sig := range annualReportYearSigs.Sigs {
+		if sig.Dir != dir {
+			continue
+		}
+		for _, wg := range sig.ReportingWGs {
+			annualWGs[string(wg)] = true
+		}
+	}
+
+	// iterate over the ReportingWGs from the current year (say 2023)
+	for _, sig := range currentYearSigs.Sigs {
+		if sig.Dir != dir {
+			continue
+		}
+		for _, newWG := range sig.ReportingWGs {
+			if _, ok := annualWGs[string(newWG)]; !ok {
+				workingGroupsMap["New"] = append(workingGroupsMap["New"], string(newWG))
+			} else {
+				workingGroupsMap["Continuing"] = append(workingGroupsMap["Continuing"], string(newWG))
+				delete(annualWGs, string(newWG))
+			}
+		}
+	}
+
+	for wg := range annualWGs {
+		workingGroupsMap["Retired"] = append(workingGroupsMap["Retired"], string(wg))
+	}
+
+	return workingGroupsMap, nil
+}
+
+func main() {
+	// prep for automated listing of subprojects in the annual report
+	intLastYear, err := strconv.Atoi(lastYear())
+	if err != nil {
+		log.Fatal(err)
+	}
+	annualReportYear = time.Date(intLastYear, time.January, 1, 0, 0, 0, 0, time.UTC)
+	currentYear = time.Date(intLastYear+1, time.January, 1, 0, 0, 0, 0, time.UTC)
+
+	repo, err = git.PlainOpen(localRepoPath)
+	if err != nil {
+		if err == git.ErrRepositoryNotExists {
+			repo, err = git.Clone(memory.NewStorage(), nil, &git.CloneOptions{
+				URL: communityRepoURL,
+			})
+		} else {
+			log.Fatal(err)
+		}
+	}
+
+	commitFromAnnualReportYear, err = getCommitByDate(repo, annualReportYear)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	commitFromCurrentYear, err = getCommitByDate(repo, currentYear)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// fetch KEPs and cache them in the keps variable
+	err = fetchKEPs()
 	if err != nil {
 		log.Fatal(err)
 	}
