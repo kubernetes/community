@@ -1,17 +1,27 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
-approvers:
-  - cblecker
-  - idvoretskyi
-  - jdumars
-  - mrbobbytables
-  - nikhita
-  - parispittman
-  - sig-contributor-experience-leads
-  - committee-steering
-emeritus_approvers:
-  - alisondy
-  - castrojo
-  - calebamiles
-  - grodrigues3
-  - spiffxp
+filters:
+  ".*":
+    approvers:
+      - cblecker
+      - idvoretskyi
+      - jdumars
+      - mrbobbytables
+      - nikhita
+      - parispittman
+      - sig-contributor-experience-leads
+      - committee-steering
+    emeritus_approvers:
+      - alisondy
+      - castrojo
+      - calebamiles
+      - grodrigues3
+      - spiffxp
+  # ensure PRs for annual reports are generated
+  "annual-report-.*\\.md$":
+    labels:
+      - area/annual-reports
+  # label charter changes for review by steering
+  "charter.md":
+    labels:
+      - committee/steering
