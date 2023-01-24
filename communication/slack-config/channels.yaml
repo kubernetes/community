@@ -192,6 +192,7 @@ channels:
   - name: kapitan
   - name: kcp-dev
     id: C021U8WSAFK
+  - name: kcp-edge-dev
   - name: keda
   - name: keda-dev
   - name: keda-docs
@@ -417,7 +418,6 @@ channels:
   # sig-docs* channels are defined in sig-docs/
   - name: sig-high-availability
     archived: true
-  - name: sig-kcp-edge
   - name: sig-instrumentation
   - name: sig-multicluster
   - name: sig-network
