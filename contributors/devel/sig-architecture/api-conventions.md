@@ -730,11 +730,9 @@ passed). The value of this field will be combined with a unique suffix on the
 server if the Name field has not been provided. The provided value must be valid
 within the rules for Name, and may be truncated by the length of the suffix
 required to make the value unique on the server. If this field is specified, and
-Name is not present, the server will NOT return a 409 if the generated name
-exists - instead, it will either return 201 Created or 504 with Reason
-`ServerTimeout` indicating a unique name could not be found in the time
-allotted, and the client should retry (optionally after the time indicated in
-the Retry-After header).
+Name is not present, the server will return a 409 with Reason `AlreadyExists` if
+the generated name exists, and the client should retry (optionally after the time
+indicated in the Retry-After header).
 
 ## Optional vs. Required
 
