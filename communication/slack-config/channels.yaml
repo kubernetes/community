@@ -417,6 +417,7 @@ channels:
   # sig-docs* channels are defined in sig-docs/
   - name: sig-high-availability
     archived: true
+  - name: sig-kcp-edge
   - name: sig-instrumentation
   - name: sig-multicluster
   - name: sig-network
