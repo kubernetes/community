@@ -288,6 +288,7 @@ channels:
   - name: malaysia-users
   - name: malta-users
   - name: meet-our-contributors
+    archived: true
   - name: meetup-athens
   - name: meetup-atlanta
   - name: meetup-austin

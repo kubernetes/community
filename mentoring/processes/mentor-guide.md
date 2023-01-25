@@ -89,11 +89,6 @@ CNCF will financially support one Outreachy intern for Kubernetes per semester; 
 
 A former GSoC intern for Kubernetes is now leading this for us - mentoring works! Thanks @nikhita!
 
-*[Meet Our Contributors - Mentors On Demand](meet-our-contributors.md)*
-* One hour a month on a streaming YouTube show answering questions about the contribution process, your experience in open source, and other questions that people would normally ask to a mentor.
-* Typically a one hour a quarter time commitment is expected; this is an opt-in sign up.
-* You will need to be on the call 5 minutes early to test audio quality and make sure we are good to go for streaming.
-
 *[Pod Mentoring](mentoring-events.md)*
 * Short group sessions with other mentors during KubeCon/CloudNativeCon events answering mentee questions
   * Designed to eliminate the awkwardness of 1:1s and ensure a wider breadth of knowledge to reduce pressure of having to provide an answer

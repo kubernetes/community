@@ -125,7 +125,7 @@ Documentation is published at https://kubernetes.io - [website guidelines]
 
 Owned and operated by sig-contribex [community management] subproject.
 [Kubernetes Community channel] - recordings of community group meetings, Thursday
-community call, meet our contributors, and more [YouTube Guidelines].
+community call, and more [YouTube Guidelines].
 
 #### Kubernetes Blog
 

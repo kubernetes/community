@@ -1443,8 +1443,7 @@ sigs:
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
   - name: mentoring
     description: Oversees and develops programs for helping contributors ascend the
-      contributor ladder, including the New Contributor Workshops, Meet Our Contributors,
-      and other programs.
+      contributor ladder, including the New Contributor Workshops, and other programs.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-katacoda/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS

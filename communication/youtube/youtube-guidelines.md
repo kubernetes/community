@@ -23,7 +23,7 @@ and includes all communications such as YouTube.
 
 The [Kubernetes YouTube Channel] has separate playlists for each SIG, WG, UG
 meeting recordings, as well as recordings of other recurring events such as the
-Kubernetes [community meeting], [Meet our Contributors] and others.
+Kubernetes [community meeting], and others.
 
 [Subprojects], in addition to SIGs, WGs, UGs may request their own playlists
 to better target their contributors and increase general discoverability.
@@ -172,9 +172,8 @@ The following SIGs and groups are currently running splain.io:
 -   [SIG Release]
 -   [Steering Committee]
 -   [WG Data Protection]
--   The main Zoom admin account which holds Meet Our Contributors and others (if
-    you log in to splain using this account, all of the other accounts will be
-    logged here)
+-   The main Zoom admin account (if you log in to splain using this account,
+    all of the other accounts will be logged here)
 
 ### Descriptions and Playlists
 
@@ -213,9 +212,9 @@ to hear from you.
 ### Streaming Events
 
 YouTube admins with a system capable of streaming may be asked to stream public
-Kubernetes Community events such as the weekly [Community Meeting],
-[Meet our Contributors], or other publicly streamed
-events. For detailed information about streaming, see our [Streaming Config].
+Kubernetes Community events such as the weekly [Community Meeting], or other
+publicly streamed events. For detailed information about streaming, see our
+[Streaming Config].
 
 ### Migrating Content
 
@@ -239,7 +238,6 @@ downloaded and then reuploaded to the Kubernetes channel.
 [admins]: /communication/moderators.md
 [Kubernetes YouTube Channel]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
 [community meeting]: /events/community-meeting.md
-[Meet our Contributors]: /events/meet-our-contributors.md
 [Subprojects]: /governance.md#subprojects
 [collaboration]: https://support.google.com/youtube/answer/6109639
 [update the permissions in your YouTube settings]: https://support.google.com/a/answer/6212415

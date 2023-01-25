@@ -131,9 +131,7 @@ as Meetups) program by email (meetups@cncf.io)
 
 ### Mentorship
 
-Learn more about the Kubernetes [mentoring initiatives]. Join past and present
-Kubernetes Contributors for a live question-and-answer session during
-[Meet Our Contributors].
+Learn more about the Kubernetes [mentoring initiatives].
 
 ## Advanced Topics
 
@@ -156,7 +154,6 @@ do not need to interact with regularly.
 [here]: /events/2019/11-contributor-summit
 [General Information]: /communication
 [mentoring initiatives]: /mentoring/README.md
-[Meet Our Contributors]: /mentoring/programs/meet-our-contributors.md
 [OWNERS files]: ./owners.md
 [Cloud Native Computing Foundation Guidelines]: https://github.com/cncf/communitygroups
 [Events]: https://www.cncf.io/events/
