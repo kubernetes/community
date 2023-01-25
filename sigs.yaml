@@ -1418,22 +1418,6 @@ sigs:
       slack: sig-contribex
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
-    meetings:
-    - description: Office Hours European Edition (Open Q&A for end-user kubernetes
-        related questions)
-      day: Wednesday
-      time: "09:00"
-      tz: ET (Eastern Time)
-      frequency: monthly on 3rd Wednesday
-      url: https://hackmd.io/@k8s/office-hours
-    - description: Office Hours Western Edition (Open Q&A for end-user kubernetes
-        related questions)
-      day: Wednesday
-      time: "12:00"
-      tz: ET (Eastern Time)
-      frequency: monthly on 3rd Wednesday
-      archive_url: https://hackmd.io/@k8s/office-hours
-      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3azFUvYJjGn45YbF6C-uIg
   - name: github-management
     description: Manages and controls Github permissions, repos, and groups, including
       Org Membership.

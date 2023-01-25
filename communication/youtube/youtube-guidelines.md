@@ -23,8 +23,7 @@ and includes all communications such as YouTube.
 
 The [Kubernetes YouTube Channel] has separate playlists for each SIG, WG, UG
 meeting recordings, as well as recordings of other recurring events such as the
-Kubernetes [community meeting], [Office Hours], [Meet our Contributors]
-and others.
+Kubernetes [community meeting], [Meet our Contributors] and others.
 
 [Subprojects], in addition to SIGs, WGs, UGs may request their own playlists
 to better target their contributors and increase general discoverability.
@@ -35,8 +34,8 @@ playlist can upload videos *to that particular playlist* (links & playlists are
 one-to-one).
 
 Each group's playlist link will be shared with the group's leadership via Slack
-and the group leadership Google Group. Other playlists links, for example Office
-Hours, will be shared with the appropriate point(s) of contact.
+and the group leadership Google Group. Other playlists links, will be shared
+with the appropriate point(s) of contact.
 
 ### Uploading Guidelines for Collaborators
 
@@ -214,8 +213,8 @@ to hear from you.
 ### Streaming Events
 
 YouTube admins with a system capable of streaming may be asked to stream public
-Kubernetes Community events such as the weekly [Community Meeting], 
-[Office Hours], [Meet our Contributors], or other publicly streamed
+Kubernetes Community events such as the weekly [Community Meeting],
+[Meet our Contributors], or other publicly streamed
 events. For detailed information about streaming, see our [Streaming Config].
 
 ### Migrating Content
@@ -240,7 +239,6 @@ downloaded and then reuploaded to the Kubernetes channel.
 [admins]: /communication/moderators.md
 [Kubernetes YouTube Channel]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
 [community meeting]: /events/community-meeting.md
-[Office Hours]: /events/office-hours.md
 [Meet our Contributors]: /events/meet-our-contributors.md
 [Subprojects]: /governance.md#subprojects
 [collaboration]: https://support.google.com/youtube/answer/6109639
