@@ -370,3 +370,28 @@ for your provider, please see the [testgrid conformance README]
 [testgrid conformance README]: https://github.com/kubernetes/test-infra/blob/master/testgrid/conformance/README.md
 [v1.9 conformance doc]: https://github.com/cncf/k8s-conformance/blob/master/docs/KubeConformance-1.9.md
 [conformance.yaml]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.yaml
+
+## Demoting Conformance Tests
+
+Occasionally it may be necessary to remove a test that was added to conformance. Reasons may include but are not limited to:
+
+* The test does not actually [meet the criteria](#conformance-test-requirements) to be a conformance test
+* The test is discovered to be unreliable and/or includes functionality not intended to be part of conformance
+* The project deprecates or removes a feature
+
+These criteria apply to conformance added in a current release and should follow the same process involved in promoting a test.
+
+We may occasionally discover that a conformance test must be demoted in an already released version. This is generally a safe operation for the consumers of conformance - no existing distribution will become less conformant as a result of demoting a test. We should apply the same heightened bar for backporting conformance demotions as we would for backporting any code change:
+
+* Ensuring agreement among the responsible SIG(s) that the criteria for demotion are met
+* Agreement from conformance approvers that backporting the demotion is consistent with backwards compatibility for the project
+* Verifying the demotion does not result in a loss of function in a previous release
+
+The process for demoting a conformance test in a previous release is:
+
+* Demote the test in the current release following the current release process
+* Open the appropriate backport PR following the backport process
+* Approval of the backport by the conformance approvers and the release lead
+* Update of necessary conformance test tooling is the responsibility of their owners, such as for CNCF automation that approves test results
+
+A backported demotion does not imply previously conformant distributions must recertify - those distributions are no less conformant than they were previously. As Kubernetes is a continuously evolving project new patches to previously released versions may tweak behavior in keeping with our commitment to API stability, so we expect true conformance changes in previously released versions to be rare.
