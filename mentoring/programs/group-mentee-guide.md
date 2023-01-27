@@ -67,9 +67,6 @@ TODO: add more here
 - mailing lists
 	- dev@kubernetes.io
 	- your respective sig (ie - kubernetes-sig-cli@googlegroups.com)
-- contributor office hours
-	- Kubernetes Community Office Hours
-	- #office-hours on slack
 - the docs
 	- kubernetes/community is your friend for upstream workflows, processes, and
 	information around contributing

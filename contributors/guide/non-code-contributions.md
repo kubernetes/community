@@ -27,11 +27,6 @@ These are roles that either span the project as a whole, or span several areas o
 
 - Community education
   - Answering questions on [Discuss](https://discuss.kubernetes.io/), [Slack](http://slack.k8s.io/), [StackOverflow](https://stackoverflow.com/questions/tagged/kubernetes), etc
-  - [K8s Office Hours](https://github.com/kubernetes/community/blob/master/events/office-hours.md) 
-    - [Slack](https://kubernetes.slack.com/messages/C6RFQ3T5H/)
-    - [Discuss](https://discuss.kubernetes.io/tags/office-hours)
-    - [YouTube](https://www.youtube.com/playlist?list=PL69nYSiGNLP3azFUvYJjGn45YbF6C-uIg)
-  - [Meet Our Contributors](https://github.com/kubernetes/community/blob/master/mentoring/programs/meet-our-contributors.md)
     - [Slack](https://kubernetes.slack.com/messages/C8WRR2BB9/) 
     - [YouTube](https://www.youtube.com/playlist?list=PL69nYSiGNLP3QpQrhZq_sLYo77BVKv09F)
   - Onboarding new contributors

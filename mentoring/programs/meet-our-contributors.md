@@ -7,6 +7,8 @@ description: |
   participate in peer code reviews.
 ---
 
+# Program is on hiatus and may be brought back at a future date
+
 # Meet Our Contributors - Ask Us Anything!
 
 When Slack seems like it’s going too fast, and you just need a quick answer from

@@ -96,11 +96,6 @@ Creates and runs contributor-focused events, such as the Contributor Summit.  Ev
   - [kubernetes/community/events](https://github.com/kubernetes/community/blob/master/events/OWNERS)
 - **Contact:**
   - Slack: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)
-- **Meetings:**
-  - Office Hours European Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 09:00 ET (Eastern Time)](https://hackmd.io/@k8s/office-hours) (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=ET%20%28Eastern%20Time%29).
-  - Office Hours Western Edition (Open Q&A for end-user kubernetes related questions): [Wednesdays at 12:00 ET (Eastern Time)]() (monthly on 3rd Wednesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:00&tz=ET%20%28Eastern%20Time%29).
-    - [Meeting notes and Agenda](https://hackmd.io/@k8s/office-hours).
-    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3azFUvYJjGn45YbF6C-uIg).
 ### github-management
 Manages and controls Github permissions, repos, and groups, including Org Membership.
 - **Owners:**
@@ -119,7 +114,7 @@ Manages and controls Github permissions, repos, and groups, including Org Member
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1IiVrr1hcFWmbboExk971FsMUGfr2Wp68mdMribCuzLs/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### mentoring
-Oversees and develops programs for helping contributors ascend the contributor ladder, including the New Contributor Workshops, Meet Our Contributors, and other programs.
+Oversees and develops programs for helping contributors ascend the contributor ladder, including the New Contributor Workshops, and other programs.
 - **Owners:**
   - [kubernetes-sigs/contributor-katacoda](https://github.com/kubernetes-sigs/contributor-katacoda/blob/main/OWNERS)
   - [kubernetes-sigs/contributor-playground](https://github.com/kubernetes-sigs/contributor-playground/blob/master/OWNERS)

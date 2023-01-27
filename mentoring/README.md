@@ -24,10 +24,6 @@ SIG's office hours / mentoring
 
 - [Office hours / mentoring](/mentoring/programs/office-hours.md)
 
-Mentors On Demand
-
-- [Meet Our Contributors](/mentoring/programs/meet-our-contributors.md)
-
 Long Term Contributor Ladder Growth
 
 - Through [Group Mentoring Cohorts](/mentoring/programs/group-mentoring.md)
