@@ -4,6 +4,10 @@ We recommend the following presentations, docs, and videos to help get familiar 
 
 | Date | Title | Link | Description |
 | --- | --- | --- | --- |
+| 2023 January 23 | PV/PVC Controller Deep Dive | [Slides](https://docs.google.com/presentation/d/1XI_XzxlAYF6dqRfQQsoBd-UWRHssH2Ts5KwK5NDIMgg/edit) | A walk through of the PV controller source code following the Dynamic Volume Provisioning with CSI scenario |
+| 2022 November 9 | Kubernetes SIG Storage Deep Dive | [Video](https://www.youtube.com/watch?v=_XXn3-yDZA0) | An overview and update of SIG Storage by Xing Yang, VMware & Mauricio Poppe, Google at KubeCon NA 2022. |
+| 2022 May 16 | Kubernetes SIG Storage Deep Dive | [Video](https://www.youtube.com/watch?v=dsEeQqRSg74) | An overview and update of SIG Storage by Xing Yang, VMware & Jan Šafránek, Red Hat at KubeCon Europe 2022. |
+| 2020 November 20 | Intro & Deep Dive: Kubernetes SIG-Storage | [Video](https://www.youtube.com/watch?v=rnCdvWToPPM&t=2s) | An overview and update of SIG Storage by Xing Yang and Michelle Au at KubeCon/CloudNativeCon NA 2020. |
 | 2020 November 20 | Intro & Deep Dive: Kubernetes SIG-Storage | [Video](https://www.youtube.com/watch?v=rnCdvWToPPM&t=2s) | An overview and update of SIG Storage by Xing Yang and Michelle Au at KubeCon/CloudNativeCon NA 2020. |
 | 2020 November 20 | Intro & Deep Dive: Kubernetes Data Protection WG | [Video](https://www.youtube.com/watch?v=g8HEQnLVo04) | An overview of Data Protection WG by Xing Yang and Xiangqian Yu at KubeCon/CloudNativeCon NA 2020. |
 | 2020 November 18 | Beyond File and Block Storage in Kubernetes | [Video](https://www.youtube.com/watch?v=Y3GgJb71Cwo) | An introduction of Container Object Storage Interface (COSI) by Sidhartha Mani at KubeCon/CloudNativeCon NA 2020. |
@@ -21,20 +25,20 @@ We recommend the following presentations, docs, and videos to help get familiar 
 | 2016 March 25 | The State of State | [Video](https://www.youtube.com/watch?v=jsTQ24CLRhI&index=6&list=PLosInM-8doqcBy3BirmLM4S_pmox6qTw3) | The State of State at KubeCon/CloudNativeCon EU 2016 by Matthew Bates
 | 2016 March 25 | Kubernetes Storage 101 | [Video](https://www.youtube.com/watch?v=ZqTHe6Xj0Ek&list=PLosInM-8doqcBy3BirmLM4S_pmox6qTw3&index=38) | Kubernetes Storage 101 at KubeCon/CloudNativeCon EU 2016 by Erin Boyd
 
-Keep in mind that these artifacts reflect the state of the art at the time they were created. In Kubernetes we try very hard to maintain backwards compatibility, but Kubernetes is a fast moving project and we do add features going forward and attending the Storage SIG meetings and the Storage SIG Google group are both good ways of continually staying up to speed. 
+Keep in mind that these artifacts reflect the state of the art at the time they were created. In Kubernetes we try very hard to maintain backwards compatibility, but Kubernetes is a fast moving project and we do add features going forward and attending the Storage SIG meetings and the Storage SIG Google group are both good ways of continually staying up to speed.
 
 ### How to help
 
 We love having folks help in any capacity! We recommend you start by reading the overall [Kubernetes contributor's guide](/contributors/guide)
 
 ### Helping with Features
-If you have a feature idea, please submit a feature proposal PR first and put it on the [Storage SIG Meeting Agenda](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit#heading=h.bag869lp4lyz). 
-Our PR review bandwidth is fairly small, as such, we strongly recommend that you do not start writing the implementation before you've 
-discussed the feature with the community. This helps the community understand what you're trying to do with the proposal and helps the 
-community and you work through the approach until there is consensus. The community then will also be able to communicate with you how 
-soon they will be able to review your proposal PR, to set expectations. However, generally speaking once the your proposal PR is merged, 
-your implementation PR review and merge should go fairly quickly as the review is  focused on the implementation quality and not 
-what you are proposing. We are really trying to improve our test coverage and documentation, so please include functional tests, e2e tests 
+If you have a feature idea, please submit a feature proposal PR first and put it on the [Storage SIG Meeting Agenda](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit#heading=h.bag869lp4lyz).
+Our PR review bandwidth is fairly small, as such, we strongly recommend that you do not start writing the implementation before you've
+discussed the feature with the community. This helps the community understand what you're trying to do with the proposal and helps the
+community and you work through the approach until there is consensus. The community then will also be able to communicate with you how
+soon they will be able to review your proposal PR, to set expectations. However, generally speaking once the your proposal PR is merged,
+your implementation PR review and merge should go fairly quickly as the review is  focused on the implementation quality and not
+what you are proposing. We are really trying to improve our test coverage and documentation, so please include functional tests, e2e tests
 and documentation in your implementation PR.
 
 ### Helping with Issues
