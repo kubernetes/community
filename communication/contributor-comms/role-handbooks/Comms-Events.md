@@ -14,8 +14,8 @@ Time Commitment:
 ## Minimum skills and Requirements
 
 - Kubernetes github org [membership](https://github.com/kubernetes/community/blob/master/community-membership.md)
-- familiarity with the workflow of [#sig-contributor-comms](https://github.com/kubernetes/community/tree/master/communication/marketing-team)
-- has understanding of the [social guidlines](https://github.com/kubernetes/community/blob/master/communication/marketing-team/storytelling-resources/social-guidelines.md)
+- familiarity with the workflow of [#sig-contributor-comms](https://github.com/kubernetes/community/tree/master/communication/contributor-comms)
+- has understanding of the [social guidelines](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/storytelling-resources/social-guidelines.md)
 - Good grasp on general marketing activities surrounding events
 - Understanding of common forms of marketing communications
 - Event planning experience is a plus
