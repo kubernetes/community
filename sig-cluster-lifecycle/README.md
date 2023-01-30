@@ -25,7 +25,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**), Google
 * Lubomir Ivanov (**[@neolit123](https://github.com/neolit123)**), VMware
-* Vince Prignano (**[@vincepri](https://github.com/vincepri)**), VMware
+* Vince Prignano (**[@vincepri](https://github.com/vincepri)**), Red Hat
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing

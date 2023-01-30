@@ -986,7 +986,7 @@ sigs:
       company: VMware
     - github: vincepri
       name: Vince Prignano
-      company: VMware
+      company: Red Hat
     tech_leads:
     - github: fabriziopandini
       name: Fabrizio Pandini
