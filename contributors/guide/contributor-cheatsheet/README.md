@@ -387,7 +387,7 @@ git push --force
 [Kubernetes Code Search]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
 [calendar]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
-[kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[kubernetes-dev]: https://groups.google.com/a/kubernetes.io/g/dev
 [slack channels]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [youtube channel]: https://www.youtube.com/c/KubernetesCommunity/
