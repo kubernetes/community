@@ -94,7 +94,7 @@ procedure, see the Gmail help page on [Creating rules to filter your email].
 These suggestions come largely from an old [kubernetes-dev] mailing list [thread]
 on Gmail filters for Kubernetes.
 
-[kubernetes-dev]: https://groups.google.com/g/kubernetes-dev
+[kubernetes-dev]: https://groups.google.com/a/kubernetes.io/g/dev
 [thread]: https://groups.google.com/forum/#!topic/kubernetes-dev/5qU8irU7_tE/discussion
 
 <!-- shared links -->

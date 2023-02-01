@@ -35,7 +35,7 @@ lazy consensus cannot be achieved, an election should be held.
 SIG Contributor Experience should be contacted to assist with the
 administration of the election.
 
-[kubernetes-dev]: https://groups.google.com/g/kubernetes-dev
+[kubernetes-dev]: https://groups.google.com/a/kubernetes.io/g/dev
 [steering-private]: steering-private@kubernetes.io
 [member]: /community-membership.md#member
 [`sigs.yaml`]: /sigs.yaml
