@@ -362,6 +362,7 @@ channels:
   - name: osbkit
   - name: outreachy-apps
     id: CDH610735
+  - name: paralus
   - name: pharmer
   - name: pinniped
   - name: pl-users
