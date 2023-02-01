@@ -201,7 +201,7 @@ Operational tasks in [sig-governance.md]:
 [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
 [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
 [ ] Meeting notes and recordings for $YYYY are linked from [README.md] and updated/uploaded if needed
-[ ] Did you have community-wide updates in $YYYY (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+[ ] Did you have community-wide updates in $YYYY (e.g. kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
     - 
     - 
 

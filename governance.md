@@ -166,10 +166,9 @@ user groups are documented in [sigs.yaml].
 As you can see in the descriptions above, the project is robust with diverse
 groups of contributors and their varying degrees of expected communications.
 
-The annual community group health check will establish an opportunity for deeper
+The [annual community group health check] will establish an opportunity for deeper
  dialogue and broader communication across the chairs of each group and the
- Steering Committee. By including this reporting with the existing community
- meeting structure, we can focus on the goals outlined in the [Annual Report] doc.
+ Steering Committee.
 
 ## Cross-project Communication and Coordination
 
@@ -223,6 +222,5 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [working group governance]: /committee-steering/governance/wg-governance.md
 [user group governance]: /committee-steering/governance/ug-governance.md
 [SIG Governance Requirements]: /committee-steering/governance/sig-governance-requirements.md
-[Annual Report]: /committee-steering/governance/annual-reports.md
-[monthly community meeting]: /events/community-meeting.md
+[annual community group health check]: /committee-steering/governance/annual-reports.md
 [KEP process]: https://github.com/kubernetes/enhancements/tree/master/keps#kubernetes-enhancement-proposals-keps

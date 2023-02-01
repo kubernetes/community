@@ -16,9 +16,6 @@ repo
 [Kubernetes Community YouTube playlist]  
 - Report activity with the community via the dev@kubernetes.io mailing list at
 least once a year. 
-  - Each SIG is assigned an update during the [monthly community meeting]
-  throughout the year from sig-contributor-experience. The meeting host will publish the notes to the
-  kubernetes-dev mailing list with the update.  
   - This is separate from the [annual report]. 
 - Participate in release planning meetings and retrospectives, and burndown
 meetings, as needed
@@ -115,7 +112,6 @@ Subproject contributors (as applicable).
  groups like SIGs and the Steering Committee but *MAY* delegate the actual
  communication and creation of content to other contributors where
  appropriate  
-- *MUST* provide updates through the [monthly community meeting]
 - *MUST* present yearly [annual report] for the group but *SHOULD* get help with
 curation from other SIG participants
 
@@ -276,6 +272,5 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [Marketing Council]: /communication/marketing-team/role-handbooks/council.md
 [Events Lead]: /events/events-team/events-lead.md
 [PR Wrangler]: https://kubernetes.io/docs/contribute/participate/pr-wranglers/
-[monthly community meeting]: /events/community-meeting.md
 [Inclusive Open Source Community Orientation course]: https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/
 [technical-lead.md]: /contributors/chairs-and-techleads/technical-lead.md
