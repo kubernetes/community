@@ -362,10 +362,10 @@ The Kubernetes build system defaults to limiting the number of reported Go compi
 make WHAT="cmd/kubectl" GOGCFLAGS="-e"
 ```
 
-If you need to use debugging inspection tools on your compiled Kubernetes executables, add `-N -l` to `GOGCFLAGS`. For example:
+If you need to use debugging inspection tools on your compiled Kubernetes executables, set DBG=1. For example:
 
 ```sh
-make WHAT="cmd/kubectl" GOGCFLAGS="-N -l"
+make WHAT="cmd/kubectl" DBG=1
 ```
 
 To cross-compile Kubernetes for all platforms, run the following command:
