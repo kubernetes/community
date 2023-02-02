@@ -16,8 +16,9 @@ Prerequisites:
 - [Install etcd](https://github.com/coreos/etcd/releases) and include the path to the installation in your PATH
   - Verify etcd is installed correctly by running `which etcd`
   - Or make etcd binary available and executable at `/tmp/etcd`
-- [Install ginkgo](https://github.com/onsi/ginkgo) and include the path to the installation in your PATH
-  - Verify ginkgo is installed correctly by running `which ginkgo`
+- [containerd](https://github.com/containerd/containerd) configured with the cgroupfs driver
+- Working CNI
+  - Ensure that you have a valid CNI configuration in /etc/cni/net.d/. For testing purposes, a [bridge](https://www.cni.dev/plugins/current/main/bridge/) configuration should work.
 
 From the Kubernetes base directory, run:
 
