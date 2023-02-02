@@ -33,7 +33,7 @@ There are multiple ways to successfully contribute a Kubernetes blog post. Here 
 * Connect with a storyteller -- if you reach out to Contributor Comms, you will be paired with someone to help you through writing, editing, and getting your article published
   * Discussion happens via GitHub issue or through working group meetings
 * This includes working with Contributor Comms team to polish, and format your blog post
-  * There is not a single canonical format for documents, but we do have [guidelines for effective articles](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/blog-guidelines.md#how-to-write-an-effective-blog)
+  * There is not a single canonical format for documents, but we do have [guidelines for effective articles](https://github.com/kubernetes/community/tree/master/sig-docs/blog-subproject#blog-guidelines)
   * There are further technical considerations by the [Blog team](https://github.com/kubernetes/community/blob/4026287dc3a2d16762353b62ca2fe4b80682960a/sig-docs/blog-subproject/README.md#submit-a-post)
 
 When it's ready, submit the blog post: 
