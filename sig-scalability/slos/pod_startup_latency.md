@@ -7,8 +7,9 @@
 | __Official__ | Startup latency of schedulable<sup>[1](#footnote1)</sup> stateless<sup>[2](#footnote2)</sup> pods, excluding time to pull images and run init containers, measured from pod creation timestamp to when all its containers are reported as started and observed via watch, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile per cluster-day <= 5s |
 | __WIP__ | Startup latency of schedulable<sup>[1](#footnote1)</sup> stateful<sup>[3](#footnote3)</sup> pods, excluding time to pull images, run init containers, provision volumes (in delayed binding mode) and unmount/detach volumes (from previous pod if needed), measured from pod creation timestamp to when all its containers are reported as started and observed via watch, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, 99th percentile per cluster-day <= X where X depends on storage provider |
 
-<a name="footnote1">[1\]</a>By schedulable pod we mean a pod that can be
-scheduled in the cluster without causing any preemption.
+<a name="footnote1">[1\]</a>By schedulable pod we mean a pod that has to be immediately
+(without actions from any other components) schedulable in the cluster without
+causing any preemption.
 
 <a name="footnote2">[2\]</a>A `stateless pod` is defined as a pod that doesn't
 mount volumes with sources other than secrets, config maps, downward API and
