@@ -1287,6 +1287,12 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
+  - name: logical-cluster
+    description: A set of APIs to improve the Kubernetes user experience for cluster
+      administration by offering utilities to interact with fleet of clusters which
+      can be managed by Cluster API, or other entities (like cloud providers).
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/logical-cluster/main/OWNERS
   - name: minikube
     description: Implements a local Kubernetes cluster for application development
       on macOS, Linux, and Windows
