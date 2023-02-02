@@ -193,7 +193,7 @@ However, image configuration files select test cases based on the `tests` field.
 
 See https://github.com/kubernetes/test-infra/blob/4572dc3bf92e70f572e55e7ac1be643bdf6b2566/jobs/e2e_node/benchmark-config.yaml#L22-23 for an example configuration. 
 
-If the [Prow e2e job configuration](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/image-config.yaml) does **not** specify the `tests` field, FOCUS and SKIP will run as expected.
+If the [Prow e2e job configuration](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/containerd/image-config.yaml) does **not** specify the `tests` field, FOCUS and SKIP will run as expected.
 
 # Additional test options for both remote and local execution
 
@@ -308,7 +308,7 @@ For example,
     /test pull-kubernetes-node-e2e
     flake due to #12345
 
-The PR builder runs tests against the images listed in [image-config.yaml](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/image-config.yaml).
+The PR builder runs tests against the images listed in [image-config.yaml](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/containerd/image-config.yaml).
 
 Other [node e2e Prow jobs](https://github.com/kubernetes/test-infra/tree/master/config/jobs/kubernetes/sig-node)
 run against different images depending on the configuration chosen in the

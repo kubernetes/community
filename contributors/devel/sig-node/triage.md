@@ -141,8 +141,8 @@ After 30d more, they will be marked as rotten, and then closed automatically.
 Reviewers should feel free to close stale PRs (4+ months of no changes) with a
 note that the author can reopen when they are ready to work on it.
 
-[tests are failing]: contributors/devel/sig-testing/testing.md#troubleshooting-a-failure
-[flake]: contributors/devel/sig-testing/flaky-tests.md
+[tests are failing]: /contributors/devel/sig-testing/testing.md#troubleshooting-a-failure
+[flake]: /contributors/devel/sig-testing/flaky-tests.md
 
 ## Waiting on Reviewer
 
