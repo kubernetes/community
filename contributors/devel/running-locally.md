@@ -177,7 +177,7 @@ To start the DNS service, you need to set the following variables:
 ```sh
 KUBE_ENABLE_CLUSTER_DNS=true
 KUBE_DNS_SERVER_IP="10.0.0.10"
-KUBE_DNS_DOMAIN="cluster.local"
+KUBE_DNS_NAME="cluster.local"
 ```
 
 To know more on DNS service you can check out the [docs](http://kubernetes.io/docs/admin/dns/).
