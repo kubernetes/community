@@ -44,7 +44,7 @@ The members and their terms are as follows:
 ### Term ends on August 23, 2023
 
 - Jeremy Rickard (Microsoft)
-- Nabarun Pal (VMware)
+- Jason DeTiberus (Cisco)
 
 ### Term ends on August 17, 2024
 
