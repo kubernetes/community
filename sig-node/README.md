@@ -25,8 +25,16 @@ The [charter](charter.md) defines the scope and governance of the Node Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Sergey Kanzhelev (**[@SergeyKanzhelev](https://github.com/SergeyKanzhelev)**), Google
+* Mrunal Patel (**[@mrunalp](https://github.com/mrunalp)**), Red Hat
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
 * Dawn Chen (**[@dchen1107](https://github.com/dchen1107)**), Google
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
+* Mrunal Patel (**[@mrunalp](https://github.com/mrunalp)**), Red Hat
 
 ## Contact
 - Slack: [#sig-node](https://kubernetes.slack.com/messages/sig-node)
