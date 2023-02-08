@@ -111,8 +111,6 @@ chairs/chairs in training
   staff and approve presented content but *MAY* delegate to other contributors
   to create material and present  
 - *MUST* ensure meetings are recorded and made available
-- *MUST* report activity with the community via k-dev mailing list at least
-once a quarter (slides, video from kubecon, etc)
 - *MUST* coordinate sponsored working group updates to the SIG and the wider
   community  
 - *MUST* coordinate communication and be a connector with other community
