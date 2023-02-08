@@ -90,23 +90,23 @@ Subproject contributors (as applicable).
 - *SHOULD* identify, track, and maintain the SIGs enhancements for current
   release and serve as point of contact for the release team, but *MAY* delegate
    to another Lead to fulfill these responsibilities
-  - *MAY* delegate the creation of a SIG roadmap to other Leads
-  - *MUST* organize a main group meeting and make sure [sigs.yaml] is up to date
-  including subprojects and their meeting information but *SHOULD* delegate the
-  need for subproject meetings to subproject owners  
-  - *SHOULD* facilitate meetings but *MAY* delegate to other Leads or future
-  chairs/chairs in training
-  - *MUST* ensure there is a maintained CONTRIBUTING.md document in the
-  appropriate SIG folder if the contributor experience or on-boarding knowledge
-  is different than in the general [contributor guide]. *MAY* delegate to
-  contributors to create or update.
-  - *MUST* organize KubeCon/CloudNativeCon Intros and Deep Dives with CNCF Event
-   staff and approve presented content but *MAY* delegate to other contributors
-   to create material and present  
-  - *MUST* ensure meetings are recorded and made available
-  - *MUST* report activity with the community via k-dev mailing list at least
-  once a quarter (slides, video from kubecon, etc)
-  - *MUST* coordinate sponsored working group updates to the SIG and the wider
+- *MAY* delegate the creation of a SIG roadmap to other Leads
+- *MUST* organize a main group meeting and make sure [sigs.yaml] is up to date
+including subprojects and their meeting information but *SHOULD* delegate the
+need for subproject meetings to subproject owners  
+- *SHOULD* facilitate meetings but *MAY* delegate to other Leads or future
+chairs/chairs in training
+- *MUST* ensure there is a maintained CONTRIBUTING.md document in the
+appropriate SIG folder if the contributor experience or on-boarding knowledge
+is different than in the general [contributor guide]. *MAY* delegate to
+contributors to create or update.
+- *MUST* organize KubeCon/CloudNativeCon Intros and Deep Dives with CNCF Event
+  staff and approve presented content but *MAY* delegate to other contributors
+  to create material and present  
+- *MUST* ensure meetings are recorded and made available
+- *MUST* report activity with the community via k-dev mailing list at least
+once a quarter (slides, video from kubecon, etc)
+- *MUST* coordinate sponsored working group updates to the SIG and the wider
   community  
 - *MUST* coordinate communication and be a connector with other community
  groups like SIGs and the Steering Committee but *MAY* delegate the actual
