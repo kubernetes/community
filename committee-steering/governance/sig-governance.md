@@ -119,6 +119,7 @@ chairs/chairs in training
  groups like SIGs and the Steering Committee but *MAY* delegate the actual
  communication and creation of content to other contributors where
  appropriate  
+- *SHOULD* help curate docs related to the SIG
 - *MUST* present yearly [annual report] for the group but *SHOULD* get help with
 curation from other SIG participants
 
