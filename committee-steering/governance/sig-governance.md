@@ -96,10 +96,16 @@ including subprojects and their meeting information but *SHOULD* delegate the
 need for subproject meetings to subproject owners  
 - *SHOULD* facilitate meetings but *MAY* delegate to other Leads or future
 chairs/chairs in training
-- *MUST* ensure there is a maintained CONTRIBUTING.md document in the
-appropriate SIG folder if the contributor experience or on-boarding knowledge
-is different than in the general [contributor guide]. *MAY* delegate to
-contributors to create or update.
+- *MUST* ensure the good contributors experience, *MAY* delegate those tasks
+  to contributors:
+  - *MUST* ensure there is a maintained CONTRIBUTING.md document in the
+    appropriate SIG folder if the contributor experience or on-boarding
+    knowledge is different than in the general [contributor guide]. 
+  - *MUST* curate "help wanted" and "good first issue" issues to simplify new
+    contributors experience
+  - *MUST* ensure up to date OWNERs files - elevate contributors and move people
+    to emeritus to improve review/approval cycle
+  - *SHOULD* define contributors ladder with clear requirements and progress tracking
 - *MUST* organize KubeCon/CloudNativeCon Intros and Deep Dives with CNCF Event
   staff and approve presented content but *MAY* delegate to other contributors
   to create material and present  
