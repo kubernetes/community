@@ -90,7 +90,8 @@ Subproject contributors (as applicable).
 - *SHOULD* identify, track, and maintain the SIGs enhancements for current
   release and serve as point of contact for the release team, but *MAY* delegate
    to another Lead to fulfill these responsibilities
-- *MAY* delegate the creation of a SIG roadmap to other Leads
+- *MUST* ensure the SIG roadmap is shared regularly. *MAY* delegate the creation
+  of a SIG roadmap to other Leads
 - *MUST* organize a main group meeting and make sure [sigs.yaml] is up to date
 including subprojects and their meeting information but *SHOULD* delegate the
 need for subproject meetings to subproject owners  
