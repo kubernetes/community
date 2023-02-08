@@ -92,6 +92,8 @@ Subproject contributors (as applicable).
    to another Lead to fulfill these responsibilities
 - *MUST* ensure the SIG roadmap is shared regularly. *MAY* delegate the creation
   of a SIG roadmap to other Leads
+- *MUST* watch for the active issues and PRs trends
+  and *SHOULD* coordinate triage, backlog grooming, assignments, and status checks
 - *MUST* organize a main group meeting and make sure [sigs.yaml] is up to date
 including subprojects and their meeting information but *SHOULD* delegate the
 need for subproject meetings to subproject owners  
