@@ -15,8 +15,6 @@ Actions for the chair/organizer of the community group:
 
 Once all the above items are complete, this issue may be `/close`'d
 
-A template has already been generated for your group, and is available [here](https://git.k8s.io/community/{{.Dir}}/annual-report-{{lastYear}}.md).
-
 Key dates:
 - Initial PR to communtiy repo should be opened by March 24th, {{now.UTC.Year}}
 - PR should be reviewed and merged by April 7th, {{now.UTC.Year}}
@@ -31,6 +29,7 @@ If you have any questions or concerns about this process, you may reach the Stee
 - The public mailing list steering@kubernetes.io
 - The private mailing list steering-private@kubernetes.io for any private or sensitive issues.
 
+/assign {{range .Leadership.Chairs}}@{{.GitHub}} {{end}}
 /{{.Prefix}} {{.Label}}
 /committee steering
 /area annual-reports
