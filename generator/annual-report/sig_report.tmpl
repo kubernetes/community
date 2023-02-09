@@ -16,9 +16,9 @@
 
 {{$releases := getReleases}}
 {{$owingsig := .Dir}}
-3. KEP work in {{lastYear}} (v{{$releases.Latest}}, v{{$releases.LatestMinusOne}}, v{{$releases.LatestMinusTwo}}):
+3. KEP work in {{lastYear}} ({{$releases.LatestMinusTwo}}, {{$releases.LatestMinusOne}}, {{$releases.Latest}}):
 {{- range $stage, $keps := filterKEPs $owingsig $releases}}
-  {{ $stage }}:
+  - {{ $stage }}:
   {{- range $keps}}
     - [{{.Number}} - {{.Title}}](https://github.com/kubernetes/enhancements/tree/master/keps/{{.OwningSIG}}/{{.Name}}) - {{.LatestMilestone -}}
   {{ end}}

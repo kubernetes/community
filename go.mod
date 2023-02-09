@@ -6,6 +6,7 @@ require (
 	github.com/client9/misspell v0.3.4
 	github.com/go-git/go-git/v5 v5.2.0
 	github.com/google/go-github/v32 v32.1.0
+	golang.org/x/mod v0.4.0
 	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c
 	k8s.io/enhancements v0.0.0-20230113204613-7f681415a001
 )

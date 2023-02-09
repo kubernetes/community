@@ -43,6 +43,8 @@ import (
 	"github.com/go-git/go-git/v5/storage/memory"
 
 	yaml "gopkg.in/yaml.v3"
+
+	"golang.org/x/mod/semver"
 )
 
 const (
@@ -104,9 +106,24 @@ func getLastThreeK8sReleases() (Releases, error) {
 		return Releases{}, err
 	}
 	var result Releases
-	result.Latest = strings.Split(strings.TrimPrefix(*releases[0].TagName, "v"), ".")[0] + "." + strings.Split(strings.TrimPrefix(*releases[0].TagName, "v"), ".")[1]
-	result.LatestMinusOne = strings.Split(strings.TrimPrefix(*releases[1].TagName, "v"), ".")[0] + "." + strings.Split(strings.TrimPrefix(*releases[1].TagName, "v"), ".")[1]
-	result.LatestMinusTwo = strings.Split(strings.TrimPrefix(*releases[2].TagName, "v"), ".")[0] + "." + strings.Split(strings.TrimPrefix(*releases[2].TagName, "v"), ".")[1]
+	for _, release := range releases {
+		if release.GetPrerelease() || release.GetDraft() {
+			continue
+		}
+		if result.Latest == "" {
+			result.Latest = semver.MajorMinor(release.GetTagName())
+			continue
+		}
+		if result.LatestMinusOne == "" {
+			result.LatestMinusOne = semver.MajorMinor(release.GetTagName())
+			continue
+		}
+		if result.LatestMinusTwo == "" {
+			result.LatestMinusTwo = semver.MajorMinor(release.GetTagName())
+			break
+		}
+	}
+
 	return result, nil
 }
 
@@ -756,7 +773,7 @@ func createAnnualReport(groups []Group, prefix string) error {
 
 		outputPath := filepath.Join(outputDir, fmt.Sprintf("annual-report-%s.md", lastYear()))
 		templatePath := filepath.Join(baseGeneratorDir, templateDir, templateFile)
-		if err := writeTemplate(templatePath, outputPath, "markdown", group); err != nil {
+		if err := writeTemplate(templatePath, outputPath, "", group); err != nil {
 			return err
 		}
 	}
