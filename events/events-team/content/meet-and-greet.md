@@ -4,9 +4,19 @@ The SIG Meet & Greet (M&G) is an event we hold during Kubecon in order for new c
 
 While the M&G does not take place during the Contributor Summit, it is considered part of it.
 
-## Staffing
+## Roles & Staffing
 
-Aside from the SIG leads, this event is run by a Meet & Greet Coordinator (MGC), a role selected on the event staff for the Contributor Summit. 
+Aside from the SIG leads, this event is run by a Meet & Greet Coordinator (MGC), a role selected on the event staff for the Contributor Summit.
+
+### Skills and Qualifications
+
+- Familiarity with the SIGs, including understanding how SIGs are related to each other and any likely overlap in membership.
+- Good organizational skills, including being able to relentlessly follow up and get responses if SIGs are unresponsive.
+
+### Time Commitment
+
+  - 1-2 hours a week from 3 months in 
+  - 2-3 hours a week in the month leading up to the event
 
 ## Audience
 
@@ -98,3 +108,23 @@ Folks will probably still be chatting when the event ends.  Generally the room i
 ### Day After
 
 Send out a thank you to the SIG Leads, and a link to the survey, if you're doing one.
+
+## Notes and Tasks
+
+Some additional notes based on experience from prior M&G events:
+
+- Create a form to track the details about each SIG / WG representative. See the example from the [2019 San Diego SIG M&G](https://forms.gle/hxx1qz8XtwtXEBMm8) for more details about what information to gather.
+- Contact each SIG / WG and ask them to have 1 or more experienced members complete the form and commit to represent the group at the Meet and Greet.
+- Expect to spend a fair amount of time following up with SIGs and WGs to get the name of their representatives.
+- Add these representatives to a calendar notice for the SIG Meet and Greet.
+- Work with the registration lead to make sure that representatives are registered for the summit and follow up with any representatives who have not registered.
+- Make sure that we have table stands and buttons for each SIG that are organized and easy to hand out at the beginning of the event. These were done in alphabetized reusable bags for San Diego, which worked really well. 
+- Create a plan and map for organizing SIGs / WGs at tables to make it easier for attendees to find SIGs. Get the room layout from the venue and pre-assign SIGs / WGs to tables with some thought given to logical groupings with similar topics in close proximity. Make sure that this plan is communicated to volunteers and other organizers and display the room layout / map on the projector to help people find their tables.
+- Recruit a few volunteers to distribute table stands and buttons and to help SIGs / contributors find the right tables. 
+- Make a short announcement at the beginning with an overview of how it works.
+- Walk around the room throughout the event to help lost contributors get matched up with a SIG table.
+
+### Prior M&Gs
+
+- [SIG Meet and Greet Barcelona 2019](https://github.com/kubernetes/community/issues/3516)
+- [SIG Meet and Greet San Diego 2019](https://github.com/kubernetes/community/issues/3896)
