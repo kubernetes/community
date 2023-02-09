@@ -729,7 +729,7 @@ func createAnnualReportIssue(groups []Group, prefix string) error {
 
 		outputPath := filepath.Join(outputDir, fmt.Sprintf("%s_%s.md", lastYear(), group.Dir))
 		templatePath := filepath.Join(baseGeneratorDir, templateDir, annualReportIssueTemplate)
-		if err := writeTemplate(templatePath, outputPath, "markdown", group); err != nil {
+		if err := writeTemplate(templatePath, outputPath, "", group); err != nil {
 			return err
 		}
 	}
