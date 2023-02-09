@@ -47,6 +47,11 @@ The CNCF staff must do this because they have possession of the case of SIG gear
 
 If Kubernetes has a new SIG this year, or a team that really wants to recruit, notify the staff as soon as possible so that they can order new gear for that group.
 
+Additional gear that you might want to have at the M&G, depending on circumstances and availability:
+
+* Approver pins
+* Kubernetes contributor patches
+
 ### 1 Month Before: Recruit SIG staffers
 
 Prepare a sign-up sheet for SIG volunteers, usually a spreadsheet so that folks from SIGs can see who else has signed up for their SIG.  Then work with Contributor Comms in order to message all of the SIG leads.  Notify folks on the following channels:
