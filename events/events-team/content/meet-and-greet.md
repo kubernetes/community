@@ -28,7 +28,7 @@ The M&G is generally held during lunch period on one of the main Kubecon days.  
 
 Request a large room for the M&G from the CNCF Contributor Summit Liaison.  This will be a large room, set with at least 10 round tables.
 
-The gear for the M&G consists of table sign stands for each SIG, and a bag of buttons for each.  Some of this gets used/goes missing each Kubecon, so ask CNCF staff to check that:
+The gear for the M&G consists of table sign stands for each SIG, a bag of buttons for each SIG, and Kubernetes Contributor badge ribbons for folks who might not have gotten one.  Some of this gets used/goes missing each KubeCon, so ask CNCF staff to check that:
 
 - All currently active SIGs have at least a dozen buttons
 - All currently active SIGs have table signs, and non-broken table stands
@@ -57,7 +57,7 @@ Check weekly to see who's signed up.  While participation by all SIGs is valuabl
 
 ### 1 Week Before: Solicit Attendees and Send Reminders
 
-By this time, CNCF events should have given you a room number and day. Send out a reminder to all of the chairs and techleads, and give them the updated information including the location and time.  Update the Summit website with the full information.
+By this time, CNCF events should have given you a room number and day. Send out a reminder to all of the chairs and techleads as well as anyone who signed up, and give them the updated information including the location and time.  Update the Summit website with the full information.
 
 Working with Comms, advertise the Meet & Greet to Kubecon attendees and community members.  This should include advertising it on community channels, including social media, #contributor-summit, #kubernetes-contributors, and kubernetes-dev ML, and LWKD.  You should also make sure that it gets into at least one of Kubecon's official messages to attendees; ask CNCF about this.
 
@@ -68,6 +68,8 @@ Decide whether you'll have a sign-in sheet for attendees.  This is unnecessary i
 ### 1 Day Before
 
 If possible, check out the space assigned to the M&G, just in case there are problems with it.  If there are, raise them with our CNCF event staff.
+
+Check that all SIGs who intended to attend are accounted for and were able to make it to the event. In the case of anyone with last-minute travel cancellations, identify if someone can cover for them. If a SIG cannot get members out due to travel issues, solicit help to staff their table from related groups or SIG ContribEx.
 
 ### Day Of
 
@@ -81,9 +83,13 @@ The SIG-Beard pack is special. Leave it in the box unless someone who knows what
 
 Wear some kind of Kubernetes gear, to help identify you as staff.
 
+If possible, put together short directions (plus pictures) to the M&G room from the main conference area to send to Comms for posting on social media and via email.
+
 ### During the M&G
 
-Hover near the entrance to help attendees find the SIGs they are looking for.   Sometimes they won't know, so be ready to chat about their interests with them and direct them appropriately.
+Hover near the entrance to help attendees find the SIGs they are looking for. Sometimes they won't know, so be ready to chat about their interests with them and direct them appropriately.
+
+Take pictures and forward them to Comms to send out on social media to further promote contributions.
 
 ### After the M&G
 
