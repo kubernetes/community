@@ -1,4 +1,4 @@
-# 2021 Annual Report: SIG K8s Infra
+# 2022 Annual Report: SIG Windows
 
 ## Current initiatives
 
@@ -14,25 +14,16 @@
    -
    -
 
-3. KEP work in 2021 (1.x, 1.y, 1.z):
 
-<!--
-In future, this will be generated from kubernetes/enhancements kep.yaml files
-1. with SIG as owning-sig or in participating-sigs
-2. listing 1.x, 1.y, or 1.z in milestones or in latest-milestone
--->
 
-   - Stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-   - Beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-   - Alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-   - Pre-alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md)
+3. KEP work in 2022 (v1.24, v1.25, v1.26):
+  - alpha:
+    - [2578 - Windows Conformance](https://github.com/kubernetes/enhancements/tree/master/keps/sig-windows/2578-windows-conformance) - v1.24
+    - [3503 - Host Network Support for Windows Pods](https://github.com/kubernetes/enhancements/tree/master/keps/sig-windows/3503-host-network-support-for-windows-pods) - v1.26
+  - stable:
+    - [1981 - Windows Privileged Container Support](https://github.com/kubernetes/enhancements/tree/master/keps/sig-windows/1981-windows-privileged-container-support) - v1.26
+    - [2802 - Identify Pod's OS during API Server admission](https://github.com/kubernetes/enhancements/tree/master/keps/sig-windows/2802-identify-windows-pods-apiserver-admission) - v1.25
+
 
 ## Project health
 
@@ -80,43 +71,24 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 
 Include any other ways you measure group membership
 
-## Subprojects
+## [Subprojects](https://git.k8s.io/community/sig-windows#subprojects)
 
-<!--
-In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
-Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
--->
 
-New in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
 
-Retired in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+**New in 2022:**
 
-Continuing:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+  - windows-operational-readiness
 
-## Working groups
+**Continuing:**
 
-<!--
-In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
-Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
--->
+  - windows-gmsa
+  - windows-samples
+  - windows-testing
+  - windows-tools
 
-New in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
 
-Retired in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+## [Working groups](https://git.k8s.io/community/sig-windows#working-groups)
 
-Continuing:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
 
 ## Operational
 
@@ -128,16 +100,15 @@ Operational tasks in [sig-governance.md]:
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
 - [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
 - [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
-- [ ] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+- [ ] Meeting notes and recordings for 2022 are linked from [README.md] and updated/uploaded if needed
+- [ ] Did you have community-wide updates in 2022 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
       -
       -
 
-[CONTRIBUTING.md]: https://git.k8s.io/community/sig-k8s-infra/CONTRIBUTING.md
+[CONTRIBUTING.md]: https://git.k8s.io/community/sig-windows/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
 [sig-governance.md]: https://git.k8s.io/community/committee-steering/governance/sig-governance.md
-[README.md]: https://git.k8s.io/community/sig-k8s-infra/README.md
+[README.md]: https://git.k8s.io/community/sig-windows/README.md
 [sigs.yaml]: https://git.k8s.io/community/sigs.yaml
 [contributor guide]: https://git.k8s.io/community/contributors/guide/README.md
 [devel]: https://git.k8s.io/community/contributors/devel/README.md
-

@@ -1,4 +1,4 @@
-# 2021 Annual Report: WG Reliability
+# 2022 Annual Report: WG Structured Logging
 
 ## Current initiatives
 
@@ -48,8 +48,8 @@ Operational tasks in [wg-governance.md]:
 
 - [ ] [README.md] reviewed for accuracy and updated if needed
 - [ ] WG leaders in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
-- [ ] Updates provided to sponsoring SIGs in 2021
+- [ ] Meeting notes and recordings for 2022 are linked from [README.md] and updated/uploaded if needed
+- [ ] Updates provided to sponsoring SIGs in 2022
       - [$sig-name](https://git.k8s.io/community/$sig-id/)
         - links to email, meeting notes, slides, or recordings, etc
       - [$sig-name](https://git.k8s.io/community/$sig-id/)
@@ -57,6 +57,5 @@ Operational tasks in [wg-governance.md]:
       -
 
 [wg-governance.md]: https://git.k8s.io/community/committee-steering/governance/wg-governance.md
-[README.md]: https://git.k8s.io/community/wg-reliability/README.md
+[README.md]: https://git.k8s.io/community/wg-structured-logging/README.md
 [sigs.yaml]: https://git.k8s.io/community/sigs.yaml
-
