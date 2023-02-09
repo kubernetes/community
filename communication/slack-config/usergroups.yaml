@@ -262,3 +262,21 @@ usergroups:
       - sbueringer
       - VibhorChinda
       - ykakarap
+
+  - name: kcp-devs
+    long_name: kcp Development Team
+    description: Active developers of kcp on #kcp-dev
+    members:
+      - csams
+      - davidfestal
+      - hardys
+      - jmprusi
+      - kylape
+      - ncdc
+      - nrb
+      - p0lyn0mial
+      - pweil-
+      - s-urbaniak
+      - stevekuznetsov
+      - sttts
+      - vincepri
