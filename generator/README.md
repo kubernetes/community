@@ -80,8 +80,11 @@ drop GitHub issue templates into the `generator/generated/` directory.
 You can generate the issues from these templates by running:
 
 ```bash
-ls -1 generator/generated/*.md | xargs -L1 hub issue create -F
+for i in $(ls -1 generator/generated/*.md); do hub issue create -F $i && rm $i; done
 ```
+
+ You may run into rate limiting issues, which is why this command removes the
+ files after an issue has been successfully created.
 
 
 ## Adding custom content
