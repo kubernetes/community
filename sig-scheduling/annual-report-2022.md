@@ -1,4 +1,4 @@
-# 2021 Annual Report: SIG Multicluster
+# 2022 Annual Report: SIG Scheduling
 
 ## Current initiatives
 
@@ -14,25 +14,19 @@
    -
    -
 
-3. KEP work in 2021 (1.x, 1.y, 1.z):
 
-<!--
-In future, this will be generated from kubernetes/enhancements kep.yaml files
-1. with SIG as owning-sig or in participating-sigs
-2. listing 1.x, 1.y, or 1.z in milestones or in latest-milestone
--->
 
-   - Stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.stable
-   - Beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.beta
-   - Alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md) - $milestone.alpha
-   - Pre-alpha
-     - [$kep-number - $title](https://git.k8s.io/community/$link/README.md)
+3. KEP work in 2022 (v1.24, v1.25, v1.26):
+  - beta:
+    - [3022 - Tuning the number of domains in PodTopologySpread](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/3022-min-domains-in-pod-topology-spread) - v1.25
+    - [3094 - Take taints/tolerations into consideration when calculating PodTopologySpread skew](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/3094-pod-topology-spread-considering-taints) - v1.25
+  - stable:
+    - [1258 - Default Pod Topology Spread](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/1258-default-pod-topology-spread) - v1.24
+    - [1923 - Prefer Nominated Node](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/1923-prefer-nominated-node) - v1.24
+    - [2249 - Namespace Selector for Pod Affinity](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/2249-pod-affinity-namespace-selector) - v1.24
+    - [785 - Scheduler Component Config API](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/785-scheduler-component-config-api) - v1.25
+    - [902 - Add NonPreempting Option For PriorityClasses](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/902-non-preempting-priorityclass) - v1.24
+
 
 ## Project health
 
@@ -80,43 +74,41 @@ In future, this will be generated from kubernetes/enhancements kep.yaml files
 
 Include any other ways you measure group membership
 
-## Subprojects
+## [Subprojects](https://git.k8s.io/community/sig-scheduling#subprojects)
 
-<!--
-In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
-Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
--->
 
-New in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
 
-Retired in $YYYY:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+**New in 2022:**
 
-Continuing:
-- [$subproject-name](https://git.k8s.io/community/$sig-id#$subproject-name)
--
+  - kueue
+  - kwok
 
-## Working groups
+**Retired in 2022:**
 
-<!--
-In future, this will be generated from delta of sigs.yaml from $YYYY-01-01 to $YYYY-12-31
-Manually visible via `git diff HEAD@{$YYYY-01-01} HEAD@{$YYYY-12-31} -- $sig-id/README.md`
--->
+  - poseidon
 
-New in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+**Continuing:**
 
-Retired in $YYYY:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+  - cluster-capacity
+  - descheduler
+  - kube-batch
+  - kube-scheduler-simulator
+  - scheduler
+  - scheduler-plugins
 
-Continuing:
-- [$wg-name](https://git.k8s.io/community/$wg-id/) ([$YYYY report](https://git.k8s.io/community/$wg-id/annual-report-$YYYY.md))
--
+
+## [Working groups](https://git.k8s.io/community/sig-scheduling#working-groups)
+
+
+**New in 2022:**
+
+ - Batch
+
+**Continuing:**
+
+ - Multitenancy
+ - Policy
+ - Structured Logging
 
 ## Operational
 
@@ -128,16 +120,15 @@ Operational tasks in [sig-governance.md]:
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
 - [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
 - [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2021 are linked from [README.md] and updated/uploaded if needed
-- [ ] Did you have community-wide updates in 2021 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+- [ ] Meeting notes and recordings for 2022 are linked from [README.md] and updated/uploaded if needed
+- [ ] Did you have community-wide updates in 2022 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
       -
       -
 
-[CONTRIBUTING.md]: https://git.k8s.io/community/sig-multicluster/CONTRIBUTING.md
+[CONTRIBUTING.md]: https://git.k8s.io/community/sig-scheduling/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
 [sig-governance.md]: https://git.k8s.io/community/committee-steering/governance/sig-governance.md
-[README.md]: https://git.k8s.io/community/sig-multicluster/README.md
+[README.md]: https://git.k8s.io/community/sig-scheduling/README.md
 [sigs.yaml]: https://git.k8s.io/community/sigs.yaml
 [contributor guide]: https://git.k8s.io/community/contributors/guide/README.md
 [devel]: https://git.k8s.io/community/contributors/devel/README.md
-

@@ -1,7 +1,9 @@
 {{lastYear}} Annual Report: {{.Prefix | toUpper}} {{.Name}}
 
 Chairs: {{range .Leadership.Chairs}}@{{.GitHub}} {{end}}
+{{- if.Contact.Liaison.GitHub}}
 Liaison: @{{.Contact.Liaison.GitHub}}
+{{- end}}
 
 Actions for the chair/organizer of the community group:
 - [ ] Consult your community group to complete draft of report
@@ -13,9 +15,11 @@ Actions for the chair/organizer of the community group:
 
 Once all the above items are complete, this issue may be `/close`'d
 
+A template has already been generated for your group, and is available [here](https://git.k8s.io/community/{{.Dir}}/annual-report-{{lastYear}}.md).
+
 Key dates:
-- Initial PR to communtiy repo should be opened by February 14, {{now.UTC.Year}}
-- PR should be reviewed and merged by March 1st, {{now.UTC.Year}}
+- Initial PR to communtiy repo should be opened by March 24th, {{now.UTC.Year}}
+- PR should be reviewed and merged by April 7th, {{now.UTC.Year}}
 
 More detailed information on the annual reports process is available [here](https://git.k8s.io/community/committee-steering/governance/annual-reports.md).
 

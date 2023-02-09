@@ -1,4 +1,4 @@
-# {{lastYear}} Annual Report: {{.Prefix | toUpper}} {{.Name}}
+# 2022 Annual Report: SIG API Machinery
 
 ## Current initiatives
 
@@ -14,15 +14,17 @@
    -
    -
 
-{{$releases := getReleases}}
-{{$owingsig := .Dir}}
-3. KEP work in {{lastYear}} ({{$releases.LatestMinusTwo}}, {{$releases.LatestMinusOne}}, {{$releases.Latest}}):
-{{- range $stage, $keps := filterKEPs $owingsig $releases}}
-  - {{ $stage }}:
-  {{- range $keps}}
-    - [{{.Number}} - {{.Title}}](https://github.com/kubernetes/enhancements/tree/master/keps/{{.OwningSIG}}/{{.Name}}) - {{.LatestMilestone -}}
-  {{ end}}
-{{- end}}
+
+
+3. KEP work in 2022 (v1.24, v1.25, v1.26):
+  - alpha:
+    - [3156 - HTTP3](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/3156-http3) - v1.24
+  - beta:
+    - [1965 - kube-apiserver identity](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/1965-kube-apiserver-identity) - v1.26
+    - [2876 - CRD Validation Expression Language](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/2876-crd-validation-expression-language) - v1.25
+  - stable:
+    - [1164 - Deprecate and remove SelfLink](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/1164-remove-selflink) - v1.24
+    - [1904 - Efficient watch resumption after kube-apiserver reboot](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/1904-efficient-watch-resumption) - v1.24
 
 
 ## Project health
@@ -71,62 +73,34 @@
 
 Include any other ways you measure group membership
 
-## [Subprojects](https://git.k8s.io/community/{{.Dir}}#subprojects)
-{{- define "subprojects" -}}
-{{- $owingsig := .Dir -}}
-{{- if .New}}
+## [Subprojects](https://git.k8s.io/community/sig-api-machinery#subprojects)
 
-**New in {{lastYear}}:**
-{{range .New}}
-  - {{.}}
-{{- end}}
-{{- end}}
 
-{{- if .Retired}}
-
-**Retired in {{lastYear}}:**
-{{range .Retired}}
-  - {{.}}
-{{- end}}
-{{- end}}
-
-{{- if .Continuing}}
 
 **Continuing:**
-{{range .Continuing}}
-  - {{.}}
-{{- end}}
-{{- end}}
-{{- end}}
 
-{{ template "subprojects" (getCategorizedSubprojects .Dir) }}
+  - component-base
+  - control-plane-features
+  - idl-schema-client-pipeline
+  - json
+  - kubernetes-clients
+  - server-api-aggregation
+  - server-binaries
+  - server-crd
+  - server-frameworks
+  - server-sdk
+  - universal-machinery
+  - yaml
 
 
-## [Working groups](https://git.k8s.io/community/{{.Dir}}#working-groups)
-{{ $categorizedWorkingGroups := getCategorizedWorkingGroups .Dir }}
-{{- if $categorizedWorkingGroups.New}}
+## [Working groups](https://git.k8s.io/community/sig-api-machinery#working-groups)
 
-**New in {{lastYear}}:**
-{{range $categorizedWorkingGroups.New }}
- - {{.}}
-{{- end}}
-{{- end}}
-
-{{- if $categorizedWorkingGroups.Retired}}
-
-**Retired in {{lastYear}}:**
-{{range $categorizedWorkingGroups.Retired }}
- - {{.}}
-{{- end}}
-{{- end}}
-
-{{- if $categorizedWorkingGroups.Continuing}}
 
 **Continuing:**
-{{range $categorizedWorkingGroups.Continuing }}
- - {{ . }}
-{{- end}}
-{{- end}}
+
+ - API Expression
+ - Multitenancy
+ - Structured Logging
 
 ## Operational
 
@@ -138,15 +112,15 @@ Operational tasks in [sig-governance.md]:
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
 - [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
 - [ ] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for {{lastYear}} are linked from [README.md] and updated/uploaded if needed
-- [ ] Did you have community-wide updates in {{lastYear}} (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+- [ ] Meeting notes and recordings for 2022 are linked from [README.md] and updated/uploaded if needed
+- [ ] Did you have community-wide updates in 2022 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
       -
       -
 
-[CONTRIBUTING.md]: https://git.k8s.io/community/{{.Dir}}/CONTRIBUTING.md
+[CONTRIBUTING.md]: https://git.k8s.io/community/sig-api-machinery/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
 [sig-governance.md]: https://git.k8s.io/community/committee-steering/governance/sig-governance.md
-[README.md]: https://git.k8s.io/community/{{.Dir}}/README.md
+[README.md]: https://git.k8s.io/community/sig-api-machinery/README.md
 [sigs.yaml]: https://git.k8s.io/community/sigs.yaml
 [contributor guide]: https://git.k8s.io/community/contributors/guide/README.md
 [devel]: https://git.k8s.io/community/contributors/devel/README.md
