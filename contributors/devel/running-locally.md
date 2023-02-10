@@ -71,6 +71,8 @@ Set the endpoint for container runtime e.g. containerd
 export CONTAINER_RUNTIME_ENDPOINT="unix:///run/containerd/containerd.sock"
 ```
 
+Optionally set any other environment variables as needed to change the cluster configuration. The possible options are listed at the top of the `./hack/local-up-cluster.sh` script.
+
 In a separate tab of your terminal, run the following:
 
 ```sh
@@ -100,7 +102,11 @@ print the commands to run to point kubectl at the local cluster.
 
 Your cluster is running, and you want to start running containers!
 
-You can now use any of the cluster/kubectl.sh commands to interact with your local setup.
+You can now use any of the cluster/kubectl.sh commands to interact with your local setup after setting your KUBECONFIG
+
+```sh
+export KUBECONFIG=/var/run/kubernetes/admin.kubeconfig
+```
 
 ```sh
 ./cluster/kubectl.sh get pods
@@ -112,10 +118,11 @@ You can now use any of the cluster/kubectl.sh commands to interact with your loc
 While waiting for the provisioning to complete, you can monitor progress in another terminal with these commands.
 
 ```sh
-docker images
-# To watch the process pull the nginx image
-docker ps
-# To watch all Docker processes.
+# containerd
+# To list images
+ctr --namespace k8s.io image ls
+# To list containers
+ctr --namespace k8s.io containers ls
 ```
 
 Once provisioning is complete, you can use the following commands for Kubernetes introspection.
@@ -181,3 +188,11 @@ KUBE_DNS_NAME="cluster.local"
 ```
 
 To know more on DNS service you can check out the [docs](http://kubernetes.io/docs/admin/dns/).
+
+### All pod fail to start with a cgroups error of `expected cgroupsPath to be of format "slice:prefix:name" for systemd cgroups`
+
+Your container runtime is using the systemd cgroup driver, but by default `./hack/local-up-cluster.sh` uses cgroupfs.  To correct the mismatch, set the `CGROUP_DRIVER` environment variable to systemd as well.
+
+```sh
+export CGROUP_DRIVER=systemd
+```
