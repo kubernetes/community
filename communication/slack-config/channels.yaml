@@ -330,6 +330,7 @@ channels:
   - name: multi-platform
   - name: mysql-operator
   - name: nais
+  - name: nauticus
   - name: navigator
     archived: true
   - name: ncw-staff
