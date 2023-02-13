@@ -623,17 +623,14 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/autoscaler/master/addon-resizer/OWNERS
   - name: cluster-autoscaler
     owners:
-    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/OWNERS
   - name: horizontal-pod-autoscaler
     owners:
     - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
-  - name: scale-client
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/client-go/master/scale/OWNERS
   - name: vertical-pod-autoscaler
     owners:
-    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/vertical-pod-autoscaler/OWNERS
 - dir: sig-cli
   name: CLI
   mission_statement: >
