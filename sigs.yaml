@@ -1389,7 +1389,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/lwkd/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/communication/contributor-comms/OWNERS
     meetings:
-    - description: Contributor Comms - Upstream Marketing Team Meeting
+    - description: Contributor Comms - Contributor Comms Team Meeting
       day: Friday
       time: "8:00"
       tz: PT (Pacific Time)
