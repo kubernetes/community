@@ -208,6 +208,7 @@ channels:
   - name: kompose
   - name: kong
   - name: konveyor
+  - name: konveyor-dev
   - name: koordinator
   - name: kops-dev
   - name: kops-users
