@@ -105,7 +105,8 @@ correct solution is created before a single line of code is reviewed.
 
 Official releases are built using Docker containers. To build Kubernetes using
 Docker please follow [these
-instructions](http://releases.k8s.io/HEAD/build/README.md).
+instructions](http://releases.k8s.io/master/build/README.md).
+
 
 ## Building Kubernetes on a local OS/shell environment
 
