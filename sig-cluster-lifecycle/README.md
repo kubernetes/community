@@ -179,7 +179,7 @@ Cluster API infrastructure provider for OpenStack
   - Slack: [#cluster-api-openstack](https://kubernetes.slack.com/messages/cluster-api-openstack)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 ### cluster-api-provider-packet
-Cluster API infrastructure provider for Packet
+Cluster API infrastructure provider for Equinix Metal
 - **Owners:**
   - [kubernetes-sigs/cluster-api-provider-packet](https://github.com/kubernetes-sigs/cluster-api-provider-packet/blob/master/OWNERS)
 - **Contact:**
