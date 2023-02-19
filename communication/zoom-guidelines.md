@@ -190,7 +190,7 @@ for which models work best.
 
 Thanks for making Kubernetes meetings work great!
 
-[community meeting]: /events/community-meeting
+[community meeting]: /events/community-meeting.md
 [SIG/WG meetings]: /sig-list.md
 [Kubernetes code of conduct]: /code-of-conduct.md
 [moderation]: ./moderation.md
