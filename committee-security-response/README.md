@@ -13,13 +13,14 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 
 ## Members
 
+* Sri Saran Balaji (**[@SaranBalaji90](https://github.com/SaranBalaji90)**), Amazon
 * CJ Cullen (**[@cjcullen](https://github.com/cjcullen)**), Google
 * Mo Khan (**[@enj](https://github.com/enj)**), Microsoft
 * Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
 * Luke Hinds (**[@lukehinds](https://github.com/lukehinds)**), Red Hat
 * Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
+* Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
 * Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
-* Tim Allclair (**[@tallclair](https://github.com/tallclair)**), Google
 
 ## Contact
 - Private Mailing List: security@kubernetes.io
