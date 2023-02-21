@@ -988,6 +988,9 @@ sigs:
       name: Vince Prignano
       company: Red Hat
     tech_leads:
+    - github: CecileRobertMichon
+      name: Cecile Robert-Michon
+      company: Microsoft
     - github: fabriziopandini
       name: Fabrizio Pandini
       company: VMware
