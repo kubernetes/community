@@ -488,7 +488,7 @@ Some resources in the v1 API contain fields called **`phase`**, and associated
 `message`, `reason`, and other status fields. The pattern of using `phase` is
 deprecated. Newer API types should use conditions instead. Phase was
 essentially a state-machine enumeration field, that contradicted [system-design
-principles](../../design-proposals/architecture/principles.md#control-logic) and
+principles](https://git.k8s.io/design-proposals-archive/architecture/principles.md#control-logic) and
 hampered evolution, since [adding new enum values breaks backward
 compatibility](api_changes.md). Rather than encouraging clients to infer
 implicit properties from phases, we prefer to explicitly expose the individual
@@ -513,7 +513,7 @@ only provided with reasonable effort, and is not guaranteed to not be lost.
 Status information that may be large (especially proportional in size to
 collections of other resources, such as lists of references to other objects --
 see below) and/or rapidly changing, such as
-[resource usage](../../design-proposals/scheduling/resources.md#usage-data), should be put into separate
+[resource usage](https://git.k8s.io/design-proposals-archive/scheduling/resources.md#usage-data), should be put into separate
 objects, with possibly a reference from the original object. This helps to
 ensure that GETs and watch remain reasonably efficient for the majority of
 clients, which may not need that data.
