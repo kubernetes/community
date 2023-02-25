@@ -18,7 +18,7 @@ As mentioned, the focus of the Contributor Experience articles is targeted at th
 2. Article is just for [kubernetes.io](https://kubernetes.io/blog/): when the article targets Kubernetes end-users, and not specifically the contributor community. Examples include most technical articles on Kubernetes features, updates on new features and deprecations, etc.
 3. Article is relevant for both: sometimes, an article will be relevant to both the Kubernetes end-users, and the contributor community. Examples include interviews with SIGs and WGs, articles on technical aspects that are important for the contributor community, etc.
 
-The decision on what is the right option will be made jointly by the SIG Contribex Comms and the SIG Docs Blogging editorial team: as a content writer you shouldn't be overly concerned about it, expect in how it can change the approval process, as described below.
+The decision on what is the right option will be made jointly by the SIG Contribex Comms and the SIG Docs Blogging editorial team: as a content writer you shouldn't be overly concerned about it, except in how it can change the approval process, as described below.
 
 ## Submission and review process
 
@@ -30,9 +30,9 @@ This process is initiated in [#sig-contribex-comms](https://kubernetes.slack.com
 2. The submission idea will be reviewed by the team, including the decision on where to publish it; someone from the SIG Contribex Comms team will reach out to the [#sig-docs-blog](https://kubernetes.slack.com/archives/CJDHVD54J) editorial team to clarify if the content is adequate for republishing in the main Kubernentes blog. At this stage an editor should be assigned to follow-up the process with you.
 3. Create your proposal draft in [Google Docs](https://docs.google.com/) or HackMD (https://hackmd.io), and ask for a review in [the channel](https://kubernetes.slack.com/archives/C03KT3SUJ20). This will facilitate easier editing, especially if major changes or restructuring is needed. Take into account the [documentation style guide](https://kubernetes.io/docs/contribute/style/style-guide/): these guidelines can help in improving the readability of your article, especially in terms of the use of Kubernetes terminology.
 4. Once you have reflected any feedback in the proposal draft,  announce that the article is ready for submission (again, in the channel or in one of the weekly meetings): the assigned editor will use the final text to open the PR, adding you as a Co-author
-5. (Optional) If the submission will be mirrored in the main Kubernetes site, a second PR will be oped by the editor, but on the main repository, and after being approved in the `contributor-site` one.
+5. (Optional) If the submission will be mirrored in the main Kubernetes site, a second PR will be opened by the editor, but on the main repository, and after being approved in the `contributor-site` one.
 
-For now, our official process is to use [SIG Docs' system](/sig-docs/blog-subproject/README.md), with one change: instead of directly creating the file in the Kubernetes site repository, as instructed abovem it's initially created in the [contributor-site](https://github.com/kubernetes/contributor-site), in the appropriate folder (i.e. the right year in `contributor-site/content/en/blog/`).
+For now, our official process is to use [SIG Docs' system](/sig-docs/blog-subproject/README.md), with one change: instead of directly creating the file in the Kubernetes site repository, as instructed above it's initially created in the [contributor-site](https://github.com/kubernetes/contributor-site), in the appropriate folder (i.e. the right year in `contributor-site/content/en/blog/`).
 
 This will lead to an initial review process before it gets mirrored to the main Kubernetes site.
 
