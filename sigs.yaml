@@ -3159,7 +3159,7 @@ workinggroups:
     day: Wednesday
     time: "09:00"
     tz: PT
-    frequency: every four weeks
+    frequency: every two weeks
     url: https://zoom.us/j/92778512626?pwd=MXhlemwvYnhkQmkxeXllQ0Z5VGs4Zz09
     archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
   contact:
