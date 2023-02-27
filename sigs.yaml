@@ -2927,6 +2927,9 @@ sigs:
   label: windows
   leadership:
     chairs:
+    - github: aravindhp
+      name: Aravindh Puthiyaparambil
+      company: Redhat
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
@@ -2939,6 +2942,9 @@ sigs:
       company: VMware
     - github: jsturtevant
       name: James Sturtevant
+      company: Microsoft
+    - github: marosset
+      name: Mark Rossetti
       company: Microsoft
     emeritus_leads:
     - github: PatrickLang
