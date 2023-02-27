@@ -1933,15 +1933,18 @@ sigs:
   label: network
   leadership:
     chairs:
-    - github: caseydavenport
-      name: Casey Davenport
-      company: Tigera
     - github: dcbw
       name: Dan Williams
       company: Red Hat
+    - github: shaneutt
+      name: Shane Utt
+      company: Kong
     - github: thockin
       name: Tim Hockin
       company: Google
+    emeritus_leads:
+    - github: caseydavenport
+      name: Casey Davenport
   meetings:
   - description: Gateway API GAMMA Meeting (APAC Friendly)
     day: Tuesday

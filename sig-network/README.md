@@ -39,9 +39,13 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**), Tigera
 * Dan Williams (**[@dcbw](https://github.com/dcbw)**), Red Hat
+* Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Kong
 * Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
+
+## Emeritus Leads
+
+* Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**)
 
 ## Contact
 - Slack: [#sig-network](https://kubernetes.slack.com/messages/sig-network)
