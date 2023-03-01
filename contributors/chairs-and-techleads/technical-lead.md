@@ -36,8 +36,6 @@ Expectations of Technical Leads are:
   right decisions.
 - They actively identify risk and maintain a high level of trust with other
   members of the SIG.
-- They are responsible for reviewing and approving KEPs for releases
-  or rejecting KEPs based on technical vision of a SIG.
 
 Technical Leads have the responsibility to track the technical quality of the
 deliverables of the team if a roadmap exists. They are volunteering to provide
