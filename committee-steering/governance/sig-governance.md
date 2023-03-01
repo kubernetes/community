@@ -88,8 +88,9 @@ Subproject contributors (as applicable).
 - *SHOULD* define how priorities and commitments are managed and delegate to other leads as needed
 - *SHOULD* drive charter changes (including creation) to get community buy-in but *MAY* delegate content creation to SIG contributors
 - *SHOULD* identify, track, and maintain the SIGs enhancements for current
-  release and serve as point of contact for the release team, but *MAY* delegate
-   to another Lead to fulfill these responsibilities
+  release and serve as point of contact for the release team. If Technical Leads
+  are present in a SIG, Technical Leads *MUST* approve the content of the KEP,
+  while both chairs and TLs *MUST* maintain the KEPs metadata
   - *MAY* delegate the creation of a SIG roadmap to other Leads
   - *MUST* organize a main group meeting and make sure [sigs.yaml] is up to date
   including subprojects and their meeting information but *SHOULD* delegate the
@@ -121,6 +122,7 @@ curation from other SIG participants
   - Establish new subprojects
   - Decommission existing subprojects
   - Resolve X-Subproject technical issues and decisions
+  - Review and approve KEPs
   - Number: 2-3
   - Membership tracked in [sigs.yaml]
   - Role description in [technical-lead.md]
