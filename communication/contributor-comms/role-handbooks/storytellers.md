@@ -76,7 +76,7 @@ If you would like to be listed as a member of the team, here are the expectation
 3. Remain non-partial: if you receive a request to write about a project, an individual, or a group of people from your employer, you should ask an impartial blogger to write it.
 4. As with all contribution to Kubernetes, adhere to the [code of conduct](/code-of-conduct.md), values, and principles of the project.
 
-There is no shadow roles for Storytellers. If Storytellers are interested in becoming a shadow they can read more about it in the [Marketing Council Handbook].
+There are no shadow roles for Storytellers. If Storytellers are interested in becoming a shadow they can read more about the available leadership roles in the Contributor Comms [Role handbooks](https://github.com/kubernetes/community/tree/master/communication/contributor-comms/role-handbooks).
 
 [blogging guidelines]: ../storytelling-resources/blog-guidelines.md
 [YouTube guidelines]: /communication/youtube/youtube-guidelines.md
