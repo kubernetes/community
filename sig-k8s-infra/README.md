@@ -50,6 +50,13 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-k8s-infra:
+### community-images
+kubectl plugin used to highlight images pulled from community-owned registries
+- **Owners:**
+  - [kubernetes-sigs/community-images](https://github.com/kubernetes-sigs/community-images/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
+  - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 ### k8s-infra-dns
 Code and configuration to manage DNS records for domains owned by the Kubernetes project such as k8s.io and kubernetes.io
 - **Owners:**
