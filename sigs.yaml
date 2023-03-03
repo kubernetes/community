@@ -2765,6 +2765,11 @@ sigs:
       github: cpanato
       name: Carlos Tadeu Panato Jr.
   subprojects:
+  - name: Cloud Provider for KIND
+    description: |
+      Cloud provider for KIND clusters
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-kind/main/OWNERS
   - name: boskos
     description: |
       Boskos is a resource manager service that handles different kinds of resources and transitions between different states. We use it on the Kubernetes project to manage pools of GCP projects for CI/CD.

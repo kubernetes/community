@@ -61,6 +61,10 @@ The following [working groups][working-group-definition] are sponsored by sig-te
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-testing:
+### Cloud Provider for KIND
+Cloud provider for KIND clusters
+- **Owners:**
+  - [kubernetes-sigs/cloud-provider-kind](https://github.com/kubernetes-sigs/cloud-provider-kind/blob/main/OWNERS)
 ### boskos
 Boskos is a resource manager service that handles different kinds of resources and transitions between different states. We use it on the Kubernetes project to manage pools of GCP projects for CI/CD.
 - **Owners:**
