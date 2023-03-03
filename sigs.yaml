@@ -1767,6 +1767,14 @@ sigs:
       name: Stephen Augustus
       company: Cisco
   subprojects:
+  - name: community-images
+    description: kubectl plugin used to highlight images pulled from community-owned
+      registries
+    contact:
+      slack: sig-k8s-infra
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/community-images/main/OWNERS
   - name: k8s-infra-dns
     description: Code and configuration to manage DNS records for domains owned by
       the Kubernetes project such as k8s.io and kubernetes.io
