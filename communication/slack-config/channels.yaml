@@ -30,6 +30,7 @@ channels:
   - name: bindings-discuss
   - name: bootkube
     archived: true
+  - name: bpfd
   - name: brigade
   - name: camptocamp-devops-stack
   - name: canonical-kubernetes
