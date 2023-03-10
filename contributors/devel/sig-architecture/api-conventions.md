@@ -731,8 +731,8 @@ server if the Name field has not been provided. The provided value must be valid
 within the rules for Name, and may be truncated by the length of the suffix
 required to make the value unique on the server. If this field is specified, and
 Name is not present, the server will return a 409 with Reason `AlreadyExists` if
-the generated name exists, and the client should retry (optionally after the time
-indicated in the Retry-After header).
+the generated name exists, and the client should retry (after waiting at least the amount of time
+indicated in the Retry-After header, if it is present).
 
 ## Optional vs. Required
 
