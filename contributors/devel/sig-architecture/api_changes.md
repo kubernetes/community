@@ -877,16 +877,29 @@ You need to regenerate the generated code as instructed in the sections above.
 Part of our testing regimen for APIs is to "fuzz" (fill with random values) API
 objects and then convert them to and from the different API versions. This is
 a great way of exposing places where you lost information or made bad
-assumptions. If you have added any fields which need very careful formatting
-(the test does not run validation) or if you have made assumptions such as
-"this slice will always have at least 1 element", you may get an error or even
-a panic from the `serialization_test`. If so, look at the diff it produces (or
-the backtrace in case of a panic) and figure out what you forgot. Encode that
-into the fuzzer's custom fuzz functions. Hint: if you added defaults for a
-field, that field will need to have a custom fuzz function that ensures that the
-field is fuzzed to a non-empty value.
+assumptions. 
 
-The fuzzer can be found in `pkg/api/testing/fuzzer.go`.
+The fuzzer works by creating a random API object and calling the custom fuzzer
+function in `pkg/apis/$GROUP/fuzzer/fuzzer.go`. The resulting object is then
+round-tripped from one api version to another, and verified to be the same as
+what was started with. Validation is not run during this process, but defaulting
+is.  
+
+If you have added any fields which need very careful formatting (the test does
+not run validation) or if you have made assumptions during defaulting such as
+"this slice will always have at least 1 element", you may get an error or even a
+panic from the `k8s.io/kubernetes/pkg/api/testing.TestRoundTripTypes` in
+`./pkg/api/testing/serialization_test.go`.
+
+If you default any fields, you must check that in the custom fuzzer function,
+because the fuzzer may leave some fields empty. If your object has a structure
+reference, the fuzzer may leave that nil, or it may create a random object. Your
+custom fuzzer function must ensure that defaulting does not further change the
+object, as that will show up as a diff in the round trip test.
+
+Finally, the fuzz test runs without any feature gate configuration. If
+defaulting or other behavior is behind a feature gate, beware that the fuzz
+behavior will change when the feature gate becomes default on.
 
 ## Update the semantic comparisons
 
