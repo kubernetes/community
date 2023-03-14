@@ -15,6 +15,7 @@ usergroups:
       - sig-release
     members:
       - ameukam # Release Manager Associate
+      - cici37 # Release Manager
       - cpanato # Release Manager
       - jeremyrickard # Release Manager
       - jimangel # Release Manager Associate
@@ -91,6 +92,7 @@ usergroups:
       - sig-release
     members:
       - cjcullen # Product Security Committee
+      - cici37 # Release Manager
       - cpanato # subproject owner / Release Manager
       - jeremyrickard # subproject owner / Release Manager
       - joelsmith # Product Security Committee
