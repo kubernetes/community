@@ -167,6 +167,7 @@ channels:
   - name: it-users
   - name: java
   - name: jenkins-ci
+  - name: jenkins-operator
   - name: jenkins-x-dev
   - name: jenkins-x-user
   - name: jp-dev
