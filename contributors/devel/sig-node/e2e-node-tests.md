@@ -354,3 +354,14 @@ metadata:
 Please note that if you add the annotations, then you must provide the full information:
 you must should specify the number of SRIOV devices attached to each NUMA node in the system,
 even if the number is zero.
+
+# Debugging E2E Tests Locally
+
+1. Install kubectl on the node
+2. Set your KUBCONFIG environment variable to reference the kubeconfig created by the e2e node tests
+   `export KUBECONFIG=./_output/local/go/bin/kubeconfig`
+3. Inspect the node and pods as needed while the tests are running
+   ```
+   $ kubectl get pod -A
+   $ kubectl describe node
+   ```
