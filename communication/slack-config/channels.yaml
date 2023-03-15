@@ -403,6 +403,7 @@ channels:
   - name: sig-api-machinery-cel-dev
   - name: sig-apps
   - name: sig-auth
+  - name: sig-auth-authenticators-dev
   - name: sig-auth-kms-dev
   - name: sig-auth-triage
   - name: sig-autoscaling
