@@ -125,7 +125,9 @@ channels:
   - name: fr-users
   - name: fury-distribution
   - name: garden
+    archived: true
   - name: garden-dev
+    archived: true
   - name: gardener
   - name: gimbal
   - name: github
