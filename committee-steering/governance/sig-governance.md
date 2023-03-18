@@ -39,9 +39,10 @@ The process for setting up a SIG or Working Group (WG) is listed in the
 ### Notes on Roles
 
 Within this section "Lead" refers to someone who is a member of the union
- of a Chair, Tech Lead or Subproject Owner role. There is no one lead to any
- Kubernetes community group. Leads have specific decision making power over some
- part of a group and thus additional accountability. Each role is detailed below.  
+of a Chair, Tech Lead, or Subproject Owner role. Leads may, and frequently do
+hold more than one role. There is no one lead to any Kubernetes community
+group. Leads have specific decision making power over some part of a group
+and thus additional accountability. Each role is detailed below.
 
 - Initial roles are defined at the founding of the SIG or Subproject as part
 of the acceptance of that SIG or Subproject.
@@ -79,17 +80,17 @@ Subproject contributors (as applicable).
 
 ### Chair
 
-- Number: 2-3
-- Membership tracked in [sigs.yaml]  
-  - If no tech lead role is present, Chair assumes responsibilities from [#tech-lead] section.
+- Number: 2+
+- Membership tracked in [sigs.yaml]
   
-  In addition, run operations and processes governing the SIG:
+In addition, run operations and processes governing the SIG:
 
 - *SHOULD* define how priorities and commitments are managed and delegate to other leads as needed
 - *SHOULD* drive charter changes (including creation) to get community buy-in but *MAY* delegate content creation to SIG contributors
-- *SHOULD* identify, track, and maintain the SIGs enhancements for current
-  release and serve as point of contact for the release team, but *MAY* delegate
-   to another Lead to fulfill these responsibilities
+- *MUST* in conjunction with the Tech Leads identify, track, and maintain the
+  metadata of the SIGs enhancements for the current release and serve as
+  point of contact for the release team, but *MAY* delegate to other
+  contributors to fulfill these responsibilities
   - *MAY* delegate the creation of a SIG roadmap to other Leads
   - *MUST* organize a main group meeting and make sure [sigs.yaml] is up to date
   including subprojects and their meeting information but *SHOULD* delegate the
@@ -104,8 +105,6 @@ Subproject contributors (as applicable).
    staff and approve presented content but *MAY* delegate to other contributors
    to create material and present  
   - *MUST* ensure meetings are recorded and made available
-  - *MUST* report activity with the community via k-dev mailing list at least
-  once a quarter (slides, video from kubecon, etc)
   - *MUST* coordinate sponsored working group updates to the SIG and the wider
   community  
 - *MUST* coordinate communication and be a connector with other community
@@ -117,13 +116,21 @@ curation from other SIG participants
 
 ### Tech Lead
 
-- *Optional Role*: SIG Technical Leads
-  - Establish new subprojects
-  - Decommission existing subprojects
-  - Resolve X-Subproject technical issues and decisions
-  - Number: 2-3
-  - Membership tracked in [sigs.yaml]
-  - Role description in [technical-lead.md]
+- Number: 2+
+- Membership tracked in [sigs.yaml]
+- *MUST* Approve & facilitate the creation of new subprojects
+- *MUST* Approve & facilitate decommissioning of existing subprojects
+- *MUST* Resolve cross-Subproject and cross-SIG technical issues and decisions
+  or delegate to another Lead as needed
+- *MUST* in conjunction with the Chairs identify, track, and maintain the
+  metadata of the SIGs enhancement proposals for the current release and serve
+  as point of contact for the release team, but *MAY* delegate to other
+  contributors to fulfill these responsibilities
+- *MUST* Review & Approve SIG Enhancement Proposals, but *MAY* delegate to
+  other contributors to fulfill these responsibilities for individual proposals
+
+Additional information on the Tech Lead role can be found in
+[technical-lead.md]; within the [Chair & TL Contributor Documentation].
 
 ### Subproject Owner
 
@@ -274,3 +281,4 @@ Issues impacting multiple subprojects in the SIG should be resolved by either:
 [PR Wrangler]: https://kubernetes.io/docs/contribute/participate/pr-wranglers/
 [Inclusive Open Source Community Orientation course]: https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/
 [technical-lead.md]: /contributors/chairs-and-techleads/technical-lead.md
+[Chair & TL Contributor Documentation]: /contributors/chairs-and-techleads/
