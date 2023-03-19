@@ -3456,6 +3456,9 @@ committees:
   label: security-response
   leadership:
     chairs:
+    - github: SaranBalaji90
+      name: Sri Saran Balaji
+      company: Amazon
     - github: cjcullen
       name: CJ Cullen
       company: Google
@@ -3471,15 +3474,17 @@ committees:
     - github: micahhausler
       name: Micah Hausler
       company: Amazon
+    - github: ritazh
+      name: Rita Zhang
+      company: Microsoft
     - github: tabbysable
       name: Tabitha Sable
       company: Datadog
-    - github: tallclair
-      name: Tim Allclair
-      company: Google
     emeritus_leads:
     - github: swamymsft
       name: Swamy Shivaganga Nagaraju
+    - github: tallclair
+      name: Tim Allclair
   meetings: []
   contact:
     private_mailing_list: security@kubernetes.io

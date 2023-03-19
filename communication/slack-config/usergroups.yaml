@@ -56,8 +56,9 @@ usergroups:
       - joelsmith
       - lukehinds
       - micahhausler
+      - ritazh
+      - SaranBalaji90
       - tabbysable
-      - tallclair
 
   - name: velero-maintainers
     long_name: Velero Maintainers
