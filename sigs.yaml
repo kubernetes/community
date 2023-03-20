@@ -514,7 +514,7 @@ sigs:
       API storage support for storing data encrypted at rest in etcd.
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/storage/value/OWNERS
   - name: hierarchical-namespace-controller
     description: |
       Controller to manage hierarchical namespaces

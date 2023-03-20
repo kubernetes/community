@@ -123,7 +123,7 @@ Certificates APIs and client infrastructure to support PKI.
 API storage support for storing data encrypted at rest in etcd.
 - **Owners:**
   - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/storage/value/encrypt/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/apiserver/pkg/storage/value](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apiserver/pkg/storage/value/OWNERS)
 ### hierarchical-namespace-controller
 Controller to manage hierarchical namespaces
 - **Owners:**
