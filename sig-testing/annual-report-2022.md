@@ -89,16 +89,15 @@ Include any other ways you measure group membership
 
 Operational tasks in [sig-governance.md]:
 
-- [ ] [README.md] reviewed for accuracy and updated if needed
+- [X] [README.md] reviewed for accuracy and updated if needed
 - [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
       (or created if missing and your contributor steps and experience are different or more
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
 - [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
 - [X] SIG leaders (chairs, tech leads, and subproject owners) in [sigs.yaml] are accurate and active, and updated if needed
 - [X] Meeting notes and recordings for 2022 are linked from [README.md] and updated/uploaded if needed
-- [ ] Did you have community-wide updates in 2022 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
+- [X] Did you have community-wide updates in 2022 (e.g. community meetings, kubecon, or kubernetes-dev@ emails)? Links to email, slides, or recordings:
       - KubeCon NA 2022: [SIG Testing: Intro And Updates](https://www.youtube.com/watch?v=CdKBl6CncHg)
-      -(_any others?_)
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-testing/CONTRIBUTING.md
 [contributor ladder]: https://git.k8s.io/community/community-membership.md
