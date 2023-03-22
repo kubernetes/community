@@ -13,9 +13,7 @@ route contributors to the appropriate SIG; SIGs should follow these guidelines:
   repo.
 - Record meetings and make them publicly available on the
   [Kubernetes Community YouTube playlist].
-- Report activity with the community via the dev@kubernetes.io mailing list at
-  least once a year.
-  - This is separate from the [annual report].
+- Record activity and complete the [annual report].
 - Participate in release planning meetings, retrospectives, and burndown
   meetings, as needed.
 - Ensure related work happens in a project-owned GitHub org and repository,
