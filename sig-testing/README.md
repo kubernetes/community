@@ -117,9 +117,12 @@ Miscellaneous tools and configuration to run the testing infrastructure for the 
 | KubeCon NA 2018 - SIG Testing Intro | [Slides](https://docs.google.com/presentation/d/1HOQ2df_AT-vIuz-JNaJol2oiGq84m50h9T49_5WgEaI/edit?usp=sharing) | [Video](https://www.youtube.com/watch?v=7-_O41W3FRU) | @spiffxp, @stevekuznetsov |
 | KubeCon NA 2018 - SIG Testing Deep Dive | [Slides](https://static.sched.com/hosted_files/kccna18/9b/Kubecon%20Seattle%20SIG-Testing%20Deep%20Dive%20%281%29.pdf) | [Video](https://www.youtube.com/watch?v=1rwiKDTJILY) | @cjwagner, @Katharine |
 | KubeCon NA 2018 - Behind Your PR: How Kubernetes Uses Kubernetes to Run Kubernetes CI | [Slides](https://static.sched.com/hosted_files/kccna18/3e/KubeCon%20Seattle%20Talk.pdf) | [Video](https://www.youtube.com/watch?v=pz0lpl6h-Gc) | @BenTheElder, @krzyzacy |
+| KubeCon China 2018 - Intro: SIG Testing | [Slides](https://static.sched.com/hosted_files/kccncchina2018english/97/KubeCon%20China%20SIG%20Testing%20Intro%20%281%29.pdf) | [Video](https://www.youtube.com/watch?v=WFvC_VdkDFk) | @krzyzacy, @jessiezcc |
 | KubeCon EU 2019 - SIG Testing Intro | [Slides](https://static.sched.com/hosted_files/kccnceu19/c8/SIG-Testing%20Intro%20Kubecon%20EU%202019.pdf) | [Video](https://www.youtube.com/watch?v=_uO5gHVTzF8) | @cjwagner, @AishSundar |
 | KubeCon EU 2019 - SIG Testing Deep Dive | TBD | [Video](https://www.youtube.com/watch?v=6m9frvTxK0o) | @BenTheElder, @munnerz |
 | KubeCon EU 2019 - Testing Your K8s Apps with Kind | TBD | [Video](https://www.youtube.com/watch?v=8KtmevMFfxA) | @BenTheElder, @munnerz | 
+| KubeCon NA 2019 - SIG Testing Intro | [Slides](https://static.sched.com/hosted_files/kccncna19/50/Sig-Testing%20Intro%20Presentation.pdf) | [Video](https://www.youtube.com/watch?v=WFvC_VdkDFk) | @chases2, @fejta
+| KubeCon NA 2022 - SIG Testing: Intro And Updates | TBD | [Video](https://www.youtube.com/watch?v=CdKBl6CncHg) | @BenTheElder, @michelle192837, @chaodaiG, @aojea
 
 
 <!-- END CUSTOM CONTENT -->
