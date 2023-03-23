@@ -93,6 +93,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - [kubernetes-sigs/aws-encryption-provider](https://github.com/kubernetes-sigs/aws-encryption-provider/blob/master/OWNERS)
   - [kubernetes-sigs/aws-file-cache-csi-driver](https://github.com/kubernetes-sigs/aws-file-cache-csi-driver/blob/main/OWNERS)
   - [kubernetes-sigs/aws-fsx-csi-driver](https://github.com/kubernetes-sigs/aws-fsx-csi-driver/blob/master/OWNERS)
+  - [kubernetes-sigs/aws-fsx-openzfs-csi-driver](https://github.com/kubernetes-sigs/aws-fsx-openzfs-csi-driver/blob/main/OWNERS)
   - [kubernetes-sigs/aws-iam-authenticator](https://github.com/kubernetes-sigs/aws-iam-authenticator/blob/master/OWNERS)
   - [kubernetes-sigs/aws-load-balancer-controller](https://github.com/kubernetes-sigs/aws-load-balancer-controller/blob/main/OWNERS)
   - [kubernetes-sigs/provider-aws-test-infra](https://github.com/kubernetes-sigs/provider-aws-test-infra/blob/master/OWNERS)
