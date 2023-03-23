@@ -281,3 +281,14 @@ usergroups:
       - stevekuznetsov
       - sttts
       - vincepri
+
+  - name: github-admins
+    long_name: Kubernetes GitHub Admins
+    description: Administrators of the Kubernetes GitHub organisations
+    members:
+      - ameukam
+      - cblecker
+      - idvoretskyi
+      - mrbobbytables
+      - nikhita
+      - palnabarun
