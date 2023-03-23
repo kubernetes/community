@@ -138,7 +138,7 @@ Additional information on the Tech Lead role can be found in
 
 #### Subproject Owner
 
-- Number: 2-3
+- Number: 2+
 - Scoped to a subproject defined in [sigs.yaml]
 - Seed leads and contributors established at subproject founding
 - *SHOULD* be an escalation point for technical discussions and decisions in
@@ -201,64 +201,27 @@ Other roles...
 
 ### Subproject Creation
 
-#### Option 1: by SIG Technical Leads
-
-Subprojects may be created by [KEP] proposal and accepted by [lazy-consensus]
-with fallback on majority vote of SIG Technical Leads.  The result *SHOULD* be
-supported by the majority of SIG Leads.
-- KEP *MUST* establish subproject owners.
+Subprojects may be created with a simple majority vote of SIG Technical Leads.
 - [sigs.yaml] *MUST* be updated to include subproject information and [OWNERS]
   files with subproject owners.
 - Where subprojects processes differ from the SIG governance, they must
   document how. e.g. if subprojects release separately - they must document
   how release and planning is performed
 
-#### Option 2: by Federation of Subprojects
+### Subproject Requirements
 
-Subprojects may create repos under *github.com/kubernetes-sigs* through
-[lazy-consensus] of subproject owners.
+Subprojects broadly fall into two categories, those that are directly part
+of [Kubernetes] core and those that are tool, driver, or other component that
+do not adhere to the Kubernetes release cycle.
 
-Subprojects may be created by [KEP] proposal and accepted by [lazy-consensus]
-with fallback on majority vote of subproject owners in the SIG.  The result
-*SHOULD* be supported by the majority of Leads.
-- KEP *MUST* establish subproject owners.
-- [sigs.yaml] *MUST* be updated to include subproject information and [OWNERS]
-  files with subproject owners.
-- Where subprojects processes differ from the SIG governance, they must
-  document how. e.g. if subprojects release separately - they must document
-  how release and planning is performed
+**Kubernetes Core Subprojects**
+- *MUST* use the [KEP] process for introducing new features and decision
+  making.
+- *MUST* Adhere to release test health requirements.
 
-### Subproject Release Process Requirements
-
-- Subprojects must define how releases are performed and milestones are set.
-
-**Example:**
-
-> - Release milestones
->   - Follows the kubernetes/kubernetes release milestones and schedule
->   - Priorities for upcoming release are discussed during the SIG meeting
->     following the preceding release and shared through a PR. Priorities are
->     finalized before feature freeze.
-> - Code and artifacts are published as part of the kubernetes/kubernetes release
-
-
-### Subproject Technical processes
-
-Subprojects of the SIG *MUST* use the following processes unless explicitly
-following alternatives they have defined.
-
-- Proposing and making decisions
-  - Proposals sent as [KEP] PRs and published to googlegroup as announcement
-  - Follow [KEP] decision making process
-
-- Test health
-  - Canonical health of code published to [dashboard]
-  - Consistently broken tests automatically send an alert to their google group.
-  - SIG contributors are responsible for responding to broken tests alert. PRs
-    that break tests should be rolled back if not fixed within 24 hours
-    (business hours).
-  - Test dashboard checked and reviewed at start of each SIG meeting.  Owners
-    assigned for any broken tests and followed up during the next SIG meeting.
+**Non Kubernetes Core Subprojects**
+- *SHOULD* define how releases are performed.
+- *SHOULD* setup and monitor test health.
 
 Issues impacting multiple subprojects in the SIG should be resolved by the
 SIG's Tech Leads or a federation of Subproject Owners.
@@ -271,6 +234,7 @@ otherwise fulfill its Organizational Management responsibilities
 - after 3 or more months it *SHOULD* be retired
 - after 6 or more months it *MUST* be retired
 
+[Kubernetes]: https://github.com/kubernetes/kubernetes
 [KEPs]: https://github.com/kubernetes/enhancements
 [forums provided]: /communication/README.md
 [lazy-consensus]: http://en.osswiki.info/concepts/lazy_consensus
