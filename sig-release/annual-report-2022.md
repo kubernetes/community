@@ -46,7 +46,8 @@
 4. If your group has special training, requirements for reviewers/approvers, or processes beyond the general [contributor guide],
    does your [CONTRIBUTING.md] document those to help **existing** contributors grow throughout the [contributor ladder]?
 
-   -
+   - [Release Team](https://github.com/kubernetes/sig-release/tree/master/release-team)
+   - [Release Engineering](https://github.com/kubernetes/sig-release/tree/master/release-engineering)
 
 5. Does the group have contributors from multiple companies/affiliations?
 
