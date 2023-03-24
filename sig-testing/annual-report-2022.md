@@ -4,11 +4,26 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-   - (_to be filled_)
+   - Ginkgov2 migration
+     - https://github.com/kubernetes/test-infra/pull/26250
+     - https://github.com/kubernetes/kubernetes/pull/109111
+   - Utilizing context provided by Ginkgo
+     - https://github.com/kubernetes/kubernetes/pull/112923
+   - Test failure description improvements
+     - https://github.com/kubernetes/kubernetes/pull/113538
+   - Launched prow docs site
+   - TestGrid API now available at testgrid-data.k8s.io
+   - Prow API service ("Gangway" component) merged, enabling Prow installations to programmatically trigger Prow jobs
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
-   - (_to be filled_)
+   - Continue to improve testing and enforcing best practices on software development
+   - Cost efficiency:
+     - Clean up orphan jobs
+     - Optimize existing tooling: artifact storage, log size, …
+     - Extend the CI to other Cloud Providers
+   - Development of a new TestGrid UI
+
 
 3. KEP work in 2022 (v1.24, v1.25, v1.26):
   - beta:
@@ -20,12 +35,15 @@
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
 
-   - (_to be filled_)
+   - Additional reviewers (and eventually approvers) on [Prow](https://github.com/kubernetes/test-infra/tree/master/prow)
+   - Many less-active tools in test-infra, such as:
+     - [Boskos](https://github.com/kubernetes/test-infra/tree/master/boskos)
+     - [Kettle](https://github.com/kubernetes/test-infra/tree/master/kettle)
+     - [Kubetest2](https://github.com/kubernetes-sigs/kubetest2)
 
 2. What metrics/community health stats does your group care about and/or measure?
 
    - Reviewers and approvers
-   - (_any others?_)
 
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
