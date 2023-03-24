@@ -24,7 +24,15 @@ The [charter](charter.md) defines the scope and governance of the Apps Special I
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
-* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Brex
+* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Snowflake
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
+* Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Snowflake
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 
 ## Emeritus Leads
