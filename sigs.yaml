@@ -2151,6 +2151,7 @@ sigs:
       mailing_list: https://groups.google.com/g/kubernetes-sig-node-test-failures
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/common/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/common/node/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/node/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e_node/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/jobs/kubernetes/sig-node/OWNERS
@@ -2159,6 +2160,8 @@ sigs:
   - name: cri-api
     owners:
     - https://raw.githubusercontent.com/kubernetes/cri-api/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cri-api/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cri-api/pkg/OWNERS
   - name: cri-tools
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
@@ -2169,9 +2172,13 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kubelet/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/probe/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/security/apparmor/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-helpers/node/OWNERS
   - name: node-api
     owners:
     - https://raw.githubusercontent.com/kubernetes/api/master/node/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/node/OWNERS
   - name: node-feature-discovery
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery-operator/master/OWNERS
@@ -2184,8 +2191,13 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/jobs/kubernetes/node-problem-detector/OWNERS
   - name: resource-management
     owners:
-    - https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/dra-example-driver/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/resourceclaim/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/framework/plugins/dynamicresources/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/kubelet/pkg/apis/dra/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/dra/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/testing-manifests/dra/OWNERS
     - https://raw.githubusercontent.com/kubernetes/noderesourcetopology-api/master/OWNERS
   - name: security-profiles-operator
     contact:
