@@ -4,10 +4,12 @@ The process for contributing code to Kubernetes via the sig-multicluster [commun
 
 ## TL;DR
 
+- See [multicluster.sigs.k8s.io/contributing](https://multicluster.sigs.k8s.io/contributing/)
 - The sig-multicluster [community page] lists sig-multicluster [leads]
   and group [meeting] times.
 - Request a feature by making an [issue] and mentioning
   `@kubernetes/sig-multicluster-feature-requests`.
+- Reach out on Slack in [#sig-multicluster](https://kubernetes.slack.com/messages/sig-multicluster)
 - Write a design proposal before starting work on a new feature.
 - Write [tests]!
 
