@@ -84,7 +84,7 @@ In addition to the user-specified options and [default JSON options](#default-js
 ```
 kubernetes.io/pod.name
 kubernetes.io/pod.namespace
-kubernetes.io/pod.uid
+kubernetes.io/pod.UID
 kubernetes.io/serviceAccount.name
 ```
 
@@ -137,7 +137,7 @@ Note: Secrets are passed only to "mount/unmount" call-outs.
 
 "kubernetes.io/pod.name":"<string>",
 "kubernetes.io/pod.namespace":"<string>",
-"kubernetes.io/pod.uid":"<string>",
+"kubernetes.io/pod.UID":"<string>",
 "kubernetes.io/serviceAccount.name":"<string>",
 
 "kubernetes.io/secret/key1":"<secret1>"
