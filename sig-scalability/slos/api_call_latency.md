@@ -4,12 +4,13 @@
 
 | Status | SLI | SLO |
 | --- | --- | --- |
-| __Official__ | Latency<sup>[1](#footnote1)</sup> of mutating<sup>[2](#footnote2)</sup> API calls for single objects for every (resource, verb) pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, verb) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day <= 1s |
-| __Official__ | Latency<sup>[1](#footnote1)</sup> of non-streaming read-only<sup>[3](#footnote3)</sup> API calls for every (resource, scope<sup>[4](#footnote4)</sup>) pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, scope) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day: (a) <= 1s if `scope=resource` (b) <= 30s<sup>[5](#footnote5)</sup> otherwise (if `scope=namespace` or `scope=cluster`) |
+| __Official__ | Latency of processing<sup>[1](#footnote1)</sup> mutating<sup>[2](#footnote2)</sup> API calls for single objects for every (resource, verb) pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, verb) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day <= 1s |
+| __Official__ | Latency of processing<sup>[1](#footnote1)</sup> non-streaming read-only<sup>[3](#footnote3)</sup> API calls for every (resource, scope<sup>[4](#footnote4)</sup>) pair, measured as 99th percentile over last 5 minutes | In default Kubernetes installation, for every (resource, scope) pair, excluding virtual and aggregated resources and Custom Resource Definitions, 99th percentile per cluster-day: (a) <= 1s if `scope=resource` (b) <= 30s<sup>[5](#footnote5)</sup> otherwise (if `scope=namespace` or `scope=cluster`) |
 
-<a name="footnote1">\[1\]</a> By latency of API call in this doc we mean time
-from the moment when apiserver gets the request to last byte of response sent
-to the user.
+<a name="footnote1">\[1\]</a> The SLI only measures latency incurred by the processing
+time of the request. The processing time of a request is the moment when apiserver gets
+the request to last byte of response sent to the user, excluding latency incurred by
+webhooks and priority & fairness queue wait times.
 
 <a name="footnote2">\[2\]</a> By mutating API calls we mean POST, PUT, DELETE
 and PATCH.
@@ -35,15 +36,15 @@ that users are fine with listing tens of thousands of objects taking more than
 - As a user of vanilla Kubernetes, I want some guarantee how quickly I get the
 response from an API call.
 - As an administrator of Kubernetes cluster, if I know characteristics of my
-external dependencies of apiserver (e.g custom admission plugins and webhooks)
-I want to be able to provide guarantees for API calls latency to users of my
-cluster.
+external dependencies of apiserver (e.g custom admission plugins, priority
+& fairness configuration, and webhooks). I want to be able to provide
+guarantees for API calls latency to users of my cluster.
 
 ### Other notes
 - We obviously can’t give any guarantee in general, because cluster
-administrators are allowed to register custom admission plugins or webhooks,
-which we don’t have any control about and they obviously impact API call
-latencies.
+administrators are allowed to register custom admission plugins, webhooks,
+and priority and fairness configurations, which we don’t have any control
+about and they obviously impact API call latencies.
 - As a result, we define the SLIs to be very generic (no matter how your
 cluster is set up), but we provide SLO only for default installations (where we
 have control over what apiserver is doing). This doesn’t provide a false
@@ -72,6 +73,8 @@ that all `core` components communicate with apiserver using protocol buffers.
 stale data (being served from cache) and the SLO again has to be satisfied
 independently of that. This makes the careful choice of requests in tests
 important.
+- The SLI & SLO excludes latency incurred by factors that are outside our control, specifically
+from webhooks (1.23+) and API priority & fairness queue wait times (1.27+).
 
 ### TODOs
 - We may consider treating `non-namespaced` resources as a separate bucket in
