@@ -65,6 +65,8 @@
 - Primary mailing list member count: 315
 - Primary meeting attendee count (estimated, if needed): 12.6
 - Primary meeting participant count (estimated, if needed): 12.6
+
+  _Due to the way we conduct our meetings, at the majority of meetings, everyone participates._
 - Unique reviewers for SIG-owned packages: N/A
 - Unique approvers for SIG-owned packages: N/A
 
