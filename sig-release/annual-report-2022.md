@@ -7,7 +7,7 @@ SIG Release has a [roadmap](https://github.com/kubernetes/sig-release/blob/maste
 1. What work did the SIG do this year that should be highlighted?
    - [Migrated most of deb/rpm package building into release process to reduce Google Build Admin involvement in releases](https://github.com/kubernetes/release/issues/2737)
    - Proof-of-concept of using OpenSUSE Build Service to build and publish packages using community infrastructure. Reflected in updates to [1731 - Publishing Kubernetes packages on community infrastructure](https://github.com/kubernetes/enhancements/tree/master/keps/sig-release/1731-publishing-packages). See [biweekly meeting from 18 October 2022](https://youtu.be/8l8X3vSAJAw?t=787) for a good overview.
-   - [Signing of Release Files](https://github.com/kubernetes/release/pull/2742).
+   - [Signing of Release Artifacts](https://github.com/kubernetes/enhancements/issues/3031).
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
