@@ -2556,6 +2556,12 @@ sigs:
       github: cpanato
       name: Carlos Tadeu Panato Jr.
   subprojects:
+  - name: security-assessments
+    description: Security self assessments for upstream projects
+    contact:
+      slack: sig-security-assessments
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/sig-security/main/sig-security-assessments/OWNERS
   - name: security-audit
     description: Third Party Security Audit
     owners:
