@@ -38,6 +38,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-security:
+### security-assessments
+Security self assessments for upstream projects
+- **Owners:**
+  - [kubernetes/sig-security/sig-security-assessments](https://github.com/kubernetes/sig-security/blob/main/sig-security-assessments/OWNERS)
+- **Contact:**
+  - Slack: [#sig-security-assessments](https://kubernetes.slack.com/messages/sig-security-assessments)
 ### security-audit
 Third Party Security Audit
 - **Owners:**
