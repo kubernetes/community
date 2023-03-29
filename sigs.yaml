@@ -871,6 +871,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-encryption-provider/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-file-cache-csi-driver/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-csi-driver/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/aws-fsx-openzfs-csi-driver/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-iam-authenticator/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/provider-aws-test-infra/master/OWNERS
