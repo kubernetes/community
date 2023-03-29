@@ -39,13 +39,14 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Dan Williams (**[@dcbw](https://github.com/dcbw)**), Red Hat
+* Michael Zappa (**[@mikezappa87](https://github.com/mikezappa87)**), Microsoft
 * Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Kong
 * Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
 
 ## Emeritus Leads
 
 * Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**)
+* Dan Williams (**[@dcbw](https://github.com/dcbw)**)
 
 ## Contact
 - Slack: [#sig-network](https://kubernetes.slack.com/messages/sig-network)
