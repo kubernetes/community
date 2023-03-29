@@ -161,20 +161,42 @@ func fetchKEPs() error {
 	return nil
 }
 
-func filterKEPs(owningSig string, releases Releases) (map[api.Stage][]api.Proposal, error) {
-	kepsByStage := make(map[api.Stage][]api.Proposal)
-	for _, kep := range cachedKEPs {
-		if kep.OwningSIG == owningSig {
-			for _, stage := range api.ValidStages {
-				if kep.Stage == stage && (strings.HasSuffix(kep.LatestMilestone, releases.Latest) ||
-					strings.HasSuffix(kep.LatestMilestone, releases.LatestMinusOne) ||
-					strings.HasSuffix(kep.LatestMilestone, releases.LatestMinusTwo)) {
-					kepsByStage[stage] = append(kepsByStage[stage], kep)
-				}
-			}
-		}
+func stageIfKEPsIsWorkedInReleases(kepMilestone api.Milestone, releases Releases) (api.Stage, bool) {
+	if strings.HasSuffix(kepMilestone.Stable, releases.Latest) || strings.HasSuffix(kepMilestone.Stable, releases.LatestMinusOne) || strings.HasSuffix(kepMilestone.Stable, releases.LatestMinusTwo) {
+		return api.StableStage, true
 	}
 
+	if strings.HasSuffix(kepMilestone.Beta, releases.Latest) || strings.HasSuffix(kepMilestone.Beta, releases.LatestMinusOne) || strings.HasSuffix(kepMilestone.Beta, releases.LatestMinusTwo) {
+		return api.BetaStage, true
+	}
+
+	if strings.HasSuffix(kepMilestone.Alpha, releases.Latest) || strings.HasSuffix(kepMilestone.Alpha, releases.LatestMinusOne) || strings.HasSuffix(kepMilestone.Alpha, releases.LatestMinusTwo) {
+		return api.AlphaStage, true
+	}
+
+	return "", false
+}
+
+func filterKEPs(owningSig string, releases Releases) (map[string][]api.Proposal, error) {
+	// TODO(palnabarun): Hack to allow unprefixed version strings in KEPs.
+	// Once all KEPs are updated to use the prefixed version strings, this can be removed.
+	// See: https://github.com/kubernetes/community/issues/7213#issuecomment-1484964640
+	unPrefixedReleases := Releases{
+		Latest:         strings.TrimPrefix(releases.Latest, "v"),
+		LatestMinusOne: strings.TrimPrefix(releases.LatestMinusOne, "v"),
+		LatestMinusTwo: strings.TrimPrefix(releases.LatestMinusTwo, "v"),
+	}
+
+	kepsByStage := make(map[string][]api.Proposal)
+	for _, kep := range cachedKEPs {
+		if kep.OwningSIG == owningSig {
+			stage, ok := stageIfKEPsIsWorkedInReleases(kep.Milestone, unPrefixedReleases)
+			if !ok {
+				continue
+			}
+			kepsByStage[string(stage)] = append(kepsByStage[string(stage)], kep)
+		}
+	}
 	return kepsByStage, nil
 }
 
