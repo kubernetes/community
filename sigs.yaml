@@ -1941,9 +1941,9 @@ sigs:
   label: network
   leadership:
     chairs:
-    - github: dcbw
-      name: Dan Williams
-      company: Red Hat
+    - github: mikezappa87
+      name: Michael Zappa
+      company: Microsoft
     - github: shaneutt
       name: Shane Utt
       company: Kong
@@ -1953,6 +1953,8 @@ sigs:
     emeritus_leads:
     - github: caseydavenport
       name: Casey Davenport
+    - github: dcbw
+      name: Dan Williams
   meetings:
   - description: Gateway API GAMMA Meeting (APAC Friendly)
     day: Tuesday
