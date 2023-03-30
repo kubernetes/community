@@ -59,6 +59,7 @@ The following [working groups][working-group-definition] are sponsored by sig-ar
 * [WG API Expression](/wg-api-expression)
 * [WG Policy](/wg-policy)
 * [WG Reliability](/wg-reliability)
+* [WG Sidecar](/wg-sidecar)
 * [WG Structured Logging](/wg-structured-logging)
 
 

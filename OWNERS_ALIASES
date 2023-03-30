@@ -143,6 +143,8 @@ aliases:
     - deads2k
     - stevekuznetsov
     - wojtek-t
+  wg-sidecar-leads:
+    - SergeyKanzhelev
   wg-structured-logging-leads:
     - pohly
     - serathius

@@ -65,6 +65,7 @@ The following [working groups][working-group-definition] are sponsored by sig-sc
 * [WG Batch](/wg-batch)
 * [WG Multitenancy](/wg-multitenancy)
 * [WG Policy](/wg-policy)
+* [WG Sidecar](/wg-sidecar)
 * [WG Structured Logging](/wg-structured-logging)
 
 
