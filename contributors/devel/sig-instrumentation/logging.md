@@ -48,6 +48,16 @@ Example:
 klog.InfoS("Received HTTP request", "method", "GET", "URL", "/metrics", "latency", time.Second)
 ```
 
+### Message style guidelines
+
+Good practices when writing log messages are:
+
+- Start from a capital letter.
+- Do not end the message with a period.
+- Use active voice. Use complete sentences when there is an acting subject ("A could not do B") or omit the subject if the subject would be the program itself ("Could not do B").
+- Use past tense ("Could not delete B" instead of "Cannot delete B")
+- When referring to an object, state what type of object it is. ("Deleted pod" instead of "Deleted")
+
 ### What method to use?
 
 * `klog.ErrorS` - Errors should be used to indicate unexpected behaviours in code, like unexpected errors returned by subroutine function calls.
