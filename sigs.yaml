@@ -2728,18 +2728,15 @@ sigs:
   label: testing
   leadership:
     chairs:
-    - github: BenTheElder
-      name: Benjamin Elder
-      company: Google
     - github: michelle192837
       name: Michelle Shepardson
-      company: Google
-    - github: spiffxp
-      name: Aaron Crickenberger
       company: Google
     - github: stevekuznetsov
       name: Steve Kuznetsov
       company: Red Hat
+    - github: xmcqueen
+      name: Brian McQueen
+      company: LinkedIn
     tech_leads:
     - github: BenTheElder
       name: Benjamin Elder
@@ -2759,6 +2756,8 @@ sigs:
     emeritus_leads:
     - github: fejta
       name: Erick Fejta
+    - github: spiffxp
+      name: Aaron Crickenberger
     - github: timothysc
       name: Timothy St. Clair
   meetings:
