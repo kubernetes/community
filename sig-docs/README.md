@@ -39,7 +39,6 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Divya Mohan (**[@divya-mohan0209](https://github.com/divya-mohan0209)**), SUSE
-* Jim Angel (**[@jimangel](https://github.com/jimangel)**), Google
 * Natali Vlatko (**[@natalisucks](https://github.com/natalisucks)**), Wayfair
 * Rey Lejano (**[@reylejano](https://github.com/reylejano)**), SUSE
 
@@ -60,6 +59,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Jared Bhatti (**[@jaredbhatti](https://github.com/jaredbhatti)**)
 * Kaitlyn Barnard (**[@kbarnard10](https://github.com/kbarnard10)**)
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**)
+* Jim Angel (**[@jimangel](https://github.com/jimangel)**)
 
 ## Contact
 - Slack: [#sig-docs](https://kubernetes.slack.com/messages/sig-docs)
