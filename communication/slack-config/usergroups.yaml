@@ -249,20 +249,22 @@ usergroups:
     long_name: Cluster API Release Team
     description: Members of the Cluster API Release Team
     members:
-      - alexander-demicev
+      - adilGhaffarDev
       - aniruddha2000
       - CecileRobertMichon
-      - cpanato
-      - dntosas
+      - chiukapoor
+      - chrischdi
       - furkatgofurov7
+      - g-gaston
       - hackeramitkumar
       - joekr
+      - johannesfrey
+      - killianmuldoon
       - nawazkh
-      - oscr
-      - sayantani11
+      - prajyot-parab
+      - sadysnaat
       - sbueringer
-      - VibhorChinda
-      - ykakarap
+      - tobiasgiese
 
   - name: kcp-devs
     long_name: kcp Development Team
