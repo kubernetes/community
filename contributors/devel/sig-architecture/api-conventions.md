@@ -69,7 +69,7 @@ An introduction to using resources with kubectl can be found in [the object mana
   - [When to use a different type](#when-to-use-a-different-type)
 
 
-The conventions of the [Kubernetes API](https://kubernetes.io/docs/api/) (and related APIs in the
+The conventions of the [Kubernetes API](https://kubernetes.io/docs/concepts/overview/kubernetes-api/) (and related APIs in the
 ecosystem) are intended to ease client development and ensure that configuration
 mechanisms can be implemented that work across a diverse set of use cases
 consistently.
@@ -148,8 +148,8 @@ the full list. Some objects may be singletons (the current user, the system
 defaults) and may not have lists.
 
    In addition, all lists that return objects with labels should support label
-filtering (see [the labels documentation](https://kubernetes.io/docs/user-guide/labels/)), and most
-lists should support filtering by fields (see
+filtering (see [the labels documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)),
+and most lists should support filtering by fields (see
 [the fields documentation](https://kubernetes.io/docs/concepts/overview/working-with-objects/field-selectors/)).
 
    Examples: `PodList`, `ServiceList`, `NodeList`.
@@ -188,7 +188,7 @@ is independent of the specific resource schema.
 
    Two additional subresources, `proxy` and `portforward`, provide access to
 cluster resources as described in
-[accessing the cluster](https://kubernetes.io/docs/user-guide/accessing-the-cluster/).
+[accessing the cluster](https://kubernetes.io/docs/tasks/access-application-cluster/access-cluster/).
 
 The standard REST verbs (defined below) MUST return singular JSON objects. Some
 API endpoints may deviate from the strict REST pattern and return resources that
@@ -229,12 +229,12 @@ called "metadata":
 
 * namespace: a namespace is a DNS compatible label that objects are subdivided
 into. The default namespace is 'default'. See
-[the namespace docs](https://kubernetes.io/docs/user-guide/namespaces/) for more.
+[the namespace docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) for more.
 * name: a string that uniquely identifies this object within the current
-namespace (see [the identifiers docs](https://kubernetes.io/docs/user-guide/identifiers/)).
+namespace (see [the identifiers docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)).
 This value is used in the path when retrieving an individual object.
 * uid: a unique in time and space value (typically an RFC 4122 generated
-identifier, see [the identifiers docs](https://kubernetes.io/docs/user-guide/identifiers/))
+identifier, see [the identifiers docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/))
 used to distinguish between objects with the same name that have been deleted
 and recreated
 
@@ -264,10 +264,10 @@ Once the deletionTimestamp is set, this value may not be unset or be set further
 into the future, although it may be shortened or the resource may be deleted
 prior to this time.
 * labels: a map of string keys and values that can be used to organize and
-categorize objects (see [the labels docs](https://kubernetes.io/docs/user-guide/labels/))
+categorize objects (see [the labels docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/))
 * annotations: a map of string keys and values that can be used by external
 tooling to store and retrieve arbitrary metadata about this object (see
-[the annotations docs](https://kubernetes.io/docs/user-guide/annotations/))
+[the annotations docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/))
 
 Labels are intended for organizational purposes by end users (select the pods
 that match this label query). Annotations enable third-party automation and
@@ -526,9 +526,10 @@ the reported status reflects the most recent desired status.
 #### References to related objects
 
 References to loosely coupled sets of objects, such as
-[pods](https://kubernetes.io/docs/user-guide/pods/) overseen by a
-[replication controller](https://kubernetes.io/docs/user-guide/replication-controller/), are usually
-best referred to using a [label selector](https://kubernetes.io/docs/user-guide/labels/). In order to
+[pods](https://kubernetes.io/docs/concepts/workloads/pods/) overseen by a
+[replication controller](https://kubernetes.io/docs/concepts/workloads/controllers/replicationcontroller/),
+are usually best referred to using a
+[label selector](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors). In order to
 ensure that GETs of individual objects remain bounded in time and space, these
 sets may be queried via separate API queries, but will not be expanded in the
 referring object's status.
@@ -720,7 +721,8 @@ detailed explanation of how it works and why it needed to be introduced, see
 All compatible Kubernetes APIs MUST support "name idempotency" and respond with
 an HTTP status code 409 when a request is made to POST an object that has the
 same name as an existing object in the system. See
-[the identifiers docs](https://kubernetes.io/docs/user-guide/identifiers/) for details.
+[the identifiers docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/)
+for details.
 
 Names generated by the system may be requested using `metadata.generateName`.
 GenerateName indicates that the name should be made unique by the server prior
@@ -1673,7 +1675,8 @@ called `Fooable`, not `IsFooable`.
 [DNS_LABEL](https://git.k8s.io/design-proposals-archive/architecture/identifiers.md).
 * The `kube-` prefix is reserved for Kubernetes system namespaces, e.g. `kube-system` and `kube-public`.
 * See
-[the namespace docs](https://kubernetes.io/docs/user-guide/namespaces/) for more information.
+[the namespace docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+for more information.
 
 ## Label, selector, and annotation conventions
 
@@ -1706,7 +1709,7 @@ that hard to consistently apply schemas that ensure uniqueness. One just needs
 to ensure that at least one value of some label key in common differs compared
 to all other comparable resources. We could/should provide a verification tool
 to check that. However, development of conventions similar to the examples in
-[Labels](https://kubernetes.io/docs/user-guide/labels/) make uniqueness straightforward. Furthermore,
+[Labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) make uniqueness straightforward. Furthermore,
 relatively narrowly used namespaces (e.g., per environment, per application) can
 be used to reduce the set of resources that could potentially cause overlap.
 
