@@ -24,6 +24,7 @@ channels:
   - name: awesome-kubernetes
   - name: aws-authenticator
   - name: aws-controllers-k8s
+  - name: aws-gateway-api-controller
   - name: aws-vpc-cni
   - name: azure-service-operator
   - name: bazel
