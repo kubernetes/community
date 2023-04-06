@@ -17,8 +17,8 @@ SIG Release has a [roadmap](https://github.com/kubernetes/sig-release/blob/maste
 3. KEP work in 2022 (v1.24, v1.25, v1.26):
   - beta:
     - [3000 - Artifact Distribution Policy](https://github.com/kubernetes/enhancements/tree/master/keps/sig-release/3000-artifact-distribution) - v1.25, v1.26
+    - [3027 - SLSA Level 3 Compliance](https://github.com/kubernetes/enhancements/tree/master/keps/sig-release/3027-slsa-compliance) - v1.25
     - [3031 - Signing release artifacts](https://github.com/kubernetes/enhancements/tree/master/keps/sig-release/3031-signing-release-artifacts) - v1.25, v1.26
-
 
 ## Project health
 
