@@ -73,19 +73,19 @@ SIG Release has a [roadmap](https://github.com/kubernetes/sig-release/blob/maste
       - International Business Machines
       - Jetstack LTD
       - Mesosphere
-      - Mastercard International Incorported
+      - Mastercard International Incorporated
       - DaoCloud Network Technology Co. Ltd.
       - Oracle America Inc.
       - Rackspace
       - NEC Corporation
 
    This data reflects company information in terms of PRs. We also have had contributions from individuals that have no company affiliation and several individuals from the CNCF.
-   In addition to code contributions, the release teams during 2022 were staffed by individuals from a wide range of corporations, as well as students and other independant individuals. These contributions are not all reflected by the devstats query above, but are important to recognize.
+   In addition to code contributions, the release teams during 2022 were staffed by individuals from a wide range of corporations, as well as students and other independent individuals. These contributions are not all reflected by the devstats query above, but are important to recognize.
 
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
-   - The release tooling is currently supported by the core of the Release Engineering team. There are opportunities for end users and Kubernetes distributors to support the maintaince of the tooling within our repositories, including the `bom` tool. Additionally, vendor companies that build and distribute their own Kubernetes releases could provide more support to SIG Release, specifically Release Engineering, in order to grow contributors that could help with important tasks like Go verison updates. 
+   - The release tooling is currently supported by the core of the Release Engineering team. There are opportunities for end users and Kubernetes distributors to support the maintenance of the tooling within our repositories, including the `bom` tool. Additionally, vendor companies that build and distribute their own Kubernetes releases could provide more support to SIG Release, specifically Release Engineering, in order to grow contributors that could help with important tasks like Go version updates. 
    
 
 ## Membership
