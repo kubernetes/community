@@ -24,12 +24,16 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Josh Berkus (**[@jberkus](https://github.com/jberkus)**), Red Hat
+* Kaslin Fields (**[@kaslin](https://github.com/kaslin)**), Google
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
+* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
+* Madhav Jivrajani (**[@MadhavJivrajani](https://github.com/MadhavJivrajani)**), VMware
+* Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**), SUSE
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
 * Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**), VMware
 
