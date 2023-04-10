@@ -38,7 +38,7 @@ SIG Release has a [roadmap](https://github.com/kubernetes/sig-release/blob/maste
    Some data tracking efforts that SIG Release performs include monitoring release team applications,
    release manager activities and code commits to ensure timely release cuts in our repos.
 
-   In support of better understanding the diversity of the release team, [kubernetes-sigs/release-team-shadow-stats](https://github.com/kubernetes-sigs/release-team-shadow-stats) was begun to provide better reporting and visibility on release team metrics. For our KubeCon EU SIG update, we also presented a historical breakdown of the location of release team members and the geographic distribution of the release teams. 
+   In support of better understanding the diversity of the release team, [kubernetes-sigs/release-team-shadow-stats](https://github.com/kubernetes-sigs/release-team-shadow-stats) was begun to provide better reporting and visibility on release team metrics. For our [KubeCon EU SIG update](https://www.youtube.com/watch?v=qhQYu077zZU), we also presented a historical breakdown of the location of release team members and the geographic distribution of the release teams. 
 
 3. Does your [CONTRIBUTING.md] help **new** contributors engage with your group specifically by pointing
    to activities or programs that provide useful context or allow easy participation?
