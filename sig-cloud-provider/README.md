@@ -23,8 +23,8 @@ The [charter](CHARTER.md) defines the scope and governance of the Cloud Provider
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Andrew Sy Kim (**[@andrewsykim](https://github.com/andrewsykim)**), Google
-* Nick Turner (**[@nckturner](https://github.com/nckturner)**), Amazon
+* Bridget Kromhout (**[@bridgetkromhout](https://github.com/bridgetkromhout)**), Microsoft
+* Michael McCune (**[@elmiko](https://github.com/elmiko)**), Red Hat
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
