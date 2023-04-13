@@ -10,8 +10,10 @@
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
-   - Performance improvements
-   - Code refactorings and cleanups
+   - Performance improvements.
+   - Code refactorings and cleanups.
+   - [Kueue](https://kueue.sigs.k8s.io/), a k8s-native job scheduling and queueing controller, a new subproject sponsored by the sig.
+   - [scheduler-plugins](https://sigs.k8s.io/scheduler-plugins), repository for out-of-tree scheduler plugins.
 
 
 
@@ -33,7 +35,7 @@
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
 
-   -
+   - Increase the number of reviewers ([call for reviewers](https://groups.google.com/g/kubernetes-sig-scheduling/c/ZzxAujy6dLM))
    -
    -
 
