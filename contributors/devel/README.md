@@ -2,8 +2,8 @@
 
 The developer guide is for anyone wanting to either write code which directly accesses the
 Kubernetes API, or to contribute directly to the Kubernetes project.
-It assumes some familiarity with concepts in the [User Guide](http://kubernetes.io/docs/user-guide/) and the [Cluster Admin
-Guide](http://kubernetes.io/docs/admin/).
+It assumes some familiarity with concepts in the [User Guide](https://kubernetes.io/docs/concepts/) and the [Cluster Admin
+Guide](https://kubernetes.io/docs/concepts/cluster-administration/).
 
 
 ## The process of developing and contributing code to the Kubernetes project
@@ -51,7 +51,7 @@ Guide](http://kubernetes.io/docs/admin/).
 
 ## Developing against the Kubernetes API
 
-* The [REST API documentation](http://kubernetes.io/docs/reference/) explains the REST
+* The [REST API documentation](https://kubernetes.io/docs/reference/) explains the REST
   API exposed by apiserver.
 
 * **Annotations** ([Annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)): are for attaching arbitrary non-identifying metadata to objects.
@@ -66,10 +66,10 @@ Guide](http://kubernetes.io/docs/admin/).
 
 ## Writing plugins
 
-* **Authentication** ([Authentication](http://kubernetes.io/docs/admin/authentication/)):
+* **Authentication** ([Authentication](https://kubernetes.io/docs/reference/access-authn-authz/authentication/)):
   The current and planned states of authentication tokens.
 
-* **Authorization Plugins** ([Authorization](http://kubernetes.io/docs/admin/authorization/)):
+* **Authorization Plugins** ([Authorization](https://kubernetes.io/docs/reference/access-authn-authz/authorization/)):
   Authorization applies to all HTTP requests on the main apiserver port.
   This doc explains the available authorization implementations.
 
