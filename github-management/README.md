@@ -3,9 +3,9 @@
 The Kubernetes project uses Github extensively to store and organize code,
 manage issues and documentation, and provide a consistent contributor flow.
 
-With the size and growth of the Kubernetes project, management of our Github
+With the size and growth of the Kubernetes project, management of our GitHub
 footprint has historically been a challenge. We have created a number of
-policies to reduce friction and ease administration of our Github repositories
+policies to reduce friction and ease administration of our GitHub repositories
 and organizations. We have also created a number of tools to automate setup and
 enforcement of these policies.
 
