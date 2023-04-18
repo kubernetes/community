@@ -264,10 +264,9 @@ Once the deletionTimestamp is set, this value may not be unset or be set further
 into the future, although it may be shortened or the resource may be deleted
 prior to this time.
 * labels: a map of string keys and values that can be used to organize and
-categorize objects (see [the labels docs](https://kubernetes.io/docs/user-guide/labels/))
+categorize objects (see [the labels docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/))
 * annotations: a map of string keys and values that can be used by external
-tooling to store and retrieve arbitrary metadata about this object (see
-[the annotations docs](https://kubernetes.io/docs/user-guide/annotations/))
+tooling to store and retrieve arbitrary metadata about this object (see [the annotaions docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/))
 
 Labels are intended for organizational purposes by end users (select the pods
 that match this label query). Annotations enable third-party automation and
