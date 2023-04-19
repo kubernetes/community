@@ -1236,8 +1236,8 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/image-builder/master/OWNERS
     meetings:
     - description: Image Builder office hours
-      day: Thursday
-      time: "08:00"
+      day: Monday
+      time: "08:30"
       tz: PT (Pacific Time)
       frequency: biweekly
       url: https://zoom.us/j/807524571?pwd=WEFTeDJzeWU3bVFkcWQ0UEdZRkRCdz09
