@@ -64,6 +64,7 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### ci-testing
 - **Owners:**
   - [kubernetes/kubernetes/test/e2e/common](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/common/OWNERS)
+  - [kubernetes/kubernetes/test/e2e/common/node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/common/node/OWNERS)
   - [kubernetes/kubernetes/test/e2e/node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/node/OWNERS)
   - [kubernetes/kubernetes/test/e2e_node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e_node/OWNERS)
   - [kubernetes/test-infra/config/jobs/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-node/OWNERS)
@@ -74,6 +75,8 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### cri-api
 - **Owners:**
   - [kubernetes/cri-api](https://github.com/kubernetes/cri-api/blob/master/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/cri-api](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-api/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/cri-api/pkg](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-api/pkg/OWNERS)
 ### cri-tools
 - **Owners:**
   - [kubernetes-sigs/cri-tools](https://github.com/kubernetes-sigs/cri-tools/blob/master/OWNERS)
@@ -84,9 +87,13 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 - **Owners:**
   - [kubernetes/kubernetes/cmd/kubelet](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubelet/OWNERS)
   - [kubernetes/kubernetes/pkg/kubelet](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/OWNERS)
+  - [kubernetes/kubernetes/pkg/probe](https://github.com/kubernetes/kubernetes/blob/master/pkg/probe/OWNERS)
+  - [kubernetes/kubernetes/pkg/security/apparmor](https://github.com/kubernetes/kubernetes/blob/master/pkg/security/apparmor/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/component-helpers/node](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-helpers/node/OWNERS)
 ### node-api
 - **Owners:**
   - [kubernetes/api/node](https://github.com/kubernetes/api/blob/master/node/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/api/node](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/node/OWNERS)
 ### node-feature-discovery
 - **Owners:**
   - [kubernetes-sigs/node-feature-discovery-operator](https://github.com/kubernetes-sigs/node-feature-discovery-operator/blob/master/OWNERS)
@@ -99,8 +106,13 @@ The following [subprojects][subproject-definition] are owned by sig-node:
   - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
 ### resource-management
 - **Owners:**
-  - [kubernetes/kubernetes/staging/src/k8s.io/dynamic-resource-allocation](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS)
   - [kubernetes-sigs/dra-example-driver](https://github.com/kubernetes-sigs/dra-example-driver/blob/main/OWNERS)
+  - [kubernetes/kubernetes/pkg/controller/resourceclaim](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/resourceclaim/OWNERS)
+  - [kubernetes/kubernetes/pkg/scheduler/framework/plugins/dynamicresources](https://github.com/kubernetes/kubernetes/blob/master/pkg/scheduler/framework/plugins/dynamicresources/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/dynamic-resource-allocation](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/kubelet/pkg/apis/dra](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubelet/pkg/apis/dra/OWNERS)
+  - [kubernetes/kubernetes/test/e2e/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/dra/OWNERS)
+  - [kubernetes/kubernetes/test/e2e/testing-manifests/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/testing-manifests/dra/OWNERS)
   - [kubernetes/noderesourcetopology-api](https://github.com/kubernetes/noderesourcetopology-api/blob/master/OWNERS)
 ### security-profiles-operator
 - **Owners:**
