@@ -55,7 +55,7 @@ Or even better, volunteer for mentoring an intern during the work on your idea!
 
 Kubernetes has participated in Google Summer of Code in [2020](https://summerofcode.withgoogle.com/archive/2020/organizations/5861737481371648/), [2019](https://summerofcode.withgoogle.com/archive/2019/organizations/6034778267058176/), [2018](https://summerofcode.withgoogle.com/organizations/6453865516367872/) and [2017](https://summerofcode.withgoogle.com/archive/2017/organizations/6018829461225472/) as a part of CNCF and in [2015](https://www.google-melange.com/archive/gsoc/2015/orgs/kubernetes) as an independent organization.
 
-To get an idea about the projects, you can take a look at the list of project ideas published for GSoC at the [CNCF Mentoring repo](https://github.com/cncf/mentoring/tree/master/summerofcode).
+To get an idea about the projects, you can take a look at the list of project ideas published for GSoC at the [CNCF Mentoring repo](https://github.com/cncf/mentoring/tree/main/programs/summerofcode).
 
 ## Code of Conduct
 
