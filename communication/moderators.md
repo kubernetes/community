@@ -111,7 +111,6 @@ Regional category moderators seats (per category): 3
 | Name               | Kubernetes Discuss ID | Region | Timezone                                           |
 | ------------------ | --------------------- | ------ | -------------------------------------------------- |
 | Puja Abbassi       | @puja                 | EMEA   | [CET - Central European Time](https://time.is/CET) |
-| Daniel Holbach     | @dholbach             | EMEA   | [CET - Central European Time](https://time.is/CET) |
 | Michael Hausenblas | @mhausenblas          | EMEA   | [WET - Western European Time](https://time.is/WET) |
 
 **[Italian]**
