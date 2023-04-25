@@ -60,6 +60,9 @@ The following [working groups][working-group-definition] are sponsored by sig-ap
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-api-machinery:
+### cel-admission-webhook
+- **Owners:**
+  - [kubernetes/cel-admission-webhook](https://github.com/kubernetes/cel-admission-webhook/blob/main/OWNERS)
 ### component-base
 - **Owners:**
   - [kubernetes-sigs/legacyflag](https://github.com/kubernetes-sigs/legacyflag/blob/master/OWNERS)
