@@ -61,6 +61,9 @@ sigs:
       github: palnabarun
       name: Nabarun Pal
   subprojects:
+  - name: cel-admission-webhook
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/cel-admission-webhook/main/OWNERS
   - name: component-base
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/legacyflag/master/OWNERS
