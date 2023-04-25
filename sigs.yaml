@@ -1931,9 +1931,6 @@ sigs:
       github: mrbobbytables
       name: Bob Killen
   subprojects:
-  - name: Kubefed
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kubefed/master/OWNERS
   - name: about-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/about-api/master/OWNERS
