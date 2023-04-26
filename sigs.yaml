@@ -780,12 +780,12 @@ sigs:
   label: cloud-provider
   leadership:
     chairs:
-    - github: andrewsykim
-      name: Andrew Sy Kim
-      company: Google
-    - github: nckturner
-      name: Nick Turner
-      company: Amazon
+    - github: bridgetkromhout
+      name: Bridget Kromhout
+      company: Microsoft
+    - github: elmiko
+      name: Michael McCune
+      company: Red Hat
     tech_leads:
     - github: andrewsykim
       name: Andrew Sy Kim
