@@ -54,9 +54,6 @@ The following [working groups][working-group-definition] are sponsored by sig-mu
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-multicluster:
-### Kubefed
-- **Owners:**
-  - [kubernetes-sigs/kubefed](https://github.com/kubernetes-sigs/kubefed/blob/master/OWNERS)
 ### about-api
 - **Owners:**
   - [kubernetes-sigs/about-api](https://github.com/kubernetes-sigs/about-api/blob/master/OWNERS)
