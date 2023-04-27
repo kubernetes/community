@@ -759,6 +759,13 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubectl/OWNERS
+  - name: kubectl-validate
+    description: |
+      CLI Tool for validating Kubernetes resources from their OpenAPIV3
+      schemas on client-side aiming for best parity with errors returned
+      by server. Supports core resources, CRDs, CEL validations, and more!
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kubectl-validate/main/OWNERS
   - name: kui
     description: Hybrid command-line/UI development experience for cloud-native development
     owners:
