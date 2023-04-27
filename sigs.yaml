@@ -166,7 +166,17 @@ sigs:
       company: Google
     - github: kow3ns
       name: Kenneth Owens
-      company: Brex
+      company: Snowflake
+    - github: soltysh
+      name: Maciej Szulik
+      company: Red Hat
+    tech_leads:
+    - github: janetkuo
+      name: Janet Kuo
+      company: Google
+    - github: kow3ns
+      name: Kenneth Owens
+      company: Snowflake
     - github: soltysh
       name: Maciej Szulik
       company: Red Hat
