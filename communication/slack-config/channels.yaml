@@ -103,6 +103,7 @@ channels:
   - name: draft-dev
   - name: draft-users
   - name: druid-operator
+  - name: ebpf
   - name: eks
   - name: elastickube
   - name: elk-charts
