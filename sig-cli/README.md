@@ -96,6 +96,12 @@ Centralized plugin index for krew.
 - **Owners:**
   - [kubernetes/kubectl](https://github.com/kubernetes/kubectl/blob/master/OWNERS)
   - [kubernetes/kubernetes/pkg/kubectl](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubectl/OWNERS)
+### kubectl-validate
+CLI Tool for validating Kubernetes resources from their OpenAPIV3
+schemas on client-side aiming for best parity with errors returned
+by server. Supports core resources, CRDs, CEL validations, and more!
+- **Owners:**
+  - [kubernetes-sigs/kubectl-validate](https://github.com/kubernetes-sigs/kubectl-validate/blob/main/OWNERS)
 ### kui
 Hybrid command-line/UI development experience for cloud-native development
 - **Owners:**
