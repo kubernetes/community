@@ -150,6 +150,20 @@ registration system.
 
 ### Approval Process
 
+TODO - update doc with new process - query to get org members below:
+
+```
+yq '.admins + .members' \
+  config/kubernetes/org.yaml \
+  config/kubernetes-client/org.yaml \
+  config/kubernetes-csi/org.yaml \
+  config/kubernetes-sigs/org.yaml \
+  | jq -s 'add | .[] | ascii_downcase' | jq -s 'sort | unique | .[]' \
+  | sed -e 's/"//g' > members.txt
+```
+
+
+
 An approval process for registration is commonly used for multiple reasons, but
 really boils down to ensuring the right people are in the right track or room.
 The goal is for all contributors to get the best experience out of the event and
