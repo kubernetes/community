@@ -198,6 +198,7 @@ channels:
   - name: kapitan
   - name: kcp-dev
     id: C021U8WSAFK
+  - name: kcp-edge-dev
   - name: keda
   - name: keda-dev
   - name: keda-docs
