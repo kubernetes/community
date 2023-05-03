@@ -290,3 +290,13 @@ usergroups:
       - mrbobbytables
       - nikhita
       - palnabarun
+
+ - name: kcp-edge-devs
+    long_name: KCP-Edge Development Team
+    description: Active developers of KCP-Edge on #kcp-edge-dev
+    members:
+      - clubanderson
+      - mspreitz
+      - paolo
+      - ezra
+      
