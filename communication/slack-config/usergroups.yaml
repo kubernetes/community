@@ -296,7 +296,7 @@ usergroups:
     description: Active developers of KCP-Edge on #kcp-edge-dev
     members:
       - clubanderson
-      - mspreitz
-      - paolo
-      - ezra
+      - MikeSpreitzer
+      - ezrasilvera
+      - pdettori
       
