@@ -13,7 +13,7 @@ The contributor comms team has an ongoing effort to create blog posts which shin
     * We have [example topics](example-topics.md) available for you to use, plus the existing articles that serve as a reference.
     * You can either write some initial questions, get answers, and stop there, or based on the answers add new ones.
     * Consider that you're not bound by your initial questions: it's very common for an answer to cover things that would be even better as a reply to a question that isn't there. You can add that questions and refactor answers to improve the flow, as long as the final version is reviewed and approved by the SIG person being interviewed.
-5. With that final version, create a markdown file in hackmd.io, based on the blog markdown template, and share it with the Contribex Comms Blogging lead and the community (the `#contribex-comms` channel).
+5. With that final version, create a markdown file in hackmd.io, based on the blog markdown template, and share it with the Contribex Comms Blogging lead and the community (the `#sig-contribex-comms` channel).
     * We will do a preliminary round of reviews on this, which is why it's better to have in outside of github at this stage, and before creating the PR.
     * If you don't want to use hack.md, the original Google Docs file can also be used.
 
