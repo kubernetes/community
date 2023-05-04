@@ -142,8 +142,8 @@ This is a collection of presentations from our SIG members around contributing t
 
 This is the work we've done this past cycle and plan to work on in the future:
 
-- [Contributor Experience Community Update](https://youtu.be/J3O8fXTm3HE?t=148) (July 2020)
-  - [Slides](https://docs.google.com/presentation/d/1BS7liUs1WDSPnpNXIHRtRSKhGzK9usS5qzpry_9YU-I/edit?usp=sharing) 
+- [From Automation to Community: A Deep Dive Into SIG Contributor Experience](https://youtu.be/5Bs1bs6iFmY) (April 2023)
+  - [Slides](https://docs.google.com/presentation/d/1BNej12r_YN_0FSYgthPWvOqpcS53oiHS) 
 
 ## General Presentations
 
@@ -156,6 +156,9 @@ This is the work we've done this past cycle and plan to work on in the future:
 
 We give our SIG status at every KubeCon, here are our most current talks:
 
+- [From Automation to Community: A Deep Dive Into SIG Contributor Experience, Europe 2023](https://youtu.be/5Bs1bs6iFmY) - Madhav Jivrajani, Priyanka Saggu, Kaslin Fields
+- [SIG Contributor Experience Deep Dive, North America 2022](https://www.youtube.com/watch?v=C-k_h3vzWxE) - Nabarun Pal & Madhav Jivrajani, Marky Jackson, Kaslin Fields
+- [SIG Contributor Experience Deep Dive, Europe 2022](https://www.youtube.com/watch?v=hD6ZtmEIbEQ) - Alison Dowdney, Christoph Blecker, Bob Killen
 - [SIG Contributor Experience Deep Dive, North America 2021](https://youtu.be/QOiyWWFjG5Q) - Alison Dowdney, Christoph Blecker
 - [SIG Contributor Experience Deep Dive, Europe 2021](https://youtu.be/vPK3QmVOE4Y) - Bob Killen, Alison Dowdney, Christoph Blecker, Nikhita Raghunath
 - [Introdution to Contributor Experience 2020](https://youtu.be/VeCMQoNHFMU) - Bob Killen, Jorge Castro 
