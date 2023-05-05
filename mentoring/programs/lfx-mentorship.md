@@ -4,4 +4,4 @@
 
 LFX Mentorship is actively used by the Cloud Native Computing Foundation as a mentorship platform across the CNCF projects.
 
-More details about the LFX Mentorship program you may find at the [CNCF Mentoring repo](https://github.com/cncf/mentoring/blob/master/lfx-mentorship/README.md).
+More details about the LFX Mentorship program you may find at the [CNCF Mentoring repo](https://github.com/cncf/mentoring/blob/main/programs/lfx-mentorship/README.md).
