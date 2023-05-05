@@ -10,7 +10,7 @@ description: |
 ## Code conventions
 
   - Bash
-    - https://google.github.io/styleguide/shell.xml
+    - [Shell Style Guide](https://google.github.io/styleguide/shellguide.html)
     - Ensure that build, release, test, and cluster-management scripts run on macOS
 
   - Go
