@@ -662,7 +662,7 @@ sigs:
     chairs:
     - github: KnVerey
       name: Katrina Verey
-      company: Shopify
+      company: Independent
     - github: eddiezane
       name: Eddie Zaneski
       company: Chainguard, Inc
@@ -672,7 +672,7 @@ sigs:
     tech_leads:
     - github: KnVerey
       name: Katrina Verey
-      company: Shopify
+      company: Independent
     - github: soltysh
       name: Maciej Szulik
       company: Red Hat
