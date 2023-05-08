@@ -1509,9 +1509,6 @@ sigs:
     - github: divya-mohan0209
       name: Divya Mohan
       company: SUSE
-    - github: jimangel
-      name: Jim Angel
-      company: Google
     - github: natalisucks
       name: Natali Vlatko
       company: Wayfair
@@ -1540,6 +1537,8 @@ sigs:
       name: Irvi Aini
     - github: jaredbhatti
       name: Jared Bhatti
+    - github: jimangel
+      name: Jim Angel
     - github: kbarnard10
       name: Kaitlyn Barnard
     - github: zacharysarah
