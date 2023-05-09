@@ -7,7 +7,8 @@ SIG Release has a [roadmap](https://github.com/kubernetes/sig-release/blob/maste
 1. What work did the SIG do this year that should be highlighted?
    - [Migrated most of deb/rpm package building into release process to reduce Google Build Admin involvement in releases](https://github.com/kubernetes/release/issues/2737)
    - Proof-of-concept of using OpenSUSE Build Service to build and publish packages using community infrastructure. Reflected in updates to [1731 - Publishing Kubernetes packages on community infrastructure](https://github.com/kubernetes/enhancements/tree/master/keps/sig-release/1731-publishing-packages). See [biweekly meeting from 18 October 2022](https://youtu.be/8l8X3vSAJAw?t=787) for a good overview.
-   - [Signing of Release Artifacts](https://github.com/kubernetes/enhancements/issues/3031).
+   - We released [Kubernetes 1.24](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.24), [Kubernetes 1.25](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.25), and [Kubernetes 1.26](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.26) in 2022.
+   - We did extensive work on the image promotion tooling to support the k8s.gcr.io -> registry.k8s.io migration. This involved several tactical PRs to fix the tooling and adapt to the increased number of registries. We identified work for 2023 to further improve the image promotion tooling.
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
@@ -23,15 +24,7 @@ SIG Release has a [roadmap](https://github.com/kubernetes/sig-release/blob/maste
 ## Project health
 
 1. What areas and/or subprojects does your group need the most help with?
-   Any areas with 2 or fewer OWNERs? (link to more details)
-
-   - [kubernetes-sigs/bom](https://github.com/kubernetes-sigs/bom/blob/main/OWNERS)
-   - [kubernetes-sigs/downloadkubernetes](https://github.com/kubernetes-sigs/downloadkubernetes/blob/master/OWNERS)
-   - [kubernetes-sigs/mdtoc](https://github.com/kubernetes-sigs/mdtoc/blob/master/OWNERS)
-   - [kubernetes-sigs/release-notes](https://github.com/kubernetes-sigs/release-notes/blob/master/OWNERS)
-   - [kubernetes-sigs/release-team-shadow-stats](https://github.com/kubernetes-sigs/release-team-shadow-stats/blob/master/OWNERS)
-   - [kubernetes-sigs/tejolote](https://github.com/kubernetes-sigs/tejolote/blob/main/OWNERS)
-   - [kubernetes-sigs/zeitgeist](https://github.com/kubernetes-sigs/zeitgeist/blob/master/OWNERS)
+   Both subprojects, Release Team and Release Engineering, have a pipeline of interested individuals. In the release engineering subproject, we are tracking a number of larger initiatives, detailed in the KEP section. These larger efforts are where we could use the most help. The easiest way to identify what areas need help would be to use the individual KEPs as tracking. We have also labeled some things as good first issues.  
    
 2. What metrics/community health stats does your group care about and/or measure?
 
@@ -85,9 +78,8 @@ SIG Release has a [roadmap](https://github.com/kubernetes/sig-release/blob/maste
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
-   - The release tooling is currently supported by the core of the Release Engineering team. There are opportunities for end users and Kubernetes distributors to support the maintenance of the tooling within our repositories, including the `bom` tool. Additionally, vendor companies that build and distribute their own Kubernetes releases could provide more support to SIG Release, specifically Release Engineering, in order to grow contributors that could help with important tasks like Go version updates. 
+   - The release tooling is currently supported by the core of the Release Engineering team. There are opportunities for end users and Kubernetes distributors to support the maintenance of the tooling within our repositories, including the `bom` tool. Contributing to these tools would also be a good way to grow in SIG Release and join the Release Manager Associate program.  
    
-
 ## Membership
 
 The following stats are accurate as of March 15th, 2023. Numbers were pulled from Slack, the mailing list, and [kubernetes/release](https://github.com/kubernetes/release), the primary repository for Release Engineering tooling. 
