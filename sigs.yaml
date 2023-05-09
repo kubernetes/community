@@ -2284,7 +2284,7 @@ sigs:
   meetings:
   - description: Regular SIG Meeting APAC/EU Oriented Time
     day: Tuesday
-    time: "15:30"
+    time: "14:30"
     tz: UTC
     frequency: biweekly
     url: https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09
