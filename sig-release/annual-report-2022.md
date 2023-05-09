@@ -125,7 +125,7 @@ The following stats are accurate as of March 15th, 2023. Numbers were pulled fro
 Operational tasks in [sig-governance.md]:
 
 - [x] [README.md] reviewed for accuracy and updated if needed
-- [] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
       (or created if missing and your contributor steps and experience are different or more
       in-depth than the documentation listed in the general [contributor guide] and [devel] folder.)
 - [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
