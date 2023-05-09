@@ -19,6 +19,7 @@ channels:
     archived: true
   - name: argentina
   - name: arm64
+  - name: atmosphere
   - name: aus-nz-dev
   - name: aus-nz-users
   - name: awesome-kubernetes
