@@ -2,18 +2,19 @@
 
 ## Current initiatives
 
-SIG Release has a [roadmap](https://github.com/kubernetes/sig-release/blob/master/roadmap.md) that captures high level initiatives that the SIG is working toward, with specific information captured in our [project board](https://github.com/orgs/kubernetes/projects/30). 
+SIG Release has a [roadmap](https://git.k8s.io/sig-release/roadmap.md) that captures high level initiatives that the SIG is working toward. 
 
 1. What work did the SIG do this year that should be highlighted?
-   - [Migrated most of deb/rpm package building into release process to reduce Google Build Admin involvement in releases](https://github.com/kubernetes/release/issues/2737)
+   - [Migrated deb/rpm package building into release process to reduce Google Build Admin involvement in releases](https://github.com/kubernetes/release/issues/2737)
    - Proof-of-concept of using OpenSUSE Build Service to build and publish packages using community infrastructure. Reflected in updates to [1731 - Publishing Kubernetes packages on community infrastructure](https://github.com/kubernetes/enhancements/tree/master/keps/sig-release/1731-publishing-packages). See [biweekly meeting from 18 October 2022](https://youtu.be/8l8X3vSAJAw?t=787) for a good overview.
    - We released [Kubernetes 1.24](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.24), [Kubernetes 1.25](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.25), and [Kubernetes 1.26](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.26) in 2022.
    - We did extensive work on the image promotion tooling to support the k8s.gcr.io -> registry.k8s.io migration. This involved several tactical PRs to fix the tooling and adapt to the increased number of registries. We identified work for 2023 to further improve the image promotion tooling.
+   - Migrated enhancement tracking from Google Sheets to [Github Project board in 1.26 Release](https://github.com/orgs/kubernetes/projects/98). 
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
    - [Donation of a new project for SLSA Attestation](https://github.com/kubernetes-sigs/tejolote)
-   - We begun work on a new process for onboarding release manager associates and a ladder for becoming a full release manager.
+   - We begun work on a new process for onboarding Release Manager Associates and a ladder for becoming a full Release Manager.
 
 3. KEP work in 2022 (v1.24, v1.25, v1.26):
   - beta:
