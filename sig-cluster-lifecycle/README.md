@@ -48,6 +48,12 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-cluster-lifecycle](https://github.com/orgs/kubernetes/teams/sig-cluster-lifecycle) - SIG Cluster Lifecycle mailing list
 - Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-cluster-lifecycle:
+* [WG Long Term Support](/wg-long-term-support)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-cluster-lifecycle:

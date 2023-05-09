@@ -3212,6 +3212,44 @@ workinggroups:
     liaison:
       github: cblecker
       name: Christoph Blecker
+- dir: wg-long-term-support
+  name: Long Term Support
+  mission_statement: >
+    Define LTS
+
+  stakeholder_sigs:
+  - Architecture
+  - Cluster Lifecycle
+  - K8s Infra
+  - Release
+  - Testing
+  label: long-term-support
+  leadership:
+    chairs:
+    - github: jeremyrickard
+      name: Jeremy Rickard
+      company: Microsoft
+    - github: liggitt
+      name: Jordan Liggitt
+      company: Google
+    - github: micahhausler
+      name: Micah Hausler
+      company: Amazon
+  meetings:
+  - description: Regular WG Meeting
+    day: TBD
+    time: TBD
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: TBD
+    archive_url: TBD
+    recordings_url: TBD
+  contact:
+    slack: wg-lts
+    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-lts
+    liaison:
+      github: TBD
+      name: TBD
 - dir: wg-policy
   name: Policy
   mission_statement: >
