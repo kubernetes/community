@@ -6,7 +6,7 @@ sigs.yaml file in the project root.
 
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 --->
-# Long Term Support Working Group
+# LTS Working Group
 
 Define LTS
 
@@ -32,7 +32,7 @@ Define LTS
 ## Contact
 - Slack: [#wg-lts](https://kubernetes.slack.com/messages/wg-lts)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-lts)
-- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Flong-term-support)
+- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Flts)
 - Steering Committee Liaison: TBD (**[@TBD](https://github.com/TBD)**)
 <!-- BEGIN CUSTOM CONTENT -->
 

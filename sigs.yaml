@@ -3212,8 +3212,8 @@ workinggroups:
     liaison:
       github: cblecker
       name: Christoph Blecker
-- dir: wg-long-term-support
-  name: Long Term Support
+- dir: wg-lts
+  name: LTS
   mission_statement: >
     Define LTS
 
@@ -3223,7 +3223,7 @@ workinggroups:
   - K8s Infra
   - Release
   - Testing
-  label: long-term-support
+  label: lts
   leadership:
     chairs:
     - github: jeremyrickard

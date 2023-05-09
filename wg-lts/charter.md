@@ -10,24 +10,7 @@ and uses the Roles and Organization Management outlined in [sig-governance].
 
 The Long Term Support Working Group (WG LTS) is organized with the goal of developing a better understanding what "Long Term Support" might mean for Kubernetes, those who support Kubernetes, and end users, as well as to investigate changes the Kubernetes project could make related to long term support. The working group will also determine feasibility, benefits, **costs**, and prerequisites of such changes.
 
-### In Scope
-
-- Collecting input to better define long term support with regard to Kubernetes OSS releases
-- Creating and prioritizing a list of areas that require investments to improve long term supportability
-- Initiate and drive cross-SIG changes related to long term support
-
-### Out of scope
-
-- Designing and executing on changes clearly falling into individual SIG
-  responsibilities.
-
-## Special Powers
-
-None
-
-## Stakeholders
-
-In the first phase of the working group, we will collect information related to the needs and wants regarding support periods from end-users and people supporting Kubernetes. This will be done by reaching out to users and cluster operator (e.g. via surveys), to better understand:
+In the first phase of the working group, we will collect information related to the needs and wants regarding support periods from end-users and people supporting Kubernetes. This will be done by reaching out to users and cluster operators (e.g. via surveys), to better understand:
 
 * in-use versions (in the form of a user/vendor survey) and reasons for remaining on those versions
 * constraints on deployment and upgrade patterns / timelines (e.g. edge deployments, regulated industries, retail, etc)
@@ -45,7 +28,24 @@ With this information, we will investigate changes the Kubernetes project could 
 * expanding supported skew
 * improving supported upgrade patterns for clusters at EOL
 
-These changes will require involvement and investment from the following SIGS:
+### In Scope
+
+- Collecting input to better define long term support with regard to Kubernetes OSS releases
+- Creating and prioritizing a list of areas that require investments to improve long term supportability
+- Initiate and drive cross-SIG changes related to long term support
+
+### Out of scope
+
+- Designing and executing on changes clearly falling into individual SIG
+  responsibilities.
+
+## Special Powers
+
+None
+
+## Stakeholders
+
+Any changes identified by this working group will require involvement and investment from the following SIGS:
 
 - SIG Architecture
   High-level input on requirements.
@@ -64,7 +64,7 @@ Improvements identified will likely involve every SIG, but the list above are id
 
 The artifacts the group is supposed to deliver include:
 - Survey results better describing Kubernetes version use patterns, deployment constraints, and upgrade patterns.
-- Recommend changes Kubernetes sigs can make that will provide broad benefits in a sustainable/affordable way. This would likely take the form of one or more KEPs.
+- Recommend changes Kubernetes SIGS can make that will provide broad benefits in a sustainable/affordable way. This would likely take the form of one or more KEPs.
 - Recommend ways users/vendors who want to maximize Kubernetes support can consume Kubernetes
 
 Any changes identified will be owned by corresponding SIGs.
