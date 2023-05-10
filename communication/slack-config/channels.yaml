@@ -250,6 +250,7 @@ channels:
   - name: kubebuilder
   - name: kubecon
   - name: kubectl-trace
+  - name: kubectl-validate
   - name: kubedb
   - name: kubeinit
   - name: kubekhan
