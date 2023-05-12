@@ -76,7 +76,7 @@ patch release branches.
 
 ## Initiate a Cherry Pick
 
-Note: Before initiating a cherry-pick to a release branch, first make sure that the fix is available in every _newer_ release branch. (For example, if the 1.27 is the most recent release branch, then, before cherry-picking to 1.25, first make sure the fix is already in 1.26, and 1.27). This helps prevent regressions as the result of an upgrade to the next release.
+Note: Before initiating a cherry-pick to a release branch, make sure the fix is available in every _newer_ release branch. For example, if 1.27 is the most recent release branch, then, before cherry-picking to 1.25, make sure the fix is already in 1.26 and 1.27. This helps to prevent regressions as a result of an upgrade to the next release.
 
 - Run the [cherry pick script][cherry-pick-script]
 
