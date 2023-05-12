@@ -78,4 +78,4 @@ This working group adheres to the Roles and Organization Management outlined in
 
 ## Timelines and Disbanding
 
-The exact timeline for this working group is hard to define at this time. If we are unable to define a common long term support definition for Kubernetes, we will disband the working group. If we are unable to define improvements related to an agreed upon definition, we will also disband the working group.
+The exact timeline for this working group is hard to define at this time. If we are unable to define a common long term support definition for Kubernetes, we will disband the working group. If we are unable to define improvements related to an agreed upon definition, we will also disband the working group. In order to evaluate our progress toward the working group goals, we will provide periodic updates to the stakeholder SIGs and committees at least every six months, in addition to a working group annual report.   
