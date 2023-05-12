@@ -71,7 +71,7 @@ Any changes identified will be owned by corresponding SIGs.
 
 ## Roles and Organization Management
 
-This sig follows adheres to the Roles and Organization Management outlined in
+This working group adheres to the Roles and Organization Management outlined in
 [sig-governance] and opts-in to updates and modifications to [sig-governance].
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
