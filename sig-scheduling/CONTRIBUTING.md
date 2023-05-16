@@ -35,11 +35,12 @@ also follow the requirements of `Bug Report`, it will help us a lot when analyzi
   * Open an issue under kubernetes/kubernetes with labels `/sig scheduling` and `/kind feature`, please focus on
   the user stories
   * If there's any debate on the rationalities, you can bring it to the [SIG meeting](https://github.com/kubernetes/community/tree/master/sig-scheduling#meetings).
-  * If there're multiple implementation options, consider to create a doc with Pros and Cons, and gather some feedback.
+  * If there are multiple implementation options, consider creating a doc with Pros and Cons, and gather some feedback.
+  You can do this by sharing the doc with the SIG's [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling).
   * If necessary, open an issue in kubernetes/enhancements and write a [KEP](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling) for it.
 
-* If you find any out-of-date documentation, please help us to revise that. Future readers
-will be grateful for your kindness.
+* If you find any out-of-date documentation, please help the community correct that by either sending a PR to
+update the docs or open an issue if you are not sure about how to fix it.
   * For website documentation, you can open issues at [kubernetes/website](https://github.com/kubernetes/website).
   * For developer documentation, you can open issues at [kubernetes/community](https://github.com/kubernetes/community).
 
@@ -48,20 +49,20 @@ If you're interested, you can contribute to them as well.
 
 ## Best Practices
 
-From years of contributions to the Kubernetes, we have summarized the following practices:
+The community has been following some practices to help ensure maintainable and quality code:
 
-* In general, PR should be reviewed by the [Reviewers](https://github.com/kubernetes/community/blob/master/community-membership.md#reviewer) first. Once the PR gets a `/lgtm` from Reviewers,
-  [Approvers](https://github.com/kubernetes/community/blob/master/community-membership.md#approver) will get onboard. This helps to reduce the burden on the Approvers.
+* It is best if a PR is first reviewed by the [Reviewers](https://github.com/kubernetes/community/blob/master/community-membership.md#reviewer). Once the PR gets a `/lgtm` from a Reviewer,
+  [Approvers](https://github.com/kubernetes/community/blob/master/community-membership.md#approver) will review the PR to approve it.
 
 * Leave the Reviewers assigned by the bot automatically if possible, unless there is a need
-for one specific contributor's expertise.
+for a specific contributor's expertise.
 
 * Critical bug fixes can be assigned to approvers directly.
 
-* Always add a new commit to address review comments, instead of amending. This helps to
+* Always add a new commit to address review comments instead of amending. This helps to
 review the new changes. You might be asked by the Reviewer to squash at a certain point.
 
-* Squash the commits when PR is ready to merge, this does a great favor for the git history.
+* Squash the commits when the PR is ready to merge, this does a great favor for the git history.
 
 * Code contributions should be relatively small, simple, well documented and well tested.
 Try to split your changes into incremental PRs if the feature is big.
