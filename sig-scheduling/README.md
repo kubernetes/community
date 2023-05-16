@@ -83,6 +83,9 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
 ### kube-scheduler-simulator
 - **Owners:**
   - [kubernetes-sigs/kube-scheduler-simulator](https://github.com/kubernetes-sigs/kube-scheduler-simulator/blob/master/OWNERS)
+### kube-scheduler-wasm-extension
+- **Owners:**
+  - [kubernetes-sigs/kube-scheduler-wasm-extension](https://github.com/kubernetes-sigs/kube-scheduler-wasm-extension/blob/main/OWNERS)
 ### kueue
 - **Owners:**
   - [kubernetes-sigs/kueue](https://github.com/kubernetes-sigs/kueue/blob/main/OWNERS)
