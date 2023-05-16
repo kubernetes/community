@@ -2555,6 +2555,9 @@ sigs:
   - name: kube-scheduler-simulator
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kube-scheduler-simulator/master/OWNERS
+  - name: kube-scheduler-wasm-extension
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kube-scheduler-wasm-extension/main/OWNERS
   - name: kueue
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
