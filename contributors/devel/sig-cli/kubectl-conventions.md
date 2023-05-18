@@ -372,7 +372,7 @@ and as noted in [command conventions](#command-conventions), ideally that logic
 should exist server-side so any client could take advantage of it. Notice that
 this is not a mandatory structure and not every command is implemented this way,
 but this is a nice convention so try to be compliant with it. As an example,
-have a look at how [kubectl logs](https://git.k8s.io/kubernetes/pkg/kubectl/cmd/logs/logs.go) is implemented.
+have a look at how [kubectl logs](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubectl/pkg/cmd/logs/logs.go) is implemented.
 
 ## Exit code conventions
 
