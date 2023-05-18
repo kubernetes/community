@@ -195,11 +195,10 @@ kubetest2 gce --test ginkgo -- --test-package-version v1.18.0
 
 The argument to `--test-package-version` can be changed to specify
 some other test package version. To see available release names for
-this option, use this command:
+this option, visit https://github.com/kubernetes/kubernetes/releases.
 
-```sh
-gsutil ls gs://kubernetes-release/release/
-```
+Examples: v1.26.0-alpha.2, v1.26.0-beta.0, v1.26.1-rc.0, v1.26.5
+
 
 ### Testing against an existing cluster
 
