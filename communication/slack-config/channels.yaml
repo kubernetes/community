@@ -516,6 +516,7 @@ channels:
     archived: true
   - name: wg-policy
   - name: wg-reliability
+    archived: true
   - name: wg-resource-mgmt
     archived: true
   - name: wg-structured-logging

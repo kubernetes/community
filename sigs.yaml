@@ -3329,43 +3329,6 @@ workinggroups:
     liaison:
       github: cblecker
       name: Christoph Blecker
-- dir: wg-reliability
-  name: Reliability
-  mission_statement: >
-    Allow users to safely use Kubernetes for managing production workloads by ensuring
-    Kubernetes is stable and reliable.
-
-  charter_link: charter.md
-  stakeholder_sigs:
-  - Architecture
-  - Cluster Lifecycle
-  - Release
-  - Scalability
-  - Testing
-  label: reliability
-  leadership:
-    chairs:
-    - github: deads2k
-      name: David Eads
-      company: Red Hat
-    - github: stevekuznetsov
-      name: Steve Kuznetsov
-      company: Red Hat
-    - github: wojtek-t
-      name: Wojciech Tyczynski
-      company: Google
-  meetings:
-  - description: Regular WG Meeting
-    day: Monday
-    time: "11:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/97964505804?pwd=R3hzSnArQWJHYmdWUnpSUDh3aXhFUT09
-    archive_url: https://docs.google.com/document/d/1KF_kof3rBWzis87wMkwXicetREuutxlPI6dFDSqdWbo/edit
-    recordings_url: TODO
-  contact:
-    slack: wg-reliability
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-reliability
 - dir: wg-structured-logging
   name: Structured Logging
   mission_statement: >
