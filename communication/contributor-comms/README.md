@@ -8,7 +8,7 @@ To better inform the Kubernetes contributor community and highlight their work t
 
 | Area & Handbook Link | Team | Notes |
 | --- | --- | --- |
-| Subproject Lead | @kaslin, @chris-short | Shadow role is available. |
+| Subproject Lead | @kaslin, @chris-short | @NitishKumar06 (shadow) |
 | [Social Media Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Social-Media.md) |@kaslin | Shadow role is available. |
 | [Comms Tech Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Tech-Lead.md) | @Atharva-Shinde, @imnmo | @markarranz (shadow) |
 | [Comms Event Lead] | @AvineshTripathi | Shadow role is available. |
