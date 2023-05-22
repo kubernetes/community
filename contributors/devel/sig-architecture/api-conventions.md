@@ -22,6 +22,9 @@ An introduction to using resources with kubectl can be found in [the object mana
 - [Differing Representations](#differing-representations)
 - [Verbs on Resources](#verbs-on-resources)
   - [PATCH operations](#patch-operations)
+- [Short-names and Categories](#short-names-and-categories)
+  - [Short-names](#short-names)
+  - [Categories](#categories)
 - [Idempotency](#idempotency)
 - [Optional vs. Required](#optional-vs-required)
 - [Defaulting](#defaulting)
@@ -715,6 +718,74 @@ saved. For more details on how to use Merge Patch, see the RFC.
   * Strategic Merge Patch is a custom implementation of Merge Patch. For a
 detailed explanation of how it works and why it needed to be introduced, see
 [here](/contributors/devel/sig-api-machinery/strategic-merge-patch.md).
+
+## Short-names and Categories
+
+Resource implementers can optionally include "short names" and categories
+in the discovery information published for a resource type,
+which clients may use as hints when resolving ambiguous user invocations.
+
+For compiled-in resources, these are controlled by the REST handler `ShortNames() []string` and `Categories() []string` implementations.
+
+For custom resources, these are controlled by the `.spec.names.shortNames` and `.spec.names.categories` fields in the CustomResourceDefinition.
+
+### Short-names
+
+Note: Due to unpredictable behavior when short names collide (with each other or with resource types),
+do not add new short names to built-in resources unless specifically allowed by API reviewers. See issues
+[#117742](https://issue.k8s.io/117742#issuecomment-1545945336) and [#108573](http://issue.k8s.io/108573).
+
+"Short names" listed in discovery may be used by clients as hints to resolve ambiguous user invocations to a single resource.
+
+Examples of built-in short names include:
+
+* `ds` -> `apps/v* daemonsets`
+* `sts` -> `apps/v* statefulsets`
+* `hpa` -> `autoscaling/v* horizontalpodautoscalers`
+
+For example, with only built-in API types served, `kubectl get sts` is equivalent to `kubectl get statefulsets.v1.apps`.
+
+Short-name matches may be given lower priority than an exact match of a resource type,
+so use of short names increases potential for inconsistent behavior in clusters
+with custom resources installed, if those custom resource types overlap with short names.
+
+Continuing the above example, if a custom resource with `.spec.names.plural` set to `sts` was installed in a cluster,
+`kubectl get sts` would switch to retrieving instances of the custom resource instead.
+
+### Categories
+
+Note: Due to inconsistent behavior when categories collide with resource types,
+and difficulties knowing when it is safe to add new resources to an existing category,
+do not add new categories to built-in resources unless specifically allowed by API reviewers.
+See issues [#7547](https://github.com/kubernetes/kubernetes/issues/7547#issuecomment-355835279)
+[#42885](https://github.com/kubernetes/kubernetes/issues/42885#issuecomment-531265679),
+and [considerations for adding to the "all" category](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-cli/kubectl-conventions.md#rules-for-extending-special-resource-alias---all)
+for examples of the difficulties encountered.
+
+Categories listed in discovery may be used by clients as hints to resolve user invocations to multiple resources.
+
+Examples of built-in categories and the resources they map to include:
+* `api-extensions`
+  * `apiregistration.k8s.io/v* apiservices`
+  * `admissionregistration.k8s.io/v* mutatingwebhookconfigurations`
+  * `admissionregistration.k8s.io/v* validatingwebhookconfigurations`
+  * `admissionregistration.k8s.io/v* validatingadmissionpolicies`
+  * `admissionregistration.k8s.io/v* validatingadmissionpolicybindings`
+  * `apiextensions.k8s.io/v* customresourcedefinitions`
+* `all`
+  * `v1 pods`
+  * `v1 replicationcontrollers`
+  * `v1 services`
+  * `apps/v* daemonsets`
+  * `apps/v* deployments`
+  * `apps/v* replicasets`
+  * `apps/v* statefulsets`
+  * `autoscaling/v* horizontalpodautoscalers`
+  * `batch/v* cronjobs`
+  * `batch/v* jobs`
+
+With the above categories, and only built-in API types served, `kubectl get all` would be equivalent to 
+`kubectl get pods.v1.,replicationcontrollers.v1.,services.v1.,daemonsets.v1.apps,deployments.v1.apps,replicasets.v1.apps,statefulsets.v1.apps,horizontalpodautoscalers.v2.autoscaling,cronjobs.v1.batch,jobs.v1.batch,`.
 
 ## Idempotency
 

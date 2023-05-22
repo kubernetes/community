@@ -26,6 +26,7 @@ It should serve as a reference for all contributors, and be useful especially to
   - [Is the feature wanted? File a Kubernetes Enhancement Proposal](#is-the-feature-wanted-file-a-kubernetes-enhancement-proposal)
   - [Smaller Is Better: Small Commits, Small Pull Requests](#smaller-is-better-small-commits-small-pull-requests)
   - [Open a Different Pull Request for Fixes and Generic Features](#open-a-different-pull-request-for-fixes-and-generic-features)
+  - [Don't Open Pull Requests That Span the Whole Repository](#dont-open-pull-requests-that-span-the-whole-repository)
   - [Comments Matter](#comments-matter)
   - [Test](#test)
   - [Squashing](#squashing)
@@ -248,6 +249,31 @@ We have places for hosting more generic code.
 Likewise, if Feature-X is similar in form to Feature-W which was checked in last month, and you're duplicating some tricky stuff from Feature-W, consider prefactoring the core logic out and using it in both Feature-W and
 Feature-X.
 (Do that in its own commit or pull request, please.)
+
+## Don't Open Pull Requests That Span the Whole Repository
+
+Often a new contributor will find some problem that exists in many places across the main
+`kubernetes/kubernetes` repository, and file a PR to fix it everywhere at once. Maybe
+there's a cool new function in the latest golang release that everyone ought to be using,
+or a recently-deprecated function that ought to be replaced with calls to its replacement.
+Sometimes a contributor will run a linter or security scanner across the code to find
+problems, or fix a particular spelling mistake in comments or variable names. (It's
+"deprecated", not "depreciated"!)
+
+The problem with this approach is that different parts of `kubernetes/kubernetes` are
+maintained by different SIGs, and so changes to those different parts require approvals
+from different people. A PR containing 20 one-line changes scattered across the repository
+could end up needing 5 or 10 approvals or more before it can be merged. (While there are a
+handful of people who can approve changes across large portions of the repository, those
+are generally the people who are the most busy and hardest to get reviews from, especially
+when you're a new contributor with no connections within the community yet.)
+
+If you really want to try to get such a PR merged, your best bet is to break up the PR
+into separate PRs for each SIG whose code it touches. You can look at the `OWNERS` files
+in a directory (or its parent directory) to see who owns that code, and then group the
+changes together accordingly (e.g., with one PR touching files in `cmd/kube-proxy` and
+`pkg/util/iptables`, which are owned by SIG Network, and another PR touching files in
+`pkg/kubelet` and `pkg/controller/nodelifecycle`, which are owned by SIG Node.)
 
 ## Comments Matter
 

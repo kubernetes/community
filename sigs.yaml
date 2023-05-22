@@ -662,7 +662,7 @@ sigs:
     chairs:
     - github: KnVerey
       name: Katrina Verey
-      company: Shopify
+      company: Independent
     - github: eddiezane
       name: Eddie Zaneski
       company: Chainguard, Inc
@@ -672,7 +672,7 @@ sigs:
     tech_leads:
     - github: KnVerey
       name: Katrina Verey
-      company: Shopify
+      company: Independent
     - github: soltysh
       name: Maciej Szulik
       company: Red Hat
@@ -1509,9 +1509,6 @@ sigs:
     - github: divya-mohan0209
       name: Divya Mohan
       company: SUSE
-    - github: jimangel
-      name: Jim Angel
-      company: Google
     - github: natalisucks
       name: Natali Vlatko
       company: Wayfair
@@ -1540,6 +1537,8 @@ sigs:
       name: Irvi Aini
     - github: jaredbhatti
       name: Jared Bhatti
+    - github: jimangel
+      name: Jim Angel
     - github: kbarnard10
       name: Kaitlyn Barnard
     - github: zacharysarah
@@ -2285,7 +2284,7 @@ sigs:
   meetings:
   - description: Regular SIG Meeting APAC/EU Oriented Time
     day: Tuesday
-    time: "15:30"
+    time: "14:30"
     tz: UTC
     frequency: biweekly
     url: https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09
@@ -2556,6 +2555,9 @@ sigs:
   - name: kube-scheduler-simulator
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kube-scheduler-simulator/master/OWNERS
+  - name: kube-scheduler-wasm-extension
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kube-scheduler-wasm-extension/main/OWNERS
   - name: kueue
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
@@ -3327,43 +3329,6 @@ workinggroups:
     liaison:
       github: cblecker
       name: Christoph Blecker
-- dir: wg-reliability
-  name: Reliability
-  mission_statement: >
-    Allow users to safely use Kubernetes for managing production workloads by ensuring
-    Kubernetes is stable and reliable.
-
-  charter_link: charter.md
-  stakeholder_sigs:
-  - Architecture
-  - Cluster Lifecycle
-  - Release
-  - Scalability
-  - Testing
-  label: reliability
-  leadership:
-    chairs:
-    - github: deads2k
-      name: David Eads
-      company: Red Hat
-    - github: stevekuznetsov
-      name: Steve Kuznetsov
-      company: Red Hat
-    - github: wojtek-t
-      name: Wojciech Tyczynski
-      company: Google
-  meetings:
-  - description: Regular WG Meeting
-    day: Monday
-    time: "11:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/97964505804?pwd=R3hzSnArQWJHYmdWUnpSUDh3aXhFUT09
-    archive_url: https://docs.google.com/document/d/1KF_kof3rBWzis87wMkwXicetREuutxlPI6dFDSqdWbo/edit
-    recordings_url: TODO
-  contact:
-    slack: wg-reliability
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-reliability
 - dir: wg-structured-logging
   name: Structured Logging
   mission_statement: >
@@ -3517,6 +3482,9 @@ committees:
       company: Amazon
     - github: cjcullen
       name: CJ Cullen
+      company: Google
+    - github: cji
+      name: Craig Ingram
       company: Google
     - github: enj
       name: Mo Khan

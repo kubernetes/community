@@ -19,6 +19,7 @@ channels:
     archived: true
   - name: argentina
   - name: arm64
+  - name: atmosphere
   - name: aus-nz-dev
   - name: aus-nz-users
   - name: awesome-kubernetes
@@ -249,6 +250,7 @@ channels:
   - name: kubebuilder
   - name: kubecon
   - name: kubectl-trace
+  - name: kubectl-validate
   - name: kubedb
   - name: kubeinit
   - name: kubekhan
@@ -514,6 +516,7 @@ channels:
     archived: true
   - name: wg-policy
   - name: wg-reliability
+    archived: true
   - name: wg-resource-mgmt
     archived: true
   - name: wg-structured-logging

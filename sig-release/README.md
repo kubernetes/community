@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Release Specia
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-release) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting APAC/EU Oriented Time: [Tuesdays at 15:30 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
+* Regular SIG Meeting APAC/EU Oriented Time: [Tuesdays at 14:30 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:30&tz=UTC).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-release-meeting).
   * [Meeting recordings](https://bit.ly/k8s-sig-release-videos).
 * Regular SIG Meeting US Oriented Time: [Tuesdays at 17:00 UTC](https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
@@ -56,12 +56,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-release-admins](https://github.com/orgs/kubernetes/teams/sig-release-admins) - Admins for SIG Release repositories
     - [@kubernetes/sig-release-leads](https://github.com/orgs/kubernetes/teams/sig-release-leads) - Chairs, Technical Leads, and Program Managers for SIG Release
 - Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
-
-## Working Groups
-
-The following [working groups][working-group-definition] are sponsored by sig-release:
-* [WG Reliability](/wg-reliability)
-
 
 ## Subprojects
 
