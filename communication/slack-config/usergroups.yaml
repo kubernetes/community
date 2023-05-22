@@ -296,7 +296,7 @@ usergroups:
     description: "Active developers of KubeStellar on #kubestellar-dev"
     members:
       - clubanderson
-      - mikespreitzer
-      - ezrasilvera
-      - pdettori
+      - mspreitz
+      - ezra
+      - paolo
       
