@@ -293,7 +293,7 @@ usergroups:
 
   - name: kubestellar-devs
     long_name: KubeStellar Development Team
-    description: Active developers of KubeStellar on #kubestellar-dev
+    description: "Active developers of KubeStellar on #kubestellar-dev"
     members:
       - clubanderson
       - MikeSpreitzer
