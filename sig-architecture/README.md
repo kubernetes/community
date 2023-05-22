@@ -58,7 +58,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [working groups][working-group-definition] are sponsored by sig-architecture:
 * [WG API Expression](/wg-api-expression)
 * [WG Policy](/wg-policy)
-* [WG Reliability](/wg-reliability)
 * [WG Structured Logging](/wg-structured-logging)
 
 

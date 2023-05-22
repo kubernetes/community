@@ -144,10 +144,6 @@ aliases:
   wg-policy-leads:
     - JimBugwadia
     - rficcaglia
-  wg-reliability-leads:
-    - deads2k
-    - stevekuznetsov
-    - wojtek-t
   wg-structured-logging-leads:
     - pohly
     - serathius
