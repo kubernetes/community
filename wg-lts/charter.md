@@ -17,7 +17,7 @@ In the first phase of the working group, we will collect information related to 
 * expected/required support periods from users/vendors
 * support periods of core Kubernetes dependencies
 * support periods of other components required to run Kubernetes clusters (OS, network, storage, etc)
-* what users/vendors are currently doing to support releases past OSS End Of Life (EOL)
+* what users/vendors are currently doing to support releases past community support End Of Life (EOL)
 * what do users/vendors do with EOL clusters today? what would they do if EOL was extended by N months/years?
 
 With this information, we will investigate changes the Kubernetes project could make to address these needs. A non-exhaustive set of changes to investigate include:
@@ -30,14 +30,28 @@ With this information, we will investigate changes the Kubernetes project could 
 
 ### In Scope
 
-- Collecting input to better define long term support with regard to Kubernetes OSS releases
-- Creating and prioritizing a list of areas that require investments to improve long term supportability
-- Initiate and drive cross-SIG changes related to long term support
+- Collecting input to better define long term support with regard to Kubernetes releases. This could include:
+  * What is a supported release?
+  * Number of community supported branches.
+  * Duration of community support per supported branch.
+- Working with vendors and other community members to identify ongoing efforts to help end users beyond current community support and identify opportunities for reuse of prior work.
+- Creating and prioritizing a list of areas that require investments to improve long term supportability. This could include:
+  * Upgrade path considerations.
+  * Costs of Kubernetes releases in terms of:
+    * Infrastructure
+    * People
+- Initiate and drive cross-SIG changes related to long term support.
+- Identify ways to that vendors and other community members can better support Kubernetes releases.
 
 ### Out of scope
 
+- The lifecycle of projects outside of the Kubernetes org.
 - Designing and executing on changes clearly falling into individual SIG
-  responsibilities.
+  responsibilities. This is a working group, no code implementation is the responsibility of this Working Group.
+- Technical and end-user support:  The WG may make recommendations
+  around support to those responsible for relevant code and responsible
+  for the release engineering operations and automation, but does not
+  own code itself.
 
 ## Special Powers
 
