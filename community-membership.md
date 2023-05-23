@@ -3,15 +3,15 @@
 **Note:** This document is a work in progress
 
 This doc outlines the various responsibilities of contributor roles in
-Kubernetes.  The Kubernetes project is subdivided into subprojects under SIGs.
-Responsibilities for most roles are scoped to these subprojects.
+Kubernetes.  The Kubernetes project is subdivided into sub-projects under SIGs.
+Responsibilities for most roles are scoped to these sub-projects.
 
 | Role | Responsibilities | Requirements | Defined by |
 | -----| ---------------- | ------------ | -------|
 | Member | Active contributor in the community | Sponsored by 2 reviewers and multiple contributions to the project | Kubernetes GitHub org member|
-| Reviewer | Review contributions from other members | History of review and authorship in a subproject | [OWNERS] file reviewer entry |
-| Approver | Contributions acceptance approval| Highly experienced active reviewer and contributor to a subproject | [OWNERS] file approver entry|
-| Subproject owner | Set direction and priorities for a subproject | Demonstrated responsibility and excellent technical judgement for the subproject | [sigs.yaml] subproject [OWNERS] file *owners* entry |
+| Reviewer | Review contributions from other members | History of review and authorship in a sub-project | [OWNERS] file reviewer entry |
+| Approver | Contributions acceptance approval| Highly experienced active reviewer and contributor to a sub-project | [OWNERS] file approver entry|
+| Sub-project owner | Set direction and priorities for a sub-project | Demonstrated responsibility and excellent technical judgement for the sub-project | [sigs.yaml] subproject [OWNERS] file *owners* entry |
 
 ## New contributors
 
@@ -23,7 +23,7 @@ communication channels.
 
 Established community members are expected to demonstrate their adherence to the
 principles in this document, familiarity with project organization, roles,
-policies, procedures, conventions, etc., and technical and/or writing ability.
+policies, procedures, conventions, etc., and technical or writing ability.
 Role-specific expectations, responsibilities, and requirements are enumerated
 below.
 
@@ -42,11 +42,11 @@ remain active contributors to the community.
 - Have made multiple contributions to the project or community.  Contribution may include, but is not limited to:
     - Authoring or reviewing PRs on GitHub. At least one PR must be **merged**.
     - Filing or commenting on issues on GitHub
-    - Contributing to SIG, subproject, or community discussions (e.g. meetings, Slack, email discussion
+    - Contributing to SIG, sub-project, or community discussions (e.g. meetings, Slack, email discussion
       forums, Stack Overflow)
 - Subscribed to [dev@kubernetes.io]
 - Have read the [contributor guide]
-- Actively contributing to 1 or more subprojects.
+- Actively contributing to 1 or more sub-projects.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
     - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating
       on issues, etc.
@@ -115,10 +115,10 @@ an [OWNERS] file (for repos using the bot).
 - Primary reviewer for at least 5 PRs to the codebase
 - Reviewed or merged at least 20 substantial PRs to the codebase
 - Knowledgeable about the codebase
-- Sponsored by a subproject approver
+- Sponsored by a sub-project approver
   - With no objections from other approvers
   - Done through PR to update the OWNERS file
-- May either self-nominate, be nominated by an approver in this subproject, or be nominated by a robot
+- May either self-nominate, be nominated by an approver in this sub-project, or be nominated by a robot
 
 ### Responsibilities and privileges
 
@@ -157,8 +157,8 @@ in an [OWNERS] file (for repos using the bot).
 - Reviewer of the codebase for at least 3 months
 - Primary reviewer for at least 10 substantial PRs to the codebase
 - Reviewed or merged at least 30 PRs to the codebase
-- Nominated by a subproject owner
-  - With no objections from other subproject owners
+- Nominated by a sub-project owner
+  - With no objections from other sub-project owners
   - Done through PR to update the top-level OWNERS file
 
 ### Responsibilities and privileges
@@ -175,50 +175,49 @@ in an [OWNERS] file (for repos using the bot).
 - Mentor contributors and reviewers
 - May approve code contributions for acceptance
 
-## Subproject Owner
+## Sub-project Owner
 
-**Note:** This is a generalized high-level description of the role, and the
-specifics of the subproject owner role's responsibilities and related
-processes *MUST* be defined for individual SIGs or subprojects.
+**Note:** This is a generalized high-level description of the role and the
+specifics of the sub-project owner role's responsibilities and related
+processes *MUST* be defined for individual SIGs or subp-rojects.
 
-Subproject Owners are the technical authority for a subproject in the Kubernetes
-project.  They *MUST* have demonstrated both good judgement and responsibility
-towards the health of that subproject.  Subproject Owners *MUST* set technical
-direction and make or approve design decisions for their subproject - either
+Sub-project Owners are the technical authority for a sub-project in the Kubernetes
+project.  They *MUST* have demonstrated both good judgment and responsibility
+towards the health of that sub-project.  Sub-project Owners *MUST* set technical
+direction and make or approve design decisions for their sub-project - either
 directly or through delegation of these responsibilities.
 
-**Defined by:** *owners* entry in subproject [OWNERS] files as defined by [sigs.yaml]  *subproject.owners*
+**Defined by:** *owners* entry in sub-project [OWNERS] files as defined by [sigs.yaml]  *sub-project.owners*
 
 ### Requirements
 
-The process for becoming an subproject Owner should be defined in the SIG
-charter of the SIG owning the subproject.  Unlike the roles outlined above, the
-Owners of a subproject are typically limited to a relatively small group of
-decision makers and updated as fits the needs of the subproject.
+The process for becoming an sub-project Owner should be defined in the SIG
+charter of the SIG owning the sub-project.  Unlike the roles outlined above, the
+Owners of a sub-project are typically limited to a relatively small group of
+decision makers and updated as fits the needs of the sub-project.
 
-The following apply to the subproject for which one would be an owner.
+The following apply to the sub-project for which one would be an owner.
 
-- Deep understanding of the technical goals and direction of the subproject
-- Deep understanding of the technical domain of the subproject
+- Deep understanding of the technical domain, technical goals and direction of the sub-project
 - Sustained contributions to design and direction by doing all of:
   - Authoring and reviewing proposals
   - Initiating, contributing and resolving discussions (emails, GitHub issues, meetings)
   - Identifying subtle or complex issues in designs and implementation PRs
-- Directly contributed to the subproject through implementation and / or review
+- Directly contributed to the sub-project through implementation and/or review
 
 ### Responsibilities and privileges
 
-The following apply to the subproject for which one would be an owner.
+The following apply to the sub-project for which one would be an owner.
 
-- Make and approve technical design decisions for the subproject.
-- Set technical direction and priorities for the subproject.
+- Make and approve technical design decisions for the sub-project.
+- Set technical direction and priorities for the sub-project.
 - Define milestones and releases.
-- Mentor and guide approvers, reviewers, and contributors to the subproject.
-- Ensure continued health of subproject
+- Mentor and guide approvers, reviewers, and contributors to the sub-project.
+- Ensure continued health of sub-project
   - Adequate test coverage to confidently release
   - Tests are passing reliably (i.e. not flaky) and are fixed when they fail
 - Ensure a healthy process for discussion and decision making is in place.
-- Work with other subproject owners to maintain the project's overall health and success holistically
+- Work with other sub-project owners to maintain the project's overall health and success holistically
 
 ## Inactive members
 
