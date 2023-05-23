@@ -260,6 +260,7 @@ channels:
   - name: kubeone
   - name: kubepack
   - name: kubestack
+  - name: kubestellar-dev
   - name: kuberhealthy
   - name: kubernetes-arm
   - name: kubernetes-batch-jobs
