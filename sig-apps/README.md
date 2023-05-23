@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Apps Special Interest Group
 
-Covers deploying and operating applications in Kubernetes. We focus on the developer and devops experience of running applications in Kubernetes. We discuss how to define and run apps in Kubernetes, demo relevant tools and projects, and discuss areas of friction that can lead to suggesting improvements or feature requests.
+SIG Apps is responsible for deploying and operating applications in Kubernetes. The SIG focuses on the developer and devops experience of running applications in Kubernetes, discusses how to define and run apps in Kubernetes, demo relevant tools and projects, and discusses areas of friction that can lead to suggesting improvements or feature requests.
 
 The [charter](charter.md) defines the scope and governance of the Apps Special Interest Group.
 
@@ -112,25 +112,5 @@ The core workloads API, which is composed of the CronJob, DaemonSet, Deployment,
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
-
-## Goals
-
-* Discuss running and defining applications in Kubernetes (e.g., APIs, SDKs, Controllers, package management tools, etc.)
-* Work on improvements to the Workload API
-* Suggest Kubernetes features where we see friction
-* Be the voice of the people running applications in Kubernetes (developers and devops)
-* Help people get involved in the Kubernetes community
-* Show early features/demos of tools that make running apps easier
-
-## Non-goals
-
-* Do not endorse one particular ecosystem tool
-* Do not pick which apps to run on top of Kubernetes
-* Do not recommend one way to do things (e.g., picking a template language)
-
-## [Helm](https://helm.sh) and [Charts](https://github.com/kubernetes/charts)
-
-Helm, Charts and its other subprojects have [moved to the CNCF](https://github.com/cncf/toc/blob/main/proposals/incubation/helm.adoc).
-See Helm's [community repository](https://github.com/kubernetes-helm/community) for information about the Helm project.
 
 <!-- END CUSTOM CONTENT -->

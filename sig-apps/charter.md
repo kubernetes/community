@@ -5,7 +5,7 @@ the Roles and Organization Management outlined in [sig-governance].
 
 ## Scope
 
-SIG Apps covers developing, deploying, and operating applications on Kubernetes with a focus on the application developer and application operator experience.
+SIG Apps is responsible for developing, deploying, and operating applications on Kubernetes with a focus on the application developer and application operator experience.
 
 ### In scope
 
@@ -33,21 +33,12 @@ and opts-in to updates and modifications to [sig-governance].
 
 ### Additional responsibilities of Chairs
 
-- Report the SIG status at events and community meetings wherever possible
-- Actively promote diversity and inclusion in the SIG
-- Uphold the Kubernetes Code of Conduct especially in terms of personal behavior and responsibility
-- Chairs oversee the subproject creation process
+- Technical leads seeded by legacy SIG chairs from existing subproject owners.
 
 ### Deviations from [sig-governance]
 
-- Generic technical leads are not appropriate for this SIG because sub-projects maintain their processes
-- Chairs follow the Technical Leads process in the subproject creation process
-- Proposing and making decisions MAY be done without the use of KEPs so long as the decision is documented in a linkable medium.
+None.
 
 ### Subproject Creation
 
-SIG Chairs following Technical Leads process defined in [sig-governance]
-
-[sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
-[sig-subprojects]: https://github.com/kubernetes/community/blob/master/sig-YOURSIG/README.md#subprojects
-[Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
+SIG Technical Leads.

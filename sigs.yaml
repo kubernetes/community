@@ -152,10 +152,11 @@ sigs:
 - dir: sig-apps
   name: Apps
   mission_statement: >
-    Covers deploying and operating applications in Kubernetes. We focus on the developer
-    and devops experience of running applications in Kubernetes. We discuss how to
-    define and run apps in Kubernetes, demo relevant tools and projects, and discuss
-    areas of friction that can lead to suggesting improvements or feature requests.
+    SIG Apps is responsible for deploying and operating applications in Kubernetes.
+    The SIG focuses on the developer and devops experience of running applications
+    in Kubernetes, discusses how to define and run apps in Kubernetes, demo relevant
+    tools and projects, and discusses areas of friction that can lead to suggesting
+    improvements or feature requests.
 
   charter_link: charter.md
   label: apps
