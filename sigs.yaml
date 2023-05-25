@@ -2549,9 +2549,6 @@ sigs:
   - name: descheduler
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/descheduler/master/OWNERS
-  - name: kube-batch
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kube-batch/master/OWNERS
   - name: kube-scheduler-simulator
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kube-scheduler-simulator/master/OWNERS
