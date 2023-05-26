@@ -154,7 +154,7 @@ Conclusion: Sent [email](https://groups.google.com/g/kubernetes-sig-storage/c/Qv
     - https://github.com/kubernetes-sigs/container-object-storage-interface-csi-adapter
     - https://github.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar
     - https://github.com/kubernetes-sigs/container-object-storage-interface-spec
-    - https://github.com/kubernetes-sigs/cosi-driver-sample/master
+    - https://github.com/kubernetes-sigs/cosi-driver-sample/
 
   - name: kubernetes-csi
     - https://github.com/kubernetes-csi/cluster-driver-registrar (deprecated in 2019)
@@ -201,10 +201,10 @@ Conclusion: Sent [email](https://groups.google.com/g/kubernetes-sig-storage/c/Qv
       - Sent out [email](https://groups.google.com/g/kubernetes-sig-storage/c/QvKc25Gdi84) to SIG Storage mailing list.
       - Conclusion: Archive it
 
-    - https://github.com/kubernetes/kubernetes/staging/src/k8s.io/csi-translation-lib
+    - https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/csi-translation-lib
 
   - name: mount-utils
-    - https://github.com/kubernetes/kubernetes/staging/src/k8s.io/mount-utils
+    - https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/mount-utils
 
   - name: nfs-provisioner
     - https://github.com/kubernetes-sigs/nfs-ganesha-server-and-external-provisioner
@@ -217,7 +217,7 @@ Conclusion: Sent [email](https://groups.google.com/g/kubernetes-sig-storage/c/Qv
     - https://github.com/kubernetes-csi/volume-data-source-validator
   - name: volumes
     owners:
-    - https://github.com/kubernetes/kubernetes/pkg/volume
+    - https://github.com/kubernetes/kubernetes/tree/master/pkg/volume
 
 ## Working groups
 
