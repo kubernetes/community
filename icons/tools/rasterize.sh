@@ -15,7 +15,7 @@ for size in "${SIZES[@]}"; do
         echo "[$counter/$total] Generating $output"
         # Only specify the width, since we know heptagons are wider than they
         # are tall. The tool will automatically retain the source aspect ratio.
-        docker run -v $(pwd)/svg:/convertor svgconvertor:latest  $svg -w $size > $output
+        docker run --rm -v $(pwd)/svg:/convertor svgconvertor:latest $svg -w $size > $output
         counter=$[$counter +1]
     done
 done
