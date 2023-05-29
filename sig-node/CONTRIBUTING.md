@@ -16,7 +16,7 @@ SIG Node enhancements are available in the <https://github.com/kubernetes/enhanc
 
 **Code**:  
 
-For general code organization, read [contributors/devel/README.md](contributors/devel/README.md) for explaning things like
+For general code organization, read [contributors/devel/README.md](contributors/devel/README.md) for explaining things like
 `vendor/`, `staging`, etc.
 
 * Kubelet

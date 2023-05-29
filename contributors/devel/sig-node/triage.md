@@ -12,7 +12,8 @@ CI-related PRs are tracked on the [CI subproject board].
 
 For help with the commands listed in the document below, review the [bot command documentation].
 
-[SIG Node Triage project board]: https://github.com/orgs/kubernetes/projects/49
+[SIG Node PR Triage project board]: https://github.com/orgs/kubernetes/projects/49
+[SIG Node Bugs Triage project board]: https://github.com/orgs/kubernetes/projects/59
 [CI subproject board]: https://github.com/orgs/kubernetes/projects/43
 [bot command documentation]: https://go.k8s.io/bot-commands
 
