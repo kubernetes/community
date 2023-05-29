@@ -13,7 +13,9 @@ SIG Node is responsible for the components that support the controlled interacti
 The [charter](charter.md) defines the scope and governance of the Node Special Interest Group.
 
 ## Meetings
+
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-node) for the group will typically add invites for the following meetings to your calendar.*
+
 * Main SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
@@ -23,12 +25,14 @@ The [charter](charter.md) defines the scope and governance of the Node Special I
 ## Leadership
 
 ### Chairs
+
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Sergey Kanzhelev (**[@SergeyKanzhelev](https://github.com/SergeyKanzhelev)**), Google
 * Mrunal Patel (**[@mrunalp](https://github.com/mrunalp)**), Red Hat
 
 ### Technical Leads
+
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
@@ -37,88 +41,109 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Mrunal Patel (**[@mrunalp](https://github.com/mrunalp)**), Red Hat
 
 ## Contact
-- Slack: [#sig-node](https://kubernetes.slack.com/messages/sig-node)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-node)
-- [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnode)
-- GitHub Teams:
-    - [@kubernetes/sig-node-api-reviews](https://github.com/orgs/kubernetes/teams/sig-node-api-reviews) - API Changes and Reviews
-    - [@kubernetes/sig-node-bugs](https://github.com/orgs/kubernetes/teams/sig-node-bugs) - Bug Triage and Troubleshooting
-    - [@kubernetes/sig-node-feature-requests](https://github.com/orgs/kubernetes/teams/sig-node-feature-requests) - Feature Requests
-    - [@kubernetes/sig-node-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-node-pr-reviews) - PR Reviews
-    - [@kubernetes/sig-node-proposals](https://github.com/orgs/kubernetes/teams/sig-node-proposals) - Design Proposals
-    - [@kubernetes/sig-node-test-failures](https://github.com/orgs/kubernetes/teams/sig-node-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
+
+* Slack: [#sig-node](https://kubernetes.slack.com/messages/sig-node)
+* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-node)
+* [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnode)
+* GitHub Teams:
+  * [@kubernetes/sig-node-api-reviews](https://github.com/orgs/kubernetes/teams/sig-node-api-reviews) - API Changes and Reviews
+  * [@kubernetes/sig-node-bugs](https://github.com/orgs/kubernetes/teams/sig-node-bugs) - Bug Triage and Troubleshooting
+  * [@kubernetes/sig-node-feature-requests](https://github.com/orgs/kubernetes/teams/sig-node-feature-requests) - Feature Requests
+  * [@kubernetes/sig-node-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-node-pr-reviews) - PR Reviews
+  * [@kubernetes/sig-node-proposals](https://github.com/orgs/kubernetes/teams/sig-node-proposals) - Design Proposals
+  * [@kubernetes/sig-node-test-failures](https://github.com/orgs/kubernetes/teams/sig-node-test-failures) - Test Failures and Triage
+* Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-node:
+
 * [WG Batch](/wg-batch)
 * [WG Multitenancy](/wg-multitenancy)
 * [WG Policy](/wg-policy)
 * [WG Structured Logging](/wg-structured-logging)
 
-
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-node:
+
 ### ci-testing
-- **Owners:**
-  - [kubernetes/kubernetes/test/e2e/common](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/common/OWNERS)
-  - [kubernetes/kubernetes/test/e2e/common/node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/common/node/OWNERS)
-  - [kubernetes/kubernetes/test/e2e/node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/node/OWNERS)
-  - [kubernetes/kubernetes/test/e2e_node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e_node/OWNERS)
-  - [kubernetes/test-infra/config/jobs/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-node/OWNERS)
-  - [kubernetes/test-infra/config/testgrids/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/testgrids/kubernetes/sig-node/OWNERS)
-  - [kubernetes/test-infra/jobs/e2e_node](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/OWNERS)
-- **Contact:**
-  - [Mailing List](https://groups.google.com/g/kubernetes-sig-node-test-failures)
+
+* **Owners:**
+  * [kubernetes/kubernetes/test/e2e/common](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/common/OWNERS)
+  * [kubernetes/kubernetes/test/e2e/common/node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/common/node/OWNERS)
+  * [kubernetes/kubernetes/test/e2e/node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/node/OWNERS)
+  * [kubernetes/kubernetes/test/e2e_node](https://github.com/kubernetes/kubernetes/blob/master/test/e2e_node/OWNERS)
+  * [kubernetes/test-infra/config/jobs/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/sig-node/OWNERS)
+  * [kubernetes/test-infra/config/testgrids/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/testgrids/kubernetes/sig-node/OWNERS)
+  * [kubernetes/test-infra/jobs/e2e_node](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/OWNERS)
+* **Contact:**
+  * [Mailing List](https://groups.google.com/g/kubernetes-sig-node-test-failures)
+
 ### cri-api
-- **Owners:**
-  - [kubernetes/cri-api](https://github.com/kubernetes/cri-api/blob/master/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/cri-api](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-api/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/cri-api/pkg](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-api/pkg/OWNERS)
+
+* **Owners:**
+  * [kubernetes/cri-api](https://github.com/kubernetes/cri-api/blob/master/OWNERS)
+  * [kubernetes/kubernetes/staging/src/k8s.io/cri-api](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-api/OWNERS)
+  * [kubernetes/kubernetes/staging/src/k8s.io/cri-api/pkg](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-api/pkg/OWNERS)
+
 ### cri-tools
-- **Owners:**
-  - [kubernetes-sigs/cri-tools](https://github.com/kubernetes-sigs/cri-tools/blob/master/OWNERS)
+
+* **Owners:**
+  * [kubernetes-sigs/cri-tools](https://github.com/kubernetes-sigs/cri-tools/blob/master/OWNERS)
+
 ### kernel-module-management
-- **Owners:**
-  - [kubernetes-sigs/kernel-module-management](https://github.com/kubernetes-sigs/kernel-module-management/blob/main/OWNERS)
+
+* **Owners:**
+  * [kubernetes-sigs/kernel-module-management](https://github.com/kubernetes-sigs/kernel-module-management/blob/main/OWNERS)
+
 ### kubelet
-- **Owners:**
-  - [kubernetes/kubernetes/cmd/kubelet](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubelet/OWNERS)
-  - [kubernetes/kubernetes/pkg/kubelet](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/OWNERS)
-  - [kubernetes/kubernetes/pkg/probe](https://github.com/kubernetes/kubernetes/blob/master/pkg/probe/OWNERS)
-  - [kubernetes/kubernetes/pkg/security/apparmor](https://github.com/kubernetes/kubernetes/blob/master/pkg/security/apparmor/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/component-helpers/node](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-helpers/node/OWNERS)
+
+* **Owners:**
+  * [kubernetes/kubernetes/cmd/kubelet](https://github.com/kubernetes/kubernetes/blob/master/cmd/kubelet/OWNERS)
+  * [kubernetes/kubernetes/pkg/kubelet](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/OWNERS)
+  * [kubernetes/kubernetes/pkg/probe](https://github.com/kubernetes/kubernetes/blob/master/pkg/probe/OWNERS)
+  * [kubernetes/kubernetes/pkg/security/apparmor](https://github.com/kubernetes/kubernetes/blob/master/pkg/security/apparmor/OWNERS)
+  * [kubernetes/kubernetes/staging/src/k8s.io/component-helpers/node](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-helpers/node/OWNERS)
+
 ### node-api
-- **Owners:**
-  - [kubernetes/api/node](https://github.com/kubernetes/api/blob/master/node/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/api/node](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/node/OWNERS)
+
+* **Owners:**
+  * [kubernetes/api/node](https://github.com/kubernetes/api/blob/master/node/OWNERS)
+  * [kubernetes/kubernetes/staging/src/k8s.io/api/node](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/node/OWNERS)
+
 ### node-feature-discovery
-- **Owners:**
-  - [kubernetes-sigs/node-feature-discovery-operator](https://github.com/kubernetes-sigs/node-feature-discovery-operator/blob/master/OWNERS)
-  - [kubernetes-sigs/node-feature-discovery](https://github.com/kubernetes-sigs/node-feature-discovery/blob/master/OWNERS)
+
+* **Owners:**
+  * [kubernetes-sigs/node-feature-discovery-operator](https://github.com/kubernetes-sigs/node-feature-discovery-operator/blob/master/OWNERS)
+  * [kubernetes-sigs/node-feature-discovery](https://github.com/kubernetes-sigs/node-feature-discovery/blob/master/OWNERS)
+
 ### node-problem-detector
-- **Owners:**
-  - [kubernetes/node-problem-detector](https://github.com/kubernetes/node-problem-detector/blob/master/OWNERS)
-  - [kubernetes/test-infra/config/jobs/kubernetes/node-problem-detector](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/node-problem-detector/OWNERS)
-- **Contact:**
-  - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
+
+* **Owners:**
+  * [kubernetes/node-problem-detector](https://github.com/kubernetes/node-problem-detector/blob/master/OWNERS)
+  * [kubernetes/test-infra/config/jobs/kubernetes/node-problem-detector](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/node-problem-detector/OWNERS)
+* **Contact:**
+  * Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
+
 ### resource-management
-- **Owners:**
-  - [kubernetes-sigs/dra-example-driver](https://github.com/kubernetes-sigs/dra-example-driver/blob/main/OWNERS)
-  - [kubernetes/kubernetes/pkg/controller/resourceclaim](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/resourceclaim/OWNERS)
-  - [kubernetes/kubernetes/pkg/scheduler/framework/plugins/dynamicresources](https://github.com/kubernetes/kubernetes/blob/master/pkg/scheduler/framework/plugins/dynamicresources/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/dynamic-resource-allocation](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/kubelet/pkg/apis/dra](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubelet/pkg/apis/dra/OWNERS)
-  - [kubernetes/kubernetes/test/e2e/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/dra/OWNERS)
-  - [kubernetes/kubernetes/test/e2e/testing-manifests/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/testing-manifests/dra/OWNERS)
-  - [kubernetes/noderesourcetopology-api](https://github.com/kubernetes/noderesourcetopology-api/blob/master/OWNERS)
+
+* **Owners:**
+  * [kubernetes-sigs/dra-example-driver](https://github.com/kubernetes-sigs/dra-example-driver/blob/main/OWNERS)
+  * [kubernetes/kubernetes/pkg/controller/resourceclaim](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/resourceclaim/OWNERS)
+  * [kubernetes/kubernetes/pkg/scheduler/framework/plugins/dynamicresources](https://github.com/kubernetes/kubernetes/blob/master/pkg/scheduler/framework/plugins/dynamicresources/OWNERS)
+  * [kubernetes/kubernetes/staging/src/k8s.io/dynamic-resource-allocation](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS)
+  * [kubernetes/kubernetes/staging/src/k8s.io/kubelet/pkg/apis/dra](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubelet/pkg/apis/dra/OWNERS)
+  * [kubernetes/kubernetes/test/e2e/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/dra/OWNERS)
+  * [kubernetes/kubernetes/test/e2e/testing-manifests/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/testing-manifests/dra/OWNERS)
+  * [kubernetes/noderesourcetopology-api](https://github.com/kubernetes/noderesourcetopology-api/blob/master/OWNERS)
+
 ### security-profiles-operator
-- **Owners:**
-  - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/main/OWNERS)
-- **Contact:**
-  - Slack: [#security-profiles-operator](https://kubernetes.slack.com/messages/security-profiles-operator)
+
+* **Owners:**
+  * [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/main/OWNERS)
+* **Contact:**
+  * Slack: [#security-profiles-operator](https://kubernetes.slack.com/messages/security-profiles-operator)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
@@ -127,21 +152,21 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 
 The following topics fall under scope of this SIG.
 
-- Kubelet and its features
-- Pod API and Pod behaviors (with [sig-architecture](../sig-architecture))
-- Node API (with [sig-architecture](../sig-architecture))
-- Node controller
-- Node level performance and scalability (with [sig-scalability](../sig-scalability))
-- Node reliability (problem detection and remediation)
-- Node lifecycle management (with [sig-cluster-lifecycle](../sig-cluster-lifecycle))
-- Container runtimes
-- Device management
-- Image management
-- Node-level resource management (with [sig-scheduling](../sig-scheduling))
-- Hardware discovery
-- Issues related to node, pod, container monitoring (with [sig-instrumentation](../sig-instrumentation))
-- Node level security and Pod isolation (with [sig-auth](../sig-auth))
-- Host OS and/or kernel interactions (to a limited extent)
+* Kubelet and its features
+* Pod API and Pod behaviors (with [sig-architecture](../sig-architecture))
+* Node API (with [sig-architecture](../sig-architecture))
+* Node controller
+* Node level performance and scalability (with [sig-scalability](../sig-scalability))
+* Node reliability (problem detection and remediation)
+* Node lifecycle management (with [sig-cluster-lifecycle](../sig-cluster-lifecycle))
+* Container runtimes
+* Device management
+* Image management
+* Node-level resource management (with [sig-scheduling](../sig-scheduling))
+* Hardware discovery
+* Issues related to node, pod, container monitoring (with [sig-instrumentation](../sig-instrumentation))
+* Node level security and Pod isolation (with [sig-auth](../sig-auth))
+* Host OS and/or kernel interactions (to a limited extent)
 
 We also work closely with [sig-storage](../sig-storage) and [sig-network](../sig-network). As you can see, this is a very cross-functional team!
 <!-- END CUSTOM CONTENT -->
