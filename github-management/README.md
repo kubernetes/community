@@ -56,9 +56,7 @@ GitHub organization.
 They also have approval privileges for adding new members to the GitHub config.
 
 Our current coordinators are:
-* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**, Central European)
-* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**, Indian Standard Time)
-* Savitha Raghunathan (**[@savitharaghunathan](https://github.com/savitharaghunathan)**, US Eastern)
+TBD
 
 ## Project Owned Organizations
 
