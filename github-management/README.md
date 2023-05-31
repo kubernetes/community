@@ -27,12 +27,12 @@ we have a GitHub Administration team that is responsible for carrying out the
 various tasks.
 
 This team (**[@kubernetes/owners](https://github.com/orgs/kubernetes/teams/owners)**) is as follows:
-* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**, Central European Time)
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**, US Eastern)
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**, CA Pacific)
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**, Indian Standard Time)
 * Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**, Indian Standard Time)
 * Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**, UA Eastern European)
+* Madhav Jivrajani (**[@MadhavJivrajani](https://github.com/MadhavJivrajani)**, Indian Standard Time)
 
 This team is responsible for holding Org Owner privileges over all the active
 Kubernetes orgs, and will take action in accordance with our polices and
