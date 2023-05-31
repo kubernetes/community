@@ -140,9 +140,9 @@ Google group: <optional>
 
 #### Example
 
-> SIG-Contribex: Weekly Marketing Meeting
+> SIG-Contribex: Weekly Contributor Comms Meeting
 > 
-> https://github.com/kubernetes/community/tree/master/communication/marketing-team
+> https://github.com/kubernetes/community/tree/master/communication/contributor-comms
 > 
 > **Time**: Weekly on Friday from 8-9am PT
 > 

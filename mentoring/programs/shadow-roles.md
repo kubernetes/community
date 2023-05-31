@@ -28,13 +28,13 @@ Production readiness reviews are intended to ensure that features merging into K
 
 The list of roles and duties can be found [here](https://github.com/kubernetes/community/blob/master/sig-architecture/production-readiness.md)
 
-## Upstream Marketing
-The mission of the Kubernetes Upstream Marketing Team is to elevate the hard work being done throughout the Kubernetes 
+## Contributor Comms
+The mission of the Kubernetes Contributor Comms Team is to elevate the hard work being done throughout the Kubernetes 
 community by its contributors. Promoting the work and helping fill the needs of the Kubernetes community is the driving 
-force behind the Kubernetes Upstream Marketing Team. The goal of this work is to improve the overall sustainability of 
+force behind the Kubernetes Contributor Comms Team. The goal of this work is to improve the overall sustainability of 
 the project by giving or elevating information to contributors so they stay well informed.
 
-The list of roles and duties can be found [here](https://github.com/kubernetes/community/blob/master/communication/marketing-team/CHARTER.md)
+The list of roles and duties can be found [here](https://github.com/kubernetes/community/tree/master/communication/contributor-comms/role-handbooks)
 
 ## SIG-Docs-Blog  
 The Kubernetes Blog Subproject is owned by SIG-Docs and run by the Editorial Team.

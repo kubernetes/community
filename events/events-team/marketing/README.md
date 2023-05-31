@@ -63,8 +63,7 @@ are often limited in the content and quantity that may be sent.
 Tweets targeting the current contributor base should use the [@K8sContributors]
 account. There are no restrictions with this account for the amount or kind of
 messages that may be sent. This account may be used for announcements,
-live-tweeting, pictures and more. Reach out to the Kubernetes [upstream marketing
-team] to schedule or use this account.
+live-tweeting, pictures and more. Reach out to the Kubernetes [Contributor Comms] to schedule or use this account.
 
 
 ## Shadow to the Marketing Lead Role
@@ -86,4 +85,4 @@ the Lead.
 [@K8sContributors]: https://twitter.com/K8sContributors
 [@Kubernetesio]: https://twitter.com/kubernetesio
 [CNCF]: https://www.cncf.io/
-[upstream marketing team]: /communication/marketing-team/README.md
+[SIG-ContribEx Contributor Comms team]: /communication/contributor-comms/README.md

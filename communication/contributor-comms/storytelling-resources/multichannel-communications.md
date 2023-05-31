@@ -84,4 +84,4 @@ To find SIG-specific channels, check the Contact column in the [SIG list](https:
 
 ## Questions?
 
-Have a question about what's written here or something else? Reach out to the [marketing team](README.md)!
+Have a question about what's written here or something else? Reach out to the [contributor-comms](../README.md)!

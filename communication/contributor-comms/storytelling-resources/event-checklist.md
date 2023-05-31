@@ -1,4 +1,4 @@
-TODO - this document is intended to outline all Contributor Communications team activities to support a major event, like KubeCon. Please add to the list as we learn. See the [Marketing Team README](./README.md) for info on the team.
+TODO - this document is intended to outline all Contributor Communications team activities to support a major event, like KubeCon. Please add to the list as we learn. See the [contributor-comms README](../README.md) for info on the team.
 
 # Pre-Event (KubeCon) Checklist
 
