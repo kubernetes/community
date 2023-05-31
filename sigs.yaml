@@ -666,13 +666,16 @@ sigs:
     - github: eddiezane
       name: Eddie Zaneski
       company: Chainguard, Inc
-    - github: seans3
-      name: Sean Sullivan
+    - github: natasha41575
+      name: Natasha Sarkar
       company: Google
     tech_leads:
     - github: KnVerey
       name: Katrina Verey
       company: Independent
+    - github: eddiezane
+      name: Eddie Zaneski
+      company: Chainguard, Inc
     - github: soltysh
       name: Maciej Szulik
       company: Red Hat
@@ -683,6 +686,8 @@ sigs:
       name: Fabiano Franz
     - github: pwittrock
       name: Phillip Wittrock
+    - github: seans3
+      name: Sean Sullivan
   meetings:
   - description: Bug Scrub
     day: Wednesday

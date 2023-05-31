@@ -34,13 +34,14 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Independent
 * Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Chainguard, Inc
-* Sean Sullivan (**[@seans3](https://github.com/seans3)**), Google
+* Natasha Sarkar (**[@natasha41575](https://github.com/natasha41575)**), Google
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Independent
+* Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Chainguard, Inc
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 
 ## Emeritus Leads
@@ -48,6 +49,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Tony Ado (**[@AdoHe](https://github.com/AdoHe)**)
 * Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**)
 * Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**)
+* Sean Sullivan (**[@seans3](https://github.com/seans3)**)
 
 ## Contact
 - Slack: [#sig-cli](https://kubernetes.slack.com/messages/sig-cli)
