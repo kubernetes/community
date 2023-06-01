@@ -115,7 +115,7 @@ Miscellaneous tools and configuration to run the testing infrastructure for the 
 | KubeCon EU 2019 - SIG Testing Intro | [Slides](https://static.sched.com/hosted_files/kccnceu19/c8/SIG-Testing%20Intro%20Kubecon%20EU%202019.pdf) | [Video](https://www.youtube.com/watch?v=_uO5gHVTzF8) | @cjwagner, @AishSundar |
 | KubeCon EU 2019 - SIG Testing Deep Dive | TBD | [Video](https://www.youtube.com/watch?v=6m9frvTxK0o) | @BenTheElder, @munnerz |
 | KubeCon EU 2019 - Testing Your K8s Apps with Kind | TBD | [Video](https://www.youtube.com/watch?v=8KtmevMFfxA) | @BenTheElder, @munnerz | 
-| KubeCon NA 2019 - SIG Testing Intro | [Slides](https://static.sched.com/hosted_files/kccncna19/50/Sig-Testing%20Intro%20Presentation.pdf) | [Video](https://www.youtube.com/watch?v=WFvC_VdkDFk) | @chases2, @fejta
+| KubeCon NA 2019 - SIG Testing Intro | [Slides](https://static.sched.com/hosted_files/kccncna19/50/Sig-Testing%20Intro%20Presentation.pdf) | [Video](https://www.youtube.com/watch?v=ER1H9OPPYew) | @chases2, @fejta
 | KubeCon NA 2022 - SIG Testing: Intro And Updates | TBD | [Video](https://www.youtube.com/watch?v=CdKBl6CncHg) | @BenTheElder, @michelle192837, @chaodaiG, @aojea
 
 
