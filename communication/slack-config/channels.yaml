@@ -53,6 +53,7 @@ channels:
     archived: true
   - name: cluster-addons
   - name: cluster-api
+  - name: cluster-api-addon-helm
   - name: cluster-api-aws
   - name: cluster-api-aws-alerts
   - name: cluster-api-azure
