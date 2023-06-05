@@ -1213,6 +1213,14 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
+    meetings:
+    - description: Cluster API Provider OpenStack Office Hours
+      day: Wednesday
+      time: "14:00"
+      tz: UTC
+      frequency: alternate weeks, check agenda doc for last meeting
+      url: https://zoom.us/j/91405526408?pwd=bVBxempwVDBzejJGQlhSOGlXZnRxUT09
+      archive_url: https://docs.google.com/document/d/1hzi6nr04mhQYBKrwL2NDTNPvgI4RgO9a-gqmk31kXMA/edit?usp=sharing
   - name: cluster-api-provider-packet
     description: Cluster API infrastructure provider for Packet
     contact:
