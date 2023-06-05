@@ -1,0 +1,68 @@
+name: Leadership Change
+description: Onboarding / Offboarding checklist for SIG/WG leads
+title: "<SIG/WG FOO>: Leadership Change"
+body:
+- id: group
+  type: input
+  attributes:
+    label: "SIG/WG name:"
+    placeholder: "SIG foo"
+- id: leader_onboarding
+  type: input
+  attributes:
+    label: "Onboarding Lead(s):"
+    placeholder: GitHub handle(s) of the new leads
+- id: leader_offboarding
+  type: input
+  attributes:
+    label: "Offboarding Lead(s):"
+    placeholder: GitHub handle(s) of the previous leads
+- type: markdown
+  attributes:
+    value: |
+      **Process to initiate leadership change**
+
+
+      An email should be sent to the SIG/WG and [kubernetes dev](https://groups.google.com/a/kubernetes.io/g/dev)
+      mailing lists with the following:
+      - Intent to step down / nominate a new lead
+        - If nominating a new lead:
+          - 1-2 lines about why they are being nominated, and links to any potential meeting notes where the change was
+            discussed.
+          - Contacts to privately reach out to for questions (current leads) or concerns (current leads +
+            steering-private@kubernetes.io about the nomination
+          - lazy consensus deadline of at least one week
+- id: discussion_link
+  type: input
+  attributes:
+    label: "Link to discussion:"
+- id: new_lead_prereqs
+  type: checkboxes
+  attributes:
+    label: "Prerequisites for new leads:"
+    options:
+    - label: Are a [Kubernetes Org member](https://git.k8s.io/community/community-membership.md)
+    - label: Have completed the [Inclusive Open Source Community Orientation course](https://training.linuxfoundation.org/training/inclusive-open-source-community-orientation-lfc102/)
+- id: req_checklist
+  type: checkboxes
+  attributes:
+    label: "Onboarding / Offboarding tasks:"
+    options:
+    - label: Updated [sigs.yaml](https://git.k8s.io/community/sigs.yaml) and associated [generated files](https://git.k8s.io/community/generator) (ran `make`). **NOTE:** If offboarding, remember to add to emeritus.
+    - label: Updated [OWNERS_ALIASES](https://git.k8s.io/org/OWNERS_ALIASES) in [kubernetes/org](https://git.k8s.io/org/).
+    - label: Updated [milestone maintainers team](https://git.k8s.io/org/config/kubernetes/sig-release/teams.yaml) in [kubernetes/org](https://git.k8s.io/org/).
+    - label: Checked for and updated any other potential teams in [kubernetes/org](https://git.k8s.io/org/).
+    - label: Updated [OWNERS_ALIASES](https://github.com/kubernetes/enhancements/OWNERS_ALIASES) in [kubernetes/enhancements](https://github.com/kubernetes/enhancements).
+    - label: Updated [OWNERS_ALIASES](https://git.k8s.io/k8s.io/OWNERS_ALIASES) in [kubernetes/k8s.io](https://git.k8s.io/k8s.io/).
+    - label: "[Updated membership]((https://git.k8s.io/k8s.io//groups/groups.yaml) of the [leads mailing list](https://groups.google.com/a/kubernetes.io/g/leads)"
+    - label: "Updated membership for any other [mailing list / groups](https://git.k8s.io/k8s.io//groups/)."
+    - label: "Added to `#chairs-and-techleads` slack channel."
+    - label: Updated ownership of group leads mailing list.
+    - label: Updated ownership of group mailing list.
+    - label: Updated ownership of group calendar.
+    - label: Updated access/teams in 1password. (Contact ContribEx leads to complete)
+- id: additional_info
+  type: textarea
+  attributes:
+    label: "Additional Information:"
+    placeholder: "Other links to leadership discussions etc."
