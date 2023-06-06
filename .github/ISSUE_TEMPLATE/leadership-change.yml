@@ -52,9 +52,9 @@ body:
     - label: Updated [OWNERS_ALIASES](https://git.k8s.io/org/OWNERS_ALIASES) in [kubernetes/org](https://git.k8s.io/org/).
     - label: Updated [milestone maintainers team](https://git.k8s.io/org/config/kubernetes/sig-release/teams.yaml) in [kubernetes/org](https://git.k8s.io/org/).
     - label: Checked for and updated any other potential teams in [kubernetes/org](https://git.k8s.io/org/).
-    - label: Updated [OWNERS_ALIASES](https://github.com/kubernetes/enhancements/OWNERS_ALIASES) in [kubernetes/enhancements](https://github.com/kubernetes/enhancements).
+    - label: Updated [OWNERS_ALIASES](https://git.k8s.io/enhancements/OWNERS_ALIASES) in [kubernetes/enhancements](https://github.com/kubernetes/enhancements).
     - label: Updated [OWNERS_ALIASES](https://git.k8s.io/k8s.io/OWNERS_ALIASES) in [kubernetes/k8s.io](https://git.k8s.io/k8s.io/).
-    - label: "[Updated membership]((https://git.k8s.io/k8s.io//groups/groups.yaml) of the [leads mailing list](https://groups.google.com/a/kubernetes.io/g/leads)"
+    - label: "Updated [membership](https://git.k8s.io/k8s.io//groups/groups.yaml) of the [leads mailing list](https://groups.google.com/a/kubernetes.io/g/leads)"
     - label: "Updated membership for any other [mailing list / groups](https://git.k8s.io/k8s.io//groups/)."
     - label: "Added to `#chairs-and-techleads` slack channel."
     - label: Updated ownership of group leads mailing list.
