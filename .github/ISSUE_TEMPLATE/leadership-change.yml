@@ -23,8 +23,7 @@ body:
       **Process to initiate leadership change**
 
 
-      An email should be sent to the SIG/WG and [kubernetes dev](https://groups.google.com/a/kubernetes.io/g/dev)
-      mailing lists with the following:
+      An email should be sent to the SIG/WG and [kubernetes dev](https://groups.google.com/a/kubernetes.io/g/dev) mailing lists with the following:
       - Intent to step down / nominate a new lead
         - If nominating a new lead:
           - 1-2 lines about why they are being nominated, and links to any potential meeting notes where the change was
@@ -64,5 +63,12 @@ body:
 - id: additional_info
   type: textarea
   attributes:
-    label: "Additional Information:"
+    label: "Additional information:"
     placeholder: "Other links to leadership discussions etc."
+- id: labels
+  type: textarea
+  attributes:
+    label: "Labels:"
+    placeholder: |
+      /sig foo
+      /assign bar
