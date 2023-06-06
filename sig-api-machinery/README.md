@@ -33,7 +33,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
-* Daniel Smith (**[@lavalamp](https://github.com/lavalamp)**), Google
+* Joe Betz (**[@jpbetz](https://github.com/jpbetz)**), Google
 
 ## Contact
 - Slack: [#sig-api-machinery](https://kubernetes.slack.com/messages/sig-api-machinery)
