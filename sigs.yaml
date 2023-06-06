@@ -1085,6 +1085,10 @@ sigs:
       solution for Cluster API using Helm.
     owners:
     - https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/blob/main/OWNERS
+  - name: cluster-api-ipam-provider-in-cluster
+    description: Cluster API IPAM provider
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-ipam-provider-in-cluster/main/OWNERS
   - name: cluster-api-operator
     description: Leverages a declarative API and an operator to empower admins to
       handle the lifecycle of Cluster API providers within the management cluster
