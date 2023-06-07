@@ -76,6 +76,10 @@ A project focused on providing declarative APIs and tooling to simplify provisio
 Implementation of Cluster Add-on Provider for Helm, an add-on orchestration solution for Cluster API using Helm.
 - **Owners:**
   - [kubernetes-sigs/cluster-api-addon-provider-helm](https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/blob/main/OWNERS)
+### cluster-api-ipam-provider-in-cluster
+Cluster API IPAM provider
+- **Owners:**
+  - [kubernetes-sigs/cluster-api-ipam-provider-in-cluster](https://github.com/kubernetes-sigs/cluster-api-ipam-provider-in-cluster/blob/main/OWNERS)
 ### cluster-api-operator
 Leverages a declarative API and an operator to empower admins to handle the lifecycle of Cluster API providers within the management cluster
 - **Owners:**
