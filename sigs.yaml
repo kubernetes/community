@@ -2784,12 +2784,12 @@ sigs:
   label: testing
   leadership:
     chairs:
+    - github: jbpratt
+      name: Brady Pratt
+      company: Red Hat
     - github: michelle192837
       name: Michelle Shepardson
       company: Google
-    - github: stevekuznetsov
-      name: Steve Kuznetsov
-      company: Red Hat
     - github: xmcqueen
       name: Brian McQueen
       company: LinkedIn
@@ -2814,6 +2814,8 @@ sigs:
       name: Erick Fejta
     - github: spiffxp
       name: Aaron Crickenberger
+    - github: stevekuznetsov
+      name: Steve Kuznetsov
     - github: timothysc
       name: Timothy St. Clair
   meetings:

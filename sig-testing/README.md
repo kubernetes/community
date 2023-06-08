@@ -23,8 +23,8 @@ The [charter](charter.md) defines the scope and governance of the Testing Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Brady Pratt (**[@jbpratt](https://github.com/jbpratt)**), Red Hat
 * Michelle Shepardson (**[@michelle192837](https://github.com/michelle192837)**), Google
-* Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**), Red Hat
 * Brian McQueen (**[@xmcqueen](https://github.com/xmcqueen)**), LinkedIn
 
 ### Technical Leads
@@ -41,6 +41,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Erick Fejta (**[@fejta](https://github.com/fejta)**)
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**)
+* Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**)
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**)
 
 ## Contact
