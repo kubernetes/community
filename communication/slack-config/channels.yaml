@@ -107,6 +107,7 @@ channels:
   - name: druid-operator
   - name: ebpf
   - name: eks
+  - name: eksctl
   - name: elastickube
   - name: elk-charts
     archived: true
