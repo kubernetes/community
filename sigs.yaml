@@ -1633,6 +1633,8 @@ sigs:
       description: Documentation PR reviews
     - name: sig-docs-pt-owners
       description: Portuguese language content
+    - name: sig-docs-ru-owners
+      description: Russian language content
     - name: sig-docs-uk-owners
       description: Ukrainian language content
     - name: sig-docs-zh-owners
