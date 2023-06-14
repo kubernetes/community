@@ -58,7 +58,6 @@ members will assume one of the departing members groups.
 | [WG Batch](wg-batch/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [WG Data Protection](wg-data-protection/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG IoT Edge](wg-iot-edge/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
-| [WG Multitenancy](wg-multitenancy/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG Policy](wg-policy/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG Structured Logging](wg-structured-logging/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [UG VMware Users](ug-vmware-users/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |

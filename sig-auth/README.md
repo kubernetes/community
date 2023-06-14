@@ -64,7 +64,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-auth:
-* [WG Multitenancy](/wg-multitenancy)
 * [WG Policy](/wg-policy)
 
 

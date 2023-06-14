@@ -67,7 +67,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 The following [working groups][working-group-definition] are sponsored by sig-network:
 * [WG IoT Edge](/wg-iot-edge)
-* [WG Multitenancy](/wg-multitenancy)
 * [WG Policy](/wg-policy)
 * [WG Structured Logging](/wg-structured-logging)
 

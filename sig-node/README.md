@@ -53,7 +53,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 The following [working groups][working-group-definition] are sponsored by sig-node:
 * [WG Batch](/wg-batch)
-* [WG Multitenancy](/wg-multitenancy)
 * [WG Policy](/wg-policy)
 * [WG Structured Logging](/wg-structured-logging)
 
