@@ -81,7 +81,7 @@ election will serve out the remainder of the term for the person they are
 replacing, regardless of the length of that remainder.
 
 In the event that the committee votes to dissolve in its entirety an entirely
-new special election will he held by the steering committee instead of filling
+new special election will be held by the steering committee instead of filling
 with names from the previous election. Those elected will complete the remaining
 terms of the previous, dissolved, committee. With those receiving the highest
 votes receiving the longest term.
