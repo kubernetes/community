@@ -52,7 +52,6 @@ members will assume one of the departing members groups.
 | [SIG Storage](sig-storage/README.md) | Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**) |
 | [SIG Testing](sig-testing/README.md) | Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**) |
 | [SIG UI](sig-ui/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
-| [SIG Usability](sig-usability/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [SIG Windows](sig-windows/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG API Expression](wg-api-expression/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG Batch](wg-batch/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |

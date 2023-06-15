@@ -449,6 +449,7 @@ channels:
   # sig-testing channels are defined in sig-testing/
   - name: sig-ui
   - name: sig-usability
+    archived: true
   - name: sig-windows
   - name: sig-windows-leads
   - name: skaffold
