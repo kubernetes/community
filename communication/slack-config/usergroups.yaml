@@ -298,4 +298,22 @@ usergroups:
       - mspreitz
       - ezra
       - paolo
-      
+
+  - name: cert-manager-maintainers
+    long_name: cert-manager Maintainers
+    description: The maintainers of the cert-manager project.
+    channels:
+      - cert-manager-dev
+      - cert-manager
+    # To get that list, run the following:
+    #  curl https://raw.githubusercontent.com/cert-manager/cert-manager/master/OWNERS | yq .approvers
+    members:
+      - munnerz
+      - joshvanl
+      - wallrj
+      - jakexks
+      - maelvls
+      - irbekrm
+      - sgtcodfish
+      - inteon
+
