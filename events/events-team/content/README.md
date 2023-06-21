@@ -26,7 +26,7 @@ All roles may have shadows.  Click the role name for that role's Handbook.
 [Programmed Sessions]: ./session-manager.md
 [Unconference]: ./unconference.md
 [Contributor Workshops]: ./contributor-workshops.md
-[SIG Face-to-Face]: ./sig-contrib-events.md
-[SIG Meet & Greet]: ./sig-contrib-events.md
+[SIG Face-to-Face]: ./sig-f2f.md
+[SIG Meet & Greet]: ./meet-and-greet.md
 [Social Event Content]: ./social-content.md
 [Awards Ceremony]: ./awards-ceremony.md
