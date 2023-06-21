@@ -999,11 +999,11 @@ func getCategorizedWorkingGroups(dir string) (map[string][]string, error) {
 	return workingGroupsMap, nil
 }
 
-func main() {
-	// prep for automated listing of subprojects in the annual report
+// prep for automated listing of subprojects in the annual report
+func prepForAnnualReportGeneration() error {
 	intLastYear, err := strconv.Atoi(lastYear())
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 	annualReportYear = time.Date(intLastYear, time.January, 1, 0, 0, 0, 0, time.UTC)
 	currentYear = time.Date(intLastYear+1, time.January, 1, 0, 0, 0, 0, time.UTC)
@@ -1015,35 +1015,39 @@ func main() {
 				URL: communityRepoURL,
 			})
 		} else {
-			log.Fatal(err)
+			return err
 		}
 	}
 
 	commitFromAnnualReportYear, err = getCommitByDate(repo, annualReportYear)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
 	commitFromCurrentYear, err = getCommitByDate(repo, currentYear)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
 	// fetch KEPs and cache them in the keps variable
 	err = fetchKEPs()
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
 	releases, err = getLastThreeK8sReleases()
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
+	return nil
+}
+
+func main() {
 	yamlPath := filepath.Join(baseGeneratorDir, sigsYamlFile)
 	var ctx Context
 
-	err = readYaml(yamlPath, &ctx)
+	err := readYaml(yamlPath, &ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -1076,6 +1080,9 @@ func main() {
 	}
 
 	if envVal, ok := os.LookupEnv("ANNUAL_REPORT"); ok && envVal == "true" {
+		if err := prepForAnnualReportGeneration(); err != nil {
+			log.Fatal(err)
+		}
 		fmt.Println("Generating annual reports")
 		for prefix, groups := range ctx.PrefixToGroupMap() {
 			err = createAnnualReportIssue(groups, prefix)
