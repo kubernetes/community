@@ -413,7 +413,7 @@ works fine when the user creates a sends a hand-written configuration --
 clients can write either field and read either field.
 
 But what about creation or update from the output of a GET, or update via PATCH
-(see [In-place updates](https://kubernetes.io/docs/user-guide/managing-deployments/#in-place-updates-of-resources))?
+(see [In-place updates](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/#in-place-updates-of-resources))?
 In these cases, the two fields will conflict, because only one field would be
 updated in the case of an old client that was only aware of the old field
 (e.g. `height`).
