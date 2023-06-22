@@ -35,6 +35,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-security-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-security-pr-reviews) - SIG Security PR review notifications
 - Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-security:
+* [WG LTS](/wg-lts)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-security:

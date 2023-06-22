@@ -10,12 +10,12 @@ and uses the Roles and Organization Management outlined in [sig-governance].
 
 The Long Term Support Working Group (WG LTS) is organized with the goal of developing a better understanding what "Long Term Support" might mean for Kubernetes, those who support Kubernetes, and end users, as well as to investigate changes the Kubernetes project could make related to long term support. The working group will also determine feasibility, benefits, **costs**, and prerequisites of such changes.
 
-In the first phase of the working group, we will collect information related to the needs and wants regarding support periods from end-users and people supporting Kubernetes. This will be done by reaching out to users and cluster operators (e.g. via surveys), to better understand:
+In the first phase of the working group, we will collect information related to the needs and wants regarding support periods from end-users and people supporting Kubernetes. This will be accomplished by reaching out to users and cluster operators (e.g., through surveys) in order to gain a better understanding, including, but not restricted to:
 
 * in-use versions (in the form of a user/vendor survey) and reasons for remaining on those versions
 * constraints on deployment and upgrade patterns / timelines (e.g. edge deployments, regulated industries, retail, etc)
 * expected/required support periods from users/vendors
-* support periods of core Kubernetes dependencies
+* core Kubernetes dependencies and their support periods
 * support periods of other components required to run Kubernetes clusters (OS, network, storage, etc)
 * what users/vendors are currently doing to support releases past community support End Of Life (EOL)
 * what do users/vendors do with EOL clusters today? what would they do if EOL was extended by N months/years?
@@ -40,8 +40,8 @@ With this information, we will investigate changes the Kubernetes project could 
   * Costs of Kubernetes releases in terms of:
     * Infrastructure
     * People
-- Initiate and drive cross-SIG changes related to long term support.
-- Identify ways to that vendors and other community members can better support Kubernetes releases.
+- Initiating and driving cross-SIG changes related to long term support.
+- Identifing ways to that vendors and other community members can better support Kubernetes releases.
 
 ### Out of scope
 
@@ -78,7 +78,7 @@ Improvements identified will likely involve every SIG, but the list above are id
 
 The artifacts the group is supposed to deliver include:
 - Survey results better describing Kubernetes version use patterns, deployment constraints, and upgrade patterns.
-- Recommend changes Kubernetes SIGS can make that will provide broad benefits in a sustainable/affordable way. This would likely take the form of one or more KEPs.
+- Recommend changes Kubernetes SIGs can make that will provide broad benefits in a sustainable/affordable way. This would likely take the form of one or more KEPs.
 - Recommend ways users/vendors who want to maximize Kubernetes support can consume Kubernetes
 
 Any changes identified will be owned by corresponding SIGs.
@@ -92,4 +92,6 @@ This working group adheres to the Roles and Organization Management outlined in
 
 ## Timelines and Disbanding
 
-The exact timeline for this working group is hard to define at this time. If we are unable to define a common long term support definition for Kubernetes, we will disband the working group. If we are unable to define improvements related to an agreed upon definition, we will also disband the working group. In order to evaluate our progress toward the working group goals, we will provide periodic updates to the stakeholder SIGs and committees at least every six months, in addition to a working group annual report.   
+The exact timeline for this working group is hard to define at this time. If we are unable to define a common long term support definition for Kubernetes, we will disband the working group. If we are unable to define improvements related to an agreed upon definition, we will also disband the working group. In order to evaluate our progress toward the working group goals, we will provide periodic updates to the stakeholder SIGs and committees at least every six months, in addition to a working group annual report.
+
+Additionally, if the working group determines that the Kubernetes project does not have sufficient resources, nor commmitments for future resources to support relevant proposed changes, the working group will also disband.

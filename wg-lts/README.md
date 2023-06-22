@@ -8,17 +8,18 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # LTS Working Group
 
-Define LTS
+The working group is organized with the goal of developing a better understanding of what "Long Term Support" might mean for Kubernetes, those who support  Kubernetes, and end users. The working group will investigate changes the Kubernetes project could make related this better understanding of what long term support might mean. The working group will also determine the feasibility, benefits, **cost**, and prerequisites  of any such changes.s
 
 ## Stakeholder SIGs
 * [SIG Architecture](/sig-architecture)
 * [SIG Cluster Lifecycle](/sig-cluster-lifecycle)
 * [SIG K8s Infra](/sig-k8s-infra)
 * [SIG Release](/sig-release)
+* [SIG Security](/sig-security)
 * [SIG Testing](/sig-testing)
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-lts) for the group will typically add invites for the following meetings to your calendar.*
+*Joining the [mailing list](TBD) for the group will typically add invites for the following meetings to your calendar.*
 * Regular WG Meeting: [TBDs at TBD PT (Pacific Time)](TBD) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=TBD&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](TBD).
   * [Meeting recordings](TBD).
@@ -31,7 +32,7 @@ Define LTS
 
 ## Contact
 - Slack: [#wg-lts](https://kubernetes.slack.com/messages/wg-lts)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-lts)
+- [Mailing list](TBD)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Flts)
 - Steering Committee Liaison: TBD (**[@TBD](https://github.com/TBD)**)
 <!-- BEGIN CUSTOM CONTENT -->
