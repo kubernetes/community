@@ -80,6 +80,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-docs-pl-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pl-owners) - Polish language content
     - [@kubernetes/sig-docs-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-docs-pr-reviews) - Documentation PR reviews
     - [@kubernetes/sig-docs-pt-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) - Portuguese language content
+    - [@kubernetes/sig-docs-ru-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ru-owners) - Russian language content
     - [@kubernetes/sig-docs-uk-owners](https://github.com/orgs/kubernetes/teams/sig-docs-uk-owners) - Ukrainian language content
     - [@kubernetes/sig-docs-zh-owners](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) - Chinese language content
 - Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
