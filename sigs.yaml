@@ -21,8 +21,8 @@ sigs:
     - github: deads2k
       name: David Eads
       company: Red Hat
-    - github: lavalamp
-      name: Daniel Smith
+    - github: jpbetz
+      name: Joe Betz
       company: Google
   meetings:
   - description: Kubebuilder and Controller Runtime Meeting
