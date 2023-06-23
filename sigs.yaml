@@ -1666,6 +1666,119 @@ sigs:
   - name: website
     owners:
     - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+- dir: sig-etcd
+  name: etcd
+  mission_statement: >
+    Make etcd the best production-ready store for building cloud-native distributed
+    systems and managing cloud-native infrastructure via orchestrators like Kubernetes.
+
+    Etcd should provide distributed system primitives** (such as distributed locking
+    and leader election) that allow users to **create scalable, highly available and
+    fault-tolerant systems.
+
+    Etcd is the place to store the infrastructure configuration, not only as part
+    of Kubernetes, but also as a standalone solution.
+
+  charter_link: charter.md
+  label: etcd
+  leadership:
+    chairs:
+    - github: ahrtr
+      name: Benjamin Wang
+      company: VMWare
+    - github: serathius
+      name: Marek Siarkowicz
+      company: Google
+    tech_leads:
+    - github: ahrtr
+      name: Benjamin Wang
+      company: VMWare
+    - github: serathius
+      name: Marek Siarkowicz
+      company: Google
+  meetings:
+  - description: Regular SIG Meeting
+    day: Thursday
+    time: "9:30"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://meet.google.com/umg-nrxn-qvs
+    archive_url: https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit?usp=sharing
+  contact:
+    slack: etcd
+    mailing_list: https://groups.google.com/g/etcd-dev
+    teams:
+    - name: sig-etcd-leads
+      description: SIG Chairs and Tech Leads
+    liaison:
+      github: TBD
+      name: TBD
+  subprojects:
+  - name: bbolt
+    description: An embedded key/value database for Go.
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/bbolt/master/MAINTAINERS
+  - name: cetcd
+    description: Serve Consul with etcd
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/cetcd/master/MAINTAINERS
+  - name: dbtester
+    description: Distributed database benchmark tester
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/dbtester/master/MAINTAINERS
+  - name: discovery.etcd.io
+    description: Kubernetes manifests powering discovery.etcd.io
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/discovery.etcd.io/master/MAINTAINERS
+  - name: discoveryserver
+    description: Public etcd Discovery Service
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/discoveryserver/master/MAINTAINERS
+  - name: etcd
+    description: Distributed reliable key-value store for the most critical data of
+      a distributed system
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/etcd/master/MAINTAINERS
+  - name: etcd-play
+    description: etcd playground
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/etcd-play/master/MAINTAINERS
+  - name: etcdlabs
+    description: etcd playground
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/etcdlabs/master/MAINTAINERS
+  - name: gofail
+    description: failpoints for go
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/gofail/master/MAINTAINERS
+  - name: govanityurls
+    description: Use a custom domain in your Go import path
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/govanityurls/master/MAINTAINERS
+  - name: jetcd
+    description: etcd java client
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/jetcd/master/MAINTAINERS
+  - name: maintainers
+    description: issue tracking for project wide non-code concerns
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/maintainers/master/MAINTAINERS
+  - name: protodoc
+    description: protodoc generates Protocol Buffer documentation.
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/protodoc/master/MAINTAINERS
+  - name: raft
+    description: Raft library for maintaining a replicated state machine
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/raft/master/MAINTAINERS
+  - name: website
+    description: etcd-io
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/website/master/MAINTAINERS
+  - name: zetcd
+    description: Serve the Apache Zookeeper API but back it with an etcd cluster
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/zetcd/master/MAINTAINERS
 - dir: sig-instrumentation
   name: Instrumentation
   mission_statement: >

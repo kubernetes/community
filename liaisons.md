@@ -40,6 +40,7 @@ members will assume one of the departing members groups.
 | [SIG Cluster Lifecycle](sig-cluster-lifecycle/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [SIG Contributor Experience](sig-contributor-experience/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Docs](sig-docs/README.md) | Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**) |
+| [SIG etcd](sig-etcd/README.md) | TBD (**[@TBD](https://github.com/TBD)**) |
 | [SIG Instrumentation](sig-instrumentation/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [SIG K8s Infra](sig-k8s-infra/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG Multicluster](sig-multicluster/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
