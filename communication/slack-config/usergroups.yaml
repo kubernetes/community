@@ -307,6 +307,8 @@ usergroups:
       - cert-manager
     # To get that list, run the following:
     #  curl https://raw.githubusercontent.com/cert-manager/cert-manager/master/OWNERS | yq .approvers
+    # Note that you will then need to find your Slack User ID (look up in Stackoverflow)
+    # and copy it to the users.yaml file in this repository.
     members:
       - munnerz
       - joshvanl
