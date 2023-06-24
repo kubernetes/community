@@ -1330,7 +1330,7 @@ Most trends are consistent across levels of the contributor ladder. The one exce
 ![png](https://drive.google.com/uc?export=view&id=1oj9pho7UzFI1E9wuHhnKN_RUT_7U87oo)
 
 
-Most areas saw increases in contributors, with the exception of code inside Kubernetes/Kubernetes and other. This reflects the continuing effort to only keep core code in the Kubernetes/Kuberenetes repository, moving other contributions to additional repositories in the Kubernetes organization. 
+Most areas saw increases in contributors, with the exception of code inside Kubernetes/Kubernetes and other. This reflects the continuing effort to only keep core code in the Kubernetes/Kubernetes repository, moving other contributions to additional repositories in the Kubernetes organization. 
 
 
 ```python
