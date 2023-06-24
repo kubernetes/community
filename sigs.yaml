@@ -3414,9 +3414,6 @@ committees:
     - github: joelsmith
       name: Joel Smith
       company: Red Hat
-    - github: lukehinds
-      name: Luke Hinds
-      company: Red Hat
     - github: micahhausler
       name: Micah Hausler
       company: Amazon
