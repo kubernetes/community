@@ -1,7 +1,7 @@
 ---
 title: "Getting Started"
 weight: 1
-aliases: [ "/guide" ]
+aliases: ["/guide"]
 description:
   A small list of things that you should read and be familiar with before you
   get started with contributing. This includes such things as signing the
@@ -46,7 +46,7 @@ is welcome!
 Welcome to Kubernetes! This guide is broken up into the following sections.
 It is recommended that you follow these steps in order:
 
-- [Welcome](#welcome) - this page 
+- [Welcome](#welcome) - this page
 - [Prerequisites](#prerequisites) - tasks you need to complete before
   you can start contributing to Kubernetes
 - [Your First Contribution](./first-contribution.md) - things you'll need to know
@@ -58,21 +58,21 @@ It is recommended that you follow these steps in order:
 
 Before submitting code to Kubernetes, you should first complete the following
 prerequisites. These steps are checked automatically by [a bot] during your
-first submission.  Completing these steps will make your first contribution
-easier: 
+first submission. Completing these steps will make your first contribution
+easier:
 
 ### Create a GitHub account
 
-Before you get started, you will need to [sign up](http://github.com/signup) for a GitHub user account. 
+Before you get started, you will need to [sign up](http://github.com/signup) for a GitHub user account.
 
 ### Sign the CLA
 
 Before you can contribute to Kubernetes, you will need to sign the
-[Contributor License Agreement].  
+[Contributor License Agreement].
 
 ### Code of Conduct
 
-Please make sure to read and observe the [Code of Conduct] and 
+Please make sure to read and observe the [Code of Conduct] and
 [Community Values]
 
 ### Setting up your development environment
@@ -88,15 +88,15 @@ for how to set up your environment.
 Kubernetes is a community project. Consequently, it is wholly dependent on its
 community to provide a productive, friendly, and collaborative environment.
 
-- Read and review the [Community Expectations] for an 
+- Read and review the [Community Expectations] for an
   understanding of code and review expectations.
-- See [Community Membership][CM] for a list the various 
-  responsibilities of contributor roles. 
+- See [Community Membership][CM] for a list of the various
+  responsibilities of contributor roles.
 - You are encouraged to move up this contributor ladder as you gain experience.
 
 ## Kubernetes Contributor Playground
 
-If you are looking for a safe place, where you can familiarize yourself with 
+If you are looking for a safe place, where you can familiarize yourself with
 the pull request and issue review process in Kubernetes, then the
 [Kubernetes Contributor Playground] is the right place for you.
 
@@ -126,7 +126,7 @@ community events is available on the CNCF [Events] pages.
 ### Meetups
 
 All Kubernetes meetups follow the general [Cloud Native Computing Foundation Guidelines]
-You may also contact CNCF Staff driving the Community Groups  (previously known
+You may also contact CNCF Staff driving the Community Groups (previously known
 as Meetups) program by email (meetups@cncf.io)
 
 ### Mentorship
@@ -140,7 +140,6 @@ do not need to interact with regularly.
 
 - [OWNERS files] - The Kubernetes organizations are managed with OWNERS files,
   which outline which parts of the code are owned by what groups.
-
 
 [a bot]: https://github.com/k8s-ci-robot
 [Contributor License Agreement]: /CLA.md
