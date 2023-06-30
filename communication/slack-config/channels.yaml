@@ -383,6 +383,7 @@ channels:
   - name: pl-users
   - name: podman-desktop
   - name: pr-reviews
+  - name: primaza
   - name: prometheus
   - name: prometheus-operator
   - name: prometheus-operator-dev
