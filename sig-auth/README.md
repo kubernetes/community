@@ -127,10 +127,6 @@ API storage support for storing data encrypted at rest in etcd.
 Controller to manage hierarchical namespaces
 - **Owners:**
   - [kubernetes-sigs/hierarchical-namespaces](https://github.com/kubernetes-sigs/hierarchical-namespaces/blob/master/OWNERS)
-### multi-tenancy
-Proposals and prototypes for introducing tenant model to enable multi-tenant cluster
-- **Owners:**
-  - [kubernetes-sigs/multi-tenancy](https://github.com/kubernetes-sigs/multi-tenancy/blob/master/OWNERS)
 ### node-identity-and-isolation
 Node identity management (co-owned with sig-lifecycle), and authorization restrictions for isolating workloads on separate nodes (co-owned with sig-node).
 - **Owners:**
