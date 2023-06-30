@@ -241,7 +241,7 @@ with the current state.
 ### How inactivity is measured
 
 Inactive members are defined as members of one of the Kubernetes Organizations
-with **no** contributions across any organization within 18 months. This is
+with **no** contributions across any organization within 12 months. This is
 measured by the CNCF [DevStats project].
 
 **Note:** Devstats does not take into account non-code contributions. If a
