@@ -29,7 +29,7 @@ below.
 
 ## Member
 
-Members are continuously active contributors in the community.  They can have
+Members are *[continuously active]* contributors in the community. They can have
 issues and PRs assigned to them, participate in SIGs through GitHub teams, and
 pre-submit tests are automatically run for their PRs. Members are expected to
 remain active contributors to the community.
@@ -39,11 +39,19 @@ remain active contributors to the community.
 ### Requirements
 
 - Enabled [two-factor authentication] on their GitHub account
-- Have made multiple contributions to the project or community.  Contribution may include, but is not limited to:
-    - Authoring or reviewing PRs on GitHub. At least one PR must be **merged**.
+- Have made **multiple contributions** to the project or community, enough to
+  demonstrate an **ongoing and long-term commitment** to the project.
+  Contributions may include, but is not limited to:
+    - Authoring or reviewing PRs on GitHub, with at least one **merged** PR.
+      **NOTE:** The PR(s) must demonstrate an ongoing and active commitment.
+      A few examples include:
+      - A single KEP that has taken several weeks of driving consensus
+      - A larger number of smaller PRs over several weeks to months
+      - A smaller number of complex or technical PRs that required working with
+        community members to resolve an issue (e.g. regressions, bugs fixes etc)
     - Filing or commenting on issues on GitHub
-    - Contributing to SIG, subproject, or community discussions (e.g. meetings, Slack, email discussion
-      forums, Stack Overflow)
+    - Contributing to SIG, subproject, or community discussions (e.g. meetings,
+      Slack, email discussion forums)
 - Subscribed to [dev@kubernetes.io]
 - Have read the [contributor guide]
 - Actively contributing to 1 or more subprojects.
@@ -272,3 +280,4 @@ before being able to contribute effectively.
 [two-factor authentication]: https://help.github.com/articles/about-two-factor-authentication
 [elevated set of permissions]: #Responsibilities-and-privileges
 [Devstats project]: https://k8s.devstats.cncf.io/
+[continuously active]: #inactive-members
