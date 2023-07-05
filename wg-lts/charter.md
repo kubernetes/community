@@ -69,6 +69,8 @@ Any changes identified by this working group will require involvement and invest
   Input on infrastructure costs related to increased support period(s).
 - SIG Release
   Input on maintaining older branches and additional releases.
+- SIG Security
+  Input on vulnerability management process and audits for additional releases.
 - SIG Testing
   Input on testing impacts related to upgrades and longer test periods. 
   
