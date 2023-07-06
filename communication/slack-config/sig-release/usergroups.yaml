@@ -92,18 +92,19 @@ usergroups:
       - sig-release
     members:
       - cjcullen # Product Security Committee
+      - cji # Product Security Committee
       - cici37 # Release Manager
       - cpanato # subproject owner / Release Manager
+      - enj # Produce Security Committee
       - jeremyrickard # subproject owner / Release Manager
       - joelsmith # Product Security Committee
       - justaugustus # subproject owner / Release Manager
-      - lukehinds # Product Security Committee
       - micahhausler # Product Security Committee
       - palnabarun # Release Manager
       - puerco # subproject owner / Release Manager
+      - ritazh # Product Security Committee
+      - SaranBalaji90 # Product Security Committee
       - saschagrunert # subproject owner / Release Manager
-      - swamymsft # Product Security Committee
       - tabbysable # Product Security Committee
-      - tallclair # Product Security Committee
       - xmudrii # Release Manager
       - Verolop # subproject owner / Release Manager
