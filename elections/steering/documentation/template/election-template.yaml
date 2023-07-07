@@ -1,0 +1,18 @@
+## RENAME THIS FILE TO election.yaml
+name: {{YEAR}} Steering Committee Election
+organization: Kubernetes
+start_datetime: {{DATETIME VOTING STARTS IN UTC}}
+end_datetime: {{DATETIME VOTING ENDS IN UTC}}
+no_winners: {{# BEING ELECTED}}
+allow_no_opinion: True
+delete_after: True
+show_candidate_fields:
+  - employer
+  - slack
+election_officers:
+  - {{EO 1}}
+  - {{EO 2}}
+  - {{EO 3}}
+eligibility: Kubernetes Org members with {{NUM}} or more contributions in the last year can vote.  See [the election guide](https://github.com/kubernetes/community/tree/master/elections/steering/{{YEAR}})
+exception_description: Not all contributions are measured by DevStats.  If you have contributions that are not so measured, then please request an exception to allow you to vote via the Elekto application.
+exception_due: {{DATETIME 3-4 DAYS BEFORE VOTING ENDS}}
