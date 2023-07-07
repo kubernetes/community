@@ -11,7 +11,7 @@ To better inform the Kubernetes contributor community and highlight their work t
 | Subproject Lead | @kaslin, @chris-short | Shadow role is available. |
 | [Social Media Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Social-Media.md) |@kaslin | Shadow role is available. |
 | [Comms Tech Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Tech-Lead.md) | @Atharva-Shinde, @imnmo | @markarranz (shadow) |
-| [Comms Event Lead] | @AvineshTripathi | Shadow role is available. |
+| [Comms Event Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Events.md) | @AvineshTripathi | Shadow role is available. |
 | [Comms Blog Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/blog-coordinator.md) | @fsmunoz |  Shadow role is available. |
 | [Storytellers] & other members | @hpopal11, @Atharva-Shinde | New to Contributor Comms? Add your name here! |
 | Emeritus | @parispittman, @mbbroberg |
