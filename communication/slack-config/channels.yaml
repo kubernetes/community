@@ -144,6 +144,7 @@ channels:
   - name: gitops
   - name: gke
   - name: gloo
+  - name: gophercloud
   - name: grafana-operator
   - name: haproxy-ingress
   - name: headlamp
