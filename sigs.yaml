@@ -3409,9 +3409,6 @@ committees:
     - github: joelsmith
       name: Joel Smith
       company: Red Hat
-    - github: lukehinds
-      name: Luke Hinds
-      company: Red Hat
     - github: micahhausler
       name: Micah Hausler
       company: Amazon
@@ -3422,6 +3419,8 @@ committees:
       name: Tabitha Sable
       company: Datadog
     emeritus_leads:
+    - github: lukehinds
+      name: Luke Hinds
     - github: swamymsft
       name: Swamy Shivaganga Nagaraju
     - github: tallclair
