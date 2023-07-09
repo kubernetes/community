@@ -106,13 +106,13 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### resource-management
 - **Owners:**
   - [kubernetes-sigs/dra-example-driver](https://github.com/kubernetes-sigs/dra-example-driver/blob/main/OWNERS)
+  - [kubernetes-sigs/noderesourcetopology-api](https://github.com/kubernetes-sigs/noderesourcetopology-api/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/resourceclaim](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/resourceclaim/OWNERS)
   - [kubernetes/kubernetes/pkg/scheduler/framework/plugins/dynamicresources](https://github.com/kubernetes/kubernetes/blob/master/pkg/scheduler/framework/plugins/dynamicresources/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/dynamic-resource-allocation](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/kubelet/pkg/apis/dra](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubelet/pkg/apis/dra/OWNERS)
   - [kubernetes/kubernetes/test/e2e/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/dra/OWNERS)
   - [kubernetes/kubernetes/test/e2e/testing-manifests/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/testing-manifests/dra/OWNERS)
-  - [kubernetes/noderesourcetopology-api](https://github.com/kubernetes/noderesourcetopology-api/blob/master/OWNERS)
 ### security-profiles-operator
 - **Owners:**
   - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/main/OWNERS)
