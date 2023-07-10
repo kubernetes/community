@@ -34,9 +34,20 @@ with the following responsibilities:
 Anyone can contribute to the elections subproject. In our [OWNERS file] you
 can find the list of our current approvers and reviewers.
 
-Approvers and reviewers are also responsible for the Elections roadmap, 
+Approvers and reviewers are also responsible for the Elections roadmap,
 maintenance, and security.  As such, new approvers must be approved by
 the [Contributor Experience] chairs or by the Steering Committee.
+
+Here are the list of Elections Subproject members who, among other things,
+choose the slate of Election Officers:
+
+| Contributor | Affiliation |
+| ---------------- | ------------------- |
+| [Josh Berkus](https://github.com/jberkus) | Red Hat |
+| [Bob Killen](https://github.com/mrbobbytables) | Google |
+| [Nikhita Raghunath](https://github.com/nikhita) | VMware |
+| [Paris Pittman](https://github.com/parispittman) | Apple |
+| [Federico Muñoz](https://github.com/fsmunoz) | SAS |
 
 ### Communications
 
@@ -71,8 +82,8 @@ responsible for any necessary scripts, such as how to pull a voter list.
 
 ### Recommending Election Officers
 
-The Elections Subproject will be responsible for finding and recommending 
-Election Officers to run the next Steering Committee election. The schedule 
+The Elections Subproject will be responsible for finding and recommending
+Election Officers to run the next Steering Committee election. The schedule
 for that should be:
 
 * Early June: contact last year's EOs and determine who will be returning.
@@ -83,7 +94,7 @@ for that should be:
 * Mid-July: SC approves the EOs.
 * Late July: EOs set the schedule for the election.
 
-Election Officers should be chosen from among regular, trusted contributors to the 
+Election Officers should be chosen from among regular, trusted contributors to the
 Kubernetes project, with an eye towards employer, demographic, and geographic
 diversity.  Further requirements can be found in the [Steering Election documentation].
 
@@ -97,9 +108,9 @@ and either helping create the appropriate files or auditing them for the teams.
 The subproject will work with the Contributor Comms team to promote the elections
 as appropriate.
 
-Any named Kubernetes team (see [requesting an election]) may run an election 
-in elections.k8s.io.  Since Elekto allows running multiple elections 
-concurrently, the main limitation for running additional elections is the time 
+Any named Kubernetes team (see [requesting an election]) may run an election
+in elections.k8s.io.  Since Elekto allows running multiple elections
+concurrently, the main limitation for running additional elections is the time
 of Contribex volunteers assist with the process.
 
 ### Other Responsibilities
