@@ -2249,13 +2249,13 @@ sigs:
   - name: resource-management
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/dra-example-driver/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/noderesourcetopology-api/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/resourceclaim/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/framework/plugins/dynamicresources/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/kubelet/pkg/apis/dra/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/dra/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/testing-manifests/dra/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/noderesourcetopology-api/master/OWNERS
   - name: security-profiles-operator
     contact:
       slack: security-profiles-operator
