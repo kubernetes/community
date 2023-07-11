@@ -32,7 +32,7 @@ We are always open to being a home for contributors to Kubernetes whether you co
 
 To find out what projects we're currently working on and explore what you could do to contribute:
 * Come to one of our [meetings] (Every Friday at 8am PT). See the [calendar] to add it to your own calendar.
-* Reach out to us on the #sig-contribex channel on the Kubernetes slack ([slack.k8s.io](http://slack.k8s.io)).
+* Reach out to us on the #sig-contribex-comms channel on the Kubernetes slack ([slack.k8s.io](http://slack.k8s.io)).
 * Join our [mailing-list]
 
 [meetings]: /sig-contributor-experience#contributor-comms
