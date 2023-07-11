@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # LTS Working Group
 
-The working group is organized with the goal of developing a better understanding of what "Long Term Support" might mean for Kubernetes, those who support  Kubernetes, and end users. The working group will investigate changes the Kubernetes project could make related to the better understanding of what long term support might mean. The working group will also determine the feasibility, benefits, **cost**, and prerequisites  of any such changes.
+The working group is organized with the goal of developing a better understanding of what "Long Term Support" might mean for Kubernetes, those who support Kubernetes, and end users. The working group will investigate changes the Kubernetes project could make related to the better understanding of what long term support might mean. The working group will also determine the feasibility, benefits, **cost**, and prerequisites of any such changes.
 
 ## Stakeholder SIGs
 * [SIG Architecture](/sig-architecture)
