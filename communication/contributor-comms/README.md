@@ -6,6 +6,9 @@ The Contributor Communications team (Contributor Comms for short) is part of the
 
 To better inform the Kubernetes contributor community and highlight their work to the broader ecosystem.
 
+## Roles
+The Contributor Comms subproject uses leadership roles to organize and delegate work of varying types. Contributors who have been a part of our group for a while and who have specific interests or skills may be interested in becoming a shadow. Shadows are contributors who work closely with a specific lead with the intent of taking over the lead role. Current leads and shadows are listed in the table below.
+
 | Area & Handbook Link | Team | Notes |
 | --- | --- | --- |
 | Subproject Lead | @kaslin, @chris-short | Shadow role is available. |
@@ -13,7 +16,6 @@ To better inform the Kubernetes contributor community and highlight their work t
 | [Comms Tech Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Tech-Lead.md) | @Atharva-Shinde, @imnmo | @markarranz (shadow) |
 | [Comms Event Lead] | @AvineshTripathi | Shadow role is available. |
 | [Comms Blog Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/blog-coordinator.md) | @fsmunoz |  Shadow role is available. |
-| [Storytellers] & other members | @hpopal11, @Atharva-Shinde | New to Contributor Comms? Add your name here! |
 | Emeritus | @parispittman, @mbbroberg |
 
 ## Contact Us!
@@ -28,10 +30,10 @@ To better inform the Kubernetes contributor community and highlight their work t
 
 We are always open to being a home for contributors to Kubernetes whether you code or not. 
 
+To find out what projects we're currently working on and explore what you could do to contribute:
 * Come to one of our [meetings] (Every Friday at 8am PT). See the [calendar] to add it to your own calendar.
-* Join our [mailing-list], and/or reach out to us on the #sig-contribex channel on the Kubernetes slack ([slack.k8s.io](http://slack.k8s.io)).
-
-Let us know you are interested and if you have any questions.
+* Reach out to us on the #sig-contribex-comms channel on the Kubernetes slack ([slack.k8s.io](http://slack.k8s.io)).
+* Join our [mailing-list]
 
 [meetings]: /sig-contributor-experience#contributor-comms
 [calendar]: https://calendar.google.com/calendar/u/0/r/customday?eid=NmU5MjFnYWwwMzIwNjVwamFvNmszZHBuYzhfMjAyMDEyMDRUMTYwMDAwWiBjYWxlbmRhckBrdWJlcm5ldGVzLmlv&ctz=America/Los_Angeles&sf=true
