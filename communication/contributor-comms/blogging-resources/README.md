@@ -1,4 +1,4 @@
-9# Blogging resources
+# Blogging resources
 
 We have collected some information to get anyone started. If you're looking to get started blogging on the kubernetes.dev blog, this page contains a list of resources available to help you be successful.
 
