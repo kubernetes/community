@@ -11,9 +11,9 @@ The Contributor Comms subproject uses leadership roles to organize and delegate 
 
 | Area & Handbook Link | Team | Notes |
 | --- | --- | --- |
-| Subproject Lead | @kaslin, @chris-short | Shadow role is available. |
+| Subproject Lead | @kaslin, @chris-short | @AvineshTripathi (shadow) |
 | [Social Media Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Social-Media.md) |@kaslin | Shadow role is available. |
-| [Comms Tech Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Tech-Lead.md) | @Atharva-Shinde, @imnmo | @markarranz (shadow) |
+| [Comms Tech Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Tech-Lead.md) | @SD-13 | Shadow role is available. |
 | [Comms Event Lead] | @AvineshTripathi | Shadow role is available. |
 | [Comms Blog Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/blog-coordinator.md) | @fsmunoz |  Shadow role is available. |
 | Emeritus | @parispittman, @mbbroberg |
@@ -24,7 +24,7 @@ The Contributor Comms subproject uses leadership roles to organize and delegate 
   - Ping the whole team: @contributor-comms in #sig-contribex on slack
 - Tag us in an issue in [kubernetes/community] with the label [area/contributor-comms]
   - Set a marketing issue template in [kubernetes/community]
-- Follow us on @K8sContributors on [Twitter]
+- Follow us on @K8sContributors on [Twitter] and [Mastodon]
 
 ## Join us!
 
@@ -51,3 +51,4 @@ To find out what projects we're currently working on and explore what you could 
 [kubernetes/community]: https://github.com/kubernetes/community/issues
 [area/contributor-comms]: https://github.com/kubernetes/community/issues?q=is%3Aopen+is%3Aissue+label%3Aarea%2Fcontributor-comms
 [Twitter]: https://twitter.com/K8sContributors/
+[Mastodon]: https://hachyderm.io/@K8sContributors
