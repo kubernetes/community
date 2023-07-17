@@ -3207,6 +3207,50 @@ workinggroups:
     liaison:
       github: cblecker
       name: Christoph Blecker
+- dir: wg-lts
+  name: LTS
+  mission_statement: >
+    The working group is organized with the goal of developing a better understanding
+    of what "Long Term Support" might mean for Kubernetes, those who support Kubernetes,
+    and end users. The working group will investigate changes the Kubernetes project
+    could make related to the better understanding of what long term support might
+    mean. The working group will also determine the feasibility, benefits, **cost**,
+    and prerequisites of any such changes.
+
+  stakeholder_sigs:
+  - Architecture
+  - Cluster Lifecycle
+  - K8s Infra
+  - Release
+  - Security
+  - Testing
+  label: lts
+  leadership:
+    chairs:
+    - github: jeremyrickard
+      name: Jeremy Rickard
+      company: Microsoft
+    - github: liggitt
+      name: Jordan Liggitt
+      company: Google
+    - github: micahhausler
+      name: Micah Hausler
+      company: Amazon
+  meetings:
+  - description: Regular WG Meeting
+    day: TBD
+    time: TBD
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: TBD
+    archive_url: TBD
+    recordings_url: TBD
+  contact:
+    slack: wg-lts
+    mailing_list: TBD
+    liaison:
+      github: TBD
+      name: TBD
 - dir: wg-policy
   name: Policy
   mission_statement: >

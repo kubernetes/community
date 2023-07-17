@@ -47,6 +47,12 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-k8s-infra-leads](https://github.com/orgs/kubernetes/teams/sig-k8s-infra-leads) - sig-k8s-infra chairs and tech leads
 - Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-k8s-infra:
+* [WG LTS](/wg-lts)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-k8s-infra:
