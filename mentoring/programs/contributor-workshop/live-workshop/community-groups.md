@@ -17,7 +17,6 @@ Refer to previous workshops for inspirations.
 - SIGs
 - Subprojects
 - Working Groups
-- User Groups
 - Committees
 - How to Join Any Of The Above
 

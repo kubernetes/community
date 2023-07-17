@@ -2,7 +2,7 @@
 
 This folder contains scripts to automatically generate documentation about the
 different Special Interest Groups (SIGs), Working Groups (WGs),
-User Groups (UGs) and Committees of Kubernetes. The authoritative
+and Committees of Kubernetes. The authoritative
 source for SIG information is the [`sigs.yaml`](/sigs.yaml) file in the project root.
 All updates must be done there.
 
@@ -14,7 +14,6 @@ The documentation follows a template and uses the values from [`sigs.yaml`](/sig
 - List: [`list.tmpl`](list.tmpl)
 - SIG README: [`sig_readme.tmpl`](sig_readme.tmpl)
 - WG README: [`wg_readme.tmpl`](wg_readme.tmpl)
-- UG README: [`ug_readme.tmpl`](ug_readme.tmpl)
 - Committee README: [`committee_readme.tmpl`](committee_readme.tmpl)
 
 **Time Zone gotcha**:
@@ -31,7 +30,6 @@ accompanying documentation. This takes the format of the following types of doc 
 ```
 sig-<sig-name>/README.md
 wg-<working-group-name>/README.md
-ug-<user-group-name>/README.md
 committee-<committee-name>/README.md
 sig-list.md
 ```
@@ -91,7 +89,7 @@ for i in $(ls -1 generator/generated/*.md); do hub issue create -F $i && rm $i; 
 
 ### README
 
-If your SIG, WG, UG or Committee wishes to add custom content, you can do so by placing it within
+If your SIG, WG  or Committee wishes to add custom content, you can do so by placing it within
 the following code comments:
 
 ```markdown

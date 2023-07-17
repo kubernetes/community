@@ -1,6 +1,6 @@
 ## SUMMARY:
 
-This document covers everything you need to know about the creation and retirement (“lifecycle”) of a special interest, working group or user group within the Kubernetes project. General project governance information can be found in the [steering committee repo].
+This document covers everything you need to know about the creation and retirement (“lifecycle”) of a special interest or working group within the Kubernetes project. General project governance information can be found in the [steering committee repo].
 Out of scope for this document: [subproject] creation.
 
 [Creation]
@@ -24,19 +24,6 @@ Out of scope for this document: [subproject] creation.
   - [ ] Also add sponsoring SIG Chair/Tech Leads as approvers; you'll get this from the community email above
   - [ ] Place a `/hold` on it until the members that need to review have; a contributor experience member will do this for you if they don't see one already
 - [ ] Send an email to the stakeholder SIG mailing lists and steering committee with the sigs.yaml pull request
-
-### Prerequisites for a UG
-- [ ] Read the [documentation on user group governance](committee-steering/governance/ug-governance.md)
-- [ ] Require to have 2 Chairs to start a User Group.
-- [ ] Require to have at least 2 members other than chairs to be a part of the User Group.
-- [ ] Requires at least 2 sponsors from steering or lazy consensus (In case of no objection within 7 week days).
-- [ ] Send an email to dev@kubernetes.io and steering@kubernetes.io titled "UG-Creation-Request: UG Foo" answering the following questions and wait for community discourse:
-  - [ ] What topics are in scope for this user group?
-  - [ ] What is the meeting cadence?
-  - [ ] Who will chair the group, and ensure it continues to meet the requirements?
-- [ ] Do the first checklist item in the [GitHub] section below and add a row to the UG section:
-  - [ ] Label with committee/steering and place a `/hold` on it
-- [ ] Send an email to the steering committee with the [sigs.yaml] pull request
 
 
 ### [GitHub]
@@ -84,19 +71,14 @@ Sometimes it might be necessary to sunset a SIG or Working Group. SIGs/WGs may a
 ### Prerequisites for WG Retirement
 - [ ] Have completed the mission of the WG or have another reason as outlined in [wg-governance.md]
 
-### Prerequisites for UG Retirement
-- [ ] There is no longer a chair and no one is nominated within the 4-week grace period.
-- [ ] There has been no meeting conducted by the chair in 8 weeks.
-- [ ] There is no activity on communication channels.
-
 ### Steps:
 - [ ] Send an email to dev@kubernetes.io and community@kubernetes.io alerting the community of your intentions to disband or merge. [example]
 - This kicks off the process for Contributor Experience’s community managers who will reach out and set an issue against `kubernetes/community` with exact next steps covered below. We can help walk through this when you get there. Most of this is covered in the same creation communication docs as above.
 - [ ] Archive the member and lead/chair mailing lists/[GoogleGroups]
 - [ ] Check the [slack-guidelines.md] for latest process on archiving the slack channel
 - [ ] Deactivate the zoom license
-- [ ] Delete your shared SIG/WG/UG calendar
-- [ ] Ensure that the [youtube-guidelines.md] links are removed and you've uploaded all SIG/WG/UG meetings to date
+- [ ] Delete your shared SIG/WG calendar
+- [ ] Ensure that the [youtube-guidelines.md] links are removed and you've uploaded all SIG/WG meetings to date
 - [ ] Move the existing SIG directory into the archive in `kubernetes/community`
 - [ ] GitHub archiving/removing/other transactions:
    - [ ] Move all appropriate github repositories to an appropriate archive or a repo outside of the Kubernetes org

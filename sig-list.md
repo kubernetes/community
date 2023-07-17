@@ -2,7 +2,7 @@
 title: Community Groups
 linkTitle: Community Groups
 description:  |
-  A list of our community groups: Special Interest Groups, Working Groups, User Groups and Committees.
+  A list of our community groups: Special Interest Groups, Working Groups and Committees.
 weight: 99
 type: docs
 aliases: [ "/groups", "/sigs" ]
@@ -66,12 +66,6 @@ When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 |[IoT Edge](wg-iot-edge/README.md)|[iot-edge](https://github.com/kubernetes/kubernetes/labels/wg%2Fiot-edge)|* Multicluster<br>* Network<br>|* [Steve Wong](https://github.com/cantbewong), VMware<br>* [Cindy Xing](https://github.com/cindyxing), Microsoft<br>* [Dejan Bosanac](https://github.com/dejanb), Red Hat<br>|* [Slack](https://kubernetes.slack.com/messages/wg-iot-edge)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge)|* APAC WG Meeting: [Wednesdays at 5:00 UTC (every four weeks)](https://zoom.us/j/91251176046?pwd=cmdqclovM3R3eDB1VlpuL1ZGU1hnZz09)<br>* Regular WG Meeting (Pacific Time): [Wednesdays at 09:00 PT (every four weeks)](https://zoom.us/j/92778512626?pwd=MXhlemwvYnhkQmkxeXllQ0Z5VGs4Zz09)<br>
 |[Policy](wg-policy/README.md)|[policy](https://github.com/kubernetes/kubernetes/labels/wg%2Fpolicy)|* Architecture<br>* Auth<br>* Multicluster<br>* Network<br>* Node<br>* Scheduling<br>* Storage<br>|* [Jim Bugwadia](https://github.com/JimBugwadia), Kyverno/Nirmata<br>* [Robert Ficcaglia](https://github.com/rficcaglia), SunStone<br>|* [Slack](https://kubernetes.slack.com/messages/wg-policy)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-policy)|* Regular WG Meeting: [Wednesdays at 8:00 PT (Pacific Time) (semimonthly)](https://zoom.us/j/7375677271)<br>
 |[Structured Logging](wg-structured-logging/README.md)|[structured-logging](https://github.com/kubernetes/kubernetes/labels/wg%2Fstructured-logging)|* API Machinery<br>* Architecture<br>* Cloud Provider<br>* Instrumentation<br>* Network<br>* Node<br>* Scheduling<br>* Storage<br>|* [Patrick Ohly](https://github.com/pohly), Intel<br>* [Marek Siarkowicz](https://github.com/serathius), Google<br>|* [Slack](https://kubernetes.slack.com/messages/wg-structured-logging)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-wg-structured-logging)|* Regular Meeting: [Thursdays at 15:30 London-UK (biweekly)](https://zoom.us/j/96716142646?pwd=VmgrN29sbmhDREp3R0NtZlpGSlZ4Zz09)<br>
-
-### User Groups
-
-| Name | Label |Organizers | Contact | Meetings |
-|------|-------|------------|--------|----------|
-|[VMware Users](ug-vmware-users/README.md)|[vmware-users](https://github.com/kubernetes/kubernetes/labels/ug%2Fvmware-users)|* [Steve Wong](https://github.com/cantbewong), VMware<br>* [Myles Gray](https://github.com/mylesagray), VMware<br>|* [Slack](https://kubernetes.slack.com/messages/ug-vmware)<br>* [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-ug-vmware)|* Regular User Group Meeting: [Thursdays at 11:00 PT (Pacific Time) (monthly)](https://docs.google.com/document/d/1ujpqj4hhcIBrSCK2qn6J1r--3QyD96rfDjXTZQ7n7Mw/edit)<br>
 
 ### Committees
 
