@@ -515,7 +515,6 @@ channels:
   - name: sig-k8s-infra
     id: CCK68P2Q2
   - name: wg-lts
-    archived: true
   - name: wg-machine-learning
     archived: true
   - name: wg-multitenancy
