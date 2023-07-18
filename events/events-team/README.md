@@ -19,6 +19,7 @@ the logistical and operational pieces together.
 | Marketing Lead                              | [Marketing Handbook]                    |                                                     |
 | CNCF Events Manager                         | CNCF                    | CNCF will staff this                                |
 | Content Subteam                        | [Content Subteam Handbook]                    |                                                     |
+| Operations Lead                             | [Operations Handbook]                        |                                                     |
 | Accessibility, Inclusiveness, and Diversity | TODO                    |                                                     |   
 
 
@@ -47,6 +48,9 @@ The [Content Subteam Handbook] includes detailed handbooks for Content Coordinat
 ### Registration
 [registration handbook]
 
+### Day-Of Operations
+[Operations Handbook]
+
 # Out of scope
 
 We don't coordinate meetups. CNCF leads these efforts and their information can be found [here].
@@ -60,3 +64,4 @@ We don't coordinate meetups. CNCF leads these efforts and their information can 
 [Marketing Handbook]: ./marketing/README.md
 [Content Subteam Handbook]: ./content/README.md
 [Project Manager Handbook]: ./projectmanagement/README.md
+[Operations Handbook]: ./operations/README.md
