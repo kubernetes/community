@@ -48,9 +48,6 @@ and opts-in to updates and modifications to [sig-governance].
   - Email: [etcd-dev](https://groups.google.com/forum/?hl=en#!forum/etcd-dev).
   - Slack: [#etcd](https://kubernetes.slack.com/messages/C3HD8ARJ5/details/) channel on Kubernetes.
 - SIG etcd contributing instructions ([CONTRIBUTING.md]) be defined in etcd project.
-- KEPs created by SIG etcd will not follow Kubernetes release cycle and freezes due.
-
-Tech Leads must also fulfill all of the responsibilities of the Chair role as outlined in [sig-governance].
 
 [CONTRIBUTING.md]: https://github.com/etcd-io/etcd/blob/main/CONTRIBUTING.md
 
