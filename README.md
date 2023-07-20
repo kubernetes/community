@@ -30,9 +30,6 @@ Kubernetes has the following types of groups that are officially supported:
 * **Working Groups** are temporary groups that are formed to address issues that cross SIG boundaries.
   Working groups do not own any code or other long term artifacts.
   Working groups can report back and act through involved SIGs.
-* **User Groups** are groups for facilitating communication and discovery of information related to
-  topics that have long term relevance to large groups of Kubernetes users.
-  They do not have ownership of parts of the Kubernetes code base.
 
 See the [full governance doc](governance.md) for more details on these groups.
 
