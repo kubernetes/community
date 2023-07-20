@@ -88,6 +88,7 @@ channels:
   - name: craft
   - name: crash-diagnostics
   - name: crd-installation
+  - name: cri-dockerd
   - name: crio
   - name: crossplane
   - name: csi-secrets-store #this channel is for secrets-store-csi-driver which is a subproject of sig-auth
