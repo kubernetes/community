@@ -25,7 +25,7 @@ The [Kubernetes YouTube Channel] has separate playlists for each SIG or WG
 meeting recordings, as well as recordings of other recurring events such as the
 Kubernetes [community meeting], and others.
 
-[Subprojects], in addition to SIGs and WGsmay request their own playlists
+[Subprojects], in addition to SIGs and WGs may request their own playlists
 to better target their contributors and increase general discoverability.
 
 To better serve the community, [collaboration] has been enabled to share the
