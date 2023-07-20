@@ -5,8 +5,8 @@ we can host any number of elections for community groups, as they need them.
 
 ## Who Can Request an Election
 
-Any "Kubernetes team" can request an election.  This includes SIGs, Working Groups,
-User Groups, operational teams like Release Engineering or Enhancements, 
+Any "Kubernetes team" can request an election.  This includes SIGs, Working 
+Groups, operational teams like Release Engineering or Enhancements, 
 Subprojects, and even wholly subsidiary projects like Prow and ClusterAPI.
 Basically, if your group is all Kubernetes contributors, you can ask for an
 election.

@@ -2,7 +2,7 @@
 title: Community Groups
 linkTitle: Community Groups
 description:  |
-  A list of our community groups: Special Interest Groups, Working Groups, User Groups and Committees.
+  A list of our community groups: Special Interest Groups, Working Groups and Committees.
 weight: 99
 type: docs
 aliases: [ "/groups", "/sigs" ]
@@ -43,14 +43,6 @@ When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 |------|-------|------------------|-----------|---------|----------|
 {{- range .WorkingGroups}}
 |[{{.Name}}]({{.Dir}}/README.md)|[{{.Label}}](https://github.com/kubernetes/kubernetes/labels/wg%2F{{.Label}})|{{range .StakeholderSIGs}}* {{.}}<br>{{end }}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
-{{- end }}
-
-### User Groups
-
-| Name | Label |Organizers | Contact | Meetings |
-|------|-------|------------|--------|----------|
-{{- range .UserGroups}}
-|[{{.Name}}]({{.Dir}}/README.md)|[{{.Label}}](https://github.com/kubernetes/kubernetes/labels/ug%2F{{.Label}})|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
 {{- end }}
 
 ### Committees

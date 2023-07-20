@@ -115,8 +115,6 @@ In case you are creating a calendar event and wondering what to include in it, h
 [SIG-<name>] <meeting title>
 or
 [WG-<name>] <meeting title>
-or
-[User Group-<name>]
 ```
 #### Description
 
