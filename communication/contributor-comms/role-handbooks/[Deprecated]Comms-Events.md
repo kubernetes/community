@@ -1,5 +1,7 @@
 # Comms Events Lead Role Handbook 
 
+**NOTE**: This role is deprecated as of mid 2023
+
 ## Overview
 
 As Event Co-ordinator Lead, you are responsible for
