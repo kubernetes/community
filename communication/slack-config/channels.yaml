@@ -291,6 +291,7 @@ channels:
   - name: kudo
   - name: kurl
   - name: kustomize
+  - name: kustomize-training-cohort # archive once cohort finishes
   - name: kwok
   - name: kwok-dev
   - name: kyverno
