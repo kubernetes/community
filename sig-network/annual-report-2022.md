@@ -4,17 +4,14 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-   -
-   -
-   -
+  - Network Policy contributed the first release of `AdminNetworkPolicy`
+  - Gateway API released `GatewayClass`, `Gateway` and `HTTPRoute` as BETA
+  - The multi-network project formed
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
-   -
-   -
-   -
-
-
+   - Network Policy now tracks their own progress with NPEPs, raising KEPs as the result of several iterations of the NPEP process
+   - Gateway API tracks their own progress with GEPs, raising KEPs as the results of several iterations of the GEP process
 
 3. KEP work in 2022 (v1.24, v1.25, v1.26):
   - alpha:
@@ -37,9 +34,7 @@
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
 
-   -
-   -
-   -
+   - The KPNG project is in need of support and direction in general, and more concrete use cases in order for us to determine more specific goals for the project.
 
 2. What metrics/community health stats does your group care about and/or measure?
 
@@ -59,13 +54,12 @@
 
 5. Does the group have contributors from multiple companies/affiliations?
 
-   -
+   -Yes
 
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
-   -
-   -
+   - While I think it can always be said that we welcome more engineering time that anyone can contribute, we could really use more time contributed towards _project management_ particularly for our sub-projects to keep them organized and engaging for the community.
 
 ## Membership
 
