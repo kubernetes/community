@@ -5,8 +5,9 @@
 1. What work did the SIG do this year that should be highlighted?
 
   - Network Policy contributed the first release of `AdminNetworkPolicy`
-  - Gateway API released `GatewayClass`, `Gateway` and `HTTPRoute` as BETA
   - The multi-network project formed
+  - Gateway API released `GatewayClass`, `Gateway` and `HTTPRoute` as BETA
+  - the GAMMA project started to enable using Gateway API resources in a service mesh context
 
 2. What initiatives are you working on that aren't being tracked in KEPs?
 
