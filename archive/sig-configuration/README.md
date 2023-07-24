@@ -1,4 +1,4 @@
-This group is for discussion about application configuration and deployment in Kubernetes. We use the label `area/app-config-deployment` to tag related issues and pull requests on Github. 
+This group is for discussion about application configuration and deployment in Kubernetes. We use the label `area/app-config-deployment` to tag related issues and pull requests on GitHub. 
 
 For Kubernetes cluster configuration and deployment, see [SIG-Cluster-Ops](SIG-Cluster-Ops).
 
