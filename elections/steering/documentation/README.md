@@ -154,7 +154,7 @@ where things must happen in a specific number of days.
 | 81    | Election Closes             | Automatic          |                                       |
 | 82    | Send Results to SC          | EO Admin           |                                       |
 | 84    | Approve Results             | Steering Committee |                                       |
-| 86    | Inform Candidates           | EO Member          | MUST BE the day before announcement   |
+| 86    | Inform Candidates           | EO Member          | MUST BE 24-48 hours before announcing |
 | 87    | Announce Results            | EO Comms           | on K/dev, etc.                        |
 | 88    | Election Blog Post          | EO Comms           |                                       |
 | 89    | Results in Elekto           | EO Admin           |                                       |
