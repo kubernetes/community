@@ -123,7 +123,7 @@ Examples of contributions that would NOT be considered:
 - Private announcement of results to SC members is at least ~2 days
   before private announcement to all candidates.
 - The interval between private announcement to all candidates and the
-  public announcement is a weekend.
+  public announcement is 24-48 hours, ideally during a weekend.
 -->
 
 | Date                    | Event                                                                 |
