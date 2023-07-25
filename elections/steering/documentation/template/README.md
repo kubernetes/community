@@ -299,7 +299,7 @@ Nominees may be found in the [election app].
 [pledge to recuse]: https://github.com/kubernetes/steering/blob/master/elections.md#steering-committee-and-election-officer-recusal
 
 [Condorcet]: https://en.wikipedia.org/wiki/Condorcet_method
-[prior candidate bios]: https://github.com/kubernetes/community/tree/master/elections/steering/2022
+[prior candidate bios]: https://github.com/kubernetes/community/tree/master/elections/steering/{{YEAR-1}}
 [election officers]: https://github.com/kubernetes/community/tree/master/elections#recommending-election-officers
 [Kubernetes Community Meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
 [Kubernetes Blog]: https://kubernetes.io/blog/
@@ -310,9 +310,9 @@ Nominees may be found in the [election app].
 [Elekto]: https://elekto.dev
 [election app]: https://elections.k8s.io
 [Elekto voting documentation]: https://elekto.dev/docs/voting/
-[voters.yaml]: https://github.com/kubernetes/community/blob/master/elections/steering/2022/voters.yaml
-[election page]: https://elections.k8s.io/app/elections/steering---2022
-[voter exception form]: https://elections.k8s.io/app/elections/steering---2022/exception
+[voters.yaml]: https://github.com/kubernetes/community/blob/master/elections/steering/{{YEAR}}/voters.yaml
+[election page]: https://elections.k8s.io/app/elections/steering---{{YEAR}}
+[voter exception form]: https://elections.k8s.io/app/elections/steering---{{YEAR}}/exception
 [public Steering Committee Meeting]: https://github.com/kubernetes/steering/#meetings
-[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2022#eligibility
+[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/{{YEAR}}#eligibility
 [SIGs.yaml]: https://github.com/kubernetes/community/tree/master/sigs.yaml

@@ -293,7 +293,7 @@ On the rare occasions that a voter nominates the candidate instead of themselves
 When a candidate creates an issue, EOs should check if they've copied in the process for endorsements; if not, an EO should.  Particularly, voters need to remember to provide their employer name.  Then the EO Nominations watches to see when the candidate accumulates the necessary three endorsements from contributors working for different employers.  At that point, EO Nominations posts to the issue:
 
 ```
-<CANDIDATE NAME> has the necessary endorsements and is eligible to run in the Steering Committee election.  The candidate should prepare their candidate profile as a PR and submit it, per the instructions at: https://github.com/kubernetes/community/blob/master/elections/steering/2022/README.md#candidacy-process
+<CANDIDATE NAME> has the necessary endorsements and is eligible to run in the Steering Committee election.  The candidate should prepare their candidate profile as a PR and submit it, per the instructions at: https://github.com/kubernetes/community/blob/master/elections/steering/{{YEAR}}/README.md#candidacy-process
 ```
 
 In most cases, there are no other eligibility requirements.  Candidates are not required to be documented contributors or org members. The Issue will remain open until the candidate profile is merged as a PR.
