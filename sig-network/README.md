@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network) for the group will typically add invites for the following meetings to your calendar.*
-* Gateway API Code Jam: [Fridays at 08:30 PT (Pacific Time)](https://zoom.us/j/96900767253) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
+* Gateway API Code Jam: [Fridays at 08:30 PT (Pacific Time)](https://zoom.us/j/96900767253) (Last Friday of the Month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
 * Gateway API GAMMA Meeting (APAC Friendly): [Tuesdays at 15:00 PT (Pacific Time)](https://zoom.us/j/96951309977) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1s5hQU0CB9ehjFukRmRHQ41f1FA8GX5_1Rv6nHW6NWAA/edit).
 * Gateway API GAMMA Meeting (EMEA Friendly): [Tuesdays at 08:00 PT (Pacific Time)](https://zoom.us/j/96951309977) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
