@@ -12,7 +12,10 @@
 ## Table of Contents
 
 * [Purpose](#purpose)
+<!-- Only if there are significant changes
 * [Changes](#changes)
+-->
+* [Election Platform](#election-platform)
 * [Background](#background)
 * [Eligibility](#eligibility)
   * [Voter Exception](#voter-exception)
@@ -28,6 +31,10 @@
 The role of this election is to fill out the {{NUM (#)}} seats due for
 reelection this year on the [Kubernetes Steering Committee]. Each elected
 member will serve a two (2) year term.
+
+<!-- Only if there are significant changes
+## Changes
+-->
 
 ## Election Platform
 
@@ -172,7 +179,7 @@ automatically close the issue once the PR is merged.
 
 5. Create the PR for your bio by copying the `nomination-template.md` file in
 this directory, and creating a new file titled `candidate-githubid.md`.  Fill
-out all the fields in the template, but avoid making and format changes.
+out all the fields in the template, but avoid making any format changes.
 
 **Endorsement**
 
@@ -282,7 +289,7 @@ Nominees may be found in the [election app].
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
-[current steering committee backlog]: https://github.com/kubernetes/steering/projects/1
+[current steering committee backlog]: https://github.com/orgs/kubernetes/projects/40
 [governance meeting video]: https://www.youtube.com/watch?v=ltRKXLl0RaE&list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ&index=23
 
 [Steering Committee Election Charter]: https://git.k8s.io/steering/elections.md
@@ -293,7 +300,7 @@ Nominees may be found in the [election app].
 
 [Condorcet]: https://en.wikipedia.org/wiki/Condorcet_method
 [prior candidate bios]: https://github.com/kubernetes/community/tree/master/elections/steering/2022
-[election officers]: https://github.com/kubernetes/community/tree/master/elections#election-officers
+[election officers]: https://github.com/kubernetes/community/tree/master/elections#recommending-election-officers
 [Kubernetes Community Meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
 [Kubernetes Blog]: https://kubernetes.io/blog/
 

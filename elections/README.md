@@ -21,7 +21,7 @@ for their team.  See the instructions on [requesting an election].
 
 ## The Elections Subproject
 
-The Elections Subproject is a team within Kubernetes [SIG Contributor Experience]
+The Elections Subproject is a team within Kubernetes SIG [Contributor Experience]
 with the following responsibilities:
 
 * Maintain and update the elections documentation and messaging templates
