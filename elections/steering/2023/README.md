@@ -67,7 +67,7 @@ Please refer to the [Steering Committee Election Charter] for [Eligibility for c
 Eligibility for voting in 2023 is defined as:
 
 * People who had at least 50 contributions to the Kubernetes project over
-  the past year, according to a snapshot taken 2022-08-04 of the data driving
+  the past year, according to a snapshot taken 2023-08-04 of the data driving
   the [devstats developer activity counts dashboard][devstats-dashboard],
   who are also [Org Members].
   Contributions include GitHub events like creating issues, creating PRs,
@@ -303,9 +303,9 @@ Nominees may be found in the [election app].
 [Elekto]: https://elekto.dev
 [election app]: https://elections.k8s.io
 [Elekto voting documentation]: https://elekto.dev/docs/voting/
-[voters.yaml]: https://github.com/kubernetes/community/blob/master/elections/steering/2022/voters.yaml
-[election page]: https://elections.k8s.io/app/elections/steering---2022
-[voter exception form]: https://elections.k8s.io/app/elections/steering---2022/exception
+[voters.yaml]: https://github.com/kubernetes/community/blob/master/elections/steering/2023/voters.yaml
+[election page]: https://elections.k8s.io/app/elections/steering---2023
+[voter exception form]: https://elections.k8s.io/app/elections/steering---2023/exception
 [public Steering Committee Meeting]: https://github.com/kubernetes/steering/#meetings
-[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2022#eligibility
+[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2023#eligibility
 [SIGs.yaml]: https://github.com/kubernetes/community/tree/master/sigs.yaml
