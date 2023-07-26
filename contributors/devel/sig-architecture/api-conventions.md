@@ -574,22 +574,28 @@ selectors, annotations, data), as opposed to sets of subobjects.
 
 #### Primitive types
 
+* Look at similar fields in the API (e.g. ports, durations) and follow the
+  conventions of existing fields.
+* Do not use enums. Use aliases for string instead (e.g. `NodeConditionType`).
+* All numeric fields should be bounds-checked, both for too-small or negative
+  and for too-large.
+* All public integer fields MUST use the Go `int32` or Go `int64` types, not
+  `int` (which is ambiguously sized, depending on target platform).  Internal
+  types may use `int`.
+* For integer fields, prefer `int32` to `int64` unless you need to represent
+  values larger than `int32`.  See other guidelines about limitations of
+  `int64` and language compatibility.
+* Do not use unsigned integers, due to inconsistent support across languages and
+  libraries. Just validate that the integer is non-negative if that's the case.
+* All numbers (e.g. `int32`, `int64`) are converted to `float64` by Javascript
+  and some other languages, so any field which is expected to exceed that
+  either in magnitude or in precision (e.g. integer values > 53 bits)
+  should be serialized and accepted as strings. `int64` fields must be
+  bounds-checked to be within the range of `-(2^53) < x < (2^53)`.
 * Avoid floating-point values as much as possible, and never use them in spec.
   Floating-point values cannot be reliably round-tripped (encoded and
   re-decoded) without changing, and have varying precision and representations
   across languages and architectures.
-* All numbers (e.g., uint32, int64) are converted to float64 by Javascript and
-  some other languages, so any field which is expected to exceed that either in
-  magnitude or in precision (specifically integer values > 53 bits) should be
-  serialized and accepted as strings.
-* Do not use unsigned integers, due to inconsistent support across languages and
-  libraries. Just validate that the integer is non-negative if that's the case.
-* Do not use enums. Use aliases for string instead (e.g., `NodeConditionType`).
-* Look at similar fields in the API (e.g., ports, durations) and follow the
-  conventions of existing fields.
-* All public integer fields MUST use the Go `(u)int32` or Go `(u)int64` types,
-  not `(u)int` (which is ambiguous depending on target platform). Internal
-  types may use `(u)int`.
 * Think twice about `bool` fields. Many ideas start as boolean but eventually
   trend towards a small set of mutually exclusive options.  Plan for future
   expansions by describing the policy options explicitly as a string type
