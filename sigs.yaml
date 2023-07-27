@@ -2009,7 +2009,7 @@ sigs:
     day: Friday
     time: "08:30"
     tz: PT (Pacific Time)
-    frequency: weekly
+    frequency: Last Friday of the Month
     url: https://zoom.us/j/96900767253
   - description: Gateway API GAMMA Meeting (APAC Friendly)
     day: Tuesday
