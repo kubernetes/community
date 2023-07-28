@@ -75,7 +75,7 @@ Contributor Communications focuses on amplifying the success of Kubernetes contr
   - [kubernetes/community/communication/contributor-comms](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/OWNERS)
 - **Meetings:**
   - Contributor Comms - Contributor Comms Team Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/596959769?pwd=TURBNlZPb3BEWVFmbWlCYXlMVVJiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1KDoqbw2A6W7rLSbIRuOlqH8gkoOnp2IHHuV9KyJDD2c/edit).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1K3vjCZ9C3LwYrOJOhztQtFuDQCe-urv-ewx1bI8IPVQ/edit?usp=sharing).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 ### contributors-documentation
 writes and maintains documentation around contributing to Kubernetes, including the Contributor's Guide, Developer's Guide, and contributor website.
