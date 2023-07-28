@@ -1,4 +1,4 @@
-# {{YEAR}} VOTERS GUIDE - KUBERNETES STEERING COMMITTEE ELECTION
+# 2023 VOTERS GUIDE - KUBERNETES STEERING COMMITTEE ELECTION
 
 ## Important Links
 
@@ -12,7 +12,7 @@
 ## Table of Contents
 
 * [Purpose](#purpose)
-* [Changes](#changes)
+* [Election Platform](#election-platform)
 * [Background](#background)
 * [Eligibility](#eligibility)
   * [Voter Exception](#voter-exception)
@@ -25,7 +25,7 @@
 
 ## Purpose
 
-The role of this election is to fill out the {{NUM (#)}} seats due for
+The role of this election is to fill out the four (4) seats due for
 reelection this year on the [Kubernetes Steering Committee]. Each elected
 member will serve a two (2) year term.
 
@@ -64,10 +64,10 @@ previous [governance meeting video] which led to this whole process.
 
 Please refer to the [Steering Committee Election Charter] for [Eligibility for candidacy]
 
-Eligibility for voting in {{YEAR}} is defined as:
+Eligibility for voting in 2023 is defined as:
 
-* People who had at least {{NUM}} contributions to the Kubernetes project over
-  the past year, according to a snapshot taken {{DATE OF SNAPSHOT}} of the data driving
+* People who had at least 50 contributions to the Kubernetes project over
+  the past year, according to a snapshot taken 2023-08-04 of the data driving
   the [devstats developer activity counts dashboard][devstats-dashboard],
   who are also [Org Members].
   Contributions include GitHub events like creating issues, creating PRs,
@@ -75,7 +75,7 @@ Eligibility for voting in {{YEAR}} is defined as:
   [the SQL query used by devstats for developer activity counts][devstats-sql].
 
 * Full members of the Code of Conduct Committee (CoCC) and Security Response Committee
-  (SRC), as listed in [SIGs.yaml], at any time between August {{YEAR-1}} and {{YEAR}},
+  (SRC), as listed in [SIGs.yaml], at any time between August 2022 and August 2023,
   regardless of contribution count.
 
 * People who have submitted the [voter exception form] and are accepted by
@@ -128,18 +128,18 @@ Examples of contributions that would NOT be considered:
 
 | Date                    | Event                                                                 |
 |:------------------------|:----------------------------------------------------------------------|
-| DATE HERE               | Steering Committee selects Election Committee                         |
-| DATE HERE               | Announcement of Election and publication of voters.md                 |
-| DATE HERE               | Steering Committee Q+A for the candidates                             |
-| DATE HERE               | Candidate nominations due at the end of the day in AoE time           |
-| DATE HERE               | All candidate bios due at the end of the day in AoE time              |
-| DATE HERE               | Election Begins via email ballots                                     |
-| DATE HERE               | Deadline to submit voter exception requests                           |
-| DATE HERE               | Election Closes at the end of the day in AoE time                     |
-| DATE HERE               | Private announcement of Results to SC members not up for election     |
-| DATE HERE               | Private announcement of Results to all candidates                     |
-| DATE HERE               | Public announcement of Results at Public Steering Committee Meeting   |
-| DATE HERE               | Election Retro                                                        |
+| Wednesday, July 12      | Steering Committee selects Election Committee                         |
+| Tuesday, August 8       | Announcement of Election and publication of voters.md                 |
+| TBD                     | Steering Committee Q+A for the candidates                             |
+| Saturday, August 26     | Candidate nominations due at the end of the day in AoE time           |
+| Sunday, August 27       | All candidate bios due at the end of the day in AoE time              |
+| Tuesday, August 29      | Election Begins via email ballots                                     |
+| Saturday, September 23  | Deadline to submit voter exception requests                           |
+| Tuesday, September 26   | Election Closes at the end of the day in AoE time                     |
+| Wednesday, September 27 | Private announcement of Results to SC members not up for election     |
+| Sunday, October 1       | Private announcement of Results to all candidates                     |
+| Monday, October 2       | Public announcement of Results at Public Steering Committee Meeting   |
+| Thursday, October 5     | Election Retro                                                        |
 
 Candidate nomination, bio, and election close deadlines will be done using Anywhere on Earth timing, meaning it is still valid to submit new nominations/bios/votes as long as it is still the last day anywhere on the planet (i.e. at the end of that day in UTC-12).
 
@@ -172,7 +172,7 @@ automatically close the issue once the PR is merged.
 
 5. Create the PR for your bio by copying the `nomination-template.md` file in
 this directory, and creating a new file titled `candidate-githubid.md`.  Fill
-out all the fields in the template, but avoid making and format changes.
+out all the fields in the template, but avoid making any format changes.
 
 **Endorsement**
 
@@ -257,8 +257,8 @@ The Steering Committee has selected the following people as [election officers]:
 In addition, the following contributors are helping with the election:
 
 - Alternate Officers: Christoph Blecker, Lachlan Evenson
-- Infra Liaison: {{K8s INFRA LIAISON}}
-- Contributor Comms Liaison: {{COMMS LIAISON}}
+- Infra Liaison: Davanum Srinivas
+- Contributor Comms Liaison: Kaslin Fields
 
 Please direct any questions via email to <election@k8s.io>.
 
@@ -282,7 +282,7 @@ Nominees may be found in the [election app].
 
 [Kubernetes Steering Committee]: https://github.com/kubernetes/steering
 [Steering Committee Charter]: https://github.com/kubernetes/steering/blob/master/charter.md
-[current steering committee backlog]: https://github.com/kubernetes/steering/projects/1
+[current steering committee backlog]: https://github.com/orgs/kubernetes/projects/40
 [governance meeting video]: https://www.youtube.com/watch?v=ltRKXLl0RaE&list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ&index=23
 
 [Steering Committee Election Charter]: https://git.k8s.io/steering/elections.md
@@ -293,7 +293,7 @@ Nominees may be found in the [election app].
 
 [Condorcet]: https://en.wikipedia.org/wiki/Condorcet_method
 [prior candidate bios]: https://github.com/kubernetes/community/tree/master/elections/steering/2022
-[election officers]: https://github.com/kubernetes/community/tree/master/elections#election-officers
+[election officers]: https://github.com/kubernetes/community/tree/master/elections#recommending-election-officers
 [Kubernetes Community Meeting]: https://github.com/kubernetes/community/blob/master/events/community-meeting.md
 [Kubernetes Blog]: https://kubernetes.io/blog/
 
@@ -303,9 +303,9 @@ Nominees may be found in the [election app].
 [Elekto]: https://elekto.dev
 [election app]: https://elections.k8s.io
 [Elekto voting documentation]: https://elekto.dev/docs/voting/
-[voters.yaml]: https://github.com/kubernetes/community/blob/master/elections/steering/2022/voters.yaml
-[election page]: https://elections.k8s.io/app/elections/steering---2022
-[voter exception form]: https://elections.k8s.io/app/elections/steering---2022/exception
+[voters.yaml]: https://github.com/kubernetes/community/blob/master/elections/steering/2023/voters.yaml
+[election page]: https://elections.k8s.io/app/elections/steering---2023
+[voter exception form]: https://elections.k8s.io/app/elections/steering---2023/exception
 [public Steering Committee Meeting]: https://github.com/kubernetes/steering/#meetings
-[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2022#eligibility
+[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2023#eligibility
 [SIGs.yaml]: https://github.com/kubernetes/community/tree/master/sigs.yaml
