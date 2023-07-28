@@ -28,10 +28,9 @@ This document outlines the process, for Code of Conduct Committee (CoCC) electio
 The steering committee will announce a request for nominations some time in July from anyone meeting the [eligibility for candidacy](#eligibility-for-candidacy) guidelines.
 
 The steering committee will accept nominations for at least 1 week. Though the steering
-committee may choose to accept nominations for longer.  After the announced nomination
-period the steering committee will hold a private ballot election using time-limited
-[Condorcet] ranking use the [Schulze method] to break ties. The steering committee
-will publicly announce the results of the election.
+committee may choose to accept nominations for longer. Once the announced nomination
+period ends, steering committee will hold an election using [Elekto](https://elections.k8s.io/)
+and will publicly announce the results of the election.
 
 #### Nomination process
 
@@ -85,6 +84,3 @@ new special election will be held by the steering committee instead of filling
 with names from the previous election. Those elected will complete the remaining
 terms of the previous, dissolved, committee. With those receiving the highest
 votes receiving the longest term.
-
-[Condorcet]: https://en.wikipedia.org/wiki/Condorcet_method
-[Schulze method]: https://en.wikipedia.org/wiki/Schulze_method
