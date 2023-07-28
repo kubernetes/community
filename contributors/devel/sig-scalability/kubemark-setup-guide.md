@@ -24,7 +24,8 @@ git clone git@github.com:kubernetes/kubernetes.git
 - ii. build kubemark binary 
 
 ```
-./hack/build-go.sh cmd/kubemark/
+cd kubernetes
+make all WHAT=cmd/kubemark
 cp $GOPATH/src/k8s.io/kubernetes/_output/bin/kubemark $GOPATH/src/k8s.io/kubernetes/cluster/images/kubemark/
 ```
 
