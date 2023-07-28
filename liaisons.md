@@ -25,7 +25,7 @@ the Steering Committee.
 
 Liaisons are assigned community groups at random (adjustments can be
 made, if needed) with each member having an (almost) equal distribution
-of SIGs, WGs and UGs. Each year after Steering Committee elections, new 
+of SIGs and WGs. Each year after Steering Committee elections, new 
 members will assume one of the departing members groups. 
 
 | Community Group            | Steering Committee Liaison |
@@ -60,7 +60,6 @@ members will assume one of the departing members groups.
 | [WG LTS](wg-lts/README.md) | TBD (**[@TBD](https://github.com/TBD)**) |
 | [WG Policy](wg-policy/README.md) | Christoph Blecker (**[@cblecker](https://github.com/cblecker)**) |
 | [WG Structured Logging](wg-structured-logging/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
-| [UG VMware Users](ug-vmware-users/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
 | [Committee Code of Conduct](committee-code-of-conduct/README.md) | Tim Pepper (**[@tpepper](https://github.com/tpepper)**) |
 | [Committee Security Response](committee-security-response/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 <!-- BEGIN CUSTOM CONTENT -->

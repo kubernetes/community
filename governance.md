@@ -34,7 +34,6 @@ The project is comprised of the following types of subgroups:
   * Subprojects
 * Working Groups, WGs
 * Committees
-* User Groups
 
 ![Kubernetes Governance Diagram](kubernetes_governance_diagram.png)
 
@@ -133,35 +132,6 @@ however, all committee members must be [community members].  Like a SIG, a
 committee has a charter and a chair, and will report to the steering committee
 periodically, and to the community as makes sense, given the charter.
 
-## User groups
-Some topics have long term relevance to large groups of Kubernetes users, but
-do not have clear deliverables or ownership of parts of the Kubernetes
-code base. As such they are neither good fits for SIGs or Working Groups.
-An example of such a topic might be continuous delivery to Kubernetes.
-
-Though their central goal is not a deliverable piece of work, as contributing
-members of the community user groups are expected to work with SIGs
-to either identify friction or usability issues that need to be addressed,
-or to provide or improve documentation in their area of expertise. However
-these activities are covered under general code contributions to the relevant
-SIGs (e.g. SIG Docs) rather than as part of the user group. These contributions
-are expected to be more incremental and ad-hoc versus the more targeted
-output of a user group.
-
-User groups function as a centralized resource to facilitate communication and
-discovery of information related to the topic of the user group. User groups
-should not undertake to produce any deliverable, instead they should form
-working groups under the auspices of some SIG for such work. Likewise they
-shouldn't take ownership of anything in the Kubernetes process, as that is a
-role for SIGs. All user group chairs, and others that hold leadership positions
-within a user group must be [community members].
-
-See [user group governance] for more details about forming and disbanding
-User Groups.
-
-To facilitate discoverability and engagement,
-user groups are documented in [sigs.yaml].
-
 ## Community Group Annual Reports
 As you can see in the descriptions above, the project is robust with diverse
 groups of contributors and their varying degrees of expected communications.
@@ -220,7 +190,6 @@ All contributors must sign the CNCF CLA, as described [here](CLA.md).
 [sig charter process]: /committee-steering/governance/README.md
 [kubernetes repository guidelines]: /github-management/kubernetes-repositories.md
 [working group governance]: /committee-steering/governance/wg-governance.md
-[user group governance]: /committee-steering/governance/ug-governance.md
 [SIG Governance Requirements]: /committee-steering/governance/sig-governance-requirements.md
 [annual community group health check]: /committee-steering/governance/annual-reports.md
 [KEP process]: https://github.com/kubernetes/enhancements/tree/master/keps#kubernetes-enhancement-proposals-keps

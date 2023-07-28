@@ -150,7 +150,7 @@ To add a channel, open a Pull Request (PR) updating the [slack-config].
         -   `#projectname`
 -   In the PR comments, include some details regarding the purpose of the
     Channel.
-    -   Channels should be dedicated to [SIGs, WGs, UGs][sig-list], sub-projects,
+    -   Channels should be dedicated to [SIGs or WGs][sig-list], sub-projects,
         community topics, or related Kubernetes programs/projects.
     -   Linking to resources such as the PR adding the subproject will speed in
         the validation and processing of the channel creation request.
@@ -299,7 +299,7 @@ bots, tokens or webhooks. Please see the processes outlined below.
 #### Processing Channel Requests
 
 Channel requests should be reviewed for their relation and relevance to the
-Kubernetes community. Typically channels should be dedicated to SIGs, WGs, UGs,
+Kubernetes community. Typically channels should be dedicated to SIGs, WGs, 
 sub-projects, community topics, and other things related to Kubernetes programs
 and projects.
 
@@ -307,7 +307,7 @@ For Kubernetes project centric requests, validate them against the
 [sig-list], or request a link to a related issue/PR, or mailing
 list discussion for the requested Channel.
 
-Small external projects are encouraged to use the channel of the SIG, WG, or UG
+Small external projects are encouraged to use the channel of the SIG or WG 
 most relevant to them. Other things such as programming language-specific
 channels are discouraged and should in turn be steered to `#kubernetes-client`
 or communication avenues commonly used by their specific language.
