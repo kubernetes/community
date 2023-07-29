@@ -1,5 +1,7 @@
 channels:
   - name: sig-node
+  - name: sig-node-bug-scrub
+    archived: true
   - name: sig-node-ci
   - name: sig-node-kmm
     id: C037RE58RED
