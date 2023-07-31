@@ -116,6 +116,9 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 ### provider-baiducloud
 - **Owners:**
   - [kubernetes-sigs/cloud-provider-baiducloud](https://github.com/kubernetes-sigs/cloud-provider-baiducloud/blob/master/OWNERS)
+### provider-equinix-metal
+- **Owners:**
+  - [kubernetes-sigs/cloud-provider-equinix-metal](https://github.com/kubernetes-sigs/cloud-provider-equinix-metal/blob/main/OWNERS)
 ### provider-gcp
 - **Owners:**
   - [kubernetes-sigs/gcp-compute-persistent-disk-csi-driver](https://github.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/blob/master/OWNERS)

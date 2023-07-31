@@ -925,6 +925,9 @@ sigs:
   - name: provider-baiducloud
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-baiducloud/master/OWNERS
+  - name: provider-equinix-metal
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-equinix-metal/main/OWNERS
   - name: provider-gcp
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/gcp-compute-persistent-disk-csi-driver/master/OWNERS
