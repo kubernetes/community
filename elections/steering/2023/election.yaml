@@ -1,7 +1,7 @@
 name: 2023 Steering Committee Election
 organization: Kubernetes
 start_datetime: 2023-08-29 00:00:01
-end_datetime: 2023-09-26 11:59:59
+end_datetime: 2023-09-27 11:59:59
 no_winners: 4
 allow_no_opinion: True
 delete_after: True
@@ -14,4 +14,4 @@ election_officers:
   - bridgetkromhout
 eligibility: Kubernetes Org members with 50 or more contributions in the last year can vote.  See [the election guide](https://github.com/kubernetes/community/tree/master/elections/steering/2023)
 exception_description: Not all contributions are measured by DevStats.  If you have contributions that are not so measured, then please request an exception to allow you to vote via the Elekto application.
-exception_due: 2023-09-23 11:59:59
+exception_due: 2023-09-24 11:59:59
