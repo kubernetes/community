@@ -133,7 +133,7 @@ Examples of contributions that would NOT be considered:
 | TBD                     | Steering Committee Q+A for the candidates                             |
 | Saturday, August 26     | Candidate nominations due at the end of the day in AoE time           |
 | Sunday, August 27       | All candidate bios due at the end of the day in AoE time              |
-| Tuesday, August 29      | Election Begins via email ballots                                     |
+| Tuesday, August 29      | Election Begins                                                       |
 | Saturday, September 23  | Deadline to submit voter exception requests                           |
 | Tuesday, September 26   | Election Closes at the end of the day in AoE time                     |
 | Wednesday, September 27 | Private announcement of Results to SC members not up for election     |
