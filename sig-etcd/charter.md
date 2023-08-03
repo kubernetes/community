@@ -54,7 +54,7 @@ and opts-in to updates and modifications to [sig-governance].
 ### Deviations from [kubernetes-repositories]
 
 - SIG etcd repositories live in github.com/etcd-io
-- SIG etcd repositories should (but not must) adopt merge bot, Kubernetes PR commands/bot, OWNERS file.
+- SIG etcd repositories should (but not must) adopt merge bot, Kubernetes PR commands/bot.
 - SIG etcd repositories will follow [rules for donated repositories].
 
 [kubernetes-repositories]: https://github.com/kubernetes/community/blob/master/github-management/kubernetes-repositories.md#sig-repositories
