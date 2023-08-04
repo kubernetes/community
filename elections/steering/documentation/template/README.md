@@ -140,7 +140,7 @@ Examples of contributions that would NOT be considered:
 | DATE HERE               | Steering Committee Q+A for the candidates                             |
 | DATE HERE               | Candidate nominations due at the end of the day in AoE time           |
 | DATE HERE               | All candidate bios due at the end of the day in AoE time              |
-| DATE HERE               | Election Begins via email ballots                                     |
+| DATE HERE               | Election Begins                                                       |
 | DATE HERE               | Deadline to submit voter exception requests                           |
 | DATE HERE               | Election Closes at the end of the day in AoE time                     |
 | DATE HERE               | Private announcement of Results to SC members not up for election     |
