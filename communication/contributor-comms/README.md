@@ -12,7 +12,7 @@ The Contributor Comms subproject uses leadership roles to organize and delegate 
 | Area & Handbook Link | Team | Notes |
 | --- | --- | --- |
 | Subproject Lead | @kaslin, @chris-short | @AvineshTripathi (shadow) |
-| [Social Media Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Social-Media.md) |@kaslin | Shadow role is available. |
+| [Social Media Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Social-Media.md) |@kaslin | @Hii-Arpit (shadow) |
 | [Comms Tech Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Tech-Lead.md) | @SD-13 | Shadow role is available. |
 | [Comms Blog Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/blog-coordinator.md) | @fsmunoz |  Shadow role is available. |
 | Emeritus | @parispittman, @mbbroberg |
