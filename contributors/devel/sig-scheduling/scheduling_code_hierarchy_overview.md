@@ -135,7 +135,7 @@ different consumers of the framework can initialize the environment differently
 to cover their needs. For example, a simulator can inject its own object
 through informers. Or custom plugins may be provided instead of the default ones.
 Known consumers of the scheduling framework:
-- [cluster-autoscaler](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/simulator/predicatechecker/schedulerbased.go)
+- [cluster-autoscaler](https://github.com/kubernetes/autoscaler/blob/3b44c1012b246376026d7e532b76631abe563ba5/cluster-autoscaler/simulator/predicatechecker/schedulerbased.go)
 - [cluster-capacity](https://github.com/kubernetes-sigs/cluster-capacity/blob/8e9c2dcf3644cb5f73fca3d35d4e22899c265ad5/pkg/framework/simulator.go#L370-L383)
 
 ### Assembling the scheduler
