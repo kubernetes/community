@@ -265,7 +265,7 @@ operation compared to running the same test locally. On the other hand, a too
 long timeout can be annoying when trying to debug tests locally.
 
 The framework provides some [common
-timeouts](https://github.com/kubernetes/kubernetes/blob/eba98af1d8b19b120e39f3/test/e2e/framework/timeouts.go#L44-L109)
+timeouts](https://github.com/kubernetes/kubernetes/blob/1e84987baccbccf929eba98af1d8b19b120e39f3/test/e2e/framework/timeouts.go#L44-L109)
 through the [framework
 instance](https://github.com/kubernetes/kubernetes/blob/1e84987baccbccf929eba98af1d8b19b120e39f3/test/e2e/framework/framework.go#L122-L123).
 When writing a test, check whether one of those fits before defining a custom
