@@ -213,9 +213,14 @@ At the same time you have Steering approve the timeline, they should also approv
 
 The eligible voters list is produced through this process:
 
-1. Request a list of all contributors over a certain number of contributions from [Devstats] staff by filing an issue.  To ensure attention, tag @lukaszgryglicki in the #devstats Slack channel.
-2. Match this list against the list of Org members supplied from the [Org Repo], discarding any contributor who is not an Org member.
+1. Generate the list of eligible contributors from [Devstats], filtering by required number of contributions. Search for all repos for the last year, bots excluded, and [generate a CSV to download].
+2. Match this list against the list of Org members supplied from the [Org Repo], discarding any contributor who is not an Org member. An example of how to produce the Org member list:
+```
+yq '.admins + .members'   config/kubernetes/org.yaml   config/kubernetes-client/org.yaml   config/kubernetes-csi/org.yaml   config/kubernetes-sigs/org.yaml | sort -f | uniq | grep -v "\-\-\-"
+```
+
 3. Add to the list all members of the Code of Conduct Committee and Security Response Committee, if not already present
+
 4. Sort alphabetically, deduplicate if required, and reformat to match the format of voters.yaml template
 
 Note that currently Elekto is case-sensitive and requires capitalization in voters.yaml to match the official capitalization of each contributor's GitHub account. While this may be fixed in the future, you need to be careful to preserve capitalization when copying GH IDs for now.
@@ -469,3 +474,4 @@ Should more than one EO drop out, leaving less than three EOs, then the remainin
 [email script]: https://github.com/elekto-io/elekto/blob/main/scripts/elekto_emails.py
 [Comms Plan]: https://docs.google.com/document/d/1zhZzjKi-VHD1xfdibX68VxYaQ_-PiFKanGzBcF-1ilQ/edit?usp=sharing
 [2022 retro]: https://docs.google.com/document/d/1M8Ho1Bx9WkmNrzc1eoSJPsQxaO9smEtp-mxvpc4s5i8/edit?usp=sharing
+[generate a CSV to download]: https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All&var-repo_name=kubernetes%2Fkubernetes&var-country_name=All&inspect=4&inspectTab=data#:~:text=Formatted%20data-,Download,-CSV
