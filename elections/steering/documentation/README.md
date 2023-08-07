@@ -235,6 +235,8 @@ For Steering elections, we are currently using [Elekto]. Elekto is a GitOps syst
 * **voters.yaml**: this is the list of eligible voters used by Elekto.
 * **nomination-template.md**: this is a sample candidate template for candidates to base their nomintation statements and profiles on. You should not need to edit it.
 
+Note: also list the voters.yaml file in the spelling-check exclusion file [hack/.spelling_failures](https://github.com/kubernetes/community/commit/5fd6a0222fc88fdc35131a2bb5321ef17ad65d27). This prevents a failure in the build caused because usernames don't match what a dictionary lists as a correctly-spelled word.
+
 Each of the above templates will have blanks to fill in.  When the EO Admin has filled in all information, they submit it for the other two EOs to approve. Ideally, a project member trained on Elekto will also review it for technical errors.
 
 Once the file is merged, the election should appear on the [election website] in half an hour or less.  If it does not, contact the Infra liaison for troubleshooting.
