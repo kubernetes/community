@@ -49,6 +49,7 @@ channels:
   - name: cka-exam-prep
   - name: ckad-exam-prep
   - name: cks-exam-prep
+  - name: claudie
   - name: client-go-docs
     archived: true
   - name: cluster-addons
