@@ -52,9 +52,7 @@
 1. What areas and/or subprojects does your group need the most help with?
    Any areas with 2 or fewer OWNERs? (link to more details)
 
-   -
-   -
-   -
+   - The [Needs KEP / release work #sig-auth](https://docs.google.com/document/d/1sY8fRyRtk4eG9R439z5ao5i9bFuuxilS03XaNlqoni0/edit?usp=sharing) document lists multiple areas that need help and some currently have volunteers working on them.
 
 2. What metrics/community health stats does your group care about and/or measure?
 
@@ -78,8 +76,7 @@
 6. Are there ways end users/companies can contribute that they currently are not?
    If one of those ways is more full time support, what would they work on and why?
 
-   -
-   -
+   - We need help with enhancing onboarding guide, pull request reviews, and areas listed in the [Needs KEP / release work #sig-auth](https://docs.google.com/document/d/1sY8fRyRtk4eG9R439z5ao5i9bFuuxilS03XaNlqoni0/edit?usp=sharing) document.
 
 ## Membership
 
