@@ -1,0 +1,18 @@
+name: 2023 Kubernetes Code of Conduct Committee Election
+organization: Kubernetes
+start_datetime: 2023-08-09 00:00:01
+end_datetime: 2023-08-15 11:59:59
+no_winners: 2
+allow_no_opinion: True
+delete_after: True
+election_officers:
+ - BenTheElder
+ - cblecker
+ - cpanato
+ - justaugustus
+ - mrbobbytables
+ - palnabarun
+ - tpepper
+eligibility: Eligibility is limited to the [current Steering Committee Members](https://github.com/kubernetes/steering/blob/c65bd4e586be59d12466b2bd6c19905240a97f0a/README.md#members)
+exception_description: No exception requests accepted for this election.
+exception_due: 2023-08-08 00:00:01
