@@ -30,7 +30,7 @@ Owns the etcd project and how it is used by Kubernetes.
 
 ### Out of scope
 
-- Structure of data stored in etcd is owned by SIG API Machinery
+- Structure of data stored in etcd by Kubernetes components is owned by SIG API Machinery
 
 ## Roles and Organization Management
 

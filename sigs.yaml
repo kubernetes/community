@@ -1669,8 +1669,8 @@ sigs:
 - dir: sig-etcd
   name: etcd
   mission_statement: >
-    Make etcd the best production-ready store for building cloud-native distributed
-    systems and managing cloud-native infrastructure via orchestrators like Kubernetes.
+    etcd is a production-ready store for building cloud-native distributed systems
+    and managing cloud-native infrastructure via orchestrators like Kubernetes.
 
     Etcd should provide distributed system primitives** (such as distributed locking
     and leader election) that allow users to **create scalable, highly available and

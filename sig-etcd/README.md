@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # etcd Special Interest Group
 
-Make etcd the best production-ready store for building cloud-native distributed systems and managing cloud-native infrastructure via orchestrators like Kubernetes.
+etcd is a production-ready store for building cloud-native distributed systems and managing cloud-native infrastructure via orchestrators like Kubernetes.
 Etcd should provide distributed system primitives** (such as distributed locking and leader election) that allow users to **create scalable, highly available and fault-tolerant systems.
 Etcd is the place to store the infrastructure configuration, not only as part of Kubernetes, but also as a standalone solution.
 
