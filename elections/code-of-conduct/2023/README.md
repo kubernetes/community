@@ -47,9 +47,9 @@ for how to use it.
 | July 25                 | Nominations Open                                  |
 | Friday, August 4        | Nominations Close                                 |
 | Monday, August 7        | Steering to confirm candidacy                     |
-| Wednesday, August 9     | Election Begins                                   |
-| Tuesday, August 15      | Election Closes                                   |
-| Wednesday, August 16    | Announcement of results                           |
+| Friday, August 11       | Election Begins                                   |
+| Thursday, August 17     | Election Closes                                   |
+| Friday, August 18       | Announcement of results                           |
 | Wednesday, August 23    | CoCC to hold onboarding sessions for new members  |
 
 Candidate nomination, bio, and election close deadlines will be done using Anywhere on Earth timing, meaning it is still valid to submit new nominations/bios/votes as long as it is still the last day anywhere on the planet (i.e. at the end of that day in UTC-12).
