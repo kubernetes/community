@@ -18,7 +18,7 @@ and organization of every kind. For Kubernetes, the larger the project becomes
 
 ## Current mentoring activities:
 
-Please reach out to #sig-contribex on slack or come to a mentoring meeting to get involved in planning //TODO add contribex README when this is updated
+Please reach out to #sig-contribex on slack or come to a mentoring meeting to get involved in planning. <!--TODO: add contribex README when this is updated -->
 
 SIG's office hours / mentoring
 
