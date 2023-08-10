@@ -1683,11 +1683,11 @@ sigs:
   label: etcd
   leadership:
     chairs:
-    - github: ahrtr
-      name: Benjamin Wang
-      company: VMWare
-    - github: serathius
-      name: Marek Siarkowicz
+    - github: jmhbnz
+      name: James Blair
+      company: Red Hat
+    - github: wenjiaswe
+      name: Wenjia Zhang
       company: Google
     tech_leads:
     - github: ahrtr

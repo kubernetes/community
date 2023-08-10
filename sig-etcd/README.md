@@ -24,8 +24,8 @@ The [charter](charter.md) defines the scope and governance of the etcd Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Benjamin Wang (**[@ahrtr](https://github.com/ahrtr)**), VMWare
-* Marek Siarkowicz (**[@serathius](https://github.com/serathius)**), Google
+* James Blair (**[@jmhbnz](https://github.com/jmhbnz)**), Red Hat
+* Wenjia Zhang (**[@wenjiaswe](https://github.com/wenjiaswe)**), Google
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
