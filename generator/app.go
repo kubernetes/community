@@ -230,6 +230,7 @@ type Subproject struct {
 	Description string   `yaml:",omitempty"`
 	Contact     *Contact `yaml:",omitempty"`
 	Owners      []string
+	Leads       []Person  `yaml:",omitempty"`
 	Meetings    []Meeting `yaml:",omitempty"`
 }
 
@@ -395,6 +396,9 @@ func (c *Context) Sort() {
 						return subproject.Contact.GithubTeams[i].Name < subproject.Contact.GithubTeams[j].Name
 					})
 				}
+				sort.Slice(subproject.Leads, func(i, j int) bool {
+					return subproject.Leads[i].GitHub < subproject.Leads[j].GitHub
+				})
 				sort.Strings(subproject.Owners)
 				sort.Slice(subproject.Meetings, func(i, j int) bool {
 					return subproject.Meetings[i].Description < subproject.Meetings[j].Description

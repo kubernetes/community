@@ -90,6 +90,12 @@ The following [subprojects][subproject-definition] are owned by sig-{{.Label}}:
 {{- if .Description }}
 {{ trimSpace .Description }}
 {{- end }}
+{{- if .Leads }}
+- **Leads:**{{ range .Leads }}
+  - {{.Name}} (**[@{{.GitHub}}](https://github.com/{{.GitHub}})**){{if .Company}}, {{.Company}}{{end}}
+{{- end }}
+
+{{- end }}
 - **Owners:**
 {{- range .Owners }}
   - [{{trimSuffix (orgRepoPath .) "/OWNERS"}}]({{githubURL .}})
