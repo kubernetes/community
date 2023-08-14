@@ -2008,7 +2008,7 @@ sigs:
     - github: dcbw
       name: Dan Williams
   meetings:
-  - description: Gateway API Code Jam
+  - description: Sig-Network and Gateway API Code Jam
     day: Friday
     time: "08:30"
     tz: PT (Pacific Time)
@@ -2050,18 +2050,6 @@ sigs:
     url: https://zoom.us/j/98377891310
     archive_url: https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit
     recordings_url: https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X
-  - description: SIG Network KPNG APAC Meeting
-    day: Wednesday
-    time: "16:00"
-    tz: IST (Indian Standard Time)
-    frequency: weekly
-    url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
-  - description: SIG Network KPNG Meeting
-    day: Friday
-    time: "7:30"
-    tz: PT (Pacific Time)
-    frequency: weekly
-    url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
   - description: SIG Network Meeting
     day: Thursday
     time: "09:00"
@@ -2253,7 +2241,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/dra-example-driver/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/noderesourcetopology-api/main/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/resourceclaim/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/resourcecl#aim/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/framework/plugins/dynamicresources/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/dynamic-resource-allocation/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/kubelet/pkg/apis/dra/OWNERS
