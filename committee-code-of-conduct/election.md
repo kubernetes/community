@@ -55,19 +55,9 @@ Prior to the voting process, Steering Committee must:
 Maximal representation of a single employer is `QUORUM - 1`. With a five person committee,
 that limits the number of members employed by the same company to two.
 
-### Committee Conflict of Interest
+### Committee Conflicts of Interest
 
-As project committees have unique charters, there is a possibility
-for a conflict of interest to arise. While multiple scenarios may
-be possible now or in the future, one known example of such conflict
-of interest is where a member of the Code of Conduct Committee is
-elected to the Steering Committee.
-
-Such conflict will be resolved by the applicable Election Committee
-reaching out to the newly-elected member and facilitating a decision
-regarding on which committee the individual will continue. The
-committee where that individual vacated their seat will fill that
-vacancy as per existing election or committee vacancy rules.
+Potential committee conflicts of interest are detailed in the [election documentation](/elections/committee-conflict-of-interest.md).
 
 ### Election Cycles
 
