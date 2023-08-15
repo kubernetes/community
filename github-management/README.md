@@ -29,10 +29,10 @@ various tasks.
 This team (**[@kubernetes/owners](https://github.com/orgs/kubernetes/teams/owners)**) is as follows:
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**, US Eastern)
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**, CA Pacific)
+* Madhav Jivrajani (**[@MadhavJivrajani](https://github.com/MadhavJivrajani)**, Indian Standard Time)
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**, Indian Standard Time)
 * Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**, Indian Standard Time)
-* Ihor Dvoretskyi (**[@idvoretskyi](https://github.com/idvoretskyi)**, UA Eastern European)
-* Madhav Jivrajani (**[@MadhavJivrajani](https://github.com/MadhavJivrajani)**, Indian Standard Time)
+* Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**, Indian Standard Time)
 
 This team is responsible for holding Org Owner privileges over all the active
 Kubernetes orgs, and will take action in accordance with our polices and
