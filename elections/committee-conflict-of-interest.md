@@ -1,13 +1,15 @@
 # Committee Conflicts of Interest
 
-As project committees have unique charters, there is a possibility
-for a conflict of interest to arise. While multiple scenarios may
-be possible now or in the future, one known example of such conflict
-of interest is where a member of the Code of Conduct Committee is
-elected to the Steering Committee.
+At time of writing, the only known conflict of interest for serving on
+committees in the Kubernetes Community exists with the
+[Steering Committee](/committee-steering/README.md) and
+the [Code of Conduct Committee](/committee-code-of-conduct/README.md).
 
-Such conflict will be resolved by the applicable Election Committee
-reaching out to the newly-elected member and facilitating a decision
-regarding on which committee the individual will continue. The
-committee where that individual vacated their seat will fill that
-vacancy as per existing election or committee vacancy rules.
+**_Kubernetes Community members cannot serve on both committees simultaneously._**
+
+Upon appointment, the (Steering Committee) election committee will reach out to
+the newly elected Steering Committee member and ask which committee they intend
+to continue with.
+
+The committee where that individual vacated their seat will fill that vacancy
+per existing election or committee vacancy rules.
