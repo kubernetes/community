@@ -420,6 +420,7 @@ channels:
   - name: sig-auth
   - name: sig-auth-authenticators-dev
   - name: sig-auth-authorizers-dev
+  - name: sig-auth-certificates-dev
   - name: sig-auth-kms-dev
   - name: sig-auth-triage
   - name: sig-autoscaling
