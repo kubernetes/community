@@ -27,6 +27,8 @@ I'd love to bring SIG, end-user, and my overall experience to the Steering Commi
 
 ## Resources About Me
 
+- My website: [vincepri.com](https://vincepri.com)
 - [Cluster API Deep-Dive KubeCon NA 2019](https://www.youtube.com/watch?v=B_Zb9_Ralb4)
 - [Co-Authored the Cluster API v1 CNCF blog post](https://www.cncf.io/blog/2021/10/06/kubernetes-cluster-api-reaches-production-readiness-with-version-1-0/)
-- Twitter: [https://twitter.com/vinceprignano](https://twitter.com/vinceprignano)
+- [Cluster API Intro and Deep Dive KubeCon EU 2022](https://www.youtube.com/watch?v=9H8flXm_lKk)
+
