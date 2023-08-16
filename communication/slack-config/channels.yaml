@@ -279,9 +279,12 @@ channels:
   - name: kubernetes-operators
   - name: kubernetes-org-members
   - name: kubernetes-ruby
+    archived: true
   - name: kubernetes-security
   - name: kubernetes-streaming
+    archived: true
   - name: kubernetes-teachers
+    archived: true
   - name: kubernetes-users
   - name: kubeslice
   - name: kubespray
