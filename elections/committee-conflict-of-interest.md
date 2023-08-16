@@ -31,5 +31,9 @@ they want to continue with in the event that they are elected.
 This process should occur as soon as possible after a potential conflict has
 been identified.
 
+If the candidate is elected in the first election to conclude and that
+appointment matches their preference, the candidate will be withdrawn from the
+remaining open election.
+
 If applicable, the committee where that individual vacated their seat will fill
 that vacancy per existing election or committee vacancy rules.
