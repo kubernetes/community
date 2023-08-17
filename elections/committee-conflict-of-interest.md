@@ -39,3 +39,9 @@ remaining open election.
 
 If applicable, the committee where that individual vacated their seat will fill
 that vacancy per existing election or committee vacancy rules.
+
+In the event that multiple candidates trigger this conflict in an election
+cycle, the two (2) affected candidates receiving the most votes will have their
+preference honored. In the event that the first election to conclude has only
+two seats under consideration, only the affected candidate with the most votes
+will have their preference honored.
