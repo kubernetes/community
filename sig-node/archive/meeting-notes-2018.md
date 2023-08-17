@@ -241,9 +241,9 @@ https://groups.google.com/d/topic/kubernetes-sig-storage/v2DKu8kNIgo/discussion
     *   Validate against a docker API version: https://github.com/kubernetes/kubernetes/issues/53221
     *   Sig-cluster-lifecycle requirements:
         *   Test dashboard to show the container runtime status:
-            *   Docker: https://k8s-testgrid.appspot.com/sig-node-kubelet, https://k8s-testgrid.appspot.com/sig-node-cri
-            *   Containerd: https://k8s-testgrid.appspot.com/sig-node-containerd
-            *   CRI-O: https://k8s-testgrid.appspot.com/sig-node-cri-o
+            *   Docker: https://testgrid.k8s.io/sig-node-kubelet, https://testgrid.k8s.io/sig-node-cri
+            *   Containerd: https://testgrid.k8s.io/sig-node-containerd
+            *   CRI-O: https://testgrid.k8s.io/sig-node-cri-o
             *   Pending work to move to the newly defined test jobs for CRI
         *   A central place of document to tell users how to configure each container runtime.
             *   Follow up here - https://github.com/kubernetes/website/issues/9692

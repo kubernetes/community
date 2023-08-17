@@ -321,8 +321,8 @@ NOTE: This meeting is being held in ZOOM due to troubles with hangouts: http://w
         *   Use cadvisor for now, punt till post 1.5
     *   Docker integration status:
         *   Passing most of the tests (testgrid link)
-            *   node e2e: https://k8s-testgrid.appspot.com/google-node#kubelet-cri-gce-e2e
-            *   cluster e2e: https://k8s-testgrid.appspot.com/google-gce#gci-gce-cri
+            *   node e2e: https://testgrid.k8s.io/google-node#kubelet-cri-gce-e2e
+            *   cluster e2e: https://testgrid.k8s.io/google-gce#gci-gce-cri
         *   Adding serial and per-PR builders soon
         *   Lantao (random-liu@) is working on integration over grpc: https://github.com/kubernetes/kubernetes/pull/33988
     *   Networking
@@ -362,7 +362,7 @@ NOTE: This meeting is being held in ZOOM due to troubles with hangouts: http://w
     *   port forwarding (casey)
 *   CRI e2e testing
     *   https://github.com/kubernetes/kubernetes/issues/33189
-    *   https://k8s-testgrid.appspot.com/google-node#kubelet-cri-gce-e2e
+    *   https://testgrid.k8s.io/google-node#kubelet-cri-gce-e2e
         *   Bypassed CRI to support logs/exec for now
         *   Support only docker 1.11+
     *   Q: If you're writing your own CRI implementation, how can you test it?

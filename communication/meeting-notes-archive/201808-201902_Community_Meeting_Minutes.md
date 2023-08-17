@@ -13,7 +13,7 @@
     *   Current Release Development Cycle  [Aaron Crickenberger - Release Manager]
         *   [We are at Week 7 for v1.14](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.14) - [minutes](https://docs.google.com/document/d/1U3jL8Ucruoq9wyzIgxEdyA51MuOIi_gvecVed1kAli0/edit#heading=h.60ptyogm23dd) - [recording](https://youtu.be/SfaBzKPeaLk)
         *   Everything has a KEP, but are they useful
-        *   We have [release-1.14-blocking](https://testgrid.k8s.io/sig-release-1.14-blocking) and [release-1.14-all](https://testgrid.k8s.io/sig-release-1.14-all) testgrid dashboards backed by release-1.14 jobs (thanks @amwat, @dbhanushali, @krzyzacy)
+        *   We have [release-1.14-blocking](https://k8s-testgrid.appspot.com/sig-release-1.14-blocking) and [release-1.14-all](https://k8s-testgrid.appspot.com/sig-release-1.14-all) testgrid dashboards backed by release-1.14 jobs (thanks @amwat, @dbhanushali, @krzyzacy)
         *   Comments / questions / concerns on how this is going? Add them to [https://bit.ly/k8s114-retro](https://bit.ly/k8s114-retro) 
     *   Upcoming milestones:
         *   **[Burndown](https://github.com/kubernetes/sig-release/tree/master/releases/release-1.14#burndown) Monday February 25** (week 8)
@@ -163,8 +163,8 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
             *   If you have any questions about the KEP process, join us at (HEY AARON FILL THIS OUT) meeting. 
         *   CI Signal
             *   [http://bit.ly/k8s114-cisignal](http://bit.ly/k8s114-cisignal)
-            *   We watch [release-master-blocking](https://testgrid.k8s.io/sig-release-master-blocking), [release-master-upgrade](https://testgrid.k8s.io/sig-release-master-upgrade)
-            *   We are informed by [release-master-informing](https://testgrid.k8s.io/sig-release-master-informing) (still being iterated on)
+            *   We watch [release-master-blocking](https://k8s-testgrid.appspot.com/sig-release-master-blocking), [release-master-upgrade](https://k8s-testgrid.appspot.com/sig-release-master-upgrade)
+            *   We are informed by [release-master-informing](https://k8s-testgrid.appspot.com/sig-release-master-informing) (still being iterated on)
             *   FYI: [pull-kubernetes-e2e-kops-aws is optional, non-blocking](https://groups.google.com/forum/#!topic/kubernetes-dev/mvzwnWR3ahg)
             *   Implementing [release-blocking job criteria](https://github.com/kubernetes/sig-release/blob/master/release-blocking-jobs.md#release-blocking-criteria): all release-blocking jobs must have owners
                 *   Specify "owner" as "an e-mail address that testgrid can send alerts to if the job fails more than N times in a row"
@@ -248,7 +248,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
             *   41 enhancements, 19 in alpha, 11 in beta and 6 for GA.  Would be good to have less alpha, more stable.
         *   CI Signal
             *   [http://bit.ly/k8s114-cisignal](http://bit.ly/k8s114-cisignal)
-            *   We watch [release-master-blocking](https://testgrid.k8s.io/sig-release-master-blocking) 
+            *   We watch [release-master-blocking](https://k8s-testgrid.appspot.com/sig-release-master-blocking) 
             *   Currently tracked in google doc, likely to change going forward
             *   Implementing [release-blocking job criteria](https://github.com/kubernetes/sig-release/blob/master/release-blocking-jobs.md#release-blocking-criteria): all release-blocking jobs must have owners
                 *   Specify "owner" as "an e-mail address that testgrid can send alerts to if the job fails more than N times in a row"
@@ -882,7 +882,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   No k8s office hours this month - thanks to all the volunteers who helped make the program a success this year. 
     *   **? **Shoutouts this week **?**
         *   Twitterverse shoutouts for our fearless 1.13 Release Team Lead, @AishSundar: https://twitter.com/stephenaugustus/status/1063610123149545472?s=19
-        *   Shoutout to @amerai for adding a search bar to Testgrid so that you don't have to dig to find the right dashboard! https://testgrid.k8s.io/
+        *   Shoutout to @amerai for adding a search bar to Testgrid so that you don't have to dig to find the right dashboard! https://k8s-testgrid.appspot.com/
         *   to @mkimuram & @saad-ali & @msau42 for rapid response to multiple storage test issues with new features.
         *   to @mrhohn for fast & insightful help with sig-network test failures
         *   Huge shoutouts to the entire 1.13 Release leads and shadows for their stellar efforts at every stage throughout the cycle, enabling us to stabilize and  hopefully land the release on time -  @kacole2 @jberkus @cjwagner @dougm @nikopen @tfogo @marpaia @kbarnard10 @spiffxp @tpepper@aleksandram!
@@ -935,7 +935,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   _@justaugustus_ 
         *   Twitterverse shoutouts for our fearless 1.13 Release Team Lead, @AishSundar: [https://twitter.com/stephenaugustus/status/1063610123149545472](https://twitter.com/stephenaugustus/status/1063610123149545472) 
     *   _@cjwagner_ 
-        *   Shoutout to @amerai for adding a search bar to Testgrid so that you don't have to dig to find the right dashboard! [https://testgrid.k8s.io/](https://testgrid.k8s.io/) 
+        *   Shoutout to @amerai for adding a search bar to Testgrid so that you don't have to dig to find the right dashboard! [https://k8s-testgrid.appspot.com/](https://k8s-testgrid.appspot.com/) 
 
 
 ## November 15, 2018 - ([recording](https://youtu.be/wkMRB1dalpA))
@@ -1046,7 +1046,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
     *   GitHub: [https://j.hept.io/contour](https://j.hept.io/contour)
 *   [ 0:00 ]** Release Updates**
     *   Current Release Development Cycle  [Aish Sundar - Release Manager]
-        *   We cut Beta0 and the [1.13 Release branch](https://testgrid.k8s.io/sig-release-1.13-blocking) yesterday, 11/7 !
+        *   We cut Beta0 and the [1.13 Release branch](https://k8s-testgrid.appspot.com/sig-release-1.13-blocking) yesterday, 11/7 !
         *   Updated to Go 1.11.2 before Beta.
         *   **Code Slush is this Friday (tomorrow), 11/9**
             *   All PRs need /priority, /kind, /sig, /milestone labels to merge post 5pm PST 
@@ -1438,7 +1438,7 @@ Paris: shoutout to @coderanger who helped us during a slack spam attack this wee
         *   AishSundar - shoutout to @nikopen for automating the Issues and PR spreadsheet for Bug Triage and CI Signal for 1.13 ! Thanks for staying on top of this and accommodating the feature requests
         *   jberkus - to @justinsb for splitting out our long-running upgrade tests so that they actually complete
         *   spiffxp - Congrats to @bentheelder for creating a PR that deletes over 3 million lines of code [https://github.com/kubernetes-sigs/kustomize/pull/503](https://github.com/kubernetes-sigs/kustomize/pull/503)
-            *   Shoutouts to @ixdy for setting things up so we can use shorter URL's https://testgrid.k8s.io and [https://gubernator.k8s.io](https://gubernator.k8s.io)
+            *   Shoutouts to @ixdy for setting things up so we can use shorter URL's https://k8s-testgrid.appspot.com and [https://gubernator.k8s.io](https://gubernator.k8s.io)
         *   nabrahams - Shoutout to @idealhack for translating a huge pile of slides in preparation for the New Contributor Workshop in Shanghai.
         *   kacole2 - Shoutout to @AishSundar @spiffxp @claurence @gsaenger and @ameukam for their help on getting all the k/features (enhancements) issues in a great spot where everything is now being tracked to a PR in k/k and getting the freeze over the finish line.
         *   AishSundar - @kacole2 right back at you ! Awesome job on doing all the heavy lifting yourself. Staying on top of ~50 incoming enhancements, following up to prune the list and mentoring the shadows at the same time is no easy feat :slightly_smiling_face:

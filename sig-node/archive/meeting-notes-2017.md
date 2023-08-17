@@ -55,8 +55,8 @@
 *   FYI RHEL e2e-node results for regular and containerized kubelet now in TestGrid (Seth)
     *   Big thanks to Jan Chaloupka for the work on this
     *   Uses Red Hat Origin CI infra for doing the tests and publishing to GCS
-    *   https://k8s-testgrid.appspot.com/sig-node-kubelet#kubelet-conformance-aws-e2e-rhel
-    *   https://k8s-testgrid.appspot.com/sig-node-kubelet#kubelet-containerized-conformance-aws-e2e-rhel
+    *   https://testgrid.k8s.io/sig-node-kubelet#kubelet-conformance-aws-e2e-rhel
+    *   https://testgrid.k8s.io/sig-node-kubelet#kubelet-containerized-conformance-aws-e2e-rhel
 *   1.9 release status updates
 
 
@@ -562,8 +562,8 @@ No meeting
     *   @Dawn: Node e2e and conformance test are also built for vendors and users to validate their node setup including the docker version.
     *   @Lantao: Kubeadm also enforce docker version in the pre-flight check.
     *   We already run many tests for docker validation, but we do need to organize and expose the information better.
-        *   Node e2e test: https://k8s-testgrid.appspot.com/sig-node#kubelet
-        *   Docker validation test: https://k8s-testgrid.appspot.com/google-docker (e2e-cos suite is not working properly because of some legacy reason, our GCI team is working on that)
+        *   Node e2e test: https://testgrid.k8s.io/sig-node#kubelet
+        *   Docker validation test: https://testgrid.k8s.io/google-docker (e2e-cos suite is not working properly because of some legacy reason, our GCI team is working on that)
     *   @michaelcrosby: Containerd will run integration test to avoid PRs breaking swarm, Kubernetes etc.
     *   @Dawn: Both cluster e2e and node e2e are too heavy for containerd to carry. That's why we build the [CRI validation test](https://github.com/kubernetes-incubator/cri-tools), which test against CRI directly which is much more lightweight.
 *   mount propagation (@jsafrane)
@@ -898,7 +898,7 @@ Thus far, we have been discussing config in terms of a specific object type asso
 
 *   1.6 release discussion:
     *   CRI logging with journald: PR was merged
-    *   Is someone looking at [kublet serial GC failues](https://k8s-testgrid.appspot.com/google-node#kubelet-serial-gce-e2e)?
+    *   Is someone looking at [kublet serial GC failues](https://testgrid.k8s.io/google-node#kubelet-serial-gce-e2e)?
     *   Thanks for closing all those flakes :)
     *   GPU support: accepted
     *   Release notes
@@ -929,7 +929,7 @@ Thus far, we have been discussing config in terms of a specific object type asso
         *   Found several small issues, such as kubectl log+journald support
             *   The fixes are in or pending
             *   Discussions about requirements to deprecate support for journald: https://github.com/kubernetes/kubernetes/issues/42188
-        *   Non-CRI test coverage:https://k8s-testgrid.appspot.com/google-non-cri
+        *   Non-CRI test coverage:https://testgrid.k8s.io/google-non-cri
     *   Evictions
         *   Delete pod objects only after all pod level resources are reclaimed
         *   TODO:
