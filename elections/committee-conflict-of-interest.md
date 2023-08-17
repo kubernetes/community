@@ -1,6 +1,6 @@
 # Committee Conflicts of Interest
 
-## Steering Committee and CoCC
+## Steering Committee and Code of Conduct Committee
 
 At time of writing, the only known conflict of interest for serving on
 committees in the Kubernetes Community exists with the
@@ -25,8 +25,10 @@ preference in which committee they would like to serve on, if elected_.
 
 After the candidate is nominated for a position that would conflict and before
 the conclusion of the first of the two elections to complete, a non-conflicted
-Election Officer will reach out to the candidate to determine which committee
-they want to continue with in the event that they are elected.
+Election Officer or in the event that a Steering Committee election is not
+active, a non-conflicted Steering Committee member will reach out to the
+candidate to determine which committee they want to continue with in the event
+that they are elected.
 
 This process should occur as soon as possible after a potential conflict has
 been identified.
