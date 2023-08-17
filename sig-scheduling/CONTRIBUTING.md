@@ -72,6 +72,26 @@ to the issue/PR, which helps to preserve the context.
 
 * Always open an issue for a TODO or a follow-up just in case you forget it.
 
+### Technical and style guidelines
+
+The following guidelines apply primarily to kube-scheduler, but some subprojects
+might also adhere to them.
+
+- Follow [effective go](https://go.dev/doc/effective_go) guidelines.
+- Naming:
+  - Length: As a rule-of-thumb, the length of a variable name should be
+    proportional to the size of the scope where it is used and inversely
+    proportional to the number of times that it is used.
+- In tests:
+  - Follow a [DAMP principle](https://stackoverflow.com/a/11837973).
+  - Use `cmp.Diff` instead of `reflect.Equal`, to provide useful comparisons.
+  - Avoid creating or using assertion libraries.
+    Use standard `t.Error` or `t.Fatal`, as necessary.
+
+Note that some existing code might be in violation of these guidelines, as it
+might have been written before these guidelines were established. Feel free to
+open PRs to get the code up to the standard.
+
 ## Use of @mentions
 
 * @kubernetes/sig-scheduling-api-reviews - API Changes and Reviews
