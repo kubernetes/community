@@ -481,6 +481,46 @@ dependencies.
 Developers who need to manage dependencies in the `vendor/` tree should read
 the docs on [using go modules to manage dependencies](/contributors/devel/sig-architecture/vendor.md).
 
+### Building Kubernetes Using A Specific Version of Go
+
+There exists a [`.go-version`](https://github.com/kubernetes/kubernetes/blob/f563910656ad325a7e1f8ab5848746bc2eba4d7f/.go-version)
+file in the root of the Kubernetes repo. This file defines what version of `go` should be used
+to build Kubernetes. So, for example, if you'd like to build with `go1.20.4` specifically, you
+would change the contents of this file to just `1.20.4`.
+
+The way that the build targets choose what `go` version to use is as follows: 
+- If the `go` version that exists on your system (determined by output of `go version`) does 
+  not match the version defined in `.go-version`, then default to the version specified in `.go-version`.
+- If you do not want this behaviour, you can do one of the following:
+  - Set the `GO_VERSION` environment variable. `GO_VERSION` defines the _desired_ version of
+    `go` to be used. Even if the `go` version on your system does not match the one in `.go-version`,
+    the version specified by `GO_VERSION` will be used (even if it needs to be downloaded).
+    - The format of the version specified as part of `GO_VERSION` is the same as how a version
+      would be defined in the `.go-version` file. So if you wanted to build with `go1.20.4`, you'd
+      set `GO_VERSION=1.20.4`.
+  - Set the `FORCE_HOST_GO` environment variable to a non-empty value. This will skip all the above
+    logic and just use the `go` version that exists on your system's `$PATH`.
+
+Some examples:
+
+If you want to build using a `go` version (let's assume this is go1.20.4) that neither exists on your
+system nor is the one that is specified in the `.go-version` file:
+
+```
+GO_VERSION=1.20.4 make WHAT=cmd/<subsystem> 
+```
+
+If you want to build using the `go` version that exists on your system already and not really with what
+exists in the `.go-version` file:
+```
+FORCE_HOST_GO=y make WHAT=cmd/<subsystem> 
+```
+
+Or you can just change the contents of the `.go-version` file to your desired `go` version!  
+`.go-version`:
+```
+1.20.4
+```
 
 ## GitHub workflow
 
