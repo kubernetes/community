@@ -298,4 +298,24 @@ usergroups:
       - mspreitz
       - ezra
       - paolo
-      
+
+  - name: cert-manager-maintainers
+    long_name: cert-manager Maintainers
+    description: The maintainers of the cert-manager project.
+    channels:
+      - cert-manager-dev
+      - cert-manager
+    # To get that list, run the following:
+    #  curl https://raw.githubusercontent.com/cert-manager/cert-manager/master/OWNERS | yq .approvers
+    # Note that you will then need to find your Slack User ID (look up in Stackoverflow)
+    # and copy it to the users.yaml file in this repository.
+    members:
+      - munnerz
+      - joshvanl
+      - wallrj
+      - jakexks
+      - maelvls
+      - irbekrm
+      - sgtcodfish
+      - inteon
+
