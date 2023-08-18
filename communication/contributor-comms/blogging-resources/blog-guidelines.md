@@ -91,8 +91,10 @@ follows:
    use the final text to open the PR, adding you as a Co-author.
 5. (Optional) If the submission will be mirrored in the main
    Kubernetes site, a second PR will be opened by the editor, but on
-   the main repository, and after being approved in the
-   `contributor-site` one.
+   the main repository. The content of both should be the same, with
+   the applicable differences (e.g., file location, metadata). The
+   review process primarily happens in the `contributor-site` PR, with
+   all the changes then copied over to the `website` after approval.
 
 For now, our official process is to use [SIG Docs'
 system](/sig-docs/blog-subproject/README.md), with one change: instead
@@ -121,7 +123,10 @@ is done by adding `Co-authored-by: original-author-name
 
 The number of PRs depends on where the article will be published:
 
-1. If it's solely for the Contributor site: the PR should be opened in the [contributor-site](https://github.com/kubernetes/contributor-site), after which the process ends.
+1. If it's solely for the Contributor site: the PR should be opened in
+   the
+   [contributor-site](https://github.com/kubernetes/contributor-site),
+   after which the process ends.
 2. If it's to be mirrored in the main Kubernetes blog: after the
    previous step, a new PR is opened on
    [kubernetes/website](https://github.com/kubernetes/website),
