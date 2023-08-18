@@ -1,5 +1,9 @@
 # Committee Conflicts of Interest
 
+**Effective date**: 2023-10-03 (following the announcement of the [2023 Steering Committee election][steering-2023-election-schedule] results)
+
+[steering-2023-election-schedule]: /elections/steering/2023/README.md#schedule
+
 At time of writing, the only known conflict of interest for serving on
 committees in the Kubernetes Community exists with the
 [Steering Committee](/committee-steering/README.md) and
