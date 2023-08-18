@@ -1,11 +1,11 @@
 # Committee Conflicts of Interest
 
-## Steering Committee and Code of Conduct Committee
-
 At time of writing, the only known conflict of interest for serving on
 committees in the Kubernetes Community exists with the
 [Steering Committee](/committee-steering/README.md) and
 the [Code of Conduct Committee (CoCC)](/committee-code-of-conduct/README.md).
+
+## Steering Committee and Code of Conduct Committee
 
 **_Kubernetes Community members cannot serve on both committees simultaneously._**
 
@@ -18,30 +18,40 @@ This conflict may arise in the following scenarios:
 - A Kubernetes Community member has been nominated for candidacy for both
   committees
 
-Given the uniqueness of the respective committee charters, their memberships'
-position in the community, and the difference in how these committees need to
-adjudicate on community matters, _candidates must be able to declare their
-preference in which committee they would like to serve on, if elected_.
+There are several factors under consideration when formulating a reasonable
+process for resolving this conflict of interest:
 
-After the candidate is nominated for a position that would conflict and before
-the conclusion of the first of the two elections to complete, a non-conflicted
-Election Officer or in the event that a Steering Committee election is not
-active, a non-conflicted Steering Committee member will reach out to the
-candidate to determine which committee they want to continue with in the event
-that they are elected.
+- The distinctness of the Steering and CoCC charters, not limited to how these
+  committees need to adjudicate on community matters
+- The Kubernetes Community's expectation of commitment in its committee members
+  for duration of their terms
+- Continuity of committees and the duties they discharge
+- Undue burden on existing committee members to balance workload through
+  committee membership transitions, not limited to onboarding/offboarding
+- Undue burden on Election Officers in supporting overlapping elections with
+  the potential to generate conflicts
+- Minimization of conflict of interest edge cases not otherwise described by
+  this document
 
-This process should occur as soon as possible after a potential conflict has
-been identified.
+With these considerations in mind, the following rules exist to prevent or
+resolve membership conflicts of interest between Steering and the CoCC:
 
-If the candidate is elected in the first election to conclude and that
-appointment matches their preference, the candidate will be withdrawn from the
-remaining open election.
+<!-- TODO(committee-coi): Reflect this list in each committee's "Eligibility for candidacy" section -->
 
-If applicable, the committee where that individual vacated their seat will fill
-that vacancy per existing election or committee vacancy rules.
+- Loss of committee member that occurs due to this conflict of interest will
+  be resolved per existing election or committee vacancy rules
+- Candidates who are nominated for a seat on both Steering and CoCC within the
+  same 12-month period must:
+  - (if elected) accept a seat on the committee whose election concludes first
+  - be withdrawn from candidacy in second election to conclude
+- Standing Steering or CoCC members must have served on their committee for a
+  period of twelve (12) months to be considered eligible for candidacy in the
+  other committee's election
+- Kubernetes Community members who have recently vacated a seat on either
+  Steering or CoCC will be ineligible for candidacy for a period of three (3)
+  months
 
-In the event that multiple candidates trigger this conflict in an election
-cycle, the two (2) affected candidates receiving the most votes will have their
-preference honored. In the event that the first election to conclude has only
-two seats under consideration, only the affected candidate with the most votes
-will have their preference honored.
+Should this conflict of interest arise in a manner that cannot be resolved by
+these rules, a non-conflicted Election Officer or, in the event that a Steering
+Committee election is not active, a non-conflicted Steering Committee member
+will reach out to the candidate to discuss resolution.
