@@ -5,45 +5,44 @@ The source code for this bot is present in https://github.com/kubernetes-sigs/sl
 ## Prerequisites
 
 ### Permissions
-
-Reach out to the 'sig-contribex-comms' channel in kubernetes slack for permissions or for posting something on your behalf.
+To use the bot, the user must be a member of the Slack 'sig-contributor-comms' group. Contact @contributor-comms to obtain the necessary permissions or to post something on your behalf.
 
 ### Adding bot to a channel
 
-In order for the bot to send message to a channel, it needs to be part of the channel first and before you add it, you need to join the channel. Although we have it added in most of the channels, it still might be required to be added to a new channel. Follow the below steps for doing this
+To allow the bot to send messages to a channel, it must first be added to the channel. Before adding it, you need to make sure that the bot has already joined the channel. Although the bot is added to most of the channels, it might still be necessary to add it to a new channel. Follow the steps below to do so.
 
 
 1. Go to the 'More' option in the top left side and then go to 'Apps'
-![](https://i.imgur.com/Dk26HwP.png)
+<img src="./announcementbot-images/add-bot-to-channel/step-1.png">
 
 
 2. That will take you to the apps page & choose 'Announcement bot' in this page
-![](https://i.imgur.com/x3x3TQ6.png)
+<img src="./announcementbot-images/add-bot-to-channel/step-2.png">
 
 
 3. Now, slack will take you to a DM page with the bot. Click on the title of the bot at the top of this page
-![](https://i.imgur.com/x7umv6O.png)
+<img src="./announcementbot-images/add-bot-to-channel/step-3.png">
 
 
 4. In the pop-up click on 'Add this app to a channel' & enter the channel name. This will have add the bot to the specified channel
-![](https://i.imgur.com/It5K1sH.png)
+<img src="./announcementbot-images/add-bot-to-channel/step-4.png>
 
 
 
 ## Pushing announcements through the bot
 
 1. From any page on slack, find the '+' button called as "Attachments & shortcuts" in the text box
-![](https://i.imgur.com/njN9Xqq.png)
+<img src="./announcementbot-images/make-announcement/step-1.png">
 
 2. In the options displayed, click on 'Browse all shortcuts'
-![](https://i.imgur.com/pmVMWzS.png)
+<img src="./announcementbot-images/make-announcement/step-2.png">
 
 3. In the following page choose 'Announcement bot'
-![](https://i.imgur.com/1eQVBWk.png)
+<img src="./announcementbot-images/make-announcement/step-3.png">
 
 4. In the options displayed for 'Announcement bot' click on 'Post message' which open the message form
-![](https://i.imgur.com/M3mI3Jg.png)
+<img src="./announcementbot-images/make-announcement/step-4.png">
 
 5. In the form, choose the channel(s), write the message that needs to be sent and click on 'submit' buttom.
 The keyboard here might not support slack emoji search (with `:`) The workaround for this is to copy emojis 
-![](https://i.imgur.com/FlZdGgi.png)
+<img src="./announcementbot-images/make-announcement/step-5.png">
