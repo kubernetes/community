@@ -47,8 +47,8 @@ resolve membership conflicts of interest between Steering and the CoCC:
 - Standing Steering or CoCC members must have served on their committee for a
   period of twelve (12) months to be considered eligible for candidacy in the
   other committee's election
-- Kubernetes Community members who have recently vacated a seat on either
-  Steering or CoCC will be ineligible for candidacy for a period of three (3)
+- Kubernetes Community members who have recently voluntarily vacated a seat on either
+  Steering or CoCC without serving the complete term will be ineligible for candidacy for a period of three (3)
   months
 
 Should this conflict of interest arise in a manner that cannot be resolved by
