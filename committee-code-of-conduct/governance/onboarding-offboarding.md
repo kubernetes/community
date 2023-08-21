@@ -16,12 +16,6 @@ Different actions on this list must be carried out by different members:
 - [ ] `#kubernetes-moderators` and `#slack-reports` private channels on `kubernetes.slack.com` 
 - [ ] Code of conduct sync Slack channel on `cloud-native.slack.com`
 
-### Slack Channel Admin Privileges
-
-**Who executes:** During transition, carryover members initiate promotion/removal by pinging project Slack admins
-
-- [ ] Ping project Slack admins to add/remove Slack admin privileges for incoming/outgoing members in CoCC channel(s)
-
 ### Kubernetes/community permissions and google permissions
 
 **Who executes:** Carryover members should ensure that outgoing members are removed and incoming members are invited.
