@@ -164,6 +164,7 @@ towards the health of that subproject.
 - *Optional if and only if Subproject Leads are defined for the subproject*
   - Number: 2+
   - Membership tracked in [sigs.yaml] via links to OWNERS files
+  - *If no Subproject Leads are defined for the subproject, the Subproject Owners will be responsible for the same duties.*
 - Scoped to a subproject defined in [sigs.yaml]
 - *MUST* actively participate in triaging issues and reviewing PRs
 - *SHOULD* mentor and guide contributors of the subproject
