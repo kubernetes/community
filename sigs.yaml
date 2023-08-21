@@ -3345,9 +3345,9 @@ committees:
   label: code-of-conduct
   leadership:
     chairs:
-    - github: detiber
-      name: Jason DeTiberus
-      company: Cisco
+    - github: AnaMMedina21
+      name: Ana Margarita Medina
+      company: Lightstep
     - github: endocrimes
       name: Danielle Lancashire
       company: Independent
@@ -3371,6 +3371,8 @@ committees:
       name: Celeste Horgan
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
+    - github: detiber
+      name: Jason DeTiberus
     - github: eparis
       name: Eric Paris
     - github: jdumars
