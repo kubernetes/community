@@ -41,8 +41,8 @@ Above all other projects and endeavors, I will be a steward, a resource, a liais
 ## Resources About Me
 
 - Some Talks By Me
--- [Opening the Contributor Summit in Amsterdam, 2023] (https://www.youtube.com/watch?v=dL7cYhzAFrE&list=PL69nYSiGNLP06HYgwMWJJZmJHreLCrd21)
--- My fun Kubecon LA Talk: [A Safari of Kubernetes and its Natural Habitat] (https://www.youtube.com/watch?v=RnhRj_EsYtk) 
--- [A talk about communication at a New Contributor Workshop, 2018] (https://www.youtube.com/watch?v=AVoat-IdCGA)
+  - [Opening the Contributor Summit in Amsterdam, 2023] (https://www.youtube.com/watch?v=dL7cYhzAFrE&list=PL69nYSiGNLP06HYgwMWJJZmJHreLCrd21)
+  - My fun Kubecon LA Talk: [A Safari of Kubernetes and its Natural Habitat] (https://www.youtube.com/watch?v=RnhRj_EsYtk) 
+  - [A talk about communication at a New Contributor Workshop, 2018] (https://www.youtube.com/watch?v=AVoat-IdCGA)
 - My Mastodon: [@nabrahams@hachyderm.io](https://hachyderm.io/@nabrahams)
 
