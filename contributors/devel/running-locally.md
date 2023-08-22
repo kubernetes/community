@@ -135,8 +135,8 @@ Once provisioning is complete, you can use the following commands for Kubernetes
 
 ## Running a user defined pod
 
-Note the difference between a [container](https://kubernetes.io/docs/user-guide/containers/)
-and a [pod](https://kubernetes.io/docs/user-guide/pods/). Since you only asked for the former, Kubernetes will create a wrapper pod for you.
+Note the difference between a [container](https://kubernetes.io/docs/concepts/containers/)
+and a [pod](https://kubernetes.io/docs/concepts/workloads/pods/). Since you only asked for the former, Kubernetes will create a wrapper pod for you.
 However, you cannot view the nginx start page on localhost. To verify that nginx is running, you need to run `curl` within the Docker container (try `docker exec`).
 
 You can control the specifications of a pod via a user defined manifest, and reach nginx through your browser on the port specified therein:

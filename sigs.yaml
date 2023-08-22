@@ -3241,19 +3241,19 @@ workinggroups:
       company: Amazon
   meetings:
   - description: Regular WG Meeting
-    day: TBD
-    time: TBD
+    day: Tuesday
+    time: "07:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: TBD
+    url: https://zoom.us/j/92480197536?pwd=dmtSMGJRQmNYYTIyZkFlQ25JRngrdz09
     archive_url: TBD
     recordings_url: TBD
   contact:
     slack: wg-lts
-    mailing_list: TBD
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-lts
     liaison:
-      github: TBD
-      name: TBD
+      github: palnabarun
+      name: Nabarun Pal
 - dir: wg-policy
   name: Policy
   mission_statement: >
@@ -3345,9 +3345,9 @@ committees:
   label: code-of-conduct
   leadership:
     chairs:
-    - github: detiber
-      name: Jason DeTiberus
-      company: Cisco
+    - github: AnaMMedina21
+      name: Ana Margarita Medina
+      company: Lightstep
     - github: endocrimes
       name: Danielle Lancashire
       company: Independent
@@ -3371,6 +3371,8 @@ committees:
       name: Celeste Horgan
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
+    - github: detiber
+      name: Jason DeTiberus
     - github: eparis
       name: Eric Paris
     - github: jdumars

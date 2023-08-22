@@ -19,8 +19,8 @@ The working group is organized with the goal of developing a better understandin
 * [SIG Testing](/sig-testing)
 
 ## Meetings
-*Joining the [mailing list](TBD) for the group will typically add invites for the following meetings to your calendar.*
-* Regular WG Meeting: [TBDs at TBD PT (Pacific Time)](TBD) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=TBD&tz=PT%20%28Pacific%20Time%29).
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-lts) for the group will typically add invites for the following meetings to your calendar.*
+* Regular WG Meeting: [Tuesdays at 07:00 PT (Pacific Time)](https://zoom.us/j/92480197536?pwd=dmtSMGJRQmNYYTIyZkFlQ25JRngrdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](TBD).
   * [Meeting recordings](TBD).
 
@@ -32,9 +32,9 @@ The working group is organized with the goal of developing a better understandin
 
 ## Contact
 - Slack: [#wg-lts](https://kubernetes.slack.com/messages/wg-lts)
-- [Mailing list](TBD)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-lts)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Flts)
-- Steering Committee Liaison: TBD (**[@TBD](https://github.com/TBD)**)
+- Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
