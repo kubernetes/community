@@ -22,6 +22,12 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 * Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
 * Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
 
+## Emeritus Members
+
+* Luke Hinds (**[@lukehinds](https://github.com/lukehinds)**)
+* Swamy Shivaganga Nagaraju (**[@swamymsft](https://github.com/swamymsft)**)
+* Tim Allclair (**[@tallclair](https://github.com/tallclair)**)
+
 ## Contact
 - Private Mailing List: security@kubernetes.io
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fsecurity-response)
