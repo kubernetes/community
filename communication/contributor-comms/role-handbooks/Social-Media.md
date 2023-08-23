@@ -24,9 +24,9 @@ Team members: 1-3 hours per week.
 
 ## General Expectations
 
-- Rules for social posts and more can be found in [social guidelines](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/storytelling-resources/social-guidelines.md)
+- Rules for social posts and more can be found in [social guidelines](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/blogging-resources/social-guidelines.md)
 - Be welcoming, be yourself
-- Understanding, communicating, and setting/adjusting [social guidelines](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/storytelling-resources/social-guidelines.md)
+- Understanding, communicating, and setting/adjusting [social guidelines](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/blogging-resources/social-guidelines.md)
 - Coordinating work to create tweets, ensuring tweet requests are fulfilled
 - Working with other Contributor Comms leads, such as the Event Coordinator Lead, on social media tasks
 - Approving tweet PRs on [kubernetes-sigs/contributor-tweets](https://github.com/kubernetes-sigs/contributor-tweets)
