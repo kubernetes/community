@@ -20,6 +20,23 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 * Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
 * Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Microsoft
 
+## Emeritus Members
+
+* Aeva Black (**[@AevaOnline](https://github.com/AevaOnline)**)
+* Jennifer Rondeau (**[@Bradamant3](https://github.com/Bradamant3)**)
+* Carolyn Van Slyck (**[@carolynvs](https://github.com/carolynvs)**)
+* Celeste Horgan (**[@celestehorgan](https://github.com/celestehorgan)**)
+* Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
+* Jason DeTiberus (**[@detiber](https://github.com/detiber)**)
+* Eric Paris (**[@eparis](https://github.com/eparis)**)
+* Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**)
+* Karen Chu (**[@karenhchu](https://github.com/karenhchu)**)
+* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
+* Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
+* Tasha Drew (**[@tashimi](https://github.com/tashimi)**)
+* Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
+* Vallery Lancey (**[@vllry](https://github.com/vllry)**)
+
 ## Contact
 - Slack: [#code-of-conduct](https://kubernetes.slack.com/messages/code-of-conduct)
 - Private Mailing List: conduct@kubernetes.io
