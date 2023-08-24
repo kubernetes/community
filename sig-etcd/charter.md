@@ -43,7 +43,7 @@ and opts-in to updates and modifications to [sig-governance].
 
 ### Deviations from [sig-governance]
 
-- SIG-Etcd's participation in the Kubernetes release cycle is limited by Etcd having a different schedule for its releases.  Particularly, Etcd may or may not participate in the Enhancements process depending on whether an upcoming Kubernetes release targets specific new Etcd features.
+- SIG etcd's participation in the Kubernetes release cycle is limited by etcd having a different schedule for its releases.
 - SIG etcd communication utilizes pre-existing forums for communication:
   - Email: [etcd-dev](https://groups.google.com/forum/?hl=en#!forum/etcd-dev).
   - Slack: [#etcd](https://kubernetes.slack.com/messages/C3HD8ARJ5/details/) channel on Kubernetes.
