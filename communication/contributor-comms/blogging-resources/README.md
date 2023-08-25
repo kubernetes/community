@@ -1,5 +1,7 @@
 # Blogging resources
 
+Contributor Comms depends on great storytelling to get the message out about our amazing community. We help Kubernetes contributors hear the latest news in the most entertaining ways. This can be done through words and visuals. 
+
 We have collected some information to get anyone started. If you're looking to get started blogging on the kubernetes.dev blog, this page contains a list of resources available to help you be successful.
 
 ## [Blog guidelines](./blog-guidelines.md)
