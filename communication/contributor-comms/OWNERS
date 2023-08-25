@@ -1,19 +1,17 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 reviewers:
-  - Atharva-Shinde
   - AvineshTripathi
   - chris-short
   - fsmunoz
-  - imnmo
   - kaslin
+  - SD-13
 approvers:
-  - Atharva-Shinde
   - AvineshTripathi
   - chris-short
   - fsmunoz
-  - imnmo
   - kaslin
+  - SD-13
 emeritus_approvers:
   - Pensu
   - mbbroberg
