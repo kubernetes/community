@@ -18,25 +18,23 @@ This team operates independently from Cloud Native Computing Foundation (CNCF) o
 
 ## Governance
 
-The Contributor Comms subproject welcomes and encourages its members to take on leadership roles in their contributions. The group defines the areas of its work such as social media, blogging, etc. and creates associated leadership roles accordingly. Members are encouraged to pursue any interest in specific areas as contributing team members, leads, or shadows. Leadership roles are defined in the subproject’s [role handbooks](../role-handbooks/).
+The Contributor Comms subproject welcomes and encourages its members to take on leadership roles in their contributions. The group defines the areas of its work such as social media, blogging, etc. and creates associated leadership roles accordingly. Members are encouraged to pursue any interest in specific areas as contributing team members, leads, or shadows. Leadership roles are defined in the subproject’s [role handbooks](./role-handbooks/).
 
 ## Roles and Subproject Management
 
 General subproject leadership is handled by the Contributor Comms Subproject Lead(s). Specific subproject responsibilities are also broken down into areas with their own lead roles, as defined here:
 
-* Contributor Comms Subproject Lead
-* [Social Media Coordinator](../role-handbooks/Social-Media.md)
-* [Comms Tech Lead](../role-handbooks/Comms-Tech-Lead.md)
-* [Comms Event Lead](../role-handbooks/Comms-Event-Lead.md)
-* [Comms Blog Coordinator](../role-handbooks/blog-coordinator.md)
-* [Storytellers](../role-handbooks/storytellers.md) & other members
+* [Contributor Comms Subproject Lead](./role-handbooks/Subproject-Lead.md)
+* [Social Media Coordinator](./role-handbooks/Social-Media.md)
+* [Comms Tech Lead](./role-handbooks/Comms-Tech-Lead.md)
+* [Comms Blog Coordinator](./role-handbooks/blog-coordinator.md)
 * Emeritus (previous team members that we had the privilege of working with)
 
 All roles can have multiple shadows and should have at least one shadow. All leads should actively recruit members and shadows for the entire team.
 
 Roles are flexible and subject to change.
 
-Roles are occupied or available as indicated on our [README.md](https://github.com/kubernetes/community#readme).
+Roles are occupied or available as indicated on our [README.md](https://github.com/kubernetes/community/tree/master/communication/contributor-comms#readme).
 
 ### Decision Making
 
