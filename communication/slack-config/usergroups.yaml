@@ -283,12 +283,12 @@ usergroups:
     long_name: Kubernetes GitHub Admins
     description: Administrators of the Kubernetes GitHub organisations
     members:
-      - ameukam
       - cblecker
-      - idvoretskyi
+      - MadhavJivrajani
       - mrbobbytables
       - nikhita
       - palnabarun
+      - Priyankasaggu11929
 
   - name: kubestellar-devs
     long_name: KubeStellar Development Team
