@@ -26,7 +26,7 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 * New Contributor Meet and Greet: [Tuesdays at 10:30 UTC](https://zoom.us/j/92822621820?pwd=S1p4RnB1RmNSZ3JjYlRRUVd4UjFPZz09) (first Tuesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
-* Regular SIG Meeting: [Tuesdays at 17:30 UTC](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit) (weekly - except fourth Tuesday every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
+* Regular SIG Meeting: [Tuesdays at 17:30 UTC](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 * Spanish Team Meeting: [Tuesdays at 15:30 UTC](https://zoom.us/j/95918289494?pwd=Wk9Oa0xZUkFXSDV5OTFoZEZsTURCZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:30&tz=UTC).
@@ -39,7 +39,7 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Divya Mohan (**[@divya-mohan0209](https://github.com/divya-mohan0209)**), SUSE
-* Natali Vlatko (**[@natalisucks](https://github.com/natalisucks)**), Wayfair
+* Natali Vlatko (**[@natalisucks](https://github.com/natalisucks)**), Cisco
 * Rey Lejano (**[@reylejano](https://github.com/reylejano)**), SUSE
 
 ### Technical Leads
@@ -47,7 +47,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Karen Bradshaw (**[@kbhawkey](https://github.com/kbhawkey)**), Independent
-* Taylor Dolezal (**[@onlydole](https://github.com/onlydole)**), Independent
+* Taylor Dolezal (**[@onlydole](https://github.com/onlydole)**), CNCF
 * Tim Bannister (**[@sftim](https://github.com/sftim)**), The Scale Factory
 * Qiming Teng (**[@tengqm](https://github.com/tengqm)**), Sangfor Technologies
 
