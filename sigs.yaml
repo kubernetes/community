@@ -1531,7 +1531,7 @@ sigs:
       company: SUSE
     - github: natalisucks
       name: Natali Vlatko
-      company: Wayfair
+      company: Cisco
     - github: reylejano
       name: Rey Lejano
       company: SUSE
@@ -1541,7 +1541,7 @@ sigs:
       company: Independent
     - github: onlydole
       name: Taylor Dolezal
-      company: Independent
+      company: CNCF
     - github: sftim
       name: Tim Bannister
       company: The Scale Factory
@@ -1600,7 +1600,7 @@ sigs:
     day: Tuesday
     time: "17:30"
     tz: UTC
-    frequency: weekly - except fourth Tuesday every month
+    frequency: biweekly
     url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
     archive_url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
