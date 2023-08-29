@@ -8,10 +8,6 @@
 # below, please fill out an exception request and the elections team will get back to
 # you as quickly as possible: https://elections.k8s.io/app/elections/steering---2023/exception
 #
-# History:
-# Log of changes to the file
-# 2023-08-07 - Initial setup with voters from devstats+org, plus CCoC + SRC
-#
 eligible_voters:
 - '249043822'
 - 196Ikuchil
@@ -352,6 +348,7 @@ eligible_voters:
 - krol3
 - kundan2707
 - kwiesmueller
+- lachie83
 - landreasyan
 - lauchokyip
 - lauralorenz
@@ -484,6 +481,7 @@ eligible_voters:
 - pacoxu
 - palnabarun
 - panslava
+- parispittman
 - pawbana
 - pbetkier
 - perriea
