@@ -23,10 +23,8 @@ Owns the etcd project and how it is used by Kubernetes.
 
 #### Cross-cutting and Externally Facing Processes
 
-- Specifying, testing and improving [The Implicit Kubernetes-ETCD Contract]
+- Specifying, testing and improving the implicit Kubernetes-ETCD Contract, which includes storage requirements, write and delete requirements, read requirements and watch requirements.
 - Release process of etcd and other binaries belonging to [etcd-io organization]
-
-[The Implicit Kubernetes-ETCD Contract]: https://docs.google.com/document/d/1NUZDiJeiIH5vo_FMaTWf0JtrQKCx0kpEaIIuPoj9P6A/edit?usp=sharing
 
 ### Out of scope
 
