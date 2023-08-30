@@ -37,13 +37,17 @@ KEP authors, and reviewed by the SIG leads. Once the leads are satisfied with
 both the overall KEP (i.e., it is ready to move to `implementable` state) and
 the PRR answers, the authors may request PRR approval:
 
+* Make sure the Enhancement KEP is labeled `lead-opted-in` before PRR Freeze. This is required so that the Enhancements 
+  release team and PRR team are aware the KEP is targeting the release.
 * Assign a PRR approver from the `prod-readiness-approvers` list in the
   [OWNERS_ALIASES] file. This may be done earlier as well, to get early feedback
   or just to let the approver know. Reach out on the `#prod-readiness` Slack
   channel or just pick someone from the list. The team may rebalance the
   assignees if necessary.
 * Update the `kep.yaml`, setting the `stage`, `latest-milestone`, and the
-  `milestone` struct (which captures per-stage release versions).
+  `milestone` struct (which captures per-stage release versions). See the 
+  [KEP template](https://github.com/kubernetes/enhancements/tree/master/keps/NNNN-kep-template)
+  for required sections.
 * Create a `prod-readiness/<sig>/<KEP number>.yaml` file, with the PRR
   approver's GitHub handle for the specific stage
 * See this [example PRR approval request PR].
