@@ -306,6 +306,7 @@ channels:
   - name: litmus
   - name: litmus-dev
   - name: lokomotive
+  - name: magnum-cluster-api
   - name: malaysia-users
   - name: malta-users
   - name: meet-our-contributors
