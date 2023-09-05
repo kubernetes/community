@@ -2,7 +2,7 @@
 
 The Kubernetes Localization Subproject is owned by [SIG Docs](https://github.com/kubernetes/community/tree/master/sig-docs) and run by the [Subproject leads](#leadership).
 
-The Kubernetes documentation has been localized into several different languages. Each localization is owned by a team of individuals that speaks the language. A localization team is a self-sufficient community responsible for prioritizing work, translating content, and reviewing and merging PRs into the kubernetes/website repo for their localization. 
+The Kubernetes documentation is localized into many different languages. Each localization is owned by a team of contributors that specialize in translating [localizing] the Kubernetes docs into a specific language. A localization team is a self-sufficient community responsible for prioritizing work, translating content, and reviewing and merging PRs into the kubernetes/website repo for their localization. 
 
 The Localization Subproject's aim is to provide a place for localization teams to share ideas and standardize processes across all localizations. This page covers documentation, processes, and roles for the Kubernetes localization teams and the Localization Subproject.
 
@@ -17,7 +17,9 @@ A localization team may also hold language specific meetings. If you are interes
 
 ## Subproject Leadership
 
-- **Subproject lead:** [Abigail McCarthy](https://github.com/a-mccarthy)
+- **Subproject leads:** 
+ * [Abigail McCarthy](https://github.com/a-mccarthy)
+ * [Seokho Son](https://github.com/seokho-son)
 
 - **Emeritus leads:** [Brad Topol](https://github.com/bradtopol)
 
@@ -47,7 +49,7 @@ The Localization Subproject lead is **not responsible** for
 
 - Familiar with the [localization processes](https://kubernetes.io/docs/contribute/localization/).
 - Have strong written and verbal communication skills. 
-- A working knowledge of Github.
+- A working knowledge of GitHub.
 - A working knowledge of kubernetes/website [review and merge processes](https://kubernetes.io/docs/contribute/review/).
 
 Time commitment for a Localization lead is 1-2 hours per week.
