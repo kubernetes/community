@@ -44,7 +44,7 @@ How?
 - Reliable cluster membership changes via learners with automated promotion
 - Two node etcd clusters
 
-## Etcd is a standalone solution for managing infrastructure
+## Etcd is a standalone solution for managing infrastructure configuration
 
 Kubernetes is not the only way to manage infrastructure.
 It was the first to introduce many concepts that have now become the standard,
