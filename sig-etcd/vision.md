@@ -9,7 +9,7 @@ The long-term success of the etcd project depends on the following:
 The goals and milestones listed here are for future releases. 
 The scope of release v3.6 has already been defined and is unlikely to change.
 
-## Etcd is a reliable key-value storage
+## Etcd is a reliable key-value storage service
 
 Reliability remains the most important property of etcd.
 The project cannot allow for another [data inconsistency incident].
