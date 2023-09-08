@@ -854,6 +854,7 @@ sigs:
   - name: cloud-provider-extraction-migration
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-network-proxy/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cloud-pv-admission-labeler/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
     - https://raw.githubusercontent.com/kubernetes/legacy-cloud-providers/master/OWNERS
     meetings:
