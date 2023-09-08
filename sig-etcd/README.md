@@ -16,8 +16,9 @@ The [charter](charter.md) defines the scope and governance of the etcd Special I
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/g/etcd-dev) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Thursdays at 9:30 PT (Pacific Time)](https://meet.google.com/umg-nrxn-qvs) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:30&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit?usp=sharing).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PLRGL688DpO9rtufHbiunuCHddYY6MGkwW).
 
 ## Leadership
 

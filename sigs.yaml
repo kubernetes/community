@@ -1699,11 +1699,12 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
-    time: "9:30"
+    time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://meet.google.com/umg-nrxn-qvs
+    url: https://zoom.us/my/cncfetcdproject
     archive_url: https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit?usp=sharing
+    recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9rtufHbiunuCHddYY6MGkwW
   contact:
     slack: etcd
     mailing_list: https://groups.google.com/g/etcd-dev
