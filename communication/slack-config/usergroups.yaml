@@ -232,13 +232,15 @@ usergroups:
       - devfile
     members:
       - elsony
+      - feloy
+      - jasperchui
       - johnmcollier
       - kim-tsao
       - maysunfaisal
       - michael-valdron
-      - mike-hoang
+      - rm3l
       - rtaniwa
-      - schultzp2020
+      - thepetk
       - yangcao77
 
   - name: cluster-api-release-team
