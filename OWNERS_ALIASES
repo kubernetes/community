@@ -54,6 +54,11 @@ aliases:
     - reylejano
     - sftim
     - tengqm
+  sig-etcd-leads:
+    - ahrtr
+    - jmhbnz
+    - serathius
+    - wenjiaswe
   sig-instrumentation-leads:
     - dashpole
     - dgrisonnet
