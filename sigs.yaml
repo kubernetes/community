@@ -437,7 +437,7 @@ sigs:
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
   - description: Secrets Store CSI Meeting
     day: Thursday
-    time: "8:00"
+    time: "9:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/91272289538
