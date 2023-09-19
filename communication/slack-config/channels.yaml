@@ -226,6 +226,7 @@ channels:
   - name: kots
     id: CFFKXV0JZ
   - name: kpack
+    archived: true
   - name: kpt
   - name: kr-dev
   - name: kr-users
