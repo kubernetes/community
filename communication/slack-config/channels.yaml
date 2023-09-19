@@ -412,6 +412,7 @@ channels:
   - name: ru-users
   - name: scaleway-k8s
   - name: schemahero
+  - name: sovereign-cloud-stack
   - name: se-users
   - name: sealed-secrets
   - name: security-profiles-operator
