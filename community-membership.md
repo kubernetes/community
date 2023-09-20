@@ -183,50 +183,17 @@ in an [OWNERS] file (for repos using the bot).
 - Mentor contributors and reviewers
 - May approve code contributions for acceptance
 
-## Subproject Owner
-
-**Note:** This is a generalized high-level description of the role, and the
-specifics of the subproject owner role's responsibilities and related
-processes *MUST* be defined for individual SIGs or subprojects.
-
-Subproject Owners are the technical authority for a subproject in the Kubernetes
-project.  They *MUST* have demonstrated both good judgement and responsibility
-towards the health of that subproject.  Subproject Owners *MUST* set technical
-direction and make or approve design decisions for their subproject - either
-directly or through delegation of these responsibilities.
+## Subproject Lead
 
 **Defined by:** *owners* entry in subproject [OWNERS] files as defined by [sigs.yaml]  *subproject.owners*
 
-### Requirements
+The [SIG Governance][sig-governance-subproject-lead] mentions in details the responsibilities of a Subproject Lead.
 
-The process for becoming an subproject Owner should be defined in the SIG
-charter of the SIG owning the subproject.  Unlike the roles outlined above, the
-Owners of a subproject are typically limited to a relatively small group of
-decision makers and updated as fits the needs of the subproject.
+## Subproject Owner
 
-The following apply to the subproject for which one would be an owner.
+**Defined by:** *owners* entry in subproject [OWNERS] files as defined by [sigs.yaml]  *subproject.owners*
 
-- Deep understanding of the technical goals and direction of the subproject
-- Deep understanding of the technical domain of the subproject
-- Sustained contributions to design and direction by doing all of:
-  - Authoring and reviewing proposals
-  - Initiating, contributing and resolving discussions (emails, GitHub issues, meetings)
-  - Identifying subtle or complex issues in designs and implementation PRs
-- Directly contributed to the subproject through implementation and / or review
-
-### Responsibilities and privileges
-
-The following apply to the subproject for which one would be an owner.
-
-- Make and approve technical design decisions for the subproject.
-- Set technical direction and priorities for the subproject.
-- Define milestones and releases.
-- Mentor and guide approvers, reviewers, and contributors to the subproject.
-- Ensure continued health of subproject
-  - Adequate test coverage to confidently release
-  - Tests are passing reliably (i.e. not flaky) and are fixed when they fail
-- Ensure a healthy process for discussion and decision making is in place.
-- Work with other subproject owners to maintain the project's overall health and success holistically
+The [SIG Governance][sig-governance-subproject-owner] mentions in details the responsibilities of a Subproject Owner.
 
 ## Inactive members
 
@@ -281,3 +248,5 @@ before being able to contribute effectively.
 [elevated set of permissions]: #Responsibilities-and-privileges
 [Devstats project]: https://k8s.devstats.cncf.io/
 [continuously active]: #inactive-members
+[sig-governance-subproject-lead]: /committee-steering/sig-governance.md#subproject-lead
+[sig-governance-subproject-owner]: /committee-steering/sig-governance.md#subproject-owner

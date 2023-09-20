@@ -136,15 +136,40 @@ the acceptance of that SIG or Subproject.
 Additional information on the Tech Lead role can be found in
 [technical-lead.md]; within the [Chair & TL Contributor Documentation].
 
-#### Subproject Owner
+#### Subproject Lead
+
+**Note:** This is a generalized high-level description of the role, and the
+specifics of the subproject lead role's responsibilities and related
+processes *MUST* be defined for individual SIGs or subprojects. The process
+for becoming an Subproject Lead should be defined in the SIG charter of the
+SIG owning the subproject.
+
+Subproject Leads are the technical authority for a subproject in the Kubernetes
+project. They *MUST* have demonstrated both good judgement and responsibility
+towards the health of that subproject.
 
 - Number: 2+
-- Scoped to a subproject defined in [sigs.yaml]
-- Seed leads and contributors established at subproject founding
-- *SHOULD* be an escalation point for technical discussions and decisions in
-  the subproject
+- Membership tracked in [sigs.yaml] via *subproject.leads* entry and scoped to a subproject
+- *MUST* set technical direction and make or approve design decisions for their subproject - either directly or through delegation
+- *MUST* mentor and guide approvers, reviewers, and contributors to the subproject.
+- *MUST* maintain components, review, shepherd and approve proposals for enhancing areas owned by the subproject
+- *MUST* actively participate in triaging issues and reviewing PRs
+- *SHOULD* be an escalation point for technical discussions and decisions in the subproject
 - *SHOULD* set milestone priorities or delegate this responsibility
-- Membership tracked in [sigs.yaml] via links to OWNERS files
+- *SHOULD* ensure a healthy process for discussion and decision making is in place.
+- *MAY* make decisions to resolve conflicts
+
+#### Subproject Owner
+
+- *Optional if and only if Subproject Leads are defined for the subproject*
+  - Number: 2+
+  - Membership tracked in [sigs.yaml] via links to OWNERS files
+  - *If no Subproject Leads are defined for the subproject, the Subproject Owners will be responsible for the same duties.*
+- Scoped to a subproject defined in [sigs.yaml]
+- *MUST* actively participate in triaging issues and reviewing PRs
+- *SHOULD* mentor and guide contributors of the subproject
+- *SHOULD* help the subproject leads (if defined) in their responsibilities
+
 
 #### All Leads
 
@@ -175,7 +200,7 @@ governance requirements, including defining more roles to sustain the group. If
 a SIG needs to change the Chair and Tech Lead position to include or remove
 duties, this needs to be approved by the Steering Committee. Newly created roles
 that don't assume any responsibility of Chair and/or Tech Lead should follow
-the governing processes in the SIGs charter. 
+the governing processes in the SIGs charter.
 
 Example of SIG roles created to help operations:
 
