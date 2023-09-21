@@ -370,6 +370,7 @@ channels:
   - name: okteto
   - name: olm-dev
   - name: open-cluster-mgmt
+  - name: open-component-model
   - name: opencontainers
   - name: openebs
   - name: openebs-dev
