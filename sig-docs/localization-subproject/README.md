@@ -99,7 +99,7 @@ A leader of a localization team is someone who is responsible for helping to gui
 Some recommended skills for localization leads include, 
 * Excellent written and verbal skills in the given language.
 * Experience with the kubernetes/website repo localization [branching strategy](https://kubernetes.io/docs/contribute/localization/#branching-strategy).
-* Experience reviewing English language PRs to develop an understanding the review processes and repo structure. Its recommended that leaders participate in the SIG Docs [PR Wrangler Shadow Program](https://kubernetes.io/docs/contribute/participate/pr-wranglers/#pr-wrangler-shadow-program).
+* Experience reviewing English language PRs to develop an understanding the review processes and repo structure. It is recommended that leaders participate in the SIG Docs [PR Wrangler Shadow Program](https://kubernetes.io/docs/contribute/participate/pr-wranglers/#pr-wrangler-shadow-program).
 
 
 ## Localization processes
