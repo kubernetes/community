@@ -1,8 +1,8 @@
 # Localization Subproject
 
-The Kubernetes Localization Subproject is owned by [SIG Docs](https://github.com/kubernetes/community/tree/master/sig-docs) and run by the [Subproject leads](#leadership).
+The Kubernetes Localization Subproject is owned by [SIG Docs](https://github.com/kubernetes/community/tree/master/sig-docs) and run by the [Subproject leads](#subproject-leadership).
 
-The Kubernetes documentation is localized into many different languages. Each localization is owned by a team of contributors that specialize in translating [localizing] the Kubernetes docs into a specific language. A localization team is a self-sufficient community responsible for prioritizing work, translating content, and reviewing and merging PRs into the kubernetes/website repo for their localization. 
+The Kubernetes documentation is localized into many different languages. Each localization is owned by a team of contributors that specialize in translating (localizing) the Kubernetes docs into a specific language. A localization team is a self-sufficient community responsible for prioritizing work, translating content, and reviewing and merging PRs into the kubernetes/website repo for their localization. 
 
 The Localization Subproject's aim is to provide a place for localization teams to share ideas and standardize processes across all localizations. This page covers documentation, processes, and roles for the Kubernetes localization teams and the Localization Subproject.
 
@@ -25,7 +25,7 @@ A localization team may also hold language specific meetings. If you are interes
 
 ## Contact
 
-- Slack: [#sig-docs-localizations](https://kubernetes.slack.com/archives/C0191RDKHU1) Each localization team also has a language specific channel, noted [below](#localization-teams). 
+- Slack: [#sig-docs-localizations](https://kubernetes.slack.com/archives/C0191RDKHU1) (Each localization team also has a language specific channel, noted [below](#localization-teams)). 
 - Mailing list: https://groups.google.com/g/kubernetes-sig-docs-localization
 
 ## Responsibilities
