@@ -23,12 +23,12 @@ A localization team may also hold language specific meetings. If you are interes
 
 - **Emeritus leads:** [Brad Topol](https://github.com/bradtopol)
 
-## Contact
+### Contact
 
 - Slack: [#sig-docs-localizations](https://kubernetes.slack.com/archives/C0191RDKHU1) (Each localization team also has a language specific channel, noted [below](#localization-teams)). 
 - Mailing list: https://groups.google.com/g/kubernetes-sig-docs-localization
 
-## Responsibilities
+### Responsibilities
 
 The Localization Subproject lead is **responsible** for
 
@@ -45,7 +45,7 @@ The Localization Subproject lead is **not responsible** for
 - Dictating how localization teams do work or organize.
 - Making decisions for localizations policies or teams without the localization team's input.
 
-## Skills and Experience Required 
+### Skills and Experience Required 
 
 - Familiar with the [localization processes](https://kubernetes.io/docs/contribute/localization/).
 - Have strong written and verbal communication skills. 
@@ -58,23 +58,23 @@ Time commitment for a Localization lead is 1-2 hours per week.
 
 The following is a list of all localization teams. Localization teams are responsible for keeping this list up-to-date. 
 
-| Language |  Leads | Docs Link | Slack Channel |
+| Language |  Docs Links | Owners | Slack Channel |
 |--|--|--|--|
-| Arabic | | In progress | [#kubernetes-docs-ar](https://kubernetes.slack.com/archives/CP9FKRD51) |
-| Bengali | Shahriyar Al Mustakim Mitul ([@mitul3737](https://github.com/mitul3737)) | In progress | [#kubernetes-docs-bn](https://kubernetes.slack.com/archives/CQ0TD298C) |
-| Chinese | Qiming Teng ([@tengqm](https://github.com/tengqm)) | https://kubernetes.io/zh-cn/ | [#kubernetes-docs-zh](https://kubernetes.slack.com/archives/CE3LNFYJ1) | 
-| French | Rémy Léone ([@remyleone](https://github.com/remyleone)) | https://kubernetes.io/fr/ | [#kubernetes-docs-fr](https://kubernetes.slack.com/archives/CG838BFT9) |
-| German | | https://kubernetes.io/de/ | [#kubernetes-docs-de](https://kubernetes.slack.com/archives/CH4UJ2BAL) |
-| Hindi | Anubhav Vardhan ([anubha-v-ardhan](https://github.com/anubha-v-ardhan)) | https://kubernetes.io/hi/ | [#kubernetes-docs-hi](https://kubernetes.slack.com/archives/CJ14B9BDJ) | 
-| Indonesian | Aris Cahyadi Risdianto ([@ariscahyadi](https://github.com/ariscahyadi)) | https://kubernetes.io/id/ | [#kubernetes-docs-id](https://kubernetes.slack.com/archives/CJ1LUCUHM) |
-| Italian | Fabrizio Pandini ([@fabriziopandini](https://github.com/fabriziopandini)) | https://kubernetes.io/it/ | [#kubernetes-docs-it](https://kubernetes.slack.com/archives/CGB1MCK7X) | 
-| Japanese | Masahiro Kitamura ([@nasa9084](https://github.com/nasa9084)), Kohei Ota ([@inductor](https://github.com/inductor)) | https://kubernetes.io/ja/ | [#kubernetes-docs-ja](https://kubernetes.slack.com/archives/CAG2M83S8) | 
-| Korean | Seokho Son ([@seokho-son](https://github.com/seokho-son)) | https://kubernetes.io/ko/ | [#kubernetes-docs-ko](https://kubernetes.slack.com/archives/CA1MMR86S) | 
-| Portuguese | Ricardo Katz ([rikatz](https://github.com/rikatz)), Mauren Berti ([@stormqueen1990](https://github.com/stormqueen1990)), Edson C ([@edsoncelio](https://github.com/edsoncelio)) | https://kubernetes.io/pt-br/ | [#kubernetes-docs-pt](https://kubernetes.slack.com/archives/CJ21AS0NA) | 
-| Russian | Dmitry Shurupov ([@shurup](https://github.com/shurup)) | https://kubernetes.io/ru/ | [#kubernetes-docs-ru](https://kubernetes.slack.com/archives/CPZ9KD9TN) |
-| Spanish | Rael Garcia ([@raelga](https://github.com/raelga)), Victor Morales ([@electrocucaracha](https://github.com/electrocucaracha/)) | https://kubernetes.io/es/ | [#kubernetes-docs-es](https://kubernetes.slack.com/archives/CH7GB2E3B) | 
-| Ukrainian | Maksym Vlasov ([@MaxymVlasov](https://github.com/MaxymVlasov)) | https://kubernetes.io/uk/ | [#kubernetes-docs-uk](https://kubernetes.slack.com/archives/CSKCYN138) | 
-| Vietnamese | | https://kubernetes.io/vi/ | [#kubernetes-docs-vi](https://kubernetes.slack.com/archives/CPHAWNF1Q) |  
+| Arabic | In progress | In progress | [#kubernetes-docs-ar](https://kubernetes.slack.com/archives/CP9FKRD51) |
+| Bengali | In progress | In progress | [#kubernetes-docs-bn](https://kubernetes.slack.com/archives/CQ0TD298C) |
+| Chinese | https://kubernetes.io/zh-cn/ | [sig-docs-zh-owners](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) | [#kubernetes-docs-zh](https://kubernetes.slack.com/archives/CE3LNFYJ1) | 
+| French | https://kubernetes.io/fr/ | [sig-docs-fr-owners](https://github.com/orgs/kubernetes/teams/sig-docs-fr-owners) | [#kubernetes-docs-fr](https://kubernetes.slack.com/archives/CG838BFT9) |
+| German | https://kubernetes.io/de/ | [sig-docs-de-owners](https://github.com/orgs/kubernetes/teams/sig-docs-de-owners)  | [#kubernetes-docs-de](https://kubernetes.slack.com/archives/CH4UJ2BAL) |
+| Hindi | https://kubernetes.io/hi/ | [sig-docs-hi-owners](https://github.com/orgs/kubernetes/teams/sig-docs-hi-owners) | [#kubernetes-docs-hi](https://kubernetes.slack.com/archives/CJ14B9BDJ) | 
+| Indonesian | https://kubernetes.io/id/ | [sig-docs-id-owners](https://github.com/orgs/kubernetes/teams/sig-docs-id-owners) | [#kubernetes-docs-id](https://kubernetes.slack.com/archives/CJ1LUCUHM) |
+| Italian | https://kubernetes.io/it/ | [sig-docs-it-owners](https://github.com/orgs/kubernetes/teams/sig-docs-it-owners) | [#kubernetes-docs-it](https://kubernetes.slack.com/archives/CGB1MCK7X) | 
+| Japanese | https://kubernetes.io/ja/ | [sig-docs-ja-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ja-owners) | [#kubernetes-docs-ja](https://kubernetes.slack.com/archives/CAG2M83S8) | 
+| Korean | https://kubernetes.io/ko/ | [sig-docs-ko-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ko-owners) | [#kubernetes-docs-ko](https://kubernetes.slack.com/archives/CA1MMR86S) | 
+| Portuguese | https://kubernetes.io/pt-br/ | [sig-docs-pt-owners](https://github.com/orgs/kubernetes/teams/sig-docs-pt-owners) | [#kubernetes-docs-pt](https://kubernetes.slack.com/archives/CJ21AS0NA) | 
+| Russian | https://kubernetes.io/ru/ | [sig-docs-ru-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ru-owners) | [#kubernetes-docs-ru](https://kubernetes.slack.com/archives/CPZ9KD9TN) |
+| Spanish | https://kubernetes.io/es/ | [sig-docs-es-owners](https://github.com/orgs/kubernetes/teams/sig-docs-es-owners) | [#kubernetes-docs-es](https://kubernetes.slack.com/archives/CH7GB2E3B) | 
+| Ukrainian | https://kubernetes.io/uk/ | [sig-docs-uk-owners](https://github.com/orgs/kubernetes/teams/sig-docs-uk-owners) | [#kubernetes-docs-uk](https://kubernetes.slack.com/archives/CSKCYN138) | 
+| Vietnamese | https://kubernetes.io/vi/ | [sig-docs-vi-owners](https://github.com/orgs/kubernetes/teams/sig-docs-vi-owners) | [#kubernetes-docs-vi](https://kubernetes.slack.com/archives/CPHAWNF1Q) |  
 
 "In progress" teams have started localization work, but are not yet live on the Kubernetes site.
 
