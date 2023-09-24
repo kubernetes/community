@@ -10,8 +10,8 @@ writing our tests defensively. When flakes are identified, we should prioritize
 addressing them, either by fixing them or quarantining them off the critical
 path.
 
-The project has a "zero-flake" policy, jobs must not automatically retry on test failures,
-this was effectivily implemented and announced in 2019,
+The project has a "zero-flake" policy. Test jobs must not automatically retry on test failures.
+This was announced and implemented in effect from 2019:
 [No more ginkgo.flakeAttempts=2 for e2e tests as of 2019-12-13](https://groups.google.com/g/kubernetes-dev/c/NNmEGUsJObg/m/dmI2mVc_AAAJ)
 
 For more information about deflaking Kubernetes tests, you can watch:
