@@ -10,8 +10,14 @@ writing our tests defensively. When flakes are identified, we should prioritize
 addressing them, either by fixing them or quarantining them off the critical
 path.
 
-For more information about deflaking Kubernetes tests, watch @liggitt's
-[presentation from Kubernetes SIG Testing - 2020-08-25](https://www.youtube.com/watch?v=Ewp8LNY_qTg).
+The project has a "zero-flake" policy, jobs must not automatically retry on test failures,
+this was effectivily implemented and announced in 2019,
+[No more ginkgo.flakeAttempts=2 for e2e tests as of 2019-12-13}(https://groups.google.com/g/kubernetes-dev/c/NNmEGUsJObg/m/dmI2mVc_AAAJ)
+
+For more information about deflaking Kubernetes tests, you can watch:
+- @liggitt's [presentation from Kubernetes SIG Testing - 2020-08-25](https://www.youtube.com/watch?v=Ewp8LNY_qTg).
+- @aojea's [presentation from Kubernetes SIG Testing - 2022-11-15](https://www.youtube.com/watch?v=x2Lj-ldR0AA&t=2660s).
+- @aojea's [Contributor Summit: "The art of deflaking Kubernetes tests"](https://sched.co/1LXGm).
 
 **Table of Contents**
 
