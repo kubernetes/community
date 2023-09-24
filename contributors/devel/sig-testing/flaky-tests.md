@@ -12,7 +12,7 @@ path.
 
 The project has a "zero-flake" policy, jobs must not automatically retry on test failures,
 this was effectivily implemented and announced in 2019,
-[No more ginkgo.flakeAttempts=2 for e2e tests as of 2019-12-13}(https://groups.google.com/g/kubernetes-dev/c/NNmEGUsJObg/m/dmI2mVc_AAAJ)
+[No more ginkgo.flakeAttempts=2 for e2e tests as of 2019-12-13](https://groups.google.com/g/kubernetes-dev/c/NNmEGUsJObg/m/dmI2mVc_AAAJ)
 
 For more information about deflaking Kubernetes tests, you can watch:
 - @liggitt's [presentation from Kubernetes SIG Testing - 2020-08-25](https://www.youtube.com/watch?v=Ewp8LNY_qTg).
