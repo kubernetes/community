@@ -603,7 +603,7 @@ sigs:
     time: "16:00"
     tz: Poland
     frequency: weekly
-    url: https://zoom.us/j/944410904
+    url: https://zoom.us/j/96548204174
     archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
   contact:
     slack: sig-autoscaling
