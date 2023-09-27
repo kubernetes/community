@@ -443,6 +443,7 @@ channels:
     archived: true
   - name: sig-contribex
   - name: sig-contribex-meetings
+    archived: true
   - name: sig-contribex-comms
   - name: sig-contribex-elections
   - name: sig-contribex-triage
