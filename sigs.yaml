@@ -1438,7 +1438,6 @@ sigs:
     description: |
       Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/contributor-tweets/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/lwkd/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/communication/contributor-comms/OWNERS
     meetings:

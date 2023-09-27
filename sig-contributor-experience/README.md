@@ -70,7 +70,6 @@ Manages operations and policy for upstream community group communication platfor
 ### contributor-comms
 Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
 - **Owners:**
-  - [kubernetes-sigs/contributor-tweets](https://github.com/kubernetes-sigs/contributor-tweets/blob/master/OWNERS)
   - [kubernetes-sigs/lwkd](https://github.com/kubernetes-sigs/lwkd/blob/main/OWNERS)
   - [kubernetes/community/communication/contributor-comms](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/OWNERS)
 - **Meetings:**
