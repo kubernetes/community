@@ -6,8 +6,8 @@ Welcome to the Kubernetes Community contributing guide. We are excited about the
 
 We have full documentation on how to get started contributing here:
 
-- [Kubernetes Contributor Guide](http://git.k8s.io/community/contributors/guide) - Main contributor documentation
-- [Contributor Cheat Sheet](./contributors/guide/contributor-cheatsheet/) - Common resources for existing developers
+- [Kubernetes Contributor Guide](https://www.kubernetes.dev/docs/guide/) - Main contributor documentation
+- [Contributor Cheat Sheet](https://www.kubernetes.dev/docs/contributor-cheatsheet/) - Common resources for existing developers
 
 ## Mentorship
 
