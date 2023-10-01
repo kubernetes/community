@@ -278,7 +278,7 @@ sigs:
       company: Red Hat
     - github: dims
       name: Davanum Srinivas
-      company: Amazon Web Services
+      company: Amazon
     - github: johnbelamaric
       name: John Belamaric
       company: Google
@@ -1902,7 +1902,7 @@ sigs:
       company: VMware
     - github: dims
       name: Davanum Srinivas
-      company: Amazon Web Services
+      company: Amazon
     tech_leads:
     - github: spiffxp
       name: Aaron Crickenberger
@@ -2536,7 +2536,7 @@ sigs:
       company: Google
     - github: shyamjvs
       name: Shyam Jeedigunta
-      company: AWS
+      company: Amazon
     tech_leads:
     - github: wojtek-t
       name: Wojciech Tyczynski
@@ -3076,7 +3076,7 @@ sigs:
     chairs:
     - github: aravindhp
       name: Aravindh Puthiyaparambil
-      company: Redhat
+      company: Red Hat
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
@@ -3467,7 +3467,7 @@ committees:
       company: Independent
     - github: hlipsig
       name: Hilliary Lipsig
-      company: RedHat
+      company: Red Hat
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Microsoft

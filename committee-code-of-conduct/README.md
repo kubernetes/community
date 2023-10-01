@@ -16,7 +16,7 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 * Ana Margarita Medina (**[@AnaMMedina21](https://github.com/AnaMMedina21)**), Lightstep
 * Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), Independent
-* Hilliary Lipsig (**[@hlipsig](https://github.com/hlipsig)**), RedHat
+* Hilliary Lipsig (**[@hlipsig](https://github.com/hlipsig)**), Red Hat
 * Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
 * Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Microsoft
 
