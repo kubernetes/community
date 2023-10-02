@@ -468,8 +468,8 @@ sigs:
     - name: sig-auth-test-failures
       description: Test Failures and Triage
     liaison:
-      github: cblecker
-      name: Christoph Blecker
+      github: pohly
+      name: Patrick Ohly
   subprojects:
   - name: audit-logging
     description: |
@@ -624,8 +624,8 @@ sigs:
     - name: sig-autoscaling-test-failures
       description: Test Failures and Triage
     liaison:
-      github: tpepper
-      name: Tim Pepper
+      github: soltysh
+      name: Maciej Szulik
   subprojects:
   - name: addon-resizer
     owners:
@@ -1651,8 +1651,8 @@ sigs:
     - name: sig-docs-zh-owners
       description: Chinese language content
     liaison:
-      github: cpanato
-      name: Carlos Tadeu Panato Jr.
+      github: pacoxu
+      name: Paco Xu 徐俊杰
   subprojects:
   - name: kubernetes-blog
     owners:
@@ -1836,8 +1836,8 @@ sigs:
     - name: sig-instrumentation-members
       description: SIG Membership Roster
     liaison:
-      github: cblecker
-      name: Christoph Blecker
+      github: pohly
+      name: Patrick Ohly
   subprojects:
   - name: custom-metrics-apiserver
     owners:
@@ -2211,8 +2211,8 @@ sigs:
     - name: sig-network-test-failures
       description: Test Failures and Triage
     liaison:
-      github: tpepper
-      name: Tim Pepper
+      github: soltysh
+      name: Maciej Szulik
   subprojects:
   - name: cluster-proportional-autoscaler
     owners:
@@ -2317,8 +2317,8 @@ sigs:
     - name: sig-node-test-failures
       description: Test Failures and Triage
     liaison:
-      github: tpepper
-      name: Tim Pepper
+      github: soltysh
+      name: Maciej Szulik
   subprojects:
   - name: ci-testing
     contact:
@@ -2739,8 +2739,8 @@ sigs:
     - name: sig-security-pr-reviews
       description: SIG Security PR review notifications
     liaison:
-      github: cpanato
-      name: Carlos Tadeu Panato Jr.
+      github: pacoxu
+      name: Paco Xu 徐俊杰
   subprojects:
   - name: security-assessments
     description: Security self assessments for upstream projects
@@ -2836,8 +2836,8 @@ sigs:
     - name: sig-storage-test-failures
       description: Test Failures and Triage
     liaison:
-      github: cpanato
-      name: Carlos Tadeu Panato Jr.
+      github: pacoxu
+      name: Paco Xu 徐俊杰
   subprojects:
   - name: external-storage
     owners:
@@ -2963,8 +2963,8 @@ sigs:
     - name: sig-testing-pr-reviews
       description: PR Reviews
     liaison:
-      github: cpanato
-      name: Carlos Tadeu Panato Jr.
+      github: pacoxu
+      name: Paco Xu 徐俊杰
   subprojects:
   - name: Cloud Provider for KIND
     description: |
@@ -3277,8 +3277,8 @@ workinggroups:
     slack: wg-data-protection
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-data-protection
     liaison:
-      github: cblecker
-      name: Christoph Blecker
+      github: pohly
+      name: Patrick Ohly
 - dir: wg-iot-edge
   name: IoT Edge
   mission_statement: >
@@ -3322,8 +3322,8 @@ workinggroups:
     slack: wg-iot-edge
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge
     liaison:
-      github: cblecker
-      name: Christoph Blecker
+      github: pohly
+      name: Patrick Ohly
 - dir: wg-lts
   name: LTS
   mission_statement: >
@@ -3405,8 +3405,8 @@ workinggroups:
     slack: wg-policy
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-policy
     liaison:
-      github: cblecker
-      name: Christoph Blecker
+      github: pohly
+      name: Patrick Ohly
 - dir: wg-structured-logging
   name: Structured Logging
   mission_statement: >
@@ -3511,8 +3511,8 @@ committees:
     - name: code-of-conduct-committee
       description: General Discussion
     liaison:
-      github: tpepper
-      name: Tim Pepper
+      github: soltysh
+      name: Maciej Szulik
 - dir: committee-security-response
   name: Security Response
   mission_statement: >
