@@ -3582,24 +3582,24 @@ committees:
     - github: BenTheElder
       name: Benjamin Elder
       company: Google
-    - github: cblecker
-      name: Christoph Blecker
-      company: Red Hat
-    - github: cpanato
-      name: Carlos Tadeu Panato Jr.
-      company: Chainguard, Inc
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
     - github: mrbobbytables
       name: Bob Killen
       company: Google
+    - github: pacoxu
+      name: Paco Xu 徐俊杰
+      company: DaoCloud
     - github: palnabarun
       name: Nabarun Pal
       company: VMware
-    - github: tpepper
-      name: Tim Pepper
-      company: VMware
+    - github: pohly
+      name: Patrick Ohly
+      company: Intel
+    - github: soltysh
+      name: Maciej Szulik
+      company: Red Hat
   meetings:
   - description: Private Steering Committee Meeting
     day: third Monday

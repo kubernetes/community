@@ -195,12 +195,12 @@ usergroups:
       - steering-committee
     members:
       - bentheelder
-      - cblecker
-      - cpanato
       - justaugustus
       - mrbobbytables
+      - pacoxu
       - palnabarun
-      - tpepper
+      - pohly
+      - soltysh
 
   - name: grafana-operator-maintainers
     long_name: Grafana Operator Maintainers
