@@ -39,7 +39,7 @@ members will assume one of the departing members groups.
 | [SIG Cloud Provider](sig-cloud-provider/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG Cluster Lifecycle](sig-cluster-lifecycle/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [SIG Contributor Experience](sig-contributor-experience/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
-| [SIG Docs](sig-docs/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
+| [SIG Docs](sig-docs/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG etcd](sig-etcd/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Instrumentation](sig-instrumentation/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [SIG K8s Infra](sig-k8s-infra/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
@@ -49,7 +49,7 @@ members will assume one of the departing members groups.
 | [SIG Release](sig-release/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [SIG Scalability](sig-scalability/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Scheduling](sig-scheduling/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
-| [SIG Security](sig-security/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
+| [SIG Security](sig-security/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG Storage](sig-storage/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG Testing](sig-testing/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG UI](sig-ui/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
@@ -61,7 +61,7 @@ members will assume one of the departing members groups.
 | [WG LTS](wg-lts/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [WG Policy](wg-policy/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [WG Structured Logging](wg-structured-logging/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
-| [Committee Code of Conduct](committee-code-of-conduct/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
+| [Committee Code of Conduct](committee-code-of-conduct/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [Committee Security Response](committee-security-response/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 <!-- BEGIN CUSTOM CONTENT -->
 ## Expectations

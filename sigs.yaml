@@ -1651,8 +1651,8 @@ sigs:
     - name: sig-docs-zh-owners
       description: Chinese language content
     liaison:
-      github: pacoxu
-      name: Paco Xu 徐俊杰
+      github: justaugustus
+      name: Stephen Augustus
   subprojects:
   - name: kubernetes-blog
     owners:
@@ -2739,8 +2739,8 @@ sigs:
     - name: sig-security-pr-reviews
       description: SIG Security PR review notifications
     liaison:
-      github: pacoxu
-      name: Paco Xu 徐俊杰
+      github: justaugustus
+      name: Stephen Augustus
   subprojects:
   - name: security-assessments
     description: Security self assessments for upstream projects
@@ -3511,8 +3511,8 @@ committees:
     - name: code-of-conduct-committee
       description: General Discussion
     liaison:
-      github: soltysh
-      name: Maciej Szulik
+      github: palnabarun
+      name: Nabarun Pal
 - dir: committee-security-response
   name: Security Response
   mission_statement: >
