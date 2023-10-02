@@ -18,12 +18,12 @@ Es un resumen o referencia rápida de información útil para mejorar tu experie
     - [Ejemplos de Buena/Mala Comunicación](#ejemplos-de-buenamala-comunicación)
 - [Presentar una Contribución](#presentar-una-contribución)
   - [Firmar el CLA](#firmar-el-cla)
-  - [Abrir y Responder a Issues](#abrir-y-responder-a-issues)
+  - [Abrir y Responder Issues](#abrir-y-responder-issues)
     - [Crear un Issue](#crear-un-issue)
     - [Responder a un Issue](#responder-a-un-issue)
   - [Abrir un Pull Request](#abrir-un-pull-request)
     - [Crear un Pull Request](#crear-un-pull-request)
-    - [Ejemplo de Descripción de un Pull Request](#ejemplo-de-descripción-de-pull-request)
+    - [Ejemplo de Descripción de un Pull Request](#ejemplo-de-descripción-de-un-pull-request)
     - [Solucionar Problemas de un Pull Request](#solucionar-problemas-de-un-pull-request)
   - [Labels](#labels)
 - [Trabajar Localmente](#trabajar-localmente)
@@ -66,7 +66,7 @@ Es un resumen o referencia rápida de información útil para mejorar tu experie
 - [Prow] - Sistema de CI/CD de Kubernetes.
 - [Tide] - Plugin de Prow que administra fusiones y pruebas. [Panel de Tide]
 - [Comandos de Bots] - Comandos utilizados para interactuar con los Bots de Kubernetes (ejemplos:
-- `/cc`, `/lgtm` y `/retest`).
+  `/cc`, `/lgtm` y `/retest`).
 - [GitHub Labels] - Lista de labels utilizados en todo el Proyecto Kubernetes.
 - [Búsqueda de Código de Kubernetes], mantenida por [@dims].
 
@@ -96,7 +96,7 @@ Es un resumen o referencia rápida de información útil para mejorar tu experie
 
 - [Estadísticas de Desarrolladores] - Visualiza estadísticas de desarrolladores para todos los
   proyectos gestionados por la CNCF.
-- [Lanzamiento de Parches de Kubernetes] - Programación e información de contacto del equipo
+- [Publicación de Parches de Kubernetes] - Programación e información de contacto del equipo
   para lanzamientos de parches de Kubernetes.
 
 ---
@@ -137,7 +137,7 @@ han firmado el CLA.
 Si encuentras problemas al firmar el CLA, sigue 
 las [pautas de solución de problemas del CLA].
   
-### Abrir y Responder a Issues
+### Abrir y Responder Issues
 
 Los Issues de GitHub son el medio principal para dar seguimiento a cosas como informes de errores, 
 solicitudes de mejoras o para informar otros problemas, como pruebas que fallan. 
@@ -175,7 +175,7 @@ informa el problema en [Stack Overflow] o sigue en el [foro de Kubernetes].
 
 ### Abrir un Pull Request
 
-Las solicitudes de extracción (Pull Request) son el principal medio 
+Las solicitudes de extracción (Pull Request o PR) son el principal medio 
 para contribuir con código, documentación u
 otras formas de trabajo que se almacenarán en un repositorio git.
 
@@ -204,6 +204,7 @@ otras formas de trabajo que se almacenarán en un repositorio git.
 - Si tu PR no recibe suficiente atención, publica un enlace al PR en el
   canal `#pr-reviews` en Slack para encontrar revisores adiccionales.
 
+
 #### Ejemplo de Descripción de un Pull Request
 
 ```
@@ -217,12 +218,11 @@ All files owned by SIG testing were moved from `/devel` to the new folder `/deve
 /assign @approver1 @approver2 @approver3
 ```
 
-
 Lo que contiene ese PR:
 - **Línea 1** - Referencia a otros issues o PRs (#3064 #3097).
 - **Línea 2** - Una breve descripción de lo que se está haciendo en el PR.
-- **Línea 4** - Asignación de [SIG][sigs] con el [comando][commands]
-  `/sig contributor-experience`..
+- **Línea 4** - Asignación de [SIG][sigs] con el [comandos]
+  `/sig contributor-experience`.
 - **Línea 5** - Los revisores que pueden estar interesados en este problema o PR están
   especificados con el comando [`/cc`][cc].
 - **Línea 6** - El comando [`/kind cleanup`][kind] agrega una [etiqueta][labels] que
@@ -259,7 +259,7 @@ efectiva.
 
 **Referencias:**
 - [Labels]
-- [Comandos de Prow][commands]
+- [Comandos de Prow][comandos]
 
 Labels frecuentemente utilizados:
 - [`/sig <nombre de SIG>`][kind] Asigna un [SIG][SIGs] a la propiedad del issue
@@ -272,14 +272,14 @@ Labels frecuentemente utilizados:
 
 ## Trabajar Localmente
 
-Antes de proponer una solicitud de extracción (pull request), deberás realizar algún trabajo 
+Antes de proponer una solicitud de extracción (Pull Request), deberás realizar algún trabajo 
 localmente. 
 Si eres nuevo en Git, el [tutorial de Git de Atlassian] es un buen punto de partida. 
 Como alternativa, el [tutorial Git Magic] de Stanford es una buena opción multilingüe.
 
 **Referencias:**
 - [Tutorial de Git de Atlassian]
-- [Git Magic]
+- [tutorial Git Magic]
 - [Flujo de trabajo de GitHub]
 - [Pruebas locales]
 - [Guía del desarrollador]
@@ -327,8 +327,8 @@ Esto es lo mínimo que debes hacer antes de crear una nueva rama para trabajar e
 git checkout -b myfeature
 ```
 
-#### Combinar Commits (Squashing Commits)
-El propósito principal de [combinar commits] (squashing) es crear un Git limpio con 
+#### Squashing Commits
+El propósito principal de [squashing commits] es crear un Git limpio con 
 historial legible y con log de los cambios realizados. 
 Normalmente, esto se hace en la última fase de revisión de un PR. 
 Si no estás seguro de si debes hacer el squashing de tus commits, es mejor optar por tener más commits y dejar que lo decidan los otros colaboradores encargados de revisar y aprobar tu PR.
@@ -349,10 +349,10 @@ label `LGTM` (si ya se ha aplicado) o en la repetición de las pruebas CI.
 [Curso para Colaboradores]: https://www.kubernetes.dev/docs/onboarding
 [Guía para Colaboradores]: /contributors/guide/README.md
 [Guía del Desarrollador]: /contributors/devel/README.md
-[Tablero de Gubernator]: https://gubernator.k8s.io/pr
+[Panel de Gubernator]: https://gubernator.k8s.io/pr
 [Prow]: https://prow.k8s.io
 [Tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
-[Tablero de Tide]: https://prow.k8s.io/tide
+[Panel de Tide]: https://prow.k8s.io/tide
 [Comandos de Bots]: https://go.k8s.io/bot-commands
 [GitHub Labels]: https://go.k8s.io/github-labels
 [Búsqueda de Código de Kubernetes]: https://cs.k8s.io/
@@ -362,35 +362,35 @@ label `LGTM` (si ya se ha aplicado) o en la repetición de las pruebas CI.
 [Canales de Slack]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [Canal de YouTube]: https://www.youtube.com/c/KubernetesCommunity/
-[Tablero de Triage]: https://go.k8s.io/triage
-[Tablero de Pruebas]: https://testgrid.k8s.io
+[Panel de Triage]: https://go.k8s.io/triage
+[Test Grid]: https://testgrid.k8s.io
 [Estadísticas de Desarrolladores]: https://k8s.devstats.cncf.io
 [Código de Conducta]: /code-of-conduct.md
 [Solicitudes de Soporte de Usuarios]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request
-[Guía de Resolución de Problemas]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
+[guía de solución de problemas]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
 [Foro de Kubernetes]: https://discuss.kubernetes.io/
-[Pull Requests]: /contributors/guide/pull-requests.md
+[pull request process]: /contributors/guide/pull-requests.md
 [Flujo de Trabajo de GitHub]: /contributors/guide/github-workflow.md
 [Prow]: https://git.k8s.io/test-infra/prow#prow
 [CLA]: /CLA.md#how-do-i-sign
-[Directrices para la Solución de Problemas del CLA]: /CLA.md#troubleshooting
-[Comandos]: https://prow.k8s.io/command-help
-[Tipo]: https://prow.k8s.io/command-help#kind
+[pautas de solución de problemas del CLA]: /CLA.md#troubleshooting
+[comandos]: https://prow.k8s.io/command-help
+[kind]: https://prow.k8s.io/command-help#kind
 [CC]: https://prow.k8s.io/command-help#cc
-[En Espera]: https://prow.k8s.io/command-help#hold
-[Asignar]: https://prow.k8s.io/command-help#assign
+[hold]: https://prow.k8s.io/command-help#hold
+[assign]: https://prow.k8s.io/command-help#assign
 [SIGs]: /sig-list.md
 [Guía de Pruebas]: /contributors/devel/sig-testing/testing.md
 [Labels]: https://git.k8s.io/test-infra/label_sync/labels.md
-[Arreglo Trivial]: /contributors/guide/pull-requests.md#10-trivial-edits
+[corrección trivial]: /contributors/guide/pull-requests.md#10-trivial-edits
 [Flujo de Trabajo de GitHub]: /contributors/guide/github-workflow.md#3-branch
-[Combinación de Commits]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
-[Dueños]: /contributors/guide/owners.md
+[Squashing Commits]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
+[OWNERS]: /contributors/guide/owners.md
 [Pruebas Locales]: /contributors/devel/sig-testing/testing.md
 [Tutorial de Git de Atlassian]: https://www.atlassian.com/git/tutorials
-[Tutorial de Git Magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
-[Información de Seguridad y Divulgación]: https://kubernetes.io/docs/reference/issues-security/security/
-[Aprobar]: https://prow.k8s.io/command-help#approve
+[tutorial Git Magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
+[Guía de Seguridad y Divulgación]: https://kubernetes.io/docs/reference/issues-security/security/
+[approve]: https://prow.k8s.io/command-help#approve
 [Equipo de Administración de GitHub]: /github-management#github-administration-team
 [Publicación de Parches de Kubernetes]: https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md
 
