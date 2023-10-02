@@ -1,12 +1,12 @@
 # Cheat Sheet para Colaboradores de Kubernetes
 
 Una lista de recursos comunes al contribuir a Kubernetes, consejos, trucos y mejores prácticas utilizadas dentro del proyecto Kubernetes. 
-Es una "TL;DR" o referencia rápida de información útil para mejorar tu experiencia de colaboración en GitHub.
+Es un resumen o referencia rápida de información útil para mejorar tu experiencia de colaboración en GitHub.
 
 **Tabla de Contenidos**
 
 - [Recursos Útiles](#recursos-útiles)
-  - [Empezando](#empezando)
+  - [Empezar](#empezar)
   - [SIGs y Otros Grupos](#sigs-y-otros-grupos)
   - [Comunidad](#comunidad)
   - [Flujo de Trabajo](#flujo-de-trabajo)
@@ -35,7 +35,7 @@ Es una "TL;DR" o referencia rápida de información útil para mejorar tu experi
 ---
 ## Recursos Útiles
 
-### Empezando
+### Empezar
 
 - [Curso para Colaboradores] - **NUEVO** - El curso de E-Learning para colaboradores de Kubernetes!
 - [Guía para Colaboradores] - Guía sobre cómo comenzar a contribuir al Proyecto
