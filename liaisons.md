@@ -35,8 +35,8 @@ members will assume one of the departing members groups.
 | [SIG Architecture](sig-architecture/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [SIG Auth](sig-auth/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [SIG Autoscaling](sig-autoscaling/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
-| [SIG CLI](sig-cli/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
-| [SIG Cloud Provider](sig-cloud-provider/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
+| [SIG CLI](sig-cli/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
+| [SIG Cloud Provider](sig-cloud-provider/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [SIG Cluster Lifecycle](sig-cluster-lifecycle/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [SIG Contributor Experience](sig-contributor-experience/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Docs](sig-docs/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
@@ -45,14 +45,14 @@ members will assume one of the departing members groups.
 | [SIG K8s Infra](sig-k8s-infra/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG Multicluster](sig-multicluster/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Network](sig-network/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
-| [SIG Node](sig-node/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
+| [SIG Node](sig-node/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG Release](sig-release/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [SIG Scalability](sig-scalability/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [SIG Scheduling](sig-scheduling/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [SIG Security](sig-security/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG Storage](sig-storage/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG Testing](sig-testing/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
-| [SIG UI](sig-ui/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
+| [SIG UI](sig-ui/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [SIG Windows](sig-windows/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG API Expression](wg-api-expression/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG Batch](wg-batch/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |

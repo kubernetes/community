@@ -47,7 +47,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-node-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-node-pr-reviews) - PR Reviews
     - [@kubernetes/sig-node-proposals](https://github.com/orgs/kubernetes/teams/sig-node-proposals) - Design Proposals
     - [@kubernetes/sig-node-test-failures](https://github.com/orgs/kubernetes/teams/sig-node-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
+- Steering Committee Liaison: Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**)
 
 ## Working Groups
 

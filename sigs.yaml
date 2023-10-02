@@ -737,8 +737,8 @@ sigs:
     - name: sig-cli-test-failures
       description: Test Failures and Triage
     liaison:
-      github: justaugustus
-      name: Stephen Augustus
+      github: pacoxu
+      name: Paco Xu 徐俊杰
   subprojects:
   - name: cli-experimental
     owners:
@@ -848,8 +848,8 @@ sigs:
     - name: sig-cloud-providers-misc
       description: General Discussion
     liaison:
-      github: justaugustus
-      name: Stephen Augustus
+      github: soltysh
+      name: Maciej Szulik
   subprojects:
   - name: cloud-provider-extraction-migration
     owners:
@@ -2317,8 +2317,8 @@ sigs:
     - name: sig-node-test-failures
       description: Test Failures and Triage
     liaison:
-      github: soltysh
-      name: Maciej Szulik
+      github: pacoxu
+      name: Paco Xu 徐俊杰
   subprojects:
   - name: ci-testing
     contact:
@@ -3058,8 +3058,8 @@ sigs:
     slack: sig-ui
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
     liaison:
-      github: justaugustus
-      name: Stephen Augustus
+      github: soltysh
+      name: Maciej Szulik
   subprojects:
   - name: dashboard
     owners:
