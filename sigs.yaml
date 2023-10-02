@@ -1712,8 +1712,8 @@ sigs:
     - name: sig-etcd-leads
       description: SIG Chairs and Tech Leads
     liaison:
-      github: TBD
-      name: TBD
+      github: mrbobbytables
+      name: Bob Killen
   subprojects:
   - name: bbolt
     description: An embedded key/value database for Go.
