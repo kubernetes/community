@@ -1,4 +1,4 @@
-# Cheat Sheet Hoja de Trucos para Contribuyentes de Kubernetes
+# Cheat Sheet para Colaboradores de Kubernetes
 
 Una lista de recursos comunes al contribuir a Kubernetes, consejos, trucos y mejores prácticas utilizadas dentro del proyecto Kubernetes. 
 Es una "TL;DR" o referencia rápida de información útil para mejorar tu experiencia de colaboración en GitHub.
