@@ -59,7 +59,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-auth-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-auth-pr-reviews) - PR Reviews
     - [@kubernetes/sig-auth-proposals](https://github.com/orgs/kubernetes/teams/sig-auth-proposals) - Design Proposals
     - [@kubernetes/sig-auth-test-failures](https://github.com/orgs/kubernetes/teams/sig-auth-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
+- Steering Committee Liaison: Patrick Ohly (**[@pohly](https://github.com/pohly)**)
 
 ## Working Groups
 

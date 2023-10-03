@@ -37,7 +37,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-autoscaling-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-autoscaling-pr-reviews) - PR Reviews
     - [@kubernetes/sig-autoscaling-proposals](https://github.com/orgs/kubernetes/teams/sig-autoscaling-proposals) - Design Proposals
     - [@kubernetes/sig-autoscaling-test-failures](https://github.com/orgs/kubernetes/teams/sig-autoscaling-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
+- Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
 
 ## Working Groups
 
