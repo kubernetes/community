@@ -47,7 +47,7 @@ Es un resumen o referencia rápida de información útil para mejorar tu experie
 
 ### SIGs y Otros Grupos
 
-- [Lista Maestra de Grupos][sigs]
+- [Lista Maestra de Grupos][SIGs]
 
 ### Comunidad
 
@@ -221,7 +221,7 @@ All files owned by SIG testing were moved from `/devel` to the new folder `/deve
 Lo que contiene ese PR:
 - **Línea 1** - Referencia a otros issues o PRs (#3064 #3097).
 - **Línea 2** - Una breve descripción de lo que se está haciendo en el PR.
-- **Línea 4** - Asignación de [SIG][sigs] con el [comandos]
+- **Línea 4** - Asignación de [SIG][SIGs] con el [comandos]
   `/sig contributor-experience`.
 - **Línea 5** - Los revisores que pueden estar interesados en este problema o PR están
   especificados con el comando [`/cc`][cc].
