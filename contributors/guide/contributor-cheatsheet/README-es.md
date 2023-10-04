@@ -38,9 +38,9 @@ Es un resumen o referencia rápida de información útil para mejorar tu experie
 ### Empezar
 
 - [Curso para Colaboradores] - **NUEVO** - El curso de E-Learning para colaboradores de Kubernetes!
-- [Guía para Colaboradores] - Guía sobre cómo comenzar a contribuir al Proyecto
+- [Guía para Colaboradores] - Guía sobre cómo comenzar a contribuir al proyecto
   Kubernetes.
-- [Guía del Desarrollador] - Guía para contribuir código directamente al Proyecto
+- [Guía del Desarrollador] - Guía para contribuir código directamente al proyecto
   Kubernetes.
 - [Guía de Seguridad y Divulgación] - Guía para informar vulnerabilidades
   y el proceso de liberación de seguridad.
@@ -67,7 +67,7 @@ Es un resumen o referencia rápida de información útil para mejorar tu experie
 - [Tide] - Plugin de Prow que administra fusiones y pruebas. [Panel de Tide]
 - [Comandos de Bots] - Comandos utilizados para interactuar con los Bots de Kubernetes (ejemplos:
   `/cc`, `/lgtm` y `/retest`).
-- [GitHub Labels] - Lista de labels utilizados en todo el Proyecto Kubernetes.
+- [GitHub Labels] - Lista de labels utilizados en todo el proyecto Kubernetes.
 - [Búsqueda de Código de Kubernetes], mantenida por [@dims].
 
 ### Pruebas
@@ -182,7 +182,7 @@ otras formas de trabajo que se almacenarán en un repositorio git.
 **Referencias:**
 - [Labels]
 - [Comandos de Prow][comandos]
-- [Proceso de Solicitud de Extracción (Pull Request)][pull request process]
+- [Proceso de Solicitud de Extracción (Pull Request)][Pull Requests]
 - [Flujo de Trabajo de GitHub]
 
 
@@ -259,7 +259,7 @@ efectiva.
 
 **Referencias:**
 - [Labels]
-- [Comandos de Prow][comandos]
+- [Comandos de Prow][Comandos]
 
 Labels frecuentemente utilizados:
 - [`/sig <nombre de SIG>`][kind] Asigna un [SIG][SIGs] a la propiedad del issue
@@ -369,12 +369,12 @@ label `LGTM` (si ya se ha aplicado) o en la repetición de las pruebas CI.
 [Solicitudes de Soporte de Usuarios]: /contributors/guide/issue-triage.md#determine-if-its-a-support-request
 [guía de solución de problemas]: https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/
 [Foro de Kubernetes]: https://discuss.kubernetes.io/
-[pull request process]: /contributors/guide/pull-requests.md
+[Pull Requests]: /contributors/guide/pull-requests.md
 [Flujo de Trabajo de GitHub]: /contributors/guide/github-workflow.md
 [Prow]: https://git.k8s.io/test-infra/prow#prow
 [CLA]: /CLA.md#how-do-i-sign
 [pautas de solución de problemas del CLA]: /CLA.md#troubleshooting
-[comandos]: https://prow.k8s.io/command-help
+[Comandos]: https://prow.k8s.io/command-help
 [kind]: https://prow.k8s.io/command-help#kind
 [CC]: https://prow.k8s.io/command-help#cc
 [hold]: https://prow.k8s.io/command-help#hold
