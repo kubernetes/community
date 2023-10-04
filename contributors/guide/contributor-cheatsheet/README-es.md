@@ -61,8 +61,6 @@ Es un resumen o referencia rápida de información útil para mejorar tu experie
 
 ### Flujo de Trabajo
 
-- [Panel de Gubernator] - Visualiza las Solicitudes de Extracción entrantes y salientes que requieren
-  tu atención.
 - [Prow] - Sistema de CI/CD de Kubernetes.
 - [Tide] - Plugin de Prow que administra fusiones y pruebas. [Panel de Tide]
 - [Comandos de Bots] - Comandos utilizados para interactuar con los Bots de Kubernetes (ejemplos:
@@ -349,7 +347,6 @@ label `LGTM` (si ya se ha aplicado) o en la repetición de las pruebas CI.
 [Curso para Colaboradores]: https://www.kubernetes.dev/docs/onboarding
 [Guía para Colaboradores]: /contributors/guide/README.md
 [Guía del Desarrollador]: /contributors/devel/README.md
-[Panel de Gubernator]: https://gubernator.k8s.io/pr
 [Prow]: https://prow.k8s.io
 [Tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [Panel de Tide]: https://prow.k8s.io/tide
