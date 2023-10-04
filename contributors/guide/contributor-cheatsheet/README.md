@@ -78,8 +78,6 @@ better.
 
 ### Workflow
 
-- [Gubernator Dashboard] - View incoming and outgoing Pull Requests that require
-  your attention.
 - [Prow] - Kubernetes CI/CD System.
 - [Tide] - Prow plugin that manages merges and tests. [Tide Dashboard]
 - [Bot commands] - Commands used to interact with Kubernetes Bots (examples:
@@ -380,7 +378,6 @@ git push --force
 [contributor course]: https://www.kubernetes.dev/docs/onboarding
 [contributor guide]: /contributors/guide/README.md
 [developer guide]: /contributors/devel/README.md
-[gubernator dashboard]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [tide dashboard]: https://prow.k8s.io/tide
