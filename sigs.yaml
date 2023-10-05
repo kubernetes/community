@@ -1083,6 +1083,9 @@ sigs:
   - name: cluster-api-addon-provider-helm
     description: Implementation of Cluster Add-on Provider for Helm, an add-on orchestration
       solution for Cluster API using Helm.
+    contact:
+      slack: cluster-api-addon-helm
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/blob/main/OWNERS
   - name: cluster-api-ipam-provider-in-cluster
