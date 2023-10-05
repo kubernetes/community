@@ -25,12 +25,13 @@ sigs:
       name: Joe Betz
       company: Google
   meetings:
-  - description: Kubebuilder and Controller Runtime Meeting
+  - description: Kubebuilder Meeting
     day: Thursday
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    archive_url: https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing
+    archive_url: https://docs.google.com/document/d/1GbSkHAxIaFTm2fL92z3WeWrCtnIjXfr7gNZSySLHhmk/edit?usp=sharing
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0SOaFeA9f3dwdCNECEKkX3
   - description: Regular SIG Meeting
     day: Wednesday
     time: "11:00"
