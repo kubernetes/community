@@ -904,7 +904,7 @@ sigs:
       time: "9:00"
       tz: PT (Pacific Time)
       frequency: 'biweekly 2019 start date: Jan. 11th'
-      url: https://zoom.us/my/k8ssigaws
+      url: ​​https://zoom.us/j/508079177?pwd=ZmEvMksxdTFTc0N1eXFLRm91QUlyUT09
       archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29DzPOBBaJi-SO3AQ_b4HC
   - name: provider-azure
