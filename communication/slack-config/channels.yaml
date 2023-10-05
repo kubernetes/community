@@ -96,6 +96,7 @@ channels:
   - name: de-events
   - name: de-users
   - name: deppy-dev
+    archived: true
   - name: devfile
   - name: devspace
   - name: devstats
@@ -411,6 +412,7 @@ channels:
   - name: rktnetes
   - name: ro-users
   - name: rukpak-dev
+    archived: true
   - name: ru-users
   - name: scaleway-k8s
   - name: schemahero
