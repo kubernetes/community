@@ -58,10 +58,10 @@ Our [Incident Report Handling Procedures](incident-process.md) describes how we 
 
 The members and their terms are as follows:
 
-### Term ends on August 23, 2023
+### Term ends on August 23, 2025
 
 - Jeremy Rickard (Microsoft)
-- Jason DeTiberus (Cisco)
+- Ana Margarita Medina (Lightstep)
 
 ### Term ends on August 17, 2024
 
@@ -70,22 +70,5 @@ The members and their terms are as follows:
 - Xander Grzywinski (Microsoft)
 
 Please see the [bootstrapping document](./bootstrapping-process.md) and [election process guidelines](election.md) for more information on how members are picked and their responsibilities.
-
-## Emeritus Committee Members
-
-The Code of Conduct Committee sincerely thanks our emeritus committee members for their contributions.
-
-- Jaice Singer Dumars (Google)
-- Jennifer Rondeau (Stripe)
-- Carolyn Van Slyck (Microsoft)
-- Eric Paris (Red Hat)
-- Paris Pittman (Apple)
-- Aeva Black (Microsoft)
-- Tasha Drew (VMware)
-- Tim Pepper (VMware)
-- Karen Chu (Microsoft)
-- Celeste Horgan (Independent)
-- Carlos Tadeu Panato Jr. (Chainguard, Inc)
-- Vallery Lancey (Apple)
 
 <!-- END CUSTOM CONTENT -->
