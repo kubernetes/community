@@ -108,6 +108,7 @@ channels:
   - name: draft-users
   - name: druid-operator
   - name: ebpf
+  - name: educates
   - name: eks
   - name: eksctl
   - name: elastickube
