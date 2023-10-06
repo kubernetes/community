@@ -2090,6 +2090,9 @@ sigs:
   - name: about-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/about-api/master/OWNERS
+  - name: cluster-inventory-api
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-inventory-api/main/OWNERS
   - name: mcs-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
