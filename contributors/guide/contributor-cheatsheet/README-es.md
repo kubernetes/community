@@ -389,5 +389,5 @@ label `LGTM` (si ya se ha aplicado) o en la repetición de las pruebas CI.
 [Guía de Seguridad y Divulgación]: https://kubernetes.io/docs/reference/issues-security/security/
 [approve]: https://prow.k8s.io/command-help#approve
 [Equipo de Administración de GitHub]: /github-management#github-administration-team
-[Publicación de Parches de Kubernetes]: https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md
+[Publicación de Parches de Kubernetes]: https://kubernetes.io/releases/patch-releases/
 
