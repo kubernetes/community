@@ -243,7 +243,7 @@
             *   Begin code freeze:      	Sept. 4, 2018
             *   End code freeze:          	Sept. 19, 2018
             *   Release date:                 	Sept. 25, 2018
-        *   Process changes:  Nothing notable versus 1.11, will continue shortened code slush/freeze, BUT this depends on us all keeping a clean [CI Signal](http://k8s-testgrid.appspot.com/) throughout the release cycle.  Additionally asking for increased focus on earlier:
+        *   Process changes:  Nothing notable versus 1.11, will continue shortened code slush/freeze, BUT this depends on us all keeping a clean [CI Signal](http://testgrid.k8s.io/) throughout the release cycle.  Additionally asking for increased focus on earlier:
             *   Definition of blocking test cases and test case additions
             *   Drafting documentation for feature changes
     *   1.11.1: [Anirudh Ramanathan]

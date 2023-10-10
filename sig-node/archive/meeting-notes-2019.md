@@ -250,8 +250,8 @@
         *   https://github.com/kubernetes/enhancements/pull/1254 
     *   Project board: https://github.com/orgs/kubernetes/projects/34
     *   Recent meeting notes: https://docs.google.com/document/d/1PKlmTIh0-qSzGDPhYmc_5BJjdD9GRdMGIATzvlhUAwM/edit?usp=sharing
-    *   Containerd windows CRI validation test: https://testgrid.k8s.io/sig-node-containerd#cri-validation-windows
-    *   Containerd windows Kubernetes e2e test: https://testgrid.k8s.io/sig-windows#containerd-l2bridge-windows-master (Still using forked containerd right now, will setup one with upstream containerd soon)
+    *   Containerd windows CRI validation test: https://k8s-testgrid.appspot.com/sig-node-containerd#cri-validation-windows
+    *   Containerd windows Kubernetes e2e test: https://k8s-testgrid.appspot.com/sig-windows#containerd-l2bridge-windows-master (Still using forked containerd right now, will setup one with upstream containerd soon)
 *   [vinaykul] [In-Place Vertical Scaling KEP](https://github.com/kubernetes/enhancements/pull/686/commits/533c3c625a49b07fcbbf9449080f1a7b139c92f3) - just a status update.
     *   Approval from sig-node and sig-scheduling.
     *   Awaiting @kgolab lgtm and @mwielgus approve, API review and next steps.

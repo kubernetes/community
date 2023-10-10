@@ -689,8 +689,8 @@ Open Mic / Open Discussion / Remaining time of call:
 *   decouple lgtm and approve commands on k/k [Christoph]
     *   [https://groups.google.com/d/msgid/kubernetes-sig-contribex/CAN4RaVT%3DhhN0S7-_B5rm8z5ao9NmyJNLXgPGi0or0hVxg8E6Bg%40mail.gmail.com](https://groups.google.com/d/msgid/kubernetes-sig-contribex/CAN4RaVT%3DhhN0S7-_B5rm8z5ao9NmyJNLXgPGi0or0hVxg8E6Bg%40mail.gmail.com?utm_medium=email&utm_source=footer).
 *   peribolos rollout [Christoph]
-    *   [https://testgrid.k8s.io/sig-testing-org#post-peribolos](https://testgrid.k8s.io/sig-testing-org#post-peribolos) - running in response to PR merges
-    *   [https://testgrid.k8s.io/sig-testing-org#ci-peribolos](https://testgrid.k8s.io/sig-testing-org#ci-peribolos) - running periodically to ensure the state of github doesn’t drift from the state of the kubernetes/org repo
+    *   [https://k8s-testgrid.appspot.com/sig-testing-org#post-peribolos](https://k8s-testgrid.appspot.com/sig-testing-org#post-peribolos) - running in response to PR merges
+    *   [https://k8s-testgrid.appspot.com/sig-testing-org#ci-peribolos](https://k8s-testgrid.appspot.com/sig-testing-org#ci-peribolos) - running periodically to ensure the state of github doesn’t drift from the state of the kubernetes/org repo
 
 
 ### September 19th (Recording)
