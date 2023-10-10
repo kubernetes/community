@@ -46,14 +46,14 @@ David Eads, Daniel Smith, Federico Bongiovanni
 
 3. Same question as above but for working groups.
    [wg-api-expression](https://github.com/kubernetes/community/blob/master/wg-api-expression/README.md) has its own 
-   regular meeting cadence and did its own [annual report](https://github.com/kubernetes/community/blob/master/wg-api-expression/2020-annual-report.md).
+   regular meeting cadence and did its own [annual report](https://github.com/kubernetes/community/blob/master/wg-api-expression/annual-report-2020.md).
    
-   [wg-component-standard](https://github.com/kubernetes/community/blob/master/wg-component-standard/README.md) has its own
+   [wg-component-standard](https://github.com/kubernetes/community/blob/master/archive/wg-component-standard/README.md) has its own
    regular meeting cadence.
    The working group is not as active as it once was, see the [mailing list thread](https://groups.google.com/g/kubernetes-dev/c/sQGrk6HWyj0).
    
    [wg-multitenancy](https://github.com/kubernetes/community/tree/master/wg-multitenancy) has its own regular meeting cadence
-   and did its own [annual report](https://github.com/kubernetes/community/blob/master/wg-multitenancy/2021-annual-report.md).
+   and did its own [annual report](https://github.com/kubernetes/community/blob/master/wg-multitenancy/annual-report-2020.md).
 
 4. When was your last public community-wide update? (provide link to deck and/or recording)
    [May 2020](https://docs.google.com/presentation/d/1UWRaMVtTD3yVhJ3MGBpt7LRIaRHTaQZoGlDT7Bl7jLE/edit#slide=id.g401c104a3c_0_0)
@@ -100,7 +100,7 @@ David Eads, Daniel Smith, Federico Bongiovanni
    
    Currently underway:
    1. [server-side-apply](https://github.com/kubernetes/enhancements/issues/555) to GA
-   2. [server-side-apply client](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/2144-clientgo-apply#alternative-1-generated-structs-where-all-fields-are-pointers)
+   2. [server-side-apply client](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/2155-clientgo-apply#alternative-generated-structs-where-all-fields-are-pointers)
    3. [optionally skip backend TLS verifiction](https://github.com/kubernetes/enhancements/issues/1295)
    4. [namespace labels](https://github.com/kubernetes/enhancements/pull/2162)
    5. Getting ready for CRD and admission webhook v1beta1 API removal: [reminder on kubernetes-dev](https://groups.google.com/g/kubernetes-dev/c/z_AE1EHhZF4/m/kBd3HkWxAwAJ).

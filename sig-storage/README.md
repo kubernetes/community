@@ -51,7 +51,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-storage-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-storage-pr-reviews) - PR Reviews
     - [@kubernetes/sig-storage-proposals](https://github.com/orgs/kubernetes/teams/sig-storage-proposals) - Design Proposals
     - [@kubernetes/sig-storage-test-failures](https://github.com/orgs/kubernetes/teams/sig-storage-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
+- Steering Committee Liaison: Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**)
 
 ## Working Groups
 

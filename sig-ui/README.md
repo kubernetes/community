@@ -36,7 +36,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 - Slack: [#sig-ui](https://kubernetes.slack.com/messages/sig-ui)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ui)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fui)
-- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
+- Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
 
 ## Subprojects
 

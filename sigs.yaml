@@ -25,12 +25,13 @@ sigs:
       name: Joe Betz
       company: Google
   meetings:
-  - description: Kubebuilder and Controller Runtime Meeting
+  - description: Kubebuilder Meeting
     day: Thursday
     time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
-    archive_url: https://docs.google.com/document/d/1Ih-2cgg1bUrLwLVTB9tADlPcVdgnuMNBGbUl4D-0TIk/edit?usp=sharing
+    archive_url: https://docs.google.com/document/d/1GbSkHAxIaFTm2fL92z3WeWrCtnIjXfr7gNZSySLHhmk/edit?usp=sharing
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0SOaFeA9f3dwdCNECEKkX3
   - description: Regular SIG Meeting
     day: Wednesday
     time: "11:00"
@@ -278,7 +279,7 @@ sigs:
       company: Red Hat
     - github: dims
       name: Davanum Srinivas
-      company: Amazon Web Services
+      company: Amazon
     - github: johnbelamaric
       name: John Belamaric
       company: Google
@@ -468,8 +469,8 @@ sigs:
     - name: sig-auth-test-failures
       description: Test Failures and Triage
     liaison:
-      github: cblecker
-      name: Christoph Blecker
+      github: pohly
+      name: Patrick Ohly
   subprojects:
   - name: audit-logging
     description: |
@@ -603,7 +604,7 @@ sigs:
     time: "16:00"
     tz: Poland
     frequency: weekly
-    url: https://zoom.us/j/944410904
+    url: https://zoom.us/j/96548204174
     archive_url: https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit
   contact:
     slack: sig-autoscaling
@@ -624,25 +625,22 @@ sigs:
     - name: sig-autoscaling-test-failures
       description: Test Failures and Triage
     liaison:
-      github: tpepper
-      name: Tim Pepper
+      github: soltysh
+      name: Maciej Szulik
   subprojects:
   - name: addon-resizer
     owners:
     - https://raw.githubusercontent.com/kubernetes/autoscaler/master/addon-resizer/OWNERS
   - name: cluster-autoscaler
     owners:
-    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/OWNERS
   - name: horizontal-pod-autoscaler
     owners:
     - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
-  - name: scale-client
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/client-go/master/scale/OWNERS
   - name: vertical-pod-autoscaler
     owners:
-    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/autoscaler/master/vertical-pod-autoscaler/OWNERS
 - dir: sig-cli
   name: CLI
   mission_statement: >
@@ -737,8 +735,8 @@ sigs:
     - name: sig-cli-test-failures
       description: Test Failures and Triage
     liaison:
-      github: justaugustus
-      name: Stephen Augustus
+      github: pacoxu
+      name: Paco Xu 徐俊杰
   subprojects:
   - name: cli-experimental
     owners:
@@ -848,8 +846,8 @@ sigs:
     - name: sig-cloud-providers-misc
       description: General Discussion
     liaison:
-      github: justaugustus
-      name: Stephen Augustus
+      github: soltysh
+      name: Maciej Szulik
   subprojects:
   - name: cloud-provider-extraction-migration
     owners:
@@ -904,7 +902,7 @@ sigs:
       time: "9:00"
       tz: PT (Pacific Time)
       frequency: 'biweekly 2019 start date: Jan. 11th'
-      url: https://zoom.us/my/k8ssigaws
+      url: ​​https://zoom.us/j/508079177?pwd=ZmEvMksxdTFTc0N1eXFLRm91QUlyUT09
       archive_url: https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29DzPOBBaJi-SO3AQ_b4HC
   - name: provider-azure
@@ -1082,6 +1080,9 @@ sigs:
   - name: cluster-api-addon-provider-helm
     description: Implementation of Cluster Add-on Provider for Helm, an add-on orchestration
       solution for Cluster API using Helm.
+    contact:
+      slack: cluster-api-addon-helm
+      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/blob/main/OWNERS
   - name: cluster-api-ipam-provider-in-cluster
@@ -1651,8 +1652,8 @@ sigs:
     - name: sig-docs-zh-owners
       description: Chinese language content
     liaison:
-      github: cpanato
-      name: Carlos Tadeu Panato Jr.
+      github: justaugustus
+      name: Stephen Augustus
   subprojects:
   - name: kubernetes-blog
     owners:
@@ -1712,8 +1713,8 @@ sigs:
     - name: sig-etcd-leads
       description: SIG Chairs and Tech Leads
     liaison:
-      github: TBD
-      name: TBD
+      github: mrbobbytables
+      name: Bob Killen
   subprojects:
   - name: bbolt
     description: An embedded key/value database for Go.
@@ -1836,8 +1837,8 @@ sigs:
     - name: sig-instrumentation-members
       description: SIG Membership Roster
     liaison:
-      github: cblecker
-      name: Christoph Blecker
+      github: pohly
+      name: Patrick Ohly
   subprojects:
   - name: custom-metrics-apiserver
     owners:
@@ -1902,7 +1903,7 @@ sigs:
       company: VMware
     - github: dims
       name: Davanum Srinivas
-      company: Amazon Web Services
+      company: Amazon
     tech_leads:
     - github: spiffxp
       name: Aaron Crickenberger
@@ -2089,6 +2090,9 @@ sigs:
   - name: about-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/about-api/master/OWNERS
+  - name: cluster-inventory-api
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-inventory-api/main/OWNERS
   - name: mcs-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
@@ -2122,12 +2126,6 @@ sigs:
     - github: dcbw
       name: Dan Williams
   meetings:
-  - description: Gateway API Code Jam
-    day: Friday
-    time: "08:30"
-    tz: PT (Pacific Time)
-    frequency: Last Friday of the Month
-    url: https://zoom.us/j/96900767253
   - description: Gateway API GAMMA Meeting (APAC Friendly)
     day: Tuesday
     time: "15:00"
@@ -2164,18 +2162,6 @@ sigs:
     url: https://zoom.us/j/98377891310
     archive_url: https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit
     recordings_url: https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X
-  - description: SIG Network KPNG APAC Meeting
-    day: Wednesday
-    time: "16:00"
-    tz: IST (Indian Standard Time)
-    frequency: weekly
-    url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
-  - description: SIG Network KPNG Meeting
-    day: Friday
-    time: "7:30"
-    tz: PT (Pacific Time)
-    frequency: weekly
-    url: https://docs.google.com/document/d/1yW3AUp5rYDLYCAtZc6e4zeLbP5HPLXdvuEFeVESOTic/edit
   - description: SIG Network Meeting
     day: Thursday
     time: "09:00"
@@ -2192,6 +2178,12 @@ sigs:
     url: https://zoom.us/j/95680858961?pwd=M1c2TTdMZHpMUUtIYXRpbjRobkNJZz09
     archive_url: https://docs.google.com/document/d/1pe_0aOsI35BEsQJ-FhFH9Z_pWQcU2uqwAnOx2NIx6OY/edit
     recordings_url: https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb
+  - description: Sig-Network Code Jam
+    day: Friday
+    time: "08:30"
+    tz: PT (Pacific Time)
+    frequency: Last Friday of the Month
+    url: https://zoom.us/j/96900767253
   contact:
     slack: sig-network
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-network
@@ -2211,8 +2203,8 @@ sigs:
     - name: sig-network-test-failures
       description: Test Failures and Triage
     liaison:
-      github: tpepper
-      name: Tim Pepper
+      github: soltysh
+      name: Maciej Szulik
   subprojects:
   - name: cluster-proportional-autoscaler
     owners:
@@ -2317,8 +2309,8 @@ sigs:
     - name: sig-node-test-failures
       description: Test Failures and Triage
     liaison:
-      github: tpepper
-      name: Tim Pepper
+      github: pacoxu
+      name: Paco Xu 徐俊杰
   subprojects:
   - name: ci-testing
     contact:
@@ -2533,10 +2525,10 @@ sigs:
     chairs:
     - github: marseel
       name: Marcel Zieba
-      company: Google
+      company: Isovalent
     - github: shyamjvs
       name: Shyam Jeedigunta
-      company: AWS
+      company: Amazon
     tech_leads:
     - github: wojtek-t
       name: Wojciech Tyczynski
@@ -2739,8 +2731,8 @@ sigs:
     - name: sig-security-pr-reviews
       description: SIG Security PR review notifications
     liaison:
-      github: cpanato
-      name: Carlos Tadeu Panato Jr.
+      github: justaugustus
+      name: Stephen Augustus
   subprojects:
   - name: security-assessments
     description: Security self assessments for upstream projects
@@ -2836,8 +2828,8 @@ sigs:
     - name: sig-storage-test-failures
       description: Test Failures and Triage
     liaison:
-      github: cpanato
-      name: Carlos Tadeu Panato Jr.
+      github: pacoxu
+      name: Paco Xu 徐俊杰
   subprojects:
   - name: external-storage
     owners:
@@ -2963,8 +2955,8 @@ sigs:
     - name: sig-testing-pr-reviews
       description: PR Reviews
     liaison:
-      github: cpanato
-      name: Carlos Tadeu Panato Jr.
+      github: pacoxu
+      name: Paco Xu 徐俊杰
   subprojects:
   - name: Cloud Provider for KIND
     description: |
@@ -3058,8 +3050,8 @@ sigs:
     slack: sig-ui
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
     liaison:
-      github: justaugustus
-      name: Stephen Augustus
+      github: soltysh
+      name: Maciej Szulik
   subprojects:
   - name: dashboard
     owners:
@@ -3076,7 +3068,7 @@ sigs:
     chairs:
     - github: aravindhp
       name: Aravindh Puthiyaparambil
-      company: Redhat
+      company: Red Hat
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
@@ -3277,8 +3269,8 @@ workinggroups:
     slack: wg-data-protection
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-data-protection
     liaison:
-      github: cblecker
-      name: Christoph Blecker
+      github: pohly
+      name: Patrick Ohly
 - dir: wg-iot-edge
   name: IoT Edge
   mission_statement: >
@@ -3322,8 +3314,8 @@ workinggroups:
     slack: wg-iot-edge
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge
     liaison:
-      github: cblecker
-      name: Christoph Blecker
+      github: pohly
+      name: Patrick Ohly
 - dir: wg-lts
   name: LTS
   mission_statement: >
@@ -3405,8 +3397,8 @@ workinggroups:
     slack: wg-policy
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-policy
     liaison:
-      github: cblecker
-      name: Christoph Blecker
+      github: pohly
+      name: Patrick Ohly
 - dir: wg-structured-logging
   name: Structured Logging
   mission_statement: >
@@ -3467,7 +3459,7 @@ committees:
       company: Independent
     - github: hlipsig
       name: Hilliary Lipsig
-      company: RedHat
+      company: Red Hat
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Microsoft
@@ -3511,8 +3503,8 @@ committees:
     - name: code-of-conduct-committee
       description: General Discussion
     liaison:
-      github: tpepper
-      name: Tim Pepper
+      github: palnabarun
+      name: Nabarun Pal
 - dir: committee-security-response
   name: Security Response
   mission_statement: >
@@ -3582,24 +3574,24 @@ committees:
     - github: BenTheElder
       name: Benjamin Elder
       company: Google
-    - github: cblecker
-      name: Christoph Blecker
-      company: Red Hat
-    - github: cpanato
-      name: Carlos Tadeu Panato Jr.
-      company: Chainguard, Inc
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
     - github: mrbobbytables
       name: Bob Killen
       company: Google
+    - github: pacoxu
+      name: Paco Xu 徐俊杰
+      company: DaoCloud
     - github: palnabarun
       name: Nabarun Pal
       company: VMware
-    - github: tpepper
-      name: Tim Pepper
-      company: VMware
+    - github: pohly
+      name: Patrick Ohly
+      company: Intel
+    - github: soltysh
+      name: Maciej Szulik
+      company: Red Hat
   meetings:
   - description: Private Steering Committee Meeting
     day: third Monday

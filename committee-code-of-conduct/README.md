@@ -16,7 +16,7 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 * Ana Margarita Medina (**[@AnaMMedina21](https://github.com/AnaMMedina21)**), Lightstep
 * Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), Independent
-* Hilliary Lipsig (**[@hlipsig](https://github.com/hlipsig)**), RedHat
+* Hilliary Lipsig (**[@hlipsig](https://github.com/hlipsig)**), Red Hat
 * Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
 * Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Microsoft
 
@@ -43,7 +43,7 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fcode-of-conduct)
 - GitHub Teams:
     - [@kubernetes/code-of-conduct-committee](https://github.com/orgs/kubernetes/teams/code-of-conduct-committee) - General Discussion
-- Steering Committee Liaison: Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
+- Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
@@ -58,10 +58,10 @@ Our [Incident Report Handling Procedures](incident-process.md) describes how we 
 
 The members and their terms are as follows:
 
-### Term ends on August 23, 2023
+### Term ends on August 23, 2025
 
 - Jeremy Rickard (Microsoft)
-- Jason DeTiberus (Cisco)
+- Ana Margarita Medina (Lightstep)
 
 ### Term ends on August 17, 2024
 
@@ -70,22 +70,5 @@ The members and their terms are as follows:
 - Xander Grzywinski (Microsoft)
 
 Please see the [bootstrapping document](./bootstrapping-process.md) and [election process guidelines](election.md) for more information on how members are picked and their responsibilities.
-
-## Emeritus Committee Members
-
-The Code of Conduct Committee sincerely thanks our emeritus committee members for their contributions.
-
-- Jaice Singer Dumars (Google)
-- Jennifer Rondeau (Stripe)
-- Carolyn Van Slyck (Microsoft)
-- Eric Paris (Red Hat)
-- Paris Pittman (Apple)
-- Aeva Black (Microsoft)
-- Tasha Drew (VMware)
-- Tim Pepper (VMware)
-- Karen Chu (Microsoft)
-- Celeste Horgan (Independent)
-- Carlos Tadeu Panato Jr. (Chainguard, Inc)
-- Vallery Lancey (Apple)
 
 <!-- END CUSTOM CONTENT -->

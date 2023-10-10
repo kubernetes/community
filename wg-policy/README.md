@@ -33,7 +33,7 @@ Provide an overall architecture that describes both the current policy related i
 - Slack: [#wg-policy](https://kubernetes.slack.com/messages/wg-policy)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-policy)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fpolicy)
-- Steering Committee Liaison: Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
+- Steering Committee Liaison: Patrick Ohly (**[@pohly](https://github.com/pohly)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

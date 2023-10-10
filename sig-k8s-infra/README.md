@@ -25,7 +25,7 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Spec
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), VMware
-* Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon Web Services
+* Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing

@@ -23,8 +23,8 @@ The [charter](charter.md) defines the scope and governance of the Scalability Sp
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Marcel Zieba (**[@marseel](https://github.com/marseel)**), Google
-* Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), AWS
+* Marcel Zieba (**[@marseel](https://github.com/marseel)**), Isovalent
+* Shyam Jeedigunta (**[@shyamjvs](https://github.com/shyamjvs)**), Amazon
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
