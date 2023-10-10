@@ -42,6 +42,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Kong
 * Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
 
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Dan Winship (**[@danwinship](https://github.com/danwinship)**), Red Hat
+
 ## Emeritus Leads
 
 * Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**)
