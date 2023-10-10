@@ -47,6 +47,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Dan Winship (**[@danwinship](https://github.com/danwinship)**), Red Hat
+* Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
 
 ## Emeritus Leads
 
