@@ -85,6 +85,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
 ### gateway-api
 - **Owners:**
+  - [kubernetes-sigs/blixt](https://github.com/kubernetes-sigs/blixt/blob/main/OWNERS)
   - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
   - [kubernetes-sigs/ingress2gateway](https://github.com/kubernetes-sigs/ingress2gateway/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/endpoint](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/endpoint/OWNERS)

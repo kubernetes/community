@@ -2221,6 +2221,7 @@ sigs:
     contact:
       slack: sig-network-gateway-api
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/blixt/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/ingress2gateway/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
