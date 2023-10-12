@@ -116,7 +116,6 @@ channels:
   - name: emea-users
   - name: eraser
   - name: es-users
-  - name: etcd
   - name: etcdadm
   - name: evented-pleg
   - name: events
@@ -444,6 +443,8 @@ channels:
   - name: sig-contribex-triage
     archived: true
   # sig-docs* channels are defined in sig-docs/
+  - name: sig-etcd
+    id: C3HD8ARJ5
   - name: sig-high-availability
     archived: true
   - name: sig-instrumentation
