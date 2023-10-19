@@ -2120,6 +2120,13 @@ sigs:
     - github: thockin
       name: Tim Hockin
       company: Google
+    tech_leads:
+    - github: danwinship
+      name: Dan Winship
+      company: Red Hat
+    - github: thockin
+      name: Tim Hockin
+      company: Google
     emeritus_leads:
     - github: caseydavenport
       name: Casey Davenport
