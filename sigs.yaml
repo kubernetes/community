@@ -1905,15 +1905,22 @@ sigs:
       name: Davanum Srinivas
       company: Amazon
     tech_leads:
-    - github: spiffxp
-      name: Aaron Crickenberger
+    - github: BenTheElder
+      name: Benjamin Elder
       company: Google
-    - github: thockin
-      name: Tim Hockin
-      company: Google
+    - github: ameukam
+      name: Arnaud Meukam
+      company: VMware
+    - github: upodroid
+      name: Mahamed Ali
+      company: Cisco
     emeritus_leads:
     - github: bartsmykla
       name: Bart Smykla
+    - github: spiffxp
+      name: Aaron Crickenberger
+    - github: thockin
+      name: Tim Hockin
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
