@@ -381,6 +381,7 @@ channels:
   - name: openshift-users
   - name: openstack-helm
   - name: openstack-kolla
+  - name: openstack-magnum
   - name: operator-builder
   - name: operator-framework-community
   - name: operator-sdk-dev
