@@ -65,10 +65,10 @@ aliases:
     - ehashman
     - logicalhan
   sig-k8s-infra-leads:
+    - BenTheElder
     - ameukam
     - dims
-    - spiffxp
-    - thockin
+    - upodroid
   sig-multicluster-leads:
     - jeremyot
     - pmorie

@@ -31,12 +31,15 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**), Google
-* Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
+* Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
+* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), VMware
+* Mahamed Ali (**[@upodroid](https://github.com/upodroid)**), Cisco
 
 ## Emeritus Leads
 
 * Bart Smykla (**[@bartsmykla](https://github.com/bartsmykla)**)
+* Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**)
+* Tim Hockin (**[@thockin](https://github.com/thockin)**)
 
 ## Contact
 - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
