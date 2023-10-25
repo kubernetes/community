@@ -5,9 +5,11 @@ channels:
   - name: africa-dev
   - name: airflow-operator
   - name: akri
-  - name: aks-engine-users
+  - name: aks
+    id: CU3N85WJK
   - name: aks-engine-dev
     id: CU1CXUHN0
+    archived: true
   - name: announcements
   - name: antrea
   - name: api-priority-and-fairness
