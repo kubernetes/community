@@ -1476,8 +1476,8 @@ due to invalid data provided as part of the request.
 
 
 * `429 StatusTooManyRequests`
-  * Indicates that the either the client rate limit has been exceeded or the
-server has received more requests then it can process.
+  * Indicates that either the client rate limit has been exceeded or the
+server has received more requests than it can process.
   * Suggested client recovery behavior:
     * Read the `Retry-After` HTTP header from the response, and wait at least
 that long before retrying.
