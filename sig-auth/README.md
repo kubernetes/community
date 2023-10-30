@@ -38,8 +38,8 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
+* Mo Khan (**[@enj](https://github.com/enj)**), Microsoft
 * Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google
-* Mike Danese (**[@mikedanese](https://github.com/mikedanese)**), Google
 
 ## Emeritus Leads
 
