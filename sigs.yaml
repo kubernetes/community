@@ -599,6 +599,20 @@ sigs:
       name: Marcin Wielgus
       company: Google
   meetings:
+  - description: Karpenter Subproject bi-weekly Meeting (APAC TZ Edition)
+    day: Thursday
+    time: "15:00"
+    tz: Seattle
+    frequency: four-weekly
+    url: <PLACEHOLDER>
+    archive_url: <PLACEHOLDER>
+  - description: Karpenter Subproject bi-weekly Meeting (Europe TZ Edition)
+    day: Monday
+    time: "17:00"
+    tz: Poland
+    frequency: four-weekly
+    url: <PLACEHOLDER>
+    archive_url: <PLACEHOLDER>
   - description: Regular SIG Meeting
     day: Monday
     time: "16:00"
@@ -638,6 +652,9 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
+  - name: karpenter
+    owners:
+    - https://github.com/kubernetes-sigs/karpenter/blob/main/OWNERS
   - name: vertical-pod-autoscaler
     owners:
     - https://raw.githubusercontent.com/kubernetes/autoscaler/master/vertical-pod-autoscaler/OWNERS
