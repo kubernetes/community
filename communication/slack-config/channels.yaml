@@ -309,6 +309,7 @@ channels:
   - name: litmus
   - name: litmus-dev
   - name: lokomotive
+    archived: true
   - name: magnum-cluster-api
   - name: malaysia-users
   - name: malta-users
