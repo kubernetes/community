@@ -3608,8 +3608,8 @@ committees:
     url: https://bit.ly/k8s-steering-wd
     recordings_url: https://www.youtube.com/watch?v=YAzgJRQxsdc&list=PL69nYSiGNLP1yP1B_nd9-drjoxp0Q14qM
   - description: Public Steering Committee Meeting
-    day: first Monday
-    time: "9:30"
+    day: first Wednesday
+    time: "8:00"
     tz: PT (Pacific Time)
     frequency: monthly
     url: https://bit.ly/k8s-steering-wd
