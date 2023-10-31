@@ -248,5 +248,5 @@ before being able to contribute effectively.
 [elevated set of permissions]: #Responsibilities-and-privileges
 [Devstats project]: https://k8s.devstats.cncf.io/
 [continuously active]: #inactive-members
-[sig-governance-subproject-lead]: /committee-steering/sig-governance.md#subproject-lead
-[sig-governance-subproject-owner]: /committee-steering/sig-governance.md#subproject-owner
+[sig-governance-subproject-lead]: /committee-steering/governance/sig-governance.md#subproject-lead
+[sig-governance-subproject-owner]: /committee-steering/governance/sig-governance.md#subproject-owner
