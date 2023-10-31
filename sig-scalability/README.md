@@ -158,7 +158,8 @@ performance exists (ideally by providing easy-to-use frameworks and working
 with SIGs to provide them), having environment and resources to run them:
 
 * [Official tests](https://github.com/kubernetes/perf-tests/tree/master/clusterloader2/testing)
-* [Testgrid](https://k8s-testgrid.appspot.com/sig-scalability)
+* [Testgrid](https://testgrid.k8s.io/sig-scalability)
+* [Perfdash](https://perf-dash.k8s.io/)
 
 Ensuring that tests are being executed according to calendar and ensuring that
 each official Kubernetes release satisfies all scalability and performance
