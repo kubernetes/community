@@ -414,11 +414,11 @@ sigs:
     - github: deads2k
       name: David Eads
       company: Red Hat
+    - github: enj
+      name: Mo Khan
+      company: Microsoft
     - github: liggitt
       name: Jordan Liggitt
-      company: Google
-    - github: mikedanese
-      name: Mike Danese
       company: Google
     emeritus_leads:
     - github: ericchiang
