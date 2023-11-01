@@ -71,6 +71,7 @@ A project for figuring out the best way to install, manage and deliver cluster a
 A project focused on providing declarative APIs and tooling to simplify provisioning, upgrading, and operating multiple Kubernetes clusters
 - **Owners:**
   - [kubernetes-sigs/cluster-api](https://github.com/kubernetes-sigs/cluster-api/blob/main/OWNERS)
+  - [kubernetes-sigs/logical-cluster](https://github.com/kubernetes-sigs/logical-cluster/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
@@ -264,10 +265,6 @@ A project that uses Ansible / Vagrant for deploying production ready clusters on
 - **Contact:**
   - Slack: [#kubespray](https://kubernetes.slack.com/messages/kubespray)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
-### logical-cluster
-A set of APIs to improve the Kubernetes user experience for cluster administration by offering utilities to interact with fleet of clusters which can be managed by Cluster API, or other entities (like cloud providers).
-- **Owners:**
-  - [kubernetes-sigs/logical-cluster](https://github.com/kubernetes-sigs/logical-cluster/blob/main/OWNERS)
 ### minikube
 Implements a local Kubernetes cluster for application development on macOS, Linux, and Windows
 - **Owners:**
