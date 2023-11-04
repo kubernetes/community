@@ -640,7 +640,7 @@ A quick overview of how we run e2e CI on Kubernetes.
 
 ### What is CI?
 
-We run a battery of [release-blocking jobs](https://k8s-testgrid.appspot.com/sig-release-master-blocking)
+We run a battery of [release-blocking jobs](https://testgrid.k8s.io/sig-release-master-blocking)
 against `HEAD` of the master branch on a continuous basis, and block merges
 via [Tide](https://git.k8s.io/test-infra/prow/cmd/tide) on a subset of those
 tests if they fail.

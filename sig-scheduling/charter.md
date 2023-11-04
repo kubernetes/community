@@ -60,7 +60,7 @@ None
 SIG Technical Leads
 
 
-[test grid]: https://k8s-testgrid.appspot.com/sig-scheduling#Summary
+[test grid]: https://testgrid.k8s.io/sig-scheduling#Summary
 [perf dashboard]: http://perf-dash.k8s.io/
 [readme]: https://github.com/kubernetes/community/tree/master/sig-scheduling
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
