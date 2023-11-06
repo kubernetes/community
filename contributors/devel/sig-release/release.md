@@ -337,6 +337,7 @@ issue kind labels must be set:
 - `kind/api-change`: Adds, removes, or changes an API
 - `kind/bug`: Fixes a newly discovered bug.
 - `kind/cleanup`: Adding tests, refactoring, fixing old bugs.
+- `kind/deprecation`: Deprecates an API (release notes required).
 - `kind/design`: Related to design
 - `kind/documentation`: Adds documentation
 - `kind/failing-test`: CI test case is failing consistently.
