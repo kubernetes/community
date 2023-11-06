@@ -20,7 +20,7 @@ description: |
 ## Find something to work on
 
 The first step to getting starting contributing to Kubernetes is to find something
-to work on. Help is always welcome, and no contribution is too small! 
+to work on. Help is always welcome, and no contribution is too small (but see below)!
 
 Here are some things you can do today to get started contributing:
 
@@ -33,6 +33,14 @@ If the above suggestions don't appeal to you, you can browse the
 [issues labeled as a good first issue] to see who is looking for help. Those interested 
 in contributing without writing code can also find ideas in the 
 [Non-Code Contributions Guide].
+
+{{< note >}}
+Although contributions are welcome, beware that every pull
+request creates work for maintainers and costs for testing it.
+Fixing *linter warnings* is often *not* worth it because the
+existing code is fine. Always discuss with maintainers first
+before creating such PRs.
+{{< /note >}}
 
 ### Find a good first topic
 
