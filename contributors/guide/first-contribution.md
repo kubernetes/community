@@ -34,13 +34,11 @@ If the above suggestions don't appeal to you, you can browse the
 in contributing without writing code can also find ideas in the 
 [Non-Code Contributions Guide].
 
-{{< note >}}
-Although contributions are welcome, beware that every pull
+*Note*: although contributions are welcome, beware that every pull
 request creates work for maintainers and costs for testing it.
 Fixing *linter warnings* is often *not* worth it because the
 existing code is fine. Always discuss with maintainers first
 before creating such PRs.
-{{< /note >}}
 
 ### Find a good first topic
 
