@@ -23,9 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Josh Berkus (**[@jberkus](https://github.com/jberkus)**), Red Hat
 * Kaslin Fields (**[@kaslin](https://github.com/kaslin)**), Google
-* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
 
 ### Technical Leads
@@ -34,15 +32,17 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Madhav Jivrajani (**[@MadhavJivrajani](https://github.com/MadhavJivrajani)**), VMware
 * Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**), SUSE
-* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**), Red Hat
-* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**), VMware
 
 ## Emeritus Leads
 
 * Elsie Phillips (**[@Phillels](https://github.com/Phillels)**)
 * Alison Dowdney (**[@alisondy](https://github.com/alisondy)**)
 * Jorge Castro (**[@castrojo](https://github.com/castrojo)**)
+* Christoph Blecker (**[@cblecker](https://github.com/cblecker)**)
 * Garrett Rodrigues (**[@grodrigues3](https://github.com/grodrigues3)**)
+* Josh Berkus (**[@jberkus](https://github.com/jberkus)**)
+* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+* Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**)
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
 
 ## Contact
