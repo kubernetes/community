@@ -5,7 +5,7 @@ channels:
   - name: africa-dev
   - name: airflow-operator
   - name: akri
-  - name: aks
+  - name: azure-aks
     id: CU3N85WJK
   - name: aks-engine-dev
     id: CU1CXUHN0
