@@ -73,7 +73,7 @@ that process and provide approvals for upcoming articles.
 
 ### Embargoed content
 
-The blog repository on GitHub is public, therefore any content that needs to remain confidential until a certain time (for example: release posts, security vulnerabilities) should be proposed by email message to [blog@kubernetes.io](mailto:blog@kubernetes.io). If you need to, you can also send a Slack direct message to the set of blog approvers; please do this sparing.
+The blog repository on GitHub is public, therefore any content that needs to remain confidential until a certain time (for example: release posts, security vulnerabilities) should be proposed by email message to [blog@kubernetes.io](mailto:blog@kubernetes.io). If you need to, you can also send a Slack direct message to the set of blog approvers; please do this sparingly.
 
 In your message, please note the time that the embargo will be lifted.
 
