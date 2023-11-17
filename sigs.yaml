@@ -3214,18 +3214,21 @@ workinggroups:
     - github: Huang-Wei
       name: Wei Huang
       company: Apple
-    - github: ahg-g
-      name: Abdullah Gharaibeh
-      company: Google
     - github: endocrimes
       name: Danielle Lancashire
       company: Independent
+    - github: mwielgus
+      name: Marcin Wielgus
+      company: Google
     - github: soltysh
       name: Maciej Szulik
       company: Red Hat
     - github: swatisehgal
       name: Swati Sehgal
       company: Red Hat
+    emeritus_leads:
+    - github: ahg-g
+      name: Abdullah Gharaibeh
   meetings:
   - description: Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com))
     day: Thursdays (starting March 3rd 2022)
