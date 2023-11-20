@@ -84,9 +84,28 @@ To become a reviewer:
  * Read/study previous PRR comments and production readiness responses in existing KEPs.
  * Choose some KEPs requiring PRR and perform a review. Put "shadow prod readiness review"
    in your review comments so that the assigned PRR approver knows your intent.
- * After at least one release cycle, if you have shown good judgement and quality reviews,
-   you can propose yourself as approver by submitting a PRR to add your GitHub
-   handle to the `prod-readiness-approvers` alias in [OWNERS_ALIASES].
+
+### Becoming an approver
+
+After serving as reviewer/shadow for at least one release and showing good judgement and quality reviews,
+you can propose yourself as an approver by submitting a PR to add your GitHub
+handle to the `prod-readiness-approvers` alias in [OWNERS_ALIASES].
+
+When submitting the PR, you should include references to KEPs you reviewed that demonstrated a good variety
+of different situations.
+Here is a good starting point (remember that one PR can cover multiple categories):
+
+* Transitions from new to alpha
+* Transitions from alpha to beta
+* Transitions from beta to GA
+* Must have successfully reviewed at least three enhancements that require coordination between multiple components.
+* Must have successfully reviewed at least three enhancements that require version skew consideration (both HA and component skew):
+  does behavior fail safely and eventually reconcile.
+* Must have successfully reviewed at least three enhancements that are outside your primary domain.
+* Examples where the feature requires considering the case of administering thousands of clusters.
+  This comes up frequently for host-based features in storage, node, or networking.
+* Examples where the feature requires considering the case of very large clusters.  This is commonly covered by metrics.
+
 
 ## Finding KEPs needing prod readiness review
 
