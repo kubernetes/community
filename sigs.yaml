@@ -1360,14 +1360,8 @@ sigs:
   label: contributor-experience
   leadership:
     chairs:
-    - github: jberkus
-      name: Josh Berkus
-      company: Red Hat
     - github: kaslin
       name: Kaslin Fields
-      company: Google
-    - github: mrbobbytables
-      name: Bob Killen
       company: Google
     - github: palnabarun
       name: Nabarun Pal
@@ -1379,12 +1373,6 @@ sigs:
     - github: Priyankasaggu11929
       name: Priyanka Saggu
       company: SUSE
-    - github: cblecker
-      name: Christoph Blecker
-      company: Red Hat
-    - github: nikhita
-      name: Nikhita Raghunath
-      company: VMware
     emeritus_leads:
     - github: Phillels
       name: Elsie Phillips
@@ -1392,8 +1380,16 @@ sigs:
       name: Alison Dowdney
     - github: castrojo
       name: Jorge Castro
+    - github: cblecker
+      name: Christoph Blecker
     - github: grodrigues3
       name: Garrett Rodrigues
+    - github: jberkus
+      name: Josh Berkus
+    - github: mrbobbytables
+      name: Bob Killen
+    - github: nikhita
+      name: Nikhita Raghunath
     - github: parispittman
       name: Paris Pittman
   meetings:
