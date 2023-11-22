@@ -638,6 +638,9 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
+  - name: karpenter
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/karpenter/main/OWNERS
   - name: vertical-pod-autoscaler
     owners:
     - https://raw.githubusercontent.com/kubernetes/autoscaler/master/vertical-pod-autoscaler/OWNERS
