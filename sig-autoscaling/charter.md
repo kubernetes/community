@@ -13,11 +13,10 @@ component autoscaling, and autoscaling of Kubernetes clusters themselves.
 ### In scope
 
 - Autoscaling-related API objects, such as the HorizontalPodAutoscaler and
-  VerticalPodAutoscaler
+  VerticalPodAutoscaler.
 
-- Autoscaling-related tools, such as the cluster autoscaler,
-  single-component scaling tools (e.g. pod-nanny), and
-  cluster-proportional scaling tools
+- Autoscaling-related tools, such as the cluster autoscaler, karpenter,
+  and single-component scaling tools (e.g. addon-resizer).
 
 - Ensuring API interfaces (the scale subresource) are available and usable
   to enable other SIGs to write autoscalable objects, and enable people to

@@ -14,6 +14,10 @@ The [charter](charter.md) defines the scope and governance of the Autoscaling Sp
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling) for the group will typically add invites for the following meetings to your calendar.*
+* Karpenter Subproject bi-weekly Meeting (APAC TZ Edition): [Thursdays at 15:00 Seattle](<PLACEHOLDER>) (four-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=Seattle).
+  * [Meeting notes and Agenda](<PLACEHOLDER>).
+* Karpenter Subproject bi-weekly Meeting (Europe TZ Edition): [Mondays at 17:00 Poland](<PLACEHOLDER>) (four-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=Poland).
+  * [Meeting notes and Agenda](<PLACEHOLDER>).
 * Regular SIG Meeting: [Mondays at 16:00 Poland](https://zoom.us/j/96548204174) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=Poland).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1RvhQAEIrVLHbyNnuaT99-6u9ZUMp7BfkPupT2LAZK7w/edit).
 
@@ -58,6 +62,9 @@ The following [subprojects][subproject-definition] are owned by sig-autoscaling:
 - **Owners:**
   - [kubernetes/api/autoscaling](https://github.com/kubernetes/api/blob/master/autoscaling/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/podautoscaler](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/podautoscaler/OWNERS)
+### karpenter
+- **Owners:**
+  - [kubernetes-sigs/karpenter](https://github.com/kubernetes-sigs/karpenter/blob/main/OWNERS)
 ### vertical-pod-autoscaler
 - **Owners:**
   - [kubernetes/autoscaler/vertical-pod-autoscaler](https://github.com/kubernetes/autoscaler/blob/master/vertical-pod-autoscaler/OWNERS)
