@@ -3430,12 +3430,12 @@ workinggroups:
   label: structured-logging
   leadership:
     chairs:
+    - github: mengjiao-liu
+      name: Mengjiao Liu
+      company: DaoCloud
     - github: pohly
       name: Patrick Ohly
       company: Intel
-    - github: serathius
-      name: Marek Siarkowicz
-      company: Google
   meetings: []
   contact:
     slack: wg-structured-logging
