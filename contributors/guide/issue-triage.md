@@ -140,7 +140,7 @@ The api-machinery SIG has found that consistently meeting on a regular, fixed sc
 
 ### Triage Guide by cluster-lifecycle
 
-The cluster-lifecycle SIG has developed a [triaging page](/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](#planning-milestones) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
+The cluster-lifecycle SIG has developed a [triaging page](/sig-cluster-lifecycle/grooming.md) detailing their process, including the [Milestones](/sig-cluster-lifecycle/grooming.md#planning-a-milestone) stage. Here is a [March 2020 presentation](https://www.youtube.com/watch?v=Q07_PfkNjlw) delivered to the SIG chairs and leads group on their process.
 
 ## Step One: Review Newly Created Open Issues
 
