@@ -21,7 +21,7 @@ The working group is organized with the goal of developing a better understandin
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-lts) for the group will typically add invites for the following meetings to your calendar.*
 * Regular WG Meeting: [Tuesdays at 07:00 PT (Pacific Time)](https://zoom.us/j/92480197536?pwd=dmtSMGJRQmNYYTIyZkFlQ25JRngrdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](TBD).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1RI_EL35MwQxrHqlWvtQNINhOSWergL3hmOSgC5PeZss/edit).
   * [Meeting recordings](TBD).
 
 ## Organizers

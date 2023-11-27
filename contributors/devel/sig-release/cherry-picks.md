@@ -62,6 +62,9 @@ your case by supplementing your PR with e.g.,
 - Key stakeholder SIG reviewers/approvers attesting to their confidence in the
   change being a required backport
 
+To illustrate the point, dependency updates that just aim to silence some scanners
+and do not fix any vulnerable code are NOT eligible for cherry-picks.
+
 If the change is in cloud provider-specific platform code (which is in the
 process of being moved out of core Kubernetes), describe the customer impact,
 how the issue escaped initial testing, remediation taken to prevent similar

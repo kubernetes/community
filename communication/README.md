@@ -129,9 +129,9 @@ community call, and more [YouTube Guidelines].
 
 #### Kubernetes Blog
 
-The [Kubernetes Blog] is owned by sig-docs and operated by the [blog team].
+The [Kubernetes Blog] is owned by SIG Docs and operated by the [blog team].
 
-[submit a blog post] | [2018 blog metrics]
+[submit a blog post]
 
 ## Misc Community Resources
 ### Issues & Troubleshooting

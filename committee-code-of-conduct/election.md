@@ -42,11 +42,26 @@ Nominations can be collected via any means. In the past a Google form has been u
 * Does the nominee have any experience serving on an Ethics Committee or Code of Conduct Committee? (required)
 * How has this nominee demonstrated the [eligibility for candidacy](#eligibility-for-candidacy) guidelines? (optional)
 
-The nomination form must be communicated via email to [Kubernetes dev](https://groups.google.com/forum/#!forum/kubernetes-dev) mailing list.
+The nomination form must be communicated via email to [kubernetes-dev] mailing list.
 
 Prior to the voting process, Steering must:
 * Vet that all nominees support the role of the code of conduct committee, i.e. maintaining a safe and inclusive space for everyone to work on Kubernetes.
 * Confirm with all nominees (that were not self nominations) that they accept the nomination.
+
+#### Voting Process
+
+The steering committee will setup an election and ensure that the election is open for a duration such that all members can vote.
+
+Sample PR for setting up the election: https://github.com/kubernetes/community/pull/7446
+
+<!-- TODO(future): Discuss the possibility of surfacing candidate bios in public -->
+<!-- TODO(future): Discuss the possibility of candidates nominating through GitHub similar to the Steering Committee Elections -->
+
+#### Announcing Results
+
+Once the elections are over, the steering committee will re-confirm with the winning
+candidates their intent of serving in the committee and then only announce the
+election results to [kubernetes-dev] mailing list.
 
 ### Maximal representation
 
@@ -56,7 +71,7 @@ that limits the number of members employed by the same company to two.
 ### Election Cycles
 
 Election cycles are scheduled such that roughly half of the seats come up for
-re-election each year for purposes of continuity.  The exact number of seats
+re-election each year for purposes of continuity. The exact number of seats
 alternates between 2 and 3. The elections by the steering committee should be
 held and announced before the previous appointments expire (typically in Aug).
 
@@ -84,3 +99,5 @@ new special election will be held by the steering committee instead of filling
 with names from the previous election. Those elected will complete the remaining
 terms of the previous, dissolved, committee. With those receiving the highest
 votes receiving the longest term.
+
+[kubernetes-dev]: https://groups.google.com/a/kubernetes.io/g/dev

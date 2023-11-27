@@ -20,7 +20,7 @@ By Special Interest Group (SIG)
 
 #### Scheduling
 
-- Huang Wei
+- Wei Huang
 
 #### Storage
 

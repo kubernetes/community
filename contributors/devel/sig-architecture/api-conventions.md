@@ -425,6 +425,11 @@ Conditions are most useful when they follow some consistent conventions:
 Conditions should follow the standard schema included in [k8s.io/apimachinery/pkg/apis/meta/v1/types.go](https://github.com/kubernetes/apimachinery/blob/release-1.23/pkg/apis/meta/v1/types.go#L1432-L1492).
 It should be included as a top level element in status, similar to
 ```go
+// +listType=map
+// +listMapKey=type
+// +patchStrategy=merge
+// +patchMergeKey=type
+// +optional
 Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type" protobuf:"bytes,1,rep,name=conditions"`
 ```
 
@@ -979,7 +984,7 @@ All forms of defaulting should only make the following types of modifications:
  - Setting previously unset fields
  - Adding keys to maps
  - Adding values to arrays which have mergeable semantics
-   (`patchStrategy:"merge"` attribute in the type definition)
+   (`+listType=map` tag or `patchStrategy:"merge"` attribute in the type definition)
 
 In particular we never want to change or override a value that was provided by
 the user.  If they requested something invalid, they should get an error.
@@ -1471,8 +1476,8 @@ due to invalid data provided as part of the request.
 
 
 * `429 StatusTooManyRequests`
-  * Indicates that the either the client rate limit has been exceeded or the
-server has received more requests then it can process.
+  * Indicates that either the client rate limit has been exceeded or the
+server has received more requests than it can process.
   * Suggested client recovery behavior:
     * Read the `Retry-After` HTTP header from the response, and wait at least
 that long before retrying.

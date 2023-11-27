@@ -16,7 +16,7 @@ existing tools and processes, and in general tips and suggestions on
 how to collaborate.
 
 Other types of content, like Kubernetes capabilities, tutorials, and
-technical articles, are better suited for the [SIG-Docs blogging
+technical articles, are better suited for the [SIG Docs blogging
 initiative](/sig-docs/blog-subproject/README.md).
 
 ## Where to publish
@@ -85,6 +85,9 @@ follows:
    guide](https://kubernetes.io/docs/contribute/style/style-guide/):
    these guidelines can help in improving the readability of your
    article, especially in terms of the use of Kubernetes terminology.
+   You can also read
+   [Submitting blog posts and case studies](https://kubernetes.io/docs/contribute/new-content/blogs-case-studies/)
+   for extra context.
 4. Once you have reflected any feedback in the proposal draft,
    announce that the article is ready for submission (again, in the
    channel or in one of the weekly meetings): the assigned editor will
@@ -121,7 +124,7 @@ co-author](https://docs.github.com/en/pull-requests/committing-changes-to-your-p
 is done by adding `Co-authored-by: original-author-name
 <original-author@example.com>` to the commit message.
 
-The number of PRs depends on where the article will be published:
+The number of PRs you open depends on where the article will be published:
 
 1. If it's solely for the Contributor site: the PR should be opened in
    the
@@ -130,7 +133,7 @@ The number of PRs depends on where the article will be published:
 2. If it's to be mirrored in the main Kubernetes blog: after the
    previous step, a new PR is opened on
    [kubernetes/website](https://github.com/kubernetes/website),
-   mentioning the original PR. The SIG-Docs Blog editorial team will,
+   mentioning the original PR. Reviewers from SIG Docs Blog will,
    in this case, already been notified and involved in the initial PR.
 
 
@@ -186,7 +189,9 @@ Keep the following points in mind as you write in order to speed up the review p
   * As the author, never talk about your employer, sell, promote, or
     pitch; this is about upstream community endeavours and the
     individuals and groups that create it
-* Follow the [documentation style guide](https://kubernetes.io/docs/contribute/style/style-guide/).
+* Follow the [documentation style guide](https://kubernetes.io/docs/contribute/style/style-guide/);
+  for blog articles these are informative guidelines rather than anything more strict, but
+  it's still good to follow them where appropriate.
 
 ## Further Recommendations
 

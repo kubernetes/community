@@ -36,7 +36,7 @@ The [charter](charter.md) defines the scope and governance of the Architecture S
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
-* Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon Web Services
+* Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon
 * John Belamaric (**[@johnbelamaric](https://github.com/johnbelamaric)**), Google
 
 ## Contact
@@ -125,7 +125,7 @@ Establishing and documenting conventions for system and user-facing APIs, define
 * [API Review process](https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md)
 * [Deprecation policy](https://kubernetes.io/docs/reference/deprecation-policy/)
 
-Please see the [API Reviews](https://github.com/orgs/kubernetes/projects/13) tracking board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://git.k8s.io/design-proposals-archive/architecture/OWNERS) file if you are interested in joining this effort.
+Please see the [API Reviews](https://github.com/orgs/kubernetes/projects/169) tracking board to follow the work of this sub-project. Please reach out to folks in the [OWNERS](https://git.k8s.io/design-proposals-archive/architecture/OWNERS) file if you are interested in joining this effort.
 
 ## Enhancement Proposals
 

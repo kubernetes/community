@@ -195,12 +195,12 @@ usergroups:
       - steering-committee
     members:
       - bentheelder
-      - cblecker
-      - cpanato
       - justaugustus
       - mrbobbytables
+      - pacoxu
       - palnabarun
-      - tpepper
+      - pohly
+      - soltysh
 
   - name: grafana-operator-maintainers
     long_name: Grafana Operator Maintainers
@@ -232,13 +232,15 @@ usergroups:
       - devfile
     members:
       - elsony
+      - feloy
+      - jasperchui
       - johnmcollier
       - kim-tsao
       - maysunfaisal
       - michael-valdron
-      - mike-hoang
+      - rm3l
       - rtaniwa
-      - schultzp2020
+      - thepetk
       - yangcao77
 
   - name: cluster-api-release-team
@@ -283,12 +285,12 @@ usergroups:
     long_name: Kubernetes GitHub Admins
     description: Administrators of the Kubernetes GitHub organisations
     members:
-      - ameukam
       - cblecker
-      - idvoretskyi
+      - MadhavJivrajani
       - mrbobbytables
       - nikhita
       - palnabarun
+      - Priyankasaggu11929
 
   - name: kubestellar-devs
     long_name: KubeStellar Development Team

@@ -3,8 +3,7 @@ contributors/guide/contributor-cheatsheet/README-fr.md
 contributors/guide/contributor-cheatsheet/README-it.md
 contributors/guide/contributor-cheatsheet/README-pt.md
 committee-steering/meeting-notes-archive
-elections/steering/2022/voters.yaml
-elections/steering/2023/voters.yaml
+elections/steering/.*/voters.yaml
 events/2014
 events/elections/2017/
 sig-contributor-experience/meeting-notes-archive

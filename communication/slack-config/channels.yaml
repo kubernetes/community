@@ -5,9 +5,11 @@ channels:
   - name: africa-dev
   - name: airflow-operator
   - name: akri
-  - name: aks-engine-users
+  - name: azure-aks
+    id: CU3N85WJK
   - name: aks-engine-dev
     id: CU1CXUHN0
+    archived: true
   - name: announcements
   - name: antrea
   - name: api-priority-and-fairness
@@ -49,6 +51,7 @@ channels:
   - name: cka-exam-prep
   - name: ckad-exam-prep
   - name: cks-exam-prep
+  - name: claudie
   - name: client-go-docs
     archived: true
   - name: cluster-addons
@@ -95,6 +98,7 @@ channels:
   - name: de-events
   - name: de-users
   - name: deppy-dev
+    archived: true
   - name: devfile
   - name: devspace
   - name: devstats
@@ -107,6 +111,7 @@ channels:
   - name: draft-users
   - name: druid-operator
   - name: ebpf
+  - name: educates
   - name: eks
   - name: eksctl
   - name: elastickube
@@ -116,7 +121,6 @@ channels:
   - name: emea-users
   - name: eraser
   - name: es-users
-  - name: etcd
   - name: etcdadm
   - name: evented-pleg
   - name: events
@@ -226,6 +230,7 @@ channels:
   - name: kots
     id: CFFKXV0JZ
   - name: kpack
+    archived: true
   - name: kpt
   - name: kr-dev
   - name: kr-users
@@ -272,15 +277,19 @@ channels:
     archived: true
   - name: kubernetes-careers
   - name: kubernetes-client
-  - name: kubernetes-contributors
+  - name: kubernetes-new-contributors
     id: C09R23FHP
   # kubernetes-docs-* channels are defined in sig-docs/
   - name: kubernetes-novice
   - name: kubernetes-operators
+  - name: kubernetes-org-members
   - name: kubernetes-ruby
+    archived: true
   - name: kubernetes-security
   - name: kubernetes-streaming
+    archived: true
   - name: kubernetes-teachers
+    archived: true
   - name: kubernetes-users
   - name: kubeslice
   - name: kubespray
@@ -302,6 +311,8 @@ channels:
   - name: litmus
   - name: litmus-dev
   - name: lokomotive
+    archived: true
+  - name: magnum-cluster-api
   - name: malaysia-users
   - name: malta-users
   - name: meet-our-contributors
@@ -363,6 +374,7 @@ channels:
   - name: okteto
   - name: olm-dev
   - name: open-cluster-mgmt
+  - name: open-component-model
   - name: opencontainers
   - name: openebs
   - name: openebs-dev
@@ -372,6 +384,7 @@ channels:
   - name: openshift-users
   - name: openstack-helm
   - name: openstack-kolla
+  - name: openstack-magnum
   - name: operator-builder
   - name: operator-framework-community
   - name: operator-sdk-dev
@@ -402,9 +415,11 @@ channels:
   - name: rktnetes
   - name: ro-users
   - name: rukpak-dev
+    archived: true
   - name: ru-users
   - name: scaleway-k8s
   - name: schemahero
+  - name: sovereign-cloud-stack
   - name: se-users
   - name: sealed-secrets
   - name: security-profiles-operator
@@ -435,11 +450,14 @@ channels:
     archived: true
   - name: sig-contribex
   - name: sig-contribex-meetings
+    archived: true
   - name: sig-contribex-comms
   - name: sig-contribex-elections
   - name: sig-contribex-triage
     archived: true
   # sig-docs* channels are defined in sig-docs/
+  - name: sig-etcd
+    id: C3HD8ARJ5
   - name: sig-high-availability
     archived: true
   - name: sig-instrumentation
@@ -538,3 +556,4 @@ channels:
   - name: yaml-overlay-tool
   - name: zarf
   - name: zarf-dev
+  - name: krkn

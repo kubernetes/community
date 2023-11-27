@@ -34,6 +34,10 @@ To find out what projects we're currently working on and explore what you could 
 * Reach out to us on the #sig-contribex-comms channel on the Kubernetes slack ([slack.k8s.io](http://slack.k8s.io)).
 * Join our [mailing-list]
 
+As with all contribution to Kubernetes, adhere to the [code of conduct], values, and principles of the project.
+
+**NOTE** 
+
 [meetings]: /sig-contributor-experience#contributor-comms
 [calendar]: https://www.kubernetes.dev/resources/calendar/
 [mailing-list]: https://groups.google.com/g/kubernetes-sig-contribex
@@ -50,3 +54,4 @@ To find out what projects we're currently working on and explore what you could 
 [area/contributor-comms]: https://github.com/kubernetes/community/issues?q=is%3Aopen+is%3Aissue+label%3Aarea%2Fcontributor-comms
 [Twitter]: https://twitter.com/K8sContributors/
 [Mastodon]: https://hachyderm.io/@K8sContributors
+[code of conduct]: https://github.com/kubernetes/community/blob/master/code-of-conduct.md

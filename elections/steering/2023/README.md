@@ -139,7 +139,7 @@ Examples of contributions that would NOT be considered:
 | Wednesday, September 27 | Private announcement of Results to SC members not up for election     |
 | Sunday, October 1       | Private announcement of Results to all candidates                     |
 | Monday, October 2       | Public announcement of Results at Public Steering Committee Meeting   |
-| Thursday, October 5     | Election Retro                                                        |
+| Tuesday, October 3      | Election Retro                                                        |
 
 Candidate nomination, bio, and election close deadlines will be done using Anywhere on Earth timing, meaning it is still valid to submit new nominations/bios/votes as long as it is still the last day anywhere on the planet (i.e. at the end of that day in UTC-12).
 

@@ -61,9 +61,9 @@ You can run these local verifications before you submit your pull request to pre
 
 Merging a pull request requires the following steps to be completed before the pull request will be merged automatically.
 
-- [Sign the CLA](https://git.k8s.io/community/CLA.md) (prerequisite)
 - [Open a pull request](https://help.github.com/articles/about-pull-requests/)
   - *For kubernetes/kubernetes repository only:* Add [release notes](/contributors/guide/release-notes.md) if needed.
+- Follow the EasyCLA steps to [sign the CLA](https://git.k8s.io/community/CLA.md) (prerequisite)
 - Pass all e2e tests
 - Get all necessary approvals from reviewers and code owners
 

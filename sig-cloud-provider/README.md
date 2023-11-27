@@ -52,7 +52,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-cloud-provider-proposals](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-proposals) - Design Proposals
     - [@kubernetes/sig-cloud-provider-test-failures](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-test-failures) - Test Failures and Triage
     - [@kubernetes/sig-cloud-providers-misc](https://github.com/orgs/kubernetes/teams/sig-cloud-providers-misc) - General Discussion
-- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
+- Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
 
 ## Working Groups
 
@@ -66,6 +66,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
 ### cloud-provider-extraction-migration
 - **Owners:**
   - [kubernetes-sigs/apiserver-network-proxy](https://github.com/kubernetes-sigs/apiserver-network-proxy/blob/master/OWNERS)
+  - [kubernetes-sigs/cloud-pv-admission-labeler](https://github.com/kubernetes-sigs/cloud-pv-admission-labeler/blob/main/OWNERS)
   - [kubernetes/community/sig-cloud-provider/cloud-provider-extraction-migration](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS)
   - [kubernetes/legacy-cloud-providers](https://github.com/kubernetes/legacy-cloud-providers/blob/master/OWNERS)
 - **Meetings:**
@@ -99,7 +100,7 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - [kubernetes-sigs/provider-aws-test-infra](https://github.com/kubernetes-sigs/provider-aws-test-infra/blob/master/OWNERS)
   - [kubernetes/cloud-provider-aws](https://github.com/kubernetes/cloud-provider-aws/blob/master/OWNERS)
 - **Meetings:**
-  - Regular AWS Subproject Meeting: [Fridays at 9:00 PT (Pacific Time)](https://zoom.us/my/k8ssigaws) (biweekly 2019 start date: Jan. 11th). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+  - Regular AWS Subproject Meeting: [Fridays at 9:00 PT (Pacific Time)](​​https://zoom.us/j/508079177?pwd=ZmEvMksxdTFTc0N1eXFLRm91QUlyUT09) (biweekly 2019 start date: Jan. 11th). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1-i0xQidlXnFEP9fXHWkBxqySkXwJnrGJP9OGyP2_P14/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29DzPOBBaJi-SO3AQ_b4HC).
 ### provider-azure

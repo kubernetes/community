@@ -40,11 +40,7 @@ aliases:
   sig-contributor-experience-leads:
     - MadhavJivrajani
     - Priyankasaggu11929
-    - cblecker
-    - jberkus
     - kaslin
-    - mrbobbytables
-    - nikhita
     - palnabarun
   sig-docs-leads:
     - divya-mohan0209
@@ -54,20 +50,26 @@ aliases:
     - reylejano
     - sftim
     - tengqm
+  sig-etcd-leads:
+    - ahrtr
+    - jmhbnz
+    - serathius
+    - wenjiaswe
   sig-instrumentation-leads:
     - dashpole
     - dgrisonnet
     - ehashman
     - logicalhan
   sig-k8s-infra-leads:
+    - BenTheElder
     - ameukam
     - dims
-    - spiffxp
-    - thockin
+    - upodroid
   sig-multicluster-leads:
     - jeremyot
     - pmorie
   sig-network-leads:
+    - danwinship
     - mikezappa87
     - shaneutt
     - thockin
@@ -123,8 +125,8 @@ aliases:
     - kwiesmueller
   wg-batch-leads:
     - Huang-Wei
-    - ahg-g
     - endocrimes
+    - mwielgus
     - soltysh
     - swatisehgal
   wg-data-protection-leads:
@@ -142,8 +144,8 @@ aliases:
     - JimBugwadia
     - rficcaglia
   wg-structured-logging-leads:
+    - mengjiao-liu
     - pohly
-    - serathius
   committee-code-of-conduct:
     - AnaMMedina21
     - endocrimes
@@ -161,12 +163,12 @@ aliases:
     - tabbysable
   committee-steering:
     - BenTheElder
-    - cblecker
-    - cpanato
     - justaugustus
     - mrbobbytables
+    - pacoxu
     - palnabarun
-    - tpepper
+    - pohly
+    - soltysh
 ## BEGIN CUSTOM CONTENT
   provider-aws:
     - justinsb
@@ -181,9 +183,10 @@ aliases:
   provider-ibmcloud:
     - spzala
   provider-openstack:
-    - chrigl
-    - lingxiankong
-    - ramineni
+    - dulek
+    - jichenjc
+    - kayrus
+    - zetaab
   provider-vmware:
     - cantbewong
     - frapposelli

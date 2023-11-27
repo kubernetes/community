@@ -78,14 +78,14 @@ Voluntary reviews apply towards non-core APIs that do not meet the [mandatory](#
 1. Request an API review for a PR or issue in the kubernetes org by adding the `api-review` label with a `/label api-review` comment (requests can be cancelled with a `/remove-label api-review` comment)
     * If this is a review of a PR implementing an already-reviewed design/KEP, reference the approved KEP and note any differences between the approved design and the implementation.
 
-2. API reviews are tracked in a project board at https://github.com/orgs/kubernetes/projects/13
+2. API reviews are tracked in a project board at https://github.com/orgs/kubernetes/projects/169
     * Github query for requested reviews not yet in the project:
-        * [`is:open org:kubernetes label:api-review -project:kubernetes/13`](https://github.com/search?q=is%3Aopen+org%3Akubernetes+label%3Aapi-review+-project%3Akubernetes%2F13)
+        * [`is:open org:kubernetes label:api-review -project:kubernetes/169`](https://github.com/search?q=is%3Aopen+org%3Akubernetes+label%3Aapi-review+-project%3Akubernetes%2F169)
     * Github query for items in the project no longer requesting review:
-        * [`is:open org:kubernetes -label:api-review project:kubernetes/13`](https://github.com/search?q=is%3Aopen+org%3Akubernetes+-label%3Aapi-review+project%3Akubernetes%2F13)
+        * [`is:open org:kubernetes -label:api-review project:kubernetes/169`](https://github.com/search?q=is%3Aopen+org%3Akubernetes+-label%3Aapi-review+project%3Akubernetes%2F169)
     * Requests are triaged by API approvers/reviewers/moderators [regularly](#review-lifecycle-timing), and added to the project board if prereqs have been completed
     * As requests are added to the project board, that is reflected in the sidebar of the issue or PR, along with the current status (backlog, assigned, in progress, completed)
-    * The API review backlog and queue is publicly visible at https://github.com/orgs/kubernetes/projects/13
+    * The API review backlog and queue is publicly visible at https://github.com/orgs/kubernetes/projects/169
 
 3. Backlog
     * An approver or moderator will adjust the prioritization of the issue in the backlog. Reviews are prioritized based on a number of factors:
@@ -99,14 +99,14 @@ Voluntary reviews apply towards non-core APIs that do not meet the [mandatory](#
     * An approver or moderator will assign an approver (or potentially aspiring reviewer - see *training reviews* below for the aspiring reviewer workflow)
     * Reviews are assigned based on reviewer capacity and domain knowledge
     * Assignment of reviewers is done on the issue/PR itself using the normal `/assign` method (works seamlessly with existing github/PR dashboard queries)
-    * All API reviews assigned to an individual can be viewed in the project board ([example](https://github.com/orgs/kubernetes/projects/13/?card_filter_query=assignee%3Aliggitt)), for visibility on status, order, and reviewer load
+    * All API reviews assigned to an individual can be viewed in the project board ([example](https://github.com/orgs/kubernetes/projects/169/views/3?filterQuery=assignee%3Aliggitt)), for visibility on status, order, and reviewer load
 
 5. In Progress / Approved / Changes Requested / Rejected
     * Reviews proceed like a normal KEP or PR review. Possible outcomes:
     * Approval:
       * Implementation PRs are tagged with `/lgtm /approve` and merged normally
       * KEP PRs containing API designs can also be tagged with `/lgtm /approve`, but should explicitly note if API approval is being given. This approval should be linked to when later requesting review of the implementation PR, and should limit the scope of the implementation review to differences between the approved design and final implementation, problems encountered during implementation, and correctness of the implementation.
-      * The approved issue is archived in the review project board, and the `api-review` label is removed.
+      * The approved issue is archived in the review project board.
     * Changes requested:
       * Comments or questions are left on the PR or issue, and the reviewer notifies the submitter
       * The reviewer moves the issue to "Changes Requested" in the review project board
