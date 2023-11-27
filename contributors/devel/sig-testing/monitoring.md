@@ -255,7 +255,7 @@ SpyGlass.
 
 For `node-kubelet-master`, we see the following:
 
-![Spyglass Prow Job Results for node-kubelet-master`](./testgrid-images/spyglass-summary-node-kubelet-master.png "Spyglass Prow Job results viewer")
+![Spyglass Prow Job Results for node-kubelet-master`](./testgrid-images/spyglass-summary.png "Spyglass Prow Job results viewer")
 
 Here we see that 2 tests failed (both related to the node problem detector) and
 the `e2e.go: Node Tests` stage was marked as failed (because the node problem

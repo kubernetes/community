@@ -25,7 +25,7 @@ Getting started locally
 
 ### Linux
 
-Not running Linux? Consider running [Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/), or on a cloud provider like [Google Compute Engine](https://kubernetes.io/docs/setup/production-environment/turnkey/gce/).
+Not running Linux? Consider running [Minikube](https://kubernetes.io/docs/tasks/tools/#minikube), or on a cloud provider like [Google Compute Engine](https://cloud.google.com/compute/).
 
 ### Container Runtime
 
