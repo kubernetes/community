@@ -230,7 +230,7 @@ To squash your commits, perform an [interactive rebase](https://git-scm.com/book
 4. Force push your changes to your remote branch:
 
   ```
-  git push --force
+  git push --force-with-lease
   ```
 
 For mass automated fixups such as automated doc formatting, use one or more
