@@ -106,6 +106,17 @@ Here is a good starting point (remember that one PR can cover multiple categorie
   This comes up frequently for host-based features in storage, node, or networking.
 * Examples where the feature requires considering the case of very large clusters.  This is commonly covered by metrics.
 
+The success in all of the above can be claimed if the final PRR approver perceived their review
+as non-essential after the primary PRR review done by the shadow reviewer.
+
+*Watchout*: The fact that final approver didn't have any substantial comments may mean one of two things:
+
+* the reviewer did a great job in finding all the issues
+* the KEP author did a great job in answering all the questions up front
+
+When promoting shadow reviewer to approver we want to ensure that not all KEPs belong to the second
+category to ensure that all PRR approvers can push for changes if required. We definitely don't
+require all reviews to be in that category, but we require at least three to belong there.
 
 ## Finding KEPs needing prod readiness review
 
