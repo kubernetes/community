@@ -10,9 +10,9 @@ To learn more about the difference between the two roles, please refer to [Netli
 
 ## Owner access
 
-- Divya Mohan (@divya-mohan0209)
-- Natali Vlatko (@natalisucks)
-- Rey Lejano (@reylejano)
+- Divya Mohan ([@divya-mohan0209](https://github.com/divya-mohan0209))
+- Natali Vlatko ([@natalisucks](https://github.com/natalisucks))
+- Rey Lejano ([@reylejano](https://github.com/reylejano))
 
 ## Collaborator access
 
