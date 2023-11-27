@@ -305,6 +305,7 @@ channels:
   - name: kwok
   - name: kwok-dev
   - name: kyverno
+  - name: kyverno-chainsaw
   - name: kyverno-dev
   - name: leadership-summit
     archived: true
