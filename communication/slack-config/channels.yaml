@@ -34,7 +34,8 @@ channels:
   - name: bindings-discuss
   - name: bootkube
     archived: true
-  - name: bpfd
+  - name: bpfman
+    id: C04UJBW2553
   - name: brigade
   - name: camptocamp-devops-stack
   - name: canonical-kubernetes
