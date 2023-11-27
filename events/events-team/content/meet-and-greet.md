@@ -131,7 +131,7 @@ Some additional notes based on experience from prior MKCC events:
 - Contact each SIG / WG and ask them to have 1 or more experienced members complete the form and commit to represent the group at MKCC.
 - Expect to spend a fair amount of time following up with SIGs and WGs to get the name of their representatives.
 - Add these representatives to a calendar notice for MKCC.
-- Ensure the table stands are all useable when you arrive. It's a lot easier to put each bag on tables, then set up the stands. The CNCF events liasion should have some extras in the box. 
+- Ensure the table stands are all useable when you arrive. It's a lot easier to put each bag on tables, then set up the stands. The CNCF events liaison should have some extras in the box. 
 - Create a plan and map for organizing SIGs / WGs at tables to make it easier for attendees to find SIGs. Get the room layout from the venue and pre-assign SIGs / WGs to tables with some thought given to logical groupings with similar topics in close proximity. Make sure that this plan is communicated to volunteers and other organizers and display the room layout / map on the projector to help people find their tables.
 - Recruit a few volunteers to distribute table stands and buttons and to help SIGs / contributors find the right tables. 
 - Walk around the room throughout the event to help lost contributors get matched up with a SIG table.
