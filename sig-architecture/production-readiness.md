@@ -91,7 +91,7 @@ After serving as reviewer/shadow for at least one release and showing good judge
 you can propose yourself as an approver by submitting a PR to add your GitHub
 handle to the `prod-readiness-approvers` alias in [OWNERS_ALIASES].
 
-When submitting the PR, you should include references to KEPs you reviewed that demonstrated a good variety
+When submitting the PR, you should include links to your KEP review comments that demonstrate a good variety
 of different situations.
 Here is a good starting point (remember that one PR can cover multiple categories):
 
