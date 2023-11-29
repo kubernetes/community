@@ -3085,12 +3085,12 @@ sigs:
     - github: claudiubelu
       name: Claudiu Belu
       company: Cloudbase Solutions
-    - github: jayunit100
-      name: Jay Vyas
-      company: VMware
     - github: jsturtevant
       name: James Sturtevant
       company: Microsoft
+    - github: knabben
+      name: Amim Knabben
+      company: VMware
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
@@ -3101,6 +3101,8 @@ sigs:
       name: Ben Moss
     - github: ddebroy
       name: Deep Debroy
+    - github: jayunit100
+      name: Jay Vyas
     - github: michmike
       name: Michael Michael
   meetings:
