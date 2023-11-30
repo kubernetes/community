@@ -30,7 +30,7 @@ Some teams that are not SIGs or WGs may also participate, e.g. ClusterAPI or the
 
 ## Time and Location
 
-MKCC is generally held during lunch period on one of the main Kubecon days. CNCF staff decides the exact schedule in order to not conflict with other lunchtime events.
+MKCC is generally held during lunch period on one of the main KubeCon days. CNCF staff decides the exact schedule in order to not conflict with other lunchtime events.
 
 ## Preparation & Timeline
 
@@ -38,7 +38,7 @@ MKCC is generally held during lunch period on one of the main Kubecon days. CNCF
 
 Request a large room for MKCC from the CNCF Contributor Summit Liaison. This will be a large room, set with at least 10 round tables.
 
-The gear for MKCC consists of table sign stands for each SIG, a bag of buttons for each SIG, and Kubernetes Contributor badge ribbons for folks who might not have gotten one. Some of this gets used/goes missing each KubeCon. As the MC, you will get access to a spreadsheet to fill out to identify which SIGs are active and how many buttons should be present for each SIG. Use this sheet to ask CNCF staff to check the geat. Ensure, though the sheet, that:
+The gear for MKCC consists of table sign stands for each SIG, a bag of buttons for each SIG, and Kubernetes Contributor badge ribbons for folks who might not have gotten one. Some of this gets used/goes missing each KubeCon. As the MC, you will get access to a spreadsheet to fill out to identify which SIGs are active and how many buttons should be present for each SIG. Use this sheet to ask CNCF staff to check the gear. Ensure, though the sheet, that:
 
 - All currently active SIGs have at least a dozen buttons
 - All currently active SIGs have table signs, and non-broken table stands
