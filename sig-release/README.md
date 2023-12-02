@@ -73,6 +73,7 @@ The Release Engineering subproject is responsible for the [process/procedures](h
   - [kubernetes-sigs/downloadkubernetes](https://github.com/kubernetes-sigs/downloadkubernetes/blob/master/OWNERS)
   - [kubernetes-sigs/mdtoc](https://github.com/kubernetes-sigs/mdtoc/blob/master/OWNERS)
   - [kubernetes-sigs/promo-tools](https://github.com/kubernetes-sigs/promo-tools/blob/main/OWNERS)
+  - [kubernetes-sigs/release-actions](https://github.com/kubernetes-sigs/release-actions/blob/master/OWNERS)
   - [kubernetes-sigs/release-notes](https://github.com/kubernetes-sigs/release-notes/blob/master/OWNERS)
   - [kubernetes-sigs/release-sdk](https://github.com/kubernetes-sigs/release-sdk/blob/main/OWNERS)
   - [kubernetes-sigs/release-utils](https://github.com/kubernetes-sigs/release-utils/blob/main/OWNERS)

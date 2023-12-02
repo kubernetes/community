@@ -2473,6 +2473,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/downloadkubernetes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/mdtoc/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/promo-tools/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/release-actions/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-sdk/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-utils/main/OWNERS
