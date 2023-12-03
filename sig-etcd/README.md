@@ -114,5 +114,6 @@ Serve the Apache Zookeeper API but back it with an etcd cluster
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
-
+## Meetings
+**Note:** *The Regular SIG Meeting alternates between community meetings and issue triage meetings. Community meetings serve as a forum for discussions and updates related to etcd project, while issue triage meetings speficially focus on addressing the backlog of pull requests (PRs) and issues in the etcd project, providing an opportunity for any contributor to participate and contribute to the project.*
 <!-- END CUSTOM CONTENT -->
