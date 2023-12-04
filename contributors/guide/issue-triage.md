@@ -113,8 +113,8 @@ We encourage more SIGs to use project boards to enhance visibility and tracking.
 ### DevStats
 
 The CNCF has created a [suite of Grafana dashboards and charts](https://devstats.cncf.io/) for collecting metrics related to all the CNCF projects. The [Kubernetes dashboard](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&refresh=15m) can be used to help SIGs view real-time metrics on many aspects of their workflow, including:
-- [Issue Velocity](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&from=1587157094179&to=1587758294179&refresh=15m&panelId=8&fullscreen): How quickly issues are resolved
-- [PR Velocity](https://k8s.devstats.cncf.io/d/12/dashboards?orgId=1&from=1587157166022&to=1587758366022&refresh=15m&panelId=9&fullscreen): Including PR workload per SIG, PR time to approve and merge, and other data
+- [Issue Velocity](https://k8s.devstats.cncf.io/d/12/dashboards?from=1587157094179&orgId=1&refresh=15m&to=1587758294179&viewPanel=8): How quickly issues are resolved
+- [PR Velocity](https://k8s.devstats.cncf.io/d/12/dashboards?from=1587157166022&orgId=1&refresh=15m&to=1587758366022&viewPanel=9): Including PR workload per SIG, PR time to approve and merge, and other data
 
 ## Process Pointers and Advice from SIGs
 
