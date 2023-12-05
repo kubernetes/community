@@ -3368,7 +3368,7 @@ workinggroups:
     frequency: biweekly
     url: https://zoom.us/j/92480197536?pwd=dmtSMGJRQmNYYTIyZkFlQ25JRngrdz09
     archive_url: https://docs.google.com/document/d/1RI_EL35MwQxrHqlWvtQNINhOSWergL3hmOSgC5PeZss/edit
-    recordings_url: TBD
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP13_zDqYfUjfLZ2Lu9a3pv-
   contact:
     slack: wg-lts
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-lts
