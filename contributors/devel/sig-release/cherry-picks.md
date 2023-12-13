@@ -164,10 +164,11 @@ pull requests on the `master` branch in that they:
   The [Release Managers][release-managers] are the final approvers on release
   branches.
 
-  Approval is signified by a Release Manager manually applying the
-  `cherry-pick-approved` label. This action removes the
-  `do-not-merge/cherry-pick-not-approved` label and triggers a merge into the
-  target branch.
+  Approval is signified by a Release Manager by approving the PR using the
+  GitHub review feature. The [`cherrypickapproved`](https://github.com/kubernetes/test-infra/tree/ce9ca27/prow/plugins/cherrypickapproved) 
+  prow plugin will take care of applying the `cherry-pick-approved` label as
+  well as removing the `do-not-merge/cherry-pick-not-approved` one, which
+  triggers a merge into the target branch.
 
   The team scrubs through incoming cherry picks on at least a weekly basis,
   daily during burndown ahead of a .0 release. Ahead of point releases,
