@@ -46,6 +46,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
+* Antonio Ojea (**[@aojea](https://github.com/aojea)**), Google
 * Dan Winship (**[@danwinship](https://github.com/danwinship)**), Red Hat
 * Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
 
