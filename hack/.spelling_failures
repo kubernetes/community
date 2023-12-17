@@ -1,7 +1,4 @@
-contributors/guide/contributor-cheatsheet/README-de.md
-contributors/guide/contributor-cheatsheet/README-fr.md
-contributors/guide/contributor-cheatsheet/README-it.md
-contributors/guide/contributor-cheatsheet/README-pt.md
+contributors/guide/contributor-cheatsheet/README-[a-z]{2}.md
 committee-steering/meeting-notes-archive
 elections/steering/.*/voters.yaml
 events/2014
