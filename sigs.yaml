@@ -638,6 +638,9 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
+  - name: karpenter
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/karpenter/main/OWNERS
   - name: vertical-pod-autoscaler
     owners:
     - https://raw.githubusercontent.com/kubernetes/autoscaler/master/vertical-pod-autoscaler/OWNERS
@@ -1360,14 +1363,8 @@ sigs:
   label: contributor-experience
   leadership:
     chairs:
-    - github: jberkus
-      name: Josh Berkus
-      company: Red Hat
     - github: kaslin
       name: Kaslin Fields
-      company: Google
-    - github: mrbobbytables
-      name: Bob Killen
       company: Google
     - github: palnabarun
       name: Nabarun Pal
@@ -1379,12 +1376,6 @@ sigs:
     - github: Priyankasaggu11929
       name: Priyanka Saggu
       company: SUSE
-    - github: cblecker
-      name: Christoph Blecker
-      company: Red Hat
-    - github: nikhita
-      name: Nikhita Raghunath
-      company: VMware
     emeritus_leads:
     - github: Phillels
       name: Elsie Phillips
@@ -1392,8 +1383,16 @@ sigs:
       name: Alison Dowdney
     - github: castrojo
       name: Jorge Castro
+    - github: cblecker
+      name: Christoph Blecker
     - github: grodrigues3
       name: Garrett Rodrigues
+    - github: jberkus
+      name: Josh Berkus
+    - github: mrbobbytables
+      name: Bob Killen
+    - github: nikhita
+      name: Nikhita Raghunath
     - github: parispittman
       name: Paris Pittman
   meetings:
@@ -2123,6 +2122,9 @@ sigs:
       name: Tim Hockin
       company: Google
     tech_leads:
+    - github: aojea
+      name: Antonio Ojea
+      company: Google
     - github: danwinship
       name: Dan Winship
       company: Red Hat
@@ -2474,6 +2476,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/downloadkubernetes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/mdtoc/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/promo-tools/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/release-actions/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-notes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-sdk/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/release-utils/main/OWNERS
@@ -3086,12 +3089,12 @@ sigs:
     - github: claudiubelu
       name: Claudiu Belu
       company: Cloudbase Solutions
-    - github: jayunit100
-      name: Jay Vyas
-      company: VMware
     - github: jsturtevant
       name: James Sturtevant
       company: Microsoft
+    - github: knabben
+      name: Amim Knabben
+      company: VMware
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
@@ -3102,6 +3105,8 @@ sigs:
       name: Ben Moss
     - github: ddebroy
       name: Deep Debroy
+    - github: jayunit100
+      name: Jay Vyas
     - github: michmike
       name: Michael Michael
   meetings:
@@ -3211,21 +3216,25 @@ workinggroups:
   label: batch
   leadership:
     chairs:
-    - github: Huang-Wei
-      name: Wei Huang
-      company: Apple
-    - github: ahg-g
-      name: Abdullah Gharaibeh
+    - github: alculquicondor
+      name: Aldo Culquicondor
       company: Google
-    - github: endocrimes
-      name: Danielle Lancashire
-      company: Independent
+    - github: mwielgus
+      name: Marcin Wielgus
+      company: Google
     - github: soltysh
       name: Maciej Szulik
       company: Red Hat
     - github: swatisehgal
       name: Swati Sehgal
       company: Red Hat
+    emeritus_leads:
+    - github: Huang-Wei
+      name: Wei Huang
+    - github: ahg-g
+      name: Abdullah Gharaibeh
+    - github: endocrimes
+      name: Danielle Lancashire
   meetings:
   - description: Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com))
     day: Thursdays (starting March 3rd 2022)
@@ -3363,7 +3372,7 @@ workinggroups:
     frequency: biweekly
     url: https://zoom.us/j/92480197536?pwd=dmtSMGJRQmNYYTIyZkFlQ25JRngrdz09
     archive_url: https://docs.google.com/document/d/1RI_EL35MwQxrHqlWvtQNINhOSWergL3hmOSgC5PeZss/edit
-    recordings_url: TBD
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP13_zDqYfUjfLZ2Lu9a3pv-
   contact:
     slack: wg-lts
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-lts
@@ -3434,12 +3443,12 @@ workinggroups:
   label: structured-logging
   leadership:
     chairs:
+    - github: mengjiao-liu
+      name: Mengjiao Liu
+      company: DaoCloud
     - github: pohly
       name: Patrick Ohly
       company: Intel
-    - github: serathius
-      name: Marek Siarkowicz
-      company: Google
   meetings: []
   contact:
     slack: wg-structured-logging

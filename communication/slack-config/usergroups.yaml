@@ -232,13 +232,12 @@ usergroups:
       - devfile
     members:
       - elsony
-      - feloy
       - jasperchui
+      - Jdubrick
       - johnmcollier
       - kim-tsao
       - maysunfaisal
       - michael-valdron
-      - rm3l
       - rtaniwa
       - thepetk
       - yangcao77
@@ -248,20 +247,23 @@ usergroups:
     description: Members of the Cluster API Release Team
     members:
       - adilGhaffarDev
+      - adityabhatia
+      - akshay196
       - cahillsf
-      - chiukapoor
-      - furkatgofurov7
-      - g-gaston
-      - hackeramitkumar
-      - kranurag7
-      - mjlshen
+      - chandankumar4
+      - Dhairya-Arora01
+      - Fedosin
+      - mansikulkarni96 
+      - mcbenjemaa
       - nawazkh
-      - nprokopic
-      - prajyot-parab
-      - razashahid107
+      - ssuriyan7
+      - SubhasmitaSw
       - Sunnatillo
-      - vincepri
+      - troy0820 
+      - typeid
+      - VibhorChinda
       - willie-yao
+      - yrs147 
 
   - name: kcp-devs
     long_name: kcp Development Team

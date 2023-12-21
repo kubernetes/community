@@ -58,6 +58,9 @@ The following [subprojects][subproject-definition] are owned by sig-autoscaling:
 - **Owners:**
   - [kubernetes/api/autoscaling](https://github.com/kubernetes/api/blob/master/autoscaling/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/podautoscaler](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/podautoscaler/OWNERS)
+### karpenter
+- **Owners:**
+  - [kubernetes-sigs/karpenter](https://github.com/kubernetes-sigs/karpenter/blob/main/OWNERS)
 ### vertical-pod-autoscaler
 - **Owners:**
   - [kubernetes/autoscaler/vertical-pod-autoscaler](https://github.com/kubernetes/autoscaler/blob/master/vertical-pod-autoscaler/OWNERS)

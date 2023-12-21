@@ -38,8 +38,9 @@ specifically, a test is eligible for promotion to conformance if:
   use the kubelet API for debugging purposes upon failure
 - it works for all providers (e.g., no `SkipIfProviderIs`/`SkipUnlessProviderIs`
   calls)
-- it is non-privileged (e.g., does not require root on nodes, access to raw
-  network interfaces, or cluster admin permissions)
+- it limits itself to capabilities exposed via APIs (e.g., does not require
+  root on nodes, access to raw network interfaces) and does not require write
+  access to system namespaces (like kube-system)
 - it works without access to the public internet (short of whatever is required
   to pre-pull images for conformance tests)
 - it works without non-standard filesystem permissions granted to pods

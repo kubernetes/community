@@ -26,11 +26,16 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 
 ## Organizers
 
-* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), Apple
-* Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
-* Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), Independent
+* Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**), Google
+* Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 * Swati Sehgal (**[@swatisehgal](https://github.com/swatisehgal)**), Red Hat
+
+## Emeritus Organizers
+
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**)
+* Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**)
+* Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**)
 
 ## Contact
 - Slack: [#wg-batch](https://kubernetes.slack.com/messages/wg-batch)

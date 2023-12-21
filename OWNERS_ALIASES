@@ -40,11 +40,7 @@ aliases:
   sig-contributor-experience-leads:
     - MadhavJivrajani
     - Priyankasaggu11929
-    - cblecker
-    - jberkus
     - kaslin
-    - mrbobbytables
-    - nikhita
     - palnabarun
   sig-docs-leads:
     - divya-mohan0209
@@ -73,6 +69,7 @@ aliases:
     - jeremyot
     - pmorie
   sig-network-leads:
+    - aojea
     - danwinship
     - mikezappa87
     - shaneutt
@@ -121,16 +118,15 @@ aliases:
   sig-windows-leads:
     - aravindhp
     - claudiubelu
-    - jayunit100
     - jsturtevant
+    - knabben
     - marosset
   wg-api-expression-leads:
     - apelisse
     - kwiesmueller
   wg-batch-leads:
-    - Huang-Wei
-    - ahg-g
-    - endocrimes
+    - alculquicondor
+    - mwielgus
     - soltysh
     - swatisehgal
   wg-data-protection-leads:
@@ -149,8 +145,8 @@ aliases:
     - poonam-lamba
     - sudermanjr
   wg-structured-logging-leads:
+    - mengjiao-liu
     - pohly
-    - serathius
   committee-code-of-conduct:
     - AnaMMedina21
     - endocrimes
