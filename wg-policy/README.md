@@ -30,6 +30,10 @@ Provide an overall architecture that describes both the current policy related i
 * Poonam Lamba (**[@poonam-lamba](https://github.com/poonam-lamba)**), Google
 * Andy Suderman (**[@sudermanjr](https://github.com/sudermanjr)**), Fairwinds
 
+## Emeritus Organizers
+
+* Robert Ficcaglia (**[@rficcaglia](https://github.com/rficcaglia)**)
+
 ## Contact
 - Slack: [#wg-policy](https://kubernetes.slack.com/messages/wg-policy)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-policy)
