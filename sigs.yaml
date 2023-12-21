@@ -3398,6 +3398,10 @@ workinggroups:
     - github: sudermanjr
       name: Andy Suderman
       company: Fairwinds
+    emeritus_leads:
+    - github: rficcaglia
+      name: Robert Ficcaglia
+      company: SunStone Secure
   meetings:
   - description: Regular WG Meeting
     day: Wednesday
