@@ -3401,7 +3401,6 @@ workinggroups:
     emeritus_leads:
     - github: rficcaglia
       name: Robert Ficcaglia
-      company: SunStone Secure
   meetings:
   - description: Regular WG Meeting
     day: Wednesday
