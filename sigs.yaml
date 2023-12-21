@@ -3213,12 +3213,9 @@ workinggroups:
   label: batch
   leadership:
     chairs:
-    - github: Huang-Wei
-      name: Wei Huang
-      company: Apple
-    - github: endocrimes
-      name: Danielle Lancashire
-      company: Independent
+    - github: alculquicondor
+      name: Aldo Culquicondor
+      company: Google
     - github: mwielgus
       name: Marcin Wielgus
       company: Google
@@ -3229,8 +3226,12 @@ workinggroups:
       name: Swati Sehgal
       company: Red Hat
     emeritus_leads:
+    - github: Huang-Wei
+      name: Wei Huang
     - github: ahg-g
       name: Abdullah Gharaibeh
+    - github: endocrimes
+      name: Danielle Lancashire
   meetings:
   - description: Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com))
     day: Thursdays (starting March 3rd 2022)
