@@ -59,7 +59,6 @@ Melhor.
 
 ### Fluxo de trabalho
 
-- [Gubernator Dashboard] - Ver Pull Requests que exigem sua atenção.
 - [Prow] - Kubernetes CI/CD System.
 - [Tide] - Plugin Prow que gerencia merges e testes. [Tide Dashboard]
 - [Comandos do Bot] - Comandos usados ​​para interagir com o Kubernetes Bots (exemplos:
@@ -332,7 +331,6 @@ fase de uma revisão do PR. Se você não tem certeza se deve efetuar o squashin
 
 [Guia do Contribuidor]: /contributors/guide/README.md
 [Guia do Desenvolvedor]: /contributors/devel/README.md
-[Gubernator dashboard]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [tide dashboard]: https://prow.k8s.io/tide

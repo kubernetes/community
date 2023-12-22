@@ -63,8 +63,6 @@
 
 ### 작업 흐름
 
-- [Gubernator 대시보드] - 주목이 필요한 수신/발신 풀 리퀘스트
-  확인
 - [Prow] - 쿠버네티스 CI/CD 시스템
 - [Tide] - 머지와 테스트를 관리하는 Prow 플러그인 [Tide 대시보드]
 - [Bot 명령] - 쿠버네티스 Bot과 상호 작용하는데 사용하는 명령 (예시:
@@ -351,7 +349,6 @@ PR을 검토하고 승인하도록 지정된 다른 참여자의 판단에 맡�
 
 [컨트리뷰터 가이드]: /contributors/guide/README.md
 [개발자 가이드]: /contributors/devel/README.md
-[Gubernator 대시보드]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [tide 대시보드]: https://prow.k8s.io/tide

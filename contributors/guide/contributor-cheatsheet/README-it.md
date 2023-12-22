@@ -63,7 +63,6 @@ condensato di informazioni utili per rendere migliore la tua esperienza di GitHu
 
 ### Workflow
 
-- [Gubernator Dashboard] - Visualizza le Pull request che richiedono la tua attenzione.
 - [Prow] - Kubernetes CI/CD System.
 - [Tide] - Prow plugin che gestisce il merge delle PR e l'esecuzione dei tests. [Tide Dashboard]
 - [Bot commands] - Guida ai comandi utilizzati per interagire con i bot di Kubernetes (examples:
@@ -353,7 +352,6 @@ git push --force
 
 [contributor guide]: /contributors/guide/README.md
 [developer guide]: /contributors/devel/README.md
-[gubernator dashboard]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [tide dashboard]: https://prow.k8s.io/tide
