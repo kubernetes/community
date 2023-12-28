@@ -18,7 +18,7 @@ This was announced and implemented in effect from 2019:
 For more information about deflaking Kubernetes tests, you can watch:
 - @liggitt's [presentation from Kubernetes SIG Testing - 2020-08-25](https://www.youtube.com/watch?v=Ewp8LNY_qTg).
 - @aojea's [presentation from Kubernetes SIG Testing - 2022-11-15](https://www.youtube.com/watch?v=x2Lj-ldR0AA&t=2660s).
-- @aojea's [Contributor Summit: "The art of deflaking Kubernetes tests"](https://sched.co/1LXGm).
+- @aojea's [Contributor Summit: "The art of deflaking Kubernetes tests"](https://www.youtube.com/watch?v=wyMyQdvg1Qw).
 
 **Table of Contents**
 
