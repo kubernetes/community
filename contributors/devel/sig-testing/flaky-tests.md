@@ -191,8 +191,6 @@ In addition, be sure to include the following information:
 For a good example of a flaking test issue,
 [check here](https://github.com/kubernetes/kubernetes/issues/93358).
 
-([TODO](https://github.com/kubernetes/kubernetes/issues/95528): Move these instructions to the issue template.)
-
 ## Deflaking unit tests
 
 To get started with deflaking unit tests, you will need to first
