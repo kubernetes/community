@@ -358,6 +358,7 @@ channels:
   - name: monolith
     archived: true
   - name: multi-platform
+  - name: myks
   - name: mysql-operator
   - name: nais
   - name: nauticus
