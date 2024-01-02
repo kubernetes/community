@@ -323,3 +323,13 @@ usergroups:
       - sgtcodfish
       - inteon
 
+  - name: gophercloud-maintainers
+    long_name: Gophercloud Maintainers
+    description: Gophercloud Maintainers group.
+    channels:
+      - gophercloud
+    members:
+      - EmilienM
+      - kayrus
+      - mandre
+      - pierreprinetti
