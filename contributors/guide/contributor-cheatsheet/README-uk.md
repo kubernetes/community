@@ -57,7 +57,6 @@
 
 ### Робочий процес
 
-- [Gubernator Dashboard] - Перегляд вхідних та вихідних Pull Request, що потребують вашої уваги.
 - [Prow] - Kubernetes CI/CD система.
 - [Tide] - Prow плаґін для управління процесом злиття змін до основної гілки репозиторія (merge) і тестами. [Tide Dashboard]
 - [Команди бота] - Команди для взаємодії з ботами Kubernetes (наприклад:
@@ -278,7 +277,6 @@ git checkout -b myfeature
 
 [Керівництво для контриб'юторів]: /contributors/guide/README.md
 [Керівництво для розробників]: /contributors/devel/README.md
-[gubernator dashboard]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [tide dashboard]: https://prow.k8s.io/tide

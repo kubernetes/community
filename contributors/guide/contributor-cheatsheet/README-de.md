@@ -62,7 +62,6 @@ nützlicher Informationen gedacht, um deine Beitragserfahrung auf GitHub besser 
 
 ### Ablauf
 
-- [Gubernator Dashboard] - Eingehende und Ausgehende Pull-Requests, die Aufmerksamkeit erfordern.
 - [Prow] - Kubernetes CI/CD-System.
 - [Tide] - Prow-Plugin das Merges und Tests verwaltet. [Tide Dashboard]
 - [Bot-Befehle] - Befehle zur Interaktion mit Kubernetes-Bots (zum Beispiel: `/cc`, `/lgtm`, und `/retest`)
@@ -345,7 +344,6 @@ anderer Beitragenden zu überlassen, die als Reviewer und Approver für den PR z
 
 [Contributor Guide]: /contributors/guide/README.md
 [Developer Guide]: /contributors/devel/README.md
-[Gubernator Dashboard]: https://gubernator.k8s.io/pr
 [Prow]: https://prow.k8s.io
 [Tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [Tide Dashboard]: https://prow.k8s.io/tide

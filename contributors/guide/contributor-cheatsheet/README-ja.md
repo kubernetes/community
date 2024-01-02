@@ -57,7 +57,6 @@ Kubernetesにコントリビュートする際のtipsや、Kubernetesプロジ�
 
 ### ワークフロー
 
-- [Gubernatorダッシュボード] - 注意して見ておくべきPull Requests
 - [Prow] - KubernetesのCI/CDシステム
 - [Tide] - mergeやtestを管理するためのProw用プラグイン [Tideダッシュボード]
 - [Botコマンド] - KubernetesのBotとコミュニケーションをとるためのコマンド (例: `/cc`、`/lgtm`や`/retest`)
@@ -302,7 +301,6 @@ git push --force
 
 [コントリビューターガイド]: /contributors/guide/README.md
 [開発者ガイド]: /contributors/devel/README.md
-[gubernatorダッシュボード]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [tideダッシュボード]: https://prow.k8s.io/tide

@@ -63,7 +63,6 @@ di GitHub menjadi lebih baik.
 
 ### _Workflow_
 
-- [Dasbor Gubernator] - Melihat Pull Request yang masuk dan keluar yang memerlukan perhatian.
 - [Prow] - Mekanisme CI/CD Kubernetes.
 - [Tide] - _Plugin_ Prow yang melakukan manajemen _merge_ dan _test_. [Dasbor Tide]
 - [Perintah Bot] - Perintah yang dapat kamu gunakan untuk berinteraksi dengan Bot Kubernetes (contoh:
@@ -346,7 +345,6 @@ _squashing_ perlu dilakukan atau tidak.
 
 [Panduan Kontributor]: /contributors/guide/README.md
 [Panduan Pengembang]: /contributors/devel/README.md
-[dasbor gubernator]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [dasbor tide]: https://prow.k8s.io/tide

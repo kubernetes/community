@@ -14,7 +14,6 @@ description: |
 - [How to Triage: A Step-by-Step Flow](#how-to-triage-a-step-by-step-flow)
    - [Triage-Related Tools](#triage-related-tools)
       - [Permissions and the Bot](#permissions-and-the-bot)
-      - [Gubernator](#gubernator)
       - [Triage Party](#triage-party)
       - [GitHub Project Boards](#github-project-boards)
       - [DevStats](#devstats)
@@ -78,10 +77,6 @@ These are tools that your SIG can use to make the triage process simpler, more e
 ### Permissions and the Bot
 
 Opening new issues and leaving comments on other people's issues are possible for all contributors. However, permission to assign specific labels (such as `triage`), change milestones, or close other contributors issues is only granted to the author of an issue, assignees, and organization members. For this reason, we use a bot to manage labelling and triaging. For a full list of the bot's commands and permissions, see the [Prow command reference page](https://go.k8s.io/bot-commands).
-
-### Gubernator
-
-[Gubernator](https://gubernator.k8s.io/pr) offers a dashboard that tells you which pull requests are waiting for your feedback and which PRs are waiting for the contributor to respond. Please note that Gubernator only shows *pull requests*. You will not see which issues are assigned to you.
 
 ### Triage Party
 

@@ -57,7 +57,6 @@
 
 ### वर्कफ़्लो
 
-- [Gubernator डैशबोर्ड] - आने वाले और बाहर जाने वाले pull requests को देखें जिन्हें आवश्यकता है आपके ध्यान की।
 - [Prow] - कुबेरनेट्स CI/CD सिस्टम।
 - [Tide] - मर्ज और परीक्षण का प्रबंधन करने वाले प्लगइन को साबित करें। [टाइड डैशबोर्ड]
 - [बॉट कमांड] - कमांड को कुबेरनेट्स बॉट्स के साथ बातचीत करने के लिए इस्तेमाल किया जाता है (उदाहरण: `/cc`, `/lgtm`, और `/retest`)
@@ -276,7 +275,6 @@ PR संशोधन का चरण। यदि आप अनिश्चि
 
 [योगदानकर्ता गाइड]: /contributors/guide/README.md
 [डेवलपर गाइड]: /contributors/devel/README.md
-[gubernator डैशबोर्ड]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io//prow.k8s.io-tide
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [tide डैशबोर्ड]: https:

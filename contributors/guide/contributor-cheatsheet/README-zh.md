@@ -57,7 +57,6 @@
 
 ### 工作流程
 
-- [Gubernator 仪表盘] - 收到和发出的 PR，您需要关注它们
 - [Prow] - Kubernetes CI/CD 系统
 - [Tide] - 管理合并和测试的 Prow 插件 [Tide 仪表盘]
 - [Bot 命令] - 用来和 Kubernetes 机器人互动的命令（例如 `/cc`、`/lgtm` 和 `/retest`）
@@ -283,7 +282,6 @@ git checkout -b myfeature
 
 [贡献者指南]: /contributors/guide/README.md
 [开发者指南]: /contributors/devel/README.md
-[gubernator 仪表盘]: https://gubernator.k8s.io/pr
 [prow]: https://prow.k8s.io
 [tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [tide 仪表盘]: https://prow.k8s.io/tide

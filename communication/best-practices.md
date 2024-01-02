@@ -14,13 +14,8 @@ your email account to attain a good signal-to-noise ratio with regards to the
 mailing list messages and GitHub notifications. All the steps below are for Gmail
 users, however similar filters can be made in other email clients.
 
-**Note:** Alternatively, we highly encourage people to use [Gubernator] to
-view and acknowledge their Pull Request review notifications.
-
 [Special Interest Groups (SIG)]: /sig-list.md#master-sig-list
 [Working Groups (WG)]: /sig-list.md#master-working-group-list
-[Gubernator]: https://gubernator.k8s.io/pr
-
 
 ## Creating filters for Kubernetes Mailing lists
 
