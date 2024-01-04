@@ -40,7 +40,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Divya Mohan (**[@divya-mohan0209](https://github.com/divya-mohan0209)**), SUSE
 * Natali Vlatko (**[@natalisucks](https://github.com/natalisucks)**), Cisco
-* Rey Lejano (**[@reylejano](https://github.com/reylejano)**), SUSE
+* Rey Lejano (**[@reylejano](https://github.com/reylejano)**), Red Hat
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
