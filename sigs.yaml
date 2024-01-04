@@ -1529,7 +1529,7 @@ sigs:
       company: Cisco
     - github: reylejano
       name: Rey Lejano
-      company: SUSE
+      company: Red Hat
     tech_leads:
     - github: onlydole
       name: Taylor Dolezal
