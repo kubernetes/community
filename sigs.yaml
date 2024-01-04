@@ -1531,9 +1531,6 @@ sigs:
       name: Rey Lejano
       company: SUSE
     tech_leads:
-    - github: kbhawkey
-      name: Karen Bradshaw
-      company: Independent
     - github: onlydole
       name: Taylor Dolezal
       company: CNCF
@@ -1556,6 +1553,8 @@ sigs:
       name: Jim Angel
     - github: kbarnard10
       name: Kaitlyn Barnard
+    - github: kbhawkey
+      name: Karen Bradshaw
     - github: zacharysarah
       name: Zach Corleissen
   meetings:
