@@ -18,7 +18,6 @@ To learn more about the difference between the two roles, please refer to [Netli
 
 ## Collaborator access
 
-- Karen Bradshaw ([@kbhawkey](https://github.com/kbhawkey))
 - Nate Waddington ([@nate-double-u](https://github.com/nate-double-u))
 - Patrice Chalin ([@chalin](https://github.com/chalin))
 - Qiming Teng ([@tengqm](https://github.com/tengqm))
