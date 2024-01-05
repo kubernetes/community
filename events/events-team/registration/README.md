@@ -40,7 +40,7 @@ A successful Registration lead should have the following qualities:
 
 **Comfortable working with spreadsheets and reports.**
 - Registration requests and reports are all done in spreadsheets. Being
-  comfortable with queries and syntax is incredibly helpful, both for for the
+  comfortable with queries and syntax is incredibly helpful, both for the
   registration approval process and later report generation.
 
 ## Shadow to the Registration Lead Role
@@ -142,7 +142,7 @@ emails from its invite system are frequently blocked or ignored.
 [cvent] is the current system used by the [Linux Foundation] (LF) and supports
 SSO, along with multiple workflows. However, no direct access can be given to a
 non LF employee and it can be difficult to troubleshoot workflows as all changes
-require going through through the LF.
+require going through the LF.
 
 Other options exist and should be evaluated when making your decision for the
 registration system.
