@@ -522,8 +522,8 @@ standard across documentation improves supportability.
   - **Good example:** `This is **bold** text.`
   - **Bad example:** `This should not be used for __bold__.`
 - Use an underscore (`_`) for _Italics_.
-  - **Good example:** This is _italics_.`
-  - **Bad example:**  This should not be used for *italics*.`
+  - **Good example:** `This is _italics_.`
+  - **Bad example:**  `This should not be used for *italics*.`
 - Use two tildes (`~~`) for ~~Strikethrough~~.
   - **Good example:** `This is ~~strikethrough~~`
   - **Bad example:** `This should not be used for ~strikethrough~.`
