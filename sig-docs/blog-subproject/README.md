@@ -17,7 +17,7 @@ See [meetings](/kubernetes/community/tree/master/sig-docs#meetings) for SIG Docs
 
 - **Blog shadow approvers:** _no contributors_
 
-- **Blog editors:** _no contributors_
+- **Blog editors:** [Gaurav Padam](https://github.com/Gauravpadam)
 
 - **Blog shadow editors:** _no contributors_
 
