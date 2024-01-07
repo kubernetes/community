@@ -18,7 +18,7 @@ This process is generally completed the co-chair moving to emeritus.
 - Other
   - Update your `k/website` PR with reference link(s) to the other PRs for completeness
   - Work with another co-chair to manually revoke `k8s-sig-docs-leads@` Google Group membership
-  - Work with another co-chair to manually revoke Google Analytics access
+  - Work with another co-chair to manually revoke Google Analytics access and add the new co-chairs email for refreshing the dashboards.
   - Work with another co-chair to manually revoke Netlify access
 
 Note: You may move to emeritus and remain an approver if desired. Alternately, emeritus co-chairs are welcome to open a PR to re-establish an approver role at a later date.
