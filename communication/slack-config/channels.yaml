@@ -397,6 +397,7 @@ channels:
   - name: outreachy-apps
     id: CDH610735
   - name: paralus
+  - name: pepr
   - name: pharmer
   - name: pinniped
   - name: pl-users
