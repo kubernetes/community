@@ -78,6 +78,7 @@ channels:
   - name: cluster-api-openstack
   - name: cluster-api-operator
   - name: cluster-api-packet
+  - name: cluster-api-proxmox
   - name: cluster-api-vsphere
   - name: cn-dev
   - name: cn-events
