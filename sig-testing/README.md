@@ -75,6 +75,10 @@ Boskos is a resource manager service that handles different kinds of resources a
 An experimental e2e testing framework for Kubernetes clusters.
 - **Owners:**
   - [kubernetes-sigs/e2e-framework](https://github.com/kubernetes-sigs/e2e-framework/blob/main/OWNERS)
+### hydrophone
+Hydrophone is a lightweight Kubernetes conformance tests runner
+- **Owners:**
+  - [kubernetes-sigs/hydrophone](https://github.com/kubernetes-sigs/hydrophone/blob/main/OWNERS)
 ### kind
 Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
 - **Owners:**

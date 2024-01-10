@@ -2989,6 +2989,11 @@ sigs:
       An experimental e2e testing framework for Kubernetes clusters.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/e2e-framework/main/OWNERS
+  - name: hydrophone
+    description: |
+      Hydrophone is a lightweight Kubernetes conformance tests runner
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/hydrophone/main/OWNERS
   - name: kind
     description: |
       Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
