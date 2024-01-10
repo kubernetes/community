@@ -245,6 +245,7 @@ channels:
   - name: kuadrant
   - name: kube-aws
   - name: kube-bind
+  - name: kube-burner
   - name: kube-deploy
     archived: true
   - name: kube-monkey
