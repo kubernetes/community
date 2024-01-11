@@ -36,7 +36,7 @@ make 1>/dev/null
 mismatches=0
 break=$(printf "=%.0s" $(seq 1 68))
 
-for file in $(ls ${CRT_DIR}/sigs.yaml ${CRT_DIR}/sig-*/README.md ${CRT_DIR}/wg-*/README.md ${CRT_DIR}/ug-*/README.md ${CRT_DIR}/committee-*/README.md ${CRT_DIR}/sig-list.md ${CRT_DIR}/OWNERS_ALIASES); do
+for file in $(ls ${CRT_DIR}/sigs.yaml ${CRT_DIR}/sig-*/README.md ${CRT_DIR}/wg-*/README.md ${CRT_DIR}/committee-*/README.md ${CRT_DIR}/sig-list.md ${CRT_DIR}/OWNERS_ALIASES); do
   real=${file#$CRT_DIR/}
   if ! diff -q ${file} ${WORKING_DIR}/${real} &>/dev/null; then
     echo "${file} does not match ${WORKING_DIR}/${real}";
