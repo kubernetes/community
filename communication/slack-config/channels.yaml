@@ -415,6 +415,7 @@ channels:
   - name: random
     archived: true
   - name: reddit-mods
+  - name: riscv
   - name: rktnetes
   - name: ro-users
   - name: rukpak-dev
