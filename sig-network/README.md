@@ -121,6 +121,9 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - [kubernetes/api/networking](https://github.com/kubernetes/api/blob/master/networking/OWNERS)
 - **Contact:**
   - Slack: [#sig-network-policy-api](https://kubernetes.slack.com/messages/sig-network-policy-api)
+### node-ipam-controller
+- **Owners:**
+  - [kubernetes-sigs/node-ipam-controller](https://github.com/kubernetes-sigs/node-ipam-controller/blob/main/OWNERS)
 ### pod-networking
 - **Owners:**
   - [kubernetes-sigs/ip-masq-agent](https://github.com/kubernetes-sigs/ip-masq-agent/blob/master/OWNERS)

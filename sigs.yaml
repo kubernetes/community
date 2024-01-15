@@ -2259,6 +2259,9 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
+  - name: node-ipam-controller
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/node-ipam-controller/main/OWNERS
   - name: pod-networking
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
