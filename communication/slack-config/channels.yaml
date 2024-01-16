@@ -374,6 +374,7 @@ channels:
   - name: odo
   - name: office-hours
     archived: true
+  - name: okd-dev
   - name: okteto
   - name: olm-dev
   - name: open-cluster-mgmt
