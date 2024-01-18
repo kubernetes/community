@@ -168,6 +168,7 @@ channels:
     id: C678BMZ89
   - name: hetzner
   - name: homelab
+  - name: hydrophone
   - name: id-events
   - name: id-users
   - name: il-users
