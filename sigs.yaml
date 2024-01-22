@@ -2247,6 +2247,9 @@ sigs:
   - name: iptables-wrappers
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/iptables-wrappers/master/OWNERS
+  - name: knftables
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/knftables/master/OWNERS
   - name: kpng
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kpng/master/OWNERS
