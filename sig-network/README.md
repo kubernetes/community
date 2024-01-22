@@ -109,6 +109,9 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### iptables-wrappers
 - **Owners:**
   - [kubernetes-sigs/iptables-wrappers](https://github.com/kubernetes-sigs/iptables-wrappers/blob/master/OWNERS)
+### knftables
+- **Owners:**
+  - [kubernetes-sigs/knftables](https://github.com/kubernetes-sigs/knftables/blob/master/OWNERS)
 ### kpng
 - **Owners:**
   - [kubernetes-sigs/kpng](https://github.com/kubernetes-sigs/kpng/blob/master/OWNERS)
