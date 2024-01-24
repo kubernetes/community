@@ -33,21 +33,22 @@ The [charter](charter.md) defines the scope and governance of the CLI Special In
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Independent
-* Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Chainguard, Inc
-* Natasha Sarkar (**[@natasha41575](https://github.com/natasha41575)**), Google
+* Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Defense Unicorns
+* Marly Puckett (**[@mpuckett159](https://github.com/mpuckett159)**), Independent
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Katrina Verey (**[@KnVerey](https://github.com/KnVerey)**), Independent
-* Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Chainguard, Inc
+* Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Defense Unicorns
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
 
 ## Emeritus Leads
 
 * Tony Ado (**[@AdoHe](https://github.com/AdoHe)**)
 * Fabiano Franz (**[@fabianofranz](https://github.com/fabianofranz)**)
+* Natasha Sarkar (**[@natasha41575](https://github.com/natasha41575)**)
 * Phillip Wittrock (**[@pwittrock](https://github.com/pwittrock)**)
 * Sean Sullivan (**[@seans3](https://github.com/seans3)**)
 
@@ -109,6 +110,8 @@ Hybrid command-line/UI development experience for cloud-native development
 - **Owners:**
   - [kubernetes-sigs/kui](https://github.com/kubernetes-sigs/kui/blob/master/OWNERS)
 ### kustomize
+- **Leads:**
+  - Yugo Kobayashi (**[@koba1t](https://github.com/koba1t)**), Yahoo!
 - **Owners:**
   - [kubernetes-sigs/kustomize](https://github.com/kubernetes-sigs/kustomize/blob/master/OWNERS)
 - **Contact:**
