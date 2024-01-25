@@ -176,6 +176,7 @@ channels:
   - name: image-builder
   - name: in-dev
   - name: in-events
+  - name: in-place-pod-resize
   - name: in-users
   - name: ingress-nginx-dev
   - name: ingress-nginx-users
