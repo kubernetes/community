@@ -8,4 +8,4 @@ channels:
   - name: sig-node-rkt
     archived: true
   - name: sig-node-swap
-  - name: in-place-pod-resize
+  - name: kep-inplace-pod-resize
