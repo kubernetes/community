@@ -1531,9 +1531,6 @@ sigs:
       name: Rey Lejano
       company: Red Hat
     tech_leads:
-    - github: onlydole
-      name: Taylor Dolezal
-      company: CNCF
     - github: sftim
       name: Tim Bannister
       company: The Scale Factory
@@ -1555,6 +1552,8 @@ sigs:
       name: Kaitlyn Barnard
     - github: kbhawkey
       name: Karen Bradshaw
+    - github: onlydole
+      name: Taylor Dolezal
     - github: zacharysarah
       name: Zach Corleissen
   meetings:
