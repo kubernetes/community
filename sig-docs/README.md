@@ -46,7 +46,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Taylor Dolezal (**[@onlydole](https://github.com/onlydole)**), CNCF
 * Tim Bannister (**[@sftim](https://github.com/sftim)**), The Scale Factory
 * Qiming Teng (**[@tengqm](https://github.com/tengqm)**), Sangfor Technologies
 
@@ -59,6 +58,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Jim Angel (**[@jimangel](https://github.com/jimangel)**)
 * Kaitlyn Barnard (**[@kbarnard10](https://github.com/kbarnard10)**)
 * Karen Bradshaw (**[@kbhawkey](https://github.com/kbhawkey)**)
+* Taylor Dolezal (**[@onlydole](https://github.com/onlydole)**)
 * Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**)
 
 ## Contact
