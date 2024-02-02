@@ -386,7 +386,7 @@ Because kubernetes only merges pull requests when unit, integration, and e2e tes
 passing, your development environment needs to run all tests successfully. While this quick start will get you going,
 to really understand the testing infrastructure, read the
 [Testing Guide](sig-testing/testing.md) and check out the
-[SIG Architecture developer guide material](README.md#sig-testing).
+[SIG Architecture developer guide material](README.md#sig-architecture).
 
 Note that all of the commands in this section are run in your
 Kubernetes project directory at `$GOPATH/src/k8s.io/kubernetes/`
