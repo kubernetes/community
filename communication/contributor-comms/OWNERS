@@ -5,13 +5,13 @@ reviewers:
   - chris-short
   - fsmunoz
   - kaslin
-  - SD-13
+  - mfahlandt
 approvers:
   - AvineshTripathi
   - chris-short
   - fsmunoz
   - kaslin
-  - SD-13
+  - mfahlandt
 emeritus_approvers:
   - Atharva-Shinde
   - imnmo
@@ -19,6 +19,7 @@ emeritus_approvers:
   - mbbroberg
   - parispittman
   - rajula96reddy
+  - SD-13
 labels:
   - sig/contributor-experience
   - area/contributor-comms
