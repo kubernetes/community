@@ -25,17 +25,21 @@ usergroups:
     description: Contributor Communications group.
     channels:
       - sig-contribex
+      - sig-contribex-comms
     members:
-      - Atharva-Shinde
       - AvineshTripathi
       - chrisshort
-      - Debanitrkl
-      - Jason
+      - fsmunoz
+      - fykaa
+      - hii-arpit
+      - iancoldwater
       - kaslin
+      - mfahlandt
+      - nitishfy
       - paris
-      - PurneswarPrasad
-      - rajula96reddy
-      - imran
+      - sandipanpanda
+      - sreeram-venkitesh
+
 
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
@@ -253,17 +257,17 @@ usergroups:
       - chandankumar4
       - Dhairya-Arora01
       - Fedosin
-      - mansikulkarni96 
+      - mansikulkarni96
       - mcbenjemaa
       - nawazkh
       - ssuriyan7
       - SubhasmitaSw
       - Sunnatillo
-      - troy0820 
+      - troy0820
       - typeid
       - VibhorChinda
       - willie-yao
-      - yrs147 
+      - yrs147
 
   - name: kcp-devs
     long_name: kcp Development Team
