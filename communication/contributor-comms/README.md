@@ -11,11 +11,11 @@ The Contributor Comms subproject uses leadership roles to organize and delegate 
 
 | Area & Handbook Link | Team | Notes |
 | --- | --- | --- |
-| Subproject Lead | @kaslin, @chris-short | @AvineshTripathi (shadow) |
-| [Social Media Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Social-Media.md) |@kaslin | @Hii-Arpit (shadow) |
-| [Comms Tech Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Tech-Lead.md) | @SD-13 | Shadow role is available. |
-| [Comms Blog Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/blog-coordinator.md) | @fsmunoz |  Shadow role is available. |
-| Emeritus | @parispittman, @mbbroberg |
+| Subproject Lead | [@kaslin](https://github.com/kaslin), [@chris-short](https://github.com/chris-short) | [@AvineshTripathi](https://github.com/AvineshTripathi) (shadow) |
+| [Social Media Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Social-Media.md) |[@kaslin](https://github.com/kaslin) | [@Hii-Arpit](https://github.com/Hii-Arpit) (shadow) |
+| [Comms Tech Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Tech-Lead.md) | [@mfahlandt](https://github.com/mfahlandt) | Shadow role is available. |
+| [Comms Blog Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/blog-coordinator.md) | [@fsmunoz](https://github.com/fsmunoz) |  Shadow role is available. |
+| Emeritus | [@parispittman](https://github.com/parispittman), [@mbbroberg](https://github.com/mbbroberg), [@SD-13](https://github.com/SD-13) |
 
 ## Contact Us!
 
@@ -27,7 +27,7 @@ The Contributor Comms subproject uses leadership roles to organize and delegate 
 
 ## Join us!
 
-We are always open to being a home for contributors to Kubernetes whether you code or not. 
+We are always open to being a home for contributors to Kubernetes whether you code or not.
 
 To find out what projects we're currently working on and explore what you could do to contribute:
 * Come to one of our [meetings] (Every Friday 8:00 PT, [Convert into your time zone](https://dateful.com/time-zone-converter?t=8:00&tz=PT%20%28Pacific%20Time%29)). See the [calendar] to add it to your own calendar.
@@ -36,7 +36,7 @@ To find out what projects we're currently working on and explore what you could 
 
 As with all contribution to Kubernetes, adhere to the [code of conduct], values, and principles of the project.
 
-**NOTE** 
+**NOTE**
 
 [meetings]: /sig-contributor-experience#contributor-comms
 [calendar]: https://www.kubernetes.dev/resources/calendar/
