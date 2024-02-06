@@ -35,6 +35,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
 * Joe Betz (**[@jpbetz](https://github.com/jpbetz)**), Google
+* Stefan Schimanski (**[@sttts](https://github.com/sttts)**), Upbound
 
 ## Contact
 - Slack: [#sig-api-machinery](https://kubernetes.slack.com/messages/sig-api-machinery)
