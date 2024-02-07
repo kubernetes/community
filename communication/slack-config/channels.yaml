@@ -32,6 +32,7 @@ channels:
   - name: azure-service-operator
   - name: bazel
   - name: bindings-discuss
+  - name: blixt
   - name: bootkube
     archived: true
   - name: bpfman
