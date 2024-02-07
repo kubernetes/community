@@ -254,7 +254,7 @@ and introduced a new label for the differentiating dimension.
 For instance, you should **_prefer_**:
 
 ```
-apiserver_authorization_config_controller_reloads_total{descision=[SUCCESS, FAILURE]}
+apiserver_authorization_config_controller_reloads_total{decision=[SUCCESS, FAILURE]}
 ```
 
 ...over this variant:
