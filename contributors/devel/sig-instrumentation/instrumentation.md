@@ -242,6 +242,27 @@ metric could look as follows:
 ```
 kube_pod_restarts and on(namespace, pod) kube_pod_info{uuid=”ABC”}
 ```
+## When to use labels
+
+Labels should be used to mark dimensions about the measured quantity. It can be
+tempting to embed a label in the _name_ of a metric, but often this is a bad idea
+as it can make it slightly more difficult to do ratios. If you find yourself
+creating two metrics with the exact same schema that you are likely to want to
+compare against each other, it's probably better to merge them into a single metric
+and introduced a new label for the differentiating dimension.
+
+For instance, you should **_prefer_**:
+
+```
+apiserver_authorization_config_controller_reloads_total{descision=[SUCCESS, FAILURE]}
+```
+
+...over this variant:
+
+```
+apiserver_authorization_config_controller_automatic_reload_failures_total
+apiserver_authorization_config_controller_automatic_reload_success_total
+```
 
 ## Deprecating Metrics
 
