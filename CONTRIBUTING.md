@@ -15,7 +15,7 @@ We have full documentation on how to get started contributing here:
 
 ## Contributing to Individual SIGs
 
-Each SIG may or may not have it's own policies for editing their section of this repository.
+Each SIG may or may not have its own policies for editing their section of this repository.
 
 Edits in SIG sub-directories should follow any additional guidelines described
 by the respective SIG leads in the sub-directory's `CONTRIBUTING` file
