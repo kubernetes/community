@@ -40,12 +40,8 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by the Steering Committee:
-### funding
-Funding requests for project infrastructure, events, and consulting
-- **Owners:**
-  - [kubernetes/funding](https://github.com/kubernetes/funding/blob/master/OWNERS)
 ### steering
-Steering Committee policy and documentation
+Steering Committee policies, documentation, and funding requests
 - **Owners:**
   - [kubernetes/steering](https://github.com/kubernetes/steering/blob/master/OWNERS)
 
