@@ -661,17 +661,17 @@ sigs:
       company: Independent
     - github: eddiezane
       name: Eddie Zaneski
-      company: Chainguard, Inc
-    - github: natasha41575
-      name: Natasha Sarkar
-      company: Google
+      company: Defense Unicorns
+    - github: mpuckett159
+      name: Marly Puckett
+      company: Independent
     tech_leads:
     - github: KnVerey
       name: Katrina Verey
       company: Independent
     - github: eddiezane
       name: Eddie Zaneski
-      company: Chainguard, Inc
+      company: Defense Unicorns
     - github: soltysh
       name: Maciej Szulik
       company: Red Hat
@@ -680,6 +680,8 @@ sigs:
       name: Tony Ado
     - github: fabianofranz
       name: Fabiano Franz
+    - github: natasha41575
+      name: Natasha Sarkar
     - github: pwittrock
       name: Phillip Wittrock
     - github: seans3
@@ -786,6 +788,10 @@ sigs:
       slack: kustomize
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/OWNERS
+    leads:
+    - github: koba1t
+      name: Yugo Kobayashi
+      company: Yahoo!
 - dir: sig-cloud-provider
   name: Cloud Provider
   mission_statement: >
