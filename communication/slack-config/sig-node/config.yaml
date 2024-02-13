@@ -9,3 +9,4 @@ channels:
     archived: true
   - name: sig-node-swap
   - name: sig-node-inplace-pod-resize
+  - name: sig-node-sidecar
