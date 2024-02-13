@@ -14,15 +14,37 @@
    -
    -
 
-{{$releases := getReleases}}
-{{$owingsig := .Dir}}
+{{$releases := getReleases -}}
+{{$owningSIG := .Dir -}}
+{{$stagedKeps := filterKEPs $owningSIG $releases -}}
+{{$alphaKeps := index $stagedKeps "alpha" -}}
+{{$betaKeps := index $stagedKeps "beta" -}}
+{{$stableKeps := index $stagedKeps "stable" -}}
+<!--
+   Note: This list is generated from the KEP metadata in kubernetes/enhancements repository.
+      If you find any discrepancy in the generated list here, please check the KEP metadata.
+      Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
+-->
+
 3. KEP work in {{lastYear}} ({{$releases.LatestMinusTwo}}, {{$releases.LatestMinusOne}}, {{$releases.Latest}}):
-{{- range $stage, $keps := filterKEPs $owingsig $releases}}
-  - {{ $stage }}:
-  {{- range $keps}}
-    - [{{.Number}} - {{.Title}}](https://github.com/kubernetes/enhancements/tree/master/keps/{{.OwningSIG}}/{{.Name}}) - {{.LatestMilestone -}}
+{{if ne (len $alphaKeps) 0}}
+  - Alpha
+  {{- range $alphaKeps}}
+    - [{{.Number}} - {{.Title}}](https://github.com/kubernetes/enhancements/tree/master/keps/{{.OwningSIG}}/{{.Name}}) - {{.Milestone.Alpha -}}
   {{ end}}
-{{- end}}
+{{ end}}
+{{if ne (len $betaKeps) 0}}
+  - Beta
+  {{- range $betaKeps}}
+    - [{{.Number}} - {{.Title}}](https://github.com/kubernetes/enhancements/tree/master/keps/{{.OwningSIG}}/{{.Name}}) - {{.Milestone.Beta -}}
+  {{ end}}
+{{ end}}
+{{if ne (len $stableKeps) 0}}
+  - Stable
+  {{- range $stableKeps}}
+    - [{{.Number}} - {{.Title}}](https://github.com/kubernetes/enhancements/tree/master/keps/{{.OwningSIG}}/{{.Name}}) - {{.Milestone.Stable -}}
+  {{ end}}
+{{ end}}
 
 
 ## Project health
@@ -73,7 +95,7 @@ Include any other ways you measure group membership
 
 ## [Subprojects](https://git.k8s.io/community/{{.Dir}}#subprojects)
 {{- define "subprojects" -}}
-{{- $owingsig := .Dir -}}
+{{- $owningSIG := .Dir -}}
 {{- if .New}}
 
 **New in {{lastYear}}:**
