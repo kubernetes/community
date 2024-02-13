@@ -46,6 +46,10 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-etcd:
+### auger
+Directly access data objects stored in etcd by kubernetes.
+- **Owners:**
+  - [etcd-io/auger](https://github.com/etcd-io/auger/blob/master/OWNERS)
 ### bbolt
 An embedded key/value database for Go.
 - **Owners:**

@@ -1708,6 +1708,10 @@ sigs:
       github: mrbobbytables
       name: Bob Killen
   subprojects:
+  - name: auger
+    description: Directly access data objects stored in etcd by kubernetes.
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/auger/master/OWNERS
   - name: bbolt
     description: An embedded key/value database for Go.
     owners:
