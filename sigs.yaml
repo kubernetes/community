@@ -3646,11 +3646,7 @@ committees:
     - name: steering-committee
       description: General Discussion
   subprojects:
-  - name: funding
-    description: Funding requests for project infrastructure, events, and consulting
-    owners:
-    - https://raw.githubusercontent.com/kubernetes/funding/master/OWNERS
   - name: steering
-    description: Steering Committee policy and documentation
+    description: Steering Committee policies, documentation, and funding requests
     owners:
     - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
