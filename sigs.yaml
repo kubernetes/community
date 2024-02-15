@@ -791,7 +791,7 @@ sigs:
     leads:
     - github: koba1t
       name: Yugo Kobayashi
-      company: Yahoo!
+      company: LY Corporation
 - dir: sig-cloud-provider
   name: Cloud Provider
   mission_statement: >

@@ -111,7 +111,7 @@ Hybrid command-line/UI development experience for cloud-native development
   - [kubernetes-sigs/kui](https://github.com/kubernetes-sigs/kui/blob/master/OWNERS)
 ### kustomize
 - **Leads:**
-  - Yugo Kobayashi (**[@koba1t](https://github.com/koba1t)**), Yahoo!
+  - Yugo Kobayashi (**[@koba1t](https://github.com/koba1t)**), LY Corporation
 - **Owners:**
   - [kubernetes-sigs/kustomize](https://github.com/kubernetes-sigs/kustomize/blob/master/OWNERS)
 - **Contact:**
