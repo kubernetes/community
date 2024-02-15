@@ -2205,6 +2205,12 @@ sigs:
     tz: PT (Pacific Time)
     frequency: Last Friday of the Month
     url: https://zoom.us/j/96900767253
+  - description: Sig-Network KNI
+    day: Thursday
+    time: "08:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://konghq.zoom.us/j/95972403933
   contact:
     slack: sig-network
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-network
