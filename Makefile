@@ -1,5 +1,5 @@
 IMAGE_NAME=golang:1.18
-export GOPROXY?=https://proxy.golang.org
+CONTAINER_ENGINE?=$(shell command -v docker 2>/dev/null || command -v podman 2>/dev/null)
 
 default: \
 	generate \
@@ -10,19 +10,19 @@ reset-docs:
 generate:
 	go run ./generator/app.go
 
-generate-dockerized:
-	docker run --rm -e WHAT -e GOPROXY -v $(shell pwd):/go/src/app:Z $(IMAGE_NAME) make -C /go/src/app generate
+generate-containerized:
+	$(CONTAINER_ENGINE) run --rm -e WHAT -v $(shell pwd):/go/src/app $(IMAGE_NAME) make -C /go/src/app generate
 
 verify:
 	@hack/verify.sh
 
-verify-dockerized:
-	docker run --rm -v $(shell pwd):/go/src/app:Z $(IMAGE_NAME) make -C /go/src/app verify
+verify-containerized:
+	$(CONTAINER_ENGINE) run --rm -v $(shell pwd):/go/src/app $(IMAGE_NAME) make -C /go/src/app verify
 
 test:
 	go test -v ./generator/...
 
-test-dockerized:
-	docker run --rm -v $(shell pwd):/go/src/app:Z $(IMAGE_NAME) make -C /go/src/app test
+test-containerized:
+	$(CONTAINER_ENGINE) run --rm -v $(shell pwd):/go/src/app $(IMAGE_NAME) make -C /go/src/app test
 
-.PHONY: default reset-docs generate generate-dockerized verify test test-dockerized
+.PHONY: default reset-docs generate generate-containerized verify verify-containerized test test-containerized

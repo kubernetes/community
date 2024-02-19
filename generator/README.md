@@ -1,7 +1,7 @@
 # SIG Doc builder
 
 This folder contains scripts to automatically generate documentation about the
-different Special Interest Groups (SIGs), Working Groups (WGs) 
+different Special Interest Groups (SIGs), Working Groups (WGs)
 and Committees of Kubernetes. The authoritative
 source for SIG information is the [`sigs.yaml`](/sigs.yaml) file in the project root.
 All updates must be done there.
@@ -49,9 +49,9 @@ To (re)build documentation for all the SIGs in a go environment, run:
 ```bash
 make generate
 ```
-or to run this inside a docker container:
+or to run this inside a container:
 ```bash
-make generate-dockerized
+make generate-containerized
 ```
 
 To build docs for one SIG, run one of these commands:
