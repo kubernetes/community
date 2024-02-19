@@ -71,7 +71,7 @@ to run a specific integration test case:
 
 ```sh
 # Run integration test TestPodUpdateActiveDeadlineSeconds with the verbose flag set.
-make test-integration WHAT=./test/integration/pods GOFLAGS="-v" KUBE_TEST_ARGS="-run ^TestPodUpdateActiveDeadlineSeconds$"
+make test-integration WHAT=./test/integration/pods GOFLAGS="-v" KUBE_TEST_ARGS="-run ^TestPodUpdateActiveDeadlineSeconds\$\$\$\$"
 ```
 
 If you set `KUBE_TEST_ARGS`, the test case will be run with only the `v1` API
