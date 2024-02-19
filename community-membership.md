@@ -39,6 +39,8 @@ remain active contributors to the community.
 ### Requirements
 
 - Enabled [two-factor authentication] on their GitHub account
+- Updated their GitHub username, company affiliation and email in [CNCF gitdm]. If you are
+  not affiliated with a company please mark yourself as "Independent".
 - Have made **multiple contributions** to the project or community, enough to
   demonstrate an **ongoing and long-term commitment** to the project.
   Contributions may include, but is not limited to:
@@ -250,3 +252,4 @@ before being able to contribute effectively.
 [continuously active]: #inactive-members
 [sig-governance-subproject-lead]: /committee-steering/governance/sig-governance.md#subproject-lead
 [sig-governance-subproject-owner]: /committee-steering/governance/sig-governance.md#subproject-owner
+[CNCF gitdm]: https://github.com/cncf/gitdm
