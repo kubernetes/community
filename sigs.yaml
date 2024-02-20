@@ -346,6 +346,10 @@ sigs:
       github: BenTheElder
       name: Benjamin Elder
   subprojects:
+  - name: apisnoop
+    description: Snooping on the Kubernetes OpenAPI communications
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/apisnoop/main/OWNERS
   - name: architecture-and-api-governance
     description: '[Described below](#architecture-and-api-governance-1)'
     owners:

@@ -65,6 +65,10 @@ The following [working groups][working-group-definition] are sponsored by sig-ar
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-architecture:
+### apisnoop
+Snooping on the Kubernetes OpenAPI communications
+- **Owners:**
+  - [kubernetes-sigs/apisnoop](https://github.com/kubernetes-sigs/apisnoop/blob/main/OWNERS)
 ### architecture-and-api-governance
 [Described below](#architecture-and-api-governance-1)
 - **Owners:**
