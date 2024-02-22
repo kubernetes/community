@@ -238,6 +238,7 @@ sigs:
       StatefulSet kinds
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/jobset/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/lws/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/apps/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/batch/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/core/v1/OWNERS
