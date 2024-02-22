@@ -91,6 +91,7 @@ channels:
   - name: contour
   - name: contributor-summit
   - name: controller-runtime
+  - name: cozystack
   - name: craft
   - name: crash-diagnostics
   - name: crd-installation
