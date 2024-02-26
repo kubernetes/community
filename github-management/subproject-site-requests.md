@@ -85,7 +85,7 @@ To do so, create an issue using the [DNS Update Request] issue template in the
   # https://github.com/kubernetes-sigs/<project> (<contact or owners>)
   <project>.sigs:
     type: CNAME
-    value: <netlify url>
+    value: kubernetes-docs.netlifyglobalcdn.com.
   ```
 - **Reason for update:** Provide a description and link to the Netlify request
   issue made in [kubernetes/org].
