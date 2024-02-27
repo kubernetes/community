@@ -37,6 +37,7 @@ channels:
     archived: true
   - name: bpfman
     id: C04UJBW2553
+  - name: br-dev
   - name: brigade
   - name: camptocamp-devops-stack
   - name: canonical-kubernetes
