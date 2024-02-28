@@ -26,7 +26,7 @@ mejor.
     - [Crear un Pull Request](#crear-un-pull-request)
     - [Ejemplo de Descripción de un Pull Request](#ejemplo-de-descripción-de-un-pull-request)
     - [Solucionar Problemas de un Pull Request](#solucionar-problemas-de-un-pull-request)
-  - [Labels](#labels)
+  - [Etiquetas](#etiquetas)
 - [Trabajar Localmente](#trabajar-localmente)
   - [Estrategia de Branch](#estrategia-de-branch)
     - [Agregar Upstream](#agregar-upstream)
