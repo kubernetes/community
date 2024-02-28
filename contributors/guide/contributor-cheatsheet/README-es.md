@@ -151,7 +151,7 @@ informa el problema en [Stack Overflow] o sigue en el [foro de Kubernetes].
 #### Crear un Issue
 
 - Utiliza una plantilla de issue si está disponible. Utilizar la correcta plantilla
-  ayudará a otros colaboradores a responder a tu issue.
+  ayudará a otros contribuidores a responder a tu issue.
   - Sigue cualquier instrucción descrita en la plantilla del issue.
 - Sé descriptivo en el issue que estás planteando.
 - Asigna las [labels] adecuadas. Si tienes dudas, el bot [k8s-ci-robot][prow]
