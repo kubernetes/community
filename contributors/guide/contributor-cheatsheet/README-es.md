@@ -158,7 +158,7 @@ informa el problema en [Stack Overflow] o sigue en el [foro de Kubernetes].
   (bot [Kubernetes CI][prow]) responderá a tu issue con las etiquetas necesarias
   para un triage correcto.
 - Sé selectivo al asignar issues usando [`/assign @<nombre de usuario>`][assign] o
-  [`/cc @<nombre de usuario>`][cc]. Tu issue se triageará de manera más efectiva aplicando
+  [`/cc @<nombre de usuario>`][cc]. Tu issue se clasificará de manera más efectiva aplicando
   labels correctas en lugar de asignar más personas al issue.
 
 
