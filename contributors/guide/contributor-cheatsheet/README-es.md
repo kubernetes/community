@@ -159,7 +159,7 @@ informa el problema en [Stack Overflow] o sigue en el [foro de Kubernetes].
   para un triage correcto.
 - Sé selectivo al asignar issues usando [`/assign @<nombre de usuario>`][assign] o
   [`/cc @<nombre de usuario>`][cc]. Tu issue se clasificará de manera más efectiva aplicando
-  labels correctas en lugar de asignar más personas al issue.
+  etiquetas correctas en lugar de asignar más personas al issue.
 
 
 #### Responder a un Issue
