@@ -325,6 +325,7 @@ git checkout -b myfeature
 ```
 
 #### Squashing Commits
+
 El propósito principal de [squashing commits] es crear un Git limpio con 
 historial legible y con log de los cambios realizados. 
 Normalmente, esto se hace en la última fase de revisión de un PR. 
