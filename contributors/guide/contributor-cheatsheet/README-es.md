@@ -1,7 +1,9 @@
 # Cheat Sheet para Colaboradores de Kubernetes
 
-Una lista de recursos comunes al contribuir a Kubernetes, consejos, trucos y mejores prácticas utilizadas dentro del proyecto Kubernetes. 
-Es un resumen o referencia rápida de información útil para mejorar tu experiencia de colaboración en GitHub.
+Una lista de recursos comunes al contribuir a Kubernetes, consejos, trucos y
+mejores prácticas comúnmente utilizadas dentro del proyecto Kubernetes. Es un
+resumen o referencia rápida de información útil para hacer tu experiencia de contribución en GitHub
+mejor.
 
 **Tabla de Contenidos**
 - [Recursos Útiles](#recursos-útiles)
