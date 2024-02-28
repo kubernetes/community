@@ -4,7 +4,6 @@ Una lista de recursos comunes al contribuir a Kubernetes, consejos, trucos y mej
 Es un resumen o referencia rápida de información útil para mejorar tu experiencia de colaboración en GitHub.
 
 **Tabla de Contenidos**
-
 - [Recursos Útiles](#recursos-útiles)
   - [Empezar](#empezar)
   - [SIGs y Otros Grupos](#sigs-y-otros-grupos)
