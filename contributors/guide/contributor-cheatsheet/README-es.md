@@ -17,7 +17,7 @@ mejor.
 - [Comunicación Efectiva en GitHub](#comunicación-efectiva-en-github)
   - [Cómo Ser Excelente Entre Sí](#cómo-ser-excelente-entre-sí)
     - [Ejemplos de una Buena/Mala Comunicación](#ejemplos-de-una-buenamala-comunicación)
-- [Presentar una Contribución](#presentar-una-contribución)
+- [Enviar una Contribución](#enviar-una-contribución)
   - [Firmar el CLA](#firmar-el-cla)
   - [Abrir y Responder Issues](#abrir-y-responder-issues)
     - [Crear un Issue](#crear-un-issue)
