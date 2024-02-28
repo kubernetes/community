@@ -154,7 +154,7 @@ informa el problema en [Stack Overflow] o sigue en el [foro de Kubernetes].
   ayudará a otros contribuidores a responder a tu issue.
   - Sigue cualquier instrucción descrita en la plantilla del issue.
 - Sé descriptivo en el issue que estás planteando.
-- Asigna las [labels] adecuadas. Si tienes dudas, el bot [k8s-ci-robot][prow]
+- Asigna las [etiquetas] adecuadas. Si tienes dudas, el bot [k8s-ci-robot][prow]
   (bot [Kubernetes CI][prow]) responderá a tu issue con las etiquetas necesarias
   para un triage correcto.
 - Sé selectivo al asignar issues usando [`/assign @<nombre de usuario>`][assign] o
