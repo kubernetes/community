@@ -147,6 +147,7 @@ informa el problema en [Stack Overflow] o sigue en el [foro de Kubernetes].
 - [Labels]
 - [Comandos de Prow][comandos]
 
+
 #### Crear un Issue
 
 - Utiliza una plantilla de issue si está disponible. Utilizar la correcta plantilla
