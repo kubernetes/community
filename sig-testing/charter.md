@@ -11,6 +11,11 @@ away project toil. We focus on creating and running tools and infrastructure
 that make it easier for the community to write and run tests, and to
 contribute, analyze and act upon test results.
 
+We define the overall testing standards, strategies and style guidelines for
+the project. Each SIG is responsible for determining how those
+guidelines apply to their work and implementing those parts
+which make sense.
+
 Although we are not responsible for ongoing test maintenance (see
 [Out of Scope] below), we will act as an escalation point of last resort for
 remediation if it is clear that misbehaving tests are harming the immediate
