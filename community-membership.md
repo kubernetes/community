@@ -41,7 +41,7 @@ remain active contributors to the community.
 - Enabled [two-factor authentication] on their GitHub account
 - Have made **multiple contributions** to the project or community, enough to
   demonstrate an **ongoing and long-term commitment** to the project.
-  Contributions may include, but is not limited to:
+  Contributions should include, but is not limited to:
     - Authoring or reviewing PRs on GitHub, with at least one **merged** PR.
       **NOTE:** The PR(s) must demonstrate an ongoing and active commitment.
       A few examples include:
