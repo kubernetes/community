@@ -15,7 +15,7 @@ label, indicating that members have committed to providing extra assistance for
 new contributors. All `good first issue` items also have the `help wanted`
 label.
 
-We also have some [suggestions](#suggestions) for using these labels to help
+We also have some [suggestions](#suggestions-for-experienced-community-members) for using these labels to help
 grow and improve our community.
 
 ## Help Wanted
