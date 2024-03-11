@@ -151,7 +151,7 @@ if *runKubeletMode { RunKubelet(); return }
 if *systemValidateMode { ValidateSpec(); return }
 ```
 
-### ginkgo.SynchronizedBeforeSuide 
+### ginkgo.SynchronizedBeforeSuite 
 
 The first inner call is a Ginkgo helper function called before running the entire suite.
 
