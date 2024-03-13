@@ -15,8 +15,10 @@ from all of them.
 DNS will start resolving service name to its newly started backends.
 - As a user of vanilla Kubernetes, I want some guarantee how quickly in-cluster
 DNS will stop resolving service name to its removed (or unhealthy) backends.
-- As a user of vanilla Kubernetes, I wasn some guarantee how quickly newly
+- As a user of vanilla Kubernetes, I want some guarantee how quickly newly
 create services will be resolvable via in-cluster DNS.
+- As a user of vanilla Kubernetes, I want some guarantee how quickly in-cluster
+DNS will start resolving headless service hostnames to its newly started backends.
 
 ### Other notes
 - We are consciously focusing on in-cluster DNS for the purpose of this SLI,
@@ -36,6 +38,10 @@ The reason for doing it this way is feasibility for efficiently computing that:
     Ready state is reflected, we would have to know when exactly it was reflected
     in 99% of programmers (e.g. iptables). That requires tracking metrics on
     per-change base (which we can't do efficiently).
+
+- The SLI is expected to remain constant independently of the number of records, per
+example, in a headless service with thousands of pods the SLI for the first and the
+last Pod should not exhibit a statistically significant difference.
 
 ### How to measure the SLI.
 There [network programming latency](./network_programming_latency.md) is
