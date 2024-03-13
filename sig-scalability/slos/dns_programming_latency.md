@@ -39,9 +39,11 @@ The reason for doing it this way is feasibility for efficiently computing that:
     in 99% of programmers (e.g. iptables). That requires tracking metrics on
     per-change base (which we can't do efficiently).
 
-- The SLI is expected to remain constant independently of the number of records, per
-example, in a headless service with thousands of pods the SLI for the first and the
-last Pod should not exhibit a statistically significant difference.
+- The SLI for DNS publishing should remain constant independent of the number of records.
+For example, in a headless service with thousands of pods the time between the pod being
+assigned an IP and the time DNS makes that IP availabe in the service's A/AAAA record(s)
+should be statisitically consistent for the first Pod and the last Pod.
+
 
 ### How to measure the SLI.
 There [network programming latency](./network_programming_latency.md) is
