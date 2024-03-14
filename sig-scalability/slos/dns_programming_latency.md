@@ -41,7 +41,7 @@ The reason for doing it this way is feasibility for efficiently computing that:
 
 - The SLI for DNS publishing should remain constant independent of the number of records.
 For example, in a headless service with thousands of pods the time between the pod being
-assigned an IP and the time DNS makes that IP availabe in the service's A/AAAA record(s)
+assigned an IP and the time DNS makes that IP available in the service's A/AAAA record(s)
 should be statisitically consistent for the first Pod and the last Pod.
 
 
