@@ -1579,7 +1579,7 @@ sigs:
     tz: UTC
     frequency: biweekly
     url: https://zoom.us/j/98193594774?pwd=VzlweTE3ckxscDRhWVFtRHp2Znlxdz09
-    archive_url: hhttps://docs.google.com/document/d/1s4KdaDEYGR-hGkxIl2sRwyXZpuVgeQD6XNxcISkA-vE
+    archive_url: https://docs.google.com/document/d/1s4KdaDEYGR-hGkxIl2sRwyXZpuVgeQD6XNxcISkA-vE
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
   - description: Korean Team Meeting
     day: Thursday
