@@ -35,7 +35,7 @@
 
 
 **New in 2023:**
-  - [Cloud Provider for KIND](https://git.k8s.io/community/<no value>#Cloud Provider for KIND)
+  - [Cloud Provider for KIND](https://sigs.k8s.io/cloud-provider-kind/)
 **Continuing:**
   - boskos
   - e2e-framework
