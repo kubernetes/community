@@ -24,6 +24,9 @@ sigs:
     - github: jpbetz
       name: Joe Betz
       company: Google
+    - github: sttts
+      name: Stefan Schimanski
+      company: Upbound
   meetings:
   - description: Kubebuilder Meeting
     day: Thursday
