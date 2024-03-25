@@ -269,6 +269,7 @@ channels:
   - name: kubectl-trace
   - name: kubectl-validate
   - name: kubedb
+    archived: true
   - name: kubeinit
   - name: kubekhan
     archived: true
@@ -276,6 +277,7 @@ channels:
   - name: kubemove
   - name: kubeone
   - name: kubepack
+    archived: true
   - name: kubestack
   - name: kubestellar-dev
   - name: kuberhealthy
@@ -406,6 +408,7 @@ channels:
   - name: paralus
   - name: pepr
   - name: pharmer
+    archived: true
   - name: pinniped
   - name: pl-users
   - name: podman-desktop
