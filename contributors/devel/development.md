@@ -267,7 +267,6 @@ version of Go. Please install the newest stable version available for
 your system. The table below lists the required Go versions for
 different versions of Kubernetes.
 
-
 | Kubernetes     | requires Go |
 |----------------|-------------|
 | 1.0 - 1.2      | 1.4.2       |
@@ -286,7 +285,34 @@ different versions of Kubernetes.
 | 1.21 - 1.22    | 1.16.7      |
 | 1.23           | 1.17        |
 | 1.24           | 1.18        |
-| 1.25+          | 1.19        |
+| 1.25           | 1.20.10     |
+| 1.26 - 1.29    | 1.21.7      |
+| 1.30           | 1.22.1      |
+
+[Go version for latest Kubernetes](https://cs.k8s.io/?q=golang%3A%20upstream%20version&i=nope&files=&excludeFiles=&repos=)
+
+To find which Go is required for a specific Kubernetes version,
+run the following commands in your Kubernetes working directory.
+Below example looks for all 1.29.z Kubernetes releases.
+
+```sh
+K8S_VERSION=1.29
+for tag in $(git tag | grep $K8S_VERSION);do git checkout -q tags/$tag;goVersion=$(cat ./build/dependencies.yaml | grep "golang: upstream version" -A 1 | grep version: | awk '{$1=$1;print}' );echo "Kubernetes $tag requires Go $goVersion";done
+```
+
+An example output will be
+```sh
+Kubernetes v1.29.0 requires Go version: 1.21.5
+Kubernetes v1.29.0-alpha.0 requires Go version: 1.20.6
+Kubernetes v1.29.0-alpha.1 requires Go version: 1.21.1
+Kubernetes v1.29.0-alpha.2 requires Go version: 1.21.2
+Kubernetes v1.29.0-alpha.3 requires Go version: 1.21.3
+Kubernetes v1.29.0-rc.0 requires Go version: 1.21.4
+Kubernetes v1.29.0-rc.1 requires Go version: 1.21.4
+Kubernetes v1.29.0-rc.2 requires Go version: 1.21.5
+Kubernetes v1.29.1 requires Go version: 1.21.6
+Kubernetes v1.29.2 requires Go version: 1.21.7
+```
 
 ##### A Note on Changing Go Versions
 
