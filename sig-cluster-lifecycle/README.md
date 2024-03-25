@@ -31,11 +31,11 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Cecile Robert-Michon (**[@CecileRobertMichon](https://github.com/CecileRobertMichon)**), Microsoft
 * Fabrizio Pandini (**[@fabriziopandini](https://github.com/fabriziopandini)**), VMware
 
 ## Emeritus Leads
 
+* Cecile Robert-Michon (**[@CecileRobertMichon](https://github.com/CecileRobertMichon)**)
 * Lucas Käldström (**[@luxas](https://github.com/luxas)**)
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**)
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**)
