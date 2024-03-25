@@ -27,7 +27,12 @@ Provide an overall architecture that describes both the current policy related i
 ## Organizers
 
 * Jim Bugwadia (**[@JimBugwadia](https://github.com/JimBugwadia)**), Kyverno/Nirmata
-* Robert Ficcaglia (**[@rficcaglia](https://github.com/rficcaglia)**), SunStone
+* Poonam Lamba (**[@poonam-lamba](https://github.com/poonam-lamba)**), Google
+* Andy Suderman (**[@sudermanjr](https://github.com/sudermanjr)**), Fairwinds
+
+## Emeritus Organizers
+
+* Robert Ficcaglia (**[@rficcaglia](https://github.com/rficcaglia)**)
 
 ## Contact
 - Slack: [#wg-policy](https://kubernetes.slack.com/messages/wg-policy)
