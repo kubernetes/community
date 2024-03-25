@@ -1729,7 +1729,7 @@ sigs:
   - name: bbolt
     description: An embedded key/value database for Go.
     owners:
-    - https://raw.githubusercontent.com/etcd-io/bbolt/master/MAINTAINERS
+    - https://raw.githubusercontent.com/etcd-io/bbolt/main/OWNERS
   - name: cetcd
     description: Serve Consul with etcd
     owners:
@@ -1741,16 +1741,16 @@ sigs:
   - name: discovery.etcd.io
     description: Kubernetes manifests powering discovery.etcd.io
     owners:
-    - https://raw.githubusercontent.com/etcd-io/discovery.etcd.io/master/MAINTAINERS
+    - https://raw.githubusercontent.com/etcd-io/discovery.etcd.io/master/OWNERS
   - name: discoveryserver
     description: Public etcd Discovery Service
     owners:
-    - https://raw.githubusercontent.com/etcd-io/discoveryserver/master/MAINTAINERS
+    - https://raw.githubusercontent.com/etcd-io/discoveryserver/master/OWNERS
   - name: etcd
     description: Distributed reliable key-value store for the most critical data of
       a distributed system
     owners:
-    - https://raw.githubusercontent.com/etcd-io/etcd/master/MAINTAINERS
+    - https://raw.githubusercontent.com/etcd-io/etcd/main/OWNERS
   - name: etcd-play
     description: etcd playground
     owners:
@@ -1762,15 +1762,15 @@ sigs:
   - name: gofail
     description: failpoints for go
     owners:
-    - https://raw.githubusercontent.com/etcd-io/gofail/master/MAINTAINERS
+    - https://raw.githubusercontent.com/etcd-io/gofail/master/OWNERS
   - name: govanityurls
     description: Use a custom domain in your Go import path
     owners:
-    - https://raw.githubusercontent.com/etcd-io/govanityurls/master/MAINTAINERS
+    - https://raw.githubusercontent.com/etcd-io/govanityurls/master/OWNERS
   - name: jetcd
     description: etcd java client
     owners:
-    - https://raw.githubusercontent.com/etcd-io/jetcd/master/MAINTAINERS
+    - https://raw.githubusercontent.com/etcd-io/jetcd/main/OWNERS
   - name: maintainers
     description: issue tracking for project wide non-code concerns
     owners:
@@ -1778,15 +1778,15 @@ sigs:
   - name: protodoc
     description: protodoc generates Protocol Buffer documentation.
     owners:
-    - https://raw.githubusercontent.com/etcd-io/protodoc/master/MAINTAINERS
+    - https://raw.githubusercontent.com/etcd-io/protodoc/master/OWNERS
   - name: raft
     description: Raft library for maintaining a replicated state machine
     owners:
-    - https://raw.githubusercontent.com/etcd-io/raft/master/MAINTAINERS
+    - https://raw.githubusercontent.com/etcd-io/raft/main/OWNERS
   - name: website
     description: etcd-io
     owners:
-    - https://raw.githubusercontent.com/etcd-io/website/master/MAINTAINERS
+    - https://raw.githubusercontent.com/etcd-io/website/main/OWNERS
   - name: zetcd
     description: Serve the Apache Zookeeper API but back it with an etcd cluster
     owners:
