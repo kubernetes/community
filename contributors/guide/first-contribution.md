@@ -121,6 +121,7 @@ community directories:
 - [`/sig-apps/CONTRIBUTING.md`](/sig-apps/CONTRIBUTING.md)
 - [`/sig-cli/CONTRIBUTING.md`](/sig-cli/CONTRIBUTING.md)
 - [`/sig-multicluster/CONTRIBUTING.md`](/sig-multicluster/CONTRIBUTING.md)
+- [`/sig-node/CONTRIBUTING.md`](/sig-node/CONTRIBUTING.md)
 - [`/sig-storage/CONTRIBUTING.md`](/sig-storage/CONTRIBUTING.md)
 - [`/sig-windows/CONTRIBUTING.md`](/sig-windows/CONTRIBUTING.md)
 
