@@ -147,13 +147,35 @@ require going through the LF.
 Other options exist and should be evaluated when making your decision for the
 registration system.
 
+### Communications
+
+Work with the Communications Lead to include the link to the registration page and future 
+communications efforts to drive registration.
 
 ### Approval Process
 
-TODO - update doc with new process - query to get org members below:
+The Kubernetes Contributor Summit are for active contributors to the Kubernetes project.
+Registrants will be approved if they are org members of one of the following Kubernetes Orgs:
+kubernetes, kubernetes-client, kubernetes-csi, kubernetes-sigs, etcd-io.
+
+A SIG lead (co-chair, tech lead, subproject lead) can sponsor a non-org member to attend the summit.
+Kubernetes Contributor Summit speakers who are non-org members can attend the summit.
+
+There will be a  **Kubernetes Contributor Summit Planning Doc** , in the past this 
+was a Google Spreadsheet.
+
+As soon as the **Kubernetes Contributor Summit Planning Doc** is available, populate 
+the **org - DO NOT DELTE** tab (the name may change in the future but is always the 
+tab that compares if the registrant is an org member) in the 
+**Kubernetes Contributor Summit Planning Doc**.
+
+There are 2 options to create a list of org members:
 
 ```
+git clone https://github.com/kubernetes/org.git
+cd org
 yq '.admins + .members' \
+  config/etcd-io/org.yaml \
   config/kubernetes/org.yaml \
   config/kubernetes-client/org.yaml \
   config/kubernetes-csi/org.yaml \
@@ -162,7 +184,36 @@ yq '.admins + .members' \
   | sed -e 's/"//g' > members.txt
 ```
 
+an alternative is 
 
+```
+git clone https://github.com/kubernetes/org.git
+cd org
+yq '.admins + .members' \
+  config/etcd-io/org.yaml \
+  config/kubernetes/org.yaml \
+  config/kubernetes-client/org.yaml \
+  config/kubernetes-csi/org.yaml \
+  config/kubernetes-sigs/org.yaml \
+  | sed -e 's/---//g' | sed -e 's/- //g' \
+  | sed -e 's/"//g' | sed -e '/^$/d' \
+  | awk '{print tolower($0)}' | sort | uniq > members.txt
+```
+
+Populate what's in members.txt in the **org - DO NOT DELTE** tab in the 
+**Kubernetes Contributor Summit Planning Doc**.
+
+Create a list of staff, shadows, volunteers including day-of volunteers. You can 
+create this list from the GitHub staffing issue e.g. https://github.com/kubernetes/community/issues/7611
+and query the Summit Staff leads for their day-of volunteers. The Day-of Operations
+team will likely have volunteers not listed on the GitHub staffing issue.
+
+Once the talks for the Kubernetes Contributor Summit have been selected, create 
+a list of speakers and note if any are not org members so they an be approved
+when they register.
+
+Review past declined registrants if any are speakers, email them to re-register 
+for the Contributor Summit.
 
 An approval process for registration is commonly used for multiple reasons, but
 really boils down to ensuring the right people are in the right track or room.
@@ -193,6 +244,20 @@ audience and that they may get more out of the other track. Use your best
 judgement. If you are unsure, reach out to other Event organizers or other
 members of SIG-Contributor Experience for their opinion on the matter.
 
+
+### Dietary Requirements
+
+Confirm with the CNCF staff rep on who will keep track of dietary requirements.
+If there are any email requests, add them to the **Dietary Requirements** tab 
+in the **Kubernetes Contributor Summit Planning Doc** and notify the CNCF staff
+rep.
+
+### Celebration Guests
+
+The CNCF staff may have the ability to keep track of registrants who are bringing
+a plus 1 to the social. There may be emails to request to bring a plus 1.
+Add any requests via email to the **Celebration Guests** tab in the 
+**Kubernetes Contributor Summit Planning Doc**.
 
 #### Helpful Approval Tips and Facts
 
@@ -250,7 +315,11 @@ combined with the post-event survey data, can provide insights in the event
 itself.
 
 
+## Registration at the Contributor Summit
 
+If there is a registration desk / badge pickup at the Contributor Summit, 
+it is helpful to have a Registration Team member at the registration desk during 
+the morning of the Kubernetes Contributor Summit to assist with questions.
 
 
 [sched]: http://sched.com
