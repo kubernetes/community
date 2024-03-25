@@ -38,7 +38,7 @@ performing any real work, or making any network requests.
 ### Configuration and Setup
 
 Kubernetes components should expose a flag, `--tracing-config-file`, which accepts a
-[TracingConfiguration](https://github.com/kubernetes/kubernetes/blob/cb989b84c82ab8c695d02c9a1866bc27de37caec/staging/src/k8s.io/component-base/tracing/api/v1/types.go)
+[TracingConfiguration](https://kubernetes.io/docs/reference/config-api/apiserver-config.v1beta1/#apiserver-k8s-io-v1beta1-TracingConfiguration)
 object. The `component-base/tracing` library provides a `NewProvider()` helper
 to convert a TracingConfiguration to a TracerProvider, which can be used to
 record spans. Components should avoid using OpenTelemetry globals, and instead
@@ -66,6 +66,10 @@ Follow the OpenTelemetry [guidelines for span naming](https://opentelemetry.io/d
 ### Tracing stability
 
 Tracing instrumentation in Kubernetes components does not currently have
-stability guarantees. Component owners should avoid breaking context
-propagation, or removing trace instrumentation entirely. Component owners may
-rename spans, or span attributes.
+stability guarantees, but component owners should be aware of which changes are
+breaking to users so such changes are done with proper consideration. In
+particular, is is breaking for users for a component to stop propagating
+context in a way that breaks parent/child relationships for spans, to remove
+spans without replacement, or to remove an attribute from a span without
+replacement. Component owners should not treat general modification spans
+(e.g. renaming the span, or renaming an attribute) as breaking.
