@@ -45,7 +45,7 @@ Most of our SIG members are contributors from at least one cloud provider. We tr
 
 **What programs do you participate in for new contributors?**
 
-None, our contributors tend to be representatives from the various companies who provider Kubernetes on the Cloud. It would be nice to expand this however.
+None, our contributors tend to be representatives from the various companies who provide Kubernetes on the Cloud. It would be nice to expand this however.
 
 **Does the group have contributors from multiple companies/affiliations? Can end users/companies contribute in some way that they currently are not?**
 
