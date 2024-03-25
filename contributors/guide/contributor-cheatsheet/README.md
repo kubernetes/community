@@ -420,4 +420,4 @@ git push --force
 [Security and Disclosure Information]: https://kubernetes.io/docs/reference/issues-security/security/
 [approve]: https://prow.k8s.io/command-help#approve
 [GitHub Administration Team]: /github-management#github-administration-team
-[Kubernetes Patch Release]: https://github.com/kubernetes/sig-release/blob/master/releases/patch-releases.md
+[Kubernetes Patch Release]: https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md
