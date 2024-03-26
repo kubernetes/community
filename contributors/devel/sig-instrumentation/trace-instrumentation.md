@@ -68,7 +68,7 @@ Follow the OpenTelemetry [guidelines for span naming](https://opentelemetry.io/d
 Tracing instrumentation in Kubernetes components does not currently have
 stability guarantees, but component owners should be aware of which changes are
 breaking to users so such changes are done with proper consideration. In
-particular, is is breaking for users for a component to stop propagating
+particular, it is breaking for users for a component to stop propagating
 context in a way that breaks parent/child relationships for spans, to remove
 spans without replacement, or to remove an attribute from a span without
 replacement. Component owners should not treat general modification spans
