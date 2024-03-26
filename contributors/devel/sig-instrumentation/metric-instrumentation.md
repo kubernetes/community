@@ -1,4 +1,4 @@
-## Instrumenting Kubernetes
+## Instrumenting Kubernetes with Metrics
 
 The following references and outlines general guidelines for metric instrumentation
 in Kubernetes components. Components are instrumented using the
