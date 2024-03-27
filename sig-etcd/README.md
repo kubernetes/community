@@ -74,6 +74,16 @@ Public etcd Discovery Service
 Distributed reliable key-value store for the most critical data of a distributed system
 - **Owners:**
   - [etcd-io/etcd](https://github.com/etcd-io/etcd/blob/main/OWNERS)
+### etcd-operator
+New generation community-driven etcd-operator!
+- **Owners:**
+  - [kubernetes-sigs/etcd-operator](https://github.com/kubernetes-sigs/etcd-operator/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#etcd-operator](https://kubernetes.slack.com/messages/etcd-operator)
+  - [Mailing List](https://groups.google.com/g/etcd-operator-dev)
+- **Meetings:**
+  - etcd-operator Office Hours: [Tuesdays at 16:00 CET (Central European Time)](https://meet.google.com/fmn-sogk-ofb) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=CET%20%28Central%20European%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1coiWlHOVfPAIyKqtfpYLhq9eeRPHCuuMxmNmVfo9-sA/edit).
 ### etcd-play
 etcd playground
 - **Owners:**

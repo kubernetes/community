@@ -1751,6 +1751,21 @@ sigs:
       a distributed system
     owners:
     - https://raw.githubusercontent.com/etcd-io/etcd/main/OWNERS
+  - name: etcd-operator
+    description: New generation community-driven etcd-operator!
+    contact:
+      slack: etcd-operator
+      mailing_list: https://groups.google.com/g/etcd-operator-dev
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/etcd-operator/main/OWNERS
+    meetings:
+    - description: etcd-operator Office Hours
+      day: Tuesday
+      time: "16:00"
+      tz: CET (Central European Time)
+      frequency: weekly
+      url: https://meet.google.com/fmn-sogk-ofb
+      archive_url: https://docs.google.com/document/d/1coiWlHOVfPAIyKqtfpYLhq9eeRPHCuuMxmNmVfo9-sA/edit
   - name: etcd-play
     description: etcd playground
     owners:

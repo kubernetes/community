@@ -126,6 +126,7 @@ channels:
   - name: emea-users
   - name: eraser
   - name: es-users
+  - name: etcd-operator
   - name: etcdadm
   - name: evented-pleg
   - name: events
