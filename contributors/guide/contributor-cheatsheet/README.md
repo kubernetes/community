@@ -373,7 +373,7 @@ git rebase -i HEAD~3
 git push --force
 ```
 
-**Note**: you can also ask your reviewer to add the `tide/merge-method-squash` label to your PR (this can be done by a reviewer by issuing the command: `/label tide/merge-method-squash`), this will let the bot take care of squashing _all_ commits that are part of this PR and will not result in removal of the `LGTM` label (if already applied) or re-run of the CI tests.
+**Note**: you can also use the bot to help squash commits, please see [squashing commits] for more details.
 
 [contributor course]: https://www.kubernetes.dev/docs/onboarding
 [contributor guide]: /contributors/guide/README.md

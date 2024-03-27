@@ -318,7 +318,47 @@ For more information, see [squash commits](./github-workflow.md#squash-commits).
  For instance, writing a code munger could be one commit, applying it could be another, and adding a precommit check could be a third.
  One could argue they should be separate pull requests, but there's really no way to test/review the munger without seeing it applied, and there needs to be a precommit check to ensure the munged output doesn't immediately get out of date.
  
-**Note**: you can also ask your reviewer to add the `tide/merge-method-squash` label to your PR (this can be done by a reviewer by issuing the command: `/label tide/merge-method-squash`), this will let the bot take care of squashing _all_ commits that are part of this PR and will not result in removal of the `LGTM` label (if already applied) or re-run of the CI tests.
+**Note**: you can also use the `tide/merge-method-squash` label on your PR to let the bot handle squashing 
+_all_ commits, which can be done by commenting `/label tide/merge-method-squash`. As opposed to squashing by hand, this will prevent removal of the `lgtm` label (if already applied) and re-run of the CI tests. Although,
+if this label is used, please know the following:
+
+- All commit messages will be squashed and combined and the final commit message will be a combination of all
+  commit messages according to how GitHub generates the [message for a squash merge](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#merge-message-for-a-squash-merge), for example, if this is the lifecycle of your PR:
+  ```
+  # commit 1
+  Original commit msg
+
+  Some useful information
+  Some more useful information
+  ```
+  ```
+  # commit 2
+  Address review comments
+  ```
+  ```
+  # commit 3
+  Fix test
+  ```
+  After applying the label, if the PR is merged, the final commit message will end up being:
+  ```
+  Title of your PR (#PR-number)
+
+  * Original commit msg
+
+  Some useful information
+  Some more useful information
+
+  * Address review comments
+
+  * Fix test
+  ```
+  Since commit messages are meant to be a record of the "why" and "what" of your changes, having 
+  messages like "Address review comments" in the final commit message adds no real value in terms
+  of communicating the "what"s and "why"s of your change. Please see [Commit Message Guidelines](#commit-message-guidelines) for more details on writing better commit messages.
+
+  Using this label can help when squashing by hand is considered too challenging or not worth the
+  extra effort. It can also speed up merging because squashing by hand implies getting another LGTM
+  from a reviewer and re-run of the CI tests.
 
 ## Commit Message Guidelines
 
