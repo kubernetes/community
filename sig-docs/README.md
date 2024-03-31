@@ -17,7 +17,7 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 * APAC SIG Meeting: [Wednesdays at 05:30 UTC](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit) (monthly - Wednesday, after the fourth Tuesday, every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=05:30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
-* Arabic Team Meeting: [Wednesdays at 18:00 UTC](https://zoom.us/j/98193594774?pwd=VzlweTE3ckxscDRhWVFtRHp2Znlxdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
+* Arabic Team Meeting: [Wednesdays at 17:00 UTC](https://zoom.us/j/98193594774?pwd=VzlweTE3ckxscDRhWVFtRHp2Znlxdz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17:00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1s4KdaDEYGR-hGkxIl2sRwyXZpuVgeQD6XNxcISkA-vE).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 * Korean Team Meeting: [Thursdays at 13:00 UTC](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=UTC).

@@ -1575,9 +1575,9 @@ sigs:
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
   - description: Arabic Team Meeting
     day: Wednesday
-    time: "18:00"
+    time: "17:00"
     tz: UTC
-    frequency: biweekly
+    frequency: weekly
     url: https://zoom.us/j/98193594774?pwd=VzlweTE3ckxscDRhWVFtRHp2Znlxdz09
     archive_url: https://docs.google.com/document/d/1s4KdaDEYGR-hGkxIl2sRwyXZpuVgeQD6XNxcISkA-vE
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
