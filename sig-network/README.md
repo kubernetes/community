@@ -72,6 +72,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-network:
+* [WG Device Management](/wg-device-management)
 * [WG Policy](/wg-policy)
 * [WG Structured Logging](/wg-structured-logging)
 

@@ -63,6 +63,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 The following [working groups][working-group-definition] are sponsored by sig-scheduling:
 * [WG Batch](/wg-batch)
+* [WG Device Management](/wg-device-management)
 * [WG Policy](/wg-policy)
 * [WG Structured Logging](/wg-structured-logging)
 
