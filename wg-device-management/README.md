@@ -29,7 +29,7 @@ The [charter](charter.md) defines the scope and governance of the Device Managem
 ## Organizers
 
 * John Belamaric (**[@johnbelamaric](https://github.com/johnbelamaric)**), Google
-* Kevin Klues (**[@kklues](https://github.com/kklues)**), NVIDIA
+* Kevin Klues (**[@klueska](https://github.com/klueska)**), NVIDIA
 * Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel
 
 ## Contact
