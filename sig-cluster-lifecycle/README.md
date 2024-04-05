@@ -206,7 +206,7 @@ Cluster API infrastructure provider for vSphere
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
   - Cluster API vSphere meeting: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/92253194848?pwd=cVVVNDMxeTl1QVJPUlpvLzNSVU1JZz09) (biweekly starting Thursday June 25th, 2020). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1jQrQiOW75uWraPk4b_LWtCTHwT7EZwrWWwMdxeWOEvk/edit?usp=sharing).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/15CD2VOdkCAEcq2mm5FVoPO8M4-0a2SA2ajHLFBYqz7c/edit?usp=sharing).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu).
 ### etcdadm
 A command-line tool for operating etcd clusters
