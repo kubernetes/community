@@ -170,6 +170,26 @@ See `kubetest2 gce --help` for more options. Note that the different
 deployer and tester plugins have their own additional options, which
 can be seen in their help listings.
 
+### Testing the specified modules
+
+Usually the entire e2e test is very time-consuming. At this time, you may only want to test the modules you are interested in or some modified tests. 
+You can modify the file `test/e2e/e2e_test.go` or `test/e2e/common/imports.go` like this. Comment out the modules you don't want to test, and then execute:
+
+```sh
+make WHAT=test/e2e/e2e.test
+```
+
+When the test is executed subsequently, only the tests of the imported module will be executed
+For example, below the tests for the `autoscaling` and `cloud` modules are commented out so only the tests for the `common` module will be executed.
+
+```go
+import (
+	//_ "k8s.io/kubernetes/test/e2e/autoscaling"
+	//_ "k8s.io/kubernetes/test/e2e/cloud"
+	_ "k8s.io/kubernetes/test/e2e/common"
+)
+```
+
 ### Cleaning Up
 
 During a run, pressing **Control-C** should result in an orderly
