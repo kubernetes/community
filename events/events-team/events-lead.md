@@ -41,6 +41,7 @@ next 12 months.
 - Ensure the overall event is a great experience for all contributors
 - Recruit a core team (see [best-practices.md]) and help recruit other volunteers
   as necessary
+- Ensure that all members of the event team (plus shadows) are added to the correct [groups](https://github.com/kubernetes/k8s.io)
 - Create an event strategy with the Content Lead(s) and consider having a social
   event (decide if social needs it's own lead)
 - Provide venue ideas and suggestions to CNCF; do a walk through if possible
