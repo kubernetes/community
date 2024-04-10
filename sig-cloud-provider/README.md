@@ -30,14 +30,15 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Andrew Sy Kim (**[@andrewsykim](https://github.com/andrewsykim)**), Google
 * Walter Fender (**[@cheftako](https://github.com/cheftako)**), Google
-* Nick Turner (**[@nckturner](https://github.com/nckturner)**), Amazon
+* Michael McCune (**[@elmiko](https://github.com/elmiko)**), Red Hat
 
 ## Emeritus Leads
 
+* Andrew Sy Kim (**[@andrewsykim](https://github.com/andrewsykim)**)
 * Chris Hoge (**[@hogepodge](https://github.com/hogepodge)**)
 * Jago Macleod (**[@jagosan](https://github.com/jagosan)**)
+* Nick Turner (**[@nckturner](https://github.com/nckturner)**)
 
 ## Contact
 - Slack: [#sig-cloud-provider](https://kubernetes.slack.com/messages/sig-cloud-provider)
