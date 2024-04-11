@@ -510,6 +510,7 @@ channels:
   - name: tanzu-community-edition
     archived: true
   - name: tanzu-streaming-runtimes
+  - name: terraform-kops
   - name: terraform-providers
   - name: terranetes
   - name: test-failures
