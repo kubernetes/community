@@ -13,7 +13,18 @@
    - work not tracked in KEPs
 -->
 
+- KEPs being worked on:
+    - Prevent unauthorized volume mode conversion moved to Beta in 1.27: https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3141-prevent-volume-mode-conversion
+    - Volume Group Snapshot moved to Alpha in 1.27: https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3476-volume-group-snapshot
+    - Changed Block Tracking KEP was being reviewed and progress has been made: https://github.com/kubernetes/enhancements/pull/4082
+
+- KubeCon updates
+  - KubeCon NA 2023: https://www.youtube.com/watch?v=GRlXQcBR3wE
+  - KubeCon EU 2023: https://www.youtube.com/watch?v=qutcX-HjPk8
+  - KubeCon China 2023: https://www.youtube.com/watch?v=1jYrKcdOO8s
+
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
+  - If more end users/companies can attend our meetings, provide feedback, and contribute to design/implementation of the features we are working on, that will be great.
 
 ## Operational
 
