@@ -2975,6 +2975,12 @@ sigs:
     - github: timothysc
       name: Timothy St. Clair
   meetings:
+  - description: Hydrophone Office Hours
+    day: Tuesday
+    time: "13:00"
+    tz: PT (Pacific Time)
+    frequency: bi-weekly starting Tuesday April 16, 2024
+    url: https://zoom.us/j/92022289212?pwd=VU5UWEtuU3ZYTmlYS3hSU3hLbTA0Zz09
   - description: SIG Testing Bi-Weekly Meeting
     day: Tuesday
     time: "10:00"
