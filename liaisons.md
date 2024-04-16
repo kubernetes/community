@@ -60,6 +60,7 @@ members will assume one of the departing members groups.
 | [WG Device Management](wg-device-management/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [WG LTS](wg-lts/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [WG Policy](wg-policy/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
+| [WG Serving](wg-serving/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [WG Structured Logging](wg-structured-logging/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [Committee Code of Conduct](committee-code-of-conduct/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [Committee Security Response](committee-security-response/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |

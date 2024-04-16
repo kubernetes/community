@@ -3481,6 +3481,50 @@ workinggroups:
     liaison:
       github: pohly
       name: Patrick Ohly
+- dir: wg-serving
+  name: Serving
+  mission_statement: >
+    Discuss and enhance the support of inference serving for accelerated workloads
+    in Kubernetes. Make Kubernetes the natural choice for hosting production inference
+    reliably, and improve all serving workloads along the way.
+
+  charter_link: charter.md
+  stakeholder_sigs:
+  - Apps
+  - Architecture
+  - Autoscaling
+  - Instrumentation
+  - Network
+  - Node
+  - Scheduling
+  - Storage
+  label: serving
+  leadership:
+    chairs:
+    - github: ArangoGutierrez
+      name: Eduardo Arango
+      company: NVIDIA
+    - github: SergeyKanzhelev
+      name: Sergey Kanzhelev
+      company: Google
+    - github: terrytangyuan
+      name: Yuan Tang
+      company: Red Hat
+  meetings:
+  - description: WG Serving weekly meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com))
+    day: Wednesday
+    time: 9:00 AM
+    tz: PT (Pacific Time)
+    frequency: weekly
+    url: https://zoom.us/j/93517402529?pwd=RnkwUUQ4L3J2QmNYYlNBcnZGbXcvQT09
+    archive_url: https://docs.google.com/document/d/1aExJFtaLnO-TM6_2uILgI8NI0IjOm7FcwLABBKEMEo0/edit
+    recordings_url: https://www.youtube.com/playlist?list=TODO
+  contact:
+    slack: wg-serving
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-serving
+    liaison:
+      github: soltysh
+      name: Maciej Szulik
 - dir: wg-structured-logging
   name: Structured Logging
   mission_statement: >

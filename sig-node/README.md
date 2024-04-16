@@ -55,6 +55,7 @@ The following [working groups][working-group-definition] are sponsored by sig-no
 * [WG Batch](/wg-batch)
 * [WG Device Management](/wg-device-management)
 * [WG Policy](/wg-policy)
+* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 

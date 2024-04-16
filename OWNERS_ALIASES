@@ -142,6 +142,10 @@ aliases:
     - JimBugwadia
     - poonam-lamba
     - sudermanjr
+  wg-serving-leads:
+    - ArangoGutierrez
+    - SergeyKanzhelev
+    - terrytangyuan
   wg-structured-logging-leads:
     - mengjiao-liu
     - pohly
