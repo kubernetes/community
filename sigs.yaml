@@ -3339,51 +3339,6 @@ workinggroups:
     liaison:
       github: pohly
       name: Patrick Ohly
-- dir: wg-iot-edge
-  name: IoT Edge
-  mission_statement: >
-    A Working Group dedicated to discussing, designing and documenting using Kubernetes
-    for developing and deploying IoT and Edge specific applications
-
-  stakeholder_sigs:
-  - Multicluster
-  - Network
-  label: iot-edge
-  leadership:
-    chairs:
-    - github: cantbewong
-      name: Steve Wong
-      company: VMware
-    - github: cindyxing
-      name: Cindy Xing
-      company: Microsoft
-    - github: dejanb
-      name: Dejan Bosanac
-      company: Red Hat
-    emeritus_leads:
-    - github: ptone
-      name: Preston Holmes
-  meetings:
-  - description: APAC WG Meeting
-    day: Wednesday
-    time: "5:00"
-    tz: UTC
-    frequency: every four weeks
-    url: https://zoom.us/j/91251176046?pwd=cmdqclovM3R3eDB1VlpuL1ZGU1hnZz09
-    archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
-  - description: Regular WG Meeting (Pacific Time)
-    day: Wednesday
-    time: "09:00"
-    tz: PT
-    frequency: every four weeks
-    url: https://zoom.us/j/92778512626?pwd=MXhlemwvYnhkQmkxeXllQ0Z5VGs4Zz09
-    archive_url: https://docs.google.com/document/d/1Yuwy9IO4X6XKq2wLW0pVZn5yHQxlyK7wdYBZBXRWiKI/edit?usp=sharing
-  contact:
-    slack: wg-iot-edge
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-iot-edge
-    liaison:
-      github: pohly
-      name: Patrick Ohly
 - dir: wg-lts
   name: LTS
   mission_statement: >

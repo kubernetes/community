@@ -57,7 +57,6 @@ members will assume one of the departing members groups.
 | [WG API Expression](wg-api-expression/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG Batch](wg-batch/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
 | [WG Data Protection](wg-data-protection/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
-| [WG IoT Edge](wg-iot-edge/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [WG LTS](wg-lts/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
 | [WG Policy](wg-policy/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [WG Structured Logging](wg-structured-logging/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |

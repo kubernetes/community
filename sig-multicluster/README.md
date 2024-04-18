@@ -47,7 +47,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-multicluster:
-* [WG IoT Edge](/wg-iot-edge)
 * [WG Policy](/wg-policy)
 
 
