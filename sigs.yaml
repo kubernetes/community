@@ -664,19 +664,13 @@ sigs:
   label: cli
   leadership:
     chairs:
-    - github: KnVerey
-      name: Katrina Verey
-      company: Independent
-    - github: eddiezane
-      name: Eddie Zaneski
-      company: Defense Unicorns
+    - github: ardaguclu
+      name: Arda Guclu
+      company: Red Hat
     - github: mpuckett159
       name: Marly Puckett
       company: Independent
     tech_leads:
-    - github: KnVerey
-      name: Katrina Verey
-      company: Independent
     - github: eddiezane
       name: Eddie Zaneski
       company: Defense Unicorns
@@ -686,6 +680,8 @@ sigs:
     emeritus_leads:
     - github: AdoHe
       name: Tony Ado
+    - github: KnVerey
+      name: Katrina Verey
     - github: fabianofranz
       name: Fabiano Franz
     - github: natasha41575
