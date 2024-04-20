@@ -2272,6 +2272,7 @@ sigs:
     contact:
       slack: sig-network-policy-api
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kube-network-policies/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
   - name: node-ipam-controller
