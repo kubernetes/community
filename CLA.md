@@ -11,7 +11,7 @@ and [vendor](https://git.k8s.io/kubernetes/vendor).
 
 It is important to read and understand this legal agreement.
 
-## How do I sign?
+## How do I sign? (note: Bot will automatically remind you once you started contributing and created a Pull Request.)
 
 After creating your first Pull Request, the linux-foundation-easycla bot will respond with information regarding your CLA status along with a link to sign the CLA.
 
