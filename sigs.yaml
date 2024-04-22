@@ -603,9 +603,12 @@ sigs:
     - github: gjtempleton
       name: Guy Templeton
       company: Skyscanner
+    - github: maciekpytel
+      name: Maciek Pytel
+      company: Google
+    emeritus_leads:
     - github: mwielgus
       name: Marcin Wielgus
-      company: Google
   meetings:
   - description: Regular SIG Meeting
     day: Monday
