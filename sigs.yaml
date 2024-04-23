@@ -3088,15 +3088,7 @@ sigs:
       name: Dan Romlein
     - github: jeefy
       name: Jeffrey Sica
-  meetings:
-  - description: SIG Meeting
-    day: ""
-    time: ""
-    tz: ""
-    frequency: on demand
-    url: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
-    archive_url: https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing
-    recordings_url: https://www.youtube.com/watch?v=r3pL8i3wPhk&list=PL69nYSiGNLP35H5MZbg9OU6pqpfWgtbLm
+  meetings: []
   contact:
     slack: sig-ui
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
