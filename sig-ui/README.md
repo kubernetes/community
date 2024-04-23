@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the UI Special Int
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Thursdays at 09:00 PT (Pacific Time)](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+* SIG Meeting: [s at  ](https://groups.google.com/forum/#!forum/kubernetes-sig-ui) (on demand). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=&tz=).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/watch?v=r3pL8i3wPhk&list=PL69nYSiGNLP35H5MZbg9OU6pqpfWgtbLm).
 
@@ -23,8 +23,8 @@ The [charter](charter.md) defines the scope and governance of the UI Special Int
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Sebastian Florek (**[@floreks](https://github.com/floreks)**), Kubermatic
-* Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**), Kubermatic
+* Sebastian Florek (**[@floreks](https://github.com/floreks)**), Plural
+* Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**), Plural
 * Shu Muto (**[@shu-mutou](https://github.com/shu-mutou)**), NEC
 
 ## Emeritus Leads
@@ -43,7 +43,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [subprojects][subproject-definition] are owned by sig-ui:
 ### dashboard
 - **Owners:**
-  - [kubernetes-sigs/dashboard-metrics-scraper](https://github.com/kubernetes-sigs/dashboard-metrics-scraper/blob/master/OWNERS)
   - [kubernetes/dashboard](https://github.com/kubernetes/dashboard/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects

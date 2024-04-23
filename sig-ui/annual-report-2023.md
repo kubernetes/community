@@ -3,6 +3,9 @@
 ## Current initiatives and Project Health
 
 1. What work did the SIG do this year that should be highlighted?
+   - Released Kubernetes Dashboard v3.0.0 alpha that introduced major architecture
+   changes and a multi-container deployment. 
+   - Added support for the latest Kubernetes release at the time.
 
 <!--
    Some example items that might be worth highlighting:
@@ -13,6 +16,7 @@
 -->
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
+   - None
 
 <!--
    Note: This list is generated from the KEP metadata in kubernetes/enhancements repository.
@@ -21,10 +25,7 @@
 -->
 
 3. Did you have community-wide updates in 2023 (e.g. KubeCon talks)?
-None
-<!--
-  Examples include links to email, slides, or recordings.
--->
+   - None
 
 4. KEP work in 2023 (v1.27, v1.28, v1.29):
    - None
