@@ -2513,6 +2513,10 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-engineering/OWNERS
     - https://raw.githubusercontent.com/kubernetes/website/main/content/en/releases/OWNERS
     - https://raw.githubusercontent.com/kubernetes/website/main/data/releases/OWNERS
+    leads:
+    - github: xmudrii
+      name: Marko Mudrinić
+      company: Kubermatic
   - name: Release Team
     description: |
       The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
@@ -2532,6 +2536,12 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/release-team-shadow-stats/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
+    leads:
+    - github: gracenng
+      name: Grace Nguyen
+    - github: katcosgrove
+      name: Kat Cosgrove
+      company: Dell
   - name: SIG Release Process Documentation
     description: |
       Documents and processes related to SIG Release
