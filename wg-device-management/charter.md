@@ -88,8 +88,8 @@ five primary groups of stakeholders from each of which we expect multiple partic
 
 ## Roles and Organization Management
 
-This sig follows adheres to the Roles and Organization Management outlined in [wg-governance]
-and opts-in to updates and modifications to [wg-governance].
+This working group adheres to the Roles and Organization Management outlined in
+[wg-governance] and opts-in to updates and modifications to [wg-governance].
 
 ## Exit Criteria
 
