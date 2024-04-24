@@ -79,7 +79,6 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
 - **Owners:**
   - [kubernetes-sigs/container-object-storage-interface-api](https://github.com/kubernetes-sigs/container-object-storage-interface-api/blob/master/OWNERS)
   - [kubernetes-sigs/container-object-storage-interface-controller](https://github.com/kubernetes-sigs/container-object-storage-interface-controller/blob/master/OWNERS)
-  - [kubernetes-sigs/container-object-storage-interface-csi-adapter](https://github.com/kubernetes-sigs/container-object-storage-interface-csi-adapter/blob/master/OWNERS)
   - [kubernetes-sigs/container-object-storage-interface-provisioner-sidecar](https://github.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar/blob/master/OWNERS)
   - [kubernetes-sigs/container-object-storage-interface-spec](https://github.com/kubernetes-sigs/container-object-storage-interface-spec/blob/master/OWNERS)
   - [kubernetes-sigs/cosi-driver-sample](https://github.com/kubernetes-sigs/cosi-driver-sample/blob/master/OWNERS)
