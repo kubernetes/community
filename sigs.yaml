@@ -3412,9 +3412,15 @@ workinggroups:
     - github: JimBugwadia
       name: Jim Bugwadia
       company: Kyverno/Nirmata
+    - github: poonam-lamba
+      name: Poonam Lamba
+      company: Google
+    - github: sudermanjr
+      name: Andy Suderman
+      company: Fairwinds
+    emeritus_leads:
     - github: rficcaglia
       name: Robert Ficcaglia
-      company: SunStone
   meetings:
   - description: Regular WG Meeting
     day: Wednesday
