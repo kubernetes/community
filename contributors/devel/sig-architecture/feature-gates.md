@@ -9,6 +9,30 @@ Feature gates are intended to cover the development life cycle of a feature - th
 Features generally progress through `Alpha` -> `Beta` -> `GA`. Sometimes we end up deciding that a feature is not going to be supported and we end up marking them as `Deprecated`.
 
 The majority of features will go through all three stages, but occasionally there are features which may skip stages.
+While some exceptions may happen, approvers should use the following guidance:
+- features that involve [API changes] must progress through all `Alpha`, `Beta`, `GA` stages
+- features that are unproven at achieving their goals, have significant complexity,
+  risk of defects/problematic edge cases, or performance/scalability implications
+  should progress through all `Alpha`, `Beta`, `GA` stages
+- features which achieve their goals with minimal complexity and performance/scalability
+  implications, but still carry non-trivial risk (e.g. due to changing user-facing behavior
+  or problematic edge cases) might skip `Alpha` and start directly in `Beta`
+  (provided the appropriate `Beta` quality is achieved) but should be off by-default until
+  proven in representative production environment that utilizes the feature with the scale
+  or variety of use to prove it's working
+- more generally, changes that carry a risk of making previously working functionality
+  no longer work in certain edge cases should always start in off-by-default state
+- smaller changes with low enough risk that still may need to be disabled using the
+  feature gate without introducing a new long term configuration option, might skip
+  `Alpha` and start directly in `Beta` (provided the appropriate `Beta` quality is achieved)
+  and can be enabled by-default from the very beginning
+- bug fixes that have a sufficient level of risk that being able to turn off the fix via a
+  feature gate is justified are recommended to go directly to `Beta` and should be enabled
+  by-default from the very beginning; an alternative for bug fixes that could be perceived
+  as "removal" is to use Deprecated state, however still ensuring that the fix can be
+  disabled
+
+[API changes]: https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md#what-parts-of-a-pr-are-api-changes
 
 When we add a feature flag, we basically add if/else conditions to ensure that a feature is ONLY activated when either the default is on or if the deployer has switched it on explicitly. When a feature gate is disabled, the system should behave as if the feature doesn't exist. The only exception to this is [API input validation](https://kubernetes.io/docs/reference/using-api/deprecation-policy/#deprecating-parts-of-the-api) on updates, which should preserve and validate data if and only if it was present before the update (which could occur in case of a version rollback).
 
