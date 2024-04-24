@@ -3374,7 +3374,7 @@ workinggroups:
       name: Patrick Ohly
       company: Intel
   meetings:
-  - description: Regular WG Meeting (time TBD)
+  - description: Regular WG Meeting
     day: Tuesday
     time: "8:30"
     tz: PT (Pacific Time)
