@@ -114,9 +114,6 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - Azure Subproject Meeting: [Tuesdays at 16:00 PT (Pacific Time)](https://zoom.us/j/586836662) (monthly - third Tuesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
-### provider-baiducloud
-- **Owners:**
-  - [kubernetes-sigs/cloud-provider-baiducloud](https://github.com/kubernetes-sigs/cloud-provider-baiducloud/blob/master/OWNERS)
 ### provider-equinix-metal
 - **Owners:**
   - [kubernetes-sigs/cloud-provider-equinix-metal](https://github.com/kubernetes-sigs/cloud-provider-equinix-metal/blob/main/OWNERS)
