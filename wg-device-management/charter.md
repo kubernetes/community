@@ -94,7 +94,10 @@ This working group adheres to the Roles and Organization Management outlined in
 ## Exit Criteria
 
 The working group will disband when the KEPs resulting from these discussions
-have reached a terminal state.
+have reached a terminal state. When the core functionality for dynamic resource
+allocation (DRA) reaches GA, we will evaluate whether the working group should
+be disbanded and any remaining KEPs be left to the management of their owning
+SIGs.
 
 [wg-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md

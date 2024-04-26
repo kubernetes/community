@@ -111,7 +111,6 @@ channels:
   - name: digitalocean-k8s
   - name: distroless
   - name: diversity
-  - name: dra
   - name: draft-dev
   - name: draft-users
   - name: druid-operator
@@ -549,6 +548,8 @@ channels:
   - name: wg-component-standard-mentorship
     archived: true
   - name: wg-data-protection
+  - name: wg-device-management
+    id: C0409NGC1TK
   - name: wg-iot-edge
   - name: sig-k8s-infra
     id: CCK68P2Q2
