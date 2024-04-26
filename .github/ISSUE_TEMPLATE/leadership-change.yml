@@ -61,6 +61,7 @@ body:
     - label: Updated ownership of group mailing list.
     - label: Updated ownership of group calendar.
     - label: Updated access/teams in 1password. (Contact ContribEx leads to complete)
+    - label: Update permissions for the corresponding Youtube playlists. (Contact [YouTube moderators](https://github.com/kubernetes/community/blob/master/communication/moderators.md#youtube-channel))
 - id: additional_info
   type: textarea
   attributes:
