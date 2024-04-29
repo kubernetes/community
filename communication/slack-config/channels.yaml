@@ -543,6 +543,7 @@ channels:
   - name: wg-apply
     archived: true
   - name: wg-batch
+  - name: wg-serving
   - name: wg-component-standard
     archived: true
   - name: wg-component-standard-mentorship
