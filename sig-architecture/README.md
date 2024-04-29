@@ -60,6 +60,7 @@ The following [working groups][working-group-definition] are sponsored by sig-ar
 * [WG Device Management](/wg-device-management)
 * [WG LTS](/wg-lts)
 * [WG Policy](/wg-policy)
+* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 

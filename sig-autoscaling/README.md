@@ -48,6 +48,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The following [working groups][working-group-definition] are sponsored by sig-autoscaling:
 * [WG Batch](/wg-batch)
 * [WG Device Management](/wg-device-management)
+* [WG Serving](/wg-serving)
 
 
 ## Subprojects
