@@ -130,6 +130,10 @@ aliases:
   wg-data-protection-leads:
     - xing-yang
     - yuxiangqian
+  wg-device-management-leads:
+    - johnbelamaric
+    - klueska
+    - pohly
   wg-lts-leads:
     - jeremyrickard
     - liggitt

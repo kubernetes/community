@@ -3345,6 +3345,48 @@ workinggroups:
     liaison:
       github: pohly
       name: Patrick Ohly
+- dir: wg-device-management
+  name: Device Management
+  mission_statement: >
+    Enable simple and efficient configuration, sharing, and allocation of accelerators
+    and other specialized devices.
+
+    [Additional context](https://groups.google.com/a/kubernetes.io/g/dev/c/YWXGXe07A5w/m/OqLvdQ47BQAJ)
+
+  charter_link: charter.md
+  stakeholder_sigs:
+  - Architecture
+  - Autoscaling
+  - Network
+  - Node
+  - Scheduling
+  label: device-management
+  leadership:
+    chairs:
+    - github: johnbelamaric
+      name: John Belamaric
+      company: Google
+    - github: klueska
+      name: Kevin Klues
+      company: NVIDIA
+    - github: pohly
+      name: Patrick Ohly
+      company: Intel
+  meetings:
+  - description: Regular WG Meeting
+    day: Tuesday
+    time: "8:30"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: TBD
+    archive_url: https://docs.google.com/document/d/1qxI87VqGtgN7EAJlqVfxx86HGKEAc2A3SKru8nJHNkQ/edit?usp=sharing
+    recordings_url: TBD
+  contact:
+    slack: wg-device-management
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-device-management
+    liaison:
+      github: pohly
+      name: Patrick Ohly
 - dir: wg-lts
   name: LTS
   mission_statement: >
