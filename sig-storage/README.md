@@ -65,6 +65,9 @@ The following [working groups][working-group-definition] are sponsored by sig-st
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-storage:
+### external-snapshot-metadata
+- **Owners:**
+  - [kubernetes-csi/external-snapshot-metadata](https://github.com/kubernetes-csi/external-snapshot-metadata/blob/main/OWNERS)
 ### external-storage
 - **Owners:**
   - [kubernetes-sigs/sig-storage-lib-external-provisioner](https://github.com/kubernetes-sigs/sig-storage-lib-external-provisioner/blob/master/OWNERS)

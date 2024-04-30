@@ -2880,6 +2880,9 @@ sigs:
       github: pacoxu
       name: Paco Xu 徐俊杰
   subprojects:
+  - name: external-snapshot-metadata
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-csi/external-snapshot-metadata/main/OWNERS
   - name: external-storage
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-storage-lib-external-provisioner/master/OWNERS
