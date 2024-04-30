@@ -86,17 +86,9 @@ usergroups:
     channels:
       - sig-contribex
     members:
-      - alisondy
-      - jeefy
-      - mrbobbytables
-      - onlydole
       - chrisshort
-      - paris
-      - markyjackson-taulia
       - pnbrown
       - CIPHERTron
-      - bhumijgupta
-      - sandipanpanda
 
   - name: zoom-admins
     long_name: Zoom Admins
