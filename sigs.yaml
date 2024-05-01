@@ -2098,10 +2098,10 @@ sigs:
       description: General Discussion
     - name: sig-multicluster-pr-reviews
       description: PR Reviews
-    - name: sig-multicluster-test-failures
-      description: Test Failures and Triage
     - name: sig-multicluster-proposals
       description: Design Proposals
+    - name: sig-multicluster-test-failures
+      description: Test Failures and Triage
     liaison:
       github: mrbobbytables
       name: Bob Killen
