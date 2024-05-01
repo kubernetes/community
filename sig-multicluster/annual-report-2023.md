@@ -76,7 +76,7 @@ value>#sig-multicluster-site) **Retired in 2023:**
 
 Operational tasks in [sig-governance.md]:
 - [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
 - [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed
   for accuracy and updated if needed
 - [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for
