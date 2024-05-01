@@ -2100,7 +2100,7 @@ sigs:
       description: PR Reviews
     - name: sig-multicluster-test-failures
       description: Test Failures and Triage
-    - name: sig-mutlicluster-proposals
+    - name: sig-multicluster-proposals
       description: Design Proposals
     liaison:
       github: mrbobbytables
