@@ -3475,9 +3475,9 @@ workinggroups:
       name: Yuan Tang
       company: Red Hat
   meetings:
-  - description: WG Serving weekly meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com))
+  - description: WG Serving Weekly Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com))
     day: Wednesday
-    time: 9:00 AM
+    time: "9:00"
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://zoom.us/j/93517402529?pwd=RnkwUUQ4L3J2QmNYYlNBcnZGbXcvQT09
