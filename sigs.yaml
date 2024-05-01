@@ -876,14 +876,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-pv-admission-labeler/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
     - https://raw.githubusercontent.com/kubernetes/legacy-cloud-providers/master/OWNERS
-    meetings:
-    - description: Weekly Sync removing the in-tree cloud providers led by @cheftako
-        and @mcrute
-      day: Thursday
-      time: "13:30"
-      tz: PT (Pacific Time)
-      frequency: weekly
-      url: https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit
   - name: kubernetes-cloud-provider
     owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-sample/master/OWNERS
