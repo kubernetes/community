@@ -244,23 +244,22 @@ usergroups:
     description: Members of the Cluster API Release Team
     members:
       - adilGhaffarDev
-      - adityabhatia
-      - akshay196
-      - cahillsf
       - chandankumar4
-      - Dhairya-Arora01
-      - Fedosin
-      - mansikulkarni96
-      - mcbenjemaa
-      - nawazkh
-      - ssuriyan7
-      - SubhasmitaSw
+      - chiukapoor
+      - dhij
+      - hackeramitkumar
+      - jayesh-srivastava
+      - kperath
+      - meatballhat
+      - Nivedita-coder
+      - pravarag
+      - rajankumary2k
+      - shipra101
+      - smoshiur1237
       - Sunnatillo
       - troy0820
-      - typeid
-      - VibhorChinda
+      - vishalanarase
       - willie-yao
-      - yrs147
 
   - name: kcp-devs
     long_name: kcp Development Team
