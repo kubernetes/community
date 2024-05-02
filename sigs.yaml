@@ -3053,7 +3053,6 @@ sigs:
       slack: prow
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/prow/main/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
   - name: sig-testing
     description: |
       Home for SIG Testing discussion and documents.
