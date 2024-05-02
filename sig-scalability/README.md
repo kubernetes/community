@@ -41,13 +41,9 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scale)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fscalability)
 - GitHub Teams:
-    - [@kubernetes/sig-scalability-api-reviews](https://github.com/orgs/kubernetes/teams/sig-scalability-api-reviews) - API Changes and Reviews
-    - [@kubernetes/sig-scalability-bugs](https://github.com/orgs/kubernetes/teams/sig-scalability-bugs) - Bug Triage and Troubleshooting
-    - [@kubernetes/sig-scalability-feature-requests](https://github.com/orgs/kubernetes/teams/sig-scalability-feature-requests) - Feature Requests
-    - [@kubernetes/sig-scalability-misc](https://github.com/orgs/kubernetes/teams/sig-scalability-misc) - General Discussion
+    - [@kubernetes/sig-scalability](https://github.com/orgs/kubernetes/teams/sig-scalability) - General Discussion
+    - [@kubernetes/sig-scalability-leads](https://github.com/orgs/kubernetes/teams/sig-scalability-leads) - Leads
     - [@kubernetes/sig-scalability-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-scalability-pr-reviews) - PR Reviews
-    - [@kubernetes/sig-scalability-proprosals](https://github.com/orgs/kubernetes/teams/sig-scalability-proprosals) - Design Proposals
-    - [@kubernetes/sig-scalability-test-failures](https://github.com/orgs/kubernetes/teams/sig-scalability-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
 ## Subprojects
