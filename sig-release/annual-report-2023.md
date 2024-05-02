@@ -4,6 +4,10 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
+In 2023, the SIG made significant progress on moving toward only leveraging community infrastructure. We now leverage [OpenBuildService](https://openbuildservice.org) to [build and publish Debian and RPM packages to pkgs.k8s.io](https://kubernetes.io/blog/2023/08/15/pkgs-k8s-io-introduction/). 
+
+Additionally, work was done in order to keep supported Kubernetes versions up-to-date with supported Go versions. This has helped improve security of Kubernetes patch releases by building and releasing using supported minor versions of go. 
+
 <!--
    Some example items that might be worth highlighting:
    - Major KEP advancement
@@ -14,17 +18,14 @@
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
-<!--
-   Note: This list is generated from the KEP metadata in kubernetes/enhancements repository.
-      If you find any discrepancy in the generated list here, please check the KEP metadata.
-      Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
--->
+Not at this time.
 
 3. Did you have community-wide updates in 2023 (e.g. KubeCon talks)?
 
-<!--
-  Examples include links to email, slides, or recordings.
--->
+- How SIG Release Makes Kubernetes Releases Even More Stable and Secure - Veronica Lopez & Marko Mudrinić
+  - https://sched.co/1HyUA
+- Releasing Kubernetes and Beyond: Flexible and Fast Delivery of Packages - Grace Nguyen, Adolfo Garcia Veytia, Jim Angel, John Anderson
+  - https://sched.co/1RQeC      
 
 4. KEP work in 2023 (v1.27, v1.28, v1.29):
 
@@ -42,7 +43,9 @@
 
 **Continuing:**
   - Release Engineering
+      - New subproject lead: Marko Mudrinić
   - Release Team
+      - New subproject leads: Kat Cosgrove and Grace Nguyen
   - SIG Release Process Documentation
 
 ## [Working groups](https://git.k8s.io/community/sig-release#working-groups)
@@ -55,12 +58,12 @@
 ## Operational
 
 Operational tasks in [sig-governance.md]:
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
-- [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
 
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-release/CONTRIBUTING.md
