@@ -3502,6 +3502,9 @@ workinggroups:
     - github: ArangoGutierrez
       name: Eduardo Arango
       company: NVIDIA
+    - github: Jeffwan
+      name: Jiaxin Shan
+      company: Bytedance
     - github: SergeyKanzhelev
       name: Sergey Kanzhelev
       company: Google
