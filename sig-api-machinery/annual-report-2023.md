@@ -14,17 +14,22 @@
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
-<!--
-   Note: This list is generated from the KEP metadata in kubernetes/enhancements repository.
-      If you find any discrepancy in the generated list here, please check the KEP metadata.
-      Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
--->
+Yes, in general SIG API Machinery owns a large portion of the Kubernetes codebase. We are always looking to welcome more contributors that help up improve and keep healthy this core important part of Kubernetes.
+Just to mention a few areas:
+- client-go
+- garbage collector
+- server side apply
+- documentation
+- and many others
 
 3. Did you have community-wide updates in 2023 (e.g. KubeCon talks)?
 
-<!--
-  Examples include links to email, slides, or recordings.
--->
+Yes, there was a deep dive [API Machinery session](https://kccncna2023.sched.com/event/1R2my) at Kubecon NA 2023 that covered: 
+- An introduction to SIG API Machinery
+- An overview of Generic Control Planes
+- A deep Dive into CRD Ratcheting
+
+We also recorded a spotlight for Kubecon NA that was projected before keynotes.
 
 4. KEP work in 2023 (v1.27, v1.28, v1.29):
 
@@ -48,24 +53,10 @@
     - [2896 - OpenAPI V3](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/2896-openapi-v3) - v1.27
     - [365 - Paginated API Lists](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/365-paginated-lists) - v1.29
 
-## [Subprojects](https://git.k8s.io/community/sig-api-machinery#subprojects)
-
-
-**New in 2023:**
-  - [cel-admission-webhook](https://git.k8s.io/community/<no value>#cel-admission-webhook)
-**Continuing:**
-  - component-base
-  - control-plane-features
-  - idl-schema-client-pipeline
-  - json
-  - kubernetes-clients
-  - server-api-aggregation
-  - server-binaries
-  - server-crd
-  - server-frameworks
-  - server-sdk
-  - universal-machinery
-  - yaml
+Highlights of the work from this list:
+- The work done in Priority and Fairnes that led to Stable
+- The work done on ValidatingAdmissionControl based on CEL, that will later on graduate to Stable in 1.30
+  
 
 ## [Working groups](https://git.k8s.io/community/sig-api-machinery#working-groups)
 
@@ -78,12 +69,12 @@
 ## Operational
 
 Operational tasks in [sig-governance.md]:
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
-- [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
+- [X] [README.md] reviewed for accuracy and updated if needed
+- [X] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [X] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
+- [X] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [X] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
+- [X] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
 
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-api-machinery/CONTRIBUTING.md
