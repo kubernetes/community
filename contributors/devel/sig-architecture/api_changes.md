@@ -1096,7 +1096,7 @@ Previously, annotations were used for experimental alpha features, but are no lo
 
 The preferred approach adds an alpha field to the existing object, and ensures it is disabled by default:
 
-1. Add a feature gate to the API server to control enablement of the new field (and associated function):
+1. Add a [feature gate](feature-gates.md) to the API server to control enablement of the new field:
 
     In [staging/src/k8s.io/apiserver/pkg/features/kube_features.go](https://git.k8s.io/kubernetes/staging/src/k8s.io/apiserver/pkg/features/kube_features.go):
 
@@ -1118,7 +1118,8 @@ The preferred approach adds an alpha field to the existing object, and ensures i
     * ensure the field is [optional](api-conventions.md#optional-vs-required)
         * add the `omitempty` struct tag
         * add the `// +optional` comment tag
-        * ensure the field is entirely absent from API responses when empty (optional fields should be pointers, anyway)
+        * add the `// +featureGate=<gate-name>` comment tag
+        * ensure the field is entirely absent from API responses when empty (optional fields must be pointers)
     * include details about the alpha-level in the field description
 
     ```go
@@ -1131,6 +1132,7 @@ The preferred approach adds an alpha field to the existing object, and ensures i
       // width indicates how wide the object is.
       // This field is alpha-level and is only honored by servers that enable the Frobber2D feature.
       // +optional
+      // +featureGate=Frobber2D
       Width  *int32 `json:"width,omitempty"`
     }
     ```
@@ -1243,7 +1245,7 @@ Older versions of expected API clients must be able handle the new value in a sa
 * If the enum field drives behavior of a single component, ensure all versions of that component
   that will encounter API objects containing the new value handle it properly or fail safe.
   For example, a new allowed value in a `Pod` enum field consumed by the kubelet must be handled
-  safely by kubelets up to two versions older than the first API server release that allowed the new value.
+  safely by kubelets up to three versions older than the first API server release that allowed the new value.
 * If an API drives behavior that is implemented by external clients (like `Ingress` or `NetworkPolicy`),
   the enum field must explicitly indicate that additional values may be allowed in the future,
   and define how unrecognized values must be handled by clients. If this was not done in the first release
@@ -1268,7 +1270,7 @@ Release 2:
 This ensures a cluster with multiple servers at skewed releases (which happens during a rolling upgrade),
 will not allow data to be persisted which the previous release of the API server would choke on.
 
-Typically, a feature gate is used to do this rollout, starting in alpha and disabled by default in release 1,
+Typically, a [feature gate](feature-gates.md) is used to do this rollout, starting in alpha and disabled by default in release 1,
 and graduating to beta and enabled by default in release 2.
 
 1. Add a feature gate to the API server to control enablement of the new enum value (and associated function):
