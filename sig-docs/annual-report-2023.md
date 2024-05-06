@@ -5,8 +5,8 @@
 1. What work did the SIG do this year that should be highlighted?
 
    - SIG Docs completely [removed the Katacoda tutorials catalog](https://github.com/kubernetes/website/discussions/38878), previously shared as new user resources, after this content was reclaimed behind a paywall for O'Reilly subscribers. We are still looking for a replacement set of resources
-   - The [Issue Wrangler role](https://github.com/kubernetes/website/discussions/38861) was formalized in the SIG, which introduced a new named role to help triage and categorize SIG Docs issues. This role follows the roster system currently in place for PR Wranglers, but opens up the possibilty of seasoned contributors who *aren't* approvers to additionally contribute to the SIG
-   - SIG Docs worked with SIG Release and the Release Team Subproject to introduce new and improved processes for documentation during each release. This includes initiating a [Docs Freeze](https://github.com/kubernetes/sig-release/pull/2383) as part of the release calendar deadlines, creating [better handbook guideance](https://github.com/kubernetes/sig-release/pull/2350) for weekly status updates, as well as a more robust process for removing shadows/leads who fail to fulfil their role (seen specifically across Docs/Comms for the last few releases)
+   - The [Issue Wrangler role](https://github.com/kubernetes/website/discussions/38861) was formalized in the SIG, which introduced a new named role to help triage and categorize SIG Docs issues. This role follows the roster system currently in place for PR Wranglers, but opens up the possibility of seasoned contributors who *aren't* approvers to additionally contribute to the SIG
+   - SIG Docs worked with SIG Release and the Release Team Subproject to introduce new and improved processes for documentation during each release. This includes initiating a [Docs Freeze](https://github.com/kubernetes/sig-release/pull/2383) as part of the release calendar deadlines, creating [better handbook guidance](https://github.com/kubernetes/sig-release/pull/2350) for weekly status updates, as well as a more robust process for removing shadows/leads who fail to fulfil their role (seen specifically across Docs/Comms for the last few releases)
    - The New Contributor Ambassador has been replaced, after Arsh Sharma served in this role for over two years. We thank Arsh and welcome our now-current New Contributor Ambassador, Sreeram Venkitesh!
    - SIG Docs served as one of the first SIGs to setup and trial the new YouTube automation project lead by SIG Contributor Experience for all community meeting uploads
    - SIG Docs leadership created [onboarding and offboarding documentation and processes](https://github.com/kubernetes/website/discussions/38842) for Co-chairs and Tech Leads, alongside an annualized list of activities and work the SIG Docs leadership team is responsible for
@@ -16,7 +16,7 @@
 
    - The Kubernetes Blog Subproject currently only has one active editor, as we attempt to onboard further people to the blog reviewing team. This is a strain both on the usual blog work we have, as well as feature blogs linked with each Kubernetes release
    - The Reference Docs Subproject is currently lacking true ownership and process outlines, which we hope to solve via recruiting further Tech Leads for the SIG (currently in progress). At present, this subproject is understaffed
-   - SIG Docs is currently in a state of flux regarding leadership: three Tech Leads will step down in 2024, while we have actively recruited/replaced two of these positions
+   - SIG Docs is currently in a state of leadership transition: three Tech Leads will step down in 2024, while we have actively recruited/replaced two of these positions
 
 3. Did you have community-wide updates in 2023 (e.g. KubeCon talks)?
 
