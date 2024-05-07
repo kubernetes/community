@@ -2731,6 +2731,13 @@ sigs:
   - name: kueue
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
+    leads:
+    - github: alculquicondor
+      name: Aldo Culquicondor
+      company: Google
+    - github: tenzen-y
+      name: Yuki Iwai
+      company: CyberAgent, Inc.
   - name: kwok
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kwok/main/OWNERS
