@@ -46,7 +46,8 @@
 
 
 **New in 2023:**
-  - [kubectl-validate](https://git.k8s.io/community/<no value>#kubectl-validate)
+  - [kubectl-validate](https://git.k8s.io/community/sig-cli#kubectl-validate)
+
 **Continuing:**
   - cli-experimental
   - cli-sdk
