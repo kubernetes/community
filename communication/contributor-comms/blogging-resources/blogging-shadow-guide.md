@@ -3,24 +3,24 @@
 Contribex Comms has leads for different areas, specifically for
 blogging where there's a Blogging Lead that takes additional
 responsibility for making sure that the blogging process not only
-works as expected, but is constantly being improve to better serve the
+works as expected, but is constantly being improved to better serve the
 goals in the [SIG charter]((./CHARTER.md).
 
 Roles in SIG Contribex Comms are part of a journey where each
 individual learns and teaches, improves on what exists and eventually
 moves forward to other challenges; for this to work, it's fundamental
-to develop leadership skills in the community, and one of doing it is
+to develop leadership skills in the community, and one way of doing it is
 through a shadow program.
 
 This document briefly describes the shadowing program, including the
-tasks that are expected from shadows. It is hoped that this additional
+tasks that are expected from shadows. It is hoped that this extra
 level of detail helps shadows in their path towards additional
 responsibilities in the team.
 
 
 ## Shadow Program Goals
 
-It's important to highlight that anyone is welcomed to contribute with
+It's important to highlight that anyone is welcome to contribute with
 ideas and write articles _without being a shadow_, and the shadowing
 program is not meant to change that, but to enable it by guaranteeing
 that there's the availability to assist contributors that want to
@@ -36,7 +36,7 @@ shadowing program is meant to:
 
 ## Shadowing candidates
 
-Anyone is welcomed to display their interest in becoming a shadow for
+Anyone is welcome to display their interest in becoming a shadow for
 the blogging team. For practical purposes, the team is limited to 4
 shadows to allow an adequate exposure to the tasks in a reasonable
 period of time.
