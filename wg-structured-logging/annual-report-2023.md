@@ -18,7 +18,8 @@
 - Enhance the logcheck tool for better detection of contextual logging and use newer APIs in Kubernetes.
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
-- Our working group is looking for more contributors to help us in the migration of contextual logging. If you are interested or experienced in the area, we would very much welcome your participation.
+- Our working group is looking for more contributors to help us in [the migration of contextual logging](https://github.com/kubernetes/enhancements/issues/3077). 
+If you are interested or experienced in the area, we would very much welcome your participation.
 
 ## Operational
 
