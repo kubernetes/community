@@ -373,7 +373,7 @@ git push --force
 [kubernetes forum]: https://discuss.kubernetes.io/
 [pull request process]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: http://sigs.k8s.io/prow/pkg#prow
 [cla]: /CLA.md#how-do-i-sign
 [cla troubleshooting guidelines]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help

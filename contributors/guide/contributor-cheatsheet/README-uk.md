@@ -298,7 +298,7 @@ git checkout -b myfeature
 [Kubernetes форум]: https://discuss.kubernetes.io/
 [Процес pull request]: /contributors/guide/pull-requests.md
 [Робочий процес у github]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: http://sigs.k8s.io/prow/pkg#prow
 [cla]: /CLA.md#how-do-i-sign
 [інструкції з вирішення проблем CLA]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help

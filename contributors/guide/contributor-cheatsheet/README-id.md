@@ -366,7 +366,7 @@ _squashing_ perlu dilakukan atau tidak.
 [forum kubernetes]: https://discuss.kubernetes.io/
 [pull request process]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: http://sigs.k8s.io/prow/pkg#prow
 [cla]: /CLA.md#how-do-i-sign
 [petunjuk _troubleshooting_ cla]: /CLA.md#troubleshooting
 [perintah]: https://prow.k8s.io/command-help

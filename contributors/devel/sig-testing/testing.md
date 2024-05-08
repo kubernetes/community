@@ -229,7 +229,7 @@ If the failure seems unrelated to the change you're submitting:
     - if you don't get a response in 24 hours, engage with the SIG on their channel on the [Kubernetes slack](http://slack.k8s.io/) and/or attend one of the [SIG meetings][sig-meetings] to ask for input.
 
 [prow-url]: https://prow.k8s.io
-[prow-git]: https://git.k8s.io/test-infra/prow
+[prow-git]: http://sigs.k8s.io/prow/pkg
 [prow-doc]: https://kubernetes.io/blog/2018/08/29/the-machines-can-do-the-work-a-story-of-kubernetes-testing-ci-and-automating-the-contributor-experience/#enter-prow
 [membership]: https://github.com/kubernetes/community/blob/master/community-membership.md#member
 [k-teams]: https://github.com/orgs/kubernetes/teams

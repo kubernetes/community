@@ -365,7 +365,7 @@ anderer Beitragenden zu überlassen, die als Reviewer und Approver für den PR z
 [Kubernetes Forum]: https://discuss.kubernetes.io/
 [Pull-Request Prozess]: /contributors/guide/pull-requests.md
 [GitHub Workflow]: /contributors/guide/github-workflow.md
-[Prow]: https://git.k8s.io/test-infra/prow#prow
+[Prow]: http://sigs.k8s.io/prow/pkg#prow
 [cla]: /CLA.md#how-do-i-sign
 [CLA troubleshooting guidelines]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help
