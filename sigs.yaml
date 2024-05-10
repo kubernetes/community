@@ -1543,6 +1543,9 @@ sigs:
     - github: tengqm
       name: Qiming Teng
       company: Sangfor Technologies
+    - github: salaxander
+      name: Xander Grzywinski
+      company: Defense Unicorns
     emeritus_leads:
     - github: Bradamant3
       name: Jennifer Rondeau

@@ -48,6 +48,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Tim Bannister (**[@sftim](https://github.com/sftim)**), The Scale Factory
 * Qiming Teng (**[@tengqm](https://github.com/tengqm)**), Sangfor Technologies
+* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Defense Unicorns
 
 ## Emeritus Leads
 
