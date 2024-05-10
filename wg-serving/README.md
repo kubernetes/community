@@ -31,6 +31,7 @@ The [charter](charter.md) defines the scope and governance of the Serving Workin
 ## Organizers
 
 * Eduardo Arango (**[@ArangoGutierrez](https://github.com/ArangoGutierrez)**), NVIDIA
+* Jiaxin Shan (**[@Jeffwan](https://github.com/Jeffwan)**), Bytedance
 * Sergey Kanzhelev (**[@SergeyKanzhelev](https://github.com/SergeyKanzhelev)**), Google
 * Yuan Tang (**[@terrytangyuan](https://github.com/terrytangyuan)**), Red Hat
 
