@@ -1537,15 +1537,15 @@ sigs:
       name: Rey Lejano
       company: Red Hat
     tech_leads:
+    - github: salaxander
+      name: Xander Grzywinski
+      company: Defense Unicorns
     - github: sftim
       name: Tim Bannister
       company: The Scale Factory
     - github: tengqm
       name: Qiming Teng
       company: Sangfor Technologies
-    - github: salaxander
-      name: Xander Grzywinski
-      company: Defense Unicorns
     emeritus_leads:
     - github: Bradamant3
       name: Jennifer Rondeau

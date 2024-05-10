@@ -46,9 +46,9 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
+* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Defense Unicorns
 * Tim Bannister (**[@sftim](https://github.com/sftim)**), The Scale Factory
 * Qiming Teng (**[@tengqm](https://github.com/tengqm)**), Sangfor Technologies
-* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Defense Unicorns
 
 ## Emeritus Leads
 
