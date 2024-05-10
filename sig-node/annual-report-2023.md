@@ -77,7 +77,7 @@ Help in this area will be very appreciated.
 
 
 **New in 2023:**
-  - [resource-management](https://git.k8s.io/community/<no value>#resource-management)
+  - [resource-management](https://git.k8s.io/community/sig-node#resource-management)
 
 **Retired in 2023:**
   - noderesourcetopology-api
