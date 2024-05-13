@@ -1704,6 +1704,14 @@ sigs:
     url: https://zoom.us/my/cncfetcdproject
     archive_url: https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9rtufHbiunuCHddYY6MGkwW
+  - description: Robustness Tests Meeting
+    day: Wednesday
+    time: "08:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/my/cncfetcdproject
+    archive_url: https://docs.google.com/document/d/1idZ_7tV6F18v223LyQ0WVUn9gXLSKyeLwYTdAgbjxpw/edit?usp=sharing
+    recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9oF-YEEfVXMzaOUzFYK74-I
   contact:
     slack: etcd
     mailing_list: https://groups.google.com/g/etcd-dev
