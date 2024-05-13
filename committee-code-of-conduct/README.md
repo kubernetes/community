@@ -18,7 +18,7 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 * Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), Independent
 * Hilliary Lipsig (**[@hlipsig](https://github.com/hlipsig)**), Red Hat
 * Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
-* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Defense Unicorns
+* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Microsoft
 
 ## Emeritus Members
 
