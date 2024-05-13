@@ -1537,9 +1537,6 @@ sigs:
       name: Rey Lejano
       company: Red Hat
     tech_leads:
-    - github: sftim
-      name: Tim Bannister
-      company: The Scale Factory
     - github: tengqm
       name: Qiming Teng
       company: Sangfor Technologies
@@ -1560,8 +1557,10 @@ sigs:
       name: Karen Bradshaw
     - github: onlydole
       name: Taylor Dolezal
+    - github: sftim
+      name: Tim Bannister
     - github: zacharysarah
-      name: Zach Corleissen
+      name: Sarah Corleissen
   meetings:
   - description: APAC SIG Meeting
     day: Wednesday
