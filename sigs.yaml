@@ -1537,36 +1537,30 @@ sigs:
       name: Rey Lejano
       company: Red Hat
     tech_leads:
-    - github: katcosgrove
-      name: Kat Cosgrove
-      company: Dell Technologies
     - github: tengqm
       name: Qiming Teng
       company: Sangfor Technologies
-    - github: salaxander
-      name: Xander Grzywinski
-      company: Defense Unicorns
     emeritus_leads:
+    - github: Bradamant3
+      name: Jennifer Rondeau
     - github: chenopis
       name: Andrew Chen
     - github: irvifa
       name: Irvi Aini
     - github: jaredbhatti
       name: Jared Bhatti
-    - github: Bradamant3
-      name: Jennifer Rondeau
     - github: jimangel
       name: Jim Angel
     - github: kbarnard10
       name: Kaitlyn Barnard
     - github: kbhawkey
       name: Karen Bradshaw
-    - github: zacharysarah
-      name: Sarah Corleissen
     - github: onlydole
       name: Taylor Dolezal
     - github: sftim
       name: Tim Bannister
+    - github: zacharysarah
+      name: Sarah Corleissen
   meetings:
   - description: APAC SIG Meeting
     day: Wednesday
@@ -3560,7 +3554,7 @@ committees:
       company: Microsoft
     - github: salaxander
       name: Xander Grzywinski
-      company: Microsoft
+      company: Defense Unicorns
     emeritus_leads:
     - github: AevaOnline
       name: Aeva Black
