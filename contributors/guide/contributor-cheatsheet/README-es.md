@@ -143,7 +143,8 @@ si tú o tu empresa han firmado el CLA.
 
 Si encuentras problemas al firmar el CLA, sigue 
 las [pautas de solución de problemas del CLA].
-  
+
+
 ### Abrir y Responder Issues
 
 Los Issues de GitHub son el medio principal para dar seguimiento a cosas como informes de errores, 
