@@ -77,6 +77,10 @@ Public etcd Discovery Service
 Distributed reliable key-value store for the most critical data of a distributed system
 - **Owners:**
   - [etcd-io/etcd](https://github.com/etcd-io/etcd/blob/main/OWNERS)
+### etcd-manager
+etcd manager
+- **Owners:**
+  - [kubernetes-sigs/etcd-manager](https://github.com/kubernetes-sigs/etcd-manager/blob/main/OWNERS)
 ### etcd-play
 etcd playground
 - **Owners:**
