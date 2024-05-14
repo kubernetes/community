@@ -39,7 +39,7 @@ mejor.
 
 ### Empezar
 
-- [Curso para Colaboradores] - **NUEVO** - El curso de E-Learning para colaboradores de Kubernetes!
+- [Curso para Colaboradores] - **NUEVO** - ¡El curso de E-Learning para contribuidores de Kubernetes!
 - [Guía para Colaboradores] - Guía sobre cómo comenzar a contribuir al proyecto
   Kubernetes.
 - [Guía del Desarrollador] - Guía para contribuir código directamente al proyecto
