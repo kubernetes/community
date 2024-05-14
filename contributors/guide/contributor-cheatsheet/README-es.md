@@ -112,7 +112,8 @@ mejor.
 
 Como primer paso, familiarízate con el [Código de Conducta].
 
-#### Ejemplos de Buena/Mala Comunicación
+
+#### Ejemplos de una Buena/Mala Comunicación
 
 Al levantar un problema o buscar asistencia, por favor, sé educado en tu solicitud:
 
