@@ -64,6 +64,8 @@ mejor.
 
 ### Flujo de Trabajo
 
+- [Panel de control del gobernador] - Visualiza Pull Requests entrantes y salientes que requieren
+  su atención.
 - [Prow] - Sistema de CI/CD de Kubernetes.
 - [Tide] - Plugin de Prow que administra fusiones y pruebas. [Panel de Tide]
 - [Comandos de Bots] - Comandos utilizados para interactuar con los Bots de Kubernetes (ejemplos:
