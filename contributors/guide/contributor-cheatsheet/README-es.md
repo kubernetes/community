@@ -34,6 +34,7 @@ mejor.
     - [Combinar Commits (Squashing Commits)](#squashing-commits)
    
 ---
+
 ## Recursos Útiles
 
 ### Empezar
