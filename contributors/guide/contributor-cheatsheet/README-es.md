@@ -102,8 +102,7 @@ mejor.
 
 - [Estadísticas de Desarrolladores] - Visualiza estadísticas de desarrolladores para todos los
   proyectos gestionados por la CNCF.
-- [Publicación de Parches de Kubernetes] - Programación e información de contacto del equipo
-  para lanzamientos de parches de Kubernetes.
+- [Publicación de Parches de Kubernetes] - Programación e información de contacto del equipo para liberación de parches de Kubernetes.
 
 ---
 
