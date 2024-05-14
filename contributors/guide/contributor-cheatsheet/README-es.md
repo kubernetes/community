@@ -108,6 +108,7 @@ mejor.
 
 ## Comunicación Efectiva en GitHub
 
+
 ### Cómo ser Excelente entre Sí
 
 Como primer paso, familiarízate con el [Código de Conducta].
