@@ -78,7 +78,7 @@ mejor.
 
 - [Prow] - Sistema de CI/CD de Kubernetes.
 - [Test Grid] - Visualiza pruebas históricas y su información asociada.
-- [Panel de Triage] - Agrega problemas similares para una mejor
+- [Panel de Triage] - Agrupa problemas similares para una mejor
   resolución de problemas.
 
 ### Alias de Correo Importantes
