@@ -126,7 +126,8 @@ Al cerrar una Solicitud de Extracción (PR), transmite un mensaje explicativo y 
 que explique por qué no cumple con los requisitos para ser fusionado.
 
 🙂 "Estoy cerrando esta PR porque esta característica no puede admitir el caso de uso X. En 
-su forma propuesta, sería mejor implementarla con la herramienta Y. Gracias por trabajar en esto."
+su forma propuesta, sería mejor implementarla con la herramienta Y. Gracias
+por trabajar en esto."
 
 😞 "¿Por qué esto no sigue las convenciones de la API? Esto debería hacerse en otro lugar."
 
