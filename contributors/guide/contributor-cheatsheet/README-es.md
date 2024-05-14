@@ -148,8 +148,9 @@ las [pautas de solución de problemas del CLA].
 
 Los Issues de GitHub son el medio principal para dar seguimiento a cosas como informes de errores, 
 solicitudes de mejoras o para informar otros problemas, como pruebas que fallan. 
-**No** están destinados a [solicitudes de soporte de usuarios]. Para ello, consulta la [guía de solución de problemas], 
-informa el problema en [Stack Overflow] o sigue en el [foro de Kubernetes].
+**No** están destinados a [solicitudes de soporte de usuarios]. Para ello, consulta la 
+[guía de solución de problemas], informa el problema en [Stack Overflow] o sigue en
+el [foro de Kubernetes].
 
 **Referencias:**
 - [Labels]
