@@ -2360,7 +2360,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/cri-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cri-api/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cri-api/pkg/OWNERS
   - name: cri-tools
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
