@@ -81,6 +81,7 @@ mejor.
 - [Panel de Triage] - Agrupa problemas similares para una mejor
   resolución de problemas.
 
+
 ### Alias de Correo Importantes
 
 - community@kubernetes.io - Envía un correo a alguien del equipo de la comunidad
