@@ -129,6 +129,7 @@ above list...)
 
 **Retired in 2023:**
  - Multitenancy
+ 
 **Continuing:**
  - IoT Edge
  - Policy
