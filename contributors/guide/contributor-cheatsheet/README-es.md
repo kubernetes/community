@@ -138,9 +138,8 @@ por trabajar en esto."
 ### Firmar el CLA
 
 Antes de poder presentar una contribución, debes [firmar el Acuerdo de Licencia del 
-Colaborador (CLA)][cla]. 
-El proyecto Kubernetes _solo_ puede aceptar una contribución si tú o tu empresa 
-han firmado el CLA.
+Colaborador (CLA)][cla]. El proyecto Kubernetes _solo_ puede aceptar una contribución
+si tú o tu empresa han firmado el CLA.
 
 Si encuentras problemas al firmar el CLA, sigue 
 las [pautas de solución de problemas del CLA].
