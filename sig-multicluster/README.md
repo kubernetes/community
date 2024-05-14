@@ -40,14 +40,13 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-multicluster-feature-requests](https://github.com/orgs/kubernetes/teams/sig-multicluster-feature-requests) - Feature Requests
     - [@kubernetes/sig-multicluster-misc](https://github.com/orgs/kubernetes/teams/sig-multicluster-misc) - General Discussion
     - [@kubernetes/sig-multicluster-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-multicluster-pr-reviews) - PR Reviews
+    - [@kubernetes/sig-multicluster-proposals](https://github.com/orgs/kubernetes/teams/sig-multicluster-proposals) - Design Proposals
     - [@kubernetes/sig-multicluster-test-failures](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) - Test Failures and Triage
-    - [@kubernetes/sig-mutlicluster-proposals](https://github.com/orgs/kubernetes/teams/sig-mutlicluster-proposals) - Design Proposals
 - Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
 
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-multicluster:
-* [WG IoT Edge](/wg-iot-edge)
 * [WG Policy](/wg-policy)
 
 

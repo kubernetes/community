@@ -104,7 +104,7 @@ Testing:
   should be considered for critical and/or CPU intensive operations.
 - General guidelines:
   - Follow a [DAMP principle](https://stackoverflow.com/a/11837973).
-  - Use `cmp.Diff` instead of `reflect.Equal`, to provide useful comparisons.
+  - Use `cmp.Diff` instead of `reflect.DeepEqual`, to provide useful comparisons.
   - Compare errors using `errors.Is` (`cmpopts.EquateErrors` when using
     `cmp.Diff`) instead of comparing the error strings.
   - Leverage existing utility functions from `pkg/scheduler/testing`.

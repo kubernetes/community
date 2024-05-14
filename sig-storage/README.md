@@ -58,12 +58,16 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 The following [working groups][working-group-definition] are sponsored by sig-storage:
 * [WG Data Protection](/wg-data-protection)
 * [WG Policy](/wg-policy)
+* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-storage:
+### external-snapshot-metadata
+- **Owners:**
+  - [kubernetes-csi/external-snapshot-metadata](https://github.com/kubernetes-csi/external-snapshot-metadata/blob/main/OWNERS)
 ### external-storage
 - **Owners:**
   - [kubernetes-sigs/sig-storage-lib-external-provisioner](https://github.com/kubernetes-sigs/sig-storage-lib-external-provisioner/blob/master/OWNERS)
@@ -79,7 +83,6 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
 - **Owners:**
   - [kubernetes-sigs/container-object-storage-interface-api](https://github.com/kubernetes-sigs/container-object-storage-interface-api/blob/master/OWNERS)
   - [kubernetes-sigs/container-object-storage-interface-controller](https://github.com/kubernetes-sigs/container-object-storage-interface-controller/blob/master/OWNERS)
-  - [kubernetes-sigs/container-object-storage-interface-csi-adapter](https://github.com/kubernetes-sigs/container-object-storage-interface-csi-adapter/blob/master/OWNERS)
   - [kubernetes-sigs/container-object-storage-interface-provisioner-sidecar](https://github.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar/blob/master/OWNERS)
   - [kubernetes-sigs/container-object-storage-interface-spec](https://github.com/kubernetes-sigs/container-object-storage-interface-spec/blob/master/OWNERS)
   - [kubernetes-sigs/cosi-driver-sample](https://github.com/kubernetes-sigs/cosi-driver-sample/blob/master/OWNERS)

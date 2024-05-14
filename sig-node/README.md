@@ -53,7 +53,9 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 The following [working groups][working-group-definition] are sponsored by sig-node:
 * [WG Batch](/wg-batch)
+* [WG Device Management](/wg-device-management)
 * [WG Policy](/wg-policy)
+* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 
@@ -75,6 +77,12 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 - **Owners:**
   - [kubernetes/cri-api](https://github.com/kubernetes/cri-api/blob/master/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/cri-api](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-api/OWNERS)
+
+### cri-client
+- **Owners:**
+  - [kubernetes/cri-client](https://github.com/kubernetes/cri-client/blob/master/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/cri-client](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-client/OWNERS)
+
 ### cri-tools
 - **Owners:**
   - [kubernetes-sigs/cri-tools](https://github.com/kubernetes-sigs/cri-tools/blob/master/OWNERS)

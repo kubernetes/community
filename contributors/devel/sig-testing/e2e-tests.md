@@ -42,6 +42,8 @@ The primary objectives of the e2e tests are to ensure a consistent and reliable
 behavior of the Kubernetes code base, and to catch hard-to-test bugs before
 users do, when unit and integration tests are insufficient.
 
+**NOTE:** If you want test against a cluster, you can use `test/e2e` framework. This page is written about `test/e2e`. If you want to test the `kubelet` code, you can use `test/e2e_node` framework. If you want to know `test/e2e_node` , please see the [e2e-node-tests](../sig-node/e2e-node-tests.md).
+
 The e2e tests in Kubernetes are built atop of
 [Ginkgo](http://onsi.github.io/ginkgo/) and
 [Gomega](http://onsi.github.io/gomega/). There are a host of features that this

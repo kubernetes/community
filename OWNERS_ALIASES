@@ -3,6 +3,7 @@ aliases:
     - deads2k
     - fedebongio
     - jpbetz
+    - sttts
   sig-apps-leads:
     - janetkuo
     - kow3ns
@@ -19,9 +20,9 @@ aliases:
     - ritazh
   sig-autoscaling-leads:
     - gjtempleton
-    - mwielgus
+    - maciekpytel
   sig-cli-leads:
-    - KnVerey
+    - ardaguclu
     - eddiezane
     - mpuckett159
     - soltysh
@@ -32,7 +33,6 @@ aliases:
     - elmiko
     - nckturner
   sig-cluster-lifecycle-leads:
-    - CecileRobertMichon
     - fabriziopandini
     - justinsb
     - neolit123
@@ -46,7 +46,6 @@ aliases:
     - divya-mohan0209
     - natalisucks
     - reylejano
-    - sftim
     - tengqm
   sig-etcd-leads:
     - ahrtr
@@ -119,9 +118,6 @@ aliases:
     - jsturtevant
     - knabben
     - marosset
-  wg-api-expression-leads:
-    - apelisse
-    - kwiesmueller
   wg-batch-leads:
     - alculquicondor
     - mwielgus
@@ -130,17 +126,23 @@ aliases:
   wg-data-protection-leads:
     - xing-yang
     - yuxiangqian
-  wg-iot-edge-leads:
-    - cantbewong
-    - cindyxing
-    - dejanb
+  wg-device-management-leads:
+    - johnbelamaric
+    - klueska
+    - pohly
   wg-lts-leads:
     - jeremyrickard
     - liggitt
     - micahhausler
   wg-policy-leads:
     - JimBugwadia
-    - rficcaglia
+    - poonam-lamba
+    - sudermanjr
+  wg-serving-leads:
+    - ArangoGutierrez
+    - Jeffwan
+    - SergeyKanzhelev
+    - terrytangyuan
   wg-structured-logging-leads:
     - mengjiao-liu
     - pohly

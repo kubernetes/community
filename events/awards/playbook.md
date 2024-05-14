@@ -92,6 +92,7 @@ Our community is spread all over the world, so when choosing a vendor consider i
     - [ ] Awards tweets for the winners
     - [ ] Blog post announcing the winners, and linking to the contributor site page
     - [ ] Amplify awardee social media posts when they post pics of their awards, thanking people, etc. 
+- [ ] **After the event** update contributor website with all award winner information. See the [2022 contributor awards page](https://github.com/kubernetes/contributor-site/blob/master/content/en/community/awards/2022/index.md) as an example.
 
 ### Awards Ceremony
 

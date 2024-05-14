@@ -37,7 +37,7 @@ Guide](https://kubernetes.io/docs/concepts/cluster-administration/).
 * **Profiling Kubernetes** ([profiling.md](sig-scalability/profiling.md)): How to plug in go pprof profiler to Kubernetes.
 
 * **Instrumenting Kubernetes with a new metric**
-  ([instrumentation.md](sig-instrumentation/instrumentation.md)): How to add a new metrics to the
+  ([instrumentation.md](sig-instrumentation/metric-instrumentation.md)): How to add a new metrics to the
   Kubernetes code base.
 
 * **Coding Conventions** ([coding-conventions.md](../guide/coding-conventions.md)):
@@ -95,7 +95,7 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 * **Event style guide** [event-style-guide.md](sig-instrumentation/event-style-guide.md)
 
-* **Instrumenting Kubernetes** [instrumentation.md](sig-instrumentation/instrumentation.md)
+* **Instrumenting Kubernetes with a new metric** [instrumentation.md](sig-instrumentation/metric-instrumentation.md)
 
 * **Structured Logging migration instructions** [migration-to-structured-logging.md](sig-instrumentation/migration-to-structured-logging.md)
 

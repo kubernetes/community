@@ -111,7 +111,6 @@ channels:
   - name: digitalocean-k8s
   - name: distroless
   - name: diversity
-  - name: dra
   - name: draft-dev
   - name: draft-users
   - name: druid-operator
@@ -269,6 +268,7 @@ channels:
   - name: kubectl-trace
   - name: kubectl-validate
   - name: kubedb
+    archived: true
   - name: kubeinit
   - name: kubekhan
     archived: true
@@ -276,6 +276,7 @@ channels:
   - name: kubemove
   - name: kubeone
   - name: kubepack
+    archived: true
   - name: kubestack
   - name: kubestellar-dev
   - name: kuberhealthy
@@ -406,6 +407,7 @@ channels:
   - name: paralus
   - name: pepr
   - name: pharmer
+    archived: true
   - name: pinniped
   - name: pl-users
   - name: podman-desktop
@@ -443,6 +445,7 @@ channels:
   - name: shoutouts
   - name: sig-api-machinery
   - name: sig-api-machinery-cel-dev
+  - name: sig-api-machinery-storageversion-dev
   - name: sig-apps
   - name: sig-auth
   - name: sig-auth-authenticators-dev
@@ -506,6 +509,7 @@ channels:
   - name: tanzu-community-edition
     archived: true
   - name: tanzu-streaming-runtimes
+  - name: terraform-kops
   - name: terraform-providers
   - name: terranetes
   - name: test-failures
@@ -539,11 +543,14 @@ channels:
   - name: wg-apply
     archived: true
   - name: wg-batch
+  - name: wg-serving
   - name: wg-component-standard
     archived: true
   - name: wg-component-standard-mentorship
     archived: true
   - name: wg-data-protection
+  - name: wg-device-management
+    id: C0409NGC1TK
   - name: wg-iot-edge
   - name: sig-k8s-infra
     id: CCK68P2Q2

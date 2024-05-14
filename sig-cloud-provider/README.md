@@ -69,8 +69,6 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - [kubernetes-sigs/cloud-pv-admission-labeler](https://github.com/kubernetes-sigs/cloud-pv-admission-labeler/blob/main/OWNERS)
   - [kubernetes/community/sig-cloud-provider/cloud-provider-extraction-migration](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS)
   - [kubernetes/legacy-cloud-providers](https://github.com/kubernetes/legacy-cloud-providers/blob/master/OWNERS)
-- **Meetings:**
-  - Weekly Sync removing the in-tree cloud providers led by @cheftako and @mcrute: [Thursdays at 13:30 PT (Pacific Time)](https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:30&tz=PT%20%28Pacific%20Time%29).
 ### kubernetes-cloud-provider
 - **Owners:**
   - [kubernetes/cloud-provider-sample](https://github.com/kubernetes/cloud-provider-sample/blob/master/OWNERS)
@@ -114,9 +112,6 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - Azure Subproject Meeting: [Tuesdays at 16:00 PT (Pacific Time)](https://zoom.us/j/586836662) (monthly - third Tuesday). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1SpxvmOgHDhnA72Z0lbhBffrfe9inQxZkU9xqlafOW9k/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2JNdHwB8GxRs2mikK7zyc4).
-### provider-baiducloud
-- **Owners:**
-  - [kubernetes-sigs/cloud-provider-baiducloud](https://github.com/kubernetes-sigs/cloud-provider-baiducloud/blob/master/OWNERS)
 ### provider-equinix-metal
 - **Owners:**
   - [kubernetes-sigs/cloud-provider-equinix-metal](https://github.com/kubernetes-sigs/cloud-provider-equinix-metal/blob/main/OWNERS)

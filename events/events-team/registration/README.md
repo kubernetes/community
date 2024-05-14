@@ -52,55 +52,31 @@ This role can include one or more shadows. The Registration Lead can delegate/as
 ### Assembling the Questions and Paths
 
 Well before the event, collect the information needed for the registration form,
-and determine the registration workflow. In general this boils down to are they
-an _"Active/Current Contributor"_ vs a _"New Contributor"_. With a few
-independent questions for each registration path.
+and determine the registration workflow. 
 
-For the _"New Contributor"_ path there may be additional paths or questions such
-as a _"101"_ or _"201"_ track along with other questions that will aid the
-workshop organizers.
-
-In addition to any path specific questions, all attendees should be asked the
-following:
+All attendees should be asked the following:
 
 | Question                                                       | Type      | Required | Notes                                                                                                          |
 |----------------------------------------------------------------|-----------|----------|----------------------------------------------------------------------------------------------------------------|
-| Name                                                           | Free Text | Yes      |                                                                                                                |
 | Email                                                          | Free Text | Yes      |                                                                                                                |
-| GitHub Handle                                                  | Free Text | Yes      |                                                                                                                |
-| Signed the CLA                                                 | Dropdown  | Yes      | Provide link to CLA. Options: Yes, No - but will do before workshop, No - cannot sign due to work resrictions. |
-| Food Restrictions                                              | Dropdown  | Yes      | Options: `none`, `Gluten Free`, `Vegetarian`, `Vegan`, `Other`                                                 |
+| First Name                                                     | Free Text | Yes      |                                                                                                                |
+| Last Name                                                      | Free Text | Yes      |                                                                                                                |
+| Job Title                                                      | Free Text | Yes      |                                                                                                                |
+| Company/Organization                                           | Free Text | Yes      |                                                                                                                |
+| GitHub Username *If your GitHub Profile URL is https://github.com/username , only enter username not @username. If you don't have a GitHub username, please enter N/A*   | Free Text | Yes      |                                                                                                                |
 | Swag Related Question                                          | Dropdown  | Yes      | Swag question is generally shirt size.                                                                         |
+| Please specify dietary needs (if any)                          | Dropdown  | No      | Options: `none`, `Gluten Free`, `Vegetarian`, `Vegan`, `Halal`,`Other`                                                 |
+| Do you have a disability that we should be mindful of as we try to accommodate everyone for this event?  | Dropdown  | No      | Options: `Yes`, `No`    |
+| What email did you use to register for KubeCon + CloudNative Con <NA/Europe> <year>? **KubeCon + CloudNative Con <NA/Europe> registration is required to attend Kubernetes Contributor Summit <region> <year>**                             | Free Text | Yes      |                                                                                                                |   
+| Are you a member of one of the [Kubernetes GitHub Orgs](http://git.k8s.io/community/github-management#actively-used-github-organizations)  | Dropdown | Options: `Yes`, `No` [Pop up if no is selected] Attending the Kubernetes Contributor Summit in-person is limited to Kubernetes Org Members and Sponsored Attendees. If you have questions, please email summit-team@kubernetes.io.  Yes      |                                                                                                                |    
+| What SIGs or WGs are you most active in? Only list the top three. *This will help us plan content and activities.*                 | Dropdown  | Yes      | Options: <list all SIGs and WGs>                                             |
+| What sessions are you most looking forward to? *This will help us plan content and activities.*                 | Dropdown  | No       | Options: `Unconference`, `Prepared Presentations`, `Steering AMA`, `SIG Discussions/Working Sessions`, `Impromptu Discussions`, `Social/Mingling`                                                |
+| What other session(s) would you like to see at the summit? What else would make this event valuable to you? *We've changed content based on contributor feedback to this question in the past.*                          | Free Text | Yes      |                                                                                                                |
 | Social Event                                                   | Dropdown  | Yes      | Required if there is an independent social event.                                                              |
 | Emergency Contact                                              | Free Text | No       | Name and Phone Number. Phone number to be verified.                                                            |
 | How can we make this a valuable event for you?                 | Free Text | No       |                                                                                                                |
 | If you had a speaking slot, what would you like to talk about? | Free Text | No       |                                                                                                                |
-| Where did you hear about the Contributor Summit?               | Checkbox  | No       | Options: `Twitter`, `mailing list`, `GitHub`, `community meeting`, `SIG/WG Meeting`, `Slack`, `Other`          |
-
-Following are some of the path specific questions that have been asked in the past:
-
-**New Contributor**
-
-| Question                                                                        | Type      | Required | Notes                                                                                                                                                                                                                             |
-|---------------------------------------------------------------------------------|-----------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Laptop availability for workshop                                                | Dropdown  | Yes      | Should be mentioned that workshop can still be attended if laptop is not available and pair with other participants. Options: Yes, No - do not have a laptop, No - have one but cannot install software on it without IT approval |
-| Have you joined the kubernetes slack? If so, what is your handle?               | Free Text | No       |                                                                                                                                                                                                                                   |
-| Are there any areas of Kubernetes you're already interested in contributing to? | Checkbox  | No       | Options: `API`, `CLI`, `testing`, `docs`, `community`, `release`, etc                                                                                                                                                             |
-| Are there any SIG's you are interested in joining?                              | Free Text | No       |                                                                                                                                                                                                                                   |
-| What are you hoping to get out of the contributor summit?                       | Free Text | No       |                                                                                                                                                                                                                                   |
-| Experience with Go                                                              | Dropdown  | No       | Rate from 1 to 5, with 1 being no experience                                                                                                                                                                                      |
-| Experience with kubernetes as a user                                            | Dropdown  | No       | Rate from 1 to 5, with 1 being no experience                                                                                                                                                                                      |
-| Experience of developing application that integrate with kubernetes             | Dropdown  | No       | Rate from 1 to 5, with 1 being no experience                                                                                                                                                                                      |
-
-
-**Active Contributor**
-
-| Question                                                                                                                                                                       | Type      | Required | Notes                               |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------|----------|-------------------------------------|
-| Are you member of a Kubernetes Github Org?                                                                                                                                     | Dropdown  | Yes      |                                     |
-| What SIG's or WG's are you most active in?                                                                                                                                     | Checkbox  | Yes      | Options: List of the SIG's and WG's |
-| What session(s) would like to see at the summit? what would make this event valuable to you? We've changed content based on contributor feedback to this question in the past. | Free Text | No       |                                     |
-
+| Where did you hear about the Contributor Summit?               | Checkbox  | No       | Options: `X (formerly Twitter)`, `Mastodon`, `Kubernetes-dev mailing list`, `GitHub`, `Monthly Kubernetes Community Meeting`, `SIG/WG Meeting`, `Slack`, `Kubernetes Blog`, `Other`          |
 
 Additionally, a separate form can be created for registering the `summit staff`.
 
@@ -126,9 +102,6 @@ a system include:
 - Can it integrate with [sched]? If it can automatically add an attendee, it
   will make for a less error prone invite process.
 
-<!--
-TODO: insert link/note to reg system used for KubeCon CN
--->
 In past events, registration systems that have been used were [Google Forms],
 [SurveyMonkey], and [cvent]. All have their pluses and minuses.
 
@@ -147,13 +120,41 @@ require going through the LF.
 Other options exist and should be evaluated when making your decision for the
 registration system.
 
+### Communications
+
+Work with the Communications Lead to include the link to the registration page and future 
+communications efforts to drive registration.
 
 ### Approval Process
 
-TODO - update doc with new process - query to get org members below:
+The Kubernetes Contributor Summit is for active contributors to the Kubernetes project.
+Registrants will be approved if they are org members of one of the following Kubernetes Orgs:
+kubernetes, kubernetes-client, kubernetes-csi, kubernetes-sigs, etcd-io.
+
+A SIG lead (co-chair, tech lead, subproject lead) can sponsor a non-org member to attend the summit.
+Kubernetes Contributor Summit speakers who are non-org members can attend the summit.
+
+<!--
+Discussed in the KCSEU 2024 retro, we need to make exception requests less personal
+We can use an existing method like use the same or similar criteria of the elections
+or have requests go to the Summit Staff who then ask SIG/WG leads.
+-->
+
+There will be a  **Kubernetes Contributor Summit Planning Doc** , in the past this 
+was a Google Spreadsheet.
+
+As soon as the **Kubernetes Contributor Summit Planning Doc** is available, populate 
+the **org - DO NOT DELTE** tab (the name may change in the future but is always the 
+tab that compares if the registrant is an org member) in the 
+**Kubernetes Contributor Summit Planning Doc**.
+
+There are 2 options to create a list of org members:
 
 ```
+git clone https://github.com/kubernetes/org.git
+cd org
 yq '.admins + .members' \
+  config/etcd-io/org.yaml \
   config/kubernetes/org.yaml \
   config/kubernetes-client/org.yaml \
   config/kubernetes-csi/org.yaml \
@@ -162,37 +163,74 @@ yq '.admins + .members' \
   | sed -e 's/"//g' > members.txt
 ```
 
+an alternative is 
 
+```
+git clone https://github.com/kubernetes/org.git
+cd org
+yq '.admins + .members' \
+  config/etcd-io/org.yaml \
+  config/kubernetes/org.yaml \
+  config/kubernetes-client/org.yaml \
+  config/kubernetes-csi/org.yaml \
+  config/kubernetes-sigs/org.yaml \
+  | sed -e 's/---//g' | sed -e 's/- //g' \
+  | sed -e 's/"//g' | sed -e '/^$/d' \
+  | awk '{print tolower($0)}' | sort | uniq > members.txt
+```
 
-An approval process for registration is commonly used for multiple reasons, but
-really boils down to ensuring the right people are in the right track or room.
-The goal is for all contributors to get the best experience out of the event and
-that may mean asking them to switch tracks.
+Populate what's in members.txt in the **org - DO NOT DELTE** tab in the 
+**Kubernetes Contributor Summit Planning Doc**.
 
-A few scenarios that have occurred:
+Create a list of staff, shadows, volunteers including day-of volunteers. You can 
+create this list from the GitHub staffing issue e.g. https://github.com/kubernetes/community/issues/7611
+and query the Summit Staff leads for their day-of volunteers. The Day-of Operations
+team will likely have volunteers not listed on the GitHub staffing issue.
 
-**A person has signed up for the New Contributor Workshop, but in their
-comments have mentioned they are unfamiliar with Kubernetes.**
+Once the talks for the Kubernetes Contributor Summit have been selected, create 
+a list of speakers and note if any are not org members so they can be approved
+when they register.
 
-They may have interpreted the event as an _"Introduction to Kubernetes"_ from an
-end-user perspective. In this case it is best to reach out to them and provide
-more context for the event. They will likely apologize and ask to be removed.
+Review past declined registrants if any are speakers, email them to re-register 
+for the Contributor Summit.
 
-**A person who looks to be an Active Contributor has signed up for the New
-Contributor Track.**
+#### Exception Request Scenarios
 
-This could be accidental, or in some scenarios a non-code contributor is looking
-for a better introduction to the code base branch into code-based contributions.
+**A person is not an org member and would like to attend the Contributor Summit**
 
-**A person registered for the Active or Current Contributor track, but has not
-participated with the project.**
+With 1600+ Kubernetes Org members and limited space and budget requirements, we've
+made the decision to limit attendance to those that are already actively engaged
+with the project. 
 
-They may have accidentally selected the wrong track, or believe they should go
-for other reasons. It is best to reach out let them know about the intended
-audience and that they may get more out of the other track. Use your best
-judgement. If you are unsure, reach out to other Event organizers or other
-members of SIG-Contributor Experience for their opinion on the matter.
+Contributor Summit speakers without org membership can attend the Contributor Summit.
 
+A SIG lead (co-chair, tech lead, subproject lead) can sponsor a non-org member to attend the summit,
+this process is TBD.
+
+<!--
+Discussed in the KCSEU 2024 retro, we need to make exception requests less personal
+We can use an existing method like use the same or similar criteria of the elections
+or have requests go to the Summit Staff who then ask SIG/WG leads.
+-->
+
+**A speaker is not registered for KubeCon + CloudNativeCon**
+
+KubeCon + CloudNativeCon registration is a requirement to attend the Contributor Summit.
+Speakers must be registered for KubeCon + CloudNativeCon.
+
+### Dietary Requirements
+
+Confirm with the CNCF staff rep on who will keep track of dietary requirements.
+If there are any email requests, add them to the **Dietary Requirements** tab 
+in the **Kubernetes Contributor Summit Planning Doc** and notify the CNCF staff
+rep.
+
+### Celebration Guests
+
+The CNCF staff may have the ability to keep track of registrants who are bringing
+a plus 1 to the social. There may be emails to request to bring a plus 1.
+Add any requests via email to the **Celebration Guests** tab in the 
+**Kubernetes Contributor Summit Planning Doc**.
 
 #### Helpful Approval Tips and Facts
 
@@ -250,7 +288,11 @@ combined with the post-event survey data, can provide insights in the event
 itself.
 
 
+## Registration at the Contributor Summit
 
+If there is a registration desk / badge pickup at the Contributor Summit, 
+it is helpful to have a Registration Team member at the registration desk during 
+the morning of the Kubernetes Contributor Summit to assist with questions.
 
 
 [sched]: http://sched.com

@@ -35,6 +35,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * David Eads (**[@deads2k](https://github.com/deads2k)**), Red Hat
 * Joe Betz (**[@jpbetz](https://github.com/jpbetz)**), Google
+* Stefan Schimanski (**[@sttts](https://github.com/sttts)**), Upbound
 
 ## Contact
 - Slack: [#sig-api-machinery](https://kubernetes.slack.com/messages/sig-api-machinery)
@@ -53,7 +54,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-api-machinery:
-* [WG API Expression](/wg-api-expression)
 * [WG Structured Logging](/wg-structured-logging)
 
 

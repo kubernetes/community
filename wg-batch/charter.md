@@ -88,9 +88,9 @@ that is left until we reach that milestone.
    recommendations would be left to the respective sigs to implement. The WG could
    start implementing those recommendations in the context of the owning sig to generate
    some momentum. 
-2. Mileston 2, Late exit: The WG continues the implementation of the recommendations until they reach GA, 
+2. Milestone 2, Late exit: The WG continues the implementation of the recommendations until they reach GA, 
    and then disband. 
 2. Convert to SIG: The WG observes a constant influx of requirements for the artifacts and there
    is the risk that the SIGs don't have enough capacity to maintain them.
-   Then, the wg will propose the graduation into a SIG, taking ownership of the
+   Then, the WG will propose the graduation into a SIG, taking ownership of the
    APIs, controllers and scheduling plugins.

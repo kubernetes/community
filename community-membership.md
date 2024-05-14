@@ -39,6 +39,14 @@ remain active contributors to the community.
 ### Requirements
 
 - Enabled [two-factor authentication] on their GitHub account
+- Ensure GitHub username, company affiliation and email in [CNCF gitdm] are
+  up to date. If you are not affiliated with a company please mark yourself as
+  "Independent". 
+    - gitdm is primarily used by [devstats] to track contributions from the
+      many companies involved in the ecosystem. Kubernetes also uses it to
+      ensure org membership sponsors are from different member companies.
+- Ensure affiliation is up to date in [openprofile.dev]. 
+  - openprofile.dev will replace gitdm in the future to track affiliation.
 - Have made **multiple contributions** to the project or community, enough to
   demonstrate an **ongoing and long-term commitment** to the project.
   Contributions should include, but is not limited to:
@@ -250,3 +258,6 @@ before being able to contribute effectively.
 [continuously active]: #inactive-members
 [sig-governance-subproject-lead]: /committee-steering/governance/sig-governance.md#subproject-lead
 [sig-governance-subproject-owner]: /committee-steering/governance/sig-governance.md#subproject-owner
+[CNCF gitdm]: https://github.com/cncf/gitdm
+[devstats]: https://k8s.devstats.cncf.io/
+[openprofile.dev] https://openprofile.dev/edit/profile
