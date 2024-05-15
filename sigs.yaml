@@ -1537,6 +1537,9 @@ sigs:
       name: Rey Lejano
       company: Red Hat
     tech_leads:
+    - github: salaxander
+      name: Xander Grzywinski
+      company: Defense Unicorns
     - github: tengqm
       name: Qiming Teng
       company: Sangfor Technologies
@@ -3554,7 +3557,7 @@ committees:
       company: Microsoft
     - github: salaxander
       name: Xander Grzywinski
-      company: Microsoft
+      company: Defense Unicorns
     emeritus_leads:
     - github: AevaOnline
       name: Aeva Black
