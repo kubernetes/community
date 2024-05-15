@@ -42,14 +42,11 @@ The [charter](charter.md) defines the scope and governance of the Serving Workin
 - Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
-## WorkStreams
+## Workstreams
 
-The WG-Serving will operate in WorkStreams, each focused on a specific area of work. The following WorkStreams are currently active:
+The WG Serving will operate in several workstreams with different areas of focus. The following workstreams are currently active:
 
 - [WS Autoscaling](https://docs.google.com/document/d/1QsN4ubjerEqo5L4bQamOFFS2lmCv5zNPis2Z8gcIITg/edit?usp=sharing)
-<!--- 
-Add Links to the WorkStreams documents
---->
 - WS MultiHost/MultiNode
-- WS Orchestration
+- [WS Orchestration](https://docs.google.com/document/d/1hbEx3ZEqdXCqWH9RL3uy9FIy35B8pFJ5KiK3HsOz2FE/edit?usp=sharing)
 <!-- END CUSTOM CONTENT -->
