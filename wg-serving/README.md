@@ -24,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Serving Workin
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-serving) for the group will typically add invites for the following meetings to your calendar.*
-* WG Serving weekly meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com)): [Wednesdays at 9:00 AM PT (Pacific Time)](https://zoom.us/j/93517402529?pwd=RnkwUUQ4L3J2QmNYYlNBcnZGbXcvQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00 AM&tz=PT%20%28Pacific%20Time%29).
+* WG Serving Weekly Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com)): [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/93517402529?pwd=RnkwUUQ4L3J2QmNYYlNBcnZGbXcvQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1aExJFtaLnO-TM6_2uILgI8NI0IjOm7FcwLABBKEMEo0/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=TODO).
 
