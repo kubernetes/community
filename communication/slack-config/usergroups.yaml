@@ -318,6 +318,7 @@ usergroups:
       - irbekrm
       - sgtcodfish
       - inteon
+      - ThatsMrTalbot
 
   - name: gophercloud-maintainers
     long_name: Gophercloud Maintainers
