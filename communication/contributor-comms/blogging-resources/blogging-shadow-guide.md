@@ -4,7 +4,7 @@ Contribex Comms has leads for different areas, specifically for
 blogging where there's a Blogging Lead that takes additional
 responsibility for making sure that the blogging process not only
 works as expected, but is constantly being improved to better serve the
-goals in the [SIG charter]((./CHARTER.md).
+goals in the [SIG charter](./CHARTER.md).
 
 Roles in SIG Contribex Comms are part of a journey where each
 individual learns and teaches, improves on what exists and eventually
