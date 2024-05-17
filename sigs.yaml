@@ -1543,9 +1543,6 @@ sigs:
     - github: katcosgrove
       name: Kat Cosgrove
       company: Dell Technologies
-    - github: sftim
-      name: Tim Bannister
-      company: The Scale Factory
     - github: tengqm
       name: Qiming Teng
       company: Sangfor Technologies
