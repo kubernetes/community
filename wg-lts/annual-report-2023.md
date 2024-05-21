@@ -5,13 +5,11 @@
 
 1. What work did the WG do this year that should be highlighted?
 
-<!--
-   Some example items that might be worth highlighting:
-   - artifacts
-   - reports
-   - white papers
-   - work not tracked in KEPs
--->
+During 2023, we worked to restart the WG.
+
+We also designed and published a [survey](https://bit.ly/k8s-upgrade-survey) to capture pain points and better understand challenges Kubernetes users face with upgrading. We collected 223 survey responses. From this data, we identified some initial areas where we can better communicate improvements that have been made to Kubernetes. We plan to work on several of these during 2024 and will present analyzed results from the survey to the community during 2024. 
+
+We also hosted a maintainer track session at KubeCon NA in Chicago to discuss what the working group wanted to achieve. 
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
@@ -19,10 +17,10 @@
 
 Operational tasks in [wg-governance.md]:
 
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] WG leaders in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
-- [ ] Updates provided to sponsoring SIGs in 2023
+- [x] [README.md] reviewed for accuracy and updated if needed
+- [x] WG leaders in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
+- [x] Updates provided to sponsoring SIGs in 2023
       - [$sig-name](https://git.k8s.io/community/$sig-id/)
         - links to email, meeting notes, slides, or recordings, etc
       - [$sig-name](https://git.k8s.io/community/$sig-id/)
