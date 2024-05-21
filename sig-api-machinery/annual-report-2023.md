@@ -55,7 +55,7 @@ We also recorded a spotlight for Kubecon NA that was projected before keynotes.
 
 Highlights of the work from this list:
 - The work done in Priority and Fairnes that led to Stable
-- The work done on ValidatingAdmissionControl based on CEL, that will later on graduate to Stable in 1.30
+- The work done on ValidatingAdmissionPolicy based on CEL, that graduated to Stable in 1.30
   
 
 ## [Working groups](https://git.k8s.io/community/sig-api-machinery#working-groups)
