@@ -46,7 +46,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Tim Bannister (**[@sftim](https://github.com/sftim)**), The Scale Factory
+* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Defense Unicorns
 * Qiming Teng (**[@tengqm](https://github.com/tengqm)**), Sangfor Technologies
 
 ## Emeritus Leads
@@ -59,7 +59,8 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Kaitlyn Barnard (**[@kbarnard10](https://github.com/kbarnard10)**)
 * Karen Bradshaw (**[@kbhawkey](https://github.com/kbhawkey)**)
 * Taylor Dolezal (**[@onlydole](https://github.com/onlydole)**)
-* Zach Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**)
+* Tim Bannister (**[@sftim](https://github.com/sftim)**)
+* Sarah Corleissen (**[@zacharysarah](https://github.com/zacharysarah)**)
 
 ## Contact
 - Slack: [#sig-docs](https://kubernetes.slack.com/messages/sig-docs)

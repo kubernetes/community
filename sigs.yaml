@@ -876,14 +876,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-pv-admission-labeler/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
     - https://raw.githubusercontent.com/kubernetes/legacy-cloud-providers/master/OWNERS
-    meetings:
-    - description: Weekly Sync removing the in-tree cloud providers led by @cheftako
-        and @mcrute
-      day: Thursday
-      time: "13:30"
-      tz: PT (Pacific Time)
-      frequency: weekly
-      url: https://docs.google.com/document/d/1KLsGGzNXQbsPeELCeF_q-f0h0CEGSe20xiwvcR2NlYM/edit
   - name: kubernetes-cloud-provider
     owners:
     - https://raw.githubusercontent.com/kubernetes/cloud-provider-sample/master/OWNERS
@@ -1545,9 +1537,9 @@ sigs:
       name: Rey Lejano
       company: Red Hat
     tech_leads:
-    - github: sftim
-      name: Tim Bannister
-      company: The Scale Factory
+    - github: salaxander
+      name: Xander Grzywinski
+      company: Defense Unicorns
     - github: tengqm
       name: Qiming Teng
       company: Sangfor Technologies
@@ -1568,8 +1560,10 @@ sigs:
       name: Karen Bradshaw
     - github: onlydole
       name: Taylor Dolezal
+    - github: sftim
+      name: Tim Bannister
     - github: zacharysarah
-      name: Zach Corleissen
+      name: Sarah Corleissen
   meetings:
   - description: APAC SIG Meeting
     day: Wednesday
@@ -1712,6 +1706,22 @@ sigs:
     url: https://zoom.us/my/cncfetcdproject
     archive_url: https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9rtufHbiunuCHddYY6MGkwW
+  - description: Robustness Tests Meeting
+    day: Wednesday
+    time: "08:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/my/cncfetcdproject
+    archive_url: https://docs.google.com/document/d/1idZ_7tV6F18v223LyQ0WVUn9gXLSKyeLwYTdAgbjxpw/edit?usp=sharing
+    recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9oF-YEEfVXMzaOUzFYK74-I
+  - description: Triage Meeting
+    day: Thursday
+    time: "11:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/my/cncfetcdproject
+    archive_url: https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit
+    recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9oz7rXy7ZwRS1hvgfEc7qOr
   contact:
     slack: etcd
     mailing_list: https://groups.google.com/g/etcd-dev
@@ -2098,10 +2108,10 @@ sigs:
       description: General Discussion
     - name: sig-multicluster-pr-reviews
       description: PR Reviews
+    - name: sig-multicluster-proposals
+      description: Design Proposals
     - name: sig-multicluster-test-failures
       description: Test Failures and Triage
-    - name: sig-mutlicluster-proposals
-      description: Design Proposals
     liaison:
       github: mrbobbytables
       name: Bob Killen
@@ -2365,6 +2375,10 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/cri-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cri-api/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cri-api/pkg/OWNERS
+  - name: cri-client
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/cri-client/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cri-client/OWNERS
   - name: cri-tools
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
@@ -2735,6 +2749,13 @@ sigs:
   - name: kueue
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
+    leads:
+    - github: alculquicondor
+      name: Aldo Culquicondor
+      company: Google
+    - github: tenzen-y
+      name: Yuki Iwai
+      company: CyberAgent, Inc.
   - name: kwok
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kwok/main/OWNERS
@@ -3057,7 +3078,6 @@ sigs:
       slack: prow
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/prow/main/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/test-infra/master/prow/OWNERS
   - name: sig-testing
     description: |
       Home for SIG Testing discussion and documents.
@@ -3093,10 +3113,10 @@ sigs:
     chairs:
     - github: floreks
       name: Sebastian Florek
-      company: Kubermatic
+      company: Plural
     - github: maciaszczykm
       name: Marcin Maciaszczyk
-      company: Kubermatic
+      company: Plural
     - github: shu-mutou
       name: Shu Muto
       company: NEC
@@ -3105,15 +3125,7 @@ sigs:
       name: Dan Romlein
     - github: jeefy
       name: Jeffrey Sica
-  meetings:
-  - description: Regular SIG Meeting
-    day: Thursday
-    time: "09:00"
-    tz: PT (Pacific Time)
-    frequency: bi-weekly
-    url: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
-    archive_url: https://docs.google.com/document/d/1PwHFvqiShLIq8ZpoXvE3dSUnOv1ts5BTtZ7aATuKd-E/edit?usp=sharing
-    recordings_url: https://www.youtube.com/watch?v=r3pL8i3wPhk&list=PL69nYSiGNLP35H5MZbg9OU6pqpfWgtbLm
+  meetings: []
   contact:
     slack: sig-ui
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
@@ -3123,7 +3135,6 @@ sigs:
   subprojects:
   - name: dashboard
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/dashboard-metrics-scraper/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
 - dir: sig-windows
   name: Windows
@@ -3220,41 +3231,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-dev-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
 workinggroups:
-- dir: wg-api-expression
-  name: API Expression
-  mission_statement: >
-    Enable API authors to better serve API consumers, by improving and documenting
-    all aspects of Kubernetes API development.
-
-    [See full Mission Statement](https://docs.google.com/document/d/1XYbQXfge2qKM9psksfC5XZnW8hybtLqL1EcJLU4JwKg).
-
-  stakeholder_sigs:
-  - API Machinery
-  - Architecture
-  label: api-expression
-  leadership:
-    chairs:
-    - github: apelisse
-      name: Antoine Pelisse
-      company: Google
-    - github: kwiesmueller
-      name: Kevin Wiesmueller
-      company: Google
-  meetings:
-  - description: Regular WG Meeting
-    day: Tuesday
-    time: "9:30"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/94238112084
-    archive_url: https://docs.google.com/document/d/1CSpNaicbEqKJoW306qaQEBIkwC1mGIcKl3yiB_C0HZk
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0CU9g6-yb1NgZXGAhMxfFE&jct=9Leh8O_yrRTB0Kcv3rMKZHncZq8POg
-  contact:
-    slack: wg-api-expression
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-api-expression
-    liaison:
-      github: BenTheElder
-      name: Benjamin Elder
 - dir: wg-batch
   name: Batch
   mission_statement: >
@@ -3507,6 +3483,9 @@ workinggroups:
     - github: ArangoGutierrez
       name: Eduardo Arango
       company: NVIDIA
+    - github: Jeffwan
+      name: Jiaxin Shan
+      company: Bytedance
     - github: SergeyKanzhelev
       name: Sergey Kanzhelev
       company: Google
@@ -3514,9 +3493,9 @@ workinggroups:
       name: Yuan Tang
       company: Red Hat
   meetings:
-  - description: WG Serving weekly meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com))
+  - description: WG Serving Weekly Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com))
     day: Wednesday
-    time: 9:00 AM
+    time: "9:00"
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://zoom.us/j/93517402529?pwd=RnkwUUQ4L3J2QmNYYlNBcnZGbXcvQT09
@@ -3586,7 +3565,7 @@ committees:
       company: Microsoft
     - github: salaxander
       name: Xander Grzywinski
-      company: Microsoft
+      company: Defense Unicorns
     emeritus_leads:
     - github: AevaOnline
       name: Aeva Black

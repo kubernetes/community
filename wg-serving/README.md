@@ -24,13 +24,14 @@ The [charter](charter.md) defines the scope and governance of the Serving Workin
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-serving) for the group will typically add invites for the following meetings to your calendar.*
-* WG Serving weekly meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com)): [Wednesdays at 9:00 AM PT (Pacific Time)](https://zoom.us/j/93517402529?pwd=RnkwUUQ4L3J2QmNYYlNBcnZGbXcvQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00 AM&tz=PT%20%28Pacific%20Time%29).
+* WG Serving Weekly Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com)): [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/93517402529?pwd=RnkwUUQ4L3J2QmNYYlNBcnZGbXcvQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1aExJFtaLnO-TM6_2uILgI8NI0IjOm7FcwLABBKEMEo0/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP30qNanabU75ayPK7OPNAAS).
 
 ## Organizers
 
 * Eduardo Arango (**[@ArangoGutierrez](https://github.com/ArangoGutierrez)**), NVIDIA
+* Jiaxin Shan (**[@Jeffwan](https://github.com/Jeffwan)**), Bytedance
 * Sergey Kanzhelev (**[@SergeyKanzhelev](https://github.com/SergeyKanzhelev)**), Google
 * Yuan Tang (**[@terrytangyuan](https://github.com/terrytangyuan)**), Red Hat
 
@@ -41,4 +42,11 @@ The [charter](charter.md) defines the scope and governance of the Serving Workin
 - Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
+## Workstreams
+
+The WG Serving will operate in several workstreams with different areas of focus. The following workstreams are currently active:
+
+- [WS Autoscaling](https://docs.google.com/document/d/1QsN4ubjerEqo5L4bQamOFFS2lmCv5zNPis2Z8gcIITg/edit?usp=sharing)
+- WS MultiHost/MultiNode
+- [WS Orchestration](https://docs.google.com/document/d/1hbEx3ZEqdXCqWH9RL3uy9FIy35B8pFJ5KiK3HsOz2FE/edit?usp=sharing)
 <!-- END CUSTOM CONTENT -->

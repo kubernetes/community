@@ -46,7 +46,7 @@ aliases:
     - divya-mohan0209
     - natalisucks
     - reylejano
-    - sftim
+    - salaxander
     - tengqm
   sig-etcd-leads:
     - ahrtr
@@ -119,9 +119,6 @@ aliases:
     - jsturtevant
     - knabben
     - marosset
-  wg-api-expression-leads:
-    - apelisse
-    - kwiesmueller
   wg-batch-leads:
     - alculquicondor
     - mwielgus
@@ -144,6 +141,7 @@ aliases:
     - sudermanjr
   wg-serving-leads:
     - ArangoGutierrez
+    - Jeffwan
     - SergeyKanzhelev
     - terrytangyuan
   wg-structured-logging-leads:
