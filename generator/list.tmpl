@@ -27,12 +27,12 @@ When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 |------|-------|--------|---------|----------|
 {{- range .Sigs}}
 |[{{.Name}}]({{.Dir}}/README.md)|[{{.Label}}](https://github.com/kubernetes/kubernetes/labels/sig%2F{{.Label}})|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{- range .Meetings -}}
-  * {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>
+  * {{.Description}}{{if .CalendarURL}} ([calendar]({{.CalendarURL}})){{end}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>
 {{- end -}}
 {{- range .Subprojects -}}
   {{ $name := .Name }}
   {{- range .Meetings -}}
-    * ({{ $name }}) {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>
+    * ({{ $name }}) {{.Description}}{{if .CalendarURL}} ([calendar]({{.CalendarURL}})){{end}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>
   {{- end -}}
 {{- end -}}
 {{- end }}
@@ -42,7 +42,7 @@ When the need arises, a [new SIG can be created](sig-wg-lifecycle.md)
 | Name | Label | Stakeholder SIGs |Organizers | Contact | Meetings |
 |------|-------|------------------|-----------|---------|----------|
 {{- range .WorkingGroups}}
-|[{{.Name}}]({{.Dir}}/README.md)|[{{.Label}}](https://github.com/kubernetes/kubernetes/labels/wg%2F{{.Label}})|{{range .StakeholderSIGs}}* {{.}}<br>{{end }}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
+|[{{.Name}}]({{.Dir}}/README.md)|[{{.Label}}](https://github.com/kubernetes/kubernetes/labels/wg%2F{{.Label}})|{{range .StakeholderSIGs}}* {{.}}<br>{{end }}|{{range .Leadership.Chairs}}* [{{.Name}}](https://github.com/{{.GitHub}}){{if .Company}}, {{.Company}}{{end}}<br>{{end}}|* [Slack](https://kubernetes.slack.com/messages/{{.Contact.Slack}})<br>* [Mailing List]({{.Contact.MailingList}})|{{range .Meetings}}* {{.Description}}{{if .CalendarURL}} ([calendar]({{.CalendarURL}})){{end}}: [{{.Day}}s at {{.Time}} {{.TZ}} ({{.Frequency}})]({{.URL}})<br>{{end}}
 {{- end }}
 
 ### Committees
