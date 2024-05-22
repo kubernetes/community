@@ -21,7 +21,7 @@ Provide an overall architecture that describes both the current policy related i
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-policy) for the group will typically add invites for the following meetings to your calendar.*
-* Regular WG Meeting: [Wednesdays at 8:00 PT (Pacific Time)](https://zoom.us/j/7375677271) (semimonthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Wednesdays at 8:00 PT (Pacific Time)](https://zoom.us/j/7375677271) (semimonthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing).
 
 ## Organizers
