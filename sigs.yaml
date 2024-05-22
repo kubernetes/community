@@ -3267,7 +3267,7 @@ workinggroups:
     - github: endocrimes
       name: Danielle Lancashire
   meetings:
-  - description: Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com))
+  - description: Regular Meeting
     day: Thursdays (starting February 15th 2024)
     time: 3PM
     tz: CET (Central European Time)
@@ -3275,7 +3275,8 @@ workinggroups:
     url: https://zoom.us/j/98329676612?pwd=c0N2bVV1aTh2VzltckdXSitaZXBKQT09
     archive_url: https://docs.google.com/document/d/1XOeUN-K0aKmJJNq7H07r74n-mGgSFyiEDQ3ecwsGhec/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1U1eU1NPyflIGmwzcXPsev
-  - description: Regular Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com))
+    calendar: https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com
+  - description: Regular Meeting
     day: Thursdays (starting February 1st 2024)
     time: 3PM
     tz: PT (Pacific Time)
@@ -3283,6 +3284,7 @@ workinggroups:
     url: https://zoom.us/j/98329676612?pwd=c0N2bVV1aTh2VzltckdXSitaZXBKQT09
     archive_url: https://docs.google.com/document/d/1XOeUN-K0aKmJJNq7H07r74n-mGgSFyiEDQ3ecwsGhec/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1U1eU1NPyflIGmwzcXPsev
+    calendar: https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com
   contact:
     slack: wg-batch
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-batch
@@ -3493,7 +3495,7 @@ workinggroups:
       name: Yuan Tang
       company: Red Hat
   meetings:
-  - description: WG Serving Weekly Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com))
+  - description: WG Serving Weekly Meeting
     day: Wednesday
     time: "9:00"
     tz: PT (Pacific Time)
@@ -3501,6 +3503,7 @@ workinggroups:
     url: https://zoom.us/j/93517402529?pwd=RnkwUUQ4L3J2QmNYYlNBcnZGbXcvQT09
     archive_url: https://docs.google.com/document/d/1aExJFtaLnO-TM6_2uILgI8NI0IjOm7FcwLABBKEMEo0/edit
     recordings_url: https://youtube.com/playlist?list=PL69nYSiGNLP30qNanabU75ayPK7OPNAAS&si=XUgX-PkFahKEVxPg
+    calendar: https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com
   contact:
     slack: wg-serving
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-serving

@@ -229,6 +229,7 @@ type Meeting struct {
 	URL           string `yaml:",omitempty"`
 	ArchiveURL    string `yaml:"archive_url,omitempty"`
 	RecordingsURL string `yaml:"recordings_url,omitempty"`
+	Calendar      string `yaml:"calendar,omitempty"`
 }
 
 // Contact represents the various contact points for a group.
