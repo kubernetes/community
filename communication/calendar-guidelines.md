@@ -67,6 +67,7 @@ addition of [gsuite], this practice may change soon.
     will need to be set to "public".
   - In the calendar invite body - include your meeting notes, zoom information,
     and any other pertinent information that you want your group to know.
+  - Invite `calendar@kubernetes.io` so the event will appear in https://www.kubernetes.dev/resources/calendar/
 
 
 ### Testing Permissions
