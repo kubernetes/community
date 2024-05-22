@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Cluster Lifecy
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 
@@ -66,7 +66,7 @@ A project for figuring out the best way to install, manage and deliver cluster a
   - Slack: [#cluster-addons](https://kubernetes.slack.com/messages/cluster-addons)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster Addons meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/130096731?pwd=U3pzWloxZ0lpbEtadTZGSERRdENrZz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster Addons meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/130096731?pwd=U3pzWloxZ0lpbEtadTZGSERRdENrZz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/10_tl_SXcFGb-2109QpcFVrdrfnVEuQ05MBrXtasB0vk/edit).
 ### cluster-api
 A project focused on providing declarative APIs and tooling to simplify provisioning, upgrading, and operating multiple Kubernetes clusters
@@ -77,7 +77,7 @@ A project focused on providing declarative APIs and tooling to simplify provisio
   - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API office hours: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/861487554?pwd=dTVGVVFCblFJc0VBbkFqQlU0dHpiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://cluster-api.sigs.k8s.io/agenda).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-addon-provider-helm
@@ -99,7 +99,7 @@ Leverages a declarative API and an operator to empower admins to handle the life
   - Slack: [#cluster-api-operator](https://kubernetes.slack.com/messages/cluster-api-operator)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API Operator office hours: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/98299072687?pwd=5uKfP6PbS7uMMq99vQIEgTyDvurgUY.1) (every third Wednesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API Operator office hours: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/98299072687?pwd=5uKfP6PbS7uMMq99vQIEgTyDvurgUY.1) (every third Wednesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1-X4TQBLrGrVhUMTZokwaMil94aA-gXqdJj4Sp3Asdps/).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-aws
@@ -110,7 +110,7 @@ Cluster API infrastructure provider for AWS
   - Slack: [#cluster-api-aws](https://kubernetes.slack.com/messages/cluster-api-aws)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API Provider AWS office hours: [Mondays at 09:00 PT (Pacific Time)](https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API Provider AWS office hours: [Mondays at 09:00 PT (Pacific Time)](https://zoom.us/j/423312508?pwd=Tk9OWnZ4WHg2T2xRek9xZXA1eFQ4dz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1iW-kqcX-IhzVGFrRKTSPGBPOc-0aUvygOVoJ5ETfEZU/).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-azure
@@ -121,7 +121,7 @@ Cluster API infrastructure provider for Azure
   - Slack: [#cluster-api-azure](https://kubernetes.slack.com/messages/cluster-api-azure)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API Provider Azure office hours: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API Provider Azure office hours: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](http://bit.ly/k8s-capz-agenda).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-cloudstack
@@ -136,7 +136,7 @@ Cluster API infrastructure provider for DigitalOcean
   - Slack: [#cluster-api-digitalocean](https://kubernetes.slack.com/messages/cluster-api-digitalocean)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API Provider DigitalOcean office hours: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/91312171751?pwd=bndnMDdJMkhySDVncjZoR1VhdFBTZz09) (monthly, second Thursday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API Provider DigitalOcean office hours: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/91312171751?pwd=bndnMDdJMkhySDVncjZoR1VhdFBTZz09) (monthly, second Thursday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](http://bit.ly/k8s-capdo-agenda).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-gcp
@@ -154,7 +154,7 @@ Cluster API infrastructure provider for IBM Cloud
   - Slack: [#cluster-api-ibmcloud](https://kubernetes.slack.com/messages/cluster-api-ibmcloud)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API Provider IBM Cloud office hours: [Fridays at 09:00 IST](https://zoom.us/j/9392903494) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=IST).
+  - Cluster API Provider IBM Cloud office hours: [Fridays at 09:00 IST](https://zoom.us/j/9392903494) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=IST).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1oWnqXy1VFv0E3kovQoZfS6IlVP0L4eaQsN-2HYC_6_A).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLcYv3LH7qY9Nvx4lNaeOeBrfBZa777h3m).
 ### cluster-api-provider-kubemark
@@ -172,7 +172,7 @@ Cluster API infrastructure provider for KubeVirt
   - Slack: [#cluster-api-kubevirt](https://kubernetes.slack.com/messages/cluster-api-kubevirt)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API Provider KubeVirt Syncup Meetings: [Tuesdays at 8:00 PT (Pacific Time)](https://zoom.us/j/94685513559?pwd=cnI3RUQyZ3RrckpOc1BQNDA1Q1BrZz09) (weekly starting Tuesday December 7th, 2021). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API Provider KubeVirt Syncup Meetings: [Tuesdays at 8:00 PT (Pacific Time)](https://zoom.us/j/94685513559?pwd=cnI3RUQyZ3RrckpOc1BQNDA1Q1BrZz09) (weekly starting Tuesday December 7th, 2021). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1ZAnRLCKOVbDqrsrYis2OR0aZIAlqp576gCJVCkMNiHM/edit?usp=sharing).
 ### cluster-api-provider-nested
 Cluster API infrastructure provider for Nested Clusters
@@ -182,7 +182,7 @@ Cluster API infrastructure provider for Nested Clusters
   - Slack: [#cluster-api-nested](https://kubernetes.slack.com/messages/cluster-api-nested)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API Provider Nested Office Hours: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/91929881559?pwd=WllxazhTUzBFN1BNWTRadTA3NGtQQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API Provider Nested Office Hours: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/91929881559?pwd=WllxazhTUzBFN1BNWTRadTA3NGtQQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/10aTeq2lhXW_3aFQAd_MdGjY8PtZPslKhZCCcXxFp3_Q/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-openstack
@@ -193,7 +193,7 @@ Cluster API infrastructure provider for OpenStack
   - Slack: [#cluster-api-openstack](https://kubernetes.slack.com/messages/cluster-api-openstack)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API Provider OpenStack Office Hours: [Wednesdays at 14:00 UTC](https://zoom.us/j/91405526408?pwd=bVBxempwVDBzejJGQlhSOGlXZnRxUT09) (alternate weeks, check agenda doc for last meeting). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
+  - Cluster API Provider OpenStack Office Hours: [Wednesdays at 14:00 UTC](https://zoom.us/j/91405526408?pwd=bVBxempwVDBzejJGQlhSOGlXZnRxUT09) (alternate weeks, check agenda doc for last meeting). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14%3A00&tz=UTC).
     - [Meeting notes and Agenda](https://cluster-api-openstack.sigs.k8s.io/agenda).
 ### cluster-api-provider-packet
 Cluster API infrastructure provider for Packet
@@ -210,7 +210,7 @@ Cluster API infrastructure provider for vSphere
   - Slack: [#cluster-api-vsphere](https://kubernetes.slack.com/messages/cluster-api-vsphere)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API vSphere meeting: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/92253194848?pwd=cVVVNDMxeTl1QVJPUlpvLzNSVU1JZz09) (biweekly starting Thursday June 25th, 2020). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+  - Cluster API vSphere meeting: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/92253194848?pwd=cVVVNDMxeTl1QVJPUlpvLzNSVU1JZz09) (biweekly starting Thursday June 25th, 2020). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/15CD2VOdkCAEcq2mm5FVoPO8M4-0a2SA2ajHLFBYqz7c/edit?usp=sharing).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu).
 ### image-builder
@@ -221,7 +221,7 @@ A collection of cross-provider Kubernetes virtual machine image building utiliti
   - Slack: [#image-builder](https://kubernetes.slack.com/messages/image-builder)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - Image Builder office hours: [Mondays at 08:30 PT (Pacific Time)](https://zoom.us/j/807524571?pwd=WEFTeDJzeWU3bVFkcWQ0UEdZRkRCdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
+  - Image Builder office hours: [Mondays at 08:30 PT (Pacific Time)](https://zoom.us/j/807524571?pwd=WEFTeDJzeWU3bVFkcWQ0UEdZRkRCdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08%3A30&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### kOps
@@ -232,7 +232,7 @@ A tool for creating, destroying, upgrading and maintaining production-grade, hig
   - Slack: [#kops-dev](https://kubernetes.slack.com/messages/kops-dev)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - kOps Office Hours: [Fridays at 09:00 PT (Pacific Time)](https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  - kOps Office Hours: [Fridays at 09:00 PT (Pacific Time)](https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit).
 ### kubeadm
 A tool that performs the actions necessary to get a minimum viable, secure cluster up and running in a user friendly way
@@ -250,7 +250,7 @@ A tool that performs the actions necessary to get a minimum viable, secure clust
   - Slack: [#kubeadm](https://kubernetes.slack.com/messages/kubeadm)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - kubeadm Office Hours: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/179916854?pwd=dzRhbjFnRGVQRDVUVHY1a29JV2JxUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+  - kubeadm Office Hours: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/179916854?pwd=dzRhbjFnRGVQRDVUVHY1a29JV2JxUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1ONcoy8bOw8SWPUwXxnKeRZST3lnUxYpUv4Y6466h9Ek/edit).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### kubespray
@@ -269,7 +269,7 @@ Implements a local Kubernetes cluster for application development on macOS, Linu
   - Slack: [#minikube](https://kubernetes.slack.com/messages/minikube)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
-  - minikube office hours: [Mondays at 11:00 PT (Pacific Time)](https://zoom.us/j/97017029363?pwd=U3MvZ3pMMHM5eWorSjgzUnd5OEFtUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+  - minikube office hours: [Mondays at 11:00 PT (Pacific Time)](https://zoom.us/j/97017029363?pwd=U3MvZ3pMMHM5eWorSjgzUnd5OEFtUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit).
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects

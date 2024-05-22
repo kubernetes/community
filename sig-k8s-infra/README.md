@@ -15,7 +15,7 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Spec
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+* Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
   * [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
   * [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 
@@ -74,7 +74,7 @@ Code and configuration to manage DNS records for domains owned by the Kubernetes
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 - **Meetings:**
-  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 ### k8s-infra-groups
@@ -85,7 +85,7 @@ Code and configuration to manage Google Groups for domains owned by the Kubernet
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 - **Meetings:**
-  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 ### k8s.io
@@ -96,7 +96,7 @@ Code and configuration to manage Kubernetes project infrastructure, including va
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 - **Meetings:**
-  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 ### porche
@@ -107,7 +107,7 @@ A custom HTTP redirector serving Kubernetes binaries from existing vendor suppor
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 - **Meetings:**
-  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 ### registry.k8s.io
@@ -118,7 +118,7 @@ A custom HTTP redirector serving Kubernetes container image blobs from existing 
   - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
 - **Meetings:**
-  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20:00&tz=UTC).
+  - Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
     - [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
     - [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
 
