@@ -92,7 +92,6 @@ filters:
 
 Instead, set a `.*` key inside `filters` (as shown in the previous example).
 
-
 #### Emeritus
 
 It is inevitable, but there are times when someone may shift focuses, change jobs or step away from
