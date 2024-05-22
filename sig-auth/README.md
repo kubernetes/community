@@ -16,13 +16,13 @@ The [charter](charter.md) defines the scope and governance of the Auth Special I
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-auth) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/264572674?pwd=NHVXTm14VktMRi8zRmU0aUt1NE9uQT09) (biweekly, you must be signed into a free zoom account to join). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/264572674?pwd=NHVXTm14VktMRi8zRmU0aUt1NE9uQT09) (biweekly, you must be signed into a free zoom account to join). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw).
-* Secrets Store CSI Meeting: [Thursdays at 9:00 PT (Pacific Time)](https://zoom.us/j/91272289538?pwd=ZXZFV251Zi82Vnp3cEJrcmVDeGZaZz09) (biweekly, you must be signed into a free zoom account to join). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+* Secrets Store CSI Meeting: [Thursdays at 9:00 PT (Pacific Time)](https://zoom.us/j/91272289538?pwd=ZXZFV251Zi82Vnp3cEJrcmVDeGZaZz09) (biweekly, you must be signed into a free zoom account to join). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1q74nboAg0GSPcom3kLWCIoWg43Qg3mr306KNL58f2hg/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0PCFJrlpV6_nR_j_3RtnwI).
-* Weekly Issues/PR Triage Meeting: [Mondays at 9:00 PT (Pacific Time)](https://zoom.us/j/264572674?pwd=NHVXTm14VktMRi8zRmU0aUt1NE9uQT09) (weekly, you must be signed into a free zoom account to join). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
+* Weekly Issues/PR Triage Meeting: [Mondays at 9:00 PT (Pacific Time)](https://zoom.us/j/264572674?pwd=NHVXTm14VktMRi8zRmU0aUt1NE9uQT09) (weekly, you must be signed into a free zoom account to join). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
 
 ## Leadership
 

@@ -14,11 +14,11 @@ The [charter](charter.md) defines the scope and governance of the Windows Specia
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-windows) for the group will typically add invites for the following meetings to your calendar.*
-* Backlog Refinement  / Bug Triage Meeting: [Thursdays at 12:30 Eastern Time (ET)](https://zoom.us/j/94389601840?pwd=MCs2SEJQWG0zUWpBS3Nod0ZNMmVXQT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Time%20%28ET%29).
-* Regular SIG Meeting: [Tuesdays at 12:30 Eastern Time (ET)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:30&tz=Eastern%20Time%20%28ET%29).
+* Backlog Refinement  / Bug Triage Meeting: [Thursdays at 12:30 Eastern Time (ET)](https://zoom.us/j/94389601840?pwd=MCs2SEJQWG0zUWpBS3Nod0ZNMmVXQT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12%3A30&tz=Eastern%20Time%20%28ET%29).
+* Regular SIG Meeting: [Tuesdays at 12:30 Eastern Time (ET)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12%3A30&tz=Eastern%20Time%20%28ET%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1aCcqSDBuXQ2gTbBg6QuGvLxCmzlSrAbTfflCTmo-960/).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2OH9InCcNkWNu2bl-gmIU4).
-* Weekly CI Meeting: [Tuesdays at 12:15 Eastern Time (ET)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12:15&tz=Eastern%20Time%20%28ET%29).
+* Weekly CI Meeting: [Tuesdays at 12:15 Eastern Time (ET)](https://zoom.us/j/96892680257?pwd=TVNyMzB4VVMwRGZnUkgzT1dnb2szZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12%3A15&tz=Eastern%20Time%20%28ET%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1j2XEKXNyGaSO0XZNkSQUliaT48ZQl6StLhrsVurJoco/edit#).
 
 ## Leadership
