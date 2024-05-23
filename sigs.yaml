@@ -1761,6 +1761,10 @@ sigs:
       a distributed system
     owners:
     - https://raw.githubusercontent.com/etcd-io/etcd/main/OWNERS
+  - name: etcd-manager
+    description: etcd manager
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/etcd-manager/main/OWNERS
   - name: etcd-play
     description: etcd playground
     owners:
