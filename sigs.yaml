@@ -823,20 +823,21 @@ sigs:
       name: Michael McCune
       company: Red Hat
     tech_leads:
-    - github: andrewsykim
-      name: Andrew Sy Kim
-      company: Google
     - github: cheftako
       name: Walter Fender
       company: Google
-    - github: nckturner
-      name: Nick Turner
-      company: Amazon
+    - github: elmiko
+      name: Michael McCune
+      company: Red Hat
     emeritus_leads:
+    - github: andrewsykim
+      name: Andrew Sy Kim
     - github: hogepodge
       name: Chris Hoge
     - github: jagosan
       name: Jago Macleod
+    - github: nckturner
+      name: Nick Turner
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
