@@ -72,7 +72,7 @@ The WG Serving will operate in several workstreams with different areas of focus
    - Mention the meeting notes document in the description
 4. Make sure one of the chairs has accepted the invite. If not - ask chairs for a host key to claim a host during the meeting.
 5. Start a recording of the meeting (record to the cloud).
-
+6. You can end the recording explicitly or it will be finished when the meeting will end and all participants will leave it
 
 ### upload meeting recording to YouTube (for chairs)
 
