@@ -47,6 +47,7 @@ Successful progress
 -->
 - KubeCon NA update 2023: https://www.youtube.com/watch?v=spyEgGcqwFs
 - KubeCon EU update 2023: https://www.youtube.com/watch?v=zZFN9KMs5sI
+- KubeCon CN update 2023: https://www.youtube.com/watch?v=SPfJrDnnprs
 
 4. KEP work in 2023 (v1.27, v1.28, v1.29):
 
