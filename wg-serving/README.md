@@ -56,7 +56,7 @@ The WG Serving will operate in several workstreams with different areas of focus
 ### subscribe to WG events
 
 1. Join the [`dev@kubernetes.io`](https://groups.google.com/a/kubernetes.io/g/dev) and [`wg-serving@kubernetes.io`](https://groups.google.com/a/kubernetes.io/g/wg-serving) for needed permissions.
-2. You should have meeting invites in your inbox after some delay. Make sure to fish them out of Junk/Spam and accept and invite so it will be added to the calendar
+2. You should have meeting invites in your inbox after some delay. Make sure to fish them out of Junk/Spam and accept the invite so it will be added to your calendar.
 3. Import [WG Serving Shared Calendar](https://calendar.google.com/calendar/u/0/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba@group.calendar.google.com) to see WG events.
 
 ### schedule an ad-hoc or workstream meeting
