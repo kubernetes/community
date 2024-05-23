@@ -62,7 +62,7 @@ The WG Serving will operate in several workstreams with different areas of focus
 ### schedule an ad-hoc or workstream meeting
 
 1. Get access to the [WG Serving Shared Calendar](https://calendar.google.com/calendar/u/0/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba@group.calendar.google.com). Ask chairs in #wg-serving slack chat.
-2. Create a meting nodes document or find existing one. Make sure it is shared as following:
+2. Create a meeting notes document or find existing one. Make sure it is shared as following:
    - Shared with `dev@kubernetes.io` for commenting
    - Shared with `wg-serving@kubernetes.io` for editing
 3. Create an event. Make sure to create it in the shared calendar.
