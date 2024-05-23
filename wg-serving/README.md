@@ -81,7 +81,7 @@ The WG Serving will operate in several workstreams with different areas of focus
 3. Upload video to YouTube
    - Name should follow the template: `[WG Serving] name of the meeting 20240516`.
    - Add meeting notes and agenda document to the meeting description
-   - Add video to k8s-owned YT playlist:
+   - Add video to k8s-owned YouTube playlist:
      - Once video if uploaded, open the video page, click +Save button under the video, select the checkbox `WG Serving`.
 4. Add link to the video to the meeting notes document
 5. In zoom account change the title of the recording - add `(uploaded)` suffix
