@@ -25,7 +25,7 @@ body:
     id: audience
     attributes:
       label: Target Audience
-      description: Contributor Comms have different Channels that aim at different target audiences. To determain what channels to utilize please state your audience for the request.
+      description: Contributor Comms has different channels that aim at different target audiences. To determine what channels to utilize, please state your audience for the request.
       options:
         - Kubernetes Contributors
         - Kubernetes End-Users
