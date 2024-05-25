@@ -6,7 +6,7 @@ body:
   - type: textarea
     id: content
     attributes:
-      label: What do you want send out?(Please include a link to any information or a draft)
+      label: What do you want to send out? (Please include a link to any information or a draft)
       description: Gists, Hackmd.io, or Google Doc preferred. Include any artwork, pics, diagrams, or any other assets with public links.
     validations:
       required: true
