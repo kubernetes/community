@@ -38,7 +38,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Benjamin Wang (**[@ahrtr](https://github.com/ahrtr)**), VMWare
+* Benjamin Wang (**[@ahrtr](https://github.com/ahrtr)**), VMware
 * Marek Siarkowicz (**[@serathius](https://github.com/serathius)**), Google
 
 ## Contact
@@ -48,6 +48,12 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - GitHub Teams:
     - [@kubernetes/sig-etcd-leads](https://github.com/orgs/kubernetes/teams/sig-etcd-leads) - SIG Chairs and Tech Leads
 - Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-etcd:
+* [WG etcd Operator](/wg-etcd-operator)
+
 
 ## Subprojects
 
