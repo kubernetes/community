@@ -129,6 +129,12 @@ aliases:
     - johnbelamaric
     - klueska
     - pohly
+  wg-etcd-operator-leads:
+    - ahrtr
+    - hakman
+    - jberkus
+    - jmhbnz
+    - justinsb
   wg-lts-leads:
     - jeremyrickard
     - liggitt
