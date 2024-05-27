@@ -2617,20 +2617,12 @@ sigs:
     slack: sig-scalability
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scale
     teams:
-    - name: sig-scalability-api-reviews
-      description: API Changes and Reviews
-    - name: sig-scalability-bugs
-      description: Bug Triage and Troubleshooting
-    - name: sig-scalability-feature-requests
-      description: Feature Requests
-    - name: sig-scalability-misc
+    - name: sig-scalability
       description: General Discussion
+    - name: sig-scalability-leads
+      description: Leads
     - name: sig-scalability-pr-reviews
       description: PR Reviews
-    - name: sig-scalability-proprosals
-      description: Design Proposals
-    - name: sig-scalability-test-failures
-      description: Test Failures and Triage
     liaison:
       github: mrbobbytables
       name: Bob Killen
