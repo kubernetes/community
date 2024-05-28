@@ -301,10 +301,12 @@ opción multilingüe.
 
 ### Estrategia de Branch
 
-El proyecto Kubernetes utiliza un flujo de trabajo de _"Fork y Pull"_ que es estándar en GitHub. 
-En términos de Git, tu propio fork se denomina _"`origin`"_ y el repositorio Git del proyecto real se llama _"`upstream`"_. 
-Para mantener tu branch personal (`origin`) actualizada con el proyecto (`upstream`), 
-debes configurarla en tu copia de trabajo local.
+El proyecto Kubernetes utiliza un flujo de trabajo de _"Fork y Pull"_ que es estándar en
+GitHub. En términos de Git, tu propio fork se denomina _"`origin`"_ y
+el repositorio Git del proyecto real se llama _"`upstream`"_. 
+Para mantener tu branch personal (`origin`) actualizada con el proyecto (`upstream`), debes
+configurarla en tu copia de trabajo local.
+
 
 #### Agregar Upstream
 
