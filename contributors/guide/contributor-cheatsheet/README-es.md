@@ -322,8 +322,9 @@ git remote add upstream <repositorio Git upstream>
 git remote set-url --push upstream no_push
 ```
 
-Esto se puede verificar ejecutando `git remote -v`, 
-que mostrará tus repositorios remotos configurados.
+Esto se puede verificar ejecutando `git remote -v`, que mostrará tus repositorios remotos
+configurados.
+
 
 #### Mantener Tu Fork Sincronizado
 
