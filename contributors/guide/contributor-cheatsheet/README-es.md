@@ -200,7 +200,7 @@ otras formas de trabajo que se almacenarán en un repositorio git.
 - Sigue las instrucciones de la plantilla de PR si hay una disponible. 
   Esto ayudará a quienes responden a tu PR.
 - Si se trata de una [corrección trivial], como un enlace roto, un error tipográfico o de gramática, revisa el
-  documento completo en busca de otros errores potenciales. No abras múltiples PR para
+  documento completo en busca de otros errores potenciales. No abras múltiples PRs para
   pequeñas correcciones en el mismo documento.
 - Hace referencia a los problemas relacionados con tu PR o a los problemas que el PR podría resolver.
 - Evita realizar cambios excesivamente grandes en un solo commit. En su lugar, divide tu PR
