@@ -198,7 +198,7 @@ otras formas de trabajo que se almacenarán en un repositorio git.
 #### Crear un Pull Request
 
 - Sigue las instrucciones de la plantilla de PR si hay una disponible. 
-  Ayudará a quienes responden a tu PR.
+  Esto ayudará a quienes responden a tu PR.
 - Si se trata de una [corrección trivial], como un enlace roto, un error tipográfico o de gramática, revisa el
   documento completo en busca de otros errores potenciales. No abras múltiples PR para
   pequeñas correcciones en el mismo documento.
