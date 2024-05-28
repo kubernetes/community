@@ -286,10 +286,10 @@ Labels frecuentemente utilizados:
 
 ## Trabajar Localmente
 
-Antes de proponer una solicitud de extracción (Pull Request), deberás realizar algún trabajo 
-localmente. 
-Si eres nuevo en Git, el [tutorial de Git de Atlassian] es un buen punto de partida. 
-Como alternativa, el [tutorial Git Magic] de Stanford es una buena opción multilingüe.
+Antes de proponer un Pull Request, deberás realizar algún trabajo 
+localmente. Si eres nuevo en Git, el [tutorial de Git de Atlassian] es un buen punto de
+partida. Como alternativa, el [tutorial Git Magic] de Stanford es una buena
+opción multilingüe.
 
 **Referencias:**
 - [Tutorial de Git de Atlassian]
