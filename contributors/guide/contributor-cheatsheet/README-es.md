@@ -333,7 +333,8 @@ git rebase upstream/master
 git push
 ```
 
-Esto es lo mínimo que debes hacer antes de crear una nueva rama para trabajar en tu función o corrección.
+Esto es lo mínimo que debes hacer antes de crear una nueva rama para trabajar en tu
+función o corrección.
 
 ```
 git checkout -b myfeature
