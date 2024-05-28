@@ -205,7 +205,8 @@ otras formas de trabajo que se almacenarán en un repositorio git.
 - Haz referencia a los problemas relacionados con tu PR o a los problemas que el PR podría resolver.
 - Evita realizar cambios excesivamente grandes en un solo commit. En su lugar, divide tu PR
   en varios commits pequeños y lógicos. Esto facilita que tu PR sea revisado.
-- Comenta en tu propio PR cuando creas que algo necesita una explicación adicional.
+- Comenta en tu propio PR cuando creas que algo necesita una explicación
+  adicional.
 - Sé selectivo al asignar tu PR con [`/assign @<nombre de usuario>`][assign].
   Asignar revisores en exceso no acelerará la revisión de tu PR.
 - Si tu PR se considera un _"Trabajo en progreso"_(_"Work in progress"_), prefixa el nombre con `[WIP]`
