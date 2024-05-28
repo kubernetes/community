@@ -185,8 +185,7 @@ el [foro de Kubernetes].
 
 ### Abrir un Pull Request
 
-Las solicitudes de extracción (Pull Request o PR) son el principal medio 
-para contribuir con código, documentación u
+Los Pull Request (PR) son el principal medio para contribuir con código, documentación u
 otras formas de trabajo que se almacenarán en un repositorio git.
 
 **Referencias:**
