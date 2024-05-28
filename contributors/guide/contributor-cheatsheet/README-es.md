@@ -357,8 +357,8 @@ tu PR (esto puede ser hecho por un revisor emitiendo el comando: `/label tide/me
 combinar _todos_ los commits que forman parte de esta PR y no resultará en la eliminación del 
 label `LGTM` (si ya se ha aplicado) o en la repetición de las pruebas CI.
 
-[Curso para Colaboradores]: https://www.kubernetes.dev/docs/onboarding
-[Guía para Colaboradores]: /contributors/guide/README.md
+[Curso para contribuidores]: https://www.kubernetes.dev/docs/onboarding
+[Guía para contribuidores]: /contributors/guide/README.md
 [Guía del Desarrollador]: /contributors/devel/README.md
 [Panel de gubernator]: https://gubernator.k8s.io/pr
 [Prow]: https://prow.k8s.io
