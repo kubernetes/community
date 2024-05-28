@@ -360,6 +360,7 @@ label `LGTM` (si ya se ha aplicado) o en la repetición de las pruebas CI.
 [Curso para Colaboradores]: https://www.kubernetes.dev/docs/onboarding
 [Guía para Colaboradores]: /contributors/guide/README.md
 [Guía del Desarrollador]: /contributors/devel/README.md
+[Panel de gubernator]: https://gubernator.k8s.io/pr
 [Prow]: https://prow.k8s.io
 [Tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
 [Panel de Tide]: https://prow.k8s.io/tide
