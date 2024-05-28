@@ -339,9 +339,9 @@ git checkout -b myfeature
 #### Squashing Commits
 
 El propósito principal de [squashing commits] es crear un Git limpio con 
-historial legible y con log de los cambios realizados. 
-Normalmente, esto se hace en la última fase de revisión de un PR. 
-Si no estás seguro de si debes hacer el squashing de tus commits, es mejor optar por tener más commits y dejar que lo decidan los otros colaboradores encargados de revisar y aprobar tu PR.
+historial legible y con log de los cambios realizados. Normalmente, esto se hace en la última
+fase de revisión de un PR. Si no estás seguro de si debes hacer el squashing de tus commits, es mejor optar por tener más commits y dejar que lo decidan
+los otros colaboradores encargados de revisar y aprobar tu PR.
 
 Realiza un rebase interactivo para elegir qué commits deseas conservar y cuáles deseas combinar, y luego fuerza la actualización de tu branch:
 
