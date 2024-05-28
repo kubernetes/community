@@ -403,4 +403,3 @@ label `LGTM` (si ya se ha aplicado) o en la repetición de las pruebas CI.
 [approve]: https://prow.k8s.io/command-help#approve
 [Equipo de Administración de GitHub]: /github-management#github-administration-team
 [Publicación de Parches de Kubernetes]: https://kubernetes.io/releases/patch-releases/
-
