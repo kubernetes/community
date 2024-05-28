@@ -298,6 +298,7 @@ opción multilingüe.
 - [Pruebas locales]
 - [Guía del desarrollador]
 
+
 ### Estrategia de Branch
 
 El proyecto Kubernetes utiliza un flujo de trabajo de _"Fork y Pull"_ que es estándar en GitHub. 
