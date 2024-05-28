@@ -327,9 +327,8 @@ que mostrará tus repositorios remotos configurados.
 
 #### Mantener Tu Fork Sincronizado
 
-Obtén todos los cambios de `upstream` y _"rebasa"_ (rebase) en tu branch local `master`. 
-Esto sincronizará tu repositorio local con el proyecto `upstream`. 
-Luego, envía los cambios locales a tu `remote master`.
+Obtén todos los cambios de `upstream` y _"rebasa"_ (rebase) en tu branch local
+`master`. Esto sincronizará tu repositorio local con el proyecto `upstream`. Luego, envía los cambios locales a tu `remote master`.
 
 ```
 git fetch upstream
