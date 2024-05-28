@@ -352,10 +352,7 @@ git rebase -i HEAD~3
 git push --force
 ```
 
-**Nota**: También puedes pedir a tu revisor que añada el label `tide/merge-method-squash` a 
-tu PR (esto puede ser hecho por un revisor emitiendo el comando: `/label tide/merge-method-squash`), esto permitirá que el bot se encargue de 
-combinar _todos_ los commits que forman parte de esta PR y no resultará en la eliminación del 
-label `LGTM` (si ya se ha aplicado) o en la repetición de las pruebas CI.
+**Nota**: También puedes pedir a tu revisor que añada el label `tide/merge-method-squash` a tu PR (esto puede ser hecho por un revisor emitiendo el comando: `/label tide/merge-method-squash`), esto permitirá que el bot se encargue de combinar _todos_ los commits que forman parte de esta PR y no resultará en la eliminación del label `LGTM` (si ya se ha aplicado) o en la repetición de las pruebas CI.
 
 [Curso para contribuidores]: https://www.kubernetes.dev/docs/onboarding
 [Guía para contribuidores]: /contributors/guide/README.md
