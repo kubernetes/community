@@ -191,7 +191,7 @@ otras formas de trabajo que se almacenarán en un repositorio git.
 **Referencias:**
 - [Labels]
 - [Comandos de Prow][comandos]
-- [Proceso de Solicitud de Extracción (Pull Request)][Pull Requests]
+- [Proceso de creación de Pull Requests][Pull Requests]
 - [Flujo de Trabajo de GitHub]
 
 
