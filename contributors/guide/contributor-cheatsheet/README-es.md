@@ -213,6 +213,8 @@ otras formas de trabajo que se almacenarán en un repositorio git.
 - Si tu PR se considera un _"Trabajo en progreso"_(_"Work in progress"_), utiliza el prefijo de `[WIP]`
   o utiliza el comando [`/hold`][hold]. Esto evitará que el PR se fusione
   hasta que se quite el `[WIP]` o la retención.
+- Si tu PR no ha sido revisado, no cierres y abras un PR nuevo con los
+  mismos cambios. Contata a los revisores en un compentario con `@<github username>`. 
 - Si tu PR no recibe suficiente atención, publica un enlace al PR en el
   canal `#pr-reviews` en Slack para encontrar revisores adiccionales.
 
