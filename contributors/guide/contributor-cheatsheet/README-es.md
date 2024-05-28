@@ -210,7 +210,7 @@ otras formas de trabajo que se almacenarán en un repositorio git.
   adicional.
 - Sé selectivo al asignar tu PR con [`/assign @<nombre de usuario>`][assign].
   Asignar revisores en exceso no acelerará la revisión de tu PR.
-- Si tu PR se considera un _"Trabajo en progreso"_(_"Work in progress"_), prefixa el nombre con `[WIP]`
+- Si tu PR se considera un _"Trabajo en progreso"_(_"Work in progress"_), utiliza el prefijo de `[WIP]`
   o utiliza el comando [`/hold`][hold]. Esto evitará que el PR se fusiona hasta que se levante el `[WIP]` o la retención.
 - Si tu PR no recibe suficiente atención, publica un enlace al PR en el
   canal `#pr-reviews` en Slack para encontrar revisores adiccionales.
