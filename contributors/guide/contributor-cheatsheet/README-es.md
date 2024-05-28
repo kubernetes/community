@@ -1,4 +1,4 @@
-# Cheat Sheet para Colaboradores de Kubernetes
+# Pagina de Trucos "Cheat sheet" para Colaboradores de Kubernetes
 
 Una lista de recursos comunes al contribuir a Kubernetes, consejos, trucos y
 mejores prácticas comúnmente utilizadas dentro del proyecto Kubernetes. Es un
