@@ -328,7 +328,6 @@ Good examples of OWNERS usage:
 - OWNERS files that are regularly updated (at least once per release)
 
 [go-regex]: https://golang.org/pkg/regexp/#pkg-overview
-[test-infra-7690]: https://github.com/kubernetes/test-infra/issues/7690
 [approver-role]: https://git.k8s.io/community/community-membership.md#approver
 [reviewer-role]: https://git.k8s.io/community/community-membership.md#reviewer
 [community membership doc]: https://git.k8s.io/community/community-membership.md
