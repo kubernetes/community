@@ -231,8 +231,6 @@ is the state of today.
     PR is being ignored
   - Many **reviewers** and **approvers** are so overloaded by GitHub notifications that @mention'ing
     is unlikely to get a quick response
-  - If an **author** `/assign`'s a PR, **reviewers** and **approvers** will be made aware of it on
-    their [PR dashboard](https://gubernator.k8s.io/pr)
   - An **author** can work around this by manually reading the relevant OWNERS files,
     `/unassign`'ing unresponsive individuals, and `/assign`'ing others
   - This is a sign that our OWNERS files are stale; pruning the **reviewers** and **approvers** lists
