@@ -45,7 +45,8 @@ A successful Registration lead should have the following qualities:
 
 ## Shadow to the Registration Lead Role
 This role can include one or more shadows. The Registration Lead can delegate/assign the tasks to the shadows. The expectation from a shadow is to lead one of the events-team roles in an upcoming summit. The shadows to the Registration Lead are responsible for handling all Registration lead related activities in the absence of the Lead.
-
+After shadows are selected and confirmed, add all lead and shadows' emails to the summit-team@kubernetes.io group in https://github.com/kubernetes/k8s.io/blob/main/groups/sig-contributor-experience/groups.yaml under `members` of `summit-team@kubernetes.io` or
+`.groups.[?(@.email-id=='summit-team@kubernetes.io')].members`.
 
 ## Registration Process
 
