@@ -46,9 +46,9 @@ The [charter](charter.md) defines the scope and governance of the Serving Workin
 
 The WG Serving will operate in several workstreams with different areas of focus. The following workstreams are currently active:
 
-- [WS Autoscaling](https://docs.google.com/document/d/1QsN4ubjerEqo5L4bQamOFFS2lmCv5zNPis2Z8gcIITg/edit?usp=sharing)
-- WS MultiHost/MultiNode
-- [WS Orchestration](https://docs.google.com/document/d/1hbEx3ZEqdXCqWH9RL3uy9FIy35B8pFJ5KiK3HsOz2FE/edit?usp=sharing)
+- [Autoscaling](https://docs.google.com/document/d/1QsN4ubjerEqo5L4bQamOFFS2lmCv5zNPis2Z8gcIITg/edit?usp=sharing)
+- [MultiHost/MultiNode](https://docs.google.com/document/d/11-sK4ZIb-mJ7LGzIGx8eNViQUvZTFc5Ne4208LFEOwU/edit)
+- [Orchestration](https://docs.google.com/document/d/1hbEx3ZEqdXCqWH9RL3uy9FIy35B8pFJ5KiK3HsOz2FE/edit?usp=sharing)
 
 
 ## How to ...
