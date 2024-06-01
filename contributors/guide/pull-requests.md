@@ -1,5 +1,5 @@
 ---
-title: "Pull Request Process"
+title: "X Media"
 weight: 5
 description: |
   Explains the process and best practices for submitting a pull request
