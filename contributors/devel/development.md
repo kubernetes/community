@@ -345,9 +345,12 @@ To test Kubernetes, you will need to install a recent version of [etcd](https://
 This script will instruct you to make a change to your `PATH`. To make
 this permanent, add this to your `.bashrc` or login script:
 
+
 ```sh
-export PATH="$GOPATH/src/k8s.io/kubernetes/third_party/etcd:${PATH}"
+export PATH="$KUBE_ROOT/third_party/etcd:${PATH}"
 ```
+
+Here, KUBE_ROOT is your Kubernetes source root directory
 
 ##### BASH version requirement
 
