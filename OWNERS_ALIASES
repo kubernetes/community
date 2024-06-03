@@ -189,4 +189,8 @@ aliases:
   provider-vmware:
     - cantbewong
     - frapposelli
+  sig-release-subproject-leads:
+    - gracenng
+    - katcosgrove
+    - xmudrii
 ## END CUSTOM CONTENT
