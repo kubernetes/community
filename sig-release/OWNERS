@@ -1,7 +1,7 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 reviewers:
-  - sig-release-leads
+  - sig-release-subproject-leads
 approvers:
   - sig-release-leads
 labels:
