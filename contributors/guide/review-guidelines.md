@@ -145,7 +145,7 @@ git checkout foo
 [KEEP THE SPACE SHUTTLE FLYING]: https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/volume/persistentvolume/pv_controller.go#L57-L117
 [commit message guidelines]: ./pull-requests.md#7-commit-message-guidelines
 [GitHub Status]: https://help.github.com/en/github/setting-up-and-managing-your-github-profile/personalizing-your-profile#setting-a-status
-[Blunderbuss]: https://sigs.k8s.io/prow/pkg/plugins/approve/approvers/
+[Blunderbuss]: https://docs.prow.k8s.io/docs/components/plugins/approve/approvers/#blunderbuss-and-reviewers
 [emeritus_approver]: ./owners.md#emeritus
 [Keeping the Bar High - How to be a bad ass Code Reviewer, Tim Hockin]: https://www.youtube.com/watch?v=OZVv7-o8i40
 [Kubernetes Code Reviewing with Tim Hockin]: https://docs.google.com/document/d/15y8nIgWMzptHcYIeqf4vLJPttE3Fj_ht4I6Nj4ghDLA/edit#heading=h.3dchnigrxf5y
