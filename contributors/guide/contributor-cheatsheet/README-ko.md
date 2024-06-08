@@ -370,7 +370,7 @@ PR을 검토하고 승인하도록 지정된 다른 참여자의 판단에 맡�
 [쿠버네티스 포럼]: https://discuss.kubernetes.io/
 [풀 리퀘스트 과정]: /contributors/guide/pull-requests.md
 [github 작업 흐름]: /contributors/guide/github-workflow.md
-[prow]: http://sigs.k8s.io/prow/pkg#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [cla]: /CLA.md#how-do-i-sign
 [CLA 문제해결 가이드라인]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help

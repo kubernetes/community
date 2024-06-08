@@ -352,7 +352,7 @@ fase de uma revisão do PR. Se você não tem certeza se deve efetuar o squashin
 [Fórum do Kubernetes]: https://discuss.kubernetes.io/
 [Processo de pull request]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
-[prow]: http://sigs.k8s.io/prow/pkg#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [cla]: /CLA.md#how-do-i-sign
 [solucionando problemas do cla]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help
