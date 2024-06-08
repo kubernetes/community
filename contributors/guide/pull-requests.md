@@ -635,7 +635,7 @@ Once the tests pass, and the reviewer adds the `lgtm` and `approved` labels, the
 The merge pool is needed to make sure no incompatible changes have been introduced by other pull requests since the tests were last run on your pull request.
 <!-- TODO: create parallel instructions for reviewers -->
 
-[Tide](https://git.k8s.io/test-infra/prow/cmd/tide) will manage the merge pool
+[Tide](https://sigs.k8s.io/prow/cmd/tide) will manage the merge pool
 automatically. It uses GitHub queries to select PRs into “tide pools”,
 runs as many in a batch as it can (“tide comes in”), and merges them (“tide goes out”).
 

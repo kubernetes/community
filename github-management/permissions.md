@@ -97,6 +97,6 @@ member in the organization.
 [org permissions]:
 https://help.github.com/articles/permission-levels-for-an-organization/
 [OWNERS]: /contributors/guide/owners.md
-[peribolos]: https://git.k8s.io/test-infra/prow/cmd/peribolos
+[peribolos]: https://sigs.k8s.io/prow/cmd/peribolos
 [repo permissions]:
 https://help.github.com/articles/repository-permission-levels-for-an-organization/

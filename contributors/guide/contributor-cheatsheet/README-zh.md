@@ -303,7 +303,7 @@ git checkout -b myfeature
 [Kubernetes 论坛]: https://discuss.kubernetes.io/
 [Pull request 处理]: /contributors/guide/pull-requests.md
 [GitHub 工作流程]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [cla]: /CLA.md#how-do-i-sign
 [cla 故障排除指南]: /CLA.md#troubleshooting
 [命令]: https://prow.k8s.io/command-help

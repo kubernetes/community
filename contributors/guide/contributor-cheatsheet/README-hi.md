@@ -297,7 +297,7 @@ PR संशोधन का चरण। यदि आप अनिश्चि
 [कुबरनेट्स फ़ोरम]: https://discuss.kubernetes.io/
 [पुल अनुरोध प्रक्रिया]: /contributors/guide/pull-requests.md
 [github वर्कफ़्लो]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [CLA]: /CLA.md#how-do-i-sign
 [CLA समस्या निवारण दिशा निर्देशों]: /CLA.md#troubleshooting
 [आदेश]: https://prow.k8s.io/command-help

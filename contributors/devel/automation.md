@@ -9,7 +9,7 @@ processes.
 ## Tide
 
 This project formerly used a Submit Queue, it has since been replaced by
-[Tide](https://git.k8s.io/test-infra/prow/cmd/tide).
+[Tide](https://sigs.k8s.io/prow/cmd/tide).
 
 ### Ready to merge status
 

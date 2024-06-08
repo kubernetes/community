@@ -200,7 +200,7 @@ from the above procedure:
   * Grant the [@kubernetes/stage-bots] team admin access to the repo.
   * Setup branch protection and enable access to the
   `stage-bots` team by adding the repo in
-  [`prow/config.yaml`](https://git.k8s.io/test-infra/prow/config.yaml). See
+  [`prow/config.yaml`](https://git.k8s.io/test-infra/config/prow/config.yaml). See
   [kubernetes/test-infra#9292](https://github.com/kubernetes/test-infra/pull/9292)
   for an example.
   * Once the repo has been created, add the repo to
