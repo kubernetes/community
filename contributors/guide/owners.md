@@ -22,7 +22,7 @@ of OWNERS files.
 
 ## OWNERS spec
 
-The [k8s.io/test-infra/prow/repoowners package](http://sigs.k8s.io/prow/pkg/repoowners/repoowners.go)
+The [k8s.io/test-infra/prow/repoowners package](https://sigs.k8s.io/prow/pkg/repoowners/repoowners.go)
 is the main consumer of OWNERS files.  If this page is out of date, look there.
 
 ### OWNERS
@@ -253,20 +253,20 @@ Kubernetes uses the Prow Blunderbuss plugin and Tide.
 Tide uses GitHub queries to select PRs into “tide pools”, runs as many in a
 batch as it can (“tide comes in”), and merges them (“tide goes out”).
 
-- [Blunderbuss plugin](http://sigs.k8s.io/prow/pkg/plugins/blunderbuss):
+- [Blunderbuss plugin](https://sigs.k8s.io/prow/pkg/plugins/blunderbuss):
   - responsible for determining **reviewers**
-- [Tide](http://sigs.k8s.io/prow/cmd/tide):
+- [Tide](https://sigs.k8s.io/prow/cmd/tide):
   - responsible for automatically running batch tests and merging multiple PRs together whenever possible.
   - responsible for retriggering stale PR tests.
   - responsible for updating a GitHub status check explaining why a PR can't be merged (eg: a
     missing `lgtm` or `approved` label)
 
-### [`prow`](http://sigs.k8s.io/prow/pkg)
+### [`prow`](https://sigs.k8s.io/prow/pkg)
 
 Prow receives events from GitHub, and reacts to them. It is effectively stateless. The following
 pieces of prow are used to implement the code review process above.
 
-- [cmd: tide](http://sigs.k8s.io/prow/cmd/tide)
+- [cmd: tide](https://sigs.k8s.io/prow/cmd/tide)
   - per-repo configuration:
     - `labels`: list of labels required to be present for merge (eg: `lgtm`)
     - `missingLabels`: list of labels required to be missing for merge (eg: `do-not-merge/hold`)
@@ -278,10 +278,10 @@ pieces of prow are used to implement the code review process above.
   - merges PR's once they meet the appropriate criteria as configured above
   - if there are any presubmit prow jobs for the repo the PR is against, they will be re-run one
     final time just prior to merge
-- [plugin: assign](http://sigs.k8s.io/prow/pkg/plugins/assign)
+- [plugin: assign](https://sigs.k8s.io/prow/pkg/plugins/assign)
   - assigns GitHub users in response to `/assign` comments on a PR
   - unassigns GitHub users in response to `/unassign` comments on a PR
-- [plugin: approve](http://sigs.k8s.io/prow/pkg/plugins/approve)
+- [plugin: approve](https://sigs.k8s.io/prow/pkg/plugins/approve)
   - per-repo configuration:
     - `issue_required`: defaults to `false`; when `true`, require that the PR description link to
       an issue, or that at least one **approver** issues a `/approve no-issue`
@@ -291,12 +291,12 @@ pieces of prow are used to implement the code review process above.
     OWNERS files has `/approve`'d
   - comments as required OWNERS files are satisfied
   - removes outdated approval status comments
-- [plugin: blunderbuss](http://sigs.k8s.io/prow/pkg/plugins/blunderbuss)
+- [plugin: blunderbuss](https://sigs.k8s.io/prow/pkg/plugins/blunderbuss)
   - determines **reviewers** and requests their reviews on PR's
-- [plugin: lgtm](http://sigs.k8s.io/prow/pkg/plugins/lgtm)
+- [plugin: lgtm](https://sigs.k8s.io/prow/pkg/plugins/lgtm)
   - adds the `lgtm` label when a **reviewer** comments `/lgtm` on a PR
   - the **PR author** may not `/lgtm` their own PR
-- [pkg: k8s.io/test-infra/prow/repoowners](http://sigs.k8s.io/prow/pkg/repoowners/repoowners.go)
+- [pkg: k8s.io/test-infra/prow/repoowners](https://sigs.k8s.io/prow/pkg/repoowners/repoowners.go)
   - parses OWNERS and OWNERS_ALIAS files
   - if the `no_parent_owners` option is encountered, parent owners are excluded from having
     any influence over files adjacent to or underneath of the current OWNERS file

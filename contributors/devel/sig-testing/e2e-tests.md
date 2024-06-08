@@ -644,7 +644,7 @@ A quick overview of how we run e2e CI on Kubernetes.
 
 We run a battery of [release-blocking jobs](https://testgrid.k8s.io/sig-release-master-blocking)
 against `HEAD` of the master branch on a continuous basis, and block merges
-via [Tide](http://sigs.k8s.io/prow/cmd/tide) on a subset of those
+via [Tide](https://sigs.k8s.io/prow/cmd/tide) on a subset of those
 tests if they fail.
 
 CI results can be found at [ci-test.k8s.io](http://ci-test.k8s.io), e.g.
