@@ -367,7 +367,7 @@ git push --force
 [Guía del Desarrollador]: /contributors/devel/README.md
 [Panel de gubernator]: https://gubernator.k8s.io/pr
 [Prow]: https://prow.k8s.io
-[Tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[Tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [Panel de Tide]: https://prow.k8s.io/tide
 [Comandos de Bots]: https://go.k8s.io/bot-commands
 [GitHub Labels]: https://go.k8s.io/github-labels

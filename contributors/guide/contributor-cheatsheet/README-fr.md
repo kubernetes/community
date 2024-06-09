@@ -285,7 +285,7 @@ Si vous ne savez pas si vous devez faire un squash de vos commits, il est préf�
 [guide du contributeur]: /contributors/guide/README.md
 [guide du développeur]: /contributors/devel/README.md
 [prow]: https://prow.k8s.io
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [tide dashboard]: https://prow.k8s.io/tide
 [bot commands]: https://go.k8s.io/bot-commands
 [gitHub labels]: https://go.k8s.io/github-labels

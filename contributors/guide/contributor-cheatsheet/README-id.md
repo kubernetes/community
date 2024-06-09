@@ -346,7 +346,7 @@ _squashing_ perlu dilakukan atau tidak.
 [Panduan Kontributor]: /contributors/guide/README.md
 [Panduan Pengembang]: /contributors/devel/README.md
 [prow]: https://prow.k8s.io
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [dasbor tide]: https://prow.k8s.io/tide
 [perintah bot]: https://go.k8s.io/bot-commands
 [Label GitHub]: https://go.k8s.io/github-labels
