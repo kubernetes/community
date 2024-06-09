@@ -345,7 +345,7 @@ anderer Beitragenden zu überlassen, die als Reviewer und Approver für den PR z
 [Contributor Guide]: /contributors/guide/README.md
 [Developer Guide]: /contributors/devel/README.md
 [Prow]: https://prow.k8s.io
-[Tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[Tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [Tide Dashboard]: https://prow.k8s.io/tide
 [Bot-Befehle]: https://go.k8s.io/bot-commands
 [GitHub Labels]: https://go.k8s.io/github-labels

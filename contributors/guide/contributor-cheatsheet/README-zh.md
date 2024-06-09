@@ -283,7 +283,7 @@ git checkout -b myfeature
 [贡献者指南]: /contributors/guide/README.md
 [开发者指南]: /contributors/devel/README.md
 [prow]: https://prow.k8s.io
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [tide 仪表盘]: https://prow.k8s.io/tide
 [Bot 命令]: https://go.k8s.io/bot-commands
 [GitHub 标签]: https://go.k8s.io/github-labels

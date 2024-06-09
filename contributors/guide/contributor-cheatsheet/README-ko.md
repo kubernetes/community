@@ -350,7 +350,7 @@ PR을 검토하고 승인하도록 지정된 다른 참여자의 판단에 맡�
 [컨트리뷰터 가이드]: /contributors/guide/README.md
 [개발자 가이드]: /contributors/devel/README.md
 [prow]: https://prow.k8s.io
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [tide 대시보드]: https://prow.k8s.io/tide
 [bot 명령]: https://go.k8s.io/bot-commands
 [gitHub 레이블]: https://go.k8s.io/github-labels
