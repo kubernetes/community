@@ -961,7 +961,7 @@ I want to call out [@karenb](https://kubernetes.slack.com/team/UCLQ9GKSP) dealin
                 *   People start to depend on non-ga beta things
                 *   Timebox amount of time a feature is allowed to stay in beta.
             *   [Plan to set up CI to ensure conformance coverage](https://github.com/kubernetes/enhancements/pull/1306)
-            *   [Plan to eliminate dependencies on non-GA features in conformance](http://git.k8s.io/enhancements/keps/sig-architecture/20191023-conformance-without-beta.md)
+            *   [Plan to eliminate dependencies on non-GA features in conformance](https://git.k8s.io/enhancements/keps/sig-architecture/20191023-conformance-without-beta.md)
         *   Started a “KEP reading group”
             *   Team collectively reads KEPs and discusses them in meetings
         *   Code organization

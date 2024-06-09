@@ -1668,7 +1668,7 @@ Twitter | [Sep 19th](https://twitter.com/stephenaugustus/status/1174797710043430
 
     *   Announcements
     *   WG LTS Survey ending on April 26th.
-        *   This survey was created by the[ LTS Working Group](http://git.k8s.io/community/wg-lts) of the Kubernetes project. The purpose of this survey is to understand the challenges faced by various types of stakeholders with respect to the current release cadence of Kubernetes project. The survey questions are classified based on the stakeholder category.
+        *   This survey was created by the[ LTS Working Group](https://git.k8s.io/community/wg-lts) of the Kubernetes project. The purpose of this survey is to understand the challenges faced by various types of stakeholders with respect to the current release cadence of Kubernetes project. The survey questions are classified based on the stakeholder category.
         *   [https://www.surveymonkey.com/r/kubernetes-support-survey-2019](https://www.surveymonkey.com/r/kubernetes-support-survey-2019)
     *   We now have a `#pr-reviews` slack channel as a last resort if your PR is stuck. We would love to have folks who can triage/review as well to join the channel to 	help wither fellow contributors. The idea is to help get someone get a PR “ready” and get the right SIGs/Reviewers/Approvers involved.
     *   **👏 **Shoutouts this week (Check in #shoutouts on slack) **👏**

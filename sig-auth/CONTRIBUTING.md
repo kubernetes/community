@@ -4,7 +4,7 @@ Welcome to contributing to SIG Auth.
 
 If you haven't seen them already, the Kubernetes project has:
 
-- A [Contributor Guide](http://git.k8s.io/community/contributors/guide) - some
+- A [Contributor Guide](https://git.k8s.io/community/contributors/guide) - some
   [kubernetes/kubernetes]-specific content, but lots of info for the
   entire project
 - A [Contributor Cheat

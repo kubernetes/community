@@ -50,7 +50,7 @@ How are you doing with operational tasks in sig-governance.md?
 
 ## Current initiatives and project health
 * What are initiatives that should be highlighted, lauded, shout out, that your group is proud of? Currently underway? What are some of the longer tail projects that your group is working on?
-  * [Kubefed](http://sigs.k8s.io/kubefed) - long running subproject with active contribution. The big initiative for 2020 was to [kick off support for pull-based reconciliation](https://github.com/kubernetes-sigs/kubefed/blob/master/docs/keps/20200619-kubefed-pull-reconciliation.md).
+  * [Kubefed](https://sigs.k8s.io/kubefed) - long running subproject with active contribution. The big initiative for 2020 was to [kick off support for pull-based reconciliation](https://github.com/kubernetes-sigs/kubefed/blob/master/docs/keps/20200619-kubefed-pull-reconciliation.md).
   * [Work API](https://docs.google.com/document/d/1cWcdB40pGg3KS1eSyb9Q6SIRvWVI8dEjFp9RI0Gk0vg) - [sigs.k8s.io/work-api](https://sigs.k8s.io/work-api)
   * MCS API [KEP-1645](https://github.com/kubernetes/enhancements/tree/master/keps/sig-multicluster/1645-multi-cluster-services-api) - [sigs.k8s.io/mcs-api](https://sigs.k8s.io/mcs-api)
   * Cluster ID [KEP-2149](https://github.com/kubernetes/enhancements/tree/master/keps/sig-multicluster/2149-clusterid)

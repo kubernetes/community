@@ -5,7 +5,7 @@ We are thrilled to have you here.
 
 ## Before you begin
 
-Before you begin, please check out [Kubernetes Contributor Guide](http://git.k8s.io/community/contributors/guide) and [Contributor Cheat Sheet](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet)
+Before you begin, please check out [Kubernetes Contributor Guide](https://git.k8s.io/community/contributors/guide) and [Contributor Cheat Sheet](https://github.com/kubernetes/community/blob/master/contributors/guide/contributor-cheatsheet)
 
 ## What SIG Scalability works on
 
