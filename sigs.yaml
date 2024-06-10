@@ -380,6 +380,7 @@ sigs:
       teams:
       - name: cncf-conformance-wg
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/verify-conformance/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/image/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS

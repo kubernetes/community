@@ -92,6 +92,7 @@ Snooping on the Kubernetes OpenAPI communications
 ### conformance-definition
 [Described below](#conformance-definition-1)
 - **Owners:**
+  - [kubernetes-sigs/verify-conformance](https://github.com/kubernetes-sigs/verify-conformance/blob/main/OWNERS)
   - [kubernetes/kubernetes/test/conformance](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/OWNERS)
   - [kubernetes/kubernetes/test/conformance/image](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/image/OWNERS)
   - [kubernetes/kubernetes/test/conformance/testdata](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS)
