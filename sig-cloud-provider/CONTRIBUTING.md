@@ -6,7 +6,7 @@ about the prospect of you joining our community!
 ## Before You Begin
 
 We strongly recommend you to understand the main [Kubernetes Contributor
-Guide](http://git.k8s.io/community/contributors/guide) and adhere to the
+Guide](https://git.k8s.io/community/contributors/guide) and adhere to the
 contribution rules (specially signing the CLA).
 
 You can also check the [Contributor Cheat

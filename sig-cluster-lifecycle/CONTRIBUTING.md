@@ -6,7 +6,7 @@ about the prospect of you joining our [community](https://git.k8s.io/community/s
 ## Before You Begin
 
 We strongly recommend you to understand the main
-[Kubernetes Contributor Guide](http://git.k8s.io/community/contributors/guide)
+[Kubernetes Contributor Guide](https://git.k8s.io/community/contributors/guide)
 and adhere to the contribution rules (specially signing the CLA).
 
 You can also check the [Contributor Cheat Sheet](/contributors/guide/contributor-cheatsheet/),
@@ -28,10 +28,10 @@ Video resources:
 
 ## Get in touch with the SIG
 
-Find the SIG contact details in its [community page](http://git.k8s.io/community/sig-cluster-lifecycle/README.md#contact):
+Find the SIG contact details in its [community page](https://git.k8s.io/community/sig-cluster-lifecycle/README.md#contact):
 - Join the SIG [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - Join the SIG [slack channel](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
-- Join the periodic SIG [video call](http://git.k8s.io/community/sig-cluster-lifecycle/README.md#meetings)
+- Join the periodic SIG [video call](https://git.k8s.io/community/sig-cluster-lifecycle/README.md#meetings)
 
 Using the SIG mailing list or video call is preferred for wider discussion topics that affect
 multiple subprojects. The main SIG slack channel should only be used for SIG level updates

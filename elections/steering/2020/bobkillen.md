@@ -25,7 +25,7 @@ process and more. A few notable items:
 - [Routinely pruned and update OWNERS files](https://groups.google.com/d/msg/kubernetes-dev/4160VsBL7OI/BsBRZSqpCQAJ)
 - [Defined policy around inactive members](https://groups.google.com/d/msg/kubernetes-dev/AvCa-sGx9Jw/zByeyP9LAgAJ)
 - [Helped run several of our Contributor Summits](https://github.com/kubernetes/community/tree/master/events) (in the before times 😭)
-- Trusted member of the [GitHub Admin Team](http://git.k8s.io/community/github-management#github-administration-team) and a representative to GitHub for the project
+- Trusted member of the [GitHub Admin Team](https://git.k8s.io/community/github-management#github-administration-team) and a representative to GitHub for the project
 - [Moderator of all the things](https://git.k8s.io/community/communication/moderators.md)
 - Driven further automation and improvements in the KEP process.
 - Surface our docs and resources in a more accessible fashion aka contributor site \o/ - [https://k8s.dev](https://k8s.dev)

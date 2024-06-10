@@ -52,7 +52,7 @@ My efforts both for Kubernetes and the broader community were recognized in
 [Defined policy around inactive members]: https://groups.google.com/d/msg/kubernetes-dev/AvCa-sGx9Jw/zByeyP9LAgAJ
 [improved triage automation & workflow]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-contributor-experience/1553-issue-triage
 [Contributor Summits]:  https://www.kubernetes.dev/events/
-[GitHub Admin Team]: http://git.k8s.io/community/github-management#github-administration-team
+[GitHub Admin Team]: https://git.k8s.io/community/github-management#github-administration-team
 [Moderator of all our communications platforms]: https://git.k8s.io/community/communication/moderators.md
 [Keynote talk]: https://youtu.be/aVZWOMGE5q8
 [SIG ContribEx lead shadow program]: https://docs.google.com/document/d/1CBz8qV_mD6rbDmTsMuosTOQGRXGhN3d8UrcULUI6Vkw/edit#bookmark=id.6p8mxrh41rzf
