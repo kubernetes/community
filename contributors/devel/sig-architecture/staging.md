@@ -28,4 +28,4 @@ If further repos under staging are needed, adding them to the bot is easy.
 Contact one of the [owners of the bot](https://git.k8s.io/publishing-bot/OWNERS).
 
 Currently, the bot is hosted on a
-[public CNCF cluster](https://git.k8s.io/publishing-bot/k8s-publishing-bot.md).
+[public CNCF cluster](https://github.com/kubernetes/publishing-bot/blob/master/production.md).
