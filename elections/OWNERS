@@ -5,10 +5,11 @@ approvers:
   - committee-steering
   - sig-contributor-experience-leads
   - parispittman
-  - mrbobbytables
-  - nikhita
   - fsmunoz
+  - salaxander
 emeritus_approvers:
   - jdumars
+  - nikhita
+  - mrbobbytables
 labels:
   - committee/steering

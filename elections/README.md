@@ -44,8 +44,7 @@ choose the slate of Election Officers:
 | Contributor | Affiliation |
 | ---------------- | ------------------- |
 | [Josh Berkus](https://github.com/jberkus) | Red Hat |
-| [Bob Killen](https://github.com/mrbobbytables) | Google |
-| [Nikhita Raghunath](https://github.com/nikhita) | VMware |
+| [Xander Grzywinski](https://github.com/salaxander) | Defense Unicorns |
 | [Paris Pittman](https://github.com/parispittman) | Apple |
 | [Federico Muñoz](https://github.com/fsmunoz) | SAS |
 
