@@ -1,6 +1,6 @@
 # Communications Lead Handbook
 
-This document defines communications and marketing activities needed to run a
+This document defines communications activities needed to run a
 Contributor Summit.
 
 - [Overview](#overview)
@@ -11,7 +11,7 @@ Contributor Summit.
 
 ## Overview
 
-As Communications Lead, you are responsible for the overall marketing communications
+As Communications Lead, you are responsible for the overall communications
 before, during, and after the event. The role also includes ensuring all non-technical content (web, mail,
 physical prints) is correct and informative, and supporting the other roles
 (registration, content) as needed.
@@ -22,8 +22,8 @@ Time Commitment:
 
 ## Skills and Qualifications
 
-- Good grasp on general marketing activities surrounding events
-- Understanding of common forms of marketing communications
+- Good grasp on general comms activities surrounding events
+- Understanding of common forms of communications
 - Event planning experience
 - If working on the website, you'll need HTML/CSS/JavaScript experience
 - A healthy emoji vocabulary!
@@ -109,12 +109,38 @@ activities in the absence of the Lead.
 
 ## Documentation
 
-- [Email comms used for Contributor Summit EU in Paris, 2024](https://drive.google.com/drive/folders/1m2sRXVp_S37V46jPk9SS3pznFZKq41uI?usp=drive_link) (Requires access – please ask Contributor Comms)
-- [Email comms used for Contributor Summit EU in Barcelona, 2019](/events/2019/05-contributor-summit/communications.md)
-- [Contributor Site](https://www.kubernetes.dev/)
-- [SIG Contributor Experience leads](/sig-contributor-experience/README.md#leadership)
-- [@K8sContributors on X](https://twitter.com/K8sContributors)
-- [@Kubernetesio on X](https://twitter.com/kubernetesio)
-- [@K8sContributors on Mastodon](https://hachyderm.io/@K8sContributors)
-- [CNCF](https://www.cncf.io/)
-- [SIG ContribEx Contributor Comms team](/communication/contributor-comms/README.md)
+[Events Drive for all KCS files and folders](https://drive.google.com/drive/u/0/folders/1R3vHghBYDkhmlqWMExEGrbDOcIMZUJai)
+
+**Template Docs**
+
+[(https://docs.google.com/document/d/1n_QIm_Yov5rt819W34ztQOcCJ3EKa4VMYDR_P-Qk02o/edit?usp=sharing)KCS Comms Overall Plan Template]
+
+**Plan Docs**
+
+[KCS NA Overall Plan Doc 2024](https://docs.google.com/document/d/1W_fkdGDomeM7QYFIIJicBrLtumIaWm_DvozwBcJQvGc/edit) (First use of template)
+
+[Comms plan for KCS EU 2024](https://docs.google.com/document/d/1Ca36QgYFJIqO_-NJjoAezmhjkXc-kwDaF8QceUabUYg/edit)
+
+[Comms plan for KCS EU 2022](https://docs.google.com/document/d/11Mc_vOgGluoUgL262Wsdzd1gLy0g0pAm5Wtf-Fqc49E/edit?usp=sharing)
+
+[Comms Planning Doc for KCS NA in Detroit, 2022](https://docs.google.com/spreadsheets/d/15wKA75zv0O9ZRvCaDWb_xCx6rtj_wTFE/edit?usp=sharing&ouid=103930683490495267611&rtpof=true&sd=true)
+
+[Comms folder for Contributor Summit EU in Paris, 2024](https://drive.google.com/drive/folders/1m2sRXVp_S37V46jPk9SS3pznFZKq41uI?usp=drive_link)
+
+**Docs for email references:**
+
+[Email comms for KCS NA in Salt Lake City, 2024](https://docs.google.com/document/d/1PJwinjOjaTcvHdOWB8KUidTKiHet2xxOFrsUGc9qr_g/edit)
+
+[Email comms for KCS EU in Paris, 2024](https://docs.google.com/document/d/1Ca36QgYFJIqO_-NJjoAezmhjkXc-kwDaF8QceUabUYg/edit)
+
+[Email comms for KCS EU in Amsterdam, 2023](https://docs.google.com/document/d/1HW48b7q_piCuTJ1zOYsr6WuDcjZLz6bRD62yHr3VPtk/edit#heading=h.gjdgxs)
+
+[Email comms for KCS NA Chicago, 2023](https://docs.google.com/document/d/1HLEBrfJ-H2EtBqQFtgNsDYmXv2pKTF2s4vyEcLjYYvo/edit?usp=sharing)
+
+[Email comms for KCS EU in Valencia, 2022](https://docs.google.com/document/d/1edNsxofCtb3SiPEVzBmBgPEzjni-XI0MYcsnEYoXwLc/edit?usp=sharing)
+
+[Email comms for KCS NA Detroit, 2022](https://docs.google.com/document/d/1zntHy-arEZvR9BHS3krUod3RNeSzr3am9LUF_QQ84bI/edit#heading=h.3znysh7)
+
+[Comms used for KCS EU in Barcelona, 2019](https://github.com/kubernetes/community/blob/master/events/2019/05-contributor-summit/communications.md)
+
+[Email comms for KCS NA 2019 in San Diego](https://docs.google.com/document/d/1EIpaFmrqp3qqXsnGhpr4H-RoFeFSd4dHZJ6M8RwyHBI/edit)
