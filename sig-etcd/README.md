@@ -42,7 +42,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Marek Siarkowicz (**[@serathius](https://github.com/serathius)**), Google
 
 ## Contact
-- Slack: [#etcd](https://kubernetes.slack.com/messages/etcd)
+- Slack: [#sig-etcd](https://kubernetes.slack.com/messages/sig-etcd)
 - [Mailing list](https://groups.google.com/g/etcd-dev)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fetcd)
 - GitHub Teams:
