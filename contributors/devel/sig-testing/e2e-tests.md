@@ -603,7 +603,13 @@ refine requirements:
     Conceptually, these are non-default requirements as defined above under
     `[Feature:.+]`, but for historic reasons and the sake of brevity they don't
     have that prefix when embedded in test names. They *do* have that prefix in the
-    Ginkgo v2 label, so use e.g. `--filter-label=Feature: containsAny Alpha`.
+    Ginkgo v2 label, so use e.g. `--filter-label=Feature: containsAny Alpha` to
+    run them. The normal `--filter-label=Feature: isEmpty` excludes them.
+
+    Note that at the moment, not all jobs filter out tests with `Alpha` or `Beta`
+    requirements like that. Therefore all tests with such a requirement also
+    have to be annotated with a `[Feature]` tag. This restriction will be lifted
+    once migration of jobs to `--filter-label` is completed.
 
 Every test should be owned by a [SIG](/sig-list.md),
 and have a corresponding `[sig-<name>]` label.
