@@ -94,21 +94,21 @@ kubetest --up
 # Run all tests
 kubetest --test
 
-# Run tests matching the regex "\[Feature:Performance\]" against a local cluster
+# Run tests which have been labeled with "Feature:Performance" against a local cluster
 # Specify "--provider=local" flag when running the tests locally
-kubetest --test --test_args="--ginkgo.focus=\[Feature:Performance\]" --provider=local
+kubetest --test --test_args='--ginkgo.label-filter=Feature:Performance' --provider=local
 
 # Conversely, exclude tests that match the regex "Pods.*env"
-kubetest --test --test_args="--ginkgo.skip=Pods.*env"
+kubetest --test --test_args='--ginkgo.skip=Pods.*env'
 
-# Exclude tests tha require a certain minimum version of the kubelet
-kubetest --test --test_args="--ginkgo.skip=\[MinimumKubeletVersion:1.20\]"
+# Exclude tests that require a certain minimum version of the kubelet
+kubetest --test --test_args='--ginkgo.label-filter=!MinimumKubeletVersion:1.20'
 
 # Run tests in parallel, skip any that must be run serially
-GINKGO_PARALLEL=y kubetest --test --test_args="--ginkgo.skip=\[Serial\]"
+GINKGO_PARALLEL=y kubetest --test --test_args='--ginkgo.label-filter=!Serial'
 
 # Run tests in parallel, skip any that must be run serially and keep the test namespace if test failed
-GINKGO_PARALLEL=y kubetest --test --test_args="--ginkgo.skip=\[Serial\] --delete-namespace-on-failure=false"
+GINKGO_PARALLEL=y kubetest --test --test_args='--ginkgo.label-filter=!Serial --delete-namespace-on-failure=false'
 
 # Flags can be combined, and their actions will take place in this order:
 # --build, --up, --test, --down
@@ -189,10 +189,14 @@ if any specs are pending.
 --ginkgo.focus="": If set, ginkgo will only run specs that match this regular
 expression.
 
---ginkgo.noColor="n": If set to "y", ginkgo will not use color in the output
-
 --ginkgo.skip="": If set, ginkgo will only run specs that do not match this
 regular expression.
+
+--ginkgo.label-filter="": If set, select tests based on their labels as described under
+"Spec Labels" in https://onsi.github.io/ginkgo/#filtering-specs. This can focus
+on tests and exclude others in a single parameter without using regular expressions.
+
+--ginkgo.noColor="n": If set to "y", ginkgo will not use color in the output
 
 --ginkgo.trace=false: If set, default reporter prints out the full stack trace
 when a failure occurs
@@ -283,7 +287,7 @@ First, compile the E2E test suite with additional compiler flags
 make WHAT=test/e2e/e2e.test GOGCFLAGS="all=-N -l" GOLDFLAGS=""
 ```
 
-Then set the env var `E2E_TEST_DEBUG_TOOL=delve` and then run the test with `./hack/gingko.sh` instead of `kubetest`, you should see the delve command line prompt
+Then set the env var `E2E_TEST_DEBUG_TOOL=delve` and then run the test with `./hack/ginkgo.sh` instead of `kubetest`, you should see the delve command line prompt
 
 ```sh
 E2E_TEST_DEBUG_TOOL=delve ./hack/ginkgo-e2e.sh --ginkgo.focus="sig-storage.*csi-hostpath.*Dynamic.PV.*default.fs.*provisioning.should.provision.storage.with.snapshot.data.source" --allowed-not-ready-nodes=10
@@ -462,7 +466,7 @@ kubetest --up
 #
 # You can target Feature:MasterUpgrade or Feature:ClusterUpgrade
 cd ../kubernetes
-kubetest --provider=gke --test --check-version-skew=false --test_args="--ginkgo.focus=\[Feature:MasterUpgrade\]"
+kubetest --provider=gke --test --check-version-skew=false --test_args="--ginkgo.label-filter=Feature:MasterUpgrade"
 
 # Run old tests with new kubectl
 cd ../kubernetes_old
@@ -523,8 +527,10 @@ where `->` means upgrading; container_vm (cvm) and gci are image names.
 
 ## Kinds of tests
 
-Tests can be labeled with any of the following labels, in order of increasing
-precedence (that is, each label listed below supersedes the previous ones):
+Tests can be labeled. Labels appear with square brackets inside the test names
+(the traditional approach) *and* are Ginkgo v2 labels (since Kubernetes v1.29).
+Available labels in order of increasing precedence (that is, each label listed
+below supersedes the previous ones):
 
   - If a test has no labels, it is expected to run fast (under five minutes), be
 able to be run in parallel, and be consistent.
@@ -555,8 +561,12 @@ monitored closely in CI. `[Flaky]` tests are by default not run, unless a
 
   - `[Feature:.+]`: If a test has non-default requirements to run or targets
 some non-core functionality, and thus should not be run as part of the standard
-suite, it receives a `[Feature:.+]` label, e.g. `[Feature:Performance]` or
-`[Feature:Ingress]`. `[Feature:.+]` tests are not run in our core suites,
+suite, it receives a `[Feature:.+]` label. This non-default requirement could
+be some special cluster setup (e.g. `Feature:IPv6DualStack` indicates that the
+cluster must support dual-stack pod and service networks) or that the test has
+special behavior that makes it unsuitable for a normal test run (e.g.
+`Feature:PerformanceDNS` marks a test that stresses cluster DNS performance
+with many services). `[Feature:.+]` tests are not run in our core suites,
 instead running in custom suites. If a feature is experimental or alpha and is
 not enabled by default due to being incomplete or potentially subject to
 breaking changes, it does *not* block PR merges, and thus should run in
@@ -577,20 +587,85 @@ to be eligible for this tag. This tag does not supersed any other labels.
   - `[LinuxOnly]`: If a test is known to be using Linux-specific features
 (e.g.: seLinuxOptions) or is unable to run on Windows nodes, it is labeled
 `[LinuxOnly]`. When using Windows nodes, this tag should be added to the
-`skip` argument.
+`skip` argument. This is not using `[Feature:LinuxOnly]` because that
+would have implied changing all CI jobs which skip tests with unknown
+requirements.
 
   - The following tags are not considered to be exhaustively applied, but are
 intended to further categorize existing `[Conformance]` tests, or tests that are
 being considered as candidate for promotion to `[Conformance]` as we work to
 refine requirements:
     - `[Privileged]`: This is a test that requires privileged access
-    - `[Internet]`: This is a test that assumes access to the public internet
     - `[Deprecated]`: This is a test that exercises a deprecated feature
+
+  - For tests that depend on feature gates, the following are set automatically:
     - `[Alpha]`: This is a test that exercises an alpha feature
     - `[Beta]`: This is a test that exercises a beta feature
 
+    Conceptually, these are non-default requirements as defined above under
+    `[Feature:.+]`, but for historic reasons and the sake of brevity they don't
+    have that prefix when embedded in test names. They *do* have that prefix in the
+    Ginkgo v2 label, so use e.g. `--filter-label=Feature: containsAny Alpha` to
+    run them. The normal `--filter-label=Feature: isEmpty` excludes them.
+
+    Note that at the moment, not all jobs filter out tests with `Alpha` or `Beta`
+    requirements like that. Therefore all tests with such a requirement also
+    have to be annotated with a `[Feature]` tag. This restriction will be lifted
+    once migration of jobs to `--filter-label` is completed.
+
 Every test should be owned by a [SIG](/sig-list.md),
 and have a corresponding `[sig-<name>]` label.
+
+## Selecting tests to run
+
+See https://onsi.github.io/ginkgo/#filtering-specs for a general introduction.
+
+Focusing on a specific test by its name is useful when interactively running
+just one or a few related tests. The test name is a concatenation of multiple
+strings. To get a list of all full test names, run:
+
+```console
+$ e2e.test -list-tests
+The following spec names can be used with 'ginkgo run --focus/skip':
+    test/e2e/apimachinery/watchlist.go:41: [sig-api-machinery] API Streaming (aka. WatchList) [Serial] [Feature:WatchList] should be requested when ENABLE_CLIENT_GO_WATCH_LIST_ALPHA is set
+    test/e2e/apimachinery/flowcontrol.go:65: [sig-api-machinery] API priority and fairness should ensure that requests can be classified by adding FlowSchema and PriorityLevelConfiguration
+    test/e2e/apimachinery/flowcontrol.go:190: [sig-api-machinery] API priority and fairness should ensure that requests can't be drowned out (fairness)
+...
+```
+
+Or within the Kubernetes repo:
+
+```console
+$ go test -v ./test/e2e -args -list-tests
+The following spec names can be used with 'ginkgo run --focus/skip':
+    test/e2e/apimachinery/watchlist.go:41: [sig-api-machinery] API Streaming (aka. WatchList) [Serial] [Feature:WatchList] should be requested when ENABLE_CLIENT_GO_WATCH_LIST_ALPHA is set
+...
+```
+
+The same works for other Kubernetes E2E suites, like `e2e_node`.
+
+In Prow jobs, selection by labels is often simpler. See
+[below]((#kinds-of-tests) for documentation of the different labels that are in
+use. A full list of labels used by a specific E2E suite can be obtained with
+`--list-labels`.
+
+A common pattern is to run only tests which have no special cluster setup
+requirements and are not flaky:
+
+    --filter-label='Feature: isEmpty && !Flaky'
+
+Feature owners have to ensure that tests excluded that way from shared CI
+jobs are executed in dedicated jobs (more on CI below):
+
+    --filter-label='Feature: containsAny MyAwesomeFeature'
+
+In jobs that support certain well-known features it is possible to run tests
+which have no special requirements or at least only depend on the supported
+features:
+
+    # Alpha APIs and features enabled, allow tests depending on that as
+    # long as they have no other special requirements.
+    --filter-label='Feature: isSubsetOf Alpha'
 
 ### Viper configuration and hierarchichal test parameters.
 
@@ -664,6 +739,14 @@ non-`[Disruptive]`, non-`[Flaky]`, non-`[Feature:.+]` tests in parallel.
 
   - `kubernetes-e2e-<provider>-serial` runs all `[Serial]` and `[Disruptive]`,
 non-`[Flaky]`, non-`[Feature:.+]` tests in serial.
+
+  - `ci-kubernetes-e2e-kind-alpha-features` runs all tests without any special
+    requirements and tests that only have alpha feature gates and API groups
+    as requirement.
+
+  - `ci-kubernetes-e2e-kind-beta-features` runs all tests without any special
+    requirements and tests that only have beta feature gates and API groups
+    as requirement.
 
 We also run non-default tests if the tests exercise general-availability ("GA")
 features that require a special environment to run in, e.g.
