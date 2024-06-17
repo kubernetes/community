@@ -95,7 +95,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### gateway-api
 - **Owners:**
   - [kubernetes-sigs/blixt](https://github.com/kubernetes-sigs/blixt/blob/main/OWNERS)
-  - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
+  - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/main/OWNERS)
   - [kubernetes-sigs/ingress2gateway](https://github.com/kubernetes-sigs/ingress2gateway/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/endpoint](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/endpoint/OWNERS)
   - [kubernetes/kubernetes/pkg/proxy](https://github.com/kubernetes/kubernetes/blob/master/pkg/proxy/OWNERS)
@@ -106,7 +106,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 - **Owners:**
   - [kubernetes-sigs/ingress-controller-conformance](https://github.com/kubernetes-sigs/ingress-controller-conformance/blob/master/OWNERS)
   - [kubernetes/ingress-gce](https://github.com/kubernetes/ingress-gce/blob/master/OWNERS)
-  - [kubernetes/ingress-nginx](https://github.com/kubernetes/ingress-nginx/blob/master/OWNERS)
+  - [kubernetes/ingress-nginx](https://github.com/kubernetes/ingress-nginx/blob/main/OWNERS)
 ### iptables-wrappers
 - **Owners:**
   - [kubernetes-sigs/iptables-wrappers](https://github.com/kubernetes-sigs/iptables-wrappers/blob/master/OWNERS)
@@ -121,7 +121,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
 ### network-policy
 - **Owners:**
-  - [kubernetes-sigs/kube-network-policies](https://github.com/kubernetes-sigs/kube-network-policies/blob/master/OWNERS)
+  - [kubernetes-sigs/kube-network-policies](https://github.com/kubernetes-sigs/kube-network-policies/blob/main/OWNERS)
   - [kubernetes-sigs/network-policy-api](https://github.com/kubernetes-sigs/network-policy-api/blob/master/OWNERS)
   - [kubernetes/api/networking](https://github.com/kubernetes/api/blob/master/networking/OWNERS)
 - **Contact:**
