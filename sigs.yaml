@@ -1539,6 +1539,9 @@ sigs:
       name: Rey Lejano
       company: Red Hat
     tech_leads:
+    - github: katcosgrove
+      name: Kat Cosgrove
+      company: Dell
     - github: salaxander
       name: Xander Grzywinski
       company: Defense Unicorns
