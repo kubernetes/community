@@ -1,6 +1,6 @@
 module k8s.io/community
 
-go 1.18
+go 1.22.4
 
 require (
 	github.com/client9/misspell v0.3.4
