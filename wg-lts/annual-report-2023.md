@@ -20,7 +20,13 @@ We hosted a [maintainer track session](https://www.youtube.com/watch?v=0fngdOlwZ
 
 We have been meeting on a bi-weekly cadence, but have not provided updates to the sponsoring SIGs as most of 2023 was spent forming and drafting the survey. We will provide updates to the sponsoring SIGS during 2024.   
 
-2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
+
+2. Did you have community-wide updates in 2023 (e.g. KubeCon talks)?
+
+* [KCSNA 2023 - Swimming with the current: make it easy to stay up-to-date - Jordan Liggitt](https://www.youtube.com/watch?v=OtigVP3lRh4)
+* [KubeCon NA 2023 - Community-Powered Kubernetes LTS: Ensuring Stability and Compatibility While Driving Innovation - Jeremy Rickard](https://kccncna2023.sched.com/event/1R4cZ/sponsored-keynote-community-powered-kubernetes-lts-ensuring-stability-and-compatibility-while-driving-innovation-jeremy-rickard-principal-software-engineer-microsoft-azure)
+* [KubeCon NA 2023 - What's up with Kubernetes Long Term Support? - Jeremy Rickard](https://kccncna2023.sched.com/event/1R2tj/whats-up-with-kubernetes-long-term-support-jeremy-rickard-microsoft)
+
 
 ## Operational
 
