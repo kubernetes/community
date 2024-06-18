@@ -71,6 +71,7 @@ channels:
     archived: true
   - name: cluster-api-gcp
   - name: cluster-api-ibmcloud
+  - name: cluster-api-ionoscloud
   - name: cluster-api-k3s
   - name: cluster-api-kubemark
   - name: cluster-api-kubevirt
