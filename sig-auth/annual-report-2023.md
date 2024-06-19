@@ -28,15 +28,16 @@
    - Important initiatives that aren't tracked via KEPs:
      - Once a week issue/PR triage meetings.
 
-1. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
+2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
 <!--
    Note: This list is generated from the KEP metadata in kubernetes/enhancements repository.
       If you find any discrepancy in the generated list here, please check the KEP metadata.
       Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
 -->
+   - The [Needs KEP / release work #sig-auth](https://docs.google.com/document/d/1sY8fRyRtk4eG9R439z5ao5i9bFuuxilS03XaNlqoni0/edit?usp=sharing) document lists multiple areas that need help and some currently have volunteers working on them.
 
-1. Did you have community-wide updates in 2023 (e.g. KubeCon talks)?
+3. Did you have community-wide updates in 2023 (e.g. KubeCon talks)?
 
 <!--
   Examples include links to email, slides, or recordings.
@@ -45,7 +46,7 @@
    - [KubeCon EU 2023] - [Kubernetes SIG Auth Deep Dive - Jordan Liggitt & Mike Danese, Google; Rita Zhang, David Eads](https://youtu.be/j9nzOLPJxAI?si=7p61DKRZ9aRwhRwe)
    - [KubeCon NA 2023] - [The Future of Kubernetes Auth and Policy Config: Common Expression Language - Mo Khan & Jordan Liggitt](https://youtu.be/yOF9S_0TO3A?si=etTKdsEZmC3EmiZc)
 
-1. KEP work in 2023 (v1.27, v1.28, v1.29):
+4. KEP work in 2023 (v1.27, v1.28, v1.29):
 
   - Pre-Alpha
     - [3766 - Move ReferenceGrant to sig-auth API Group](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/3766-referencegrant)
