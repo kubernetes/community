@@ -1622,7 +1622,7 @@ sigs:
     slack: sig-docs
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
     teams:
-    - name: kubernetes-blog
+    - name: sig-docs-blog-owners
       description: Kubernetes blog maintainers
     - name: sig-docs-de-owners
       description: German language content
