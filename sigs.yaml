@@ -2174,25 +2174,18 @@ sigs:
     - github: dcbw
       name: Dan Williams
   meetings:
-  - description: Gateway API GAMMA Meeting (APAC Friendly)
-    day: Tuesday
-    time: "15:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/96951309977
-    archive_url: https://docs.google.com/document/d/1s5hQU0CB9ehjFukRmRHQ41f1FA8GX5_1Rv6nHW6NWAA/edit
-  - description: Gateway API GAMMA Meeting (EMEA Friendly)
-    day: Tuesday
-    time: "08:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/96951309977
-    archive_url: https://docs.google.com/document/d/1s5hQU0CB9ehjFukRmRHQ41f1FA8GX5_1Rv6nHW6NWAA/edit
-  - description: Gateway API Meeting
+  - description: Gateway API Meeting (Americas)
     day: Monday
     time: "15:00"
     tz: PT (Pacific Time)
     frequency: weekly
+    url: https://zoom.us/j/441530404
+    archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
+  - description: Gateway API Meeting (Europe)
+    day: Tuesday (starting September 10th 2024)
+    time: "08:00"
+    tz: PT (Pacific Time)
+    frequency: monthly
     url: https://zoom.us/j/441530404
     archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
   - description: Network Policy API Meeting
@@ -2226,12 +2219,6 @@ sigs:
     url: https://zoom.us/j/95680858961?pwd=M1c2TTdMZHpMUUtIYXRpbjRobkNJZz09
     archive_url: https://docs.google.com/document/d/1pe_0aOsI35BEsQJ-FhFH9Z_pWQcU2uqwAnOx2NIx6OY/edit
     recordings_url: https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb
-  - description: Sig-Network Code Jam
-    day: Friday
-    time: "08:30"
-    tz: PT (Pacific Time)
-    frequency: Last Friday of the Month
-    url: https://zoom.us/j/96900767253
   contact:
     slack: sig-network
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-network
