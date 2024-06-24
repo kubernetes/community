@@ -6,7 +6,7 @@ This section covers documentation, processes, and roles for the [Kubernetes blog
 
 ## Meetings
 
-See [meetings](/kubernetes/community/tree/master/sig-docs#meetings) for SIG Docs
+See [meetings](../README.md#meetings) for SIG Docs
 
 
 ## Subproject contributors

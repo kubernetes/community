@@ -1662,9 +1662,15 @@ sigs:
   - name: reference-docs
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/reference-docs/master/OWNERS
+  - name: subproject-definition
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/governance.md#subprojects
   - name: website
     owners:
     - https://raw.githubusercontent.com/kubernetes/website/master/OWNERS
+  - name: working-group-definition
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/community/master/governance.md#working-groups
 - dir: sig-etcd
   name: etcd
   mission_statement: >
