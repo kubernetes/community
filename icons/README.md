@@ -2,6 +2,8 @@
 
 These icons are a way to standardize Kubernetes architecture diagrams for presentation. Having uniform architecture diagrams improve understandibility.
 
+The icon for Kubernetes itself can be found at https://github.com/kubernetes/kubernetes/tree/master/logo .
+
 ## Tools
 
 ```shell
