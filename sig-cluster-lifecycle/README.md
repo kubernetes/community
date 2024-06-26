@@ -189,7 +189,7 @@ Cluster API infrastructure provider for OpenStack
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
 - **Meetings:**
   - Cluster API Provider OpenStack Office Hours: [Wednesdays at 14:00 UTC](https://zoom.us/j/91405526408?pwd=bVBxempwVDBzejJGQlhSOGlXZnRxUT09) (alternate weeks, check agenda doc for last meeting). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14:00&tz=UTC).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1hzi6nr04mhQYBKrwL2NDTNPvgI4RgO9a-gqmk31kXMA/edit?usp=sharing).
+    - [Meeting notes and Agenda](https://cluster-api-openstack.sigs.k8s.io/agenda).
 ### cluster-api-provider-packet
 Cluster API infrastructure provider for Packet
 - **Owners:**
