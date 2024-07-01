@@ -1236,7 +1236,7 @@ sigs:
       tz: UTC
       frequency: alternate weeks, check agenda doc for last meeting
       url: https://zoom.us/j/91405526408?pwd=bVBxempwVDBzejJGQlhSOGlXZnRxUT09
-      archive_url: https://docs.google.com/document/d/1hzi6nr04mhQYBKrwL2NDTNPvgI4RgO9a-gqmk31kXMA/edit?usp=sharing
+      archive_url: https://cluster-api-openstack.sigs.k8s.io/agenda
   - name: cluster-api-provider-packet
     description: Cluster API infrastructure provider for Packet
     contact:
