@@ -32,7 +32,7 @@ usergroups:
   # - Emeritus Adviser
   # - SIG Release leads
   #
-  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.29/release-team.md
+  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.31/release-team.md
   - name: release-team-leads
     long_name: Release Team Leads
     description: >-
@@ -51,13 +51,13 @@ usergroups:
       - cpanato # SIG Release Technical Lead
       - jeremyrickard # SIG Release Chair
       - justaugustus # SIG Release Chair
-      - mehabhalodiya # 1.29 RT Lead Shadow
-      - mickeyboxell # 1.29 RT Lead Shadow
-      - neoaggelos # 1.29 RT Lead Shadow
-      - Priyankasaggu11929 # 1.29 RT Lead
+      - fsmunoz # 1.31 RT Lead Shadow
+      - drewhagen # 1.31 RT Lead Shadow
+      - SanchitaMishra # 1.31 RT Lead Shadow
+      - MohammadRezaSaleh # 1.31 RT Lead Shadow
+      - neoaggelos # 1.31 RT Lead
+      - Priyankasaggu11929 # 1.31 RT EA
       - puerco # SIG Release Technical Lead
-      - ramrodo # 1.29 RT Lead Shadow
-      - salaxander # 1.29 Emeritus Adviser
       - saschagrunert # SIG Release Chair
       - Verolop # SIG Release Technical Lead
 
