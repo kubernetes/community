@@ -92,9 +92,6 @@ filters:
 
 Instead, set a `.*` key inside `filters` (as shown in the previous example).
 
-**WARNING**: The `approve` plugin [does not currently respect `filters`][test-infra-7690].
-Until that is fixed, `filters` should only be used for the `labels` key (as shown in the above example).
-
 
 #### Emeritus
 
@@ -235,8 +232,6 @@ is the state of today.
     PR is being ignored
   - Many **reviewers** and **approvers** are so overloaded by GitHub notifications that @mention'ing
     is unlikely to get a quick response
-  - If an **author** `/assign`'s a PR, **reviewers** and **approvers** will be made aware of it on
-    their [PR dashboard](https://gubernator.k8s.io/pr)
   - An **author** can work around this by manually reading the relevant OWNERS files,
     `/unassign`'ing unresponsive individuals, and `/assign`'ing others
   - This is a sign that our OWNERS files are stale; pruning the **reviewers** and **approvers** lists
@@ -332,7 +327,6 @@ Good examples of OWNERS usage:
 - OWNERS files that are regularly updated (at least once per release)
 
 [go-regex]: https://golang.org/pkg/regexp/#pkg-overview
-[test-infra-7690]: https://github.com/kubernetes/test-infra/issues/7690
 [approver-role]: https://git.k8s.io/community/community-membership.md#approver
 [reviewer-role]: https://git.k8s.io/community/community-membership.md#reviewer
 [community membership doc]: https://git.k8s.io/community/community-membership.md
