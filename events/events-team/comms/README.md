@@ -44,7 +44,7 @@ Time Commitment:
 
 ### Skills and Qualifications
 
-- A KCS Comms Lead must have [Kubernetes Org Membership](). (They should not plan to pursue membership during the cycle.)
+- A KCS Comms Lead must have [Kubernetes Org Membership]. (They should not plan to pursue membership during the cycle.)
 - A KCS Comms Lead should plan to attend their KCS event in-person
 - Successful completion of a past cycle as a KCS Comms Shadow, or equivalent experience
 - Good grasp on general comms activities surrounding events
