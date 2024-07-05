@@ -2815,6 +2815,7 @@ sigs:
     contact:
       slack: sig-security-tooling
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cve-feed-osv/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-security/main/sig-security-tooling/OWNERS
   - name: sig-security
     description: SIG Security discussions, documents, processes and other artifacts
