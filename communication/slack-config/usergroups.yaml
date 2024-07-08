@@ -82,7 +82,7 @@ usergroups:
 
   - name: youtube-admins
     long_name: YouTube Admins
-    description: YouTube Admin group. Ping for a YouTube-specific issue
+    description: YouTube Admin group. Ping for a YouTube-specific issue.
     channels:
       - sig-contribex
     members:
@@ -92,7 +92,7 @@ usergroups:
 
   - name: zoom-admins
     long_name: Zoom Admins
-    description: Zoom Admin group. Ping for a Zoom-specific issue
+    description: Zoom Admin group. Ping for a Zoom-specific issue.
     channels:
       - sig-contribex
     members:
