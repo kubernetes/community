@@ -18,9 +18,9 @@ Watches, etc, are all merely optimizations of this logic.
 
 When you're writing controllers, there are few guidelines that will help make sure you get the results and performance you're looking for.
 
-1. Operate on one item at a time.  If you use a `workqueue.Interface`, you'll be able to queue changes for a particular resource and later pop them in multiple “worker” gofuncs with a guarantee that no two gofuncs will work on the same item at the same time.
+1. Operate on one item at a time.  If you use a `workqueue.Interface`, you'll be able to queue references to particular objects and later pop them in multiple “worker” goroutines with a guarantee that no two goroutines will work on the same item at the same time.
 
-   Many controllers must trigger off multiple resources (I need to "check X if Y changes"), but nearly all controllers can collapse those into a queue of “check this X” based on relationships.  For instance, a ReplicaSet controller needs to react to a pod being deleted, but it does that by finding the related ReplicaSets and queuing those.
+   Many controllers must trigger off multiple resources (I need to "check X if Y changes"), but nearly all controllers can collapse those into a queue of “check this X” based on relationships.  For instance, a ReplicaSet controller needs to react to a pod being deleted, but it does that by finding the related ReplicaSets and queuing references to those.
 
 1. Random ordering between resources. When controllers queue off multiple types of resources, there is no guarantee of ordering amongst those resources.
 
@@ -44,17 +44,19 @@ When you're writing controllers, there are few guidelines that will help make su
 
 1. Wait for your secondary caches.  Many controllers have primary and secondary resources.  Primary resources are the resources that you'll be updating `Status` for.  Secondary resources are resources that you'll be managing (creating/deleting) or using for lookups.
 
-   Use the `framework.WaitForCacheSync` function to wait for your secondary caches before starting your primary sync functions.  This will make sure that things like a Pod count for a ReplicaSet isn't working off of known out of date information that results in thrashing.
+   Use the `cache.WaitForCacheSync` function to wait for your secondary caches before starting your primary sync functions.  This will make sure that things like a Pod count for a ReplicaSet isn't working off of known out of date information that results in thrashing.
 
 1. There are other actors in the system.  Just because you haven't changed an object doesn't mean that somebody else hasn't.
 
    Don't forget that the current state may change at any moment--it's not sufficient to just watch the desired state. If you use the absence of objects in the desired state to indicate that things in the current state should be deleted, make sure you don't have a bug in your observation code (e.g., act before your cache has filled).
 
+1. Failures happen, and their detection in Kubernetes is imperfect. Run multiple copies of your controller pod (e.g., via a `Deployment`), with one copy active and the other(s) ready to take over at a moment's notice. Use `k8s.io/client-go/tools/leader-election` for that. Even leader election is imperfect; even when using leader election it is still possible --- although very unlikely --- that multiple copies of your controller may be active.
+
 1. Percolate errors to the top level for consistent re-queuing.  We have a  `workqueue.RateLimitingInterface` to allow simple requeuing with reasonable backoffs.
 
-   Your main controller func should return an error when requeuing is necessary.  When it isn't, it should use `utilruntime.HandleError` and return nil instead.  This makes it very easy for reviewers to inspect error handling cases and to be confident that your controller doesn't accidentally lose things it should retry for.
+   Your main controller func should return an error when requeuing is necessary.  When it isn't, it should use `utilruntime.HandleErrorWithContext` and return nil instead.  This makes it very easy for reviewers to inspect error handling cases and to be confident that your controller doesn't accidentally lose things it should retry for.
 
-1. Watches and Informers will “sync”.  Periodically, they will deliver every matching object in the cluster to your `Update` method.  This is good for cases where you may need to take additional action on the object, but sometimes you know there won't be more work to do.
+1. Informers can periodically “resync”.  This means to call the Update event handler on every object in the informer's local cache.  This is good for cases where you may need to take additional action on the object, but sometimes you know there won't be more work to do.
 
    In cases where you are *certain* that you don't need to requeue items when there are no new changes, you can compare the resource version of the old and new objects.  If they are the same, you skip requeuing the work.  Be careful when you do this.  If you ever skip requeuing your item on failures, you could fail, not requeue, and then never retry that item again.
 
@@ -80,7 +82,7 @@ type Controller struct {
 
 	// queue is where incoming work is placed to de-dup and to allow "easy"
 	// rate limited requeues on errors
-	queue workqueue.RateLimitingInterface
+	queue workqueue.TypedRateLimitingInterface[cache.ObjectName]
 }
 
 func NewController(pods informers.PodInformer) *Controller {
@@ -93,23 +95,23 @@ func NewController(pods informers.PodInformer) *Controller {
 	// register event handlers to fill the queue with pod creations, updates and deletions
 	pods.Informer().AddEventHandler(cache.ResourceEventHandlerFuncs{
 		AddFunc: func(obj interface{}) {
-			key, err := cache.MetaNamespaceKeyFunc(obj)
+			ref, err := cache.ObjectToName(obj)
 			if err == nil {
-				c.queue.Add(key)
+				c.queue.Add(ref)
 			}
 		},
 		UpdateFunc: func(old interface{}, new interface{}) {
-			key, err := cache.MetaNamespaceKeyFunc(new)
+			ref, err := cache.ObjectToName(new)
 			if err == nil {
-				c.queue.Add(key)
+				c.queue.Add(ref)
 			}
 		},
 		DeleteFunc: func(obj interface{}) {
 			// IndexerInformer uses a delta nodeQueue, therefore for deletes we have to use this
 			// key function.
-			key, err := cache.DeletionHandlingMetaNamespaceKeyFunc(obj)
+			ref, err := cache.DeletionHandlingObjectToName(obj)
 			if err == nil {
-				c.queue.Add(key)
+				c.queue.Add(ref)
 			}
 		},
 	},)
@@ -117,17 +119,18 @@ func NewController(pods informers.PodInformer) *Controller {
 	return c
 }
 
-func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
+func (c *Controller) Run(ctx context.Context, threadiness int) error {
 	// don't let panics crash the process
 	defer utilruntime.HandleCrash()
 	// make sure the work queue is shutdown which will trigger workers to end
 	defer c.queue.ShutDown()
+	logger := klog.FromContext(ctx)
 
-	klog.Infof("Starting <NAME> controller")
+	logger.Info("Starting <NAME> controller")
 
 	// wait for your secondary caches to fill before starting your work
-	if !cache.WaitForCacheSync(stopCh, c.podsSynced) {
-		return
+	if !cache.WaitForCacheSync(ctx.Done(), c.podsSynced) {
+		return fmt.Errorf("failed to wait for caches to sync")
 	}
 
 	// start up your worker threads based on threadiness.  Some controllers
@@ -135,56 +138,59 @@ func (c *Controller) Run(threadiness int, stopCh chan struct{}) {
 	for i := 0; i < threadiness; i++ {
 		// runWorker will loop until "something bad" happens.  The .Until will
 		// then rekick the worker after one second
-		go wait.Until(c.runWorker, time.Second, stopCh)
+		go wait.UntilWithContext(ctx, c.runWorker, time.Second)
 	}
+	logger.Info("Started workers")
 
 	// wait until we're told to stop
-	<-stopCh
-	klog.Infof("Shutting down <NAME> controller")
+	<-ctx.Done()
+	logger.Info("Shutting down <NAME> controller")
+
+	return nil
 }
 
-func (c *Controller) runWorker() {
+func (c *Controller) runWorker(ctx context.Context) {
 	// hot loop until we're told to stop.  processNextWorkItem will
 	// automatically wait until there's work available, so we don't worry
 	// about secondary waits
-	for c.processNextWorkItem() {
+	for c.processNextWorkItem(ctx) {
 	}
 }
 
-// processNextWorkItem deals with one key off the queue.  It returns false
+// processNextWorkItem deals with one item off the queue.  It returns false
 // when it's time to quit.
-func (c *Controller) processNextWorkItem() bool {
-	// pull the next work item from queue.  It should be a key we use to lookup
+func (c *Controller) processNextWorkItem(ctx context.Context) bool {
+	// Pull the next work item from queue.  It will be an object reference that we use to lookup
 	// something in a cache
-	key, quit := c.queue.Get()
-	if quit {
+	ref, shutdown := c.queue.Get()
+	if shutdown {
 		return false
 	}
 	// you always have to indicate to the queue that you've completed a piece of
 	// work
-	defer c.queue.Done(key)
+	defer c.queue.Done(ref)
 
-	// do your work on the key.  This method will contains your "do stuff" logic
-	err := c.syncHandler(key.(string))
+	// Process the object reference.  This method will contains your "do stuff" logic
+	err := c.syncHandler(ref)
 	if err == nil {
 		// if you had no error, tell the queue to stop tracking history for your
-		// key. This will reset things like failure counts for per-item rate
+		// item. This will reset things like failure counts for per-item rate
 		// limiting
-		c.queue.Forget(key)
+		c.queue.Forget(ref)
 		return true
 	}
 
 	// there was a failure so be sure to report it.  This method allows for
 	// pluggable error handling which can be used for things like
 	// cluster-monitoring
-	utilruntime.HandleError(fmt.Errorf("%v failed with : %v", key, err))
+	utilruntime.HandleErrorWithContext(ctx, err, "Error syncing; requeuing for later retry", "objectReference", ref))
 
 	// since we failed, we should requeue the item to work on later.  This
 	// method will add a backoff to avoid hotlooping on particular items
 	// (they're probably still not going to work right away) and overall
 	// controller protection (everything I've done is broken, this controller
 	// needs to calm down or it can starve other useful work) cases.
-	c.queue.AddRateLimited(key)
+	c.queue.AddRateLimited(ref)
 
 	return true
 }
