@@ -110,9 +110,6 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### knftables
 - **Owners:**
   - [kubernetes-sigs/knftables](https://github.com/kubernetes-sigs/knftables/blob/master/OWNERS)
-### kpng
-- **Owners:**
-  - [kubernetes-sigs/kpng](https://github.com/kubernetes-sigs/kpng/blob/master/OWNERS)
 ### kube-dns
 - **Owners:**
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
@@ -158,4 +155,18 @@ SIG Network is responsible for a number of issues and PRs. A summary can be foun
 The following are larger efforts which are now archived and historical. They are
 no longer active, but are kept in an archived state for posterity and maybe be
 useful as reference materials.
+
+### KPNG
+
+["Kube Proxy Next Generation (KPNG)"][kpng] was an effort to evaluate the
+potential for a new [kube-proxy] with an emphasis on modularity and
+adaptability. Through the project we explored alternatives to our historical
+kube-proxy architecture and gained a lot of community members through interest
+in it. The project was very large in scope, and was archived in 2024 after
+agreement that the community was no longer able to continue focus on it, but it
+remains important prior art for any future attempts to revise kube-proxy.
+
+[kpng]: https://github.com/kubernetes-sigs/kpng
+[kube-proxy]: https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/
+
 <!-- END CUSTOM CONTENT -->

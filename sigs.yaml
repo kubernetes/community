@@ -2275,9 +2275,6 @@ sigs:
   - name: knftables
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/knftables/master/OWNERS
-  - name: kpng
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kpng/master/OWNERS
   - name: kube-dns
     owners:
     - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
