@@ -152,4 +152,10 @@ SIG Network is responsible for a number of issues and PRs. A summary can be foun
 ## Documents
 
 * [2017 Planning](https://docs.google.com/document/d/1fBxC36UCBnqY_w3m3TjdnXFsIT--GS6HmKb5o0nhkTk/edit#)
+
+## Archive
+
+The following are larger efforts which are now archived and historical. They are
+no longer active, but are kept in an archived state for posterity and maybe be
+useful as reference materials.
 <!-- END CUSTOM CONTENT -->
