@@ -90,6 +90,10 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 - **Contact:**
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
 ### gateway-api
+- **Leads:**
+  - Rob Scott (**[@robscott](https://github.com/robscott)**), Google
+  - Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Kong
+  - Nick Young (**[@youngnick](https://github.com/youngnick)**), Isovalent
 - **Owners:**
   - [kubernetes-sigs/blixt](https://github.com/kubernetes-sigs/blixt/blob/main/OWNERS)
   - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
@@ -117,6 +121,10 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 - **Owners:**
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
 ### network-policy
+- **Leads:**
+  - Andrew Stoycos (**[@astoycos](https://github.com/astoycos)**), Red Hat
+  - Dan Winship (**[@danwinship](https://github.com/danwinship)**), Red Hat
+  - Yang Ding (**[@dyanngg](https://github.com/dyanngg)**), VMWare
 - **Owners:**
   - [kubernetes-sigs/kube-network-policies](https://github.com/kubernetes-sigs/kube-network-policies/blob/master/OWNERS)
   - [kubernetes-sigs/network-policy-api](https://github.com/kubernetes-sigs/network-policy-api/blob/master/OWNERS)

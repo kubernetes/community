@@ -2268,12 +2268,12 @@ sigs:
     - github: robscott
       name: Rob Scott
       company: Google
-    - github: youngnick
-      name: Nick Young
-      company: Isovalent
     - github: shaneutt
       name: Shane Utt
       company: Kong
+    - github: youngnick
+      name: Nick Young
+      company: Isovalent
   - name: ingress
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
@@ -2302,12 +2302,12 @@ sigs:
     - github: astoycos
       name: Andrew Stoycos
       company: Red Hat
-    - github: dyanngg
-      name: Yang Ding
-      company: VMWare
     - github: danwinship
       name: Dan Winship
       company: Red Hat
+    - github: dyanngg
+      name: Yang Ding
+      company: VMWare
   - name: node-ipam-controller
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/node-ipam-controller/main/OWNERS
