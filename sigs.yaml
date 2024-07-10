@@ -2296,6 +2296,15 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/kube-network-policies/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
+    leads:
+    - github: astoycos
+      name: Andrew Stoycos
+    - github: danwinship
+      name: Dan Winship
+      company: Red Hat
+    - github: dyanngg
+      name: Yang Ding
+      company: VMWare
   - name: node-ipam-controller
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/node-ipam-controller/main/OWNERS
