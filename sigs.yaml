@@ -2258,6 +2258,19 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/controllers/service/OWNERS
+    leads:
+    - github: mlavacca
+      name: Mattia Lavacca
+      company: Kong
+    - github: robscott
+      name: Rob Scott
+      company: Google
+    - github: shaneutt
+      name: Shane Utt
+      company: Red Hat
+    - github: youngnick
+      name: Nick Young
+      company: Isovalent
   - name: ingress
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
