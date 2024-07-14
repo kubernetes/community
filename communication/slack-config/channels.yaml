@@ -171,6 +171,7 @@ channels:
   - name: hephy-users
     id: C678BMZ89
   - name: hetzner
+  - name: hmc  
   - name: homelab
   - name: hydrophone
   - name: id-events
