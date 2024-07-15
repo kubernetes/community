@@ -120,6 +120,13 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### kube-dns
 - **Owners:**
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
+### multi-network
+- **Leads:**
+  - Maciej Skrocki (**[@mskrocki](https://github.com/mskrocki)**), Google
+- **Owners:**
+  - [kubernetes/enhancements/3700](https://github.com/kubernetes/enhancements/blob/pull/3700)
+- **Contact:**
+  - Slack: [#sig-network-multi-network](https://kubernetes.slack.com/messages/sig-network-multi-network)
 ### network-policy
 - **Leads:**
   - Andrew Stoycos (**[@astoycos](https://github.com/astoycos)**), Red Hat
