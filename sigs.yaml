@@ -2286,9 +2286,15 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
   - name: multi-network
+    contact:
+      slack: sig-network-multi-network
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/multi-network-api/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/multi-network/main/OWNERS
+    leads:
+    - github: mskrocki
+      name: Maciej Skrocki
+      company: Google
   - name: network-policy
     contact:
       slack: sig-network-policy-api
