@@ -1260,21 +1260,6 @@ sigs:
       url: https://zoom.us/j/92253194848?pwd=cVVVNDMxeTl1QVJPUlpvLzNSVU1JZz09
       archive_url: https://docs.google.com/document/d/15CD2VOdkCAEcq2mm5FVoPO8M4-0a2SA2ajHLFBYqz7c/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu
-  - name: etcdadm
-    description: A command-line tool for operating etcd clusters
-    contact:
-      slack: etcdadm
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
-    meetings:
-    - description: etcdadm Office Hours
-      day: Monday
-      time: "09:00"
-      tz: PT (Pacific Time)
-      frequency: biweekly
-      url: https://zoom.us/j/612375927?pwd=MldxRnRSOExCVW1rbjM4ZzBSc3MvUT09
-      archive_url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit
   - name: image-builder
     description: A collection of cross-provider Kubernetes virtual machine image building
       utilities

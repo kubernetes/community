@@ -208,16 +208,6 @@ Cluster API infrastructure provider for vSphere
   - Cluster API vSphere meeting: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/92253194848?pwd=cVVVNDMxeTl1QVJPUlpvLzNSVU1JZz09) (biweekly starting Thursday June 25th, 2020). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/15CD2VOdkCAEcq2mm5FVoPO8M4-0a2SA2ajHLFBYqz7c/edit?usp=sharing).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu).
-### etcdadm
-A command-line tool for operating etcd clusters
-- **Owners:**
-  - [kubernetes-sigs/etcdadm](https://github.com/kubernetes-sigs/etcdadm/blob/master/OWNERS)
-- **Contact:**
-  - Slack: [#etcdadm](https://kubernetes.slack.com/messages/etcdadm)
-  - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
-- **Meetings:**
-  - etcdadm Office Hours: [Mondays at 09:00 PT (Pacific Time)](https://zoom.us/j/612375927?pwd=MldxRnRSOExCVW1rbjM4ZzBSc3MvUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit).
 ### image-builder
 A collection of cross-provider Kubernetes virtual machine image building utilities
 - **Owners:**
