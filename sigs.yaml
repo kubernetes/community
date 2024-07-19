@@ -441,24 +441,24 @@ sigs:
     day: Wednesday
     time: "11:00"
     tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/264572674
+    frequency: biweekly, you must be signed into a free zoom account to join
+    url: https://zoom.us/j/264572674?pwd=NHVXTm14VktMRi8zRmU0aUt1NE9uQT09
     archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
   - description: Secrets Store CSI Meeting
     day: Thursday
     time: "9:00"
     tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/91272289538
+    frequency: biweekly, you must be signed into a free zoom account to join
+    url: https://zoom.us/j/91272289538?pwd=ZXZFV251Zi82Vnp3cEJrcmVDeGZaZz09
     archive_url: https://docs.google.com/document/d/1q74nboAg0GSPcom3kLWCIoWg43Qg3mr306KNL58f2hg/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0PCFJrlpV6_nR_j_3RtnwI
   - description: Weekly Issues/PR Triage Meeting
     day: Monday
     time: "9:00"
     tz: PT (Pacific Time)
-    frequency: weekly
-    url: https://zoom.us/j/264572674
+    frequency: weekly, you must be signed into a free zoom account to join
+    url: https://zoom.us/j/264572674?pwd=NHVXTm14VktMRi8zRmU0aUt1NE9uQT09
   contact:
     slack: sig-auth
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-auth
