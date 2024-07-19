@@ -1683,7 +1683,7 @@ sigs:
     tech_leads:
     - github: ahrtr
       name: Benjamin Wang
-      company: VMWare
+      company: VMware
     - github: serathius
       name: Marek Siarkowicz
       company: Google
@@ -3351,6 +3351,54 @@ workinggroups:
     liaison:
       github: pohly
       name: Patrick Ohly
+- dir: wg-etcd-operator
+  name: etcd Operator
+  mission_statement: >
+    The working group is dedicated to enabling automatic and efficient operation of
+    etcd clusters in Kubernetes using an etcd-operator. The working group will discuss
+    the requirement and use cases of such an etcd-operator. It will also try to create
+    a roadmap to develop such an etcd-operator.
+
+    Note: the etcd clusters, to be managed by the etcd-operator, are to support applications
+    instead of Kubernetes itself.
+
+  charter_link: charter.md
+  stakeholder_sigs:
+  - Cluster Lifecycle
+  - etcd
+  label: etcd-operator
+  leadership:
+    chairs:
+    - github: ahrtr
+      name: Benjamin Wang
+      company: VMware
+    - github: hakman
+      name: Ciprian Hacman
+      company: Microsoft
+    - github: jberkus
+      name: Josh Berkus
+      company: Red Hat
+    - github: jmhbnz
+      name: James Blair
+      company: Red Hat
+    - github: justinsb
+      name: Justin Santa Barbara
+      company: Google
+  meetings:
+  - description: Regular WG Meeting
+    day: TBD
+    time: TBD
+    tz: PT (Pacific Time)
+    frequency: bi-weekly
+    url: https://zoom.us/my/cncfetcdproject
+    archive_url: TBD
+    recordings_url: TBD
+  contact:
+    slack: wg-etcd-operator
+    mailing_list: https://groups.google.com/u/1/g/etcd-dev
+    liaison:
+      github: soltysh
+      name: Maciej Szulik
 - dir: wg-lts
   name: LTS
   mission_statement: >
