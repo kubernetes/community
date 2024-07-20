@@ -2,12 +2,12 @@
 
 approvers:
   - jberkus
-  - jdumars
   - committee-steering
   - sig-contributor-experience-leads
   - coderanger
   - dims
 emeritus_approvers:
   - parispittman
+  - jdumars
 labels:
   - committee/steering
