@@ -1,7 +1,6 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 reviewers:
-  - jdumars
   - idvoretskyi
   - jeefy
   - mrbobbytables
@@ -10,6 +9,7 @@ approvers:
   - mrbobbytables
   - sig-contributor-experience-leads
 emeritus_approvers:
+  - jdumars
   - castrojo
   - parispittman
 labels:
