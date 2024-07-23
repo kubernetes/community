@@ -25,11 +25,11 @@ communication channels and their home time zone. See our
 - [YouTube Channel](#youtube-channel)
   - [Owners](#owners)
   - [Primary Moderators](#primary-moderators-1)
-  - [Moderators Pro Tempore](#moderators-pro-tempore-1)
+  - [Backup Moderators](#backup-moderators)
 - [Slack](#slack)
   - [Owner](#owner)
   - [Moderators](#moderators)
-  - [Moderators Pro Tempore](#moderators-pro-tempore-2)
+  - [Moderators Pro Tempore](#moderators-pro-tempore-1)
 - [Zoom](#zoom)
 
 ## Mailing Lists
@@ -149,9 +149,8 @@ Moderators seats: 6
 | Chris Short         | @chrisshort           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Nigel Brown         | @nigel                | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
 | Pritish Samal       | @Pritish              | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
+| Chad Crowell        | @chadmcrowell         | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
 | _Open_              | _Open_                | _Open_   | _Open_                                                  |
-| _Open_              | _Open_                | _Open_   | _Open_                                                  |
-
 
 ### Backup Moderators
 
@@ -160,7 +159,6 @@ Moderators seats: 6
 | Jeffrey Sica        | @jeefy                | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen          | @mrbobbytables        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Taylor Dolezal      | @onlydole             | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-
 
 ## Slack
 

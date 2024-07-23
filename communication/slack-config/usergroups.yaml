@@ -89,6 +89,7 @@ usergroups:
       - chrisshort
       - pnbrown
       - CIPHERTron
+      - chadmcrowell
 
   - name: zoom-admins
     long_name: Zoom Admins
