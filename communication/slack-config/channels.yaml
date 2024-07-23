@@ -545,6 +545,7 @@ channels:
   - name: wg-apply
     archived: true
   - name: wg-batch
+  - name: wg-etcd-operator
   - name: wg-serving
   - name: wg-component-standard
     archived: true
