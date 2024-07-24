@@ -50,8 +50,7 @@ usergroups:
   - name: product-security-committee
     long_name: Product Security Committee
     description: |-
-      The Product Security Committee (PSC) is responsible for triaging and
-      handling the security issues for Kubernetes.
+      The Product Security Committee (PSC) is responsible for triaging and handling the security issues for Kubernetes.
     channels:
       - release-management
       - sig-release
