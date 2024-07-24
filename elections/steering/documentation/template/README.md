@@ -114,7 +114,7 @@ Committee's governance will be considered for voter exception.
 Examples of contributions that would be considered:
 * Slack admins who are not active in GitHub
 * K8s Infra staff doing mostly support
-* Working Group leads without a lot of GitHub activity
+* Working Group or User Group leads without a lot of GitHub activity
 
 Examples of contributions that would NOT be considered:
 * Contributions to ecosystem projects and products
@@ -124,13 +124,13 @@ Examples of contributions that would NOT be considered:
 
 <!-- While finalizing the dates in the schedule, ensure that:
 - The Steering Committee and candidate Q+A occurs at a public SC meeting
-  (usually a Monday).
+  (usually a Wednesday).
 - Deadline to submit voter exception forms and request a
   replacement ballot is ~3 days before voting closes.
 - Private announcement of results to SC members is at least ~2 days
   before private announcement to all candidates.
 - The interval between private announcement to all candidates and the
-  public announcement is 24-48 hours, ideally during a weekend.
+  public announcement is 24-48 hours.
 -->
 
 | Date                    | Event                                                                 |
@@ -178,7 +178,7 @@ to add their bio (see below). The PR body must contain the text `Fixes #NNN` to
 automatically close the issue once the PR is merged.
 
 5. Create the PR for your bio by copying the `nomination-template.md` file in
-this directory, and creating a new file titled `candidate-githubid.md`.  Fill
+this directory, and creating a new file titled `candidate-yourgithub.md`.  Fill
 out all the fields in the template, but avoid making any format changes.
 
 **Endorsement**
@@ -204,7 +204,7 @@ Election Officers will announce that on the GitHub issue.
 
 Eligible candidates can submit a pull request with a biography in this
 directory with their platform and intent to run. This PR will copy `nomination-template.md`
-to a file named `candidate-YourName.md`.  It will fill out the fields in
+to a file named `candidate-yourgithub.md`.  It will fill out the fields in
 that template.
 
 All biographical statements should be brief and to the point, with a guideline of around
