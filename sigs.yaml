@@ -1393,7 +1393,15 @@ sigs:
     day: Wednesday
     time: "9:00"
     tz: PT (Pacific Time)
-    frequency: weekly alternating slack/zoom
+    frequency: Biweekly
+    url: https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09
+    archive_url: https://docs.google.com/document/d/1CBz8qV_mD6rbDmTsMuosTOQGRXGhN3d8UrcULUI6Vkw/edit
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
+  - description: Regular SIG Meeting (APAC/J/NZ timezone friendly)
+    day: Wednesday
+    time: "7:30"
+    tz: UTC
+    frequency: Biweekly, interleaved with the Regular SIG Meeting
     url: https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09
     archive_url: https://docs.google.com/document/d/1CBz8qV_mD6rbDmTsMuosTOQGRXGhN3d8UrcULUI6Vkw/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
