@@ -2274,6 +2274,10 @@ sigs:
   - name: kube-dns
     owners:
     - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
+  - name: multi-network
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/multi-network-api/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/multi-network/main/OWNERS
   - name: network-policy
     contact:
       slack: sig-network-policy-api
