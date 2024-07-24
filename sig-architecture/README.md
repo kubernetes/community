@@ -112,6 +112,9 @@ Snooping on the Kubernetes OpenAPI communications
   - [kubernetes/community/sig-architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/OWNERS)
 - **Contact:**
   - Slack: [#prod-readiness](https://kubernetes.slack.com/messages/prod-readiness)
+### wg-serving
+- **Owners:**
+  - [kubernetes-sigs/wg-serving](https://github.com/kubernetes-sigs/wg-serving/blob/main/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups

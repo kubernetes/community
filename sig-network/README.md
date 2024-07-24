@@ -113,6 +113,10 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### kube-dns
 - **Owners:**
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
+### multi-network
+- **Owners:**
+  - [kubernetes-sigs/multi-network-api](https://github.com/kubernetes-sigs/multi-network-api/blob/main/OWNERS)
+  - [kubernetes-sigs/multi-network](https://github.com/kubernetes-sigs/multi-network/blob/main/OWNERS)
 ### network-policy
 - **Owners:**
   - [kubernetes-sigs/kube-network-policies](https://github.com/kubernetes-sigs/kube-network-policies/blob/master/OWNERS)
