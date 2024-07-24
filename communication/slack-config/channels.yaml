@@ -502,6 +502,7 @@ channels:
   - name: spark-operator
   - name: spinnaker
   - name: sre
+  - name: sre-learning-platform
   - name: steering-committee
   - name: submariner
   - name: surveys
