@@ -63,7 +63,4 @@ restrictions:
       - "^prow"
       - "^testgrid"
       - "^testing"
-    usergroups:
-      - "^test-infra-oncall$"
-      - "^google-build-admin$"
   - path: "**/*" # prevent any other file from containing anything
