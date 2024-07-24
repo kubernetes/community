@@ -90,6 +90,10 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 - **Contact:**
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
 ### gateway-api
+- **Leads:**
+  - Rob Scott (**[@robscott](https://github.com/robscott)**), Google
+  - Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Kong
+  - Nick Young (**[@youngnick](https://github.com/youngnick)**), Isovalent
 - **Owners:**
   - [kubernetes-sigs/blixt](https://github.com/kubernetes-sigs/blixt/blob/main/OWNERS)
   - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
@@ -113,7 +117,18 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### kube-dns
 - **Owners:**
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
+### multi-network
+- **Leads:**
+  - Maciej Skrocki (**[@mskrocki](https://github.com/mskrocki)**), Google
+- **Owners:**
+  - [kubernetes/enhancements/3700](https://github.com/kubernetes/enhancements/blob/pull/3700)
+- **Contact:**
+  - Slack: [#sig-network-multi-network](https://kubernetes.slack.com/messages/sig-network-multi-network)
 ### network-policy
+- **Leads:**
+  - Andrew Stoycos (**[@astoycos](https://github.com/astoycos)**), Red Hat
+  - Dan Winship (**[@danwinship](https://github.com/danwinship)**), Red Hat
+  - Yang Ding (**[@dyanngg](https://github.com/dyanngg)**), VMWare
 - **Owners:**
   - [kubernetes-sigs/kube-network-policies](https://github.com/kubernetes-sigs/kube-network-policies/blob/master/OWNERS)
   - [kubernetes-sigs/network-policy-api](https://github.com/kubernetes-sigs/network-policy-api/blob/master/OWNERS)
@@ -131,6 +146,29 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
+
+### Subproject Leads
+
+SIG network provides some additional responsibilities for subproject leads beyond was in covered in the [standard subproject definition][subprojects].
+Most of these additional responsibilities relate to communication about their projects within SIG Network, and to the greater community:
+
+- **Transparent Project Planning, Maintainence and Communication:**
+  - Subproject Leads **MUST** provide transparent view into their historical and future project plans (eg; using GitHub project boards, KEPs, or custom enhancement proposals (see [GEPs]/[NPEPs])).
+  - Subproject leads **MUST** create, maintain and be present in a public [Kubernetes Slack] channel with the naming `#sig-network-<subproject>`.
+  - Subproject leads **SHOULD** create and maintain a regular public [Zoom] sync on the [SIG Network Calendar].
+
+- **Regular Project Updates**
+  - Subproject leads **MUST** report on project's status, significant releases/events, interesting developments to the wider SIG-Network community via the [SIG Network Mailing List] on a quarterly basis (or as needed).
+  - Subproject leads **SHOULD** report on project status in the general SIG Network community meetings (in addition to mailing list updates).
+
+[subprojects]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[GEPs]: https://github.com/kubernetes-sigs/gateway-api/blob/main/geps/overview.md
+[NPEPs]: https://github.com/kubernetes-sigs/network-policy-api/blob/main/npeps
+[Kubernetes Slack]: https://kubernetes.slack.com
+[Zoom]: https://zoom.us
+[SIG Network Calendar]: https://github.com/kubernetes/community/tree/master/sig-network#meetings
+[SIG Network Mailing List]: https://groups.google.com/g/kubernetes-sig-network
+
 ## Areas of Responsibility
 
 SIG Network is responsible for the following Kubernetes subsystems:
