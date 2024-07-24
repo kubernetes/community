@@ -3386,8 +3386,8 @@ workinggroups:
       company: Google
   meetings:
   - description: Regular WG Meeting
-    day: TBD
-    time: TBD
+    day: Tuesday
+    time: "11:00"
     tz: PT (Pacific Time)
     frequency: bi-weekly
     url: https://zoom.us/my/cncfetcdproject

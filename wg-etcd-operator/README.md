@@ -19,7 +19,7 @@ The [charter](charter.md) defines the scope and governance of the etcd Operator 
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/u/1/g/etcd-dev) for the group will typically add invites for the following meetings to your calendar.*
-* Regular WG Meeting: [TBDs at TBD PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=TBD&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Tuesdays at 11:00 PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](TBD).
   * [Meeting recordings](TBD).
 
