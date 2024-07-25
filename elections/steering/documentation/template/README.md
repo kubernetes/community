@@ -114,7 +114,7 @@ Committee's governance will be considered for voter exception.
 Examples of contributions that would be considered:
 * Slack admins who are not active in GitHub
 * K8s Infra staff doing mostly support
-* Working Group or User Group leads without a lot of GitHub activity
+* Working Group leads without a lot of GitHub activity
 
 Examples of contributions that would NOT be considered:
 * Contributions to ecosystem projects and products
