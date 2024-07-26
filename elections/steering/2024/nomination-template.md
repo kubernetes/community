@@ -11,7 +11,7 @@ the election directory -->
 
 ## SIGS
 
-- SIGS/WG/UGs you're a member of
+- SIGs/WGs/Teams you're a member of
 
 ## What I have done
 
