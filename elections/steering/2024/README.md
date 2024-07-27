@@ -259,7 +259,7 @@ In addition, the following contributors are helping with the election:
 
 - Alternate Officers: Rey Lejano, Joseph Sandoval
 - Infra Liaison: Mahamed Ali
-- Contributor Comms Liaison: TBD (discussing with contrib comms)
+- Contributor Comms Liaison: Arpit Agrawal
 
 Please direct any questions via email to <election@k8s.io>.
 
