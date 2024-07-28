@@ -323,7 +323,11 @@ different version of Go, please refer to the
 #### PyYAML
 
 Some Kubernetes verification tests use [PyYAML](https://pyyaml.org/) and it therefore needs to be installed to successfully run all verification tests in your local environment. 
-You can use the
+
+``` py
+pip install pyyaml
+```
+Or you can use the
 [PyYAML documentation](https://pyyaml.org/wiki/PyYAMLDocumentation) to
 find the installation instructions for your platform.
 
@@ -341,7 +345,7 @@ To test Kubernetes, you will need to install a recent version of [etcd](https://
 ```sh
 ./hack/install-etcd.sh
 ```
-
+This script requires a minimum bash version of 4.2. 
 This script will instruct you to make a change to your `PATH`. To make
 this permanent, add this to your `.bashrc` or login script:
 
