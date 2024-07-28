@@ -8,6 +8,6 @@ The last Steering election, including all directions on eligibility, voting, and
 
 You can also read [documentation] on how to run a Steering Election.
 
-[2023 Election]: /elections/steering/2023/
 [2024 Election]: /elections/steering/2024/
+[2023 Election]: /elections/steering/2023/
 [documentation]: /elections/steering/documentation/

@@ -361,7 +361,7 @@ Eligible:
 Ineligible without other contributions:
 
 * Writer/maintainers of 3rd party information resources (private/company blogs, personal/company Kubernetes websites, personal video channels)
-* Meetup/User Group organizers
+* Meetup organizers
 * Conference speakers
 * Contributors to other CNCF projects
 * Contributors to Kubernetes distributions
