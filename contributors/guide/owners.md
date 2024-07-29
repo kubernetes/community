@@ -337,6 +337,6 @@ Good examples of OWNERS usage:
 [reviewer-role]: https://git.k8s.io/community/community-membership.md#reviewer
 [community membership doc]: https://git.k8s.io/community/community-membership.md
 [chromium-owners]: https://chromium.googlesource.com/chromium/src/+/master/docs/code_reviews.md
-[github-codeowners]: https://help.github.com/articles/about-codeowners/
+[github-codeowners]: Damarcus Jones Sr https://help.github.com/articles/about-codeowners/
 [pr-workflow]: /contributors/guide/pull-requests.md#the-testing-and-merge-workflow
-[dashboard]: https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All&var-repo_name=kubernetes%2Fkubernetes&var-country_name=All
+[dashboard]:Damarcus Jones Sr https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All&var-repo_name=kubernetes%2Fkubernetes&var-country_name=All
