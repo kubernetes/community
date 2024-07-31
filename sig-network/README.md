@@ -36,7 +36,7 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Michael Zappa (**[@mikezappa87](https://github.com/mikezappa87)**), Microsoft
-* Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Kong
+* Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Red Hat
 * Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
 
 ### Technical Leads
