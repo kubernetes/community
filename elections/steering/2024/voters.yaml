@@ -11,8 +11,10 @@
 # History:
 # Log of changes to the file
 # 2024-08-01 - Initial setup with voters from devstats+org, plus CCoC + SRC
+# 2024-08-01 - Minor correction to fix alpha-sorting of voters list
 #
 eligible_voters:
+- a-mccarthy
 - a7i
 - achernevskii
 - adikul30
@@ -36,15 +38,14 @@ eligible_voters:
 - AlbeeSo
 - alculquicondor
 - aleksandra-malinowska
-- alexanderConstantinescu
 - alexander-demicev
+- alexanderConstantinescu
 - alexkats
 - alexzielenski
 - alvaroaleman
 - amacaskill
 - AmarNathChary
 - ambiknai
-- a-mccarthy
 - ameukam
 - Amulyam24
 - AnaMMedina21
@@ -121,9 +122,9 @@ eligible_voters:
 - chengxiangdong
 - chenrui333
 - chethanv28
+- chris-short
 - chrischdi
 - chrishenzie
-- chris-short
 - cici37
 - cjcullen
 - cji
@@ -169,8 +170,8 @@ eligible_voters:
 - dobsonj
 - dpasiukevich
 - dprotaso
-- drewhagen
 - drew-viles
+- drewhagen
 - drmorr0
 - droslean
 - dtzar
@@ -209,13 +210,13 @@ eligible_voters:
 - fsmunoz
 - furkatgofurov7
 - fykaa
+- g-gaston
 - gabesaba
 - Gacko
 - gauravkghildiyal
 - Gauravpadam
 - gcs278
 - Gekko0114
-- g-gaston
 - giuseppe
 - gjkim42
 - gjtempleton
@@ -536,8 +537,8 @@ eligible_voters:
 - shannonxtreme
 - shecodesmagic
 - shraddhabang
-- Shubham82
 - shu-mutou
+- Shubham82
 - shurup
 - shyamjvs
 - sipriyaa
@@ -574,10 +575,12 @@ eligible_voters:
 - swetharepakula
 - sxllwx
 - szuecs
+- t-inu
+- T-Lakshmi
 - tabbysable
+- Tal-or
 - tallaxes
 - tallclair
-- Tal-or
 - tao12345666333
 - tengqm
 - tenzen-y
@@ -587,10 +590,8 @@ eligible_voters:
 - thockin
 - tico88612
 - timwangmusic
-- t-inu
 - tjons
 - tkashem
-- T-Lakshmi
 - tnqn
 - tobiasgiese
 - tomasaschan
@@ -664,4 +665,4 @@ eligible_voters:
 - zetaab
 - zhanggbj
 - ziyi-xie
-- zwpaper
+- zwpaper 
