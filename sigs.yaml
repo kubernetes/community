@@ -1571,6 +1571,14 @@ sigs:
     url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
     archive_url: https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
+  - description: Arabic Team Meeting
+    day: Wednesday
+    time: "17:00"
+    tz: UTC
+    frequency: weekly
+    url: https://docs.google.com/document/d/1s4KdaDEYGR-hGkxIl2sRwyXZpuVgeQD6XNxcISkA-vE/edit
+    archive_url: https://docs.google.com/document/d/1s4KdaDEYGR-hGkxIl2sRwyXZpuVgeQD6XNxcISkA-vE/edit
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8
   - description: Korean Team Meeting
     day: Thursday
     time: "13:00"
@@ -1615,6 +1623,8 @@ sigs:
     slack: sig-docs
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
     teams:
+    - name: sig-docs-ar-owners
+      description: Arabic language content
     - name: sig-docs-blog-owners
       description: Kubernetes blog maintainers
     - name: sig-docs-de-owners
