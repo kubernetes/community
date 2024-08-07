@@ -18,9 +18,9 @@ The [charter](charter.md) defines the scope and governance of the etcd Operator 
 * [SIG etcd](/sig-etcd)
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/u/1/g/etcd-dev) for the group will typically add invites for the following meetings to your calendar.*
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-etcd-operator) for the group will typically add invites for the following meetings to your calendar.*
 * Regular WG Meeting: [Tuesdays at 11:00 PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](TBD).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1ey4zTTRvtCVJJP2vjF95VjG-sAKlNTcqB2HdmC18Lfc/edit).
   * [Meeting recordings](TBD).
 
 ## Organizers
@@ -33,7 +33,7 @@ The [charter](charter.md) defines the scope and governance of the etcd Operator 
 
 ## Contact
 - Slack: [#wg-etcd-operator](https://kubernetes.slack.com/messages/wg-etcd-operator)
-- [Mailing list](https://groups.google.com/u/1/g/etcd-dev)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-etcd-operator)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fetcd-operator)
 - Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
 <!-- BEGIN CUSTOM CONTENT -->
