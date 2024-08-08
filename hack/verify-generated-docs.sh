@@ -28,6 +28,12 @@ function cleanup {
 }
 trap cleanup EXIT
 
+function get_interesting_files() {
+  local dir=$1
+  local files=$(ls ${dir}/sigs.yaml ${dir}/sig-*/README.md ${dir}/wg-*/README.md ${dir}/committee-*/README.md ${dir}/sig-list.md ${dir}/OWNERS_ALIASES)
+  echo "$files"
+}
+
 git archive --format=tar "$(git write-tree)" | (cd "${WORKING_DIR}" && tar xf -)
 
 cd "${WORKING_DIR}"
@@ -36,13 +42,23 @@ make 1>/dev/null
 mismatches=0
 break=$(printf "=%.0s" $(seq 1 68))
 
-for file in $(ls ${CRT_DIR}/sigs.yaml ${CRT_DIR}/sig-*/README.md ${CRT_DIR}/wg-*/README.md ${CRT_DIR}/committee-*/README.md ${CRT_DIR}/sig-list.md ${CRT_DIR}/OWNERS_ALIASES); do
+
+real_files=$(get_interesting_files "$CRT_DIR")
+for file in $real_files; do
   real=${file#$CRT_DIR/}
   if ! diff -q ${file} ${WORKING_DIR}/${real} &>/dev/null; then
     echo "${file} does not match ${WORKING_DIR}/${real}";
     mismatches=$((mismatches+1))
   fi;
 done
+
+real_files_count=$(echo "$real_files" | wc -w)
+working_dir_files_count=$(get_interesting_files "${WORKING_DIR}" | wc -l)
+
+if [[ $real_files_count -ne $working_dir_files_count ]]; then
+  echo "Mismatch: Number of generated files in does not match the number of files in the repository."
+  mismatches=$((mismatches+1))
+fi
 
 if [[ ${mismatches} -gt "0" ]]; then
   echo ""
