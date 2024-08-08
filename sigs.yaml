@@ -2369,7 +2369,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/cri-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cri-api/OWNERS
-    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cri-api/pkg/OWNERS
   - name: cri-client
     owners:
     - https://raw.githubusercontent.com/kubernetes/cri-client/master/OWNERS
