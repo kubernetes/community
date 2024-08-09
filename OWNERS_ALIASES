@@ -27,11 +27,9 @@ aliases:
     - mpuckett159
     - soltysh
   sig-cloud-provider-leads:
-    - andrewsykim
     - bridgetkromhout
     - cheftako
     - elmiko
-    - nckturner
   sig-cluster-lifecycle-leads:
     - fabriziopandini
     - justinsb
@@ -44,6 +42,7 @@ aliases:
     - palnabarun
   sig-docs-leads:
     - divya-mohan0209
+    - katcosgrove
     - natalisucks
     - reylejano
     - salaxander
@@ -65,7 +64,7 @@ aliases:
     - upodroid
   sig-multicluster-leads:
     - jeremyot
-    - pmorie
+    - skitt
   sig-network-leads:
     - aojea
     - danwinship
@@ -131,6 +130,12 @@ aliases:
     - johnbelamaric
     - klueska
     - pohly
+  wg-etcd-operator-leads:
+    - ahrtr
+    - hakman
+    - jberkus
+    - jmhbnz
+    - justinsb
   wg-lts-leads:
     - jeremyrickard
     - liggitt
@@ -191,4 +196,8 @@ aliases:
   provider-vmware:
     - cantbewong
     - frapposelli
+  sig-release-subproject-leads:
+    - gracenng
+    - katcosgrove
+    - xmudrii
 ## END CUSTOM CONTENT

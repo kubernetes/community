@@ -23,7 +23,7 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 
 * Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
 * Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Cisco
-* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Google
+* Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**), Cloud Native Computing Foundation
 * Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**), DaoCloud
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
 * Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel

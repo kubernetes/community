@@ -4,34 +4,26 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-<!--
-   Some example items that might be worth highlighting:
-   - Major KEP advancement
-   - Important initiatives that aren't tracked via KEPs
-   - Paying down significant tech debt
-   - Governance and leadership changes
--->
+  In the past year SIG Apps focused on stabilizing the currently supported workload
+  APIs, finishing the work that has already started, and providing review bandwidth
+  for the work driven by the WG Batch.
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
-<!--
-   Note: This list is generated from the KEP metadata in kubernetes/enhancements repository.
-      If you find any discrepancy in the generated list here, please check the KEP metadata.
-      Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
--->
+  None.
 
 3. Did you have community-wide updates in 2023 (e.g. KubeCon talks)?
 
-<!--
-  Examples include links to email, slides, or recordings.
--->
+  Yes. SIG-Apps provided the following updates:
+  - [KubeCon EU 2023](https://youtu.be/OC9egbi8IQw?si=wKvIcvAkGkoeBLya)
+  - [KubeCon NA 2023](https://youtu.be/7LNOTuo-bdE?si=REB0-pck2zk23dSx)
 
 4. KEP work in 2023 (v1.27, v1.28, v1.29):
-
 
   - Beta
     - [3017 - Pod Healthy Policy for PDB](https://github.com/kubernetes/enhancements/tree/master/keps/sig-apps/3017-pod-healthy-policy-for-pdb) - v1.27
     - [3335 - StatefulSet Slice](https://github.com/kubernetes/enhancements/tree/master/keps/sig-apps/3335-statefulset-slice) - v1.27
+    - [3715 - Elastic Indexed Job](https://github.com/kubernetes/enhancements/tree/master/keps/sig-apps/3715-elastic-indexed-job) - v1.27
     - [3850 - Backoff Limits Per Index For Indexed Jobs](https://github.com/kubernetes/enhancements/tree/master/keps/sig-apps/3850-backoff-limits-per-index-for-indexed-jobs) - v1.29
     - [3939 - Allow Replacement of Pods in a Job when fully terminating](https://github.com/kubernetes/enhancements/tree/master/keps/sig-apps/3939-allow-replacement-when-fully-terminated) - v1.29
     - [4017 - Pod Index Label](https://github.com/kubernetes/enhancements/tree/master/keps/sig-apps/4017-pod-index-label) - v1.28
@@ -42,10 +34,8 @@
     - [2804 - Consolidate Workload controllers life cycle status](https://github.com/kubernetes/enhancements/tree/master/keps/sig-apps/2804-consolidate-workload-controllers-status) - v1.27
     - [2879 - Track ready Pods in Job status](https://github.com/kubernetes/enhancements/tree/master/keps/sig-apps/2879-ready-pods-job-status) - v1.29
     - [3140 - TimeZone support in CronJob](https://github.com/kubernetes/enhancements/tree/master/keps/sig-apps/3140-TimeZone-support-in-CronJob) - v1.27
-    - [3715 - Elastic Indexed Job](https://github.com/kubernetes/enhancements/tree/master/keps/sig-apps/3715-elastic-indexed-job) - v1.28
 
 ## [Subprojects](https://git.k8s.io/community/sig-apps#subprojects)
-
 
 **Continuing:**
   - application
@@ -63,13 +53,12 @@
 ## Operational
 
 Operational tasks in [sig-governance.md]:
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
-- [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
-
+- [x] [README.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-apps/CONTRIBUTING.md
 [sig-governance.md]: https://git.k8s.io/community/committee-steering/governance/sig-governance.md

@@ -1668,7 +1668,7 @@ Twitter | [Sep 19th](https://twitter.com/stephenaugustus/status/1174797710043430
 
     *   Announcements
     *   WG LTS Survey ending on April 26th.
-        *   This survey was created by the[ LTS Working Group](http://git.k8s.io/community/wg-lts) of the Kubernetes project. The purpose of this survey is to understand the challenges faced by various types of stakeholders with respect to the current release cadence of Kubernetes project. The survey questions are classified based on the stakeholder category.
+        *   This survey was created by the[ LTS Working Group](https://git.k8s.io/community/wg-lts) of the Kubernetes project. The purpose of this survey is to understand the challenges faced by various types of stakeholders with respect to the current release cadence of Kubernetes project. The survey questions are classified based on the stakeholder category.
         *   [https://www.surveymonkey.com/r/kubernetes-support-survey-2019](https://www.surveymonkey.com/r/kubernetes-support-survey-2019)
     *   We now have a `#pr-reviews` slack channel as a last resort if your PR is stuck. We would love to have folks who can triage/review as well to join the channel to 	help wither fellow contributors. The idea is to help get someone get a PR “ready” and get the right SIGs/Reviewers/Approvers involved.
     *   **👏 **Shoutouts this week (Check in #shoutouts on slack) **👏**
@@ -2325,6 +2325,6 @@ Twitter | [Sep 19th](https://twitter.com/stephenaugustus/status/1174797710043430
         *   bentheelder - Shoutout to @jeefy for the really shiny and useful looking structured Kubernetes release notes viewer demo in today's #sig-release meeting, looking forward to seeing more about this! 
         *   Maria - shoutout to Silvia Moura Pina (@smourapina) for putting together a workflow to enable the CI signal subteam of the release team keep on top of flagging issues from e2e tests and coordinate follow-ups and to Jorge Alarcon (@Jorge) for spotting an opportunity to offer broader transparency to what the CI signal team is working on, suggesting a structure and kicking off implementation (find current version at [https://github.com/orgs/kubernetes/projects/11](https://github.com/orgs/kubernetes/projects/11))
         *   spiffxp - shouts to Josh Berkus (@jberkus) for taking notes during today’s steering committee meeting, our google doc clearly becomes way more difficult to use with so many people looking at it, and the written record is invaluable
-        *   spiffxp - shoutout to Katharine Berry (@Katharine) for moving us from gubernator to spyglass for all of our test result viewing needs! [https://git.k8s.io/test-infra/prow/spyglass ](https://git.k8s.io/test-infra/prow/spyglass)
+        *   spiffxp - shoutout to Katharine Berry (@Katharine) for moving us from gubernator to spyglass for all of our test result viewing needs! [https://sigs.k8s.io/prow/pkg/spyglass ](https://sigs.k8s.io/prow/pkg/spyglass)
         *   codenrhoden - Shoutout to Michelle Au (@msau42) for her patience and helpful guidance in getting a very large PR merged!
         *   @strebel - @jeefy and @onyiny-ang for all their awesome work on the Release-Notes team for 1.14. Especially @jeefy’s work on the Release-Notes website concept

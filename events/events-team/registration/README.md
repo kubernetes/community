@@ -45,7 +45,8 @@ A successful Registration lead should have the following qualities:
 
 ## Shadow to the Registration Lead Role
 This role can include one or more shadows. The Registration Lead can delegate/assign the tasks to the shadows. The expectation from a shadow is to lead one of the events-team roles in an upcoming summit. The shadows to the Registration Lead are responsible for handling all Registration lead related activities in the absence of the Lead.
-
+After shadows are selected and confirmed, add all lead and shadows' emails to the summit-team@kubernetes.io group in https://github.com/kubernetes/k8s.io/blob/main/groups/sig-contributor-experience/groups.yaml under `members` of `summit-team@kubernetes.io` or
+`.groups.[?(@.email-id=='summit-team@kubernetes.io')].members`.
 
 ## Registration Process
 
@@ -68,7 +69,7 @@ All attendees should be asked the following:
 | Please specify dietary needs (if any)                          | Dropdown  | No      | Options: `none`, `Gluten Free`, `Vegetarian`, `Vegan`, `Halal`,`Other`                                                 |
 | Do you have a disability that we should be mindful of as we try to accommodate everyone for this event?  | Dropdown  | No      | Options: `Yes`, `No`    |
 | What email did you use to register for KubeCon + CloudNative Con <NA/Europe> <year>? **KubeCon + CloudNative Con <NA/Europe> registration is required to attend Kubernetes Contributor Summit <region> <year>**                             | Free Text | Yes      |                                                                                                                |   
-| Are you a member of one of the [Kubernetes GitHub Orgs](http://git.k8s.io/community/github-management#actively-used-github-organizations)  | Dropdown | Options: `Yes`, `No` [Pop up if no is selected] Attending the Kubernetes Contributor Summit in-person is limited to Kubernetes Org Members and Sponsored Attendees. If you have questions, please email summit-team@kubernetes.io.  Yes      |                                                                                                                |    
+| Are you a member of one of the [Kubernetes GitHub Orgs](https://git.k8s.io/community/github-management#actively-used-github-organizations)  | Dropdown | Options: `Yes`, `No` [Pop up if no is selected] Attending the Kubernetes Contributor Summit in-person is limited to Kubernetes Org Members and Sponsored Attendees. If you have questions, please email summit-team@kubernetes.io.  Yes      |                                                                                                                |    
 | What SIGs or WGs are you most active in? Only list the top three. *This will help us plan content and activities.*                 | Dropdown  | Yes      | Options: <list all SIGs and WGs>                                             |
 | What sessions are you most looking forward to? *This will help us plan content and activities.*                 | Dropdown  | No       | Options: `Unconference`, `Prepared Presentations`, `Steering AMA`, `SIG Discussions/Working Sessions`, `Impromptu Discussions`, `Social/Mingling`                                                |
 | What other session(s) would you like to see at the summit? What else would make this event valuable to you? *We've changed content based on contributor feedback to this question in the past.*                          | Free Text | Yes      |                                                                                                                |
@@ -302,7 +303,7 @@ the morning of the Kubernetes Contributor Summit to assist with questions.
 [linux foundation]:https://www.linuxfoundation.org/
 [devstats]: https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1
 [sig-list]: /sig-list.yaml
-[voters]: http://git.k8s.io/steering/elections.md#eligibility-for-voting
+[voters]: https://git.k8s.io/steering/elections.md#eligibility-for-voting
 [kubernetes org members]: https://git.k8s.io/org
 [owners files]: https://cs.k8s.io/?q=&i=fosho&files=OWNERS&repos=
 [slack]: http://slack.k8s.io

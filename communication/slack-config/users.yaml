@@ -1,7 +1,7 @@
 # This file contains an alphabetically sorted mapping of lowercase GitHub
 # usernames to Kubernetes Slack user IDs.
 users:
-  adheipsingh: T09NY5SBT
+  adheipsingh: U02HS73S804
   adilGhaffarDev: U038BLZPX1S
   adisky: U9YRVLTEH
   adityabhatia: U04N6JTDK39
@@ -33,13 +33,14 @@ users:
   byako: U03GZBD4J4C
   cahillsf: U04TNKBE92R
   calebamiles: U1ZDD4CUR
-  camilamacedo86: UJDM393EH
+  camilamacedo86: U042UFD8LQK
   castrojo: U1W1Q6PRQ
   catblade: URCV5RDSB
   cblecker: U3EDWR9FV
   cdrage: U2TU9NPH9
   CecileRobertMichon: U98JPHB2M
   cfryanr: U0188B6J42H
+  chadmcrowell: UC4J73YCR
   chandankumar4: U01QKVBNMSL
   chiukapoor: U045T4QQUE6
   chrischdi: UBVL9Q4TB
@@ -99,7 +100,6 @@ users:
   ilya-zuyev: U018UF2G42F
   imran: U03K4862X7U
   inteon: U03RG8315NW
-  irbekrm: UTX3WBNGZ
   IsaacPD: U01B0C1R9NZ
   jakexks: U0AKBM9EC
   JamesLaverack: U9MK7274Y
@@ -256,6 +256,7 @@ users:
   tallclair: U64VCBURE
   TaoBeier: UCLDV6MN1
   tejal29: UACD7R316
+  ThatsMrTalbot: U7QBP08LR
   theishshah: U01891A4TRS
   thejoycekung: U01AY4VHX25
   thepetk: U04NW4PPY8N

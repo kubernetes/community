@@ -63,6 +63,7 @@ Security Documents and Documentation
 ### security-tooling
 Development and Enhancements of Security Tooling
 - **Owners:**
+  - [kubernetes-sigs/cve-feed-osv](https://github.com/kubernetes-sigs/cve-feed-osv/blob/main/OWNERS)
   - [kubernetes/sig-security/sig-security-tooling](https://github.com/kubernetes/sig-security/blob/main/sig-security-tooling/OWNERS)
 - **Contact:**
   - Slack: [#sig-security-tooling](https://kubernetes.slack.com/messages/sig-security-tooling)

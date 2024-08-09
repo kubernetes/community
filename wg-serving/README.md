@@ -24,9 +24,9 @@ The [charter](charter.md) defines the scope and governance of the Serving Workin
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-serving) for the group will typically add invites for the following meetings to your calendar.*
-* WG Serving weekly meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com)): [Wednesdays at 9:00 AM PT (Pacific Time)](https://zoom.us/j/93517402529?pwd=RnkwUUQ4L3J2QmNYYlNBcnZGbXcvQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00 AM&tz=PT%20%28Pacific%20Time%29).
+* WG Serving Weekly Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com)): [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/92615874244?pwd=VGhxZlJjRTNRWTZIS0dQV2MrZUJ5dz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1aExJFtaLnO-TM6_2uILgI8NI0IjOm7FcwLABBKEMEo0/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=TODO).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP30qNanabU75ayPK7OPNAAS).
 
 ## Organizers
 
@@ -42,14 +42,49 @@ The [charter](charter.md) defines the scope and governance of the Serving Workin
 - Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
-## WorkStreams
+## Workstreams
 
-The WG-Serving will operate in WorkStreams, each focused on a specific area of work. The following WorkStreams are currently active:
+The WG Serving will operate in several workstreams with different areas of focus. The following workstreams are currently active:
 
-- [WS Autoscaling](https://docs.google.com/document/d/1QsN4ubjerEqo5L4bQamOFFS2lmCv5zNPis2Z8gcIITg/edit?usp=sharing)
-<!--- 
-Add Links to the WorkStreams documents
---->
-- WS MultiHost/MultiNode
-- WS Orchestration
+- [Autoscaling](https://docs.google.com/document/d/1QsN4ubjerEqo5L4bQamOFFS2lmCv5zNPis2Z8gcIITg/edit?usp=sharing)
+- [MultiHost/MultiNode](https://docs.google.com/document/d/11-sK4ZIb-mJ7LGzIGx8eNViQUvZTFc5Ne4208LFEOwU/edit)
+- [Orchestration](https://docs.google.com/document/d/1hbEx3ZEqdXCqWH9RL3uy9FIy35B8pFJ5KiK3HsOz2FE/edit?usp=sharing)
+
+
+## How to ...
+
+### subscribe to WG events
+
+1. Join the [`dev@kubernetes.io`](https://groups.google.com/a/kubernetes.io/g/dev) and [`wg-serving@kubernetes.io`](https://groups.google.com/a/kubernetes.io/g/wg-serving) for needed permissions.
+2. You should have meeting invites in your inbox after some delay. Make sure to fish them out of Junk/Spam and accept the invite so it will be added to your calendar.
+3. Import [WG Serving Shared Calendar](https://calendar.google.com/calendar/u/0/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba@group.calendar.google.com) to see WG events.
+
+### schedule an ad-hoc or workstream meeting
+
+1. Get access to the [WG Serving Shared Calendar](https://calendar.google.com/calendar/u/0/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba@group.calendar.google.com). Ask chairs in #wg-serving slack chat.
+2. Create a meeting notes document or find existing one. Make sure it is shared as following:
+   - Shared with `dev@kubernetes.io` for commenting
+   - Shared with `wg-serving@kubernetes.io` for editing
+3. Create an event. Make sure to create it in the shared calendar.
+   - Use this zoom link: https://zoom.us/j/9955436256?pwd=Z2FQWU1jeDZkVC9RRTN4TlZyZTBHZz09
+   - Invite `wg-serving@kubernetes.io`
+   - Invite `calendar@kubernetes.io` so the event will appear in https://www.kubernetes.dev/resources/calendar/
+   - Mention the meeting notes document in the description
+4. Make sure one of the chairs has accepted the invite. If not - ask chairs for a host key to claim a host during the meeting.
+5. Start a recording of the meeting (record to the cloud).
+6. You can end the recording explicitly or it will be finished when the meeting will end and all participants will leave it
+
+### upload meeting recording to YouTube (for chairs)
+
+1. Download the video file from zoom account `wg-serving-leads@kubernetes.io`
+2. Log in to YouTube under the `kubernetes-wg-serving` account (use switch account)
+3. Upload video to YouTube
+   - Name should follow the template: `[WG Serving] name of the meeting 20240516`.
+   - Add meeting notes and agenda document to the meeting description
+   - Add video to k8s-owned YouTube playlist:
+     - Once video if uploaded, open the video page, click +Save button under the video, select the checkbox `WG Serving`.
+4. Add link to the video to the meeting notes document
+5. In zoom account change the title of the recording - add `(uploaded)` suffix
+
+
 <!-- END CUSTOM CONTENT -->

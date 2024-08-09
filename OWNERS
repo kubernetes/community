@@ -5,13 +5,13 @@ filters:
     approvers:
       - cblecker
       - idvoretskyi
-      - jdumars
       - mrbobbytables
       - nikhita
       - parispittman
       - sig-contributor-experience-leads
       - committee-steering
     emeritus_approvers:
+      - jdumars
       - alisondy
       - castrojo
       - calebamiles

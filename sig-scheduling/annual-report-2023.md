@@ -4,27 +4,19 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-<!--
-   Some example items that might be worth highlighting:
-   - Major KEP advancement
-   - Important initiatives that aren't tracked via KEPs
-   - Paying down significant tech debt
-   - Governance and leadership changes
--->
+  - Refine the scheduler’s APIs to provide more options that cater to diverse infrastructure and workload requirements. This includes continuing improvements on the PodTopologySpread API and applying the same approach to the PodAffinity API.
+  - Explore fine-grained (re-)queuing directives to enhance scheduling efficiency. This involves introducing new controls for developers to implement custom logic for determining how and when a pod should be (re-)queued.
+  - Stabilize core scheduling while enhancing its extensibility with external components.
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
-<!--
-   Note: This list is generated from the KEP metadata in kubernetes/enhancements repository.
-      If you find any discrepancy in the generated list here, please check the KEP metadata.
-      Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
--->
+  None.
 
 3. Did you have community-wide updates in 2023 (e.g. KubeCon talks)?
 
-<!--
-  Examples include links to email, slides, or recordings.
--->
+  Yes. SIG-Scheduling provided the following updates:
+  - [KubeCon EU 2023](https://sched.co/1HySx)
+  - [KubeCon NA 2023](https://sched.co/1R2rr)
 
 4. KEP work in 2023 (v1.27, v1.28, v1.29):
 
@@ -46,7 +38,7 @@
 
 
 **New in 2023:**
-  - [kube-scheduler-wasm-extension](https://git.k8s.io/community/<no value>#kube-scheduler-wasm-extension)
+  - [kube-scheduler-wasm-extension](https://github.com/kubernetes/community/tree/master/sig-scheduling#kube-scheduler-wasm-extension)
 **Retired in 2023:**
   - kube-batch
 **Continuing:**
@@ -70,12 +62,12 @@
 ## Operational
 
 Operational tasks in [sig-governance.md]:
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
-- [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
 
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-scheduling/CONTRIBUTING.md

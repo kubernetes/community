@@ -92,6 +92,7 @@ Snooping on the Kubernetes OpenAPI communications
 ### conformance-definition
 [Described below](#conformance-definition-1)
 - **Owners:**
+  - [kubernetes-sigs/verify-conformance](https://github.com/kubernetes-sigs/verify-conformance/blob/main/OWNERS)
   - [kubernetes/kubernetes/test/conformance](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/OWNERS)
   - [kubernetes/kubernetes/test/conformance/image](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/image/OWNERS)
   - [kubernetes/kubernetes/test/conformance/testdata](https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/OWNERS)
@@ -111,6 +112,9 @@ Snooping on the Kubernetes OpenAPI communications
   - [kubernetes/community/sig-architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/OWNERS)
 - **Contact:**
   - Slack: [#prod-readiness](https://kubernetes.slack.com/messages/prod-readiness)
+### wg-serving
+- **Owners:**
+  - [kubernetes-sigs/wg-serving](https://github.com/kubernetes-sigs/wg-serving/blob/main/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups

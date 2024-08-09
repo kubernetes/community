@@ -46,6 +46,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
+* Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Dell
 * Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Defense Unicorns
 * Qiming Teng (**[@tengqm](https://github.com/tengqm)**), Sangfor Technologies
 
@@ -67,7 +68,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fdocs)
 - GitHub Teams:
-    - [@kubernetes/kubernetes-blog](https://github.com/orgs/kubernetes/teams/kubernetes-blog) - Kubernetes blog maintainers
+    - [@kubernetes/sig-docs-blog-owners](https://github.com/orgs/kubernetes/teams/sig-docs-blog-owners) - Kubernetes blog maintainers
     - [@kubernetes/sig-docs-de-owners](https://github.com/orgs/kubernetes/teams/sig-docs-de-owners) - German language content
     - [@kubernetes/sig-docs-en-owners](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners) - English content (default)
     - [@kubernetes/sig-docs-es-owners](https://github.com/orgs/kubernetes/teams/sig-docs-es-owners) - Spanish language content

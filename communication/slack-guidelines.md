@@ -323,7 +323,7 @@ below message and pin it.
 
 ```
 This channel abides to the Kubernetes Code of Conduct -
-http://git.k8s.io/community/code-of-conduct.md
+https://git.k8s.io/community/code-of-conduct.md
 Contact conduct@kubernetes.io or an admin in the #slack-admins channel if there
 is a problem.
 ```
@@ -393,7 +393,7 @@ Report any actions taken to the other slack admins, and if needed the
 [Slack Archive Download]: https://drive.google.com/drive/folders/1Xnkwsxis3tu0pT7rwp-crRq4IciZ5b1o?usp=sharing
 [cocc]: /committee-code-of-conduct/README.md
 [CNCF Slack]: https://slack.cncf.io/
-[Tempelis]: http://sigs.k8s.io/slack-infra/tempelis
+[Tempelis]: https://sigs.k8s.io/slack-infra/tempelis
 [slack-config]: ./slack-config/
 [Channel Documentation]: ./slack-config/README.md
 [sig-list]: https://www.kubernetes.dev/community/community-groups

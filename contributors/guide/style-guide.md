@@ -635,7 +635,7 @@ relative links. However, how and what they're being linked to can vary widely.
     ```
     The super cool [prow tool] resides in the test-infra repo under the kubernetes organization
 
-    [prow tool]: https://git.k8s.io/test-infra/prow/README.md
+    [prow tool]: https://sigs.k8s.io/prow/README.md
     ```
 
 

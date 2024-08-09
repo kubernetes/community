@@ -380,6 +380,7 @@ sigs:
       teams:
       - name: cncf-conformance-wg
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/verify-conformance/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/image/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/conformance/testdata/OWNERS
@@ -395,6 +396,9 @@ sigs:
       slack: prod-readiness
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-architecture/OWNERS
+  - name: wg-serving
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/wg-serving/main/OWNERS
 - dir: sig-auth
   name: Auth
   mission_statement: >
@@ -440,24 +444,24 @@ sigs:
     day: Wednesday
     time: "11:00"
     tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/264572674
+    frequency: biweekly, you must be signed into a free zoom account to join
+    url: https://zoom.us/j/264572674?pwd=NHVXTm14VktMRi8zRmU0aUt1NE9uQT09
     archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
   - description: Secrets Store CSI Meeting
     day: Thursday
     time: "9:00"
     tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/91272289538
+    frequency: biweekly, you must be signed into a free zoom account to join
+    url: https://zoom.us/j/91272289538?pwd=ZXZFV251Zi82Vnp3cEJrcmVDeGZaZz09
     archive_url: https://docs.google.com/document/d/1q74nboAg0GSPcom3kLWCIoWg43Qg3mr306KNL58f2hg/edit#
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0PCFJrlpV6_nR_j_3RtnwI
   - description: Weekly Issues/PR Triage Meeting
     day: Monday
     time: "9:00"
     tz: PT (Pacific Time)
-    frequency: weekly
-    url: https://zoom.us/j/264572674
+    frequency: weekly, you must be signed into a free zoom account to join
+    url: https://zoom.us/j/264572674?pwd=NHVXTm14VktMRi8zRmU0aUt1NE9uQT09
   contact:
     slack: sig-auth
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-auth
@@ -705,7 +709,7 @@ sigs:
     tz: PT (Pacific Time)
     frequency: every four weeks
     url: https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09
-    archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
+    archive_url: https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
   - description: KRM Functions Subproject Meeting
     day: Wednesday
@@ -721,7 +725,7 @@ sigs:
     tz: PT (Pacific Time)
     frequency: every four weeks
     url: https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09
-    archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
+    archive_url: https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
   - description: Regular SIG Meeting
     day: Wednesday
@@ -729,7 +733,7 @@ sigs:
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09
-    archive_url: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit?usp=sharing
+    archive_url: https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
   contact:
     slack: sig-cli
@@ -823,20 +827,21 @@ sigs:
       name: Michael McCune
       company: Red Hat
     tech_leads:
-    - github: andrewsykim
-      name: Andrew Sy Kim
-      company: Google
     - github: cheftako
       name: Walter Fender
       company: Google
-    - github: nckturner
-      name: Nick Turner
-      company: Amazon
+    - github: elmiko
+      name: Michael McCune
+      company: Red Hat
     emeritus_leads:
+    - github: andrewsykim
+      name: Andrew Sy Kim
     - github: hogepodge
       name: Chris Hoge
     - github: jagosan
       name: Jago Macleod
+    - github: nckturner
+      name: Nick Turner
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
@@ -1258,21 +1263,6 @@ sigs:
       url: https://zoom.us/j/92253194848?pwd=cVVVNDMxeTl1QVJPUlpvLzNSVU1JZz09
       archive_url: https://docs.google.com/document/d/15CD2VOdkCAEcq2mm5FVoPO8M4-0a2SA2ajHLFBYqz7c/edit?usp=sharing
       recordings_url: https://www.youtube.com/playlist?list=PLutJyDdkKQIovV-AONxMa2cyv-_5LAYiu
-  - name: etcdadm
-    description: A command-line tool for operating etcd clusters
-    contact:
-      slack: etcdadm
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/etcdadm/master/OWNERS
-    meetings:
-    - description: etcdadm Office Hours
-      day: Monday
-      time: "09:00"
-      tz: PT (Pacific Time)
-      frequency: biweekly
-      url: https://zoom.us/j/612375927?pwd=MldxRnRSOExCVW1rbjM4ZzBSc3MvUT09
-      archive_url: https://docs.google.com/document/d/1b_J0oBvi9lL0gsPgTOrCw1Zlx3e7BYEuXnB3d2S15pA/edit
   - name: image-builder
     description: A collection of cross-provider Kubernetes virtual machine image building
       utilities
@@ -1406,7 +1396,15 @@ sigs:
     day: Wednesday
     time: "9:00"
     tz: PT (Pacific Time)
-    frequency: weekly alternating slack/zoom
+    frequency: Biweekly
+    url: https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09
+    archive_url: https://docs.google.com/document/d/1CBz8qV_mD6rbDmTsMuosTOQGRXGhN3d8UrcULUI6Vkw/edit
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
+  - description: Regular SIG Meeting (APAC/J/NZ timezone friendly)
+    day: Wednesday
+    time: "7:30"
+    tz: UTC
+    frequency: Biweekly, interleaved with the Regular SIG Meeting
     url: https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09
     archive_url: https://docs.google.com/document/d/1CBz8qV_mD6rbDmTsMuosTOQGRXGhN3d8UrcULUI6Vkw/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
@@ -1537,6 +1535,9 @@ sigs:
       name: Rey Lejano
       company: Red Hat
     tech_leads:
+    - github: katcosgrove
+      name: Kat Cosgrove
+      company: Dell
     - github: salaxander
       name: Xander Grzywinski
       company: Defense Unicorns
@@ -1617,7 +1618,7 @@ sigs:
     slack: sig-docs
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-docs
     teams:
-    - name: kubernetes-blog
+    - name: sig-docs-blog-owners
       description: Kubernetes blog maintainers
     - name: sig-docs-de-owners
       description: German language content
@@ -1693,7 +1694,7 @@ sigs:
     tech_leads:
     - github: ahrtr
       name: Benjamin Wang
-      company: VMWare
+      company: VMware
     - github: serathius
       name: Marek Siarkowicz
       company: Google
@@ -1714,8 +1715,16 @@ sigs:
     url: https://zoom.us/my/cncfetcdproject
     archive_url: https://docs.google.com/document/d/1idZ_7tV6F18v223LyQ0WVUn9gXLSKyeLwYTdAgbjxpw/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9oF-YEEfVXMzaOUzFYK74-I
+  - description: Triage Meeting
+    day: Thursday
+    time: "11:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/my/cncfetcdproject
+    archive_url: https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit
+    recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9oz7rXy7ZwRS1hvgfEc7qOr
   contact:
-    slack: etcd
+    slack: sig-etcd
     mailing_list: https://groups.google.com/g/etcd-dev
     teams:
     - name: sig-etcd-leads
@@ -1753,6 +1762,10 @@ sigs:
       a distributed system
     owners:
     - https://raw.githubusercontent.com/etcd-io/etcd/main/OWNERS
+  - name: etcd-manager
+    description: etcd manager
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/etcd-manager/main/OWNERS
   - name: etcd-play
     description: etcd playground
     owners:
@@ -2071,10 +2084,12 @@ sigs:
     - github: jeremyot
       name: Jeremy Olmsted-Thompson
       company: Google
+    - github: skitt
+      name: Stephen Kitt
+      company: Red Hat
+    emeritus_leads:
     - github: pmorie
       name: Paul Morie
-      company: Apple
-    emeritus_leads:
     - github: quinton-hoole
       name: Quinton Hoole
   meetings:
@@ -2137,7 +2152,7 @@ sigs:
       company: Microsoft
     - github: shaneutt
       name: Shane Utt
-      company: Kong
+      company: Red Hat
     - github: thockin
       name: Tim Hockin
       company: Google
@@ -2157,25 +2172,18 @@ sigs:
     - github: dcbw
       name: Dan Williams
   meetings:
-  - description: Gateway API GAMMA Meeting (APAC Friendly)
-    day: Tuesday
-    time: "15:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/96951309977
-    archive_url: https://docs.google.com/document/d/1s5hQU0CB9ehjFukRmRHQ41f1FA8GX5_1Rv6nHW6NWAA/edit
-  - description: Gateway API GAMMA Meeting (EMEA Friendly)
-    day: Tuesday
-    time: "08:00"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/96951309977
-    archive_url: https://docs.google.com/document/d/1s5hQU0CB9ehjFukRmRHQ41f1FA8GX5_1Rv6nHW6NWAA/edit
-  - description: Gateway API Meeting
+  - description: Gateway API Meeting (Americas)
     day: Monday
     time: "15:00"
     tz: PT (Pacific Time)
     frequency: weekly
+    url: https://zoom.us/j/441530404
+    archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
+  - description: Gateway API Meeting (Europe)
+    day: Tuesday (starting September 10th 2024)
+    time: "08:00"
+    tz: PT (Pacific Time)
+    frequency: monthly
     url: https://zoom.us/j/441530404
     archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
   - description: Network Policy API Meeting
@@ -2209,12 +2217,6 @@ sigs:
     url: https://zoom.us/j/95680858961?pwd=M1c2TTdMZHpMUUtIYXRpbjRobkNJZz09
     archive_url: https://docs.google.com/document/d/1pe_0aOsI35BEsQJ-FhFH9Z_pWQcU2uqwAnOx2NIx6OY/edit
     recordings_url: https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb
-  - description: Sig-Network Code Jam
-    day: Friday
-    time: "08:30"
-    tz: PT (Pacific Time)
-    frequency: Last Friday of the Month
-    url: https://zoom.us/j/96900767253
   contact:
     slack: sig-network
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-network
@@ -2269,12 +2271,13 @@ sigs:
   - name: knftables
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/knftables/master/OWNERS
-  - name: kpng
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kpng/master/OWNERS
   - name: kube-dns
     owners:
     - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
+  - name: multi-network
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/multi-network-api/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/multi-network/main/OWNERS
   - name: network-policy
     contact:
       slack: sig-network-policy-api
@@ -2604,20 +2607,12 @@ sigs:
     slack: sig-scalability
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scale
     teams:
-    - name: sig-scalability-api-reviews
-      description: API Changes and Reviews
-    - name: sig-scalability-bugs
-      description: Bug Triage and Troubleshooting
-    - name: sig-scalability-feature-requests
-      description: Feature Requests
-    - name: sig-scalability-misc
+    - name: sig-scalability
       description: General Discussion
+    - name: sig-scalability-leads
+      description: Leads
     - name: sig-scalability-pr-reviews
       description: PR Reviews
-    - name: sig-scalability-proprosals
-      description: Design Proposals
-    - name: sig-scalability-test-failures
-      description: Test Failures and Triage
     liaison:
       github: mrbobbytables
       name: Bob Killen
@@ -2817,6 +2812,7 @@ sigs:
     contact:
       slack: sig-security-tooling
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cve-feed-osv/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/sig-security/main/sig-security-tooling/OWNERS
   - name: sig-security
     description: SIG Security discussions, documents, processes and other artifacts
@@ -2856,13 +2852,20 @@ sigs:
     - github: childsb
       name: Bradley Childs
   meetings:
-  - description: Regular CSI Implementation meeting
-    day: Monday and Wednesday
+  - description: Regular CSI Implementation Meeting
+    day: Monday
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: weekly
     url: https://zoom.us/j/614261834
     archive_url: https://docs.google.com/document/d/1_hvq3nleqQEYatH9V_Gfep39jMzaFJRSN2ioA0PFq-Q/edit#
+  - description: Regular SIG Issue Triage Meeting
+    day: Wednesday
+    time: "10:00"
+    tz: PT (Pacific Time)
+    frequency: weekly
+    url: https://zoom.us/j/614261834
+    archive_url: https://docs.google.com/document/d/1n-dXXvCbHsPfO1yrKwT1qoC80KhsxHYKbRdChdzqeXY/edit)
   - description: Regular SIG Meeting
     day: Thursday
     time: "9:00"
@@ -3363,6 +3366,54 @@ workinggroups:
     liaison:
       github: pohly
       name: Patrick Ohly
+- dir: wg-etcd-operator
+  name: etcd Operator
+  mission_statement: >
+    The working group is dedicated to enabling automatic and efficient operation of
+    etcd clusters in Kubernetes using an etcd-operator. The working group will discuss
+    the requirement and use cases of such an etcd-operator. It will also try to create
+    a roadmap to develop such an etcd-operator.
+
+    Note: the etcd clusters, to be managed by the etcd-operator, are to support applications
+    instead of Kubernetes itself.
+
+  charter_link: charter.md
+  stakeholder_sigs:
+  - Cluster Lifecycle
+  - etcd
+  label: etcd-operator
+  leadership:
+    chairs:
+    - github: ahrtr
+      name: Benjamin Wang
+      company: VMware
+    - github: hakman
+      name: Ciprian Hacman
+      company: Microsoft
+    - github: jberkus
+      name: Josh Berkus
+      company: Red Hat
+    - github: jmhbnz
+      name: James Blair
+      company: Red Hat
+    - github: justinsb
+      name: Justin Santa Barbara
+      company: Google
+  meetings:
+  - description: Regular WG Meeting
+    day: Tuesday
+    time: "11:00"
+    tz: PT (Pacific Time)
+    frequency: bi-weekly
+    url: https://zoom.us/my/cncfetcdproject
+    archive_url: https://docs.google.com/document/d/1ey4zTTRvtCVJJP2vjF95VjG-sAKlNTcqB2HdmC18Lfc/edit
+    recordings_url: TBD
+  contact:
+    slack: wg-etcd-operator
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-etcd-operator
+    liaison:
+      github: soltysh
+      name: Maciej Szulik
 - dir: wg-lts
   name: LTS
   mission_statement: >
@@ -3485,14 +3536,14 @@ workinggroups:
       name: Yuan Tang
       company: Red Hat
   meetings:
-  - description: WG Serving weekly meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com))
+  - description: WG Serving Weekly Meeting ([Calendar](https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com))
     day: Wednesday
-    time: 9:00 AM
+    time: "9:00"
     tz: PT (Pacific Time)
     frequency: weekly
-    url: https://zoom.us/j/93517402529?pwd=RnkwUUQ4L3J2QmNYYlNBcnZGbXcvQT09
+    url: https://zoom.us/j/92615874244?pwd=VGhxZlJjRTNRWTZIS0dQV2MrZUJ5dz09
     archive_url: https://docs.google.com/document/d/1aExJFtaLnO-TM6_2uILgI8NI0IjOm7FcwLABBKEMEo0/edit
-    recordings_url: https://www.youtube.com/playlist?list=TODO
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP30qNanabU75ayPK7OPNAAS
   contact:
     slack: wg-serving
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-serving
@@ -3671,7 +3722,7 @@ committees:
       company: Cisco
     - github: mrbobbytables
       name: Bob Killen
-      company: Google
+      company: Cloud Native Computing Foundation
     - github: pacoxu
       name: Paco Xu 徐俊杰
       company: DaoCloud

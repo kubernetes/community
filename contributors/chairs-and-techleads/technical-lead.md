@@ -15,7 +15,7 @@ role.
 
 The Technical Lead role in Kubernetes is an optional role that each SIG can
 choose to implement as part of its [governance
-model](http://git.k8s.io/community/committee-steering/governance/sig-governance.md#roles).
+model](https://git.k8s.io/community/committee-steering/governance/sig-governance.md#roles).
 This means SIGs can decide on their own if they want to add Technical Leads to
 their charter or not. Depending on the overall size of the SIG, around two to
 three people can be chosen by the SIG Chairs to support the technical aspects of

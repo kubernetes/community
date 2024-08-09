@@ -302,14 +302,14 @@ git push --force
 [コントリビューターガイド]: /contributors/guide/README.md
 [開発者ガイド]: /contributors/devel/README.md
 [prow]: https://prow.k8s.io
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [tideダッシュボード]: https://prow.k8s.io/tide
 [botコマンド]: https://go.k8s.io/bot-commands
 [GitHubラベル]: https://go.k8s.io/github-labels
 [Kubernetes Code Search]: https://cs.k8s.io/
 [@dims]: https://github.com/dims
 [カレンダー]: https://calendar.google.com/calendar/embed?src=calendar%40kubernetes.io
-[kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[kubernetes-dev]: https://groups.google.com/a/kubernetes.io/g/dev
 [slackチャンネル]: http://slack.k8s.io/
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/kubernetes
 [youtubeチャンネル]: https://www.youtube.com/c/KubernetesCommunity/
@@ -322,7 +322,7 @@ git push --force
 [kubernetesフォーラム]: https://discuss.kubernetes.io/
 [pull request process]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [cla]: /CLA.md#how-do-i-sign
 [claトラブルシューティングガイドライン]: /CLA.md#troubleshooting
 [コマンド]: https://prow.k8s.io/command-help
@@ -337,7 +337,7 @@ git push --force
 [GitHub workflow]: /contributors/guide/github-workflow.md#3-branch
 [スカッシュコミット]: /contributors/guide/pull-requests.md#6-squashing-and-commit-titles
 [owners]: /contributors/guide/owners.md
-[ローカルでのテスト]: /contributors/guide/README.md#testing
+[ローカルでのテスト]: /contributors/devel/sig-testing/testing.md
 [Atlassian gitチュートリアル]: https://www.atlassian.com/git/tutorials
 [git magic]: http://www-cs-students.stanford.edu/~blynn/gitmagic/
 [セキュリティと情報開示]: https://kubernetes.io/docs/reference/issues-security/security/

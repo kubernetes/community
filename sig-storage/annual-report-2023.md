@@ -12,6 +12,19 @@
    - Governance and leadership changes
 -->
 
+GA milestones hit
+
+    - [2268 - non graceful shutdown](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/2268-non-graceful-shutdown) - v1.28
+    - [2485 - ReadWriteOncePod PersistentVolume AccessMode](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/2485-read-write-once-pod-pv-access-mode) - v1.29
+    - [3107 - SecretRef field addition to NodeExpandVolume request](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3107-csi-nodeexpandsecret) - v1.29
+    - [3333 - Retroactive default StorageClass assignment](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3333-retroactive-default-storage-class) - v1.28
+
+Successful progress
+
+    - [3751 - Kubernetes Volume Provisioned IO](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3751-volume-attributes-class) - v1.29
+      - The VolumeAttributesClass Alpha feature was introduced in v1.29. This feature proposes an extension to the Kubernetes Persistent Volume API to allow users to change volume attributes after provisioning (for example, for IOPS or throughput).
+
+
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
 <!--
@@ -20,11 +33,21 @@
       Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
 -->
 
+- Write more tests; monitor test grid health; work on test framework out of tree; enhance CSI release tools.
+- Doc writer to improve docs on CSI side and in general in Storage side.
+- We have a weekly issue triage meeting, but would appreciate help with more efficient issue triage and help with fixing the issues.
+  - https://github.com/orgs/kubernetes-csi/projects/52/views/3
+  - https://docs.google.com/document/d/1n-dXXvCbHsPfO1yrKwT1qoC80KhsxHYKbRdChdzqeXY/edit#
+
+
 3. Did you have community-wide updates in 2023 (e.g. KubeCon talks)?
 
 <!--
   Examples include links to email, slides, or recordings.
 -->
+- KubeCon NA update 2023: https://www.youtube.com/watch?v=spyEgGcqwFs
+- KubeCon EU update 2023: https://www.youtube.com/watch?v=zZFN9KMs5sI
+- KubeCon CN update 2023: https://www.youtube.com/watch?v=SPfJrDnnprs
 
 4. KEP work in 2023 (v1.27, v1.28, v1.29):
 
@@ -32,19 +55,15 @@
     - [3751 - Kubernetes Volume Provisioned IO](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3751-volume-attributes-class) - v1.29
 
   - Beta
-    - [1710 - Skip SELinux relabeling of volumes](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/1710-selinux-relabeling) - v1.27
-    - [2923 - In-tree Storage Plugin to CSI Migration - Ceph RBD](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/2923-csi-migration-ceph-rbd) - v1.27
+    - [171: - Skip SELinux relabeling of volumes - SELinuxMountReadWriteOncePod](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/1710-selinux-relabeling) - v1.27
     - [3141 - Prevent unauthorised volume mode conversion](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3141-prevent-volume-mode-conversion) - v1.27
-    - [3476 - Volume Group Snapshot](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3476-volume-group-snapshot) - v1.29
     - [3756 - Robust VolumeManager reconstruction after kubelet restart](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3756-volume-reconstruction) - v1.27
     - [3762 - PersistentVolume last phase transition time](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3762-persistent-volume-last-phase-transition-time) - v1.29
 
   - Stable
     - [2268 - non graceful shutdown](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/2268-non-graceful-shutdown) - v1.28
     - [2485 - ReadWriteOncePod PersistentVolume AccessMode](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/2485-read-write-once-pod-pv-access-mode) - v1.29
-    - [2644 - Honor Persistent Volume Reclaim Policy](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/2644-honor-pv-reclaim-policy) - v1.28
     - [3107 - SecretRef field addition to NodeExpandVolume request](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3107-csi-nodeexpandsecret) - v1.29
-    - [3294 - Provision volumes from cross-namespace snapshots](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3294-provision-volumes-from-cross-namespace-snapshots) - v1.29
     - [3333 - Retroactive default StorageClass assignment](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3333-retroactive-default-storage-class) - v1.28
 
 ## [Subprojects](https://git.k8s.io/community/sig-storage#subprojects)
@@ -65,6 +84,7 @@
 
 **Retired in 2023:**
  - Multitenancy
+
 **Continuing:**
  - Data Protection
  - Policy

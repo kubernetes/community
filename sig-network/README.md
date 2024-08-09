@@ -14,11 +14,9 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network) for the group will typically add invites for the following meetings to your calendar.*
-* Gateway API GAMMA Meeting (APAC Friendly): [Tuesdays at 15:00 PT (Pacific Time)](https://zoom.us/j/96951309977) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1s5hQU0CB9ehjFukRmRHQ41f1FA8GX5_1Rv6nHW6NWAA/edit).
-* Gateway API GAMMA Meeting (EMEA Friendly): [Tuesdays at 08:00 PT (Pacific Time)](https://zoom.us/j/96951309977) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1s5hQU0CB9ehjFukRmRHQ41f1FA8GX5_1Rv6nHW6NWAA/edit).
-* Gateway API Meeting: [Mondays at 15:00 PT (Pacific Time)](https://zoom.us/j/441530404) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=PT%20%28Pacific%20Time%29).
+* Gateway API Meeting (Americas): [Mondays at 15:00 PT (Pacific Time)](https://zoom.us/j/441530404) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
+* Gateway API Meeting (Europe): [Tuesday (starting September 10th 2024)s at 08:00 PT (Pacific Time)](https://zoom.us/j/441530404) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
 * Network Policy API Meeting: [Tuesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/96264742248) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs).
@@ -31,7 +29,6 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 * SIG Network Multi-Network Meeting: [Wednesdays at 08:00 PT (Pacific Time)](https://zoom.us/j/95680858961?pwd=M1c2TTdMZHpMUUtIYXRpbjRobkNJZz09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1pe_0aOsI35BEsQJ-FhFH9Z_pWQcU2uqwAnOx2NIx6OY/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
-* Sig-Network Code Jam: [Fridays at 08:30 PT (Pacific Time)](https://zoom.us/j/96900767253) (Last Friday of the Month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:30&tz=PT%20%28Pacific%20Time%29).
 
 ## Leadership
 
@@ -39,7 +36,7 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Michael Zappa (**[@mikezappa87](https://github.com/mikezappa87)**), Microsoft
-* Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Kong
+* Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Red Hat
 * Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
 
 ### Technical Leads
@@ -113,12 +110,13 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### knftables
 - **Owners:**
   - [kubernetes-sigs/knftables](https://github.com/kubernetes-sigs/knftables/blob/master/OWNERS)
-### kpng
-- **Owners:**
-  - [kubernetes-sigs/kpng](https://github.com/kubernetes-sigs/kpng/blob/master/OWNERS)
 ### kube-dns
 - **Owners:**
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
+### multi-network
+- **Owners:**
+  - [kubernetes-sigs/multi-network-api](https://github.com/kubernetes-sigs/multi-network-api/blob/main/OWNERS)
+  - [kubernetes-sigs/multi-network](https://github.com/kubernetes-sigs/multi-network/blob/main/OWNERS)
 ### network-policy
 - **Owners:**
   - [kubernetes-sigs/kube-network-policies](https://github.com/kubernetes-sigs/kube-network-policies/blob/master/OWNERS)
@@ -155,4 +153,24 @@ SIG Network is responsible for a number of issues and PRs. A summary can be foun
 ## Documents
 
 * [2017 Planning](https://docs.google.com/document/d/1fBxC36UCBnqY_w3m3TjdnXFsIT--GS6HmKb5o0nhkTk/edit#)
+
+## Archive
+
+The following are larger efforts which are now archived and historical. They are
+no longer active, but are kept in an archived state for posterity and maybe be
+useful as reference materials.
+
+### KPNG
+
+["Kube Proxy Next Generation (KPNG)"][kpng] was an effort to evaluate the
+potential for a new [kube-proxy] with an emphasis on modularity and
+adaptability. Through the project we explored alternatives to our historical
+kube-proxy architecture and gained a lot of community members through interest
+in it. The project was very large in scope, and was archived in 2024 after
+agreement that the community was no longer able to continue focus on it, but it
+remains important prior art for any future attempts to revise kube-proxy.
+
+[kpng]: https://github.com/kubernetes-sigs/kpng
+[kube-proxy]: https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/
+
 <!-- END CUSTOM CONTENT -->

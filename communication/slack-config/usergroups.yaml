@@ -50,8 +50,7 @@ usergroups:
   - name: product-security-committee
     long_name: Product Security Committee
     description: |-
-      The Product Security Committee (PSC) is responsible for triaging and
-      handling the security issues for Kubernetes.
+      The Product Security Committee (PSC) is responsible for triaging and handling the security issues for Kubernetes.
     channels:
       - release-management
       - sig-release
@@ -82,17 +81,18 @@ usergroups:
 
   - name: youtube-admins
     long_name: YouTube Admins
-    description: YouTube Admin group. Ping for a YouTube-specific issue
+    description: YouTube Admin group. Ping for a YouTube-specific issue.
     channels:
       - sig-contribex
     members:
       - chrisshort
       - pnbrown
       - CIPHERTron
+      - chadmcrowell
 
   - name: zoom-admins
     long_name: Zoom Admins
-    description: Zoom Admin group. Ping for a Zoom-specific issue
+    description: Zoom Admin group. Ping for a Zoom-specific issue.
     channels:
       - sig-contribex
     members:
@@ -315,9 +315,9 @@ usergroups:
       - wallrj
       - jakexks
       - maelvls
-      - irbekrm
       - sgtcodfish
       - inteon
+      - ThatsMrTalbot
 
   - name: gophercloud-maintainers
     long_name: Gophercloud Maintainers

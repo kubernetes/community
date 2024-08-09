@@ -61,7 +61,7 @@ instead of direct pushing that will never kick off a CLA check.
 ## Label automation
 
 The label automation is done using the [CLA plugin in
-prow](https://git.k8s.io/test-infra/prow/plugins/cla).  In order to turn on the
+prow](https://sigs.k8s.io/prow/pkg/plugins/cla).  In order to turn on the
 CLA labels on your repo, add it as appropriate within the
 [plugins.yaml](https://git.k8s.io/test-infra/config/prow/plugins.yaml), and add the cla
 plugin to it.

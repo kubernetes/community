@@ -276,7 +276,7 @@ PR संशोधन का चरण। यदि आप अनिश्चि
 [योगदानकर्ता गाइड]: /contributors/guide/README.md
 [डेवलपर गाइड]: /contributors/devel/README.md
 [prow]: https://prow.k8s.io//prow.k8s.io-tide
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [tide डैशबोर्ड]: https:
 [बॉट कमांड]: https://go.k8s.io/bot-commands
 [Github लेबल]: https://go.k8s.io/github-labels
@@ -297,7 +297,7 @@ PR संशोधन का चरण। यदि आप अनिश्चि
 [कुबरनेट्स फ़ोरम]: https://discuss.kubernetes.io/
 [पुल अनुरोध प्रक्रिया]: /contributors/guide/pull-requests.md
 [github वर्कफ़्लो]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [CLA]: /CLA.md#how-do-i-sign
 [CLA समस्या निवारण दिशा निर्देशों]: /CLA.md#troubleshooting
 [आदेश]: https://prow.k8s.io/command-help

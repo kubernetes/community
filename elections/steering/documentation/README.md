@@ -81,8 +81,10 @@ unable to complete the election, or is unavailable for post-election duties (suc
 as a special election).  Any current Officer may activate the Alternate if
 any Officer resigns or is unavailable.
 
-The Alternate will be added to the Election Officers slack, but will have no
-duties and will not participate in votes unless activated.
+The Alternate(s) will be added to the Election Officers slack and email alias,
+but will have no specific duties and will not participate in votes unless
+activated.  Alternate(s) are also intended to be in training to run the
+following year's election.
 
 ### K8s Infra Liaison
 
@@ -171,12 +173,31 @@ Potential sources for qualified EO candidates include:
 * Emeritus Steering Committee members
 * Current Steering members who are terming out
 * Current or former Contributor Experience leads
+* Other current or former Kubernetes team leaders
 
-Subproject leads will choose the EOs to match the criteria for the role.  The Subproject is not required to issue a public call for candidates, nor document their EO selection process, unless asked to do so by the Steering Committee.
+Subproject leads will choose the EOs to match the criteria for the role.  The
+Subproject is not required to issue a public call for candidates, nor document
+their EO selection process, unless asked to do so by the Steering Committee.
 
-When they settle on a final list of three candidates and one alternate, they will check in with SIG-ContribEx leads, and then propose the list of officers to the current Steering Committee.  This proposal should happen as an issue or PR, such that all Steering members are able to see the proposal and comment on it. If Steering requires different candidates, the Subproject Leads will find alternate EO possibilities until Steering approves.
+When they settle on a final list of three candidates and one or two alternates,
+they will check in with SIG-ContribEx leads, and then propose the list of
+officers to the current Steering Committee.  This proposal should happen as an
+issue or PR, such that all Steering members are able to see the proposal and
+comment on it. If Steering requires different candidates, the Subproject Leads
+will find alternate EO possibilities until Steering approves.
 
-A Subproject lead will submit a PR to create the team, primarily creating an OWNERS file in the appropriate steering/YEAR directory.  They will request that the Slack Admins change the membership on the #election-officers Slack channel to reflect the current EOs.
+A Subproject lead will submit a PR to create the team, primarily creating an
+OWNERS file in the appropriate steering/YEAR directory.  The Subproject lead
+will also be responsible for ensuring that the new EOs are set up both on Slack
+and email.  Setting up the officers at the election@kubernetes.io alias is
+done by submitting a PR against the [groups file].
+
+To set up the officers on Slack, the lead will request that a continuing EO
+invite them to the #election-officers channel.  They will then update the
+membership of the channel to include all current Officers and Alternates.  
+The Subproject lead will then stay on the channel to assist and answer questions
+until the new EOs submit a schedule proposal to Steering.  At that point, the
+Subproject lead will leave the channel.
 
 ### Set Up
 
@@ -340,7 +361,7 @@ Eligible:
 Ineligible without other contributions:
 
 * Writer/maintainers of 3rd party information resources (private/company blogs, personal/company Kubernetes websites, personal video channels)
-* Meetup/User Group organizers
+* Meetup organizers
 * Conference speakers
 * Contributors to other CNCF projects
 * Contributors to Kubernetes distributions
@@ -475,3 +496,4 @@ Should more than one EO drop out, leaving less than three EOs, then the remainin
 [Comms Plan]: https://docs.google.com/document/d/1zhZzjKi-VHD1xfdibX68VxYaQ_-PiFKanGzBcF-1ilQ/edit?usp=sharing
 [2022 retro]: https://docs.google.com/document/d/1M8Ho1Bx9WkmNrzc1eoSJPsQxaO9smEtp-mxvpc4s5i8/edit?usp=sharing
 [generate a CSV to download]: https://k8s.devstats.cncf.io/d/13/developer-activity-counts-by-repository-group?orgId=1&var-period_name=Last%20year&var-metric=contributions&var-repogroup_name=All&var-repo_name=kubernetes%2Fkubernetes&var-country_name=All&inspect=4&inspectTab=data#:~:text=Formatted%20data-,Download,-CSV
+[groups file]: https://github.com/kubernetes/k8s.io/blob/main/groups/committee-steering/groups.yaml

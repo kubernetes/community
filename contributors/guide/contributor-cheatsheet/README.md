@@ -373,13 +373,13 @@ git rebase -i HEAD~3
 git push --force
 ```
 
-**Note**: you can also ask your reviewer to add the `tide/merge-method-squash` label to your PR (this can be done by a reviewer by issuing the command: `/label tide/merge-method-squash`), this will let the bot take care of squashing _all_ commits that are part of this PR and will not result in removal of the `LGTM` label (if already applied) or re-run of the CI tests.
+**Note**: you can also use the bot to help squash commits, please see [squashing commits] for more details.
 
 [contributor course]: https://www.kubernetes.dev/docs/onboarding
 [contributor guide]: /contributors/guide/README.md
 [developer guide]: /contributors/devel/README.md
 [prow]: https://prow.k8s.io
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [tide dashboard]: https://prow.k8s.io/tide
 [bot commands]: https://go.k8s.io/bot-commands
 [gitHub labels]: https://go.k8s.io/github-labels
@@ -399,7 +399,7 @@ git push --force
 [kubernetes forum]: https://discuss.kubernetes.io/
 [pull request process]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [cla]: /CLA.md#how-do-i-sign
 [cla troubleshooting guidelines]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help

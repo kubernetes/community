@@ -22,6 +22,9 @@ The [charter](charter.md) defines the scope and governance of the etcd Special I
 * Robustness Tests Meeting: [Wednesdays at 08:00 PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1idZ_7tV6F18v223LyQ0WVUn9gXLSKyeLwYTdAgbjxpw/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLRGL688DpO9oF-YEEfVXMzaOUzFYK74-I).
+* Triage Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11:00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PLRGL688DpO9oz7rXy7ZwRS1hvgfEc7qOr).
 
 ## Leadership
 
@@ -35,16 +38,22 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Benjamin Wang (**[@ahrtr](https://github.com/ahrtr)**), VMWare
+* Benjamin Wang (**[@ahrtr](https://github.com/ahrtr)**), VMware
 * Marek Siarkowicz (**[@serathius](https://github.com/serathius)**), Google
 
 ## Contact
-- Slack: [#etcd](https://kubernetes.slack.com/messages/etcd)
+- Slack: [#sig-etcd](https://kubernetes.slack.com/messages/sig-etcd)
 - [Mailing list](https://groups.google.com/g/etcd-dev)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fetcd)
 - GitHub Teams:
     - [@kubernetes/sig-etcd-leads](https://github.com/orgs/kubernetes/teams/sig-etcd-leads) - SIG Chairs and Tech Leads
 - Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-etcd:
+* [WG etcd Operator](/wg-etcd-operator)
+
 
 ## Subprojects
 
@@ -77,6 +86,10 @@ Public etcd Discovery Service
 Distributed reliable key-value store for the most critical data of a distributed system
 - **Owners:**
   - [etcd-io/etcd](https://github.com/etcd-io/etcd/blob/main/OWNERS)
+### etcd-manager
+etcd manager
+- **Owners:**
+  - [kubernetes-sigs/etcd-manager](https://github.com/kubernetes-sigs/etcd-manager/blob/main/OWNERS)
 ### etcd-play
 etcd playground
 - **Owners:**

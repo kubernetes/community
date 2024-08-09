@@ -15,7 +15,7 @@ branches.
 
 ## Prerequisites
 
-- [Contributor License Agreement](http://git.k8s.io/community/CLA.md) is
+- [Contributor License Agreement](https://git.k8s.io/community/CLA.md) is
   considered implicit for all code within cherry pick pull requests,
   **unless there is a large conflict**.
 - A pull request merged against the `master` branch.

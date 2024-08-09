@@ -2,6 +2,8 @@
 
 These icons are a way to standardize Kubernetes architecture diagrams for presentation. Having uniform architecture diagrams improve understandibility.
 
+The icon for Kubernetes itself can be found at https://github.com/kubernetes/kubernetes/tree/master/logo .
+
 ## Tools
 
 ```shell
@@ -16,7 +18,7 @@ This script generates png from svg, and Visio Stencil from png.
 ./tools/rasterize.sh
 ```
 
-This script will convert all svg into png. It's based on a docker container defined [here](hack/svgconvertor/Dockefile)
+This script will convert all svg into png. It's based on a docker container defined [here](./tools/Dockerfile)
 
 ### Generate Visio Stencil from png icons
 

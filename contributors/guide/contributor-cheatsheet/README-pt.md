@@ -332,7 +332,7 @@ fase de uma revisão do PR. Se você não tem certeza se deve efetuar o squashin
 [Guia do Contribuidor]: /contributors/guide/README.md
 [Guia do Desenvolvedor]: /contributors/devel/README.md
 [prow]: https://prow.k8s.io
-[tide]: http://git.k8s.io/test-infra/prow/cmd/tide/pr-authors.md
+[tide]: https://sigs.k8s.io/prow/site/content/en/docs/components/core/tide/pr-authors.md
 [tide dashboard]: https://prow.k8s.io/tide
 [Comandos do Bot]: https://go.k8s.io/bot-commands
 [gitHub labels]: https://go.k8s.io/github-labels
@@ -352,7 +352,7 @@ fase de uma revisão do PR. Se você não tem certeza se deve efetuar o squashin
 [Fórum do Kubernetes]: https://discuss.kubernetes.io/
 [Processo de pull request]: /contributors/guide/pull-requests.md
 [github workflow]: /contributors/guide/github-workflow.md
-[prow]: https://git.k8s.io/test-infra/prow#prow
+[prow]: https://sigs.k8s.io/prow/pkg
 [cla]: /CLA.md#how-do-i-sign
 [solucionando problemas do cla]: /CLA.md#troubleshooting
 [commands]: https://prow.k8s.io/command-help

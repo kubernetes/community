@@ -103,13 +103,13 @@ intentions. [For more details please see community issue #1407](https://github.c
 
 We have created a number of tools to help with the management of or Github
 repositories and organizations:
-- [prow](https://git.k8s.io/test-infra/prow): Prow is our system for handling
+- [prow](https://sigs.k8s.io/prow/pkg): Prow is our system for handling
   GitHub events and commands for Kubernetes. It is comprised of a number of
   modules/plugins. A couple key ones for GitHub management are below, but a full
   list of commands is available [here](https://go.k8s.io/bot-commands)
-  - [branchprotector](https://git.k8s.io/test-infra/prow/cmd/branchprotector):
+  - [branchprotector](https://sigs.k8s.io/prow/cmd/branchprotector):
     enforce branch protection settings across an organization
-  - [peribolos](https://git.k8s.io/test-infra/prow/cmd/peribolos): Manage Github
+  - [peribolos](https://sigs.k8s.io/prow/cmd/peribolos): Manage Github
     organization and team membership based on a defined YAML configuration
 - [label_sync](https://git.k8s.io/test-infra/label_sync): Add, modify, delete,
   and migrate labels across an entire organization based on a defined YAML
