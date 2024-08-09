@@ -1,0 +1,44 @@
+name: Contributor Comms Request
+description: Get support on sending a message out to our community through coordinated outreach on email, Slack, social media, and other public channels.
+title: 'REQUEST: New communication about <topic>'
+labels: area/contributor-comms, sig/contributor-experience
+body:
+  - type: textarea
+    id: content
+    attributes:
+      label: What do you want to send out? (Please include a link to any information or a draft)
+      description: Gists, Hackmd.io, or Google Doc preferred. Include any artwork, pics, diagrams, or any other assets with public links.
+    validations:
+      required: true
+  - type: dropdown
+    id: help
+    attributes:
+      label: Drafting Content help needed?
+      description: Do you also need help drafting the content?
+      options:
+        - "Yes"
+        - "No"
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Target Audience
+      description: Contributor Comms has different channels that aim at different target audiences. To determine what channels to utilize, please state your audience for the request.
+      options:
+        - Kubernetes Contributors
+        - Kubernetes End-Users
+        - Everyone
+      default: 2
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "Please do not change the following textbox"
+  - id: labels
+    type: textarea
+    attributes:
+      label: "Labels:"
+      value: |
+        /cc @kubernetes/contributor-comms
