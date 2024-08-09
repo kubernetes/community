@@ -108,6 +108,6 @@ Note: Task 5 requires Linux OS
    - Name should follow the template: `<name of the meeting> yyyymmdd` like `Kubernetes SIG Node 20240618`.
    - Add a link to the meeting notes and agenda document to the meeting description
    - Add video to k8s-owned YouTube playlist:
-     - Once video if uploaded, open the video page, click +Save button under the video, select the checkbox `SIG Node Meetings`.
+     - Once video is uploaded, open the video page, click +Save button under the video, select the checkbox `SIG Node Meetings`.
 4. Add link to the video to the meeting notes document
 5. In zoom account change the title of the recording - add `(uploaded)` suffix
