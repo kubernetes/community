@@ -2305,6 +2305,9 @@ sigs:
     - github: SergeyKanzhelev
       name: Sergey Kanzhelev
       company: Google
+    - github: haircommander
+      name: Peter Hunt
+      company: Red Hat
     - github: mrunalp
       name: Mrunal Patel
       company: Red Hat
