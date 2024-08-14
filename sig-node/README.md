@@ -26,6 +26,7 @@ The [charter](charter.md) defines the scope and governance of the Node Special I
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Sergey Kanzhelev (**[@SergeyKanzhelev](https://github.com/SergeyKanzhelev)**), Google
+* Peter Hunt (**[@haircommander](https://github.com/haircommander)**), Red Hat
 * Mrunal Patel (**[@mrunalp](https://github.com/mrunalp)**), Red Hat
 
 ### Technical Leads
