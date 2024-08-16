@@ -65,9 +65,9 @@ community must use it responsibly and are subject to the following guidelines:
     -   Posting of any inappropriate content (i.e. NSFW content)
         will result in ***immediate*** suspension of privileges.
 
--   All posted videos should use the naming convention: \<Name of Playlist's
-    Group\> YYYYMMDD
-    -   **Example:** SIG Service Catalog 20161129
+-   All posted videos should use the naming convention: [Name of Playlist's
+    Group] Meeting Name for YYYYMMDD
+    -   **Example:** [SIG Contributor Experience] Biweekly Meeting for 20240816
 
 -   Playlists should be organized chronologically for ease of use. This can be
     done by updating the default ordering of the Playlist:
