@@ -24,9 +24,9 @@ it's necessary to keep a continuous pipeline of quality contributors and we want
 
 ## Programs
 
-| Program                                                                | Status                   | Target Date                                                                   |
-|------------------------------------------------------------------------|--------------------------|-------------------------------------------------------------------------------|
-| [Group Mentoring Cohorts](/mentoring/programs/2024/group-mentoring.md) | **Planning in progress** | [Sept-Nov](/mentoring/programs/2024/groupmentorship/group-mentor-planning.md) |
+| Program                                                                                         | Status                   | Target Date                                                                   |
+|-------------------------------------------------------------------------------------------------|--------------------------|-------------------------------------------------------------------------------|
+| [Group Mentoring Cohorts](/mentoring/programs/2024/groupmentorship/group-mentor-planning.md) | **Planning in progress** | [Sept-Nov](/mentoring/programs/2024/groupmentorship/group-mentor-planning.md) |
 
 
 ### Self Paced
