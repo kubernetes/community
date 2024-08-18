@@ -26,7 +26,7 @@ it's necessary to keep a continuous pipeline of quality contributors and we want
 
 | Program                                                                | Status                   | Target Date                                                                   |
 |------------------------------------------------------------------------|--------------------------|-------------------------------------------------------------------------------|
-| [Group Mentoring Cohorts](/mentoring/mentors/group-mentoring.md) | **Planning in progress** | [Sept-Nov](/mentoring/programs/2024/groupmentorship/group-mentor-planning.md) |
+| [Group Mentoring Cohorts](/mentoring/programs/2024/group-mentoring.md) | **Planning in progress** | [Sept-Nov](/mentoring/programs/2024/groupmentorship/group-mentor-planning.md) |
 
 
 ### Self Paced
@@ -52,42 +52,6 @@ Please reach out to #sig-contribex on slack or come to a mentoring meeting to ge
 
 Please reach out to #sig-contribex on slack or come to a mentoring meeting to get involved in planning //TODO add contribex README when this is updated
 
-SIG's office hours / mentoring
-
-- [Office hours / mentoring](/mentoring/programs/office-hours.md)
-
-Long Term Contributor Ladder Growth
-
-- Through [Group Mentoring Cohorts](/mentoring/mentors/group-mentoring.md)
-
-Specific topics and activities
-
-- [The 1:1 Hour](/mentoring/programs/archive/the1-on-1hour.md)
-
-Role based shadow programs
-
-- [List of programs](/mentoring/programs/archive/shadow-roles.md)
-
-Students
-
-- [Google Summer of Code](/mentoring/programs/archive/google-summer-of-code.md)
-
-1:1 full-time mentoring
-
-- [LFX Mentorship](/mentoring/processes/lfx-mentorship.md)
-
-Tech Writers
-
-- [Google Season of Docs](/mentoring/processes/google-season-of-docs.md)
-
-Groups Traditionally Underrepresented in Tech
-
-- [Outreachy](/mentoring/programs/archive/outreachy.md)
-
-In person
-
-- [Videos of New Contributor Workshop](https://www.youtube.com/playlist?list=PL69nYSiGNLP3M5X7stuD7N4r3uP2PZQUx)
-- Pod Mentoring! [aka group mentoring](/mentoring/programs/archive/mentoring-events.md)
 
 #### Inspiration and Thanks
 
