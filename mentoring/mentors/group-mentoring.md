@@ -72,9 +72,9 @@ mentor.
 [Mentor Guide]  
 [Mentee Guide]
 
-[Mentee Guide]: /mentoring/programs/group-mentee-guide.md
+[Mentee Guide]: /mentoring/programs/archive/group-mentee-guide.mdguide.md
 [Mentoring/Contributor Info Form]: https://goo.gl/forms/SHWAiZ9Ih1qwuJbs1
-[Mentor Guide]: /mentoring/processes/mentor-guide.md
+[Mentor Guide]: /mentoring/mentors/mentor-guide.md
 [community membership guidelines]: /community-membership.md
 [Chair]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md#chair
 [Tech Lead]: https://github.com/kubernetes/community/blob/master/contributors/chairs-and-techleads/technical-lead.md

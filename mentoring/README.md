@@ -5,7 +5,7 @@ description: |
   An index of Kubernetes Mentoring programs, initiatives, and resources.
 ---
 
-# Kubernetes Upstream Mentoring Programs
+# Kubernetes Mentoring Programs
 
 This page indexes all of the mentoring initiatives for contributing to the Kubernetes project. For end user mentoring initiatives, check out KubeCon and other CNCF events and programs.
 
@@ -13,49 +13,23 @@ This page indexes all of the mentoring initiatives for contributing to the Kuber
 
 We understand that everyone has different learning styles and we want to support
 as many of those as possible. Mentoring is vital to the growth of an individual
-and organization of every kind. For Kubernetes, the larger the project becomes
-, it's necessary to keep a continuous pipeline of quality contributors and we want you to hang around!
+and organization of every kind. For Kubernetes, the larger the project becomes,
+it's necessary to keep a continuous pipeline of quality contributors and we want you to hang around!
+
 
 ## Current mentoring activities:
 
-Please reach out to #sig-contribex on slack or come to a mentoring meeting to get involved in planning //TODO add contribex README when this is updated
+### SIG's office hours 
+- [Office hours](/mentoring/programs/office-hours.md)
 
-SIG's office hours / mentoring
+### Long Term Contributor Ladder Growth (currently in planning, expected later this year)
+- [Group Mentoring Cohorts](/mentoring/mentors/group-mentoring.md)
 
-- [Office hours / mentoring](/mentoring/programs/office-hours.md)
 
-Long Term Contributor Ladder Growth
+External programs
+- [LFX Mentorship](/mentoring/processes/lfx-mentorship.md)
 
-- Through [Group Mentoring Cohorts](/mentoring/programs/group-mentoring.md)
 
-Specific topics and activities
-
-- [The 1:1 Hour](/mentoring/programs/the1-on-1hour.md)
-
-Role based shadow programs
-
-- [List of programs](/mentoring/programs/shadow-roles.md)
-
-Students
-
-- [Google Summer of Code](/mentoring/programs/google-summer-of-code.md)
-
-1:1 full-time mentoring
-
-- [LFX Mentorship](/mentoring/programs/lfx-mentorship.md)
-
-Tech Writers
-
-- [Google Season of Docs](/mentoring/programs/google-season-of-docs.md)
-
-Groups Traditionally Underrepresented in Tech
-
-- [Outreachy](/mentoring/programs/outreachy.md)
-
-In person
-
-- [Videos of New Contributor Workshop](https://www.youtube.com/playlist?list=PL69nYSiGNLP3M5X7stuD7N4r3uP2PZQUx)
-- Pod Mentoring! [aka group mentoring](/mentoring/programs/mentoring-events.md)
 
 #### Inspiration and Thanks
 

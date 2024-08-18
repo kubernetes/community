@@ -42,7 +42,7 @@ suggestions:
 *Chair/TL combo*
 Chair + Reviewer
 - All of the above
-- [Sample curriculum](../programs/leads-curriculum.md)
+- [Sample curriculum](leads-curriculum.md)
 
 One of the best strategies is to have everyone work on something together, 
 Examples:
