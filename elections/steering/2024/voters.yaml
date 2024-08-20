@@ -12,6 +12,7 @@
 # Log of changes to the file
 # 2024-08-01 - Initial setup with voters from devstats+org, plus CCoC + SRC
 # 2024-08-01 - Minor correction to fix alpha-sorting of voters list
+# 2024-08-20 - Add voters from approved exception requests
 #
 eligible_voters:
 - a-mccarthy
@@ -519,6 +520,7 @@ eligible_voters:
 - sashrith
 - SataQiu
 - satyampsoni
+- savitharaghunathan
 - sawsa307
 - sbueringer
 - schrej
