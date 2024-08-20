@@ -1,4 +1,4 @@
-## SUMMARY:
+sig-wg-lifecycle.md## SUMMARY:
 
 This document covers everything you need to know about the creation and retirement (“lifecycle”) of a special interest, or working group within the Kubernetes project. General project governance information can be found in the [steering committee repo].
 Out of scope for this document: [subproject] creation.
