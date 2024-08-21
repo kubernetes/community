@@ -265,6 +265,7 @@ channels:
   - name: kubeadm
   - name: kubeadm-cn
   - name: kubeapps
+  - name: kubearchive
   - name: kubebuilder
   - name: kubecon
   - name: kubecfg
