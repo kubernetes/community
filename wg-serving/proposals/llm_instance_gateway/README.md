@@ -26,10 +26,8 @@ use cases upon shared hardware has distinct advantages in enabling efficient and
 
 ## Motivation
 
-Novel advancements in fine-tuning like [LoRA](https://arxiv.org/abs/2106.09685) and [Multi-LoRA](https://arxiv.org/abs/2310.18547) have enabled
-multiple distinct use cases to share accelerators. As this new tech is adopted,
-the Day1/2 operational 
-concerns quickly become necessary.
+Novel advancements in fine-tuning like [LoRA](https://arxiv.org/abs/2106.09685) and [Multi-LoRA](https://arxiv.org/abs/2310.18547) have enabled multiple distinct use cases to share accelerators. As this new tech is adopted, the Day1/2 operational concerns quickly become necessary.
+
 Kubernetes as long been a standard in easing and automating operational tasks of
 workloads. A mechanism (gateway) within the K8s ecosystem is a 
 reasonable, and expected way for a user to support multiple LLM use cases on shared
@@ -44,11 +42,9 @@ accelerators.
 
 #### Gateway Goals
 
--   Fast reconfiguration - New use cases (including LoRA adapters 
-or client    configuration) can be rolled out / back in seconds to clients without
-    
-    waiting for a new 
-  model server to start.
+-   Fast reconfiguration - New use cases (including LoRA adapters or client
+    configuration) can be rolled out / back in seconds to clients without waiting for 
+    a new model server to start.
 -  Efficient accelerator sharing - Use cases can use less than an accelerator
     or temporarily burst without needing to start a new model server leading to
     fewer wasted accelerators and better pooling of shared capacity.
@@ -57,12 +53,10 @@ or client    configuration) can be rolled out / back in seconds to clients witho
 -   Standardized LoRA - Simple recommended patterns for deploying and loading
     LoRA adapters on a wide range of Kubernetes environments into model servers.
 -   Composability - Approach should be composable with:
-    -   K8s Gateway 
-    API
-  -   Other gateway features and projects, including high level LLM gateways
-    -   existing deployment tools like kserve or kaito
-    
-    -   different model servers
+    - K8s Gateway API
+-  Other gateway features and projects, including high level LLM gateways  
+    - existing deployment tools like kserve or kaito
+    - different model servers
 
 ### Non-Goals
 
@@ -161,9 +155,7 @@ To briefly describe how the components work together:
 
 -   When an `LLMRoute` is defined, our gateway recognizes this new service, and
     allows traffic for the specified adapter to be admitted to the backend pool.
-
-    - We support and expect Open AI API spec as the default when 
-    reading the
+    - We support and expect Open AI API spec as the default when reading the
       adapter.
 
 -   Incoming traffic for a validated service is then routed to ExtProc, where
