@@ -260,4 +260,4 @@ before being able to contribute effectively.
 [sig-governance-subproject-owner]: /committee-steering/governance/sig-governance.md#subproject-owner
 [CNCF gitdm]: https://github.com/cncf/gitdm
 [devstats]: https://k8s.devstats.cncf.io/
-[openprofile.dev] https://openprofile.dev/edit/profile
+[openprofile.dev]: https://openprofile.dev/edit/profile
