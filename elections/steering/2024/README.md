@@ -85,6 +85,8 @@ Corporate affiliation is applied after the election. If an organization finds
 itself with too many representatives it is up to those individuals to come
 to a consensus on who should serve on the committee.
 
+Note: to quickly check if you are an eligible voter you can look your GitHub username up in [this yaml file](https://github.com/kubernetes/community/blob/master/elections/steering/2024/voters.yaml).
+
 ### Voter exception
 
 We *explicitly* believe that the above heuristic will be inaccurate
