@@ -51,22 +51,16 @@ usergroups:
       - sig-release
     members:
       - chanieljdan         # 1.32 Docs Lead
-      - cpanato             # SIG Release Technical Lead
       - drewhagen           # 1.32 Release Signal Lead
       - fsmunoz             # 1.32 Release Lead
       - gracenng            # Release Team Subproject Lead
-      - jeremyrickard       # SIG Release Chair
-      - justaugustus        # SIG Release Chair
       - katcosgrove         # 1.32 EA + Release Team Subproject Lead
       - mbianchidev         # 1.32 Communications Lead
       - npolshakova         # 1.32 RT Lead Shadow
-      - puerco              # SIG Release Technical Lead
       - salehsedghpour      # 1.32 RT Lead Shadow
-      - saschagrunert       # SIG Release Chair
       - satyampsoni         # 1.32 Release Notes Lead
       - sreeram-venkitesh   # 1.32 RT Lead Shadow
-      - tjons               # 1.32 Enhancements Lead-
-      - Verolop             # SIG Release Technical Lead
+      - tjons               # 1.32 Enhancements Lead
       - Vyom-Yadav          # 1.32 RT Lead Shadow
 
   # Should match the membership of the following teams at all times:
