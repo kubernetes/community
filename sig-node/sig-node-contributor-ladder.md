@@ -114,3 +114,29 @@ There are different ways to earn trust:
 
 **Be present**
 Participate in SIG Node meetings by speaking about KEPs or improvements driven, or find some other way to prove the identity behind GitHub handle.
+
+## Emeritus Approvers
+
+The [emeritus_approvers](https://www.kubernetes.dev/docs/guide/owners/#emeritus) section is used
+to list approvers who may no longer have time to spend on the project regularly. Keeping the list of
+_active_ approvers up to date helps contributors find the approver for their work easier.
+However, the emeritus section as important, as people listed in it are recognized
+for their domain knowledge and expertise.
+
+As the process of becoming a SIG Node approver is a multi-year journey, the SIG Node recognizes
+that the change of jobs and focus is only natural. So when considering the contributions to become SIG Node approver,
+the SIG Node recognizes contributions over years, no matter how long ago.
+It also makes the process of returning the emeritus approver back to regular approver easy.
+
+It is important for approvers and reviewers to be actively engaged in the SIG Node community
+both to maintain the health of the community, and to maintain up-to-date technical knowledge and state.
+We encourage reviewers and approvers who anticipate an extended absence (6+ months) from SIG Node
+to move themselves to emeritus.
+
+On return to SIG Node, emeritus members can be fast-tracked into previous roles.
+To do so, we expect the following:
+
+- return to the SIG Node community, and demonstrate familiarity with the current state
+- committed to sustained future SIG Node presence (for at least the next 3 months)
+- no objections from other approvers
+- request the previous role, providing the proof of satisfied requirements.
