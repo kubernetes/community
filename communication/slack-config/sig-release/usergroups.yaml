@@ -63,6 +63,24 @@ usergroups:
       - tjons               # 1.32 Enhancements Lead
       - Vyom-Yadav          # 1.32 RT Lead Shadow
 
+  # Should match SIG Release Leads at all times:
+  # https://git.k8s.io/community/sig-release/README.md#leadership
+  - name: sig-release-leads
+    long_name: SIG Release Leads
+    description: >-
+      SIG Release Leads. Ping for questions on SIG Release process and escalations.
+    channels:
+      - release-ci-signal
+      - release-management
+      - sig-release
+    members:
+      - cpanato             # SIG Release Technical Lead
+      - jeremyrickard       # SIG Release Chair
+      - justaugustus        # SIG Release Chair
+      - puerco              # SIG Release Technical Lead
+      - saschagrunert       # SIG Release Chair
+      - Verolop             # SIG Release Technical Lead
+
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
   # - https://kubernetes.io/releases/release-managers/#release-managers
