@@ -26,7 +26,7 @@ I joined the release team in v1.23. During the v1.28 release, I noticed a severe
 
 As v1.30 lead, I was the first release lead to manage the merging of CI Signal and Bug Triage into one subteam. I was the first release lead to use the [release team removal guidelines](https://github.com/kubernetes/sig-release/blob/master/release-team/release-team-removal.md), which I co-authored. I also implemented a [Docs Freeze](https://github.com/kubernetes/sig-release/blob/master/releases/release_phases.md#docs-freeze) phase, drastically reducing the workload for SIG Docs and Release Docs.
 
-For my improvements to Releads Docs, Release Comms, and the release process overall, I became a Release Team subproject owner and a SIG Docs tech lead and have continued to make significant improvements to the operation of both. My goal has always been to improve the efficiency and operation of the Release Team and the project overall.
+For my improvements to Release Docs, Release Comms, and the release process overall, I became a Release Team subproject owner and a SIG Docs tech lead and have continued to make significant improvements to the operation of both. My goal has always been to improve the efficiency and operation of the Release Team and the project overall.
 
 ## What I'll do
 
