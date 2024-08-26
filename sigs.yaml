@@ -3410,7 +3410,7 @@ workinggroups:
     frequency: bi-weekly
     url: https://zoom.us/my/cncfetcdproject
     archive_url: https://docs.google.com/document/d/1ey4zTTRvtCVJJP2vjF95VjG-sAKlNTcqB2HdmC18Lfc/edit
-    recordings_url: TBD
+    recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9pLz5aCOPHLvASXACZrvD8D
   contact:
     slack: wg-etcd-operator
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-etcd-operator
