@@ -34,5 +34,5 @@ My current roles across the project require me to have technical breadth as oppo
   - [How To Localize Kubernetes Documentation: A Guide For Everyone (KubeCon/CloudNativeCon EU 2023)](https://kccnceu2023.sched.com/event/1HyUP)
   - [Contributing to the Kubernetes Website: A Guide For Everyone (KubeCon/CloudNativeCon NA 2022)](https://kccncna2022.sched.com/event/182O1/contributing-to-the-kubernetes-website-a-guide-for-everyone-divya-mohan-rey-lejano-suse-tim-bannister-the-scale-factory-natali-vlatko-wayfair-arsh-sharma-okteto)
 - Find me on [GitHub](https://github.com/natalisucks)
-- Check out my [LinkedIn](https://www.linkedin.com/in/natalivlatko))
+- Check out my [LinkedIn](https://www.linkedin.com/in/natalivlatko)
 
