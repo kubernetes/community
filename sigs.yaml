@@ -711,22 +711,6 @@ sigs:
     url: https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09
     archive_url: https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
-  - description: KRM Functions Subproject Meeting
-    day: Wednesday
-    time: "10:30"
-    tz: PT (Pacific Time)
-    frequency: biweekly
-    url: https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09
-    archive_url: https://docs.google.com/document/d/1x80l4i88F27zSCxSjlhvwFdH6jQAHou1k1ibuXrDTaw/edit
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
-  - description: Kustomize Bug Scrub
-    day: Wednesday
-    time: "09:00"
-    tz: PT (Pacific Time)
-    frequency: every four weeks
-    url: https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09
-    archive_url: https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
   - description: Regular SIG Meeting
     day: Wednesday
     time: "09:00"
