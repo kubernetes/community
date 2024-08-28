@@ -235,6 +235,10 @@ sigs:
       slack: kompose
     owners:
     - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
+  - name: llm-instance-gateway
+    description: LLM Instance gateway implementation
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/llm-instance-gateway/main/OWNERS
   - name: workloads-api
     description: The core workloads API, which is composed of the CronJob, DaemonSet,
       Deployment, Job, ReplicaSet, ReplicationController, PodDisruptionBudget and
