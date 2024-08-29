@@ -428,6 +428,7 @@ channels:
   - name: rancher
   - name: random
     archived: true
+  - name: reconcilerio
   - name: reddit-mods
   - name: riscv
   - name: rktnetes
