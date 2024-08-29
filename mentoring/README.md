@@ -24,9 +24,9 @@ it's necessary to keep a continuous pipeline of quality contributors and we want
 
 ## Programs
 
-| Program                                                                                         | Status                   | Target Date                                                                   |
-|-------------------------------------------------------------------------------------------------|--------------------------|-------------------------------------------------------------------------------|
-| [Group Mentoring Cohorts](/mentoring/programs/2024/groupmentorship/group-mentor-planning.md) | **Planning in progress** | [Sept-Nov](/mentoring/programs/2024/groupmentorship/group-mentor-planning.md) |
+| Program                                                                | Status                   | Target Date                                                                   |
+|------------------------------------------------------------------------|--------------------------|-------------------------------------------------------------------------------|
+| [Group Mentoring Cohorts](/mentoring/mentors/group-mentoring.md) | **Planning in progress** | [Sept-Nov](/mentoring/programs/2024/groupmentorship/group-mentor-planning.md) |
 
 
 ### Self Paced
@@ -47,8 +47,6 @@ it's necessary to keep a continuous pipeline of quality contributors and we want
 
 ## Archive
 - [Mentoring Programs](/mentoring/programs/archive/README.md)
-
-Please reach out to #sig-contribex on slack or come to a mentoring meeting to get involved in planning //TODO add contribex README when this is updated
 
 Please reach out to #sig-contribex on slack or come to a mentoring meeting to get involved in planning //TODO add contribex README when this is updated
 
