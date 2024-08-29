@@ -17,12 +17,6 @@ The [charter](charter.md) defines the scope and governance of the CLI Special In
 * Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
-* KRM Functions Subproject Meeting: [Wednesdays at 10:30 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:30&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1x80l4i88F27zSCxSjlhvwFdH6jQAHou1k1ibuXrDTaw/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
-* Kustomize Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
 * Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).

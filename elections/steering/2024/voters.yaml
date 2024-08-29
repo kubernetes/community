@@ -14,6 +14,8 @@
 # 2024-08-01 - Minor correction to fix alpha-sorting of voters list
 # 2024-08-20 - Add voters from approved exception requests
 # 2024-08-21 - Add voters from approved exception requests
+# 2024-08-26 - Add voters from approved exception requests
+# 2024-08-28 - Add voters from approved exception requests
 #
 eligible_voters:
 - a-mccarthy
@@ -248,6 +250,7 @@ eligible_voters:
 - huww98
 - huxcrux
 - ialidzhikov
+- IanColdwater
 - iholder101
 - Imtiaz1234
 - inductor
@@ -327,6 +330,7 @@ eligible_voters:
 - kvaps
 - kwiesmueller
 - kwilczynski
+- lachie83
 - laozc
 - lauralorenz
 - leilajal
@@ -463,6 +467,7 @@ eligible_voters:
 - PiotrProkop
 - pjbgf
 - pmalek
+- pnbrown
 - pohly
 - Prajyot-Parab
 - PrasadG193
@@ -475,6 +480,7 @@ eligible_voters:
 - pwittrock
 - pwschuurman
 - qbarrand
+- qedrakmar
 - qiujian16
 - Raffo
 - RainbowMango
