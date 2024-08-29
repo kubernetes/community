@@ -235,6 +235,7 @@ roles you may hold.
 
 Elections will be held using time-limited [Condorcet] ranking on [Elekto].
 The most preferred candidates will be elected to the open seats.
+To get more info about voting eligibility criteria, refer to the [eligibility section](#eligibility). 
 
 Employer diversity is encouraged, and thus maximal representation will be
 enforced as spelled out in the [Steering Committee Election Charter].
