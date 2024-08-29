@@ -85,7 +85,14 @@ Corporate affiliation is applied after the election. If an organization finds
 itself with too many representatives it is up to those individuals to come
 to a consensus on who should serve on the committee.
 
-Note: to quickly check if you are an eligible voter you can look your GitHub username up in [this yaml file](https://github.com/kubernetes/community/blob/master/elections/steering/2024/voters.yaml).
+Contributors may check their voter eligibility at any time once the election
+process starts, by going to the [election app], logging in, navigating to
+the current year election, and seeing if the screen there says that they are eligible.
+That screen takes its data from the [voters.yaml] file.
+
+If the app does not say that you are eligible, because you have worked on
+Kubernetes in a way that is NOT reflected in GitHub contributions, you can use
+the exception form built into the same app to ask to participate in the election.
 
 ### Voter exception
 
@@ -225,15 +232,6 @@ to the project as a member of this community, outside of whatever corporate
 roles you may hold.
 
 ## Voting Process
-
-Contributors may check their voter eligibility at any time once the election
-process starts, by going to the [election app], logging in, navigating to
-the current year election, and seeing if the screen there says that they are eligible.
-That screen takes its data from the [voters.yaml] file.
-
-If the app does not say that you are eligible, because you have worked on
-Kubernetes in a way that is NOT reflected in GitHub contributions, you can use
-the exception form built into the same app to ask to participate in the election.
 
 Elections will be held using time-limited [Condorcet] ranking on [Elekto].
 The most preferred candidates will be elected to the open seats.
