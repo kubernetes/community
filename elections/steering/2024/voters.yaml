@@ -16,6 +16,7 @@
 # 2024-08-21 - Add voters from approved exception requests
 # 2024-08-26 - Add voters from approved exception requests
 # 2024-08-28 - Add voters from approved exception requests
+# 2024-08-30 - Add voters from approved exception requests
 #
 eligible_voters:
 - a-mccarthy
@@ -185,6 +186,7 @@ eligible_voters:
 - eddycharly
 - edithturn
 - edsoncelio
+- ehashman
 - electrocucaracha
 - elezar
 - ellistarn
