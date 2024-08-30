@@ -69,7 +69,9 @@ Before you get started, you will need to [sign up](http://github.com/signup) for
 
 Before you can contribute to Kubernetes, you will need to sign the
 [Contributor License Agreement].
-The easiest way to do so is to open a PR against the [contributor playground repo](https://github.com/kubernetes-sigs/contributor-playground), you can find an example PR [here](https://github.com/kubernetes-sigs/contributor-playground/pull/1227).
+The easiest way to do so is to open a PR against the [contributor playground repo](https://github.com/kubernetes-sigs/contributor-playground), you can find an example PR [here](https://github.com/kubernetes-sigs/contributor-playground/pull/1389).
+
+**Note:** [kubernetes-sigs/contributor-playground](https://github.com/kubernetes-sigs/contributor-playground) is a repository for practicing submitting your first PR, not just for CLA registration. When creating and submitting a new PR, please write the PR description according to the provided template. Check the above example PR for reference.
 
 ### Code of Conduct
 
