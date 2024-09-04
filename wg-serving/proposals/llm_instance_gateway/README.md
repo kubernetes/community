@@ -20,7 +20,7 @@
 
 ## Summary
 
-As presented in the [demo](https://youtu.be/NUBZg_uqqXk?si=v681EeYdGUGEVqQQ&t=1458) and building further upon the [joint proposal](https://docs.google.com/document/d/1BkwDlgFxSKKPHhM9kS28CdDIyJ3Xkdue3Iw1INaUkGw/edit?tab=t.0#heading=h.ajlsibmfh8wr), we are proposing that a gateway, focused on
+As presented in the [demo](https://youtu.be/NUBZg_uqqXk?si=v681EeYdGUGEVqQQ&t=1458) and building further upon the [joint proposal](https://docs.google.com/document/d/1sFNHQqUWm1DIzC9GxXp3cKRm8cUtTcGuwZYkjkOkUqk/edit?tab=t.0#heading=h.9brozdsx9dqo), we are proposing that a gateway, focused on
 multiplexing 
 use cases upon shared hardware has distinct advantages in enabling efficient and fair use of multiple use-cases over a shared pool of compute.
 
