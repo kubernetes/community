@@ -324,6 +324,7 @@ channels:
   - name: litmus-dev
   - name: lokomotive
     archived: true
+  - name: loxilb
   - name: lula-dev
   - name: magnum-cluster-api
   - name: malaysia-users
