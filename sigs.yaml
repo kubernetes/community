@@ -173,7 +173,7 @@ sigs:
       company: Snowflake
     - github: soltysh
       name: Maciej Szulik
-      company: Red Hat
+      company: Defense Unicorns
     tech_leads:
     - github: janetkuo
       name: Janet Kuo
@@ -183,7 +183,7 @@ sigs:
       company: Snowflake
     - github: soltysh
       name: Maciej Szulik
-      company: Red Hat
+      company: Defense Unicorns
     emeritus_leads:
     - github: mattfarina
       name: Matt Farina
@@ -692,7 +692,7 @@ sigs:
       company: Defense Unicorns
     - github: soltysh
       name: Maciej Szulik
-      company: Red Hat
+      company: Defense Unicorns
     emeritus_leads:
     - github: AdoHe
       name: Tony Ado
@@ -3241,7 +3241,7 @@ workinggroups:
       company: Google
     - github: soltysh
       name: Maciej Szulik
-      company: Red Hat
+      company: Defense Unicorns
     - github: swatisehgal
       name: Swati Sehgal
       company: Red Hat
@@ -3725,7 +3725,7 @@ committees:
       company: Intel
     - github: soltysh
       name: Maciej Szulik
-      company: Red Hat
+      company: Defense Unicorns
   meetings:
   - description: Private Steering Committee Meeting
     day: third Monday

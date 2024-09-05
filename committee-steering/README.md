@@ -27,7 +27,7 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**), DaoCloud
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
 * Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
 
 ## Contact
 - Slack: [#steering-committee](https://kubernetes.slack.com/messages/steering-committee)
