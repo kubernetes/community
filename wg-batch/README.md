@@ -31,7 +31,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 
 * Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**), Google
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
 * Swati Sehgal (**[@swatisehgal](https://github.com/swatisehgal)**), Red Hat
 
 ## Emeritus Organizers

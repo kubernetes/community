@@ -25,7 +25,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
 * Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Snowflake
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -33,7 +33,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
 * Kenneth Owens (**[@kow3ns](https://github.com/kow3ns)**), Snowflake
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
 
 ## Emeritus Leads
 

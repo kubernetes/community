@@ -34,7 +34,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Eddie Zaneski (**[@eddiezane](https://github.com/eddiezane)**), Defense Unicorns
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Red Hat
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
 
 ## Emeritus Leads
 
