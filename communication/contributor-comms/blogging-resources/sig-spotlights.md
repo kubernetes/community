@@ -1,6 +1,6 @@
 # SIG Spotlights
 
-These are all the spot lights that are published to date:
+These are all the spotlights that are published to date; while they are mostly about SIGs, the concept itself also includes other groups and events, like Working Groups, Clubs, or Summit organization.
 
 | SIG | Label | Link | Author | Publish Date |
 |-----|-------|------|--------|--------------|
@@ -21,3 +21,6 @@ These are all the spot lights that are published to date:
 | [Testing](https://github.com/kubernetes/community/tree/master/sig-testing#readme) | [testing](https://github.com/kubernetes/kubernetes/labels/sig%2Ftesting) | [Spotlight on SIG Testing](https://kubernetes.io/blog/2023/11/24/sig-testing-spotlight-2023/) | [Sandipan Panda](https://github.com/sandipanpanda) | 2023-11-24 |
 | [Release](https://github.com/kubernetes/community/tree/master/sig-release#readme) | [release](https://github.com/kubernetes/kubernetes/labels/sig%2Frelease) | [Spotlight on SIG Release](https://kubernetes.io/blog/2024/01/15/sig-release-spotlight-2023/) | Nitish Kumar | 2024-01-15 |
 | [Cloud Provider](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/README.md) | [cloud-provider](https://github.com/kubernetes/kubernetes/labels/sig%2cloud-provider) | [SIG Cloud Provider](https://www.kubernetes.dev/blog/2024/03/01/sig-cloud-provider-spotlight-2024/) | Arujjwal Negi  | 2024-03-01 |
+| [API Machinery](https://github.com/kubernetes/community/blob/master/sig-api-machinery/README.md) | [api-machinery](https://github.com/kubernetes/kubernetes/labels/sig%2Fapi-machinery) | [Spotlight on SIG API Machinery](https://www.kubernetes.dev/blog/2024/08/07/sig-api-machinery-spotlight-2024/) | Frederico Muñoz | 2024-98-07 |
+| [Kubernetes Book Club](https://community.cncf.io/kubernetes-virtual-book-club/) | | [A look into the Kubernetes Book Club](https://www.kubernetes.dev/blog/2024/02/22/k8s-book-club/) | Frederico Muñoz | 2024-02-22 |
+| Kubernetes Contributor Summit | | [Kubernetes Contributor Summit: Behind-the-scenes](https://www.kubernetes.dev/blog/2023/11/03/k8s-contributor-summit-behind-the-scenes/) | Frederico Muñoz | 2023-11-03 |
