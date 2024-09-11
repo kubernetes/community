@@ -98,6 +98,10 @@ Leverages a declarative API and an operator to empower admins to handle the life
 - **Contact:**
   - Slack: [#cluster-api-operator](https://kubernetes.slack.com/messages/cluster-api-operator)
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
+- **Meetings:**
+  - Cluster API Operator office hours: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/98299072687?pwd=5uKfP6PbS7uMMq99vQIEgTyDvurgUY.1) (every third Wednesday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1-X4TQBLrGrVhUMTZokwaMil94aA-gXqdJj4Sp3Asdps/).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-aws
 Cluster API infrastructure provider for AWS
 - **Owners:**
