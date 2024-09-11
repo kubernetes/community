@@ -1100,6 +1100,15 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-operator/main/OWNERS
+    meetings:
+    - description: Cluster API Operator office hours
+      day: Wednesday
+      time: "09:00"
+      tz: PT (Pacific Time)
+      frequency: every third Wednesday of the month
+      url: https://zoom.us/j/98299072687?pwd=5uKfP6PbS7uMMq99vQIEgTyDvurgUY.1
+      archive_url: https://docs.google.com/document/d/1-X4TQBLrGrVhUMTZokwaMil94aA-gXqdJj4Sp3Asdps/
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-aws
     description: Cluster API infrastructure provider for AWS
     contact:
