@@ -248,6 +248,7 @@ channels:
   - name: krew
   - name: krex
   - name: krustlet
+  - name: kty
   - name: kuadrant
   - name: kube-aws
   - name: kube-bind
