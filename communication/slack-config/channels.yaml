@@ -498,6 +498,7 @@ channels:
     archived: true
   - name: sig-windows
   - name: sig-windows-leads
+  - name: simkube
   - name: skaffold
   - name: slack-admins
   - name: slack-infra
