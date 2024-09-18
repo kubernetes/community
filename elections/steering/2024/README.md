@@ -92,7 +92,8 @@ That screen takes its data from the [voters.yaml] file.
 
 If the app does not say that you are eligible, because you have worked on
 Kubernetes in a way that is NOT reflected in GitHub contributions, you can use
-the exception form built into the same app to ask to participate in the election.
+the exception form built into the same app to ask to participate in the election. 
+See Voter Exception below for how this works.
 
 ### Voter exception
 
@@ -233,9 +234,10 @@ roles you may hold.
 
 ## Voting Process
 
+See the [eligibility section](#eligibility) to understand if you are eligible to vote.
+
 Elections will be held using time-limited [Condorcet] ranking on [Elekto].
 The most preferred candidates will be elected to the open seats.
-To get more info about voting eligibility criteria, refer to the [eligibility section](#eligibility). 
 
 Employer diversity is encouraged, and thus maximal representation will be
 enforced as spelled out in the [Steering Committee Election Charter].
