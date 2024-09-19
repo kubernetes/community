@@ -199,6 +199,8 @@ channels:
   - name: jsonnet
   - name: carvel
     id: CH8KCCKA5
+  - name: k0s-dev
+  - name: k0s-users
   - name: kalm
   - name: kaniko
   - name: karpenter
