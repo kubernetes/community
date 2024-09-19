@@ -24,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Device Managem
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-device-management) for the group will typically add invites for the following meetings to your calendar.*
 * Regular WG Meeting: [Tuesdays at 8:30 PT (Pacific Time)](TBD) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8:30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1qxI87VqGtgN7EAJlqVfxx86HGKEAc2A3SKru8nJHNkQ/edit?usp=sharing).
-  * [Meeting recordings](TBD).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1kac4zsH0INEWEZlPhOhlp).
 
 ## Organizers
 
