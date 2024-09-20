@@ -2766,14 +2766,14 @@ sigs:
     chairs:
     - github: IanColdwater
       name: Ian Coldwater
-      company: Twilio
+      company: Docker
     - github: tabbysable
       name: Tabitha Sable
       company: Datadog
   meetings:
   - description: Regular SIG Meeting
-    day: Thursday
-    time: "9:00"
+    day: Friday
+    time: "8:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/j/9934z1184192?pwd=L25Tc0ZOL3FqU09KNERlTU12dFhTQT09
