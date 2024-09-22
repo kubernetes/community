@@ -99,15 +99,10 @@ The following [subprojects][subproject-definition] are owned by sig-docs:
 ### reference-docs
 - **Owners:**
   - [kubernetes-sigs/reference-docs](https://github.com/kubernetes-sigs/reference-docs/blob/master/OWNERS)
-### subproject-definition
-- **Owners:**
-  - [kubernetes/community/governance.md#subprojects](https://github.com/kubernetes/community/blob/master/governance.md#subprojects)
 ### website
 - **Owners:**
   - [kubernetes/website](https://github.com/kubernetes/website/blob/master/OWNERS)
-### working-group-definition
-- **Owners:**
-  - [kubernetes/community/governance.md#working-groups](https://github.com/kubernetes/community/blob/master/governance.md#working-groups)
+
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
