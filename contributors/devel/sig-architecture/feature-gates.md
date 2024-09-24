@@ -105,6 +105,18 @@ While some exceptions may happen, approvers should use the following guidance:
 
 [API changes]: https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md#what-parts-of-a-pr-are-api-changes
 
+Feature lifecycle will remain through the code until post GA or deprecation. For
+example, when a feature is promoted from beta to GA, both the old state and new
+state are preserved along with the version that the transition occurred.
+
+```go
+RetryGenerateName: {
+  {Version: version.MustParse("1.30"), Default: false, PreRelease: featuregate.Alpha},
+  {Version: version.MustParse("1.31"), Default: true, PreRelease: featuregate.Beta},
+  {Version: version.MustParse("1.32"), Default: true, LockToDefault: true, PreRelease: featuregate.GA},
+},
+```
+
 ### Alpha features
 
 * `PreRelease` is set to `featuregate.Alpha`
@@ -152,17 +164,21 @@ other action outside of Kubernetes to use it. This gives some grace period for
 users to take action, but such feature gates will eventually set
 `LockToDefault` to `true` and then be retired, like normal.
 
-[After at least two releases post-GA and deprecation](https://kubernetes.io/docs/reference/using-api/deprecation-policy/#deprecation),
+[After at least three releases post-GA and deprecation](https://kubernetes.io/docs/reference/using-api/deprecation-policy/#deprecation),
 feature gates should be removed. Typically, we add a comment in
 [the code](https://github.com/kubernetes/kubernetes/blob/master/pkg/features/kube_features.go)
 such as: `// remove in 1.23` to signal when we plan to remove the feature gate.
 We provide this grace period to give users time to stop referencing "finished"
 gates. If a feature gate is removed and a user has forgotten to drop the
 reference to it (e.g. in the CLI flags of `kube-apiserver`), then they will see
-a hard failure.
+a hard failure. 
 
-When we set `LockToDefault` to `true`, we also remove all references to the feature
-gate from the codebase.
+All references to the feature gate must be kept for a minimum of three releases
+after a features goes GA and `LockToDefault` is set to `true`. Keeping the feature
+gate and references also allows [compatibility version](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/4330-compatibility-versions) to be used to
+emulate previous versions up to a maximum of n-3 before the current version.
+References to the feature gate along with the gate itself may be removed three
+releases after GA.
 
 ### Deprecation
 
