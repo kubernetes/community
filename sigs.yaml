@@ -1293,6 +1293,10 @@ sigs:
       frequency: biweekly
       url: https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09
       archive_url: https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit
+  - name: karpenter-provider-cluster-api
+    description: Cluster API Karpenter provider
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/karpenter-provider-cluster-api/refs/heads/main/OWNERS
   - name: kubeadm
     description: A tool that performs the actions necessary to get a minimum viable,
       secure cluster up and running in a user friendly way
