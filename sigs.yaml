@@ -2253,6 +2253,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/blixt/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/gwctl/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/ingress2gateway/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
