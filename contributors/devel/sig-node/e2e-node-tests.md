@@ -115,6 +115,14 @@ This is useful if you have an host instance running already and want to run the 
 make test-e2e-node REMOTE=true HOSTS="<comma-separated-list-of-hostnames>"
 ```
 
+## Run tests against a different network and subnet (not the default)
+
+This is useful if you want to run tests on a non-default network and subnet.
+
+```sh
+make test-e2e-node REMOTE=true NETWORK="<network> SUBNET="<subnet>"
+```
+
 ## Delete instance after tests run
 
 This is useful if you want recreate the instance for each test run to trigger flakes related to starting the instance.
