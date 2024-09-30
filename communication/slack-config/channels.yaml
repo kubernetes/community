@@ -269,6 +269,7 @@ channels:
   - name: kubebuilder
   - name: kubecon
   - name: kubecfg
+  - name: kubectl-nvim
   - name: kubectl-trace
   - name: kubectl-validate
   - name: kubedb
