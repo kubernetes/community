@@ -3718,21 +3718,21 @@ committees:
     - github: BenTheElder
       name: Benjamin Elder
       company: Google
+    - github: aojea
+      name: Antonio Ojea
+      company: Google
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
-    - github: mrbobbytables
-      name: Bob Killen
-      company: Cloud Native Computing Foundation
     - github: pacoxu
       name: Paco Xu 徐俊杰
       company: DaoCloud
-    - github: palnabarun
-      name: Nabarun Pal
-      company: VMware
     - github: pohly
       name: Patrick Ohly
       company: Intel
+    - github: saschagrunert
+      name: Sascha Grunert
+      company: Red Hat
     - github: soltysh
       name: Maciej Szulik
       company: Defense Unicorns

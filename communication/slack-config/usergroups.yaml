@@ -192,12 +192,12 @@ usergroups:
     channels:
       - steering-committee
     members:
+      - aojea
       - bentheelder
       - justaugustus
-      - mrbobbytables
       - pacoxu
-      - palnabarun
       - pohly
+      - saschagrunert
       - soltysh
 
   - name: grafana-operator-maintainers
