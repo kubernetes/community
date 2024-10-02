@@ -44,7 +44,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-scalability](https://github.com/orgs/kubernetes/teams/sig-scalability) - General Discussion
     - [@kubernetes/sig-scalability-leads](https://github.com/orgs/kubernetes/teams/sig-scalability-leads) - Leads
     - [@kubernetes/sig-scalability-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-scalability-pr-reviews) - PR Reviews
-- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+- Steering Committee Liaison: Antonio Ojea (**[@aojea](https://github.com/aojea)**)
 
 ## Subprojects
 

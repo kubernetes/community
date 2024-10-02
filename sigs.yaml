@@ -62,8 +62,8 @@ sigs:
     - name: sig-api-machinery-test-failures
       description: Test Failures and Triage
     liaison:
-      github: palnabarun
-      name: Nabarun Pal
+      github: saschagrunert
+      name: Sascha Grunert
   subprojects:
   - name: cel-admission-webhook
     owners:
@@ -217,8 +217,8 @@ sigs:
     - name: sig-apps-test-failures
       description: Test Failures and Triage
     liaison:
-      github: mrbobbytables
-      name: Bob Killen
+      github: aojea
+      name: Antonio Ojea
   subprojects:
   - name: application
     description: Application metadata descriptor CRD
@@ -1043,8 +1043,8 @@ sigs:
     - name: sig-cluster-lifecycle
       description: SIG Cluster Lifecycle mailing list
     liaison:
-      github: palnabarun
-      name: Nabarun Pal
+      github: saschagrunert
+      name: Sascha Grunert
   subprojects:
   - name: cluster-addons
     description: A project for figuring out the best way to install, manage and deliver
@@ -1416,8 +1416,8 @@ sigs:
     - name: sig-contributor-experience-pr-reviews
       description: PR Reviews
     liaison:
-      github: mrbobbytables
-      name: Bob Killen
+      github: aojea
+      name: Antonio Ojea
   subprojects:
   - name: community
     description: Owns and manages overall community repo, including community group
@@ -1727,8 +1727,8 @@ sigs:
     - name: sig-etcd-leads
       description: SIG Chairs and Tech Leads
     liaison:
-      github: mrbobbytables
-      name: Bob Killen
+      github: aojea
+      name: Antonio Ojea
   subprojects:
   - name: auger
     description: Directly access data objects stored in etcd by kubernetes.
@@ -2117,8 +2117,8 @@ sigs:
     - name: sig-multicluster-test-failures
       description: Test Failures and Triage
     liaison:
-      github: mrbobbytables
-      name: Bob Killen
+      github: aojea
+      name: Antonio Ojea
   subprojects:
   - name: about-api
     owners:
@@ -2487,8 +2487,8 @@ sigs:
     - name: sig-release-leads
       description: Chairs, Technical Leads, and Program Managers for SIG Release
     liaison:
-      github: palnabarun
-      name: Nabarun Pal
+      github: saschagrunert
+      name: Sascha Grunert
   subprojects:
   - name: Release Engineering
     description: |
@@ -2615,8 +2615,8 @@ sigs:
     - name: sig-scalability-pr-reviews
       description: PR Reviews
     liaison:
-      github: mrbobbytables
-      name: Bob Killen
+      github: aojea
+      name: Antonio Ojea
   subprojects:
   - name: kubernetes-scalability-and-performance-tests-and-validation
     description: '[Described below](#kubernetes-scalability-and-performance-tests-and-validation)'
@@ -3283,8 +3283,8 @@ workinggroups:
     slack: wg-batch
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-batch
     liaison:
-      github: mrbobbytables
-      name: Bob Killen
+      github: aojea
+      name: Antonio Ojea
 - dir: wg-data-protection
   name: Data Protection
   mission_statement: >
@@ -3457,8 +3457,8 @@ workinggroups:
     slack: wg-lts
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-lts
     liaison:
-      github: palnabarun
-      name: Nabarun Pal
+      github: saschagrunert
+      name: Sascha Grunert
 - dir: wg-policy
   name: Policy
   mission_statement: >
@@ -3581,8 +3581,8 @@ workinggroups:
     slack: wg-structured-logging
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-structured-logging
     liaison:
-      github: palnabarun
-      name: Nabarun Pal
+      github: saschagrunert
+      name: Sascha Grunert
 usergroups: []
 committees:
 - dir: committee-code-of-conduct
@@ -3647,8 +3647,8 @@ committees:
     - name: code-of-conduct-committee
       description: General Discussion
     liaison:
-      github: palnabarun
-      name: Nabarun Pal
+      github: saschagrunert
+      name: Sascha Grunert
 - dir: committee-security-response
   name: Security Response
   mission_statement: >

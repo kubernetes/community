@@ -34,7 +34,7 @@ The working group is organized with the goal of developing a better understandin
 - Slack: [#wg-lts](https://kubernetes.slack.com/messages/wg-lts)
 - [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-lts)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Flts)
-- Steering Committee Liaison: Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
+- Steering Committee Liaison: Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

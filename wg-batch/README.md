@@ -44,7 +44,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 - Slack: [#wg-batch](https://kubernetes.slack.com/messages/wg-batch)
 - [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-batch)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fbatch)
-- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+- Steering Committee Liaison: Antonio Ojea (**[@aojea](https://github.com/aojea)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
