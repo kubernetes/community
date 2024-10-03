@@ -17,22 +17,13 @@ description: |
 
 ## 2. Clone fork to local storage
 
-Per Go's [workspace instructions][go-workspace], place Kubernetes' code on your
-`GOPATH` using the following cloning procedure.
+In your shell, define a local working directory as `working_dir`.
 
-[go-workspace]: https://golang.org/doc/code.html#Workspaces
-
-In your shell, define a local working directory as `working_dir`. If your `GOPATH` has multiple paths, pick
-just one and use it instead of `$GOPATH`. You must follow exactly this pattern,
-neither `$GOPATH/src/github.com/${your github profile name}/`
-nor any other pattern will work.
+[GO Modules]: https://go.dev/blog/using-go-modules
 
 ```sh
-export working_dir="$(go env GOPATH)/src/k8s.io"
+export working_dir="${HOME}/src/k8s.io" # Change to your preferred location for source code
 ```
-
-If you already do Go development on github, the `k8s.io` directory
-will be a sibling to your existing `github.com` directory.
 
 Set `user` to match your github profile name:
 
