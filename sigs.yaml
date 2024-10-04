@@ -1180,12 +1180,12 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/main/OWNERS
     meetings:
     - description: Cluster API Provider IBM Cloud office hours
-      day: Friday
-      time: "09:00"
+      day: Tuesday
+      time: "10:00"
       tz: IST
-      frequency: weekly
-      url: https://zoom.us/j/9392903494
-      archive_url: https://docs.google.com/document/d/1oWnqXy1VFv0E3kovQoZfS6IlVP0L4eaQsN-2HYC_6_A
+      frequency: biweekly
+      url: https://zoom.us/j/508079177
+      archive_url: https://cluster-api-ibmcloud.sigs.k8s.io/agenda
       recordings_url: https://www.youtube.com/playlist?list=PLcYv3LH7qY9Nvx4lNaeOeBrfBZa777h3m
   - name: cluster-api-provider-kubemark
     description: Cluster API infrastructure provider for Kubemark
