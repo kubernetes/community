@@ -43,7 +43,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-multicluster-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-multicluster-pr-reviews) - PR Reviews
     - [@kubernetes/sig-multicluster-proposals](https://github.com/orgs/kubernetes/teams/sig-multicluster-proposals) - Design Proposals
     - [@kubernetes/sig-multicluster-test-failures](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+- Steering Committee Liaison: Antonio Ojea (**[@aojea](https://github.com/aojea)**)
 
 ## Working Groups
 

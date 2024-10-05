@@ -52,7 +52,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-apps-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-apps-pr-reviews) - PR Reviews
     - [@kubernetes/sig-apps-proposals](https://github.com/orgs/kubernetes/teams/sig-apps-proposals) - Design Proposals
     - [@kubernetes/sig-apps-test-failures](https://github.com/orgs/kubernetes/teams/sig-apps-test-failures) - Test Failures and Triage
-- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+- Steering Committee Liaison: Antonio Ojea (**[@aojea](https://github.com/aojea)**)
 
 ## Working Groups
 

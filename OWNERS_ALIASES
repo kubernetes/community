@@ -170,11 +170,11 @@ aliases:
     - tabbysable
   committee-steering:
     - BenTheElder
+    - aojea
     - justaugustus
-    - mrbobbytables
     - pacoxu
-    - palnabarun
     - pohly
+    - saschagrunert
     - soltysh
 ## BEGIN CUSTOM CONTENT
   provider-aws:

@@ -30,39 +30,39 @@ members will assume one of the departing members groups.
 
 | Community Group            | Steering Committee Liaison |
 | -------------------------- | -------------------------- |
-| [SIG API Machinery](sig-api-machinery/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
-| [SIG Apps](sig-apps/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
+| [SIG API Machinery](sig-api-machinery/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
+| [SIG Apps](sig-apps/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [SIG Architecture](sig-architecture/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [SIG Auth](sig-auth/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [SIG Autoscaling](sig-autoscaling/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [SIG CLI](sig-cli/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG Cloud Provider](sig-cloud-provider/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
-| [SIG Cluster Lifecycle](sig-cluster-lifecycle/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
-| [SIG Contributor Experience](sig-contributor-experience/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
+| [SIG Cluster Lifecycle](sig-cluster-lifecycle/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
+| [SIG Contributor Experience](sig-contributor-experience/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [SIG Docs](sig-docs/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
-| [SIG etcd](sig-etcd/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
+| [SIG etcd](sig-etcd/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [SIG Instrumentation](sig-instrumentation/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [SIG K8s Infra](sig-k8s-infra/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
-| [SIG Multicluster](sig-multicluster/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
+| [SIG Multicluster](sig-multicluster/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [SIG Network](sig-network/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [SIG Node](sig-node/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
-| [SIG Release](sig-release/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
-| [SIG Scalability](sig-scalability/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
+| [SIG Release](sig-release/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
+| [SIG Scalability](sig-scalability/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [SIG Scheduling](sig-scheduling/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [SIG Security](sig-security/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 | [SIG Storage](sig-storage/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG Testing](sig-testing/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG UI](sig-ui/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [SIG Windows](sig-windows/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
-| [WG Batch](wg-batch/README.md) | Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**) |
+| [WG Batch](wg-batch/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [WG Data Protection](wg-data-protection/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [WG Device Management](wg-device-management/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [WG etcd Operator](wg-etcd-operator/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
-| [WG LTS](wg-lts/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
+| [WG LTS](wg-lts/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
 | [WG Policy](wg-policy/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [WG Serving](wg-serving/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
-| [WG Structured Logging](wg-structured-logging/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
-| [Committee Code of Conduct](committee-code-of-conduct/README.md) | Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**) |
+| [WG Structured Logging](wg-structured-logging/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
+| [Committee Code of Conduct](committee-code-of-conduct/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
 | [Committee Security Response](committee-security-response/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
 <!-- BEGIN CUSTOM CONTENT -->
 ## Expectations

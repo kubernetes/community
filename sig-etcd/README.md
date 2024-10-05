@@ -47,7 +47,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fetcd)
 - GitHub Teams:
     - [@kubernetes/sig-etcd-leads](https://github.com/orgs/kubernetes/teams/sig-etcd-leads) - SIG Chairs and Tech Leads
-- Steering Committee Liaison: Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**)
+- Steering Committee Liaison: Antonio Ojea (**[@aojea](https://github.com/aojea)**)
 
 ## Working Groups
 
