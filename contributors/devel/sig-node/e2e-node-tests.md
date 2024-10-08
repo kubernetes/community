@@ -96,7 +96,7 @@ provided by the default image.
 List the available test images using gcloud.
 
 ```sh
-make test-e2e-node LIST_IMAGES=true
+gcloud compute images list --project="cos-cloud" --no-standard-images --filter="name ~ 'cos-beta.*'"
 ```
 
 This will output a list of the available images for the default image project.
