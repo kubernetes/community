@@ -1070,6 +1070,7 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/karpenter-provider-cluster-api/refs/heads/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/logical-cluster/main/OWNERS
     meetings:
     - description: Cluster API office hours

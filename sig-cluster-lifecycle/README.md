@@ -72,6 +72,7 @@ A project for figuring out the best way to install, manage and deliver cluster a
 A project focused on providing declarative APIs and tooling to simplify provisioning, upgrading, and operating multiple Kubernetes clusters
 - **Owners:**
   - [kubernetes-sigs/cluster-api](https://github.com/kubernetes-sigs/cluster-api/blob/main/OWNERS)
+  - [kubernetes-sigs/karpenter-provider-cluster-api/heads/main](https://github.com/kubernetes-sigs/karpenter-provider-cluster-api/blob/refs/heads/main/OWNERS)
   - [kubernetes-sigs/logical-cluster](https://github.com/kubernetes-sigs/logical-cluster/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#cluster-api](https://kubernetes.slack.com/messages/cluster-api)
