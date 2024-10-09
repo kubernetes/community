@@ -379,6 +379,7 @@ channels:
   - name: navigator
     archived: true
   - name: ncw-staff
+    archived: true
   - name: netmaker
   - name: nl-users
   - name: node-feature-discovery
@@ -515,6 +516,7 @@ channels:
   - name: summit-staff
   - name: suse-caasp
   - name: talk-proposals
+    archived: true
   - name: tanzu-community-edition
     archived: true
   - name: tanzu-streaming-runtimes
@@ -569,6 +571,7 @@ channels:
     archived: true
   - name: wg-multitenancy
   - name: wg-naming
+    archived: true
   - name: wg-onprem
     archived: true
   - name: wg-policy
