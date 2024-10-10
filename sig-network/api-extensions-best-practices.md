@@ -1,6 +1,6 @@
 # API Extensions - Best Practices
 
-It is sometimes desireable to build new networking features as [CRDs] rather
+It is sometimes desirable to build new networking features as [CRDs] rather
 than [in-tree]. Reasons may include (but aren't limited to):
 
 * A desire to be free of lockstep with the [KEP] process
