@@ -14,8 +14,8 @@ The [charter](charter.md) defines the scope and governance of the Testing Specia
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-testing) for the group will typically add invites for the following meetings to your calendar.*
-* Hydrophone Office Hours: [Tuesdays at 13:00 PT (Pacific Time)](https://zoom.us/j/92022289212?pwd=VU5UWEtuU3ZYTmlYS3hSU3hLbTA0Zz09) (bi-weekly starting Tuesday April 16, 2024). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13:00&tz=PT%20%28Pacific%20Time%29).
-* SIG Testing Bi-Weekly Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/135450138?pwd=WGJyaVZzekJCWFBTMGJGTXVjUFJaUT09) (bi-weekly starting Tuesday August 13, 2019). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10:00&tz=PT%20%28Pacific%20Time%29).
+* Hydrophone Office Hours: [Tuesdays at 13:00 PT (Pacific Time)](https://zoom.us/j/92022289212?pwd=VU5UWEtuU3ZYTmlYS3hSU3hLbTA0Zz09) (bi-weekly starting Tuesday April 16, 2024). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13%3A00&tz=PT%20%28Pacific%20Time%29).
+* SIG Testing Bi-Weekly Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/135450138?pwd=WGJyaVZzekJCWFBTMGJGTXVjUFJaUT09) (bi-weekly starting Tuesday August 13, 2019). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://bit.ly/k8s-sig-testing-notes).
   * [Meeting recordings](https://bit.ly/k8s-sig-testing-videos).
 

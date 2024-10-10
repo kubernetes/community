@@ -14,10 +14,10 @@ The [charter](charter.md) defines the scope and governance of the CLI Special In
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli) for the group will typically add invites for the following meetings to your calendar.*
-* Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+* Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
-* Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
 
