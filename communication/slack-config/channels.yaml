@@ -589,4 +589,5 @@ channels:
   - name: yaml-overlay-tool
   - name: zarf
   - name: zarf-dev
+    archived: true
   - name: krkn
