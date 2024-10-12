@@ -14,7 +14,7 @@ The [charter]({{.CharterLink}}) defines the scope and governance of the {{.Name}
 {{- end }}
 
 {{- range .Meetings }}
-* {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}}]({{.URL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time}}&tz={{.TZ | tzUrlEncode}}).
+* {{.Description}}{{if .CalendarURL}} ([calendar]({{.CalendarURL}})){{end}}: [{{.Day}}s at {{.Time}} {{.TZ}}]({{.URL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time | urlquery}}&tz={{.TZ | tzUrlEncode}}).
 {{- if .ArchiveURL }}
   * [Meeting notes and Agenda]({{.ArchiveURL}}).
 {{- end }}
@@ -99,7 +99,7 @@ The following [subprojects][subproject-definition] are owned by the {{.Name}} Co
 {{- if .Meetings }}
 - **Meetings:**
 {{- range .Meetings }}
-  - {{.Description}}: [{{.Day}}s at {{.Time}} {{.TZ}}]({{.URL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time}}&tz={{.TZ | tzUrlEncode}}).
+  - {{.Description}}{{if .CalendarURL}} ([calendar]({{.CalendarURL}})){{end}}: [{{.Day}}s at {{.Time}} {{.TZ}}]({{.URL}}) ({{.Frequency}}). [Convert to your timezone](http://www.thetimezoneconverter.com/?t={{.Time | urlquery}}&tz={{.TZ | tzUrlEncode}}).
 {{- if .ArchiveURL }}
     - [Meeting notes and Agenda]({{.ArchiveURL}}).
 {{- end }}
