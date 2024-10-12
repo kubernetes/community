@@ -29,9 +29,10 @@ Video resources:
 ## Get in touch with the SIG
 
 Find the SIG contact details in its [community page](https://git.k8s.io/community/sig-cluster-lifecycle/README.md#contact):
-- Join the SIG [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
+- Join the SIG [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle)
 - Join the SIG [slack channel](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
 - Join the periodic SIG [video call](https://git.k8s.io/community/sig-cluster-lifecycle/README.md#meetings)
+- Add our [calendar](https://calendar.google.com/calendar/u/0/embed?src=u5822lrl4q68ic1iakuvcpe7b4@group.calendar.google.com)
 
 Using the SIG mailing list or video call is preferred for wider discussion topics that affect
 multiple subprojects. The main SIG slack channel should only be used for SIG level updates
