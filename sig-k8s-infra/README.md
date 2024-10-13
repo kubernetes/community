@@ -24,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the K8s Infra Spec
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), VMware
+* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), Independent
 * Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon
 
 ### Technical Leads
@@ -32,7 +32,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
-* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), VMware
+* Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), Independent
 * Mahamed Ali (**[@upodroid](https://github.com/upodroid)**), Cisco
 
 ## Emeritus Leads
