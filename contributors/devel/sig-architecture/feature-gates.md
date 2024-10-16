@@ -244,8 +244,9 @@ to unbreak themselves (and then file a bug). If this happens, we must
 reconsider the deprecation and may choose to abandon it entirely by changing
 the gate back to `true` for a release or two and eventually removing it.
 
-Once the deprecation is fully under way, `LockToDefault` must be set to true
-and the deprecated feature is to be fully removed 3 releases after `LockToDefault`
+Once the deprecation wait period has passed and the feature is to be fully
+disabled, set `LockToDefault` to true and the default to false. The deprecated
+feature is to be fully removed 3 releases after `LockToDefault`
 is set. This allows [compatibility version](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/4330-compatibility-versions)
 to support emulating previous versions when the feature gate is still toggleable. 
 
