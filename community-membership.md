@@ -53,7 +53,7 @@ remain active contributors to the community.
     - Authoring or reviewing PRs on GitHub, with at least one **merged** PR.
       **NOTE:** The PR(s) must demonstrate an ongoing and active commitment.
       A few examples include:
-      - A single KEP that has taken several weeks of driving consensus
+      - A single [KEP] that has taken several weeks of driving consensus
       - A larger number of smaller PRs over several weeks to months
       - A smaller number of complex or technical PRs that required working with
         community members to resolve an issue (e.g. regressions, bugs fixes etc)
@@ -260,4 +260,5 @@ before being able to contribute effectively.
 [sig-governance-subproject-owner]: /committee-steering/governance/sig-governance.md#subproject-owner
 [CNCF gitdm]: https://github.com/cncf/gitdm
 [devstats]: https://k8s.devstats.cncf.io/
-[openprofile.dev] https://openprofile.dev/edit/profile
+[openprofile.dev]: https://openprofile.dev/edit/profile
+[KEP]: https://github.com/kubernetes/enhancements/blob/master/keps/README.md#kubernetes-enhancement-proposals-keps 
