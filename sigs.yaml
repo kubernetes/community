@@ -3243,9 +3243,9 @@ workinggroups:
   label: batch
   leadership:
     chairs:
-    - github: alculquicondor
-      name: Aldo Culquicondor
-      company: Google
+    - github: kannon92
+      name: Kevin Hannon
+      company: Red Hat
     - github: mwielgus
       name: Marcin Wielgus
       company: Google
@@ -3260,6 +3260,8 @@ workinggroups:
       name: Wei Huang
     - github: ahg-g
       name: Abdullah Gharaibeh
+    - github: alculquicondor
+      name: Aldo Culquicondor
     - github: endocrimes
       name: Danielle Lancashire
   meetings:

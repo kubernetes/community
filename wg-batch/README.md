@@ -29,7 +29,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 
 ## Organizers
 
-* Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**), Google
+* Kevin Hannon (**[@kannon92](https://github.com/kannon92)**), Red Hat
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
 * Swati Sehgal (**[@swatisehgal](https://github.com/swatisehgal)**), Red Hat
@@ -38,6 +38,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 
 * Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**)
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**)
+* Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**)
 * Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**)
 
 ## Contact
