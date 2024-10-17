@@ -1,7 +1,6 @@
 # See the OWNERS docs at https://go.k8s.io/owners
 
 reviewers:
-  - AvineshTripathi
   - chris-short
   - fsmunoz
   - kaslin
@@ -14,6 +13,7 @@ approvers:
   - mfahlandt
 emeritus_approvers:
   - Atharva-Shinde
+  - AvineshTripathi
   - imnmo
   - Pensu
   - mbbroberg
