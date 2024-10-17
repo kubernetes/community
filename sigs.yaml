@@ -1170,7 +1170,16 @@ sigs:
       slack: cluster-api-gcp
       mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/main/OWNERS
+    meetings:
+    - description: Cluster API infrastructure provider for GCP
+      day: Thursday
+      time: "09:00"
+      tz: PT (Pacific Time)
+      frequency: every first Thursday of the month
+      url: https://zoom.us/j/96963829102?pwd=WjBZcmwvZFZsUU93aVZieUk1L3FnZz09
+      archive_url: https://docs.google.com/document/d/1l8B947Je79ZJX7zmKnJyMcOMIWjNidvp5FMTnPAY72I/
+      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: cluster-api-provider-ibmcloud
     description: Cluster API infrastructure provider for IBM Cloud
     contact:
