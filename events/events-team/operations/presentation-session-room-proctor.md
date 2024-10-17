@@ -1,6 +1,6 @@
 # Contributor Summit Presentation Sessions Room Proctor Instructions
 
-Thanks for volunteering to moderate one of the presentation sessions! 
+Thanks for volunteering to be a room proctor for one of the presentation sessions! 
 Presentation sessions are 30 minute sessions in which a speaker is making a slide presentation to the contributors.  
 Your contribution will make sure everyone can share knowledge and collaborate.
 

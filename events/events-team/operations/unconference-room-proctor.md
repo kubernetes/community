@@ -1,8 +1,8 @@
 # Contributor Summit Unconference Sessions Room Proctor Instructions
 
-Thanks for volunteering to moderate one of our unconference sessions! Your contribution will make sure everyone can share knowledge and collaborate.
+Thanks for volunteering to be a room proctor for one of our unconference sessions! Your contribution will make sure everyone can share knowledge and collaborate.
 
-To be a successful moderator, you’ll complete the following tasks:
+To be a successful room proctor, you’ll complete the following tasks:
 
 * Arrive at least 5 minutes before the unconference session is scheduled to start
 * Make sure the room has appropriate supplies e.g. pens, paper, etc.
