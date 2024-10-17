@@ -28,36 +28,36 @@
 
 4. KEP work in 2023 (v1.27, v1.28, v1.29):
 
-
-
+- https://github.com/kubernetes/enhancements/issues/4224
 
 ## [Subprojects](https://git.k8s.io/community/sig-k8s-infra#subprojects)
 
-
 **New in 2023:**
-  - [community-images](https://git.k8s.io/community/<no value>#community-images)
-**Continuing:**
-  - k8s-infra-dns
-  - k8s-infra-groups
-  - k8s.io
-  - porche
-  - registry.k8s.io
+
+- [community-images](https://git.k8s.io/community/<no value>#community-images)
+  **Continuing:**
+- k8s-infra-dns
+- k8s-infra-groups
+- k8s.io
+- porche
+- registry.k8s.io
 
 ## [Working groups](https://git.k8s.io/community/sig-k8s-infra#working-groups)
 
 **New in 2023:**
- - LTS
+
+- LTS
 
 ## Operational
 
 Operational tasks in [sig-governance.md]:
+
 - [ ] [README.md] reviewed for accuracy and updated if needed
 - [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
 - [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
-
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-k8s-infra/CONTRIBUTING.md
 [sig-governance.md]: https://git.k8s.io/community/committee-steering/governance/sig-governance.md
