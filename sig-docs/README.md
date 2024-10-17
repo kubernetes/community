@@ -17,6 +17,9 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
 * APAC SIG Meeting: [Wednesdays at 05:30 UTC](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit) (monthly - Wednesday, after the fourth Tuesday, every month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=05%3A30&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1emuO4nmaQq3K8JZ9-MQeIygtrCPO9kWv7U7RzTaW4F8/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
+* Arabic Team Meeting: [Wednesdays at 17:00 UTC](https://docs.google.com/document/d/1s4KdaDEYGR-hGkxIl2sRwyXZpuVgeQD6XNxcISkA-vE/edit) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17%3A00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1s4KdaDEYGR-hGkxIl2sRwyXZpuVgeQD6XNxcISkA-vE/edit).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 * Korean Team Meeting: [Thursdays at 13:00 UTC](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13%3A00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLAOP7m08QDCWZ7RwGca6cU4vzrOMw3ht7).
@@ -68,6 +71,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-docs)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fdocs)
 - GitHub Teams:
+    - [@kubernetes/sig-docs-ar-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ar-owners) - Arabic language content
     - [@kubernetes/sig-docs-blog-owners](https://github.com/orgs/kubernetes/teams/sig-docs-blog-owners) - Kubernetes blog maintainers
     - [@kubernetes/sig-docs-de-owners](https://github.com/orgs/kubernetes/teams/sig-docs-de-owners) - German language content
     - [@kubernetes/sig-docs-en-owners](https://github.com/orgs/kubernetes/teams/sig-docs-en-owners) - English content (default)
