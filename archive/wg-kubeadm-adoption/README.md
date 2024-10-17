@@ -22,7 +22,7 @@ Boost adoption of the kubeadm tool. kubeadm is a tool for creating new Kubernete
 
 ## Contact
 * [Slack](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
-* [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle)
+* [Mailing list](https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle)
 
 <!-- BEGIN CUSTOM CONTENT -->
 
