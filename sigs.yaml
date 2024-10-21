@@ -2258,6 +2258,19 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/controllers/service/OWNERS
+    leads:
+    - github: mlavacca
+      name: Mattia Lavacca
+      company: Kong
+    - github: robscott
+      name: Rob Scott
+      company: Google
+    - github: shaneutt
+      name: Shane Utt
+      company: Red Hat
+    - github: youngnick
+      name: Nick Young
+      company: Isovalent
   - name: ingress
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
@@ -2273,9 +2286,15 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
   - name: multi-network
+    contact:
+      slack: sig-network-multi-network
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/multi-network-api/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/multi-network/main/OWNERS
+    leads:
+    - github: mskrocki
+      name: Maciej Skrocki
+      company: Google
   - name: network-policy
     contact:
       slack: sig-network-policy-api
@@ -2283,6 +2302,15 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/kube-network-policies/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
+    leads:
+    - github: astoycos
+      name: Andrew Stoycos
+    - github: danwinship
+      name: Dan Winship
+      company: Red Hat
+    - github: dyanngg
+      name: Yang Ding
+      company: VMWare
   - name: node-ipam-controller
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/node-ipam-controller/main/OWNERS
