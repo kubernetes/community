@@ -115,6 +115,8 @@ channels:
   - name: draft-dev
   - name: draft-users
   - name: druid-operator
+  - name: e2e-framework-dev
+  - name: e2e-framework-users
   - name: ebpf
   - name: educates
   - name: eks
