@@ -86,7 +86,7 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
   - [kubernetes-sigs/kube-scheduler-wasm-extension](https://github.com/kubernetes-sigs/kube-scheduler-wasm-extension/blob/main/OWNERS)
 ### kueue
 - **Leads:**
-  - Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**), Google
+  - Michał Woźniak (**[@mimowo](https://github.com/mimowo)**), Google
   - Yuki Iwai (**[@tenzen-y](https://github.com/tenzen-y)**), CyberAgent, Inc.
 - **Owners:**
   - [kubernetes-sigs/kueue](https://github.com/kubernetes-sigs/kueue/blob/main/OWNERS)
