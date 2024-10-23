@@ -117,6 +117,49 @@ with the principles before spending any time in the implementation details.
 
 TODO
 
+#### Known Challenges
+
+Developing with CRDs can be challenging and we've gained a lot of experience
+with some of the trickier bits over the years. In this section we'll describe in
+detail some subtle or particularly nebulous challenges we've faced, and provide
+guidance on how to navigate them.
+
+##### When a feature can be supported by many but not ALL implementations
+
+When developing an API in a community (especially if there are many
+implementations) you may find there are features that are not common across all
+implementations, but a subset of them can implement them.
+
+**In an ideal situation no user is provided fields in an API that they can't
+actually use**. It can be tempting to take some tradeoffs on this to try to find
+a middle-ground so that you can provide more overall features. The [Gateway API]
+project (in particular) ran into this problem early on and decided to try an
+approach called [Conformance Support Levels].
+
+With the "support levels approach", all the ubiquitous features are covered by
+a "core" level of support. Features which are supported by at least 3
+implementations are covered by an "extended" level of support. Each of these has
+conformance tests and are included in reports, but ultimately when the user is
+defining their [HTTPRoute] (or other resource) **it can be very unclear whether
+the fields marked as "extended" will actually be functional given any particular
+implementation, and between different implementations**. Morever (at the time
+of writing) Gateway API doesn't have a complete solution for how feedback to a
+user should work in this regard (but there are some [ongoing proposals]).
+
+It is due to the problems stated above and the lack of implementation
+complete-ness so far that **we do not advise employing an approach like
+conformance levels at this time**. In general, we advise that all fields
+available in your APIs be functional regardless of implementation.
+
+> **Note**: This guidance may be updated in the future if we come to more
+> definitive conclusions on the value and efficacy of support levels for
+> end-users.
+
+[Gateway API]:https://github.com/kubernetes-sigs/gateway-api/
+[Conformance Support Levels]:https://gateway-api.sigs.k8s.io/concepts/conformance/#2-support-levels
+[HTTPRoute]:https://gateway-api.sigs.k8s.io/api-types/httproute/
+[ongoing proposals]:https://gateway-api.sigs.k8s.io/geps/gep-2162/
+
 ### Delivering CRDs
 
 TODO
