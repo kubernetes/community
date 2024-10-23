@@ -45,8 +45,8 @@ remain active contributors to the community.
     - gitdm is primarily used by [devstats] to track contributions from the
       many companies involved in the ecosystem. Kubernetes also uses it to
       ensure org membership sponsors are from different member companies.
-- Ensure affiliation is up to date in [openprofile.dev]. 
-  - openprofile.dev will replace gitdm in the future to track affiliation.
+- Ensure affiliation is up to date in [openprofile.dev](https://openprofile.dev/). 
+  - [openprofile.dev](https://openprofile.dev/) will replace gitdm in the future to track affiliation.
 - Have made **multiple contributions** to the project or community, enough to
   demonstrate an **ongoing and long-term commitment** to the project.
   Contributions should include, but is not limited to:
@@ -61,7 +61,7 @@ remain active contributors to the community.
     - Contributing to SIG, subproject, or community discussions (e.g. meetings,
       Slack, email discussion forums)
 - Subscribed to [dev@kubernetes.io]
-- Have read the [contributor guide]
+- Have read the [contributor guide]()
 - Actively contributing to 1 or more subprojects.
 - Sponsored by 2 reviewers. **Note the following requirements for sponsors**:
     - Sponsors must have close interactions with the prospective member - e.g. code/design/proposal review, coordinating
