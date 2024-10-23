@@ -41,9 +41,9 @@ Only the following types of changes are expected to be backported:
   - Dependency updates that just aim to silence some scanners
     and do not fix any vulnerable code are **not** eligible for cherry-picks.
 - Regression fixes
+  - A fix for a regression that only occurs when an off-by-default alpha feature is enabled is **not** eligible for backport.
 - Critical bug fixes (loss of data, memory corruption, panic, crash, hang)
-  - A bugfix for a functional issue (not a data loss or security issue) that only
-    affects an alpha feature does not qualify as a critical bug fix.
+  - A fix for an issue that only occurs when an off-by-default alpha feature is enabled does not qualify as a critical bug fix and is **not** eligible for backport.
 - Prerequisite changes for critical dependency updates (e.g. [go updates](https://github.com/kubernetes/sig-release/blob/master/release-engineering/handbooks/go.md#minor-version-updates))
 - Test-only changes to stabilize failing / flaky tests on release branches
 
