@@ -1000,6 +1000,8 @@ sigs:
   mission_statement: >
     The Cluster Lifecycle SIG examines how we should change Kubernetes to make it
     easier to manage and operate with a focus on cluster deployment and upgrades.
+    Add our [calendar](https://calendar.google.com/calendar/u/0/embed?src=u5822lrl4q68ic1iakuvcpe7b4@group.calendar.google.com)
+    to track when we have community meetings.
 
   charter_link: charter.md
   label: cluster-lifecycle
@@ -1036,9 +1038,10 @@ sigs:
     url: https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09
     archive_url: https://docs.google.com/document/d/1Gmc7LyCIL_148a9Tft7pdhdee0NBHdOfHS1SAF0duI4/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+    calendar_url: https://calendar.google.com/calendar/u/0/embed?src=u5822lrl4q68ic1iakuvcpe7b4@group.calendar.google.com
   contact:
     slack: sig-cluster-lifecycle
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     teams:
     - name: sig-cluster-lifecycle
       description: SIG Cluster Lifecycle mailing list
@@ -1051,7 +1054,7 @@ sigs:
       cluster addons
     contact:
       slack: cluster-addons
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-addons/master/OWNERS
     meetings:
@@ -1067,7 +1070,7 @@ sigs:
       provisioning, upgrading, and operating multiple Kubernetes clusters
     contact:
       slack: cluster-api
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/logical-cluster/main/OWNERS
@@ -1085,7 +1088,7 @@ sigs:
       solution for Cluster API using Helm.
     contact:
       slack: cluster-api-addon-helm
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://github.com/kubernetes-sigs/cluster-api-addon-provider-helm/blob/main/OWNERS
   - name: cluster-api-ipam-provider-in-cluster
@@ -1097,7 +1100,7 @@ sigs:
       handle the lifecycle of Cluster API providers within the management cluster
     contact:
       slack: cluster-api-operator
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-operator/main/OWNERS
     meetings:
@@ -1113,7 +1116,7 @@ sigs:
     description: Cluster API infrastructure provider for AWS
     contact:
       slack: cluster-api-aws
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-aws/master/OWNERS
     meetings:
@@ -1129,7 +1132,7 @@ sigs:
     description: Cluster API infrastructure provider for Azure
     contact:
       slack: cluster-api-azure
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-azure/master/OWNERS
     meetings:
@@ -1149,7 +1152,7 @@ sigs:
     description: Cluster API infrastructure provider for DigitalOcean
     contact:
       slack: cluster-api-digitalocean
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-digitalocean/master/OWNERS
     meetings:
@@ -1165,14 +1168,14 @@ sigs:
     description: Cluster API infrastructure provider for GCP
     contact:
       slack: cluster-api-gcp
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-gcp/master/OWNERS
   - name: cluster-api-provider-ibmcloud
     description: Cluster API infrastructure provider for IBM Cloud
     contact:
       slack: cluster-api-ibmcloud
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/main/OWNERS
     meetings:
@@ -1188,14 +1191,14 @@ sigs:
     description: Cluster API infrastructure provider for Kubemark
     contact:
       slack: cluster-api-kubemark
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-kubemark/master/OWNERS
   - name: cluster-api-provider-kubevirt
     description: Cluster API infrastructure provider for KubeVirt
     contact:
       slack: cluster-api-kubevirt
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-kubevirt/main/OWNERS
     meetings:
@@ -1210,7 +1213,7 @@ sigs:
     description: Cluster API infrastructure provider for Nested Clusters
     contact:
       slack: cluster-api-nested
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-nested/master/OWNERS
     meetings:
@@ -1226,7 +1229,7 @@ sigs:
     description: Cluster API infrastructure provider for OpenStack
     contact:
       slack: cluster-api-openstack
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-openstack/master/OWNERS
     meetings:
@@ -1241,14 +1244,14 @@ sigs:
     description: Cluster API infrastructure provider for Packet
     contact:
       slack: cluster-api-packet
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-packet/master/OWNERS
   - name: cluster-api-provider-vsphere
     description: Cluster API infrastructure provider for vSphere
     contact:
       slack: cluster-api-vsphere
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-vsphere/master/OWNERS
     meetings:
@@ -1265,7 +1268,7 @@ sigs:
       utilities
     contact:
       slack: image-builder
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/image-builder/master/OWNERS
     meetings:
@@ -1282,7 +1285,7 @@ sigs:
       highly available, Kubernetes cluster that also provisions infrastructure
     contact:
       slack: kops-dev
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes/kops/master/OWNERS
     meetings:
@@ -1298,7 +1301,7 @@ sigs:
       secure cluster up and running in a user friendly way
     contact:
       slack: kubeadm
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes/cluster-bootstrap/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubeadm/main/OWNERS
@@ -1323,7 +1326,7 @@ sigs:
       clusters on different infrastructure
     contact:
       slack: kubespray
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubespray/master/OWNERS
   - name: minikube
@@ -1331,7 +1334,7 @@ sigs:
       on macOS, Linux, and Windows
     contact:
       slack: minikube
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cluster-lifecycle
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/minikube-gui/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
