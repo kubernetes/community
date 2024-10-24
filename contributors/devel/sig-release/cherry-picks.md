@@ -32,22 +32,23 @@ branches.
 
 ## What Kind of PRs are Good for Cherry Picks
 
-Compared to the normal master branch's merge volume across time,
-the release branches see one or two orders of magnitude less PRs.
-This is because there is an order or two of magnitude higher scrutiny.
-Again, the emphasis is on critical bug fixes, e.g.,
+Patch releases must be easy and safe to consume, so security fixes
+and critical bugfixes can be delivered with minimal risk of regression.
 
-- Loss of data
-- Memory corruption
-- Panic, crash, hang
-- Security
+Only the following types of changes are expected to be backported:
 
-A bugfix for a functional issue (not a data loss or security issue) that only
-affects an alpha feature does not qualify as a critical bug fix.
+- Security fixes
+  - Dependency updates that just aim to silence some scanners
+    and do not fix any vulnerable code are **not** eligible for cherry-picks.
+- Regression fixes
+  - A fix for a regression that only occurs when an off-by-default alpha feature is enabled is **not** eligible for backport.
+- Critical bug fixes (loss of data, memory corruption, panic, crash, hang)
+  - A fix for an issue that only occurs when an off-by-default alpha feature is enabled does not qualify as a critical bug fix and is **not** eligible for backport.
+- Prerequisite changes for critical dependency updates (e.g. [go updates](https://github.com/kubernetes/sig-release/blob/master/release-engineering/handbooks/go.md#minor-version-updates))
+- Test-only changes to stabilize failing / flaky tests on release branches
 
-If you are proposing a cherry pick and it is not a clear and obvious critical
-bug fix, please reconsider. If upon reflection you wish to continue, bolster
-your case by supplementing your PR with e.g.,
+If you are proposing a cherry pick outside these categories, please reconsider.
+If upon reflection you wish to continue, bolster your case by supplementing your PR with e.g.,
 
 - A GitHub issue detailing the problem
 
@@ -61,21 +62,6 @@ your case by supplementing your PR with e.g.,
 
 - Key stakeholder SIG reviewers/approvers attesting to their confidence in the
   change being a required backport
-
-To illustrate the point, dependency updates that just aim to silence some scanners
-and do not fix any vulnerable code are NOT eligible for cherry-picks.
-
-If the change is in cloud provider-specific platform code (which is in the
-process of being moved out of core Kubernetes), describe the customer impact,
-how the issue escaped initial testing, remediation taken to prevent similar
-future escapes, and why the change cannot be carried in your downstream fork of
-the Kubernetes project branches.
-
-It is critical that our full community is actively engaged on enhancements in
-the project. If a released feature was not enabled on a particular provider's
-platform, this is a community miss that needs to be resolved in the `master`
-branch for subsequent releases. Such enabling will not be backported to the
-patch release branches.
 
 ## Initiate a Cherry Pick
 
