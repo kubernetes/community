@@ -105,6 +105,33 @@ While some exceptions may happen, approvers should use the following guidance:
 
 [API changes]: https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md#what-parts-of-a-pr-are-api-changes
 
+### Compatibility versions
+
+The Kubernetes "compatibility version" feature promises that control-plane
+components can be configured to behave as if they were any of the three previous
+releases, which includes (non-alpha) feature gates and gate-controlled APIs and logic.
+
+As a feature progresses through the lifecycle, we must preserve enough
+information to allow such compatible configuration, including both the old and
+new states, along with the version that the transition occurred.
+
+```
+RetryGenerateName: {  
+  {Version: version.MustParse("1.30"), Default: false, PreRelease: featuregate.Alpha},  
+  {Version: version.MustParse("1.31"), Default: true, PreRelease: featuregate.Beta},  
+  {Version: version.MustParse("1.32"), Default: true, LockToDefault: true, PreRelease: featuregate.GA},  
+},  
+```
+
+In this example, a component at v1.33 can be configured to behave as v1.32+ or
+to be compatible with v1.31 (where the gate was disableable) or v1.30 (where the
+gate was off by default). That component at v1.34 can be configured to behave as
+v1.32+ or to be compatible with v1.31 (where the gate was disableable), but
+v1.30 falls outside the "three releases" window.
+
+At v1.35, the component can only be configured to be compatible as far back as
+1.32 (where the gate was locked on), and so the lifecycle is complete.
+
 ### Alpha features
 
 * `PreRelease` is set to `featuregate.Alpha`
@@ -152,8 +179,17 @@ other action outside of Kubernetes to use it. This gives some grace period for
 users to take action, but such feature gates will eventually set
 `LockToDefault` to `true` and then be retired, like normal.
 
-[After at least two releases post-GA and deprecation](https://kubernetes.io/docs/reference/using-api/deprecation-policy/#deprecation),
-feature gates should be removed. Typically, we add a comment in
+To achieve our [compatibility version](#compatibility-versions) promise, after
+three releases where a feature has been locked to the default value (whether
+that feature is GA or deprecated), feature gates and references should be
+removed. We use three releases because it corresponds to roughly one year in the
+Kubernetes development cycle which is our [support
+period](https://kubernetes.io/releases/patch-releases/#support-period). For
+example, if a gate was `LockToDefault: true` in kubernetes version `X`, it may
+be removed in version `X+3` (which must be compatible with `X+2`, `X+1`, and
+`X`, all of which were also locked).
+
+Typically, we add a comment in
 [the code](https://github.com/kubernetes/kubernetes/blob/master/pkg/features/kube_features.go)
 such as: `// remove in 1.23` to signal when we plan to remove the feature gate.
 We provide this grace period to give users time to stop referencing "finished"
@@ -161,8 +197,48 @@ gates. If a feature gate is removed and a user has forgotten to drop the
 reference to it (e.g. in the CLI flags of `kube-apiserver`), then they will see
 a hard failure.
 
-When we set `LockToDefault` to `true`, we also remove all references to the feature
-gate from the codebase.
+#### Disablement Tests
+
+Typically for full coverage, unit and integration tests exist for both when a
+feature is enabled and disabled. When a feature is promoted to GA, it is usually
+locked to true by default and cannot be unset in testing. For integration with
+compatibility version, feature disablement tests should be maintained until the
+GA feature is fully removed three releases after promotion. To test scenarios
+where the feature gate may still be disabled, emulation version should be set in
+disablement tests. For these disablement tests, simply set emulation version to
+the version before the GA promotion to support disablement. The emulation
+version would be set the line before the feature gate is set.
+
+For example, if the "CustomResourceFieldSelectors" becomes GA in version 1.32,
+the emulation version is set to v1.31.
+
+```go
+featuregatetesting.SetFeatureGateEmulationVersionDuringTest(t, utilfeature.DefaultFeatureGate, version.MustParse("1.31"))
+featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, apiextensionsfeatures.CustomResourceFieldSelectors, false)
+```
+
+When the feature gate is removed three releases later in v1.35, the disablement
+feature gate test is then removed. For tests using a matrix, emulation version
+should only be set on tests that disable the feature.
+
+
+```go
+testcases := []struct{
+  ...
+  featureEnabled bool
+}
+
+for _, tc := range testcases {
+  if !tc.featureEnabled {
+    featuregatetesting.SetFeatureGateEmulationVersionDuringTest(t, utilfeature.DefaultFeatureGate, version.MustParse("1.31"))
+  }
+  featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.MyFeature, tc.featureEnabled)
+}
+```
+
+Disablement tests are only required to be preserved for components and libraries
+that support compatibility version. Tests for node and kubelet are unaffected by
+compatibility version.
 
 ### Deprecation
 
@@ -180,6 +256,24 @@ If some user is impacted by the deprecation, they can set that gate to `true`
 to unbreak themselves (and then file a bug). If this happens, we must
 reconsider the deprecation and may choose to abandon it entirely by changing
 the gate back to `true` for a release or two and eventually removing it.
+
+Once the [deprecation period](https://kubernetes.io/docs/reference/using-api/deprecation-policy/#deprecation)
+has passed, the gate should be locked to the default value (`LockToDefault:
+true`). As with GA features, all references to the feature gate must be kept for
+a minimum of three releases after gate has been locked to the default value. the
+gate, all references to it, and all gated logic may be removed after those three
+releases. See [compatibility version](#compatibility-versions) for more details.
+
+For example:
+
+```
+DeprecatedFeature: {  
+  {Version: version.MustParse("1.29"), Default: false, PreRelease: featuregate.Alpha}, // feature graduated to alpha.
+  {Version: version.MustParse("1.30"), Default: true, PreRelease: featuregate.Beta},  // feature graduated to beta.
+  {Version: version.MustParse("1.32"), Default: false, PreRelease: featuregate.Deprecated}, // feature is deprecated and turned off. LockToDefault is unset to give users time to transition.
+  {Version: version.MustParse("1.34"), Default: false, LockToDefault: true, PreRelease: featuregate.Deprecated}, // feature is deprecated, off, and locked. remove in v1.37 once versions up to v1.34 cannot be emulated anymore.
+},  
+```
 
 NOTE: We do not remove GA fields from the API.
 
