@@ -115,6 +115,8 @@ As a feature progresses through the lifecycle, we must preserve enough
 information to allow such compatible configuration, including both the old and
 new states, along with the version that the transition occurred.
 
+Example:
+
 ```
 RetryGenerateName: {  
   {Version: version.MustParse("1.30"), Default: false, PreRelease: featuregate.Alpha},  
@@ -260,7 +262,7 @@ the gate back to `true` for a release or two and eventually removing it.
 Once the [deprecation period](https://kubernetes.io/docs/reference/using-api/deprecation-policy/#deprecation)
 has passed, the gate should be locked to the default value (`LockToDefault:
 true`). As with GA features, all references to the feature gate must be kept for
-a minimum of three releases after gate has been locked to the default value. the
+a minimum of three releases after gate has been locked to the default value. The
 gate, all references to it, and all gated logic may be removed after those three
 releases. See [compatibility version](#compatibility-versions) for more details.
 
@@ -271,7 +273,7 @@ DeprecatedFeature: {
   {Version: version.MustParse("1.29"), Default: false, PreRelease: featuregate.Alpha}, // feature graduated to alpha.
   {Version: version.MustParse("1.30"), Default: true, PreRelease: featuregate.Beta},  // feature graduated to beta.
   {Version: version.MustParse("1.32"), Default: false, PreRelease: featuregate.Deprecated}, // feature is deprecated and turned off. LockToDefault is unset to give users time to transition.
-  {Version: version.MustParse("1.34"), Default: false, LockToDefault: true, PreRelease: featuregate.Deprecated}, // feature is deprecated, off, and locked. remove in v1.37 once versions up to v1.34 cannot be emulated anymore.
+  {Version: version.MustParse("1.34"), Default: false, LockToDefault: true, PreRelease: featuregate.Deprecated}, // feature is deprecated, off, and locked. remove in v1.37 once versions prior to v1.34 cannot be emulated anymore.
 },  
 ```
 
