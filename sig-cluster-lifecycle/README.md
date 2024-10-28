@@ -234,6 +234,10 @@ A tool for creating, destroying, upgrading and maintaining production-grade, hig
 - **Meetings:**
   - kOps Office Hours: [Fridays at 09:00 PT (Pacific Time)](https://zoom.us/j/97072789944?pwd=VVlUR3dhN2h5TEFQZHZTVVd4SnJUdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/12QkyL0FkNbWPcLFxxRGSPt_tNPBHbmni3YLY-lHny7E/edit).
+### karpenter-provider-cluster-api
+Cluster API Karpenter provider
+- **Owners:**
+  - [kubernetes-sigs/karpenter-provider-cluster-api/heads/main](https://github.com/kubernetes-sigs/karpenter-provider-cluster-api/blob/refs/heads/main/OWNERS)
 ### kubeadm
 A tool that performs the actions necessary to get a minimum viable, secure cluster up and running in a user friendly way
 - **Owners:**
