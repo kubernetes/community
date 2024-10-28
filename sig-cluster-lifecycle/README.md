@@ -174,17 +174,6 @@ Cluster API infrastructure provider for KubeVirt
 - **Meetings:**
   - Cluster API Provider KubeVirt Syncup Meetings: [Tuesdays at 8:00 PT (Pacific Time)](https://zoom.us/j/94685513559?pwd=cnI3RUQyZ3RrckpOc1BQNDA1Q1BrZz09) (weekly starting Tuesday December 7th, 2021). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1ZAnRLCKOVbDqrsrYis2OR0aZIAlqp576gCJVCkMNiHM/edit?usp=sharing).
-### cluster-api-provider-nested
-Cluster API infrastructure provider for Nested Clusters
-- **Owners:**
-  - [kubernetes-sigs/cluster-api-provider-nested](https://github.com/kubernetes-sigs/cluster-api-provider-nested/blob/master/OWNERS)
-- **Contact:**
-  - Slack: [#cluster-api-nested](https://kubernetes.slack.com/messages/cluster-api-nested)
-  - [Mailing List](https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle)
-- **Meetings:**
-  - Cluster API Provider Nested Office Hours: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/91929881559?pwd=WllxazhTUzBFN1BNWTRadTA3NGtQQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
-    - [Meeting notes and Agenda](https://docs.google.com/document/d/10aTeq2lhXW_3aFQAd_MdGjY8PtZPslKhZCCcXxFp3_Q/edit).
-    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-openstack
 Cluster API infrastructure provider for OpenStack
 - **Owners:**
