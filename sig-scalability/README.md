@@ -91,7 +91,6 @@ on https://go.k8s.io/oncall .
 Also do not hesitate to contact those SIG members for status update:
 
 * Antoni Zawody (**[@tosi3k](https://github.com/tosi3k)**), Google
-* Jacek Kaniuk (**[@jkaniuk](https://github.com/jkaniuk)**), Google
 * Jakub Przychodzeń (**[@jprzychodzen](https://github.com/jprzychodzen)**), Google
 * Maciej Borsz (**[@mborsz](https://github.com/mborsz)**), Google
 * Marcel Zięba (**[@marseel](https://github.com/marseel)**), Google
