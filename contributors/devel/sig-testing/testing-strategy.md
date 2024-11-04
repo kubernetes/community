@@ -82,8 +82,8 @@ presubmits:
           - runner.sh
           - ./test/e2e.sh
           args:
-          - --ginkgo.focus=MyFeature
-          - --ginkgo.skip=Slow
+         # Run tests labeled with "MyFeature", and only with that.
+         -ginkgo.label-filter='Feature: containsAny MyFeature && Feature: isSubsetOf MyFeature && !Flaky'
       annotations:
         testgrid-dashboards: sig-my-feature
         testgrid-tab-name: My Feature E2E Tests
