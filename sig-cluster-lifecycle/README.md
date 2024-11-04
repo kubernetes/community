@@ -142,10 +142,14 @@ Cluster API infrastructure provider for DigitalOcean
 ### cluster-api-provider-gcp
 Cluster API infrastructure provider for GCP
 - **Owners:**
-  - [kubernetes-sigs/cluster-api-provider-gcp](https://github.com/kubernetes-sigs/cluster-api-provider-gcp/blob/master/OWNERS)
+  - [kubernetes-sigs/cluster-api-provider-gcp](https://github.com/kubernetes-sigs/cluster-api-provider-gcp/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#cluster-api-gcp](https://kubernetes.slack.com/messages/cluster-api-gcp)
   - [Mailing List](https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle)
+- **Meetings:**
+  - Cluster API infrastructure provider for GCP: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/96963829102?pwd=WjBZcmwvZFZsUU93aVZieUk1L3FnZz09) (every first Thursday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/1l8B947Je79ZJX7zmKnJyMcOMIWjNidvp5FMTnPAY72I/).
+    - [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4).
 ### cluster-api-provider-ibmcloud
 Cluster API infrastructure provider for IBM Cloud
 - **Owners:**
