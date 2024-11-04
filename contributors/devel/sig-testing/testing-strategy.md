@@ -29,6 +29,10 @@ healthy: Blocking and Informing.
 If your feature or area is critical for the release please follow the instructions provided in https://github.com/kubernetes/sig-release/blob/master/release-blocking-jobs.md to promote your periodic jobs to be Blocking or Informing.
 
 A condition necessary for Presubmit Blocking jobs is to be also a Release Blocking jobs.
+Presubmit Blocking jobs should be even faster than Release Blocking jobs (under one hour, preferably under 30 minutes).
+Jobs should only be promoted to presubmit blocking if we are **frequently** identifying bugs only after they disrupt the release blocking jobs. A few times per release is not sufficient, you can use testgrid to bisect the commits that merged between pass / fail and revert or fix the relevant PR.
+
+Presubmit blocking jobs are much more expensive to run than release blocking jobs because they must run on every pushed PR, not just merged code, and issues with them disrupt ALL contributors, so we do not add presubmit blocking jobs lightly.
 
 ### Mitigating E2E Test Flakiness
 
