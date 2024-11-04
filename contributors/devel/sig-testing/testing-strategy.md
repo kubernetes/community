@@ -47,7 +47,12 @@ of masking legit bugs that will be present in clusters running in production.
 
 ###  Testing Strategy for Specific Features/Areas
 
-If your focus is on a specific feature or area within Kubernetes, consider this strategy:
+If your focus is on a specific feature or area within Kubernetes, it is your responsibility
+to ensure that tests for that a) run in the CI and b) remain healthy.
+SIG Testing provides the *tooling* for running tests, but is not
+responsible for *running* specific tests.
+
+ Consider this strategy:
 
 1. **Periodic Jobs:**
     - Run expensive E2E tests periodically (e.g., every 6 hours).
