@@ -7,7 +7,7 @@ This document outlines a testing strategy for Kubernetes features based on the *
 Prioritize tests based on the testing pyramid, refer to the [Testing Guide](./testing.md):
 
 - **Unit Tests:**  The foundation. Fast, isolated, and cover individual components.
-- **Integration Tests:** Verify interactions between components within your subsystem.
+- **Integration Tests:** Verify interactions between components within your subsystem. These are preferred for tests which require cluster components to be run with test-specific configurations.
 - **E2E Tests:**  Test the entire system, including interactions with external dependencies. These are the most expensive and prone to flakiness.
 
 ### CI Job Types
