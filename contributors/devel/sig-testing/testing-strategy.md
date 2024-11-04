@@ -101,7 +101,7 @@ periodics:
           - runner.sh
           - ./test/e2e.sh
           args:
-          - --ginkgo.focus=MyFeature
+          - -ginkgo.label-filter='Feature: containsAny MyFeature && Feature: isSubsetOf MyFeature && !Flaky'
       annotations:
         testgrid-dashboards: sig-my-feature
         testgrid-tab-name: My Feature Periodic E2E Tests
