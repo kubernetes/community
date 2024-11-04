@@ -12,7 +12,7 @@ Prioritize tests based on the testing pyramid, refer to the [Testing Guide](./te
 
 ### CI Job Types
 
-The Kubernetes job uses [prow](https://prow.k8s.io) to implement the CI system. We can differentiate between different of jobs:
+The Kubernetes job uses [prow](https://prow.k8s.io) to implement the CI system. We can differentiate between different types of jobs:
 
 - **Presubmit:** Runs before code is merged.
     - **Blocking:** Prevents merging if tests fail. Use cautiously due to potential project-wide impact. We aim to have a very high bar on these jobs and ask for proof
