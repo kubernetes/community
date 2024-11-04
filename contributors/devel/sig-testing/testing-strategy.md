@@ -26,7 +26,7 @@ The Kubernetes job uses [prow](https://prow.k8s.io) to implement the CI system. 
 SIG-release maintains two sets of jobs that decide whether the release is
 healthy: Blocking and Informing.
 
-If you are feature or area is critical for the release please follow the instructions provided in https://github.com/kubernetes/sig-release/blob/master/release-blocking-jobs.md to promote your periodic jobs to be Blocking or Informing.
+If your feature or area is critical for the release please follow the instructions provided in https://github.com/kubernetes/sig-release/blob/master/release-blocking-jobs.md to promote your periodic jobs to be Blocking or Informing.
 
 A condition necessary for Presubmit Blocking jobs is to be also a Release Blocking jobs.
 
