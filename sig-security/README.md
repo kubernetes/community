@@ -24,6 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Security Speci
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Ian Coldwater (**[@IanColdwater](https://github.com/IanColdwater)**), Docker
+* Cailyn Edwards (**[@cailyn-codes](https://github.com/cailyn-codes)**), Okta
 * Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
 
 ## Contact

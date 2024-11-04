@@ -2787,6 +2787,9 @@ sigs:
     - github: IanColdwater
       name: Ian Coldwater
       company: Docker
+    - github: cailyn-codes
+      name: Cailyn Edwards
+      company: Okta
     - github: tabbysable
       name: Tabitha Sable
       company: Datadog
