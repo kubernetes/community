@@ -1,6 +1,6 @@
 ## Defining a Robust Testing Strategy
 
-This document outlines a testing strategy for Kubernetes features based on the **testing pyramid**, with considerations on the existing CI system's characteristics.
+This document outlines a testing strategy for Kubernetes features based on the [**testing pyramid**](https://martinfowler.com/articles/practical-test-pyramid.html), with considerations on the existing CI system's characteristics.
 
 ### The Testing Pyramid
 
@@ -18,12 +18,12 @@ The Kubernetes job uses [prow](https://prow.k8s.io) to implement the CI system. 
     - **Blocking:** Prevents merging if tests fail. Use cautiously due to potential project-wide impact. We aim to have a very high bar on these jobs and ask for proof
     of stability, reliability and performance.
     - **Non-Blocking/Informational:** Provides feedback without blocking merges.
-- **Periodic:** Runs at scheduled intervals. Ideal for monitoring trends and catching regressions.
 - **Postsubmit:** Runs after code is merged. Useful for building artifacts.
+- **Periodic:** Runs at scheduled intervals. Ideal for monitoring trends and catching regressions.
 
-#### SIG-Release Blocking and Informing jobs
+#### SIG Release Blocking and Informing jobs
 
-SIG-release maintains two sets of jobs that decide whether the release is
+SIG Release maintains two sets of jobs that decide whether the release is
 healthy: Blocking and Informing.
 
 If your feature or area is critical for the release please follow the instructions provided in https://github.com/kubernetes/sig-release/blob/master/release-blocking-jobs.md to promote your periodic jobs to be Blocking or Informing.
@@ -60,11 +60,13 @@ responsible for *running* specific tests.
     - Subscribe to alerts, Testgrid provides early signals if changes elsewhere in Kubernetes break your feature.
 
 2. **Non-Blocking Presubmit Jobs:**
-    - Configure presubmit jobs to run only when specific files or folders are modified.
+    - Configure presubmit jobs to run only when specific files or folders are modified. This can be done using the `run_if_changed` [trigger in prow](https://docs.prow.k8s.io/docs/jobs/#triggering-jobs-based-on-changes).
     - Use OWNERS files to require approval from maintainers of the relevant codebase. This acts as a "soft block," ensuring review and accountability without the risk of halting the entire project.
     - Encourages maintainers to take ownership of their code's quality and stability.
 
 ### Example: CI Configuration
+
+There are a large number of CI jobs configurations that depend on multiple facvtos, here's a basic example. Remember to adapt it to your specific needs.
 
 ```yaml
 presubmits:
