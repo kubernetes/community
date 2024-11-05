@@ -1,8 +1,13 @@
 ## Defining a Robust Testing Strategy
 
-This document outlines a testing strategy for Kubernetes features based on the [**testing pyramid**](https://martinfowler.com/articles/practical-test-pyramid.html), with considerations on the existing CI system's characteristics.
+This document outlines a testing strategy for Kubernetes features based on past experiences and lessons learned taking into consideration the existing CI system's characteristics.
 
 ### The Testing Pyramid
+
+The [**testing pyramid**](https://martinfowler.com/articles/practical-test-pyramid.html) is
+a metaphor, nothing else, that helps visualize how to structure software tests. It's not a rigid prescription, but a general guideline for creating a balanced and effective testing strategy.
+
+![testing-pyramid](./sig_testing_kubecon_na_2022_pyramid.png)
 
 Prioritize tests based on the testing pyramid, refer to the [Testing Guide](./testing.md):
 
