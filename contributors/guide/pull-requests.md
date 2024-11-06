@@ -590,6 +590,58 @@ at once to that file.
 * Can the file be improved further?
 * Does the trivial edit greatly improve the quality of the content?
 
+## Fixing linter issues
+
+Kubernetes has a set of linter checks. Some of those must pass in the entire
+code base, some must pass in new or modified code, and some are merely hints
+to developers how to improve their code.
+
+Please do not create Pull Requests for issues found by linters without first
+reaching out to maintainers on the `#code-organization`
+[Slack](http://slack.kubernetes.io) channel to determine whether there is
+sufficient interest in fixing such issues.
+
+When it was discussed, make sure to include people who gave the preliminary
+approval of this work as well as the link to the discussion on Slack or GitHub
+issue into the PR description. This is a good example to follow:
+
+> /area code-organization
+>
+> This PR fixes linter rules discussed in the Slack https://kubernetes.slack.com/archives/Foo/Bar.
+> Preliminary agreement to address those issues were given by @GHHandle1 and @GHHandle2.
+>
+> /assign @GHHandle1
+> /assign @GHHandle2
+>
+> This PR fixes issues in the package:
+> pkg/kubelet
+>
+> Related PRs for other packages:
+> - github.com/link-to-other-PR1
+> - github.com/link-to-other-PR2
+
+It does not matter whether the linter is enabled in Kubernetes or not:
+- If a linter *is* enabled in
+  [golangci.yaml](https://github.com/kubernetes/kubernetes/blob/master/hack/golangci.yaml),
+  then it has already been determined that sweeping changes in the existing
+  code aren't necessary or just are not worth the cost (e.g. causing rebases of other
+  Pull Requests or obscuring authorship).
+- If a linter *is not* enabled, then it might not be important enough.
+- If the check is performed by third party tools which are not integrated in
+  the Kubernetes CI or proprietary, file a bug or start a discussion about it first.
+
+Such Pull Requests are often large and thus hard to review. When the linter
+enforces some opinion or policy, then this is not necessarily something that
+applies to Kubernetes. Kubernetes uses the formatting rules enforced by Go.
+Stricter rules like specific usage of
+[whitespace](https://golangci-lint.run/usage/linters/#whitespace) or using
+[standard library constants](https://golangci-lint.run/usage/linters/#usestdlibvars)
+are opinionated and not worth the cost of introducing them now.
+
+Linters worth considering are those which actually improve code correctness,
+for example by warning about suspicious code like calling a function and then
+not checking the error result.
+
 # The Testing and Merge Workflow
 
 The Kubernetes merge workflow uses labels, applied by [commands](https://prow.k8s.io/command-help) via comments. 
