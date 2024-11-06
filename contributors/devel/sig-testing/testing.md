@@ -198,6 +198,11 @@ Please refer to [Integration Testing in Kubernetes](integration-tests.md).
 
 Please refer to [End-to-End Testing in Kubernetes](e2e-tests.md).
 
+## Testing Strategy
+
+Either if you are a feature owner or subsystem or area maintaner, you have to define a
+testing strategy for your area, please refer to [Defining a Robust Testing Strategy in Kubernetes](testing-strategy.md).
+
 ## Running your contribution through Kubernetes CI
 Once you open a PR, [`prow`][prow-url] runs pre-submit tests in CI. You can find more about `prow` in [kubernetes/test-infra][prow-git] and in [this blog post][prow-doc] on automation involved in testing PRs to Kubernetes.
 
