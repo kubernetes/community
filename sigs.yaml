@@ -2316,6 +2316,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/node-ipam-controller/main/OWNERS
   - name: pod-networking
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/cni-dra-driver/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
 - dir: sig-node
