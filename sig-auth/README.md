@@ -167,6 +167,7 @@ Infrastructure implementing Kubernetes service account based workload identity.
   - [kubernetes/kubernetes/pkg/kubelet/token](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/token/OWNERS)
   - [kubernetes/kubernetes/pkg/serviceaccount](https://github.com/kubernetes/kubernetes/blob/master/pkg/serviceaccount/OWNERS)
   - [kubernetes/kubernetes/plugin/pkg/admission/serviceaccount](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/admission/serviceaccount/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/externaljwt](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/externaljwt/OWNERS)
 ### sig-auth-tools
 Tooling to automate the SIG Auth project boards
 - **Owners:**

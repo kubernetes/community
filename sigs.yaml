@@ -596,6 +596,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/token/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/serviceaccount/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/serviceaccount/OWNERS
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/externaljwt/OWNERS
   - name: sig-auth-tools
     description: |
       Tooling to automate the SIG Auth project boards
