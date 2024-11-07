@@ -143,6 +143,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - [kubernetes-sigs/node-ipam-controller](https://github.com/kubernetes-sigs/node-ipam-controller/blob/main/OWNERS)
 ### pod-networking
 - **Owners:**
+  - [kubernetes-sigs/cni-dra-driver](https://github.com/kubernetes-sigs/cni-dra-driver/blob/main/OWNERS)
   - [kubernetes-sigs/ip-masq-agent](https://github.com/kubernetes-sigs/ip-masq-agent/blob/master/OWNERS)
   - [kubernetes/kubernetes/pkg/kubelet/network](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/network/OWNERS)
 
