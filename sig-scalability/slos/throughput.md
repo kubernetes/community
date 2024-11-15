@@ -17,7 +17,7 @@ The aggregated throughput help to understand if the cluster network and applicat
 
 ### How to measure the SLI.
 
-Requires tto collect both the time duration of the connection and the amount of data transferred during that time. This can be done:
+Requires to collect both the time duration of the connection and the amount of data transferred during that time. This can be done:
 
 - Client-side: In the application code or using a benchmark application.
 - Network devices: Packet inspection and analysis on nodes along the network datapath.
