@@ -168,22 +168,28 @@ sigs:
     - github: janetkuo
       name: Janet Kuo
       company: Google
+      email: chiachenk@google.com
     - github: kow3ns
       name: Kenneth Owens
       company: Snowflake
+      email: kowens0826@gmail.com
     - github: soltysh
       name: Maciej Szulik
       company: Defense Unicorns
+      email: soltysh@gmail.com
     tech_leads:
     - github: janetkuo
       name: Janet Kuo
       company: Google
+      email: chiachenk@google.com
     - github: kow3ns
       name: Kenneth Owens
       company: Snowflake
+      email: kowens0826@gmail.com
     - github: soltysh
       name: Maciej Szulik
       company: Defense Unicorns
+      email: soltysh@gmail.com
     emeritus_leads:
     - github: mattfarina
       name: Matt Farina
