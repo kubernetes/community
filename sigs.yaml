@@ -2160,6 +2160,7 @@ sigs:
     - github: aojea
       name: Antonio Ojea
       company: Google
+      email: aojea@google.com
     - github: danwinship
       name: Dan Winship
       company: Red Hat
@@ -3026,6 +3027,7 @@ sigs:
     - github: aojea
       name: Antonio Ojea
       company: Google
+      email: aojea@google.com
     - github: cjwagner
       name: Cole Wagner
       company: Google
