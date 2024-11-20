@@ -47,15 +47,15 @@ for how to use it.
 ### Schedule
 
 <!-- TODO(cocc): Fix election dates -->
-| Date                    | Event                                             |
-|:------------------------|:--------------------------------------------------|
-| July 25                 | Nominations Open                                  |
-| Friday, August 4        | Nominations Close                                 |
-| Monday, August 7        | Steering to confirm candidacy                     |
-| Friday, August 11       | Election Begins                                   |
-| Thursday, August 17     | Election Closes                                   |
-| Friday, August 18       | Announcement of results                           |
-| Wednesday, August 23    | CoCC to hold onboarding sessions for new members  |
+| Date | Event |
+| --- | --- |
+| Monday, December 2 | Nominations Open |
+| Friday, January 31 | Nominations Close |
+| Monday, February 3 | Steering to confirm candidacy |
+| Monday, February 10 | Election Begins |
+| Monday, February 17 | Election Closes |
+| Tuesday, February 18 | Announcement of results |
+| Thursday, February 20 | CoCC to hold onboarding sessions for new members |
 
 Candidate nomination, bio, and election close deadlines will be done using Anywhere on Earth timing, meaning it is still valid to submit new nominations/bios/votes as long as it is still the last day anywhere on the planet (i.e. at the end of that day in UTC-12).
 
