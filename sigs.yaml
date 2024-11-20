@@ -436,6 +436,7 @@ sigs:
     - github: liggitt
       name: Jordan Liggitt
       company: Google
+      email: liggitt@google.com
     emeritus_leads:
     - github: ericchiang
       name: Eric Chiang
@@ -3480,6 +3481,7 @@ workinggroups:
     - github: liggitt
       name: Jordan Liggitt
       company: Google
+      email: liggitt@google.com
     - github: micahhausler
       name: Micah Hausler
       company: Amazon
