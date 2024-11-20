@@ -291,6 +291,7 @@ sigs:
     - github: johnbelamaric
       name: John Belamaric
       company: Google
+      email: jbelamaric@google.com
   meetings:
   - description: Enhancements Subproject Meeting
     day: Thursday
@@ -3386,6 +3387,7 @@ workinggroups:
     - github: johnbelamaric
       name: John Belamaric
       company: Google
+      email: jbelamaric@google.com
     - github: klueska
       name: Kevin Klues
       company: NVIDIA
