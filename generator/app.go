@@ -217,6 +217,10 @@ type Person struct {
 	GitHub  string
 	Name    string
 	Company string `yaml:"company,omitempty"`
+	// NOTE: this isn't displayed in the markdown files by design
+	// We collect this info for purposes like the leads@kubernetes.io list
+	// You should reach out to SIGs via the group mailinglists, slack, and github
+	Email string `yaml:"email,omitempty"`
 }
 
 // Meeting represents a regular meeting for a group.

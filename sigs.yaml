@@ -1933,6 +1933,7 @@ sigs:
     - github: BenTheElder
       name: Benjamin Elder
       company: Google
+      email: bentheelder@google.com
     - github: ameukam
       name: Arnaud Meukam
       company: Independent
@@ -3017,6 +3018,7 @@ sigs:
     - github: BenTheElder
       name: Benjamin Elder
       company: Google
+      email: bentheelder@google.com
     - github: alvaroaleman
       name: Alvaro Aleman
       company: Red Hat
