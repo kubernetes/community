@@ -3575,6 +3575,7 @@ workinggroups:
     - github: terrytangyuan
       name: Yuan Tang
       company: Red Hat
+      email: terrytangyuan@gmail.com
   meetings:
   - description: WG Serving Weekly Meeting
     day: Wednesday
