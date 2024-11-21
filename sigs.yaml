@@ -2706,19 +2706,24 @@ sigs:
     - github: Huang-Wei
       name: Wei Huang
       company: Apple
+      email: hweicdl@gmail.com
     - github: ahg-g
       name: Abdullah Gharaibeh
       company: Google
+      email: ahg@google.com
     tech_leads:
     - github: Huang-Wei
       name: Wei Huang
       company: Apple
+      email: hweicdl@gmail.com
     - github: ahg-g
       name: Abdullah Gharaibeh
       company: Google
+      email: ahg@google.com
     - github: alculquicondor
       name: Aldo Culquicondor
       company: Google
+      email: acondor@google.com
     emeritus_leads:
     - github: bsalamat
       name: Bobby (Babak) Salamat
@@ -2790,9 +2795,11 @@ sigs:
     - github: alculquicondor
       name: Aldo Culquicondor
       company: Google
+      email: acondor@google.com
     - github: tenzen-y
       name: Yuki Iwai
       company: CyberAgent, Inc.
+      email: yuki.iwai.tz@gmail.com
   - name: kwok
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kwok/main/OWNERS
