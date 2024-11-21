@@ -3309,15 +3309,19 @@ workinggroups:
     - github: kannon92
       name: Kevin Hannon
       company: Red Hat
+      email: kehannon@redhat.com
     - github: mwielgus
       name: Marcin Wielgus
       company: Google
+      email: mwielgus@google.com
     - github: soltysh
       name: Maciej Szulik
       company: Defense Unicorns
+      email: soltysh@gmail.com
     - github: swatisehgal
       name: Swati Sehgal
       company: Red Hat
+      email: swati.tcd@gmail.com
     emeritus_leads:
     - github: Huang-Wei
       name: Wei Huang
