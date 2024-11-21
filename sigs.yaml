@@ -1935,6 +1935,7 @@ sigs:
     - github: ameukam
       name: Arnaud Meukam
       company: Independent
+      email: ameukam@gmail.com
     - github: dims
       name: Davanum Srinivas
       company: Amazon
@@ -1947,6 +1948,7 @@ sigs:
     - github: ameukam
       name: Arnaud Meukam
       company: Independent
+      email: ameukam@gmail.com
     - github: upodroid
       name: Mahamed Ali
       company: Cisco
