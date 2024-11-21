@@ -1,8 +1,7 @@
 name: 2025 Kubernetes Code of Conduct Committee Election
 organization: Kubernetes
-# TODO(cocc): Fix election dates
-start_datetime: 2025-08-11 00:00:01
-end_datetime: 2025-08-18 11:59:59
+start_datetime: 2025-02-10 00:00:01
+end_datetime: 2025-02-17 11:59:59
 no_winners: 3
 allow_no_opinion: True
 delete_after: True
@@ -16,7 +15,6 @@ election_officers:
   - soltysh
 eligibility: Eligibility is limited to the [current Steering Committee Members](https://github.com/kubernetes/steering/blob/45c016ebe5c08cb3852240751382b02afc0aa4f3/README.md#members)
 exception_description: No exception requests accepted for this election.
-# TODO(cocc): Fix election dates
-exception_due: 2025-08-08 00:00:01
+exception_due: 2025-02-04 00:00:01
 show_candidate_fields:
   - 

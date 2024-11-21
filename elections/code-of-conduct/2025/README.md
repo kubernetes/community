@@ -46,7 +46,6 @@ for how to use it.
 
 ### Schedule
 
-<!-- TODO(cocc): Fix election dates -->
 | Date | Event |
 | --- | --- |
 | Monday, December 2 | Nominations Open |
@@ -61,15 +60,13 @@ Candidate nomination, bio, and election close deadlines will be done using Anywh
 
 ## Candidacy Process
 
-<!-- TODO(cocc): Fix election dates -->
-Candidate nominations were accepted through a [Google Form] open from July 25, 2025 to August 4, 2025.
+Candidate nominations were accepted through a [Google Form] open during the above stated [nomination period](#schedule).
 
 For more details about the candidacy and the voting process, see the [CoCC Election Charter].
 
 ## Voters
 
-<!-- TODO(cocc): Fix election dates -->
-Only the Kubernetes Steering Committee members as of August 8, 2025 will be eligible voters for the election.
+Only the Kubernetes Steering Committee members as of February 4, 2025 will be eligible voters for the election.
 
 ## Nominees
 
