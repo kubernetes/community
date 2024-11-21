@@ -2787,8 +2787,8 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
     leads:
-    - github: alculquicondor
-      name: Aldo Culquicondor
+    - github: mimowo
+      name: Michał Woźniak
       company: Google
     - github: tenzen-y
       name: Yuki Iwai
