@@ -2630,13 +2630,16 @@ sigs:
     - github: marseel
       name: Marcel Zieba
       company: Isovalent
+      email: marcel.zieba@isovalent.com
     - github: shyamjvs
       name: Shyam Jeedigunta
       company: Amazon
+      email: jeedigv@amazon.com
     tech_leads:
     - github: wojtek-t
       name: Wojciech Tyczynski
       company: Google
+      email: wojtekt@google.com
     emeritus_leads:
     - github: mm4tt
       name: Matt Matejczyk
