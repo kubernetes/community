@@ -25,7 +25,11 @@ The role of this election is to fill out the three (3) seats open for election
 this year on the [Kubernetes Code of Conduct Committee]. Each elected
 member will serve a two (2) year term.
 
-<!-- TODO(cocc): Add blurb about election timing -->
+*In an effort to deconflict between Steering and Code of Conduct Committee
+election timing and provide new Steering Committee members sufficient time to
+onboard (3+ months), the Steering Committee has made the decision to move the
+Code of Conduct Committee elections to follow the 2024 Steering elections,
+instead of preceding them.*
 
 ## Election Platform
 
