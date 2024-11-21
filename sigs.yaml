@@ -2351,22 +2351,28 @@ sigs:
     - github: SergeyKanzhelev
       name: Sergey Kanzhelev
       company: Google
+      email: s.kanzhelev@gmail.com
     - github: haircommander
       name: Peter Hunt
       company: Red Hat
+      email: pehunt@redhat.com
     - github: mrunalp
       name: Mrunal Patel
       company: Red Hat
+      email: mpatel@redhat.com
     tech_leads:
     - github: dchen1107
       name: Dawn Chen
       company: Google
+      email: dawnchen@google.com
     - github: derekwaynecarr
       name: Derek Carr
       company: Red Hat
+      email: decarr@redhat.com
     - github: mrunalp
       name: Mrunal Patel
       company: Red Hat
+      email: mpatel@redhat.com
   meetings:
   - description: Main SIG Meeting
     day: Tuesday
