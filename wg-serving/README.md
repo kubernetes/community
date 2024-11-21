@@ -51,12 +51,6 @@ The WG Serving will operate in several workstreams with different areas of focus
 - [Orchestration](https://docs.google.com/document/d/1hbEx3ZEqdXCqWH9RL3uy9FIy35B8pFJ5KiK3HsOz2FE/edit?usp=sharing)
 - [DRA](https://github.com/kubernetes/community/tree/master/wg-device-management)
 
-## Sponsored Subprojects
-
-* [LLM Instance Gateway](https://github.com/kubernetes-sigs/llm-instance-gateway)
-* [Serving Catalog](https://github.com/kubernetes-sigs/wg-serving/tree/main/serving-catalog)
-
-
 ## How to ...
 
 ### subscribe to WG events
