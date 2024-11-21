@@ -3630,6 +3630,7 @@ workinggroups:
     - github: mengjiao-liu
       name: Mengjiao Liu
       company: DaoCloud
+      email: mengjiao.liu@daocloud.io
     - github: pohly
       name: Patrick Ohly
       company: Intel
