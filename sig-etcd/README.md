@@ -19,7 +19,7 @@ The [charter](charter.md) defines the scope and governance of the etcd Special I
 * Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLRGL688DpO9rtufHbiunuCHddYY6MGkwW).
-* Robustness Tests Meeting: [Wednesdays at 08:00 PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08%3A00&tz=PT%20%28Pacific%20Time%29).
+* Robustness Tests Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1idZ_7tV6F18v223LyQ0WVUn9gXLSKyeLwYTdAgbjxpw/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLRGL688DpO9oF-YEEfVXMzaOUzFYK74-I).
 * Triage Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).

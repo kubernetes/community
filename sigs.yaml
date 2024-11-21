@@ -1717,7 +1717,7 @@ sigs:
     recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9rtufHbiunuCHddYY6MGkwW
   - description: Robustness Tests Meeting
     day: Wednesday
-    time: "08:00"
+    time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/my/cncfetcdproject
