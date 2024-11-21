@@ -29,7 +29,7 @@ member will serve a two (2) year term.
 
 ## Election Platform
 
-We will be using [Elekto] to conduct the election. Elekto relies entirely on GitHub Oauth for
+We will be using [Elekto] to conduct the election. Elekto relies entirely on GitHub OAuth for
 voting, and as such does not use email at all. Elekto also handles exceptions,
 eligibility checks, and other aspects of the election. See the [Elekto voting documentation]
 for how to use it.
