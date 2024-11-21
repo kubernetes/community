@@ -3474,18 +3474,23 @@ workinggroups:
     - github: ahrtr
       name: Benjamin Wang
       company: VMware
+      email: benjamin.ahrtr@gmail.com
     - github: hakman
       name: Ciprian Hacman
       company: Microsoft
+      email: chacman@microsoft.com
     - github: jberkus
       name: Josh Berkus
       company: Red Hat
+      email: jberkus@redhat.com
     - github: jmhbnz
       name: James Blair
       company: Red Hat
+      email: jablair@redhat.com
     - github: justinsb
       name: Justin Santa Barbara
       company: Google
+      email: justinsb@google.com
   meetings:
   - description: Regular WG Meeting
     day: Tuesday
