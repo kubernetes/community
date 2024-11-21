@@ -27,7 +27,7 @@ The [charter](charter.md) defines the scope and governance of the CLI Special In
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Arda Guclu (**[@ardaguclu](https://github.com/ardaguclu)**), Red Hat
-* Marly Puckett (**[@mpuckett159](https://github.com/mpuckett159)**), Independent
+* Marly Salazar (**[@mpuckett159](https://github.com/mpuckett159)**), Independent
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
