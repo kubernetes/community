@@ -693,6 +693,7 @@ sigs:
     - github: ardaguclu
       name: Arda Guclu
       company: Red Hat
+      email: ardaguclu@gmail.com
     - github: mpuckett159
       name: Marly Salazar
       company: Independent
@@ -701,9 +702,11 @@ sigs:
     - github: eddiezane
       name: Eddie Zaneski
       company: Defense Unicorns
+      email: eddiezane@gmail.com
     - github: soltysh
       name: Maciej Szulik
       company: Defense Unicorns
+      email: soltysh@gmail.com
     emeritus_leads:
     - github: AdoHe
       name: Tony Ado
