@@ -2487,6 +2487,7 @@ sigs:
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
       company: Chainguard, Inc
+      email: ctadeu@gmail.com
     - github: puerco
       name: Adolfo García Veytia
       company: Chainguard, Inc
