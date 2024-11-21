@@ -2480,6 +2480,7 @@ sigs:
     - github: saschagrunert
       name: Sascha Grunert
       company: Red Hat
+      email: saschagrunert@gmail.com
     tech_leads:
     - github: Verolop
       name: Verónica López
@@ -3792,6 +3793,7 @@ committees:
     - github: saschagrunert
       name: Sascha Grunert
       company: Red Hat
+      email: saschagrunert@gmail.com
     - github: soltysh
       name: Maciej Szulik
       company: Defense Unicorns
