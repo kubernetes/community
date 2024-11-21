@@ -14,19 +14,24 @@ sigs:
     - github: deads2k
       name: David Eads
       company: Red Hat
+      email: deads@redhat.com
     - github: fedebongio
       name: Federico Bongiovanni
       company: Google
+      email: fbongiovanni@google.com
     tech_leads:
     - github: deads2k
       name: David Eads
       company: Red Hat
+      email: deads@redhat.com
     - github: jpbetz
       name: Joe Betz
       company: Google
+      email: jpbetz@google.com
     - github: sttts
       name: Stefan Schimanski
       company: Upbound
+      email: stefan.schimanski@gmail.com
   meetings:
   - description: Kubebuilder Meeting
     day: Thursday
