@@ -3727,27 +3727,35 @@ committees:
     - github: SaranBalaji90
       name: Sri Saran Balaji
       company: Amazon
+      email: srajakum@amazon.com
     - github: cjcullen
       name: CJ Cullen
       company: Google
+      email: cjcullen@google.com
     - github: cji
       name: Craig Ingram
       company: Google
+      email: cjingram@google.com
     - github: enj
       name: Mo Khan
       company: Microsoft
+      email: i@monis.app
     - github: joelsmith
       name: Joel Smith
       company: Red Hat
+      email: joelsmith@redhat.com
     - github: micahhausler
       name: Micah Hausler
       company: Amazon
+      email: mhausler@amazon.com
     - github: ritazh
       name: Rita Zhang
       company: Microsoft
+      email: ritazh@microsoft.com
     - github: tabbysable
       name: Tabitha Sable
       company: Datadog
+      email: tabitha.c.sable@gmail.com
     emeritus_leads:
     - github: lukehinds
       name: Luke Hinds
