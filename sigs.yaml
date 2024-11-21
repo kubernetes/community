@@ -2477,23 +2477,28 @@ sigs:
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Microsoft
+      email: jeremy.r.rickard@gmail.com
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
+      email: k8s@auggie.dev
     - github: saschagrunert
       name: Sascha Grunert
       company: Red Hat
+      email: saschagrunert@gmail.com
     tech_leads:
     - github: Verolop
       name: Verónica López
-      company: PlanetScale
+      company: AuthZed
+      email: gveronicalg@gmail.com
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
       company: Chainguard, Inc
       email: ctadeu@gmail.com
     - github: puerco
       name: Adolfo García Veytia
-      company: Chainguard, Inc
+      company: Stacklok
+      email: adolfo.garcia@uservers.net
     emeritus_leads:
     - github: alejandrox1
       name: Jorge Alarcon Ochoa
@@ -2581,6 +2586,7 @@ sigs:
     - github: xmudrii
       name: Marko Mudrinić
       company: Kubermatic
+      email: mudrinic.mare@gmail.com
   - name: Release Team
     description: |
       The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
@@ -2603,9 +2609,12 @@ sigs:
     leads:
     - github: gracenng
       name: Grace Nguyen
+      company: Notion
+      email: nng.grace@gmail.com
     - github: katcosgrove
       name: Kat Cosgrove
-      company: Dell
+      company: Independent
+      email: kat.cosgrove@gmail.com
   - name: SIG Release Process Documentation
     description: |
       Documents and processes related to SIG Release
