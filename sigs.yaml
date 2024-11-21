@@ -694,8 +694,9 @@ sigs:
       name: Arda Guclu
       company: Red Hat
     - github: mpuckett159
-      name: Marly Puckett
+      name: Marly Salazar
       company: Independent
+      email: mpuckett259@gmail.com
     tech_leads:
     - github: eddiezane
       name: Eddie Zaneski
