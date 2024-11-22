@@ -1035,6 +1035,7 @@ sigs:
     - github: justinsb
       name: Justin Santa Barbara
       company: Google
+      email: justinsb@google.com
     - github: neolit123
       name: Lubomir Ivanov
       company: VMware
