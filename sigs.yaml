@@ -1844,16 +1844,20 @@ sigs:
     - github: logicalhan
       name: Han Kang
       company: Google
+      email: hankang@google.com
     - github: rexagod
       name: Pranshu Srivastava
       company: Red Hat
+      email: rexagod@gmail.com
     tech_leads:
     - github: dashpole
       name: David Ashpole
       company: Google
+      email: dashpole@google.com
     - github: dgrisonnet
       name: Damien Grisonnet
       company: Red Hat
+      email: dgrisonn@redhat.com
     emeritus_leads:
     - github: brancz
       name: Frederic Branczyk
