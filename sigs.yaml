@@ -3080,6 +3080,7 @@ sigs:
     - github: pohly
       name: Patrick Ohly
       company: Intel
+      email: patrick.ohly@intel.com
     emeritus_leads:
     - github: fejta
       name: Erick Fejta
@@ -3442,9 +3443,11 @@ workinggroups:
     - github: klueska
       name: Kevin Klues
       company: NVIDIA
+      email: klueska@gmail.com
     - github: pohly
       name: Patrick Ohly
       company: Intel
+      email: patrick.ohly@intel.com
   meetings:
   - description: Regular WG Meeting
     day: Tuesday
@@ -3840,6 +3843,7 @@ committees:
     - github: pohly
       name: Patrick Ohly
       company: Intel
+      email: patrick.ohly@intel.com
     - github: saschagrunert
       name: Sascha Grunert
       company: Red Hat
