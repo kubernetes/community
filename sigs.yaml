@@ -3633,12 +3633,15 @@ workinggroups:
     - github: ArangoGutierrez
       name: Eduardo Arango
       company: NVIDIA
+      email: arangogutierrez@gmail.com
     - github: Jeffwan
       name: Jiaxin Shan
       company: Bytedance
+      email: seedjeffwan@gmail.com
     - github: SergeyKanzhelev
       name: Sergey Kanzhelev
       company: Google
+      email: s.kanzhelev@gmail.com
     - github: terrytangyuan
       name: Yuan Tang
       company: Red Hat
