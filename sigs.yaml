@@ -1860,6 +1860,7 @@ sigs:
     - github: rexagod
       name: Pranshu Srivastava
       company: Red Hat
+      email: rexagod@gmail.com
     - github: richabanker
       name: Richa Banker
       company: Google
@@ -1868,9 +1869,11 @@ sigs:
     - github: dashpole
       name: David Ashpole
       company: Google
+      email: dashpole@google.com
     - github: dgrisonnet
       name: Damien Grisonnet
       company: Red Hat
+      email: dgrisonn@redhat.com
     emeritus_leads:
     - github: brancz
       name: Frederic Branczyk
