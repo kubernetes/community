@@ -836,16 +836,20 @@ sigs:
     - github: bridgetkromhout
       name: Bridget Kromhout
       company: Microsoft
+      email: bridget@kromhout.org
     - github: elmiko
       name: Michael McCune
       company: Red Hat
+      email: msm@opbstudios.com
     tech_leads:
     - github: cheftako
       name: Walter Fender
       company: Google
+      email: wfender@google.com
     - github: elmiko
       name: Michael McCune
       company: Red Hat
+      email: msm@opbstudios.com
     emeritus_leads:
     - github: andrewsykim
       name: Andrew Sy Kim
