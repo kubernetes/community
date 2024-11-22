@@ -1562,7 +1562,7 @@ sigs:
       company: Dell
     - github: salaxander
       name: Xander Grzywinski
-      company: Defense Unicorns
+      email: xandergrzyw@gmail.com
     - github: tengqm
       name: Qiming Teng
       company: Sangfor Technologies
@@ -3717,7 +3717,7 @@ committees:
       company: Microsoft
     - github: salaxander
       name: Xander Grzywinski
-      company: Defense Unicorns
+      email: xandergrzyw@gmail.com
     emeritus_leads:
     - github: AevaOnline
       name: Aeva Black
