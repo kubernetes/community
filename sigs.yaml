@@ -1555,22 +1555,28 @@ sigs:
     - github: divya-mohan0209
       name: Divya Mohan
       company: SUSE
+      email: divya.mohan0209@gmail.com
     - github: natalisucks
       name: Natali Vlatko
       company: Cisco
+      email: natalivlatko@gmail.com
     - github: reylejano
       name: Rey Lejano
       company: Red Hat
+      email: rlejano@gmail.com
     tech_leads:
     - github: katcosgrove
       name: Kat Cosgrove
       company: Dell
+      email: kat.cosgrove@gmail.com
     - github: salaxander
       name: Xander Grzywinski
       company: Defense Unicorns
+      email: xandergrzyw@gmail.com
     - github: tengqm
       name: Qiming Teng
       company: Sangfor Technologies
+      email: tengqm@outlook.com
     emeritus_leads:
     - github: Bradamant3
       name: Jennifer Rondeau
