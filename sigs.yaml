@@ -1715,16 +1715,20 @@ sigs:
     - github: jmhbnz
       name: James Blair
       company: Red Hat
+      email: mail@jamesblair.net
     - github: wenjiaswe
       name: Wenjia Zhang
       company: Google
+      email: wenjia.swe@gmail.com
     tech_leads:
     - github: ahrtr
       name: Benjamin Wang
       company: VMware
+      email: benjamin.ahrtr@gmail.com
     - github: serathius
       name: Marek Siarkowicz
       company: Google
+      email: marek.siarkowicz@gmail.com
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
@@ -3504,7 +3508,7 @@ workinggroups:
     - github: jmhbnz
       name: James Blair
       company: Red Hat
-      email: jablair@redhat.com
+      email: mail@jamesblair.net
     - github: justinsb
       name: Justin Santa Barbara
       company: Google
