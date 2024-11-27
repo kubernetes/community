@@ -26,6 +26,43 @@ The Kubernetes job uses [prow](https://prow.k8s.io) to implement the CI system. 
 - **Postsubmit:** Runs after code is merged. Useful for building artifacts.
 - **Periodic:** Runs at scheduled intervals. Ideal for monitoring trends and catching regressions.
 
+#### Non-blocking triggered by path
+
+Usually, blocking pre-submit jobs run by default and non-blocking jobs don't. The `/test` command
+has to be used explicitly for such non-blocking jobs. It is possible to configure such
+jobs so that they [run automatically when certain paths are modified](https://github.com/kubernetes/test-infra/blob/ee70308f09c10f7cd933c26c98acc7ebf785d436/config/jobs/kubernetes/sig-node/sig-node-presubmit.yaml#L3201-L3202).
+
+Non-blocking jobs cannot detect all regressions. A test flake might succeed
+when tested only once during presubmit. When defining the path trigger, it's
+impossible to list everything that might cause a need to run tests
+(e.g. tool changes, updates in packages that a feature depends on). Therefore
+it is required to have a periodic job which runs the same tests regularly.
+
+The advantage of also having a non-blocking job that gets triggered automatically is
+that reviewers don't need to remember to run it and that problems get
+discovered sooner. Without it, maintainers are forced to diagnose regressions
+in a periodic job and then have to ping the contributor who caused the problem.
+If that contributor is unresponsive, maintainers may have to fix the problem
+themselves.
+
+Instead, the burden is on the contributor whose pull request fails the
+tests. If they are unresponsive, their change doesn't get merged and there's no
+regression.
+
+> :warning: **Warning:** A non-blocking job that fails confuses other
+> contributors who are not familiar with the job or the failures. If it runs
+> too often, it wastes CI resources.
+
+To avoid those negative consequences for the project, the guidelines for
+setting up such a job are:
+
+* The job owners are responsive and react to problems with the job.
+* The job must have a low failure rate to avoid confusion in drive-by pull requests.
+* The importance of the feature must justify the extra CI resources (depends
+  on how often it gets triggered).
+* The `run_if_changed` regular expression must be narrow enough that
+  the job doesn't run for unrelated changes.
+
 #### SIG Release Blocking and Informing jobs
 
 SIG Release maintains two sets of jobs that decide whether the release is
