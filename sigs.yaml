@@ -3018,9 +3018,6 @@ sigs:
       slack: sig-storage-cosi
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-api/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-controller/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-spec/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/cosi-driver-sample/master/OWNERS
   - name: kubernetes-csi
