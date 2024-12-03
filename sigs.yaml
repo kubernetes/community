@@ -241,6 +241,9 @@ sigs:
   - name: execution-hook
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/execution-hook/master/OWNERS
+  - name: kjob
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kjob/main/OWNERS
   - name: kompose
     contact:
       slack: kompose
