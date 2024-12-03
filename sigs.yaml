@@ -2315,6 +2315,9 @@ sigs:
     - github: youngnick
       name: Nick Young
       company: Isovalent
+  - name: ingate
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/ingate/refs/heads/main/OWNERS
   - name: ingress
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
