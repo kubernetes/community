@@ -17,7 +17,7 @@ The [charter](charter.md) defines the scope and governance of the API Machinery 
 * Kubebuilder Meeting: [Thursdays at 11:00 PT (Pacific Time)]() (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1GbSkHAxIaFTm2fL92z3WeWrCtnIjXfr7gNZSySLHhmk/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0SOaFeA9f3dwdCNECEKkX3).
-* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/my/apimachinery) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/91842015362?pwd=NUdZRjdNV0NsWXJjbDZXQWc5cm91QT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://goo.gl/0lbiM9).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP21oW3hbLyjjj4XhrwKxH2R).
 
