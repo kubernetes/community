@@ -75,6 +75,9 @@ Application metadata descriptor CRD
 ### execution-hook
 - **Owners:**
   - [kubernetes-sigs/execution-hook](https://github.com/kubernetes-sigs/execution-hook/blob/master/OWNERS)
+### kjob
+- **Owners:**
+  - [kubernetes-sigs/kjob](https://github.com/kubernetes-sigs/kjob/blob/main/OWNERS)
 ### kompose
 - **Owners:**
   - [kubernetes/kompose](https://github.com/kubernetes/kompose/blob/master/OWNERS)
