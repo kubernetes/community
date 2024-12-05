@@ -156,7 +156,7 @@ determining if you should request a channel:
 ### Private Channels
 
 We offer private channels on the Kubernetes Slack extremely sparingly.  The only
-private channels we currently support involve community-owned softwaresecurity
+private channels we currently support involve community-owned software security
 or community moderation in some way.  Unless supported by a Kubernetes SIG
 or the Steering Committee, requests for a private channel will be treated with
 skepticism.
