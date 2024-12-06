@@ -196,7 +196,7 @@ Please refer to [Integration Testing in Kubernetes](integration-tests.md).
 
 ## End-to-End tests
 
-Please refer to [End-to-End Testing in Kubernetes](e2e-tests.md).
+Please refer to [End-to-End Testing in Kubernetes](e2e-tests-kubetest2.md).
 
 ## Testing Strategy
 
