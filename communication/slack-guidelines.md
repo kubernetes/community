@@ -42,7 +42,7 @@ administrators have time. There is no explicit interval.
 
 ### Slack Usage Rules
 
-In addition to the [Code of Conduct], users of Kubernetes Slack must adhere to
+In addition to the [Code of Conduct][coc], users of Kubernetes Slack must adhere to
 the following behavior rules.  Failure to follow them may result in warnings,
 removal of posts, escalating to temporary or permanent deactivation of the user
 account.
@@ -150,8 +150,8 @@ determining if you should request a channel:
         heavily restrict private channels.
     -   If you need private discussion areas for security-sensitive topics, a
         project-specific Slack or the [CNCF Slack] may be a better fit.
--   Ask in `#slack-admins` or file an issue if you're unsure It never hurts to
-    ask.
+-   Ask in `#slack-admins` or file an issue if you're unsure. We're happy to
+    discuss it with you.
 
 ### Private Channels
 
@@ -160,6 +160,9 @@ private channels we currently support involve community-owned software security
 or community moderation in some way.  Unless supported by a Kubernetes SIG
 or the Steering Committee, requests for a private channel will be treated with
 skepticism.
+
+Most private channels will be required to include a member of the Slack Admins
+team.
 
 ### Requesting a Channel
 
