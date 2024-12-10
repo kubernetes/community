@@ -105,6 +105,10 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - [kubernetes/kubernetes/staging/src/k8s.io/cloud-provider/controllers/service](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cloud-provider/controllers/service/OWNERS)
 - **Contact:**
   - Slack: [#sig-network-gateway-api](https://kubernetes.slack.com/messages/sig-network-gateway-api)
+### gateway-api-inference-extension
+Gateway API Inference Extension
+- **Owners:**
+  - [kubernetes-sigs/llm-instance-gateway](https://github.com/kubernetes-sigs/llm-instance-gateway/blob/main/OWNERS)
 ### ingate
 - **Owners:**
   - [kubernetes-sigs/ingate/heads/main](https://github.com/kubernetes-sigs/ingate/blob/refs/heads/main/OWNERS)
