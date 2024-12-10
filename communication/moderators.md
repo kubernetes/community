@@ -134,6 +134,13 @@ Regional category moderators seats (per category): 3
 | Ihor Dvoretskyi | @idvoretskyi          | EMEA   | [EET - Eastern European Time](https://time.is/EET) |
 | _Open_          | _Open_                |        |                                                    |
 
+**[Hindi]**
+
+| Name            | Kubernetes Discuss ID | Region   | Timezone                                                |
+| --------------- | --------------------- | -------- | ------------------------------------------------------- |
+| Jayesh Mahajan  | @jayeshmahajan        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| _Open_          | _Open_                |          |                                                         |
+
 ## YouTube Channel
 
 ### Owners
@@ -229,6 +236,7 @@ Administrators seats: 6
 [github administration team]: https://git.k8s.io/community/github-management#github-administration-team
 [trust system]: https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/
 [chinese]: https://discuss.kubernetes.io/t/about-the-chinese-category/2881
+[hindi]: https://discuss.kubernetes.io/t/about-the-hindi-category/30051
 [german]: https://discuss.kubernetes.io/t/about-the-german-category/3152
 [italian]: https://discuss.kubernetes.io/t/about-the-italian-category/2917/2
 [spanish]: https://discuss.kubernetes.io/t/about-the-spanish-category/6167
