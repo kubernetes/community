@@ -179,9 +179,6 @@ Engage with the SIG cli community!  Let us know who you are and how things are g
 - Fill out the [about me form] so we know a bit about you and can direct your work accordingly.
   - **Note:** After filling out the form, reach out via slack or the googlegroup and let us know.
 
-- Message the [cli mentors] googlegroup and let them know you filled out the form
-  and are looking to get started.
-
 - In [slack][slack-messages] (signup [here][slack-signup]),
   @mention a [lead][leads] and ask if there are any issues you could pick up, or
   let them know what you are working on.
@@ -424,5 +421,4 @@ See the sig-cli [community page] for points of contact and meeting times:
 [slack-messages]: https://kubernetes.slack.com/messages/sig-cli
 [slack-signup]: http://slack.k8s.io/
 [tests]: /contributors/devel/sig-testing/testing.md
-[cli mentors]: https://groups.google.com/a/google.com/forum/#!forum/kubernetes-sig-cli-mentors
 [about me form]: https://docs.google.com/forms/d/1ID6DX1abiDr9Z9_sXXC0DsMwuyHb_NeFdB3xeRa4Vf0
