@@ -13,7 +13,7 @@ Covers kubectl and related tools. We focus on the development and standardizatio
 The [charter](charter.md) defines the scope and governance of the CLI Special Interest Group.
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli) for the group will typically add invites for the following meetings to your calendar.*
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-cli) for the group will typically add invites for the following meetings to your calendar.*
 * Bug Scrub: [Wednesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/288426795?pwd=UDdoYnFyNjBiS1RHcXRxS1BCNy9wUT09) (every four weeks). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF).
@@ -47,7 +47,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Contact
 - Slack: [#sig-cli](https://kubernetes.slack.com/messages/sig-cli)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cli)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/sig-cli)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fcli)
 - GitHub Teams:
     - [@kubernetes/sig-cli-api-reviews](https://github.com/orgs/kubernetes/teams/sig-cli-api-reviews) - API Changes and Reviews

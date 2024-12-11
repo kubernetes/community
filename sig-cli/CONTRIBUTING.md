@@ -385,7 +385,7 @@ See the sig-cli [community page] for points of contact and meeting times:
 
 - attend the sig-cli [meeting]
 - message one of the sig leads on [slack][slack-messages] (signup [here][slack-signup])
-- send an email to the _kubernetes-sig-cli@googlegroups.com_ [group].
+- send an email to the _sig-cli@kubernetes.io_ [group].
 
 ## Use of [@mentions]
 
@@ -411,7 +411,7 @@ See the sig-cli [community page] for points of contact and meeting times:
 [feature repo]: https://github.com/kubernetes/features
 [feature request]: #feature-requests
 [feature]: https://github.com/kubernetes/features
-[group]: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
+[group]: https://groups.google.com/a/kubernetes.io/g/sig-cli
 [issue]: https://github.com/kubernetes/kubectl/projects/3
 [kubectl docs]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
 [kubernetes/cmd/kubectl]: https://git.k8s.io/kubernetes/cmd/kubectl
