@@ -56,7 +56,7 @@ There are a couple ways to contribute beyond code and the sub-projects. They inc
   help with running applications, new ways of building workloads, methods for
   tying different tools together, and more. If you are interested in
   contributing a demo please contact the SIG leads via the
-  [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-apps)
+  [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-apps)
 * Documentation is a vital resource for those using Kubernetes. The documentation
   teaches concepts, usage of resources, how to accomplish tasks, and more. When
   it comes to running applications, such as when leveraging workloads, the
