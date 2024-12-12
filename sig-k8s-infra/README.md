@@ -34,6 +34,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
 * Arnaud Meukam (**[@ameukam](https://github.com/ameukam)**), Independent
 * Mahamed Ali (**[@upodroid](https://github.com/upodroid)**), Cisco
+* Marko Mudrinić (**[@xmudrii](https://github.com/xmudrii)**), Kubermatic
 
 ## Emeritus Leads
 
