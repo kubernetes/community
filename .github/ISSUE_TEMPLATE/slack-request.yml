@@ -31,8 +31,7 @@ body:
     required: false
 - type: input
   attributes:
-    label: Is this request supported by an existing Kubernetes group (SIG, WG, Team, Subproject)?  If so, please name them here, and tag a SIG lead who can verify
-    the request.
+    label: Is this request supported by an existing Kubernetes group (SIG, WG, Team, Subproject)?  If so, please name them here, and tag a SIG lead who can verify the request.
   validations:
     required: false
 - type: textarea
