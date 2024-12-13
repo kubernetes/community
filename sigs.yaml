@@ -1858,12 +1858,13 @@ sigs:
   label: instrumentation
   leadership:
     chairs:
-    - github: logicalhan
-      name: Han Kang
-      company: Google
     - github: rexagod
       name: Pranshu Srivastava
       company: Red Hat
+    - github: richabanker
+      name: Richa Banker
+      company: Google
+      email: richabanker@google.com
     tech_leads:
     - github: dashpole
       name: David Ashpole
@@ -1876,6 +1877,8 @@ sigs:
       name: Frederic Branczyk
     - github: ehashman
       name: Elana Hashman
+    - github: logicalhan
+      name: Han Kang
     - github: piosz
       name: Piotr Szczesniak
   meetings:
