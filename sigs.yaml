@@ -1988,6 +1988,10 @@ sigs:
     - github: upodroid
       name: Mahamed Ali
       company: Cisco
+    - github: xmudrii
+      name: Marko Mudrinić
+      company: Kubermatic
+      email: mudrinic.mare@gmail.com
     emeritus_leads:
     - github: bartsmykla
       name: Bart Smykla
