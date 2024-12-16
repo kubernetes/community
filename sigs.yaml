@@ -211,7 +211,7 @@ sigs:
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3
   contact:
     slack: sig-apps
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-apps
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-apps
     teams:
     - name: sig-apps-api-reviews
       description: API Changes and Reviews
@@ -753,7 +753,7 @@ sigs:
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
   contact:
     slack: sig-cli
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cli
     teams:
     - name: sig-cli-api-reviews
       description: API Changes and Reviews
