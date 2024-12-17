@@ -86,6 +86,7 @@ channels:
   - name: cn-dev
   - name: cn-events
   - name: cn-users
+  - name: cni-dra-driver
   - name: code-of-conduct
   - name: community-sites
     archived: true
