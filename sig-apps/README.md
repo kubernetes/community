@@ -83,10 +83,6 @@ Application metadata descriptor CRD
   - [kubernetes/kompose](https://github.com/kubernetes/kompose/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#kompose](https://kubernetes.slack.com/messages/kompose)
-### llm-instance-gateway
-LLM Instance gateway implementation
-- **Owners:**
-  - [kubernetes-sigs/llm-instance-gateway](https://github.com/kubernetes-sigs/llm-instance-gateway/blob/main/OWNERS)
 ### workloads-api
 The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, PodDisruptionBudget and StatefulSet kinds
 - **Owners:**
