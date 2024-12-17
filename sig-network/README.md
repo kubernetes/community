@@ -108,7 +108,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### gateway-api-inference-extension
 Gateway API Inference Extension
 - **Owners:**
-  - [kubernetes-sigs/llm-instance-gateway](https://github.com/kubernetes-sigs/llm-instance-gateway/blob/main/OWNERS)
+  - [kubernetes-sigs/gateway-api-inference-extension](https://github.com/kubernetes-sigs/gateway-api-inference-extension/blob/main/OWNERS)
 ### ingate
 - **Owners:**
   - [kubernetes-sigs/ingate/heads/main](https://github.com/kubernetes-sigs/ingate/blob/refs/heads/main/OWNERS)
