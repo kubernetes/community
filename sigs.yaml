@@ -2330,7 +2330,7 @@ sigs:
   - name: gateway-api-inference-extension
     description: Gateway API Inference Extension
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/llm-instance-gateway/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api-inference-extension/main/OWNERS
   - name: ingate
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/ingate/refs/heads/main/OWNERS
