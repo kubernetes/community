@@ -2,6 +2,7 @@
 
 reviewers:
   - sig-testing-leads
+  - sig-testing-subproject-leads
 approvers:
   - sig-testing-leads
 labels:
