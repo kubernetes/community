@@ -13,7 +13,7 @@ SIG Storage is responsible for ensuring that different types of file and block s
 The [charter](charter.md) defines the scope and governance of the Storage Special Interest Group.
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-storage) for the group will typically add invites for the following meetings to your calendar.*
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-storage) for the group will typically add invites for the following meetings to your calendar.*
 * Regular CSI Implementation Meeting: [Mondays at 10:00 PT (Pacific Time)](https://zoom.us/j/614261834) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1_hvq3nleqQEYatH9V_Gfep39jMzaFJRSN2ioA0PFq-Q/edit#).
 * Regular SIG Issue Triage Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/614261834) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
@@ -43,7 +43,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Contact
 - Slack: [#sig-storage](https://kubernetes.slack.com/messages/sig-storage)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-storage)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/sig-storage)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fstorage)
 - GitHub Teams:
     - [@kubernetes/sig-storage-api-reviews](https://github.com/orgs/kubernetes/teams/sig-storage-api-reviews) - API Changes and Reviews
