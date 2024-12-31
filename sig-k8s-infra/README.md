@@ -14,7 +14,7 @@ In other words, we seek to eradicate usage of the phrase "oh that's something th
 The [charter](charter.md) defines the scope and governance of the K8s Infra Special Interest Group.
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra) for the group will typically add invites for the following meetings to your calendar.*
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Wednesdays at 20:00 UTC](https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=20%3A00&tz=UTC).
   * [Meeting notes and Agenda](http://bit.ly/sig-k8s-infra-notes).
   * [Meeting recordings](http://bit.ly/sig-k8s-infra-playlist).
@@ -44,7 +44,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Contact
 - Slack: [#sig-k8s-infra](https://kubernetes.slack.com/messages/sig-k8s-infra)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fk8s-infra)
 - GitHub Teams:
     - [@kubernetes/sig-k8s-infra](https://github.com/orgs/kubernetes/teams/sig-k8s-infra) - active contributors in sig-k8s-infra

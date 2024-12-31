@@ -2006,7 +2006,7 @@ sigs:
     recordings_url: http://bit.ly/sig-k8s-infra-playlist
   contact:
     slack: sig-k8s-infra
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     private_mailing_list: sig-k8s-infra-private@kubernetes.io
     teams:
     - name: sig-k8s-infra
