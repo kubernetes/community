@@ -2960,16 +2960,20 @@ sigs:
     - github: saad-ali
       name: Saad Ali
       company: Google
+      email: saadali@google.com
     - github: xing-yang
       name: Xing Yang
       company: VMware
+      email: xingyang105@gmail.com
     tech_leads:
     - github: jsafrane
       name: Jan Šafránek
       company: Red Hat
+      email: jsafrane@redhat.com
     - github: msau42
       name: Michelle Au
       company: Google
+      email: msau@google.com
     emeritus_leads:
     - github: childsb
       name: Bradley Childs
