@@ -80,7 +80,7 @@ work.
   - This is hard.  Sorry.  We want to make this easier.
 - Familiarize yourself with the code:
   - [kubernetes/cmd/kubectl] is the entry point
-  - [kubernetes/pkg/kubectl] is the implementation
+  - [kubernetes/staging/src/k8s.io/kubectl/pkg] is the implementation
   - Look at how some of the other commands are implemented
   - [Codebase Tour]
 - Try adding a new command to do something simple:
@@ -412,7 +412,7 @@ See the sig-cli [community page] for points of contact and meeting times:
 [issue]: https://github.com/kubernetes/kubectl/projects/3
 [kubectl docs]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
 [kubernetes/cmd/kubectl]: https://git.k8s.io/kubernetes/cmd/kubectl
-[kubernetes/pkg/kubectl]: https://git.k8s.io/kubernetes/pkg/kubectl
+[kubernetes/staging/src/k8s.io/kubectl/pkg]: https://git.k8s.io/kubernetes/staging/src/k8s.io/kubectl/pkg
 [Codebase Tour]:  https://youtu.be/eZeCFRh2uGg?t=538
 [leads]: /sig-cli/README.md#leadership
 [management overview]: https://kubernetes.io/docs/concepts/tools/kubectl/object-management-overview
