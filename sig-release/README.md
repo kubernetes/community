@@ -34,9 +34,9 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Verónica López (**[@Verolop](https://github.com/Verolop)**), PlanetScale
+* Verónica López (**[@Verolop](https://github.com/Verolop)**), AuthZed
 * Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**), Chainguard, Inc
-* Adolfo García Veytia (**[@puerco](https://github.com/puerco)**), Chainguard, Inc
+* Adolfo García Veytia (**[@puerco](https://github.com/puerco)**), Stacklok
 
 ## Emeritus Leads
 
@@ -106,8 +106,8 @@ The Release Engineering subproject is responsible for the [process/procedures](h
 ### Release Team
 The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
 - **Leads:**
-  - Grace Nguyen (**[@gracenng](https://github.com/gracenng)**)
-  - Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Dell
+  - Grace Nguyen (**[@gracenng](https://github.com/gracenng)**), Notion
+  - Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Independent
 - **Owners:**
   - [kubernetes-sigs/release-team-shadow-stats](https://github.com/kubernetes-sigs/release-team-shadow-stats/blob/main/OWNERS)
   - [kubernetes/sig-release/release-team](https://github.com/kubernetes/sig-release/blob/master/release-team/OWNERS)

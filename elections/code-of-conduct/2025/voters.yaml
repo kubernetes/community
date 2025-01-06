@@ -1,0 +1,17 @@
+# 2025 Code of Conduct Committee Election
+##################################
+#
+# The eligible voters for the elections is the Kubernetes Steering Committee as of 2025-01-31
+#
+# History:
+# Log of changes to the file
+# 2024-11-06 - Add eligible voters
+#
+eligible_voters:
+- BenTheElder
+- aojea
+- justaugustus
+- pacoxu
+- pohly
+- saschagrunert
+- soltysh

@@ -14,19 +14,24 @@ sigs:
     - github: deads2k
       name: David Eads
       company: Red Hat
+      email: deads@redhat.com
     - github: fedebongio
       name: Federico Bongiovanni
       company: Google
+      email: fbongiovanni@google.com
     tech_leads:
     - github: deads2k
       name: David Eads
       company: Red Hat
+      email: deads@redhat.com
     - github: jpbetz
       name: Joe Betz
       company: Google
+      email: jpbetz@google.com
     - github: sttts
       name: Stefan Schimanski
       company: Upbound
+      email: stefan.schimanski@gmail.com
   meetings:
   - description: Kubebuilder Meeting
     day: Thursday
@@ -168,22 +173,28 @@ sigs:
     - github: janetkuo
       name: Janet Kuo
       company: Google
+      email: chiachenk@google.com
     - github: kow3ns
       name: Kenneth Owens
       company: Snowflake
+      email: kowens0826@gmail.com
     - github: soltysh
       name: Maciej Szulik
       company: Defense Unicorns
+      email: soltysh@gmail.com
     tech_leads:
     - github: janetkuo
       name: Janet Kuo
       company: Google
+      email: chiachenk@google.com
     - github: kow3ns
       name: Kenneth Owens
       company: Snowflake
+      email: kowens0826@gmail.com
     - github: soltysh
       name: Maciej Szulik
       company: Defense Unicorns
+      email: soltysh@gmail.com
     emeritus_leads:
     - github: mattfarina
       name: Matt Farina
@@ -200,7 +211,7 @@ sigs:
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3
   contact:
     slack: sig-apps
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-apps
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-apps
     teams:
     - name: sig-apps-api-reviews
       description: API Changes and Reviews
@@ -230,15 +241,14 @@ sigs:
   - name: execution-hook
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/execution-hook/master/OWNERS
+  - name: kjob
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kjob/main/OWNERS
   - name: kompose
     contact:
       slack: kompose
     owners:
     - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
-  - name: llm-instance-gateway
-    description: LLM Instance gateway implementation
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/llm-instance-gateway/main/OWNERS
   - name: workloads-api
     description: The core workloads API, which is composed of the CronJob, DaemonSet,
       Deployment, Job, ReplicaSet, ReplicationController, PodDisruptionBudget and
@@ -288,9 +298,11 @@ sigs:
     - github: dims
       name: Davanum Srinivas
       company: Amazon
+      email: davanum@gmail.com
     - github: johnbelamaric
       name: John Belamaric
       company: Google
+      email: jbelamaric@google.com
   meetings:
   - description: Enhancements Subproject Meeting
     day: Thursday
@@ -400,6 +412,12 @@ sigs:
       slack: prod-readiness
     owners:
     - https://raw.githubusercontent.com/kubernetes/community/master/sig-architecture/OWNERS
+  - name: wg-device-management
+    description: Contains prototype code for future work driven by WG Device Management
+    contact:
+      slack: wg-device-management
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/wg-device-management/main/OWNERS
   - name: wg-serving
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/wg-serving/main/OWNERS
@@ -436,6 +454,7 @@ sigs:
     - github: liggitt
       name: Jordan Liggitt
       company: Google
+      email: liggitt@google.com
     emeritus_leads:
     - github: ericchiang
       name: Eric Chiang
@@ -684,16 +703,20 @@ sigs:
     - github: ardaguclu
       name: Arda Guclu
       company: Red Hat
+      email: ardaguclu@gmail.com
     - github: mpuckett159
-      name: Marly Puckett
+      name: Marly Salazar
       company: Independent
+      email: mpuckett259@gmail.com
     tech_leads:
     - github: eddiezane
       name: Eddie Zaneski
       company: Defense Unicorns
+      email: eddiezane@gmail.com
     - github: soltysh
       name: Maciej Szulik
       company: Defense Unicorns
+      email: soltysh@gmail.com
     emeritus_leads:
     - github: AdoHe
       name: Tony Ado
@@ -726,7 +749,7 @@ sigs:
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP28HaTzSlFe6RJVxpFmbUvF
   contact:
     slack: sig-cli
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-cli
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cli
     teams:
     - name: sig-cli-api-reviews
       description: API Changes and Reviews
@@ -812,16 +835,20 @@ sigs:
     - github: bridgetkromhout
       name: Bridget Kromhout
       company: Microsoft
+      email: bridget@kromhout.org
     - github: elmiko
       name: Michael McCune
       company: Red Hat
+      email: msm@opbstudios.com
     tech_leads:
     - github: cheftako
       name: Walter Fender
       company: Google
+      email: wfender@google.com
     - github: elmiko
       name: Michael McCune
       company: Red Hat
+      email: msm@opbstudios.com
     emeritus_leads:
     - github: andrewsykim
       name: Andrew Sy Kim
@@ -1011,6 +1038,7 @@ sigs:
     - github: justinsb
       name: Justin Santa Barbara
       company: Google
+      email: justinsb@google.com
     - github: neolit123
       name: Lubomir Ivanov
       company: VMware
@@ -1526,22 +1554,28 @@ sigs:
     - github: divya-mohan0209
       name: Divya Mohan
       company: SUSE
+      email: divya.mohan0209@gmail.com
     - github: natalisucks
       name: Natali Vlatko
       company: Cisco
+      email: natalivlatko@gmail.com
     - github: reylejano
       name: Rey Lejano
       company: Red Hat
+      email: rlejano@gmail.com
     tech_leads:
     - github: katcosgrove
       name: Kat Cosgrove
       company: Dell
+      email: kat.cosgrove@gmail.com
     - github: salaxander
       name: Xander Grzywinski
       company: Defense Unicorns
+      email: xandergrzyw@gmail.com
     - github: tengqm
       name: Qiming Teng
       company: Sangfor Technologies
+      email: tengqm@outlook.com
     emeritus_leads:
     - github: Bradamant3
       name: Jennifer Rondeau
@@ -1686,16 +1720,20 @@ sigs:
     - github: jmhbnz
       name: James Blair
       company: Red Hat
+      email: mail@jamesblair.net
     - github: wenjiaswe
       name: Wenjia Zhang
       company: Google
+      email: wenjia.swe@gmail.com
     tech_leads:
     - github: ahrtr
       name: Benjamin Wang
       company: VMware
+      email: benjamin.ahrtr@gmail.com
     - github: serathius
       name: Marek Siarkowicz
       company: Google
+      email: marek.siarkowicz@gmail.com
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
@@ -1707,7 +1745,7 @@ sigs:
     recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9rtufHbiunuCHddYY6MGkwW
   - description: Robustness Tests Meeting
     day: Wednesday
-    time: "08:00"
+    time: "11:00"
     tz: PT (Pacific Time)
     frequency: biweekly
     url: https://zoom.us/my/cncfetcdproject
@@ -1816,12 +1854,13 @@ sigs:
   label: instrumentation
   leadership:
     chairs:
-    - github: logicalhan
-      name: Han Kang
-      company: Google
     - github: rexagod
       name: Pranshu Srivastava
       company: Red Hat
+    - github: richabanker
+      name: Richa Banker
+      company: Google
+      email: richabanker@google.com
     tech_leads:
     - github: dashpole
       name: David Ashpole
@@ -1834,6 +1873,8 @@ sigs:
       name: Frederic Branczyk
     - github: ehashman
       name: Elana Hashman
+    - github: logicalhan
+      name: Han Kang
     - github: piosz
       name: Piotr Szczesniak
   meetings:
@@ -1926,19 +1967,27 @@ sigs:
     - github: ameukam
       name: Arnaud Meukam
       company: Independent
+      email: ameukam@gmail.com
     - github: dims
       name: Davanum Srinivas
       company: Amazon
+      email: davanum@gmail.com
     tech_leads:
     - github: BenTheElder
       name: Benjamin Elder
       company: Google
+      email: bentheelder@google.com
     - github: ameukam
       name: Arnaud Meukam
       company: Independent
+      email: ameukam@gmail.com
     - github: upodroid
       name: Mahamed Ali
       company: Cisco
+    - github: xmudrii
+      name: Marko Mudrinić
+      company: Kubermatic
+      email: mudrinic.mare@gmail.com
     emeritus_leads:
     - github: bartsmykla
       name: Bart Smykla
@@ -2148,22 +2197,28 @@ sigs:
     - github: mikezappa87
       name: Michael Zappa
       company: Microsoft
+      email: michael.zappa@gmail.com
     - github: shaneutt
       name: Shane Utt
       company: Red Hat
+      email: sutt@redhat.com
     - github: thockin
       name: Tim Hockin
       company: Google
+      email: thockin@google.com
     tech_leads:
     - github: aojea
       name: Antonio Ojea
       company: Google
+      email: aojea@google.com
     - github: danwinship
       name: Dan Winship
       company: Red Hat
+      email: danwinship@redhat.com
     - github: thockin
       name: Tim Hockin
       company: Google
+      email: thockin@google.com
     emeritus_leads:
     - github: caseydavenport
       name: Casey Davenport
@@ -2272,6 +2327,13 @@ sigs:
     - github: youngnick
       name: Nick Young
       company: Isovalent
+  - name: gateway-api-inference-extension
+    description: Gateway API Inference Extension
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api-inference-extension/main/OWNERS
+  - name: ingate
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/ingate/refs/heads/main/OWNERS
   - name: ingress
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
@@ -2333,22 +2395,28 @@ sigs:
     - github: SergeyKanzhelev
       name: Sergey Kanzhelev
       company: Google
+      email: s.kanzhelev@gmail.com
     - github: haircommander
       name: Peter Hunt
       company: Red Hat
+      email: pehunt@redhat.com
     - github: mrunalp
       name: Mrunal Patel
       company: Red Hat
+      email: mpatel@redhat.com
     tech_leads:
     - github: dchen1107
       name: Dawn Chen
       company: Google
+      email: dawnchen@google.com
     - github: derekwaynecarr
       name: Derek Carr
       company: Red Hat
+      email: decarr@redhat.com
     - github: mrunalp
       name: Mrunal Patel
       company: Red Hat
+      email: mpatel@redhat.com
   meetings:
   - description: Main SIG Meeting
     day: Tuesday
@@ -2459,22 +2527,28 @@ sigs:
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Microsoft
+      email: jeremy.r.rickard@gmail.com
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
+      email: k8s@auggie.dev
     - github: saschagrunert
       name: Sascha Grunert
       company: Red Hat
+      email: saschagrunert@gmail.com
     tech_leads:
     - github: Verolop
       name: Verónica López
-      company: PlanetScale
+      company: AuthZed
+      email: gveronicalg@gmail.com
     - github: cpanato
       name: Carlos Tadeu Panato Jr.
       company: Chainguard, Inc
+      email: ctadeu@gmail.com
     - github: puerco
       name: Adolfo García Veytia
-      company: Chainguard, Inc
+      company: Stacklok
+      email: adolfo.garcia@uservers.net
     emeritus_leads:
     - github: alejandrox1
       name: Jorge Alarcon Ochoa
@@ -2562,6 +2636,7 @@ sigs:
     - github: xmudrii
       name: Marko Mudrinić
       company: Kubermatic
+      email: mudrinic.mare@gmail.com
   - name: Release Team
     description: |
       The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
@@ -2584,9 +2659,12 @@ sigs:
     leads:
     - github: gracenng
       name: Grace Nguyen
+      company: Notion
+      email: nng.grace@gmail.com
     - github: katcosgrove
       name: Kat Cosgrove
-      company: Dell
+      company: Independent
+      email: kat.cosgrove@gmail.com
   - name: SIG Release Process Documentation
     description: |
       Documents and processes related to SIG Release
@@ -2615,13 +2693,16 @@ sigs:
     - github: marseel
       name: Marcel Zieba
       company: Isovalent
+      email: marcel.zieba@isovalent.com
     - github: shyamjvs
       name: Shyam Jeedigunta
       company: Amazon
+      email: jeedigv@amazon.com
     tech_leads:
     - github: wojtek-t
       name: Wojciech Tyczynski
       company: Google
+      email: wojtekt@google.com
     emeritus_leads:
     - github: mm4tt
       name: Matt Matejczyk
@@ -2687,19 +2768,24 @@ sigs:
     - github: Huang-Wei
       name: Wei Huang
       company: Apple
+      email: hweicdl@gmail.com
     - github: ahg-g
       name: Abdullah Gharaibeh
       company: Google
+      email: ahg@google.com
     tech_leads:
     - github: Huang-Wei
       name: Wei Huang
       company: Apple
+      email: hweicdl@gmail.com
     - github: ahg-g
       name: Abdullah Gharaibeh
       company: Google
+      email: ahg@google.com
     - github: alculquicondor
       name: Aldo Culquicondor
       company: Google
+      email: acondor@google.com
     emeritus_leads:
     - github: bsalamat
       name: Bobby (Babak) Salamat
@@ -2768,12 +2854,14 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kueue/main/OWNERS
     leads:
-    - github: alculquicondor
-      name: Aldo Culquicondor
+    - github: mimowo
+      name: Michał Woźniak
       company: Google
+      email: acondor@google.com
     - github: tenzen-y
       name: Yuki Iwai
       company: CyberAgent, Inc.
+      email: yuki.iwai.tz@gmail.com
   - name: kwok
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kwok/main/OWNERS
@@ -2948,10 +3036,7 @@ sigs:
     contact:
       slack: sig-storage-cosi
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-api/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-controller/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-provisioner-sidecar/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface-spec/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/container-object-storage-interface/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/cosi-driver-sample/master/OWNERS
   - name: kubernetes-csi
     owners:
@@ -3017,18 +3102,21 @@ sigs:
     - github: BenTheElder
       name: Benjamin Elder
       company: Google
+      email: bentheelder@google.com
     - github: alvaroaleman
       name: Alvaro Aleman
       company: Red Hat
     - github: aojea
       name: Antonio Ojea
       company: Google
+      email: aojea@google.com
     - github: cjwagner
       name: Cole Wagner
       company: Google
     - github: pohly
       name: Patrick Ohly
       company: Intel
+      email: patrick.ohly@intel.com
     emeritus_leads:
     - github: fejta
       name: Erick Fejta
@@ -3279,15 +3367,19 @@ workinggroups:
     - github: kannon92
       name: Kevin Hannon
       company: Red Hat
+      email: kehannon@redhat.com
     - github: mwielgus
       name: Marcin Wielgus
       company: Google
+      email: mwielgus@google.com
     - github: soltysh
       name: Maciej Szulik
       company: Defense Unicorns
+      email: soltysh@gmail.com
     - github: swatisehgal
       name: Swati Sehgal
       company: Red Hat
+      email: swati.tcd@gmail.com
     emeritus_leads:
     - github: Huang-Wei
       name: Wei Huang
@@ -3383,12 +3475,15 @@ workinggroups:
     - github: johnbelamaric
       name: John Belamaric
       company: Google
+      email: jbelamaric@google.com
     - github: klueska
       name: Kevin Klues
       company: NVIDIA
+      email: klueska@gmail.com
     - github: pohly
       name: Patrick Ohly
       company: Intel
+      email: patrick.ohly@intel.com
   meetings:
   - description: Regular WG Meeting
     day: Tuesday
@@ -3425,18 +3520,23 @@ workinggroups:
     - github: ahrtr
       name: Benjamin Wang
       company: VMware
+      email: benjamin.ahrtr@gmail.com
     - github: hakman
       name: Ciprian Hacman
       company: Microsoft
+      email: chacman@microsoft.com
     - github: jberkus
       name: Josh Berkus
       company: Red Hat
+      email: jberkus@redhat.com
     - github: jmhbnz
       name: James Blair
       company: Red Hat
+      email: mail@jamesblair.net
     - github: justinsb
       name: Justin Santa Barbara
       company: Google
+      email: justinsb@google.com
   meetings:
   - description: Regular WG Meeting
     day: Tuesday
@@ -3478,6 +3578,7 @@ workinggroups:
     - github: liggitt
       name: Jordan Liggitt
       company: Google
+      email: liggitt@google.com
     - github: micahhausler
       name: Micah Hausler
       company: Amazon
@@ -3564,15 +3665,19 @@ workinggroups:
     - github: ArangoGutierrez
       name: Eduardo Arango
       company: NVIDIA
+      email: arangogutierrez@gmail.com
     - github: Jeffwan
       name: Jiaxin Shan
       company: Bytedance
+      email: seedjeffwan@gmail.com
     - github: SergeyKanzhelev
       name: Sergey Kanzhelev
       company: Google
+      email: s.kanzhelev@gmail.com
     - github: terrytangyuan
       name: Yuan Tang
       company: Red Hat
+      email: terrytangyuan@gmail.com
   meetings:
   - description: WG Serving Weekly Meeting
     day: Wednesday
@@ -3611,6 +3716,7 @@ workinggroups:
     - github: mengjiao-liu
       name: Mengjiao Liu
       company: DaoCloud
+      email: mengjiao.liu@daocloud.io
     - github: pohly
       name: Patrick Ohly
       company: Intel
@@ -3699,27 +3805,35 @@ committees:
     - github: SaranBalaji90
       name: Sri Saran Balaji
       company: Amazon
+      email: srajakum@amazon.com
     - github: cjcullen
       name: CJ Cullen
       company: Google
+      email: cjcullen@google.com
     - github: cji
       name: Craig Ingram
       company: Google
+      email: cjingram@google.com
     - github: enj
       name: Mo Khan
       company: Microsoft
+      email: i@monis.app
     - github: joelsmith
       name: Joel Smith
       company: Red Hat
+      email: joelsmith@redhat.com
     - github: micahhausler
       name: Micah Hausler
       company: Amazon
+      email: mhausler@amazon.com
     - github: ritazh
       name: Rita Zhang
       company: Microsoft
+      email: ritazh@microsoft.com
     - github: tabbysable
       name: Tabitha Sable
       company: Datadog
+      email: tabitha.c.sable@gmail.com
     emeritus_leads:
     - github: lukehinds
       name: Luke Hinds
@@ -3768,6 +3882,7 @@ committees:
     - github: pohly
       name: Patrick Ohly
       company: Intel
+      email: patrick.ohly@intel.com
     - github: saschagrunert
       name: Sascha Grunert
       company: Red Hat

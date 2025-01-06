@@ -56,8 +56,6 @@ GitHub organization.
 They also have approval privileges for adding new members to the GitHub config.
 
 Our current coordinators are:
-* Ader Fu (**[ydFu](https://github.com/ydFu)**, Taipei Standard Time)
-* Heba Elayoty (**[helayoty](https://github.com/helayoty)**, Pacific Time)
 * Mario Jason Braganza (**[jasonbraganza](https://github.com/jasonbraganza)**, Indian Standard Time)
 
 ## Project Owned Organizations

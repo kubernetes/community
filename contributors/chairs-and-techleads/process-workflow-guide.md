@@ -103,8 +103,7 @@ SIG Docs rotates the triage facilitator role with its “[wrangler of the week](
 <img src="triage_party_skaffold.png" width="60%" height="60%">
 
 **Other Uses of Triage Party**:
-- SIG CLI uses it to manage [kubectl](https://tp.kuberneddies.dev/s/daily) workflow, including quarterly bug scrubs and daily/weekly triage
-- SIG Release launched [their instance](https://release.triage.k8s.io/s/milestone), which includes tabs for the current milestone as well as subprojects, in April 2021.
+- SIG CLI uses it to manage [kubectl](https://cli.triage.k8s.io/s/kubectl) workflow, including quarterly bug scrubs and daily/weekly triage.
 
 ### GitHub Project Boards
 
