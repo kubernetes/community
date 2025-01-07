@@ -2998,7 +2998,7 @@ sigs:
     recordings_url: https://www.youtube.com/watch?v=Eh7Qa7KOL8o&list=PL69nYSiGNLP02-BMqJdfFgGxYQ4Nb-2Qq
   contact:
     slack: sig-storage
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-storage
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-storage
     teams:
     - name: sig-storage-api-reviews
       description: API Changes and Reviews
