@@ -1042,13 +1042,16 @@ sigs:
     - github: neolit123
       name: Lubomir Ivanov
       company: VMware
+      email: neolit123@gmail.com
     - github: vincepri
       name: Vince Prignano
       company: Red Hat
+      email: hi@vincepri.com
     tech_leads:
     - github: fabriziopandini
       name: Fabrizio Pandini
       company: VMware
+      email: fabrizio.pandini@gmail.com
     emeritus_leads:
     - github: CecileRobertMichon
       name: Cecile Robert-Michon
