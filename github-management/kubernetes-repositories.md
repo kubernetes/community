@@ -68,6 +68,7 @@ from a central body (e.g. steering committee or sig-architecture)
 ### Rules for new repositories
 
    * For now all repos will live in `github.com/kubernetes-sigs/\<project-name\>`.
+      * For project names: see [project-naming](./../committee-steering/governance/project-naming.md)
    * Must contain the topic for the sponsoring SIG - e.g.
      `k8s-sig-api-machinery`.  (Added through the *Manage topics* link on the
 repo page.)
@@ -108,6 +109,7 @@ the developers who could not be reached
      ideally occur shortly thereafter.
    * Should contain template files as per the
      [kubernetes-template-project](https://github.com/kubernetes/kubernetes-template-project).
+   * For project names: see [project-naming](./../committee-steering/governance/project-naming.md)
 
 Note that copyright notices should only be modified or removed by the people or
 organizations named in the notice. See [the FAQ below](#faq) for more information
