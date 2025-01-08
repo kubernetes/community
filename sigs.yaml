@@ -3870,15 +3870,19 @@ committees:
     - github: BenTheElder
       name: Benjamin Elder
       company: Google
+      email: bentheelder@google.com
     - github: aojea
       name: Antonio Ojea
       company: Google
+      email: antonio.ojea.garcia@gmail.com
     - github: justaugustus
       name: Stephen Augustus
       company: Cisco
+      email: k8s@auggie.dev
     - github: pacoxu
       name: Paco Xu 徐俊杰
       company: DaoCloud
+      email: roollingstone@gmail.com
     - github: pohly
       name: Patrick Ohly
       company: Intel
@@ -3886,9 +3890,11 @@ committees:
     - github: saschagrunert
       name: Sascha Grunert
       company: Red Hat
+      email: saschagrunert@gmail.com
     - github: soltysh
       name: Maciej Szulik
       company: Defense Unicorns
+      email: soltysh@gmail.com
   meetings:
   - description: Private Steering Committee Meeting
     day: third Monday
