@@ -67,9 +67,13 @@ The following [subprojects][subproject-definition] are owned by sig-autoscaling:
 ### karpenter
 - **Owners:**
   - [kubernetes-sigs/karpenter](https://github.com/kubernetes-sigs/karpenter/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#karpenter](https://kubernetes.slack.com/messages/karpenter)
 ### vertical-pod-autoscaler
 - **Owners:**
   - [kubernetes/autoscaler/vertical-pod-autoscaler](https://github.com/kubernetes/autoscaler/blob/master/vertical-pod-autoscaler/OWNERS)
+- **Contact:**
+  - Slack: [#vertical-pod-autoscaler](https://kubernetes.slack.com/messages/vertical-pod-autoscaler)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
