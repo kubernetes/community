@@ -62,7 +62,7 @@ usergroups:
       - rytswd              # 1.33 Communications Lead
       - sanchita-07         # 1.33 Release Lead Shadow
       - Vyom-Yadav          # 1.33 Release Lead Shadow
-
+      - wendy-ha18          # 1.33 Release Signal Lead
   # Should match SIG Release Leads at all times:
   # https://git.k8s.io/community/sig-release/README.md#leadership
   - name: sig-release-leads
