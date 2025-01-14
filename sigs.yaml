@@ -2732,6 +2732,10 @@ sigs:
       github: aojea
       name: Antonio Ojea
   subprojects:
+  - name: inference-perf
+    description: '[Described below](#inference-perf)'
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/inference-perf/refs/heads/main/OWNERS
   - name: kubernetes-scalability-and-performance-tests-and-validation
     description: '[Described below](#kubernetes-scalability-and-performance-tests-and-validation)'
     owners:
