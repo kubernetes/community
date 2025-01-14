@@ -26,7 +26,7 @@ The [charter](charter.md) defines the scope and governance of the Structured Log
 
 ## Organizers
 
-* Mengjiao Liu (**[@mengjiao-liu](https://github.com/mengjiao-liu)**), DaoCloud
+* Mengjiao Liu (**[@mengjiao-liu](https://github.com/mengjiao-liu)**), Independent
 * Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel
 
 ## Contact
