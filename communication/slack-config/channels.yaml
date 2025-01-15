@@ -175,6 +175,7 @@ channels:
   - name: hetzner
   - name: hmc-dev
   - name: homelab
+  - name: hybrid-cloud-users
   - name: hydrophone
   - name: id-events
   - name: id-users
@@ -295,7 +296,6 @@ channels:
     archived: true
   - name: kubernetes-careers
   - name: kubernetes-client
-  - name: kubernetes-hybrid-cloud
   - name: kubernetes-new-contributors
     id: C09R23FHP
   # kubernetes-docs-* channels are defined in sig-docs/
