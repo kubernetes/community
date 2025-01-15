@@ -4,13 +4,14 @@ filters:
   ".*":
     approvers:
       - cblecker
-      - idvoretskyi
       - mrbobbytables
       - nikhita
-      - parispittman
+      - jberkus
       - sig-contributor-experience-leads
       - committee-steering
     emeritus_approvers:
+      - idvoretskyi
+      - parispittman
       - jdumars
       - alisondy
       - castrojo
