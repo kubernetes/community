@@ -188,10 +188,10 @@ Image configuration files can further influence how FOCUS and SKIP match test ca
 For example:
 
 ```sh
---focus="\[NodeFeature:.+\]" --skip="\[Flaky\]|\[Serial\]"
+--focus="\[Feature:.+\]" --skip="\[Flaky\]|\[Serial\]"
 ```
 
-runs all e2e tests labeled `"[NodeFeature:*]"` and will skip any tests labeled `"[Flaky]"` or `"[Serial]"`.
+runs all e2e tests labeled `"[Feature:*]"` and will skip any tests labeled `"[Flaky]"` or `"[Serial]"`.
 
 Two example e2e tests that match this expression are:
   * https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L155
@@ -235,7 +235,7 @@ To run a particular e2e test, simply pass the Grinkgo `It` string to the `--focu
 For example, suppose we have the following test case: https://github.com/kubernetes/kubernetes/blob/0e2220b4462130ae8a22ed657e8979f7844e22c1/test/e2e_node/security_context_test.go#L175. We could select this test case by adding the argument:
 
 ```sh
---focus="should not show its pid in the non-hostpid containers \[NodeFeature:HostAccess\]"
+--focus="should not show its pid in the non-hostpid containers \[Feature:HostAccess\]"
 ```
 
 ## Run all tests related to a feature
@@ -243,7 +243,7 @@ For example, suppose we have the following test case: https://github.com/kuberne
 In contrast, to run all node e2e tests related to the "HostAccess" feature one could run:
 
 ```sh
---focus="\[NodeFeature:HostAccess\]"
+--focus="\[Feature:HostAccess\]"
 ```
 
 ## Run tests continually until they fail
