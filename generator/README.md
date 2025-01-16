@@ -78,7 +78,7 @@ drop GitHub issue templates into the `generator/generated/` directory.
 You can generate the issues from these templates by running:
 
 ```bash
-for i in $(ls -1 generator/generated/*.md); do hub issue create -F $i && rm $i; done
+for i in $(ls -1 generator/generated/*.md); do gh issue create --repo kubernetes/community --title="$(head -n 1 $i)" --body-file $i && rm $i; done
 ```
 
  You may run into rate limiting issues, which is why this command removes the

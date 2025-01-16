@@ -180,7 +180,7 @@ place!
 [events]: https://www.cncf.io/events/
 [file an issue]: https://github.com/kubernetes/kubernetes/issues/new
 [kubernetes-announce]: https://groups.google.com/forum/#!forum/kubernetes-announce
-[kubernetes-dev]: https://groups.google.com/forum/#!forum/kubernetes-dev
+[kubernetes-dev]: https://groups.google.com/a/kubernetes.io/g/dev
 [Discuss Kubernetes]: https://discuss.kubernetes.io
 [Join]: http://slack.k8s.io
 [Slack Guidelines]: /communication/slack-guidelines.md
