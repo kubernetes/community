@@ -2019,7 +2019,6 @@ sigs:
     liaison:
       github: justaugustus
       name: Stephen Augustus
-      company: Cisco
   subprojects:
   - name: community-images
     description: kubectl plugin used to highlight images pulled from community-owned
@@ -2533,7 +2532,7 @@ sigs:
       email: jeremy.r.rickard@gmail.com
     - github: justaugustus
       name: Stephen Augustus
-      company: Cisco
+      company: Bloomberg L.P.
       email: k8s@auggie.dev
     - github: saschagrunert
       name: Sascha Grunert
@@ -3884,7 +3883,7 @@ committees:
       email: antonio.ojea.garcia@gmail.com
     - github: justaugustus
       name: Stephen Augustus
-      company: Cisco
+      company: Bloomberg L.P.
       email: k8s@auggie.dev
     - github: pacoxu
       name: Paco Xu 徐俊杰
