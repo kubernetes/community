@@ -102,11 +102,13 @@ against the kubernetes/org repo, as above.
 - Members can do `/lgtm` on open PRs.
 - They can be assigned to issues and PRs, and people can ask members for reviews with a `/cc @username`.
 - Tests can be run against their PRs automatically. No `/ok-to-test` needed.
-- Members can do `/ok-to-test` for PRs that have a `needs-ok-to-test` label, and use commands like `/close` to close PRs as well.
+- Members can do `/ok-to-test` for PRs that have a `needs-ok-to-test` label, and use commands like `/close` to close issues or PRs as well.
 
-**Note:** members who frequently contribute code are expected to proactively
+**Note:** Members who frequently contribute code are expected to proactively
 perform code reviews and work towards becoming a primary *reviewer* for the
-subproject that they are active in.
+subproject that they are active in. Members who contribute to the Kubernetes documentation
+can participate in the [pull request wrangler program](https://kubernetes.io/docs/contribute/participate/pr-wranglers/)
+to cultivate a habit of [reviewing for approvers and reviewers](https://kubernetes.io/docs/contribute/review/for-approvers/).
 
 ## Reviewer
 
@@ -127,7 +129,7 @@ addition to the assigned reviewers.
 The following apply to the part of codebase for which one would be a reviewer in
 an [OWNERS] file (for repos using the bot).
 
-- member for at least 3 months
+- Member for at least 3 months
 - Primary reviewer for at least 5 PRs to the codebase
 - Reviewed or merged at least 20 substantial PRs to the codebase
 - Knowledgeable about the codebase

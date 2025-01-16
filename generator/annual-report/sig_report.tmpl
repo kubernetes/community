@@ -54,11 +54,10 @@
 
 ## [Subprojects](https://git.k8s.io/community/{{.Dir}}#subprojects)
 {{- define "subprojects" -}}
-{{- $owningSIG := .Dir -}}
 
 {{- if .New}}
 **New in {{lastYear}}:**{{range .New}}
-  - [{{.}}](https://git.k8s.io/community/{{ $owningSIG }}#{{.}})
+  - {{.}}
 {{- end}}
 {{- end}}
 

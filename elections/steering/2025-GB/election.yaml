@@ -1,0 +1,13 @@
+name: 2025 Kubernetes CNCF Governing Board Election
+organization: Kubernetes
+start_datetime: 2025-01-08 00:00:01
+end_datetime: 2025-01-26 11:59:59
+no_winners: 1
+allow_no_opinion: False
+delete_after: True
+election_officers:
+  - soltysh
+  - jberkus
+eligibility: Eligibility is limited to the [current Steering Committee Members](https://github.com/kubernetes/steering/tree/main?tab=readme-ov-file#members)
+exception_description: No exception requests accepted for the GB election.
+exception_due: 2025-01-26 00:00:01

@@ -2019,7 +2019,6 @@ sigs:
     liaison:
       github: justaugustus
       name: Stephen Augustus
-      company: Cisco
   subprojects:
   - name: community-images
     description: kubectl plugin used to highlight images pulled from community-owned
@@ -2533,7 +2532,7 @@ sigs:
       email: jeremy.r.rickard@gmail.com
     - github: justaugustus
       name: Stephen Augustus
-      company: Cisco
+      company: Bloomberg L.P.
       email: k8s@auggie.dev
     - github: saschagrunert
       name: Sascha Grunert
@@ -2889,12 +2888,15 @@ sigs:
     - github: IanColdwater
       name: Ian Coldwater
       company: Docker
+      email: ian@coldwater.io
     - github: cailyn-codes
       name: Cailyn Edwards
       company: Okta
+      email: cailyn-codes@gmail.com
     - github: tabbysable
       name: Tabitha Sable
       company: Datadog
+      email: tabitha.c.sable@gmail.com
   meetings:
   - description: Regular SIG Meeting
     day: Friday
@@ -2963,16 +2965,20 @@ sigs:
     - github: saad-ali
       name: Saad Ali
       company: Google
+      email: saadali@google.com
     - github: xing-yang
       name: Xing Yang
       company: VMware
+      email: xingyang105@gmail.com
     tech_leads:
     - github: jsafrane
       name: Jan Šafránek
       company: Red Hat
+      email: jsafrane@redhat.com
     - github: msau42
       name: Michelle Au
       company: Google
+      email: msau@google.com
     emeritus_leads:
     - github: childsb
       name: Bradley Childs
@@ -3718,8 +3724,8 @@ workinggroups:
     chairs:
     - github: mengjiao-liu
       name: Mengjiao Liu
-      company: DaoCloud
-      email: mengjiao.liu@daocloud.io
+      company: Independent
+      email: liumengjiao.dev@gmail.com
     - github: pohly
       name: Patrick Ohly
       company: Intel
@@ -3880,7 +3886,7 @@ committees:
       email: antonio.ojea.garcia@gmail.com
     - github: justaugustus
       name: Stephen Augustus
-      company: Cisco
+      company: Bloomberg L.P.
       email: k8s@auggie.dev
     - github: pacoxu
       name: Paco Xu 徐俊杰
