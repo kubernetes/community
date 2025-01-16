@@ -2888,12 +2888,15 @@ sigs:
     - github: IanColdwater
       name: Ian Coldwater
       company: Docker
+      email: ian@coldwater.io
     - github: cailyn-codes
       name: Cailyn Edwards
       company: Okta
+      email: cailyn-codes@gmail.com
     - github: tabbysable
       name: Tabitha Sable
       company: Datadog
+      email: tabitha.c.sable@gmail.com
   meetings:
   - description: Regular SIG Meeting
     day: Friday
