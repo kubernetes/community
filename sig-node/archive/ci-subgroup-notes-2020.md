@@ -85,7 +85,7 @@ Agenda:
   - Action: Sergey to start an issue  
     - Also follow up with recently added crio jobs  
   - PR and CI may be different.   
-  - Some scalability tests may be specifying CNI explicilty  
+  - Some scalability tests may be specifying CNI explicitly  
 - \[SergeyKanzhelev\] Critical tests red: [https://testgrid.k8s.io/sig-node-critical\#kubelet-NodeConformance](https://testgrid.k8s.io/sig-node-critical#kubelet-NodeConformance)   
   - pod lifecycle moved to conformance. Was passing in previous location.  
   - This test was moved from orphans. Need to investigate why it was passing there and is failing here  
