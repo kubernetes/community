@@ -175,6 +175,7 @@ channels:
   - name: hetzner
   - name: hmc-dev
   - name: homelab
+  - name: hybrid-cloud-users
   - name: hydrophone
   - name: id-events
   - name: id-users
