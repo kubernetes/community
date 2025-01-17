@@ -70,7 +70,7 @@ Another focus of this project is to provide a smooth transition for Slurm users.
 WG-Batch provided a series of kubernetes enhancements that improved the experience of batch workloads on Kubernetes. In 2024, this group proposed/implemented the following KEPs.
 
 - [Job Managed By](https://github.com/kubernetes/enhancements/issues/4368)
-  - Promoted to beta in 2024
+  - Promoted to beta.
 
 - [Job Success Policy](https://github.com/kubernetes/enhancements/issues/3998)
   - Promoted to beta.
@@ -86,30 +86,32 @@ WG-Batch provided a series of kubernetes enhancements that improved the experien
 
 ### Talks
 
-- WG-Batch Update at Kubecon NA 2024
+- WG-Batch Update at Kubecon
   - Authors: Kevin Hannon and Marcin Wielgus
+  - Kubecon NA, Salt Lake City
 
 - Keynote: MultiCluster Batch Jobs Dispatching with Kueue at CERN
   - Authors: Ricardo Rocha and Marcin Wielgus
-  - Kubecon NA 2024
+  - Kubecon NA, Salt Lake City
 
 - Multitenancy and Fairness at Scale with Kueue: A Case Study
-  - Authors: Aldo Culquicondor & Rajat Phull
-  - Kubecon NA 2024
+  - Authors: Aldo Culquicondor and Rajat Phull
+  - Kubecon NA, Salt Lake City
 
 - Advanced Resource Management for Running AI/ML Workloads with Kueue
-  - Authors: Michał Woźniak & Yuki Iwai
-  - Kubecon EU 2024
+  - Authors: Michał Woźniak and Yuki Iwai
+  - Kubecon EU, Paris
 
 - Scale Your Batch / Big Data / AI Workloads Beyond the Kubernetes Scheduler
-  - Authors: Antonin Stefanutti & Anish Asthana
-  - KubeCon EU, March, Paris
+  - Authors: Antonin Stefanutti and Anish Asthana
+  - KubeCon EU, Paris
 
-- WG-Batch Update at Kubecon EU 2024
-  - Authors: Martin Wielgus
+- WG-Batch Update
+  - Author: Marcin Wielgus
+  - KubeCon EU, Paris
 
 - How the Kubernetes Community is Improving Kubernetes for HPC/AI/ML Workloads
-  - Authors: Kevin Hannon
+  - Author: Kevin Hannon
   - FOSDEM 2024
 
 ### Community adoption
@@ -127,12 +129,9 @@ Operational tasks in [wg-governance.md]:
 - [x] [README.md] reviewed for accuracy and updated if needed
 - [x] WG leaders in [sigs.yaml] are accurate and active, and updated if needed
 - [x] Meeting notes and recordings for 2024 are linked from [README.md] and updated/uploaded if needed
-- [] Updates provided to sponsoring SIGs in 2024
-      - [$sig-name](https://git.k8s.io/community/$sig-id/)
-        - links to email, meeting notes, slides, or recordings, etc
-      - [$sig-name](https://git.k8s.io/community/$sig-id/)
-        - links to email, meeting notes, slides, or recordings, etc
-      -
+- [x] Updates provided to sponsoring SIGs in 2024
+      - WG-Batch Updates at Kubecon EU 2024
+      - WG-Batch Updates at Kubecon NA 2024
 
 [wg-governance.md]: https://git.k8s.io/community/committee-steering/governance/wg-governance.md
 [README.md]: https://git.k8s.io/community/wg-batch/README.md
