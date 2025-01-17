@@ -8,7 +8,7 @@ See [2024 Highlights](#2024-highlights).
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
-  None.
+  Yes, JobSet has 1 active owner at the moment.
 
 ### 2024 Highlights
 
