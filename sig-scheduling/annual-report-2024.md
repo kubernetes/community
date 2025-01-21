@@ -12,11 +12,11 @@
    - Governance and leadership changes
 -->
 
-- **The performance improvement**
-  - Have put a lot of effort into QueueingHint ([KEP-4247](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/4247-queueinghint)), which enhances the scheduler's retrying efficiency.
-  - Introduced the asynchronous preemption ([KEP-4832](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/4832-async-preemption)), which improves the scheduling throughput with the preemption.
-  - Improved [the internal scheduling performance test (scheduler-perf)](https://github.com/kubernetes/kubernetes/tree/master/test/integration/scheduler_perf) to cover more scenarios and alert us when the degradation is introduced.
-- **DRA**: Improved the DRA scheduling with the structured parameters ([KEP-4381](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/4381-dra-structured-parameters#kube-scheduler)).
+- **Performance improvement**
+  - Iterated on QueueingHints towards re-enabling the feature. ([KEP-4247](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/4247-queueinghint))
+  - Introduced asynchronous preemption ([KEP-4832](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/4832-async-preemption)) when there are pods to be preempted.
+  - Improved [the internal scheduling performance test suite (scheduler-perf)](https://github.com/kubernetes/kubernetes/tree/master/test/integration/scheduler_perf) to cover more scenarios and alert us when the degradation is introduced.
+- **DRA**: Added DRA scheduling with the structured parameters, replacing classic DRA ([KEP-4381](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/4381-dra-structured-parameters#kube-scheduler)).
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
