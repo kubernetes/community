@@ -1395,16 +1395,20 @@ sigs:
     - github: kaslin
       name: Kaslin Fields
       company: Google
+      email: kaslin.fields@gmail.com
     - github: palnabarun
       name: Nabarun Pal
       company: VMware
+      email: pal.nabarun95@gmail.com
     tech_leads:
     - github: MadhavJivrajani
       name: Madhav Jivrajani
       company: VMware
+      email: madhav.jiv@gmail.com
     - github: Priyankasaggu11929
       name: Priyanka Saggu
       company: SUSE
+      email: priyankasaggu11929@gmail.com
     emeritus_leads:
     - github: Phillels
       name: Elsie Phillips
