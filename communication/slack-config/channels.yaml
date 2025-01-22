@@ -82,6 +82,7 @@ channels:
   - name: cluster-api-operator
   - name: cluster-api-packet
   - name: cluster-api-proxmox
+  - name: cluster-api-release
   - name: cluster-api-vsphere
   - name: cn-dev
   - name: cn-events
