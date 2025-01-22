@@ -2394,6 +2394,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cni-dra-driver/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/nat64/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
 - dir: sig-node
   name: Node
