@@ -2144,9 +2144,11 @@ sigs:
     - github: jeremyot
       name: Jeremy Olmsted-Thompson
       company: Google
+      email: jeremyot@google.com
     - github: skitt
       name: Stephen Kitt
       company: Red Hat
+      email: skitt@redhat.com
     emeritus_leads:
     - github: pmorie
       name: Paul Morie
