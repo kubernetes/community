@@ -18,7 +18,7 @@ Not yet.
 
 Operational tasks in [wg-governance.md]:
 
-- [ ] [README.md] reviewed for accuracy and updated if needed
+- [X] [README.md] reviewed for accuracy and updated if needed
 - [X] WG leaders in [sigs.yaml] are accurate and active, and updated if needed
 - [X] Meeting notes and recordings for 2024 are linked from [README.md] and updated/uploaded if needed
 - [ ] Updates provided to sponsoring SIGs in 2024
