@@ -20,7 +20,7 @@ the logistical and operational pieces together.
 | Content Subteam                        | [Content Subteam Handbook]                    | The content subteam is responsible for coordinating the CFP and summit activities such as unconference sessions, SIG and WG meetings, and the documentation sprint. |
 | Operations Lead | [Operations Handbook]  | The Operations lead is responsible for day-of event management, supervision of event space, schedule adherence, and delegation/management of room staff. |
 | Awards                             | [Awards Handbook]                        |  The Awards role only needs to be filled once per year. Awards have traditionally been held at the North American Kubernetes Contributor Summit.                                                   |
-| Meet & Greet | TODO                    | Traditionally, the Kubernetes contributor community has held a Meet & Greet during KubeCon to meet prospective contributors.                                                    |  
+| Meet & Greet | [SIG Meet and Greet Handbook]                    | Traditionally, the Kubernetes contributor community has held a Meet & Greet during KubeCon to meet prospective contributors.                                                    |  
 | Accessibility, Inclusiveness, and Diversity | [Accessibility, Inclusiveness, and Diversity at Events Handbook]                    | Accessibility, inclusiveness, and diversity are responsibilities of all summit staff team members. Should additional accountability be needed in this area, the summit leads may choose to assign someone to this role.   
 
 
@@ -73,3 +73,4 @@ We don't coordinate meetups. CNCF leads these efforts and their information can 
 [Operations Handbook]: ./operations/README.md
 [Awards Handbook]: ../awards/playbook.md
 [Accessibility, Inclusiveness, and Diversity at Events Handbook]: ./diversity.md
+[SIG Meet and Greet Handbook]: ./sig-meet-and-greet/README.md
