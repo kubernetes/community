@@ -194,11 +194,16 @@ distributions and commands used to install these tools are below.
   sudo apt update
   sudo apt install build-essential
   ```
-- Fedora/RHEL/CentOS
+- RHEL/CentOS
   ```sh
   sudo yum update
   sudo yum groupinstall "Development Tools"
   ```
+- Fedora
+  ```sh
+  sudo dnf update
+  sudo dnf5 group install "d-development"
+  ``` 
 - OpenSUSE
   ```sh
   sudo zypper update
