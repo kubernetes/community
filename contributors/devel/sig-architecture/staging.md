@@ -24,8 +24,17 @@ a published repo, the code you get is exactly the same as if you check out the
 It is recommend to use the semver `v0.x.y` tags for a seamless experience
 with go modules.
 
+## Configuring Staging Repositories
+
 If further repos under staging are needed, adding them to the bot is easy.
 Contact one of the [owners of the bot](https://git.k8s.io/publishing-bot/OWNERS).
 
 Currently, the bot is hosted on a
 [public CNCF cluster](https://github.com/kubernetes/publishing-bot/blob/master/production.md).
+
+As staging repository is not designed for direct contributions it is recommended to:
+
+1. Make sure README.md in the root folder explicitly stating that contributions (issues and PRs)
+   must be done to the Kubernetes repository, not to the staging copy.
+3. Request to disable issues on the repository (like this [example](https://github.com/kubernetes/org/issues/5370)).
+4. Block PRs using prow bot (like this [example](https://github.com/kubernetes/test-infra/pull/34209)).
