@@ -1396,6 +1396,10 @@ sigs:
       name: Kaslin Fields
       company: Google
       email: kaslin.fields@gmail.com
+    - github: mfahlandt
+      name: Mario Fahlandt
+      company: Kubermatic GmbH
+      email: mfahlandt@pixel-haufen.de
     - github: palnabarun
       name: Nabarun Pal
       company: VMware
