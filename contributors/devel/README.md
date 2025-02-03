@@ -173,8 +173,6 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 * **Container Runtime Interface: Container Metrics** [cri-container-stats.md](sig-node/cri-container-stats.md)
 
-* **Container Runtime Interface (CRI) Validation Testing** [cri-validation.md](sig-node/cri-validation.md)
-
 * **Node End-To-End tests** [e2e-node-tests.md](sig-node/e2e-node-tests.md)
 
 * **Container Runtime Interface: Testing Policy** [cri-testing-policy.md](sig-node/cri-testing-policy.md)
