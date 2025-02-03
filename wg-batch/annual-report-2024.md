@@ -30,9 +30,9 @@ Kueue has had 5 minor releases in 2024.
 
 - [Release 0.10](https://github.com/kubernetes-sigs/kueue/releases/tag/v0.10.0)
 
-In 2024, the kueue community would like to highlight are Topology aware scheduling, MultiKueue, Kueue Dashboard, KueueCtrl, Deployment/Statefulset integration for serving and Fair sharing.
+In 2024, the kueue community would like to highlight Topology aware scheduling, MultiKueue, Kueue Dashboard, KueueCtrl, Deployment/Statefulset integration for serving and Fair sharing.
 
-[Topology aware scheduling](https://kueue.sigs.k8s.io/docs/concepts/topology_aware_scheduling/) facilitates scheduling of workloads that take in account data center topology.
+[Topology aware scheduling](https://kueue.sigs.k8s.io/docs/concepts/topology_aware_scheduling/) facilitates scheduling of workloads that take into account data center topology.
 Workloads benefit from using interconnects that are physically close together.
 
 [MultiKueue](https://kueue.sigs.k8s.io/docs/concepts/multikueue/) provides a way of dispatching batch workloads to worker clusters.
