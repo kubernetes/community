@@ -48,7 +48,7 @@ applications dynamically.
  hub cluster(s) be isolated from the running Workload Fleet for security and hub
  concerns. But there may be specific cases or applications that require to mix the two. For example,
  controllers that take a "leader-election" approach and want a smaller footprint.
-* Application-running features vs platform-running features: Hub clusters can runcontrollers
+* Application-running features vs platform-running features: Hub clusters can run controllers
   that are catering to a "Platform" type of user, effectively using a central cluster to manage other clusters and
   other infrastructure. For example, centrally monitoring health of clusters of a clusterset. It can also run
   controllers that are helping run business applications globally. For example, having a definition of a multicluster
