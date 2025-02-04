@@ -58,12 +58,12 @@ Our [Incident Report Handling Procedures](incident-process.md) describes how we 
 
 The members and their terms are as follows:
 
-### Term ends on August 23, 2025
+### Term ends on February 17, 2026
 
 - Jeremy Rickard (Microsoft)
 - Ana Margarita Medina (Lightstep)
 
-### Term ends on August 17, 2024
+### Term ends on February 17, 2025
 
 - Danielle Lancashire (VMware)
 - Hilliary Lipsig (RedHat)
