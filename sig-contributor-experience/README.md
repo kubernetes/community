@@ -27,6 +27,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Kaslin Fields (**[@kaslin](https://github.com/kaslin)**), Google
+* Mario Fahlandt (**[@mfahlandt](https://github.com/mfahlandt)**), Kubermatic GmbH
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
 
 ### Technical Leads
