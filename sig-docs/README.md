@@ -47,7 +47,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Dell
-* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Defense Unicorns
+* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Independent
 * Qiming Teng (**[@tengqm](https://github.com/tengqm)**), Sangfor Technologies
 
 ## Emeritus Leads
