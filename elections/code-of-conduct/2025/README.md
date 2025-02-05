@@ -81,5 +81,5 @@ Nominees may be found in the [election app].
 [election page]: https://elections.k8s.io/app/elections/code-of-conduct---2025
 [Elekto]: https://elekto.dev
 [Elekto voting documentation]: https://elekto.dev/docs/voting/
-[Google Form]: https://forms.gle/YQvofRb14Jbu2mjc6 <!-- TODO(cocc): Generate new candidate submission form -->
+[Google Form]: https://forms.gle/4yTd7Cy7FDsvA3GJ8
 [CoCC Election Charter]: https://github.com/kubernetes/community/blob/master/committee-code-of-conduct/election.md

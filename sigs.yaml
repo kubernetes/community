@@ -1585,7 +1585,7 @@ sigs:
       email: kat.cosgrove@gmail.com
     - github: salaxander
       name: Xander Grzywinski
-      company: Defense Unicorns
+      company: Independent
       email: xandergrzyw@gmail.com
     - github: tengqm
       name: Qiming Teng
@@ -3768,7 +3768,7 @@ committees:
     chairs:
     - github: AnaMMedina21
       name: Ana Margarita Medina
-      company: Lightstep
+      company: Upbound
     - github: endocrimes
       name: Danielle Lancashire
       company: Independent
@@ -3780,7 +3780,7 @@ committees:
       company: Microsoft
     - github: salaxander
       name: Xander Grzywinski
-      company: Defense Unicorns
+      company: Independent
     emeritus_leads:
     - github: AevaOnline
       name: Aeva Black
