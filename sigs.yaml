@@ -2812,6 +2812,14 @@ sigs:
     - github: k82cn
       name: Klaus Ma
   meetings:
+  - description: biweekly meeting (Asia & Europe)
+    day: Tuesday
+    time: "9:00"
+    tz: UTC
+    frequency: biweekly starting Tuesday Feb 11, 2025
+    url: https://zoom.us/j/841218129
+    archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
+    recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
   - description: biweekly meeting (NA & Europe)
     day: Thursday
     time: "17:00"
