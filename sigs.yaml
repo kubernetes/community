@@ -3119,9 +3119,11 @@ sigs:
     - github: jbpratt
       name: Brady Pratt
       company: Red Hat
+      email: bpratt@redhat.com
     - github: michelle192837
       name: Michelle Shepardson
       company: Google
+      email: amerai@google.com
     - github: xmcqueen
       name: Brian McQueen
       company: LinkedIn
@@ -3130,21 +3132,19 @@ sigs:
       name: Benjamin Elder
       company: Google
       email: bentheelder@google.com
-    - github: alvaroaleman
-      name: Alvaro Aleman
-      company: Red Hat
     - github: aojea
       name: Antonio Ojea
       company: Google
       email: aojea@google.com
-    - github: cjwagner
-      name: Cole Wagner
-      company: Google
     - github: pohly
       name: Patrick Ohly
       company: Intel
       email: patrick.ohly@intel.com
     emeritus_leads:
+    - github: alvaroaleman
+      name: Alvaro Aleman
+    - github: cjwagner
+      name: Cole Wagner
     - github: fejta
       name: Erick Fejta
     - github: spiffxp
@@ -3185,12 +3185,29 @@ sigs:
       Cloud provider for KIND clusters
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-kind/main/OWNERS
+    leads:
+    - github: BenTheElder
+      name: Benjamin Elder
+      company: Google
+      email: bentheelder@google.com
+    - github: aojea
+      name: Antonio Ojea
+      company: Google
+      email: aojea@google.com
   - name: boskos
     description: |
       Boskos is a resource manager service that handles different kinds of resources and transitions between different states. We use it on the Kubernetes project to manage pools of GCP projects for CI/CD.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/boskos/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
+    leads:
+    - github: dims
+      name: Davanum Srinivas
+      company: Amazon
+      email: davanum@gmail.com
+    - github: upodroid
+      name: Mahamed Ali
+      company: Cisco
   - name: e2e-framework
     description: |
       An experimental e2e testing framework for Kubernetes clusters.
@@ -3201,6 +3218,14 @@ sigs:
       Hydrophone is a lightweight Kubernetes conformance tests runner
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/hydrophone/main/OWNERS
+    leads:
+    - github: dims
+      name: Davanum Srinivas
+      company: Amazon
+      email: davanum@gmail.com
+    - github: rjsadow
+      name: Ricky Sadowski
+      company: ICR Team
   - name: kind
     description: |
       Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
@@ -3208,6 +3233,15 @@ sigs:
       slack: kind
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kind/main/OWNERS
+    leads:
+    - github: BenTheElder
+      name: Benjamin Elder
+      company: Google
+      email: bentheelder@google.com
+    - github: aojea
+      name: Antonio Ojea
+      company: Google
+      email: aojea@google.com
   - name: kubetest2
     description: |
       Kubetest2 is the framework for launching and running end-to-end tests on kubernetes.
@@ -3215,6 +3249,14 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubetest2/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/kubetest/OWNERS
+    leads:
+    - github: aojea
+      name: Antonio Ojea
+      company: Google
+      email: aojea@google.com
+    - github: upodroid
+      name: Mahamed Ali
+      company: Cisco
   - name: prow
     description: |
       Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action for the Kubernetes project
@@ -3222,6 +3264,11 @@ sigs:
       slack: prow
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/prow/main/OWNERS
+    leads:
+    - github: petr-muller
+      name: Petr Muller
+      company: Red Hat
+      email: muller@redhat.com
   - name: sig-testing
     description: |
       Home for SIG Testing discussion and documents.
@@ -3238,6 +3285,11 @@ sigs:
       This hosts Kubernetes-related projects for TestGrid (currently, the new frontend). See https://github.com/GoogleCloudPlatform/testgrid for the main repository (currently, backend components).
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/testgrid/main/OWNERS
+    leads:
+    - github: michelle192837
+      name: Michelle Shepardson
+      company: Google
+      email: amerai@google.com
   - name: testing-commons
     description: |
       **[best-effort]** The testing-commons subproject focuses on matters of code structure, layout, and execution of kubernetes/kubernetes test code. It is currently staffed on a best-effort basis; please bring discussions to the sig-testing slack channel or meeting. For historical context, please see the [former testing-commons meeting agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit) and [archived testing-commons slack channel](https://kubernetes.slack.com/archives/C9NK9KFFW)

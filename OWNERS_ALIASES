@@ -105,9 +105,7 @@ aliases:
     - xing-yang
   sig-testing-leads:
     - BenTheElder
-    - alvaroaleman
     - aojea
-    - cjwagner
     - jbpratt
     - michelle192837
     - pohly
@@ -204,4 +202,12 @@ aliases:
     - gracenng
     - katcosgrove
     - xmudrii
+  sig-testing-subproject-leads:
+    - aojea
+    - BenTheElder
+    - dims
+    - michelle192837
+    - petr-muller
+    - rjsadow
+    - upodroid
 ## END CUSTOM CONTENT
