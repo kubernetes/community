@@ -10,11 +10,17 @@ These awards are handed out during the end-of-year Contributor Summit.
 
 ## Contributor Award Recipients
 
+- [2024 Contributor Award Recipients][2024-awards-recipients]
+- [2023 Contributor Award Recipients][2023-awards-recipients]
+- [2022 Contributor Award Recipients][2022-awards-recipients]
 - [2021 Contributor Award Recipients][2021-awards-recipients]
 - [2020 Contributor Award Recipients][2020-awards-recipients]
 - [2019 Contributor Award Recipients][2019-awards-recipients]
 
 [playbook]: ./README.md
-[2021-awards-recipients]: ./award-recipients/2021-award-recipients.md
-[2020-awards-recipients]: ./award-recipients/2020-award-recipients.md
-[2019-awards-recipients]: ./award-recipients/2019-award-recipients.md
+[2024-awards-recipients]: https://www.kubernetes.dev/community/awards/2024/
+[2023-awards-recipients]: https://www.kubernetes.dev/community/awards/2023/
+[2022-awards-recipients]: https://www.kubernetes.dev/community/awards/2022/
+[2021-awards-recipients]: https://www.kubernetes.dev/community/awards/2021/
+[2020-awards-recipients]: https://www.kubernetes.dev/community/awards/2020/
+[2019-awards-recipients]: https://www.kubernetes.dev/community/awards/2019/
