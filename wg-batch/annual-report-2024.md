@@ -60,8 +60,8 @@ Jobset has had 4 minor releases in 2024.
 
 - [Release 0.7](https://github.com/kubernetes-sigs/jobset/releases/tag/v0.7.0)
 
-A major achievement of JobSet has been the adoption of JobSet as a component for [Kubeflow Training Operator](https://github.com/kubeflow/training-operator) V2.
-There has been a collaborative effort with the Kubeflow community and the batch community to implement the features needed for this integration.
+A major achievement of JobSet has been the adoption of JobSet 
+as a component for [Kubeflow Trainer](https://github.com/kubeflow/trainer) V2, the next generation of the Kubeflow Training Operator project.
 
 [Metaflow](https://github.com/Netflix/metaflow/pull/1804) has adopted the use of JobSet for distributed ML training.
 
@@ -92,6 +92,11 @@ WG-Batch provided a series of kubernetes enhancements that improved the experien
 
 ### Talks
 
+- Democratizing AI Model Training on Kubernetes with Kubeflow TrainJob and JobSet
+  - Speakers:  Andrey Velichkevich and Yuki Iwai
+  - Kubecon NA, Salt Lake City
+  - [Recording](https://www.youtube.com/watch?v=Lgy4ir1AhYw)
+  
 - WG-Batch Update at Kubecon
   - Speakers: Kevin Hannon and Marcin Wielgus
   - Kubecon NA, Salt Lake City
@@ -129,8 +134,7 @@ WG-Batch provided a series of kubernetes enhancements that improved the experien
 
 ### Community adoption
 
-- [Kubeflow Training Operator v2](https://github.com/kubeflow/training-operator/blob/0c30f5cd306611f061b6dd529d3c7b7981a7d27c/docs/proposals/2170-kubeflow-training-v2/README.md#kep-2170-kubeflow-training-v2-api) will be using JobSet as a critical component for training and finetuning.
-
+- [Kubeflow Trainer v2](https://github.com/kubeflow/trainer/tree/62e958fa8c07ae73be0b10a30e1fb5e4c3d0e8f3/docs/proposals/2170-kubeflow-training-v2) will be using JobSet as a critical component for distributed training and LLMs fine-tuning.
 - [Metaflow supports JobSet](https://github.com/Netflix/metaflow/pull/1804) for distributed training.
 
 - Airflow has built an [integration](https://airflow.apache.org/docs/apache-airflow-providers-cncf-kubernetes/stable/_api/airflow/providers/cncf/kubernetes/operators/kueue/index.html) with Kueue.
