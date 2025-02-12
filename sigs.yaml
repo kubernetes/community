@@ -2020,11 +2020,11 @@ sigs:
     tz: UTC
     frequency: bi-weekly
     url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-    archive_url: http://bit.ly/sig-k8s-infra-notes
+    archive_url: https://go.k8s.io/sig-k8s-infra-notes
     recordings_url: http://bit.ly/sig-k8s-infra-playlist
   contact:
     slack: sig-k8s-infra
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     private_mailing_list: sig-k8s-infra-private@kubernetes.io
     teams:
     - name: sig-k8s-infra
@@ -2058,7 +2058,7 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: k8s-infra-groups
     description: Code and configuration to manage Google Groups for domains owned
@@ -2075,7 +2075,7 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: k8s.io
     description: Code and configuration to manage Kubernetes project infrastructure,
@@ -2092,7 +2092,7 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: porche
     description: A custom HTTP redirector serving Kubernetes binaries from existing
@@ -2109,7 +2109,7 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: registry.k8s.io
     description: A custom HTTP redirector serving Kubernetes container image blobs
@@ -2126,7 +2126,7 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
 - dir: sig-multicluster
   name: Multicluster
