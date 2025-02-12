@@ -2040,7 +2040,7 @@ sigs:
       registries
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/community-images/main/OWNERS
   - name: k8s-infra-dns
@@ -2048,7 +2048,7 @@ sigs:
       the Kubernetes project such as k8s.io and kubernetes.io
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/dns/OWNERS
     meetings:
@@ -2065,7 +2065,7 @@ sigs:
       by the Kubernetes project such kubernetes.io
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/groups/OWNERS
     meetings:
@@ -2082,7 +2082,7 @@ sigs:
       including various *.k8s.io sites
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/OWNERS
     meetings:
@@ -2099,7 +2099,7 @@ sigs:
       vendor supported and approved storage services.
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/porche/main/OWNERS
     meetings:
@@ -2116,7 +2116,7 @@ sigs:
       from existing vendor supported container registries.
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/registry.k8s.io/main/OWNERS
     meetings:
