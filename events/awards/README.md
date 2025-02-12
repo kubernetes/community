@@ -1,6 +1,6 @@
 # Kubernetes Contributor Awards
 
-The awards can be see in [contributor site](https://www.kubernetes.dev/community/awards/), and recipients is maintained in https://github.com/kubernetes/contributor-site/tree/master/content/en/community/awards.
+The awards can be see in [contributor site](https://www.kubernetes.dev/community/awards/), and recipients is maintained in the [contributor-site repository](https://github.com/kubernetes/contributor-site/tree/master/content/en/community/awards).
 
 Every year, the Kubernetes Contributor Community recognizes and awards their peers for
 outstanding contributions to the project for the year.
