@@ -198,6 +198,10 @@ aliases:
   provider-vmware:
     - cantbewong
     - frapposelli
+  sig-architecture-approvers:
+    - dims
+    - derekwaynecarr
+    - johnbelamaric
   sig-release-subproject-leads:
     - gracenng
     - katcosgrove
