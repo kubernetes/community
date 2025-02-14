@@ -70,7 +70,14 @@ The GIE team is looking forward to this upcoming year\! With many integrations u
 
 ##### [Serving Catalog](https://github.com/kubernetes-sigs/wg-serving/tree/main/serving-catalog)
 
-TBA
+Serving Catalog creates a repository of example K8s templates to deploy popular inference workloads. [Kustomized Blueprints - Serving Catalog](https://docs.google.com/document/d/1dOP0lIn-DK3tmq8gSvyK51J7CfKTz_Z1mqIAeYK8YS0/edit?tab=t.0#heading=h.48xpf8o6yz1j) described an approach for [LLM Serving Catalog](https://docs.google.com/document/d/1yXOhEXltc69_WFX90kMrHs3NcJGsD-U6-RejvK3XQtE/edit#heading=h.uxsw8fcrx2wp) using Kustomize overlays and components to provide a framework for extensible templates.
+
+The current support matrix is available [here](https://github.com/kubernetes-sigs/wg-serving/blob/main/serving-catalog/catalog.md), including support for:
+
+* [Singlehost Inference using Deployments](https://github.com/kubernetes-sigs/wg-serving/tree/main/serving-catalog/core/deployment) for vLLM and JetStream  
+* [Multihost Inference using LeaderWorkerSet](https://github.com/kubernetes-sigs/wg-serving/tree/main/serving-catalog/core/lws) for vLLM  
+* Components for [HPA stubs for token-latency](https://github.com/kubernetes-sigs/wg-serving/commit/54ee7234800cad53c0a43668b177c704ae704730)
+
 
 #### Workstream Updates
 
