@@ -11,11 +11,16 @@
    - Paying down significant tech debt
    - Governance and leadership changes
 -->
+ - Dynamic Reasource Allocation support
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
+ - Horizontal Pod Autoscaler - see [this issue](https://github.com/kubernetes/kubernetes/issues/128948)
+
 
 
 3. Did you have community-wide updates in 2024 (e.g. KubeCon talks)?
+- [Kubecon EU 2024 SIG Update](https://www.youtube.com/watch?v=3j2DqZinn5E)
+- [Kubecon NA 2024 SIG Update](https://www.youtube.com/watch?v=3fr2J3G1s1U)
 
 <!--
   Examples include links to email, slides, or recordings.
@@ -30,11 +35,8 @@
       Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
 -->
 
-<!-- 
-
-
   - Stable
-    - [1610 - Container Resource based Autoscaling](https://github.com/kubernetes/enhancements/tree/master/keps/sig-autoscaling/1610-container-resource-autoscaling) - v1.30 -->
+    - [1610 - Container Resource based Autoscaling](https://github.com/kubernetes/enhancements/tree/master/keps/sig-autoscaling/1610-container-resource-autoscaling) - v1.30
 
 ## [Subprojects](https://git.k8s.io/community/sig-autoscaling#subprojects)
 
