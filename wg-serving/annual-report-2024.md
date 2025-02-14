@@ -1,7 +1,6 @@
 # 2024 Annual Report: WG Serving
 
-## Current initiatives and Project Health
-
+## Current Initiatives and Project Health
 
 ### 1. What work did the WG do this year that should be highlighted?
 
@@ -78,22 +77,23 @@ The current support matrix is available [here](https://github.com/kubernetes-sig
 * [Multihost Inference using LeaderWorkerSet](https://github.com/kubernetes-sigs/wg-serving/tree/main/serving-catalog/core/lws) for vLLM  
 * Components for [HPA stubs for token-latency](https://github.com/kubernetes-sigs/wg-serving/commit/54ee7234800cad53c0a43668b177c704ae704730)
 
-
 #### Workstream Updates
 
-**Orchestration**: Progress on various initiatives and relevant projects such as the GIE project, Serving Catalog, and KServe. Please refer to the previous section for more details.
+**Orchestration**: Progress on various initiatives and relevant projects such as the GIE project, Serving Catalog, and [KServe](https://github.com/kserve/kserve). Please refer to the previous section for more details.
 
 **Autoscaling**: Ongoing efforts to integrate custom metrics for autoscaling AI workloads.
 
 One of the directions for autoscaling is a unification of model weights distributions formats. There is not a single distribution mechanism and WG Serving believes that the container images are the best distribution format. WG Serving identified some problems with the OCI large images support and sponsored the Kubernetes Image VolumeSource KEP work.
 
-**Multi-Host Serving**: Improvements in distributed inference across nodes using vLLM and LeaderWorkerSet APIs.
+**Multi-Host Serving**: Improvements in distributed inference across nodes in vLLM, LeaderWorkerSet, and KServe.
 
 LeaderWorkerSet (LWS) continues to evolve as a key component for multi-host inference, addressing the challenges of deploying large-scale AI/ML models across multiple nodes. The v0.3.0 release introduced subgroup support for disaggregated serving, a new start policy API, and improved inter-container communication through leader address injection. It also added a multi-node serving example for LLaMA 70B on GPUs using vLLM. Building on these capabilities, v0.4.0 & v0.5.0 introduced network configuration support, group size as an environment variable, and expanded multi-host inference examples, including llama.cpp for distributed inference and an updated vLLM example for Llama 3.1-405B. These enhancements reinforce LWS’s flexibility in orchestrating increasingly larger models on Kubernetes.
 
 At the same time, WG-Serving is working closely with vLLM developers on the latest P\&D disaggregation feature progress, actively testing the upstream 1P1D functionality to better understand evolving orchestration requirements. This collaboration aims to drive improvements in xPyD capabilities, further unlocking disaggregated serving on Kubernetes by optimizing workload placement and execution strategies. By refining these mechanisms, we aim to enhance inference performance, ensuring more efficient resource utilization and scalability for large-scale AI workloads.
 
 With these iterative improvements, LWS and vLLM continue to refine multi-host inference, making large-scale distributed model deployments on Kubernetes more reliable, efficient, and adaptable.
+
+In addition, KServe also added multi-host serving capability via vLLM serving runtime.
 
 **DRA (Dynamic Resource Allocation)**: Enhancing GPU/accelerator allocation, structured parameters, and resource claim standardization.
 
@@ -117,7 +117,6 @@ Operational tasks in [wg-governance.md]:
         - links to email, meeting notes, slides, or recordings, etc
       - [$sig-name](https://git.k8s.io/community/$sig-id/)
         - links to email, meeting notes, slides, or recordings, etc
-      -
 
 [wg-governance.md]: https://git.k8s.io/community/committee-steering/governance/wg-governance.md
 [README.md]: https://git.k8s.io/community/wg-serving/README.md
