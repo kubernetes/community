@@ -90,6 +90,10 @@ Distributed reliable key-value store for the most critical data of a distributed
 etcd manager
 - **Owners:**
   - [kubernetes-sigs/etcd-manager](https://github.com/kubernetes-sigs/etcd-manager/blob/main/OWNERS)
+### etcd-operator
+future site of the new etcd operator, currently used for wg-etcd-operator artifacts
+- **Owners:**
+  - [etcd-io/etcd-operator](https://github.com/etcd-io/etcd-operator/blob/main/OWNERS)
 ### etcd-play
 etcd playground
 - **Owners:**
