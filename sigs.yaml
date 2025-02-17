@@ -3477,7 +3477,7 @@ workinggroups:
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP336DulLgPdlWJ_gzRz1iL5
   contact:
     slack: wg-data-protection
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-data-protection
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-data-protection
     liaison:
       github: pohly
       name: Patrick Ohly
