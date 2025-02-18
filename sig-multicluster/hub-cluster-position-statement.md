@@ -12,7 +12,7 @@ controllers to manage multicluster applications or features across an inventory 
 Multicluster controllers have always needed a place to run. This may happen in external
 proprietary control-planes but for more generic platforms, it has been natural for the
 Kubernetes community to leverage a Kubernetes Cluster and the existing api-machinery
-available. There has been a variety of examples of which we can quote ArgoCD, MultiKueue
+available. There has been a variety of examples of which we can quote ArgoCD, MultiKueue, Open Cluster Management
 or any of the Federation effort (Karmada, KubeAdmiral), all of them not-naming the "location"
 where they run or not aligning on the name (Admin cluster, Management Cluster, Command Cluster, Manager Cluster...). 
 The [ClusterInventory](https://github.com/kubernetes/enhancements/blob/master/keps/sig-multicluster/4322-cluster-inventory/README.md)
@@ -24,7 +24,7 @@ when hub runs infrastructure components.
 ## Definition
 
 A (multicluster) hub cluster is a Kubernetes cluster that acts as a 
-control-plane for other Kubernetes clusters (named Workload Clusters to differentiate
+control-plane for other Kubernetes clusters (named Workload [Execution] Clusters to differentiate
 them). It MUST have the ClusterProfiles written on it MAY have access to the api, metrics or
 workloads of the workload clusters and MAY have administrative privileges over them. It 
 SHOULD not be part of workload clusters or running as mixed mode (workload and hub) to provide a better
