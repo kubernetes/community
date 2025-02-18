@@ -2,11 +2,18 @@
 
 - Number of seats open: 3 (2 year term)
 - Number of eligible voters: 7
-- Number of votes cast: TBD
-- Turnout: TBD
+- Number of votes cast: 6
+- Turnout: 85.71%
 
 ## Winners
 
-- TBD
-- TBD
-- TBD
+- [Danielle Lancashire](https://github.com/endocrimes)
+- [Divya Mohan](https://github.com/divya-mohan0209)
+- [Sean McGinnis](https://github.com/stmcginnis)
+
+## Complete rankings
+
+1. (Tie) [Danielle Lancashire](https://github.com/endocrimes) / [Divya Mohan](https://github.com/divya-mohan0209)
+2. [Sean McGinnis](https://github.com/stmcginnis)
+3. [Swati Sehgal](https://github.com/swatisehgal)
+4. [Sreeram Venkitesh](https://github.com/sreeram-venkitesh)
