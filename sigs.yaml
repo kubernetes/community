@@ -1817,6 +1817,11 @@ sigs:
     description: etcd manager
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/etcd-manager/main/OWNERS
+  - name: etcd-operator
+    description: future site of the new etcd operator, currently used for wg-etcd-operator
+      artifacts
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/etcd-operator/main/OWNERS
   - name: etcd-play
     description: etcd playground
     owners:
@@ -3597,6 +3602,9 @@ workinggroups:
 
     Note: the etcd clusters, to be managed by the etcd-operator, are to support applications
     instead of Kubernetes itself.
+
+    In addition to the slack channel, mailing list, and meetings, you can join our
+    discussion through issues and PRs in [the etcd-operator repo](https://github.com/etcd-io/etcd-operator/)
 
   charter_link: charter.md
   stakeholder_sigs:
