@@ -73,52 +73,5 @@ The following [subprojects][subproject-definition] are owned by sig-multicluster
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
-## Subprojects
 
-### Kubefed
-Control Plane for newer Multicluster-specific APIs. Discussions are ongoing to focus future development on multi-cluster specific Kubernetes APIs rather than a reimplementation of single-cluster Kubernetes APIs.
-
-|  |  |
-| -------------- |:-------|
-| Recommended for Production | Not yet. |
-| General Availability | Beta by 2018-Q4. GA TBD. |
-| Current Level of Activity | Once to twice weekly discussions as part of Kubefed working group (most active SIG-Multicluster members). |
-| Owner(s) | Working Group |
-| Where to find it? | https://github.com/kubernetes-sigs/kubefed |
-| Meeting Agenda | https://docs.google.com/document/d/1v-Kb1pUs3ww_x0MiKtgcyTXCAuZlbVlz4_A9wS3_HXY |
-
-### Cluster Registry
-Common abstraction for a Registry of Clusters that can store per-Cluster metadata and supports Kubernetes label selection. The Cluster Registry can be deployed as a standalone or an aggregated API server and currently provides a Registry of Clusters without any actively reconciling Kubernetes controller. The API design is documented [here](https://git.k8s.io/design-proposals-archive/multicluster/cluster-registry/api-design.md) and is intended to serve as a basis to develop multicluster controllers.
-
-|  |  |
-| -------------- |:-------|
-| Recommended for Production | Not yet. |
-| General Availability | Beta by 2018-Q1, GA by 2018-Q2 (see Project plan for details). |
-| Current Level of Activity | Alpha, active development for Beta and GA milestones. |
-| Owner(s) | [@perotinus](https://github.com/perotinus), [@font](https://github.com/font) |
-| Where to find it? | https://github.com/kubernetes/cluster-registry |
-
-### Kubemci (Kube Multi-cluster Ingress)
-Ability to program Global multicluster load balancers with two deliverables:
-* Standalone CLI tool without a centralized control plane. Allows ingress configurations that span multiple clusters. It needs to be invoked whenever there is a change in the number of clusters (healthchecking is still maintained in the background). Much of this work will be folded back into the next deliverable.
-* Kubernetes style multicluster API and self-healing controller with cluster registry
-
-|  |  |
-| -------------- |:-------|
-| Recommended for Production | Not yet. |
-| General Availability | CLI: Beta by 2018-Q1, Controller: Alpha by 2018-Q1 |
-| Current Level of Activity? | CLI is alpha and team is looking for feedback. Active development is on to bring it to beta. |
-| Owner(s) | [@nikhiljindal](https://github.com/nikhiljindal), [@G-Harmon](https://github.com/G-Harmon) |
-| Where to find it? | https://github.com/GoogleCloudPlatform/k8s-multicluster-ingress |
-
-### Federation v1 (a.k.a. Cluster Federation)
-Control Plane that coordinates configuration across multiple clusters by presenting a subset of the existing single-cluster Kubernetes APIs. Initially released as part of Kubernetes 1.3, Cluster Federation has implemented parts of the existing “single-cluster” Kubernetes API so that they may be used transparently in a multi-cluster fashion. As of Kubernetes 1.9, many of the non-Federated Kubernetes Workloads APIs have moved to GA (Deployments, ReplicaSets, Daemonset, StatefulSet). However, under Federation, these workloads have not reached the maturity of “GA” since they are re-implemented by different federated controllers. The SIG is currently re-thinking how to support Kubernetes APIs in a Federation fashion and this discussion is reflected under Kubefed.
-
-|  |  |
-| -------------- |:-------|
-| Recommended for Production | No. Between Alpha and Beta levels of functionality depending on Kubernetes APIs used. |
-| General Availability | No target set date. |
-| Current Level of Activity | On Hold. See Kubefed. |
-| Owner(s) | [@shashidharatd](https://github.com/shashidharatd) |
-| Where to find it? | Out of main Kubernetes repository as of 1.9 and into its own [kubernetes/federation](https://github.com/kubernetes/federation) repository (kubefed is no longer distributed as part of Kubernetes client tools). Users have to build their own Federation Control Plane and kubefed client tool or wait on [issue #192](https://github.com/kubernetes/federation/issues/192) to be resolved. |
 <!-- END CUSTOM CONTENT -->
