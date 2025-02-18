@@ -352,6 +352,7 @@ channels:
   - name: meetup-guatemala
   - name: meetup-hannover
   - name: meetup-hongkong
+  - name: meetup-lagos
   - name: meetup-lasvegas
   - name: meetup-losangeles
   - name: meetup-manchester
