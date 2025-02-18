@@ -11,6 +11,7 @@ approvers:
   - lavalamp
   - spiffxp
   - thockin
+  - sig-architecture-approvers
 emeritus_approvers:
 - calebamiles
 - Phillels
