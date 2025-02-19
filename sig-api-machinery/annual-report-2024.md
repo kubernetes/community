@@ -3,23 +3,34 @@
 ## Current initiatives and Project Health
 
 1. What work did the SIG do this year that should be highlighted?
-
-<!--
-   Some example items that might be worth highlighting:
-   - Major KEP advancement
-   - Important initiatives that aren't tracked via KEPs
-   - Paying down significant tech debt
-   - Governance and leadership changes
--->
+- Officially added Stefan Schimanski (sttts@) as the third tech lead of the SIG.
+- Carefully reviewed on each release the list of open KEPs and which ones were going to make it in the release.
+- 2024 Contributor Awards:
+  - Marek Siarkowicz, @serathius
+  - Lukasz Szaszkiewicz, @polynomial
+- Some KEPs that deserve special mention in 2024 are
+  - Graduated to *Stable*
+    - [CEL for Admission Control](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/3488-cel-admission-control#summary)
+    - [Aggregated Discovery](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/3352-aggregated-discovery#summary)
+    - [Unknown Version Interoperability Proxy](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/4020-unknown-version-interoperability-proxy#summary)
+    - [Transition from SPDY to Websockets](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/4006-transition-spdy-to-websockets#summary)
+    - [Custom Resource Field Selectors](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/4358-custom-resource-field-selectors#summary)
+  - Graduated to *Beta*
+    - [Consistent Reads from Cache](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/2340-Consistent-reads-from-cache#summary)
+    - [Allow informers for getting a stream of data instead of chunking](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/3157-watch-list#summary)
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
-
+- API Machinery area is very extense, here are some areas that could use extra help:
+  - Garbage Collection
+  - Resource Quota
+  - Server Side Apply
 
 3. Did you have community-wide updates in 2024 (e.g. KubeCon talks)?
 
-<!--
-  Examples include links to email, slides, or recordings.
--->
+- [Spotlight on SIG API Machinery](https://www.kubernetes.dev/blog/2024/08/07/sig-api-machinery-spotlight-2024/)
+- Kubecon EU 2024 [SIG API Machinery Maintainers (Two Tracks) - Abu Kashem, Red Hat & Mike Spreitzer, IBM](https://www.youtube.com/watch?v=YpQxxZ1Izek&ab_channel=CNCF%5BCloudNativeComputingFoundation%5D)
+- Kubecon NA 2024 [Squashing Trampoline Pods: The Future of Securely Enabling Hardware Extensions- Joe Betz, David Eads](https://www.youtube.com/watch?v=qRo1Qw_Hr2A&ab_channel=CNCF%5BCloudNativeComputingFoundation%5D)
+
 
 4. KEP work in 2024 (v1.30, v1.31, v1.32):
 <!--
