@@ -73,8 +73,8 @@ Serving Catalog creates a repository of example K8s templates to deploy popular 
 
 The current support matrix is available [here](https://github.com/kubernetes-sigs/wg-serving/blob/main/serving-catalog/catalog.md), including support for:
 
-* [Singlehost Inference using Deployments](https://github.com/kubernetes-sigs/wg-serving/tree/main/serving-catalog/core/deployment) for vLLM and JetStream  
-* [Multihost Inference using LeaderWorkerSet](https://github.com/kubernetes-sigs/wg-serving/tree/main/serving-catalog/core/lws) for vLLM  
+* [Single-host Inference using Deployments](https://github.com/kubernetes-sigs/wg-serving/tree/main/serving-catalog/core/deployment) for vLLM and JetStream  
+* [Multi-host Inference using LeaderWorkerSet](https://github.com/kubernetes-sigs/wg-serving/tree/main/serving-catalog/core/lws) for vLLM  
 * Components for [HPA stubs for token-latency](https://github.com/kubernetes-sigs/wg-serving/commit/54ee7234800cad53c0a43668b177c704ae704730)
 
 #### Workstream Updates
