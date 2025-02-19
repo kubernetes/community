@@ -2270,10 +2270,17 @@ sigs:
     day: Thursday
     time: "8:00"
     tz: PT (Pacific Time)
-    frequency: biweekly
+    frequency: monthly
     url: https://zoom.us/j/98377891310
     archive_url: https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit
     recordings_url: https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X
+  - description: SIG Network InGate Meeting
+    day: Friday
+    time: "6:00"
+    tz: PT (Pacific Time)
+    frequency: monthly
+    url: https://zoom.us/j/94625479998
+    archive_url: https://docs.google.com/document/d/1KqMxFbxz4QO5bYCFfihyZwPVZTtTtzcQs3Nt2-JQaAA/edit
   - description: SIG Network Meeting
     day: Thursday
     time: "09:00"
@@ -2334,6 +2341,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/controllers/service/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/ingate/refs/heads/main/OWNERS
     leads:
     - github: mlavacca
       name: Mattia Lavacca
