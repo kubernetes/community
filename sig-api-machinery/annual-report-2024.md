@@ -3,7 +3,7 @@
 ## Current initiatives and Project Health
 
 1. What work did the SIG do this year that should be highlighted?
-- Officially added Stefan Schimanski (sttts@) as the third tech lead of the SIG.
+- Officially added Stefan Schimanski (@sttts) as the third tech lead of the SIG.
 - Carefully reviewed on each release the list of open KEPs and which ones were going to make it in the release.
 - 2024 Contributor Awards:
   - Marek Siarkowicz, @serathius
