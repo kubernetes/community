@@ -10,7 +10,7 @@
 
 KubeCon NA 2024 talks:
 
-* [WG Serving: Accelerating AI/ML Inference Workloads on Kubernetes](https://www.youtube.com/watch?v=QMz4wf0mwfA)  
+* [WG Serving: Accelerating AI/ML Inference Workloads on Kubernetes](https://youtu.be/HWoHcOTKJM4?si=ngPu5MCJ6vONxX0c)  
 
 Kubernetes Podcast:
 
