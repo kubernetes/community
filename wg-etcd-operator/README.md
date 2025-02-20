@@ -10,6 +10,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 The working group is dedicated to enabling automatic and efficient operation of etcd clusters in Kubernetes using an etcd-operator. The working group will discuss the requirement and use cases of such an etcd-operator. It will also try to create a roadmap to develop such an etcd-operator.
 Note: the etcd clusters, to be managed by the etcd-operator, are to support applications instead of Kubernetes itself.
+In addition to the slack channel, mailing list, and meetings, you can join our discussion through issues and PRs in [the etcd-operator repo](https://github.com/etcd-io/etcd-operator/)
 
 The [charter](charter.md) defines the scope and governance of the etcd Operator Working Group.
 
