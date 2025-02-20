@@ -1973,6 +1973,9 @@ sigs:
   - name: usage-metrics-collector
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/usage-metrics-collector/main/OWNERS
+  - name: zpages
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/zpages/OWNERS
 - dir: sig-k8s-infra
   name: K8s Infra
   mission_statement: >
