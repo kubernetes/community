@@ -516,6 +516,7 @@ channels:
   - name: solr-operator
   - name: sonobuoy
   - name: spark-operator
+  - name: spegel
   - name: spinnaker
   - name: sre
   - name: steering-committee
