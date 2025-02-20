@@ -3585,8 +3585,8 @@ workinggroups:
     slack: wg-device-management
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-device-management
     liaison:
-      github: pohly
-      name: Patrick Ohly
+      github: BenTheElder
+      name: Benjamin Elder
 - dir: wg-etcd-operator
   name: etcd Operator
   mission_statement: >
