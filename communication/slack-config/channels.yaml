@@ -148,6 +148,7 @@ channels:
     archived: true
   - name: garden-dev
     archived: true
+  - name: gateway-api-inference-extension
   - name: gardener
   - name: gimbal
   - name: github

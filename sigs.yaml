@@ -1903,6 +1903,7 @@ sigs:
     frequency: biweekly
     url: https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09
     archive_url: https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1tue6RXLncPTGjfnBVHP-f
   - description: Regular Triage Meeting
     day: Thursday
     time: "9:30"
@@ -2020,11 +2021,11 @@ sigs:
     tz: UTC
     frequency: bi-weekly
     url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-    archive_url: http://bit.ly/sig-k8s-infra-notes
+    archive_url: https://go.k8s.io/sig-k8s-infra-notes
     recordings_url: http://bit.ly/sig-k8s-infra-playlist
   contact:
     slack: sig-k8s-infra
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     private_mailing_list: sig-k8s-infra-private@kubernetes.io
     teams:
     - name: sig-k8s-infra
@@ -2040,7 +2041,7 @@ sigs:
       registries
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/community-images/main/OWNERS
   - name: k8s-infra-dns
@@ -2048,7 +2049,7 @@ sigs:
       the Kubernetes project such as k8s.io and kubernetes.io
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/dns/OWNERS
     meetings:
@@ -2058,14 +2059,14 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: k8s-infra-groups
     description: Code and configuration to manage Google Groups for domains owned
       by the Kubernetes project such kubernetes.io
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/groups/OWNERS
     meetings:
@@ -2075,14 +2076,14 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: k8s.io
     description: Code and configuration to manage Kubernetes project infrastructure,
       including various *.k8s.io sites
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/OWNERS
     meetings:
@@ -2092,14 +2093,14 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: porche
     description: A custom HTTP redirector serving Kubernetes binaries from existing
       vendor supported and approved storage services.
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/porche/main/OWNERS
     meetings:
@@ -2109,14 +2110,14 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: registry.k8s.io
     description: A custom HTTP redirector serving Kubernetes container image blobs
       from existing vendor supported container registries.
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/registry.k8s.io/main/OWNERS
     meetings:
@@ -2126,7 +2127,7 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
 - dir: sig-multicluster
   name: Multicluster
@@ -2812,6 +2813,14 @@ sigs:
     - github: k82cn
       name: Klaus Ma
   meetings:
+  - description: biweekly meeting (Asia & Europe)
+    day: Tuesday
+    time: "9:00"
+    tz: UTC
+    frequency: biweekly starting Tuesday Feb 11, 2025
+    url: https://zoom.us/j/841218129
+    archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
+    recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
   - description: biweekly meeting (NA & Europe)
     day: Thursday
     time: "17:00"
@@ -2877,7 +2886,7 @@ sigs:
     - github: mimowo
       name: Michał Woźniak
       company: Google
-      email: acondor@google.com
+      email: michalwozniak@google.com
     - github: tenzen-y
       name: Yuki Iwai
       company: CyberAgent, Inc.
