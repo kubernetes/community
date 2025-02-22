@@ -2559,7 +2559,7 @@ sigs:
       email: jeremy.r.rickard@gmail.com
     - github: justaugustus
       name: Stephen Augustus
-      company: Bloomberg L.P.
+      company: Bloomberg
       email: k8s@auggie.dev
     - github: saschagrunert
       name: Sascha Grunert
@@ -3976,7 +3976,7 @@ committees:
       email: antonio.ojea.garcia@gmail.com
     - github: justaugustus
       name: Stephen Augustus
-      company: Bloomberg L.P.
+      company: Bloomberg
       email: k8s@auggie.dev
     - github: pacoxu
       name: Paco Xu 徐俊杰

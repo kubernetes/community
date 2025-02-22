@@ -27,7 +27,7 @@ The [charter](charter.md) defines the scope and governance of the Release Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
-* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Bloomberg L.P.
+* Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**), Bloomberg
 * Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**), Red Hat
 
 ### Technical Leads
