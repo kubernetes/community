@@ -56,7 +56,7 @@ members will assume one of the departing members groups.
 | [SIG Windows](sig-windows/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG Batch](wg-batch/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [WG Data Protection](wg-data-protection/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
-| [WG Device Management](wg-device-management/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
+| [WG Device Management](wg-device-management/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG etcd Operator](wg-etcd-operator/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [WG LTS](wg-lts/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
 | [WG Policy](wg-policy/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
