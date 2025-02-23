@@ -33,13 +33,13 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
-* Alvaro Aleman (**[@alvaroaleman](https://github.com/alvaroaleman)**), Red Hat
 * Antonio Ojea (**[@aojea](https://github.com/aojea)**), Google
-* Cole Wagner (**[@cjwagner](https://github.com/cjwagner)**), Google
 * Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel
 
 ## Emeritus Leads
 
+* Alvaro Aleman (**[@alvaroaleman](https://github.com/alvaroaleman)**)
+* Cole Wagner (**[@cjwagner](https://github.com/cjwagner)**)
 * Erick Fejta (**[@fejta](https://github.com/fejta)**)
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**)
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**)
@@ -65,10 +65,16 @@ The following [working groups][working-group-definition] are sponsored by sig-te
 The following [subprojects][subproject-definition] are owned by sig-testing:
 ### Cloud Provider for KIND
 Cloud provider for KIND clusters
+- **Leads:**
+  - Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
+  - Antonio Ojea (**[@aojea](https://github.com/aojea)**), Google
 - **Owners:**
   - [kubernetes-sigs/cloud-provider-kind](https://github.com/kubernetes-sigs/cloud-provider-kind/blob/main/OWNERS)
 ### boskos
 Boskos is a resource manager service that handles different kinds of resources and transitions between different states. We use it on the Kubernetes project to manage pools of GCP projects for CI/CD.
+- **Leads:**
+  - Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon
+  - Mahamed Ali (**[@upodroid](https://github.com/upodroid)**), Cisco
 - **Owners:**
   - [kubernetes-sigs/boskos](https://github.com/kubernetes-sigs/boskos/blob/master/OWNERS)
   - [kubernetes/test-infra/boskos](https://github.com/kubernetes/test-infra/blob/master/boskos/OWNERS)
@@ -78,10 +84,16 @@ An experimental e2e testing framework for Kubernetes clusters.
   - [kubernetes-sigs/e2e-framework](https://github.com/kubernetes-sigs/e2e-framework/blob/main/OWNERS)
 ### hydrophone
 Hydrophone is a lightweight Kubernetes conformance tests runner
+- **Leads:**
+  - Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon
+  - Ricky Sadowski (**[@rjsadow](https://github.com/rjsadow)**), ICR Team
 - **Owners:**
   - [kubernetes-sigs/hydrophone](https://github.com/kubernetes-sigs/hydrophone/blob/main/OWNERS)
 ### kind
 Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
+- **Leads:**
+  - Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
+  - Antonio Ojea (**[@aojea](https://github.com/aojea)**), Google
 - **Owners:**
   - [kubernetes-sigs/kind](https://github.com/kubernetes-sigs/kind/blob/main/OWNERS)
 - **Contact:**
@@ -89,11 +101,16 @@ Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using D
 ### kubetest2
 Kubetest2 is the framework for launching and running end-to-end tests on kubernetes.
 It is the next significant iteration of kubetest. We will be deprecating kubetest going forward.
+- **Leads:**
+  - Antonio Ojea (**[@aojea](https://github.com/aojea)**), Google
+  - Mahamed Ali (**[@upodroid](https://github.com/upodroid)**), Cisco
 - **Owners:**
   - [kubernetes-sigs/kubetest2](https://github.com/kubernetes-sigs/kubetest2/blob/master/OWNERS)
   - [kubernetes/test-infra/kubetest](https://github.com/kubernetes/test-infra/blob/master/kubetest/OWNERS)
 ### prow
 Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action for the Kubernetes project
+- **Leads:**
+  - Petr Muller (**[@petr-muller](https://github.com/petr-muller)**), Red Hat
 - **Owners:**
   - [kubernetes-sigs/prow](https://github.com/kubernetes-sigs/prow/blob/main/OWNERS)
 - **Contact:**
@@ -109,6 +126,8 @@ Miscellaneous tools and configuration to run the testing infrastructure for the 
 ### testgrid
 Welcome to TestGrid, a highly-configurable, interactive dashboard for viewing your test results in a grid!
 This hosts Kubernetes-related projects for TestGrid (currently, the new frontend). See https://github.com/GoogleCloudPlatform/testgrid for the main repository (currently, backend components).
+- **Leads:**
+  - Michelle Shepardson (**[@michelle192837](https://github.com/michelle192837)**), Google
 - **Owners:**
   - [kubernetes-sigs/testgrid](https://github.com/kubernetes-sigs/testgrid/blob/main/OWNERS)
 ### testing-commons

@@ -683,9 +683,13 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/api/master/autoscaling/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/podautoscaler/OWNERS
   - name: karpenter
+    contact:
+      slack: karpenter
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/karpenter/main/OWNERS
   - name: vertical-pod-autoscaler
+    contact:
+      slack: vertical-pod-autoscaler
     owners:
     - https://raw.githubusercontent.com/kubernetes/autoscaler/master/vertical-pod-autoscaler/OWNERS
 - dir: sig-cli
@@ -1391,16 +1395,24 @@ sigs:
     - github: kaslin
       name: Kaslin Fields
       company: Google
+      email: kaslin.fields@gmail.com
+    - github: mfahlandt
+      name: Mario Fahlandt
+      company: Kubermatic GmbH
+      email: mfahlandt@pixel-haufen.de
     - github: palnabarun
       name: Nabarun Pal
       company: VMware
+      email: pal.nabarun95@gmail.com
     tech_leads:
     - github: MadhavJivrajani
       name: Madhav Jivrajani
       company: VMware
+      email: madhav.jiv@gmail.com
     - github: Priyankasaggu11929
       name: Priyanka Saggu
       company: SUSE
+      email: priyankasaggu11929@gmail.com
     emeritus_leads:
     - github: Phillels
       name: Elsie Phillips
@@ -1573,7 +1585,7 @@ sigs:
       email: kat.cosgrove@gmail.com
     - github: salaxander
       name: Xander Grzywinski
-      company: Defense Unicorns
+      company: Independent
       email: xandergrzyw@gmail.com
     - github: tengqm
       name: Qiming Teng
@@ -1805,6 +1817,11 @@ sigs:
     description: etcd manager
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/etcd-manager/main/OWNERS
+  - name: etcd-operator
+    description: future site of the new etcd operator, currently used for wg-etcd-operator
+      artifacts
+    owners:
+    - https://raw.githubusercontent.com/etcd-io/etcd-operator/main/OWNERS
   - name: etcd-play
     description: etcd playground
     owners:
@@ -1860,6 +1877,7 @@ sigs:
     - github: rexagod
       name: Pranshu Srivastava
       company: Red Hat
+      email: rexagod@gmail.com
     - github: richabanker
       name: Richa Banker
       company: Google
@@ -1868,9 +1886,11 @@ sigs:
     - github: dashpole
       name: David Ashpole
       company: Google
+      email: dashpole@google.com
     - github: dgrisonnet
       name: Damien Grisonnet
       company: Red Hat
+      email: dgrisonn@redhat.com
     emeritus_leads:
     - github: brancz
       name: Frederic Branczyk
@@ -1888,6 +1908,7 @@ sigs:
     frequency: biweekly
     url: https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09
     archive_url: https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1tue6RXLncPTGjfnBVHP-f
   - description: Regular Triage Meeting
     day: Thursday
     time: "9:30"
@@ -1952,6 +1973,9 @@ sigs:
   - name: usage-metrics-collector
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/usage-metrics-collector/main/OWNERS
+  - name: zpages
+    owners:
+    - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/zpages/OWNERS
 - dir: sig-k8s-infra
   name: K8s Infra
   mission_statement: >
@@ -2005,11 +2029,11 @@ sigs:
     tz: UTC
     frequency: bi-weekly
     url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-    archive_url: http://bit.ly/sig-k8s-infra-notes
+    archive_url: https://go.k8s.io/sig-k8s-infra-notes
     recordings_url: http://bit.ly/sig-k8s-infra-playlist
   contact:
     slack: sig-k8s-infra
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     private_mailing_list: sig-k8s-infra-private@kubernetes.io
     teams:
     - name: sig-k8s-infra
@@ -2025,7 +2049,7 @@ sigs:
       registries
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/community-images/main/OWNERS
   - name: k8s-infra-dns
@@ -2033,7 +2057,7 @@ sigs:
       the Kubernetes project such as k8s.io and kubernetes.io
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/dns/OWNERS
     meetings:
@@ -2043,14 +2067,14 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: k8s-infra-groups
     description: Code and configuration to manage Google Groups for domains owned
       by the Kubernetes project such kubernetes.io
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/groups/OWNERS
     meetings:
@@ -2060,14 +2084,14 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: k8s.io
     description: Code and configuration to manage Kubernetes project infrastructure,
       including various *.k8s.io sites
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/k8s.io/main/OWNERS
     meetings:
@@ -2077,14 +2101,14 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: porche
     description: A custom HTTP redirector serving Kubernetes binaries from existing
       vendor supported and approved storage services.
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/porche/main/OWNERS
     meetings:
@@ -2094,14 +2118,14 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
   - name: registry.k8s.io
     description: A custom HTTP redirector serving Kubernetes container image blobs
       from existing vendor supported container registries.
     contact:
       slack: sig-k8s-infra
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-k8s-infra
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-k8s-infra
     owners:
     - https://raw.githubusercontent.com/kubernetes/registry.k8s.io/main/OWNERS
     meetings:
@@ -2111,7 +2135,7 @@ sigs:
       tz: UTC
       frequency: bi-weekly
       url: https://zoom.us/j/93109963352?pwd=SHJTcFR2bVg1akYxSDREUWQzaldrQT09
-      archive_url: http://bit.ly/sig-k8s-infra-notes
+      archive_url: https://go.k8s.io/sig-k8s-infra-notes
       recordings_url: http://bit.ly/sig-k8s-infra-playlist
 - dir: sig-multicluster
   name: Multicluster
@@ -2133,9 +2157,11 @@ sigs:
     - github: jeremyot
       name: Jeremy Olmsted-Thompson
       company: Google
+      email: jeremyot@google.com
     - github: skitt
       name: Stephen Kitt
       company: Red Hat
+      email: skitt@redhat.com
     emeritus_leads:
     - github: pmorie
       name: Paul Morie
@@ -2383,6 +2409,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cni-dra-driver/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/nat64/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
 - dir: sig-node
   name: Node
@@ -2532,7 +2559,7 @@ sigs:
       email: jeremy.r.rickard@gmail.com
     - github: justaugustus
       name: Stephen Augustus
-      company: Bloomberg L.P.
+      company: Bloomberg
       email: k8s@auggie.dev
     - github: saschagrunert
       name: Sascha Grunert
@@ -2794,6 +2821,14 @@ sigs:
     - github: k82cn
       name: Klaus Ma
   meetings:
+  - description: biweekly meeting (Asia & Europe)
+    day: Tuesday
+    time: "9:00"
+    tz: UTC
+    frequency: biweekly starting Tuesday Feb 11, 2025
+    url: https://zoom.us/j/841218129
+    archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
+    recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
   - description: biweekly meeting (NA & Europe)
     day: Thursday
     time: "17:00"
@@ -2859,7 +2894,7 @@ sigs:
     - github: mimowo
       name: Michał Woźniak
       company: Google
-      email: acondor@google.com
+      email: michalwozniak@google.com
     - github: tenzen-y
       name: Yuki Iwai
       company: CyberAgent, Inc.
@@ -3101,9 +3136,11 @@ sigs:
     - github: jbpratt
       name: Brady Pratt
       company: Red Hat
+      email: bpratt@redhat.com
     - github: michelle192837
       name: Michelle Shepardson
       company: Google
+      email: amerai@google.com
     - github: xmcqueen
       name: Brian McQueen
       company: LinkedIn
@@ -3112,21 +3149,19 @@ sigs:
       name: Benjamin Elder
       company: Google
       email: bentheelder@google.com
-    - github: alvaroaleman
-      name: Alvaro Aleman
-      company: Red Hat
     - github: aojea
       name: Antonio Ojea
       company: Google
       email: aojea@google.com
-    - github: cjwagner
-      name: Cole Wagner
-      company: Google
     - github: pohly
       name: Patrick Ohly
       company: Intel
       email: patrick.ohly@intel.com
     emeritus_leads:
+    - github: alvaroaleman
+      name: Alvaro Aleman
+    - github: cjwagner
+      name: Cole Wagner
     - github: fejta
       name: Erick Fejta
     - github: spiffxp
@@ -3167,12 +3202,29 @@ sigs:
       Cloud provider for KIND clusters
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/cloud-provider-kind/main/OWNERS
+    leads:
+    - github: BenTheElder
+      name: Benjamin Elder
+      company: Google
+      email: bentheelder@google.com
+    - github: aojea
+      name: Antonio Ojea
+      company: Google
+      email: aojea@google.com
   - name: boskos
     description: |
       Boskos is a resource manager service that handles different kinds of resources and transitions between different states. We use it on the Kubernetes project to manage pools of GCP projects for CI/CD.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/boskos/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/boskos/OWNERS
+    leads:
+    - github: dims
+      name: Davanum Srinivas
+      company: Amazon
+      email: davanum@gmail.com
+    - github: upodroid
+      name: Mahamed Ali
+      company: Cisco
   - name: e2e-framework
     description: |
       An experimental e2e testing framework for Kubernetes clusters.
@@ -3183,6 +3235,14 @@ sigs:
       Hydrophone is a lightweight Kubernetes conformance tests runner
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/hydrophone/main/OWNERS
+    leads:
+    - github: dims
+      name: Davanum Srinivas
+      company: Amazon
+      email: davanum@gmail.com
+    - github: rjsadow
+      name: Ricky Sadowski
+      company: ICR Team
   - name: kind
     description: |
       Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using Docker containers as nodes.
@@ -3190,6 +3250,15 @@ sigs:
       slack: kind
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kind/main/OWNERS
+    leads:
+    - github: BenTheElder
+      name: Benjamin Elder
+      company: Google
+      email: bentheelder@google.com
+    - github: aojea
+      name: Antonio Ojea
+      company: Google
+      email: aojea@google.com
   - name: kubetest2
     description: |
       Kubetest2 is the framework for launching and running end-to-end tests on kubernetes.
@@ -3197,6 +3266,14 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubetest2/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/test-infra/master/kubetest/OWNERS
+    leads:
+    - github: aojea
+      name: Antonio Ojea
+      company: Google
+      email: aojea@google.com
+    - github: upodroid
+      name: Mahamed Ali
+      company: Cisco
   - name: prow
     description: |
       Prow is a CI/CD system based on Kubernetes. See prow.k8s.io to see it in action for the Kubernetes project
@@ -3204,6 +3281,11 @@ sigs:
       slack: prow
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/prow/main/OWNERS
+    leads:
+    - github: petr-muller
+      name: Petr Muller
+      company: Red Hat
+      email: muller@redhat.com
   - name: sig-testing
     description: |
       Home for SIG Testing discussion and documents.
@@ -3220,6 +3302,11 @@ sigs:
       This hosts Kubernetes-related projects for TestGrid (currently, the new frontend). See https://github.com/GoogleCloudPlatform/testgrid for the main repository (currently, backend components).
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/testgrid/main/OWNERS
+    leads:
+    - github: michelle192837
+      name: Michelle Shepardson
+      company: Google
+      email: amerai@google.com
   - name: testing-commons
     description: |
       **[best-effort]** The testing-commons subproject focuses on matters of code structure, layout, and execution of kubernetes/kubernetes test code. It is currently staffed on a best-effort basis; please bring discussions to the sig-testing slack channel or meeting. For historical context, please see the [former testing-commons meeting agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit) and [archived testing-commons slack channel](https://kubernetes.slack.com/archives/C9NK9KFFW)
@@ -3519,6 +3606,9 @@ workinggroups:
     Note: the etcd clusters, to be managed by the etcd-operator, are to support applications
     instead of Kubernetes itself.
 
+    In addition to the slack channel, mailing list, and meetings, you can join our
+    discussion through issues and PRs in [the etcd-operator repo](https://github.com/etcd-io/etcd-operator/)
+
   charter_link: charter.md
   stakeholder_sigs:
   - Cluster Lifecycle
@@ -3750,7 +3840,7 @@ committees:
     chairs:
     - github: AnaMMedina21
       name: Ana Margarita Medina
-      company: Lightstep
+      company: Upbound
     - github: endocrimes
       name: Danielle Lancashire
       company: Independent
@@ -3762,7 +3852,7 @@ committees:
       company: Microsoft
     - github: salaxander
       name: Xander Grzywinski
-      company: Defense Unicorns
+      company: Independent
     emeritus_leads:
     - github: AevaOnline
       name: Aeva Black
@@ -3886,7 +3976,7 @@ committees:
       email: antonio.ojea.garcia@gmail.com
     - github: justaugustus
       name: Stephen Augustus
-      company: Bloomberg L.P.
+      company: Bloomberg
       email: k8s@auggie.dev
     - github: pacoxu
       name: Paco Xu 徐俊杰

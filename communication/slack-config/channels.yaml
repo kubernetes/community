@@ -82,6 +82,7 @@ channels:
   - name: cluster-api-operator
   - name: cluster-api-packet
   - name: cluster-api-proxmox
+  - name: cluster-api-release
   - name: cluster-api-vsphere
   - name: cn-dev
   - name: cn-events
@@ -147,6 +148,7 @@ channels:
     archived: true
   - name: garden-dev
     archived: true
+  - name: gateway-api-inference-extension
   - name: gardener
   - name: gimbal
   - name: github
@@ -175,6 +177,7 @@ channels:
   - name: hetzner
   - name: hmc-dev
   - name: homelab
+  - name: hybrid-cloud-users
   - name: hydrophone
   - name: id-events
   - name: id-users
@@ -548,6 +551,7 @@ channels:
   - name: velero-dev
   - name: velero-users
     id: C6VCGP4MT
+  - name: vertical-pod-autoscaler
   - name: virtlet
   - name: virtual-kubelet
   - name: virtualization

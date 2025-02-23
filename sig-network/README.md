@@ -152,6 +152,7 @@ Gateway API Inference Extension
 - **Owners:**
   - [kubernetes-sigs/cni-dra-driver](https://github.com/kubernetes-sigs/cni-dra-driver/blob/main/OWNERS)
   - [kubernetes-sigs/ip-masq-agent](https://github.com/kubernetes-sigs/ip-masq-agent/blob/master/OWNERS)
+  - [kubernetes-sigs/nat64](https://github.com/kubernetes-sigs/nat64/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/kubelet/network](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/network/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects

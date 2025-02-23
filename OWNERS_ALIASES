@@ -39,6 +39,7 @@ aliases:
     - MadhavJivrajani
     - Priyankasaggu11929
     - kaslin
+    - mfahlandt
     - palnabarun
   sig-docs-leads:
     - divya-mohan0209
@@ -104,9 +105,7 @@ aliases:
     - xing-yang
   sig-testing-leads:
     - BenTheElder
-    - alvaroaleman
     - aojea
-    - cjwagner
     - jbpratt
     - michelle192837
     - pohly
@@ -199,8 +198,20 @@ aliases:
   provider-vmware:
     - cantbewong
     - frapposelli
+  sig-architecture-approvers:
+    - dims
+    - derekwaynecarr
+    - johnbelamaric
   sig-release-subproject-leads:
     - gracenng
     - katcosgrove
     - xmudrii
+  sig-testing-subproject-leads:
+    - aojea
+    - BenTheElder
+    - dims
+    - michelle192837
+    - petr-muller
+    - rjsadow
+    - upodroid
 ## END CUSTOM CONTENT

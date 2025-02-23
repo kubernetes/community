@@ -14,11 +14,11 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 
 ## Members
 
-* Ana Margarita Medina (**[@AnaMMedina21](https://github.com/AnaMMedina21)**), Lightstep
+* Ana Margarita Medina (**[@AnaMMedina21](https://github.com/AnaMMedina21)**), Upbound
 * Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), Independent
 * Hilliary Lipsig (**[@hlipsig](https://github.com/hlipsig)**), Red Hat
 * Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
-* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Defense Unicorns
+* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Independent
 
 ## Emeritus Members
 
@@ -58,16 +58,16 @@ Our [Incident Report Handling Procedures](incident-process.md) describes how we 
 
 The members and their terms are as follows:
 
-### Term ends on August 23, 2025
+### Term ends on February 17, 2026
 
-- Jeremy Rickard (Microsoft)
-- Ana Margarita Medina (Lightstep)
+- Jeremy Rickard
+- Ana Margarita Medina
 
-### Term ends on August 17, 2024
+### Term ends on February 17, 2025
 
-- Danielle Lancashire (VMware)
-- Hilliary Lipsig (RedHat)
-- Xander Grzywinski (Microsoft)
+- Danielle Lancashire
+- Hilliary Lipsig
+- Xander Grzywinski
 
 Please see the [bootstrapping document](./bootstrapping-process.md) and [election process guidelines](election.md) for more information on how members are picked and their responsibilities.
 

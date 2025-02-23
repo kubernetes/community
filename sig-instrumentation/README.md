@@ -16,6 +16,7 @@ The [charter](charter.md) defines the scope and governance of the Instrumentatio
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation) for the group will typically add invites for the following meetings to your calendar.*
 * Regular SIG Meeting: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1tue6RXLncPTGjfnBVHP-f).
 * Regular Triage Meeting: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09) (biweekly - alternating with regular meeting). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing).
 
@@ -104,6 +105,9 @@ Organization of SIG Instrumentation subprojects
 ### usage-metrics-collector
 - **Owners:**
   - [kubernetes-sigs/usage-metrics-collector](https://github.com/kubernetes-sigs/usage-metrics-collector/blob/main/OWNERS)
+### zpages
+- **Owners:**
+  - [kubernetes/kubernetes/staging/src/k8s.io/component-base/zpages](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/zpages/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
