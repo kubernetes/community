@@ -30,8 +30,8 @@ The following topics fall under ownership of this SIG:
   - APIs for defining L3/4 loadbalancing (i.e. [Service], [Gateway API])
   - Reference implementations (i.e. [kube-proxy]).
 - Ingress
-  - APIs for defining ingress loadbalancing (i.e. [Ingress], [Gateway API])
-  - Reference implementations (i.e. [ingress-nginx])
+  - APIs for defining ingress loadbalancing (i.e. [Ingress], [Gateway API], [Gateway API Inference Extension])
+  - API Implementations (i.e. [ingress-nginx], [InGate])
 - Network Policy
   - APIs for defining network policies (i.e. [NetworkPolicy], [AdminNetworkPolicy], [BaselineAdminNetworkPolicy])
   - Reference implementations (i.e. [kube-network-policies])
@@ -83,7 +83,9 @@ SIG Technical Leads
 
 [Ingress]: https://kubernetes.io/docs/concepts/services-networking/ingress/
 [Gateway API]: https://gateway-api.sigs.k8s.io/
+[Gateway API Inference Extension]: https://github.com/kubernetes-sigs/gateway-api-inference-extension
 [ingress-nginx]: https://github.com/kubernetes/ingress-nginx/
+[InGate]: https://github.com/kubernetes-sigs/ingate
 
 [NetworkPolicy]: https://kubernetes.io/docs/concepts/services-networking/network-policies/
 [AdminNetworkPolicy]: https://network-policy-api.sigs.k8s.io/api-overview/#the-adminnetworkpolicy-resource
