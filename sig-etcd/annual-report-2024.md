@@ -9,11 +9,21 @@
   - [etcd downgrade](https://github.com/kubernetes/enhancements/tree/master/keps/sig-etcd/4326-downgrade) is implemented to support etcd v3.6 and above
   - Introduced [Server Feature Gate in etcd](https://github.com/kubernetes/enhancements/pull/4610)
 - [Working Group etcd-operator](https://github.com/kubernetes/community/blob/master/wg-etcd-operator/README.md) was co-founded by SIG etcd and SIG cluster lifecycle
+- Formed the dedicated [release team](https://github.com/etcd-io/etcd/blob/main/Documentation/contributor-guide/release.md) to streamline and enhance the release process.
+- Delivered 13 patch [releases (6 for release 3.5 and 7 for release 3.4)](https://github.com/etcd-io/etcd/releases).
+- Introduced [bbolt surgery commands](https://github.com/etcd-io/bbolt/tree/526ef1e15f7e3e3c8e29f3b78ed173fa29b1bc60/cmd/bbolt#help) to repair corrupted database files where possible.
+- Made a lot of progress on Prow job migration, including migrating all the ARM64 jobs.
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
-- [Working Group etcd-operator](https://github.com/kubernetes/community/blob/master/wg-etcd-operator/README.md)
-- [etcd robustness test](https://github.com/etcd-io/etcd/blob/main/tests/robustness/README.md)
+- [dbtester](https://github.com/etcd-io/dbtester)
+- [discovery.etcd.io](https://github.com/etcd-io/discovery.etcd.io))
+- [discoveryserver](https://github.com/etcd-io/discoveryserver)
+- [etcdlabs](https://github.com/etcd-io/etcdlabs)
+- [gofail](https://github.com/etcd-io/gofail)
+- [govanityurls](https://github.com/etcd-io/govanityurls)
+- [jetcd](https://github.com/etcd-io/jetcd)
+- [protodoc](https://github.com/etcd-io/protodoc)
 
 3. Did you have community-wide updates in 2024 (e.g. KubeCon talks)?
 
@@ -37,23 +47,20 @@
 **New in 2024:**
   - auger
   - etcd-manager
+
 **Continuing:**
   - bbolt
-  - cetcd
   - dbtester
   - discovery.etcd.io
   - discoveryserver
   - etcd
-  - etcd-play
   - etcdlabs
   - gofail
   - govanityurls
   - jetcd
-  - maintainers
   - protodoc
   - raft
   - website
-  - zetcd
 
 ## [Working groups](https://git.k8s.io/community/sig-etcd#working-groups)
 
