@@ -180,7 +180,7 @@ Webinars:
 
 Operational tasks in [sig-governance.md]:
 - [x] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
 - [x] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
 - [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
 - [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
