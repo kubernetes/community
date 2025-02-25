@@ -15,10 +15,10 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 ## Members
 
 * Ana Margarita Medina (**[@AnaMMedina21](https://github.com/AnaMMedina21)**), Upbound
-* Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), Independent
-* Hilliary Lipsig (**[@hlipsig](https://github.com/hlipsig)**), Red Hat
+* Divya Mohan (**[@divya-mohan0209](https://github.com/divya-mohan0209)**), SUSE
+* Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**), Fermyon
 * Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
-* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Independent
+* Sean McGinnis (**[@stmcginnis](https://github.com/stmcginnis)**), Lambda, Inc
 
 ## Emeritus Members
 
@@ -29,10 +29,12 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
 * Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**)
 * Jason DeTiberus (**[@detiber](https://github.com/detiber)**)
 * Eric Paris (**[@eparis](https://github.com/eparis)**)
+* Hilliary Lipsig (**[@hlipsig](https://github.com/hlipsig)**)
 * Jaice Singer DuMars (**[@jdumars](https://github.com/jdumars)**)
 * Karen Chu (**[@karenhchu](https://github.com/karenhchu)**)
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**)
 * Paris Pittman (**[@parispittman](https://github.com/parispittman)**)
+* Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**)
 * Tasha Drew (**[@tashimi](https://github.com/tashimi)**)
 * Tim Pepper (**[@tpepper](https://github.com/tpepper)**)
 * Vallery Lancey (**[@vllry](https://github.com/vllry)**)

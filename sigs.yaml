@@ -3841,18 +3841,18 @@ committees:
     - github: AnaMMedina21
       name: Ana Margarita Medina
       company: Upbound
+    - github: divya-mohan0209
+      name: Divya Mohan
+      company: SUSE
     - github: endocrimes
       name: Danielle Lancashire
-      company: Independent
-    - github: hlipsig
-      name: Hilliary Lipsig
-      company: Red Hat
+      company: Fermyon
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Microsoft
-    - github: salaxander
-      name: Xander Grzywinski
-      company: Independent
+    - github: stmcginnis
+      name: Sean McGinnis
+      company: Lambda, Inc
     emeritus_leads:
     - github: AevaOnline
       name: Aeva Black
@@ -3868,6 +3868,8 @@ committees:
       name: Jason DeTiberus
     - github: eparis
       name: Eric Paris
+    - github: hlipsig
+      name: Hilliary Lipsig
     - github: jdumars
       name: Jaice Singer DuMars
     - github: karenhchu
@@ -3876,6 +3878,8 @@ committees:
       name: Nabarun Pal
     - github: parispittman
       name: Paris Pittman
+    - github: salaxander
+      name: Xander Grzywinski
     - github: tashimi
       name: Tasha Drew
     - github: tpepper
