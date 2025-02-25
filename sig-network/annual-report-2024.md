@@ -64,6 +64,33 @@ the major themes and releases:
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
+While there are no SIG Network projects which _couldn't_ benefit from more help
+and contributions, the following is a list of specific projects where there are
+known blockers (or otherwise critical needs) where more contributions, feedback,
+or implementation support is the key to "unblocking" them:
+
+- [InGate] is a new project just getting started creating a Gateway API implementation, and needs contributors to join and get to the first release.
+- [Network Policy] could use more implementations to join and support some of our newer APIs (e.g. [AdminNetworkPolicy]) to help them graduate towards GA.
+- [MultiNetwork] has started anew with CRD based development and is in need of use cases and implementations to join to get to the first release.
+- [Gateway API]
+  - has a large number of [features which are not yet standard] which could use implementations to join us to help us graduate those towards GA.
+  - has two CLI utilities which need more users and implementations to get involved to provide feedback: [ingress2gateway], [gwctl]
+- [Gateway API Inference Extension] is a new project which provides AI/ML inference routing and load-balancing features. It is in need of more implementations to bring use cases and and contribute in order to help graduate the APIs towards GA.
+- If you're interested in [DRA] for networking, we started a new [CNI] driver this year which could use more contributors: [cni-dra-driver]
+
+[README.md]:https://github.com/kubernetes/community/blob/master/sig-network/README.md
+[charter]:https://github.com/kubernetes/community/blob/master/sig-network/charter.md
+[InGate]:https://github.com/kubernetes-sigs/ingate
+[Network Policy]:https://github.com/kubernetes-sigs/network-policy-api
+[AdminNetworkPolicy]:https://network-policy-api.sigs.k8s.io/reference/spec/#policy.networking.k8s.io%2fv1alpha1.AdminNetworkPolicy
+[MultiNetwork]:https://github.com/kubernetes-sigs/multi-network-api
+[Gateway API]:https://github.com/kubernetes-sigs/gateway-api
+[features which are not yet standard]:https://gateway-api.sigs.k8s.io/geps/overview/
+[ingress2gateway]:https://github.com/kubernetes-sigs/ingress2gateway
+[gwctl]:https://github.com/kubernetes-sigs/gwctl
+[DRA]:https://kubernetes.io/docs/concepts/scheduling-eviction/dynamic-resource-allocation/
+[CNI]:https://www.cni.dev/
+[cni-dra-driver]:https://github.com/kubernetes-sigs/cni-dra-driver
 
 3. Did you have community-wide updates in 2024 (e.g. KubeCon talks)?
 
