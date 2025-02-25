@@ -2857,20 +2857,10 @@ sigs:
     slack: sig-scheduling
     mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling
     teams:
-    - name: sig-scheduling-api-reviews
-      description: API Changes and Reviews
-    - name: sig-scheduling-bugs
-      description: Bug Triage and Troubleshooting
-    - name: sig-scheduling-feature-requests
-      description: Feature Requests
+    - name: sig-scheduling-leads
+      description: SIG Scheduling leads
     - name: sig-scheduling-misc
       description: General Discussion
-    - name: sig-scheduling-pr-reviews
-      description: PR Reviews
-    - name: sig-scheduling-proposals
-      description: Design Proposals
-    - name: sig-scheduling-test-failures
-      description: Test Failures and Triage
     liaison:
       github: BenTheElder
       name: Benjamin Elder
