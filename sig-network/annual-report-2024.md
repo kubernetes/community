@@ -94,9 +94,30 @@ or implementation support is the key to "unblocking" them:
 
 3. Did you have community-wide updates in 2024 (e.g. KubeCon talks)?
 
-<!--
-  Examples include links to email, slides, or recordings.
--->
+Blog Posts:
+
+- [Getting started with the AdminNetworkPolicy](https://network-policy-api.sigs.k8s.io/blog/2024/01/30/getting-started-with-the-adminnetworkpolicy-api/)
+- [Gateway API v1.1](https://kubernetes.io/blog/2024/05/09/gateway-api-v1-1/)
+- [Gateway API v1.2](https://kubernetes.io/blog/2024/11/21/gateway-api-v1-2/)
+
+Talks:
+
+- [Network Policy: The future of Network Policy (Kubecon EU)](https://sched.co/1Yhhb)
+- [How many network policies can I create? (Kubecon EU)](https://kccnceu2024.sched.com/event/1YeMI)
+- [Gateway API "Beyond GA" (Kubecon EU)](https://kccnceu2024.sched.com/event/50c69a019a6fb2935d5f19cbb30f0ce3)
+- [Configuring your Service Mesh with Gateway API (Kubecon EU)](https://kccnceu2024.sched.com/event/1YeOL)
+- [SIG Network Intro & Updates (Kubecon NA)](https://kccncna2024.sched.com/event/1hovJ)
+- [Securing the Future of Ingress-NGINX (Kubecon NA)](https://kccncna2024.sched.com/event/1hoxW)
+- [Gateway API: What's new, what's next? (Kubecon NA)](https://kccncna2024.sched.com/event/1hoxF)
+- [Unlocking the Gateway: A Practical Guide from Ingress to Gateway API (Kubecon NA)](https://cfp.cloud-native.rejekts.io/cloud-native-rejekts-eu-paris-2024/talk/KEYQD9/)
+- [How to move from Ingress to Gateway API with minimal Hassle (Kubecon NA)](https://kccncna2024.sched.com/event/1i7ng)
+- [Live with Gateway API 1.2 (Kubecon NA)](https://kccncna2024.sched.com/event/1i7np)
+- [With Great Flexibility Comes Great Complexity: Inspect your Gateway API Configuration (Kubecon NA)](https://kccncna2024.sched.com/event/1i7s2)
+- [CNI Updates & Direction (Kubecon NA)](https://kccncna2024.sched.com/event/1how8)
+
+Webinars:
+
+- [Migrating from Ingress to Gateway API (CNCF Webinar)](https://community.cncf.io/events/details/cncf-cncf-online-programs-presents-cncf-on-demand-webinar-ingress2gateway-migrating-from-ingress-to-gateway-api/)
 
 4. KEP work in 2024 (v1.30, v1.31, v1.32):
 
