@@ -50,15 +50,13 @@
 
 ## [Subprojects](https://git.k8s.io/community/sig-network#subprojects)
 
-
 **New in 2024:**
   - gateway-api-inference-extension
   - ingate
   - knftables
   - multi-network
   - node-ipam-controller
-**Retired in 2024:**
-  - kpng
+
 **Continuing:**
   - cluster-proportional-autoscaler
   - cluster-proportional-vertical-autoscaler
@@ -70,13 +68,18 @@
   - network-policy
   - pod-networking
 
+**Retired in 2024:**
+  - kpng
+
 ## [Working groups](https://git.k8s.io/community/sig-network#working-groups)
 
 **New in 2024:**
  - Device Management
  - Serving
+
 **Retired in 2024:**
  - IoT Edge
+
 **Continuing:**
  - Policy
  - Structured Logging
