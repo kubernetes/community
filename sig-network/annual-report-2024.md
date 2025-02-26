@@ -29,6 +29,8 @@ the major themes and releases:
   - Shipped our first release of our [gwctl] utility: [v0.1.0][gwctlv0.1]
 - [Gateway API Inference Extensions (GIE)](https://github.com/kubernetes-sigs/gateway-api-inference-extension)
   - Shipped our first release [v0.1.0](https://github.com/kubernetes-sigs/gateway-api-inference-extension)
+  - Major performance improvement: Reduced output token latency by [15%-60%] when kv cache is close to saturation
+  - Three new implementations have joined us to help us support the API and move it forward
 - [IP Masq Agent](https://github.com/kubernetes-sigs/ip-masq-agent)
   - Shipped important maintenance release [v2.12.0](https://github.com/kubernetes-sigs/ip-masq-agent/releases/tag/v2.12.0)
 - [Cluster Proportional Autoscaler](https://github.com/kubernetes-sigs/cluster-proportional-autoscaler)
