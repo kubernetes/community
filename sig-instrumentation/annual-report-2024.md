@@ -14,7 +14,7 @@
 
 - `Contextual Logging` graduated to [beta](https://github.com/kubernetes/enhancements/pull/4219)
 - Introduced `Component Statusz` [alpha](https://github.com/kubernetes/enhancements/pull/4830)
-- Introduced `Component Flags` [alpha](https://github.com/kubernetes/enhancements/pull/4831)
+- Introduced `Component Flagz` [alpha](https://github.com/kubernetes/enhancements/pull/4831)
 - Final draft ready for `Resource State Metrics` [alpha](https://github.com/kubernetes/enhancements/pull/4811)
 - [Usage metrics collector](https://github.com/kubernetes-sigs/usage-metrics-collector) now supports [cgroupsv2](https://github.com/kubernetes-sigs/usage-metrics-collector/pull/140) in metrics sampler
 - [Usage metrics collector](https://github.com/kubernetes-sigs/usage-metrics-collector) had 6 contributors from 4 different companies
@@ -56,23 +56,16 @@
 
 ## [Subprojects](https://git.k8s.io/community/sig-instrumentation#subprojects)
 
-**New in 2024:**
-
-- [zpages](https://git.k8s.io/kubernetes/staging/src/k8s.io/component-base/zpages)
-
 **Continuing:**
 
 - custom-metrics-apiserver
-- instrumentation
 - instrumentation-addons
 - instrumentation-tools
 - klog
 - kube-state-metrics
-- metric-stability-framework
 - metrics
 - metrics-server
 - prometheus-adapter
-- structured-logging
 - usage-metrics-collector
 
 ## [Working groups](https://git.k8s.io/community/sig-instrumentation#working-groups)
