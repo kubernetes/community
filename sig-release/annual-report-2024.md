@@ -17,6 +17,7 @@ None.
 [Planning for Maturity: SIG Release's Revamp for a More Stable Kubernetes](https://www.youtube.com/watch?v=UhIXUarNPKc)
 
 4. KEP work in 2024 (v1.30, v1.31, v1.32):
+None
 <!--
    TODO: Uncomment the following auto-generated list of KEPs, once reviewed & updated for correction.
 
