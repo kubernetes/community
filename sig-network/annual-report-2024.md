@@ -10,6 +10,7 @@ the major themes and releases:
 - [External DNS](https://github.com/kubernetes-sigs/external-dns)
   - Two new reviewers were added this year as the project continues to grow
   - Shipped important maintenance release [v0.15.x](https://github.com/kubernetes-sigs/external-dns/releases/tag/v0.15.0)
+  - Created [webhook provider](https://kubernetes-sigs.github.io/external-dns/v0.14.2/tutorials/webhook-provider/) to enable providers running out of tree. Our goal is to move all providers out of tree.
 - [Ingress NGINX](https://github.com/kubernetes/ingress-nginx)
   - Shipped a large number of `v1.x.x` patch and minor releases all the way from `v1.8.x` to [v1.12.0](https://github.com/kubernetes/ingress-nginx/releases/tag/controller-v1.12.0)
 - [InGate](https://github.com/kubernetes-sigs/ingate)
