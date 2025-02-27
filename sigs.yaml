@@ -983,6 +983,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-ibmcloud/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/ibm-powervs-block-csi-driver/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/ibm-vpc-block-csi-driver/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/provider-ibmcloud-test-infra/main/OWNERS
     meetings:
     - description: Regular IBM Subproject Meeting
       day: Wednesday
