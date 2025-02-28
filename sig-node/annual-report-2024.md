@@ -4,40 +4,39 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-<!--
-   Some example items that might be worth highlighting:
-   - Major KEP advancement
-   - Important initiatives that aren't tracked via KEPs
-   - Paying down significant tech debt
-   - Governance and leadership changes
--->
+SIG-Node remains a structural piece of the Kubernetes community and the span of the work done in 2024 highlights that.
+As the community continues rallying behind AI use cases and identifying gaps with Kubernetes as a platform for LLM training and serving,
+SIG-Node made strides in multiple AI related areas. DRA structured parameters made it to beta, meaning more flexible scheduling and allocation of
+device resources is now possible. In 2025 there will be a lot of continued work on DRA, including enhancing drivers to be able to report device health
+and Kubernetes components be able to react to that, extending DRA to support advanced networking use cases, device taints and tolerations, and lots more!
+Outside of DRA, OCI image volume mounts have been added as alpha in 2024, allowing users to mount AI models into containers via a separate image (and one day artifact) instead
+of a model car or embedding it in the container image. Also, work like in-place pod resize and pod level resource limits will unlock use cases for power AI users: allowing more flexibility
+in pod resource limit calculation at both initialization and during runtime.
+
+Plenty of work has been being done outside of AI as well! SIG-Node remains the top SIG in KEPs progressing, moving forward on 13, 16, and 17 KEPs between 1.30, 1.31, and 1.32 respectively.
+Lots of progress has been made in the CPU manager: like adding support for split uncore cache, adding a policy option for restricting resrevedSystemCPUS and a new static policy for optimizing CPU alignment.
+We have also worked on some long awaited linux technologies like user namespaces, swap, AppArmor, ephemeral storage quotas, recursive read only mounts, and better support for supplemental groups,
+as well as announced feature freeze on cgroupv1.
+
+All of these features don't even begin to cover the amount of CI stabilization, bug fixes, and other work the SIG is doing. We remain a productive (albeit, occasionally overbooked) SIG. To help keep up with all
+of the work, we've inducted one new approver Sergey Kanzhelev, reinducted a formerly emertius approver Tim Allclair, welcomed a new SIG chair Peter Hunt, as well as began crafting a role to help KEP authors follow along the KEP process, currently called the KEP wranglers.
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
+SIG-Node, in being so busy, always has a bottleneck of top level approvers. Any path in the kubelet could use more people who have expertise and confidence in reviewing. Please refer to our
+[contributor ladder](https://github.com/kubernetes/community/blob/master/sig-node/sig-node-contributor-ladder.md) to see ways to grow in the SIG!
 
 3. Did you have community-wide updates in 2024 (e.g. KubeCon talks)?
 
-<!--
-  Examples include links to email, slides, or recordings.
--->
+- Kubecon EU 2024 [maintainers track](https://kccnceu2024.sched.com/event/1YhjL/kubernetes-sig-node-intro-and-deep-dive-dixita-narang-dawn-chen-google-matthias-bertschy-armo-peter-hunt-red-hat)
+- Kubecon NA 2024 [maintainers track](https://kccncna2024.sched.com/event/1hovs/sig-node-intro-and-deep-dive-sergey-kanzhelev-dawn-chen-google-mrunal-patel-red-hat)
 
 4. KEP work in 2024 (v1.30, v1.31, v1.32):
-<!--
-   TODO: Uncomment the following auto-generated list of KEPs, once reviewed & updated for correction.
-
-   Note: This list is generated from the KEP metadata in kubernetes/enhancements repository.
-      If you find any discrepancy in the generated list here, please check the KEP metadata.
-      Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
--->
-
-<!-- 
   - Alpha
-    - [2535 - Ensure Secret Pulled Images](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2535-ensure-secret-pulled-images) - v1.32
     - [2837 - KEP Template](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2837-pod-level-resource-spec) - v1.32
     - [2862 - Fine grained Kubelet API authorization](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2862-fine-grained-kubelet-authz) - v1.32
     - [3288 - Split Stdout and Stderr Log Stream of Container](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/3288-separate-stdout-from-stderr) - v1.32
     - [3619 - Fine grained SupplementalGroups control](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/3619-supplemental-groups-policy) - v1.31
-    - [4205 - PSI based Node Conditions](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/4205-psi-metric) - v1.32
     - [4438 - Restarting sidecar containers during Pod termination](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/4438-container-restart-termination) - v1.32
     - [4540 - Add CPUManager policy option to restrict reservedSystemCPUs to system daemons and interrupt processing](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/4540-strict-cpu-reservation) - v1.32
     - [4580 - Deprecate & remove Kubelet RunOnce mode](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/4580-deprecate-kubelet-runonce) - v1.31
@@ -108,12 +107,12 @@
 ## Operational
 
 Operational tasks in [sig-governance.md]:
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
-- [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2024 are linked from [README.md] and updated/uploaded if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2024 are linked from [README.md] and updated/uploaded if needed
 
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-node/CONTRIBUTING.md
