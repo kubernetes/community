@@ -87,6 +87,7 @@ usergroups:
       - CIPHERTron
       - chadmcrowell
       - Hii-Arpit
+      - kaslin
 
   - name: zoom-admins
     long_name: Zoom Admins
