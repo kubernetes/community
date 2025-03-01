@@ -142,6 +142,7 @@ Gateway API Inference Extension
 - **Owners:**
   - [kubernetes-sigs/kube-network-policies](https://github.com/kubernetes-sigs/kube-network-policies/blob/master/OWNERS)
   - [kubernetes-sigs/network-policy-api](https://github.com/kubernetes-sigs/network-policy-api/blob/master/OWNERS)
+  - [kubernetes-sigs/network-policy-finalizer](https://github.com/kubernetes-sigs/network-policy-finalizer/blob/main/OWNERS)
   - [kubernetes/api/networking](https://github.com/kubernetes/api/blob/master/networking/OWNERS)
 - **Contact:**
   - Slack: [#sig-network-policy-api](https://kubernetes.slack.com/messages/sig-network-policy-api)

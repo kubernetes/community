@@ -2393,6 +2393,7 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kube-network-policies/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-api/master/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-finalizer/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
     leads:
     - github: astoycos
