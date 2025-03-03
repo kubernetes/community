@@ -49,6 +49,10 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-scalability:
+### inference-perf
+[Described below](#inference-perf)
+- **Owners:**
+  - [kubernetes-sigs/inference-perf/heads/main](https://github.com/kubernetes-sigs/inference-perf/blob/refs/heads/main/OWNERS)
 ### kubernetes-scalability-and-performance-tests-and-validation
 [Described below](#kubernetes-scalability-and-performance-tests-and-validation)
 - **Owners:**
@@ -164,5 +168,8 @@ of scalability and performance regressions:
 
 * [Processes](https://github.com/kubernetes/community/tree/master/sig-scalability/processes)
 
+## Inference perf
+
+TODO: to fill in.
 
 <!-- END CUSTOM CONTENT -->
