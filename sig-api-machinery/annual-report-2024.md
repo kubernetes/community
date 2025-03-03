@@ -22,8 +22,9 @@
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 - API Machinery area is very extense, here are some areas that could use extra help:
   - Server Side Apply
-  - Garbage Collection
-  - Resource Quota
+  - Resource Lifecycle (examples: Garbage Collection, Storage Version Migrator, Namespace Deletion, CRD lifecycle, etc)
+  - Controllers Infrastructure
+  - Clients ecosystem
 
 3. Did you have community-wide updates in 2024 (e.g. KubeCon talks)?
 
