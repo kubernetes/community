@@ -16,7 +16,10 @@
 - LWKD: 47 issues during 2024, a team of 7 folks contributing - 2 are new contributors (@satyampsoni and @priyaaakansha) from year 2024.
 - ContribEx Comms Metrics
   - Publishing of 6 SIG Spotlight Blogs ([SIG Release](https://www.kubernetes.dev/blog/2024/01/15/sig-release-spotlight-2023/), [SIG CloudProvider](https://www.kubernetes.dev/blog/2024/03/01/sig-cloud-provider-spotlight-2024/), [SIG Architecture code](https://www.kubernetes.dev/blog/2024/04/11/sig-architecture-code-spotlight-2024/), [SIG Node](https://www.kubernetes.dev/blog/2024/06/20/sig-node-spotlight-2024/), [SIG API Machinery](https://www.kubernetes.dev/blog/2024/08/07/sig-api-machinery-spotlight-2024/), [SIG Scheduling](https://www.kubernetes.dev/blog/2024/09/24/sig-scheduling-spotlight-2024/), 1 WG Spotlight ([CNCF Deaf and hard of hearing WG ](https://www.kubernetes.dev/blog/2024/09/30/cncf-deaf-and-hard-of-hearing-working-group-spotlight/), 1 additional spotlight ([Upstream training in Japan](https://www.kubernetes.dev/blog/2024/10/28/k8s-upstream-training-japan-spotlight/))
-  - # of Social Media posts
+  - Taking ownership of kubernetesio X account at 304005 Users and grew it to 309938 Followers with 64 tweets
+  - Taking ownership of Kubernetes LinkedIn Account and grew followers by 6689 starting with 2000 with 118 posts
+  - k8sContributors X account growth 2336 Follower and 181 Tweets 
+  - start of Bluesky accounts for [Contributors](https://web-cdn.bsky.app/profile/kubernetes.dev) and [EndUsers ](https://web-cdn.bsky.app/profile/kubernetes.io)
 - Revamped the mentoring subproject by improving process and documentation. Thanks to Sylvester.
 
 
