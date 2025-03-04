@@ -2262,6 +2262,13 @@ sigs:
     frequency: monthly
     url: https://zoom.us/j/441530404
     archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
+  - description: Ingate Meeting
+    day: Friday
+    time: "06:00"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/94625479998
+    archive_url: https://docs.google.com/document/d/1KqMxFbxz4QO5bYCFfihyZwPVZTtTtzcQs3Nt2-JQaAA/edit
   - description: Network Policy API Meeting
     day: Tuesday
     time: "9:00"
@@ -2352,6 +2359,8 @@ sigs:
       company: Isovalent
   - name: gateway-api-inference-extension
     description: Gateway API Inference Extension
+    contact:
+      slack: gateway-api-inference-extension
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api-inference-extension/main/OWNERS
   - name: ingate

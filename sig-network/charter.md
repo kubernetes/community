@@ -31,7 +31,7 @@ The following topics fall under ownership of this SIG:
   - Reference implementations (i.e. [kube-proxy]).
 - Ingress
   - APIs for defining ingress loadbalancing (i.e. [Ingress], [Gateway API], [Gateway API Inference Extension])
-  - API Implementations (i.e. [ingress-nginx], [InGate])
+  - API Implementations (i.e. [ingress-nginx], [InGate], [Blixt])
 - Network Policy
   - APIs for defining network policies (i.e. [NetworkPolicy], [AdminNetworkPolicy], [BaselineAdminNetworkPolicy])
   - Reference implementations (i.e. [kube-network-policies])
@@ -86,6 +86,7 @@ SIG Technical Leads
 [Gateway API Inference Extension]: https://github.com/kubernetes-sigs/gateway-api-inference-extension
 [ingress-nginx]: https://github.com/kubernetes/ingress-nginx/
 [InGate]: https://github.com/kubernetes-sigs/ingate
+[Blixt]: https://github.com/kubernetes-sigs/blixt
 
 [NetworkPolicy]: https://kubernetes.io/docs/concepts/services-networking/network-policies/
 [AdminNetworkPolicy]: https://network-policy-api.sigs.k8s.io/api-overview/#the-adminnetworkpolicy-resource
