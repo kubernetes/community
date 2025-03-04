@@ -1546,11 +1546,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
-  - name: sigs-github-actions
-    description: Repository for GitHub actions and artifacts related to all sigs in
-      Kubernetes.
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/sigs-github-actions/main/OWNERS
   - name: slack-infra
     description: Creates and maintains tools and automation for Kubernetes Slack.
     contact:

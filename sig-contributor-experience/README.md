@@ -125,10 +125,6 @@ Oversees and develops programs for helping contributors ascend the contributor l
 - **Owners:**
   - [kubernetes-sigs/contributor-playground](https://github.com/kubernetes-sigs/contributor-playground/blob/master/OWNERS)
   - [kubernetes/community/mentoring](https://github.com/kubernetes/community/blob/master/mentoring/OWNERS)
-### sigs-github-actions
-Repository for GitHub actions and artifacts related to all sigs in Kubernetes.
-- **Owners:**
-  - [kubernetes-sigs/sigs-github-actions](https://github.com/kubernetes-sigs/sigs-github-actions/blob/main/OWNERS)
 ### slack-infra
 Creates and maintains tools and automation for Kubernetes Slack.
 - **Owners:**
