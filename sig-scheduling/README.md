@@ -53,13 +53,8 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fscheduling)
 - GitHub Teams:
-    - [@kubernetes/sig-scheduling-api-reviews](https://github.com/orgs/kubernetes/teams/sig-scheduling-api-reviews) - API Changes and Reviews
-    - [@kubernetes/sig-scheduling-bugs](https://github.com/orgs/kubernetes/teams/sig-scheduling-bugs) - Bug Triage and Troubleshooting
-    - [@kubernetes/sig-scheduling-feature-requests](https://github.com/orgs/kubernetes/teams/sig-scheduling-feature-requests) - Feature Requests
+    - [@kubernetes/sig-scheduling-leads](https://github.com/orgs/kubernetes/teams/sig-scheduling-leads) - SIG Scheduling leads
     - [@kubernetes/sig-scheduling-misc](https://github.com/orgs/kubernetes/teams/sig-scheduling-misc) - General Discussion
-    - [@kubernetes/sig-scheduling-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-scheduling-pr-reviews) - PR Reviews
-    - [@kubernetes/sig-scheduling-proposals](https://github.com/orgs/kubernetes/teams/sig-scheduling-proposals) - Design Proposals
-    - [@kubernetes/sig-scheduling-test-failures](https://github.com/orgs/kubernetes/teams/sig-scheduling-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**)
 
 ## Working Groups
