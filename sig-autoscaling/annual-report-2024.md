@@ -11,7 +11,7 @@
    - Paying down significant tech debt
    - Governance and leadership changes
 -->
- - Dynamic Reasource Allocation support
+ - Dynamic Resource Allocation support
  - Ongoing work to enable in-place pod resource updates compatibility with Vertical Pod Autoscaler
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
