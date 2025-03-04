@@ -1544,7 +1544,6 @@ sigs:
     description: Oversees and develops programs for helping contributors ascend the
       contributor ladder, including the New Contributor Workshops, and other programs.
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/contributor-katacoda/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
   - name: sigs-github-actions
