@@ -36,7 +36,7 @@ The [charter](charter.md) defines the scope and governance of the Device Managem
 - Slack: [#wg-device-management](https://kubernetes.slack.com/messages/wg-device-management)
 - [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-device-management)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fdevice-management)
-- Steering Committee Liaison: Patrick Ohly (**[@pohly](https://github.com/pohly)**)
+- Steering Committee Liaison: Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
