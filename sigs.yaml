@@ -3295,6 +3295,16 @@ sigs:
       name: Petr Muller
       company: Red Hat
       email: muller@redhat.com
+  - name: randfill
+    description: |
+      Utility functions for filling types with randomized data (for kubernetes testing use).
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/randfill/main/OWNERS
+    leads:
+    - github: thockin
+      name: Tim Hockin
+      company: Google
+      email: thockin@google.com
   - name: sig-testing
     description: |
       Home for SIG Testing discussion and documents.
