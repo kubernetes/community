@@ -2728,11 +2728,15 @@ sigs:
       name: Marcel Zieba
       company: Isovalent
       email: marcel.zieba@isovalent.com
+    - github: mengqiy
+      name: David (Mengqi) Yu
+      company: Amazon
+      email: mengqiyu@amazon.com
+    tech_leads:
     - github: shyamjvs
       name: Shyam Jeedigunta
       company: Amazon
       email: jeedigv@amazon.com
-    tech_leads:
     - github: wojtek-t
       name: Wojciech Tyczynski
       company: Google
