@@ -115,6 +115,14 @@ Note that copyright notices should only be modified or removed by the people or
 organizations named in the notice. See [the FAQ below](#faq) for more information
 regarding copyrights and copyright notices.
 
+#### Additional requirements for forking external repositories
+
+In addition to all standard requirements for donated repositories:
+
+* When forking an external repository into the Kubernetes GitHub organization (particularly if the repository owners cannot be contacted), a NOTICE file must be included listing all existing contributors to the external repository. An example of the NOTICE file is [here](https://github.com/kubernetes-sigs/randfill/blob/ba7cb247249023527ba6c4d05aeeb8f8faf22c74/NOTICE).
+
+This is to ensures proper attribution and compliance with the CLA.
+
 ## Core Repositories
 
 Core repositories are considered core components of Kubernetes. They are
