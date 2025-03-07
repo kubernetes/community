@@ -2276,11 +2276,18 @@ sigs:
     frequency: bi-weekly
     url: https://zoom.us/j/96264742248
     archive_url: https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs
+  - description: SIG Network InGate Meeting
+    day: Friday
+    time: "6:00"
+    tz: PT (Pacific Time)
+    frequency: monthly
+    url: https://zoom.us/j/94625479998
+    archive_url: https://docs.google.com/document/d/1KqMxFbxz4QO5bYCFfihyZwPVZTtTtzcQs3Nt2-JQaAA/edit
   - description: SIG Network Ingress NGINX Meeting
     day: Thursday
     time: "8:00"
     tz: PT (Pacific Time)
-    frequency: biweekly
+    frequency: monthly
     url: https://zoom.us/j/98377891310
     archive_url: https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit
     recordings_url: https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X
@@ -2340,6 +2347,7 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/blixt/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/gwctl/main/OWNERS
+    - https://raw.githubusercontent.com/kubernetes-sigs/ingate/refs/heads/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/ingress2gateway/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
