@@ -105,9 +105,6 @@ Organization of SIG Instrumentation subprojects
 ### usage-metrics-collector
 - **Owners:**
   - [kubernetes-sigs/usage-metrics-collector](https://github.com/kubernetes-sigs/usage-metrics-collector/blob/main/OWNERS)
-### zpages
-- **Owners:**
-  - [kubernetes/kubernetes/staging/src/k8s.io/component-base/zpages](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/zpages/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
