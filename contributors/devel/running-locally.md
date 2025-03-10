@@ -187,7 +187,7 @@ KUBE_DNS_SERVER_IP="10.0.0.10"
 KUBE_DNS_NAME="cluster.local"
 ```
 
-To know more on DNS service you can check out the [docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/).
+To know more on DNS service you can check out the [docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) and see [Debugging DNS Resolution](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/) for diagnosing DNS problems.
 
 ### All pod fail to start with a cgroups error of `expected cgroupsPath to be of format "slice:prefix:name" for systemd cgroups`
 
