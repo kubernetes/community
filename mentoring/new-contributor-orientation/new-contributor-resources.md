@@ -7,7 +7,7 @@
 - Come join us in the [Kubernetes Slack](https://www.slack.k8s.io):
   - Join the #kubernetes-new-contributors channel
   - Join the channels of 1 or more SIGs you're interested in
-- Participate in the [New Contributor Orientation](../README.md) to get an introduction to Kubernetes development and the community.
+- Participate in the [New Contributor Orientation](./README.md) to get an introduction to Kubernetes development and the community.
 
 ## Getting Familiar with the Process
 
