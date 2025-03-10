@@ -13,7 +13,23 @@
    - work not tracked in KEPs
 -->
 
+- KEPs being worked on:
+    - Prevent unauthorized volume mode conversion moved to GA in 1.30: https://kubernetes.io/blog/2024/04/30/prevent-unauthorized-volume-mode-conversion-ga/
+    - Volume Group Snapshot moved to Beta in 1.32: https://kubernetes.io/blog/2024/12/18/kubernetes-1-32-volume-group-snapshot-beta/
+    - Changed Block Tracking KEP was merged and implementation is in progress: https://github.com/kubernetes/enhancements/pull/4082
+      - https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/3314-csi-changed-block-tracking
+      - https://github.com/container-storage-interface/spec/pull/551
+      - https://github.com/kubernetes-csi/external-snapshot-metadata
+
+- Work in progress whitepaper:
+  - [Best Practice for Applications for Data Protection](https://docs.google.com/document/d/17VIOxJEK-tv6Z3b11OD4MSEueHOMLPwInK4T9OSVVwA/edit?tab=t.0)
+
+- KubeCon updates
+  - KubeCon NA 2024: https://www.youtube.com/watch?v=5HgFYkhIoyM
+  - KubeCon EU 2024: https://www.youtube.com/watch?v=2rfMgYRNoPo
+
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
+  - If more end users/companies can attend our meetings, provide feedback, and contribute to design/implementation of the features we are working on, that will be great.
 
 ## Operational
 
