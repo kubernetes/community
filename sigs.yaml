@@ -295,6 +295,7 @@ sigs:
     - github: derekwaynecarr
       name: Derek Carr
       company: Red Hat
+      email: decarr@redhat.com
     - github: dims
       name: Davanum Srinivas
       company: Amazon
@@ -438,19 +439,23 @@ sigs:
     - github: enj
       name: Mo Khan
       company: Microsoft
+      email: i@monis.app
     - github: mikedanese
       name: Mike Danese
       company: Google
     - github: ritazh
       name: Rita Zhang
       company: Microsoft
+      email: ritazh@microsoft.com
     tech_leads:
     - github: deads2k
       name: David Eads
       company: Red Hat
+      email: deads@redhat.com
     - github: enj
       name: Mo Khan
       company: Microsoft
+      email: i@monis.app
     - github: liggitt
       name: Jordan Liggitt
       company: Google
@@ -3550,6 +3555,7 @@ workinggroups:
     - github: xing-yang
       name: Xing Yang
       company: VMware
+      email: xingyang105@gmail.com
     - github: yuxiangqian
       name: Xiangqian Yu
       company: Google
@@ -3692,6 +3698,7 @@ workinggroups:
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Microsoft
+      email: jeremy.r.rickard@gmail.com
     - github: liggitt
       name: Jordan Liggitt
       company: Google
@@ -3699,6 +3706,7 @@ workinggroups:
     - github: micahhausler
       name: Micah Hausler
       company: Amazon
+      email: mhausler@amazon.com
   meetings:
   - description: Regular WG Meeting
     day: Tuesday
@@ -3837,6 +3845,7 @@ workinggroups:
     - github: pohly
       name: Patrick Ohly
       company: Intel
+      email: patrick.ohly@intel.com
   meetings: []
   contact:
     slack: wg-structured-logging
@@ -3862,12 +3871,14 @@ committees:
     - github: divya-mohan0209
       name: Divya Mohan
       company: SUSE
+      email: divya.mohan0209@gmail.com
     - github: endocrimes
       name: Danielle Lancashire
       company: Fermyon
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Microsoft
+      email: jeremy.r.rickard@gmail.com
     - github: stmcginnis
       name: Sean McGinnis
       company: Lambda, Inc
@@ -3995,7 +4006,7 @@ committees:
     - github: aojea
       name: Antonio Ojea
       company: Google
-      email: antonio.ojea.garcia@gmail.com
+      email: aojea@google.com
     - github: justaugustus
       name: Stephen Augustus
       company: Bloomberg
