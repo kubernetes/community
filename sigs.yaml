@@ -3387,6 +3387,7 @@ sigs:
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
+      email: marosset@microsoft.com
     tech_leads:
     - github: claudiubelu
       name: Claudiu Belu
@@ -3400,6 +3401,7 @@ sigs:
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
+      email: marosset@microsoft.com
     emeritus_leads:
     - github: PatrickLang
       name: Patrick Lang
