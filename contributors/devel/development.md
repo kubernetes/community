@@ -208,6 +208,29 @@ distributions and commands used to install these tools are below.
   ```sh
   sudo pacman -Sy base-devel
   ```
+- Alpine Linux 
+
+ ```sh
+ sudo apk update
+ sudo apk add build-base
+```
+
+- Clear Linux
+
+ ```sh
+ sudo swupd update
+ sudo swupd bundle-add c-basic dev-utils
+```
+
+- Solus 
+
+ ```sh
+ sudo eopkg update-repo
+ sudo eopkg install -c system.devel
+
+ ```
+
+
 
 Once you have finished, confirm that `gcc` and `make` are installed.
 
