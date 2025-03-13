@@ -83,7 +83,7 @@ Operational tasks in [sig-governance.md]:
 - [x] Other contributing docs (e.g. in [devel] dir or contributor guide) reviewed for accuracy and updated if needed
 - [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
 - [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2024 are linked from [README.md] and updated/uploaded if needed
+- [x] Meeting notes and recordings for 2024 are linked from [README.md] and updated/uploaded if needed
 
 [sig-governance.md]: https://git.k8s.io/community/committee-steering/governance/sig-governance.md
 [README.md]: https://git.k8s.io/community/sig-instrumentation/README.md
