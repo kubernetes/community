@@ -438,6 +438,11 @@ func (c *Context) Sort() {
 // Validate returns a list of errors encountered while validating a Context
 func (c *Context) Validate() []error {
 	errors := []error{}
+	// github to Person info
+	// TODO: this would probably be a better config format? to avoid duplicating
+	// people with potentially differing info, versus referring to leads by
+	// github handle within each SIG and then keeping this map alongside the SIGs
+	// This could break external tooling parsing the file though.
 	people := make(map[string]Person)
 	reRawGitHubURL := regexp.MustCompile(regexRawGitHubURL)
 	reGitHubURL := regexp.MustCompile(regexGitHubURL)
@@ -454,8 +459,24 @@ func (c *Context) Validate() []error {
 			for prefix, persons := range group.Leadership.PrefixToPersonMap() {
 				for _, person := range persons {
 					if val, ok := people[person.GitHub]; ok {
-						if val.Name != person.Name || (prefix != "emeritus_lead" && val.Company != person.Company) {
-							errors = append(errors, fmt.Errorf("%s: %ss: expected person: %v, got: %v", group.Dir, prefix, val, person))
+						// non-emeritus must have email and company set
+						if prefix != "emeritus_lead" {
+							// email must be set and consistent
+							if val.Email == "" {
+								errors = append(errors, fmt.Errorf("%s: %s: email is empty but should be set", group.Dir, val.GitHub))
+							} else if val.Email != person.Email {
+								errors = append(errors, fmt.Errorf("%s: %s email: %q does not match other entries %q", group.Dir, val.GitHub, val.Email, person.Email))
+							}
+							// company must be set and consistent
+							if val.Company == "" {
+								errors = append(errors, fmt.Errorf("%s: %s: company is empty but should be set", group.Dir, val.Company))
+							} else if val.Company != person.Company {
+								errors = append(errors, fmt.Errorf("%s: %s company: %q does not match other entries %q", group.Dir, val.GitHub, val.Company, person.Company))
+							}
+						}
+						// all entries should have github + name, emeritus or not
+						if val.Name != person.Name {
+							errors = append(errors, fmt.Errorf("%s: %s: expected person: %v, got: %v", group.Dir, prefix, val, person))
 						}
 					} else if prefix != "emeritus_lead" {
 						people[person.GitHub] = person
