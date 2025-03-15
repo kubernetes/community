@@ -3103,7 +3103,6 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-csi/csi-release-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/csi-test/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/docs/master/OWNERS
-    - https://raw.githubusercontent.com/kubernetes-csi/driver-registrar/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/external-attacher/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/external-health-monitor/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-csi/external-provisioner/master/OWNERS

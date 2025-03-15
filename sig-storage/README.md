@@ -100,7 +100,6 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - [kubernetes-csi/csi-release-tools](https://github.com/kubernetes-csi/csi-release-tools/blob/master/OWNERS)
   - [kubernetes-csi/csi-test](https://github.com/kubernetes-csi/csi-test/blob/master/OWNERS)
   - [kubernetes-csi/docs](https://github.com/kubernetes-csi/docs/blob/master/OWNERS)
-  - [kubernetes-csi/driver-registrar](https://github.com/kubernetes-csi/driver-registrar/blob/master/OWNERS)
   - [kubernetes-csi/external-attacher](https://github.com/kubernetes-csi/external-attacher/blob/master/OWNERS)
   - [kubernetes-csi/external-health-monitor](https://github.com/kubernetes-csi/external-health-monitor/blob/master/OWNERS)
   - [kubernetes-csi/external-provisioner](https://github.com/kubernetes-csi/external-provisioner/blob/master/OWNERS)
