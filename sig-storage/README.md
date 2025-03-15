@@ -89,7 +89,6 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - Slack: [#sig-storage-cosi](https://kubernetes.slack.com/messages/sig-storage-cosi)
 ### kubernetes-csi
 - **Owners:**
-  - [kubernetes-csi/cluster-driver-registrar](https://github.com/kubernetes-csi/cluster-driver-registrar/blob/master/OWNERS)
   - [kubernetes-csi/csi-driver-host-path](https://github.com/kubernetes-csi/csi-driver-host-path/blob/master/OWNERS)
   - [kubernetes-csi/csi-driver-iscsi](https://github.com/kubernetes-csi/csi-driver-iscsi/blob/master/OWNERS)
   - [kubernetes-csi/csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs/blob/master/OWNERS)
