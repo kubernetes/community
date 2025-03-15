@@ -89,7 +89,6 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - Slack: [#sig-storage-cosi](https://kubernetes.slack.com/messages/sig-storage-cosi)
 ### kubernetes-csi
 - **Owners:**
-  - [kubernetes-csi/cluster-driver-registrar](https://github.com/kubernetes-csi/cluster-driver-registrar/blob/master/OWNERS)
   - [kubernetes-csi/csi-driver-host-path](https://github.com/kubernetes-csi/csi-driver-host-path/blob/master/OWNERS)
   - [kubernetes-csi/csi-driver-iscsi](https://github.com/kubernetes-csi/csi-driver-iscsi/blob/master/OWNERS)
   - [kubernetes-csi/csi-driver-nfs](https://github.com/kubernetes-csi/csi-driver-nfs/blob/master/OWNERS)
@@ -101,7 +100,6 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - [kubernetes-csi/csi-release-tools](https://github.com/kubernetes-csi/csi-release-tools/blob/master/OWNERS)
   - [kubernetes-csi/csi-test](https://github.com/kubernetes-csi/csi-test/blob/master/OWNERS)
   - [kubernetes-csi/docs](https://github.com/kubernetes-csi/docs/blob/master/OWNERS)
-  - [kubernetes-csi/driver-registrar](https://github.com/kubernetes-csi/driver-registrar/blob/master/OWNERS)
   - [kubernetes-csi/external-attacher](https://github.com/kubernetes-csi/external-attacher/blob/master/OWNERS)
   - [kubernetes-csi/external-health-monitor](https://github.com/kubernetes-csi/external-health-monitor/blob/master/OWNERS)
   - [kubernetes-csi/external-provisioner](https://github.com/kubernetes-csi/external-provisioner/blob/master/OWNERS)
