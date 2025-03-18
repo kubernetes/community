@@ -2,6 +2,7 @@
 
 approvers:
   - cblecker
+  - sig-contributor-experience-leads
 labels:
   - sig/contributor-experience
 emeritus_approvers:
