@@ -2204,6 +2204,9 @@ sigs:
   - name: mcs-api
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/mcs-api/master/OWNERS
+  - name: multicluster-runtime
+    owners:
+    - https://github.com/kubernetes-sigs/multicluster-runtime/blob/main/OWNERS
   - name: sig-multicluster-site
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-multicluster-site/main/OWNERS
