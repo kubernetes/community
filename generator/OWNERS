@@ -2,7 +2,8 @@
 
 approvers:
   - cblecker
-  - nikhita
-  - spiffxp
 labels:
   - sig/contributor-experience
+emeritus_approvers:
+  - nikhita
+  - spiffxp
