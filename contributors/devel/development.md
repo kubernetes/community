@@ -159,7 +159,7 @@ brew install coreutils ed findutils gawk gnu-sed gnu-tar grep make jq
 ```
 
 You will want to include this block or something similar at the end of
-your `.bashrc` or shell init script:
+your `.zshrc` or shell init script:
 
 ```sh
 GNUBINS=($(find `brew --prefix`/opt -type d -follow -name gnubin -print))
