@@ -162,14 +162,11 @@ You will want to include this block or something similar at the end of
 your `.bashrc` or shell init script:
 
 ```sh
-GNUBINS="$(find `brew --prefix`/opt -type d -follow -name gnubin -print)"
-
+GNUBINS=($(find `brew --prefix`/opt -type d -follow -name gnubin -print))
 for bindir in ${GNUBINS[@]}
 do
-  export PATH=$bindir:$PATH
+  export PATH="$bindir:$PATH"
 done
-
-export PATH
 ```
 
 This ensures that the GNU tools are found first in your path. Note
