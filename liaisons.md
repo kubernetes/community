@@ -59,6 +59,7 @@ members will assume one of the departing members groups.
 | [WG Device Management](wg-device-management/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG etcd Operator](wg-etcd-operator/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [WG LTS](wg-lts/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
+| [WG Node Lifecycle](wg-node-lifecycle/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG Serving](wg-serving/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [WG Structured Logging](wg-structured-logging/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
 | [Committee Code of Conduct](committee-code-of-conduct/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |

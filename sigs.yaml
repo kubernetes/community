@@ -3781,6 +3781,74 @@ workinggroups:
     liaison:
       github: saschagrunert
       name: Sascha Grunert
+- dir: wg-node-lifecycle
+  name: Node Lifecycle
+  mission_statement: >
+    Explore and improve node and pod lifecycle in Kubernetes. This should result in
+    better node drain/maintenance support and better pod disruption/termination. It
+    should also improve node and pod autoscaling, better application migration and
+    availability, load balancing, de/scheduling, node shutdown, and cloud provider
+    and third-party integrations.
+
+  charter_link: charter.md
+  stakeholder_sigs:
+  - Apps
+  - Autoscaling
+  - CLI
+  - Cloud Provider
+  - Cluster Lifecycle
+  - Network
+  - Node
+  - Scheduling
+  - Storage
+  label: node-lifecycle
+  leadership:
+    chairs:
+    - github: JoelSpeed
+      name: Joel Speed
+      company: Red Hat
+      email: Joel.speed@hotmail.co.uk
+    - github: atiratree
+      name: Filip Křepinský
+      company: Red Hat
+      email: atiratree@gmail.com
+    - github: fabriziopandini
+      name: Fabrizio Pandini
+      company: VMware
+      email: fabrizio.pandini@gmail.com
+    - github: haircommander
+      name: Peter Hunt
+      company: Red Hat
+      email: pehunt@redhat.com
+    - github: humblec
+      name: Humble Chirammal
+      company: VMware
+      email: humble.devassy@gmail.com
+    - github: intUnderflow
+      name: Lucy Sweet
+      company: Uber
+      email: kubernetes.github.com@lucy.sh
+    - github: kwilczynski
+      name: Krzysztof Wilczyński
+      company: Independent
+      email: kw@linux.com
+    - github: rthallisey
+      name: Ryan Hallisey
+      company: NVIDIA
+      email: rhallisey@nvidia.com
+  meetings:
+  - description: WG Node Lifecycle Weekly Meeting
+    day: Monday
+    time: 5PM
+    tz: CET (Central European Time)
+    frequency: weekly
+    archive_url: https://docs.google.com/document/d/1LSSfiJatBYX7dhLTowYygDO6MK0K-NZ_L52bEZfcZqU
+  contact:
+    slack: wg-node-lifecycle
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-node-lifecycle
+    liaison:
+      github: BenTheElder
+      name: Benjamin Elder
 - dir: wg-serving
   name: Serving
   mission_statement: >

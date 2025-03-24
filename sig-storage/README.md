@@ -59,6 +59,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 The following [working groups][working-group-definition] are sponsored by sig-storage:
 * [WG Data Protection](/wg-data-protection)
+* [WG Node Lifecycle](/wg-node-lifecycle)
 * [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
