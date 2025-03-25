@@ -282,9 +282,9 @@ For this example we'll debug a [sig-storage test that will provision storage fro
 First, compile the E2E test suite with additional compiler flags
 
 ```sh
-# -N Disable optimizations.
-# -l Disable inlining.
-make WHAT=test/e2e/e2e.test GOGCFLAGS="all=-N -l" GOLDFLAGS=""
+# DBG=1 enables necessary debug options and disables stripping binaries
+# see the makefile upstream, or use UBE_VERBOSE=3 to get the actual build commands
+make WHAT=test/e2e/e2e.test DBG=1
 ```
 
 Then set the env var `E2E_TEST_DEBUG_TOOL=delve` and then run the test with `./hack/ginkgo.sh` instead of `kubetest`, you should see the delve command line prompt
