@@ -151,6 +151,9 @@ API validation and policies enforced during admission, such as PodSecurityPolicy
   - [kubernetes/pod-security-admission](https://github.com/kubernetes/pod-security-admission/blob/master/OWNERS)
 ### secrets-store-csi-driver
 Integrates secrets stores with Kubernetes via a CSI volume.
+- **Leads:**
+  - Anish Ramasekar (**[@aramase](https://github.com/aramase)**), Microsoft
+  - Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
 - **Owners:**
   - [kubernetes-sigs/secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/OWNERS)
 - **Contact:**
@@ -158,6 +161,9 @@ Integrates secrets stores with Kubernetes via a CSI volume.
   - [Mailing List](https://groups.google.com/forum/#!forum/kubernetes-secrets-store-csi-driver)
 ### secrets-store-sync-controller
 This is a Kubernetes controller that watches for changes to a custom resource and syncs the secrets from external secrets-store as Kubernetes secret.
+- **Leads:**
+  - Anish Ramasekar (**[@aramase](https://github.com/aramase)**), Microsoft
+  - Mo Khan (**[@enj](https://github.com/enj)**), Microsoft
 - **Owners:**
   - [kubernetes-sigs/secrets-store-sync-controller](https://github.com/kubernetes-sigs/secrets-store-sync-controller/blob/main/OWNERS)
 ### service-accounts
