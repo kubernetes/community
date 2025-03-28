@@ -1732,6 +1732,10 @@ sigs:
   label: etcd
   leadership:
     chairs:
+    - github: ivanvc
+      name: Ivan Valdes
+      company: Inmar Intelligence
+      email: ivan@vald.es
     - github: jmhbnz
       name: James Blair
       company: Red Hat
