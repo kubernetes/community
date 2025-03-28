@@ -436,13 +436,14 @@ sigs:
   label: auth
   leadership:
     chairs:
-    - github: enj
-      name: Mo Khan
+    - github: aramase
+      name: Anish Ramasekar
       company: Microsoft
-      email: i@monis.app
-    - github: mikedanese
-      name: Mike Danese
-      company: Google
+      email: anish.ramasekar@gmail.com
+    - github: micahhausler
+      name: Micah Hausler
+      company: Amazon
+      email: mhausler@amazon.com
     - github: ritazh
       name: Rita Zhang
       company: Microsoft
@@ -465,6 +466,8 @@ sigs:
       name: Eric Chiang
     - github: erictune
       name: Eric Tune
+    - github: mikedanese
+      name: Mike Danese
     - github: tallclair
       name: Tim Allclair
   meetings:
