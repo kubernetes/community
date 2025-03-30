@@ -2482,7 +2482,7 @@ sigs:
     archive_url: https://docs.google.com/document/d/1fb-ugvgdSVIkkuJ388_nhp2pBTy_4HEVg5848Xy7n5U/edit
   contact:
     slack: sig-node
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-node
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-node
     teams:
     - name: sig-node-api-reviews
       description: API Changes and Reviews
@@ -2502,7 +2502,7 @@ sigs:
   subprojects:
   - name: ci-testing
     contact:
-      mailing_list: https://groups.google.com/g/kubernetes-sig-node-test-failures
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-node-ci
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/common/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/common/node/OWNERS
