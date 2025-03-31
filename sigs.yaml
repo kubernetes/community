@@ -641,10 +641,23 @@ sigs:
     - github: gjtempleton
       name: Guy Templeton
       company: Skyscanner
+      email: guyjtempleton@googlemail.com
+    - github: towca
+      name: Kuba Tużnik
+      company: Google
+      email: jtuznik@google.com
+    tech_leads:
+    - github: jackfrancis
+      name: Jack Francis
+      company: Microsoft
+      email: jack.francis@microsoft.com
+    - github: raywainman
+      name: Ray Wainman
+      company: Google
+      email: rwainman@google.com
+    emeritus_leads:
     - github: maciekpytel
       name: Maciek Pytel
-      company: Google
-    emeritus_leads:
     - github: mwielgus
       name: Marcin Wielgus
   meetings:
