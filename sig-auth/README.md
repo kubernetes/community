@@ -29,8 +29,8 @@ The [charter](charter.md) defines the scope and governance of the Auth Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Mo Khan (**[@enj](https://github.com/enj)**), Microsoft
-* Mike Danese (**[@mikedanese](https://github.com/mikedanese)**), Google
+* Anish Ramasekar (**[@aramase](https://github.com/aramase)**), Microsoft
+* Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
 * Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
 
 ### Technical Leads
@@ -45,6 +45,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Eric Chiang (**[@ericchiang](https://github.com/ericchiang)**)
 * Eric Tune (**[@erictune](https://github.com/erictune)**)
+* Mike Danese (**[@mikedanese](https://github.com/mikedanese)**)
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**)
 
 ## Contact
