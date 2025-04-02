@@ -150,4 +150,9 @@ The following topics fall under scope of this SIG.
 * Host OS and/or kernel interactions (to a limited extent)
 
 We also work closely with [sig-storage](../sig-storage) and [sig-network](../sig-network). As you can see, this is a very cross-functional team!
+
+## Subgroups
+
+Read the CI testing subgroup [charter](sig-node-ci-testing-group-charter.md).
+
 <!-- END CUSTOM CONTENT -->

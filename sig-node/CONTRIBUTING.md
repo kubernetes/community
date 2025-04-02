@@ -212,7 +212,39 @@ Running a local cluster
 
 Note: Task 5 requires Linux OS
 
+## Subgroups
+
+### CI testing
+
+CI testing subgroup of SIG Node provides a great way to get started with the SIG.
+CI testing concentrate on  reliability and ongoing issues, see the [charter](sig-node/sig-node-ci-testing-group-charter.md) for details.
+
+There are many ways to participate:
+
+1. Bring a topic for the discussion at a weekly (see "How to..." section below).
+  Topic must be aligned with the group charter.
+2. Participate in test issues, PRs, and bugs triage during the meeting.
+  Expertise in various areas is needed when triaging.
+  So YOUR expertise may be very valuable for some of the topics discussed.
+3. Host a section of a meeting. Once you attended a meeting a few times,
+  you may be ready to host the section of a meeting. It will include
+  presenting your screen and applying needed labels to the issues.
+
 ## How to ...
+
+### add agenda item to the meeting
+
+This applies to both, SIG Node weekly meeting and CI testing subgroup weekly meeting.
+
+1. Find the meeting invite and notes document.
+2. Join the group sig-node@kubernetes.io for edit permissions.
+3. Add you topic to the end of the list, prefixed with your alias, to the agenda of the next meeting.
+4. Show up at the meeting to present your agenda item or find a delegate to present it.
+
+There is generally no restrictions on topics, and topics are added on first come, first served basis.
+Chair who host the meeting will try to allocate time and fit as many topics as possible.
+However declared order is not guaranteed. Also topics may be moved to the next meeting
+if other things like KEP planning must be prioritized.
 
 ### upload meeting recording to YouTube (for chairs)
 
