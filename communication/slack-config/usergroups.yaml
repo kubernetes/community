@@ -52,14 +52,17 @@ usergroups:
       - release-management
       - sig-release
     members:
+      - puerco
       - cjcullen
       - cji
       - enj
       - joelsmith
       - micahhausler
+      - natherz97
       - ritazh
       - SaranBalaji90
       - tabbysable
+      - Vyom-Yadav
 
   - name: velero-maintainers
     long_name: Velero Maintainers
