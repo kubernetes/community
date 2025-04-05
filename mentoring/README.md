@@ -28,9 +28,6 @@ Long Term Contributor Ladder Growth
 
 - Through [Group Mentoring Cohorts](/mentoring/programs/group-mentoring.md)
 
-Specific topics and activities
-
-- [The 1:1 Hour](/mentoring/programs/the1-on-1hour.md)
 
 Role based shadow programs
 
@@ -56,6 +53,13 @@ In person
 
 - [Videos of New Contributor Workshop](https://www.youtube.com/playlist?list=PL69nYSiGNLP3M5X7stuD7N4r3uP2PZQUx)
 - Pod Mentoring! [aka group mentoring](/mentoring/programs/mentoring-events.md)
+
+## Discontinued activities:
+
+Specific topics and activities
+
+- [The 1:1 Hour](/mentoring/programs/the1-on-1hour.md)
+
 
 #### Inspiration and Thanks
 
