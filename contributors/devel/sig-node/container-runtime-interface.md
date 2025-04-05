@@ -132,6 +132,6 @@ been fixed since.
 
 ## Contacts
 
-  - Email: sig-node (kubernetes-sig-node@googlegroups.com)
+  - Email: sig-node (sig-node@kubernetes.io)
   - Slack: https://kubernetes.slack.com/messages/sig-node
 

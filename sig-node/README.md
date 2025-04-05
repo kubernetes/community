@@ -13,7 +13,7 @@ SIG Node is responsible for the components that support the controlled interacti
 The [charter](charter.md) defines the scope and governance of the Node Special Interest Group.
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-node) for the group will typically add invites for the following meetings to your calendar.*
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-node) for the group will typically add invites for the following meetings to your calendar.*
 * Main SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
@@ -39,7 +39,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Contact
 - Slack: [#sig-node](https://kubernetes.slack.com/messages/sig-node)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-node)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/sig-node)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnode)
 - GitHub Teams:
     - [@kubernetes/sig-node-api-reviews](https://github.com/orgs/kubernetes/teams/sig-node-api-reviews) - API Changes and Reviews
@@ -73,7 +73,7 @@ The following [subprojects][subproject-definition] are owned by sig-node:
   - [kubernetes/test-infra/config/testgrids/kubernetes/sig-node](https://github.com/kubernetes/test-infra/blob/master/config/testgrids/kubernetes/sig-node/OWNERS)
   - [kubernetes/test-infra/jobs/e2e_node](https://github.com/kubernetes/test-infra/blob/master/jobs/e2e_node/OWNERS)
 - **Contact:**
-  - [Mailing List](https://groups.google.com/g/kubernetes-sig-node-test-failures)
+  - [Mailing List](https://groups.google.com/a/kubernetes.io/g/sig-node-ci)
 ### cri-api
 - **Owners:**
   - [kubernetes/cri-api](https://github.com/kubernetes/cri-api/blob/master/OWNERS)

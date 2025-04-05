@@ -61,7 +61,7 @@ It is based on a [talk](https://kcsna2023.sched.com/event/1Sp9i/implementing-a-b
 At this stage the expectation is that the proposal is written in general-enough
 terms as a Google Doc for easy commenting and fast collaborative editing.
 Sharing the design document with `dev@kubernetes.io` for commenting and with SIG
-members `kubernetes-sig-node@googlegroups.com` for commenting or in some cases
+members `sig-node@googlegroups.com` for commenting or in some cases
 editing is a good practice.
 
 It is also very helpful to attend SIG Node weekly meeting to present your
