@@ -3389,6 +3389,9 @@ sigs:
   - name: dashboard
     owners:
     - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
+  - name: headlamp
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/headlamp/refs/heads/main/OWNERS
 - dir: sig-windows
   name: Windows
   mission_statement: >
