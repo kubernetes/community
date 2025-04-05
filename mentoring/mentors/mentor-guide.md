@@ -7,7 +7,7 @@ There are many ways you can be a mentor within the Kubernetes ecosystem. Listeni
 
 You are serving two roles - coach and advisor. You are a problem solver that doesn’t have all of the answers but will know the best resources to go to get the guidance that is needed. You are helping to create a culture of continuous improvement, collaboration, and feedback.
 
-Check out our [mentoring programs](README.md) for more detailed descriptions. Please use [this form](https://goo.gl/forms/Y4MH6NGHe6OU5cZC3) to sign up to mentor.
+Check out our [mentoring programs](../processes/README.md) for more detailed descriptions. Please use [this form](https://goo.gl/forms/Y4MH6NGHe6OU5cZC3) to sign up to mentor.
 
 ## Responsibilities and Expectations
 *for ALL programs*
@@ -34,7 +34,7 @@ Check out our [mentoring programs](README.md) for more detailed descriptions. Pl
 * Only new contributors need mentoring.
 
 ### Responsibilities by each program
-*[Group mentoring](group-mentoring.md)*
+*[Group mentoring](../processes/group-mentoring.md)*
 
 You’ll need to be:
 *  On Slack at least 1-2 hours a week fielding questions.
