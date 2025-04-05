@@ -679,15 +679,13 @@ Once all the necessary manually written conversions are added, you need to
 regenerate auto-generated ones. To regenerate them run:
 
 ```sh
-make clean && make generated_files
+make clean && make update
 ```
 
 `make clean` is important, otherwise the generated files might be stale, because
 the build system uses custom cache.
 
-`make all` will invoke `make generated_files` as well.
-
-The `make generated_files` will also regenerate the `zz_generated.deepcopy.go`,
+The `make update` will also regenerate the `zz_generated.deepcopy.go`,
 `zz_generated.defaults.go`, and `api/openapi-spec/swagger.json`.
 
 If regeneration is somehow not possible due to compile errors, the easiest
@@ -813,7 +811,7 @@ reviewers to see what has changed between the two versions:
    `<new-version>`.
 1. A commit that renames `<existing-version>`to `<new-version>` in the new files.
 1. A commit that makes any new changes for `<new-version>`.
-1. A commit that contains the generated files from running `make generated_files`, `make update`, etc.
+1. A commit that contains the generated files from running `make update`.
 
 Due to the fast changing nature of the project, the following content is probably out-dated:
 * You must add the version to
