@@ -3627,12 +3627,20 @@ workinggroups:
       company: Intel
       email: patrick.ohly@intel.com
   meetings:
-  - description: Regular WG Meeting
+  - description: Regular WG Meeting (Asia/Europe)
+    day: Wednesday
+    time: "9:00"
+    tz: CET (Central European Time)
+    frequency: biweekly
+    url: https://zoom.us/j/97238699195?pwd=cy9IMm1ZeERtRlJ3VS8yWUxHUWIrQT09
+    archive_url: https://docs.google.com/document/d/1qxI87VqGtgN7EAJlqVfxx86HGKEAc2A3SKru8nJHNkQ/edit?usp=sharing
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1kac4zsH0INEWEZlPhOhlp
+  - description: Regular WG Meeting (Europe/America)
     day: Tuesday
     time: "8:30"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: TBD
+    url: https://zoom.us/j/97238699195?pwd=cy9IMm1ZeERtRlJ3VS8yWUxHUWIrQT09
     archive_url: https://docs.google.com/document/d/1qxI87VqGtgN7EAJlqVfxx86HGKEAc2A3SKru8nJHNkQ/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1kac4zsH0INEWEZlPhOhlp
   contact:
