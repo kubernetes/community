@@ -464,6 +464,7 @@ channels:
   - name: shoutouts
   - name: sig-api-machinery
   - name: sig-api-machinery-cel-dev
+  - name: sig-api-machinery-dev-tools
   - name: sig-api-machinery-storageversion-dev
   - name: sig-apps
   - name: sig-auth
