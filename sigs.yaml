@@ -98,6 +98,9 @@ sigs:
   - name: json
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/json/main/OWNERS
+  - name: kube-api-linter
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/kube-api-linter/refs/heads/main/OWNERS
   - name: kubernetes-clients
     owners:
     - https://raw.githubusercontent.com/kubernetes-client/c/master/OWNERS
