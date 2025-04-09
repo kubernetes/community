@@ -407,6 +407,11 @@ sigs:
       slack: enhancements
     owners:
     - https://raw.githubusercontent.com/kubernetes/enhancements/master/OWNERS
+  - name: maintainer-tools
+    description: Tooling based on Deep Learning tools to help maintainers to maintain
+      the Kubernetes project.
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/maintainer-tools/refs/heads/main/OWNERS
   - name: production-readiness
     description: '[Described below](#production-readiness-1)'
     contact:
