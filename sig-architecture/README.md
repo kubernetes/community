@@ -106,6 +106,10 @@ Snooping on the Kubernetes OpenAPI communications
   - [kubernetes/enhancements](https://github.com/kubernetes/enhancements/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#enhancements](https://kubernetes.slack.com/messages/enhancements)
+### maintainer-tools
+Tooling based on Deep Learning tools to help maintainers to maintain the Kubernetes project.
+- **Owners:**
+  - [kubernetes-sigs/maintainer-tools/heads/main](https://github.com/kubernetes-sigs/maintainer-tools/blob/refs/heads/main/OWNERS)
 ### production-readiness
 [Described below](#production-readiness-1)
 - **Owners:**
