@@ -615,11 +615,29 @@ sigs:
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-secrets-store-csi-driver
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-csi-driver/master/OWNERS
+    leads:
+    - github: aramase
+      name: Anish Ramasekar
+      company: Microsoft
+      email: anish.ramasekar@gmail.com
+    - github: ritazh
+      name: Rita Zhang
+      company: Microsoft
+      email: ritazh@microsoft.com
   - name: secrets-store-sync-controller
     description: |
       This is a Kubernetes controller that watches for changes to a custom resource and syncs the secrets from external secrets-store as Kubernetes secret.
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/secrets-store-sync-controller/main/OWNERS
+    leads:
+    - github: aramase
+      name: Anish Ramasekar
+      company: Microsoft
+      email: anish.ramasekar@gmail.com
+    - github: enj
+      name: Mo Khan
+      company: Microsoft
+      email: i@monis.app
   - name: service-accounts
     description: |
       Infrastructure implementing Kubernetes service account based workload identity.
