@@ -88,6 +88,9 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
 ### json
 - **Owners:**
   - [kubernetes-sigs/json](https://github.com/kubernetes-sigs/json/blob/main/OWNERS)
+### kube-api-linter
+- **Owners:**
+  - [kubernetes-sigs/kube-api-linter/heads/main](https://github.com/kubernetes-sigs/kube-api-linter/blob/refs/heads/main/OWNERS)
 ### kubernetes-clients
 - **Owners:**
   - [kubernetes-client/c](https://github.com/kubernetes-client/c/blob/master/OWNERS)
