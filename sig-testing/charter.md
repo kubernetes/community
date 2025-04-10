@@ -27,7 +27,7 @@ health of the project.
 
 - Project CI and workflow automation via tools such as [prow] and [tide]
 - Infrastructure to support running project CI at scale, including tools
-  such as [boskos], [ghproxy] and [greenhouse]
+  such as [boskos] and [ghproxy]
 - Providing a place and schema in which to upload test results for
   contributors who wish to provide additional test results not generated
   by the project's CI
@@ -37,8 +37,7 @@ health of the project.
   process via tools such as [job configs], [kubetest]
 - Tools that facilitate configuration management of github such as
   [peribolos] and [label_sync]
-- Tools that facilitate local testing of kubernetes such as [greenhouse]
-  and [kind]
+- Tools that facilitate local testing of kubernetes such as [kind]
 - Ensuring all of the above is kept running on a best effort basis
 - Tools, frameworks and libraries that make it possible to write tests against
   kubernetes such as e2e\* or integration test frameworks.
@@ -118,7 +117,6 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 
 [boskos]: https://git.k8s.io/test-infra/boskos
 [ghproxy]: https://git.k8s.io/test-infra/ghproxy
-[greenhouse]: https://git.k8s.io/test-infra/greenhouse
 [gubernator]: http://k8s-gubernator.appspot.com
 [job configs]: https://git.k8s.io/test-infra/config/jobs
 [kettle]: https://git.k8s.io/test-infra/kettle
@@ -126,7 +124,6 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 [kubetest]: https://git.k8s.io/test-infra/kubetest
 [label_sync]: https://git.k8s.io/test-infra/label_sync
 [peribolos]: https://git.k8s.io/test-infra/prow/cmd/peribolos
-[planter]: https://git.k8s.io/test-infra/planter
 [prow]: https://prow.k8s.io
 [testgrid]: https://testgrid.k8s.io
 [tide]: https://prow.k8s.io/tide
