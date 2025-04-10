@@ -36,7 +36,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Verónica López (**[@Verolop](https://github.com/Verolop)**), AuthZed
 * Carlos Tadeu Panato Jr. (**[@cpanato](https://github.com/cpanato)**), Chainguard, Inc
-* Adolfo García Veytia (**[@puerco](https://github.com/puerco)**), Stacklok
+* Adolfo García Veytia (**[@puerco](https://github.com/puerco)**), Carabiner Systems, Inc
 
 ## Emeritus Leads
 
