@@ -31,6 +31,7 @@ The [charter](charter.md) defines the scope and governance of the etcd Special I
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Ivan Valdes (**[@ivanvc](https://github.com/ivanvc)**), Inmar Intelligence
 * James Blair (**[@jmhbnz](https://github.com/jmhbnz)**), Red Hat
 * Wenjia Zhang (**[@wenjiaswe](https://github.com/wenjiaswe)**), Google
 
