@@ -3798,12 +3798,15 @@ workinggroups:
     - github: JimBugwadia
       name: Jim Bugwadia
       company: Kyverno/Nirmata
+      email: jim@nirmata.com
     - github: poonam-lamba
       name: Poonam Lamba
       company: Google
+      email: poonamlamba83@gmail.com
     - github: sudermanjr
       name: Andy Suderman
       company: Fairwinds
+      email: andy@suderman.dev
     emeritus_leads:
     - github: rficcaglia
       name: Robert Ficcaglia
