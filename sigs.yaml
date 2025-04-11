@@ -2054,6 +2054,7 @@ sigs:
     - github: upodroid
       name: Mahamed Ali
       company: Cisco
+      email: cy@borg.dev
     - github: xmudrii
       name: Marko Mudrinić
       company: Kubermatic
