@@ -1140,7 +1140,13 @@ func generateCNCFMaintainersList(ctx *Context) error {
 	defer f.Close()
 	fmt.Fprintln(f, "name | company | github | email | service-desk?")
 	fmt.Fprintln(f, "===============================================")
-	for _, m := range maintainers {
+	keys := []string{}
+	for gh := range maintainers {
+		keys = append(keys, gh)
+	}
+	sort.Strings(keys)
+	for _, gh := range keys {
+		m := maintainers[gh]
 		fmt.Fprintf(f, "%s | %s | %s | %s | %t\n", m.Name, m.Company, m.GitHub, m.Email, serviceDesk[m.GitHub])
 	}
 	return nil
