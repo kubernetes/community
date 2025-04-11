@@ -3922,6 +3922,7 @@ committees:
     - github: AnaMMedina21
       name: Ana Margarita Medina
       company: Upbound
+      email: AnaMMedina21@gmail.com
     - github: divya-mohan0209
       name: Divya Mohan
       company: SUSE
@@ -3929,6 +3930,7 @@ committees:
     - github: endocrimes
       name: Danielle Lancashire
       company: Fermyon
+      email: lancashiredanielle@gmail.com
     - github: jeremyrickard
       name: Jeremy Rickard
       company: Microsoft
@@ -3936,6 +3938,7 @@ committees:
     - github: stmcginnis
       name: Sean McGinnis
       company: Lambda, Inc
+      email: sean.mcginnis@gmail.com
     emeritus_leads:
     - github: AevaOnline
       name: Aeva Black
