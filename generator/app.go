@@ -461,25 +461,30 @@ func (c *Context) Validate() []error {
 					if val, ok := people[person.GitHub]; ok {
 						// non-emeritus must have email and company set
 						if prefix != "emeritus_lead" {
-							// email must be set and consistent
-							if val.Email == "" {
-								errors = append(errors, fmt.Errorf("%s: %s: email is empty but should be set", group.Dir, val.GitHub))
-							} else if val.Email != person.Email {
+							// email and company must match across groups
+							if val.Email != person.Email {
 								errors = append(errors, fmt.Errorf("%s: %s email: %q does not match other entries %q", group.Dir, val.GitHub, val.Email, person.Email))
 							}
-							// company must be set and consistent
-							if val.Company == "" {
-								errors = append(errors, fmt.Errorf("%s: %s: company is empty but should be set", group.Dir, val.Company))
-							} else if val.Company != person.Company {
+							if val.Company != person.Company {
 								errors = append(errors, fmt.Errorf("%s: %s company: %q does not match other entries %q", group.Dir, val.GitHub, val.Company, person.Company))
 							}
 						}
-						// all entries should have github + name, emeritus or not
+						// all entries should have matching github + name, emeritus or not
 						if val.Name != person.Name {
 							errors = append(errors, fmt.Errorf("%s: %s: expected person: %v, got: %v", group.Dir, prefix, val, person))
 						}
 					} else if prefix != "emeritus_lead" {
 						people[person.GitHub] = person
+						// email and company must be set for leads
+						if person.Email == "" {
+							errors = append(errors, fmt.Errorf("%s: %s: email is empty but should be set", group.Dir, person.GitHub))
+						}
+						if person.Company == "" {
+							errors = append(errors, fmt.Errorf("%s: %s: company is empty but should be set", group.Dir, person.GitHub))
+						}
+					}
+					if person.Name == "" {
+						errors = append(errors, fmt.Errorf("%s: %s: name is empty but should be set", group.Dir, person.GitHub))
 					}
 
 					if prefix == "emeritus_lead" && person.Company != "" {
