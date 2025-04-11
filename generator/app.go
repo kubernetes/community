@@ -469,7 +469,7 @@ func (c *Context) Validate() []error {
 								errors = append(errors, fmt.Errorf("%s: %s company: %q does not match other entries %q", group.Dir, val.GitHub, val.Company, person.Company))
 							}
 						}
-						// all entries should have github + name, emeritus or not
+						// all entries should have matching github + name, emeritus or not
 						if val.Name != person.Name {
 							errors = append(errors, fmt.Errorf("%s: %s: expected person: %v, got: %v", group.Dir, prefix, val, person))
 						}
@@ -482,6 +482,9 @@ func (c *Context) Validate() []error {
 						if person.Company == "" {
 							errors = append(errors, fmt.Errorf("%s: %s: company is empty but should be set", group.Dir, person.GitHub))
 						}
+					}
+					if person.Name == "" {
+						errors = append(errors, fmt.Errorf("%s: %s: name is empty but should be set", group.Dir, person.GitHub))
 					}
 
 					if prefix == "emeritus_lead" && person.Company != "" {
