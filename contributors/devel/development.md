@@ -158,24 +158,6 @@ In particular, this command installs the necessary packages:
 brew install coreutils ed findutils gawk gnu-sed gnu-tar grep make jq
 ```
 
-You will want to include this block or something similar at the end of
-your `.bashrc` or shell init script:
-
-```sh
-GNUBINS="$(find `brew --prefix`/opt -type d -follow -name gnubin -print)"
-
-for bindir in ${GNUBINS[@]}
-do
-  export PATH=$bindir:$PATH
-done
-
-export PATH
-```
-
-This ensures that the GNU tools are found first in your path. Note
-that shell init scripts work a little differently for
-macOS. [This article can help you figure out what changes to make.](https://scriptingosx.com/2017/04/about-bash_profile-and-bashrc-on-macos/)
-
 ### Installing Required Software
 
 #### GNU Development Tools 
