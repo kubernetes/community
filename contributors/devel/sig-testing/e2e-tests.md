@@ -283,7 +283,7 @@ First, compile the E2E test suite with additional compiler flags
 
 ```sh
 # DBG=1 enables necessary debug options and disables stripping binaries
-# see the makefile upstream, or use UBE_VERBOSE=3 to get the actual build commands
+# see the makefile upstream, or use KUBE_VERBOSE=3 to get the actual build commands
 make WHAT=test/e2e/e2e.test DBG=1
 ```
 
