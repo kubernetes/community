@@ -3432,6 +3432,7 @@ sigs:
     - github: aravindhp
       name: Aravindh Puthiyaparambil
       company: Softdrive Technologies Group Inc.
+      email: aravindh.foss@pm.me
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
@@ -3440,12 +3441,15 @@ sigs:
     - github: claudiubelu
       name: Claudiu Belu
       company: Cloudbase Solutions
+      email: cbelu@cloudbasesolutions.com
     - github: jsturtevant
       name: James Sturtevant
       company: Microsoft
+      email: jsturtevant@gmail.com
     - github: knabben
       name: Amim Knabben
       company: VMware
+      email: amim.knabben@gmail.com
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
