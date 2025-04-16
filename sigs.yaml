@@ -3614,6 +3614,7 @@ workinggroups:
     - github: yuxiangqian
       name: Xiangqian Yu
       company: Google
+      email: xiangqian@google.com
   meetings:
   - description: Regular WG Meeting
     day: Wednesday
