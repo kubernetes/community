@@ -7,6 +7,8 @@
 
   - [Shift Down Security Whitepaper](https://tag-security.cncf.io/community/resources/security-whitepaper/v2/CNCF_cloud-native-security-whitepaper-May2022-v2.pdf)
   - 2 KubeCon talks - NA + EU
+    - [Kubecon EU 2024](https://www.youtube.com/watch?v=apYGi-R28MU)
+    - [Kubecon NA 2024](https://www.youtube.com/watch?v=8NevGwP8NrY&t=2s)
   - Policy Reports API
 <!--
    Some example items that might be worth highlighting:
