@@ -3391,12 +3391,15 @@ sigs:
     - github: floreks
       name: Sebastian Florek
       company: Plural
+      email: sebastian@plural.sh
     - github: maciaszczykm
       name: Marcin Maciaszczyk
       company: Plural
+      email: marcin9yk@icloud.com
     - github: shu-mutou
       name: Shu Muto
       company: NEC
+      email: shu.mutow@gmail.com
     emeritus_leads:
     - github: danielromlein
       name: Dan Romlein
