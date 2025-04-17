@@ -60,6 +60,12 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-cli-test-failures](https://github.com/orgs/kubernetes/teams/sig-cli-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-cli:
+* [WG Node Lifecycle](/wg-node-lifecycle)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-cli:
