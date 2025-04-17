@@ -581,11 +581,6 @@ sigs:
     owners:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/server/options/encryptionconfig/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/storage/value/OWNERS
-  - name: hierarchical-namespace-controller
-    description: |
-      Controller to manage hierarchical namespaces
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/hierarchical-namespaces/master/OWNERS
   - name: node-identity-and-isolation
     description: |
       Node identity management (co-owned with sig-lifecycle), and authorization restrictions for isolating workloads on separate nodes (co-owned with sig-node).
@@ -598,7 +593,6 @@ sigs:
     description: |
       API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/pspmigrator/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/wg-policy-prototypes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kms/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
