@@ -598,7 +598,6 @@ sigs:
     description: |
       API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/pspmigrator/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/wg-policy-prototypes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kms/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
