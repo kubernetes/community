@@ -1,3 +1,7 @@
+# this file contains information that we don't want to further surface for
+# scraping but do generate locally
+maintainers.txt
+
 # OSX leaves these everywhere on SMB shares
 ._*
 

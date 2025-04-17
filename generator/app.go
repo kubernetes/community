@@ -1100,6 +1100,58 @@ func prepForAnnualReportGeneration() error {
 	return nil
 }
 
+func generateCNCFMaintainersList(ctx *Context) error {
+	maintainers := map[string]Person{}
+	serviceDesk := map[string]bool{}
+	for _, group := range ctx.Committees {
+		if group.Name == "Steering" {
+			for _, member := range group.Leadership.Chairs {
+				maintainers[member.GitHub] = member
+				serviceDesk[member.GitHub] = true
+			}
+		}
+	}
+	for _, sig := range ctx.Sigs {
+		// these groups retain service desk access in addition to steering
+		// as outlined in https://github.com/kubernetes/steering/issues/281
+		isServiceDesk := sig.Name == "Contributor Experience" || sig.Name == "K8s Infra" || sig.Name == "Release"
+		for _, chair := range sig.Leadership.Chairs {
+			maintainers[chair.GitHub] = chair
+			// only set service desk true as needed, do not override to false
+			// in case of maintainers spanning groups
+			if isServiceDesk {
+				serviceDesk[chair.Name] = true
+			}
+		}
+		for _, tl := range sig.Leadership.TechnicalLeads {
+			maintainers[tl.GitHub] = tl
+			// only set service desk true as needed, do not override to false
+			// in case of maintainers spanning groups
+			if isServiceDesk {
+				serviceDesk[tl.Name] = true
+			}
+		}
+	}
+	outputPath := filepath.Join(baseGeneratorDir, "maintainers.txt")
+	f, err := os.Create(outputPath)
+	if err != nil {
+		return err
+	}
+	defer f.Close()
+	fmt.Fprintln(f, "name | company | github | email | service-desk?")
+	fmt.Fprintln(f, "===============================================")
+	keys := []string{}
+	for gh := range maintainers {
+		keys = append(keys, gh)
+	}
+	sort.Strings(keys)
+	for _, gh := range keys {
+		m := maintainers[gh]
+		fmt.Fprintf(f, "%s | %s | %s | %s | %t\n", m.Name, m.Company, m.GitHub, m.Email, serviceDesk[m.GitHub])
+	}
+	return nil
+}
+
 func main() {
 	yamlPath := filepath.Join(baseGeneratorDir, sigsYamlFile)
 	var ctx Context
@@ -1151,6 +1203,11 @@ func main() {
 				log.Fatal(err)
 			}
 		}
+	}
+
+	if envVal, ok := os.LookupEnv("MAINTAINERS_LIST"); ok && envVal == "true" {
+		fmt.Println("Generating CNCF maintainers list")
+		generateCNCFMaintainersList(&ctx)
 	}
 
 	fmt.Println("Generating sig-list.md")
