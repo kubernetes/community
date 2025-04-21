@@ -84,6 +84,19 @@ for i in $(ls -1 generator/generated/*.md); do gh issue create --repo kubernetes
  You may run into rate limiting issues, which is why this command removes the
  files after an issue has been successfully created.
 
+<!--TODO: we probably won't need maintainers.txt longterm-->
+To generate the maintainers.txt file for updating with the CNCF re:
+https://github.com/kubernetes/steering/issues/281
+
+```bash
+make MAINTAINERS_LIST=true
+```
+
+This will generate an untracked (not saved in git) maintainers.txt file with a 
+table in the format requested by the CNCF.
+Most contributors will never need to do this.
+For more details see the linked steering issue.
+<!--END-TODO: we probably won't need maintainers.txt longterm-->
 
 ## Adding custom content
 
