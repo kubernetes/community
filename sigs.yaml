@@ -2861,28 +2861,30 @@ sigs:
   label: scheduling
   leadership:
     chairs:
-    - github: Huang-Wei
-      name: Wei Huang
-      company: Apple
-      email: hweicdl@gmail.com
-    - github: ahg-g
-      name: Abdullah Gharaibeh
+    - github: macsko
+      name: Maciej Skoczeń
       company: Google
-      email: ahg@google.com
+      email: mskoczen@google.com
+    - github: sanposhiho
+      name: Kensei Nakada
+      company: Tetrate
+      email: handbomusic@gmail.com
     tech_leads:
+    - github: dom4ha
+      name: Dominik Marciński
+      company: Google
+      email: dmarcinski@google.com
+    - github: sanposhiho
+      name: Kensei Nakada
+      company: Tetrate
+      email: handbomusic@gmail.com
+    emeritus_leads:
     - github: Huang-Wei
       name: Wei Huang
-      company: Apple
-      email: hweicdl@gmail.com
     - github: ahg-g
       name: Abdullah Gharaibeh
-      company: Google
-      email: ahg@google.com
     - github: alculquicondor
       name: Aldo Culquicondor
-      company: Google
-      email: acondor@google.com
-    emeritus_leads:
     - github: bsalamat
       name: Bobby (Babak) Salamat
     - github: k82cn
