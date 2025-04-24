@@ -409,7 +409,7 @@ See the sig-cli [community page] for points of contact and meeting times:
 [feature request]: #feature-requests
 [feature]: https://github.com/kubernetes/features
 [group]: https://groups.google.com/a/kubernetes.io/g/sig-cli
-[issue]: https://github.com/kubernetes/kubectl/projects/3
+[issue]: https://github.com/kubernetes/kubectl/issues?q=is%3Aissue%20state%3Aopen%20label%3Apriority%2Fbacklog
 [kubectl docs]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
 [kubernetes/cmd/kubectl]: https://git.k8s.io/kubernetes/cmd/kubectl
 [kubernetes/staging/src/k8s.io/kubectl/pkg]: https://git.k8s.io/kubernetes/staging/src/k8s.io/kubectl/pkg
