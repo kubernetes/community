@@ -3567,15 +3567,6 @@ workinggroups:
     archive_url: https://docs.google.com/document/d/1XOeUN-K0aKmJJNq7H07r74n-mGgSFyiEDQ3ecwsGhec/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1U1eU1NPyflIGmwzcXPsev
     calendar_url: https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com
-  - description: Regular Meeting
-    day: Thursdays (starting February 1st 2024)
-    time: 3PM
-    tz: PT (Pacific Time)
-    frequency: monthly
-    url: https://zoom.us/j/98329676612?pwd=c0N2bVV1aTh2VzltckdXSitaZXBKQT09
-    archive_url: https://docs.google.com/document/d/1XOeUN-K0aKmJJNq7H07r74n-mGgSFyiEDQ3ecwsGhec/edit
-    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1U1eU1NPyflIGmwzcXPsev
-    calendar_url: https://calendar.google.com/calendar/embed?src=8ulop9k0jfpuo0t7kp8d9ubtj4%40group.calendar.google.com
   contact:
     slack: wg-batch
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-batch
