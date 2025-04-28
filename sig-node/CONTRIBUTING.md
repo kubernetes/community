@@ -217,7 +217,7 @@ Note: Task 5 requires Linux OS
 ### CI testing
 
 CI testing subgroup of SIG Node provides a great way to get started with the SIG.
-CI testing concentrate on  reliability and ongoing issues, see the [charter](sig-node/sig-node-ci-testing-group-charter.md) for details.
+CI testing concentrate on  reliability and ongoing issues, see the [charter](sig-node-ci-testing-group-charter.md) for details.
 
 There are many ways to participate:
 
