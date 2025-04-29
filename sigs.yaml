@@ -2924,7 +2924,7 @@ sigs:
     recordings_url: https://youtube.com/playlist?list=PLEafaZMk8MYYqoSncOkL8uutIcTsUQE_g
   contact:
     slack: sig-scheduling
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-scheduling
     teams:
     - name: sig-scheduling-leads
       description: SIG Scheduling leads
