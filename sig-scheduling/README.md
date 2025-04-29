@@ -32,19 +32,21 @@ The [charter](charter.md) defines the scope and governance of the Scheduling Spe
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), Apple
-* Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
+* Maciej Skoczeń (**[@macsko](https://github.com/macsko)**), Google
+* Kensei Nakada (**[@sanposhiho](https://github.com/sanposhiho)**), Tetrate
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**), Apple
-* Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**), Google
-* Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**), Google
+* Dominik Marciński (**[@dom4ha](https://github.com/dom4ha)**), Google
+* Kensei Nakada (**[@sanposhiho](https://github.com/sanposhiho)**), Tetrate
 
 ## Emeritus Leads
 
+* Wei Huang (**[@Huang-Wei](https://github.com/Huang-Wei)**)
+* Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**)
+* Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**)
 * Bobby (Babak) Salamat (**[@bsalamat](https://github.com/bsalamat)**)
 * Klaus Ma (**[@k82cn](https://github.com/k82cn)**)
 
