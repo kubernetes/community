@@ -13,7 +13,7 @@ SIG Scheduling is responsible for the components that make Pod placement decisio
 The [charter](charter.md) defines the scope and governance of the Scheduling Special Interest Group.
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling) for the group will typically add invites for the following meetings to your calendar.*
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-scheduling) for the group will typically add invites for the following meetings to your calendar.*
 * biweekly meeting (Asia & Europe): [Tuesdays at 9:00 UTC](https://zoom.us/j/841218129) (biweekly starting Tuesday Feb 11, 2025). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
@@ -52,7 +52,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Contact
 - Slack: [#sig-scheduling](https://kubernetes.slack.com/messages/sig-scheduling)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-scheduling)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/sig-scheduling)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fscheduling)
 - GitHub Teams:
     - [@kubernetes/sig-scheduling-leads](https://github.com/orgs/kubernetes/teams/sig-scheduling-leads) - SIG Scheduling leads
