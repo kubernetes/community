@@ -1477,7 +1477,7 @@ sigs:
   meetings:
   - description: Regular SIG Meeting
     day: Wednesday
-    time: "9:00"
+    time: "10:00"
     tz: PT (Pacific Time)
     frequency: Biweekly
     url: https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09
