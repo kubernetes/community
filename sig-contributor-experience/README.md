@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Contributor Ex
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09) (Biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09) (Biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1CBz8qV_mD6rbDmTsMuosTOQGRXGhN3d8UrcULUI6Vkw/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr).
 * Regular SIG Meeting (APAC/J/NZ timezone friendly): [Wednesdays at 7:30 UTC](https://zoom.us/j/397264241?pwd=bHNnZVArNFdPaWVJMmttdko0Sktudz09) (Biweekly, interleaved with the Regular SIG Meeting). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7%3A30&tz=UTC).
