@@ -13,8 +13,8 @@ Multicluster controllers have always needed a place to run. This may happen in e
 proprietary control-planes but for more generic platforms, it has been natural for the
 Kubernetes community to leverage a Kubernetes Cluster and the existing api-machinery
 available. There has been a variety of examples of which we can quote ArgoCD, MultiKueue, Open Cluster Management
-or any of the Federation effort (Karmada, KubeAdmiral), all of them not-naming the "location"
-where they run or not aligning on the name (Admin cluster, Management Cluster, Command Cluster, Manager Cluster...). 
+or any of the Federation effort (Karmada, KubeAdmiral, which uses Host Cluster), all of them not-naming the "location"
+where they run or not aligning on the name (Host Cluster, Admin cluster, Management Cluster, Command Cluster, Manager Cluster...). 
 The [ClusterInventory](https://github.com/kubernetes/enhancements/blob/master/keps/sig-multicluster/4322-cluster-inventory/README.md)
 (ClusterProfile CRDs) is also the starting point for a lot of multicluster controllers and, 
 being a CRD, it requires an api-machinery to host it. The functionality of this cluster is also
