@@ -3995,6 +3995,10 @@ committees:
       name: Sri Saran Balaji
       company: Amazon
       email: srajakum@amazon.com
+    - github: Vyom-Yadav
+      name: Vyom Yadav
+      company: Canonical
+      email: vyom.yadav@canonical.com
     - github: cjcullen
       name: CJ Cullen
       company: Google
@@ -4015,6 +4019,14 @@ committees:
       name: Micah Hausler
       company: Amazon
       email: mhausler@amazon.com
+    - github: natherz97
+      name: Nathan Herz
+      company: Amazon
+      email: natherz@amazon.com
+    - github: puerco
+      name: Adolfo García Veytia
+      company: Carabiner Systems, Inc
+      email: adolfo.garcia@uservers.net
     - github: ritazh
       name: Rita Zhang
       company: Microsoft
