@@ -21,7 +21,7 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 * Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
 * Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
 * Nathan Herz (**[@natherz97](https://github.com/natherz97)**), Amazon
-* Adolfo García Veytia (**[@puerco](https://github.com/puerco)**), Stacklok
+* Adolfo García Veytia (**[@puerco](https://github.com/puerco)**), Carabiner Systems, Inc
 * Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
 * Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
 
