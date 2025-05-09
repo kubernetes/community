@@ -3862,7 +3862,7 @@ workinggroups:
     day: Wednesday
     time: "9:00"
     tz: PT (Pacific Time)
-    frequency: weekly
+    frequency: biweekly
     url: https://zoom.us/j/92615874244?pwd=VGhxZlJjRTNRWTZIS0dQV2MrZUJ5dz09
     archive_url: https://docs.google.com/document/d/1aExJFtaLnO-TM6_2uILgI8NI0IjOm7FcwLABBKEMEo0/edit
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP30qNanabU75ayPK7OPNAAS
