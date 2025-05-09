@@ -22,14 +22,10 @@ grow and improve our community.
 
 Items marked with the `help wanted` label need to ensure that they meet these criteria:
 
-- **Low Barrier to Entry**
-  It should be easy for new contributors. Documentation on how that type of
-  change should be made should already exist.
-
 - **Clear Task**
   The task is agreed upon and does not require further discussions in the
   community. Call out if that area of code is untested and requires new
-  fixtures.
+  fixtures. Consensus should exist for the high-level approach.
 
   API and CLI behavior should be decided and included in the OP issue, for example: "The
   new command syntax is `svcat unbind NAME [--orphan] [--timeout 5m]`", with
