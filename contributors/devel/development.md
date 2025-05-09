@@ -4,8 +4,9 @@ This document is the canonical source of truth for things like supported
 toolchain versions for building Kubernetes.
 
 Please submit an [issue] on GitHub if you
-* Notice a requirement that this doc does not capture.
-* Find a different doc that specifies requirements (the doc should instead link
+
+- Notice a requirement that this doc does not capture.
+- Find a different doc that specifies requirements (the doc should instead link
   here).
 
 Development branch requirements will change over time, but release branch
@@ -16,7 +17,7 @@ requirements are frozen.
 Determine whether your issue or pull request is improving Kubernetes'
 architecture or whether it's simply fixing a bug.
 
-If you need a diagram, add it.  SEPARATE the description of the problem (e.g. Y
+If you need a diagram, add it. SEPARATE the description of the problem (e.g. Y
 is a critical component that is too slow for an SLA that we care about) from the
 solution (e.g. make X faster).
 
@@ -28,7 +29,7 @@ reviewers can spare 5 minutes to review a patch that is thoughtfully justified).
 ### Is this just a simple bug fix?
 
 Simple bug patches are easy to review since test coverage is submitted with the
-patch.  Bug fixes don't usually require a lot of extra testing, but please
+patch. Bug fixes don't usually require a lot of extra testing, but please
 update the unit tests so they catch the bug!
 
 ### Is this an architecture improvement?
@@ -41,26 +42,26 @@ Some examples of "Architecture" improvements include:
 - Making code more resilient (sleeps, backoffs, reducing flakiness, etc.).
 
 These sorts of improvements are easily evaluated, especially when they decrease
-lines of code without breaking functionality.  That said, please explain exactly
+lines of code without breaking functionality. That said, please explain exactly
 what you are 'cleaning up' in your Pull Request so as not to waste a reviewer's
 time.
 
 If you're making code more resilient, include tests that demonstrate the new
-resilient behavior.  For example: if your patch causes a controller to better
+resilient behavior. For example: if your patch causes a controller to better
 handle inconsistent data, make a mock object which returns incorrect data a few
 times and verify the controller's new behaviour.
 
 ### Is this a performance improvement?
 
-Performance bug reports MUST include data that demonstrates the bug.  Without
-data, the issue will be closed.  You can measure performance using kubemark,
+Performance bug reports MUST include data that demonstrates the bug. Without
+data, the issue will be closed. You can measure performance using kubemark,
 scheduler_perf, go benchmark tests, or e2e tests on a real cluster with metric
 plots.
 
 Examples of how NOT to suggest a performance bug (these lead to a long review
 process and waste cycles):
 
-- We *should* be doing X instead of Y because it *might* lead to better
+- We _should_ be doing X instead of Y because it _might_ lead to better
   performance.
 - Doing X instead of Y would reduce calls to Z.
 
@@ -87,7 +88,7 @@ These issues should always be submitted with (in decreasing order of value):
 - A hand-instrumented timing test (i.e. adding some logs into the controller
   manager).
 
-Here are some examples of properly submitted performance issues.  If you are new
+Here are some examples of properly submitted performance issues. If you are new
 to kubernetes and thinking about filing a performance optimization, re-read one
 or all of these before you get started.
 
@@ -97,7 +98,7 @@ or all of these before you get started.
 
 Since performance improvements can be empirically measured, you should follow
 the "scientific method" of creating a hypothesis, collecting data, and then
-revising your hypothesis.  The above issues do this transparently, using figures
+revising your hypothesis. The above issues do this transparently, using figures
 and data rather than conjecture. Notice that the problem is analyzed and a
 correct solution is created before a single line of code is reviewed.
 
@@ -141,7 +142,7 @@ the Windows Command Prompt.
    you can use Windows Subsystem for Linux (WSL) to build
    Kubernetes. [Follow these instructions to install WSL2.](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 2. If you're using an earlier version of Windows, then create a Linux
-   virtual machine with at least 8GB of memory and 60GB of disk space. 
+   virtual machine with at least 8GB of memory and 60GB of disk space.
 
 Once you have finished setting up your WSL2 installation or Linux VM,
 follow the instructions below to configure your system for building
@@ -160,7 +161,7 @@ brew install coreutils ed findutils gawk gnu-sed gnu-tar grep make jq
 
 ### Installing Required Software
 
-#### GNU Development Tools 
+#### GNU Development Tools
 
 Kubernetes development helper scripts require an up-to-date GNU
 development tools environment. The method for installing these tools
@@ -190,6 +191,20 @@ distributions and commands used to install these tools are below.
   ```sh
   sudo pacman -Sy base-devel
   ```
+  Alpin linux
+  '''sh
+  sudo apk update
+  sudo apk add build-base
+  '''
+  Clear linux
+  '''sh
+  sudo swupd update
+  sodo swupd bundle-add c-basic dev-utils
+  '''
+  Solus
+  '''sh
+  sudo eopkg update-repo
+  sudo eopkg install-c system.devel
 
 Once you have finished, confirm that `gcc` and `make` are installed.
 
@@ -249,27 +264,27 @@ version of Go. Please install the newest stable version available for
 your system. The table below lists the required Go versions for
 different versions of Kubernetes.
 
-| Kubernetes     | requires Go |
-|----------------|-------------|
-| 1.0 - 1.2      | 1.4.2       |
-| 1.3, 1.4       | 1.6         |
-| 1.5, 1.6       | 1.7 - 1.7.5 |
-| 1.7            | 1.8.1       |
-| 1.8            | 1.8.3       |
-| 1.9            | 1.9.1       |
-| 1.10           | 1.9.1       |
-| 1.11           | 1.10.2      |
-| 1.12           | 1.10.4      |
-| 1.13           | 1.11.13     |
-| 1.14 - 1.16    | 1.12.9      |
-| 1.17 - 1.18    | 1.13.15     |
-| 1.19 - 1.20    | 1.15.5      |
-| 1.21 - 1.22    | 1.16.7      |
-| 1.23           | 1.17        |
-| 1.24           | 1.18        |
-| 1.25           | 1.20.10     |
-| 1.26 - 1.29    | 1.21.7      |
-| 1.30           | 1.22.1      |
+| Kubernetes  | requires Go |
+| ----------- | ----------- |
+| 1.0 - 1.2   | 1.4.2       |
+| 1.3, 1.4    | 1.6         |
+| 1.5, 1.6    | 1.7 - 1.7.5 |
+| 1.7         | 1.8.1       |
+| 1.8         | 1.8.3       |
+| 1.9         | 1.9.1       |
+| 1.10        | 1.9.1       |
+| 1.11        | 1.10.2      |
+| 1.12        | 1.10.4      |
+| 1.13        | 1.11.13     |
+| 1.14 - 1.16 | 1.12.9      |
+| 1.17 - 1.18 | 1.13.15     |
+| 1.19 - 1.20 | 1.15.5      |
+| 1.21 - 1.22 | 1.16.7      |
+| 1.23        | 1.17        |
+| 1.24        | 1.18        |
+| 1.25        | 1.20.10     |
+| 1.26 - 1.29 | 1.21.7      |
+| 1.30        | 1.22.1      |
 
 [Go version for latest Kubernetes](https://cs.k8s.io/?q=golang%3A%20upstream%20version&i=nope&files=&excludeFiles=&repos=)
 
@@ -283,6 +298,7 @@ for tag in $(git tag | grep $K8S_VERSION);do git checkout -q tags/$tag;goVersion
 ```
 
 An example output will be
+
 ```sh
 Kubernetes v1.29.0 requires Go version: 1.21.5
 Kubernetes v1.29.0-alpha.0 requires Go version: 1.20.6
@@ -304,7 +320,7 @@ different version of Go, please refer to the
 
 #### PyYAML
 
-Some Kubernetes verification tests use [PyYAML](https://pyyaml.org/) and it therefore needs to be installed to successfully run all verification tests in your local environment. 
+Some Kubernetes verification tests use [PyYAML](https://pyyaml.org/) and it therefore needs to be installed to successfully run all verification tests in your local environment.
 You can use the
 [PyYAML documentation](https://pyyaml.org/wiki/PyYAMLDocumentation) to
 find the installation instructions for your platform.
@@ -407,7 +423,7 @@ mentioned here by running `make help`.
 
 Presubmission verification provides a battery of checks and tests to
 give your pull request the best chance of being accepted. Developers need to run as many verification tests as possible
-locally. 
+locally.
 
 You can view a list of all verification tests in `hack/verify-*.sh`
 off of your Kubernetes project directory.
@@ -474,7 +490,7 @@ especially in areas where unit and integration tests are insufficient.
 E2E tests build test binaries, spin up a test cluster,
 run the tests, and then tear the cluster down.
 
-**Note:** Running all E2E tests takes a *very long time*!
+**Note:** Running all E2E tests takes a _very long time_!
 
 For more information on E2E tests, including methods for saving time
 by just running specific tests, read
@@ -496,8 +512,9 @@ file in the root of the Kubernetes repo. This file defines what version of `go` 
 to build Kubernetes. So, for example, if you'd like to build with `go1.20.4` specifically, you
 would change the contents of this file to just `1.20.4`.
 
-The way that the build targets choose what `go` version to use is as follows: 
-- If the `go` version that exists on your system (determined by output of `go version`) does 
+The way that the build targets choose what `go` version to use is as follows:
+
+- If the `go` version that exists on your system (determined by output of `go version`) does
   not match the version defined in `.go-version`, then default to the version specified in `.go-version`.
 - If you do not want this behaviour, you can do one of the following:
   - Set the `GO_VERSION` environment variable. `GO_VERSION` defines the _desired_ version of
@@ -515,17 +532,19 @@ If you want to build using a `go` version (let's assume this is go1.20.4) that n
 system nor is the one that is specified in the `.go-version` file:
 
 ```
-GO_VERSION=1.20.4 make WHAT=cmd/<subsystem> 
+GO_VERSION=1.20.4 make WHAT=cmd/<subsystem>
 ```
 
 If you want to build using the `go` version that exists on your system already and not really with what
 exists in the `.go-version` file:
+
 ```
-FORCE_HOST_GO=y make WHAT=cmd/<subsystem> 
+FORCE_HOST_GO=y make WHAT=cmd/<subsystem>
 ```
 
 Or you can just change the contents of the `.go-version` file to your desired `go` version!  
 `.go-version`:
+
 ```
 1.20.4
 ```
@@ -534,13 +553,14 @@ Or you can just change the contents of the `.go-version` file to your desired `g
 
 To check out code to work on, please refer to [this guide](/contributors/guide/github-workflow.md).
 
-
 [macOS GNU tools]: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x
 [build/build-image/cross]: https://git.k8s.io/kubernetes/build/build-image/cross
 [build/common.sh]: https://git.k8s.io/kubernetes/build/common.sh
 [etcd-latest]: https://coreos.com/etcd/docs/latest
 [etcd-install]: sig-testing/integration-tests.md#install-etcd-dependency
+
 <!-- https://github.com/coreos/etcd/releases -->
+
 [go-workspace]: https://golang.org/doc/code.html#Workspaces
 [issue]: https://github.com/kubernetes/kubernetes/issues
 [kubectl user guide]: https://kubernetes.io/docs/user-guide/kubectl
