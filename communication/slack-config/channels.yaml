@@ -318,6 +318,7 @@ channels:
   - name: kubespray
   - name: kubespray-dev
   - name: kubevirt-dev
+  - name: kubetail
   - name: kubewarden
   - name: kubewarden-dev
   - name: kubicorn
