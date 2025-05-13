@@ -32,6 +32,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Walter Fender (**[@cheftako](https://github.com/cheftako)**), Google
 * Michael McCune (**[@elmiko](https://github.com/elmiko)**), Red Hat
+* Joel Speed (**[@joelspeed](https://github.com/joelspeed)**), Red Hat
 
 ## Emeritus Leads
 

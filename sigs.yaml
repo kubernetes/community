@@ -894,6 +894,10 @@ sigs:
       name: Michael McCune
       company: Red Hat
       email: msm@opbstudios.com
+    - github: joelspeed
+      name: Joel Speed
+      company: Red Hat
+      email: jspeed@redhat.com
     emeritus_leads:
     - github: andrewsykim
       name: Andrew Sy Kim
