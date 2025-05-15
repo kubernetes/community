@@ -331,3 +331,12 @@ usergroups:
       - kayrus
       - mandre
       - pierreprinetti
+
+  - name: kubetail-maintainers
+    long_name: kubetail Maintainers
+    description: kubetail Maintainers group of kubetail.com
+    channels:
+      - kubetail
+    members:
+      - amorey
+      - rxinui
