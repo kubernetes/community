@@ -165,7 +165,6 @@ Moderators seats: 6
 | ------------------- | --------------------- | -------- | ------------------------------------------------------- |
 | Jeffrey Sica        | @jeefy                | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen          | @mrbobbytables        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Taylor Dolezal      | @onlydole             | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 ## Slack
 
@@ -224,7 +223,6 @@ Administrators seats: 6
 | Jorge Alarcon   | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Naeil Ezzoueidi | @nzoueidi           | EMEA     | [CET - Central European Time](https://time.is/CET)      |
 | Yang Li         | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
-| Taylor Dolezal  | @onlydole           | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Jeffrey Sica    | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Ihor Dvoretskyi | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
 | Marky Jackson   | @markyjackson-taulia| Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
