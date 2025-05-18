@@ -69,3 +69,6 @@ contributors/guide/first-contribution.md#find-something-to-work-on
 [open a pull request]:
 contributors/guide/contributing.md#opening-a-pull-request
 [Community Membership]:/community-membership.md
+
+<!-- Triggering CLA signing -->
+
