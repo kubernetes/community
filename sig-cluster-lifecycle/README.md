@@ -24,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Cluster Lifecy
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**), Google
-* Lubomir Ivanov (**[@neolit123](https://github.com/neolit123)**), VMware
+* Lubomir Ivanov (**[@neolit123](https://github.com/neolit123)**), Independent
 * Vince Prignano (**[@vincepri](https://github.com/vincepri)**), Red Hat
 
 ### Technical Leads
