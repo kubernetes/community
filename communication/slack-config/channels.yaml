@@ -186,6 +186,7 @@ channels:
   - name: in-dev
   - name: in-events
   - name: in-users
+  - name: inference-perf
   - name: ingate-dev
   - name: ingate-users
   - name: ingress-nginx-dev
