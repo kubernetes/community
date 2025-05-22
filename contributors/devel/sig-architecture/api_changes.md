@@ -39,6 +39,7 @@ found at [API Conventions](api-conventions.md).
 - [Alpha, Beta, and Stable Versions](#alpha-beta-and-stable-versions)
   - [Adding Unstable Features to Stable Versions](#adding-unstable-features-to-stable-versions)
     - [New field in existing API version](#new-field-in-existing-api-version)
+    - [Ratcheting validation](#ratcheting-validation)
     - [New enum value in existing field](#new-enum-value-in-existing-field)
     - [New alpha API version](#new-alpha-api-version)
 
@@ -878,13 +879,13 @@ You need to regenerate the generated code as instructed in the sections above.
 Part of our testing regimen for APIs is to "fuzz" (fill with random values) API
 objects and then convert them to and from the different API versions. This is
 a great way of exposing places where you lost information or made bad
-assumptions. 
+assumptions.
 
 The fuzzer works by creating a random API object and calling the custom fuzzer
 function in `pkg/apis/$GROUP/fuzzer/fuzzer.go`. The resulting object is then
 round-tripped from one api version to another, and verified to be the same as
 what was started with. Validation is not run during this process, but defaulting
-is.  
+is.
 
 If you have added any fields which need very careful formatting (the test does
 not run validation) or if you have made assumptions during defaulting such as
@@ -998,9 +999,9 @@ complexity of upgradeability and lack of long-term support and lack of
 upgradability.
 - Beta level:
   - Object Versioning: API version name contains `beta` (e.g. `v2beta3`)
-  - Availability: in official Kubernetes releases; API is disabled by default 
+  - Availability: in official Kubernetes releases; API is disabled by default
 but may be enabled by a flag.
-(Note: beta APIs introduced before v1.24 were enabled by default, but this 
+(Note: beta APIs introduced before v1.24 were enabled by default, but this
 [changed for new beta APIs](https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/3136-beta-apis-off-by-default/README.md))
   - Audience: users interested in providing feedback on features
   - Completeness: all API operations, CLI commands, and UI support should be
@@ -1224,6 +1225,37 @@ In future Kubernetes versions:
       // +k8s:deprecated=width,protobuf=3
     }
     ```
+
+#### Ratcheting validation
+
+The word "ratcheting" refers to a process of incremental and often irreversible
+progression or change, typically in a single direction. The term originates from
+a mechanical device called a [ratchet](https://en.wikipedia.org/wiki/Ratchet_(device)),
+which consists of a toothed wheel or bar and a pawl (a catch) that allows movement
+in only one direction while preventing backward motion.
+
+In the Kubernetes world, a ratcheting validation refers to an incremental tightening
+of validation. This means we allow current resources to either remain invalid or
+be fixed, but all new resources must pass the validation. The following table
+best illustrates these cases:
+
+| Resource    | Validation |
+|-------------|------------|
+| new valid   | succeeds   |
+| new invalid | fails      |
+| old valid   | succeeds   |
+| old invalid | succeeds   |
+
+A good example of ratcheting validation was introduced in [this pull request](https://github.com/kubernetes/kubernetes/pull/130233).
+It introduced validation for the optional `.spec.serviceName` field for StatefulSet,
+such that old resources (nregarldess of whether they are valid or not) will succeed
+the validation check, but new resources must adhere to stricter validation rules
+for that field. The relevant changes include:
+- A struct with options passed to validation methods (here it's the `StatefulSetValidationOptions`
+  struct, with `AllowInvalidServiceName` to handle this specific case).
+- Appropriate changes inside `Validate*` methods which ensure the rules from the
+  table above are implemented.
+- Tests ensuring all the cases from the above table are covered.
 
 #### New enum value in existing field
 
