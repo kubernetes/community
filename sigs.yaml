@@ -3443,18 +3443,14 @@ sigs:
       name: Claudiu Belu
       company: Cloudbase Solutions
       email: cbelu@cloudbasesolutions.com
-    - github: jsturtevant
-      name: James Sturtevant
-      company: Microsoft
-      email: jsturtevant@gmail.com
-    - github: knabben
-      name: Amim Knabben
-      company: VMware
-      email: amim.knabben@gmail.com
     - github: marosset
       name: Mark Rossetti
       company: Microsoft
       email: marosset@microsoft.com
+    - github: zylxjtu
+      name: Yuanliang Zhang
+      company: Microsoft
+      email: zhang.yuanliang@hotmail.com
     emeritus_leads:
     - github: PatrickLang
       name: Patrick Lang
@@ -3464,6 +3460,12 @@ sigs:
       name: Deep Debroy
     - github: jayunit100
       name: Jay Vyas
+    - github: jsturtevant
+      name: James Sturtevant
+      email: jsturtevant@gmail.com
+    - github: knabben
+      name: Amim Knabben
+      email: amim.knabben@gmail.com
     - github: michmike
       name: Michael Michael
   meetings:
