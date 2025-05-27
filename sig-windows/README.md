@@ -34,9 +34,8 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Claudiu Belu (**[@claudiubelu](https://github.com/claudiubelu)**), Cloudbase Solutions
-* James Sturtevant (**[@jsturtevant](https://github.com/jsturtevant)**), Microsoft
-* Amim Knabben (**[@knabben](https://github.com/knabben)**), VMware
 * Mark Rossetti (**[@marosset](https://github.com/marosset)**), Microsoft
+* Yuanliang Zhang (**[@zylxjtu](https://github.com/zylxjtu)**), Microsoft
 
 ## Emeritus Leads
 
@@ -44,6 +43,8 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Ben Moss (**[@benmoss](https://github.com/benmoss)**)
 * Deep Debroy (**[@ddebroy](https://github.com/ddebroy)**)
 * Jay Vyas (**[@jayunit100](https://github.com/jayunit100)**)
+* James Sturtevant (**[@jsturtevant](https://github.com/jsturtevant)**)
+* Amim Knabben (**[@knabben](https://github.com/knabben)**)
 * Michael Michael (**[@michmike](https://github.com/michmike)**)
 
 ## Contact
