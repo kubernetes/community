@@ -1780,10 +1780,10 @@ sigs:
       name: James Blair
       company: Red Hat
       email: mail@jamesblair.net
-    - github: wenjiaswe
-      name: Wenjia Zhang
+    - github: siyuanfoundation
+      name: Siyuan Zhang
       company: Google
-      email: wenjia.swe@gmail.com
+      email: physicsbug@gmail.com
     tech_leads:
     - github: ahrtr
       name: Benjamin Wang
@@ -1793,6 +1793,9 @@ sigs:
       name: Marek Siarkowicz
       company: Google
       email: marek.siarkowicz@gmail.com
+    emeritus_leads:
+    - github: wenjiaswe
+      name: Wenjia Zhang
   meetings:
   - description: Regular SIG Meeting
     day: Thursday
