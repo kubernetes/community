@@ -175,8 +175,12 @@ Kubernetes. For example, the CSIMigration feature gates looked like this:
 
 GA features are always on by default, and usually cannot be disabled.
 
-Sometimes (rarely) a GA feature is allowed to be disabled (`LockToDefault:
-false`). This indicates that while this feature is GA, they need to take some
+Sometimes (rarely) a GA feature is allowed to be disabled (`LockToDefault: false`).
+This is used for features that are being enabled by default for the first time.
+Such features must be disable-able in the first release they are on by default.
+The most common case is when an entirely new API is created and is not enabled by
+default until the serialization is stable (GA).
+This can also indicate that while this feature is GA, they need to take some
 other action outside of Kubernetes to use it. This gives some grace period for
 users to take action, but such feature gates will eventually set
 `LockToDefault` to `true` and then be retired, like normal.
