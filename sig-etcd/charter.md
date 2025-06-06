@@ -46,8 +46,15 @@ and opts-in to updates and modifications to [sig-governance].
   - Email: [etcd-dev](https://groups.google.com/forum/?hl=en#!forum/etcd-dev).
   - Slack: [#etcd](https://kubernetes.slack.com/messages/C3HD8ARJ5/details/) channel on Kubernetes.
 - SIG etcd contributing instructions ([CONTRIBUTING.md]) be defined in etcd project.
+- For SIG leadership changes, we continue to follow the common [Leadership Changes] guidelines. SIG etcd also agrees to
+  conduct open and transparent discussions among the current SIG leads through the following channels before sending to
+  the SIG and kubernetes-dev mailing list,
+   - The bi-weekly sig-etcd meetings
+   - The `etcd-maintainers@googlegroups.com` mailing list
+   - Slack group threads involving sig-etcd leads and etcd OWNERS.
 
 [CONTRIBUTING.md]: https://github.com/etcd-io/etcd/blob/main/CONTRIBUTING.md
+[Leadership Changes]: https://github.com/kubernetes/community/blob/master/contributors/chairs-and-techleads/leadership-changes.md
 
 ### Deviations from [kubernetes-repositories]
 
