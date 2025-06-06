@@ -587,6 +587,7 @@ channels:
   - name: wg-multitenancy
   - name: wg-naming
     archived: true
+  - name: wg-node-lifecycle
   - name: wg-onprem
     archived: true
   - name: wg-policy
