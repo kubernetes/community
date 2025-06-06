@@ -33,7 +33,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Ivan Valdes (**[@ivanvc](https://github.com/ivanvc)**), Inmar Intelligence
 * James Blair (**[@jmhbnz](https://github.com/jmhbnz)**), Red Hat
-* Wenjia Zhang (**[@wenjiaswe](https://github.com/wenjiaswe)**), Google
+* Siyuan Zhang (**[@siyuanfoundation](https://github.com/siyuanfoundation)**), Google
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -41,6 +41,10 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Benjamin Wang (**[@ahrtr](https://github.com/ahrtr)**), VMware
 * Marek Siarkowicz (**[@serathius](https://github.com/serathius)**), Google
+
+## Emeritus Leads
+
+* Wenjia Zhang (**[@wenjiaswe](https://github.com/wenjiaswe)**)
 
 ## Contact
 - Slack: [#sig-etcd](https://kubernetes.slack.com/messages/sig-etcd)
