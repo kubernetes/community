@@ -9,7 +9,7 @@ interface (CRI). CRI networking requirements expand upon kubernetes pod
 networking requirements. This document does not specify requirements 
 from upper layers of kubernetes network stack, such as `Service`. More 
 background on k8s networking could be found 
-[here](http://kubernetes.io/docs/admin/networking/)
+[here](https://kubernetes.io/docs/concepts/cluster-administration/networking/).
 
 ## Requirements
 1. Kubelet expects the runtime shim to manage pod's network life cycle. Pod 
