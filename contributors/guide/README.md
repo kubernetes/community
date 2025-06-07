@@ -67,9 +67,8 @@ Before you get started, you will need to [sign up](http://github.com/signup) for
 
 ### Sign the CLA
 
-Before you can contribute to Kubernetes, you will need to sign the
-[Contributor License Agreement].
-The easiest way to do so is to open a PR against the [contributor playground repo](https://github.com/kubernetes-sigs/contributor-playground), you can find an example PR [here](https://github.com/kubernetes-sigs/contributor-playground/pull/1389).
+Before contributing to Kubernetes, you must sign the [Contributor License Agreement] (CLA). To sign the CLA, open a PR against the [contributor playground repo](https://github.com/kubernetes-sigs/contributor-playground). You can find an example PR [here](https://github.com/kubernetes-sigs/contributor-playground/pull/1389). Afterward, the linux-foundation-easycla bot will reply with an error message containing a specific link for your GitHub account to sign the CLA using CNCF's EasyCLA system. 
+
 
 **Note:** [kubernetes-sigs/contributor-playground](https://github.com/kubernetes-sigs/contributor-playground) is a repository for practicing submitting your first PR, not just for CLA registration. When creating and submitting a new PR, please write the PR description according to the provided template. Check the above example PR for reference.
 
