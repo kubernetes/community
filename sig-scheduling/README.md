@@ -33,14 +33,14 @@ The [charter](charter.md) defines the scope and governance of the Scheduling Spe
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Maciej Skoczeń (**[@macsko](https://github.com/macsko)**), Google
-* Kensei Nakada (**[@sanposhiho](https://github.com/sanposhiho)**), (Individual contributor)
+* Kensei Nakada (**[@sanposhiho](https://github.com/sanposhiho)**), Independent
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Dominik Marciński (**[@dom4ha](https://github.com/dom4ha)**), Google
-* Kensei Nakada (**[@sanposhiho](https://github.com/sanposhiho)**), (Individual contributor)
+* Kensei Nakada (**[@sanposhiho](https://github.com/sanposhiho)**), Independent
 
 ## Emeritus Leads
 
