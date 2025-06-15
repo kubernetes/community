@@ -593,7 +593,6 @@ sigs:
     description: |
       API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/wg-policy-prototypes/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kms/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/policy/OWNERS
@@ -3782,54 +3781,6 @@ workinggroups:
     liaison:
       github: saschagrunert
       name: Sascha Grunert
-- dir: wg-policy
-  name: Policy
-  mission_statement: >
-    Provide an overall architecture that describes both the current policy related
-    implementations as well as future policy related proposals in Kubernetes. Through
-    a collaborative method, we want to present both dev and end user a universal view
-    of policy architecture in Kubernetes.
-
-  stakeholder_sigs:
-  - Architecture
-  - Auth
-  - Multicluster
-  - Network
-  - Node
-  - Scheduling
-  - Storage
-  label: policy
-  leadership:
-    chairs:
-    - github: JimBugwadia
-      name: Jim Bugwadia
-      company: Kyverno/Nirmata
-      email: jim@nirmata.com
-    - github: poonam-lamba
-      name: Poonam Lamba
-      company: Google
-      email: poonamlamba83@gmail.com
-    - github: sudermanjr
-      name: Andy Suderman
-      company: Fairwinds
-      email: andy@suderman.dev
-    emeritus_leads:
-    - github: rficcaglia
-      name: Robert Ficcaglia
-  meetings:
-  - description: Regular WG Meeting
-    day: Wednesday
-    time: "8:00"
-    tz: PT (Pacific Time)
-    frequency: semimonthly
-    url: https://zoom.us/j/7375677271
-    archive_url: https://docs.google.com/document/d/1ihFfEfgViKlUMbY2NKxaJzBkgHh-Phk5hqKTzK-NEEs/edit?usp=sharing
-  contact:
-    slack: wg-policy
-    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-policy
-    liaison:
-      github: pohly
-      name: Patrick Ohly
 - dir: wg-serving
   name: Serving
   mission_statement: >
