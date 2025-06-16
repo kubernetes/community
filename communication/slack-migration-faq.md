@@ -6,7 +6,7 @@ description: |
 
 ## What is Changing About Slack?
 
-Kubernetes Slack will lose its special status and will be changing into a standard free Slack on June 20. Sometime later this year, our community will likely move to a new platform. If you are responsible for a channel or private channel, or a member of a User Group, you will need to take some actions as soon as you can.
+Kubernetes Slack will lose its special status and will be changing into a standard free Slack on June 20, 2025. Sometime later this year, our community will likely move to a new platform. If you are responsible for a channel or private channel, or a member of a User Group, you will need to take some actions as soon as you can.
 
 ## What Actions do Channel Owners and User Group Members Need to Take Soon?
 
