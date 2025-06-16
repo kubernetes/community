@@ -16,7 +16,7 @@ If you are responsible for a channel or a team with a Slack User Group, you'll n
 
 **Saved Files and Pinned Posts**: If your channel has important saved files and information in Pinned Posts, you need to copy that information to other media such as GitHub files or GoogleDocs *as soon as possible* and instead have a Bookmark linking to that location. Once our account is downgraded, we will not be able to access pinned posts and files more than 90 days old.
 
-**Private Channels**: Private Channels are *not* backed up to our archives because they can't be. If you have important information in private channels which is more than 90 days old, copy it to another location as soon as possible. The Slack Admins are looking for a tools which supports backing up private channels; please request a backup on the #slack-admins channel as soon as possible if you need this.
+**Private Channels**: Private Channels are *not* backed up to our archives because they can't be. If you have important information in private channels which is more than 90 days old, copy it to another location as soon as possible. We recommend backing up the contents of your private channel [using Slackdump](slack-backup/README.recommend), an open source tool.
 
 ### Within The Next Few Weeks
 
