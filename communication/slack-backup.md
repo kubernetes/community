@@ -88,7 +88,7 @@ Now you can export the Data, by entering the ChanelIDs.
 We recommend the "standard" storage type option.
 
 ![](https://i.imgur.com/TchQXRA.jpeg)
-
+Once you selected all teh options hit ESC to go back - then you can say start dump
 
 And you will receive your export!:
 ![](https://i.imgur.com/roamx80.jpeg)
