@@ -97,4 +97,4 @@ That will be decided by the Steering Committee, working together with the CNCF S
 
 ## Where Can I Discuss The Slack Downgrade and Migration?
 
-Join the [community discussion thread](link-to-github-discussion). Our plans will also get discussed at a public Steering Committee meeting (to be scheduled).
+Join the [community discussion thread](https://github.com/kubernetes/community/issues/8490). Our plans will also get discussed at a public Steering Committee meeting (to be scheduled).
