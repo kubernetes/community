@@ -96,7 +96,7 @@ Now you can export the channel contents, selecting each channel via its ID. We r
 
 ![screenshot of the UI showing the options for exporting a channel](exportdata1.jpeg)
 
-Once you have selected all the options, hit ESC to go back, and choose "Start Export". Slackdump will do a lot of pulling data, and eventually create a zip file in the root of your home directory.
+Once you have selected all the options, hit ESC to go back, and choose "Run Export". Slackdump will do a lot of pulling data, and eventually create a zip file in the root of your home directory.
 
 ![example of Slackdump exporting a channel](exportdata2.jpeg)
 
