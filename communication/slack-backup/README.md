@@ -62,7 +62,7 @@ Use the wizard to get started:
 
 ![screenshot of starting the wizard](runwizard.jpeg)
 
-Navigate the menus and select "Export" (not "Dump"). You will be asked for a login.
+Choose "Workspace", and then "New" to authenticate for the Kubernetes Slack. You will be prompted to choose a method for logging in.
 
 ![screenshot of login choices menu](login.jpeg)
 
@@ -77,6 +77,10 @@ To retrieve the Cookie, Login into [https://kubernetes.slack.com](https://kubern
 Enter "kubernetes" for the workspace name, your session cookie, and select "Yes" for "Confirm creation of workspace" to create credentials.
 
 ![screenshot of the create credentials from cookie interface](createcredential.jpeg)
+
+Navigate the menus and select "Export" (not "Dump"). You will be asked for a login.
+
+![menu of choices, with Export highlighted](export.png)
 
 Now you can export your private Channels and DMs. The easiest way is to use ChannelIDs.
 
@@ -129,7 +133,7 @@ export results:
 
 ## What Should I Do with the Backup Files?
 
-**Kubernetes Private Channels**: For most backups, contact #sig-contribex about saving the file(s) to the Kubernetes-owned Google Drive. Let them know who should have access to the files. If the private channel is such that the ContribEx leads should not see the contents of it, discuss options with them.
+**Kubernetes Private Channels**: Contact #sig-contribex about getting a folder for your group in the Kubernetes-owned Google Drive. Let them know who should have access to the folder.
 
 **Non-Kubernetes Private Channels**: For other projects on our Slack with private channels (there's a few), it will be up to you to figure out an appropriate community-owned location for the export.
 
