@@ -3,10 +3,11 @@ channels:
   - name: sig-node-bug-scrub
     archived: true
   - name: sig-node-ci
+  - name: sig-node-inplace-pod-resize
   - name: sig-node-kmm
     id: C037RE58RED
   - name: sig-node-rkt
     archived: true
-  - name: sig-node-swap
-  - name: sig-node-inplace-pod-resize
   - name: sig-node-sidecar
+  - name: sig-node-swap
+  - name: sig-node-wranglers
