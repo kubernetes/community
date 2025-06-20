@@ -7,6 +7,9 @@ Node e2e tests are component tests meant for testing the Kubelet code on a custo
 *Note: There is no scheduler running. The e2e tests have to do manual scheduling, e.g. by using `framework.PodClient`.*
 
 # Running tests
+To ensure node e2e test build can locate the Kubernetes source code, please take one of the following actions:
+- *Set the `KUBE_ROOT` environment variable* to the absolute path of the directory where the Kubernetes repository has been cloned.
+- *Clone the Kubernetes repository* into the default location: `~/k8s.io/kubernetes`.
 
 ## Locally
 
