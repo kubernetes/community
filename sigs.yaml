@@ -87,6 +87,9 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/namespace/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/resourcequota/OWNERS
     - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/quota/v1/OWNERS
+  - name: crdify
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/crdify/main/OWNERS
   - name: idl-schema-client-pipeline
     owners:
     - https://raw.githubusercontent.com/kubernetes-client/gen/master/OWNERS
