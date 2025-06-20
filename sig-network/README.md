@@ -16,7 +16,7 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network) for the group will typically add invites for the following meetings to your calendar.*
 * Gateway API Meeting (Americas): [Mondays at 15:00 PT (Pacific Time)](https://zoom.us/j/441530404) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
-* Gateway API Meeting (Europe): [Tuesday (starting September 10th 2024)s at 08:00 PT (Pacific Time)](https://zoom.us/j/441530404) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08%3A00&tz=PT%20%28Pacific%20Time%29).
+* Gateway API Meeting (Europe): [Tuesday (starting September 10th 2024)s at 08:00 PT (Pacific Time)](https://zoom.us/j/441530404) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
 * Ingate Meeting: [Fridays at 06:00 PT (Pacific Time)](https://zoom.us/j/94625479998) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=06%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1KqMxFbxz4QO5bYCFfihyZwPVZTtTtzcQs3Nt2-JQaAA/edit).

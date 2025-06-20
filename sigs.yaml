@@ -2312,7 +2312,7 @@ sigs:
     day: Tuesday (starting September 10th 2024)
     time: "08:00"
     tz: PT (Pacific Time)
-    frequency: monthly
+    frequency: bi-weekly
     url: https://zoom.us/j/441530404
     archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
   - description: Ingate Meeting
