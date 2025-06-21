@@ -45,12 +45,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
     - [@kubernetes/sig-multicluster-test-failures](https://github.com/orgs/kubernetes/teams/sig-multicluster-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Antonio Ojea (**[@aojea](https://github.com/aojea)**)
 
-## Working Groups
-
-The following [working groups][working-group-definition] are sponsored by sig-multicluster:
-* [WG Policy](/wg-policy)
-
-
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-multicluster:
