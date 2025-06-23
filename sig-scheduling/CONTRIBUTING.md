@@ -4,7 +4,7 @@ Welcome to contributing to SIG Scheduling. We are excited about the prospect of 
 joining our [community](https://github.com/kubernetes/community/tree/master/sig-scheduling)!
 
 SIG Scheduling is responsible for the components that make Pod placement decisions.
-You can read the SIG mission outlined in the [charter](https://git.k8s.io/community/sig-cluster-lifecycle/charter.md).
+You can read the SIG mission outlined in the [charter](https://git.k8s.io/community/sig-scheduling/charter.md).
 
 There are multiple ways you can participate, including PRs, issues, documentation, new proposals,
 helping to answer end-user's questions, attending meetings. All kinds of contributions are welcomed.
