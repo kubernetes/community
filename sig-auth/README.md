@@ -62,12 +62,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-auth-test-failures](https://github.com/orgs/kubernetes/teams/sig-auth-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Patrick Ohly (**[@pohly](https://github.com/pohly)**)
 
-## Working Groups
-
-The following [working groups][working-group-definition] are sponsored by sig-auth:
-* [WG Policy](/wg-policy)
-
-
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-auth:
@@ -134,7 +128,6 @@ Node identity management (co-owned with sig-lifecycle), and authorization restri
 ### policy-management
 API validation and policies enforced during admission, such as PodSecurityPolicy. Excludes run-time policies like NetworkPolicy and Seccomp.
 - **Owners:**
-  - [kubernetes-sigs/wg-policy-prototypes](https://github.com/kubernetes-sigs/wg-policy-prototypes/blob/master/OWNERS)
   - [kubernetes/kms](https://github.com/kubernetes/kms/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/imagepolicy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/imagepolicy/OWNERS)
   - [kubernetes/kubernetes/pkg/apis/policy](https://github.com/kubernetes/kubernetes/blob/master/pkg/apis/policy/OWNERS)
