@@ -27,6 +27,7 @@ An introduction to using resources with kubectl can be found in [the object mana
   - [Categories](#categories)
 - [Idempotency](#idempotency)
 - [Optional vs. Required](#optional-vs-required)
+- [Nullable](#nullable)
 - [Defaulting](#defaulting)
   - [Static Defaults](#static-defaults)
   - [Admission Controlled Defaults](#admission-controlled-defaults)
@@ -866,6 +867,17 @@ language client, and any other clients that use corresponding types
 Therefore, we ask that pointers always be used with optional fields that do not
 have a built-in `nil` value.
 
+## Nullable
+
+The `+nullable` comment tag allows the json `null` value to be a valid value
+for a field. The `null` value is serialized only when a field is a pointer
+in the Go definition, and does not have the `omitempty` json tag.
+
+For example, a map field marked with `+nullable` would accept either `foo: null` or `foo: {}`.
+
+Usage of `+nullable` is discouraged as it introduces several issues:
+- It is not compatible with json merge patching.
+- It is not compatible with generic protobuf.
 
 ## Defaulting
 
