@@ -1952,7 +1952,7 @@ sigs:
     time: "9:30"
     tz: PT (Pacific Time)
     frequency: biweekly
-    url: https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09
+    url: https://zoom.us/j/5754520722?pwd=AZQ8hLIu5fuhoCamIQjTEBGZXpzhX9.1
     archive_url: https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing
     recordings_url: https://www.youtube.com/playlist?list=PLkqe7HTr17N4ejIdxajGihkEcBxeLegDb
   - description: Regular Triage Meeting
@@ -1960,7 +1960,7 @@ sigs:
     time: "9:30"
     tz: PT (Pacific Time)
     frequency: biweekly - alternating with regular meeting
-    url: https://zoom.us/j/5342565819?pwd=RlVsK21NVnR1dmE3SWZQSXhveHZPdz09
+    url: https://zoom.us/j/5754520722?pwd=AZQ8hLIu5fuhoCamIQjTEBGZXpzhX9.1
     archive_url: https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing
   contact:
     slack: sig-instrumentation
