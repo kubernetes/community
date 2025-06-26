@@ -603,9 +603,9 @@ Given that you have not yet changed the internal structs, this might feel
 premature, and that's because it is. You don't yet have anything to convert to
 or from. We will revisit this in the "internal" section. If you're doing this
 all in a different order (i.e. you started with the internal structs), then you
-should jump to that topic below. In the very rare case that you are making an
-incompatible change you might or might not want to do this now, but you will
-have to do more later. The files you want are
+should jump to [that topic below](#edit-version-conversions). In the very rare
+case that you are making an incompatible change you might or might not want to
+do this now, but you will have to do more later. The files you want are
 `pkg/apis/<group>/<version>/conversion.go` and
 `pkg/apis/<group>/<version>/conversion_test.go`.
 
@@ -670,7 +670,7 @@ those manually written should be named with a defined convention, i.e. a
 function converting type `X` in pkg `a` to type `Y` in pkg `b`, should be named:
 `convert_a_X_To_b_Y`.
 
-Also note that you can (and for efficiency reasons should) use auto-generated
+**Note:** You should, for efficiency reasons and future updates, use auto-generated
 conversion functions when writing your conversion functions.
 
 Adding manually written conversion also requires you to add tests to
