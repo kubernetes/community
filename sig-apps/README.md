@@ -58,6 +58,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 The following [working groups][working-group-definition] are sponsored by sig-apps:
 * [WG Batch](/wg-batch)
+* [WG Checkpoint Restore](/wg-checkpoint-restore)
 * [WG Data Protection](/wg-data-protection)
 * [WG Node Lifecycle](/wg-node-lifecycle)
 * [WG Serving](/wg-serving)
