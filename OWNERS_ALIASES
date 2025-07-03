@@ -130,6 +130,10 @@ aliases:
     - mwielgus
     - soltysh
     - swatisehgal
+  wg-checkpoint-restore-leads:
+    - adrianreber
+    - rst0git
+    - viktoriaas
   wg-data-protection-leads:
     - xing-yang
     - yuxiangqian
