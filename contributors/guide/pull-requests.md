@@ -271,7 +271,7 @@ are generally the people who are the most busy and hardest to get reviews from, 
 when you're a new contributor with no connections within the community yet.)
 
 The effort required to review such sweeping changes might not be worth it, see
-["large or automatic edits")[#large-or-automatic-edits] below.
+["large or automatic edits"](#large-or-automatic-edits) below.
 
 If you really want to try to get such a PR merged, your best bet is to break up the PR
 into separate PRs for each SIG whose code it touches. You can look at the `OWNERS` files
