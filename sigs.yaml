@@ -2186,7 +2186,7 @@ sigs:
   mission_statement: >
     A Special Interest Group focused on solving common challenges related to the management
     of multiple Kubernetes clusters, and applications that exist therein. The SIG
-    will be responsible for designing, discussing, implementing and maintaining API's,
+    will be responsible for designing, discussing, implementing and maintaining API’s,
     tools and documentation related to multi-cluster administration and application
     management. This includes not only active automated approaches such as Cluster
     Federation, but also those that employ batch workflow-style continuous deployment
