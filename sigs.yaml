@@ -2186,7 +2186,7 @@ sigs:
   mission_statement: >
     A Special Interest Group focused on solving common challenges related to the management
     of multiple Kubernetes clusters, and applications that exist therein. The SIG
-    will be responsible for designing, discussing, implementing and maintaining API’s,
+    will be responsible for designing, discussing, implementing and maintaining API's,
     tools and documentation related to multi-cluster administration and application
     management. This includes not only active automated approaches such as Cluster
     Federation, but also those that employ batch workflow-style continuous deployment
@@ -3526,6 +3526,34 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-dev-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
 workinggroups:
+- dir: wg-ai-conformance
+  name: AI Conformance
+  mission_statement: "The goal of this group is to define a standardized set of capabilities,
+    APIs, and configurations that a Kubernetes cluster must offer to reliably and
+    efficiently run AI/ML workloads. \n"
+  charter_link: charter.md
+  stakeholder_sigs:
+  - Architecture
+  label: ai-conformance
+  leadership:
+    chairs:
+    - github: janetkuo
+      name: Janet Kuo
+      company: Google
+      email: chiachenk@google.com
+    - github: mfahlandt
+      name: Mario Fahlandt
+      company: Kubermatic GmbH
+      email: mfahlandt@pixel-haufen.de
+  meetings:
+  - description: Regular WG Meeting
+    day: Wednesday
+    time: "09:00"
+    tz: PT (Pacific Time)
+    frequency: weekly
+  contact:
+    slack: wg-ai-conformance
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance
 - dir: wg-batch
   name: Batch
   mission_statement: >
