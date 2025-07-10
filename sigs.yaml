@@ -3530,7 +3530,8 @@ workinggroups:
   name: AI Conformance
   mission_statement: > The goal of this group is to define a standardized set of capabilities,
     APIs, and configurations that a Kubernetes cluster must offer to reliably and
-    efficiently run AI/ML workloads. \n"
+    efficiently run AI/ML workloads.
+ 
   charter_link: charter.md
   stakeholder_sigs:
   - Architecture
