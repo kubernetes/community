@@ -20,7 +20,7 @@ The goal of this group is to define a standardized set of capabilities, APIs, an
 
 ### Out of scope
 
-This WG is not responsible for the long-term maintenance and evolution of the conformance, which would be evaluated and could ideally transition to an existing or newly formed Special Interest Group (SIG).
+This WG is not responsible for maintenance and evolution of the conformance program, which will be run by the CNCF. Some aspects may be owned by existing SIGs (Architecture, Testing) alongside the CNCF, such as Kubernetes specific testing and tooling, and the pre-existing Kubernetes conformance definition and tests.
 
 ## Roles and Organization Management
 
