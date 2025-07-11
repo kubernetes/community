@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # AI Conformance Working Group
 
-The goal of this group is to define a standardized set of capabilities, APIs, and configurations that a Kubernetes cluster must offer to reliably and efficiently run AI/ML workloads. 
+The goal of this group is to define a standardized set of capabilities,  APIs, and configurations that a Kubernetes cluster must offer to reliably and efficiently run AI/ML workloads.
 
 The [charter](charter.md) defines the scope and governance of the AI Conformance Working Group.
 
