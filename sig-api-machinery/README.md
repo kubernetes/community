@@ -77,6 +77,9 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
   - [kubernetes/kubernetes/pkg/controller/namespace](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/namespace/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/resourcequota](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/resourcequota/OWNERS)
   - [kubernetes/kubernetes/pkg/quota/v1](https://github.com/kubernetes/kubernetes/blob/master/pkg/quota/v1/OWNERS)
+### crdify
+- **Owners:**
+  - [kubernetes-sigs/crdify](https://github.com/kubernetes-sigs/crdify/blob/main/OWNERS)
 ### idl-schema-client-pipeline
 - **Owners:**
   - [kubernetes-client/gen](https://github.com/kubernetes-client/gen/blob/master/OWNERS)
