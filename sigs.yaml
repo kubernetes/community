@@ -1355,7 +1355,7 @@ sigs:
       tz: PT (Pacific Time)
       frequency: biweekly
       url: https://zoom.us/j/807524571?pwd=WEFTeDJzeWU3bVFkcWQ0UEdZRkRCdz09
-      archive_url: https://docs.google.com/document/d/1YIOD0Nnid_0h6rKlDxcbfJaoIRNO6mQd9Or5vKRNxaU/edit
+      archive_url: https://docs.google.com/document/d/100uv2GmlgWyLBVP65W6ABNJ_EqbvVYTYtTilCLbnVYI/edit
       recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
   - name: kOps
     description: A tool for creating, destroying, upgrading and maintaining production-grade,
