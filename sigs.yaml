@@ -3536,6 +3536,7 @@ workinggroups:
   charter_link: charter.md
   stakeholder_sigs:
   - Architecture
+  - Testing
   label: ai-conformance
   leadership:
     chairs:
