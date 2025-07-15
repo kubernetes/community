@@ -24,6 +24,8 @@ The [charter](charter.md) defines the scope and governance of the AI Conformance
 
 * Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
 * Mario Fahlandt (**[@mfahlandt](https://github.com/mfahlandt)**), Kubermatic GmbH
+* Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
+* Yuan Tang (**[@terrytangyuan](https://github.com/terrytangyuan)**), Red Hat
 
 ## Contact
 - Slack: [#wg-ai-conformance](https://kubernetes.slack.com/messages/wg-ai-conformance)

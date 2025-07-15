@@ -3548,6 +3548,14 @@ workinggroups:
       name: Mario Fahlandt
       company: Kubermatic GmbH
       email: mfahlandt@pixel-haufen.de
+    - github: ritazh
+      name: Rita Zhang
+      company: Microsoft
+      email: ritazh@microsoft.com
+    - github: terrytangyuan
+      name: Yuan Tang
+      company: Red Hat
+      email: terrytangyuan@gmail.com
   meetings:
   - description: Regular WG Meeting
     day: Wednesday
