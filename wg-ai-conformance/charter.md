@@ -36,17 +36,8 @@ and opts-in to updates and modifications to [sig-governance].
 ### Stakeholder SIGs
 
 - SIG Architecture (Sponsoring SIG)
-- SIG Node
-- SIG Scheduling
-- SIG Storage
-- SIG Network
-- SIG Instrumentation
-- SIG Security
-- SIG Release
 - SIG Testing
-- SIG Apps
-- SIG API Machinery
-- SIG Auth
+
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
