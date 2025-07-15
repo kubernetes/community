@@ -15,7 +15,7 @@ The goal of this group is to define a standardized set of capabilities, APIs, an
 
 #### Cross-cutting and Externally Facing Processes
 
-- The Working Group will consider its primary problem-solving objective complete upon the successful definition and initial adoption of a stable Kubernetes AI Conformance specification.
+- The Working Group will consider its primary problem-solving objective complete upon the successful definition and initial adoption of a stable CNCF Kubernetes AI Conformance specification.
 - Once the foundational conformance is established and widely recognized, the ongoing maintenance and evolution of the conformance would be evaluated, and could ideally transition to an existing or newly formed Special Interest Group (SIG) with a long-term charter, at which point the Working Group would dissolve.
 
 ### Out of scope
