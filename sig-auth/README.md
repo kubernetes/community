@@ -62,6 +62,12 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-auth-test-failures](https://github.com/orgs/kubernetes/teams/sig-auth-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Patrick Ohly (**[@pohly](https://github.com/pohly)**)
 
+## Working Groups
+
+The following [working groups][working-group-definition] are sponsored by sig-auth:
+* [WG AI Integration](/wg-ai-integration)
+
+
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-auth:
