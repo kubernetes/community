@@ -57,6 +57,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-testing:
+* [WG AI Conformance](/wg-ai-conformance)
 * [WG LTS](/wg-lts)
 
 
