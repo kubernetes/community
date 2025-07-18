@@ -11,18 +11,21 @@ SIG Cloud Provider’s mission is to simplify, develop, and maintain cloud provi
 
 #### Areas of Focus
 
-- Extension points between Kubernetes and any cloud provider
+- Cloud provider specific integrations and extension points that are not already covered by a more specific sig such as storage or networking.
 - APIs/interfaces for efficiently provisioning/de-provisioning cloud resources (nodes, routes, load balancers, etc)
 - Configuration of cluster components to enable cloud provider integrations
 - Testing and testing frameworks to ensure vendor neutrality across all cloud providers
 
 #### Code, Binaries and Services
 
+The SIG offers standardization across cloud-provider-* repos that are owned by the sig. We establish basic structure and tooling expectations to help new contributors to understand the code and how to contribute.
+
 - the [common interfaces](https://github.com/kubernetes/cloud-provider/blob/master/cloud.go) consumed by all cloud providers
 - the [cloud-controller-manager](https://github.com/kubernetes/kubernetes/tree/master/cmd/cloud-controller-manager), which acts as the “out-of-tree” cloud provider component for clusters.
 - core controllers (started by the cloud-controller-manager) that interact with cloud provider resources
 - all [cloud provider repositories](https://github.com/kubernetes?utf8=%E2%9C%93&q=cloud-provider-&type=&language=) under the Kubernetes organization
 - [e2e tests for cloud provider specific](https://github.com/kubernetes/kubernetes/tree/master/test/e2e/cloud) functionality
+- the subproject [apiserver-network-proxy](https://github.com/kubernetes-sigs/apiserver-network-proxy), which is an extensible system which controls network traffic from the Kube API Server.
 - all the subprojects formerly owned by [SIG-AWS](https://github.com/kubernetes/community/tree/master/sig-aws#subprojects), [SIG-AZURE](https://github.com/kubernetes/community/tree/master/sig-azure#subprojects), [SIG-GCP](https://github.com/kubernetes/community/tree/master/sig-gcp#subprojects), [SIG-IBMCloud](https://github.com/kubernetes/community/tree/master/sig-ibmcloud#subprojects), [SIG-Openstack](https://github.com/kubernetes/community/tree/master/sig-openstack#subprojects), [SIG-VMware](https://github.com/kubernetes/community/tree/master/sig-vmware#subprojects).
 - any new subproject that is cloud provider specific, unless there is another SIG already sponsoring it.
 
@@ -30,8 +33,10 @@ SIG Cloud Provider’s mission is to simplify, develop, and maintain cloud provi
 
 - This SIG works with SIG Testing & SIG Release to ensure that cloud providers are actively testing & reporting test results to testgrid.
 - This SIG works with SIG Docs to provide user-facing documentation on configuring Kubernetes clusters with cloud provider integration enabled.
-- This SIG works with new cloud providers in the ecosystem that want to host their code in the Kubernetes organization and have an interest in contributing back.
-- This SIG actively engages with SIGs owning other external components of Kubernetes (CNI, CSI, etc) to ensure a consistent integration story for users.
+- This SIG works with new cloud providers in the ecosystem that want to host their code in the kubernetes-sigs organization and have an interest in contributing back.
+- A portion of the apiserver-network-proxy code needs to be compiled into the apiserver, which overlaps with SIG API Machinery.
+- This SIG actively engages with SIGs owning other external components of Kubernetes (CNI, CSI, other networking and storage, apiserver, and similar) to ensure a consistent integration story for users.
+- This SIG collaborates to create infrastructure-specific endpoints and extensions. This can entail participation in working groups or sponsorship of subprojects.
 
 ### Out of scope
 
