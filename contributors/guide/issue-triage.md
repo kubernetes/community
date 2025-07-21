@@ -96,12 +96,12 @@ Its features include:
 
 ### GitHub Project Boards
 
-GitHub offers project boards, set up like [kanban boards](https://en.wikipedia.org/wiki/Kanban), to help teams organize and track their workflow in order to get work done. The Release Team has come to depend on [their project board](https://github.com/orgs/kubernetes/projects/29) for planning new Kubernetes releases; they also use it as an archive to show the work done for past releases.
+GitHub offers project boards, set up like [kanban boards](https://en.wikipedia.org/wiki/Kanban), to help teams organize and track their workflow in order to get work done. The Release Team has come to depend on [their project board](https://github.com/orgs/kubernetes/projects/68) for planning new Kubernetes releases; they also use it as an archive to show the work done for past releases.
 
 Other SIGs are also using project boards:
-- [Contributor Experience](https://github.com/orgs/kubernetes/projects/1)
-- [Network](https://github.com/orgs/kubernetes/projects/10)
-- [Windows](https://github.com/orgs/kubernetes/projects/8)
+- [Apps](https://github.com/orgs/kubernetes/projects/167)
+- [Auth](https://github.com/orgs/kubernetes/projects/116)
+- [Scheduling](https://github.com/orgs/kubernetes/projects/165)
 
 We encourage more SIGs to use project boards to enhance visibility and tracking. If you'd like some help getting started, visit [GitHub's documentation](https://help.github.com/en/github/managing-your-work-on-github/about-project-boards) or reach out to [SIG Contributor Experience](/sig-contributor-experience/README.md#contact).
 
