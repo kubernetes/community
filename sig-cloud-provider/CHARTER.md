@@ -11,14 +11,14 @@ SIG Cloud Provider’s mission is to simplify, develop, and maintain cloud provi
 
 #### Areas of Focus
 
-- Cloud provider specific integrations and extension points that are not already covered by a more specific sig such as storage or networking.
+- Cloud provider specific integrations and extension points that are not already covered by a more specific SIG such as storage or networking.
 - APIs/interfaces for efficiently provisioning/de-provisioning cloud resources (nodes, routes, load balancers, etc)
 - Configuration of cluster components to enable cloud provider integrations
 - Testing and testing frameworks to ensure vendor neutrality across all cloud providers
 
 #### Code, Binaries and Services
 
-The SIG offers standardization across cloud-provider-* repos that are owned by the sig. We establish basic structure and tooling expectations to help new contributors to understand the code and how to contribute.
+The SIG offers standardization across cloud-provider-* repos that are owned by the SIG. We establish basic structure and tooling expectations to help new contributors to understand the code and how to contribute.
 
 - the [common interfaces](https://github.com/kubernetes/cloud-provider/blob/master/cloud.go) consumed by all cloud providers
 - the [cloud-controller-manager](https://github.com/kubernetes/kubernetes/tree/master/cmd/cloud-controller-manager), which acts as the “out-of-tree” cloud provider component for clusters.
@@ -37,6 +37,7 @@ The SIG offers standardization across cloud-provider-* repos that are owned by t
 - A portion of the apiserver-network-proxy code needs to be compiled into the apiserver, which overlaps with SIG API Machinery.
 - This SIG actively engages with SIGs owning other external components of Kubernetes (CNI, CSI, other networking and storage, apiserver, and similar) to ensure a consistent integration story for users.
 - This SIG collaborates to create infrastructure-specific endpoints and extensions. This can entail participation in working groups or sponsorship of subprojects.
+- This SIG participates in cross-SIG working groups, such as the node lifecycle working group.
 
 ### Out of scope
 
@@ -45,7 +46,7 @@ The SIG offers standardization across cloud-provider-* repos that are owned by t
 
 ## Roles and Organization Management
 
-This sig follows adheres to the Roles and Organization Management outlined in [sig-governance]
+This SIG follows adheres to the Roles and Organization Management outlined in [sig-governance]
 and opts-in to updates and modifications to [sig-governance].
 
 ### Additional responsibilities of Chairs
