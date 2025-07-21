@@ -11,16 +11,18 @@ The goal of this group is to define a standardized set of capabilities, APIs, an
 
 #### Code, Binaries and Services
 
-- The primary artifact will be the (working title for now) "CNCF Kubernetes AI Conformance" specification and a suite of tests to demonstrate conformance.
+- The primary artifact will be the (working title for now) "CNCF Kubernetes AI Conformance" specification and support for the creation of a suite of tests to demonstrate conformance.
 
 #### Cross-cutting and Externally Facing Processes
 
-- The Working Group will consider its primary problem-solving objective complete upon the successful definition and initial adoption of a stable (working title for now) "CNCF Kubernetes AI Conformance" specification.
-- Once the foundational conformance is established and widely recognized, the ongoing maintenance and evolution of the conformance would be evaluated, and could ideally transition to a Special Interest Group (SIG) with a long-term charter, at which point the Working Group would dissolve.
+- The Working Group will consider its primary problem-solving objective complete upon the successful definition and adoption of a stable (working title for now) "CNCF Kubernetes AI Conformance" specification.
+- The first Version will not include any tests in the Kubernetes Codebase and will be a self assessment questionnaire
+- Once the initial conformance is established and widely recognized, the ongoing maintenance and evolution of the conformance will be evaluated. Including determining a suitable SIG for Code Organization, Ownership and Architecture and support to create the initial suite of tests. 
+After the Ownership is clarified and handed over, the WG dissolves.
 
 ### Out of scope
 
-This WG is not responsible for maintenance and evolution of the conformance program, which will be run by the CNCF. Some aspects may be owned by existing SIGs (Architecture, Testing) alongside the CNCF, such as Kubernetes specific testing and tooling, and the pre-existing Kubernetes conformance definition and tests.
+This WG is not responsible for maintenance and evolution of the conformance program, which will be run by the CNCF. Some aspects may be owned by existing SIGs (e.g. Architecture, Testing) alongside the CNCF, such as Kubernetes specific definitions, testing and tooling, and the pre-existing Kubernetes conformance definition and tests.
 
 ## Roles and Organization Management
 
