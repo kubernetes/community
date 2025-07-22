@@ -46,7 +46,7 @@ The SIG offers standardization across cloud-provider-* repos that are owned by t
 
 ## Roles and Organization Management
 
-This SIG follows adheres to the Roles and Organization Management outlined in [sig-governance]
+This SIG adheres to the Roles and Organization Management outlined in [sig-governance]
 and opts-in to updates and modifications to [sig-governance].
 
 ### Additional responsibilities of Chairs
