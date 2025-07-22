@@ -23,6 +23,10 @@ filters:
     labels:
       - area/annual-reports
   # label charter changes for review by steering
-  "charter.md":
+  "(?i)charter.md":
+    required_reviewers:
+      - kubernetes/steering-committee
+    approvers:
+      - committee-steering
     labels:
       - committee/steering
