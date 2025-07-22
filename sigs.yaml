@@ -3842,10 +3842,12 @@ workinggroups:
   meetings:
   - description: WG Node Lifecycle Weekly Meeting
     day: Monday
-    time: 5PM
-    tz: CET (Central European Time)
+    time: "8:00"
+    tz: PT (Pacific Time)
     frequency: weekly
+    url: https://zoom.us/j/97533929033
     archive_url: https://docs.google.com/document/d/1LSSfiJatBYX7dhLTowYygDO6MK0K-NZ_L52bEZfcZqU
+    recordings_url: https://youtube.com/playlist?list=PL69nYSiGNLP3yd1ztIDecigN44mo6Nx_D&si=B_7Qkj6uUsCxmbEY
   contact:
     slack: wg-node-lifecycle
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-node-lifecycle

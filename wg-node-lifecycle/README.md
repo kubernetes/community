@@ -25,8 +25,9 @@ The [charter](charter.md) defines the scope and governance of the Node Lifecycle
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-node-lifecycle) for the group will typically add invites for the following meetings to your calendar.*
-* WG Node Lifecycle Weekly Meeting: [Mondays at 5PM CET (Central European Time)]() (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=5PM&tz=CET%20%28Central%20European%20Time%29).
+* WG Node Lifecycle Weekly Meeting: [Mondays at 8:00 PT (Pacific Time)](https://zoom.us/j/97533929033) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1LSSfiJatBYX7dhLTowYygDO6MK0K-NZ_L52bEZfcZqU).
+  * [Meeting recordings](https://youtube.com/playlist?list=PL69nYSiGNLP3yd1ztIDecigN44mo6Nx_D&si=B_7Qkj6uUsCxmbEY).
 
 ## Organizers
 
