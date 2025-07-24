@@ -3558,8 +3558,8 @@ workinggroups:
       email: terrytangyuan@gmail.com
   meetings:
   - description: Regular WG Meeting
-    day: Wednesday
-    time: "09:00"
+    day: Thursday
+    time: "10:00"
     tz: PT (Pacific Time)
     frequency: weekly
   contact:
