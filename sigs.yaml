@@ -1258,7 +1258,7 @@ sigs:
     meetings:
     - description: Cluster API infrastructure provider for GCP
       day: Thursday
-      time: "09:00"
+      time: "05:00"
       tz: PT (Pacific Time)
       frequency: every first Thursday of the month
       url: https://zoom.us/j/96963829102?pwd=WjBZcmwvZFZsUU93aVZieUk1L3FnZz09
