@@ -3529,6 +3529,45 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-dev-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
 workinggroups:
+- dir: wg-ai-integration
+  name: AI Integration
+  mission_statement: >
+    The AI Integration Working Group focuses on enabling seamless integration of AI/ML
+    control planes with Kubernetes, as well as providing standardized patterns for
+    deploying, managing, and operating AI applications at scale on Kubernetes.
+
+  charter_link: charter.md
+  stakeholder_sigs:
+  - API Machinery
+  - Apps
+  - Architecture
+  - Auth
+  - CLI
+  - Network
+  label: ai-integration
+  leadership:
+    chairs:
+    - github: ardaguclu
+      name: Arda Guclu
+      company: Red Hat
+      email: ardaguclu@gmail.com
+    - github: rushmash91
+      name: Arush Sharma
+      company: Amazon
+      email: arushsharma91@gmail.com
+    - github: zvonkok
+      name: Zvonko Kaiser
+      company: NVIDIA
+      email: zkaiser@nvidia.com
+  meetings:
+  - description: WG AI Integration Weekly Meeting
+    day: Wednesday
+    time: "9:30"
+    tz: PT (Pacific Time)
+    frequency: weekly
+  contact:
+    slack: wg-ai-integration
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-integration
 - dir: wg-batch
   name: Batch
   mission_statement: >
