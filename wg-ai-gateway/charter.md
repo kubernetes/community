@@ -89,6 +89,6 @@ Ideally we want the lifecycle of the WG to go something like this:
 2. Determine a list of key features that Kubernetes needs to best support the
    defined use cases.
 3. For each feature in that list, make proposals which support them to the
-   appropriate sub-projects OR propose new sub-projects if deemed necessary.
+   appropriate SIG and/or propose new sub-projects if deemed necessary.
 4. Once the feature list is complete, leave behind some guidance and best
    practices for future implementations and then exit.
