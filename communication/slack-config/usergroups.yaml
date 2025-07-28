@@ -266,19 +266,12 @@ usergroups:
     long_name: kcp Development Team
     description: Active developers of kcp on #kcp-dev
     members:
-      - csams
-      - davidfestal
-      - hardys
-      - jmprusi
-      - kylape
-      - ncdc
-      - nrb
-      - p0lyn0mial
-      - pweil-
-      - s-urbaniak
-      - stevekuznetsov
+      - clubanderson
+      - embik
+      - mjudeikis
+      - scheeles
       - sttts
-      - vincepri
+      - xrstf
 
   - name: github-admins
     long_name: Kubernetes GitHub Admins
