@@ -3830,7 +3830,7 @@ workinggroups:
     - github: intUnderflow
       name: Lucy Sweet
       company: Uber
-      email: kubernetes.github.com@lucy.sh
+      email: lucysweet@uber.com
     - github: kwilczynski
       name: Krzysztof Wilczyński
       company: Independent
