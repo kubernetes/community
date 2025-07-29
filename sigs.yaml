@@ -3529,6 +3529,48 @@ sigs:
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-dev-tools/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
 workinggroups:
+- dir: wg-ai-conformance
+  name: AI Conformance
+  mission_statement: >
+    The goal of this group is to define a standardized set of capabilities,  APIs,
+    and configurations that a Kubernetes cluster must offer to reliably and efficiently
+    run AI/ML workloads.
+
+  charter_link: charter.md
+  stakeholder_sigs:
+  - Architecture
+  - Testing
+  label: ai-conformance
+  leadership:
+    chairs:
+    - github: janetkuo
+      name: Janet Kuo
+      company: Google
+      email: chiachenk@google.com
+    - github: mfahlandt
+      name: Mario Fahlandt
+      company: Kubermatic GmbH
+      email: mfahlandt@pixel-haufen.de
+    - github: ritazh
+      name: Rita Zhang
+      company: Microsoft
+      email: ritazh@microsoft.com
+    - github: terrytangyuan
+      name: Yuan Tang
+      company: Red Hat
+      email: terrytangyuan@gmail.com
+  meetings:
+  - description: Regular WG Meeting
+    day: Thursday
+    time: "10:00"
+    tz: PT (Pacific Time)
+    frequency: weekly
+  contact:
+    slack: wg-ai-conformance
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance
+    liaison:
+      github: pohly
+      name: Patrick Ohly
 - dir: wg-batch
   name: Batch
   mission_statement: >
