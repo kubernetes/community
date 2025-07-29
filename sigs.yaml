@@ -3565,6 +3565,9 @@ workinggroups:
   contact:
     slack: wg-ai-conformance
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance
+    liaison:
+      github: pohly
+      name: Patrick Ohly
 - dir: wg-batch
   name: Batch
   mission_statement: >
