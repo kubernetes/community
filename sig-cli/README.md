@@ -64,6 +64,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 The following [working groups][working-group-definition] are sponsored by sig-cli:
 * [WG AI Integration](/wg-ai-integration)
+* [WG API Expression](/wg-api-expression)
 * [WG Node Lifecycle](/wg-node-lifecycle)
 
 
