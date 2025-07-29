@@ -73,6 +73,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-network:
+* [WG AI Gateway](/wg-ai-gateway)
 * [WG Device Management](/wg-device-management)
 * [WG Node Lifecycle](/wg-node-lifecycle)
 * [WG Serving](/wg-serving)
