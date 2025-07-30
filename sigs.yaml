@@ -854,10 +854,6 @@ sigs:
       by server. Supports core resources, CRDs, CEL validations, and more!
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/kubectl-validate/main/OWNERS
-  - name: kui
-    description: Hybrid command-line/UI development experience for cloud-native development
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/kui/master/OWNERS
   - name: kustomize
     contact:
       slack: kustomize

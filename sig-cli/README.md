@@ -104,10 +104,6 @@ schemas on client-side aiming for best parity with errors returned
 by server. Supports core resources, CRDs, CEL validations, and more!
 - **Owners:**
   - [kubernetes-sigs/kubectl-validate](https://github.com/kubernetes-sigs/kubectl-validate/blob/main/OWNERS)
-### kui
-Hybrid command-line/UI development experience for cloud-native development
-- **Owners:**
-  - [kubernetes-sigs/kui](https://github.com/kubernetes-sigs/kui/blob/master/OWNERS)
 ### kustomize
 - **Leads:**
   - Yugo Kobayashi (**[@koba1t](https://github.com/koba1t)**), LY Corporation
