@@ -1,7 +1,7 @@
 # WG Kubernetes AI Conformance Charter
 
 This charter adheres to the conventions described in the [Kubernetes Charter README] and uses
-the Roles and Organization Management outlined in [sig-governance].
+the Roles and Organization Management outlined in [wg-governance].
 
 ## Scope
 
@@ -17,7 +17,7 @@ The goal of this group is to define a standardized set of capabilities, APIs, an
 
 - The Working Group will consider its primary problem-solving objective complete upon the successful definition and adoption of a stable (working title for now) "CNCF Kubernetes AI Conformance" specification.
 - The first Version will not include any tests in the Kubernetes Codebase and will be a self assessment questionnaire
-- Once the initial conformance is established and widely recognized, the ongoing maintenance and evolution of the conformance will be evaluated. Including determining a suitable SIG for Code Organization, Ownership and Architecture and support to create the initial suite of tests. 
+- Once the initial conformance is established and widely recognized, the ongoing maintenance and evolution of the conformance will be evaluated. Including determining a suitable SIG for Code Organization, Ownership and Architecture and support to create the initial suite of tests.
 After the Ownership is clarified and handed over, the WG dissolves.
 
 ### Out of scope
@@ -26,8 +26,8 @@ This WG is not responsible for maintenance and evolution of the conformance prog
 
 ## Roles and Organization Management
 
-This WG follows adheres to the Roles and Organization Management outlined in [sig-governance]
-and opts-in to updates and modifications to [sig-governance].
+This WG follows adheres to the Roles and Organization Management outlined in [wg-governance]
+and opts-in to updates and modifications to [wg-governance].
 
 ### Additional responsibilities of Chairs
 
@@ -40,6 +40,5 @@ and opts-in to updates and modifications to [sig-governance].
 - SIG Architecture (Sponsoring SIG)
 - SIG Testing
 
-
-[sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
+[wg-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
