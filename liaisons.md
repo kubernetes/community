@@ -55,6 +55,7 @@ members will assume one of the departing members groups.
 | [SIG UI](sig-ui/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [SIG Windows](sig-windows/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG AI Conformance](wg-ai-conformance/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
+| [WG AI Integration](wg-ai-integration/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [WG Batch](wg-batch/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [WG Data Protection](wg-data-protection/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
 | [WG Device Management](wg-device-management/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
