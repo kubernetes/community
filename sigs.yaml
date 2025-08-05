@@ -2211,11 +2211,19 @@ sigs:
     - github: quinton-hoole
       name: Quinton Hoole
   meetings:
+  - description: APAC-Friendly SIG Meeting
+    day: Thursday
+    time: "6:30"
+    tz: UTC
+    frequency: bi-weekly
+    url: https://zoom.us/my/k8s.mc
+    archive_url: https://tinyurl.com/sig-multicluster-notes
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
   - description: Regular SIG Meeting
     day: Tuesday
     time: "9:30"
     tz: PT (Pacific Time)
-    frequency: bi-weekly
+    frequency: weekly
     url: https://zoom.us/my/k8s.mc
     archive_url: https://tinyurl.com/sig-multicluster-notes
     recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-
