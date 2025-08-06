@@ -1,0 +1,4 @@
+channels:
+  - name: k8s-infra-alerts
+  - name: sig-k8s-infra
+    id: CCK68P2Q2
