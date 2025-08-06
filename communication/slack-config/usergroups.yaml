@@ -38,6 +38,19 @@ usergroups:
       - sandipanpanda
       - sreeram-venkitesh
 
+  - name: k8s-infra-leads
+    long_name: SIG K8S Infra leads
+    description: |-
+      Leads of the Infrastructure SIG. Ping for a community-owned infrastructure problem.
+    channels:
+      - k8s-infra-alerts
+      - sig-k8s-infra
+    members:
+      - ameukam
+      - bentheelder
+      - dims
+      - upodroid
+      - xmudrii
 
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc

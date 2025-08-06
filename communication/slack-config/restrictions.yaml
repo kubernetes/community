@@ -24,6 +24,10 @@ restrictions:
       - "^kubernetes-docs-[a-z]{2}(-maintainers)?$"
       - "^sig-docs$"
       - "^sig-docs-.*$"
+  - path: "sig-k8s-infra/*.yaml"
+    channels:
+      - "^k8s-infra-.*$"
+      - "^sig-k8s-infra$"
   - path: "sig-network/*.yaml"
     channels:
       - "^sig-network-.*$"
