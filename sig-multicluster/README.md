@@ -24,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Multicluster S
 ## Leadership
 
 ### Chairs
-The Chairs of the SIG run operations and processes governing the SIG.
+The Chairs of the SIG run operations and processes governing the SIG. To contact all chairs, email `kubernetes-sig-multicluster-leads at googlegroups.com`.
 
 * Jeremy Olmsted-Thompson (**[@jeremyot](https://github.com/jeremyot)**), Google
 * Stephen Kitt (**[@skitt](https://github.com/skitt)**), Red Hat
