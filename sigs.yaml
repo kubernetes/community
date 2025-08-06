@@ -1313,13 +1313,6 @@ sigs:
       frequency: alternate weeks, check agenda doc for last meeting
       url: https://zoom.us/j/91405526408?pwd=bVBxempwVDBzejJGQlhSOGlXZnRxUT09
       archive_url: https://cluster-api-openstack.sigs.k8s.io/agenda
-  - name: cluster-api-provider-packet
-    description: Cluster API infrastructure provider for Packet
-    contact:
-      slack: cluster-api-packet
-      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
-    owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/cluster-api-provider-packet/master/OWNERS
   - name: cluster-api-provider-vsphere
     description: Cluster API infrastructure provider for vSphere
     contact:
