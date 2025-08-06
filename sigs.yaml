@@ -2662,20 +2662,12 @@ sigs:
     - github: tpepper
       name: Tim Pepper
   meetings:
-  - description: Regular SIG Meeting APAC/EU Oriented Time
-    day: Tuesday
+  - description: Regular SIG Meeting
+    day: Thursday
     time: "14:30"
     tz: UTC
     frequency: biweekly
-    url: https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09
-    archive_url: https://bit.ly/k8s-sig-release-meeting
-    recordings_url: https://bit.ly/k8s-sig-release-videos
-  - description: Regular SIG Meeting US Oriented Time
-    day: Tuesday
-    time: "17:00"
-    tz: UTC
-    frequency: biweekly
-    url: https://zoom.us/j/327142148?pwd=RE9aZWtCc0hhOWs4ZTdXZ0hBM0ROdz09
+    url: https://zoom.us/j/91794653597?pwd=eFJUOVErQ1dFZ3cvODVNbUNJZFlvZz09
     archive_url: https://bit.ly/k8s-sig-release-meeting
     recordings_url: https://bit.ly/k8s-sig-release-videos
   contact:
