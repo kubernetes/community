@@ -6,9 +6,13 @@ For more information, see individual subprojects and documents, or the SIG-Multi
 
 ## About API
 
+### Also known as:
+
+- ClusterProperty
+
 ### Previously known as:
 
--  ClusterProperty API
+-  ClusterClaim API
 
 
 ## ClusterProfile API
