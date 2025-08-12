@@ -240,6 +240,7 @@ sigs:
   - name: application
     description: Application metadata descriptor CRD
     owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/agent-sandbox/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/application/master/OWNERS
   - name: examples
     owners:

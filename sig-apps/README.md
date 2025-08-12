@@ -70,6 +70,7 @@ The following [subprojects][subproject-definition] are owned by sig-apps:
 ### application
 Application metadata descriptor CRD
 - **Owners:**
+  - [kubernetes-sigs/agent-sandbox](https://github.com/kubernetes-sigs/agent-sandbox/blob/main/OWNERS)
   - [kubernetes-sigs/application](https://github.com/kubernetes-sigs/application/blob/master/OWNERS)
 ### examples
 - **Owners:**
