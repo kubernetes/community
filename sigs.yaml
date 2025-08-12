@@ -3599,7 +3599,7 @@ workinggroups:
   meetings:
   - description: WG AI Integration Weekly Meeting
     day: Wednesday
-    time: "9:30"
+    time: "10:00"
     tz: PT (Pacific Time)
     frequency: weekly
   contact:
