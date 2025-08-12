@@ -98,6 +98,9 @@ Organization of SIG Instrumentation subprojects
 ### prometheus-adapter
 - **Owners:**
   - [kubernetes-sigs/prometheus-adapter](https://github.com/kubernetes-sigs/prometheus-adapter/blob/master/OWNERS)
+### resource-state-metrics
+- **Owners:**
+  - [kubernetes-sigs/resource-state-metrics](https://github.com/kubernetes-sigs/resource-state-metrics/blob/main/OWNERS)
 ### structured-logging
 - **Owners:**
   - [kubernetes-sigs/logtools](https://github.com/kubernetes-sigs/logtools/blob/main/OWNERS)
