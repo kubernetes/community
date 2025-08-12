@@ -216,7 +216,7 @@ channels:
   - name: k8s-dual-stack
     archived: true
   - name: k8s-image-swapper
-  - name: k8s-infra-alerts
+  # k8s-infra-alerts is defined in sig-k8s-infra/
   - name: k8s-release
     archived: true
   - name: k8spin
@@ -581,8 +581,7 @@ channels:
     id: C0409NGC1TK
   - name: wg-etcd-operator
   - name: wg-iot-edge
-  - name: sig-k8s-infra
-    id: CCK68P2Q2
+  # sig-k8s-infra is defined in sig-k8s-infra/
   - name: wg-lts
   - name: wg-machine-learning
     archived: true
