@@ -563,7 +563,8 @@ channels:
   - name: virtualization
   - name: vsphere
     archived: true
-  - name: wg-ai-conformance  
+  - name: wg-ai-conformance
+  - name: wg-ai-integration
   - name: wg-app-def
     archived: true
   - name: wg-api-expression

@@ -80,7 +80,6 @@ building and managing connectors of kubernetes API with AI agent ecosystems.
 * SIG Apps
 * SIG Auth
 * SIG CLI
-* SIG Network
 
 ## Roles and Organization Management
 
