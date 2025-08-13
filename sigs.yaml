@@ -3602,6 +3602,43 @@ workinggroups:
     liaison:
       github: pacoxu
       name: Paco Xu 徐俊杰
+- dir: wg-api-expression
+  name: API Expression
+  mission_statement: >
+    Enable API authors to better serve API consumers, by improving and documenting
+    all aspects of Kubernetes API development.  Mission is for Kubernetes APIs to
+    be more declarative. [See full Mission Statement in Proposal](https://docs.google.com/document/d/1RxeKII-3ZESSGMKt09meSGhpDW6CyufM2v1SYgAh_uQ).
+
+  stakeholder_sigs:
+  - API Machinery
+  - Architecture
+  - CLI
+  label: api-expression
+  leadership:
+    chairs:
+    - github: JoelSpeed
+      name: Joel Speed
+      company: Red Hat
+      email: Joel.speed@hotmail.co.uk
+    - github: aaron-prindle
+      name: Aaron Prindle
+      company: Google
+      email: aprindle@google.com
+  meetings:
+  - description: Regular WG Meeting
+    day: Tuesday
+    time: "9:30"
+    tz: PT (Pacific Time)
+    frequency: biweekly
+    url: https://zoom.us/j/94238112084
+    archive_url: https://docs.google.com/document/d/1CSpNaicbEqKJoW306qaQEBIkwC1mGIcKl3yiB_C0HZk
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0CU9g6-yb1NgZXGAhMxfFE&jct=9Leh8O_yrRTB0Kcv3rMKZHncZq8POg
+  contact:
+    slack: wg-api-expression
+    mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-api-expression
+    liaison:
+      github: BenTheElder
+      name: Benjamin Elder
 - dir: wg-batch
   name: Batch
   mission_statement: >
