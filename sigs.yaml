@@ -688,8 +688,8 @@ sigs:
       name: Marcin Wielgus
   meetings:
   - description: Regular SIG Meeting
-    day: Monday
-    time: "16:00"
+    day: Thursday
+    time: "17:00"
     tz: Poland
     frequency: weekly
     url: https://zoom.us/j/96548204174
