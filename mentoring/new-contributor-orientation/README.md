@@ -25,7 +25,7 @@ As with all meetings in the Kubernetes community, NCO meetings follow the [Kuber
 All Kubernetes NCO meetings should follow roughly the same agenda:
 
 Meeting length: 1hr
-* ~40 min Presentation based on the [NCO slide deck template](nco-slides/TEMPLATE_%20[MONTH]%20New%20Contributor%20Orientation.pdf)
+* ~40 min Presentation based on the [NCO slide deck template](nco-slides/TEMPLATE%20%5BMONTH%5D%20New%20Contributor%20Orientation.pdf)
 * ~20 min free-form Q&A
 
 ## Questions?
