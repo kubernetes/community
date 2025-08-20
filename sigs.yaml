@@ -2005,6 +2005,9 @@ sigs:
   - name: prometheus-adapter
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/prometheus-adapter/master/OWNERS
+  - name: resource-state-metrics
+    owners:
+    - https://raw.githubusercontent.com/kubernetes-sigs/resource-state-metrics/main/OWNERS
   - name: structured-logging
     owners:
     - https://raw.githubusercontent.com/kubernetes-sigs/logtools/main/OWNERS
