@@ -20,7 +20,7 @@ Enable declarative expression of Kubernetes APIs (metadata, validation rules, et
 
 #### Cross-cutting and Externally Facing Processes
 
-- Development and maintenance of KEPs for declarative API expression features (eg: KEP-5073 Declarative Validation)
+- Development and maintenance of KEPs for declarative API expression features (eg: [KEP-5073 Declarative Validation](https://github.com/kubernetes/enhancements/issues/5073))
 - Migration strategies and guides for SIGs to adopt the declarative framework
 - Establishing patterns for ratcheting, validation, defaulting, and immutability expressed declaratively
 - Ensuring consistency between Kubernetes native types and CRD validation experiences
