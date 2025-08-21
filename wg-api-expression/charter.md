@@ -5,7 +5,7 @@ the Roles and Organization Management outlined in [sig-governance].
 
 ## Scope
 
-Enable declarative expression of Kubernetes APIs (metadata,  validation rules, etc.) to replace imperative, handwritten logic. This working group focuses on developing frameworks and tools that allow API authors to express API rules declaratively as part of the schema itself, improving development velocity, consistency, and maintainability across both native Kubernetes types and CRDs.
+Enable declarative expression of Kubernetes APIs (metadata, validation rules, etc.) to replace imperative, handwritten logic. This working group focuses on developing frameworks and tools that allow API authors to express API rules declaratively as part of the schema itself, improving development velocity, consistency, and maintainability across both native Kubernetes types and CRDs.
 
 ### In scope
 
