@@ -39,13 +39,15 @@ The working group will deliver:
 - **Kube API Linter (KAL)**: Automated API convention checker integrated into the review process
 - **Integration strategy**: Cohesive approach for integrating validation-gen, kubebuilder, KAL, and other tools
 - **KEPs**: Series of enhancement proposals introducing and evolving the framework
-- **CRD equivalence strategy**: Plan to bridge the gap between native types and CRDs
-- **Documentation generation strategy**: Automated documentation from declarative API expressions
+- **Native Type and CRD Validation Parity**: Bridge the gap between how validation is implemented for native Kubernetes types and CRDs to unify the developer experience and improve APIs. This strategy includes:
+    - Establishing a declarative source of truth (eg: Go struct tags) for validation rules that can generate the validation methods needed for native types and the OpenAPI/CEL rules used by CRDs.
+    - Enable easier inheritance of validation logic when a CRD embeds a native type. For example, a CRD that includes a `corev1.PodSpec` should allow reuse of `PodSpec`'s validation.
+- **Automated API Reference Documentation**: A strategy and tooling to automatically generate documentation for validation rules directly from the declarative tags in the Go API types. The goal is to enhance Kubernetes API reference docs by ensuring they are synchronized with the validation logic enforced by the API server.
 - **Migration guides**: Documentation for SIGs to adopt the framework and migrate existing APIs
 
 ## Stakeholders
 
-- **SIG API Machinery**: Owner of API server, gengo, kube-openapi, and validation-gen tool
+- **SIG API Machinery**: Owner of API server, gengo, kube-openapi, kube-api-linter, and validation-gen tool
 - **SIG Architecture**: Owner of Kubernetes API conventions and architectural decisions
 - **SIG CLI**: Consumer of more expressive APIs, providing feedback on kubectl interaction and user experience
 
@@ -53,19 +55,6 @@ The working group will deliver:
 
 This sig adheres to the Roles and Organization Management outlined in [sig-governance]
 and opts-in to updates and modifications to [sig-governance].
-
-### Meeting Mechanics
-
-- **Frequency**: Bi-weekly (every 2 weeks)
-- **Duration**: 60 minutes
-- **Communication**:
-  - Slack: #wg-api-expression
-  - Mailing List: kubernetes-wg-api-expression@googlegroups.com
-
-### Chairs
-
-- Aaron Prindle (@aaron-prindle)
-- Joel Speed (@JoelSpeed)
 
 ## Exit Criteria
 
