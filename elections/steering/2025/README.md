@@ -140,7 +140,7 @@ Examples of contributions that would NOT be considered:
 |:------------------------|:----------------------------------------------------------------------|
 | Wednesday, July 23      | Steering Committee selects Election Committee                         |
 | Monday, August 25       | Announcement of Election and publication of voters.md                 |
-| Thursday, September 4   | Steering Committee Q+A for the candidates (to be confirmed)           |
+| Wednesday, September 3  | Steering Committee Q+A for the candidates (to be confirmed)           |
 | Monday, September 8     | Candidate nominations due at the end of the day in AoE time           |
 | Tuesday, September 9    | All candidate bios due at the end of the day in AoE time              |
 | Wednesday, September 10 | Election Begins                                                       |
@@ -149,7 +149,7 @@ Examples of contributions that would NOT be considered:
 | Monday, October 27      | Private announcement of Results to SC members not up for election     |
 | Tuesday, October 28     | Private announcement of Results to all candidates                     |
 | Wednesday, November 5   | Public announcement of Results at Public Steering Committee Meeting   |
-| Thursday, November 6    | Election Retro                                                        |
+| Thursday, November 19   | Election Retro                                                        |
 
 Candidate nomination, bio, and election close deadlines will be done using Anywhere on Earth timing, meaning it is still valid to submit new nominations/bios/votes as long as it is still the last day anywhere on the planet (i.e. at the end of that day in UTC-12).
 
@@ -259,8 +259,9 @@ The Steering Committee has selected the following people as [election officers]:
 
 In addition, the following contributors are helping with the election:
 
-- Alternate Officers: Rey Lejano, Arujjwal Negi
-- Infra Liaison: Mahamed Ali
+- Alternate Officers: Rey Lejano (@reylejano), Arujjwal Negi (@arujjval)
+- Infra Liaison: Mahamed Ali (@upodroid)
+- Contributor Comms Liaison: Arujjwal Negi (@arujjval)
 
 Please direct any questions via email to <election@k8s.io>.
 
