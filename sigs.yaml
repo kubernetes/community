@@ -2193,6 +2193,7 @@ sigs:
   charter_link: charter.md
   label: multicluster
   leadership:
+    mailing_list_email: kubernetes-sig-multicluster-leads at googlegroups.com
     chairs:
     - github: jeremyot
       name: Jeremy Olmsted-Thompson
