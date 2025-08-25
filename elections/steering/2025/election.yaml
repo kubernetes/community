@@ -1,0 +1,20 @@
+name: 2025 Steering Committee Election
+organization: Kubernetes
+# Start of day in UTC for opening: 2023-08-29 00:00:01
+start_datetime: 2025-09-11 00:00:01
+# End of day Anywhere on Earth for closing. Write 2023-09-26 as: 2023-09-27 11:59:59
+end_datetime: 2025-10-25 11:59:59
+no_winners: 4
+allow_no_opinion: True
+delete_after: True
+show_candidate_fields:
+  - employer
+  - slack
+election_officers:
+  - cblecker
+  - npolshakova
+  - sreeram-venkitesh
+eligibility: Kubernetes Org members with 50 or more contributions in the last year can vote.  See [the election guide](https://github.com/kubernetes/community/tree/master/elections/steering/2025)
+exception_description: Not all contributions are measured by DevStats.  If you have contributions that are not so measured, then please request an exception to allow you to vote via the Elekto application.
+# End of day Anywhere on Earth for closing. Write 2023-09-23 as: 2023-09-24 11:59:59
+exception_due: 2025-10-25 11:59:59
