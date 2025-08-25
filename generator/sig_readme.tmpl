@@ -26,6 +26,9 @@ The [charter]({{.CharterLink}}) defines the scope and governance of the {{.Name}
 {{- if .Leadership }}
 
 ## Leadership
+{{- if .Leadership.MailingListEmail }}
+To contact all the leads, email `{{.Leadership.MailingListEmail}}`.
+{{- end }}
 {{- if .Leadership.Chairs }}
 
 ### Chairs
