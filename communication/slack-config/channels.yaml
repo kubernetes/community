@@ -222,6 +222,7 @@ channels:
   - name: k8spin
   - name: kamaji
   - name: kapitan
+  - name: kcp-dev
   - name: kcp-users
     id: C021U8WSAFK
   - name: keda
