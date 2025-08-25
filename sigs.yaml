@@ -1221,10 +1221,10 @@ sigs:
       day: Thursday
       time: "09:00"
       tz: PT (Pacific Time)
-      frequency: weekly
+      frequency: biweekly
       url: https://zoom.us/j/566930821?pwd=N2JuRWljc3hGS3ZnVlBLTk42TFlzQT09
       archive_url: http://bit.ly/k8s-capz-agenda
-      recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP29D0nYgAGWt1ZFqS9Z7lw4
+      recordings_url: https://www.youtube.com/playlist?list=PLIK3KJ8dtXfJYiQJnORdPOQPK6lOl8TdD
   - name: cluster-api-provider-cloudstack
     description: Cluster API provider for Apache Cloudstack
     owners:
