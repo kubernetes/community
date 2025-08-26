@@ -1,0 +1,15 @@
+# 2025 Steering Committee Election
+##################################
+#
+# The process for determining eligible voters can be found in
+# https://github.com/kubernetes/community/tree/master/elections/steering/2025
+#
+# If you feel you meet the eligibility criteria but do not see your GitHub username
+# below, please fill out an exception request and the elections team will get back to
+# you as quickly as possible: https://elections.k8s.io/app/elections/steering---2025/exception
+#
+# History:
+# Log of changes to the file
+#
+eligible_voters:
+-
