@@ -25,7 +25,7 @@
 
 ## Purpose
 
-The role of this election is to fill out the three (3) seats due for
+The role of this election is to fill out the four (4) seats due for
 reelection this year on the [Kubernetes Steering Committee]. Each elected
 member will serve a two (2) year term.
 
