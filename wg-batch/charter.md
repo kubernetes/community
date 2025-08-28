@@ -14,16 +14,16 @@ providers.
 
 ### In scope
 
-- To reduce fragmentation in the k8s batch ecosystem: congregate leads and users from 
+- To reduce fragmentation in the k8s batch ecosystem: congregate leads and users from
   different external and internal projects and user groups (CNCF TAGs, k8s sub-projects
-  focused on batch-related features such as topology-aware scheduling) in the batch ecosystem to 
+  focused on batch-related features such as topology-aware scheduling) in the batch ecosystem to
   gather requirements, validate designs and encourage reutilization of core kubernetes APIs.
 - The following recommendations for enhancements:
   - Additions to the batch API group, currently including Job and CronJob resources
     that benefit batch use cases such as HPC, AI/ML, data analytics and CI.
   - Primitives for job-level queueing, not limited to the k8s Job resource. Long-term,
     this could include multi-cluster support.
-  - Primitives to control and maximize utilization of resources in fixed-size clusters 
+  - Primitives to control and maximize utilization of resources in fixed-size clusters
     (on-prem) and elastic clusters (cloud).
   - Runtime and scheduling support for specialized hardware (GPUs, NUMA, RDMA, etc.)
 
@@ -75,21 +75,20 @@ and opts-in to updates and modifications to [wg-governance].
 Additionally, the wg commits to:
 
 - maintain a solid communication line between the Kubernetes groups and the wider CNCF community;
-- submit a proposal to the KubeCon/CloudNativeCon maintainers track; if not selected, a video update will be recorded and listed below.
 
 ## Timelines and Disbanding
 
 As a first mandate, the wg will define a roadmap in the first quarter
-of operation. We envision three timelines for the exit criteria, the focus will 
-be on early exit, but a determination on whether or not to go beyond 
+of operation. We envision three timelines for the exit criteria, the focus will
+be on early exit, but a determination on whether or not to go beyond
 that is left until we reach that milestone.
 
 1. Early exit: define "recommendations" for the deliverables mentioned above, those
    recommendations would be left to the respective sigs to implement. The WG could
    start implementing those recommendations in the context of the owning sig to generate
-   some momentum. 
-2. Milestone 2, Late exit: The WG continues the implementation of the recommendations until they reach GA, 
-   and then disband. 
+   some momentum.
+2. Milestone 2, Late exit: The WG continues the implementation of the recommendations until they reach GA,
+   and then disband.
 2. Convert to SIG: The WG observes a constant influx of requirements for the artifacts and there
    is the risk that the SIGs don't have enough capacity to maintain them.
    Then, the WG will propose the graduation into a SIG, taking ownership of the
