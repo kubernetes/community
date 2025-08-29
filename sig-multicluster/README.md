@@ -22,6 +22,7 @@ The [charter](charter.md) defines the scope and governance of the Multicluster S
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0HqgyqTby6HlDEz7i1mb0-).
 
 ## Leadership
+To contact all the leads, email `kubernetes-sig-multicluster-leads at googlegroups.com`.
 
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.

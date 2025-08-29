@@ -263,9 +263,10 @@ type Subproject struct {
 
 // LeadershipGroup represents the different groups of leaders within a group
 type LeadershipGroup struct {
-	Chairs         []Person
-	TechnicalLeads []Person `yaml:"tech_leads,omitempty"`
-	EmeritusLeads  []Person `yaml:"emeritus_leads,omitempty"`
+	MailingListEmail string `yaml:"mailing_list_email,omitempty"`
+	Chairs           []Person
+	TechnicalLeads   []Person `yaml:"tech_leads,omitempty"`
+	EmeritusLeads    []Person `yaml:"emeritus_leads,omitempty"`
 }
 
 // PrefixToPersonMap returns a map of prefix to persons, useful for iteration over all persons
