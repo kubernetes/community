@@ -80,10 +80,7 @@ and opts-in to updates and modifications to [wg-governance].
 
 [wg-governance]: /committee-steering/governance/wg-governance.md
 
-Additionally, the WG commits to:
-
-- maintain a solid communication line between the Kubernetes groups and the wider CNCF community;
-- submit a proposal to the KubeCon/CloudNativeCon maintainers track;
+Additionally, the WG commits to maintain a solid communication line between the Kubernetes groups and the wider CNCF community.
 
 ## Timelines and Disbanding
 
