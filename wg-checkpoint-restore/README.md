@@ -33,6 +33,7 @@ The [charter](charter.md) defines the scope and governance of the Checkpoint Res
 - Slack: [#wg-checkpoint-restore](https://kubernetes.slack.com/messages/wg-checkpoint-restore)
 - [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-checkpoint-restore)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fcheckpoint-restore)
+- Steering Committee Liaison: Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

@@ -77,11 +77,9 @@ Additionally, the WG commits to:
 
 ## Timelines and Disbanding
 
-As a first mandate, the WG will define a roadmap and tasks in the first quarter
-of operation.
+As a first mandate, the WG will propose a draft roadmap and identify key tasks in the first quarter of operation.
 
-After that the WG will distribute the different tasks to different community
-members to define possible APIs and how it can be integrated in Kubernetes.
+After that, the WG will facilitate collaboration among community members to explore possible APIs and draft proposals for their integration into Kubernetes, which will then be presented to the relevant SIGs.
 
 Achieving the aforementioned deliverables, also mentioned in the `In Scope`
 section, will allow us to decide when to disband this WG.  There is no
