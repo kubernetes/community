@@ -3558,6 +3558,9 @@ workinggroups:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: weekly
+    url: https://zoom.us/j/95480364337
+    archive_url: https://docs.google.com/document/d/1qlW1LkibOoiMio-hbJucRjOYeKT8mNaQ4awwzf0bi8M/edit
+    calendar_url: https://www.google.com/calendar/event?eid=NWFpanZpOG0ycnVldDY5bWs0dDUwdmRyNTFfMjAyNTA5MDRUMTcwMDAwWiBjYWxlbmRhckBrdWJlcm5ldGVzLmlv
   contact:
     slack: wg-ai-conformance
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance
@@ -3599,6 +3602,10 @@ workinggroups:
     time: "10:00"
     tz: PT (Pacific Time)
     frequency: weekly
+    url: https://zoom.us/j/95637970280?pwd=3Ys5MQF5hKoeWDazUsMdgt5FiRxbSs.1
+    archive_url: https://docs.google.com/document/d/1on_SPg4Xdk9cDCXKbkxn9VMJTx4ZjTV_nBn1XEKA88E/edit
+    recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2qquAg1qpaKphnRlFx-w7R
+    calendar_url: https://calendar.google.com/calendar/embed?src=71ef14cc0995618018b12614c63ca482d667e2922ff5b94d9fb0cfd32d4efada%40group.calendar.google.com
   contact:
     slack: wg-ai-integration
     mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-integration

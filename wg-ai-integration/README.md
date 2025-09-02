@@ -21,7 +21,9 @@ The [charter](charter.md) defines the scope and governance of the AI Integration
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-ai-integration) for the group will typically add invites for the following meetings to your calendar.*
-* WG AI Integration Weekly Meeting: [Wednesdays at 10:00 PT (Pacific Time)]() (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
+* WG AI Integration Weekly Meeting ([calendar](https://calendar.google.com/calendar/embed?src=71ef14cc0995618018b12614c63ca482d667e2922ff5b94d9fb0cfd32d4efada%40group.calendar.google.com)): [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/95637970280?pwd=3Ys5MQF5hKoeWDazUsMdgt5FiRxbSs.1) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1on_SPg4Xdk9cDCXKbkxn9VMJTx4ZjTV_nBn1XEKA88E/edit).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2qquAg1qpaKphnRlFx-w7R).
 
 ## Organizers
 
