@@ -18,7 +18,8 @@ The [charter](charter.md) defines the scope and governance of the AI Conformance
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance) for the group will typically add invites for the following meetings to your calendar.*
-* Regular WG Meeting: [Thursdays at 10:00 PT (Pacific Time)]() (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting ([calendar](https://www.google.com/calendar/event?eid=NWFpanZpOG0ycnVldDY5bWs0dDUwdmRyNTFfMjAyNTA5MDRUMTcwMDAwWiBjYWxlbmRhckBrdWJlcm5ldGVzLmlv)): [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/95480364337) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1qlW1LkibOoiMio-hbJucRjOYeKT8mNaQ4awwzf0bi8M/edit).
 
 ## Organizers
 
