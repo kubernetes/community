@@ -17,11 +17,6 @@ For more information, see individual subprojects and documents, or the SIG-Multi
 
 ## ClusterProfile API
 
-### Previously known as:
-
-- Cluster Inventory
-
-
 ## ClusterSet
 
 
