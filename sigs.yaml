@@ -3567,6 +3567,61 @@ workinggroups:
     liaison:
       github: pohly
       name: Patrick Ohly
+- dir: wg-ai-gateway
+  name: AI Gateway
+  mission_statement: >
+    The AI Gateway Working Group focuses on the intersection of AI and networking,
+    particularly in the context of extending load-balancer, gateway and proxy technologies
+    to manage and route traffic for AI Inference.
+
+  charter_link: charter.md
+  stakeholder_sigs:
+  - Multicluster
+  - Network
+  label: ai-gateway
+  leadership:
+    chairs:
+    - github: keithmattix
+      name: Keith Mattix
+      company: Microsoft
+      email: keithmattix2@gmail.com
+    - github: kflynn
+      name: Flynn
+      company: Buoyant
+      email: flynn@buoyant.io
+    - github: kfswain
+      name: Kellen Swain
+      company: Google
+      email: kfswain@google.com
+    - github: nirrozenbaum
+      name: Nir Rozenbaum
+      company: IBM
+      email: nirro@il.ibm.com
+    - github: shaneutt
+      name: Shane Utt
+      company: Red Hat
+      email: sutt@redhat.com
+    - github: xunzhuo
+      name: Xunzhuo
+      company: Tencent
+      email: mixdeers@gmail.com
+  meetings:
+  - description: WG AI Gateway Bi-Weekly Meeting (Earlier Option)
+    day: Monday
+    time: 12PM
+    tz: UTC
+    frequency: bi-weekly
+  - description: WG AI Gateway Bi-Weekly Meeting (Later Option)
+    day: Thursday
+    time: 6PM
+    tz: UTC
+    frequency: bi-weekly
+  contact:
+    slack: wg-ai-gateway
+    mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-gateway
+    liaison:
+      github: justaugustus
+      name: Stephen Augustus
 - dir: wg-ai-integration
   name: AI Integration
   mission_statement: >
