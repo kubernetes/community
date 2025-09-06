@@ -21,6 +21,7 @@ channels:
   - name: kubernetes-docs-pl
   - name: kubernetes-docs-uk
   - name: sig-docs
+  - name: sig-docs-automation
   - name: sig-docs-blog
   - name: sig-docs-dockershim
     archived: true
