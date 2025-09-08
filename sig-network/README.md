@@ -100,7 +100,6 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Red Hat
   - Nick Young (**[@youngnick](https://github.com/youngnick)**), Isovalent
 - **Owners:**
-  - [kubernetes-sigs/blixt](https://github.com/kubernetes-sigs/blixt/blob/main/OWNERS)
   - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
   - [kubernetes-sigs/gwctl](https://github.com/kubernetes-sigs/gwctl/blob/main/OWNERS)
   - [kubernetes-sigs/ingate/heads/main](https://github.com/kubernetes-sigs/ingate/blob/refs/heads/main/OWNERS)
@@ -228,5 +227,20 @@ remains important prior art for any future attempts to revise kube-proxy.
 
 [kpng]: https://github.com/kubernetes-sigs/kpng
 [kube-proxy]: https://kubernetes.io/docs/reference/command-line-tools-reference/kube-proxy/
+
+### Blixt
+
+[Blixt] was a Kubernetes L4 load-balancer that started in the early 2020's at a
+time when eBPF technology was a huge buzz for Kubernetes, and members of the
+Kubernetes SIG Network community wanted to experiment with and explore the
+technology on K8s. The project operated primarily as an experimental sandbox.
+
+We had a lot of fun working on this while it was active. It was great to create
+the first official Kubernetes project in [Rust], and experimenting with eBPF in
+its nascence was exciting. All things must come to an end however. Thank you to
+all contributors!
+
+[Blixt]:https://github.com/kubernetes-sigs/blixt
+[Rust]:https://github.com/rust-lang/
 
 <!-- END CUSTOM CONTENT -->
