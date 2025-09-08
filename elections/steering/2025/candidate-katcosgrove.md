@@ -13,7 +13,12 @@ info:
   - Release Team Subproject Lead
   - v1.30 Release Lead
   - v1.29 Docs Lead
+  - v1.28 Docs Shadow
+  - v1.27 Release Lead Shadow
+  - v1.26 Release Lead Shadow
   - v1.25 Comms Lead
+  - v1.24 Comms Shadow
+  - v1.23 Comms Shadow
 
 - SIG Docs
   - Technical Lead
