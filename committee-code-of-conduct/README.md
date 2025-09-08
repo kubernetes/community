@@ -65,11 +65,11 @@ The members and their terms are as follows:
 - Jeremy Rickard
 - Ana Margarita Medina
 
-### Term ends on February 17, 2025
+### Term ends on February 17, 2027
 
 - Danielle Lancashire
-- Hilliary Lipsig
-- Xander Grzywinski
+- Divya Mohan
+- Sean McGinnis
 
 Please see the [bootstrapping document](./bootstrapping-process.md) and [election process guidelines](election.md) for more information on how members are picked and their responsibilities.
 
