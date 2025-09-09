@@ -17,11 +17,12 @@
 set -o errexit
 set -o nounset
 set -o pipefail
-
 shopt -s extglob
 
-# exclude bios before 2021 since some of them have more than 300 words
-STEERING_ELECTION_BIOS="$(pwd)/events/elections/!(2017|2018|2019|2020)/candidate-*.md"
+export KUBE_ROOT=$(dirname "${BASH_SOURCE}")/..
+
+# exclude bios before 2025 since some of them have more than 300 words
+STEERING_ELECTION_BIOS="${KUBE_ROOT}/elections/steering/!(2017|2018|2019|2020|2021|2022|2023|2024)/candidate-*.md"
 
 invalid_bios=0
 break=$(printf "=%.0s" $(seq 1 68))
