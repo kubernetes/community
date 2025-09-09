@@ -33,6 +33,7 @@ channels:
   - name: bazel
   - name: bindings-discuss
   - name: blixt
+    archived: true
   - name: bootkube
     archived: true
   - name: bpfman

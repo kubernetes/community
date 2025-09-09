@@ -2400,7 +2400,6 @@ sigs:
     contact:
       slack: sig-network-gateway-api
     owners:
-    - https://raw.githubusercontent.com/kubernetes-sigs/blixt/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/master/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/gwctl/main/OWNERS
     - https://raw.githubusercontent.com/kubernetes-sigs/ingate/refs/heads/main/OWNERS
