@@ -12,4 +12,5 @@ emeritus_approvers:
   - nikhita
   - mrbobbytables
 labels:
-  - committee/steering
+  - area/elections
+  - sig/contributor-experience
