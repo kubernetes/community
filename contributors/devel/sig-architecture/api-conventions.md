@@ -1953,7 +1953,9 @@ the future, an HTTP/2 implementation will be exposed that deprecates SPDY.
 
 ## Validation
 
-API objects are validated upon receipt by the apiserver. Validation can be implemented in two ways: declaratively, using tags on the Go type definitions, or manually, by writing validation functions. For all new APIs, declarative validation is the preferred approach for the validation rules it supports.  For more information see the [declarative validation documentation](api_changes.md).  Validation errors are
+API objects are validated upon receipt by the apiserver. 
+Validation can be implemented in two ways: declaratively, using tags on the Go type definitions, or manually, by writing validation functions. 
+For all new APIs, declarative validation is the preferred approach for the validation rules it supports.  For more information see the [declarative validation documentation](api_changes.md#declarative-validation).  Validation errors are
 flagged and returned to the caller in a `Failure` status with `reason` set to
 `Invalid`. In order to facilitate consistent error messages, we ask that
 validation logic adheres to the following guidelines whenever possible (though
