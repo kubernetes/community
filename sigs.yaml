@@ -3583,14 +3583,10 @@ workinggroups:
           name: Marcin Wielgus
           company: Google
           email: mwielgus@google.com
-        - github: soltysh
-          name: Maciej Szulik
-          company: Defense Unicorns
-          email: soltysh@gmail.com
-        - github: swatisehgal
-          name: Swati Sehgal
-          company: Red Hat
-          email: swati.tcd@gmail.com
+        - github: tenzen-y
+          name: Yuki Iwai
+          company: CyberAgent, Inc.
+          email: yuki.iwai.tz@gmail.com
       emeritus_leads:
         - github: Huang-Wei
           name: Wei Huang
@@ -3600,6 +3596,10 @@ workinggroups:
           name: Aldo Culquicondor
         - github: endocrimes
           name: Danielle Lancashire
+        - github: soltysh
+          name: Maciej Szulik
+        - github: swatisehgal
+          name: Swati Sehgal
     meetings:
       - description: Regular Meeting
         day: Thursdays (starting February 15th 2024)
