@@ -645,6 +645,67 @@ optionality of fields.
 
 Of course, code needs tests - `pkg/apis/<group>/validation/validation_test.go`.
 
+### Declarative Validation
+
+For new APIs, developers should use declarative validation for all validation rules that declarative validation supports. 
+See the [declarative validation tag catalog](https://kubernetes.io/docs/reference/using-api/declarative-validation/) for the list of supported validation rules.  
+This allows you to define validation rules directly on the API types using special Go comment tags. 
+These validation rules are easier to write, review, and maintain as they live alongside the type and field definitions.
+
+A new code generator, `validation-gen`, processes these tags to produce the validation logic automatically, reducing the need to write manual validation code in `validation.go`.
+
+
+Setting up validation code generation involves the following steps. 
+For APIs already using declarative validation, the first 2 plumbing steps can be skipped:
+- Register the desired API group with validation-gen, similar to other code generators([Example PR doc.go change](https://github.com/kubernetes/kubernetes/pull/130724))
+- Wire up the `strategy.go` for the desired API group to use declarative validation ([Example PR strategy.go change](https://github.com/kubernetes/kubernetes/pull/130724))
+- Add declarative validation tags to the types and fields of the registered package ([Example PR types.go change](https://github.com/kubernetes/kubernetes/pull/130725))
+- Run the validation-gen code generator (see below)
+
+Below is an example of how to register an API group with validation-gen:
+
+`pkg/apis/core/v1/doc.go`
+```go
+...
+// +k8s:validation-gen=TypeMeta
+// +k8s:validation-gen-input=k8s.io/api/core/v1
+
+// Package v1 is the v1 version of the API.
+package v1
+```
+
+Below is an example of how to use declarative validation tags in a `types.go` file:
+
+```go
+// ReplicationControllerSpec is the specification of a replication controller.
+type ReplicationControllerSpec struct {
+      // Replicas is the number of desired replicas.
+      // This is a pointer to distinguish between explicit zero and not specified.
+      // +k8s:optional
+      // +k8s:minimum=0
+      Replicas *int32 `json:"replicas,omitempty"`
+
+      // Minimum number of seconds for which a newly created pod should be ready
+      // without any of its container crashing, for it to be considered available.
+      // +k8s:optional
+      // +k8s:minimum=0
+      MinReadySeconds int32 `json:"minReadySeconds,omitempty"`
+}
+```
+
+In this example, the `+k8s:optional` and `+k8s:minimum=0` tags specify that the `Replicas` and `MinReadySeconds` fields are optional and must have a value of at least 0 if present.
+
+After adding these tags to your types, you will need to run the code generator to create or update the validation functions. 
+This is typically done by running `make update` or `hack/update-codegen.sh`.  
+To only run the declarative validation code generator, use `hack/update-codegen.sh validation`.  
+Running the validation-gen code generator will create a `zz_generated.validations.go` file for the declarative validations of the associated tagged API types and fields.  
+The generated validation methods in this file are then called via the modified `strategy.go` file in the above steps.
+
+Testing the validation logic for the behaviour of a type is identical to the testing that would be done for hand-written validation code.  
+Users will need to write go unit tests similar to what is done for hand-written validation logic that verify specific cases are allowed, disallowed, etc and the validation behaviour is as expected.
+
+While the goal is to express as much validation declaratively as possible, some complex or validation rules might still require manual implementation in `validation.go`. 
+
 ## Edit version conversions
 
 At this point you have both the versioned API changes and the internal
@@ -698,6 +759,7 @@ workaround is to remove the files causing errors and rerun the command.
 
 Apart from the `defaulter-gen`, `deepcopy-gen`, `conversion-gen` and
 `openapi-gen`, there are a few other generators:
+ - `validation-gen` (for generating validation functions from declarative tags)
  - `go-to-protobuf`
  - `client-gen`
  - `lister-gen`
