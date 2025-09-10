@@ -1,5 +1,5 @@
 -------------------------------------------------------------
-name: 
+name: Sean McGinnis
 ID: stmcginnis
 info:
   - employer: Lambda
