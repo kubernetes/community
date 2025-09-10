@@ -1,7 +1,7 @@
 name: 2025 Steering Committee Election
 organization: Kubernetes
 # Start of day in UTC for opening: 2023-08-29 00:00:01
-start_datetime: 2025-09-10 00:00:01
+start_datetime: 2025-09-12 00:00:01
 # End of day Anywhere on Earth for closing. Write 2023-09-26 as: 2023-09-27 11:59:59
 end_datetime: 2025-10-25 11:59:59
 no_winners: 4
