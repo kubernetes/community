@@ -28,8 +28,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 
 * Kevin Hannon (**[@kannon92](https://github.com/kannon92)**), Red Hat
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
-* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
-* Swati Sehgal (**[@swatisehgal](https://github.com/swatisehgal)**), Red Hat
+* Yuki Iwai (**[@tenzen-y](https://github.com/tenzen-y)**), CyberAgent, Inc.
 
 ## Emeritus Organizers
 
@@ -37,6 +36,8 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**)
 * Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**)
 * Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**)
+* Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
+* Swati Sehgal (**[@swatisehgal](https://github.com/swatisehgal)**)
 
 ## Contact
 - Slack: [#wg-batch](https://kubernetes.slack.com/messages/wg-batch)
