@@ -98,7 +98,7 @@ Corporate CLA](https://github.com/cncf/cla/blob/master/corporate-cla.pdf)
    * If (a) contributor(s) have not signed the CLA and could not be reached, a
      NOTICE file should be added referencing section 7 of the CLA with a list of
 the developers who could not be reached
-   * Licenses of dependencies are acceptable; please review the [allowed-third-party-license-policy.md](https://github.com/cncf/foundation/blob/main/allowed-third-party-license-policy.md)
+   * Licenses of dependencies are acceptable; please review the [allowed-third-party-license-policy.md](https://github.com/cncf/foundation/blob/main/policies-guidance/allowed-third-party-license-policy.md)
      and [exceptions](https://github.com/cncf/foundation/tree/main/license-exceptions).
      If your dependencies are not covered, then please open a `License Exception Request` issue in
      [cncf/foundation](https://github.com/cncf/foundation/issues) repository.
