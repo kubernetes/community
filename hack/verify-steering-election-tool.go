@@ -18,7 +18,6 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -157,7 +156,7 @@ func findBioFiles(electionsPath string) ([]string, error) {
 
 // countWords counts the number of words in a file
 func countWords(filename string) (int, error) {
-	content, err := ioutil.ReadFile(filename)
+	content, err := os.ReadFile(filename)
 	if err != nil {
 		return 0, err
 	}
@@ -190,7 +189,7 @@ func validateFileNameAndGitHubID(filename string) error {
 	expectedUsername := matches[1]
 
 	// Read file content to extract GitHub ID
-	content, err := ioutil.ReadFile(filename)
+	content, err := os.ReadFile(filename)
 	if err != nil {
 		return fmt.Errorf("error reading file: %v", err)
 	}
@@ -227,7 +226,7 @@ func validateFileNameAndGitHubID(filename string) error {
 
 // validateTemplateCompliance checks if the bio follows the required template structure
 func validateTemplateCompliance(filename string) error {
-	content, err := ioutil.ReadFile(filename)
+	content, err := os.ReadFile(filename)
 	if err != nil {
 		return fmt.Errorf("error reading file: %v", err)
 	}
