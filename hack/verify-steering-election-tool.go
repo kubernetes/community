@@ -289,9 +289,10 @@ func validateTemplateCompliance(filename string) error {
 }
 
 // extractYAMLHeader extracts the YAML content between dash separators
+// The format requires exactly 61 dashes for consistency
 func extractYAMLHeader(content string) (string, error) {
-	// Find the YAML header between dashes
-	dashRegex := regexp.MustCompile(`(?s)^-{5,}\s*\n(.*?)\n-{5,}\s*\n`)
+	// Find the YAML header between exactly 61 dashes
+	dashRegex := regexp.MustCompile(`(?s)^-{61}\s*\n(.*?)\n-{61}\s*\n`)
 	matches := dashRegex.FindStringSubmatch(content)
 	if len(matches) != 2 {
 		return "", fmt.Errorf("could not find YAML header between dashes")
