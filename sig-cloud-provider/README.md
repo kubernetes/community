@@ -72,6 +72,10 @@ The following [subprojects][subproject-definition] are owned by sig-cloud-provid
   - [kubernetes-sigs/cloud-pv-admission-labeler](https://github.com/kubernetes-sigs/cloud-pv-admission-labeler/blob/main/OWNERS)
   - [kubernetes/community/sig-cloud-provider/cloud-provider-extraction-migration](https://github.com/kubernetes/community/blob/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS)
   - [kubernetes/legacy-cloud-providers](https://github.com/kubernetes/legacy-cloud-providers/blob/master/OWNERS)
+### kro
+Simplify the creation and management of complex custom resources for Kubernetes.
+- **Owners:**
+  - [kubernetes-sigs/kro/heads/main](https://github.com/kubernetes-sigs/kro/blob/refs/heads/main/OWNERS)
 ### kubernetes-cloud-provider
 - **Owners:**
   - [kubernetes/cloud-provider-sample](https://github.com/kubernetes/cloud-provider-sample/blob/master/OWNERS)

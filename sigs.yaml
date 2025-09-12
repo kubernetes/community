@@ -923,6 +923,10 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/cloud-pv-admission-labeler/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
           - https://raw.githubusercontent.com/kubernetes/legacy-cloud-providers/master/OWNERS
+      - name: kro
+        description: Simplify the creation and management of complex custom resources for Kubernetes.
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/kro/refs/heads/main/OWNERS
       - name: kubernetes-cloud-provider
         owners:
           - https://raw.githubusercontent.com/kubernetes/cloud-provider-sample/master/OWNERS
