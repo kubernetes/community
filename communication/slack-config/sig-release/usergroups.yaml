@@ -34,7 +34,7 @@ usergroups:
   # - Emeritus Adviser
   # - SIG Release leads
   #
-  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.34/release-team.md
+  # Current release cycle: https://git.k8s.io/sig-release/releases/release-1.35/release-team.md
   - name: release-team-leads
     long_name: Release Team Leads
     description: >-
@@ -50,18 +50,16 @@ usergroups:
       - release-notes
       - sig-release
     members:
-      - aibarbetta          # v1.34 Comms Lead
-      - chanieljdan         # v1.34 RT Lead Shadow
-      - fsmunoz             # v1.34 EA
-      - gracenng            # Release Team Subproject Lead
-      - jenshu              # v1.34 Enhancements Lead
-      - katcosgrove         # v1.32 EA + Release Team Subproject Lead
-      - michellengnx        # v1.34 Docs Lead
-      - Rajalakshmi-Girish  # v1.34 Release Signal Lead
-      - rytswd              # v1.34 RT Lead Shadow
-      - sreeram-venkitesh   # v1.34 RT Lead Shadow
-      - Vyom-Yadav          # v1.34 RT Lead
-      - wendy-ha18          # v1.34 RT Lead Shadow
+      - dipesh-rawat        # v1.35 RT Lead Shadow
+      - drewhagen           # v1.35 Lead
+      - graz-dev            # v1.35 Comms Lead
+      - jenshu              # v1.35 RT Lead Shadow
+      - katcosgrove         # Release Team Subproject Lead
+      - Rajalakshmi-Girish  # v1.35 RT Lead Shadow
+      - rayandas            # v1.35 Enhancements Lead
+      - rytswd              # v1.35 RT Lead Shadow
+      - tico88612           # v1.35 Release Signal Lead
+      - Urvashi0109         # v1.35 Docs Lead
 
   # Should match SIG Release Leads at all times:
   # https://git.k8s.io/community/sig-release/README.md#leadership
