@@ -30,6 +30,7 @@ import (
 const (
 	maxWordCount         = 450
 	recommendedWordCount = 300
+	startYear            = 2026
 )
 
 type ValidationError struct {
@@ -133,12 +134,11 @@ func findBioFiles(electionsPath string) ([]string, error) {
 			return nil
 		}
 
-		// Only include elections from 2025 forward
+		// Only include elections from startYear forward
 		pathLower := strings.ToLower(path)
 		includeFile := false
 		currentYear := time.Now().Year()
-		// Check from 2025 to a few years ahead of current year
-		startYear := 2025
+		// Check from startYear to a few years ahead of current year
 		endYear := currentYear + 5
 		for year := startYear; year <= endYear; year++ {
 			yearStr := fmt.Sprintf("/%d/", year)
