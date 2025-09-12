@@ -22,6 +22,7 @@ import (
 	"path/filepath"
 	"regexp"
 	"strings"
+	"time"
 
 	yaml "gopkg.in/yaml.v3"
 )
@@ -135,7 +136,11 @@ func findBioFiles(electionsPath string) ([]string, error) {
 		// Only include elections from 2025 forward
 		pathLower := strings.ToLower(path)
 		includeFile := false
-		for year := 2025; year <= 2030; year++ { // Check current year and a few years ahead
+		currentYear := time.Now().Year()
+		// Check from 2025 to a few years ahead of current year
+		startYear := 2025
+		endYear := currentYear + 5
+		for year := startYear; year <= endYear; year++ {
 			yearStr := fmt.Sprintf("/%d/", year)
 			if strings.Contains(pathLower, yearStr) {
 				includeFile = true
