@@ -414,6 +414,10 @@ sigs:
           slack: prod-readiness
         owners:
           - https://raw.githubusercontent.com/kubernetes/community/master/sig-architecture/OWNERS
+      - name: wg-ai-conformance
+        description: Proposals and discussions for the AI Conformance Working Group
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/wg-ai-conformance/main/OWNERS
       - name: wg-device-management
         description: Contains prototype code for future work driven by WG Device Management
         contact:
