@@ -117,6 +117,10 @@ Tooling based on Deep Learning tools to help maintainers to maintain the Kuberne
   - [kubernetes/community/sig-architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/OWNERS)
 - **Contact:**
   - Slack: [#prod-readiness](https://kubernetes.slack.com/messages/prod-readiness)
+### wg-ai-conformance
+Proposals and discussions for the AI Conformance Working Group
+- **Owners:**
+  - [kubernetes-sigs/wg-ai-conformance](https://github.com/kubernetes-sigs/wg-ai-conformance/blob/main/OWNERS)
 ### wg-device-management
 Contains prototype code for future work driven by WG Device Management
 - **Owners:**
