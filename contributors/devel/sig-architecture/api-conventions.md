@@ -579,11 +579,13 @@ selectors, annotations, data), as opposed to sets of subobjects.
 
 #### Primitive types
 
+Also read the section on validation, below.
+
+When selecting fields, consider the following:
 * Look at similar fields in the API (e.g. ports, durations) and follow the
   conventions of existing fields.
-* Do not use enums. Use aliases for string instead (e.g. `NodeConditionType`).
-* All numeric fields should be bounds-checked, both for too-small or negative
-  and for too-large.
+* Do not use numeric enums. Use aliases for string instead (e.g.
+  `NodeConditionType`).
 * All public integer fields MUST use the Go `int32` or Go `int64` types, not
   `int` (which is ambiguously sized, depending on target platform).  Internal
   types may use `int`.
@@ -1954,12 +1956,61 @@ the future, an HTTP/2 implementation will be exposed that deprecates SPDY.
 ## Validation
 
 API objects are validated upon receipt by the apiserver. 
-Validation can be implemented in two ways: declaratively, using tags on the Go type definitions, or manually, by writing validation functions. 
-For all new APIs, declarative validation is the preferred approach for the validation rules it supports.  For more information see the [declarative validation documentation](api_changes.md#declarative-validation).  Validation errors are
-flagged and returned to the caller in a `Failure` status with `reason` set to
-`Invalid`. In order to facilitate consistent error messages, we ask that
-validation logic adheres to the following guidelines whenever possible (though
-exceptional cases will exist).
+Validation can be implemented in two ways: declaratively, using tags on the Go
+type definitions, or manually, by writing validation functions. For all new
+APIs, declarative validation is the preferred approach for the validation rules
+it supports.  For more information see the
+[declarative validation documentation](api_changes.md#declarative-validation).
+Validation errors are flagged and returned to the caller in a `Failure` status,
+usually with `reason` set to `Invalid`.
+
+### Requiredness
+
+All fields should be declared optional or required, and validation should
+check the requiredness.
+
+### Type-specific validation guidelines
+
+#### String fields
+
+Almost all string fields should be checked for format.  Some format checks
+include checking for length (e.g. "short-name", aka, "DNS Label" must be less
+than 64 bytes).
+
+All string fields should be checked for maximum length.  If the field has a
+minimum length, that should also be checked.
+
+Never do case-insensitive comparisons in validation.  This is a source of bugs
+and failed uniqueness assumptions.  If validation treats "abc" and "ABC" as
+the same, then ALL consumers of that field must do the same, and it is very
+easy to miss a case.
+
+#### Numeric fields
+
+All numeric fields should be bounds-checked, both for too-small values
+(including negative) and for too-large values.
+
+#### List fields
+
+All list fields should be checked for maximum size.  If the list has a minimum
+size, that should also be checked.
+
+All list fields should have their "listType" tag(s) set.  Lists with set or map
+semantics should be checked for uniqueness (declarative validation will do this
+authomatically).
+
+#### Map fields
+
+All map fields should be checked for maximum size.  If the map has a minimum
+size, that should also be checked.
+
+Map fields should have their keys validated, in addition to their values.
+
+### Error messages
+
+In order to facilitate consistent error messages, we ask that validation logic
+adheres to the following guidelines whenever possible (though exceptional cases
+will exist).
 
 * Be as precise as possible.
 * Telling users what they CAN do is more useful than telling them what they
