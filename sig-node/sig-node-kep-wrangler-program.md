@@ -33,6 +33,18 @@ Wranglers should be part of the following channels in the Kubernetes Slack works
 - Once the board is created and KEPs are added, feel free to assign KEPs to yourself by adding your name in the `Wranglers` column
 - Once you've assigned KEPs to yourself, follow up on the status of the KEPs and ping the KEP authors as and when necessary to make sure that all the different deadlines are met
 
+## Wrangler Lead
+
+In order to facilitate the wrangling process, we have a SIG Node KEP Wrangler lead. The person serving as the lead is responsible for making sure that KEPs are wrangled and that the reporting is done properly in that cycle.
+
+The responsibilities of the KEP wrangler lead includes the following:
+- Post the status of the KEPs each week in the [#sig-node-wranglers](https://kubernetes.slack.com/archives/C092ZDBRU64) channel
+- Help new wranglers get familiar with the process and assist whenever needed
+- Send reminders before important deadlines like the enhancements and code freeze
+- Step in or delegate work if a wrangler assigned to a KEP is unavailable before important deadlines
+
+The SIG Node chairs selects a wrangler lead for each cycle. If you've been a KEP wrangler previously and would like to lead the wranglers, reach out to the SIG Node chairs in the [#sig-node-wranglers](https://kubernetes.slack.com/archives/C092ZDBRU64) channel.
+
 ## Reporting
 
 In order to assess the status of KEPs throughout the release, we plan to post a report of the KEPs every week in the [#sig-node-wranglers](https://kubernetes.slack.com/archives/C092ZDBRU64) channel. This can be done on Tuesdays before the weekly SIG Node meetings.
