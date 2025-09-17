@@ -39,6 +39,7 @@ In order to facilitate the wrangling process, we have a SIG Node KEP Wrangler le
 
 The responsibilities of the KEP wrangler lead includes the following:
 - Post the status of the KEPs each week in the [#sig-node-wranglers](https://kubernetes.slack.com/archives/C092ZDBRU64) channel
+- Collect applications for wranglers at the start of the release cycle by creating an interest form
 - Help new wranglers get familiar with the process and assist whenever needed
 - Send reminders before important deadlines like the enhancements and code freeze
 - Step in or delegate work if a wrangler assigned to a KEP is unavailable before important deadlines
