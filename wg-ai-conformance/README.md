@@ -35,4 +35,8 @@ The [charter](charter.md) defines the scope and governance of the AI Conformance
 - Steering Committee Liaison: Patrick Ohly (**[@pohly](https://github.com/pohly)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
+## AI Conformance Definition
+
+The official AI conformance requirements and certification process are published in the [cncf/ai-conformance](https://github.com/cncf/ai-conformance) repository. Async discussions on defining these requirements are tracked in the [kubernetes-sigs/wg-ai-conformance](https://github.com/kubernetes-sigs/wg-ai-conformance) repository.
+
 <!-- END CUSTOM CONTENT -->
