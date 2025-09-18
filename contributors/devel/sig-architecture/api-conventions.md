@@ -27,6 +27,7 @@ An introduction to using resources with kubectl can be found in [the object mana
   - [Categories](#categories)
 - [Idempotency](#idempotency)
 - [Optional vs. Required](#optional-vs-required)
+- [Nullable](#nullable)
 - [Defaulting](#defaulting)
   - [Static Defaults](#static-defaults)
   - [Admission Controlled Defaults](#admission-controlled-defaults)
@@ -910,6 +911,26 @@ This means that there is no need to distinguish in a custom resource, between un
 In these cases, pointers are not needed, as the zero value indicates to the structured client that the field is unset.
 
 This can be beneficial to API authors, as it reduces the complexity of the API, and reduces the risk of nil pointer exceptions in controllers.
+
+## Nullable
+
+The `+nullable` comment tag allows the json `null` value to be a valid value
+for a field. The `null` value is serialized only when a field is a pointer
+in the Go definition, and does not have the `omitempty` json tag, or sometimes where a
+custom marshal function is implemented.
+
+For example, a map field marked with `+nullable` would accept either `foo: null` or `foo: {}`.
+
+Usage of `+nullable` is discouraged as it introduces several issues:
+- It is not compatible with json merge patching.
+  - From the [JSON Merge Patch RFC](https://tools.ietf.org/html/rfc7386#section-1):
+    > Null values in the merge patch are given special meaning to indicate the removal of existing values in the target.
+- Explicit `null` values are not persisted in proto serializations.
+- `null` values are not supported by Server-Side Apply applyconfiguration types.
+  - A persisted `null` value would not round-trip through the applyconfiguration type
+    encode/decode cycle.
+
+Avoid designing APIs that require the distinction between unset and `null`.
 
 ## Defaulting
 
