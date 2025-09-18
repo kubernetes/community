@@ -255,6 +255,8 @@ A project that uses Ansible / Vagrant for deploying production ready clusters on
 Implements a local Kubernetes cluster for application development on macOS, Linux, and Windows
 - **Owners:**
   - [kubernetes-sigs/minikube-gui](https://github.com/kubernetes-sigs/minikube-gui/blob/main/OWNERS)
+  - [kubernetes-sigs/minikube-os](https://github.com/kubernetes-sigs/minikube-os/blob/main/OWNERS)
+  - [kubernetes-sigs/minikube-preloads](https://github.com/kubernetes-sigs/minikube-preloads/blob/main/OWNERS)
   - [kubernetes/minikube](https://github.com/kubernetes/minikube/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#minikube](https://kubernetes.slack.com/messages/minikube)

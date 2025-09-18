@@ -1382,6 +1382,8 @@ sigs:
           mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/minikube-gui/main/OWNERS
+          - https://raw.githubusercontent.com/kubernetes-sigs/minikube-os/main/OWNERS
+          - https://raw.githubusercontent.com/kubernetes-sigs/minikube-preloads/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes/minikube/master/OWNERS
         meetings:
           - description: minikube office hours
