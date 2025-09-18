@@ -30,6 +30,13 @@ sigs:
           company: Upbound
           email: stefan.schimanski@gmail.com
     meetings:
+      - description: Declarative APIs and Linters Meeting
+        day: Tuesday
+        time: "9:00"
+        tz: PT (Pacific Time)
+        frequency: biweekly
+        archive_url: https://docs.google.com/document/d/1GbSkHAxIaFTm2fL92z3WeWrCtnIjXfr7gNZSySLHhmk/edit?usp=sharing
+        recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0SOaFeA9f3dwdCNECEKkX3
       - description: Kubebuilder Meeting
         day: Thursday
         time: "11:00"
