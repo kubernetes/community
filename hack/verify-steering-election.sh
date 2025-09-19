@@ -17,30 +17,7 @@
 set -o errexit
 set -o nounset
 set -o pipefail
-shopt -s extglob
 
-export KUBE_ROOT=$(dirname "${BASH_SOURCE}")/..
-
-# exclude bios before 2025 since some of them have more than 300 words
-STEERING_ELECTION_BIOS="${KUBE_ROOT}/elections/steering/!(2017|2018|2019|2020|2021|2022|2023|2024)/candidate-*.md"
-
-invalid_bios=0
-break=$(printf "=%.0s" $(seq 1 68))
-
-for bio in ${STEERING_ELECTION_BIOS} ; do
-  [[ -f $bio ]] || continue
-  word_count=$(wc -w < "$bio")
-  if [[ ${word_count} -gt "450" ]]; then
-    echo "${bio} has ${word_count} words."
-    invalid_bios=$((invalid_bios+1))
-  fi
-done
-
-if [[ ${invalid_bios} -gt "0" ]]; then
-  echo ""
-  echo "${break}"
-  echo "${invalid_bios} invalid Steering Committee election bio(s) detected."
-  echo "Bios should be limited to around 300 words, excluding headers."
-  echo "${break}"
-  exit 1;
-fi
+# Build and run the Go utility
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
+go run hack/verify-steering-election-tool.go elections
