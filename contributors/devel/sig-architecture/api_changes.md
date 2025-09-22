@@ -706,6 +706,50 @@ Users will need to write go unit tests similar to what is done for hand-written 
 
 While the goal is to express as much validation declaratively as possible, some complex or validation rules might still require manual implementation in `validation.go`. 
 
+#### When to Use Declarative Validation vs Hand-Written Validation
+
+**Use Declarative Validation when:**
+- The validation rule has an existing stable declarative validation tag which can be used in a straightforward way. See the catalog of stable tags [here](https://kubernetes.io/docs/reference/using-api/declarative-validation/).
+- You are working on a new API or adding new fields to an existing API that already uses declarative validation.
+- The validation rule is simple and linear (e.g., min/max values, string length, format checks).
+- The validation can be expressed as a property of the data schema.
+- The validation pattern is reusable across multiple APIs.
+
+**Continue Using Hand-Written Validation when:**
+- The validation requires complex logic or conditional branching based on multiple fields.
+- The validation needs to consider external state beyond the object itself.
+- Custom, detailed error messages are required for different failure conditions.
+- The validation logic is unique to a specific API and unlikely to be reused.
+
+
+**Guidelines for Creating New Declarative Validation Tags:**
+
+Before creating a new declarative validation tag, consider these principles:
+
+1) Any tag added should be as simple and intuitive as possible to read.
+2) Any tag added should plausibly be applicable to many APIs.
+3) Any tag added should represent our current understanding of the best way to express an idea. 
+4) Any tag we add should be something we are OK with people using in new APIs.  (We may eventually add tags that capture legacy semantics which break this rule).
+5) With rare and clear exceptions, tags should not be interdependent.
+6) Tags should usually represent properties of the data (schema) and the API operation (e.g. update), rather than the act of validation.
+7) Tags are written from the POV of an API client.
+8) Tags should be as orthogonal as possible.
+9) Tags should be linear and (with rare exceptions) not represent complex logic. 
+10) Tags should not need to consider anything other than the object(s) in question and configured options (e.g. feature gates).
+
+A new tag is worth creating when:
+- The validation pattern appears in multiple places.
+- The tag name and usage would be self-explanatory.
+- The validation can be expressed with simple parameters.
+- It would reduce code duplication meaningfully.
+
+Avoid creating tags for:
+- Complex regex patterns (prefer named formats like `+k8s:format=isDNS...`).
+- Validation requiring multiple conditional branches.
+- Rules that need to generate multiple distinct error messages based on different failure modes.
+- One-off validation logic specific to a single API.
+
+
 ## Edit version conversions
 
 At this point you have both the versioned API changes and the internal
