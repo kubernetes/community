@@ -30,6 +30,7 @@ This team (**[@kubernetes/owners](https://github.com/orgs/kubernetes/teams/owner
 * Bob Killen (**[@mrbobbytables](https://github.com/mrbobbytables)**, US Eastern)
 * Christoph Blecker (**[@cblecker](https://github.com/cblecker)**, CA Pacific)
 * Madhav Jivrajani (**[@MadhavJivrajani](https://github.com/MadhavJivrajani)**, Indian Standard Time)
+* Mario Jason Braganza (**[@jasonbraganza](https://github.com/jasonbraganza)**, Indian Standard Time)
 * Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**, Indian Standard Time)
 * Nikhita Raghunath (**[@nikhita](https://github.com/nikhita)**, Indian Standard Time)
 * Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**, Indian Standard Time)
