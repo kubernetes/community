@@ -14,10 +14,10 @@ The [charter](charter.md) defines the scope and governance of the Instrumentatio
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-instrumentation) for the group will typically add invites for the following meetings to your calendar.*
-* Regular SIG Meeting: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/5754520722?pwd=AZQ8hLIu5fuhoCamIQjTEBGZXpzhX9.1) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A30&tz=PT%20%28Pacific%20Time%29).
+* Regular SIG Meeting: [Fridays at 8:30 PT (Pacific Time)](https://zoom.us/j/5754520722?pwd=AZQ8hLIu5fuhoCamIQjTEBGZXpzhX9.1) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8%3A30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLkqe7HTr17N4ejIdxajGihkEcBxeLegDb).
-* Regular Triage Meeting: [Thursdays at 9:30 PT (Pacific Time)](https://zoom.us/j/5754520722?pwd=AZQ8hLIu5fuhoCamIQjTEBGZXpzhX9.1) (biweekly - alternating with regular meeting). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A30&tz=PT%20%28Pacific%20Time%29).
+* Regular Triage Meeting: [Fridays at 8:30 PT (Pacific Time)](https://zoom.us/j/5754520722?pwd=AZQ8hLIu5fuhoCamIQjTEBGZXpzhX9.1) (biweekly - alternating with regular meeting). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8%3A30&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1FE4AQ8B49fYbKhfg4Tx0cui1V0eI4o3PxoqQPUwNEiU/edit?usp=sharing).
 
 ## Leadership
