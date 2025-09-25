@@ -20,9 +20,9 @@ aliases:
     - micahhausler
     - ritazh
   sig-autoscaling-leads:
+    - adrianmoisey
     - gjtempleton
     - jackfrancis
-    - raywainman
     - towca
   sig-cli-leads:
     - ardaguclu

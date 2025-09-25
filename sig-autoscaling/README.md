@@ -29,13 +29,14 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
+* Adrian Moisey (**[@adrianmoisey](https://github.com/adrianmoisey)**), SalesLoft
 * Jack Francis (**[@jackfrancis](https://github.com/jackfrancis)**), Microsoft
-* Ray Wainman (**[@raywainman](https://github.com/raywainman)**), Google
 
 ## Emeritus Leads
 
 * Maciek Pytel (**[@maciekpytel](https://github.com/maciekpytel)**)
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**)
+* Ray Wainman (**[@raywainman](https://github.com/raywainman)**)
 
 ## Contact
 - Slack: [#sig-autoscaling](https://kubernetes.slack.com/messages/sig-autoscaling)
