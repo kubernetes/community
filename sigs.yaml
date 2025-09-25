@@ -668,19 +668,21 @@ sigs:
           company: Google
           email: jtuznik@google.com
       tech_leads:
+        - github: adrianmoisey
+          name: Adrian Moisey
+          company: SalesLoft
+          email: adrian@changeover.za.net
         - github: jackfrancis
           name: Jack Francis
           company: Microsoft
           email: jack.francis@microsoft.com
-        - github: raywainman
-          name: Ray Wainman
-          company: Google
-          email: rwainman@google.com
       emeritus_leads:
         - github: maciekpytel
           name: Maciek Pytel
         - github: mwielgus
           name: Marcin Wielgus
+        - github: raywainman
+          name: Ray Wainman
     meetings:
       - description: Regular SIG Meeting
         day: Thursday
