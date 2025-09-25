@@ -85,6 +85,7 @@ channels:
   - name: cluster-api-proxmox
   - name: cluster-api-release
   - name: cluster-api-vsphere
+  - name: cluster-api-wg-machinepools
   - name: cn-dev
   - name: cn-events
   - name: cn-users
