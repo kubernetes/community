@@ -2423,6 +2423,10 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/nat64/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
+      - name: wg-ai-gateway
+        description: Proposals and discussions for the AI Gateway Working Group
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/wg-ai-gateway/main/OWNERS
   - dir: sig-node
     name: Node
     mission_statement: >
