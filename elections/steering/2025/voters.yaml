@@ -23,7 +23,7 @@
 #
 # History:
 # 2025-08-25 - Initial generation from devstats CSV + org members + committee chairs
-#
+# 2025-09-28 - Added voters from approved exception requests
 eligible_voters:
 - 0ekk
 - a7i
