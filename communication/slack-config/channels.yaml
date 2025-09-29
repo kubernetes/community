@@ -3,6 +3,7 @@
 
 channels:
   - name: africa-dev
+  - name: agent-sandbox
   - name: airflow-operator
   - name: akri
   - name: azure-aks
