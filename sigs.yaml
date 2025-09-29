@@ -1994,15 +1994,15 @@ sigs:
           name: Arnaud Meukam
           company: Independent
           email: ameukam@gmail.com
-        - github: dims
-          name: Davanum Srinivas
-          company: Amazon
-          email: davanum@gmail.com
+        - github: GenPage
+          name: Dylan-Daniel Page
+          company: Lambda AI
+          email: dylanddcpage@gmail.com
+        - github: hakman
+          name: Ciprian Hacman
+          company: Microsoft
+          email: chacman@microsoft.com
       tech_leads:
-        - github: BenTheElder
-          name: Benjamin Elder
-          company: Google
-          email: bentheelder@google.com
         - github: ameukam
           name: Arnaud Meukam
           company: Independent
@@ -2018,6 +2018,10 @@ sigs:
       emeritus_leads:
         - github: bartsmykla
           name: Bart Smykla
+        - github: BenTheElder
+          name: Benjamin Elder
+        - github: dims
+          name: Davanum Srinivas
         - github: spiffxp
           name: Aaron Crickenberger
         - github: thockin
