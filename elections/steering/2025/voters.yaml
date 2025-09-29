@@ -23,7 +23,7 @@
 #
 # History:
 # 2025-08-25 - Initial generation from devstats CSV + org members + committee chairs
-#
+# 2025-09-28 - Added voters from approved exception requests
 eligible_voters:
 - 0ekk
 - a7i
@@ -88,6 +88,7 @@ eligible_voters:
 - asem-hamid
 - ash2k
 - astraw99
+- avni-mahajan
 - atiratree
 - AverageMarcus
 - AxeZhan
@@ -129,7 +130,9 @@ eligible_voters:
 - cheftako
 - chenrui333
 - chethanv28
+- chewong
 - chrischdi
+- chris-short
 - cici37
 - cjcullen
 - cji
@@ -157,6 +160,7 @@ eligible_voters:
 - davidgamero
 - dchen1107
 - deads2k
+- Debanitrkl
 - deepakkinni
 - dejanzele
 - DerekFrank
@@ -215,6 +219,7 @@ eligible_voters:
 - fsmunoz
 - furkatgofurov7
 - fuweid
+- fykaa
 - g-gaston
 - gabesaba
 - Gacko
@@ -258,6 +263,7 @@ eligible_voters:
 - illume
 - inductor
 - ingvagabund
+- intUnderflow
 - IrvingMg
 - ivankatliarchuk
 - ivanvc
@@ -331,6 +337,7 @@ eligible_voters:
 - KunWuLuan
 - kwiesmueller
 - kwilczynski
+- lachie83
 - laoj2
 - laozc
 - lauralorenz
@@ -435,6 +442,7 @@ eligible_voters:
 - ngopalak-redhat
 - nilekhc
 - nilo19
+- nimbinatus
 - niranjandarshann
 - nirrozenbaum
 - nirs
@@ -509,6 +517,7 @@ eligible_voters:
 - sameshai
 - samuelkarp
 - samzong
+- sandeepkanabar
 - sanposhiho
 - SaranBalaji90
 - sarthaksarthak9
