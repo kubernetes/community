@@ -23,5 +23,5 @@ This subproject will explicitly not be responsible for:
 - Moderation policies and escalations on GitHub (this falls under the Moderation
   subproject, the Code of Conduct committee, and the steering committee)
 - Contributor workflow within Kubernetes repos, e.g. mandated use of labels
-  (this falls under the guise of the subproject responsible for the repo, and
+  (this falls under the purview of the subproject responsible for the repo, and
   the Contributor Workflow and Automation subproject)
