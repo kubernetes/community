@@ -44,7 +44,7 @@ Organization members are granted "read" access to all repositories in the org,
 are able to be assigned issues and PRs, and are able to mention and join
 teams. This is the base level of access to an organization.
 
-A our automation tools look for organization membership as a permissions level
+Our automation tools look for organization membership as a permissions level
 for running certain bot commands. The [bot commands] list details which
 commands are restricted to org members.
 
