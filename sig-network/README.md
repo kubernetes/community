@@ -39,9 +39,9 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Bowei Du (**[@bowei](https://github.com/bowei)**), Google
 * Michael Zappa (**[@mikezappa87](https://github.com/mikezappa87)**), Microsoft
 * Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Red Hat
-* Tim Hockin (**[@thockin](https://github.com/thockin)**), Google
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing

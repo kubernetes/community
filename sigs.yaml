@@ -2219,6 +2219,10 @@ sigs:
     label: network
     leadership:
       chairs:
+        - github: bowei
+          name: Bowei Du
+          company: Google
+          email: bowei@google.com
         - github: mikezappa87
           name: Michael Zappa
           company: Microsoft
@@ -2227,10 +2231,6 @@ sigs:
           name: Shane Utt
           company: Red Hat
           email: sutt@redhat.com
-        - github: thockin
-          name: Tim Hockin
-          company: Google
-          email: thockin@google.com
       tech_leads:
         - github: aojea
           name: Antonio Ojea
