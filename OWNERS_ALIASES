@@ -64,9 +64,9 @@ aliases:
     - rexagod
     - richabanker
   sig-k8s-infra-leads:
-    - BenTheElder
+    - GenPage
     - ameukam
-    - dims
+    - hakman
     - upodroid
     - xmudrii
   sig-multicluster-leads:

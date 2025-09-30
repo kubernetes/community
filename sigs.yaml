@@ -1990,14 +1990,14 @@ sigs:
     label: k8s-infra
     leadership:
       chairs:
-        - github: ameukam
-          name: Arnaud Meukam
-          company: Independent
-          email: ameukam@gmail.com
         - github: GenPage
           name: Dylan-Daniel Page
           company: Lambda AI
           email: dylanddcpage@gmail.com
+        - github: ameukam
+          name: Arnaud Meukam
+          company: Independent
+          email: ameukam@gmail.com
         - github: hakman
           name: Ciprian Hacman
           company: Microsoft
@@ -2016,10 +2016,10 @@ sigs:
           company: Kubermatic
           email: mudrinic.mare@gmail.com
       emeritus_leads:
-        - github: bartsmykla
-          name: Bart Smykla
         - github: BenTheElder
           name: Benjamin Elder
+        - github: bartsmykla
+          name: Bart Smykla
         - github: dims
           name: Davanum Srinivas
         - github: spiffxp
