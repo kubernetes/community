@@ -47,8 +47,8 @@ usergroups:
       - sig-k8s-infra
     members:
       - ameukam
-      - bentheelder
-      - dims
+      - genpage
+      - hakman
       - upodroid
       - xmudrii
 
