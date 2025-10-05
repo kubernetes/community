@@ -24,6 +24,7 @@
 # History:
 # 2025-08-25 - Initial generation from devstats CSV + org members + committee chairs
 # 2025-09-28 - Added voters from approved exception requests
+# 2025-10-05 - Added voters from approved exception requests
 eligible_voters:
 - 0ekk
 - a7i
@@ -82,6 +83,7 @@ eligible_voters:
 - ArkaSaha30
 - arkodg
 - aroradaman
+- arujjval
 - ArvindParekh
 - aryan9600
 - asa3311
@@ -332,6 +334,7 @@ eligible_voters:
 - koba1t
 - koksay
 - kolluria
+- krol3
 - krzyzacy
 - kundan2707
 - KunWuLuan
@@ -540,6 +543,7 @@ eligible_voters:
 - shanduur
 - shaneutt
 - shannonxtreme
+- sharmarahul8222
 - shraddhabang
 - shu-mutou
 - Shubham82
