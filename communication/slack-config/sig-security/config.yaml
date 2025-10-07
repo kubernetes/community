@@ -1,8 +1,9 @@
 channels:
   - name: sig-security
-  - name: sig-security-assess-capi
   - name: sig-security-docs
   - name: sig-security-tooling
   - name: sig-security-assessments
   - name: sig-security-assess-etcd
-  - name: sig-security-assess-vsphere-csi-driver
+# Retired channels noted for future reference
+#  - name: sig-security-assess-vsphere-csi-driver
+#  - name: sig-security-assess-capi
