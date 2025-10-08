@@ -727,6 +727,7 @@ sigs:
         contact:
           slack: karpenter
         owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/karpenter-provider-ibm-cloud/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/karpenter/main/OWNERS
       - name: vertical-pod-autoscaler
         contact:
