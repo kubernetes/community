@@ -3934,7 +3934,7 @@ workinggroups:
         frequency: biweekly
         url: https://zoom.us/j/92615874244?pwd=VGhxZlJjRTNRWTZIS0dQV2MrZUJ5dz09
         archive_url: https://docs.google.com/document/d/1aExJFtaLnO-TM6_2uILgI8NI0IjOm7FcwLABBKEMEo0/edit
-        recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP30qNanabU75ayPK7OPNAAS
+        recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2io2Gg92njBfh-DX9sk7O3
         calendar_url: https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com
     contact:
       slack: wg-serving
