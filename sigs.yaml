@@ -2413,14 +2413,15 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-finalizer/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
         leads:
-          - github: astoycos
-            name: Andrew Stoycos
           - github: danwinship
             name: Dan Winship
             company: Red Hat
-          - github: dyanngg
-            name: Yang Ding
-            company: VMWare
+          - github: npinaeva
+            name: Nadia Pinaeva
+            company: NVIDIA
+          - github: tssurya
+            name: Surya Seetharaman
+            company: Red Hat
       - name: node-ipam-controller
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/node-ipam-controller/main/OWNERS
