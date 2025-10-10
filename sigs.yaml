@@ -3483,7 +3483,7 @@ workinggroups:
         day: Thursday
         time: "10:00"
         tz: PT (Pacific Time)
-        frequency: weekly
+        frequency: biweekly
         url: https://zoom.us/j/95480364337
         archive_url: https://docs.google.com/document/d/1qlW1LkibOoiMio-hbJucRjOYeKT8mNaQ4awwzf0bi8M/edit
         calendar_url: https://www.google.com/calendar/event?eid=NWFpanZpOG0ycnVldDY5bWs0dDUwdmRyNTFfMjAyNTA5MDRUMTcwMDAwWiBjYWxlbmRhckBrdWJlcm5ldGVzLmlv
