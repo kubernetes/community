@@ -2359,9 +2359,6 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/controllers/service/OWNERS
         leads:
-          - github: mlavacca
-            name: Mattia Lavacca
-            company: Kong
           - github: robscott
             name: Rob Scott
             company: Google
@@ -2401,6 +2398,9 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/multi-network-api/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/multi-network/main/OWNERS
         leads:
+          - github: LionelJouin
+            name: Lionel Jouin
+            company: Red Hat
           - github: mskrocki
             name: Maciej Skrocki
             company: Google
@@ -2413,14 +2413,15 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-finalizer/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
         leads:
-          - github: astoycos
-            name: Andrew Stoycos
           - github: danwinship
             name: Dan Winship
             company: Red Hat
-          - github: dyanngg
-            name: Yang Ding
-            company: VMWare
+          - github: npinaeva
+            name: Nadia Pinaeva
+            company: NVIDIA
+          - github: tssurya
+            name: Surya Seetharaman
+            company: Red Hat
       - name: node-ipam-controller
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/node-ipam-controller/main/OWNERS

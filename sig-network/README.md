@@ -96,7 +96,6 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
 ### gateway-api
 - **Leads:**
-  - Mattia Lavacca (**[@mlavacca](https://github.com/mlavacca)**), Kong
   - Rob Scott (**[@robscott](https://github.com/robscott)**), Google
   - Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Red Hat
   - Nick Young (**[@youngnick](https://github.com/youngnick)**), Isovalent
@@ -135,6 +134,7 @@ Gateway API Inference Extension
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
 ### multi-network
 - **Leads:**
+  - Lionel Jouin (**[@LionelJouin](https://github.com/LionelJouin)**), Red Hat
   - Maciej Skrocki (**[@mskrocki](https://github.com/mskrocki)**), Google
 - **Owners:**
   - [kubernetes-sigs/multi-network-api](https://github.com/kubernetes-sigs/multi-network-api/blob/main/OWNERS)
@@ -143,9 +143,9 @@ Gateway API Inference Extension
   - Slack: [#sig-network-multi-network](https://kubernetes.slack.com/messages/sig-network-multi-network)
 ### network-policy
 - **Leads:**
-  - Andrew Stoycos (**[@astoycos](https://github.com/astoycos)**)
   - Dan Winship (**[@danwinship](https://github.com/danwinship)**), Red Hat
-  - Yang Ding (**[@dyanngg](https://github.com/dyanngg)**), VMWare
+  - Nadia Pinaeva (**[@npinaeva](https://github.com/npinaeva)**), NVIDIA
+  - Surya Seetharaman (**[@tssurya](https://github.com/tssurya)**), Red Hat
 - **Owners:**
   - [kubernetes-sigs/kube-network-policies](https://github.com/kubernetes-sigs/kube-network-policies/blob/master/OWNERS)
   - [kubernetes-sigs/network-policy-api](https://github.com/kubernetes-sigs/network-policy-api/blob/master/OWNERS)
