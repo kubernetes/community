@@ -55,6 +55,12 @@ Security Documents and Documentation
   - [kubernetes/sig-security/sig-security-docs](https://github.com/kubernetes/sig-security/blob/main/sig-security-docs/OWNERS)
 - **Contact:**
   - Slack: [#sig-security-docs](https://kubernetes.slack.com/messages/sig-security-docs)
+### security-self-assessments
+Security self-assessments for K8s subprojects
+- **Owners:**
+  - [kubernetes/sig-security/sig-security-assessments](https://github.com/kubernetes/sig-security/blob/main/sig-security-assessments/OWNERS)
+- **Contact:**
+  - Slack: [#sig-security-assessments](https://kubernetes.slack.com/messages/sig-security-assessments)
 ### security-tooling
 Development and Enhancements of Security Tooling
 - **Owners:**
