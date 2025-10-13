@@ -532,6 +532,7 @@ channels:
   - name: surveys
   - name: summit-staff
   - name: suse-caasp
+  - name: syself
   - name: talk-proposals
     archived: true
   - name: tanzu-community-edition
