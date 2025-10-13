@@ -18,7 +18,7 @@ As a KEP wrangler you should make sure that the KEPs assigned to you are abiding
 
 ## Signing up to be a wrangler
 
-If you're interested in becoming a wrangler and helping us out, wait for the wrangler signup form in the [SIG Node mailing list](https://groups.google.com/g/kubernetes-sig-node) during the initial weeks of a release cycle.
+If you're interested in becoming a wrangler and helping us out, wait for the wrangler signup form in the [SIG Node mailing list](https://groups.google.com/a/kubernetes.io/g/sig-node) during the initial weeks of a release cycle.
 
 ## Resources
 
@@ -48,28 +48,24 @@ The SIG Node chairs selects a wrangler lead for each cycle. If you've been a KEP
 
 ## Reporting
 
-In order to assess the status of KEPs throughout the release, we plan to post a report of the KEPs every week in the [#sig-node-wranglers](https://kubernetes.slack.com/archives/C092ZDBRU64) channel. This can be done on Tuesdays before the weekly SIG Node meetings.
+In order to assess the status of KEPs throughout the release, we plan to post reports of the KEPs in the [#sig-node-wranglers](https://kubernetes.slack.com/archives/C092ZDBRU64) channel.
 
-Use the following templates to post the metrics of KEPs:
+### Status Update Templates
 
-#### Before enhancements freeze
+Use this template for updates before each major deadline (PRR Freeze, Enhancements Freeze, Code Freeze, Docs Freeze):
 
-```md
-Metrics:
+> **Status of my assigned KEPs to wrangle - [Deadline Name]:**
+> 
+> KEP [#XXXX](https://github.com/kubernetes/enhancements/pull/XXXX): 🟢 Tracked for [Deadline Name]: [Details if needed such as link to KEP PR]  
+> KEP [#XXXX](https://github.com/kubernetes/enhancements/pull/XXXX): 🟡 [Description of requirements met and what external action item it is waiting on]  
+> KEP [#XXXX](https://github.com/kubernetes/enhancements/pull/XXXX): 🔴 At Risk for [Deadline Name]: [Description of blockers and outreach efforts]  
+> KEP [#XXXX](https://github.com/kubernetes/enhancements/pull/XXXX): Moved to next release: [Brief details for deferral]
 
-By Stage
-- Alpha:
-- Beta:
-- Stable:
-- Deprecation:
+### KEP Metrics Templates
 
-By Status
-- Tracked for enhancemnets freeze: 
-- At risk for enhancements freeze:
-- Removed from milestone: 
-```
+Use this template to post the metrics of KEPs on Tuesdays before the weekly SIG Node meetings:
 
-#### Before code freeze 
+#### Weekly KEP Metrics
 
 ```md
 Metrics:
@@ -81,24 +77,7 @@ By Stage
 - Deprecation:
 
 By Status
-- Tracked for code freeze: 
-- At risk for code freeze:
-- Removed from milestone: 
-```
-
-#### Before docs freeze
-
-```md
-Metrics:
-
-By Stage
-- Alpha:
-- Beta:
-- Stable:
-- Deprecation:
-
-By Status
-- Tracked for docs freeze: 
-- At risk for docs freeze:
-- Removed from milestone: 
+- Tracked:
+- At risk:
+- Removed:
 ```
