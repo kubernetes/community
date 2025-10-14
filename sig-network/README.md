@@ -126,6 +126,9 @@ Gateway API Inference Extension
 ### iptables-wrappers
 - **Owners:**
   - [kubernetes-sigs/iptables-wrappers](https://github.com/kubernetes-sigs/iptables-wrappers/blob/master/OWNERS)
+### kindnet
+- **Owners:**
+  - [kubernetes-sigs/kindnet](https://github.com/kubernetes-sigs/kindnet/blob/main/OWNERS)
 ### knftables
 - **Owners:**
   - [kubernetes-sigs/knftables](https://github.com/kubernetes-sigs/knftables/blob/master/OWNERS)
