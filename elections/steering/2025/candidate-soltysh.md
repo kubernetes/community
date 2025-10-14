@@ -55,6 +55,7 @@ applications.
 
 ## Resources About Me
 
+- Github: [@soltysh](https://github.com/soltysh/)
 - Bluesky: [@soltysh.bsky.social](https://bsky.app/profile/soltysh.bsky.social)
 - Twitter: [@soltysh](https://twitter.com/soltysh)
 - LinkedIn: [Maciej Szulik](https://www.linkedin.com/in/maciejszulik/)
