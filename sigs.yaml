@@ -2888,6 +2888,9 @@ sigs:
       - name: descheduler
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/descheduler/master/OWNERS
+      - name: dra-driver-topology
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/dra-driver-topology/main/OWNERS
       - name: kube-scheduler-simulator
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/kube-scheduler-simulator/master/OWNERS

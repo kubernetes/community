@@ -78,6 +78,9 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
 ### descheduler
 - **Owners:**
   - [kubernetes-sigs/descheduler](https://github.com/kubernetes-sigs/descheduler/blob/master/OWNERS)
+### dra-driver-topology
+- **Owners:**
+  - [kubernetes-sigs/dra-driver-topology](https://github.com/kubernetes-sigs/dra-driver-topology/blob/main/OWNERS)
 ### kube-scheduler-simulator
 - **Owners:**
   - [kubernetes-sigs/kube-scheduler-simulator](https://github.com/kubernetes-sigs/kube-scheduler-simulator/blob/master/OWNERS)
