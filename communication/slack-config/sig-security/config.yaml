@@ -8,4 +8,4 @@ channels:
   - name: sig-security-assess-vsphere-csi-driver
     archived: true
   - name: sig-security-assess-capi
-    arhcived: true
+    archived: true
