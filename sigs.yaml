@@ -2971,6 +2971,12 @@ sigs:
           slack: sig-security-docs
         owners:
           - https://raw.githubusercontent.com/kubernetes/sig-security/main/sig-security-docs/OWNERS
+      - name: security-self-assessments
+        description: Security self-assessments for K8s subprojects
+        contact:
+          slack: sig-security-assessments
+        owners:
+          - https://raw.githubusercontent.com/kubernetes/sig-security/main/sig-security-assessments/OWNERS
       - name: security-tooling
         description: Development and Enhancements of Security Tooling
         contact:
