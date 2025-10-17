@@ -66,6 +66,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 The following [working groups][working-group-definition] are sponsored by sig-auth:
 * [WG AI Integration](/wg-ai-integration)
+* [WG Checkpoint Restore](/wg-checkpoint-restore)
 
 
 ## Subprojects

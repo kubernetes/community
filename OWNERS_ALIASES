@@ -146,6 +146,11 @@ aliases:
     - kannon92
     - mwielgus
     - tenzen-y
+  wg-checkpoint-restore-leads:
+    - adrianreber
+    - haircommander
+    - rst0git
+    - viktoriaas
   wg-data-protection-leads:
     - xing-yang
     - yuxiangqian
