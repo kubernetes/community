@@ -4199,3 +4199,8 @@ committees:
         description: Steering Committee policies, documentation, and funding requests
         owners:
           - https://raw.githubusercontent.com/kubernetes/steering/master/OWNERS
+gb_rep:
+  github: cblecker
+  name: Christoph Blecker
+  company: Red Hat
+  email: cblecker@gmail.com
