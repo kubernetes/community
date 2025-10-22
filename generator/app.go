@@ -477,6 +477,11 @@ func (c *Context) Validate() []error {
 			}
 			for prefix, persons := range group.Leadership.PrefixToPersonMap() {
 				for _, person := range persons {
+					if person.GitHub == "" {
+						errors = append(errors, fmt.Errorf("%s: %s: github is empty but should be set", group.Dir, prefix))
+						// without github key we can't check the rest, and this is going to fail validation anyhow
+						continue
+					}
 					if val, ok := people[person.GitHub]; ok {
 						// non-emeritus must have email and company set
 						if prefix != "emeritus_lead" {
