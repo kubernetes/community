@@ -351,6 +351,7 @@ type Context struct {
 	WorkingGroups []Group
 	UserGroups    []Group
 	Committees    []Group
+	GBRep         Person `yaml:"gb_rep,omitempty"`
 }
 
 func index(groups []Group, predicate func(Group) bool) int {
@@ -443,7 +444,25 @@ func (c *Context) Validate() []error {
 	// people with potentially differing info, versus referring to leads by
 	// github handle within each SIG and then keeping this map alongside the SIGs
 	// This could break external tooling parsing the file though.
-	people := make(map[string]Person)
+	people := map[string]Person{
+		// This is a singleton role, but we will compare it to other entries
+		// for consistency in case of dual-role persons holding this role
+		c.GBRep.GitHub: c.GBRep,
+	}
+	// validate GBrep
+	// TODO: this logic could all be DRY-ed a bit
+	if c.GBRep.GitHub == "" {
+		errors = append(errors, fmt.Errorf("GBRep: github is empty but should be set"))
+	}
+	if c.GBRep.Company == "" {
+		errors = append(errors, fmt.Errorf("GBRep: company is empty but should be set"))
+	}
+	if c.GBRep.Email == "" {
+		errors = append(errors, fmt.Errorf("GBRep: email is empty but should be set"))
+	}
+	if c.GBRep.Name == "" {
+		errors = append(errors, fmt.Errorf("GBRep: name is empty but should be set"))
+	}
 	reRawGitHubURL := regexp.MustCompile(regexRawGitHubURL)
 	reGitHubURL := regexp.MustCompile(regexGitHubURL)
 	for prefix, groups := range c.PrefixToGroupMap() {
@@ -458,6 +477,11 @@ func (c *Context) Validate() []error {
 			}
 			for prefix, persons := range group.Leadership.PrefixToPersonMap() {
 				for _, person := range persons {
+					if person.GitHub == "" {
+						errors = append(errors, fmt.Errorf("%s: %s: github is empty but should be set", group.Dir, prefix))
+						// without github key we can't check the rest, and this is going to fail validation anyhow
+						continue
+					}
 					if val, ok := people[person.GitHub]; ok {
 						// non-emeritus must have email and company set
 						if prefix != "emeritus_lead" {
@@ -1101,7 +1125,9 @@ func prepForAnnualReportGeneration() error {
 }
 
 func generateCNCFMaintainersList(ctx *Context) error {
-	maintainers := map[string]Person{}
+	maintainers := map[string]Person{
+		ctx.GBRep.GitHub: ctx.GBRep,
+	}
 	serviceDesk := map[string]bool{}
 	for _, group := range ctx.Committees {
 		if group.Name == "Steering" {
