@@ -161,6 +161,7 @@ channels:
   - name: gke
   - name: gloo
   - name: gophercloud
+  - name: gpu-nvidia
   - name: grafana-operator
   - name: haproxy-ingress
   - name: headlamp
