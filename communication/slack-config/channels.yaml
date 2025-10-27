@@ -526,6 +526,7 @@ channels:
   - name: solr-operator
   - name: sonobuoy
   - name: spark-operator
+    archived: true
   - name: spegel
   - name: spinnaker
   - name: sre
