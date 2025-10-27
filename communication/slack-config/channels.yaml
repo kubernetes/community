@@ -504,6 +504,7 @@ channels:
   - name: sig-instrumentation
   - name: sig-multicluster
   - name: sig-network
+  - name: sig-network-agentic-networking
   - name: sig-network-kni
   - name: sig-network-multi-network
   # sig-node channels are defined in sig-node/
