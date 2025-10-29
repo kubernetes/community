@@ -110,6 +110,9 @@ The following [subprojects][subproject-definition] are owned by sig-node:
   - [kubernetes/test-infra/config/jobs/kubernetes/node-problem-detector](https://github.com/kubernetes/test-infra/blob/master/config/jobs/kubernetes/node-problem-detector/OWNERS)
 - **Contact:**
   - Slack: [#node-problem-detector](https://kubernetes.slack.com/messages/node-problem-detector)
+### node-readiness-controller
+- **Owners:**
+  - [kubernetes-sigs/node-readiness-controller](https://github.com/kubernetes-sigs/node-readiness-controller/blob/main/OWNERS)
 ### resource-management
 - **Owners:**
   - [kubernetes-sigs/dra-example-driver](https://github.com/kubernetes-sigs/dra-example-driver/blob/main/OWNERS)

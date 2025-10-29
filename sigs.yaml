@@ -2550,6 +2550,9 @@ sigs:
         owners:
           - https://raw.githubusercontent.com/kubernetes/node-problem-detector/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes/test-infra/master/config/jobs/kubernetes/node-problem-detector/OWNERS
+      - name: node-readiness-controller
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/node-readiness-controller/main/OWNERS
       - name: resource-management
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/dra-example-driver/main/OWNERS
