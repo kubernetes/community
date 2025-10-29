@@ -3333,6 +3333,10 @@ sigs:
           name: Sebastian Florek
           company: Plural
           email: sebastian@plural.sh
+        - github: joaquimrocha
+          name: Joaquim Rocha
+          company: Microsoft
+          email: me@joaquimrocha.com
         - github: maciaszczykm
           name: Marcin Maciaszczyk
           company: Plural
