@@ -834,11 +834,6 @@ sigs:
         description: Centralized plugin index for krew.
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/krew-index/master/OWNERS
-      - name: krm-functions
-        contact:
-          slack: sig-cli-krm-functions
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/krm-functions-registry/main/OWNERS
       - name: kubectl
         owners:
           - https://raw.githubusercontent.com/kubernetes/kubectl/master/OWNERS
