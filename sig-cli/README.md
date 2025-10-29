@@ -90,11 +90,6 @@ Plugin manager for kubectl.
 Centralized plugin index for krew.
 - **Owners:**
   - [kubernetes-sigs/krew-index](https://github.com/kubernetes-sigs/krew-index/blob/master/OWNERS)
-### krm-functions
-- **Owners:**
-  - [kubernetes-sigs/krm-functions-registry](https://github.com/kubernetes-sigs/krm-functions-registry/blob/main/OWNERS)
-- **Contact:**
-  - Slack: [#sig-cli-krm-functions](https://kubernetes.slack.com/messages/sig-cli-krm-functions)
 ### kubectl
 - **Owners:**
   - [kubernetes/kubectl](https://github.com/kubernetes/kubectl/blob/master/OWNERS)
