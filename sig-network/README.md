@@ -132,6 +132,9 @@ Gateway API Inference Extension
 ### knftables
 - **Owners:**
   - [kubernetes-sigs/knftables](https://github.com/kubernetes-sigs/knftables/blob/master/OWNERS)
+### kube-agentic-networking
+- **Owners:**
+  - [kubernetes-sigs/kube-agentic-networking](https://github.com/kubernetes-sigs/kube-agentic-networking/blob/main/OWNERS)
 ### kube-dns
 - **Owners:**
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
