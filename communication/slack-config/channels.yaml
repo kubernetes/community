@@ -484,6 +484,7 @@ channels:
   - name: sig-autoscaling-api
   - name: sig-cli
   - name: sig-cli-krm-functions
+    archived: true
   - name: sig-clstr-life-leads
   - name: sig-cluster-lifecycle
   - name: sig-cluster-ops
