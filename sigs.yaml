@@ -2703,6 +2703,7 @@ sigs:
             - name: release-team-release-notes
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/release-team-shadow-stats/main/OWNERS
+          - https://raw.githubusercontent.com/kubernetes-sigs/signalhound/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
         leads:
           - github: gracenng

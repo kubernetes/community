@@ -107,6 +107,7 @@ The Kubernetes Release Team is responsible for the day-to-day work required to s
   - Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Independent
 - **Owners:**
   - [kubernetes-sigs/release-team-shadow-stats](https://github.com/kubernetes-sigs/release-team-shadow-stats/blob/main/OWNERS)
+  - [kubernetes-sigs/signalhound](https://github.com/kubernetes-sigs/signalhound/blob/main/OWNERS)
   - [kubernetes/sig-release/release-team](https://github.com/kubernetes/sig-release/blob/master/release-team/OWNERS)
 - **Contact:**
   - [Mailing List](https://groups.google.com/a/kubernetes.io/g/release-team)
