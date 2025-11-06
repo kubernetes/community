@@ -3663,6 +3663,43 @@ workinggroups:
       liaison:
         github: aojea
         name: Antonio Ojea
+  - dir: wg-checkpoint-restore
+    name: Checkpoint Restore
+    mission_statement: >
+      This working group aims to provide a central location for the community to discuss the integration of Checkpoint/Restore functionality into Kubernetes.
+
+    charter_link: charter.md
+    stakeholder_sigs:
+      - Apps
+      - Auth
+      - Node
+      - Scheduling
+    label: checkpoint-restore
+    leadership:
+      chairs:
+        - github: adrianreber
+          name: Adrian Reber
+          company: Red Hat
+          email: areber@redhat.com
+        - github: haircommander
+          name: Peter Hunt
+          company: Red Hat
+          email: pehunt@redhat.com
+        - github: rst0git
+          name: Radostin Stoyanov
+          company: University of Oxford
+          email: radostin.stoyanov@eng.ox.ac.uk
+        - github: viktoriaas
+          name: Viktória Spišaková
+          company: Masaryk University
+          email: spisakova@ics.muni.cz
+    meetings: []
+    contact:
+      slack: wg-checkpoint-restore
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-checkpoint-restore
+      liaison:
+        github: BenTheElder
+        name: Benjamin Elder
   - dir: wg-data-protection
     name: Data Protection
     mission_statement: >
