@@ -1582,7 +1582,7 @@ sigs:
       tech_leads:
         - github: katcosgrove
           name: Kat Cosgrove
-          company: Dell
+          company: Minimus
           email: kat.cosgrove@gmail.com
         - github: salaxander
           name: Xander Grzywinski
@@ -2712,7 +2712,7 @@ sigs:
             email: nng.grace@gmail.com
           - github: katcosgrove
             name: Kat Cosgrove
-            company: Independent
+            company: Minimus
             email: kat.cosgrove@gmail.com
       - name: SIG Release Process Documentation
         description: |
