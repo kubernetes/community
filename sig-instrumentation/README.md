@@ -50,7 +50,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-instrumentation-approvers](https://github.com/orgs/kubernetes/teams/sig-instrumentation-approvers) - SIG Top-level Approvers
     - [@kubernetes/sig-instrumentation-leads](https://github.com/orgs/kubernetes/teams/sig-instrumentation-leads) - SIG Chairs and Tech Leads
     - [@kubernetes/sig-instrumentation-members](https://github.com/orgs/kubernetes/teams/sig-instrumentation-members) - SIG Membership Roster
-- Steering Committee Liaison: Patrick Ohly (**[@pohly](https://github.com/pohly)**)
+- Steering Committee Liaison: Rita Zhang (**[@ritazh](https://github.com/ritazh)**)
 
 ## Working Groups
 

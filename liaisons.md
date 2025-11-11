@@ -33,76 +33,76 @@ members will assume one of the departing members groups.
 | [SIG API Machinery](sig-api-machinery/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
 | [SIG Apps](sig-apps/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [SIG Architecture](sig-architecture/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
-| [SIG Auth](sig-auth/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
+| [SIG Auth](sig-auth/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
 | [SIG Autoscaling](sig-autoscaling/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [SIG CLI](sig-cli/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG Cloud Provider](sig-cloud-provider/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [SIG Cluster Lifecycle](sig-cluster-lifecycle/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
-| [SIG Contributor Experience](sig-contributor-experience/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
-| [SIG Docs](sig-docs/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
+| [SIG Contributor Experience](sig-contributor-experience/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
+| [SIG Docs](sig-docs/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
 | [SIG etcd](sig-etcd/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
-| [SIG Instrumentation](sig-instrumentation/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
-| [SIG K8s Infra](sig-k8s-infra/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
+| [SIG Instrumentation](sig-instrumentation/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
+| [SIG K8s Infra](sig-k8s-infra/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
 | [SIG Multicluster](sig-multicluster/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [SIG Network](sig-network/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [SIG Node](sig-node/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
-| [SIG Release](sig-release/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
+| [SIG Release](sig-release/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
 | [SIG Scalability](sig-scalability/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [SIG Scheduling](sig-scheduling/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
-| [SIG Security](sig-security/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
+| [SIG Security](sig-security/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
 | [SIG Storage](sig-storage/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG Testing](sig-testing/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG UI](sig-ui/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [SIG Windows](sig-windows/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
-| [WG AI Conformance](wg-ai-conformance/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
-| [WG AI Gateway](wg-ai-gateway/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
+| [WG AI Conformance](wg-ai-conformance/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
+| [WG AI Gateway](wg-ai-gateway/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
 | [WG AI Integration](wg-ai-integration/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [WG Batch](wg-batch/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [WG Checkpoint Restore](wg-checkpoint-restore/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
-| [WG Data Protection](wg-data-protection/README.md) | Patrick Ohly (**[@pohly](https://github.com/pohly)**) |
+| [WG Data Protection](wg-data-protection/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
 | [WG Device Management](wg-device-management/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG etcd Operator](wg-etcd-operator/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [WG LTS](wg-lts/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
-| [WG Node Lifecycle](wg-node-lifecycle/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
+| [WG Node Lifecycle](wg-node-lifecycle/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
 | [WG Serving](wg-serving/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
-| [WG Structured Logging](wg-structured-logging/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
-| [Committee Code of Conduct](committee-code-of-conduct/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
-| [Committee Security Response](committee-security-response/README.md) | Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**) |
+| [WG Structured Logging](wg-structured-logging/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
+| [Committee Code of Conduct](committee-code-of-conduct/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
+| [Committee Security Response](committee-security-response/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
 <!-- BEGIN CUSTOM CONTENT -->
 ## Expectations
-### Liaison will: 
+### Liaison will:
 - Alert leads the Annual Report process is starting, expectations, and timeline
 - Check-ins with their groups at least once a quarter. This could mean a group DM
-with Chairs, a visit to a group meeting, or some other connection. Get a pulse 
+with Chairs, a visit to a group meeting, or some other connection. Get a pulse
 on health of the following:
   - Contributor base
     - Chairs and other leads: How are they?
     - Contributors, reviewers, approvers: How are they?
     - Newcomers: able to efficiently join and contribute?
   - Operational Health
-    - Transparency of meetings and decision processes (eg: published meeting 
+    - Transparency of meetings and decision processes (eg: published meeting
   agendas, minutes, and video recordings)
-    - Communication best practices for shared status and decision making across 
+    - Communication best practices for shared status and decision making across
   a WG and its sponsor SIG(s) and a SIG and its subprojects
     - Provide consultation on how to improve operational health
   - Gap Analysis
     - Where is the group now and where do they want/need to be?
-- Act as conduit for incoming cross-cutting deliverables requirements, such as 
+- Act as conduit for incoming cross-cutting deliverables requirements, such as
 ones relative to test, infra, org, docs, etc.
-- Check that sustainability is a priority. 
-  - What is the group doing to ensure contributions are sustainable? 
-  - What does the group need in order to keep things going? 
+- Check that sustainability is a priority.
+  - What is the group doing to ensure contributions are sustainable?
+  - What does the group need in order to keep things going?
   - Are there areas of concern?
-- Update Steering Committee keep the Steering Committee in the loop and keep 
+- Update Steering Committee keep the Steering Committee in the loop and keep
 track of trackable (ie: not sensitive) work in public issues.
-- Advise on funding matters - how to request and other inquiries 
+- Advise on funding matters - how to request and other inquiries
 - Connect leads to whatever they need, when they ask. (if possible!)
 
 ### Liaisons should:
-- Communicate with their groups on important business that happens at Steering 
-level (via our meetings, etc) in order for Steering to achieve a pulse on the 
-work we are doing and acknowledge governance changes. 
-  - Example: if Steering is crafting a new policy, check in with the chairs to 
+- Communicate with their groups on important business that happens at Steering
+level (via our meetings, etc) in order for Steering to achieve a pulse on the
+work we are doing and acknowledge governance changes.
+  - Example: if Steering is crafting a new policy, check in with the chairs to
 see how it would fare with their groups.
 
 <!-- END CUSTOM CONTENT -->
