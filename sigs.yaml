@@ -1582,7 +1582,7 @@ sigs:
       tech_leads:
         - github: katcosgrove
           name: Kat Cosgrove
-          company: Dell
+          company: Minimus
           email: kat.cosgrove@gmail.com
         - github: salaxander
           name: Xander Grzywinski
@@ -2712,7 +2712,7 @@ sigs:
             email: nng.grace@gmail.com
           - github: katcosgrove
             name: Kat Cosgrove
-            company: Independent
+            company: Minimus
             email: kat.cosgrove@gmail.com
       - name: SIG Release Process Documentation
         description: |
@@ -4195,18 +4195,18 @@ committees:
           name: Antonio Ojea
           company: Google
           email: aojea@google.com
-        - github: justaugustus
-          name: Stephen Augustus
-          company: Bloomberg
-          email: k8s@auggie.dev
+        - github: katcosgrove
+          name: Kat Cosgrove
+          company: Minimus
+          email: kat.cosgrove@gmail.com
         - github: pacoxu
           name: Paco Xu 徐俊杰
           company: DaoCloud
           email: roollingstone@gmail.com
-        - github: pohly
-          name: Patrick Ohly
-          company: Intel
-          email: patrick.ohly@intel.com
+        - github: ritazh
+          name: Rita Zhang
+          company: Microsoft
+          email: ritazh@microsoft.com
         - github: saschagrunert
           name: Sascha Grunert
           company: Red Hat

@@ -104,7 +104,7 @@ The Release Engineering subproject is responsible for the [process/procedures](h
 The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
 - **Leads:**
   - Grace Nguyen (**[@gracenng](https://github.com/gracenng)**), Notion
-  - Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Independent
+  - Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Minimus
 - **Owners:**
   - [kubernetes-sigs/release-team-shadow-stats](https://github.com/kubernetes-sigs/release-team-shadow-stats/blob/main/OWNERS)
   - [kubernetes-sigs/signalhound](https://github.com/kubernetes-sigs/signalhound/blob/main/OWNERS)
