@@ -227,6 +227,7 @@ Administrators seats: 6
 | Ihor Dvoretskyi | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
 | Marky Jackson   | @markyjackson-taulia| Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Nigel Brown     | @nigel              | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
+| Chad Crowell    | @chad               | EMEA     | [CET - Central European Time](https://time.is/CET)      |
 
 - License and main account controlled by the CNCF
 
