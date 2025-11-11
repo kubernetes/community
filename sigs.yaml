@@ -3696,7 +3696,7 @@ workinggroups:
     meetings: []
     contact:
       slack: wg-checkpoint-restore
-      mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-checkpoint-restore
+      mailing_list: https://groups.google.com/g/kubernetes-wg-checkpoint-restore
       liaison:
         github: BenTheElder
         name: Benjamin Elder
