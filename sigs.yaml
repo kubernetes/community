@@ -3505,7 +3505,7 @@ workinggroups:
         frequency: biweekly
         url: https://zoom.us/j/95480364337
         archive_url: https://docs.google.com/document/d/1qlW1LkibOoiMio-hbJucRjOYeKT8mNaQ4awwzf0bi8M/edit
-        calendar_url: https://www.google.com/calendar/event?eid=NWFpanZpOG0ycnVldDY5bWs0dDUwdmRyNTFfMjAyNTA5MDRUMTcwMDAwWiBjYWxlbmRhckBrdWJlcm5ldGVzLmlv
+        calendar_url: https://calendar.google.com/calendar/embed?src=a574542f85d51cb4624145f13307810c9e23bc9096cfbb83f6205cc7acee34b6%40group.calendar.google.com
     contact:
       slack: wg-ai-conformance
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance
