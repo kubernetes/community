@@ -287,21 +287,26 @@ First, compile the E2E test suite with additional compiler flags
 make WHAT=test/e2e/e2e.test DBG=1
 ```
 
-Then set the env var `E2E_TEST_DEBUG_TOOL=delve` and then run the test with `./hack/ginkgo.sh` instead of `kubetest`, you should see the delve command line prompt
+Then set the env var `E2E_TEST_DEBUG_TOOL=delve` `KUBERNETES_CONFORMANCE_TEST=y` and then run the test with `./hack/ginkgo.sh` instead of `kubetest`, you should see the delve command line prompt
 
 ```sh
-E2E_TEST_DEBUG_TOOL=delve ./hack/ginkgo-e2e.sh --ginkgo.focus="sig-storage.*csi-hostpath.*Dynamic.PV.*default.fs.*provisioning.should.provision.storage.with.snapshot.data.source" --allowed-not-ready-nodes=10
+E2E_TEST_DEBUG_TOOL=delve KUBERNETES_CONFORMANCE_TEST=y ./hack/ginkgo-e2e.sh --ginkgo.focus="sig-storage.*csi-hostpath.*Dynamic.PV.*default.fs.*provisioning.should.provision.storage.with.snapshot.data.source" --allowed-not-ready-nodes=10
 ---
-Setting up for KUBERNETES_PROVIDER="gce".
-Project: ...
-Network Project: ...
-Zone: ...
-Trying to find master named '...'
-Looking for address '...'
-Using master: ... (external IP: XX.XXX.XXX.XX; internal IP: (not set))
+Conformance test: not doing test setup.
+API server listening at: [::]:2345
+2025-07-30T22:32:10+08:00 warn layer=rpc Listening for remote connections (connections are not authenticated nor encrypted)
+```
+
+Open another terminal and use `delve` to attach the e2e executable. If everything is fine, you should see the `delve` console
+
+```sh
+dlv connect 127.0.0.1:2345
+---
 Type 'help' for list of commands.
 (dlv)
 ```
+
+The default listening port of `delve` debugger is 2345 according to the official doc. You could modify the behavior by declaring `DELVE_PORT` environment variable when running `ginkgo-e2e.sh`.
 
 Use the commands described in the [delve command lists](https://github.com/go-delve/delve/blob/master/Documentation/cli/README.md), for our example we'll set a breakpoint at the start of the method
 
