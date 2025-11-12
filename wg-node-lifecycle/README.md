@@ -44,7 +44,7 @@ The [charter](charter.md) defines the scope and governance of the Node Lifecycle
 - Slack: [#wg-node-lifecycle](https://kubernetes.slack.com/messages/wg-node-lifecycle)
 - [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-node-lifecycle)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fnode-lifecycle)
-- Steering Committee Liaison: Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**)
+- Steering Committee Liaison: Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

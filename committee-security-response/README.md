@@ -36,7 +36,7 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/committee%2Fsecurity-response)
 - GitHub Teams:
     - [@kubernetes/security-response-committee](https://github.com/orgs/kubernetes/teams/security-response-committee) - General Discussion
-- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
+- Steering Committee Liaison: Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**)
 
 ## Subprojects
 

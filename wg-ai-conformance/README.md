@@ -32,7 +32,7 @@ The [charter](charter.md) defines the scope and governance of the AI Conformance
 - Slack: [#wg-ai-conformance](https://kubernetes.slack.com/messages/wg-ai-conformance)
 - [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fai-conformance)
-- Steering Committee Liaison: Patrick Ohly (**[@pohly](https://github.com/pohly)**)
+- Steering Committee Liaison: Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## AI Conformance Definition
