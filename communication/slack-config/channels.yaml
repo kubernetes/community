@@ -549,6 +549,7 @@ channels:
   - name: test-failures
   - name: tilt
   - name: tn-users
+  - name: tofu-controller
   - name: topology-aware-scheduling
   - name: tor-controller
   - name: tr-events
