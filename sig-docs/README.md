@@ -85,7 +85,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-docs-ru-owners](https://github.com/orgs/kubernetes/teams/sig-docs-ru-owners) - Russian language content
     - [@kubernetes/sig-docs-uk-owners](https://github.com/orgs/kubernetes/teams/sig-docs-uk-owners) - Ukrainian language content
     - [@kubernetes/sig-docs-zh-owners](https://github.com/orgs/kubernetes/teams/sig-docs-zh-owners) - Chinese language content
-- Steering Committee Liaison: Stephen Augustus (**[@justaugustus](https://github.com/justaugustus)**)
+- Steering Committee Liaison: Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**)
 
 ## Subprojects
 

@@ -522,8 +522,8 @@ sigs:
         - name: sig-auth-test-failures
           description: Test Failures and Triage
       liaison:
-        github: pohly
-        name: Patrick Ohly
+        github: katcosgrove
+        name: Kat Cosgrove
     subprojects:
       - name: audit-logging
         description: |
@@ -1475,8 +1475,8 @@ sigs:
         - name: sig-contributor-experience-pr-reviews
           description: PR Reviews
       liaison:
-        github: aojea
-        name: Antonio Ojea
+        github: ritazh
+        name: Rita Zhang
     subprojects:
       - name: community
         description: Owns and manages overall community repo, including community group documentation and operations.
@@ -1701,8 +1701,8 @@ sigs:
         - name: sig-docs-zh-owners
           description: Chinese language content
       liaison:
-        github: justaugustus
-        name: Stephen Augustus
+        github: katcosgrove
+        name: Kat Cosgrove
     subprojects:
       - name: kubernetes-blog
         owners:
@@ -1926,8 +1926,8 @@ sigs:
         - name: sig-instrumentation-members
           description: SIG Membership Roster
       liaison:
-        github: pohly
-        name: Patrick Ohly
+        github: ritazh
+        name: Rita Zhang
     subprojects:
       - name: custom-metrics-apiserver
         owners:
@@ -2041,8 +2041,8 @@ sigs:
         - name: sig-k8s-infra-leads
           description: sig-k8s-infra chairs and tech leads
       liaison:
-        github: justaugustus
-        name: Stephen Augustus
+        github: ritazh
+        name: Rita Zhang
     subprojects:
       - name: community-images
         description: kubectl plugin used to highlight images pulled from community-owned registries
@@ -2639,8 +2639,8 @@ sigs:
         - name: sig-release-leads
           description: Chairs, Technical Leads, and Program Managers for SIG Release
       liaison:
-        github: saschagrunert
-        name: Sascha Grunert
+        github: ritazh
+        name: Rita Zhang
     subprojects:
       - name: Release Engineering
         description: |
@@ -2960,8 +2960,8 @@ sigs:
         - name: sig-security-pr-reviews
           description: SIG Security PR review notifications
       liaison:
-        github: justaugustus
-        name: Stephen Augustus
+        github: katcosgrove
+        name: Kat Cosgrove
     subprojects:
       - name: security-audit
         description: Third Party Security Audit
@@ -3510,8 +3510,8 @@ workinggroups:
       slack: wg-ai-conformance
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance
       liaison:
-        github: pohly
-        name: Patrick Ohly
+        github: saschagrunert
+        name: Sascha Grunert
   - dir: wg-ai-gateway
     name: AI Gateway
     mission_statement: >
@@ -3563,8 +3563,8 @@ workinggroups:
       slack: wg-ai-gateway
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-gateway
       liaison:
-        github: justaugustus
-        name: Stephen Augustus
+        github: katcosgrove
+        name: Kat Cosgrove
   - dir: wg-ai-integration
     name: AI Integration
     mission_statement: >
@@ -3735,8 +3735,8 @@ workinggroups:
       slack: wg-data-protection
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-data-protection
       liaison:
-        github: pohly
-        name: Patrick Ohly
+        github: ritazh
+        name: Rita Zhang
   - dir: wg-device-management
     name: Device Management
     mission_statement: >
@@ -3946,8 +3946,8 @@ workinggroups:
       slack: wg-node-lifecycle
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-node-lifecycle
       liaison:
-        github: BenTheElder
-        name: Benjamin Elder
+        github: saschagrunert
+        name: Sascha Grunert
   - dir: wg-serving
     name: Serving
     mission_statement: >
@@ -4029,8 +4029,8 @@ workinggroups:
       slack: wg-structured-logging
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-structured-logging
       liaison:
-        github: saschagrunert
-        name: Sascha Grunert
+        github: aojea
+        name: Antonio Ojea
 usergroups: []
 committees:
   - dir: committee-code-of-conduct
@@ -4103,8 +4103,8 @@ committees:
         - name: code-of-conduct-committee
           description: General Discussion
       liaison:
-        github: saschagrunert
-        name: Sascha Grunert
+        github: BenTheElder
+        name: Benjamin Elder
   - dir: committee-security-response
     name: Security Response
     mission_statement: >
@@ -4171,8 +4171,8 @@ committees:
         - name: security-response-committee
           description: General Discussion
       liaison:
-        github: justaugustus
-        name: Stephen Augustus
+        github: katcosgrove
+        name: Kat Cosgrove
     subprojects:
       - name: committee-security-response
         description: Policies and documentation for the Security Response Committee
