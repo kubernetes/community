@@ -2303,10 +2303,10 @@ sigs:
         archive_url: https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit
         recordings_url: https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb
       - description: SIG Network Multi-Network Meeting
-        day: Wednesday
-        time: "08:00"
+        day: Tuesday
+        time: "06:00"
         tz: PT (Pacific Time)
-        frequency: weekly
+        frequency: biweekly starting Tuesday Oct 28, 2025
         url: https://zoom.us/j/95680858961?pwd=M1c2TTdMZHpMUUtIYXRpbjRobkNJZz09
         archive_url: https://docs.google.com/document/d/1pe_0aOsI35BEsQJ-FhFH9Z_pWQcU2uqwAnOx2NIx6OY/edit
         recordings_url: https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb
