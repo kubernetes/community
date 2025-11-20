@@ -11,3 +11,4 @@ channels:
   - name: sig-node-sidecar
   - name: sig-node-swap
   - name: sig-node-wranglers
+  - name: sig-node-readiness-controller
