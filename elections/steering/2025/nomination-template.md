@@ -2,8 +2,8 @@
 name: 
 ID: GitHubID
 info:
-  - employer: Your Employer or "Independent"
-  - slack: slack handle
+  employer: Your Employer or "Independent"
+  slack: slack handle
 -------------------------------------------------------------
 
 <!-- Please make a copy of this template as "candidate-githubid.md" and save it to
