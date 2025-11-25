@@ -232,10 +232,10 @@ You must share the meeting calendar with the following people:
 2. In **Access permissions**, check **Make available to public**.
 3. Under **Share with specific people, do the following:**
   - For each lead, contributors@kubernetes.io, and 
-  kubernetes-sig-foo-leads@googlegroups.com:
+    sig-foo-leads@kubernetes.io or kubernetes-sig-foo-leads@googlegroups.com (depending which group is active):
     1. Add their email
     2. Give them the permission **Make changes and manage sharing**. 
-  - For kubernetes-sig-foo@googlegroups.com, add them and give them the 
+  - For sig-foo@kubernetes.io or kubernetes-sig-foo@googlegroups.com (depending which group is active), add them and give them the 
   permission **See all event details**.
 
 > **Note:** You need to add the member's mailing list as a guest to any meeting 
