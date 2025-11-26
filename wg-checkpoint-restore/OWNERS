@@ -1,0 +1,9 @@
+# See the OWNERS docs at https://go.k8s.io/owners
+
+approvers:
+- wg-checkpoint-restore-leads
+reviewers:
+- wg-checkpoint-restore-leads
+
+labels:
+- wg/checkpoint-restore
