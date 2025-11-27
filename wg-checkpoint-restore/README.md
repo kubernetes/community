@@ -18,7 +18,11 @@ The [charter](charter.md) defines the scope and governance of the Checkpoint Res
 * [SIG Node](/sig-node)
 * [SIG Scheduling](/sig-scheduling)
 
-
+## Meetings
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-checkpoint-restore) for the group will typically add invites for the following meetings to your calendar.*
+* WG Checkpoint Restore Biweekly Meeting: [Thursdays at 17:00 UTC](https://zoom.us/j/95866823079) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17%3A00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1ZMtHBibXfTw4cQerM4O4DJonzVs3W7Hp2K5ml6pTufs/edit).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1P7F40IMVL3NsNiIm5AGos).
 
 ## Organizers
 
