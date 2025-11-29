@@ -42,6 +42,7 @@ found at [API Conventions](api-conventions.md).
     - [Ratcheting validation](#ratcheting-validation)
     - [New enum value in existing field](#new-enum-value-in-existing-field)
     - [New alpha API version](#new-alpha-api-version)
+    - [Managing Version Skew](#managing-version-skew)
 
 ## So you want to change the API?
 
@@ -1496,3 +1497,16 @@ client which uses the other version. Therefore, this is not a preferred option.
 A related issue is how a cluster manager can roll back from a new version
 with a new feature, that is already being used by users. See
 https://github.com/kubernetes/kubernetes/issues/4855.
+
+#### Managing Version Skew
+
+The **Node Declared Features** framework can be used to manage version skew
+for node-level features where the control plane must be aware of whether each node
+supports this feature to ensure compatibility while scheduling or admitting workloads.
+
+This framework allows nodes to advertise their capabilities, preventing the
+scheduler from placing pods on incompatible nodes and enabling admission
+control to validate API operations.
+
+For more details on how the framework operates and how to integrate
+with it, see [Node Declared Features](feature-gates.md#node-declared-features).
