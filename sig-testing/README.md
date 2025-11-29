@@ -74,7 +74,7 @@ Cloud provider for KIND clusters
 ### boskos
 Boskos is a resource manager service that handles different kinds of resources and transitions between different states. We use it on the Kubernetes project to manage pools of GCP projects for CI/CD.
 - **Leads:**
-  - Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon
+  - Davanum Srinivas (**[@dims](https://github.com/dims)**), NVIDIA
   - Mahamed Ali (**[@upodroid](https://github.com/upodroid)**), Cisco
 - **Owners:**
   - [kubernetes-sigs/boskos](https://github.com/kubernetes-sigs/boskos/blob/master/OWNERS)
@@ -86,7 +86,7 @@ An experimental e2e testing framework for Kubernetes clusters.
 ### hydrophone
 Hydrophone is a lightweight Kubernetes conformance tests runner
 - **Leads:**
-  - Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon
+  - Davanum Srinivas (**[@dims](https://github.com/dims)**), NVIDIA
   - Ricky Sadowski (**[@rjsadow](https://github.com/rjsadow)**), ICR Team
 - **Owners:**
   - [kubernetes-sigs/hydrophone](https://github.com/kubernetes-sigs/hydrophone/blob/main/OWNERS)

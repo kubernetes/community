@@ -1,4 +1,4 @@
-IMAGE_NAME=golang:1.18
+IMAGE_NAME=golang:1.22
 CONTAINER_ENGINE?=$(shell command -v docker 2>/dev/null || command -v podman 2>/dev/null)
 
 default: \
