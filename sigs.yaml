@@ -303,7 +303,7 @@ sigs:
           email: decarr@redhat.com
         - github: dims
           name: Davanum Srinivas
-          company: Amazon
+          company: NVIDIA
           email: davanum@gmail.com
         - github: johnbelamaric
           name: John Belamaric
@@ -3221,7 +3221,7 @@ sigs:
         leads:
           - github: dims
             name: Davanum Srinivas
-            company: Amazon
+            company: NVIDIA
             email: davanum@gmail.com
           - github: upodroid
             name: Mahamed Ali
@@ -3239,7 +3239,7 @@ sigs:
         leads:
           - github: dims
             name: Davanum Srinivas
-            company: Amazon
+            company: NVIDIA
             email: davanum@gmail.com
           - github: rjsadow
             name: Ricky Sadowski

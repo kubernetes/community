@@ -36,7 +36,7 @@ The [charter](charter.md) defines the scope and governance of the Architecture S
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Derek Carr (**[@derekwaynecarr](https://github.com/derekwaynecarr)**), Red Hat
-* Davanum Srinivas (**[@dims](https://github.com/dims)**), Amazon
+* Davanum Srinivas (**[@dims](https://github.com/dims)**), NVIDIA
 * John Belamaric (**[@johnbelamaric](https://github.com/johnbelamaric)**), Google
 
 ## Contact
