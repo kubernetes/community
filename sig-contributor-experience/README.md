@@ -28,7 +28,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Kaslin Fields (**[@kaslin](https://github.com/kaslin)**), Google
 * Mario Fahlandt (**[@mfahlandt](https://github.com/mfahlandt)**), Kubermatic GmbH
-* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), VMware
+* Nabarun Pal (**[@palnabarun](https://github.com/palnabarun)**), Broadcom
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
