@@ -775,7 +775,7 @@ The generators that create go code have a `--go-header-file` flag
 which should be a file that contains the header that should be
 included. This header is the copyright that should be present at the
 top of the generated file and should be checked with the
-[`repo-infra/verify/verify-boilerplane.sh`](https://git.k8s.io/repo-infra/verify/verify-boilerplate.sh)
+[`repo-infra/verify/verify-boilerplate.sh`](https://git.k8s.io/repo-infra/verify/verify-boilerplate.sh)
 script at a later stage of the build.
 
 To invoke these generators, you can run `make update`, which runs a bunch of
@@ -1310,7 +1310,7 @@ best illustrates these cases:
 
 A good example of ratcheting validation was introduced in [this pull request](https://github.com/kubernetes/kubernetes/pull/130233).
 It introduced validation for the optional `.spec.serviceName` field for StatefulSet,
-such that old resources (nregarldess of whether they are valid or not) will succeed
+such that old resources (regardless of whether they are valid or not) will succeed
 the validation check, but new resources must adhere to stricter validation rules
 for that field. The relevant changes include:
 - A struct with options passed to validation methods (here it's the `StatefulSetValidationOptions`
