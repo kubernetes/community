@@ -67,7 +67,7 @@ The Code of Conduct Committee has unilateral power to address harms as needed an
 
 The Code of Conduct Committee responds to all emails in a timely manner, usually within a few days.
 
-When an email is received, it is reviewed for severity. Based on our training, the initial member(s) to review the report and determine severity and urgency. When necessary, we may alert other members and call for an urgent meeting, but in most cases, we discuss asynchronously and develop a response plan.
+When an email is received, it is reviewed for severity. Based on our training, the initial member(s) review the report and determine severity and urgency. When necessary, we may alert other members and call for an urgent meeting, but in most cases, we discuss asynchronously and develop a response plan.
 
 We maintain a triage rotation schedule so that there are at least two people watching for incoming reports. This allows us to meet our SLA to the community.
 
@@ -78,7 +78,7 @@ Before beginning investigation on an incident, members can recuse from (or refus
 - Direct reporting relationships, or company work relationships that would cause the investigation to appear inappropriate
 - Close working relationships in the Kubernetes community, for example co-leading a SIG with the reporter or someone else mentioned in the report
 
-If all members of the Code of Conduct Committee felt the need to recuse themselves from an incident, the incident would be handled by our thid party mediator.
+If all members of the Code of Conduct Committee felt the need to recuse themselves from an incident, the incident would be handled by our third party mediator.
 
 To reduce the likelihood of recusals, our [election](election.md) process stipulates that we may never have a majority of the Committee from a single employer.
 
