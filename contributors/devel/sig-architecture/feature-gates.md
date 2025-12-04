@@ -454,3 +454,52 @@ the exact meaning of "behave as if the feature doesn't exist" must be
 determined by the implementation of each feature. Emphasis should be placed on
 risk mitigation - if the feature has a bug, disabling the gate *should* stop or
 at least bound the damage.
+
+### Node Declared Features
+
+The Node Declared Features framework helps solve version skew problems between the
+control plane and the node by allowing nodes to clearly advertise which gated
+features they support. This prevents the control plane from making incorrect
+assumptions about a node's capabilities, for example, scheduling pods that
+require a feature onto a node that doesn't have it enabled.
+
+The `NodeDeclaredFeatures` feature gate enables a framework where the Kubelet can
+report a list of active, feature-gated capabilities in the
+`node.status.declaredFeatures` field. This framework is intended for node-level
+features that:
+1.  Are controlled by their own feature gate (e.g., `MyNodeFeature`).
+2.  Need their enablement status to be known by the control plane (scheduling or
+    admission) to make correct decisions.
+3.  Are required by pods, and this requirement can be *inferred* from the
+    PodSpec or other API request attributes.
+
+If a new node feature meets these criteria, it can be integrated with the Node
+Declared Features framework:
+
+*   **Shared Library Integration:**
+    *   Register your feature's unique identifier (e.g., "MyNodeFeature")
+        along with its discovery and inference logic within the
+        `k8s.io/component-helpers/nodedeclaredfeatures` library.
+    *   Provide **discovery logic**: This function will be called by the Kubelet.
+        It should check the state of your feature gate (`MyNodeFeature`) and
+        any other node-local conditions to decide if the feature is active
+        and should be declared.
+    *   Provide **inference logic**: This function will be used by the control
+        plane to determine if a PodSpec or other API request implicitly
+        requires "MyNodeFeature".
+
+*   **Kubelet Behavior:** When `NodeDeclaredFeatures` is enabled, the Kubelet
+    uses the shared library to discover which features are active on the node
+    and populates their identifiers in `node.status.declaredFeatures`.
+
+*   **Control Plane Behavior:** The `NodeDeclaredFeatures` scheduler plugin and
+    the `NodeDeclaredFeatureValidator` admission plugin in the API server use
+    the inference logic from the shared library to understand the feature
+    requirements of workloads and API requests. They then compare these
+    requirements against the list of features declared by each node in
+    `node.status.declaredFeatures`.
+
+This setup ensures that the control plane only directs workloads requiring
+specific features to nodes that explicitly declare support for it.
+
+For the complete design details, see [KEP-5328](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/5328-node-declared-features).
