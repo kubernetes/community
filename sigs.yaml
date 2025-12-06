@@ -2925,7 +2925,7 @@ sigs:
   - dir: sig-security
     name: Security
     mission_statement: >
-      Covers horizontal security initiatives for the Kubernetes project, including regular security audits, the vulnerability management process, cross-cutting security documentation, and security community management.
+      SIG Security takes a community-building approach to improving security for end users, project maintainers, and the Kubernetes project itself. We work collaboratively across SIGs to advance security-related features, write and update documentation, and maintain security processes and tools for the benefit of all.
 
     charter_link: charter.md
     label: security
@@ -2933,7 +2933,7 @@ sigs:
       chairs:
         - github: IanColdwater
           name: Ian Coldwater
-          company: Docker
+          company: Independent
           email: ian@coldwater.io
         - github: cailyn-codes
           name: Cailyn Edwards
