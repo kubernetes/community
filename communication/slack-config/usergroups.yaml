@@ -20,6 +20,18 @@ usergroups:
       - "Sujay Pillai"
       - TaoBeier
 
+  - name: contribex-leads
+    long_name: SIG Contributor Experience Leads
+    description: SIG Contributor Experience Leads group.
+    channels:
+      - sig-contribex
+    members:
+      - kaslin
+      - MadhavJivrajani
+      - mfahlandt
+      - palnabarun
+      - Priyankasaggu11929
+
   - name: contributor-comms
     long_name: Contributor Communications
     description: Contributor Communications group.
