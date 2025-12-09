@@ -123,6 +123,9 @@ usergroups:
     channels:
       - sig-contribex
     members:
+      - chadmcrowell
+      - chrisshort
+      - palnabarun
       - paris
       - pnbrown
 
