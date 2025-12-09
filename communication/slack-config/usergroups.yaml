@@ -298,6 +298,7 @@ usergroups:
     description: Administrators of the Kubernetes GitHub organisations
     members:
       - cblecker
+      - jasonbraganza
       - MadhavJivrajani
       - mrbobbytables
       - nikhita
