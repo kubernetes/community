@@ -22,6 +22,8 @@ internal and external.
 
 ## Quick Start
 
+### Adding a New Metric
+
 The following describes the basic steps required to add a new metric (in Go).
 
 1. Import "k8s.io/component-base/metrics" for metrics and "k8s.io/component-base/metrics/legacyregistry" to register your declared metrics.
@@ -67,6 +69,32 @@ first calling WithLabelValues if your metric has any labels
   	requestCounter.WithLabelValues(*verb, *resource, client, strconv.Itoa(*httpCode)).Inc()
    ```
 
+### Graduating an Existing Metric
+
+When graduating a metric from Alpha to Beta or from Beta to Stable, the following requirements must be met. For more information on stability levels and their guarantees, see [Metrics Stability](#metrics-stability).
+
+#### Graduating to Beta
+
+1. **Testing requirement**: The metric must have a corresponding test that validates:
+   - The metric is registered and emitted correctly
+   - The metric has the expected labels and values under known conditions
+
+2. **Documentation**: Ensure the metric has a clear and accurate help text description.
+
+3. **Review**: The graduation should be reviewed by the component's owning SIG.
+
+#### Graduating to Stable
+
+1. **Testing requirement**: The metric must have comprehensive tests that validate:
+   - The metric is registered and emitted correctly
+   - The metric has the expected labels and values under known conditions
+   - The metric is included in the [stable metrics list](https://github.com/kubernetes/kubernetes/blob/master/test/instrumentation/testdata/stable-metrics-list.yaml). See the [instrumentation test README](https://github.com/kubernetes/kubernetes/tree/master/test/instrumentation/README.md) for steps on how to generate this file correctly.
+
+2. **Stability validation**: The metric should have been at Beta stability for at least one release to ensure it has been sufficiently validated in production environments.
+
+3. **API Review**: Graduating a metric to Stable requires an API review by SIG Instrumentation, as it represents a contractual API agreement. See the [API Review](/contributors/devel/sig-instrumentation/metric-stability.md#api-review) section in the metrics stability documentation.
+
+4.  **Documentation**: Ensure the metric has a clear and accurate help text description.
 
 ## Instrumentation types
 
