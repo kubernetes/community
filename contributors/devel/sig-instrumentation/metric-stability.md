@@ -4,13 +4,13 @@
 
 ## Stability Classes
 
-There are currently two stability classes for metrics: (1) Alpha, (2) Stable. These classes are intended to make explicit the API contract between the control-plane and the consumer of control-plane metrics.
+There are currently four stability classes for metrics: (1) Alpha, (2) Beta, (3) Stable, and (4) Internal. These classes are intended to make the API contract between the control-plane and the consumer of control-plane metrics explicit.
 
 ### Alpha
 
 __Alpha__ metrics have __*no*__ stability guarantees; as such they can be modified or deleted at any time. All Kubernetes metrics begin as alpha metrics.
 
-An example of an alpha metric follows:
+An example of an alpha metric is as follows:
 
 ```go
 var alphaMetricDefinition = kubemetrics.CounterOpts{
@@ -20,6 +20,28 @@ var alphaMetricDefinition = kubemetrics.CounterOpts{
 	DeprecatedVersion: "1.15", // this can optionally be included on alpha metrics, although there is no change to contractual stability guarantees
 }
 ```
+
+### Beta
+
+__Beta__ metrics have a looser stability contract than their stable counterparts. No labels can be removed from beta metrics during their lifetime, however, labels can be added while the metric is in the beta stage.
+
+An example of a beta metric follows:
+
+```go
+var betaMetricDefinition = kubemetrics.CounterOpts{
+    Name: "some_beta_metric",
+    Help: "some description",
+    StabilityLevel: kubemetrics.BETA,
+    DeprecatedVersion: "1.15", // this is a custom metadata field
+}
+```
+
+By the beta stability contract, we mean:
+
+1. the metric will not be deleted without graduating to stable first or being deprecated
+2. the type of metric will not be modified
+3. no labels can be removed from this metric
+4. labels **can** be added to this metric while in beta
 
 ### Stable
 
@@ -46,6 +68,27 @@ From an ingestion point of view, it is backwards-compatible to add or remove pos
 
 **Removing or adding labels from stable metrics is not permissible.** In order to add/remove a label to an existing stable metric, one would have to introduce a new metric and deprecate the stable one; otherwise this would violate compatibility agreements.
 
+### Internal
+
+__Internal__ metrics are intended for metrics that are used for internal purposes only and are not meant to be consumed by end users. These metrics have __*no*__ stability guarantees and can be modified or deleted at any time, similar to alpha metrics. However, they are explicitly marked as internal to signal that they are not part of the public API.
+
+An example of an internal metric follows:
+
+```go
+var internalMetricDefinition = kubemetrics.CounterOpts{
+    Name: "some_internal_metric",
+    Help: "some description",
+    StabilityLevel: kubemetrics.INTERNAL,
+}
+```
+
+Internal metrics:
+
+1. have no stability guarantees
+2. can be modified or deleted at any time
+3. should not be relied upon by external monitoring or alerting systems
+4. are typically used for debugging, testing, or internal component communication
+
 ## API Review
 
 Graduating a metric to a stable state is a contractual API agreement, as such, it would be desirable to require an api-review (to sig-instrumentation) for graduating or deprecating a metric (in line with current Kubernetes [api-review processes](https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md)).
@@ -54,13 +97,13 @@ We use a verification script to flag stable metric changes for review by SIG Ins
 
 ## Metric Renaming
 
-Metric renaming is be tantamount to deleting a metric and introducing a new one. Accordingly, metric renaming will also be disallowed for stable metrics.
+Metric renaming is tantamount to deleting a metric and introducing a new one. Accordingly, metric renaming will also be disallowed for stable metrics.
 
 ## Deprecation Lifecycle
 
 Metrics can be annotated with a Kubernetes version, from which point that metric will be considered deprecated. This allows us to indicate that a metric is slated for future removal and provides the consumer a reasonable window in which they can make changes to their monitoring infrastructure which depends on this metric.
 
-While deprecation policies only actually change stability guarantees for __stable__ metrics (and not __alpha__ ones), deprecation information may however be optionally provided on alpha metrics to help component owners inform users of future intent, to help with transition plans (this change was made at the request of @dashpole, who helpfully pointed out that it would be nice to be able signal future intent even for alpha metrics).
+While deprecation policies only actually change stability guarantees for __stable__ metrics (and not __alpha__ ones), deprecation information may however be optionally provided on alpha (and beta metrics) to help component owners inform users of future intent, to help with transition plans (this change was made at the request of @dashpole, who helpfully pointed out that it would be nice to be able signal future intent even for alpha/beta metrics).
 
 When a stable metric undergoes the deprecation process, we are signaling that the metric will eventually be deleted. The lifecyle looks roughly like this (each stage represents a Kubernetes release):
 
@@ -77,7 +120,7 @@ var someCounter = kubemetrics.CounterOpts{
 }
 ````
 
-__Deprecated__ metrics will have their description text prefixed with a deprecation notice string '(Deprecated from x.y)' and a warning log will be emitted during metric registration (in the spirit of the official [Kubernetes deprecation policy](https://kubernetes.io/docs/reference/using-api/deprecation-policy/#deprecating-a-flag-or-cli)).
+__Deprecated__ metrics will have their description text prefixed with a deprecation notice string '(Deprecated since x.y.z)' and a warning log will be emitted during metric registration (in the spirit of the official [Kubernetes deprecation policy](https://kubernetes.io/docs/reference/using-api/deprecation-policy/#deprecating-a-flag-or-cli)).
 
 Before deprecation:
 
@@ -88,14 +131,23 @@ some_counter 0
 ```
 
 During deprecation:
+
 ```text
-# HELP some_counter (Deprecated from 1.15) this counts things
+# HELP some_counter (Deprecated since 1.15) this counts things
 # TYPE some_counter counter
 some_counter 0
 ```
 Like their stable metric counterparts, deprecated metrics will be automatically registered to the metrics endpoint.
 
-On a subsequent release (when the metric's deprecatedVersion is equal to current_kubernetes_version - 1)), a deprecated metric will become a __hidden metric__. _Unlike_ their deprecated counterparts, hidden metrics will __*no longer be automatically registered*__ to the metrics endpoint (hence hidden). However, they can be explicitly enabled through a command line flag on the binary (i.e. '--show-hidden-metrics-for-version=<previous minor release>'). This is to provide cluster admins an escape hatch to properly migrate off of a deprecated metric, if they were not able to react to the earlier deprecation warnings. Hidden metrics should be deleted after one release.
+After a period of time, a deprecated metric will become a __hidden metric__. The timeline for this transition depends on the metric's stability level:
+
+| Stability Level | Time until hidden                                           |
+| --------------- | ----------------------------------------------------------- |
+| **STABLE**      | Minimum of 3 releases or 9 months, whichever is longer      |
+| **BETA**        | Minimum of 1 release or 4 months, whichever is longer       |
+| **ALPHA**       | Can be hidden or removed in the same release as deprecation |
+
+_Unlike_ their deprecated counterparts, hidden metrics will __*no longer be automatically registered*__ to the metrics endpoint (hence hidden). However, they can be explicitly enabled through a command line flag on the binary (i.e. '--show-hidden-metrics-for-version=<previous minor release>'). This is to provide cluster admins an escape hatch to properly migrate off of a deprecated metric, if they were not able to react to the earlier deprecation warnings. Hidden metrics will be deleted after one release.
 
 
 [KEP-1209]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/1209-metrics-stability
