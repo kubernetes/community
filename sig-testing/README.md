@@ -78,7 +78,6 @@ Boskos is a resource manager service that handles different kinds of resources a
   - Mahamed Ali (**[@upodroid](https://github.com/upodroid)**), Cisco
 - **Owners:**
   - [kubernetes-sigs/boskos](https://github.com/kubernetes-sigs/boskos/blob/master/OWNERS)
-  - [kubernetes/test-infra/boskos](https://github.com/kubernetes/test-infra/blob/master/boskos/OWNERS)
 ### e2e-framework
 An experimental e2e testing framework for Kubernetes clusters.
 - **Owners:**
