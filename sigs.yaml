@@ -3559,11 +3559,19 @@ workinggroups:
         time: 12PM
         tz: UTC
         frequency: bi-weekly
+        url: https://zoom.us/j/4368454928
+        archive_url: https://docs.google.com/document/d/1nRRkRK2e82mxkT8zdLoAtuhkom2X6dEhtYOJ9UtfZKs/edit
+        recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0sN57uRPbr38QX6tJxxV0o
+        calendar_url: https://www.google.com/calendar/event?eid=MWh0dWVpYzE5djZ1amFzam5zbXZ2cnNpdjZfMjAyNTEyMTVUMTMwMDAwWiBjYWxlbmRhckBrdWJlcm5ldGVzLmlv
       - description: WG AI Gateway Bi-Weekly Meeting (Later Option)
         day: Thursday
         time: 6PM
         tz: UTC
         frequency: bi-weekly
+        url: https://zoom.us/j/4368454928
+        archive_url: https://docs.google.com/document/d/1nRRkRK2e82mxkT8zdLoAtuhkom2X6dEhtYOJ9UtfZKs/edit
+        recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0sN57uRPbr38QX6tJxxV0o
+        calendar_url: https://www.google.com/calendar/event?eid=NjY4N2Q1djcxZjJnOTBvdnI2Y2Z1aWE5ZWFfMjAyNTEyMThUMTkwMDAwWiBjYWxlbmRhckBrdWJlcm5ldGVzLmlv
     contact:
       slack: wg-ai-gateway
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-gateway
