@@ -2393,6 +2393,10 @@ sigs:
       - name: kube-dns
         owners:
           - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
+      - name: kubernetes-network-drivers
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/dranet/main/OWNERS
+          - https://raw.githubusercontent.com/kubernetes-sigs/kubernetes-network-drivers/main/OWNERS
       - name: multi-network
         contact:
           slack: sig-network-multi-network
