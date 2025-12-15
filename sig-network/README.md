@@ -138,6 +138,10 @@ Gateway API Inference Extension
 ### kube-dns
 - **Owners:**
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
+### kubernetes-network-drivers
+- **Owners:**
+  - [kubernetes-sigs/dranet](https://github.com/kubernetes-sigs/dranet/blob/main/OWNERS)
+  - [kubernetes-sigs/kubernetes-network-drivers](https://github.com/kubernetes-sigs/kubernetes-network-drivers/blob/main/OWNERS)
 ### multi-network
 - **Leads:**
   - Lionel Jouin (**[@LionelJouin](https://github.com/LionelJouin)**), Red Hat
