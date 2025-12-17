@@ -108,10 +108,8 @@ The core workloads API, which is composed of the CronJob, DaemonSet, Deployment,
   - [kubernetes/kubernetes/pkg/controller/statefulset](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/statefulset/OWNERS)
   - [kubernetes/kubernetes/pkg/registry/apps](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/apps/OWNERS)
   - [kubernetes/kubernetes/pkg/registry/batch](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/batch/OWNERS)
-  - [kubernetes/kubernetes/pkg/registry/extensions](https://github.com/kubernetes/kubernetes/blob/master/pkg/registry/extensions/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/api/apps](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/apps/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/api/batch](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/batch/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/api/core/v1](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/core/v1/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/api/extensions](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/extensions/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/api/policy](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/api/policy/OWNERS)
   - [kubernetes/kubernetes/test/e2e/apps](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/apps/OWNERS)
@@ -139,7 +137,7 @@ The core workloads API, which is composed of the CronJob, DaemonSet, Deployment,
 
 ## [Helm](https://helm.sh) and [Charts](https://github.com/kubernetes/charts)
 
-Helm, Charts and its other subprojects have [moved to the CNCF](https://github.com/cncf/toc/blob/main/proposals/incubation/helm.adoc).
+Helm, Charts and its other subprojects have [moved to the CNCF](https://github.com/cncf/toc/blob/5103bce2ec283a8b641659a10362f10c65a97a08/projects/helm/helm-incubation-proposal.adoc).
 See Helm's [community repository](https://github.com/kubernetes-helm/community) for information about the Helm project.
 
 <!-- END CUSTOM CONTENT -->
