@@ -78,6 +78,9 @@ filters:
 ```
 
 If you set `filters` you must not set a [simple OWNERS configuration](#owners) outside of `filters`.
+
+**Note:** The `options` key (e.g., `no_parent_owners`) is an exception and may be set at the top level even when using `filters`. All other owner-related keys such as `approvers`, `reviewers`, `labels`, and `emeritus_approvers` must be defined inside `filters`.
+
 For example:
 
 ```yaml
