@@ -19,7 +19,7 @@ The [charter](charter.md) defines the scope and governance of the Docs Special I
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
 * Korean Team Meeting: [Thursdays at 13:00 UTC](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=13%3A00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1h5sMhBpPB5unJmBAS7KzDiPs-_eFQOu5o4UyHwMtFCA/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PLAOP7m08QDCWZ7RwGca6cU4vzrOMw3ht7).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL9Bd5opncjJDhJk0Fl29fBgnKiFAqG2aT) ([Before 2021](https://www.youtube.com/playlist?list=PLAOP7m08QDCWZ7RwGca6cU4vzrOMw3ht7)).
 * Localization Subproject Meeting: [Mondays at 15:00 UTC](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/) (first Monday of the month). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15%3A00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1NwO1AN8Ea2zlK8uAdaDAKf1-LZDAFvSewIfrKqfl5No/).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP3b5hlx0YV7Lo7DtckM84y8).
