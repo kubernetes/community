@@ -3699,11 +3699,11 @@ workinggroups:
           company: Masaryk University
           email: spisakova@ics.muni.cz
     meetings:
-      - description: WG Checkpoint Restore Biweekly Meeting
+      - description: WG Checkpoint Restore Weekly Meeting
         day: Thursday
         time: "17:00"
         tz: UTC
-        frequency: biweekly
+        frequency: weekly
         url: https://zoom.us/j/95866823079
         archive_url: https://docs.google.com/document/d/1ZMtHBibXfTw4cQerM4O4DJonzVs3W7Hp2K5ml6pTufs/edit
         recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1P7F40IMVL3NsNiIm5AGos
