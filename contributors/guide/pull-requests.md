@@ -37,6 +37,7 @@ It should serve as a reference for all contributors, and be useful especially to
   - [Trivial Edits](#trivial-edits)
   - [Large or Automatic Edits](#large-or-automatic-edits)
   - [Fixing Linter Issues](#fixing-linter-issues)
+  - [AI Guidance](#ai-guidance)
 - [The Testing and Merge Workflow](#the-testing-and-merge-workflow)
   - [More About `Ok-To-Test`](#more-about-ok-to-test)
 
@@ -599,16 +600,16 @@ at once to that file.
 
 ## Large or Automatic Edits
 
-Some tools make it very easy to create large Pull Requests, for example:
+Some tools make it very easy to create large and/or automatic Pull Requests, for example:
 - global search/replace
 - linters which automatically correct issues (see also next section)
-- large language models (LLMs) which generate code or documentation
+- AI tools (large language models, assistants, etc) which generate code or documentation
 
 To make it easier for reviewers to handle such Pull Requests, please explain
 how it was generated in the "Special notes for your reviewer" section of the
 Pull Request description. Reviewers may then be able to reproduce those steps
 (search/replace, linters) or can start the review with the right expectations
-(LLMs). Also consider the section about [splitting up Pull
+(AI tools). Also consider the section about [splitting up Pull
 Requests](#dont-open-pull-requests-that-span-the-whole-repository) above.
 
 Even with such tools it is still your responsibility as submitter of a Pull
@@ -621,6 +622,16 @@ Please understand that reviewers may decide to close a Pull Request with a
 reference to this documentation if they come to the conclusion that the
 difficulty of properly reviewing the Pull Request outweighs the benefit that
 the Pull Request provides.
+
+## AI Guidance
+
+Using AI tools to help write your PR is acceptable, but as the author, you are responsible for understanding every change. 
+Do not leave the first review of AI generated changes to the reviewers, verify the changes (code review, testing, etc.) before submitting your PR.
+Reviewers may ask questions about your AI-assisted code, and if you cannot explain why a change was made, the PR will be closed.
+When responding to review comments, please do so without relying on AI tools. Reviewers want to engage directly with you, not with generated responses.
+If you used AI tools in preparing your PR, please disclose this in the "Special notes for your reviewer" section.
+All contributions must follow the [contributions policies](/contributors/guide/contributing.md) and use commit messages that align with [the policy](#commit-message-guidelines). 
+[Large AI generated](#large-or-automatic-edits) PRs and AI generated commit messages are discouraged.
 
 ## Fixing Linter Issues
 
