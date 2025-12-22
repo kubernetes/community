@@ -3,7 +3,7 @@ title: "Adding Release Notes"
 weight: 12
 description: |
   Guidance on providing release notes for changes made to the main Kubernetes
-  project repo.
+  project repo. 
 ---
 
 On the [kubernetes/kubernetes repository][kubernetes-repository], release notes
