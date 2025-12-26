@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Security Special Interest Group
 
-Covers horizontal security initiatives for the Kubernetes project, including regular security audits, the vulnerability management process, cross-cutting security documentation, and security community management.
+SIG Security takes a community-building approach to improving security for end users, project maintainers, and the Kubernetes project itself. We work collaboratively across SIGs to advance security-related features, write and update documentation, and maintain security processes and tools for the benefit of all.
 
 The [charter](charter.md) defines the scope and governance of the Security Special Interest Group.
 
@@ -23,7 +23,7 @@ The [charter](charter.md) defines the scope and governance of the Security Speci
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Ian Coldwater (**[@IanColdwater](https://github.com/IanColdwater)**), Docker
+* Ian Coldwater (**[@IanColdwater](https://github.com/IanColdwater)**), Independent
 * Cailyn Edwards (**[@cailyn-codes](https://github.com/cailyn-codes)**), Okta
 * Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
 
