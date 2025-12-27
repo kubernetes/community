@@ -83,7 +83,7 @@ cd kubernetes
 Since root access is sometimes needed to start/stop Kubernetes daemons, `./hack/local-up-cluster.sh` may need to be run as root. If it reports failures, try this instead:
 
 ```sh
-sudo ./hack/local-up-cluster.sh
+sudo -E PATH=$PATH ./hack/local-up-cluster.sh
 ```
 
 This will build and start a lightweight local cluster, consisting of a master and a single node. Press Control+C to shut it down.
