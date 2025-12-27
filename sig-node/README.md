@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Node Special I
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-node) for the group will typically add invites for the following meetings to your calendar.*
-* Main SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/4799874685) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
+* Main SIG Meeting: [Tuesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/91437143016?pwd=pUErbBMFOiIAN3ZE9gpPR6skpHYeuo.1) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ne57gvidMEWXR70OxxnRkYquAoMpt56o75oZtg-OeBg/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
 * Weekly CI/Triage Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/93387714284?pwd=NHNpT2xtOGtwNnVQZ1JXdkNlQ1RMQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
