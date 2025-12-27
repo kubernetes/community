@@ -26,7 +26,7 @@ code snippets, see [api_changes.md](api_changes.md).
 
 A feature gate definition is comprised of the following struct fields:
 
-```
+```go
 	// Default is the default enablement state for the feature. If the value of
 	// the gate is not explicitly set, this value is used.
 	Default bool
@@ -39,6 +39,14 @@ A feature gate definition is comprised of the following struct fields:
 	// are "featuregate.Alpha", "featuregate.Beta", "featuregate.GA", or
 	// "featuregate.Deprecated"
 	PreRelease prerelease
+
+	// Version indicates the earliest version from which this FeatureSpec is valid.
+	Version *version.Version
+
+	// MinCompatibilityVersion indicates the lowest version that this feature spec is compatible with.
+	// This allows features with skew compatibility implications to be introduced as Beta,
+	// but only on by default once the minimum compatibility version is high enough.
+	MinCompatibilityVersion *version.Version
 ```
 
 Unless an exception is granted for a particular feature, as documented and
@@ -96,12 +104,29 @@ While some exceptions may happen, approvers should use the following guidance:
   the feature gate without introducing a new long term configuration option,
   might skip `Alpha` and start directly in `Beta` (provided the appropriate
   `Beta` quality is achieved) and can be enabled by default from the very
-  beginning.
+  beginning. If the feature gate has to start from being disabled by default 
+  only for `N-1` compatibility reasons (e.g. validation loosening/tightening), 
+  `MinCompatibilityVersion` of the feature gate can be used to 
+  enable it by default when the control plane `--min-compatibility-version` 
+  is set to `N` the binary version.
+  
+  For example,
+
+  ```go
+  CRDObservedGenerationTracking: {
+		{Version: version.MustParse("1.35"), PreRelease: featuregate.Beta, Default: false},
+		{Version: version.MustParse("1.35"), PreRelease: featuregate.Beta, Default: true, MinCompatibilityVersion: version.MustParse("1.35")},
+	},
+  ```
+
 - Bug fixes that have a sufficient level of risk that being able to turn off
   the fix via a feature gate is justified are recommended to go directly to
   `Beta` and should be enabled by default from the very beginning; an
   alternative for bug fixes that could be perceived as "removal" is to use
-  Deprecated state, however still ensuring that the fix can be disabled.
+  Deprecated state, however still ensuring that the fix can be disabled. 
+  If the feature gate has to start from being disabled by default 
+  only for `N-1` compatibility reasons, `MinCompatibilityVersion` of the 
+  feature gate can be used to enable it by default when the control plane `--min-compatibility-version` is set to `N` the binary version. 
 
 [API changes]: https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md#what-parts-of-a-pr-are-api-changes
 
@@ -117,7 +142,7 @@ new states, along with the version that the transition occurred.
 
 Example:
 
-```
+```go
 RetryGenerateName: {  
   {Version: version.MustParse("1.30"), Default: false, PreRelease: featuregate.Alpha},  
   {Version: version.MustParse("1.31"), Default: true, PreRelease: featuregate.Beta},  
@@ -158,7 +183,7 @@ that while this feature is Beta, they will still need to do some work to switch
 it on and use it, which may include taking some other explicit action outside of
 Kubernetes. For example, the CSIMigration feature gates looked like this:
 
-```
+```go
 	CSIMigration:          {Default: true,  PreRelease: featuregate.Beta},
 	CSIMigrationGCE:       {Default: false, PreRelease: featuregate.Beta}, // Off by default (requires GCE PD CSI Driver)
 	CSIMigrationAWS:       {Default: false, PreRelease: featuregate.Beta}, // Off by default (requires AWS EBS CSI driver)
@@ -272,7 +297,7 @@ releases. See [compatibility version](#compatibility-versions) for more details.
 
 For example:
 
-```
+```go
 DeprecatedFeature: {  
   {Version: version.MustParse("1.29"), Default: false, PreRelease: featuregate.Alpha}, // feature graduated to alpha.
   {Version: version.MustParse("1.30"), Default: true, PreRelease: featuregate.Beta},  // feature graduated to beta.
@@ -317,7 +342,7 @@ operation is an UPDATE, the previous form of the object must be checked. Only
 if this object was not already using this field should it be removed. This
 usually manifests as something like:
 
-```
+```go
 if disabled(gate) && !newFieldInUse(oldObj) {
     obj.NewField = nil
 }
@@ -340,7 +365,7 @@ case where such a field does not have a value.
 
 Validation for these fields usually looks something like:
 
-```
+```go
 if obj.NewField == nil {
     allErrs = append(allErrs, field.Required(...))
 } else {
@@ -361,7 +386,7 @@ validation and pass a flag into the validation logic (usually as a field in an
 "options" struct) to indicate whether the validation code should allow the new
 field or not.
 
-```
+```go
 if enabled(gate) || newFieldInUse(oldObj) {
     options.EnableNewField = true
 }
@@ -370,7 +395,7 @@ ValidateThisObject(obj, oldObj, options)
 
 The validation code then looks something like:
 
-```
+```go
 if opts.EnableNewField {
     if obj.NewField == nil {
         allErrs = append(allErrs, field.Required(...))
@@ -414,7 +439,7 @@ must pass a flag into the validation logic (usually as a field in an "options"
 struct) to indicate whether the validation code should allow the new value or
 not.
 
-```
+```go
 if enabled(gate) || newFieldValueInUse(oldObj) {
     options.AllowNewFieldValue = true
 }
@@ -440,7 +465,7 @@ a feature gate may start in alpha or (rarely) in beta. Unlike features with API
 surface, the implementation logic is the only place where a feature gate can be
 applied. This usually manifests as a simple `if`/`else` block:
 
-```
+```go
 if enabled(gate) {
   doNewThing()
 } else {
