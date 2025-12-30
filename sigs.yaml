@@ -2848,15 +2848,15 @@ sigs:
       - description: biweekly meeting (Asia & Europe)
         day: Tuesday
         time: "9:00"
-        tz: CET
+        tz: CET (Central European Time)
         frequency: biweekly starting Tuesday Feb 11, 2025
         url: https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09
         archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
         recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
       - description: biweekly meeting (NA & Europe)
         day: Thursday
-        time: "17:00"
-        tz: UTC
+        time: "10:00"
+        tz: PT (Pacific Time)
         frequency: biweekly starting Thursday June 7, 2018
         url: https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09
         archive_url: https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit
@@ -2864,7 +2864,7 @@ sigs:
       - description: descheduler biweekly meeting Europe time
         day: Tuesday
         time: "14:30"
-        tz: CET
+        tz: CET (Central European Time)
         frequency: biweekly starting Tuesday Feb 27, 2024
         url: https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09
         archive_url: https://docs.google.com/document/d/1Ang5shAFxuylO2RXMFGO7uxSe-IX3Y3PxoKIn1yPIEQ
@@ -2872,7 +2872,7 @@ sigs:
       - description: descheduler biweekly meeting North America time
         day: Tuesday
         time: "19:30"
-        tz: CET
+        tz: CET (Central European Time)
         frequency: biweekly starting Tuesday March 12, 2024
         url: https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09
         archive_url: https://docs.google.com/document/d/1Ang5shAFxuylO2RXMFGO7uxSe-IX3Y3PxoKIn1yPIEQ

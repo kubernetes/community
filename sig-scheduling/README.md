@@ -14,16 +14,16 @@ The [charter](charter.md) defines the scope and governance of the Scheduling Spe
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-scheduling) for the group will typically add invites for the following meetings to your calendar.*
-* biweekly meeting (Asia & Europe): [Tuesdays at 9:00 CET](https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09) (biweekly starting Tuesday Feb 11, 2025). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=CET).
+* biweekly meeting (Asia & Europe): [Tuesdays at 9:00 CET (Central European Time)](https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09) (biweekly starting Tuesday Feb 11, 2025). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=CET%20%28Central%20European%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
-* biweekly meeting (NA & Europe): [Thursdays at 17:00 UTC](https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17%3A00&tz=UTC).
+* biweekly meeting (NA & Europe): [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09) (biweekly starting Thursday June 7, 2018). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/13mwye7nvrmV11q9_Eg77z-1w3X7Q1GTbslpml4J7F3A/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI).
-* descheduler biweekly meeting Europe time: [Tuesdays at 14:30 CET](https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09) (biweekly starting Tuesday Feb 27, 2024). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14%3A30&tz=CET).
+* descheduler biweekly meeting Europe time: [Tuesdays at 14:30 CET (Central European Time)](https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09) (biweekly starting Tuesday Feb 27, 2024). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14%3A30&tz=CET%20%28Central%20European%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ang5shAFxuylO2RXMFGO7uxSe-IX3Y3PxoKIn1yPIEQ).
   * [Meeting recordings](https://youtube.com/playlist?list=PLEafaZMk8MYYqoSncOkL8uutIcTsUQE_g).
-* descheduler biweekly meeting North America time: [Tuesdays at 19:30 CET](https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09) (biweekly starting Tuesday March 12, 2024). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19%3A30&tz=CET).
+* descheduler biweekly meeting North America time: [Tuesdays at 19:30 CET (Central European Time)](https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09) (biweekly starting Tuesday March 12, 2024). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19%3A30&tz=CET%20%28Central%20European%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1Ang5shAFxuylO2RXMFGO7uxSe-IX3Y3PxoKIn1yPIEQ).
   * [Meeting recordings](https://youtube.com/playlist?list=PLEafaZMk8MYYqoSncOkL8uutIcTsUQE_g).
 
