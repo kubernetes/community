@@ -96,8 +96,8 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
 ### gateway-api
 - **Leads:**
+  - Ricardo Katz (**[@rikatz](https://github.com/rikatz)**), Red Hat
   - Rob Scott (**[@robscott](https://github.com/robscott)**), Google
-  - Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Red Hat
   - Nick Young (**[@youngnick](https://github.com/youngnick)**), Isovalent
 - **Owners:**
   - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
