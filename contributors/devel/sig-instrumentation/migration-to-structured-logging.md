@@ -190,12 +190,16 @@ functions need to be used:
 - `klog.ErrorS` -> `logger.Error`
 - `klog.InfoS` -> `logger.Info`
 - `klog.V().InfoS` -> `logger.V().Info`
+- `klog.V().ErrorS(err, ...)` -> `logger.V().Info(..., "err", err)`
 
 In all of these cases, `logger` is a `logr.Logger` instance. `klog.Logger` is
-an alias for that type. Determining where that instance comes from is the main
-challenge when migrating code to contextual logging.
+an alias for that type. In contrast to klog, logr ignores verbosity for `Error`
+calls and always emits the log. The semantic equivalent of `klog.V().ErrorS` is
+therefore an `Info` call where the error is represented as a key/value pair.
 
-Several new klog functions help with that:
+Determining where the `Logger` instance comes from is the main challenge when
+migrating code to contextual logging. Several new klog functions help with
+that:
 
 - [`klog.FromContext`](https://pkg.go.dev/k8s.io/klog/v2#FromContext)
 - [`klog.Background`](https://pkg.go.dev/k8s.io/klog/v2#Background)
