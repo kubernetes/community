@@ -279,10 +279,8 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/statefulset/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/apps/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/batch/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/extensions/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/apps/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/batch/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/core/v1/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/extensions/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/policy/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/apps/OWNERS
@@ -545,7 +543,6 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/pkg/authentication/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/plugin/pkg/authenticator/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/kubernetes/typed/authentication/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/authentication/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/pkg/apis/clientauthentication/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/plugin/pkg/client/auth/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/tools/auth/OWNERS
@@ -565,7 +562,6 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiserver/plugin/pkg/authorizer/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/kubernetes/typed/authorization/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/kubernetes/typed/rbac/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/authorization/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/client-go/listers/rbac/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/kubectl/pkg/cmd/auth/OWNERS
       - name: certificates
@@ -600,9 +596,7 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/imagepolicy/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/apis/policy/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/registry/policy/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/security/podsecuritypolicy/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/imagepolicy/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/plugin/pkg/admission/security/podsecuritypolicy/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/imagepolicy/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/api/policy/OWNERS
           - https://raw.githubusercontent.com/kubernetes/pod-security-admission/master/OWNERS
