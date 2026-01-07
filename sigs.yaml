@@ -2312,7 +2312,7 @@ sigs:
         recordings_url: https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb
     contact:
       slack: sig-network
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-network
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-network
       teams:
         - name: sig-network-api-reviews
           description: API Changes and Reviews
