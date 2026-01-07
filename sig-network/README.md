@@ -13,7 +13,7 @@ Covers networking in Kubernetes.
 The [charter](charter.md) defines the scope and governance of the Network Special Interest Group.
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network) for the group will typically add invites for the following meetings to your calendar.*
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-network) for the group will typically add invites for the following meetings to your calendar.*
 * Gateway API Meeting (Americas): [Mondays at 15:00 PT (Pacific Time)](https://zoom.us/j/441530404) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit).
 * Gateway API Meeting (Europe): [Tuesday (starting September 10th 2024)s at 08:00 PT (Pacific Time)](https://zoom.us/j/441530404) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=08%3A00&tz=PT%20%28Pacific%20Time%29).
@@ -58,7 +58,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Contact
 - Slack: [#sig-network](https://kubernetes.slack.com/messages/sig-network)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-network)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/sig-network)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/sig%2Fnetwork)
 - GitHub Teams:
     - [@kubernetes/sig-network-api-reviews](https://github.com/orgs/kubernetes/teams/sig-network-api-reviews) - API Changes and Reviews
@@ -203,7 +203,7 @@ Most of these additional responsibilities relate to communication about their pr
 [Kubernetes Slack]: https://kubernetes.slack.com
 [Zoom]: https://zoom.us
 [SIG Network Calendar]: https://github.com/kubernetes/community/tree/master/sig-network#meetings
-[SIG Network Mailing List]: https://groups.google.com/g/kubernetes-sig-network
+[SIG Network Mailing List]: https://groups.google.com/a/kubernetes.io/g/sig-network
 
 ## Areas of Responsibility
 
