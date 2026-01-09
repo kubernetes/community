@@ -48,7 +48,11 @@ From an ingestion point of view, it is backwards-compatible to add or remove pos
 
 ## API Review
 
-Graduating a metric to a stable state is a contractual API agreement, as such, it would be desirable to require an api-review (to sig-instrumentation) for graduating or deprecating a metric (in line with current Kubernetes [api-review processes](https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md)).
+Graduating a metric to beta or stable is a contractual API agreement (in line with current Kubernetes [api-review processes](https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md)).
+
+For **Beta** metrics, approval from SIG Instrumentation is required.
+
+For **Stable** metrics, marking a metric as stable is a commitment by the owning SIG to maintain stability guarantees. The owning SIG leads must review and approve the graduation first. Additionally, approval from SIG Instrumentation is required.
 
 We use a verification script to flag stable metric changes for review by SIG Instrumentation approvers.
 
