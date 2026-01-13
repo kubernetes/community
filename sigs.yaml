@@ -352,7 +352,7 @@ sigs:
         recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2m6198LaLN6YahX7EEac5g
     contact:
       slack: sig-architecture
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-architecture
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-architecture
       teams:
         - name: sig-architecture-api-reviews
           description: API Changes and Reviews
