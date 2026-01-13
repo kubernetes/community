@@ -1982,6 +1982,13 @@ type definitions, or manually, by writing validation functions. For all new
 APIs, declarative validation is the preferred approach for the validation rules
 it supports.  For more information see the
 [declarative validation documentation](api_changes.md#declarative-validation).
+
+Additionally, "Declarative Validation Native" (DV Native) is a mode that allows 
+net-new API fields and their validations to be defined exclusively using Go 
+comment tags, without requiring a parallel hand-written implementation in Go. 
+See the [DV Native documentation](api_changes.md#declarative-validation-native-dv-native) 
+for more details.
+
 Validation errors are flagged and returned to the caller in a `Failure` status,
 usually with `reason` set to `Invalid`.
 
