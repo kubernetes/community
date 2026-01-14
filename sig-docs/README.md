@@ -46,6 +46,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
+* Dipesh Rawat (**[@dipesh-rawat](https://github.com/dipesh-rawat)**), IBM
 * Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Minimus
 * Xander Grzywinski (**[@salaxander](https://github.com/salaxander)**), Independent
 * Qiming Teng (**[@tengqm](https://github.com/tengqm)**), Sangfor Technologies
