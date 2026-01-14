@@ -50,16 +50,15 @@ usergroups:
       - release-notes
       - sig-release
     members:
-      - dipesh-rawat        # v1.35 RT Lead Shadow
-      - drewhagen           # v1.35 Lead
-      - graz-dev            # v1.35 Comms Lead
-      - jenshu              # v1.35 RT Lead Shadow
+      - chadmcrowell        # v1.36 Comms Lead
+      - dipesh-rawat        # v1.36 RT Lead Shadow
+      - jenshu              # v1.36 RT Lead Shadow
+      - jmickey             # v1.36 Enhancements Lead
       - katcosgrove         # Release Team Subproject Lead
-      - Rajalakshmi-Girish  # v1.35 RT Lead Shadow
-      - rayandas            # v1.35 Enhancements Lead
-      - rytswd              # v1.35 RT Lead Shadow
-      - tico88612           # v1.35 Release Signal Lead
-      - Urvashi0109         # v1.35 Docs Lead
+      - Prajyot-Parab       # v1.36 Release Signal Lead
+      - rayandas            # v1.36 RT Lead Shadow
+      - rytswd              # v1.36 Lead
+      - sayanchowdhury      # v1.36 docs Lead
 
   # Should match SIG Release Leads at all times:
   # https://git.k8s.io/community/sig-release/README.md#leadership
