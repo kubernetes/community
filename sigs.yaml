@@ -1581,6 +1581,10 @@ sigs:
           company: Red Hat
           email: rlejano@gmail.com
       tech_leads:
+        - github: dipesh-rawat
+          name: Dipesh Rawat
+          company: IBM
+          email: rawat.dipesh@gmail.com
         - github: katcosgrove
           name: Kat Cosgrove
           company: Minimus
