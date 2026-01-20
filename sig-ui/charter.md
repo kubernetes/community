@@ -8,7 +8,8 @@ SIG-UI covers GUI-related aspects of the Kubernetes project. Efforts are centere
 
 #### Code, Binaries and Services
 
-- [Kubernetes Dashboard](https://github.com/kubernetes/dashboard)
+- [Kubernetes Dashboard](https://github.com/kubernetes/dashboard) (Archived)
+- [Headlamp](https://github.com/kubernetes-sigs/headlamp)
 
 #### Cross-cutting and Externally Facing Processes
 
