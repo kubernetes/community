@@ -31,13 +31,8 @@ The [charter](charter.md) defines the scope and governance of the Node Lifecycle
 
 ## Organizers
 
-* Joel Speed (**[@JoelSpeed](https://github.com/JoelSpeed)**), Red Hat
 * Filip Křepinský (**[@atiratree](https://github.com/atiratree)**), Red Hat
-* Fabrizio Pandini (**[@fabriziopandini](https://github.com/fabriziopandini)**), VMware
-* Peter Hunt (**[@haircommander](https://github.com/haircommander)**), Red Hat
-* Humble Chirammal (**[@humblec](https://github.com/humblec)**), VMware
 * Lucy Sweet (**[@intUnderflow](https://github.com/intUnderflow)**), Uber
-* Krzysztof Wilczyński (**[@kwilczynski](https://github.com/kwilczynski)**), Independent
 * Ryan Hallisey (**[@rthallisey](https://github.com/rthallisey)**), NVIDIA
 
 ## Contact
