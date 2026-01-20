@@ -18,10 +18,10 @@ The [charter](charter.md) defines the scope and governance of the AI Gateway Wor
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-ai-gateway) for the group will typically add invites for the following meetings to your calendar.*
-* WG AI Gateway Bi-Weekly Meeting (Earlier Option) ([calendar](https://www.google.com/calendar/event?eid=MWh0dWVpYzE5djZ1amFzam5zbXZ2cnNpdjZfMjAyNTEyMTVUMTMwMDAwWiBjYWxlbmRhckBrdWJlcm5ldGVzLmlv)): [Mondays at 12PM UTC](https://zoom.us/j/4368454928) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12PM&tz=UTC).
+* WG AI Gateway Bi-Weekly Meeting (Earlier Option) ([calendar](https://www.kubernetes.dev/resources/calendar/)): [Mondays at 1PM UTC](https://zoom.us/j/4368454928) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=1PM&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1nRRkRK2e82mxkT8zdLoAtuhkom2X6dEhtYOJ9UtfZKs/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0sN57uRPbr38QX6tJxxV0o).
-* WG AI Gateway Bi-Weekly Meeting (Later Option) ([calendar](https://www.google.com/calendar/event?eid=NjY4N2Q1djcxZjJnOTBvdnI2Y2Z1aWE5ZWFfMjAyNTEyMThUMTkwMDAwWiBjYWxlbmRhckBrdWJlcm5ldGVzLmlv)): [Thursdays at 6PM UTC](https://zoom.us/j/4368454928) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=6PM&tz=UTC).
+* WG AI Gateway Bi-Weekly Meeting (Later Option) ([calendar](https://www.kubernetes.dev/resources/calendar/)): [Thursdays at 7PM UTC](https://zoom.us/j/4368454928) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7PM&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1nRRkRK2e82mxkT8zdLoAtuhkom2X6dEhtYOJ9UtfZKs/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0sN57uRPbr38QX6tJxxV0o).
 
