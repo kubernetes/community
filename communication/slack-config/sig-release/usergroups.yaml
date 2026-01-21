@@ -50,8 +50,10 @@ usergroups:
       - release-notes
       - sig-release
     members:
+      - aibarbetta          # v1.36 RT Lead Shadow
       - chadmcrowell        # v1.36 Comms Lead
       - dipesh-rawat        # v1.36 RT Lead Shadow
+      - fsmunoz             # Release Team Subproject Lead
       - jenshu              # v1.36 RT Lead Shadow
       - jmickey             # v1.36 Enhancements Lead
       - katcosgrove         # Release Team Subproject Lead
