@@ -4137,10 +4137,6 @@ committees:
     label: security-response
     leadership:
       chairs:
-        - github: SaranBalaji90
-          name: Sri Saran Balaji
-          company: Amazon
-          email: srajakum@amazon.com
         - github: Vyom-Yadav
           name: Vyom Yadav
           company: Canonical
@@ -4181,6 +4177,10 @@ committees:
           name: Tabitha Sable
           company: Datadog
           email: tabitha.c.sable@gmail.com
+        - github: vinayakankugoyal
+          name: Vinayak Goyal
+          company: Google
+          email: vinayakankugoyal@gmail.com
       emeritus_leads:
         - github: lukehinds
           name: Luke Hinds
