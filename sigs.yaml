@@ -2715,10 +2715,10 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/signalhound/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes/sig-release/master/release-team/OWNERS
         leads:
-          - github: gracenng
-            name: Grace Nguyen
-            company: Notion
-            email: nng.grace@gmail.com
+          - github: fsmunoz
+            name: Frederico Munoz
+            company: SAS
+            email: fsmunoz@gmail.com
           - github: katcosgrove
             name: Kat Cosgrove
             company: Minimus
