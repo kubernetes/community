@@ -18,8 +18,7 @@ sigs.yaml file in the project root.
 To understand how this file is generated, see https://git.k8s.io/community/generator/README.md
 --->
 
-Most community activity is organized into Special Interest Groups (SIGs),
-time bounded Working Groups, and the [community meeting](communication/README.md#weekly-meeting).
+Most community activity is organized into Special Interest Groups (SIGs) and time bounded Working Groups.
 
 SIGs follow these [guidelines](governance.md) although each of these groups may operate a little differently
 depending on their needs and workflow.
