@@ -126,6 +126,28 @@ touching the same code path, SIG may decide to only take one KEP for a release.
 Even if this is the case, properly structured KEP implementation will ensure
 that some progress was made for that release.
 
+#### Scaling up KEP approvers
+
+As per SIG charter, Tech Leads MUST Review & Approve SIG Enhancement Proposals,
+but MAY delegate to other contributors to fulfill these responsibilities for
+individual proposals. Practically, SIG Node maintain the following:
+
+1. The [sig-node OWNERS in k/enhancements](https://github.com/kubernetes/enhancements/blob/master/keps/sig-node/OWNERS#L6) contain `sig-node-tech-leads`, NOT `sig-node-leads`.
+  **Only Tech Leads can approve the KEP to enter alpha stage.**
+  So the alpha stage KEPs must identify one of the Tech Leads to be an approver in [kep.yaml](https://github.com/kubernetes/enhancements/blob/master/keps/NNNN-kep-template/kep.yaml#L14).
+2. Once the KEP implemented as alpha (implementation was actually merged),
+  Tech Lead CAN delegate the approvership to other individual.
+  The individual will often be an approver for some of the SIG Node component.
+  Often one who reviewed the alpha-phase implementation of a KEP.
+  KEP-level OWNERS file and a kep.yaml MUST be updated to reflect the additional approver.
+  It is recommended to keep one of the Tech Leads as an approver in kep.yaml.
+3. It is expected to have graduation criteria for beta and GA stages to be declared
+  before the approvership of a KEP is delegated.
+4. If the scope of a KEP changes significantly after alpha stage,
+  Tech Leads must be engaged in approving the scope change.
+  Specifically, if graduation criteria are changing for one of the stages,
+  Tech Lead needs to be notified.
+
 ### Helpful Links for SIG Node
 
 **Code**:  
