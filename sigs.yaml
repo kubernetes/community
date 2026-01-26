@@ -3925,34 +3925,14 @@ workinggroups:
     label: node-lifecycle
     leadership:
       chairs:
-        - github: JoelSpeed
-          name: Joel Speed
-          company: Red Hat
-          email: Joel.speed@hotmail.co.uk
         - github: atiratree
           name: Filip Křepinský
           company: Red Hat
           email: atiratree@gmail.com
-        - github: fabriziopandini
-          name: Fabrizio Pandini
-          company: VMware
-          email: fabrizio.pandini@gmail.com
-        - github: haircommander
-          name: Peter Hunt
-          company: Red Hat
-          email: pehunt@redhat.com
-        - github: humblec
-          name: Humble Chirammal
-          company: VMware
-          email: humble.devassy@gmail.com
         - github: intUnderflow
           name: Lucy Sweet
           company: Uber
           email: lucysweet@uber.com
-        - github: kwilczynski
-          name: Krzysztof Wilczyński
-          company: Independent
-          email: kw@linux.com
         - github: rthallisey
           name: Ryan Hallisey
           company: NVIDIA
