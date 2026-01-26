@@ -36,7 +36,7 @@ Each icon can be found in differents formats
 * [png](png)
 * [svg](svg)
 
-There is 2 types of icons
+There are 2 types of icons: labeled and unlabeled.
 
 | Kind  | Type       | Icon                             |
 |-------|------------|----------------------------------|
