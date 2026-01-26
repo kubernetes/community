@@ -101,25 +101,36 @@ func getLastThreeK8sReleases() (Releases, error) {
 	ctx := context.Background()
 	client := github.NewClient(nil)
 
-	releases, _, err := client.Repositories.ListReleases(ctx, "kubernetes", "kubernetes", nil)
+	repoReleases, _, err := client.Repositories.ListReleases(ctx, "kubernetes", "kubernetes", nil)
 	if err != nil {
 		return Releases{}, err
 	}
-	var result Releases
-	for _, release := range releases {
+
+	var releases []string
+	for _, release := range repoReleases {
 		if release.GetPrerelease() || release.GetDraft() {
 			continue
 		}
+		rel := semver.MajorMinor(release.GetTagName())
+		if !contains(releases, rel) {
+			releases = append(releases, rel)
+		}
+	}
+	semver.Sort(releases)
+
+	var result Releases
+	for i := len(releases) - 1; i >= 0; i-- {
+		release := releases[i]
 		if result.Latest == "" {
-			result.Latest = semver.MajorMinor(release.GetTagName())
+			result.Latest = semver.MajorMinor(release)
 			continue
 		}
 		if result.LatestMinusOne == "" {
-			result.LatestMinusOne = semver.MajorMinor(release.GetTagName())
+			result.LatestMinusOne = semver.MajorMinor(release)
 			continue
 		}
 		if result.LatestMinusTwo == "" {
-			result.LatestMinusTwo = semver.MajorMinor(release.GetTagName())
+			result.LatestMinusTwo = semver.MajorMinor(release)
 			break
 		}
 	}
