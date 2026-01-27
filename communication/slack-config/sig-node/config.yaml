@@ -12,3 +12,4 @@ channels:
   - name: sig-node-swap
   - name: sig-node-wranglers
   - name: sig-node-readiness-controller
+  - name: sig-node-writable-cgroups
