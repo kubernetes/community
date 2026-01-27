@@ -21,13 +21,13 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Sebastian Florek (**[@floreks](https://github.com/floreks)**), Plural
 * Joaquim Rocha (**[@joaquimrocha](https://github.com/joaquimrocha)**), Microsoft
-* Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**), Plural
 * Shu Muto (**[@shu-mutou](https://github.com/shu-mutou)**), NEC
 
 ## Emeritus Leads
 
 * Dan Romlein (**[@danielromlein](https://github.com/danielromlein)**)
 * Jeffrey Sica (**[@jeefy](https://github.com/jeefy)**)
+* Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**)
 
 ## Contact
 - Slack: [#sig-ui](https://kubernetes.slack.com/messages/sig-ui)

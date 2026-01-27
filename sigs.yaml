@@ -3347,10 +3347,6 @@ sigs:
           name: Joaquim Rocha
           company: Microsoft
           email: me@joaquimrocha.com
-        - github: maciaszczykm
-          name: Marcin Maciaszczyk
-          company: Plural
-          email: marcin9yk@icloud.com
         - github: shu-mutou
           name: Shu Muto
           company: NEC
@@ -3360,6 +3356,8 @@ sigs:
           name: Dan Romlein
         - github: jeefy
           name: Jeffrey Sica
+        - github: maciaszczykm
+          name: Marcin Maciaszczyk
     meetings: []
     contact:
       slack: sig-ui
