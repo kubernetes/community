@@ -11,7 +11,7 @@
 
 **Release Team Improvements:**
 - Streamlined release processes with improved handbooks and documentation
-- Enhanced exception criteria and templates for Production Readiness Freeze (PRR) and Code Freeze
+- Enhanced exception criteria and templates for Production Readiness Review (PRR) Freeze and Code Freeze
 - Updated release notes workflow and tooling for better accuracy
 - Continued refinement of the release cadence to balance contributor sustainability with project needs
 
@@ -36,13 +36,19 @@ None at this time. All subprojects have adequate OWNERS coverage.
 **[Maintainer Summit Europe 2025](https://maintainersummiteu2025.sched.com/) (London, March 31):**
 - [An Imperfect Guide To Impact and Intent](https://maintainersummiteu2025.sched.com/event/1uSNt/an-imperfect-guide-to-impact-and-intent-hilliary-lipsig-red-hat-danielle-lancashire-fermyon-xander-grzywinski-independent-ana-margarita-medina-upbound-jeremy-rickard-microsoft) - Panel discussion featuring Jeremy Rickard
 
-**KubeCon + CloudNativeCon Europe 2025 (London, April 1-4):**
+**[KubeCon + CloudNativeCon Europe 2025](https://kccnceu2025.sched.com/) (London, April 1-4):**
 - [Kubernetes SIG Meet & Greet](https://kccnceu2025.sched.com/event/1vTL7/kubernetes-sig-meet-greet-lunch-and-learn) (April 3) - SIG Release representatives engaged with new and existing contributors
+
+**[Maintainer Summit India 2025](https://kccncind2025.sched.com/event/25GPs/maintainer-meetup) (Hyderabad, August 5):**
+- Release Team members participated in the Maintainer Meetup, engaging with the community and sharing best practices
+
+**[KubeCon + CloudNativeCon India 2025](https://kccncind2025.sched.com/) (Hyderabad, August 6-7):**
+- SIG Release engaged with contributors throughout the conference
 
 **[Maintainer Summit North America 2025](https://maintainersummitna2025.sched.com/) (Atlanta, November 9):**
 - SIG Release members participated in maintainer discussions and project collaboration sessions
 
-**KubeCon + CloudNativeCon North America 2025 (Atlanta, November 10-13):**
+**[KubeCon + CloudNativeCon North America 2025](https://kccncna2025.sched.com/) (Atlanta, November 10-13):**
 - [Shaping LTS Together: What We've Learned the Hard Way](https://kccncna2025.sched.com/event/27FWW/shaping-lts-together-what-weve-learned-the-hard-way-nikhita-raghunath-nikhila-kamath-broadcom-micah-hausler-aws-jeremy-rickard-microsoft-aniket-ponkshe-canonical) - Jeremy Rickard (SIG Release co-chair) participated in panel on long-term support initiatives
 
 4. KEP work in 2025 (v1.33, v1.34, v1.35):
@@ -63,8 +69,7 @@ No KEPs were directly owned by SIG Release in the 2025 release cycles. SIG Relea
 
 ## [Working groups](https://git.k8s.io/community/sig-release#working-groups)
 
-**Continuing:**
- - LTS
+None at this time.
 
 ## Operational
 
