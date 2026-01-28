@@ -17,11 +17,8 @@ The [charter](charter.md) defines the scope and governance of the AI Gateway Wor
 * [SIG Network](/sig-network)
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-ai-gateway) for the group will typically add invites for the following meetings to your calendar.*
-* WG AI Gateway Bi-Weekly Meeting (Earlier Option) ([calendar](https://www.kubernetes.dev/resources/calendar/)): [Mondays at 1PM UTC](https://zoom.us/j/4368454928) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=1PM&tz=UTC).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1nRRkRK2e82mxkT8zdLoAtuhkom2X6dEhtYOJ9UtfZKs/edit).
-  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0sN57uRPbr38QX6tJxxV0o).
-* WG AI Gateway Bi-Weekly Meeting (Later Option) ([calendar](https://www.kubernetes.dev/resources/calendar/)): [Thursdays at 7PM UTC](https://zoom.us/j/4368454928) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=7PM&tz=UTC).
+* Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-ai-gateway) for the group will typically add invites for the following meetings to your calendar.*
+* WG AI Gateway Weekly Meeting ([calendar](https://www.kubernetes.dev/resources/calendar/)): [Thursdays at 2PM EST](https://zoom.us/j/4368454928) (weekly). [Convert to your timezone](https://dateful.com/time-zone-converter?t=2PM&tz=ET%20%28Eastern%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1nRRkRK2e82mxkT8zdLoAtuhkom2X6dEhtYOJ9UtfZKs/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP0sN57uRPbr38QX6tJxxV0o).
 
