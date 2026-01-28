@@ -3366,9 +3366,6 @@ sigs:
         github: soltysh
         name: Maciej Szulik
     subprojects:
-      - name: dashboard
-        owners:
-          - https://raw.githubusercontent.com/kubernetes/dashboard/master/OWNERS
       - name: headlamp
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/headlamp/refs/heads/main/OWNERS
