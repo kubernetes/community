@@ -12,6 +12,22 @@
    - Governance and leadership changes
 -->
 
+* [multicluster-runtime](https://github.com/multicluster-runtime/multicluster-runtime) accepted into the sig
+* Multicluster observability user research ([proposal doc](https://docs.google.com/document/d/1uCyHpI5zV1ME9qBtGjLkrIhpl3iXe-zQsn0SSbBiAE4/edit?usp=sharing),
+* "Hub"/"Management" Cluster definition discussion and position statement: https://github.com/kubernetes/community/pull/8210
+* Demos:  <<UNRESOLVED:get link>>helium<</UNRESOLVED>>, [KubeStellar](https://docs.google.com/presentation/d/1PYXL7FIim6b-Hrm97utpz5zjnuwgveNWRiny47IXxLg/edit?slide=id.g35a6b02e4b0_2_0#slide=id.g35a6b02e4b0_2_0)
+* Suggested well-known cluster properties and property ladder discussion: https://docs.google.com/document/d/1M6vD9ALiLLIGT3dHus-kfAUhD6wX9BPUjPB_g3XljMc/edit?tab=t.0#heading=h.jx7m99b4yg2y, <<UNRESOLVED>>PR [1](https://github.com/kubernetes/enhancements/pull/5185) and [2](https://github.com/kubernetes/enhancements/pull/5255/changes)<</UNRESOLVED>>
+* MCS versions X Y Z
+* [IP families](https://github.com/kubernetes/enhancements/pull/5264) and [ports conflict rules](https://github.com/kubernetes/enhancements/pull/4887#pullrequestreview-2494246716) for MCS and related conformance tests
+* Traffic distribution field lift to MCS
+* ClusterProfile credentials via plugin ([initial slide deck](https://docs.google.com/presentation/d/1v5-J-kFJ3TSpKqSraHcYkCz2NG7cNnYpq0ISF85wNMU/edit?slide=id.p#slide=id.p), [KEP update](https://github.com/kubernetes/enhancements/pull/5338),
+* PlacementDecision API ([community doc](https://docs.google.com/document/d/1seK6W_TgSDinogXqEm8bOgFCuKqJ9_qkZdodfkSheUY/edit?tab=t.0#heading=h.wyy5e36qm908), [informational slide deck](https://drive.google.com/file/d/1b7OQotko2w6PA_U-C7KtfaAmqeuqjMu0/view?ts=682370a6),) and general discussions about multicluster scheduling ([slides](https://docs.google.com/presentation/d/1PYXL7FIim6b-Hrm97utpz5zjnuwgveNWRiny47IXxLg/edit?slide=id.g35a6b02e4b0_2_0#slide=id.g35a6b02e4b0_2_0))
+* APAC meetings
+* Reviewer increase
+* MCS API spec/status/root discussion: [doc](https://docs.google.com/document/d/112osT8lPCg5hbbnHuekn7KVNvy2LgLPV1ICalAmb8uE/edit?tab=t.4gswme8shckl#heading=h.56zvg7miiql4), [slides](https://docs.google.com/presentation/d/12A3i8OdJdpsHu4b_IenWgldsgYSnUGkfzLJVl93b9tY/edit?usp=sharing), [github discussion thread](https://github.com/kubernetes-sigs/mcs-api/issues/106)
+* About API v1beta1 CRD released: https://github.com/kubernetes-sigs/about-api/pull/27
+
+
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
 
