@@ -103,7 +103,7 @@ The Release Engineering subproject is responsible for the [process/procedures](h
 ### Release Team
 The Kubernetes Release Team is responsible for the day-to-day work required to successfully create releases of Kubernetes.
 - **Leads:**
-  - Frederico Muñoz (**[@fsmunoz](https://github.com/fsmunoz)**), SAS
+  - Frederico Munoz (**[@fsmunoz](https://github.com/fsmunoz)**), SAS
   - Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Minimus
 - **Owners:**
   - [kubernetes-sigs/release-team-shadow-stats](https://github.com/kubernetes-sigs/release-team-shadow-stats/blob/main/OWNERS)
