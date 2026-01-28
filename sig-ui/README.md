@@ -38,9 +38,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-ui:
-### dashboard
-- **Owners:**
-  - [kubernetes/dashboard](https://github.com/kubernetes/dashboard/blob/master/OWNERS)
 ### headlamp
 - **Owners:**
   - [kubernetes-sigs/headlamp/heads/main](https://github.com/kubernetes-sigs/headlamp/blob/refs/heads/main/OWNERS)
