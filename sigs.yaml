@@ -1977,10 +1977,6 @@ sigs:
       - name: resource-state-metrics
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/resource-state-metrics/main/OWNERS
-      - name: structured-logging
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/logtools/main/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/logs/OWNERS
       - name: usage-metrics-collector
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/usage-metrics-collector/main/OWNERS
@@ -3942,39 +3938,6 @@ workinggroups:
       liaison:
         github: saschagrunert
         name: Sascha Grunert
-  - dir: wg-structured-logging
-    name: Structured Logging
-    mission_statement: >
-      Modernize logging in Kubernetes core components, allowing users to efficiently consume, process, store and analyse information stored in logs.
-
-    charter_link: charter.md
-    stakeholder_sigs:
-      - API Machinery
-      - Architecture
-      - Cloud Provider
-      - Instrumentation
-      - Network
-      - Node
-      - Scheduling
-      - Storage
-    label: structured-logging
-    leadership:
-      chairs:
-        - github: mengjiao-liu
-          name: Mengjiao Liu
-          company: Independent
-          email: liumengjiao.dev@gmail.com
-        - github: pohly
-          name: Patrick Ohly
-          company: Intel
-          email: patrick.ohly@intel.com
-    meetings: []
-    contact:
-      slack: wg-structured-logging
-      mailing_list: https://groups.google.com/forum/#!forum/kubernetes-wg-structured-logging
-      liaison:
-        github: aojea
-        name: Antonio Ojea
 usergroups: []
 committees:
   - dir: committee-code-of-conduct

@@ -76,7 +76,6 @@ The following [working groups][working-group-definition] are sponsored by sig-ne
 * [WG AI Gateway](/wg-ai-gateway)
 * [WG Device Management](/wg-device-management)
 * [WG Node Lifecycle](/wg-node-lifecycle)
-* [WG Structured Logging](/wg-structured-logging)
 
 
 ## Subprojects
