@@ -1,3 +1,9 @@
+---
+title: "NCO Lead Handbook"
+weight: 20
+description: "Guidance for leading a New Contributor Orientation meeting."
+---
+
 # New Contributor Orientation (NCO) Meeting Lead
 
 The NCO meeting Lead is responsible for running the NCO meeting for at least 1 [monthly] session. Each NCO Lead is responsible for identifying at least 1 NCO Lead to succeed them.
