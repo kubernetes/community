@@ -275,8 +275,6 @@ learn how other projects moderate and learn from them in order to improve our
 guidelines:
 
 - Mozilla's [Forum Moderation Guidelines](https://support.mozilla.org/en-US/kb/moderation-guidelines)
-- OASIS [How to Moderate a Mailing List](https://www.oasis-open.org/khelp/kmlm/user_help/html/mailing_list_moderation.html)
-- Community Spark's [How to effectively moderate forums](http://www.communityspark.com/how-to-effectively-moderate-forums/)
 - [5 tips for more effective community moderation](https://www.socialmediatoday.com/social-business/5-tips-more-effective-community-moderation)
 - [8 Helpful Moderation Tips for Community Managers](https://sproutsocial.com/insights/tips-community-managers/)
 - [Setting Up Community Guidelines for Moderation](https://www.getopensocial.com/blog/community-management/setting-community-guidelines-moderation)
