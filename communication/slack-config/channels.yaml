@@ -604,6 +604,7 @@ channels:
   - name: wg-onprem
     archived: true
   - name: wg-policy
+    archived: true
   - name: wg-reliability
     archived: true
   - name: wg-resource-mgmt
