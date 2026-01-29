@@ -1,3 +1,10 @@
+---
+title: "Monthly Kubernetes New Contributor Orientation"
+weight: 1
+description: |
+  Information about the monthly Kubernetes New Contributor Orientation meetings.
+---
+
 # Monthly Kubernetes New Contributor Orientation
 The Monthly Kubernetes New Contributor Orientation (NCO) meetings are an initiative owned by the mentoring subproject of [SIG-ContribEx](../../sig-contributor-experience/). Started in September of 2024, the purpose of these meetings is to orient prospective new contributors to the community by providing an overview of what Kubernetes does as a technology, how the community is structured and how it functions, and how they might fit into the community as "contributors." There is no hands-on content included in the New Contributor Orientation meeting.
 

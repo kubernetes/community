@@ -1,3 +1,9 @@
+---
+title: "NCO Host Handbook"
+weight: 10
+description: "Guidance for hosting a New Contributor Orientation meeting."
+---
+
 # Monthly Kubernetes New Contributor Orientation Host Handbook
 
 Any active contributor with [org membership](https://github.com/kubernetes/community/blob/master/community-membership.md#member) is invited to participate in New Contributor Orientation (NCO) meetings as a host. A host is an active contributor who participates in NCO by helping to answer attendee questions about contribution based on that host's own unique experience contributing to the project.
