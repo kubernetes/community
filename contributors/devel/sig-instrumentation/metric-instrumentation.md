@@ -22,20 +22,22 @@ internal and external.
 
 ## Quick Start
 
+### Adding a New Metric
+
 The following describes the basic steps required to add a new metric (in Go).
 
 1. Import "k8s.io/component-base/metrics" for metrics and "k8s.io/component-base/metrics/legacyregistry" to register your declared metrics.
 
 2. Create a top-level var to define the metric. For this, you have to:
 
-    1. Pick the type of metric. Use a Gauge for things you want to set to a
+   1. Pick the type of metric. Use a Gauge for things you want to set to a
 particular value, a Counter for things you want to increment, or a Histogram or
 Summary for histograms/distributions of values (typically for latency).
 Histograms are better if you're going to aggregate the values across jobs, while
 summaries are better if you just want the job to give you a useful summary of
 the values.
-    2. Give the metric a name and description.
-    3. Pick whether you want to distinguish different categories of things using
+   2. Give the metric a name and description (follow the [Prometheus best practices](https://prometheus.io/docs/practices/naming/) for this step).   
+   3. Pick whether you want to distinguish different categories of things using
 labels on the metric. If so, add "Vec" to the name of the type of metric you
 want and add a slice of the label names to the definition.
 
@@ -67,6 +69,33 @@ first calling WithLabelValues if your metric has any labels
   	requestCounter.WithLabelValues(*verb, *resource, client, strconv.Itoa(*httpCode)).Inc()
    ```
 
+### Graduating an Existing Metric
+
+When graduating a metric from Alpha to Beta or from Beta to Stable, the following requirements must be met. For more information on stability levels and their guarantees, see [Metrics Stability](#metrics-stability).
+
+#### Graduating to Beta
+
+Wherever possible, ensure that metrics graduating to Beta follow the [Prometheus metric naming best practices](https://prometheus.io/docs/practices/naming/).
+
+1. **Testing requirement**: The metric must have a corresponding test that validates:
+   - The metric exhibits the correct behavior under known conditions (e.g., increments, observations, or value changes as expected for the code path being tested).
+   - Avoid tests that only check if a metric is registered or emitted, or that simply call `.Set()`/`.Inc()`/`.Observe()` and expect the value to change since these do not provide meaningful coverage. Focus on testing the metric's behavior as part of the component's logic.
+
+2. **Documentation**: Ensure the metric has a clear and accurate help text description.
+
+3. **API Review**: Graduating a metric to Beta requires an API review by SIG Instrumentation, as it represents a contractual API agreement. See the [API Review](/contributors/devel/sig-instrumentation/metric-stability.md#api-review) section in the metrics stability documentation.
+
+#### Graduating to Stable
+
+The metric must meet all of the requirements for Beta graduation.
+
+1. **Stability validation**: The metric should have been at Beta stability for at least two releases to ensure it has been sufficiently validated in production environments.
+
+2. **Testing requirement**:
+   - The metric must be included in the [stable metrics list](https://github.com/kubernetes/kubernetes/blob/master/test/instrumentation/testdata/stable-metrics-list.yaml)
+     - See the [instrumentation test README](https://github.com/kubernetes/kubernetes/tree/master/test/instrumentation/README.md) for steps on how to generate this file correctly
+
+3. **API Review**: Marking a metric as stable is a commitment by the owning SIG to maintain stability guarantees. The owning SIG leads must review and approve the graduation first. Additionally, approval from SIG Instrumentation is required as it represents a contractual API agreement. See the [API Review](/contributors/devel/sig-instrumentation/metric-stability.md#api-review) section in the metrics stability documentation.
 
 ## Instrumentation types
 
