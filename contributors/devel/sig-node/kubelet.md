@@ -19,7 +19,7 @@ workload abstractions -- those are handled by upstream controllers.
     Kubelet on that node see it and take ownership. _**<==== WE ARE HERE!!!**_ 
 
 The Kubelet **orchestrates** the Pod spec into running processes on the host via
-the **Container Runtime Interface (CRI)**. The runtime (e.g., containerd)
+the **Container Runtime Interface (CRI)**. The runtime (e.g., `containerd`)
 translates these requests for an OCI runtime (e.g. `runc`), which handles the
 low-level operating system setup for the container.
 
