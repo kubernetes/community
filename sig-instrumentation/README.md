@@ -56,7 +56,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 The following [working groups][working-group-definition] are sponsored by sig-instrumentation:
 * [WG Serving](/wg-serving)
-* [WG Structured Logging](/wg-structured-logging)
 
 
 ## Subprojects
@@ -101,10 +100,6 @@ Organization of SIG Instrumentation subprojects
 ### resource-state-metrics
 - **Owners:**
   - [kubernetes-sigs/resource-state-metrics](https://github.com/kubernetes-sigs/resource-state-metrics/blob/main/OWNERS)
-### structured-logging
-- **Owners:**
-  - [kubernetes-sigs/logtools](https://github.com/kubernetes-sigs/logtools/blob/main/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/component-base/logs](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/logs/OWNERS)
 ### usage-metrics-collector
 - **Owners:**
   - [kubernetes-sigs/usage-metrics-collector](https://github.com/kubernetes-sigs/usage-metrics-collector/blob/main/OWNERS)
