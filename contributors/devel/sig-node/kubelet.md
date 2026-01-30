@@ -20,8 +20,8 @@ workload abstractions -- those are handled by upstream controllers.
 
 The Kubelet **orchestrates** the Pod spec into running processes on the host via
 the **Container Runtime Interface (CRI)**. The runtime (e.g., containerd)
-translates these requests into OCI specs for `runc`, which handles the low-level
-host syscalls.
+translates these requests for an OCI runtime (e.g. `runc`), which handles the
+low-level host syscalls.
 
 ## Startup Flow: From API to Pod Worker
 
