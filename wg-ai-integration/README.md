@@ -28,7 +28,7 @@ The [charter](charter.md) defines the scope and governance of the AI Integration
 ## Organizers
 
 * Arda Guclu (**[@ardaguclu](https://github.com/ardaguclu)**), Red Hat
-* Arush Sharma (**[@rushmash91](https://github.com/rushmash91)**), Amazon
+* Arush Sharma (**[@rushmash91](https://github.com/rushmash91)**), Apple
 * Zvonko Kaiser (**[@zvonkok](https://github.com/zvonkok)**), NVIDIA
 
 ## Contact
