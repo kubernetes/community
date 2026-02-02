@@ -1288,9 +1288,9 @@ sigs:
         meetings:
           - description: Cluster API Provider OpenStack Office Hours
             day: Wednesday
-            time: "14:00"
+            time: "12:00"
             tz: UTC
-            frequency: alternate weeks, check agenda doc for last meeting
+            frequency: biweekly
             url: https://zoom.us/j/91405526408?pwd=bVBxempwVDBzejJGQlhSOGlXZnRxUT09
             archive_url: https://cluster-api-openstack.sigs.k8s.io/agenda
       - name: cluster-api-provider-vsphere
