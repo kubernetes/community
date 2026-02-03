@@ -17,6 +17,9 @@ The [charter](charter.md) defines the scope and governance of the Apps Special I
 * Regular SIG Meeting ([calendar](https://calendar.google.com/calendar/embed?src=phfni1v25vnmi4q06m851230so%40group.calendar.google.com)) : [Mondays at 9:00 PT (Pacific Time)](https://zoom.us/j/739385290?pwd=ekVmNGRjT214MGJkY1JUUUpPMVlJUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1LZLBGW2wRDwAfdBNHJjFfk9CFoyZPcIYGWU7R1PQ3ng/edit#).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3).
+* Subproject Agent Sandbox Meeting ([calendar](https://calendar.google.com/calendar/embed?src=phfni1v25vnmi4q06m851230so%40group.calendar.google.com)) : [Mondays at 9:30 PT (Pacific Time)](https://zoom.us/j/739385290?pwd=ekVmNGRjT214MGJkY1JUUUpPMVlJUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A30&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1o9w0rlwo1lKO2zcfX7Kp8E7sIt1L-Z8frScLj30kpRw/edit#).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP2LMq7vznITnpd2Fk1YIZF3).
 
 ## Leadership
 
