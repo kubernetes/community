@@ -1596,6 +1596,10 @@ sigs:
           name: Xander Grzywinski
           company: Independent
           email: xandergrzyw@gmail.com
+        - github: reylejano
+          name: Rey Lejano
+          company: Red Hat
+          email: rlejano@gmail.com
         - github: tengqm
           name: Qiming Teng
           company: Sangfor Technologies
