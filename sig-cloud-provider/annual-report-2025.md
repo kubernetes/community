@@ -4,6 +4,10 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
+* [KEP-5237 watch-based route conntroller reconciliation using informers](https://github.com/kubernetes/enhancements/issues/5237)
+* [Kubernetes Resource Orchestrator (KRO)](https://github.com/kubernetes-sigs/kro/) was accepted by the SIG as an official subproject.
+* [Announcing the deprecation of Cloud Provider Equinix Metal](https://github.com/kubernetes-sigs/cloud-provider-equinix-metal/issues/636) as the service is being retired.
+
 <!--
    Some example items that might be worth highlighting:
    - Major KEP advancement
@@ -16,6 +20,9 @@
 
 
 3. Did you have community-wide updates in 2025 (e.g. KubeCon talks)?
+
+* [SIG Cloud Provider Deep Dive: Testing Cloud Controller Managers (KubeCon EU 2025)](https://www.youtube.com/watch?v=WeWQqQM6kjM)
+* [SIG Cloud Provider Deep Dive: Expanding Our Mission (KubeCon NA 2025)](https://www.youtube.com/watch?v=BcUWVmluRdw)
 
 <!--
   Examples include links to email, slides, or recordings.
@@ -30,17 +37,16 @@
       Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
 -->
 
-<!-- 
   - Alpha
     - [5237 - Watch-based route controller reconciliation](https://github.com/kubernetes/enhancements/tree/master/keps/sig-cloud-provider/5237-watch-based-route-controller-reconciliation) - v1.35
 
- -->
 
 ## [Subprojects](https://git.k8s.io/community/sig-cloud-provider#subprojects)
 
 
 **New in 2025:**
   - kro
+
 **Continuing:**
   - cloud-provider-extraction-migration
   - kubernetes-cloud-provider
@@ -59,6 +65,7 @@
 
 **New in 2025:**
  - Node Lifecycle
+
 **Continuing:**
  - Structured Logging
 
