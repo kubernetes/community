@@ -66,6 +66,7 @@
 
 **New in 2025:**
   - multicluster-runtime
+
 **Continuing:**
   - about-api
   - cluster-inventory-api
