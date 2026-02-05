@@ -25,7 +25,7 @@
   * Additional CRD versioning data on MCS ([PR](https://github.com/kubernetes-sigs/mcs-api/pull/116))
   * Forward looking discussions on policies and plans for the MCI-API conformance report program for GA
 * Cluster Inventory API
-   * ClusterProfile credentials via plugin ([initial slide deck](https://docs.google.com/presentation/d/1v5-J-kFJ3TSpKqSraHcYkCz2NG7cNnYpq0ISF85wNMU/edit?slide=id.p#slide=id.p), [KEP update](https://github.com/kubernetes/enhancements/pull/5338))
+   * ClusterProfile credentials via plugin ([initial slide deck](https://docs.google.com/presentation/d/1v5-J-kFJ3TSpKqSraHcYkCz2NG7cNnYpq0ISF85wNMU/edit?slide=id.p#slide=id.p), [KEP update](https://github.com/kubernetes/enhancements/pull/5338), [PR](https://github.com/kubernetes-sigs/cluster-inventory-api/pull/17))
    * PlacementDecision API added ([community doc](https://docs.google.com/document/d/1seK6W_TgSDinogXqEm8bOgFCuKqJ9_qkZdodfkSheUY/edit?tab=t.0#heading=h.wyy5e36qm908), [informational slide deck](https://drive.google.com/file/d/1b7OQotko2w6PA_U-C7KtfaAmqeuqjMu0/view?ts=682370a6), [KEP](https://github.com/kubernetes/enhancements/pull/5314), [PR](https://github.com/kubernetes-sigs/cluster-inventory-api/pull/33)) and general discussions about multicluster scheduling ([slides](https://docs.google.com/presentation/d/1PYXL7FIim6b-Hrm97utpz5zjnuwgveNWRiny47IXxLg/edit?slide=id.g35a6b02e4b0_2_0#slide=id.g35a6b02e4b0_2_0))
 * About API
    * About API v1beta1 CRD released: https://github.com/kubernetes-sigs/about-api/pull/27
