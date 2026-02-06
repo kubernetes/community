@@ -12,14 +12,21 @@
    - Governance and leadership changes
 -->
 
+- Started Workload initiative
+- New Chairs and Tech leads
+
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
+- [scheduler-plugins](https://github.com/kubernetes-sigs/scheduler-plugins/)
+- [kwok](https://github.com/kubernetes-sigs/kwok)
+- [kube-scheduler-simulator](https://github.com/kubernetes-sigs/kube-scheduler-simulator/)
+- [kube-scheduler-wasm-extension](https://github.com/kubernetes-sigs/kube-scheduler-wasm-extension)
 
 3. Did you have community-wide updates in 2025 (e.g. KubeCon talks)?
 
-<!--
-  Examples include links to email, slides, or recordings.
--->
+- [Kubecon NA maintainer session](https://sched.co/27NlU)
+- [Kubecon EU maintainer session](https://sched.co/1td1i)
+
 
 4. KEP work in 2025 (v1.33, v1.34, v1.35):
 <!--
@@ -30,7 +37,6 @@
       Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
 -->
 
-<!-- 
   - Alpha
     - [4671 - Gang Scheduling](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/4671-gang-scheduling) - v1.35
     - [4815 - DRA Partitionable Devices](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/4815-dra-partitionable-devices) - v1.33
@@ -54,7 +60,7 @@
     - [3094 - Take taints/tolerations into consideration when calculating PodTopologySpread skew](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/3094-pod-topology-spread-considering-taints) - 1.33
     - [3633 - Introduce MatchLabelKeys and MismatchLabelKeys to PodAffinity and PodAntiAffinity](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/3633-matchlabelkeys-to-podaffinity) - v1.33
     - [3902 - Decouple TaintManager from NodeLifeCycleController](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/3902-decoupled-taint-manager) - v1.34
-    - [4247 - Per-plugin callback functions for efficient requeueing in the scheduling queue](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/4247-queueinghint) - v1.34 -->
+    - [4247 - Per-plugin callback functions for efficient requeueing in the scheduling queue](https://github.com/kubernetes/enhancements/tree/master/keps/sig-scheduling/4247-queueinghint) - v1.34
 
 ## [Subprojects](https://git.k8s.io/community/sig-scheduling#subprojects)
 
@@ -87,12 +93,12 @@
 ## Operational
 
 Operational tasks in [sig-governance.md]:
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
 - [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
 
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-scheduling/CONTRIBUTING.md
