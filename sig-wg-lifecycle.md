@@ -57,7 +57,6 @@ Each one of these has a linked canonical source guideline from set up to moderat
 - [ ] Join the #chairs-and-techleads slack channel
 
 ...with the community as part of [sig-governance.md]
-- [ ] Get on the schedule for [Thursday community updates]; info at the top of the agenda
 - [ ] Create a shared calendar and schedule your weekly/biweekly/triweekly weeks [update meetings]
 - This calendar creation process will allow all of your leads to edit SIG/WG Meetings. This is important as we all change jobs, email addresses, and take breaks from the project. Shared calendars will also provide consistency with contributors looking for your subproject meetings, office hours, and anything else that the SIG/WGs contributors should know about.
 
