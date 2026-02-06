@@ -1,5 +1,5 @@
 ---
-title: Monthly Community Meeting
+title: Monthly Community Meeting [currently inactive]
 weight: 1
 description: |
   The Kubernetes community meeting is intended to provide a holistic overview of
