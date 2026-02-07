@@ -5,7 +5,7 @@ description: |
 ---
 
 Zoom is the main video communication platform for Kubernetes. It is used for
-running the [community meeting], [SIG/WG meetings],
+running the [New Contributor Orientation], [SIG/WG meetings],
 and many other Kubernetes online events. Since the Zoom
 meetings are open to the general public, a Zoom host or co-host has to moderate
 a meeting in all senses of the word, from starting and stopping the meeting to
@@ -190,7 +190,7 @@ for which models work best.
 
 Thanks for making Kubernetes meetings work great!
 
-[community meeting]: /events/community-meeting.md
+[New Contributor Orientation]: /mentoring/new-contributor-orientation/README.md
 [SIG/WG meetings]: /sig-list.md
 [Kubernetes code of conduct]: /code-of-conduct.md
 [moderation]: ./moderation.md

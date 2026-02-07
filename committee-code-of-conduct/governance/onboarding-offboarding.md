@@ -35,7 +35,7 @@ Different actions on this list must be carried out by different members:
 
 **Who executes:** Anyone but outgoing members!
 
-- [ ] Give an update at the monthly Community meeting
+- [ ] Give an update at the Community meetings
 - [ ] Send an email to the `kubernetes/dev` mailing list
 
 ## Knowledge transfer and group procedures
