@@ -12,7 +12,7 @@
    - Governance and leadership changes
 -->
 
-- Started Workload initiative
+- Started Workload Aware Scheduling (aka WAS) initiative
 - New Chairs and Tech leads
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
