@@ -270,12 +270,11 @@ if other things like KEP planning must be prioritized.
 
 ### upload meeting recording to YouTube (for chairs)
 
-1. Download the video file from zoom account `sig-node-leads@kubernetes.io`
-2. Log in to YouTube under the `kubernetes-sig-node` account (use switch account)
-3. Upload video to YouTube
-   - Name should follow the template: `<name of the meeting> yyyymmdd` like `Kubernetes SIG Node 20240618`.
-   - Add a link to the meeting notes and agenda document to the meeting description
-   - Add video to k8s-owned YouTube playlist:
-     - Once video is uploaded, open the video page, click +Save button under the video, select the checkbox `SIG Node Meetings`.
-4. Add link to the video to the meeting notes document
-5. In zoom account change the title of the recording - add `(uploaded)` suffix
+Every meeting recorded with the SIG Node zoom account now are automatically uploaded to the [SIG Node Meetings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG)
+youtube playlist by Zapier automation. This includes subproject meetings as well.
+
+This automation was originally requested by Peter Hunt (@haircommander) and was setup by Chad Crowell (@chadmcrowell).
+If there is an issue with it, please speak with them.
+
+Note: when the videos were manually uploaded, SIG leads would also link the meeting nodes to the youtube video description.
+This is not automated, and must still be done manually if needed.
