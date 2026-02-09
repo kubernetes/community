@@ -1898,6 +1898,10 @@ sigs:
           name: Damien Grisonnet
           company: Red Hat
           email: dgrisonn@redhat.com
+        - github: pohly
+          name: Patrick Ohly
+          company: Intel
+          email: patrick.ohly@intel.com
       emeritus_leads:
         - github: brancz
           name: Frederic Branczyk
