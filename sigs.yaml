@@ -1592,6 +1592,10 @@ sigs:
           name: Kat Cosgrove
           company: Minimus
           email: kat.cosgrove@gmail.com
+        - github: reylejano
+          name: Rey Lejano
+          company: Red Hat
+          email: rlejano@gmail.com
         - github: salaxander
           name: Xander Grzywinski
           company: Independent
