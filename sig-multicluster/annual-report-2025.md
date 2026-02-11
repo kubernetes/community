@@ -37,18 +37,16 @@
 
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
-
+While we did increase the number of reviewers this year, in practice we have around the same ~6 people across the same number of projects (with very uneven distribution in terms of how much they review across all projects vs their main project) and we don't have a pipeline. Last year we tried a volunteer "council" of reviewers who would commit to 4 hours a week of reviews and also had the power to represent consensus if needed to unblock PRs in case of lack of approver/lead bandwidth, but we have not seen this specific power come into use nor the overall velocity of PR review increasing.
 
 3. Did you have community-wide updates in 2025 (e.g. KubeCon talks)?
-
-<!--
-  Examples include links to email, slides, or recordings.
 * KubeCon EU:
   * [How the SIG-Multicluster API Specifications Are Used for Real World Multicluster Management](https://kccnceu2025.sched.com/event/1txHL/how-the-sig-multicluster-api-specifications-are-used-for-real-world-multicluster-management-august-simonelli-red-hat-ryan-zhang-microsoft)
   * [SIG-Multicluster Intro and Deep Dive](https://kccnceu2025.sched.com/event/1td0P/sig-multicluster-intro-and-deep-dive-jeremy-olmsted-thompson-laura-lorenz-google-stephen-kitt-red-hat-ryan-zhang-microsoft)
 * KubeCon NA:
   * [SIG-Multicluster Intro and Deep Dive](https://kccncna2025.sched.com/event/27Nlj/sig-multicluster-intro-and-deep-dive-stephen-kitt-red-hat-pavanipriya-sajja-independent-jeremy-olmsted-thompson-google)
   * [Finally, a Cluster Inventory I Can USE!](https://kccncna2025.sched.com/event/27FfN/finally-a-cluster-inventory-i-can-use-corentin-debains-google-ryan-zhang-microsoft)
+
 
 4. KEP work in 2025 (v1.33, v1.34, v1.35):
 <!--
@@ -65,6 +63,8 @@
     - [5339 - ClusterProfile credentials plugin](https://github.com/kubernetes/enhancements/tree/master/keps/sig-multicluster/5339-clusterprofile-plugin-credentials) - v1.34
 
  -->
+
+ TODO: pull in the KEP work from comment
 
 ## [Subprojects](https://git.k8s.io/community/sig-multicluster#subprojects)
 
@@ -84,18 +84,16 @@
 **New in 2025:**
  - AI Gateway
     - see [doc](https://docs.google.com/document/d/10WTdHYW5x2rw6BTgDzW7X-5QNesAh205MuoaUe5-IQg), [PR](https://github.com/kubernetes/community/pull/8521)
-**Retired in 2025:**
- - Policy
 
 ## Operational
 
 Operational tasks in [sig-governance.md]:
-- [ ] [README.md] reviewed for accuracy and updated if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
 - [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
 - [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
 
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-multicluster/CONTRIBUTING.md
