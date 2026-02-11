@@ -83,7 +83,7 @@
 
 **New in 2025:**
  - AI Gateway
-    - see [doc](https://docs.google.com/document/d/10WTdHYW5x2rw6BTgDzW7X-5QNesAh205MuoaUe5-IQg/edit?tab=t.0), [PR](https://github.com/kubernetes/community/pull/8521)
+    - see [doc](https://docs.google.com/document/d/10WTdHYW5x2rw6BTgDzW7X-5QNesAh205MuoaUe5-IQg), [PR](https://github.com/kubernetes/community/pull/8521)
 **Retired in 2025:**
  - Policy
 
