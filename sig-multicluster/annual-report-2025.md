@@ -13,7 +13,7 @@
 -->
 
 * [multicluster-runtime](https://github.com/multicluster-runtime/multicluster-runtime) accepted into the sig
-* Multicluster observability user research ([proposal doc](https://docs.google.com/document/d/1uCyHpI5zV1ME9qBtGjLkrIhpl3iXe-zQsn0SSbBiAE4/edit?usp=sharing))
+* Multicluster observability user research ([proposal doc](https://docs.google.com/document/d/1uCyHpI5zV1ME9qBtGjLkrIhpl3iXe-zQsn0SSbBiAE4))
 * "Hub"/"Management" Cluster definition discussion and position statement: https://github.com/kubernetes/community/pull/8210
 * Demos:  [helium](https://github.com/raffaelespazzoli/helium), [KubeStellar](https://docs.google.com/presentation/d/1PYXL7FIim6b-Hrm97utpz5zjnuwgveNWRiny47IXxLg), [kube-bind](https://kube-bind.io/) ([slides](https://docs.google.com/presentation/d/1a5QqiaJNpu0UgyL50T0kLGg9-gaeF-1yqW3FZThlhnU), [github](https://github.com/kube-bind/kube-bind))
 * MCS versions 0.2.0 and 0.3.0
