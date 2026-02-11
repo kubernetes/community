@@ -30,7 +30,7 @@
 * About API
    * About API v1beta1 CRD released: https://github.com/kubernetes-sigs/about-api/pull/27
    * Discussion on suggested well-known cluster properties and property ladder discussion ([doc](https://docs.google.com/document/d/1M6vD9ALiLLIGT3dHus-kfAUhD6wX9BPUjPB_g3XljMc/edit?tab=t.0#heading=h.jx7m99b4yg2y))
-* Discussed intersections with the Gateway Inference group e.g. [Multi-Cluster Inference Gateways proposal](https://docs.google.com/document/d/1QGvG9ToaJ72vlCBdJe--hmrmLtgOV_ptJi9D58QMD2w/edit?tab=t.0#heading=h.5ey5ed20u5wj) and [CompositeBackend proposal](https://docs.google.com/document/d/1xXM6vDDmmmwK6Oh11CdCyKKN9wdoOalnpkjsO2PdFd4/edit?tab=t.0)
+* Discussed intersections with the Gateway Inference group e.g. [Multi-Cluster Inference Gateways proposal](https://docs.google.com/document/d/1QGvG9ToaJ72vlCBdJe--hmrmLtgOV_ptJi9D58QMD2w) and [CompositeBackend proposal](https://docs.google.com/document/d/1xXM6vDDmmmwK6Oh11CdCyKKN9wdoOalnpkjsO2PdFd4)
 * Ops
    * Added APAC meetings
    * Reviewer increase
