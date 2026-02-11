@@ -21,7 +21,7 @@
   * Traffic distribution/internal traffic policies field lift to MCS ([KEP update](https://github.com/kubernetes/enhancements/pull/5588), [PR](https://github.com/kubernetes-sigs/mcs-api/pull/131)) and ServiceExport conditions streamlining against Gateway API ([KEP update](https://github.com/kubernetes/enhancements/pull/5438), [PR](https://github.com/kubernetes-sigs/mcs-api/pull/112))
   * MCS API spec/status/root discussion and eventual no-op: [doc](https://docs.google.com/document/d/112osT8lPCg5hbbnHuekn7KVNvy2LgLPV1ICalAmb8uE/edit?tab=t.4gswme8shckl#heading=h.56zvg7miiql4), [slides](https://docs.google.com/presentation/d/12A3i8OdJdpsHu4b_IenWgldsgYSnUGkfzLJVl93b9tY/edit?usp=sharing), [github discussion thread](https://github.com/kubernetes-sigs/mcs-api/issues/106)
   * Add ServiceImport conditions ([KEP update](https://github.com/kubernetes/enhancements/pull/5439), [PR](https://github.com/kubernetes/enhancements/pull/5439)) and leverage them for asymmetrical traffic conflicts ([KEP update](https://github.com/kubernetes/enhancements/pull/5706), [PR](https://github.com/kubernetes-sigs/mcs-api/pull/132))
-  * Discussion on [MCS cluster selection and traffic distribution](https://docs.google.com/document/d/14Ts1PhkSd-ouiGLhMA6uZN6RfoObqKvqpxnf7qLko5Y/edit?usp=sharing)
+  * Discussion on [MCS cluster selection and traffic distribution](https://docs.google.com/document/d/14Ts1PhkSd-ouiGLhMA6uZN6RfoObqKvqpxnf7qLko5Y)
   * Additional CRD versioning data on MCS ([PR](https://github.com/kubernetes-sigs/mcs-api/pull/116))
   * Forward looking discussions on policies and plans for the MCI-API conformance report program for GA
 * Cluster Inventory API
