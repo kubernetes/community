@@ -158,6 +158,8 @@ For general code organization, read [contributors/devel/README.md](../contributo
 * kubelet
   * <https://github.com/kubernetes/kubernetes/tree/master/cmd/kubelet>
   * <https://github.com/kubernetes/kubernetes/tree/master/pkg/kubelet>
+  * See a detailed walkthrough of the kubelet component in [the kubelet
+    README](../contributors/devel/sig-node/kubelet.md).
 * Probe: <https://github.com/kubernetes/kubernetes/tree/master/pkg/probe>
 * NodeLifecycle: <https://github.com/kubernetes/kubernetes/tree/master/pkg/controller/nodelifecycle>
 * Node API: <https://github.com/kubernetes/kubernetes/tree/master/staging/src/k8s.io/api/node>
