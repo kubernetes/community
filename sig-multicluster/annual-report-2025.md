@@ -43,7 +43,12 @@
 
 <!--
   Examples include links to email, slides, or recordings.
--->
+* KubeCon EU:
+  * [How the SIG-Multicluster API Specifications Are Used for Real World Multicluster Management](https://kccnceu2025.sched.com/event/1txHL/how-the-sig-multicluster-api-specifications-are-used-for-real-world-multicluster-management-august-simonelli-red-hat-ryan-zhang-microsoft)
+  * [SIG-Multicluster Intro and Deep Dive](https://kccnceu2025.sched.com/event/1td0P/sig-multicluster-intro-and-deep-dive-jeremy-olmsted-thompson-laura-lorenz-google-stephen-kitt-red-hat-ryan-zhang-microsoft)
+* KubeCon NA:
+  * [SIG-Multicluster Intro and Deep Dive](https://kccncna2025.sched.com/event/27Nlj/sig-multicluster-intro-and-deep-dive-stephen-kitt-red-hat-pavanipriya-sajja-independent-jeremy-olmsted-thompson-google)
+  * [Finally, a Cluster Inventory I Can USE!](https://kccncna2025.sched.com/event/27FfN/finally-a-cluster-inventory-i-can-use-corentin-debains-google-ryan-zhang-microsoft)
 
 4. KEP work in 2025 (v1.33, v1.34, v1.35):
 <!--
