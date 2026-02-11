@@ -29,7 +29,7 @@
    * PlacementDecision API added ([community doc](https://docs.google.com/document/d/1seK6W_TgSDinogXqEm8bOgFCuKqJ9_qkZdodfkSheUY/edit?tab=t.0#heading=h.wyy5e36qm908), [informational slide deck](https://drive.google.com/file/d/1b7OQotko2w6PA_U-C7KtfaAmqeuqjMu0/view?ts=682370a6), [KEP](https://github.com/kubernetes/enhancements/pull/5314), [PR](https://github.com/kubernetes-sigs/cluster-inventory-api/pull/33)) and general discussions about multicluster scheduling ([slides](https://docs.google.com/presentation/d/1PYXL7FIim6b-Hrm97utpz5zjnuwgveNWRiny47IXxLg/edit?slide=id.g35a6b02e4b0_2_0#slide=id.g35a6b02e4b0_2_0))
 * About API
    * About API v1beta1 CRD released: https://github.com/kubernetes-sigs/about-api/pull/27
-   * Discussion on suggested well-known cluster properties and property ladder discussion ([doc](https://docs.google.com/document/d/1M6vD9ALiLLIGT3dHus-kfAUhD6wX9BPUjPB_g3XljMc/edit?tab=t.0#heading=h.jx7m99b4yg2y))
+   * Discussion on suggested well-known cluster properties and property ladder discussion ([doc](https://docs.google.com/document/d/1M6vD9ALiLLIGT3dHus-kfAUhD6wX9BPUjPB_g3XljMc))
 * Discussed intersections with the Gateway Inference group e.g. [Multi-Cluster Inference Gateways proposal](https://docs.google.com/document/d/1QGvG9ToaJ72vlCBdJe--hmrmLtgOV_ptJi9D58QMD2w) and [CompositeBackend proposal](https://docs.google.com/document/d/1xXM6vDDmmmwK6Oh11CdCyKKN9wdoOalnpkjsO2PdFd4)
 * Ops
    * Added APAC meetings
