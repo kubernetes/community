@@ -90,7 +90,7 @@ While we did increase the number of reviewers this year, in practice we have aro
 Operational tasks in [sig-governance.md]:
 - [x] [README.md] reviewed for accuracy and updated if needed
 - [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
-- [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
+- [x] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
 - [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
 - [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
 - [x] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
