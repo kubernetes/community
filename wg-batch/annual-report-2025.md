@@ -84,7 +84,7 @@ The HPC/ML community tend to prefer CLI over YAML so the focus was to provide a 
 
 #### KEPs
 
-WG-Batch provided a series of Kubernetes enhancements that improved the experience of batch workloads on Kubernetes. In 2025, this group proposed/implemented the following KEPs.
+WG-Batch provided a series of Kubernetes enhancements that improved the experience of batch workloads on Kubernetes. In 2025, this group proposed/implemented/consulted the following KEPs.
 
 - [Job Success Policy](https://github.com/kubernetes/enhancements/issues/3998)
   - Promoted to stable.
