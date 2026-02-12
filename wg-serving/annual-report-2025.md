@@ -5,7 +5,7 @@
 
 1. What work did the WG do this year that should be highlighted?
 
-Subprojects and initiatives, including [Gateway API Inference Extension](https://github.com/kubernetes-sigs/gateway-api-inference-extension), [Inference Perf](https://github.com/kubernetes-sigs/inference-perf), and [Serving Catalog](https://github.com/kubernetes-sigs/wg-serving/tree/main/serving-catalog) have made great progress. Please check out each project's release notes for details. We've also continued the collaborations with the [llm-d project](https://github.com/llm-d/llm-d) community.
+Subprojects and initiatives sponsored by WG Serving, including [Gateway API Inference Extension](https://github.com/kubernetes-sigs/gateway-api-inference-extension), [Inference Perf](https://github.com/kubernetes-sigs/inference-perf), and [Serving Catalog](https://github.com/kubernetes-sigs/wg-serving/tree/main/serving-catalog) have made great progress. Please check out each project's release notes for details. We've also continued the collaborations with the [llm-d project](https://github.com/llm-d/llm-d) community.
 
 We presented at KubeCon in both Europe and North America:
 * KubeCon Europe 2025: [Advancements in AI/ML Inference Workloads on Kubernetes From WG Serving and Ecosystem Projects](https://www.youtube.com/watch?v=HWoHcOTKJM4)
