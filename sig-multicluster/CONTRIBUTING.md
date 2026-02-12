@@ -9,12 +9,11 @@ The process for contributing code to Kubernetes via the sig-multicluster
   [multicluster.sigs.k8s.io/contributing](https://multicluster.sigs.k8s.io/contributing/).
 - The sig-multicluster [community page] lists sig-multicluster [leads] and group
   [meeting] times.
-- Request a feature by making an [issue] and mentioning
-  `@kubernetes/sig-multicluster-feature-requests`.
+- Request a feature by making an issue in the appropriate [subproject repository][subprojects].
 - Reach out on Slack in
   [#sig-multicluster](https://kubernetes.slack.com/messages/sig-multicluster)
-- Write a design proposal before starting work on a new feature.
-- Write [tests]!
+- Write a design proposal before starting work on a new feature or write tests for one of the 
+[subprojects][subprojects].
 
 ## Before You Begin
 
@@ -56,35 +55,33 @@ design:
 
 - Attend a sig-multicluster [meeting] and introduce yourself as looking to get
   started.
-- Browse through the open issues in the subprojects of SIG-Multicluster,
+- Browse through the open issues in the [subprojects] of SIG-Multicluster,
   especially ones with the "help-wanted" tag.
 
 ### Bug lifecycle
 
 #### Filing a bug
 
-1. An [issue] is filed that
-  - includes steps to reproduce the issue including client / server version,
-  - mentions `@kubernetes/sig-multicluster-bugs`.
+1. An [issue] is filed in a [suproject repository][subprojects] that
+  - includes steps to reproduce the issue including client / server / API version
 
 #### Sending a fix
 
 2. A [PR] fixing the issue is implemented that
-  - __includes unit and test-cmd tests__,
+  - __includes tests__,
   - incorporates review feedback,
   - description includes `Closes #<Issue Number>` or `Fixes #<Issue Number>`,
-  - description or comment @mentions `@kubernetes/sig-multicluster-pr-reviews`.
-3. Fix appears in the next Kubernetes release!
+3. Fix appears in the next subproject release!
 
 ## Feature requests
 
 __New contributors:__ Please start by adopting an [existing issue].
 
-A feature request is an [issue] mentioning
-`@kubernetes/sig-multicluster-feature-requests`.
+A feature request is an [issue].
 
 To encourage readership, the issue description should _concisely_ (2-4 sentence)
-describe the problem that the feature addresses.
+describe the problem that the feature addresses, and include supporting information
+after that.
 
 ### Feature lifecycle
 
@@ -96,8 +93,7 @@ To minimize wasted work and improve communication across efforts, the user
 experience and software design must be agreed upon before any PRs are sent for
 code review.
 
-1. Identify a problem by filing an [issue] (mention
-   `@kubernetes/sig-multicluster-feature-requests`).
+1. Identify a problem by filing an [issue].
 2. Share a design proposal and get community feedback.
 3. Announce the proposal as an [agenda] item for the sig-multicluster [meeting].
   - Ensures awareness and feedback.
@@ -156,19 +152,21 @@ been completed, but _should not send a PR until the [KEP][multicluster KEPs] has
 been merged_.
 
 See the [development guide] for instructions on setting up the Kubernetes
-development environment.
+development environment. Individual subprojects of sig-multicluster have 
+their own READMEs on how to set up a development environment.
 
 Implementation PRs should
 - mention the issue of the associated KEP,
 - __include tests__.
+- update conformance tests if applicable.
 
 Small features and flag changes require only unit/integration tests, while
-larger changes require both unit/integration tests and e2e tests.
+larger changes require both unit/integration tests and e2e tests. API changes
+require conformance tests to be updated or added.
 
 ### Report progress
 
-_Leads need your help to ensure that progress is made to get the feature into a
-[release]._
+_Leads need your help to ensure that progress is made._
 
 While working on the issue, leave a weekly update on the issue including:
 
@@ -215,20 +213,15 @@ _including tests_, it will have to wait until the next release. Check the
 
 ### If your bug issue is stuck
 
-If an issue isn't getting any attention and is unresolved, mention
-`@kubernetes/sig-multicluster-bugs`.
-
-Highlight the severity and urgency of the issue.  For severe issues escalate by
+If an issue isn't getting any attention and is unresolved, highlight the severity 
+and urgency of the issue.  For severe issues or if it is waiting a long time, escalate by
 contacting sig [leads] and attending the [meeting].
 
 ### If your feature request issue is stuck
 
-If an issue isn't getting any attention and is unresolved, mention
-`@kubernetes/sig-multicluster-feature-requests`.
-
-If a particular issue has a high impact for you or your business, make sure this
-is clear on the bug, and reach out to the sig leads directly.  Consider
-attending the sig meeting to discuss over video conference.
+If an issue isn't getting any attention and is unresolved, and has a high impact for you or 
+your business, make sure this is clear on the bug, and reach out to the sig leads directly.
+Consider attending the sig meeting to discuss over video conference.
 
 ### If your PR is stuck
 
@@ -239,8 +232,7 @@ less likely to be stuck than a dangling PR.
 However, if it happens do the following:
 
 - If your PR is stuck for a week or more because it has never gotten any
-  comments, mention `@kubernetes/sig-multicluster-pr-reviews` and ask for
-  attention.
+  comments, raise it in the sig-multicluster slack or at a SIG meeting.
 - If your PR is stuck for a week or more _after_ it got comments, but the
   attention has died down.  Mention the reviewer and comment with [`PTAL`].
 
@@ -252,7 +244,7 @@ sig [leads] by mentioning them.
 It may happen that your design doc gets stuck without getting merged or
 additional feedback. If you believe that your design is important and has been
 dropped, or it is not moving forward, please add it to the sig multicluster
-bi-weekly meeting [agenda] and mail the [group] saying you'd like to discuss it.
+meeting [agenda] and mail the [group] saying you'd like to discuss it.
 
 ### General escalation instructions
 
@@ -263,14 +255,6 @@ times:
 - message one of the sig leads on [slack][slack-messages] (signup
   [here][slack-signup])
 - send an email to the _kubernetes-sig-multicluster@googlegroups.com_ [group].
-
-## Use of [@mentions]
-
-- `@{any lead}` solicit opinion or advice from [leads].
-- `@kubernetes/sig-multicluster-bugs` sig-multicluster centric bugs.
-- `@kubernetes/sig-multicluster-pr-reviews` triggers review of code fix PR.
-- `@kubernetes/sig-multicluster-feature-requests` flags a feature request.
-- `@kubernetes/sig-multicluster-proposals` flags a design proposal.
 
 [@mentions]:
     https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams
@@ -310,4 +294,5 @@ times:
 [release]: #release
 [slack-messages]: https://kubernetes.slack.com/messages/sig-multicluster
 [slack-signup]: http://slack.k8s.io/
+[subprojects]: https://github.com/kubernetes/community/tree/master/sig-multicluster#subprojects
 [tests]: /contributors/devel/sig-testing/testing.md
