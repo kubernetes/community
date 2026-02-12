@@ -12,12 +12,12 @@
    *   **Release of Conformance Checklists:** The WG defined and released conformance checklists for multiple Kubernetes versions, providing a clear baseline for AI-ready clusters:
         *   [`AIConformance-1.33.yaml`](https://github.com/cncf/k8s-ai-conformance/blob/main/docs/AIConformance-1.33.yaml)
         *   [`AIConformance-1.34.yaml`](https://github.com/cncf/k8s-ai-conformance/blob/main/docs/AIConformance-1.34.yaml)
-        *   [`AI Conformance-1.35.yaml`](https://github.com/cncf/k8s-ai-conformance/blob/main/docs/AIConformance-1.35.yaml)
+        *   [`AIConformance-1.35.yaml`](https://github.com/cncf/k8s-ai-conformance/blob/main/docs/AIConformance-1.35.yaml)
 
-   *   **Established Requirement & Test Processes:**
+   *   **Established Requirement Definition and Graduation Processes:**
         *   Transitioned requirement tracking from documents to a structured GitHub Project: [WG AI Conformance Requirements](https://github.com/orgs/kubernetes-sigs/projects/114).
         *   Defined the [Kubernetes AI Conformance Requirement (KAR)](https://github.com/kubernetes-sigs/wg-ai-conformance/tree/main/kars/NNNN-kar-template) process, mirroring the KEP process, to manage the lifecycle of requirements (SHOULD/MUST).
-   *   **Graduation to Subproject:** Following the successful launch of the conformance program, the Working Group officially transitioned into a permanent subproject under SIG Architecture in February 2026 to ensure long-term maintenance of the program.
+   *   **Graduation to Subproject:** Following the successful launch of the conformance program, the Working Group will transition into a permanent subproject under SIG Architecture in 2026 to ensure long-term maintenance of the program.
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
