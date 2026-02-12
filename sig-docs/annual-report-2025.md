@@ -3,23 +3,21 @@
 ## Current initiatives and Project Health
 
 1. What work did the SIG do this year that should be highlighted?
+* SIG Docs conducted an LFX Mentorship to update the API reference generator https://github.com/kubernetes-sigs/reference-docs
+* SIG Docs is in the process of upgrading Docsy theme for kubernetes.io to better align with upstream Docsy
+* SIG Docs has continued to build its maintainer and leadership bench by onboarding new TLs and approvers
+  * Dipesh Rawat and Rey Lejano appointed as Tech Leads
+* Work has started on the Farsi localization of Kubernetes documentation
 
-<!--
-   Some example items that might be worth highlighting:
-   - Major KEP advancement
-   - Important initiatives that aren't tracked via KEPs
-   - Paying down significant tech debt
-   - Governance and leadership changes
--->
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
-
+* Reference-docs subproject needs additional contributors and reviewers
 
 3. Did you have community-wide updates in 2025 (e.g. KubeCon talks)?
+* KubeCON EU 2025 Bridging the Gap to OSS Adoption with Documentation: A Kubernetes Story https://kccnceu2025.sched.com/event/1td1Z/bridge-the-gap-to-oss-adoption-with-documentation-a-kubernetes-story-natali-vlatko-cisco-divya-mohan-suse
+* KubeCon EU 2025 SIG Docs And You: Modernizing API Reference Generation https://kccnceu2025.sched.com/event/1td0V/sig-docs-and-you-modernizing-api-reference-generation-kat-cosgrove-xander-grzywinski-independent
+* KubeCon NA 2025 Getting Up to Date with Docsy: The Kubernetes Docs Upgrade Process https://kccncna2025.sched.com/event/27NnW/getting-up-to-date-with-docsy-the-kubernetes-docs-upgrade-in-progress-natali-vlatko-cisco-rey-lejano-red-hat-divya-mohan-suse-sayak-mukhopadhyay-gemini-solutions
 
-<!--
-  Examples include links to email, slides, or recordings.
--->
 
 4. KEP work in 2025 (v1.33, v1.34, v1.35):
 <!--
@@ -49,12 +47,12 @@
 ## Operational
 
 Operational tasks in [sig-governance.md]:
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
-- [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
 
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-docs/CONTRIBUTING.md
