@@ -15,7 +15,6 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 
 * Vyom Yadav (**[@Vyom-Yadav](https://github.com/Vyom-Yadav)**), Canonical
 * CJ Cullen (**[@cjcullen](https://github.com/cjcullen)**), Google
-* Craig Ingram (**[@cji](https://github.com/cji)**), Google
 * Mo Khan (**[@enj](https://github.com/enj)**), Microsoft
 * Joel Smith (**[@joelsmith](https://github.com/joelsmith)**), Red Hat
 * Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
@@ -27,6 +26,7 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 
 ## Emeritus Members
 
+* Craig Ingram (**[@cji](https://github.com/cji)**)
 * Luke Hinds (**[@lukehinds](https://github.com/lukehinds)**)
 * Swamy Shivaganga Nagaraju (**[@swamymsft](https://github.com/swamymsft)**)
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**)
