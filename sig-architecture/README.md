@@ -56,7 +56,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-architecture:
-* [WG AI Conformance](/wg-ai-conformance)
 * [WG AI Integration](/wg-ai-integration)
 * [WG Device Management](/wg-device-management)
 * [WG LTS](/wg-lts)
@@ -116,10 +115,6 @@ Tooling based on Deep Learning tools to help maintainers to maintain the Kuberne
   - [kubernetes/community/sig-architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/OWNERS)
 - **Contact:**
   - Slack: [#prod-readiness](https://kubernetes.slack.com/messages/prod-readiness)
-### wg-ai-conformance
-Proposals and discussions for the AI Conformance Working Group
-- **Owners:**
-  - [kubernetes-sigs/wg-ai-conformance](https://github.com/kubernetes-sigs/wg-ai-conformance/blob/main/OWNERS)
 ### wg-device-management
 Contains prototype code for future work driven by WG Device Management
 - **Owners:**
