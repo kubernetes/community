@@ -1,0 +1,4 @@
+channels:
+  - name: sig-scheduling
+  - name: topology-aware-scheduling
+  - name: workload-aware-scheduling
