@@ -126,6 +126,11 @@ WG-Batch provided a series of Kubernetes enhancements that improved the experien
   - KubeCon EU, London
   - [Recording](https://www.youtube.com/watch?v=aWxuaEFSarU)
 
+- From High Performance Computing to AI Workloads on Kubernetes: MPI Runtime in Kubeflow TrainJob
+  - Speakers: Andrey Velichkevich and Yuki Iwai
+  - KubeCon EU, London
+  - [Recording](https://www.youtube.com/watch?v=Fnb1a5Kaxgo)
+
 - Resource Fairness and Utilization for Heterogeneous Batch/ML Platforms With Kueue
   - Speakers: Yuki Iwai and Gabe Saba
   - KubeCon NA, Atlanta
@@ -138,7 +143,9 @@ WG-Batch provided a series of Kubernetes enhancements that improved the experien
 
 ### Community adoption
 
-- [CNCF Kubernetes AI Conformance Program](https://www.cncf.io/announcements/2025/11/11/cncf-launches-certified-kubernetes-ai-conformance-program-to-standardize-ai-workloads-on-kubernetes/) was launched in November 2025 to standardize AI workloads on Kubernetes, with Kueue as a key component in the ecosystem.
+- [CNCF Kubernetes AI Conformance Program](https://www.cncf.io/announcements/2025/11/11/cncf-launches-certified-kubernetes-ai-conformance-program-to-standardize-ai-workloads-on-kubernetes/) was launched in November 2025 to standardize AI workloads on Kubernetes, with JobSet and Kueue as a key component in the ecosystem.
+
+- [Kueue integrated with Kubeflow TrainJob](https://kueue.sigs.k8s.io/docs/tasks/run/trainjobs/), enabling quota management and admission control for distributed training workloads submitted via Kubeflow Trainer v2.
 
 ## Operational
 
