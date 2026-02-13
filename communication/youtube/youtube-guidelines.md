@@ -22,7 +22,8 @@ and includes all communications such as YouTube.
 ## Meeting Playlists
 
 The [Kubernetes YouTube Channel] has separate playlists for each SIG or WG 
-meeting recordings, as well as recordings of other recurring events such as the [New Contributor Orientation], and others.
+meeting recordings, as well as recordings of other recurring events such as
+the [New Contributor Orientation], and others.
 
 [Subprojects], in addition to SIGs and WGs may request their own playlists
 to better target their contributors and increase general discoverability.
