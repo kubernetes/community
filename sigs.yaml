@@ -439,9 +439,6 @@ sigs:
           slack: wg-device-management
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/wg-device-management/main/OWNERS
-      - name: wg-serving
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/wg-serving/main/OWNERS
   - dir: sig-auth
     name: Auth
     mission_statement: >
@@ -3945,56 +3942,6 @@ workinggroups:
       liaison:
         github: saschagrunert
         name: Sascha Grunert
-  - dir: wg-serving
-    name: Serving
-    mission_statement: >
-      Discuss and enhance the support of inference serving for accelerated workloads in Kubernetes. Make Kubernetes the natural choice for hosting production inference reliably, and improve all serving workloads along the way.
-
-    charter_link: charter.md
-    stakeholder_sigs:
-      - Apps
-      - Architecture
-      - Autoscaling
-      - Instrumentation
-      - Network
-      - Node
-      - Scheduling
-      - Storage
-    label: serving
-    leadership:
-      chairs:
-        - github: ArangoGutierrez
-          name: Eduardo Arango
-          company: NVIDIA
-          email: arangogutierrez@gmail.com
-        - github: Jeffwan
-          name: Jiaxin Shan
-          company: Bytedance
-          email: seedjeffwan@gmail.com
-        - github: SergeyKanzhelev
-          name: Sergey Kanzhelev
-          company: Google
-          email: s.kanzhelev@gmail.com
-        - github: terrytangyuan
-          name: Yuan Tang
-          company: Red Hat
-          email: terrytangyuan@gmail.com
-    meetings:
-      - description: WG Serving Weekly Meeting
-        day: Wednesday
-        time: "9:00"
-        tz: PT (Pacific Time)
-        frequency: biweekly
-        url: https://zoom.us/j/92615874244?pwd=VGhxZlJjRTNRWTZIS0dQV2MrZUJ5dz09
-        archive_url: https://docs.google.com/document/d/1aExJFtaLnO-TM6_2uILgI8NI0IjOm7FcwLABBKEMEo0/edit
-        recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2io2Gg92njBfh-DX9sk7O3
-        calendar_url: https://calendar.google.com/calendar/embed?src=e896b769743f3877edfab2d4c6a14132b2aa53287021e9bbf113cab676da54ba%40group.calendar.google.com
-    contact:
-      slack: wg-serving
-      mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-serving
-      liaison:
-        github: soltysh
-        name: Maciej Szulik
   - dir: wg-structured-logging
     name: Structured Logging
     mission_statement: >

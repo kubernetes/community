@@ -60,7 +60,6 @@ The following [working groups][working-group-definition] are sponsored by sig-ar
 * [WG AI Integration](/wg-ai-integration)
 * [WG Device Management](/wg-device-management)
 * [WG LTS](/wg-lts)
-* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 
@@ -127,9 +126,6 @@ Contains prototype code for future work driven by WG Device Management
   - [kubernetes-sigs/wg-device-management](https://github.com/kubernetes-sigs/wg-device-management/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#wg-device-management](https://kubernetes.slack.com/messages/wg-device-management)
-### wg-serving
-- **Owners:**
-  - [kubernetes-sigs/wg-serving](https://github.com/kubernetes-sigs/wg-serving/blob/main/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
