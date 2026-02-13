@@ -6,7 +6,7 @@ You can also learn more about the [SIG Autoscaling Charter](https://github.com/k
 ## Getting started
 Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-autoscaling) will get you invited to the general SIG meetings.
 
-Our Regular SIG Meeting is Mondays at 16:00 CET (Central European Time). This is a general forum for wider issues as well as most of the subprojects.
+Our Regular SIG Meeting is on [Thursdays at 17:00 Poland](https://zoom.us/j/96548204174) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17%3A00&tz=Poland). This is a general forum for wider issues as well as most of the subprojects.
 
 Most of the work of the SIG is undertaken by our [Subprojects](https://github.com/kubernetes/community/tree/master/sig-autoscaling#subprojects) where new contributors are always welcome. Some of the subprojects have their own dedicated meetings - either on an ad-hoc basis, or organised more regularly. See the above link and each subproject's Slack channel for more details.
 
