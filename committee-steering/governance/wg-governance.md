@@ -91,7 +91,7 @@ If the deliverable is a KEP, it would be helpful to link it in the closed format
 
 Working Groups will be disbanded if either of the following is true:
 
-- There is no long a Chair
+- There is no longer a Chair
   - (with a 4 week grace period)
 - None of the communication channels for the Working Group have been in use for the goals outlined at the founding of
   the Working Group
