@@ -248,10 +248,13 @@ sigs:
         github: aojea
         name: Antonio Ojea
     subprojects:
+      - name: agent-sandbox
+        description: Easy management of isolated, stateful, singleton workloads, ideal for use cases like AI agent runtimes
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/agent-sandbox/main/OWNERS
       - name: application
         description: Application metadata descriptor CRD
         owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/agent-sandbox/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/application/master/OWNERS
       - name: examples
         owners:
