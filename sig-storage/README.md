@@ -61,7 +61,6 @@ The following [working groups][working-group-definition] are sponsored by sig-st
 * [WG Data Protection](/wg-data-protection)
 * [WG Node Lifecycle](/wg-node-lifecycle)
 * [WG Serving](/wg-serving)
-* [WG Structured Logging](/wg-structured-logging)
 
 
 ## Subprojects
