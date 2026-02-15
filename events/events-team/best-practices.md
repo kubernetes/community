@@ -68,7 +68,6 @@ Slack - [#contributor-summit], [#kubecon], [#kubernetes-contributors]
 [Twitter]  
 [Kubernetes blog]  
 [discuss.kubernetes.io]  
-[Weekly Thursday Community Meetings][community-meetings]
 
 ## Sponsorship
 We like to keep our events clear from sponsorships as it distracts from the mission.
