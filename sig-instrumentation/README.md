@@ -55,7 +55,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-instrumentation:
-* [WG Serving](/wg-serving)
 * [WG Structured Logging](/wg-structured-logging)
 
 
