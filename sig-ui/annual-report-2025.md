@@ -4,33 +4,33 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-<!--
-   Some example items that might be worth highlighting:
-   - Major KEP advancement
-   - Important initiatives that aren't tracked via KEPs
-   - Paying down significant tech debt
-   - Governance and leadership changes
--->
+* Moved the Headlamp project under the SIG UI.
+* Kubernetes Dashboard was in maintenance mode, having had only dependency
+  update PRs merged.
+* joaquimrocha joined as a SIG UI lead.
+* After joining the SIG UI (April 2025), Headlamp had 10 blog posts, 10
+  releases, and 9 community calls.
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
+  In later December the SIG UI leaders decided to discontinue Kubernetes Dashboard,
+  resulting in the archiving of the project in early 2026.
 
 3. Did you have community-wide updates in 2025 (e.g. KubeCon talks)?
 
-<!--
-  Examples include links to email, slides, or recordings.
--->
+* Headlamp participated in the LFX Mentorhip with 7 projects, had 9 community
+  calls.
+* Headlamp participated actively in KubeCon Europe (London) with a talk, a
+  Contribfest session, and a part-time kiosk. And participted in KubeCon NA
+  (Atlanta) with a Contribfest session, a talk, and a full-time kiosk. There
+  were other talks given about Headlamp in the Microsoft booth, and one talk at
+  FluxCon.
 
 4. KEP work in 2025 (v1.33, v1.34, v1.35):
+
+[KEP-5008: Update KEP to be about moving headlamp](https://github.com/kubernetes/enhancements/pull/5181)
+
 <!--
-   TODO: Uncomment the following auto-generated list of KEPs, once reviewed & updated for correction.
-
-   Note: This list is generated from the KEP metadata in kubernetes/enhancements repository.
-      If you find any discrepancy in the generated list here, please check the KEP metadata.
-      Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
--->
-
-<!-- 
 
  -->
 
@@ -39,7 +39,8 @@
 
 **New in 2025:**
   - headlamp
-**Continuing:**
+
+**Archived (in early 2026):**
   - dashboard
 
 ## [Working groups](https://git.k8s.io/community/sig-ui#working-groups)
