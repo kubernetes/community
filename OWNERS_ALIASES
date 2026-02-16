@@ -173,11 +173,6 @@ aliases:
     - atiratree
     - intUnderflow
     - rthallisey
-  wg-serving-leads:
-    - ArangoGutierrez
-    - Jeffwan
-    - SergeyKanzhelev
-    - terrytangyuan
   wg-structured-logging-leads:
     - mengjiao-liu
     - pohly
