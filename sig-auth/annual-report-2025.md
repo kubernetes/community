@@ -18,11 +18,10 @@
    - Structured Authentication Configuration (KEP-3331) graduated to stable [in v1.34](https://github.com/kubernetes/kubernetes/pull/131916). The `AuthenticationConfiguration` type in `--authentication-config` files was promoted to `apiserver.config.k8s.io/v1`, supporting multiple JWT authenticators, CEL expression validation, and dynamic reloading.
    - Authorize with Selectors (KEP-4601) graduated to stable [in v1.34](https://github.com/kubernetes/kubernetes/pull/132656). Authorization decisions can now leverage field and label selectors to restrict list, watch, and deletecollection operations. The `AuthorizeWithSelectors` and `AuthorizeNodeWithSelectors` feature gates were promoted to stable and locked on.
    - Anonymous auth configurable endpoints (KEP-4633) graduated to stable [in v1.34](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/4633-anonymous-auth-configurable-endpoints). Anonymous access can now be limited to an explicit allowlist of endpoints such as `/healthz`, `/readyz`, `/livez`, reducing the blast radius of RBAC misconfigurations.
-   - Pod Security Admission now blocks setting `.host` field in ProbeHandler and LifecycleHandler (KEP-4940) graduated to stable [in v1.34](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/4940-psa-block-host-field-in-probes).
+   - Pod Security Admission `baseline` and `restricted` levels now block setting `.host` field in ProbeHandler and LifecycleHandler (KEP-4940) graduated to stable [in v1.34](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/4940-psa-block-host-field-in-probes).
    - Support for external signing of service account tokens (KEP-740) graduated to beta [in v1.34](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/740-service-account-external-signing).
    - DRA Admin Access (KEP-5018) was introduced as alpha [in v1.33](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/5018-dra-adminaccess) and graduated to beta [in v1.34](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/5018-dra-adminaccess).
    - Pod Certificates (KEP-4317) was introduced as alpha [in v1.34](https://github.com/kubernetes/kubernetes/pull/128010) and graduated to beta [in v1.35](https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/). This enables native workload identity with automated certificate rotation, where the kubelet generates keys and requests certificates via `PodCertificateRequest`, writing credential bundles directly to the Pod's filesystem.
-   - Harden Kubelet Serving Certificate Validation (KEP-4872) was introduced as alpha [in v1.35](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/4872-harden-kubelet-cert-validation), closing node-impersonation man-in-the-middle attacks through CN validation.
    - Constrained Impersonation (KEP-5284) was introduced as alpha [in v1.35](https://github.com/kubernetes/kubernetes/pull/134803), implementing a framework to prevent impersonating users from performing unauthorized actions.
    - Added ability to specify `controlplane` or `cluster` egress selectors in JWT authenticators via the `issuer.egressSelectorType` field [in v1.34](https://github.com/kubernetes/kubernetes/pull/132768), gated by the `StructuredAuthenticationConfigurationEgressSelector` beta feature gate.
    - Kube-apiserver now supports disabling caching of authorization webhook decisions in the `--authorization-config` file [in v1.34](https://github.com/kubernetes/kubernetes/pull/129237) using `cacheAuthorizedRequests` and `cacheUnauthorizedRequests` fields.
@@ -59,7 +58,6 @@
 -->
 
   - Alpha
-    - [4872 - Harden Kubelet Serving Certificate Validation in Kube-API server](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/4872-harden-kubelet-cert-validation) - v1.35
     - [5284 - Constrained Impersonation](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/5284-constrained-impersonation) - v1.35
 
   - Beta
@@ -73,7 +71,7 @@
     - [3331 - Structured authentication config](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/3331-structured-authentication-configuration) - v1.34
     - [4601 - Authorize with Selectors](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/4601-authorize-with-selectors) - v1.34
     - [4633 - Only allow anonymous auth for configured endpoints](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/4633-anonymous-auth-configurable-endpoints) - v1.34
-    - [4940 - Add Pod Security Admission to block setting host field in probes](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/4940-psa-block-host-field-in-probes) - v1.34
+    - [4940 - Pod Security Admission `baseline` and `restricted` levels now block setting `.host` field in ProbeHandler and LifecycleHandler](https://github.com/kubernetes/enhancements/tree/master/keps/sig-auth/4940-psa-block-host-field-in-probes) - v1.34
 
 ## [Subprojects](https://git.k8s.io/community/sig-auth#subprojects)
 
