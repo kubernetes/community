@@ -64,7 +64,28 @@ While we did increase the number of reviewers this year, in practice we have aro
 
  -->
 
- TODO: pull in the KEP work from comment
+MCS
+ * [KEP 1645: slightly relax the managed by requirements on EndpointSlices enhancements#4930](https://github.com/kubernetes/enhancements/pull/4930)
+ * [KEP-1645: define dual stack policies and fields enhancements#5264](https://github.com/kubernetes/enhancements/pull/5264)
+ * [KEP 1645: updates ServiceExport conditions enhancements#5437](https://github.com/kubernetes/enhancements/pull/5437)
+ * [KEP 1645: fix ServiceExport conditions enhancements#5438](https://github.com/kubernetes/enhancements/pull/5438)
+ * [KEP 1645: add ServiceImport conditions enhancements#5439](https://github.com/kubernetes/enhancements/pull/5439)
+ * [KEP 1645: updates ServiceExport conditions enhancements#5437](https://github.com/kubernetes/enhancements/pull/5437)
+ * [KEP 1645: fix ServiceExport conditions enhancements#5438](https://github.com/kubernetes/enhancements/pull/5438)
+ * [KEP 1645: add ServiceImport conditions enhancements#5439](https://github.com/kubernetes/enhancements/pull/5439)
+ *  [KEP 1645: clarify the impact of conflict condition enhancements#5463](https://github.com/kubernetes/enhancements/pull/5463)
+ * [KEP 1645: add more conflict condition on asymmetrical traffic enhancements#5706](https://github.com/kubernetes/enhancements/pull/5706)
+ * [KEP 1645: add traffic distribution and internal traffic policies fields enhancements#5588](https://github.com/kubernetes/enhancements/pull/5588)
+
+ClusterProfile
+ * [KEP 5339 - ClusterProfile Credentials external providers enhancements#5338](https://github.com/kubernetes/enhancements/pull/5338)
+ * [Update KEP-4322 to account for ClusterProfile CR being namespaced enhancements#5457](https://github.com/kubernetes/enhancements/pull/5457)
+ * [KEP-5339: fix typo in ClusterProfile credentialProviders example enhancements#5518](https://github.com/kubernetes/enhancements/pull/5518)
+ * [KEP-5339: add additional cluster-specific auth info field to the cluster profile object enhancements#5559](https://github.com/kubernetes/enhancements/pull/5559)
+ * [KEP-5339: define extensions-based per-cluster plugin configuration enhancements#5643](https://github.com/kubernetes/enhancements/pull/5643)
+
+Placement API
+  * [KEP-5313: Placement Decision API for multicluster scheduling enhancements#5314](https://github.com/kubernetes/enhancements/pull/5314)
 
 ## [Subprojects](https://git.k8s.io/community/sig-multicluster#subprojects)
 
