@@ -19,6 +19,7 @@ The [charter](charter.md) defines the scope and governance of the Node Special I
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
 * Weekly CI/Triage Meeting: [Wednesdays at 10:00 PT (Pacific Time)](https://zoom.us/j/93387714284?pwd=NHNpT2xtOGtwNnVQZ1JXdkNlQ1RMQT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1fb-ugvgdSVIkkuJ388_nhp2pBTy_4HEVg5848Xy7n5U/edit).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG).
 
 ## Leadership
 
