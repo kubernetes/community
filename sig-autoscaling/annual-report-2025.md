@@ -46,7 +46,7 @@
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
-- Omer Aplatony has stepped up considerably to reinforce HPA (thank you @omerap12) in addition to his work maintaining VPA. We are making progress here:
+- Omer Aplatony has stepped up considerably to reinforce HPA (thank you @omerap12), in addition to his work maintaining VPA. At least one more regular maintainer is still needed. We are tracking progress here:
   - https://github.com/kubernetes/kubernetes/issues/128948
 
 
