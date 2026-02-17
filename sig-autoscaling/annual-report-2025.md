@@ -69,7 +69,6 @@
 
 - Alpha
   - [5030 - Integrate CSI Volume attach limits with cluster autoscaler](https://github.com/kubernetes/enhancements/tree/master/keps/sig-autoscaling/5030-attach-limit-autoscaler) - v1.35
-  - [5325 - Improve pod selection accuracy across workload types](https://github.com/kubernetes/enhancements/tree/master/keps/sig-autoscaling/5325-hpa-pod-selection-accuracy) - v1.35
 - Beta
   - [4951 - Configurable tolerance for HPA](https://github.com/kubernetes/enhancements/tree/master/keps/sig-autoscaling/4951-configurable-hpa-tolerance) - v1.35
 
