@@ -15,6 +15,10 @@
   - [Granular Resource Limits (CapacityQuota API)](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/proposals/granular-resource-limits.md) @norbertcyran
   - Spare Capacity (CapacityBuffer API)[https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/proposals/buffers.md] @jbtk
 - 7 minor release of Karpenter: [1.2.0](https://github.com/kubernetes-sigs/karpenter/releases/tag/v1.2.0), [1.3.0](https://github.com/kubernetes-sigs/karpenter/releases/tag/v1.3.0), [1.4.0](https://github.com/kubernetes-sigs/karpenter/releases/tag/v1.4.0), [1.5.0](https://github.com/kubernetes-sigs/karpenter/releases/tag/v1.5.0), [1.6.0](https://github.com/kubernetes-sigs/karpenter/releases/tag/v1.6.0), [1.7.0](https://github.com/kubernetes-sigs/karpenter/releases/tag/v1.7.0), [1.8.0](https://github.com/kubernetes-sigs/karpenter/releases/tag/v1.8.0)
+  - Static Capacity alpha release
+  - Reserved Capacity alpha and beta release
+  - Node Overlay alpha release
+  - New Metrics, Conditions, and Events for better observability
 - Karpenter RFCs
   - [Static Capacity](https://github.com/kubernetes-sigs/karpenter/blob/main/designs/static-capacity.md) @sumukha-radhakrishna
   - [NodeRegistrationHealthy Status Condition](https://github.com/kubernetes-sigs/karpenter/pull/1910) @jigisha620
@@ -29,7 +33,9 @@
   - Cluster Autoscaler provider growth
     - New [CoreWeave Provider](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/coreweave)
     - New [Utho Provider](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler/cloudprovider/utho)
-- Significant Leadership Updates
+  - Karpenter engineering leadership growth
+    - @DerekFrank and @engedaam added as project approvers
+- Significant SIG Leadership Updates
   - Maciek Pytel steps down as Chair (Thank you @maciekpytel !)
   - Kuba Tużnik (@towca) promoted to Chair
   - Jack Francis (@jackfrancis) promoted to Lead
