@@ -76,11 +76,11 @@
 
 
 **Continuing:**
-  - cluster-autoscaler
-  - karpenter
-  - horizontal-pod-autoscaler
-  - vertical-pod-autoscaler
   - addon-resizer
+  - cluster-autoscaler
+  - horizontal-pod-autoscaler
+  - karpenter
+  - vertical-pod-autoscaler
 
 ## [Working groups](https://git.k8s.io/community/sig-autoscaling#working-groups)
 
