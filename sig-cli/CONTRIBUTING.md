@@ -95,12 +95,12 @@ work.
 ### Adopt an issue
 
 Pick up an [issue] from the backlog by commenting on the issue that you would like to work on it.
-Be sure to mention the author of the issue as well as the SIG cli members `@seans3` and `@mengqiy`.
+Be sure to mention the author of the issue as well as the SIG cli members `@mpuckett159` and `@ardaguclu`.
 
 Using the following comment will make it easier for us to search for issues folks want to have
 assigned to them:
 
-`cc @seans3 @mengqiy I would like to take this`
+`cc @mpuckett159 @ardaguclu I would like to take this`
 
 **Note:** Don't do this unless you will start work on the issue within a few days of being assigned.
 
@@ -166,7 +166,7 @@ If you like, you may pick up a different issue immediately or sometime in the fu
 **Summary**:
 
 - Don't pick up an issue until you are ready to start working on it
-- When you want to pick up an issue, be sure to comment `@seans3` and `@mengqiy`.
+- When you want to pick up an issue, be sure to comment `@mpuckett159` and `@ardaguclu`.
   Expect a response within 2 days.
 - Update the issue every week with your progress so we know it is being actively worked on.
 - There is an expectation that some time will be committed to working on the issue each
