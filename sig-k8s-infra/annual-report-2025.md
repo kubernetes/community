@@ -3,6 +3,11 @@
 ## Current initiatives and Project Health
 
 1. What work did the SIG do this year that should be highlighted?
+- Changes to leadership
+  - [@hakman](https://github.com/hakman) brought on as new Co-Chair
+  - [@GenPage](https://github.com/genpage) brought on as new Co-Chair
+  - [@BenTheElder](https://github.com/bentheelder) stepped down from Co-Chair and Tech Lead, and moved to emeritus
+  - [@dims](https://github.com/dims) stepped down from Co-Chair, and moved to emeritus
 
 <!--
    Some example items that might be worth highlighting:
@@ -16,10 +21,9 @@
 
 
 3. Did you have community-wide updates in 2025 (e.g. KubeCon talks)?
-
-<!--
-  Examples include links to email, slides, or recordings.
--->
+- **[Kubernetes Infra SIG: Intro and Updates](https://kccncna2025.sched.com/event/27Nmn/kubernetes-infra-sig-intro-and-updates-mahamed-ali-arab-center-for-research-policy-studies)**
+  - **Speaker:** Mahamed Ali (SIG K8s-Infra Tech Lead)
+  - **Description:** A deep dive into the projects SIG K8s-Infra is currently working on, existing collaborations, and updates on the state of the SIG.
 
 4. KEP work in 2025 (v1.33, v1.34, v1.35):
 <!--
@@ -53,12 +57,12 @@
 ## Operational
 
 Operational tasks in [sig-governance.md]:
-- [ ] [README.md] reviewed for accuracy and updated if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
 - [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
 - [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
 
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-k8s-infra/CONTRIBUTING.md
