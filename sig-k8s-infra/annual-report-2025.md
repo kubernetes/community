@@ -3,6 +3,13 @@
 ## Current initiatives and Project Health
 
 1. What work did the SIG do this year that should be highlighted?
+
+- Integration of IBM Cloud
+- Migration from GCR to Artifact registry
+- Migration of kOps CI to community infrastructure
+- Migration of CAPV CI to community infrastructure
+- Integration with Datadog
+
 - Changes to leadership
   - [@hakman](https://github.com/hakman) brought on as new Co-Chair
   - [@GenPage](https://github.com/genpage) brought on as new Co-Chair
@@ -19,8 +26,11 @@
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
+- Maintenance of the [registry](https://github.com/kubernetes/registry.k8s.io)
+- Maintenance of the AWS Infrastructure
 
 3. Did you have community-wide updates in 2025 (e.g. KubeCon talks)?
+
 - **[Kubernetes Infra SIG: Intro and Updates](https://kccncna2025.sched.com/event/27Nmn/kubernetes-infra-sig-intro-and-updates-mahamed-ali-arab-center-for-research-policy-studies)**
   - **Speaker:** Mahamed Ali (SIG K8s-Infra Tech Lead)
   - **Description:** A deep dive into the projects SIG K8s-Infra is currently working on, existing collaborations, and updates on the state of the SIG.
@@ -34,36 +44,31 @@
       Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
 -->
 
-<!-- 
+<!--
 
  -->
 
 ## [Subprojects](https://git.k8s.io/community/sig-k8s-infra#subprojects)
 
-
 **Continuing:**
-  - community-images
-  - k8s-infra-dns
-  - k8s-infra-groups
-  - k8s.io
-  - porche
-  - registry.k8s.io
 
-## [Working groups](https://git.k8s.io/community/sig-k8s-infra#working-groups)
-
-**Continuing:**
- - LTS
+- community-images
+- k8s-infra-dns
+- k8s-infra-groups
+- k8s.io
+- porche
+- registry.k8s.io
 
 ## Operational
 
 Operational tasks in [sig-governance.md]:
+
 - [x] [README.md] reviewed for accuracy and updated if needed
 - [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
 - [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
 - [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
 - [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
 - [x] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
-
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-k8s-infra/CONTRIBUTING.md
 [sig-governance.md]: https://git.k8s.io/community/committee-steering/governance/sig-governance.md
