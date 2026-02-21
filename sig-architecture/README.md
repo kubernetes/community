@@ -60,7 +60,6 @@ The following [working groups][working-group-definition] are sponsored by sig-ar
 * [WG AI Integration](/wg-ai-integration)
 * [WG Device Management](/wg-device-management)
 * [WG LTS](/wg-lts)
-* [WG Structured Logging](/wg-structured-logging)
 
 
 ## Subprojects

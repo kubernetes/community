@@ -57,7 +57,6 @@ The following [working groups][working-group-definition] are sponsored by sig-no
 * [WG Checkpoint Restore](/wg-checkpoint-restore)
 * [WG Device Management](/wg-device-management)
 * [WG Node Lifecycle](/wg-node-lifecycle)
-* [WG Structured Logging](/wg-structured-logging)
 
 
 ## Subprojects
