@@ -70,10 +70,13 @@ The following [working groups][working-group-definition] are sponsored by sig-ap
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-apps:
+### agent-sandbox
+Easy management of isolated, stateful, singleton workloads, ideal for use cases like AI agent runtimes
+- **Owners:**
+  - [kubernetes-sigs/agent-sandbox](https://github.com/kubernetes-sigs/agent-sandbox/blob/main/OWNERS)
 ### application
 Application metadata descriptor CRD
 - **Owners:**
-  - [kubernetes-sigs/agent-sandbox](https://github.com/kubernetes-sigs/agent-sandbox/blob/main/OWNERS)
   - [kubernetes-sigs/application](https://github.com/kubernetes-sigs/application/blob/master/OWNERS)
 ### examples
 - **Owners:**
