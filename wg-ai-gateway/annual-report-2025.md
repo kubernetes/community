@@ -6,7 +6,7 @@
 
 - WG formally established in September 2025; [charter](https://git.k8s.io/community/wg-ai-gateway/charter.md) ratified, [proposals repo](https://github.com/kubernetes-sigs/wg-ai-gateway) created, weekly meetings started
 - Two proposals developed:
-  - [Payload Processing](https://github.com/kubernetes-sigs/wg-ai-gateway/blob/main/proposals/7-payload-processing.md): prompt guards, semantic routing/caching, token rate limiting, and how these map onto Gateway API filters
+  - [Payload Processing](https://github.com/kubernetes-sigs/wg-ai-gateway/blob/main/proposals/7-payload-processing.md): prompt guards, semantic routing/caching, and how these map onto Gateway API filters
   - [Egress Gateways](https://github.com/kubernetes-sigs/wg-ai-gateway/blob/main/proposals/10-egress-gateways.md): proxying to third-party AI services (OpenAI, Gemini, Claude, etc.), with a comparison of prior art and a resource model built on Gateway API
 - KubeCon EU 2026 session accepted: "Aim at the Gate: Introducing the AI Gateway Working Group in Kubernetes"
 
