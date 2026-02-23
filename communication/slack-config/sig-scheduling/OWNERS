@@ -3,6 +3,6 @@
 reviewers:
   - sig-scheduling-leads
 approvers:
-  - sig-scheduling-approvers
+  - sig-scheduling-leads
 labels:
   - sig/scheduling
