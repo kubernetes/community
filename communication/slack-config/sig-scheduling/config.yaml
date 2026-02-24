@@ -1,3 +1,2 @@
 channels:
-  - name: sig-scheduling
   - name: workload-aware-scheduling
