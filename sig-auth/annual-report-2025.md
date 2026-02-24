@@ -30,11 +30,11 @@
    - Cross-SIG work (SIG Auth participating):
      - Ensure Secret Pulled Images (KEP-2535, sig-node) was introduced as alpha [in v1.33](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2535-ensure-secret-pulled-images) and graduated to beta [in v1.35](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2535-ensure-secret-pulled-images). Provides authorization to container image pulls for images already present on the node, ensuring image pull credentials are re-verified even for cached images.
      - Fine grained Kubelet API authorization (KEP-2862, sig-node) graduated to beta [in v1.33](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/2862-fine-grained-kubelet-authz). Adds fine-grained authorization controls to the kubelet's API endpoints.
-     - Introduce kuberc (KEP-3104, sig-cli) was introduced as alpha [in v1.33](https://github.com/kubernetes/enhancements/tree/master/keps/sig-cli/3104-introduce-kuberc) and graduated to beta [in v1.34](https://github.com/kubernetes/enhancements/tree/master/keps/sig-cli/3104-introduce-kuberc). Adds `credPluginPolicy` and `credPluginAllowlist` configuration options for credential plugin management.
+     - Credential plugin policy and allowlist in kuberc (KEP-3104, sig-cli) graduated to beta [in v1.35](https://kubernetes.io/blog/2026/01/09/kubernetes-v1-35-kuberc-credential-plugin-allowlist). The `credPluginPolicy` and `credPluginAllowlist` fields were added to the kuberc configuration file, giving users control over which exec credential plugins `kubectl` is allowed to execute.
      - CSI driver opt-in for service account tokens via secrets field (KEP-5538, sig-storage) graduated to beta [in v1.35](https://github.com/kubernetes/enhancements/tree/master/keps/sig-storage/5538-csi-sa-tokens-secrets-field). CSI drivers can now opt in to receive service account tokens via the secrets field instead of volume context, separating credentials from metadata to prevent accidental leakage.
    - Important initiatives that aren't tracked via KEPs:
      - Once a week issue/PR triage meetings.
-     - Retired the hierarchical-namespace-controller subproject and the policy working group.
+     - Retired the hierarchical-namespace-controller subproject and the policy working group [#5484](https://github.com/kubernetes/org/issues/5484).
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
