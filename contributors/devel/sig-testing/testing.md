@@ -260,7 +260,7 @@ For known flakes (i.e. with open GitHub issues against them), the community deep
 [`testgrid`](https://testgrid.k8s.io/) is a visualization of the Kubernetes CI status.
 
 It is useful as a way to:
-- see the run history of a test you are debugging (access it starting from a gubernator report for that test)
+- see the run history of a test you are debugging
 - get an overview of the project's general health
 - You can learn more about Testgrid from the [Kubecon NA San Diego Contributor Summit](https://youtu.be/8xS6mmGhbIQ)
 
