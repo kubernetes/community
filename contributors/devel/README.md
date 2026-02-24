@@ -159,8 +159,6 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 * **End-to-End Testing in Kubernetes** [e2e-tests.md](sig-testing/e2e-tests.md) and [e2e-tests-kubetest2.md](sig-testing/e2e-tests-kubetest2.md)
 
-* **Debugging with Gubernator** [gubernator.md](sig-testing/gubernator.md)
-
 * **Flaky tests** [flaky-tests.md](sig-testing/flaky-tests.md)
 
 ### SIG Node
