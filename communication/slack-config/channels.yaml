@@ -512,7 +512,7 @@ channels:
   - name: sig-network-multi-network
   # sig-node channels are defined in sig-node/
   - name: sig-scalability
-  - name: sig-scheduling
+  # sig-scheduling channels are defined in sig-scheduling/
   # sig-security* channels are defined in sig-security/
   - name: sig-service-catalog
     archived: true
@@ -616,7 +616,6 @@ channels:
     archived: true
   - name: windows-containerd
   - name: workshop-chat
-  - name: workload-aware-scheduling
   - name: yaml-overlay-tool
   - name: zarf
   - name: zarf-dev
