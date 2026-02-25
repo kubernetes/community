@@ -4,9 +4,7 @@ weight: 30
 description: "A collection of essential resources and links for new Kubernetes contributors."
 ---
 
-## Resources for Success
-
-### Join the Community
+## Join the Community
 
 - Join the Kubernetes Developer Google Group (k-dev): [https://groups.google.com/a/kubernetes.io/g/dev](https://groups.google.com/a/kubernetes.io/g/dev)
 - Check out [kubernetes/community](https://github.com/kubernetes/community) for an overview of our community.
