@@ -4069,10 +4069,6 @@ committees:
           name: CJ Cullen
           company: Google
           email: cjcullen@google.com
-        - github: cji
-          name: Craig Ingram
-          company: Google
-          email: cjingram@google.com
         - github: enj
           name: Mo Khan
           company: Microsoft
@@ -4106,6 +4102,8 @@ committees:
           company: Google
           email: vinayakankugoyal@gmail.com
       emeritus_leads:
+        - github: cji
+          name: Craig Ingram
         - github: lukehinds
           name: Luke Hinds
         - github: swamymsft
