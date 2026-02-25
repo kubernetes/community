@@ -74,7 +74,7 @@ follows:
    Comms team will reach out to the
    [#sig-docs-blog](https://kubernetes.slack.com/archives/CJDHVD54J)
    editorial team to clarify if the content is adequate for
-   republishing in the main Kubernentes blog. At this stage an editor
+   republishing in the main Kubernetes blog. At this stage an editor
    should be assigned to follow-up the process with you.
 3. Create your proposal draft in [Google
    Docs](https://docs.google.com/) or HackMD (https://hackmd.io), and
@@ -185,7 +185,7 @@ Keep the following points in mind as you write in order to speed up the review p
 * Be accountable and honest as an author
   * Remove anything that lacks adequate evidence
   * Avoid interjecting personal reactions
-  * Ensure that the blog post is reviewed by the anyone being mentioned in the piece
+  * Ensure that the blog post is reviewed by anyone being mentioned in the piece
   * As the author, never talk about your employer, sell, promote, or
     pitch; this is about upstream community endeavours and the
     individuals and groups that create it
