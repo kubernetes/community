@@ -28,8 +28,12 @@ The [charter](charter.md) defines the scope and governance of the AI Gateway Wor
 * Flynn (**[@kflynn](https://github.com/kflynn)**), Buoyant
 * Kellen Swain (**[@kfswain](https://github.com/kfswain)**), Google
 * Nir Rozenbaum (**[@nirrozenbaum](https://github.com/nirrozenbaum)**), IBM
-* Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Red Hat
-* Xunzhuo (**[@xunzhuo](https://github.com/xunzhuo)**), Tencent
+* Morgan Foster (**[@usize](https://github.com/usize)**), Red Hat
+
+## Emeritus Organizers
+
+* Shane Utt (**[@shaneutt](https://github.com/shaneutt)**)
+* Xunzhuo (**[@xunzhuo](https://github.com/xunzhuo)**)
 
 ## Contact
 - Slack: [#wg-ai-gateway](https://kubernetes.slack.com/messages/wg-ai-gateway)

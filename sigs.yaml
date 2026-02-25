@@ -3550,14 +3550,15 @@ workinggroups:
           name: Nir Rozenbaum
           company: IBM
           email: nir.rozenbaum@gmail.com
+        - github: usize
+          name: Morgan Foster
+          company: Red Hat
+          email: mofoster@redhat.com
+      emeritus_leads:
         - github: shaneutt
           name: Shane Utt
-          company: Red Hat
-          email: sutt@redhat.com
         - github: xunzhuo
           name: Xunzhuo
-          company: Tencent
-          email: mixdeers@gmail.com
     meetings:
       - description: WG AI Gateway Weekly Meeting
         day: Thursday
