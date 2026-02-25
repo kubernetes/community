@@ -1,13 +1,14 @@
 ---
-title: "Monthly Kubernetes New Contributor Orientation"
+title: "Kubernetes New Contributor Orientation"
 weight: 1
-description: |
-  Information about the monthly Kubernetes New Contributor Orientation meetings.
+description: >
+  Information about the Kubernetes New Contributor Orientation meetings,
+  designed to help prospective contributors find their way in the community.
 ---
 
-# Monthly Kubernetes New Contributor Orientation
-The Monthly Kubernetes New Contributor Orientation (NCO) meetings are an initiative owned by the mentoring subproject of [SIG-ContribEx](../../sig-contributor-experience/). Started in September of 2024, the purpose of these meetings is to orient prospective new contributors to the community by providing an overview of what Kubernetes does as a technology, how the community is structured and how it functions, and how they might fit into the community as "contributors." There is no hands-on content included in the New Contributor Orientation meeting.
+## Overview
 
+The Kubernetes New Contributor Orientation (NCO) meetings are an initiative owned by the mentoring subproject of [SIG-ContribEx](../../sig-contributor-experience/). Started in September of 2024, the purpose of these meetings is to orient prospective new contributors to the community by providing an overview of what Kubernetes does as a technology, how the community is structured and how it functions, and how they might fit into the community as "contributors." There is no hands-on content included in the New Contributor Orientation meeting.
 
 Anyone is welcome to attend the Kubernetes New Contributor Orientation.
 
@@ -27,6 +28,9 @@ Typically, the timings for the two monthly sessions are as follows:
 Joining the [SIG-ContribEx mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex) will typically add invites for the NCO meetings, and all other SIG ContribEx meetings, to your calendar. You may also add the meetings to your calendar using the links below, or by finding them on [k8s.dev/calendar](https://k8s.dev/calendar)
 
 As with all meetings in the Kubernetes community, NCO meetings follow the [Kubernetes Community Code of Conduct](https://kubernetes.io/community/code-of-conduct/).
+
+### Previous Sessions
+You can find recordings of previous New Contributor Orientation meetings in the [Kubernetes New Contributor Orientation YouTube playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP24dHZ4BifJwHPHGch94d9F).
 
 ### Agenda
 All Kubernetes NCO meetings should follow roughly the same agenda:

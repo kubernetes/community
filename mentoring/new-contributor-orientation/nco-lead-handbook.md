@@ -1,10 +1,10 @@
 ---
 title: "NCO Lead Handbook"
 weight: 20
-description: "Guidance for leading a New Contributor Orientation meeting."
+description: "Guidance for leading and organizing New Contributor Orientation (NCO) meetings."
 ---
 
-# New Contributor Orientation (NCO) Meeting Lead
+## Meeting Lead Roles
 
 The NCO meeting Lead is responsible for running the NCO meeting for at least 1 [monthly] session. Each NCO Lead is responsible for identifying at least 1 NCO Lead to succeed them.
 
@@ -61,7 +61,7 @@ Information on how to add new Calls for Help to the upcoming NCO session deck(s)
 Example comms:
 | Hello SIG Chairs & TLs!
 
-SIG Contributor Experience is spinning up a new initiative to run a monthly Kubernetes New Contributor Orientation meeting. The purpose of this meeting is to introduce prospective contributors to the how the Kubernetes Project and Contributor Community work, and to provide high-level guidance on how to get started contributing.
+SIG Contributor Experience is spinning up a new initiative to run a Kubernetes New Contributor Orientation meeting. The purpose of this meeting is to introduce prospective contributors to the how the Kubernetes Project and Contributor Community work, and to provide high-level guidance on how to get started contributing.
 
 Action Item 1: Add your Calls for Help to the slide deck!
 The slide deck for the call [1] includes a section where SIGs and WGs can add current open Calls for Help. This section starts at slide 56 and groups Calls for Help into 2 types: Evergreen and general "Calls for Help" (everything else). Evergreen tasks are those which are recurring or always available, like taking meeting notes or release shadowing. We do not expect every SIG to have Evergreen opportunities, though we would love to help you if you want to develop some (Reach out to Kaslin Fields in Slack)! Most SIGs likely have open Calls for Help. There is guidance in the slide deck explaining the need for specific skills for some tasks, so please don't hesitate to add Calls for Help that require specific skills.
@@ -85,7 +85,7 @@ Communications about the event's purpose and how to attend should be sent at lea
 * The K8sContributors channels on Social Media (Contact the [sig-contribex comms subproject team via Slack](https://kubernetes.slack.com/archives/C03KT3SUJ20) for assistance)
 
 Example attendee comms:
-| Hello, New Contributors! The next Monthly Kubernetes New Contributor Orientation (NCO) meeting will be happening on the 3rd Tuesday of this month. The purpose of this meeting is to orient you in the Kubernetes community by providing you with a brief overview of what Kubernetes does as a technology, how the community is structured, and how you might fit within it. The meeting is 1hr long and will consist of ~40min of presented content followed by ~20min of freeform Q&A with active contributor(s). Note there is no hands-on content in this session.
+| Hello, New Contributors! The next Kubernetes New Contributor Orientation (NCO) meeting will be happening on the 3rd Tuesday of this month. The purpose of this meeting is to orient you in the Kubernetes community by providing you with a brief overview of what Kubernetes does as a technology, how the community is structured, and how you might fit within it. The meeting is 1hr long and will consist of ~40min of presented content followed by ~20min of freeform Q&A with active contributor(s). Note there is no hands-on content in this session.
 This month's sessions will be held at::
 EMEA/APAC-friendly: 1:30 PT / 8:30 UTC / 10:30 CET / 14:00 IST
 AMER-friendly: 8:30 PT / 15:30 UTC / 17:30 CET / 21:00 IST
