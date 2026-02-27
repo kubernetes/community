@@ -11,6 +11,8 @@
   - AEP-8026 [AEP-8026: Allow per-VPA component configuration parameters](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler/enhancements/8026-per-vpa-component-configuration) (@omerap12)
   - AEP-8818: [InPlace Update Mode work begun](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler/enhancements/8818-in-place-only) (@omerap12)
 - 2 minor releases of Cluster Autoscaler: [1.33.0](https://github.com/kubernetes/autoscaler/releases/tag/cluster-autoscaler-1.33.0), [1.34.0](https://github.com/kubernetes/autoscaler/releases/tag/cluster-autoscaler-1.33.0)
+  - DRA maturity, will graduate to GA in 2026.
+  - Performance improvements (e.g. parallelized ClusterSnapshot creation, faster binpacking for homogeneous Pods).
 - Cluster Autoscaler Enhancement Proposals
   - [Granular Resource Limits (CapacityQuota API)](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/proposals/granular-resource-limits.md) @norbertcyran
   - Spare Capacity (CapacityBuffer API)[https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/proposals/buffers.md] @jbtk
