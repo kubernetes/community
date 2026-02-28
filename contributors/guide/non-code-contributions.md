@@ -34,7 +34,7 @@ These are roles that either span the project as a whole, or span several areas o
   - Getting more people to [SIG-Docs](https://github.com/kubernetes/community/tree/master/sig-docs)
     - [Contribute to Kubernetes docs](https://kubernetes.io/docs/contribute/)
   - Doing demos
-    - [Kubernetes Weekly Community Meeting](https://github.com/kubernetes/community/blob/master/events/community-meeting.md)
+    - For example : [Kubernetes Weekly Community Meeting](https://github.com/kubernetes/community/blob/master/events/community-meeting.md)
       - [YouTube](https://www.youtube.com/playlist?list=PL69nYSiGNLP1pkHsbPjzAewvMgGUpkCnJ)
 - Outward facing community work (might be more CNCF-oriented)
   - Hosting meetups and general evangelism

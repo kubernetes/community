@@ -22,8 +22,8 @@ and includes all communications such as YouTube.
 ## Meeting Playlists
 
 The [Kubernetes YouTube Channel] has separate playlists for each SIG or WG 
-meeting recordings, as well as recordings of other recurring events such as the
-Kubernetes [community meeting], and others.
+meeting recordings, as well as recordings of other recurring events such as
+the [New Contributor Orientation], and others.
 
 [Subprojects], in addition to SIGs and WGs may request their own playlists
 to better target their contributors and increase general discoverability.
@@ -212,8 +212,8 @@ to hear from you.
 ### Streaming Events
 
 YouTube admins with a system capable of streaming may be asked to stream public
-Kubernetes Community events such as the weekly [Community Meeting], or other
-publicly streamed events. For detailed information about streaming, see our
+Kubernetes Community events such as publicly streamed events. For detailed 
+information about streaming, see our
 [Streaming Config].
 
 ### Migrating Content
@@ -237,7 +237,7 @@ downloaded and then reuploaded to the Kubernetes channel.
 [coc]: /code-of-conduct.md
 [admins]: /communication/moderators.md
 [Kubernetes YouTube Channel]: https://www.youtube.com/channel/UCZ2bu0qutTOM0tHYa_jkIwg
-[community meeting]: /events/community-meeting.md
+[New Contributor Orientation]: /mentoring/new-contributor-orientation/README.md
 [Subprojects]: /governance.md#subprojects
 [collaboration]: https://support.google.com/youtube/answer/6109639
 [update the permissions in your YouTube settings]: https://support.google.com/a/answer/6212415
