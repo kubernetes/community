@@ -1,4 +1,8 @@
-# Getting Started with Kubernetes Development
+---
+title: "New Contributor Resources"
+weight: 30
+description: "A collection of essential resources and links for new Kubernetes contributors."
+---
 
 ## Join the Community
 
