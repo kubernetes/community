@@ -14,6 +14,8 @@ The [charter](charter.md) defines the scope and governance of the Architecture S
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-architecture) for the group will typically add invites for the following meetings to your calendar.*
+* AI Conformance Meeting ([calendar](https://calendar.google.com/calendar/embed?src=a574542f85d51cb4624145f13307810c9e23bc9096cfbb83f6205cc7acee34b6%40group.calendar.google.com)) : [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/95480364337) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1qlW1LkibOoiMio-hbJucRjOYeKT8mNaQ4awwzf0bi8M/edit).
 * Enhancements Subproject Meeting: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/95357819945) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://bit.ly/k8s-enhancements-agenda).
   * [Meeting recordings](TBD).
@@ -56,7 +58,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-architecture:
-* [WG AI Conformance](/wg-ai-conformance)
 * [WG AI Integration](/wg-ai-integration)
 * [WG Device Management](/wg-device-management)
 * [WG LTS](/wg-lts)
@@ -66,6 +67,18 @@ The following [working groups][working-group-definition] are sponsored by sig-ar
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-architecture:
+### ai-conformance
+Proposals and tests for AI Conformance
+- **Leads:**
+  - Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
+  - Mario Fahlandt (**[@mfahlandt](https://github.com/mfahlandt)**), Kubermatic GmbH
+  - Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
+  - Yuan Tang (**[@terrytangyuan](https://github.com/terrytangyuan)**), Red Hat
+- **Owners:**
+  - [kubernetes-sigs/wg-ai-conformance](https://github.com/kubernetes-sigs/wg-ai-conformance/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#wg-ai-conformance](https://kubernetes.slack.com/messages/wg-ai-conformance)
+  - [Mailing List](https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance)
 ### apisnoop
 Snooping on the Kubernetes OpenAPI communications
 - **Owners:**
@@ -116,10 +129,6 @@ Tooling based on Deep Learning tools to help maintainers to maintain the Kuberne
   - [kubernetes/community/sig-architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/OWNERS)
 - **Contact:**
   - Slack: [#prod-readiness](https://kubernetes.slack.com/messages/prod-readiness)
-### wg-ai-conformance
-Proposals and discussions for the AI Conformance Working Group
-- **Owners:**
-  - [kubernetes-sigs/wg-ai-conformance](https://github.com/kubernetes-sigs/wg-ai-conformance/blob/main/OWNERS)
 ### wg-device-management
 Contains prototype code for future work driven by WG Device Management
 - **Owners:**

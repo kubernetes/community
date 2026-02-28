@@ -320,6 +320,14 @@ sigs:
           company: Google
           email: jbelamaric@google.com
     meetings:
+      - description: AI Conformance Meeting
+        day: Thursday
+        time: "10:00"
+        tz: PT (Pacific Time)
+        frequency: biweekly
+        url: https://zoom.us/j/95480364337
+        archive_url: https://docs.google.com/document/d/1qlW1LkibOoiMio-hbJucRjOYeKT8mNaQ4awwzf0bi8M/edit
+        calendar_url: https://calendar.google.com/calendar/embed?src=a574542f85d51cb4624145f13307810c9e23bc9096cfbb83f6205cc7acee34b6%40group.calendar.google.com
       - description: Enhancements Subproject Meeting
         day: Thursday
         time: "10:00"
@@ -382,6 +390,30 @@ sigs:
         github: BenTheElder
         name: Benjamin Elder
     subprojects:
+      - name: ai-conformance
+        description: Proposals and tests for AI Conformance
+        contact:
+          slack: wg-ai-conformance
+          mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/wg-ai-conformance/main/OWNERS
+        leads:
+          - github: janetkuo
+            name: Janet Kuo
+            company: Google
+            email: chiachenk@google.com
+          - github: mfahlandt
+            name: Mario Fahlandt
+            company: Kubermatic GmbH
+            email: mfahlandt@pixel-haufen.de
+          - github: ritazh
+            name: Rita Zhang
+            company: Microsoft
+            email: ritazh@microsoft.com
+          - github: terrytangyuan
+            name: Yuan Tang
+            company: Red Hat
+            email: terrytangyuan@gmail.com
       - name: apisnoop
         description: Snooping on the Kubernetes OpenAPI communications
         owners:
@@ -432,10 +464,6 @@ sigs:
           slack: prod-readiness
         owners:
           - https://raw.githubusercontent.com/kubernetes/community/master/sig-architecture/OWNERS
-      - name: wg-ai-conformance
-        description: Proposals and discussions for the AI Conformance Working Group
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/wg-ai-conformance/main/OWNERS
       - name: wg-device-management
         description: Contains prototype code for future work driven by WG Device Management
         contact:
@@ -3480,49 +3508,6 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-dev-tools/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/sig-windows-tools/master/OWNERS
 workinggroups:
-  - dir: wg-ai-conformance
-    name: AI Conformance
-    mission_statement: >
-      The goal of this group is to define a standardized set of capabilities,  APIs, and configurations that a Kubernetes cluster must offer to reliably and efficiently run AI/ML workloads.
-
-    charter_link: charter.md
-    stakeholder_sigs:
-      - Architecture
-      - Testing
-    label: ai-conformance
-    leadership:
-      chairs:
-        - github: janetkuo
-          name: Janet Kuo
-          company: Google
-          email: chiachenk@google.com
-        - github: mfahlandt
-          name: Mario Fahlandt
-          company: Kubermatic GmbH
-          email: mfahlandt@pixel-haufen.de
-        - github: ritazh
-          name: Rita Zhang
-          company: Microsoft
-          email: ritazh@microsoft.com
-        - github: terrytangyuan
-          name: Yuan Tang
-          company: Red Hat
-          email: terrytangyuan@gmail.com
-    meetings:
-      - description: Regular WG Meeting
-        day: Thursday
-        time: "10:00"
-        tz: PT (Pacific Time)
-        frequency: biweekly
-        url: https://zoom.us/j/95480364337
-        archive_url: https://docs.google.com/document/d/1qlW1LkibOoiMio-hbJucRjOYeKT8mNaQ4awwzf0bi8M/edit
-        calendar_url: https://calendar.google.com/calendar/embed?src=a574542f85d51cb4624145f13307810c9e23bc9096cfbb83f6205cc7acee34b6%40group.calendar.google.com
-    contact:
-      slack: wg-ai-conformance
-      mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance
-      liaison:
-        github: saschagrunert
-        name: Sascha Grunert
   - dir: wg-ai-gateway
     name: AI Gateway
     mission_statement: >
