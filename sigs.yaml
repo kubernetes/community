@@ -256,6 +256,7 @@ sigs:
         description: Application metadata descriptor CRD
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/application/master/OWNERS
+          - https://raw.githubusercontent.com/kubernetes-sigs/mcp-lifecycle-operator/main/OWNERS
       - name: examples
         owners:
           - https://raw.githubusercontent.com/kubernetes/examples/master/OWNERS
