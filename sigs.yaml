@@ -2503,6 +2503,7 @@ sigs:
         frequency: weekly
         url: https://zoom.us/j/93387714284?pwd=NHNpT2xtOGtwNnVQZ1JXdkNlQ1RMQT09
         archive_url: https://docs.google.com/document/d/1fb-ugvgdSVIkkuJ388_nhp2pBTy_4HEVg5848Xy7n5U/edit
+        recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1wJPj5DYWXjiArF-MJ5fNG
     contact:
       slack: sig-node
       mailing_list: https://groups.google.com/a/kubernetes.io/g/sig-node
