@@ -34,6 +34,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * David Ashpole (**[@dashpole](https://github.com/dashpole)**), Google
 * Damien Grisonnet (**[@dgrisonnet](https://github.com/dgrisonnet)**), Red Hat
+* Patrick Ohly (**[@pohly](https://github.com/pohly)**), Intel
 
 ## Emeritus Leads
 
