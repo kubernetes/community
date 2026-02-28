@@ -19,7 +19,7 @@ The [charter](charter.md) defines the scope and governance of the Data Protectio
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-data-protection) for the group will typically add invites for the following meetings to your calendar.*
-* Regular WG Meeting: [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/6933410772) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting: [Wednesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/6933410772?pwd=MmlaeGIza1Y3d05WOEc4dHVCQ3Q3dz09) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/15tLCV3csvjHbKb16DVk-mfUmFry_Rlwo-2uG6KNGsfw/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP336DulLgPdlWJ_gzRz1iL5).
 
