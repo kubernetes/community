@@ -32,7 +32,7 @@ health of the project.
   contributors who wish to provide additional test results not generated
   by the project's CI
 - Extraction, display and analysis of test artifacts via tools like
-  [gubernator], [kettle], [testgrid], and [triage]
+  [kettle], [testgrid], and [triage]
 - Configuration management of jobs and ensuring they use a consistent
   process via tools such as [job configs], [kubetest]
 - Tools that facilitate configuration management of github such as
@@ -114,10 +114,8 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 [lazy consensus]: http://en.osswiki.info/concepts/lazy_consensus
-
 [boskos]: https://git.k8s.io/test-infra/boskos
 [ghproxy]: https://git.k8s.io/test-infra/ghproxy
-[gubernator]: http://k8s-gubernator.appspot.com
 [job configs]: https://git.k8s.io/test-infra/config/jobs
 [kettle]: https://git.k8s.io/test-infra/kettle
 [kind]: https://github.com/kubernetes-sigs/kind
@@ -128,7 +126,6 @@ Subprojects are created by Tech Leads following the process defined in [sig-gove
 [testgrid]: https://testgrid.k8s.io
 [tide]: https://prow.k8s.io/tide
 [triage]: https://go.k8s.io/triage
-
 [Release Team test-infra role]: https://git.k8s.io/sig-release/release-team/role-handbooks/test-infra
 [dev@kubernetes.io]: https://groups.google.com/a/kubernetes.io/group/dev
 [kubernetes-sig-testing@]: https://groups.google.com/forum/#!forum/kubernetes-sig-testing
