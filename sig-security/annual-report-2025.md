@@ -22,7 +22,7 @@ SIG Security Docs subproject has several ongoing efforts that could use extra as
 
 SIG Security offered maintainer track talks at KubeCon EU and KubeCon NA in 2025. The recordings are available here: [SIG Security: Succession Planting for a Flowering Future](https://www.youtube.com/watch?v=0p-sZT0LWOg), [Butterfly Effect: What Kubernetes SIG Security Has in Flight](https://www.youtube.com/watch?v=q4ryxYhAenM)
 
-In addition, we offered Project Pavillion booths at both KubeCon EU and KubeCon NA. Our booths are highlights of the year for SIG Security, drawing in contributors new and old alike. KubeCon attendees can count on the SIG Security booth as a place to find a welcoming environment, friendly conversation, and ways to get involved.
+In addition, we offered Project Pavilion booths at both KubeCon EU and KubeCon NA. Our booths are highlights of the year for SIG Security, drawing in contributors new and old alike. KubeCon attendees can count on the SIG Security booth as a place to find a welcoming environment, friendly conversation, and ways to get involved.
 
 4. KEP work in 2025 (v1.33, v1.34, v1.35):
 
