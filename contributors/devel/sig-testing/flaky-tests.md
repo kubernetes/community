@@ -236,7 +236,7 @@ go test ./pkg/kubelet/config -race -c
 Then run it under stress:
 
 ```sh
-stress ./config.test -test.run TestInvalidPodFiltered
+stress ./config.test -test.run TestInvalidPodFiltered -test.timeout=1m
 ```
 
 The stress command runs the test binary repeatedly, reporting when it fails. It
@@ -257,6 +257,11 @@ ERROR: exit status 1
 
 Be careful with tests that use the `net/http/httptest` package; they could
 exhaust the available ports on your system!
+
+The `-test.timeout=1m` is necessary to detect when a test run gets stuck.
+In contrast to `go test` invocations there is no default timeout when
+`stress` invokes the test binary directly. Use a timeout that is long
+for the test.
 
 ## Deflaking integration tests
 
