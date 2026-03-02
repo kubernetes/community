@@ -78,6 +78,7 @@ Easy management of isolated, stateful, singleton workloads, ideal for use cases 
 Application metadata descriptor CRD
 - **Owners:**
   - [kubernetes-sigs/application](https://github.com/kubernetes-sigs/application/blob/master/OWNERS)
+  - [kubernetes-sigs/mcp-lifecycle-operator](https://github.com/kubernetes-sigs/mcp-lifecycle-operator/blob/main/OWNERS)
 ### examples
 - **Owners:**
   - [kubernetes/examples](https://github.com/kubernetes/examples/blob/master/OWNERS)
