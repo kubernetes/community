@@ -4,33 +4,28 @@
 
 1. What work did the SIG do this year that should be highlighted?
 
-<!--
-   Some example items that might be worth highlighting:
-   - Major KEP advancement
-   - Important initiatives that aren't tracked via KEPs
-   - Paying down significant tech debt
-   - Governance and leadership changes
--->
+SIG Node continues its streak as the record holding SIG for most KEPs each release. 2025 actually exceeded the velocity of 2024, with 1.33 merging 33 KEPs, 1.34 merging 32 and 1.35 merging 35!
+Many major initiatives across many different areas were advanced. Particularly, many long-standing KEPs were moved to stable,
+which represents an overarching initative to close out KEPs and stabalize the project.
+
+The sheer number of KEPs makes summarizing the progress almost tedious, but look below for the full list of work done. The SIG focused largely on DRA, as well as other initatives that
+advance inference serving use-cases, but also made advancements in the cpu and memory manager.
+
+The KEP Wrangler process, started in 2024, has continued, and some of the SIG's success and velocity can be attributed to it. It's also been an opportunity for contributors to the
+SIG to step up as leaders. A special shout out goes to Sreeram Venkitesh who stepped into the role of Wrangler lead.
+
+The SIG is happy to sponsor a new sub-project: node readiness controller, which was spun out of an effort to have a clearer signal for foundational node workloads to signal they are ready
+to run end-user workloads, as well as two new working groups: WG node lifecycle and WG checkpoint restore.
 
 2. Are there any areas and/or subprojects that your group needs help with (e.g. fewer than 2 active OWNERS)?
 
 
 3. Did you have community-wide updates in 2025 (e.g. KubeCon talks)?
 
-<!--
-  Examples include links to email, slides, or recordings.
--->
+- Kubecon EU 2025 [maintainers track](https://kccnceu2025.sched.com/event/1tcy2/sig-node-intro-and-deep-dive-sergey-kanzhelev-google-francesco-romani-peter-hunt-red-hat)
+- Kubecon NA 2025 [maintainers track](https://kccncna2025.sched.com/event/27Nla/sig-node-intro-and-deep-dive-peter-hunt-red-hat-sergey-kanzhelev-google-mrunal-patel-red-hat)
 
 4. KEP work in 2025 (v1.33, v1.34, v1.35):
-<!--
-   TODO: Uncomment the following auto-generated list of KEPs, once reviewed & updated for correction.
-
-   Note: This list is generated from the KEP metadata in kubernetes/enhancements repository.
-      If you find any discrepancy in the generated list here, please check the KEP metadata.
-      Please raise an issue in kubernetes/community, if the KEP metadata is correct but the generated list is incorrect.
--->
-
-<!-- 
   - Alpha
     - [4188 - New kubelet gRPC API with endpoint returning local pods information](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/4188-kubelet-pod-readiness-api) - v1.35
     - [4960 - Container Stop Signals](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/4960-container-stop-signals) - v1.33
@@ -84,7 +79,7 @@
     - [4817 - Resource Claim Status With Possible Standardized Network Interface Data](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/4817-resource-claim-device-status) - v1.35
     - [4818 - Allow zero value for Sleep Action of PreStop Hook](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/4818-allow-zero-value-for-sleep-action-of-prestop-hook) - v1.34
     - [5067 - Pod Generation](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/5067-pod-generation) - v1.35
-    - [753 - Sidecar Containers](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/753-sidecar-containers) - v1.33 -->
+    - [753 - Sidecar Containers](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/753-sidecar-containers) - v1.33
 
 ## [Subprojects](https://git.k8s.io/community/sig-node#subprojects)
 
@@ -120,12 +115,12 @@
 ## Operational
 
 Operational tasks in [sig-governance.md]:
-- [ ] [README.md] reviewed for accuracy and updated if needed
-- [ ] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
-- [ ] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
-- [ ] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
-- [ ] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
-- [ ] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
+- [x] [README.md] reviewed for accuracy and updated if needed
+- [x] [CONTRIBUTING.md] reviewed for accuracy and updated if needed
+- [x] Other contributing docs (e.g. in devel dir or contributor guide) reviewed for accuracy and updated if needed
+- [x] Subprojects list and linked OWNERS files in [sigs.yaml] reviewed for accuracy and updated if needed
+- [x] SIG leaders (chairs, tech leads, and subproject leads) in [sigs.yaml] are accurate and active, and updated if needed
+- [x] Meeting notes and recordings for 2025 are linked from [README.md] and updated/uploaded if needed
 
 
 [CONTRIBUTING.md]: https://git.k8s.io/community/sig-node/CONTRIBUTING.md
