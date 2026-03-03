@@ -93,7 +93,6 @@ usergroups:
       - sig-release
     members:
       - cjcullen # Product Security Committee
-      - cji # Product Security Committee
       - cici37 # Release Manager
       - cpanato # subproject owner / Release Manager
       - enj # Produce Security Committee
