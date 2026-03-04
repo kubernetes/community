@@ -159,10 +159,6 @@ aliases:
     - jberkus
     - jmhbnz
     - justinsb
-  wg-lts-leads:
-    - jeremyrickard
-    - liggitt
-    - micahhausler
   wg-node-lifecycle-leads:
     - atiratree
     - intUnderflow

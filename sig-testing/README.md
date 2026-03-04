@@ -54,12 +54,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-testing-pr-reviews](https://github.com/orgs/kubernetes/teams/sig-testing-pr-reviews) - PR Reviews
 - Steering Committee Liaison: Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**)
 
-## Working Groups
-
-The following [working groups][working-group-definition] are sponsored by sig-testing:
-* [WG LTS](/wg-lts)
-
-
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-testing:
