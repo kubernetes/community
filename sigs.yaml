@@ -219,7 +219,7 @@ sigs:
         calendar_url: https://calendar.google.com/calendar/embed?src=phfni1v25vnmi4q06m851230so%40group.calendar.google.com
       - description: Subproject Agent Sandbox Meeting
         day: Monday
-        time: "9:30"
+        time: "9:00"
         tz: PT (Pacific Time)
         frequency: biweekly
         url: https://zoom.us/j/739385290?pwd=ekVmNGRjT214MGJkY1JUUUpPMVlJUT09
