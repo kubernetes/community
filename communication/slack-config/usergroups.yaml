@@ -334,6 +334,7 @@ usergroups:
       - inteon
       - ThatsMrTalbot
       - erikgb
+      - hjoshi123
 
   - name: gophercloud-maintainers
     long_name: Gophercloud Maintainers
