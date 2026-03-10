@@ -496,6 +496,7 @@ channels:
     archived: true
   - name: sig-contribex-comms
   - name: sig-contribex-elections
+  - name: sig-contribex-nco-staff
   - name: sig-contribex-triage
     archived: true
   # sig-docs* channels are defined in sig-docs/
