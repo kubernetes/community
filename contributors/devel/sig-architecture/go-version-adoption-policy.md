@@ -4,7 +4,7 @@
 
 When Kubernetes updates to a new Go version, new language features, standard
 library additions, linter checks, and tooling capabilities become available. 
-Using them  immediately on the main branch creates friction for contributors 
+Encouraging or requiring use of them immediately on the main branch can create friction for contributors 
 backporting changes to older release branches still on an earlier Go version.
 
 ## Policy
