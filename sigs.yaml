@@ -2306,13 +2306,6 @@ sigs:
         frequency: bi-weekly
         url: https://zoom.us/j/441530404
         archive_url: https://docs.google.com/document/d/1eg-YjOHaQ7UD28htdNxBR3zufebozXKyI28cl2E11tU/edit
-      - description: Ingate Meeting
-        day: Friday
-        time: "06:00"
-        tz: PT (Pacific Time)
-        frequency: biweekly
-        url: https://zoom.us/j/94625479998
-        archive_url: https://docs.google.com/document/d/1KqMxFbxz4QO5bYCFfihyZwPVZTtTtzcQs3Nt2-JQaAA/edit
       - description: Network Policy API Meeting
         day: Tuesday
         time: "9:00"
@@ -2320,13 +2313,6 @@ sigs:
         frequency: bi-weekly
         url: https://zoom.us/j/96264742248
         archive_url: https://docs.google.com/document/d/1AtWQy2fNa4qXRag9cCp5_HsefD7bxKe3ea2RPn8jnSs
-      - description: SIG Network InGate Meeting
-        day: Friday
-        time: "6:00"
-        tz: PT (Pacific Time)
-        frequency: monthly
-        url: https://zoom.us/j/94625479998
-        archive_url: https://docs.google.com/document/d/1KqMxFbxz4QO5bYCFfihyZwPVZTtTtzcQs3Nt2-JQaAA/edit
       - description: SIG Network Ingress NGINX Meeting
         day: Thursday
         time: "8:00"
