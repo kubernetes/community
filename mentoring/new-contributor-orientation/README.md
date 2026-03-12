@@ -23,7 +23,9 @@ Typically, the timings for the two monthly sessions are as follows:
 
 * [**EMEA/APAC-friendly**: 1:30 PT / 8:30 UTC / 10:30 CET / 14:00 IST](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NXVpdGhoMWRyMGhpMDZjdWxqYzhwajloYXVfMjAyNDA5MTdUMDgzMDAwWiBjOGJhZmVmMDRzMTJyYTBna3FxbDZmY2hqY0Bn&tmsrc=c8bafef04s12ra0gkqql6fchjc%40group.calendar.google.com&scp=ALL)
 * [**AMER-friendly**: 8:30 PT / 15:30 UTC / 17:30 CET / 21:00 IST](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MnZqMXVmazZhNWJ2aTNldmE3Y2FvYnRkZTBfMjAyNDA5MTdUMTUzMDAwWiBjOGJhZmVmMDRzMTJyYTBna3FxbDZmY2hqY0Bn&tmsrc=c8bafef04s12ra0gkqql6fchjc%40group.calendar.google.com&scp=ALL)
-
+**Note:** Due to Daylight Saving Time (DST), IST timings may shift.
+EMEA sessions align with CET, and AMER sessions align with PT.
+Please check the [community calendar](https://www.kubernetes.dev/resources/calendar/) for the most accurate time in your timezone.
 
 Joining the [SIG-ContribEx mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-contribex) will typically add invites for the NCO meetings, and all other SIG ContribEx meetings, to your calendar. You may also add the meetings to your calendar using the links below, or by finding them on [k8s.dev/calendar](https://k8s.dev/calendar)
 
