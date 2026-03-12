@@ -2559,6 +2559,10 @@ sigs:
         owners:
           - https://raw.githubusercontent.com/kubernetes/cri-client/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cri-client/OWNERS
+      - name: cri-streaming
+        owners:
+          - https://raw.githubusercontent.com/kubernetes/cri-streaming/master/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cri-streaming/OWNERS
       - name: cri-tools
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
@@ -2604,6 +2608,10 @@ sigs:
           slack: security-profiles-operator
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/security-profiles-operator/main/OWNERS
+      - name: streaming
+        owners:
+          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/streaming/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/streaming/master/OWNERS
   - dir: sig-release
     name: Release
     mission_statement: >
