@@ -83,6 +83,10 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 - **Owners:**
   - [kubernetes/cri-client](https://github.com/kubernetes/cri-client/blob/master/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/cri-client](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-client/OWNERS)
+### cri-streaming
+- **Owners:**
+  - [kubernetes/cri-streaming](https://github.com/kubernetes/cri-streaming/blob/master/OWNERS)
+  - [kubernetes/kubernetes/staging/src/k8s.io/cri-streaming](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cri-streaming/OWNERS)
 ### cri-tools
 - **Owners:**
   - [kubernetes-sigs/cri-tools](https://github.com/kubernetes-sigs/cri-tools/blob/master/OWNERS)
@@ -128,6 +132,10 @@ The following [subprojects][subproject-definition] are owned by sig-node:
   - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#security-profiles-operator](https://kubernetes.slack.com/messages/security-profiles-operator)
+### streaming
+- **Owners:**
+  - [kubernetes/kubernetes/staging/src/k8s.io/streaming](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/streaming/OWNERS)
+  - [kubernetes/streaming](https://github.com/kubernetes/streaming/blob/master/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
