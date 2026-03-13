@@ -706,6 +706,45 @@ Users will need to write go unit tests similar to what is done for hand-written 
 
 While the goal is to express as much validation declaratively as possible, some complex or validation rules might still require manual implementation in `validation.go`.
 
+#### Declarative Validation Native (DV Native)
+
+"Declarative Validation Native" (DV Native) is a mode of operation for the declarative validation framework that allows net-new API fields and their validations to be defined exclusively using Go comment tags, without requiring a parallel hand-written implementation in Go.
+
+This simplifies API development by making declarative tags the single source of truth for validation, reducing hand-written boilerplate code, and ensuring consistency between API definitions and enforcement logic.
+
+To opt-in a field to DV Native mode, use the `+k8s:declarativeValidationNative` tag on the field in `types.go`. For example, if adding a net-new `Name` field and associated validation for an API, you would add the following in the associated `types.go` file. Note that this `+k8s:declarativeValidationNative` tag is added as well as the actual validation tags to be used (in this case `+k8s:required` and `+k8s:format=k8s-short-name`):
+
+```go
+	// +k8s:required
+	// +k8s:format=k8s-short-name
+	// +k8s:declarativeValidationNative
+  Name string `json:"name" protobuf:"bytes,1,opt,name=name"`
+```
+
+By default, fields marked with `+k8s:declarativeValidationNative` are only allowed to use **stable** validation tags (e.g., `+k8s:required`, `+k8s:minimum`, `+k8s:maxLength`, `+k8s:format`, `+k8s:enum`, etc.). An up to date list of each tag and their associated Stability Level can be found at the kubernetes.io [Declarative Validation Tag Catalog](https://kubernetes.io/docs/reference/using-api/declarative-validation/#catalog).
+
+To enable DV Native enforcement in your API strategy, you must pass the `rest.WithDeclarativeNative()` option to the declarative validation call in your `strategy.go`.
+
+```go
+func (myStrategy) Validate(ctx context.Context, obj runtime.Object) field.ErrorList {
+    myObj := obj.(*myapi.MyResource)
+    allErrs := validation.ValidateMyResource(myObj)
+    return rest.ValidateDeclarativelyWithMigrationChecks(ctx, legacyscheme.Scheme, obj, nil, allErrs, operation.Create, rest.WithDeclarativeNative())
+}
+```
+
+When writing tests for DV Native fields, you must use `.MarkDeclarativeNative()` on the expected errors for fields that are DV Native.
+
+```go
+{
+    name: "missing native field",
+    obj: &MyResource{...},
+    expectedErrs: field.ErrorList{
+        field.Required(field.NewPath("spec", "myNativeField"), "").MarkDeclarativeNative(),
+    },
+}
+```
+
 ## Edit version conversions
 
 At this point you have both the versioned API changes and the internal
