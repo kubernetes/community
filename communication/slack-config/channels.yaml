@@ -217,6 +217,8 @@ channels:
   - name: kaniko
   - name: karpenter
   - name: karpenter-dev
+  - name: k8s-ai-conformance
+    id: C09813W8DC2
   - name: k8s-dual-stack
     archived: true
   - name: k8s-image-swapper
@@ -574,7 +576,6 @@ channels:
   - name: virtualization
   - name: vsphere
     archived: true
-  - name: wg-ai-conformance
   - name: wg-ai-gateway
   - name: wg-ai-integration
   - name: wg-app-def
