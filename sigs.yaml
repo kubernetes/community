@@ -394,10 +394,9 @@ sigs:
       - name: ai-conformance
         description: Proposals and tests for AI Conformance
         contact:
-          slack: wg-ai-conformance
-          mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance
+          slack: k8s-ai-conformance
         owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/wg-ai-conformance/main/OWNERS
+          - https://raw.githubusercontent.com/kubernetes-sigs/ai-conformance/main/OWNERS
         leads:
           - github: janetkuo
             name: Janet Kuo
