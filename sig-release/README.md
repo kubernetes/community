@@ -54,12 +54,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-release-leads](https://github.com/orgs/kubernetes/teams/sig-release-leads) - Chairs, Technical Leads, and Program Managers for SIG Release
 - Steering Committee Liaison: Rita Zhang (**[@ritazh](https://github.com/ritazh)**)
 
-## Working Groups
-
-The following [working groups][working-group-definition] are sponsored by sig-release:
-* [WG LTS](/wg-lts)
-
-
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-release:

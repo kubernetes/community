@@ -51,7 +51,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-cluster-lifecycle:
-* [WG LTS](/wg-lts)
 * [WG Node Lifecycle](/wg-node-lifecycle)
 * [WG etcd Operator](/wg-etcd-operator)
 
