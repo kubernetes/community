@@ -584,6 +584,7 @@ channels:
     archived: true
   - name: wg-batch
   - name: wg-serving
+    archived: true
   - name: wg-checkpoint-restore
   - name: wg-component-standard
     archived: true
