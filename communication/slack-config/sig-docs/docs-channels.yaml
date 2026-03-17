@@ -18,6 +18,7 @@ channels:
   - name: kubernetes-docs-ta
   - name: kubernetes-docs-vi
   - name: kubernetes-docs-zh
+  - name: kubernetes-docs-zh-tw
   - name: kubernetes-docs-pl
   - name: kubernetes-docs-uk
   - name: sig-docs
