@@ -21,7 +21,7 @@ restrictions:
       - "^enhancements-owners$"
   - path: "sig-docs/*.yaml"
     channels:
-      - "^kubernetes-docs-[a-z]{2}(-maintainers)?$"
+      - "^kubernetes-docs-[a-z]{2}(-[a-z]{2})?(-maintainers)?$"
       - "^sig-docs$"
       - "^sig-docs-.*$"
   - path: "sig-k8s-infra/*.yaml"
