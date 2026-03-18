@@ -74,10 +74,9 @@ Proposals and tests for AI Conformance
   - Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
   - Yuan Tang (**[@terrytangyuan](https://github.com/terrytangyuan)**), Red Hat
 - **Owners:**
-  - [kubernetes-sigs/wg-ai-conformance](https://github.com/kubernetes-sigs/wg-ai-conformance/blob/main/OWNERS)
+  - [kubernetes-sigs/ai-conformance](https://github.com/kubernetes-sigs/ai-conformance/blob/main/OWNERS)
 - **Contact:**
-  - Slack: [#wg-ai-conformance](https://kubernetes.slack.com/messages/wg-ai-conformance)
-  - [Mailing List](https://groups.google.com/a/kubernetes.io/g/wg-ai-conformance)
+  - Slack: [#k8s-ai-conformance](https://kubernetes.slack.com/messages/k8s-ai-conformance)
 ### apisnoop
 Snooping on the Kubernetes OpenAPI communications
 - **Owners:**
