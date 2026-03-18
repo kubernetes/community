@@ -716,7 +716,12 @@ This section covers one specific user journey:
 * make DV authoritative for that field
 
 For a new field, use either declarative validation or handwritten validation
-for that field's checks, but not both.
+for that field's validation logic, but not both (do not mix for a single field).
+
+This guidance assumes the API type is plumbed for declarative
+validation. If the type already has existing DV migrated/shadowed fields (`+k8s:alpha`/`+k8s:beta`) and still relies on fields w/ handwritten validation and/or shadowed DV, those older fields can continue to
+exist as-is, but do not introduce that split for the new field covered by this
+section.
 
 Note: for this new-field DV-native flow, use direct tags with no prefix. Do
 not use `+k8s:alpha(...)` or `+k8s:beta(...)` here. Those tags are for
@@ -1041,13 +1046,16 @@ guidance to one test file.
 
 For a new feature-gated spec field, cover at least:
 
-* gate on, field specified
-* gate on, field omitted
-* gate on, invalid value specified
-* gate off, field specified
-* gate off, field omitted
-* gate off, old value unchanged on update
-* gate off, old value changed on update
+
+| Case | Expected result |
+| --- | --- |
+| gate on, field specified | Allowed if the value is valid. |
+| gate on, field omitted | Allowed. |
+| gate on, invalid value specified | Rejected with the field's normal validation error, such as `NotSupported`, `Invalid`, `TooLong`, or `TooMany`. |
+| gate off, field specified | Rejected. With the standard `ifDisabled(...)=+k8s:forbidden` pattern, expect a forbidden error. |
+| gate off, field omitted | Allowed. |
+| gate off, old value unchanged on update | Allowed due to ratcheting. |
+| gate off, old value changed on update | Rejected. With the standard `ifDisabled(...)=+k8s:forbidden` pattern, expect a forbidden error because the update is attempting to write a disabled field value. |
 
 These cases mattered in practice and line up with review feedback on earlier
 PRs:
@@ -1353,9 +1361,9 @@ After code generation, run the unit tests for the resource you changed.
 If declarative validation covers the new field correctly, do not also add new
 checks for that field in `pkg/apis/<group>/validation/validation.go`.
 
-If the field needs handwritten validation because DV cannot yet express the
-rule, prefer handwritten validation for that field rather than mixing DV and
-handwritten validation for the same field.
+If DV can cover some of the new field's checks but cannot cover all of them,
+prefer handwritten validation for that field rather than splitting one field's
+checks between DV and handwritten validation.
 
 ## Edit version conversions
 
