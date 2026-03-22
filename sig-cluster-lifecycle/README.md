@@ -265,8 +265,8 @@ Implements a local Kubernetes cluster for application development on macOS, Linu
   - minikube office hours: [Mondays at 11:00 PT (Pacific Time)](https://zoom.us/j/97017029363?pwd=U3MvZ3pMMHM5eWorSjgzUnd5OEFtUT09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1jhfmL1gsgN39uCEgz5pW9tnIotFgHhxq2yfMK3KYE4w/edit).
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
-[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

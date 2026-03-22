@@ -46,7 +46,7 @@ Policies and documentation for the Security Response Committee
 - **Owners:**
   - [kubernetes/committee-security-response](https://github.com/kubernetes/committee-security-response/blob/main/OWNERS)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

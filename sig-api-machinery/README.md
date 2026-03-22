@@ -158,8 +158,8 @@ The following [subprojects][subproject-definition] are owned by sig-api-machiner
 - **Owners:**
   - [kubernetes-sigs/yaml](https://github.com/kubernetes-sigs/yaml/blob/master/OWNERS)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
-[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Additional links
 

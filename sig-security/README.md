@@ -75,8 +75,8 @@ SIG Security discussions, documents, processes and other artifacts
 - **Contact:**
   - Slack: [#sig-security](https://kubernetes.slack.com/messages/sig-security)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
-[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

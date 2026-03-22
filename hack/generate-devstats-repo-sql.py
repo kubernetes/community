@@ -134,7 +134,7 @@ def repos_from_k8s_group(k8s_group):
         subprojects = []
     for sp in subprojects:
         for uri in sp['owners']:
-            owners_path = re.sub(r"https://raw.githubusercontent.com/(.*)/master/(.*)",r"\1/\2",uri)
+            owners_path = re.sub(r"https://raw.githubusercontent.com/(.*)/[^/]+/(.*)",r"\1/\2",uri)
             path_parts = owners_path.split('/')
             # org/repo is owned by k8s_group if org/repo/OWNERS os in one of their subprojects
             if path_parts[2] == 'OWNERS':

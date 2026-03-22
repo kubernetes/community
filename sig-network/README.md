@@ -171,8 +171,8 @@ Proposals and discussions for the AI Gateway Working Group
 - **Owners:**
   - [kubernetes-sigs/wg-ai-gateway](https://github.com/kubernetes-sigs/wg-ai-gateway/blob/main/OWNERS)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
-[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 ### Subproject Leads

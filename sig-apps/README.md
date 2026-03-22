@@ -122,8 +122,8 @@ The core workloads API, which is composed of the CronJob, DaemonSet, Deployment,
   - [kubernetes/kubernetes/test/integration/daemonset](https://github.com/kubernetes/kubernetes/blob/master/test/integration/daemonset/OWNERS)
   - [kubernetes/kubernetes/test/integration/deployment](https://github.com/kubernetes/kubernetes/blob/master/test/integration/deployment/OWNERS)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
-[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Goals

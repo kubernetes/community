@@ -47,7 +47,7 @@ The [charter](charter.md) defines the scope and governance of the Code of Conduc
     - [@kubernetes/code-of-conduct-committee](https://github.com/orgs/kubernetes/teams/code-of-conduct-committee) - General Discussion
 - Steering Committee Liaison: Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Reporting An Incident

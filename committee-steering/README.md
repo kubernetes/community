@@ -45,7 +45,7 @@ Steering Committee policies, documentation, and funding requests
 - **Owners:**
   - [kubernetes/steering](https://github.com/kubernetes/steering/blob/master/OWNERS)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

@@ -42,8 +42,8 @@ The following [subprojects][subproject-definition] are owned by sig-ui:
 - **Owners:**
   - [kubernetes-sigs/headlamp/heads/main](https://github.com/kubernetes-sigs/headlamp/blob/refs/heads/main/OWNERS)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
-[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
