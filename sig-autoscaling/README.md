@@ -86,8 +86,8 @@ The following [subprojects][subproject-definition] are owned by sig-autoscaling:
 - **Contact:**
   - Slack: [#vertical-pod-autoscaler](https://kubernetes.slack.com/messages/vertical-pod-autoscaler)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
-[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Concerns
 * autoscaling of clusters,

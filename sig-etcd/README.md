@@ -140,8 +140,8 @@ Serve the Apache Zookeeper API but back it with an etcd cluster
 - **Owners:**
   - [etcd-io/zetcd/MAINTAINERS](https://github.com/etcd-io/zetcd/blob/master/MAINTAINERS)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
-[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

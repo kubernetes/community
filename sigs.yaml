@@ -463,7 +463,7 @@ sigs:
         contact:
           slack: prod-readiness
         owners:
-          - https://raw.githubusercontent.com/kubernetes/community/master/sig-architecture/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/sig-architecture/OWNERS
       - name: wg-device-management
         description: Contains prototype code for future work driven by WG Device Management
         contact:
@@ -963,7 +963,7 @@ sigs:
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/apiserver-network-proxy/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/cloud-pv-admission-labeler/main/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/community/master/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/sig-cloud-provider/cloud-provider-extraction-migration/OWNERS
           - https://raw.githubusercontent.com/kubernetes/legacy-cloud-providers/master/OWNERS
       - name: kro
         description: Simplify the creation and management of complex custom resources for Kubernetes.
@@ -1514,18 +1514,18 @@ sigs:
       - name: community
         description: Owns and manages overall community repo, including community group documentation and operations.
         owners:
-          - https://raw.githubusercontent.com/kubernetes/community/master/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/OWNERS
       - name: community-management
         description: Manages operations and policy for upstream community group communication platforms.
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/discuss-theme/master/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/community/master/communication/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/communication/OWNERS
       - name: contributor-comms
         description: |
           Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/lwkd/main/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/community/master/communication/contributor-comms/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/communication/contributor-comms/OWNERS
         meetings:
           - description: Contributor Comms - Contributor Comms Team Meeting
             day: Friday
@@ -1538,26 +1538,26 @@ sigs:
       - name: contributors-documentation
         description: writes and maintains documentation around contributing to Kubernetes, including the Contributor's Guide, Developer's Guide, and contributor website.
         owners:
-          - https://raw.githubusercontent.com/kubernetes/community/master/contributors/guide/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/contributors/guide/OWNERS
           - https://raw.githubusercontent.com/kubernetes/contributor-site/master/OWNERS
       - name: devstats
         description: Maintains and updates https://k8s.devstats.cncf.io, including taking requests for new charts.
         contact:
           slack: devstats
         owners:
-          - https://raw.githubusercontent.com/kubernetes/community/master/sig-contributor-experience/devstats/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/sig-contributor-experience/devstats/OWNERS
       - name: elections
         description: Oversees running elections in the community. Maintains documentation and software for elections.
         contact:
           slack: sig-contribex
         owners:
-          - https://raw.githubusercontent.com/kubernetes/community/master/elections/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/elections/OWNERS
       - name: events
         description: Creates and runs contributor-focused events, such as the Contributor Summit.  Event Teams are part of this subproject.
         contact:
           slack: sig-contribex
         owners:
-          - https://raw.githubusercontent.com/kubernetes/community/master/events/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/events/OWNERS
       - name: github-management
         description: Manages and controls Github permissions, repos, and groups, including Org Membership.
         contact:
@@ -1568,7 +1568,7 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/.github/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/maintainers/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes/.github/master/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/community/master/github-management/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/github-management/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes-template-project/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes/org/master/OWNERS
         meetings:
@@ -1584,7 +1584,7 @@ sigs:
         description: Oversees and develops programs for helping contributors ascend the contributor ladder, including the New Contributor Workshops, and other programs.
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/contributor-playground/master/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/community/master/mentoring/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/mentoring/OWNERS
       - name: slack-infra
         description: Creates and maintains tools and automation for Kubernetes Slack.
         contact:
@@ -2818,21 +2818,21 @@ sigs:
       - name: kubernetes-scalability-and-performance-tests-and-validation
         description: '[Described below](#kubernetes-scalability-and-performance-tests-and-validation)'
         owners:
-          - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/processes/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/sig-scalability/processes/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/scalability/OWNERS
       - name: kubernetes-scalability-bottlenecks-detection
         description: '[Described below](#kubernetes-scalability-bottlenecks-detection)'
         owners:
-          - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/blogs/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/sig-scalability/blogs/OWNERS
       - name: kubernetes-scalability-definition
         description: '[Described below](#kubernetes-scalability-definition)'
         owners:
-          - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/configs-and-limits/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/slos/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/sig-scalability/configs-and-limits/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/sig-scalability/slos/OWNERS
       - name: kubernetes-scalability-governance
         description: '[Described below](#kubernetes-scalability-governance)'
         owners:
-          - https://raw.githubusercontent.com/kubernetes/community/master/sig-scalability/governance/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/community/main/sig-scalability/governance/OWNERS
       - name: kubernetes-scalability-test-frameworks
         description: '[Described below](#kubernetes-scalability-test-frameworks)'
         owners:

@@ -137,8 +137,8 @@ The following [subprojects][subproject-definition] are owned by sig-node:
   - [kubernetes/kubernetes/staging/src/k8s.io/streaming](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/streaming/OWNERS)
   - [kubernetes/streaming](https://github.com/kubernetes/streaming/blob/master/OWNERS)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
-[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 ## Goals
 

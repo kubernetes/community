@@ -124,7 +124,7 @@ Tooling based on Deep Learning tools to help maintainers to maintain the Kuberne
 ### production-readiness
 [Described below](#production-readiness-1)
 - **Owners:**
-  - [kubernetes/community/sig-architecture](https://github.com/kubernetes/community/blob/master/sig-architecture/OWNERS)
+  - [kubernetes/community/sig-architecture](https://github.com/kubernetes/community/blob/main/sig-architecture/OWNERS)
 - **Contact:**
   - Slack: [#prod-readiness](https://kubernetes.slack.com/messages/prod-readiness)
 ### wg-device-management
@@ -134,8 +134,8 @@ Contains prototype code for future work driven by WG Device Management
 - **Contact:**
   - Slack: [#wg-device-management](https://kubernetes.slack.com/messages/wg-device-management)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
-[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 # Details about SIG-Architecture sub-projects

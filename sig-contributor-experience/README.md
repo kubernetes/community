@@ -65,17 +65,17 @@ The following [subprojects][subproject-definition] are owned by sig-contributor-
 ### community
 Owns and manages overall community repo, including community group documentation and operations.
 - **Owners:**
-  - [kubernetes/community](https://github.com/kubernetes/community/blob/master/OWNERS)
+  - [kubernetes/community](https://github.com/kubernetes/community/blob/main/OWNERS)
 ### community-management
 Manages operations and policy for upstream community group communication platforms.
 - **Owners:**
   - [kubernetes-sigs/discuss-theme](https://github.com/kubernetes-sigs/discuss-theme/blob/master/OWNERS)
-  - [kubernetes/community/communication](https://github.com/kubernetes/community/blob/master/communication/OWNERS)
+  - [kubernetes/community/communication](https://github.com/kubernetes/community/blob/main/communication/OWNERS)
 ### contributor-comms
 Contributor Communications focuses on amplifying the success of Kubernetes contributors through marketing.
 - **Owners:**
   - [kubernetes-sigs/lwkd](https://github.com/kubernetes-sigs/lwkd/blob/main/OWNERS)
-  - [kubernetes/community/communication/contributor-comms](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/OWNERS)
+  - [kubernetes/community/communication/contributor-comms](https://github.com/kubernetes/community/blob/main/communication/contributor-comms/OWNERS)
 - **Meetings:**
   - Contributor Comms - Contributor Comms Team Meeting: [Fridays at 8:00 PT (Pacific Time)](https://zoom.us/j/596959769?pwd=TURBNlZPb3BEWVFmbWlCYXlMVVJiUT09) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=8%3A00&tz=PT%20%28Pacific%20Time%29).
     - [Meeting notes and Agenda](https://docs.google.com/document/d/1K3vjCZ9C3LwYrOJOhztQtFuDQCe-urv-ewx1bI8IPVQ/edit?usp=sharing).
@@ -83,24 +83,24 @@ Contributor Communications focuses on amplifying the success of Kubernetes contr
 ### contributors-documentation
 writes and maintains documentation around contributing to Kubernetes, including the Contributor's Guide, Developer's Guide, and contributor website.
 - **Owners:**
-  - [kubernetes/community/contributors/guide](https://github.com/kubernetes/community/blob/master/contributors/guide/OWNERS)
+  - [kubernetes/community/contributors/guide](https://github.com/kubernetes/community/blob/main/contributors/guide/OWNERS)
   - [kubernetes/contributor-site](https://github.com/kubernetes/contributor-site/blob/master/OWNERS)
 ### devstats
 Maintains and updates https://k8s.devstats.cncf.io, including taking requests for new charts.
 - **Owners:**
-  - [kubernetes/community/sig-contributor-experience/devstats](https://github.com/kubernetes/community/blob/master/sig-contributor-experience/devstats/OWNERS)
+  - [kubernetes/community/sig-contributor-experience/devstats](https://github.com/kubernetes/community/blob/main/sig-contributor-experience/devstats/OWNERS)
 - **Contact:**
   - Slack: [#devstats](https://kubernetes.slack.com/messages/devstats)
 ### elections
 Oversees running elections in the community. Maintains documentation and software for elections.
 - **Owners:**
-  - [kubernetes/community/elections](https://github.com/kubernetes/community/blob/master/elections/OWNERS)
+  - [kubernetes/community/elections](https://github.com/kubernetes/community/blob/main/elections/OWNERS)
 - **Contact:**
   - Slack: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)
 ### events
 Creates and runs contributor-focused events, such as the Contributor Summit.  Event Teams are part of this subproject.
 - **Owners:**
-  - [kubernetes/community/events](https://github.com/kubernetes/community/blob/master/events/OWNERS)
+  - [kubernetes/community/events](https://github.com/kubernetes/community/blob/main/events/OWNERS)
 - **Contact:**
   - Slack: [#sig-contribex](https://kubernetes.slack.com/messages/sig-contribex)
 ### github-management
@@ -111,7 +111,7 @@ Manages and controls Github permissions, repos, and groups, including Org Member
   - [kubernetes-sigs/.github](https://github.com/kubernetes-sigs/.github/blob/master/OWNERS)
   - [kubernetes-sigs/maintainers](https://github.com/kubernetes-sigs/maintainers/blob/main/OWNERS)
   - [kubernetes/.github](https://github.com/kubernetes/.github/blob/master/OWNERS)
-  - [kubernetes/community/github-management](https://github.com/kubernetes/community/blob/master/github-management/OWNERS)
+  - [kubernetes/community/github-management](https://github.com/kubernetes/community/blob/main/github-management/OWNERS)
   - [kubernetes/kubernetes-template-project](https://github.com/kubernetes/kubernetes-template-project/blob/master/OWNERS)
   - [kubernetes/org](https://github.com/kubernetes/org/blob/master/OWNERS)
 - **Contact:**
@@ -124,7 +124,7 @@ Manages and controls Github permissions, repos, and groups, including Org Member
 Oversees and develops programs for helping contributors ascend the contributor ladder, including the New Contributor Workshops, and other programs.
 - **Owners:**
   - [kubernetes-sigs/contributor-playground](https://github.com/kubernetes-sigs/contributor-playground/blob/master/OWNERS)
-  - [kubernetes/community/mentoring](https://github.com/kubernetes/community/blob/master/mentoring/OWNERS)
+  - [kubernetes/community/mentoring](https://github.com/kubernetes/community/blob/main/mentoring/OWNERS)
 ### slack-infra
 Creates and maintains tools and automation for Kubernetes Slack.
 - **Owners:**
@@ -132,8 +132,8 @@ Creates and maintains tools and automation for Kubernetes Slack.
 - **Contact:**
   - Slack: [#slack-infra](https://kubernetes.slack.com/messages/slack-infra)
 
-[subproject-definition]: https://github.com/kubernetes/community/blob/master/governance.md#subprojects
-[working-group-definition]: https://github.com/kubernetes/community/blob/master/governance.md#working-groups
+[subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
+[working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
 
 ## Relevant Presentations
