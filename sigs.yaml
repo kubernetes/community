@@ -3839,48 +3839,6 @@ workinggroups:
       liaison:
         github: soltysh
         name: Maciej Szulik
-  - dir: wg-lts
-    name: LTS
-    mission_statement: >
-      The working group is organized with the goal of developing a better understanding of what "Long Term Support" might mean for Kubernetes, those who support Kubernetes, and end users. The working group will investigate changes the Kubernetes project could make related to the better understanding of what long term support might mean. The working group will also determine the feasibility, benefits, **cost**, and prerequisites of any such changes.
-
-    stakeholder_sigs:
-      - Architecture
-      - Cluster Lifecycle
-      - K8s Infra
-      - Release
-      - Security
-      - Testing
-    label: lts
-    leadership:
-      chairs:
-        - github: jeremyrickard
-          name: Jeremy Rickard
-          company: Microsoft
-          email: jeremy.r.rickard@gmail.com
-        - github: liggitt
-          name: Jordan Liggitt
-          company: Google
-          email: liggitt@google.com
-        - github: micahhausler
-          name: Micah Hausler
-          company: Amazon
-          email: mhausler@amazon.com
-    meetings:
-      - description: Regular WG Meeting
-        day: Tuesday
-        time: "07:00"
-        tz: PT (Pacific Time)
-        frequency: biweekly
-        url: https://zoom.us/j/92480197536?pwd=dmtSMGJRQmNYYTIyZkFlQ25JRngrdz09
-        archive_url: https://docs.google.com/document/d/1RI_EL35MwQxrHqlWvtQNINhOSWergL3hmOSgC5PeZss/edit
-        recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP13_zDqYfUjfLZ2Lu9a3pv-
-    contact:
-      slack: wg-lts
-      mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-lts
-      liaison:
-        github: saschagrunert
-        name: Sascha Grunert
   - dir: wg-node-lifecycle
     name: Node Lifecycle
     mission_statement: >
