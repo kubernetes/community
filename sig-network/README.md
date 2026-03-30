@@ -36,8 +36,8 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Bowei Du (**[@bowei](https://github.com/bowei)**), Google
+* Guilherme Cassolato (**[@guicassolato](https://github.com/guicassolato)**), Red Hat
 * Michael Zappa (**[@mikezappa87](https://github.com/mikezappa87)**), Microsoft
-* Shane Utt (**[@shaneutt](https://github.com/shaneutt)**), Red Hat
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -51,6 +51,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Casey Davenport (**[@caseydavenport](https://github.com/caseydavenport)**)
 * Dan Williams (**[@dcbw](https://github.com/dcbw)**)
+* Shane Utt (**[@shaneutt](https://github.com/shaneutt)**)
 
 ## Contact
 - Slack: [#sig-network](https://kubernetes.slack.com/messages/sig-network)
