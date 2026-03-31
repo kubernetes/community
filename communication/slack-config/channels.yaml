@@ -192,8 +192,11 @@ channels:
   - name: in-users
   - name: inference-perf
   - name: ingate-dev
+    archived: true
   - name: ingate-users
+    archived: true
   - name: ingress-nginx-dev
+    archived: true
   - name: ingress-nginx-users
     id: CANQGM8BA
   - name: inspektor-gadget
