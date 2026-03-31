@@ -2890,7 +2890,7 @@ sigs:
         recordings_url: https://www.youtube.com/watch?v=PweKj6SU7UA&list=PL69nYSiGNLP2vwzcCOhxrL3JVBc-eaJWI
       - description: biweekly meeting (NA & Europe)
         day: Thursday
-        time: "10:00"
+        time: "9:00"
         tz: PT (Pacific Time)
         frequency: biweekly starting Thursday June 7, 2018
         url: https://zoom.us/j/841218129?pwd=MzZkTGREcmpISWhhMjlqTHRqRERvQT09
