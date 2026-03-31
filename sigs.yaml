@@ -3999,6 +3999,10 @@ committees:
           name: Rita Zhang
           company: Microsoft
           email: ritazh@microsoft.com
+        - github: stlaz
+          name: Standa Láznička
+          company: Microsoft
+          email: slznika@microsoft.com
         - github: tabbysable
           name: Tabitha Sable
           company: Datadog
