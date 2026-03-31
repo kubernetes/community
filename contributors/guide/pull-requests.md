@@ -631,8 +631,9 @@ description of your PR. Listing AI tooling as a co-author, co-signing commits us
 the `assisted-by`, `co-developed` or similar commit trailer is not allowed.
 
 All contributions must follow the [contributions policies](/contributors/guide/contributing.md) and use 
-commit messages that align with [the policy](#commit-message-guidelines). [Large AI generated](#
-large-or-automatic-edits) PRs and AI generated commit messages are not allowed.
+commit messages that align with [the policy](#commit-message-guidelines).
+
+[Large AI generated](#large-or-automatic-edits) PRs and AI generated commit messages are not allowed.
 
 Do not leave the first review of AI generated changes to the reviewers. Verify the changes (code review, 
 testing, etc.) before submitting your PR. Reviewers may ask questions about your AI-assisted code, and if 
