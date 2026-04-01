@@ -628,7 +628,7 @@ the Pull Request provides.
 Using AI tools to help write your PR is acceptable, but as the author, you are responsible for 
 understanding every change. If you used AI tools in preparing your PR, you must disclose this in the 
 description of your PR. Listing AI tooling as a co-author, co-signing commits using an AI tool, or using 
-the `assisted-by`, `co-developed` or similar commit trailer is not allowed.
+the `assisted-by`, `co-developed` or similar commit trailer is not allowed. For copilot, you can disable with `"includeCoAuthoredBy": false`, refer to https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference.
 
 All contributions must follow the [contributions policies](/contributors/guide/contributing.md) and use 
 commit messages that align with [the policy](#commit-message-guidelines).
