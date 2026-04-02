@@ -2592,6 +2592,9 @@ sigs:
       - name: node-readiness-controller
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/node-readiness-controller/main/OWNERS
+      - name: nvidia-dra-driver-gpu
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/nvidia-dra-driver-gpu/main/OWNERS
       - name: resource-management
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/dra-example-driver/main/OWNERS

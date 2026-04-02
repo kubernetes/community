@@ -117,6 +117,9 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### node-readiness-controller
 - **Owners:**
   - [kubernetes-sigs/node-readiness-controller](https://github.com/kubernetes-sigs/node-readiness-controller/blob/main/OWNERS)
+### nvidia-dra-driver-gpu
+- **Owners:**
+  - [kubernetes-sigs/nvidia-dra-driver-gpu](https://github.com/kubernetes-sigs/nvidia-dra-driver-gpu/blob/main/OWNERS)
 ### resource-management
 - **Owners:**
   - [kubernetes-sigs/dra-example-driver](https://github.com/kubernetes-sigs/dra-example-driver/blob/main/OWNERS)
