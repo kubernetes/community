@@ -2,6 +2,7 @@
 # This includes archived channels, which are marked with `archived: true`.
 
 channels:
+  - name: aicr
   - name: africa-dev
   - name: agent-sandbox
   - name: airflow-operator
