@@ -66,7 +66,7 @@ Suggestions on how to migrate an existing repository are described below.
     Repository section of the org-level settings page.
   * Create a PR against [kubernetes/org] to add github teams as per the
     [team guidance](#team-guidance) for allotting repo admin and write access.
-    Include the repository name pattern in `config/restrictions.yaml` under
+    Include the repository name pattern in [`config/restrictions.yaml`](https://github.com/kubernetes/org/blob/main/config/restrictions.yaml) under
     the appropriate SIG path restriction.
   * Verify that all users listed for admin or write access are members of the
     destination organization. If not, they must request membership via a
@@ -76,8 +76,6 @@ Suggestions on how to migrate an existing repository are described below.
     peribolos.
   * Ask the author of the migration request to add the repo as a part of a
     subproject in [`sigs.yaml`](/sigs.yaml).
-  * The previous owner should archive the original repository and update its
-    description to point to the new location.
 
 ## Licensing Guidance
 
