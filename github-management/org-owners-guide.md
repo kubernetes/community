@@ -47,6 +47,36 @@ code in.
 It is easier to start new code in a Kubernetes organization than it is to
 transfer in existing code.
 
+Suggestions on how to migrate an existing repository are described below.
+
+  * Ensure the repository meets the [rules for donated repositories].
+  * One of the members of the [GitHub Administration Team] invites the repository owner to the [kubernetes-purgatory] organization.
+  * The repository owner initiates a GitHub transfer of their repository into
+    [kubernetes-purgatory].
+  * A [GitHub Administration Team] member transfers the repository from
+    [kubernetes-purgatory] to the final destination organization (e.g.
+    `kubernetes-sigs`).
+  * If the repository is a GitHub fork, clone it, delete the fork, recreate
+    it as a standalone repository, and push the cloned content back.
+  * Ensure the repository contains the required template files from the
+    [kubernetes-template-project]. Update `OWNERS`, `SECURITY_CONTACTS`, and
+    `README.md` as per the migration request.
+  * If the repo is a [SIG Repository], add a new topic of the form
+    `k8s-sig-<sig-name-repo-belongs-to>` using *Topics* under the
+    Repository section of the org-level settings page.
+  * Create a PR against [kubernetes/org] to add github teams as per the
+    [team guidance](#team-guidance) for allotting repo admin and write access.
+    Include the repository name pattern in [`config/restrictions.yaml`](https://github.com/kubernetes/org/blob/main/config/restrictions.yaml) under
+    the appropriate SIG path restriction.
+  * Verify that all users listed for admin or write access are members of the
+    destination organization. If not, they must request membership via a
+    separate [membership request].
+  * Once the above PR is merged and the postsubmit has run, the new GitHub
+    teams will be created and should have access automatically assigned by
+    peribolos.
+  * Ask the author of the migration request to add the repo as a part of a
+    subproject in [`sigs.yaml`](/sigs.yaml).
+
 ## Licensing Guidance
 
 Section 11 of the [CNCF Charter] provides guidance on how to license code and
@@ -207,7 +237,11 @@ from the above procedure:
   [`hack/fetch-all-latest-and-push.sh`](https://git.k8s.io/publishing-bot/hack/fetch-all-latest-and-push.sh)
   in the [publishing-bot] repo.
 
-<!-- TODO: Add suggestions for how to migrate existing repos -->
+### Migrating Existing Repositories
+
+If the repository is being transferred (donated) from outside the Kubernetes
+project, follow the steps in
+[Transferring Outside Code Into A Kubernetes Organization](#transferring-outside-code-into-a-kubernetes-organization).
 
 ### Removing Repositories
 
@@ -242,9 +276,12 @@ https://help.github.com/articles/archiving-a-github-repository/
 [kubernetes/org]: https://github.com/kubernetes/org
 [publishing-bot]: https://github.com/kubernetes/publishing-bot
 [@kubernetes/stage-bots]: https://github.com/orgs/kubernetes/teams/stage-bots
+[kubernetes-purgatory]: https://github.com/kubernetes-purgatory
 [kubernetes-retired]: https://github.com/kubernetes-retired
 [kubernetes-template-project]: https://github.com/kubernetes/kubernetes-template-project
-[SIG Repository]: /github-management/kubernetes-repositories.md##sig-repositories
+[rules for donated repositories]: /github-management/kubernetes-repositories.md#rules-for-donated-repositories
+[membership request]: https://github.com/kubernetes/org/issues/new?template=membership.yml
+[SIG Repository]: /github-management/kubernetes-repositories.md#sig-repositories
 [template repo]: https://help.github.com/en/articles/creating-a-repository-from-a-template
 [CNCF Charter]: https://github.com/cncf/foundation/blob/main/charter.md
 [Apache License, Version 2.0]: https://www.apache.org/licenses/LICENSE-2.0
