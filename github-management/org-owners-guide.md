@@ -64,7 +64,7 @@ Suggestions on how to migrate an existing repository are described below.
   * If the repo is a [SIG Repository], add a new topic of the form
     `k8s-sig-<sig-name-repo-belongs-to>` using *Topics* under the
     Repository section of the org-level settings page.
-  * Create a PR against [kubernetes/org] to add teams as per the
+  * Create a PR against [kubernetes/org] to add github teams as per the
     [team guidance](#team-guidance) for allotting repo admin and write access.
     Include the repository name pattern in `config/restrictions.yaml` under
     the appropriate SIG path restriction.
