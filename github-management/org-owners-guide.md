@@ -50,7 +50,7 @@ transfer in existing code.
 Suggestions on how to migrate an existing repository are described below.
 
   * Ensure the repository meets the [rules for donated repositories].
-  * Invite the repository owner to the [kubernetes-purgatory] organization.
+  * One of the members of the [GitHub Administration Team] invites the repository owner to the [kubernetes-purgatory] organization.
   * The repository owner initiates a GitHub transfer of their repository into
     [kubernetes-purgatory].
   * A [GitHub Administration Team] member transfers the repository from
