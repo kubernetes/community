@@ -3685,10 +3685,6 @@ workinggroups:
           name: Radostin Stoyanov
           company: University of Oxford
           email: radostin.stoyanov@eng.ox.ac.uk
-        - github: viktoriaas
-          name: Viktória Spišaková
-          company: Masaryk University
-          email: spisakova@ics.muni.cz
     meetings:
       - description: WG Checkpoint Restore Weekly Meeting
         day: Thursday

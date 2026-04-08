@@ -29,7 +29,6 @@ The [charter](charter.md) defines the scope and governance of the Checkpoint Res
 * Adrian Reber (**[@adrianreber](https://github.com/adrianreber)**), Red Hat
 * Peter Hunt (**[@haircommander](https://github.com/haircommander)**), Red Hat
 * Radostin Stoyanov (**[@rst0git](https://github.com/rst0git)**), University of Oxford
-* Viktória Spišaková (**[@viktoriaas](https://github.com/viktoriaas)**), Masaryk University
 
 ## Contact
 - Slack: [#wg-checkpoint-restore](https://kubernetes.slack.com/messages/wg-checkpoint-restore)
