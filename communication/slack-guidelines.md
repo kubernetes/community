@@ -8,7 +8,7 @@ description: |
 Slack serves as the main communication platform for the Kubernetes community
 outside of the mailing lists. It's important that conversations stay on topic in
 each channel, and that everyone abides by the [Code of Conduct][coc]. There are
-over 150,000 members who should all expect to have a positive experience. You
+over 200,000 members who should all expect to have a positive experience. You
 are a part of building and keeping a positive community.
 
 Chat is searchable and public. It's best not to make comments that you would not
@@ -20,9 +20,15 @@ others.
 Kubernetes adheres to the [Kubernetes Code of Conduct][coc] throughout the
 project, and includes all communication mediums.
 
+## Joining Slack
+
+To join the Kubernetes Slack, you must use the [community inviter].  No other method of joining Kubernetes Slack will work.
+
+Please do not send in-Slack Invitations to your coworkers or friends.  They will not be able to join our Slack that way.  Instead, direct them to the [community inviter].
+
 ## Admins
 
--   Check the [centralized list of administrators][admins] for contact information.
+The [centralized list of administrators][admins] has contact information.
 
 Slack Admins will have listed that they are a Slack admin in their Slack
 profile, along with their specific timezone.
@@ -31,38 +37,64 @@ To connect: please reach out in the `#slack-admins` channel, mention an admin
 directly in the `#slack-admins` channel when you have a question, or DM (direct
 message) one privately.
 
-## General Communication Guidelines
-
-### Workspace Channel History
+## Workspace Channel History
 
 The Kubernetes Slack Workspace is archived and made available when the
 administrators have time. There is no explicit interval.
 
 [Slack Archive Download]
 
-### Slack Usage Rules
+## General Slack Usage Guidelines
 
-In addition to the [Code of Conduct][coc], users of Kubernetes Slack must adhere to
-the following behavior rules.  Failure to follow them may result in warnings,
-removal of posts, escalating to temporary or permanent deactivation of the user
-account.
+### Activities We Encourage
 
-* **Adhere to Channel Topics**: for the most part, try to stick to the declared
-  topic of the channel you're in.
-* **No Spam**: you may not post commercial, promotional messages anywhere in
+Slack is the key communications platform for our community.  As such, all of the following behaviors and activities are allowed and encouraged on our Slack:
+
+* Following the **[Code of Conduct][coc]**
+* Generally adhering to the stated **channel topics**, and putting discussions in the appropriate channels.  For example, a security question should be discussed in #kubernetes-security, #sig-auth, or #sig-security, but a question about kubectl commands isn't appropriate there.
+* Occasional **social chatting**, which fosters a sense of community.  Just don't let it overwhelm the on-topic content of the channel, and be wary of discussing topics that might be very upsetting to some community members (e.g. international conflict).
+* Offering **help and assistance** to other users looking for answers.
+* Posting **reminders** about community meetings and activities which are appropriate to the channel (e.g. upcoming SIG meetings).
+
+### Prohibited Activities
+
+Doing any of the below is prohibited.  Breaking these rules can result 
+in warnings, deletion of posts, restrictions on posting, temporary or 
+permanent deactivation of user accounts, and even restrictions on entire
+organizations.  We rely on our community to report prohibited behavior to 
+the Slack admins; if you see any of the below, please use the [Message Reporter].
+
+* Violations of the **[Code of Conduct][coc]**
+* Posting **Spam**: you may not post commercial, promotional messages anywhere in
   Kubernetes, whether in public channels or direct messages, except for very
   specific types of messages in specific channels were it is allowed.
-* **No Unsolicited DMs**: do not send any user uninvited direct messages (DMs).
-* **Don't Discuss Company Business**: Proprietary conversations should
+* **No Automated Access**: Kubernetes Slack is for contributors to connect with
+  other contributors. Connecting any automated program or service to Kubernetes
+  Slack without explicit approval by the Slack Administrators or K8s-Infra is
+  strictly prohibited. This includes, but is not limited to, app plugins, AI
+  agents, chat bots, social media management platforms, backup tools, and screen scrapers.
+* **Unsolicited Direct Messages**: Do not send a direct message (DM) to any user
+  who has not invited it, and that you are not approaching in their official 
+  role in the Kubernetes project. In general, ask questions in public channels.
+* **Company Business**: Proprietary conversations should
   occur in your company Slack and/or communication platforms.
-* **No Surveys**: surveys, focus groups, free trials, and similar calls for
-  participation are considered spam and are prohibited.  Exceptions: an official
-  Kubernetes community survey can be posted anywhere, and any survey may be
-  posted to the Surveys channel.
+* **Self-Promotion**: users posting about their blogs, podcasts, LinkedIn profiles,
+  non-Kubernetes projects, or other personal content in order to drive traffic 
+  is considered spam and prohibited.
+
+### Content Restricted to Specific Channels
+
+Several types of posts are restricted to specific Slack channels, and posting
+this content elsewhere is a violation that can result in a warning, restrictions
+on posting, or deactivation of your account.
+
+* **Surveys**: surveys, focus groups, free trials, and similar calls for
+  participation may only be posted on the #surveys channel.  However, an official
+  Kubernetes community survey can be posted anywhere.
 * **Jobs and Resumes** belong on the `#kubernetes-careers` channel and should not
   be posted elsewhere.
 * **Events** may only be posted to channels where that specific event is
-  applicable, except for the `#events` channel.  Generally, this only includes
+  applicable, or the `#events` channel.  In general, this should be only 
   nonprofit community events.
 
 ### Specific Channel Rules
@@ -86,34 +118,42 @@ include:
 -   `#surveys` - Cloud native community wide surveys. Posts must be ecosystem
     related.
 
-### Escalating and/or Reporting a Problem
+### Reporting a Problem
 
 The Kubernetes Slack has an integrated tool for reporting issues. It may be
 accessed by clicking on "More actions", the "**...**" to the right of a message,
-and selecting **Report message**.
+selecting "connect to apps", and selecting **Report message**.
 
 This will open a new dialog prompt where you may describe the problem. When
 done, it will send the reported message and your comments to **BOTH** the
-[Slack admins][admins] and [Code of Conduct Committee (CoCC)][cocc].
+[Slack admins][admins] and [Code of Conduct Committee (CoCC)][cocc].  You 
+may report anonymously.
 
 A Slack admin or CoCC member will work to resolve the issue or reach out for
-more information.
+more information. Due to report volume, if the Slack admins do not require additional information they may take action without reporting back to you. 
 
-If the issue has not been responded to in a timely manner, Join the
+If the issue is complicated or still unresolved after some time, join the
 #slack-admins channel and alert the admins to the current issue. Many Slack
-admins watch the channel and should respond to you shortly.
+admins watch the channel and should respond to you shortly, although they 
+respond to the Message Reporter more quickly.
 
 As a last resort, or if the issue is private, contact one of the admins in the
 [closest timezone][admins] via DM directly and describe the situation. If the
 issue can be documented, please take a screenshot to include in your message.
 
-#### What if you have a problem with an admin?
+### What if you have a problem with an admin?
 
 Send a DM to another [listed admin][admins] and describe the situation. If it's
 a [code of conduct][coc] issue, please send an email to <conduct@kubernetes.io>
 and describe the situation.
 
-## Should you have a channel on the Kubernetes Slack?
+## Channel Management
+
+This section, and the sections below it, are intended for SIG Leads, channel
+owners, and Slack admins.  If you are new to Kubernetes and Kubernetes Slack, 
+you can stop reading here.
+
+### Should you have a channel on the Kubernetes Slack?
 
 The primary purpose of the Kubernetes slack is for the coordination of the
 Kubernetes project. However it is useful for developers and users to have a
@@ -423,13 +463,14 @@ Report any actions taken to the other slack admins, and if needed the
 
 [coc]: /code-of-conduct.md
 [admins]: ./moderators.md#Slack
+[community inviter]: https://slack.k8s.io
 [Slack Archive Download]: https://drive.google.com/drive/folders/1Xnkwsxis3tu0pT7rwp-crRq4IciZ5b1o?usp=sharing
 [cocc]: /committee-code-of-conduct/README.md
 [CNCF Slack]: https://slack.cncf.io/
 [Tempelis]: https://sigs.k8s.io/slack-infra/tempelis
 [slack-config]: ./slack-config/
 [Channel Documentation]: ./slack-config/README.md
-[sig-list]: https://www.kubernetes.dev/community/community-groups
+[sig-list]: /community/community-groups
 [Slack Config Documentation]: ./slack-config/README.md
 [OWNERS]: /contributors/guide/OWNERS
 [usergroups.yaml]: ./slack-config/usergroups.yaml
@@ -437,3 +478,4 @@ Report any actions taken to the other slack admins, and if needed the
 [GitHub Issue]: https://github.com/kubernetes/community/issues/new/choose
 [moderation guidelines]: ./moderation.md
 [Slack's policy on inactivated accounts]: https://get.slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account
+[Message Reporter]: /docs/comms/slack/#reporting-a-problem
