@@ -3646,7 +3646,7 @@ workinggroups:
     meetings:
       - description: Regular Meeting
         day: Thursdays (starting February 15th 2024)
-        time: 3PM
+        time: 4PM
         tz: CET (Central European Time)
         frequency: monthly
         url: https://zoom.us/j/98329676612?pwd=c0N2bVV1aTh2VzltckdXSitaZXBKQT09
