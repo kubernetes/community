@@ -144,6 +144,7 @@ aliases:
     - tenzen-y
   wg-checkpoint-restore-leads:
     - adrianreber
+    - andreyvelich
     - haircommander
     - rst0git
   wg-data-protection-leads:

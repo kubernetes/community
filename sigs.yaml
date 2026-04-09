@@ -3677,6 +3677,10 @@ workinggroups:
           name: Adrian Reber
           company: Red Hat
           email: areber@redhat.com
+        - github: andreyvelich
+          name: Andrey Velichkevich
+          company: Apple
+          email: andrey.velichkevich@gmail.com
         - github: haircommander
           name: Peter Hunt
           company: Red Hat
