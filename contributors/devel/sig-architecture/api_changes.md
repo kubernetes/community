@@ -728,6 +728,30 @@ not use `+k8s:alpha(...)` or `+k8s:beta(...)` here. Those tags are for
 shadowing or migration flows where DV runs alongside handwritten validation,
 which is not the case in this section.
 
+##### Feature gate field wiping
+
+The validation logic makes assumptions based on feature gate field wiping in several places, so it is worth understanding the mechanism before working through the steps.
+
+When a new field is behind a feature gate, the apiserver should behave as if the field does not exist when the gate is off. This is implemented at the storage strategy layer, not at the validation layer. Every API group with gated fields has a drop helper that the strategy calls from `PrepareForCreate` and `PrepareForUpdate` before validation runs. For pods this is `DropDisabledPodFields` in `pkg/api/pod/util.go`, called from `pkg/registry/core/pod/strategy.go`. The helper has one block per gated field with the shape:
+
+```go
+if !utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D) && !frobber2DInUse(oldObj) {
+    obj.Spec.Width = nil
+}
+```
+
+Two things to notice:
+
+* The `InUse(oldObj)` check is the ratcheting mechanism. If the old object already has a value in the gated field, the wipe is skipped so the user can keep updating the object. This is how the K8s update policy "gate off plus value present on UPDATE is still modifiable" is implemented.
+* Validation runs after the wipe. By the time any DV tag or handwritten check looks at the object, the gated field has already been cleared or ratcheted. Validation does not need to know about the feature gate, and DV tags on the field do not need to be made conditional on it.
+
+Practical consequences for the rest of this section:
+
+* For a whole new field, you do not need `+k8s:ifDisabled(...)` tags or `rest.WithOptions(...)`. The wipe handles gate-off behavior and validation stays gate-agnostic.
+* Tests for "gate off, field set on CREATE" should expect the field to be silently dropped, not rejected with an error.
+* Tests for "gate off, field present on UPDATE, other fields changed" should expect the update to be allowed via the `InUse` check.
+* The enum-value sub-case is the one place this model breaks down, because there is no sensible wipe target for an individual enum value. That case is covered in "Adding a new enum value behind a feature gate" below.
+
 ##### What to change
 
 Make the change in this order:
