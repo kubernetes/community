@@ -582,6 +582,7 @@ channels:
     archived: true
   - name: wg-ai-gateway
   - name: wg-ai-integration
+    archived: true
   - name: wg-app-def
     archived: true
   - name: wg-api-expression

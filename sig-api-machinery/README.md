@@ -57,8 +57,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-api-machinery:
-* [WG AI Integration](/wg-ai-integration)
-
 
 ## Subprojects
 

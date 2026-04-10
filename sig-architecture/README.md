@@ -58,7 +58,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-architecture:
-* [WG AI Integration](/wg-ai-integration)
 * [WG Device Management](/wg-device-management)
 
 

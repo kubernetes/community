@@ -60,7 +60,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-apps:
-* [WG AI Integration](/wg-ai-integration)
 * [WG Batch](/wg-batch)
 * [WG Checkpoint Restore](/wg-checkpoint-restore)
 * [WG Data Protection](/wg-data-protection)
