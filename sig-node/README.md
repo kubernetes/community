@@ -90,6 +90,9 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### cri-tools
 - **Owners:**
   - [kubernetes-sigs/cri-tools](https://github.com/kubernetes-sigs/cri-tools/blob/master/OWNERS)
+### dra-driver-nvidia-gpu
+- **Owners:**
+  - [kubernetes-sigs/dra-driver-nvidia-gpu](https://github.com/kubernetes-sigs/dra-driver-nvidia-gpu/blob/main/OWNERS)
 ### kernel-module-management
 - **Owners:**
   - [kubernetes-sigs/kernel-module-management](https://github.com/kubernetes-sigs/kernel-module-management/blob/main/OWNERS)
@@ -117,9 +120,6 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### node-readiness-controller
 - **Owners:**
   - [kubernetes-sigs/node-readiness-controller](https://github.com/kubernetes-sigs/node-readiness-controller/blob/main/OWNERS)
-### nvidia-dra-driver-gpu
-- **Owners:**
-  - [kubernetes-sigs/nvidia-dra-driver-gpu](https://github.com/kubernetes-sigs/nvidia-dra-driver-gpu/blob/main/OWNERS)
 ### resource-management
 - **Owners:**
   - [kubernetes-sigs/dra-example-driver](https://github.com/kubernetes-sigs/dra-example-driver/blob/main/OWNERS)
