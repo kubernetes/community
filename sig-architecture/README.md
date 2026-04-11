@@ -65,6 +65,10 @@ The following [working groups][working-group-definition] are sponsored by sig-ar
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-architecture:
+### admission-policies
+Mutating and Validating Admission Policies published by the Kubernetes project.
+- **Owners:**
+  - [kubernetes-sigs/admission-policies](https://github.com/kubernetes-sigs/admission-policies/blob/main/OWNERS)
 ### ai-conformance
 Proposals and tests for AI Conformance
 - **Leads:**

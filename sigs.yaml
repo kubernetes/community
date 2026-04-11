@@ -391,6 +391,10 @@ sigs:
         github: BenTheElder
         name: Benjamin Elder
     subprojects:
+      - name: admission-policies
+        description: Mutating and Validating Admission Policies published by the Kubernetes project.
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/admission-policies/main/OWNERS
       - name: ai-conformance
         description: Proposals and tests for AI Conformance
         contact:
