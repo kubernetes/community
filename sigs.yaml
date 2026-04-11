@@ -2571,6 +2571,9 @@ sigs:
       - name: cri-tools
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
+      - name: dra-driver-nvidia-gpu
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/dra-driver-nvidia-gpu/main/OWNERS
       - name: kernel-module-management
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/kernel-module-management/main/OWNERS
@@ -2598,9 +2601,6 @@ sigs:
       - name: node-readiness-controller
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/node-readiness-controller/main/OWNERS
-      - name: nvidia-dra-driver-gpu
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/nvidia-dra-driver-gpu/main/OWNERS
       - name: resource-management
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/dra-example-driver/main/OWNERS
