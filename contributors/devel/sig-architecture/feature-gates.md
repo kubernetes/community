@@ -493,9 +493,17 @@ at least bound the damage.
 
 Kubernetes is migrating API validation from handwritten code to declarative
 validation, where validation rules are expressed as comment tags on API types
-(in `staging/src/k8s.io/api/.../types.go`). When validation behavior depends
-on a feature gate, the `+k8s:ifEnabled` and `+k8s:ifDisabled` tags are used to
-conditionally apply validation rules.
+(in `staging/src/k8s.io/api/.../types.go`).
+
+By default, declarative validation should be gate-agnostic for new fields.
+The field wiping pass (see [Field wiping](#field-wiping)) handles gate-off
+behavior before validation runs, so DV tags on the field do not need to be
+conditional on the feature gate. If there is data in the field, validate
+it; the gate-informed wipe has already run.
+
+For cases where validation does need to branch on feature gate state — such as
+gating individual enum values or applying strict "forbidden" semantics — the
+`+k8s:ifEnabled` and `+k8s:ifDisabled` tags are available.
 
 ### The `+k8s:ifEnabled` and `+k8s:ifDisabled` tags
 
@@ -517,9 +525,45 @@ scope the validation to a particular stability level as well.
 
 #### Example: feature-gated new API field
 
-For features which add a new API field behind a feature gate, the recommended
-declarative pattern is to use both `+k8s:ifEnabled` and `+k8s:ifDisabled` to
-express the field's behavior in each gate state:
+For features which add a new API field behind a feature gate, validation
+should be gate-agnostic. The field wiping pass drops the field before
+validation runs when the gate is off, so DV tags do not need to be conditional
+on the feature gate:
+
+```go
+// +featureGate=MyFeatureX
+// +optional
+// +k8s:optional
+// +k8s:maxLength=256
+NewField *string `json:"newField,omitempty" protobuf:"bytes,3,opt,name=newField"`
+```
+
+The validation tags (`+k8s:optional`, `+k8s:maxLength=256`) apply
+unconditionally. This works because:
+
+* When the gate is off on CREATE, the wipe pass removes the field before
+  validation runs. Validation sees `nil` and the `+k8s:optional` tag allows it.
+* When the gate is off on UPDATE and the field was already set, the wipe pass
+  preserves the existing value (via the `InUse` ratchet in the strategy prep).
+  Validation runs against whatever data is present and validates it normally.
+* When the gate is on, the field is present and validated by the DV tags as
+  usual.
+
+This pattern does not require `rest.WithOptions(...)` or
+`+k8s:ifEnabled`/`+k8s:ifDisabled` tags, because validation is not
+branching on the feature gate.
+
+##### Strict "Forbidden" semantics (escape hatch)
+
+The wipe pattern above is the default. Reach for
+`+k8s:ifDisabled(...)=+k8s:forbidden` only when stricter semantics are needed
+— for example, when silently wiping a user's request would be misleading
+because the field's value materially impacts the running system. If the
+underlying concern is "once set, cannot safely change", prefer
+`+k8s:immutable` or `+k8s:update` tags instead.
+
+If you still want the field to be explicitly forbidden when the gate is
+disabled:
 
 ```go
 // +optional
@@ -531,31 +575,17 @@ NewField *string `json:"newField,omitempty" protobuf:"bytes,3,opt,name=newField"
 When `MyFeatureX` is disabled, the field is forbidden — it cannot be set.
 When `MyFeatureX` is enabled, the field is optional and can be set.
 
-Declarative validation ratcheting handles the update case automatically: if an
-object already has the field set from when the gate was enabled, and the gate
-is later disabled, the field value will be allowed to remain as long as it is
-unchanged. This means the "already in use" pattern from handwritten validation
-(checking `newFieldInUse(oldObj)`) does not need to be replicated in the
-declarative validation tags — ratcheting covers it. Accordingly, the
-validation option in the strategy code should reflect only the feature gate
-state, not the "in use" state:
+When using this pattern, the strategy must pass
+`rest.WithOptions(declarativeValidationOptions())` so the generated validation
+knows the gate state. See
+[Wiring feature gates to validation options](#wiring-feature-gates-to-validation-options)
+for details.
 
-```go
-var options []string
-if utilfeature.DefaultFeatureGate.Enabled(features.MyFeatureX) {
-    options = append(options, "MyFeatureX")
-}
-```
-
-This is a deliberate semantic difference from the handwritten pattern. With
-handwritten validation, `if enabled(gate) || newFieldInUse(oldObj)` would
-allow a user to *change* the field to a different value even when the gate is
-off. With declarative validation, when the gate is off, the field is forbidden
-from being changed — only the existing value is ratcheted through. This is
-considered more correct: if the gate is off, the feature should be
-neutralized. For rare cases where a field might need to be mutable when the
-gate is disabled, the type registry can choose to implement the in-use test
-when setting the option.
+Declarative validation ratcheting handles the update case: if the field is
+already set and the gate is later disabled, the existing value is allowed to
+remain as long as it is unchanged. This means the "already in use" pattern
+from handwritten validation (checking `newFieldInUse(oldObj)`) does not need
+to be replicated — ratcheting covers it.
 
 #### Example: conditional field constraints
 
@@ -599,6 +629,12 @@ Multiple conditions can be applied to a single constant. Each condition is
 evaluated independently.
 
 ### Wiring feature gates to validation options
+
+This section applies only when using `+k8s:ifEnabled` or `+k8s:ifDisabled`
+tags (e.g., the [forbidden escape hatch](#strict-forbidden-semantics-escape-hatch)
+or [conditional enum values](#example-conditional-enum-values)). If validation
+is gate-agnostic (the default for new fields with wipe), no options wiring is
+needed.
 
 The `+k8s:ifEnabled` and `+k8s:ifDisabled` tags operate on "validation
 options" — string names passed into the validation operation via the
