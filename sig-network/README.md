@@ -132,6 +132,7 @@ Gateway API Inference Extension
   - [kubernetes-sigs/kube-agentic-networking](https://github.com/kubernetes-sigs/kube-agentic-networking/blob/main/OWNERS)
 ### kube-dns
 - **Owners:**
+  - [kubernetes-sigs/node-local-dns](https://github.com/kubernetes-sigs/node-local-dns/blob/master/OWNERS)
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
 ### kubernetes-network-drivers
 - **Owners:**
