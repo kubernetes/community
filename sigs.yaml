@@ -2424,6 +2424,7 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/kube-agentic-networking/main/OWNERS
       - name: kube-dns
         owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/node-local-dns/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
       - name: kubernetes-network-drivers
         owners:
