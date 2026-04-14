@@ -2968,6 +2968,9 @@ sigs:
         owners:
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/cmd/kube-scheduler/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/scheduler/OWNERS
+      - name: scheduler-library
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-library/main/OWNERS
       - name: scheduler-plugins
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/scheduler-plugins/master/OWNERS
