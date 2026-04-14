@@ -559,19 +559,36 @@ de-flaking the test, because while a test remains labeled `[Flaky]`, it is not
 monitored closely in CI. `[Flaky]` tests are by default not run, unless a
 `focus` or `skip` argument is explicitly given.
 
-  - `[Feature:.+]`: If a test has non-default requirements to run or targets
-some non-core functionality, and thus should not be run as part of the standard
-suite, it receives a `[Feature:.+]` label. This non-default requirement could
-be some special cluster setup (e.g. `Feature:IPv6DualStack` indicates that the
-cluster must support dual-stack pod and service networks) or that the test has
-special behavior that makes it unsuitable for a normal test run (e.g.
-`Feature:PerformanceDNS` marks a test that stresses cluster DNS performance
-with many services). `[Feature:.+]` tests are not run in our core suites,
-instead running in custom suites. If a feature is experimental or alpha and is
-not enabled by default due to being incomplete or potentially subject to
-breaking changes, it does *not* block PR merges, and thus should run in
-some separate test suites owned by the feature owner(s)
-(see [Continuous Integration](#continuous-integration) below).
+  - `[Feature:.+]`: If a test validates functionality that may only work
+outside the minimal conformant installation of Kubernetes, e.g. when
+specific node capabilities are enabled, having a certain addon available,
+like loadbalancer integration, or when test depends on the
+functionality of underlying components like container runtime, and thus may
+need to be skipped on certain environments, it receives a `[Feature:.+]`
+label, e.g. `[Feature:AppArmor]`.
+`[Feature:.+]` label should not be confused with `[FeatureGate:]` label.
+Tests marked with `[Feature:.+]` must be run in test jobs
+that preconfigure the required environment. These jobs may run normal tests
+as well as tests marked with this `[Feature:.+]` label.
+
+  - `[FeatureGate:.+]`: If a test only works when a certain feature gate is
+enabled it receives a `[FeatureGate:.+]` label. `[FeatureGate:.+]` tests
+automatically get marked with the status of this feature gate: `[Alpha]` or
+`[Beta]`. If a feature gate is GA, it has no level string. If a feature gate is
+disabled by default, it also receives the `[Feature:OffByDefault]` label.
+This label helps to skip tests that would not work on a specific Kubernetes
+cluster that has a certain feature gate disabled. This label has to be
+removed when the feature gate definition gets removed.
+
+  - `[NodeConformance]`: Node-level tests that validating behavior that doesn't
+depend on specific Node capabilities being present, hardware, or feature set
+of a dependency (like a container runtime), must be labeled as `[NodeConformance]`.
+For the ease of test querying, each node-level test that is not testing alpha feature
+(marked as `[FeatureGate:Foo][Alpha]`) should be either `NodeConformance`
+or `Feature` (`[Feature:OffByDefault]` is predefined tag that also not compatible with `NodeConformance`).
+`NodeConformance` has been superseded by
+`Feature` and will be removed.
+
 
   - `[MinimumKubeletVersion:.+]`: This label must be set on tests that require
 a minimum version of the kubelet. Invocations of the test suite can then decide
@@ -596,11 +613,14 @@ intended to further categorize existing `[Conformance]` tests, or tests that are
 being considered as candidate for promotion to `[Conformance]` as we work to
 refine requirements:
     - `[Privileged]`: This is a test that requires privileged access
-    - `[Deprecated]`: This is a test that exercises a deprecated feature
 
   - For tests that depend on feature gates, the following are set automatically:
     - `[Alpha]`: This is a test that exercises an alpha feature
     - `[Beta]`: This is a test that exercises a beta feature
+    - `[Feature:OffByDefault]`: This is added if the feature gate is disabled by default.
+
+    Note that `[Stable]` is not a label; GA features simply have no level tag.
+    `[Deprecated]` may be used if the feature gate is deprecated.
 
     Conceptually, these are non-default requirements as defined above under
     `[Feature:.+]`, but for historic reasons and the sake of brevity they don't
@@ -612,6 +632,14 @@ refine requirements:
     requirements like that. Therefore all tests with such a requirement also
     have to be annotated with a `[Feature]` tag. This restriction will be lifted
     once migration of jobs to `--filter-label` is completed.
+
+### Decision making tree for the test labels
+
+- Is test validate functionality that is controlled by a Feature Gate? Add `[FeatureGate:Foo]` with the E2E framework helper functions and it will automatically get `[Alpha]` or `[Beta]` and `[Feature:OffByDefault]` if applicable.
+- Is the test validating a Core API that is enabled by default, GA, and works on any environment? Consider promotion to `[Conformance]`. See more at [conformance-tests.md](../sig-architecture/conformance-tests.md).
+- Is test only works when underlying container runtime has a specific feature enabled or specific node configuration is set? Apply `[Feature:Foo]` to declare that dependency.
+  In the definition of the feature, describe it in
+  enough detail so that others will know how to configure a cluster which can run the test.
 
 Every test should be owned by a [SIG](/sig-list.md),
 and have a corresponding `[sig-<name>]` label.
