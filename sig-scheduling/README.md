@@ -99,6 +99,9 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
 - **Owners:**
   - [kubernetes/kubernetes/cmd/kube-scheduler](https://github.com/kubernetes/kubernetes/blob/master/cmd/kube-scheduler/OWNERS)
   - [kubernetes/kubernetes/pkg/scheduler](https://github.com/kubernetes/kubernetes/blob/master/pkg/scheduler/OWNERS)
+### scheduler-library
+- **Owners:**
+  - [kubernetes-sigs/scheduler-library](https://github.com/kubernetes-sigs/scheduler-library/blob/main/OWNERS)
 ### scheduler-plugins
 - **Owners:**
   - [kubernetes-sigs/scheduler-plugins](https://github.com/kubernetes-sigs/scheduler-plugins/blob/master/OWNERS)
