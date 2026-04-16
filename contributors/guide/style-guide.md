@@ -308,6 +308,9 @@ external appearance.
   - Use `code` style for API objects or object parameters.
     - **Good example:** A `Deployment` contains a `DeploymentSpec`.
     - **Bad example:**  A Deployment contains a DeploymentSpec.
+- Capitalize the first letter of enhancement graduation stages.
+  - **Good example:** Dynamic Resource Allocation (DRA) is Beta.
+  - **Bad example:** Dynamic Resource Allocation (DRA) is beta.
 - Use angle brackets (`<` and `>`) to surround a placeholder references.
   - **Good example:** `kubectl describe pod <pod-name>`
   - **Bad example:** `kubectl describe pod pod-name`
