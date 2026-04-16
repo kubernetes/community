@@ -221,6 +221,7 @@ channels:
   - name: kaniko
   - name: karpenter
   - name: karpenter-dev
+  - name: karpenter-gcp
   - name: k8s-ai-conformance
     id: C09813W8DC2
   - name: k8s-dual-stack
