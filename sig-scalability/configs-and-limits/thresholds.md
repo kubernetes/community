@@ -35,13 +35,25 @@ There are couple caveats to the thresholds we are presenting below:
    possible cluster. For smaller clusters, the limits are proportionally
    lower.**
 1. The thresholds may differ (hopefully be non-decreasing) across Kubernetes
-   releases. The threshold below are given for Kubernetes head. <br/>
-   **TODO:** We are planning to start versioning the table below, but we
-   are not there yet.
-1. Given that configuration influences thresholds, we are assuming vanilla
-   Kubernetes setup.
+   releases. The threshold below are given for Kubernetes head.
+1. Given that configuration influences thresholds, we are assuming OSS distribution of
+   Kubernetes setup running on sharded etcd. Since Dec 2025, official release blocking
+   scalability tests run on kops. For exact configuration please refer to
+   [sig scalability test configuration] and [kops scalability configuration].
 
-The table below is **NOT exhaustive** - more content is coming soon.
+[sig scalability test configuration]: https://github.com/kubernetes/test-infra/tree/master/config/jobs/kubernetes/sig-scalability
+[kops scalability configuration]: https://github.com/kubernetes/kops/blob/master/tests/e2e/scenarios/scalability
+
+Thresholds related to API server and etcd storage for **builtin resource types**:
+
+| Quantity                      | Threshold scope=resource type | Threshold: scope=cluster |
+|-------------------------------|-------------------------------|--------------------------|
+| Number of objects (non Event) | 150'000                       | TBD                      |
+| Number of objects (Event)     | 1'000'000                     | n/a                      |
+| Size per object               | 1.5MB                         | 1.5MB                    |
+| Total size                    | 1.5GB                         | TBD                      |
+
+List of thresholds relating per resource types:
 
 | Quantity                    | Threshold scope=namespace | Threshold: scope=cluster |
 |-----------------------------|---------------------------|--------------------------|
