@@ -13,7 +13,7 @@ The Contributor Comms subproject uses leadership roles to organize and delegate 
 | --- | --- | --- |
 | Subproject Lead | [@kaslin](https://github.com/kaslin), [@chris-short](https://github.com/chris-short) | [@AvineshTripathi](https://github.com/AvineshTripathi) (shadow) |
 | [Social Media Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Social-Media.md) |[@kaslin](https://github.com/kaslin) | [@Hii-Arpit](https://github.com/Hii-Arpit) (shadow) |
-| [Comms Tech Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Tech-Lead.md) | [@mfahlandt](https://github.com/mfahlandt) | Shadow role is available. |
+| [Comms Tech Lead](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/Comms-Tech-Lead.md) | [@TineoC](https://github.com/TineoC) | Shadow role is available. |
 | [Comms Blog Coordinator](https://github.com/kubernetes/community/blob/master/communication/contributor-comms/role-handbooks/blog-coordinator.md) | [@fsmunoz](https://github.com/fsmunoz) |  Shadow role is available. |
 | Emeritus | [@parispittman](https://github.com/parispittman), [@mbbroberg](https://github.com/mbbroberg), [@SD-13](https://github.com/SD-13) |
 
