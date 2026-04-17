@@ -54,12 +54,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-api-machinery-test-failures](https://github.com/orgs/kubernetes/teams/sig-api-machinery-test-failures) - Test Failures and Triage
 - Steering Committee Liaison: Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**)
 
-## Working Groups
-
-The following [working groups][working-group-definition] are sponsored by sig-api-machinery:
-* [WG AI Integration](/wg-ai-integration)
-
-
 ## Subprojects
 
 The following [subprojects][subproject-definition] are owned by sig-api-machinery:

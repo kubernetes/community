@@ -55,7 +55,6 @@ members will assume one of the departing members groups.
 | [SIG UI](sig-ui/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [SIG Windows](sig-windows/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG AI Gateway](wg-ai-gateway/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
-| [WG AI Integration](wg-ai-integration/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [WG Batch](wg-batch/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
 | [WG Checkpoint Restore](wg-checkpoint-restore/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG Data Protection](wg-data-protection/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
