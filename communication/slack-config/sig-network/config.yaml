@@ -4,3 +4,4 @@ channels:
   - name: sig-network-policy-api
   - name: sig-network-kpng
     archived: true
+  - name: sig-network-dranet
