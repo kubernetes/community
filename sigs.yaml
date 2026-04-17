@@ -754,6 +754,7 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes/autoscaler/master/addon-resizer/OWNERS
       - name: cluster-autoscaler
         owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/cluster-autoscaler/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/OWNERS
       - name: horizontal-pod-autoscaler
         owners:

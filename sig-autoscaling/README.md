@@ -68,6 +68,7 @@ The following [subprojects][subproject-definition] are owned by sig-autoscaling:
   - [kubernetes/autoscaler/addon-resizer](https://github.com/kubernetes/autoscaler/blob/master/addon-resizer/OWNERS)
 ### cluster-autoscaler
 - **Owners:**
+  - [kubernetes-sigs/cluster-autoscaler](https://github.com/kubernetes-sigs/cluster-autoscaler/blob/main/OWNERS)
   - [kubernetes/autoscaler/cluster-autoscaler](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/OWNERS)
 ### horizontal-pod-autoscaler
 - **Owners:**
