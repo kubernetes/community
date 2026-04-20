@@ -27,6 +27,7 @@ The [charter](charter.md) defines the scope and governance of the Checkpoint Res
 ## Organizers
 
 * Adrian Reber (**[@adrianreber](https://github.com/adrianreber)**), Red Hat
+* Andrey Velichkevich (**[@andreyvelich](https://github.com/andreyvelich)**), Apple
 * Peter Hunt (**[@haircommander](https://github.com/haircommander)**), Red Hat
 * Radostin Stoyanov (**[@rst0git](https://github.com/rst0git)**), University of Oxford
 
