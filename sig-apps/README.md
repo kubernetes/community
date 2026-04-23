@@ -73,6 +73,8 @@ The following [subprojects][subproject-definition] are owned by sig-apps:
 Easy management of isolated, stateful, singleton workloads, ideal for use cases like AI agent runtimes
 - **Owners:**
   - [kubernetes-sigs/agent-sandbox](https://github.com/kubernetes-sigs/agent-sandbox/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#agent-sandbox](https://kubernetes.slack.com/messages/agent-sandbox)
 ### application
 Application metadata descriptor CRD
 - **Owners:**
