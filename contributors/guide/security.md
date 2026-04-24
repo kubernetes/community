@@ -13,12 +13,12 @@ configuration is a trust boundary: nodes the operator has admitted to the
 cluster are trusted; clusters that run with RBAC disabled or with
 authorization bypassed are not defended; in-cluster administrators
 exercising their granted permissions are not attackers.
-
+For more details on how SRC assesses severity of a reported vulnerability: https://github.com/kubernetes/committee-security-response/blob/main/severity-ratings.md
 Components outside the `kubernetes/kubernetes` repository — out-of-tree
 CSI, CNI, and cloud-provider implementations, the Kubernetes SIG
 repositories, ingress-nginx, image-builder, and similar — are owned by
-their respective maintainers and CNAs. The Kubernetes SRC coordinates
-with those repositories when a vulnerability spans boundaries.
+their respective maintainers. The Kubernetes SRC coordinates
+with those maintainers when they consider it necessary.
 
 ## Reporting
 
@@ -27,7 +27,7 @@ https://kubernetes.io/docs/reference/issues-security/security/
 
 Report privately through HackerOne (`https://hackerone.com/kubernetes`)
 or by email to `security@kubernetes.io`. Include a reproducible proof of
-concept, symbol-level reachability evidence, or a code trace from an
+concept exploit code/script, symbol-level reachability evidence, or a code trace from an
 attacker-reachable entry point to the flaw. The SRC acknowledges reports
 within three working days and begins triage within seven calendar days,
 but does not commit to a deterministic investigation or fix deadline.
@@ -39,13 +39,14 @@ careful work, and we will not rush a fix we are not confident in.
 A finding receives a Kubernetes CVE and follows the release process
 below when it breaks one of the properties above — against a currently
 supported release and a configuration the project documents as
-supported.
+supported. See: https://github.com/kubernetes/committee-security-response/blob/main/security-release-process.md#patch-release-and-public-communication
 
 Supported releases are the most recent three minors (N, N-1, N-2), each
-receiving roughly fourteen months of patch support. We backport security
-fixes to all three. We do not patch end-of-life releases; commercial
-distributions often provide extended support for older versions.
+receiving roughly fourteen months of patch support. See: https://kubernetes.io/releases/patch-releases/#support-period 
 
+We backport security fixes to all three. We do not patch end-of-life 
+releases; commercial distributions often provide extended support 
+for older versions. 
 ## What we do not treat as a vulnerability
 
 The following are not Kubernetes vulnerabilities in themselves. They may
@@ -53,15 +54,15 @@ still be legitimate bugs, and we welcome those reports through the
 normal issue tracker. They will not receive a CVE from the Kubernetes
 CNA and will not drive out-of-band releases.
 
-- **Misconfigurations.** Deviating from documented secure defaults —
+- **Misconfigurations:** Deviating from documented secure defaults —
   anonymous auth, missing RBAC, privileged containers for untrusted
   workloads — is an operator choice, not a product flaw.
-- **Out-of-support versions.** We do not investigate reports against
-  end-of-life minors.
+- **Out-of-support versions:** We do not investigate reports against
+  end-of-life minor releases.
 - **Transitive dependency CVEs with no reachable symbol.** Reachability
   is verified by symbol-level analysis (for example, `govulncheck`) or
   a code trace. Version-matching scanner output is not by itself
-  evidence.
+  evidence of exploitability.
 - **Actions available to a caller who already holds the equivalent
   permission.** A cluster admin doing variants of admin is not a
   privilege escalation.
@@ -80,8 +81,7 @@ CNA and will not drive out-of-band releases.
 - **AI-generated reports whose code paths, symbols, or traces cannot
   be reproduced.**
 - **Compliance-framework findings that do not describe a concrete
-  flaw.** That conversation belongs between the compliance vendor and
-  the operator, not with the SRC.
+  flaw.** That conversation belongs between the compliance vendor, distributor and operator, not with the SRC.
 
 ## Severity and release path
 
@@ -89,20 +89,10 @@ The SRC assigns one of four severity tiers using project-specific
 judgment. CVSS vectors accompany every advisory because downstream
 tools expect them, but CVSS is not authoritative and we do not endorse
 third-party scores (including NVD's). What the tier actually controls
-is the release path:
-
-- **Critical / High** — handled under embargo; out-of-band patched
-  release; distributors notified at least seven days before public
-  disclosure; announcement coordinated across release branches.
-- **Medium** — handled under embargo when beneficial to users, or
-  semi-publicly when it is not; rides the next scheduled monthly patch
-  release.
-- **Low** — fixed in the open on `master`, backported where useful,
-  ships in the next scheduled monthly patch release. Announced after
-  the fact.
+is the release path. See: https://github.com/kubernetes/committee-security-response/blob/main/security-release-process.md#fix-development-process and 
 
 Patch releases ship monthly; a vulnerability introduced and fixed on
-`master` before any release tag carries it does not receive a CVE.
+`master` before any release tag carries it does not receive a CVE. See: https://kubernetes.io/releases/patch-releases/
 
 The Kubernetes project is a CVE Numbering Authority for components in
 the `kubernetes/kubernetes` repository. CVEs in upstream dependencies
@@ -147,14 +137,14 @@ bucket has a distinct release path:
   the fixed version; we do not open cherry-picks for release branches
   merely to change a version string.
 
+Historically, first scenario rarely happens whereas Scenario 2 and 3 are much more prevalent.
 The monthly patch cadence is a feature of this classification, not a
 bug. A Medium-severity, reachable-and-exploitable upstream CVE ships
 within roughly thirty days by default — faster than most compliance
 frameworks require, slower than the scanner ticket demands. If the
-Fix Lead believes users are exposed sooner than that, the case is
+K8s SRC Fix Lead believes users are exposed sooner than that, the case is
 reclassified up (to High, or to an out-of-band release); if the
-Fix Lead believes the monthly cadence is sufficient, no amount of
-external escalation changes that.
+Any amount of external escalation plays no part in the decision making of when a fix will land.
 
 Go toolchain updates are a special case. Each Kubernetes minor pins a
 Go minor; we cannot swap Go versions mid-release-cycle without
@@ -164,20 +154,18 @@ handled in the next scheduled patch), whether a minor Go bump is
 required (rare; coordinated with the Go team and typically deferred
 to the next Kubernetes minor unless exploitability is high), or
 whether a targeted dependency bypass makes the Go issue irrelevant
-to Kubernetes (case by case). The Kubernetes CNA does not issue CVEs
-for Go standard library bugs; those are Go's to issue.
+to Kubernetes (case by case). The Kubernetes CNA does not issue separate CVE numbers 
+for Go standard library bugs and uses Go Community's already issued CVEs to track this work.
 
-Dependency updates whose only purpose is to silence a scanner — no
-reachability analysis, no upstream fix that touches reachable code —
-are not eligible for cherry-pick to release branches. This rule is
+Dependency updates whose only purpose is to silence a scanner, without additional evidence such as but not limited to reachability analysis, are not eligible for cherry-pick to release branches. This rule is
 load-bearing. Without it, every noisy scanner becomes a forcing
 function on the release calendar, and the release calendar stops
-serving users who actually need predictable patching.
+serving users who actually need predictable patching for relevant issues.
 
 End-of-life branches receive no dependency bumps, whether for CVE
 reasons or otherwise. Extended-support scenarios (older clusters on
 managed services, appliance deployments, regulated environments) are
-a concern for commercial vendors, not for the upstream SRC.
+a concern for commercial vendors, not for the upstream community.
 
 ## Project release cadences
 
@@ -199,7 +187,7 @@ actual bug fixes or feature work, and repeated pressure on a small team
 is corrosive. The good-citizen pattern is to file the issue (with
 reachability evidence, per this document), read the project's release
 cadence, and wait for the next scheduled release unless the finding
-genuinely warrants acceleration.
+genuinely warrants acceleration. AI driven PRs without human reviews or involvement, that fix scanner reported vulnerabilities, do not help and in fact waste precious maintainer time. 
 
 If a finding meets the severity bar for an out-of-band release, the SRC
 and the project maintainers will coordinate without external prompting;
@@ -210,7 +198,7 @@ project's call, not the scanner's.
 
 ## Machine-readable artifacts
 
-**Currently published.** The SRC publishes an official CVE feed in
+**Currently published.** The SRC and SIG Security publishes an official CVE feed in
 JSON and RSS on kubernetes.io, derived from GitHub issues labeled
 `official-cve-feed`. Release artifacts carry signed SBOMs and SLSA
 provenance. An OSV-format mirror lives at
