@@ -14,7 +14,7 @@ The [charter](charter.md) defines the scope and governance of the Architecture S
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/sig-architecture) for the group will typically add invites for the following meetings to your calendar.*
-* AI Conformance Meeting ([calendar](https://calendar.google.com/calendar/embed?src=a574542f85d51cb4624145f13307810c9e23bc9096cfbb83f6205cc7acee34b6%40group.calendar.google.com)) : [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/95480364337) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
+* AI Conformance Meeting ([calendar](https://calendar.google.com/calendar/embed?src=ot1d7dd3tfjg4dpd5qf216qeq8%40group.calendar.google.com)) : [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/97008974781?pwd=1Y54XO1EoV4AUYTE9QEAeNzCaas4Yb.1) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1qlW1LkibOoiMio-hbJucRjOYeKT8mNaQ4awwzf0bi8M/edit).
 * Enhancements Subproject Meeting: [Thursdays at 10:00 PT (Pacific Time)](https://zoom.us/j/95357819945) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://bit.ly/k8s-enhancements-agenda).
