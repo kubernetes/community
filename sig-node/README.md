@@ -90,6 +90,9 @@ The following [subprojects][subproject-definition] are owned by sig-node:
 ### cri-tools
 - **Owners:**
   - [kubernetes-sigs/cri-tools](https://github.com/kubernetes-sigs/cri-tools/blob/master/OWNERS)
+### dra-driver-google-tpu
+- **Owners:**
+  - [kubernetes-sigs/dra-driver-google-tpu](https://github.com/kubernetes-sigs/dra-driver-google-tpu/blob/main/OWNERS)
 ### dra-driver-nvidia-gpu
 - **Owners:**
   - [kubernetes-sigs/dra-driver-nvidia-gpu](https://github.com/kubernetes-sigs/dra-driver-nvidia-gpu/blob/main/OWNERS)

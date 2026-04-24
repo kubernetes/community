@@ -2575,6 +2575,9 @@ sigs:
       - name: cri-tools
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/cri-tools/master/OWNERS
+      - name: dra-driver-google-tpu
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/dra-driver-google-tpu/main/OWNERS
       - name: dra-driver-nvidia-gpu
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/dra-driver-nvidia-gpu/main/OWNERS
