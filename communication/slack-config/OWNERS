@@ -4,17 +4,20 @@
 approvers:
   - jeefy
   - mrbobbytables
-  - alejandrox1
   - coderanger
   - munnerz
   - DylanGraham
   - jberkus
+  - idvoretskyi
+  - mkumatag
+reviewers:
+  - JoelSpeed
 emeritus_approvers:
   - parispitmann
-  - idvoretskyi
   - katharine
   - castrojo
   - jdumars
   - idealhack
+  - alejandrox1
 labels:
   - area/slack-management
