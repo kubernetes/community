@@ -61,8 +61,7 @@ CNA and will not drive out-of-band releases.
   end-of-life minor releases.
 - **Transitive dependency CVEs with no reachable symbol.** Reachability
   is verified by symbol-level analysis (for example, `govulncheck`) or
-  a code trace. Version-matching scanner output is not by itself
-  evidence of exploitability.
+  a code trace.  Evidence of exploitability is desired as version-matching scanner output is useful but not by itself authoritative.
 - **Actions available to a caller who already holds the equivalent
   permission.** A cluster admin doing variants of admin is not a
   privilege escalation.
@@ -76,8 +75,6 @@ CNA and will not drive out-of-band releases.
   operational model.**
 - **Weak algorithms, missing headers, or deprecated settings an
   operator opted into by configuration.**
-- **Scanner output presented as the primary evidence of a flaw.**
-  Scanners are useful; they are not authoritative.
 - **AI-generated reports whose code paths, symbols, or traces cannot
   be reproduced.**
 - **Compliance-framework findings that do not describe a concrete
@@ -89,7 +86,7 @@ The SRC assigns one of four severity tiers using project-specific
 judgment. CVSS vectors accompany every advisory because downstream
 tools expect them, but CVSS is not authoritative and we do not endorse
 third-party scores (including NVD's). What the tier actually controls
-is the release path. See: https://github.com/kubernetes/committee-security-response/blob/main/security-release-process.md#fix-development-process and 
+is the release path. See: https://github.com/kubernetes/committee-security-response/blob/main/security-release-process.md#fix-development-process and https://github.com/kubernetes/committee-security-response/blob/main/security-release-process.md#low-cves-that-can-skip-private-disclosures
 
 Patch releases ship monthly; a vulnerability introduced and fixed on
 `master` before any release tag carries it does not receive a CVE. See: https://kubernetes.io/releases/patch-releases/
@@ -138,13 +135,13 @@ bucket has a distinct release path:
   merely to change a version string.
 
 Historically, first scenario rarely happens whereas Scenario 2 and 3 are much more prevalent.
+
 The monthly patch cadence is a feature of this classification, not a
 bug. A Medium-severity, reachable-and-exploitable upstream CVE ships
 within roughly thirty days by default — faster than most compliance
 frameworks require, slower than the scanner ticket demands. If the
 K8s SRC Fix Lead believes users are exposed sooner than that, the case is
-reclassified up (to High, or to an out-of-band release); if the
-Any amount of external escalation plays no part in the decision making of when a fix will land.
+reclassified up (to High, or to an out-of-band release); any amount of external escalation plays no part in the decision making of when a fix will land.
 
 Go toolchain updates are a special case. Each Kubernetes minor pins a
 Go minor; we cannot swap Go versions mid-release-cycle without
@@ -171,10 +168,9 @@ a concern for commercial vendors, not for the upstream community.
 
 Kubernetes is not a single release train. The monthly patch cadence
 described above applies to the core components built out of
-`kubernetes/kubernetes` — kube-apiserver, kubelet, controller-manager,
-scheduler, kube-proxy. Dozens of other projects in the `kubernetes` and
+scheduler, kube-proxy, kubectl. Dozens of other projects in the `kubernetes` and
 `kubernetes-sigs` GitHub organizations — ingress-nginx, the CSI and CNI
-drivers, cluster-api and its providers, kustomize, cri-tools,
+drivers, etcd, cluster-api and its providers, kustomize, cri-tools,
 external-dns, image-builder, and many more — run their own release
 cadences, set by their own maintainer teams and not aligned with the
 core. Most of these projects are maintained by very small groups, often
