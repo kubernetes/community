@@ -184,33 +184,18 @@ Moderators seats: 10
 
 | Name                | Kubernetes Slack ID | Region   | Timezone                                                |
 | ------------------- | ------------------- | -------- | ------------------------------------------------------- |
-| Jorge Castro        | @castrojo           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Jeffrey Sica        | @jeefy              | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
 | Bob Killen          | @mrbobbytables      | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Jorge Alarcon       | @alejandrox1        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Katharine Berry     | @Katharine          | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Jaice Singer DuMars | @jdumars            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Noah Kantrowitz     | @coderanger         | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 | Ihor Dvoretskyi     | @ihor.dvoretskyi    | EMEA     | [EET - Eastern European Time](https://time.is/EET)      |
-| Yang Li             | @idealhack          | APAC     | [JST - Japan Standard Time](https://time.is/Japan)      |
 | Josh Berkus         | @jberkus            | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| Marky Jackson       | @markyjackson-taulia| Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
-| _Open_              | _Open_              |          |                                                         |
-
-### Moderators Pro Tempore
-
-Moderators pro tempore seats: 10
-
-| Name                    | Kubernetes Slack ID | Region | Timezone                                                   |
-| ----------------------- | ------------------- | ------ | ---------------------------------------------------------- |
 | Dylan Graham            | @DylanGraham        | APAC   | [AET - Australian Eastern Time](https://time.is/Australia) |
-| Angus Lees              | @anguslees          | APAC   | [AET - Australian Eastern Time](https://time.is/Australia) |
-| Aditya Konarde          | @aditya-konarde     | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
+| Angus Lees              | @guslees          | APAC   | [AET - Australian Eastern Time](https://time.is/Australia) |
 | Manjunath Kumatagi      | @mkumatag           | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
-| Pandiyaraja Ramamoorthy | @pontiya            | APAC   | [IST - Indian Standard Time](https://time.is/IST)          |
 | Puja Abbassi            | @puja108            | EMEA   | [CET - Central European Time](https://time.is/CET)         |
 | James Munnelly          | @munnerz            | EMEA   | [GMT - Greenwich Mean Time](https://time.is/GMT)           |
 | Joel Speed              | @JoelSpeed          | EMEA   | [GMT - Greenwich Mean Time](https://time.is/GMT)           |
+| Simon Essien            | @Champbreed         | AF     | [WAT - West Africa Time](https://time.is/WAT)           |
 
 ## Zoom
 
