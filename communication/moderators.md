@@ -196,6 +196,7 @@ Moderators seats: 10
 | James Munnelly          | @munnerz            | EMEA   | [GMT - Greenwich Mean Time](https://time.is/GMT)           |
 | Joel Speed              | @JoelSpeed          | EMEA   | [GMT - Greenwich Mean Time](https://time.is/GMT)           |
 | Simon Essien            | @Champbreed         | AF     | [WAT - West Africa Time](https://time.is/WAT)           |
+| Sean McGinnis            | @Sean McGinnis         | AMER     | [CT - Central Time](https://time.is/CT)           |
 
 ## Zoom
 
