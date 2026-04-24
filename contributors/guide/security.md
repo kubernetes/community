@@ -7,8 +7,8 @@ reporters, users, distributors, contributors, and community members.
 ## Scope and assumptions
 
 The properties we defend — authentication, authorization, admission, tenant
-isolation, secret handling, component integrity — assume a cluster where
-the operator has applied documented secure defaults. Operator-chosen
+isolation, secret handling, component integrity — assumes a cluster where
+the operator has chosen a secure configuration among all available options. Operator-chosen
 configuration is a trust boundary: nodes the operator has admitted to the
 cluster are trusted; clusters that run with RBAC disabled or with
 authorization bypassed are not defended; in-cluster administrators
@@ -107,7 +107,7 @@ re-issue CVE identifiers for code it does not own.
 Kubernetes is a large Go program that vendors hundreds of modules.
 Kubernetes releases also include container images that have their own
 dependencies. A substantial fraction of all CVE-related traffic we
-receive is about code we import rather than code we wrote. This
+receive is about code we `import` or `vendor` rather than code we maintain. This
 section describes how we decide what to do with such reports and what
 that implies for our release cycle.
 
