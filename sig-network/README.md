@@ -24,7 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Network Specia
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1DKlpcV6DAW0DsBrzh-OLkZvJQmABCVfRIRWBWjc4zOs/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=VkbEihIb7tA&list=PL69nYSiGNLP2Rqe8T4mDnyHqDZ4VYPY1X).
 * SIG Network Meeting: [Thursdays at 09:00 PT (Pacific Time)](https://zoom.us/j/361123509) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09%3A00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1_w77-zG_Xj0zYvEMfQZTQ-wPP4kXkpGD8smVtW_qqWM/edit).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1bEA0F8WddLMnQp7zUfr1rZOwRqX6g2y4kcylEcGATHo/edit).
   * [Meeting recordings](https://www.youtube.com/watch?v=phCA5-vWkVM&list=PL69nYSiGNLP2E8vmnqo5MwPOY25sDWIxb).
 * SIG Network Multi-Network Meeting: [Tuesdays at 06:00 PT (Pacific Time)](https://zoom.us/j/95680858961?pwd=M1c2TTdMZHpMUUtIYXRpbjRobkNJZz09) (biweekly starting Tuesday Oct 28, 2025). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=06%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1pe_0aOsI35BEsQJ-FhFH9Z_pWQcU2uqwAnOx2NIx6OY/edit).
