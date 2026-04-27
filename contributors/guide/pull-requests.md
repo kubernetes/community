@@ -31,6 +31,7 @@ It should serve as a reference for all contributors, and be useful especially to
   - [Comments Matter](#comments-matter)
   - [Test](#test)
   - [Squashing](#squashing)
+  - [Resolving Merge Conflicts](#resolving-merge-conflicts)
   - [Commit Message Guidelines](#commit-message-guidelines)
   - [It's OK to Push Back](#its-ok-to-push-back)
   - [Common Sense and Courtesy](#common-sense-and-courtesy)
@@ -367,6 +368,32 @@ if this label is used, please know the following:
   Using this label can help when squashing by hand is considered too challenging or not worth the
   extra effort. It can also speed up merging because squashing by hand implies getting another LGTM
   from a reviewer and re-run of the CI tests.
+
+## Resolving Merge Conflicts
+
+The Kubernetes project maintains high development velocity, so it's likely other
+PRs will merge which introduce merge conflicts while Feature-X is being
+reviewed. Both the GitHub UI and `@k8s-ci-robot` will point out when a PR
+contains merge conflicts that need to be resolved with the upstream branch.
+
+Like when [addressing other feedback](#squashing), maintaining the
+history of the changes that have already been reviewed is crucial for enabling
+reviewers to determine exactly what's changed between updates. To resolve merge
+conflicts this way, use `git merge` instead of `git rebase`.
+
+A new merge commit shows your reviewer exactly where the conflicts occurred and
+how they were resolved. Rebasing _rewrites every commit on the branch_ and the
+old commits are _lost entirely_. Comparing the previous tip of the branch with
+the rebased tip, a one-line merge conflict resolution may be buried in a diff
+spanning hundreds of files and tens of thousands of lines! Savvy reviewers may
+know some tricks that help reviewing rebased branches (GitHub's force-push diffs
+and viewed file tracking, `git range-diff`), but those aren't sufficient in all
+cases to isolate the new changes introduced by your PR from upstream changes
+made by other PRs. _Merge! Don't rebase!_
+
+`@k8s-ci-robot` will add the `do-not-merge/contains-merge-commits` label to your
+PR. This looks scary, but it is okay! It's only a reminder to rebase and squash
+when your PR has been reviewed and is ready to merge.
 
 ## Commit Message Guidelines
 
