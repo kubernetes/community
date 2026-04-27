@@ -143,6 +143,8 @@ channels:
   - name: fiaas
   - name: finops
   - name: fi-users
+  - name: flannel
+  - name: flannel-dev
   - name: flatcar
   - name: flink-operator
   - name: fr-events
