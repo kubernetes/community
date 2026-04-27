@@ -20,7 +20,6 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 * Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
 * Nathan Herz (**[@natherz97](https://github.com/natherz97)**), Amazon
 * Adolfo García Veytia (**[@puerco](https://github.com/puerco)**), Carabiner Systems, Inc
-* Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
 * Standa Láznička (**[@stlaz](https://github.com/stlaz)**), Microsoft
 * Tabitha Sable (**[@tabbysable](https://github.com/tabbysable)**), Datadog
 * Vinayak Goyal (**[@vinayakankugoyal](https://github.com/vinayakankugoyal)**), Google
@@ -29,6 +28,7 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 
 * Craig Ingram (**[@cji](https://github.com/cji)**)
 * Luke Hinds (**[@lukehinds](https://github.com/lukehinds)**)
+* Rita Zhang (**[@ritazh](https://github.com/ritazh)**)
 * Swamy Shivaganga Nagaraju (**[@swamymsft](https://github.com/swamymsft)**)
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**)
 
