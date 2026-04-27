@@ -3971,10 +3971,6 @@ committees:
           name: Adolfo García Veytia
           company: Carabiner Systems, Inc
           email: adolfo.garcia@uservers.net
-        - github: ritazh
-          name: Rita Zhang
-          company: Microsoft
-          email: ritazh@microsoft.com
         - github: stlaz
           name: Standa Láznička
           company: Microsoft
@@ -3992,6 +3988,8 @@ committees:
           name: Craig Ingram
         - github: lukehinds
           name: Luke Hinds
+        - github: ritazh
+          name: Rita Zhang
         - github: swamymsft
           name: Swamy Shivaganga Nagaraju
         - github: tallclair
