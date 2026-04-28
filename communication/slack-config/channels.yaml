@@ -624,6 +624,8 @@ channels:
     archived: true
   - name: windows-containerd
   - name: workshop-chat
+  - name: workload-topology-awareness
+    id: C0AHLJ0EAEL
   - name: yaml-overlay-tool
   - name: zarf
   - name: zarf-dev
