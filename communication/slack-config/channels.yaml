@@ -486,7 +486,7 @@ channels:
   - name: sig-auth-certificates-dev
   - name: sig-auth-kms-dev
   - name: sig-auth-triage
-  - name: sig-autoscaling
+  # sig-autoscaling channels are defined in sig-autoscaling/
   - name: sig-autoscaling-api
   - name: sig-cli
   - name: sig-cli-krm-functions
