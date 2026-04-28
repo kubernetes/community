@@ -1,0 +1,3 @@
+channels:
+  - name: sig-autoscaling
+  - name: scheduler-driven-autoscaling
