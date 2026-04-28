@@ -29,7 +29,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
-* Adrian Moisey (**[@adrianmoisey](https://github.com/adrianmoisey)**), SalesLoft
+* Adrian Moisey (**[@adrianmoisey](https://github.com/adrianmoisey)**), Independent
 * Jack Francis (**[@jackfrancis](https://github.com/jackfrancis)**), Microsoft
 
 ## Emeritus Leads
