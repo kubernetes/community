@@ -1781,10 +1781,10 @@ sigs:
           name: Ivan Valdes
           company: Inmar Intelligence
           email: ivan@vald.es
-        - github: jmhbnz
-          name: James Blair
+        - github: jberkus
+          name: Josh Berkus
           company: Red Hat
-          email: mail@jamesblair.net
+          email: jberkus@redhat.com
         - github: siyuanfoundation
           name: Siyuan Zhang
           company: Google
@@ -1799,9 +1799,19 @@ sigs:
           company: Google
           email: marek.siarkowicz@gmail.com
       emeritus_leads:
+        - github: jmhbnz
+          name: James Blair
         - github: wenjiaswe
           name: Wenjia Zhang
     meetings:
+      - description: Docs Meeting
+        day: Tuesday
+        time: "17:00"
+        tz: PT (Pacific Time)
+        frequency: biweekly
+        url: https://zoom.us/my/cncfetcdproject
+        archive_url: https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit
+        recordings_url: https://www.youtube.com/playlist?list=PLRGL688DpO9oz7rXy7ZwRS1hvgfEc7qOr
       - description: Regular SIG Meeting
         day: Thursday
         time: "11:00"

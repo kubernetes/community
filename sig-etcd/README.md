@@ -16,6 +16,9 @@ The [charter](charter.md) defines the scope and governance of the etcd Special I
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/g/etcd-dev) for the group will typically add invites for the following meetings to your calendar.*
+* Docs Meeting: [Tuesdays at 17:00 PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=17%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PLRGL688DpO9oz7rXy7ZwRS1hvgfEc7qOr).
 * Regular SIG Meeting: [Thursdays at 11:00 PT (Pacific Time)](https://zoom.us/my/cncfetcdproject) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/16XEGyPBisZvmmoIHSZzv__LoyOeluC5a4x353CX0SIM/edit?usp=sharing).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLRGL688DpO9rtufHbiunuCHddYY6MGkwW).
@@ -32,7 +35,7 @@ The [charter](charter.md) defines the scope and governance of the etcd Special I
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Ivan Valdes (**[@ivanvc](https://github.com/ivanvc)**), Inmar Intelligence
-* James Blair (**[@jmhbnz](https://github.com/jmhbnz)**), Red Hat
+* Josh Berkus (**[@jberkus](https://github.com/jberkus)**), Red Hat
 * Siyuan Zhang (**[@siyuanfoundation](https://github.com/siyuanfoundation)**), Google
 
 ### Technical Leads
@@ -44,6 +47,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 
 ## Emeritus Leads
 
+* James Blair (**[@jmhbnz](https://github.com/jmhbnz)**)
 * Wenjia Zhang (**[@wenjiaswe](https://github.com/wenjiaswe)**)
 
 ## Contact
