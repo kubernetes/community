@@ -23,6 +23,9 @@ restrictions:
     channels:
       - "^sig-autoscaling"
       - "^scheduler-driven-autoscaling"
+      - "^karpenter"
+      - "^karpenter-dev"
+      - "^karpenter-gcp"
   - path: "sig-docs/*.yaml"
     channels:
       - "^kubernetes-docs-[a-z]{2}(-[a-z]{2})?(-maintainers)?$"
