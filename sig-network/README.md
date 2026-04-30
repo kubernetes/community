@@ -138,6 +138,8 @@ Gateway API Inference Extension
 - **Owners:**
   - [kubernetes-sigs/dranet](https://github.com/kubernetes-sigs/dranet/blob/main/OWNERS)
   - [kubernetes-sigs/kubernetes-network-drivers](https://github.com/kubernetes-sigs/kubernetes-network-drivers/blob/main/OWNERS)
+- **Contact:**
+  - Slack: [#sig-network-dranet](https://kubernetes.slack.com/messages/sig-network-dranet)
 ### multi-network
 - **Leads:**
   - Lionel Jouin (**[@LionelJouin](https://github.com/LionelJouin)**), Red Hat

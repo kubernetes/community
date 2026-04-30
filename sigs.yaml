@@ -2440,6 +2440,8 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/node-local-dns/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
       - name: kubernetes-network-drivers
+        contact:
+          slack: sig-network-dranet
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/dranet/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/kubernetes-network-drivers/main/OWNERS
