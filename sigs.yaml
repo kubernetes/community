@@ -3871,6 +3871,34 @@ workinggroups:
       liaison:
         github: saschagrunert
         name: Sascha Grunert
+  - dir: wg-workload-topology-awareness
+    name: Workload-Topology Awareness
+    mission_statement: >
+      The working group is dedicated to exploring and improving workload topology awareness in Kubernetes. This should result in better workload scheduling and placement,  better workload autoscaling, better workload migration and availability, load balancing, de/scheduling, and cloud provider and third-party integrations.
+
+    charter_link: charter.md
+    stakeholder_sigs:
+      - Apps
+      - Autoscaling
+      - Scheduling
+    label: workload-topology-awareness
+    leadership:
+      chairs:
+        - github: helayoty
+          name: Helayoty
+          company: Microsoft
+          email: helayoty@microsoft.com
+        - github: mm4tt
+          name: Michał Woźniak
+          company: Google
+          email: mm4tt@google.com
+    meetings: []
+    contact:
+      slack: workload-topology-awareness
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-workload-topology-awareness
+      liaison:
+        github: soltysh
+        name: Maciej Szulik
 usergroups: []
 committees:
   - dir: committee-code-of-conduct

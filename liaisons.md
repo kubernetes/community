@@ -61,6 +61,7 @@ members will assume one of the departing members groups.
 | [WG Device Management](wg-device-management/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG etcd Operator](wg-etcd-operator/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [WG Node Lifecycle](wg-node-lifecycle/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
+| [WG Workload-Topology Awareness](wg-workload-topology-awareness/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [Committee Code of Conduct](committee-code-of-conduct/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [Committee Security Response](committee-security-response/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
 <!-- BEGIN CUSTOM CONTENT -->
