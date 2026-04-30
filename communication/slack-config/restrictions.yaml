@@ -19,6 +19,12 @@ restrictions:
       - "^prod-readiness$"
     usergroups:
       - "^enhancements-owners$"
+  - path: "sig-autoscaling/*.yaml"
+    channels:
+      - "^sig-autoscaling"
+      - "^scheduler-driven-autoscaling"
+      - "^karpenter"
+      - "^karpenter-dev"
   - path: "sig-docs/*.yaml"
     channels:
       - "^kubernetes-docs-[a-z]{2}(-[a-z]{2})?(-maintainers)?$"

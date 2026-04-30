@@ -1,0 +1,5 @@
+channels:
+  - name: sig-autoscaling
+  - name: scheduler-driven-autoscaling
+  - name: karpenter
+  - name: karpenter-dev
