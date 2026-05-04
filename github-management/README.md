@@ -19,6 +19,7 @@ Experience Special Interest Group.
 - [Repository Creation Guidelines](kubernetes-repositories.md)
 - [Setting up the CNCF CLA Check](setting-up-cla-check.md)
 - [GitHub Permissions](permissions.md)
+- [AI Code Review Tools](ai-code-review-tools.md)
 
 ## GitHub Administration Team
 
