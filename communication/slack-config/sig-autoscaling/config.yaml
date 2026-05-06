@@ -4,3 +4,5 @@ channels:
   - name: karpenter
   - name: karpenter-dev
   - name: karpenter-gcp
+  - name: sig-autoscaling-api
+    archived: true
