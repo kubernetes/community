@@ -2428,6 +2428,7 @@ sigs:
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/kube-agentic-networking/main/OWNERS
       - name: kube-dns
+        description: kube-dns was the original implementation of Kubernetes Service DNS. It is now deprecated, though there may be new releases to fix CVEs up until Kubernetes 1.40. Most Kubernetes clusters now use [CoreDNS](https://coredns.io) for Service DNS.
         owners:
           - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
       - name: kubernetes-network-drivers
@@ -2468,6 +2469,9 @@ sigs:
       - name: node-ipam-controller
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/node-ipam-controller/main/OWNERS
+      - name: node-local-dns
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/node-local-dns/master/OWNERS
       - name: pod-networking
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/cni-dra-driver/main/OWNERS
