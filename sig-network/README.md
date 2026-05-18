@@ -131,6 +131,7 @@ Gateway API Inference Extension
 - **Owners:**
   - [kubernetes-sigs/kube-agentic-networking](https://github.com/kubernetes-sigs/kube-agentic-networking/blob/main/OWNERS)
 ### kube-dns
+kube-dns was the original implementation of Kubernetes Service DNS. It is now deprecated, though there may be new releases to fix CVEs up until Kubernetes 1.40. Most Kubernetes clusters now use [CoreDNS](https://coredns.io) for Service DNS.
 - **Owners:**
   - [kubernetes-sigs/node-local-dns](https://github.com/kubernetes-sigs/node-local-dns/blob/master/OWNERS)
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
@@ -164,6 +165,9 @@ Gateway API Inference Extension
 ### node-ipam-controller
 - **Owners:**
   - [kubernetes-sigs/node-ipam-controller](https://github.com/kubernetes-sigs/node-ipam-controller/blob/main/OWNERS)
+### node-local-dns
+- **Owners:**
+  - [kubernetes-sigs/node-local-dns](https://github.com/kubernetes-sigs/node-local-dns/blob/master/OWNERS)
 ### pod-networking
 - **Owners:**
   - [kubernetes-sigs/cni-dra-driver](https://github.com/kubernetes-sigs/cni-dra-driver/blob/main/OWNERS)
