@@ -125,8 +125,8 @@ When graduating a metric from Alpha to Beta or from Beta to Stable, the followin
    - Avoid tests that only check if a metric is registered or emitted, or that simply call `.Set()`/`.Inc()`/`.Observe()` and expect the value to change since these do not provide meaningful coverage. Focus on testing the metric's behavior as part of the component's logic.
    - For a concrete example of proper metric testing, see the [test example](#adding-a-new-metric) in the "Adding a New Metric" section.
 
-5. **Documentation**: Ensure the metric has a clear and accurate help text description and the metric must be included in the [stable metrics list](https://github.com/kubernetes/kubernetes/blob/master/test/instrumentation/testdata/stable-metrics-list.yaml)
-   - See the [instrumentation test README](https://github.com/kubernetes/kubernetes/tree/master/test/instrumentation/README.md) for steps on how to generate this file correctly
+5. **Documentation**: Ensure the metric has a clear and accurate help text description and the metric must be included in the [stable metrics list](https://github.com/kubernetes/kubernetes/blob/master/hack/tools/instrumentation/testdata/stable-metrics-list.yaml)
+   - See the [instrumentation test README](https://github.com/kubernetes/kubernetes/tree/master/hack/tools/instrumentation/README.md) for steps on how to generate this file correctly
 
 6. **API Review**: Graduating a metric to Beta requires an API review by SIG Instrumentation, as it represents a contractual API agreement. See the [API Review](/contributors/devel/sig-instrumentation/metric-stability.md#api-review) section in the metrics stability documentation.
 
@@ -136,8 +136,8 @@ The metric must meet all of the requirements for Beta graduation.
 
 1. **Stability validation**: The metric should have been at Beta stability for at least two releases to ensure it has been sufficiently validated in production environments.
 
-2. **Documentation**: The metric must be included in the [stable metrics list](https://github.com/kubernetes/kubernetes/blob/master/test/instrumentation/testdata/stable-metrics-list.yaml)
-   - See the [instrumentation test README](https://github.com/kubernetes/kubernetes/tree/master/test/instrumentation/README.md) for steps on how to generate this file correctly
+2. **Documentation**: The metric must be included in the [stable metrics list](https://github.com/kubernetes/kubernetes/blob/master/hack/tools/instrumentation/testdata/stable-metrics-list.yaml)
+   - See the [instrumentation test README](https://github.com/kubernetes/kubernetes/tree/master/hack/tools/instrumentation/README.md) for steps on how to generate this file correctly
 
 3. **API Review**: Marking a metric as stable is a commitment by the owning SIG to maintain stability guarantees. The owning SIG leads must review and approve the graduation first. Additionally, approval from SIG Instrumentation is required as it represents a contractual API agreement. See the [API Review](/contributors/devel/sig-instrumentation/metric-stability.md#api-review) section in the metrics stability documentation.
 
