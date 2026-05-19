@@ -79,7 +79,7 @@ We talk a lot, too.
 Our real-time platform with Kubernetes enthusiasts spread across 250+ channels.
 Owned and operated by sig-contributor-experience.
 
-[Join] | [Slack Guidelines] | [slack moderators] | [#kubernetes-contributors]
+[Join] | [Slack Guidelines] | [slack moderators] | [#kubernetes-contributors] | [Job Posting Vetting Criteria](./slack-job-posting-policy.md)
 
 Pro-tip: If you want to add a new channel, simply file a request following
 [these instructions].
