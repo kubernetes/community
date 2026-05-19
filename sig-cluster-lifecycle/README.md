@@ -158,7 +158,7 @@ Cluster API infrastructure provider for IBM Cloud
   - Slack: [#cluster-api-ibmcloud](https://kubernetes.slack.com/messages/cluster-api-ibmcloud)
   - [Mailing List](https://groups.google.com/a/kubernetes.io/g/sig-cluster-lifecycle)
 - **Meetings:**
-  - Cluster API Provider IBM Cloud office hours: [Tuesdays at 10:00 IST](https://zoom.us/j/508079177) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=10%3A00&tz=IST).
+  - Cluster API Provider IBM Cloud office hours: [Thursdays at 14:00 IST](https://zoom.us/j/508079177) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=14%3A00&tz=IST).
     - [Meeting notes and Agenda](https://cluster-api-ibmcloud.sigs.k8s.io/agenda).
     - [Meeting recordings](https://www.youtube.com/playlist?list=PLcYv3LH7qY9Nvx4lNaeOeBrfBZa777h3m).
 ### cluster-api-provider-kubemark
