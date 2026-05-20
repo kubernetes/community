@@ -3881,6 +3881,38 @@ workinggroups:
       liaison:
         github: saschagrunert
         name: Sascha Grunert
+  - dir: wg-workload-aware-scheduling
+    name: Workload-aware Scheduling
+    mission_statement: >
+      Establish native APIs and a common scheduling substrate in core Kubernetes to evolve beyond pod-by-pod placement and natively support workload-aware scheduling paradigms.
+
+    charter_link: charter.md
+    stakeholder_sigs:
+      - Apps
+      - Autoscaling
+      - Scheduling
+    label: workload-aware-scheduling
+    leadership:
+      chairs:
+        - github: helayoty
+          name: Heba Elayoty
+          company: Microsoft
+          email: hebaelayoty@gmail.com
+        - github: kannon92
+          name: Kevin Hannon
+          company: Red Hat
+          email: kehannon@redhat.com
+        - github: mm4tt
+          name: Matt Matejczyk
+          company: Google
+          email: mmatejczyk@google.com
+    meetings: []
+    contact:
+      slack: wg-workload-aware-scheduling
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-was
+      liaison:
+        github: saschagrunert
+        name: Sascha Grunert
 usergroups: []
 committees:
   - dir: committee-code-of-conduct

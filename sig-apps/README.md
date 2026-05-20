@@ -64,6 +64,7 @@ The following [working groups][working-group-definition] are sponsored by sig-ap
 * [WG Checkpoint Restore](/wg-checkpoint-restore)
 * [WG Data Protection](/wg-data-protection)
 * [WG Node Lifecycle](/wg-node-lifecycle)
+* [WG Workload-aware Scheduling](/wg-workload-aware-scheduling)
 
 
 ## Subprojects

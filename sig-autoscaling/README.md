@@ -58,6 +58,7 @@ The following [working groups][working-group-definition] are sponsored by sig-au
 * [WG Batch](/wg-batch)
 * [WG Device Management](/wg-device-management)
 * [WG Node Lifecycle](/wg-node-lifecycle)
+* [WG Workload-aware Scheduling](/wg-workload-aware-scheduling)
 
 
 ## Subprojects
