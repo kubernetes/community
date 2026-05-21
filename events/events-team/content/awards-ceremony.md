@@ -6,14 +6,22 @@ The Awards Ceremony coordinators collect information on desired awards and nomin
 
 ## Skills and Qualifications
 
-TODO  
+Basic social skills: you'll communicate with a lot of SIG leads and award nominees.
+
+You'll also have access to sensitive information (nominees' mailing addresses), so a certain level of trust is expected.  
 
 ## Activities  
 
-WIP
+- Collect award nominees from Kubernetes SIG leads and project maintainers.
+(In the past each SIG nominated anywhere from 1 to 5 names + short description why they've been awarded)
+
+- Help prepare presentation/slides for the awards ceremony
+
+- Help collect emails and physical mailing address for all award nominees.
+
 
 ## Time Commitment
 
-TODO
+1-2 hours/week for several weeks collecting nominees + their addreses.
 
 ## Instructions and Tips for Specific Tasks
