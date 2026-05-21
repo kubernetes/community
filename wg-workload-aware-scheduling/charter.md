@@ -17,7 +17,8 @@ in core Kubernetes to address these gaps.
 
 - Enable core APIs for expressing workload-level scheduling requirements, including coupling
   constraints, topology preferences, and collective resource needs.
-- Enable disruption handling that respects workload boundaries and semantics.
+- Enable disruption handling that respects workload boundaries and semantics (e.g. understanding
+  that evicting one member of a tightly-coupled workload group may disrupt the entire workload).
 - Enable higher-level controllers to consume workload-aware scheduling primitives.
 - Enable capacity provisioning that understands collective workload requirements.
 - Preserve scheduling latency and throughput for existing workloads while achieving acceptable
@@ -73,17 +74,6 @@ and opts-in to updates and modifications to [wg-governance].
 - The Working Group will have designated Chair(s) responsible for guiding discussions and ensuring progress.
 - Agendas and meeting notes will be publicly accessible.
 
-### Additional responsibilities of Tech Leads
-
-None
-
-### Deviations from [wg-governance]
-
-None
-
-### Subproject Creation
-
-None
 
 ## Timelines and Disbanding
 
