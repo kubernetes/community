@@ -2,7 +2,7 @@
 # WG Checkpoint Restore Charter
 
 This charter adheres to the conventions described in the [Kubernetes Charter README] and uses
-the Roles and Organization Management outlined in [sig-governance].
+the Roles and Organization Management outlined in [wg-governance].
 
 ## Scope
 
@@ -65,8 +65,6 @@ Later:
 This WG adheres to the Roles and Organization Management outlined in [wg-governance]
 and opts-in to updates and modifications to [wg-governance].
 
-[wg-governance]: /committee-steering/governance/wg-governance.md
-
 Additionally, the WG commits to:
 
 - maintain a solid communication line between the Kubernetes groups and the
@@ -82,6 +80,6 @@ Achieving the aforementioned deliverables, also mentioned in the `In Scope`
 section, will allow us to decide when to disband this WG.  There is no
 expectations that the Working Group will be converted into a SIG long term.
 
-[sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
+[wg-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/wg-governance.md
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
 [kep2008]: https://github.com/kubernetes/enhancements/issues/2008
