@@ -3894,6 +3894,10 @@ workinggroups:
     label: workload-aware-scheduling
     leadership:
       chairs:
+        - github: andreyvelich
+          name: Andrey Velichkevich
+          company: Apple
+          email: andrey.velichkevich@gmail.com
         - github: helayoty
           name: Heba Elayoty
           company: Microsoft

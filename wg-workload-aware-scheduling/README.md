@@ -24,6 +24,7 @@ The [charter](charter.md) defines the scope and governance of the Workload-aware
 
 ## Organizers
 
+* Andrey Velichkevich (**[@andreyvelich](https://github.com/andreyvelich)**), Apple
 * Heba Elayoty (**[@helayoty](https://github.com/helayoty)**), Microsoft
 * Kevin Hannon (**[@kannon92](https://github.com/kannon92)**), Red Hat
 * Matt Matejczyk (**[@mm4tt](https://github.com/mm4tt)**), Google
