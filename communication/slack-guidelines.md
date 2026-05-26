@@ -124,7 +124,7 @@ include:
     -   **Need More Information**: If a job listing is missing mandatory fields,
         additional information will be needed for approval.
 
-submissions require a direct corporate portal, official ATS, or accessible portfolio URL; a matching corporate domain email (public domains such as @gmail.com will be rejected); explicit geographic constraints for `Hybrid` or `On-site` roles and direct, unshortened resume links. Third-party URL shorteners are not permitted.
+Job opening submissions require a direct corporate portal, official ATS, or accessible portfolio URL; a matching corporate domain email (public domains such as @gmail.com will be rejected); explicit geographic constraints for `Hybrid` or `On-site` roles and direct, unshortened resume links. Third-party URL shorteners are not permitted.
 
 Job posting will be rejected for missing, broken, or permission-locked links; mismatched business email domains; anonymous or unverified recruitment agency postings; or any content related to cryptocurrency, investment schemes, or unrelated topics. If your post does not appear within 48 hours reach out in `#slack-admins` for a status update.
 
