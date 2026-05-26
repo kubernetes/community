@@ -2,6 +2,13 @@
 
 This document details the technical configuration and how the job posting and resume workflows were built within the Kubernetes Slack workspace. Other administrators can use these specifications to maintain, audit, or recreate the system.
 
+## Tooling & Architecture
+
+This system runs exclusively in **Slack's native Workflow Builder** with no external servers, external code, or third-party tools. 
+
+Administrators with access to the Slack Workflow Builder interface only need to configure native forms, conditional routing, interactive buttons, and automated messaging.
+
+
 ## System requirements and environment constraints
 
 Before rebuilding or modifying this layout, verify the following workspace configurations and constraints:
