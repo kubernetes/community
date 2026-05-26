@@ -108,6 +108,8 @@ include:
     started contributing to Kubernetes.
 -   `kubernetes-org-members` - Discussion by and for organization members and
     established contributors.
+-   `#surveys` - Cloud native community wide surveys. Posts must be ecosystem
+    related.
 -   `#kubernetes-careers` - Job openings for positions working with/on/around
     Kubernetes. These must be postings for specific jobs, not "cattle calls"
     for general tech hiring. To maintain community safety and combat fraudulent
@@ -122,19 +124,19 @@ include:
     -   **Need More Information**: If a job listing is missing mandatory fields,
         additional information will be needed for approval.
 
-        Submissions require a direct corporate portal, official ATS, or accessible
-        portfolio URL; a matching corporate domain email (public domains such as
-        @gmail.com will be rejected); explicit geographic constraints
-        for `Hybrid` or `On-site` roles and direct, unshortened resume links. Third-party
-        URL shorteners are not permitted.
+submissions require a direct corporate portal, official ATS, or accessible portfolio URL; a matching corporate domain email (public domains such as @gmail.com will be rejected); explicit geographic constraints for `Hybrid` or `On-site` roles and direct, unshortened resume links. Third-party URL shorteners are not permitted.
 
-        Job posting will be rejected for missing, broken, or permission-locked links;
-        mismatched business email domains; anonymous or unverified recruitment agency postings;
-        or any content related to cryptocurrency, investment schemes, or unrelated topics.
-        If your post does not appear within 48 hours reach out in `#slack-admins` for a status
-        update. For full moderation criteria see the [Job Posting Vetting Policy](./slack-job-posting-policy.md).
--   `#surveys` - Cloud native community wide surveys. Posts must be ecosystem
-    related.
+Job posting will be rejected for missing, broken, or permission-locked links; mismatched business email domains; anonymous or unverified recruitment agency postings; or any content related to cryptocurrency, investment schemes, or unrelated topics. If your post does not appear within 48 hours reach out in `#slack-admins` for a status update.
+
+**Resume Submission:** Candidates must demonstrate experience with Kubernetes, CNCF 
+technologies, or DevOps/SRE practices that serve the cloud-native ecosystem. 
+Provide your full name, professional contact information, and a direct resume link 
+(Google Drive, GitHub, or personal website), along with a brief description of your 
+background and relevant experience. Direct, unshortened links only; URL shorteners 
+will result in immediate rejection. Resume submissions follow the same vetting 
+process and moderation standards as job postings to maintain community safety.
+For full moderation criteria see the [Job Posting Vetting Policy](./slack-job-posting-policy.md).
+
 
 ### Reporting a Problem
 
