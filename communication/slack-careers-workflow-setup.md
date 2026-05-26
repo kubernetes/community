@@ -117,7 +117,7 @@ Clicking the custom `Reject` button records the rejection and notifies the submi
   * **Details (Quote Block)**: `{Answer to: Reason for Rejection}`
   * **Submitter**: `{Answer to: Submitter}`
   * **Moderator**: `{Person who submitted the form}`
-* Configure a `Send an 'only visible to you' message` step targeting `{Answer to: Submitter}` inside `#kubernetes-careers` containing:
+* Configure a `Send a message to` send a direct message to the submitter specified in `{Answer to: Submitter}` containing:
   > "Hello,
   > Your submission has been reviewed and rejected for policy violations.
   > Moderator Feedback:
