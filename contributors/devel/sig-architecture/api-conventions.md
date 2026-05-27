@@ -891,7 +891,7 @@ graph TD;
     D -- Required --> F
 ```
 There are several implications of the above:
-- For lists and maps where the zero valid is a valid user choice, this means that `[]` and `{}` have a semantically different meaning than unset, in this case it is appropriate to use `*[]T` or `*map[T]S` respectively.
+- For lists and maps where the zero value is a valid user choice, this means that `[]` and `{}` have a semantically different meaning than unset, in this case it is appropriate to use `*[]T` or `*map[T]S` respectively.
 - For `bool` types, the zero value is `false`, which is always a valid user choice. `bool` types should always be pointers, and should always use the `omitempty` tag.
 - When a field is required, and the zero value is not valid, a structured client who has not expressed an explicit choice will have their request rejected by the API server based on the invalid value, rather than the field being unset.
   - For example, a string with a minimum length of 1; Validation would not understand if the field was unset, or set to the empty string deliberately, but would still reject the request because it did not meet the length requirements.
