@@ -13,12 +13,17 @@ Node e2e tests are component tests meant for testing the Kubelet code on a custo
 Why run tests *locally*? It is much faster than running tests remotely.
 
 Prerequisites:
-- [Install etcd](https://github.com/coreos/etcd/releases) and include the path to the installation in your PATH
-  - Verify etcd is installed correctly by running `which etcd`
-  - Or make etcd binary available and executable at `/tmp/etcd`
-- [containerd](https://github.com/containerd/containerd) configured with the cgroupfs driver
-- Working CNI
-  - Ensure that you have a valid CNI configuration in /etc/cni/net.d/. For testing purposes, a [bridge](https://www.cni.dev/plugins/current/main/bridge/) configuration should work.
+- `etcd` available on the `PATH` (or as the binary `/tmp/etcd`).
+  See [Appendix: Install etcd](#appendix-install-etcd).
+- `containerd` running with the CRI plugin enabled. Either the `cgroupfs` or
+  `systemd` cgroup driver works; just make sure the kubelet and containerd
+  use the same one. See
+  [Appendix: Install and configure containerd](#appendix-install-and-configure-containerd).
+- A working CNI configuration under `/etc/cni/net.d/` and CNI plugin binaries
+  under `/opt/cni/bin`. For testing purposes, a
+  [bridge](https://www.cni.dev/plugins/current/main/bridge/) configuration
+  plus a loopback configuration is enough. See
+  [Appendix: Install CNI plugins](#appendix-install-cni-plugins).
 
 From the Kubernetes base directory, run:
 
@@ -26,10 +31,19 @@ From the Kubernetes base directory, run:
 make test-e2e-node
 ```
 
+If your host has swap enabled (for example, a typical developer workstation),
+the kubelet refuses to start by default. Pass `--fail-swap-on=false` through
+`TEST_ARGS` to allow the test run to proceed:
+
+```sh
+make test-e2e-node TEST_ARGS='--kubelet-flags="--fail-swap-on=false"'
+```
+
 This will run the *ginkgo* binary against the subdirectory *test/e2e_node*, which will in turn:
 - Ask for sudo access (needed for running some of the processes)
 - Build the Kubernetes source code
-- Pre-pull docker images used by the tests
+- Optionally pre-pull container images used by the tests
+  (`make test-e2e-node PREPULL_IMAGES=true` to enable)
 - Start a local instance of *etcd*
 - Start a local instance of *kube-apiserver*
 - Start a local instance of *kubelet*
@@ -77,7 +91,9 @@ This will:
   - Starts etcd, kube-apiserver, kubelet
   - The ginkgo command is used because this supports more features than running the test binary directly
 - Output the remote test results to STDOUT
-- `scp` the log files back to the local host under /tmp/_artifacts/e2e-node-containervm-v20160321-image
+- `scp` the log files back to the local host under a timestamped directory
+  (defaults to `/tmp/_artifacts/<YYMMDDTHHMMSS>`; override with the
+  `ARTIFACTS` environment variable)
 - Stop the processes on the remote host
 - **Leave the GCE instance running**
 
@@ -268,28 +284,6 @@ make test-e2e-node PARALLELISM=4 # run test with 4 parallel nodes
 make test-e2e-node PARALLELISM=1 # run test sequentially
 ```
 
-## Run tests with kubenet network plugin
-
-[kubenet](http://kubernetes.io/docs/admin/network-plugins/#kubenet) is
-the default network plugin used by kubelet since Kubernetes 1.3.  The
-plugin requires [CNI](https://github.com/containernetworking/cni) and
-[nsenter](http://man7.org/linux/man-pages/man1/nsenter.1.html).
-
-Currently, kubenet is enabled by default for Remote execution `REMOTE=true`,
-but disabled for Local execution.  **Note: kubenet is not supported for
-local execution currently. This may cause network related test result to be
-different for Local and Remote execution. So if you want to run network
-related test, Remote execution is recommended.**
-
-To enable/disable kubenet:
-
-```sh
-# enable kubenet
-make test-e2e-node TEST_ARGS='--kubelet-flags="--network-plugin=kubenet --network-plugin-dir=/opt/cni/bin"'
-# disable kubenet
-make test-e2e-node TEST_ARGS='--kubelet-flags="--network-plugin= --network-plugin-dir="'
-```
-
 ## Additional QoS Cgroups Hierarchy level testing
 
 For testing with the QoS Cgroup Hierarchy enabled, you can pass --cgroups-per-qos flag as an argument into Ginkgo using TEST_ARGS
@@ -373,3 +367,185 @@ even if the number is zero.
    $ kubectl get pod -A
    $ kubectl describe node
    ```
+
+# Known issues
+
+## `WithFeatureGate: the feature gate "<GATE_NAME>" is unknown`
+
+If you see this error, the e2e binary is being built against an older
+Kubernetes version than the test expects. `make test-e2e-node` derives the
+reported Kubernetes version from the git tags reachable from your working
+tree, so a fork without the upstream tags will look like an old release.
+
+Make sure your local clone has both your fork and the upstream repository as
+remotes, then fetch the upstream tags:
+
+```sh
+git remote -v
+# If `upstream` is missing, add it:
+git remote add upstream https://github.com/kubernetes/kubernetes.git
+
+git fetch upstream --tags
+# Optional: publish the tags to your fork so other clones pick them up.
+git push origin --tags
+```
+
+Re-run `make test-e2e-node` and the feature gate error should be gone.
+
+# Appendix: Install etcd
+
+The node e2e harness expects an `etcd` binary on the `PATH` (or available at
+`/tmp/etcd`).
+
+1. Download a release archive from
+   [etcd-io/etcd releases](https://github.com/etcd-io/etcd/releases) for your
+   OS and architecture.
+2. Extract the archive and either:
+    - place the `etcd` binary on a directory already on your `PATH`, or
+    - copy it to `/tmp/etcd` (the harness also checks this location).
+3. Verify the installation:
+
+   ```sh
+   which etcd
+   etcd --version
+   ```
+
+# Appendix: Install and configure containerd
+
+The node e2e tests require `containerd` running locally with the CRI plugin
+enabled. The default kubelet config used by the tests uses the `cgroupfs`
+cgroup driver, but the `systemd` driver works too as long as the kubelet and
+containerd are configured to use the same driver.
+
+## Install or upgrade containerd
+
+Pick a recent stable release from the
+[containerd releases page](https://github.com/containerd/containerd/releases)
+and install it under `/usr/local`:
+
+```sh
+export VERSION="2.2.0"   # replace with a recent stable version
+wget https://github.com/containerd/containerd/releases/download/v${VERSION}/containerd-${VERSION}-linux-amd64.tar.gz
+sudo tar Cxzvf /usr/local containerd-${VERSION}-linux-amd64.tar.gz
+```
+
+If containerd is managed by `systemd`, reload units and restart the service so
+the new binary is picked up:
+
+```sh
+sudo systemctl daemon-reload
+sudo systemctl restart containerd
+```
+
+## Enable the CRI plugin
+
+The kubelet talks to containerd over the CRI socket, so the CRI plugin must
+not be disabled. If `/etc/containerd/config.toml` does not exist, generate a
+default config:
+
+```sh
+sudo mkdir -p /etc/containerd
+containerd config default | sudo tee /etc/containerd/config.toml
+```
+
+Open the file and make sure `cri` is **not** listed in `disabled_plugins`:
+
+```toml
+# Enable CRI by leaving the list empty.
+disabled_plugins = []
+```
+
+If you want containerd to use the `systemd` cgroup driver, set
+`SystemdCgroup = true` under the runc options (the relevant section is
+typically `plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options`)
+**and** configure the kubelet with `cgroupDriver: systemd`. Otherwise leave
+the defaults in place and the kubelet's default `cgroupfs` config will match.
+
+Apply the configuration change:
+
+```sh
+sudo systemctl restart containerd
+```
+
+# Appendix: Install CNI plugins
+
+The kubelet needs CNI binaries plus a network configuration so that the test
+pods can be wired up with an IP address and a loopback interface.
+
+## Install the CNI plugin binaries
+
+Download the `cni-plugins-linux-amd64` bundle from the
+[containernetworking/plugins releases page](https://github.com/containernetworking/plugins/releases)
+and extract it into `/opt/cni/bin`:
+
+```sh
+export CNI_VERSION="v1.4.0"   # replace with a recent stable version
+wget https://github.com/containernetworking/plugins/releases/download/${CNI_VERSION}/cni-plugins-linux-amd64-${CNI_VERSION}.tgz
+sudo mkdir -p /opt/cni/bin
+sudo tar Cxzvf /opt/cni/bin cni-plugins-linux-amd64-${CNI_VERSION}.tgz
+```
+
+## Add a network configuration
+
+Create the CNI configuration directory and drop a bridge configuration in it.
+The bridge plugin creates a virtual switch and the `host-local` IPAM plugin
+hands out addresses to the pods:
+
+```sh
+sudo mkdir -p /etc/cni/net.d
+cat <<'EOF' | sudo tee /etc/cni/net.d/10-containerd-net.conflist
+{
+  "cniVersion": "1.0.0",
+  "name": "containerd-net",
+  "plugins": [
+    {
+      "type": "bridge",
+      "bridge": "cni0",
+      "isGateway": true,
+      "ipMasq": true,
+      "promiscMode": true,
+      "ipam": {
+        "type": "host-local",
+        "ranges": [
+          [{ "subnet": "10.88.0.0/16" }],
+          [{ "subnet": "2001:db8:4860::/64" }]
+        ],
+        "routes": [
+          { "dst": "0.0.0.0/0" },
+          { "dst": "::/0" }
+        ]
+      }
+    },
+    {
+      "type": "portmap",
+      "capabilities": { "portMappings": true },
+      "externalSetMarkChain": "KUBE-MARK-MASQ"
+    }
+  ]
+}
+EOF
+```
+
+The CNI config is picked up the next time the kubelet (started by
+`make test-e2e-node`) creates a pod, so no service restart is needed.
+
+## Override non-default CNI paths in containerd
+
+If your containerd installation uses non-default paths for CNI binaries or
+configuration, you must update `/etc/containerd/config.toml` so that containerd
+can find the plugins and network configs installed above. Check and fix the
+following settings under the `[plugins."io.containerd.grpc.v1.cri".cni]`
+section:
+
+- **`bin_dir`** — must point to `/opt/cni/bin` (the directory where CNI plugin
+  binaries were extracted).
+- **`conf_dir`** — must point to `/etc/cni/net.d` (the directory where network
+  configuration files were created).
+- **`conf_template`** — must be empty (`""`). If a `conf_template` is set it
+  overrides `conf_dir`, causing the network configuration files to be ignored.
+
+After making changes, restart containerd:
+
+```sh
+sudo systemctl restart containerd
+```
