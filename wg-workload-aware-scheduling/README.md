@@ -18,7 +18,7 @@ The [charter](charter.md) defines the scope and governance of the Workload-aware
 * [SIG Scheduling](/sig-scheduling)
 
 ## Meetings
-*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-was) for the group will typically add invites for the following meetings to your calendar.*
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-workload-aware-scheduling) for the group will typically add invites for the following meetings to your calendar.*
 * Workload API integration sync meeting: [Mondays at 9:00 PT (Pacific Time)](https://us06web.zoom.us/j/89570383718?pwd=2tZ4Cinl8yshTxp908lsyEVUBklKDZ.1) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
   * [Meeting recordings](https://youtube.com/playlist?list=PLAOs-sFfKbyRBvmB1fAWcP3VFT530pX73).
 
@@ -31,7 +31,7 @@ The [charter](charter.md) defines the scope and governance of the Workload-aware
 
 ## Contact
 - Slack: [#wg-workload-aware-scheduling](https://kubernetes.slack.com/messages/wg-workload-aware-scheduling)
-- [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-was)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-workload-aware-scheduling)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fworkload-aware-scheduling)
 - Steering Committee Liaison: Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**)
 <!-- BEGIN CUSTOM CONTENT -->

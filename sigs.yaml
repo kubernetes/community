@@ -3920,7 +3920,7 @@ workinggroups:
         recordings_url: https://youtube.com/playlist?list=PLAOs-sFfKbyRBvmB1fAWcP3VFT530pX73
     contact:
       slack: wg-workload-aware-scheduling
-      mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-was
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-workload-aware-scheduling
       liaison:
         github: saschagrunert
         name: Sascha Grunert
