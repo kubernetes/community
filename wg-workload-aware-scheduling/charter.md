@@ -43,8 +43,9 @@ Kubernetes components and addons.
 - SIG Scheduling
 - SIG Autoscaling
 - SIG Apps
-- WG Device Management
 - WG Batch
+- WG Device Management
+- WG Node Lifecycle
 
 Additionally, a broad set of end users, infrastructure vendors, cloud providers, and ecosystem
 projects have expressed interest in this effort. There are five primary groups of stakeholders
