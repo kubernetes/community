@@ -701,10 +701,10 @@ sigs:
     label: autoscaling
     leadership:
       chairs:
-        - github: gjtempleton
-          name: Guy Templeton
-          company: Skyscanner
-          email: guyjtempleton@googlemail.com
+        - github: jackfrancis
+          name: Jack Francis
+          company: Microsoft
+          email: jack.francis@microsoft.com
         - github: towca
           name: Kuba Tużnik
           company: Google
@@ -714,11 +714,17 @@ sigs:
           name: Adrian Moisey
           company: Independent
           email: adrian@changeover.za.net
-        - github: jackfrancis
-          name: Jack Francis
-          company: Microsoft
-          email: jack.francis@microsoft.com
+        - github: omerap12
+          name: Omer Aplatony
+          company: Red Hat
+          email: omerap12@gmail.com
+        - github: towca
+          name: Kuba Tużnik
+          company: Google
+          email: jtuznik@google.com
       emeritus_leads:
+        - github: gjtempleton
+          name: Guy Templeton
         - github: maciekpytel
           name: Maciek Pytel
         - github: mwielgus
