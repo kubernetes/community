@@ -128,14 +128,12 @@ Job opening submissions require a direct corporate portal, official ATS, or acce
 
 Job posting will be rejected for missing, broken, or permission-locked links; mismatched business email domains; anonymous or unverified recruitment agency postings; or any content related to cryptocurrency, investment schemes, or unrelated topics. If your post does not appear within 48 hours reach out in `#slack-admins` for a status update.
 
-**Resume Submission:** Candidates must demonstrate experience with Kubernetes, CNCF 
-technologies, or DevOps/SRE practices that serve the cloud-native ecosystem. 
-Provide your full name, professional contact information, and a direct resume link 
-(Google Drive, GitHub, or personal website), along with a brief description of your 
-background and relevant experience. Direct, unshortened links only; URL shorteners 
-will result in immediate rejection. Resume submissions follow the same vetting 
-process and moderation standards as job postings to maintain community safety.
-For full moderation criteria see the [Job Posting Vetting Policy](./slack-job-posting-policy.md).
+**Resume Submission:** Provide your full name, professional contact information,
+and a direct resume link (Google Drive, GitHub, or personal website), along with
+a brief description of your background. Direct, unshortened links only; URL shorteners
+will result in immediate rejection. Resume submissions are reviewed for basic safety and legitimacy,
+following the same community standards as job postings. For full moderation criteria, see the
+[Job Posting Vetting Policy](./slack-job-posting-policy.md).
 
 
 ### Reporting a Problem
