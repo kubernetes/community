@@ -372,7 +372,7 @@ if this label is used, please know the following:
 ## Resolving Merge Conflicts
 
 The Kubernetes project maintains high development velocity, so it's likely other
-PRs will merge which introduce merge conflicts while Feature-X is being
+PRs will merge which introduce [merge conflicts] while Feature-X is being
 reviewed. Both the GitHub UI and `@k8s-ci-robot` will point out when a PR
 contains merge conflicts that need to be resolved with the upstream branch.
 
@@ -808,3 +808,4 @@ That's the last step. Your pull request is now merged.
 [preferred editor]: https://help.github.com/en/github/using-git/associating-text-editors-with-git
 [imperative mood]: https://www.grammar-monster.com/glossary/imperative_mood.htm
 [GitHub keywords]: https://help.github.com/articles/closing-issues-using-keywords
+[merge conflicts]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts
