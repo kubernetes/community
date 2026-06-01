@@ -878,33 +878,66 @@ value might need to be distinguished from a zero value.
 - Structs are not omitted from encoder output even where `omitempty` is specified,
 which is messy.
 
-To determine whether a field should be a pointer, consider the following:
+To determine whether a field should be a pointer, consider the following decision trees.
+The logic differs depending on whether the field belongs to a Custom Resource Definition (CRD) or a built-in type.
+
+**Built-in fields:**
 
 ```mermaid
 graph TD;
-    A[Start] --> B{Is the zero value a valid user choice?};
-    B -- Yes --> C[Use a pointer and omitempty];
-    B -- No --> D{Is the field optional or required?};
-    D -- Optional --> E["Does the field type have a built-in nil value (map or slice)?"];
-    E -- Yes --> F[Do not use a pointer, use omitempty];
-    E -- No --> C;
-    D -- Required --> F
+    A[Field Definition Start] --> I[Is the zero value a valid user choice?];
+    I -- Yes --> L["USE: Pointer + omitempty <br/> (*int, *bool - Essential for intent)"];
+    I -- No --> M[Is the field Optional?];
+    
+    M -- No --> J["USE: Regular Type <br/> (Field must be present)"];
+    M -- Yes --> K[Does type have native nil? <br/> map or slice];
+    
+    K -- No --> N["USE: Pointer + omitempty <br/>"];
+    K -- Yes --> O[Need to distinguish <br/> Unset from Empty?];
+    
+    O -- Yes --> P["USE: Pointer to slice/map <br/> (*[]T or *map[K]V)"];
+    O -- No --> J;
 ```
+
+**CRD fields:**
+
+```mermaid
+graph TD;
+    A[Field Definition Start] --> C[Is the zero value a valid user choice?];
+    C -- Yes --> D["USE: Pointer + omitempty <br/> (*int, *bool - Essential for intent)"];
+    C -- No --> E["USE: Regular Type <br/> (int, bool)"];
+    
+    E --> F[Is the field Optional or Required?];
+    F -- Required --> G["Logic: Field always has valid data <br/> (API Server blocks missing/zero)"];
+    F -- Optional --> H["Logic: 0 means 'Unset' <br/> (Safe because API blocks explicit 0)"];
+```
+
 There are several implications of the above:
+
+**For both CRDs and built-ins:**
 - For lists and maps where the zero value is a valid user choice, this means that `[]` and `{}` have a semantically different meaning than unset, in this case it is appropriate to use `*[]T` or `*map[T]S` respectively.
 - For `bool` types, the zero value is `false`, which is always a valid user choice. `bool` types should always be pointers, and should always use the `omitempty` tag.
+- For structs, the zero value can only be valid when the struct has no required fields, and does not require at least one property to be set.
+  - Required structs should use `omitzero` to avoid marshalling the zero value.
+
+**For built-in types:**
 - When a field is required, and the zero value is not valid, a structured client who has not expressed an explicit choice will have their request rejected by the API server based on the invalid value, rather than the field being unset.
   - For example, a string with a minimum length of 1; Validation would not understand if the field was unset, or set to the empty string deliberately, but would still reject the request because it did not meet the length requirements.
   - Technically, using a pointer in these cases is also acceptable, but not advised as it makes coding more complex, and increases the risk of nil pointer exceptions.
   - In these cases, not using `omitempty` provides the same result, but pollutes the marshaled object with zero values and is not recommended.
-- For structs, the zero value can only be valid when the struct has no required fields, and does not require at least one property to be set.
-  - Required structs should use `omitzero` to avoid marshalling the zero value.
+- When a field is optional and its type does not have a native nil value (i.e. it is not a map or slice), a pointer with `omitempty` is needed to distinguish unset from the zero value.
+
+**For CRDs:**
+- When the zero value is not valid, pointers are not needed regardless of whether the field is optional or required.
+  - For required fields, the API server blocks requests where the field is missing or set to the zero value, so the field always contains valid data.
+  - For optional fields, the zero value safely implies "unset" because OpenAPI validation rejects explicit zero values before any controller observes the object.
+- This simplification reduces the complexity of the API and reduces the risk of nil pointer exceptions in controllers.
 
 #### Serialization of custom resources
 
-When custom resources are admitted by the API server, openapi validation is applied to the object _prior_ to any structured client observing the object.
+When custom resources are admitted by the API server, OpenAPI validation is applied to the object _prior_ to any structured client observing the object.
 
-For a field where the zero value is not valid, the openapi validation will reject the object if the field is present and set to the zero value,
+For a field where the zero value is not valid, the OpenAPI validation will reject the object if the field is present and set to the zero value,
 before a controller or validation webhook could observe the field.
 
 This means that there is no need to distinguish in a custom resource, between unset and the zero value for fields where the zero value is not valid.
