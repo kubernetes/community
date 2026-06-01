@@ -47,7 +47,6 @@ restrictions:
   - path: "sig-scheduling/*.yaml"
     channels:
       - "^sig-scheduling"
-      - "^workload-aware-scheduling"
   - path: "sig-security/*.yaml"
     channels:
       - "^sig-security$"
