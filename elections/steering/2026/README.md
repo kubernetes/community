@@ -1,7 +1,5 @@
 # 2026 VOTERS GUIDE - KUBERNETES STEERING COMMITTEE ELECTION
 
-## *WORK IN PROGRESS, NOT YET READY*
-
 ## Important Links
 
 * [Kubernetes Steering Committee]
@@ -140,18 +138,18 @@ Examples of contributions that would NOT be considered:
 
 | Date                    | Event                                                                 |
 |:------------------------|:----------------------------------------------------------------------|
-| Wednesday, July 23      | Steering Committee selects Election Committee                         |
-| Monday, August 25       | Announcement of Election and publication of voters.md                 |
-| Wednesday, September 3  | Steering Committee Q+A for the candidates (to be confirmed)           |
-| Monday, September 8     | Candidate nominations due at the end of the day in AoE time           |
-| Tuesday, September 9    | All candidate bios due at the end of the day in AoE time              |
-| Friday, September 12    | Election Begins                                                       |
-| Wednesday, October 22   | Deadline to submit voter exception requests                           |
-| Friday, October 24      | Election Closes at the end of the day in AoE time                     |
-| Monday, October 27      | Private announcement of Results to SC members not up for election     |
-| Tuesday, October 28     | Private announcement of Results to all candidates                     |
-| Wednesday, November 5   | Public announcement of Results at Public Steering Committee Meeting   |
-| Thursday, November 19   | Election Retro                                                        |
+| Wednesday, May 20       | Steering Committee selects Election Committee                         |
+| Wednesday, July 1       | Announcement of Election and publication of voters.md                 |
+| Wednesday, July 29      | Steering Committee Q+A for the candidates (to be confirmed)           |
+| Monday, August 3        | Candidate nominations due at the end of the day in AoE time           |
+| Tuesday, August 4       | All candidate bios due at the end of the day in AoE time              |
+| Friday, August 14       | Election Begins                                                       |
+| Tuesday, September 29   | Deadline to submit voter exception requests                           |
+| Thursday, October 1     | Election Closes at the end of the day in AoE time                     |
+| Friday, October 2       | Private announcement of Results to SC members not up for election     |
+| Monday, October 5       | Private announcement of Results to all candidates                     |
+| Wednesday, October 7    | Public announcement of Results at Public Steering Committee Meeting   |
+| Thursday, October 15    | Election Retro                                                        |
 
 Candidate nomination, bio, and election close deadlines will be done using Anywhere on Earth timing, meaning it is still valid to submit new nominations/bios/votes as long as it is still the last day anywhere on the planet (i.e. at the end of that day in UTC-12).
 
