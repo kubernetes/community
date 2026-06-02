@@ -19,8 +19,12 @@ The [charter](charter.md) defines the scope and governance of the Workload-aware
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-workload-aware-scheduling) for the group will typically add invites for the following meetings to your calendar.*
-* Workload API integration sync meeting: [Mondays at 9:00 PT (Pacific Time)](https://us06web.zoom.us/j/89570383718?pwd=2tZ4Cinl8yshTxp908lsyEVUBklKDZ.1) (weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting recordings](https://youtube.com/playlist?list=PLAOs-sFfKbyRBvmB1fAWcP3VFT530pX73).
+* WG Workload Aware Scheduling Meeting [APAC friendly]: [Thursdays at 12:00 PT (Pacific Time)](https://zoom.us/j/92680403832?pwd=ONq4tsGwcPdxpesoY3wuqdaLgEUt5X.1) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=12%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1XSPdK4L3zkAFhAZ3hBQJr2k7JX9CpGD7NeQfujM1PT4/edit?tab=t.0).
+  * [Meeting recordings](https://youtube.com/playlist?list=PL69nYSiGNLP1mLNbF38f75LxZNmsl1UNd).
+* WG Workload Aware Scheduling Meeting [NA friendly]: [Tuesdays at 9:00 PT (Pacific Time)](https://zoom.us/j/98086037242?pwd=qDQagLhEl0kF36gQOcnC5jFDQr33Fg.1) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1XSPdK4L3zkAFhAZ3hBQJr2k7JX9CpGD7NeQfujM1PT4/edit?tab=t.0).
+  * [Meeting recordings](https://youtube.com/playlist?list=PL69nYSiGNLP1mLNbF38f75LxZNmsl1UNd).
 
 ## Organizers
 
