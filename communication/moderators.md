@@ -91,20 +91,22 @@ Email: contributors@kubernetes.io
 
 Moderators seats: 6
 
-| Name                | Kubernetes Slack ID   | Region   | Timezone                                                |
-| ------------------- | --------------------- | -------- | ------------------------------------------------------- |
-| Chris Short         | @chrisshort           | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
-| Nigel Brown         | @nigel                | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
-| Pritish Samal       | @Pritish              | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
-| Chad Crowell        | @chadmcrowell         | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
-| _Open_              | _Open_                | _Open_   | _Open_                                                  |
+| Name          | Kubernetes Slack ID | Region   | Timezone                                                |
+| ------------- | ------------------- | -------- | ------------------------------------------------------- |
+| Chris Short   | @chrisshort         | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Nigel Brown   | @nigel              | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
+| Pritish Samal | @Pritish            | APAC     | [IST - Indian Standard Time](https://time.is/IST)       |
+| Chad Crowell  | @chadmcrowell       | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
+| Arpit Agrawal | @Arpit Agarwal      | Americas | [IST - Indian Standard Time](https://time.is/India)     |
+| Kaslin Fields | @kaslin             | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+
 
 ### Backup Moderators
 
-| Name                | Kubernetes Slack ID   | Region   | Timezone                                                |
-| ------------------- | --------------------- | -------- | ------------------------------------------------------- |
-| Jeffrey Sica        | @jeefy                | Americas | [CT - Eastern Time (US East Coast)](https://time.is/CT) |
-| Bob Killen          | @mrbobbytables        | Americas | [CT - Eastern Time (US East Coast)](https://time.is/CT) |
+| Name         | Kubernetes Slack ID | Region   | Timezone                                                |
+| ------------ | ------------------- | -------- | ------------------------------------------------------- |
+| Jeffrey Sica | @jeefy              | Americas | [CT - Eastern Time (US East Coast)](https://time.is/CT) |
+| Bob Killen   | @mrbobbytables      | Americas | [CT - Eastern Time (US East Coast)](https://time.is/CT) |
 
 ## Slack
 
@@ -140,22 +142,18 @@ Moderators seats: 10
 
 ## Zoom
 
-Administrators seats: 6
+Administrators seats: 5
 
-| Name            | Kubernetes Slack ID | Region   | Timezone                                                |
-| --------------- | ------------------- | -------- | ------------------------------------------------------- |
-| Nigel Brown     | @nigel              | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
-| Chris Short     | @chris-short        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Name          | Kubernetes Slack ID | Region   | Timezone                                                |
+| ------------- | ------------------- | -------- | ------------------------------------------------------- |
+| Chad Mcrowell | @chad               | Americas | [CET - Central European Time](https://time.is/Spain)    |
+| Chris Short   | @chris-short        | Americas | [ET - Eastern Time (US East Coast)](https://time.is/ET) |
+| Nabarun Pal   | @palnabarun         | Americas | [IST - Indian Standard Time](https://time.is/India)     |
+| Nigel Brown   | @nigel              | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
+| Paris Pittman | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
 
 - License and main account controlled by the CNCF
 
 [moderation guidelines]: ./moderation.md
-[SIG Contributor Experience Leads] https://git.k8s.io/community/sig-contributor-experience/README.md#leadership
-[github administration team]: https://git.k8s.io/community/github-management#github-administration-team
-[trust system]: https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/
-[chinese]: https://discuss.kubernetes.io/t/about-the-chinese-category/2881
-[hindi]: https://discuss.kubernetes.io/t/about-the-hindi-category/30051
-[german]: https://discuss.kubernetes.io/t/about-the-german-category/3152
-[italian]: https://discuss.kubernetes.io/t/about-the-italian-category/2917/2
-[spanish]: https://discuss.kubernetes.io/t/about-the-spanish-category/6167
-[ukrainian]: https://discuss.kubernetes.io/t/about-the-ukrainian-category/2916
+[SIG Contributor Experience Leads]: https://git.k8s.io/community/sig-contributor-experience/README.md#leadership
+[GitHub Administration Team]: https://git.k8s.io/community/github-management#github-administration-team
