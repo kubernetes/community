@@ -260,8 +260,8 @@ The Steering Committee has selected the following people as [election officers]:
 In addition, the following contributors are helping with the election:
 
 - Alternate Officers: Xander Grzywinski, Christopher Tineo
-- Infra Liaison: TBD
-- Contributor Comms Liaison: TBD
+- Infra Liaison: Mahamed Ali (@upodroid)
+- Contributor Comms Liaison: Christopher Tineo (@TineoC)
 
 Please direct any questions via email to <election@k8s.io>.
 
