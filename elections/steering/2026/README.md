@@ -139,7 +139,7 @@ Examples of contributions that would NOT be considered:
 | Date                    | Event                                                                 |
 |:------------------------|:----------------------------------------------------------------------|
 | Wednesday, May 20       | Steering Committee selects Election Committee                         |
-| Wednesday, July 1       | Announcement of Election and publication of voters.md                 |
+| Wednesday, July 1       | Announcement of Election and publication of voters.yaml                 |
 | Wednesday, July 29      | Steering Committee Q+A for the candidates (to be confirmed)           |
 | Monday, August 3        | Candidate nominations due at the end of the day in AoE time           |
 | Tuesday, August 4       | All candidate bios due at the end of the day in AoE time              |
