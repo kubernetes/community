@@ -3918,7 +3918,7 @@ workinggroups:
           email: mmatejczyk@google.com
     meetings:
       - description: WG Workload Aware Scheduling Meeting [APAC friendly]
-        day: Thursday
+        day: Tuesday
         time: "12:00"
         tz: PT (Pacific Time)
         frequency: bi-weekly
@@ -3926,7 +3926,7 @@ workinggroups:
         archive_url: https://docs.google.com/document/d/1XSPdK4L3zkAFhAZ3hBQJr2k7JX9CpGD7NeQfujM1PT4/edit?tab=t.0
         recordings_url: https://youtube.com/playlist?list=PL69nYSiGNLP1mLNbF38f75LxZNmsl1UNd
       - description: WG Workload Aware Scheduling Meeting [NA friendly]
-        day: Tuesday
+        day: Thursday
         time: "9:00"
         tz: PT (Pacific Time)
         frequency: bi-weekly
