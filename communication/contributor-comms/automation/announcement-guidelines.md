@@ -8,8 +8,8 @@ The source code for this bot is present in https://github.com/kubernetes-sigs/sl
 To use the bot, the user must be a member of the Slack 'sig-contributor-comms' group. Contact @contributor-comms to obtain the necessary permissions or to post something on your behalf.
 
 #### Steps to add a new user to the bot
-- *Add the User*: The new user will need to copy their "member id" from their account in Slack, and decide on a preferred username to add via PR to kubernetes/community/communication/slack-config/users.yaml
-- *Add the User to the Group*: Create a PR to add the newly created username from the users.yaml file to kubernetes/community/communication/slack-config/usergroups.yaml
+- *Add the User*: The new user will need to copy their "member id" from their account in Slack, and decide on a preferred username to add via PR to [kubernetes/community/communication/slack-config/users.yaml](https://github.com/kubernetes/community/blob/main/communication/slack-config/usergroups.yaml)
+- *Add the User to the Group*: Create a PR to add the newly created username from the users.yaml file to [kubernetes/community/communication/slack-config/usergroups.yaml](https://github.com/kubernetes/community/blob/main/communication/slack-config/users.yaml)
 
 
 ### Adding bot to a channel
