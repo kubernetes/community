@@ -59,6 +59,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-cloud-provider:
+* [WG Node Identity](/wg-node-identity)
 * [WG Node Lifecycle](/wg-node-lifecycle)
 
 
