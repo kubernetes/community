@@ -59,6 +59,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 The following [working groups][working-group-definition] are sponsored by sig-autoscaling:
 * [WG Batch](/wg-batch)
 * [WG Device Management](/wg-device-management)
+* [WG Node Identity](/wg-node-identity)
 * [WG Node Lifecycle](/wg-node-lifecycle)
 * [WG Workload-aware Scheduling](/wg-workload-aware-scheduling)
 
