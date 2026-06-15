@@ -64,10 +64,10 @@ previous [governance meeting video] which led to this whole process.
 
 Please refer to the [Steering Committee Election Charter] for [Eligibility for candidacy]
 
-Eligibility for voting in 2025 is defined as:
+Eligibility for voting in 2026 is defined as:
 
 * People who had at least 50 contributions to the Kubernetes project over
-  the past year, according to a snapshot taken 2025-07-31 of the data driving
+  the past year, according to a snapshot taken 2026-06-14 of the data driving
   the [devstats developer activity counts dashboard][devstats-dashboard],
   who are also [Org Members].
   Contributions include GitHub events like creating issues, creating PRs,
@@ -75,7 +75,7 @@ Eligibility for voting in 2025 is defined as:
   [the SQL query used by devstats for developer activity counts][devstats-sql].
 
 * Full members of the Code of Conduct Committee (CoCC) and Security Response Committee
-  (SRC), as listed in [SIGs.yaml], at any time between August 2023 and August 2025,
+  (SRC), as listed in [SIGs.yaml], at any time between August 2024 and August 2026,
   regardless of contribution count.
 
 * People who have submitted the [voter exception form] and are accepted by
