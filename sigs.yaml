@@ -3615,10 +3615,10 @@ workinggroups:
     label: batch
     leadership:
       chairs:
-        - github: kannon92
-          name: Kevin Hannon
-          company: Red Hat
-          email: kehannon@redhat.com
+        - github: amy
+          name: Amy Chen
+          company: CoreWeave
+          email: hi@amycod.es
         - github: mwielgus
           name: Marcin Wielgus
           company: Google
@@ -3636,6 +3636,8 @@ workinggroups:
           name: Aldo Culquicondor
         - github: endocrimes
           name: Danielle Lancashire
+        - github: kannon92
+          name: Kevin Hannon
         - github: soltysh
           name: Maciej Szulik
         - github: swatisehgal

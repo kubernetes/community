@@ -26,7 +26,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 
 ## Organizers
 
-* Kevin Hannon (**[@kannon92](https://github.com/kannon92)**), Red Hat
+* Amy Chen (**[@amy](https://github.com/amy)**), CoreWeave
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
 * Yuki Iwai (**[@tenzen-y](https://github.com/tenzen-y)**), CyberAgent, Inc.
 
@@ -36,6 +36,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 * Abdullah Gharaibeh (**[@ahg-g](https://github.com/ahg-g)**)
 * Aldo Culquicondor (**[@alculquicondor](https://github.com/alculquicondor)**)
 * Danielle Lancashire (**[@endocrimes](https://github.com/endocrimes)**)
+* Kevin Hannon (**[@kannon92](https://github.com/kannon92)**)
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
 * Swati Sehgal (**[@swatisehgal](https://github.com/swatisehgal)**)
 
