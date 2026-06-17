@@ -58,10 +58,10 @@ Slack is the key communications platform for our community.  As such, all of the
 
 ### Prohibited Activities
 
-Doing any of the below is prohibited.  Breaking these rules can result 
-in warnings, deletion of posts, restrictions on posting, temporary or 
+Doing any of the below is prohibited.  Breaking these rules can result
+in warnings, deletion of posts, restrictions on posting, temporary or
 permanent deactivation of user accounts, and even restrictions on entire
-organizations.  We rely on our community to report prohibited behavior to 
+organizations.  We rely on our community to report prohibited behavior to
 the Slack admins; if you see any of the below, please use the [Message Reporter].
 
 * Violations of the **[Code of Conduct][coc]**
@@ -74,12 +74,12 @@ the Slack admins; if you see any of the below, please use the [Message Reporter]
   strictly prohibited. This includes, but is not limited to, app plugins, AI
   agents, chat bots, social media management platforms, backup tools, and screen scrapers.
 * **Unsolicited Direct Messages**: Do not send a direct message (DM) to any user
-  who has not invited it, and that you are not approaching in their official 
+  who has not invited it, and that you are not approaching in their official
   role in the Kubernetes project. In general, ask questions in public channels.
 * **Company Business**: Proprietary conversations should
   occur in your company Slack and/or communication platforms.
 * **Self-Promotion**: users posting about their blogs, podcasts, LinkedIn profiles,
-  non-Kubernetes projects, or other personal content in order to drive traffic 
+  non-Kubernetes projects, or other personal content in order to drive traffic
   is considered spam and prohibited.
 
 ### Content Restricted to Specific Channels
@@ -94,7 +94,7 @@ on posting, or deactivation of your account.
 * **Jobs and Resumes** belong on the `#kubernetes-careers` channel and should not
   be posted elsewhere.
 * **Events** may only be posted to channels where that specific event is
-  applicable, or the `#events` channel.  In general, this should be only 
+  applicable, or the `#events` channel.  In general, this should be only
   nonprofit community events.
 
 ### Specific Channel Rules
@@ -144,15 +144,15 @@ selecting "connect to apps", and selecting **Report message**.
 
 This will open a new dialog prompt where you may describe the problem. When
 done, it will send the reported message and your comments to **BOTH** the
-[Slack admins][admins] and [Code of Conduct Committee (CoCC)][cocc].  You 
+[Slack admins][admins] and [Code of Conduct Committee (CoCC)][cocc].  You
 may report anonymously.
 
 A Slack admin or CoCC member will work to resolve the issue or reach out for
-more information. Due to report volume, if the Slack admins do not require additional information they may take action without reporting back to you. 
+more information. Due to report volume, if the Slack admins do not require additional information they may take action without reporting back to you.
 
 If the issue is complicated or still unresolved after some time, join the
 #slack-admins channel and alert the admins to the current issue. Many Slack
-admins watch the channel and should respond to you shortly, although they 
+admins watch the channel and should respond to you shortly, although they
 respond to the Message Reporter more quickly.
 
 As a last resort, or if the issue is private, contact one of the admins in the
@@ -168,7 +168,7 @@ and describe the situation.
 ## Channel Management
 
 This section, and the sections below it, are intended for SIG Leads, channel
-owners, and Slack admins.  If you are new to Kubernetes and Kubernetes Slack, 
+owners, and Slack admins.  If you are new to Kubernetes and Kubernetes Slack,
 you can stop reading here.
 
 ### Should you have a channel on the Kubernetes Slack?
@@ -367,4 +367,4 @@ discussed in Slack itself.
 [User Group Documentation]: ./slack-config/README.md#usergroups
 [GitHub Issue]: https://github.com/kubernetes/community/issues/new/choose
 [Slack's policy on inactivated accounts]: https://get.slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account
-[Message Reporter]: /docs/comms/slack/#reporting-a-problem
+[Message Reporter]: #reporting-a-problem
