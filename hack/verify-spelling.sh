@@ -22,12 +22,8 @@ export KUBE_ROOT=$(dirname "${BASH_SOURCE}")/..
 export GO111MODULE=on
 export GOPROXY="${GOPROXY:-https://proxy.golang.org}"
 
-# Pick out version of misspell from go.mod
-go mod download
-misspell="$(go list -m -f '{{.Dir}}' github.com/client9/misspell)"
-
 # Spell checking
 # All the skipping files are defined in hack/.spelling_failures
 skipping_file="${KUBE_ROOT}/hack/.spelling_failures"
 failing_packages=$(echo `cat ${skipping_file}` | sed "s| | -e |g")
-git ls-files | grep -vEe ${failing_packages} | xargs go run "${misspell}/cmd/misspell" -i "" -error -o stderr
+git ls-files | grep -vEe ${failing_packages} | xargs go tool misspell -i "" -error -o stderr

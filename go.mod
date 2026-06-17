@@ -1,9 +1,10 @@
 module k8s.io/community
 
-go 1.22.4
+go 1.26.4
+
+tool github.com/client9/misspell/cmd/misspell
 
 require (
-	github.com/client9/misspell v0.3.4
 	github.com/go-git/go-git/v5 v5.2.0
 	github.com/google/go-github/v32 v32.1.0
 	golang.org/x/mod v0.21.0
@@ -12,6 +13,7 @@ require (
 )
 
 require (
+	github.com/client9/misspell v0.3.4 // indirect
 	github.com/emirpasic/gods v1.12.0 // indirect
 	github.com/go-git/gcfg v1.5.0 // indirect
 	github.com/go-git/go-billy/v5 v5.0.0 // indirect
