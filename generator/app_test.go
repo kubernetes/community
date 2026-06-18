@@ -17,7 +17,6 @@ limitations under the License.
 package main
 
 import (
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
@@ -135,7 +134,7 @@ content!
 			}
 			continue
 		}
-		content, err := ioutil.ReadFile(c.outputPath)
+		content, err := os.ReadFile(c.outputPath)
 		if err != nil {
 			t.Fatalf("%s should exist", c.outputPath)
 		}
@@ -205,12 +204,12 @@ func TestReadmesAreSkipped(t *testing.T) {
 
 func copyFile(src, dst string) error {
 	// Read all content of src to data
-	data, err := ioutil.ReadFile(src)
+	data, err := os.ReadFile(src)
 	if err != nil {
 		return err
 	}
 	// Write data to dst
-	err = ioutil.WriteFile(dst, data, 0644)
+	err = os.WriteFile(dst, data, 0644)
 	if err != nil {
 		return err
 	}

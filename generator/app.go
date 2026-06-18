@@ -21,13 +21,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
 	"os"
 	"path/filepath"
 	"regexp"
+	"slices"
 	"sort"
 	"strconv"
 	"strings"
@@ -112,7 +112,7 @@ func getLastThreeK8sReleases() (Releases, error) {
 			continue
 		}
 		rel := semver.MajorMinor(release.GetTagName())
-		if !contains(releases, rel) {
+		if !slices.Contains(releases, rel) {
 			releases = append(releases, rel)
 		}
 	}
@@ -160,7 +160,7 @@ func fetchKEPs() error {
 	}
 	defer resp.Body.Close()
 
-	body, err := ioutil.ReadAll(resp.Body)
+	body, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return fmt.Errorf("Error reading KEPs body: %v", err)
 	}
@@ -215,7 +215,7 @@ func filterKEPs(owningSig string, releases Releases) (map[string][]api.Proposal,
 type FoldedString string
 
 // MarshalYAML customizes how FoldedStrings will be serialized by go-yaml
-func (x FoldedString) MarshalYAML() (interface{}, error) {
+func (x FoldedString) MarshalYAML() (any, error) {
 	return &yaml.Node{
 		Kind:  yaml.ScalarNode,
 		Style: yaml.FoldedStyle,
@@ -348,7 +348,7 @@ func (g *Group) DirName(prefix string) string {
 }
 
 func DirName(prefix, name string) string {
-	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.Replace(name, " ", "-", -1)))
+	return fmt.Sprintf("%s-%s", prefix, strings.ToLower(strings.ReplaceAll(name, " ", "-")))
 }
 
 // LabelName returns the expected label for a given group
@@ -615,13 +615,13 @@ func getExistingContent(path string, fileFormat string) (string, error) {
 	}
 
 	// NOTE: For some reason using bufio.Scanner with existing file pointer prepends
-	// a bunch of null ^@ characters, so using to ioutil.ReadFile instead.
-	content, err := ioutil.ReadFile(path)
+	// a bunch of null ^@ characters, so using os.ReadFile instead.
+	content, err := os.ReadFile(path)
 	if err != nil {
 		return "", err
 	}
 
-	for _, line := range strings.Split(string(content), "\n") {
+	for line := range strings.SplitSeq(string(content), "\n") {
 		if strings.Contains(line, endMarker) {
 			capture = false
 		}
@@ -690,10 +690,10 @@ func orgRepoPath(url string) string {
 // required as the timezone conversion site we are using doesn't recognize + as
 // a valid url escape character.
 func tzURLEncode(tz string) string {
-	return strings.Replace(url.QueryEscape(tz), "+", "%20", -1)
+	return strings.ReplaceAll(url.QueryEscape(tz), "+", "%20")
 }
 
-func writeTemplate(templatePath, outputPath string, fileFormat string, data interface{}) error {
+func writeTemplate(templatePath, outputPath string, fileFormat string, data any) error {
 	// set up template
 	t, err := template.New(filepath.Base(templatePath)).
 		Funcs(funcMap).
@@ -875,7 +875,7 @@ func createAnnualReport(groups []Group, prefix string) error {
 
 // readSigsYaml decodes yaml stored in a file at path into the
 // specified yaml.Node
-func readYaml(path string, data interface{}) error {
+func readYaml(path string, data any) error {
 	file, err := os.Open(path)
 	if err != nil {
 		return err
@@ -888,7 +888,7 @@ func readYaml(path string, data interface{}) error {
 
 // writeSigsYaml writes the specified data to a file at path
 // indent is set to 2 spaces
-func writeYaml(data interface{}, path string) error {
+func writeYaml(data any, path string) error {
 	file, err := os.Create(path)
 	if err != nil {
 		return err
@@ -961,7 +961,7 @@ func getFileFromCommit(repo *git.Repository, commit *plumbing.Hash, filename str
 	}
 	defer reader.Close()
 
-	content, err := ioutil.ReadAll(reader)
+	content, err := io.ReadAll(reader)
 	if err != nil {
 		return nil, err
 	}
@@ -991,15 +991,6 @@ func getSigsYamlFromCommit(repo *git.Repository, commitFromAnnualReportYear, com
 	}
 
 	return annualReportYearSigs, currentYearSigs, nil
-}
-
-func contains(strlist []string, val string) bool {
-	for _, str := range strlist {
-		if str == val {
-			return true
-		}
-	}
-	return false
 }
 
 func getCategorizedSubprojects(dir string) (map[string][]string, error) {
