@@ -1,3 +1,8 @@
+---
+name: k8s-trace-instrumenter
+description: Update a kubernetes/kubernetes pull request that changes kubernetes trace code. Use when asked to write a k8s PR/diff that touches trace. Trigger phrases: "add this trace in the PR".
+---
+
 ## Instrumenting Kubernetes with Traces
 
 The following references and outlines general guidelines for trace instrumentation
