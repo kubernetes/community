@@ -1,3 +1,8 @@
+---
+name: k8s-metrics-instrumenter
+description: Update a kubernetes/kubernetes pull request that changes metrics/instrumentation code. Use when asked to write a k8s PR/diff that touches metrics, instrumentation, or the stable metrics list. Trigger phrases: "write this metrics PR".
+---
+
 ## Instrumenting Kubernetes with Metrics
 
 The following references and outlines general guidelines for metric instrumentation
