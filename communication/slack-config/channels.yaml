@@ -392,6 +392,7 @@ channels:
   - name: microk8s
   - name: minikube
   - name: minikube-dev
+  - name: modelplane
   - name: monitoring-mixins
   - name: monolith
     archived: true
