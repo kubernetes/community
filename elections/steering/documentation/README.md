@@ -396,6 +396,21 @@ You'll see from the sample calendar that there are many reminders during voting.
 
 One additional reminder option is to send one email reminder to voters.  The [email script] will pull email addresses for most (but not all) voters.
 
+##### GitHub Banner
+A banner for the Kubernetes GitHub org improves voting turnout. Contact the Kubernetes GitHub management team in the [#github-management Slack channel](https://kubernetes.slack.com/archives/C01672LSZL0) to make this request.
+A template for a GitHub banner is in [./template/github-banner-template.md](./template/github-banner-template.md).
+The banner used for the 2025 election is the following:
+```
+### :bangbang: The Kubernetes Steering Committee election closes on October 24th, 2025 :bangbang:
+
+Check the closing time in your local time zone [here](https://dateful.com/convert/anywhere-on-earth-aoe?t=1159pm&d=2025-10-24).
+
+For more details, see the links below for information about voter eligibility and the voting process.
+
+Voting platform: https://elections.k8s.io/app/elections/steering---2025
+Election details: https://git.k8s.io/community/elections/steering/2025#readme
+```
+
 #### Candidate Campaigning
 
 Kubernetes has a policy against "excessive campaigning", which in practice means that the candidate is not supposed to promote their own candidacy beyond simple statements that they are running.  Further, they should not use any privileged access to large groups (such as specific SIGs, events, or their coworkers) to encourage votes.  Judgements on this can be fairly fine-tuned; for example, Steering has previously ruled that a candidate *may* send an email to their coworkers reminding them of the election, but that email may not contain information on them as a candidate.
