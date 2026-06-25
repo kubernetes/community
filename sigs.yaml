@@ -3560,6 +3560,10 @@ workinggroups:
     label: ai-gateway
     leadership:
       chairs:
+        - github: LiorLieberman
+          name: Lior Lieberman
+          company: Google
+          email: liorlieberman@google.com
         - github: keithmattix
           name: Keith Mattix
           company: Microsoft
@@ -3568,10 +3572,6 @@ workinggroups:
           name: Flynn
           company: Buoyant
           email: flynn@buoyant.io
-        - github: kfswain
-          name: Kellen Swain
-          company: Google
-          email: kfswain@google.com
         - github: nirrozenbaum
           name: Nir Rozenbaum
           company: IBM
@@ -3581,6 +3581,8 @@ workinggroups:
           company: Red Hat
           email: mofoster@redhat.com
       emeritus_leads:
+        - github: kfswain
+          name: Kellen Swain
         - github: shaneutt
           name: Shane Utt
         - github: xunzhuo
