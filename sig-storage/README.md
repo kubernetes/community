@@ -104,6 +104,7 @@ The following [subprojects][subproject-definition] are owned by sig-storage:
   - [kubernetes-csi/external-resizer](https://github.com/kubernetes-csi/external-resizer/blob/master/OWNERS)
   - [kubernetes-csi/external-snapshotter](https://github.com/kubernetes-csi/external-snapshotter/blob/master/OWNERS)
   - [kubernetes-csi/kubernetes-csi.github.io](https://github.com/kubernetes-csi/kubernetes-csi.github.io/blob/master/OWNERS)
+  - [kubernetes-csi/kubernetes-csi](https://github.com/kubernetes-csi/kubernetes-csi/blob/main/OWNERS)
   - [kubernetes-csi/livenessprobe](https://github.com/kubernetes-csi/livenessprobe/blob/master/OWNERS)
   - [kubernetes-csi/node-driver-registrar](https://github.com/kubernetes-csi/node-driver-registrar/blob/master/OWNERS)
   - [kubernetes/csi-translation-lib](https://github.com/kubernetes/csi-translation-lib/blob/master/OWNERS)
