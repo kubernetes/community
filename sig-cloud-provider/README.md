@@ -77,7 +77,6 @@ Simplify the creation and management of complex custom resources for Kubernetes.
   - [kubernetes-sigs/kro/heads/main](https://github.com/kubernetes-sigs/kro/blob/refs/heads/main/OWNERS)
 ### kubernetes-cloud-provider
 - **Owners:**
-  - [kubernetes/cloud-provider-sample](https://github.com/kubernetes/cloud-provider-sample/blob/master/OWNERS)
   - [kubernetes/cloud-provider](https://github.com/kubernetes/cloud-provider/blob/master/OWNERS)
   - [kubernetes/kubernetes/cmd/cloud-controller-manager](https://github.com/kubernetes/kubernetes/blob/master/cmd/cloud-controller-manager/OWNERS)
   - [kubernetes/kubernetes/pkg/cloudprovider](https://github.com/kubernetes/kubernetes/blob/master/pkg/cloudprovider/OWNERS)
