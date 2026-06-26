@@ -3187,6 +3187,7 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-csi/external-resizer/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi.github.io/master/OWNERS
+          - https://raw.githubusercontent.com/kubernetes-csi/kubernetes-csi/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-csi/livenessprobe/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-csi/node-driver-registrar/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes/csi-translation-lib/master/OWNERS
