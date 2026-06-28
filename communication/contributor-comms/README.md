@@ -20,7 +20,7 @@ The Contributor Comms subproject uses leadership roles to organize and delegate 
 ## Contact Us!
 
 - Reach out to an individual above via Slack
-  - Ping the whole team: Join our slack #sig-contribex-comms or tag us @contributor-comms in #sig-contribex slack
+  - Ping the whole team: Join our slack [#sig-contribex-comms](https://kubernetes.slack.com/archives/C03KT3SUJ20) or tag us @contributor-comms in [#sig-contribex](https://kubernetes.slack.com/archives/C1TU9EB9S) slack
 - Tag us in an issue in [kubernetes/community] with the label [area/contributor-comms]
   - Set a marketing issue template in [kubernetes/community]
 - Follow us on @K8sContributors on [Twitter] and [Mastodon]
