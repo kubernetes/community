@@ -103,7 +103,7 @@ The most effective defense is preventing these bots from joining in the first
 place. Hosts should configure these settings before the meeting starts:
 
 - **Set up the waiting room.** [Turn it on](https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0063329)
-  at zoom.us → Settings → Meeting → Security → Waiting Room. Participants
+  at zoom.us / Settings / Meeting / Security / Waiting Room. Participants
   wait in the lobby until you let them in.
 
 - **Enforce authentication.** Enable "Only authenticated users can join
