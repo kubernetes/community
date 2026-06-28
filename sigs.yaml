@@ -1546,7 +1546,7 @@ sigs:
             tz: PT (Pacific Time)
             frequency: weekly
             url: https://zoom.us/j/596959769?pwd=TURBNlZPb3BEWVFmbWlCYXlMVVJiUT09
-            archive_url: https://docs.google.com/document/d/1DUhWysUkwpIKKo_3A_sjDM8JVfQZs4NY8w6OKzzr1tE/edit?tab=t.0#heading=h.pmjoywrr4zet
+            archive_url: https://docs.google.com/document/d/1K3vjCZ9C3LwYrOJOhztQtFuDQCe-urv-ewx1bI8IPVQ/edit?usp=sharing
             recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP2x_48wbOPO0vXQgNTm_xxr
       - name: contributors-documentation
         description: writes and maintains documentation around contributing to Kubernetes, including the Contributor's Guide, Developer's Guide, and contributor website.

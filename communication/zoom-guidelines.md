@@ -93,6 +93,28 @@ guidance and training.
     [best practices doc] with screenshots going over the community Zoom best
     practices.
 
+### AI notetakers
+
+AI notetaker bots (such as Otter.ai, Fireflies.ai, Fathom, and Read.ai) should
+not be permitted on Kubernetes Zoom calls. Unauthorized third-party recording
+poses risks around consent, data exposure, and moderation.
+
+The most effective defense is to prevent these bots from joining in the first
+place. Hosts should enable the following settings in the Zoom web portal:
+
+- **Enforce authentication** — enable "Only authenticated users can join
+  meetings" and restrict to Zoom sign-in. AI notetaker bots nearly always join
+  as anonymous guests, so this setting stops them cold.
+- **Enable CAPTCHA for guest users** — provides a human-only barrier for the
+  rare case where guest access is needed.
+- **Use the waiting room** — requires the host to manually admit each
+  participant, making it impossible for automated bots to enter.
+
+If an AI notetaker bot still gets through despite these safeguards, the host
+should remove the participant immediately using the **Remove** function and
+then **lock the meeting**. Report the incident to `@zoom-admins` in the
+`#sig-contribex` Slack channel.
+
 ### Escalating and Reporting a Problem
 
 Issues that cannot be handled via normal moderation, or with the assistance of
