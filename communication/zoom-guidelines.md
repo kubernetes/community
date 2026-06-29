@@ -97,7 +97,7 @@ guidance and training.
 
 AI notetaker bots — such as Otter.ai, Fireflies.ai, Fathom, and Read.ai —
 should not be permitted on Kubernetes Zoom calls. Unauthorized third-party
-recording poses risks around consent, data exposure, and moderation.
+recording poses risks around consent, privacy, and moderation.
 
 The most effective defense is preventing these bots from joining in the first
 place. Hosts should configure these settings before the meeting starts:
