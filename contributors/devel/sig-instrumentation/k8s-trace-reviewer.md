@@ -19,11 +19,8 @@ This skill reviews **only** tracing-relevant changes. If the PR doesn't touch tr
 In-scope signals (any of):
 - Touches `staging/src/k8s.io/component-base/tracing` (or older `component-base/traces`),
   `k8s.io/utils/trace`, or `tracer.Start` / `span.*` / `otel*` calls.
-- Adds/changes propagators, `TracerProvider` wiring, `WithTracing`/`otelhttp`/`otelgrpc` handlers, or
-
-  `TracingConfiguration`.
-- Bumps `go.opentelemetry.io/otel*` or `…/contrib/…` dependencies.
-- Edits `test/integration/apiserver/tracing/tracing_test.go`.
+- Adds/changes propagators, `TracerProvider` wiring, `WithTracing`/`otelhttp`/`otelgrpc` handlers, or `TracingConfiguration`.
+- Edits integration tests for tracing (e.g. `test/integration/apiserver/tracing/tracing_test.go` or kubelet tracing integration tests).
 
 If none apply, report "not a tracing change — out of scope" and stop.
 
@@ -34,6 +31,7 @@ For each finding cite file:line and tag **BLOCKER** / **NIT** / **QUESTION**.
 - **BLOCKER**: use of the global `TracerProvider`/propagator. Pass them explicitly per client/server,
   reusing the single provider constructed at component start (kubedeps / apiserver config).
 - Disabled/unset → `NoopTracerProvider`, not nil; instrumentation is feature-gated and no-op safe.
+- Follow OpenTelemetry Library Instrumentation guidelines (libraries should not register global providers; they must receive a tracer provider or API-level propagator from the application).
 
 ### B. Security
 - Tracing/instrumentation sits **after authentication & authorization**. Unauthenticated/read-only
@@ -42,13 +40,11 @@ For each finding cite file:line and tag **BLOCKER** / **NIT** / **QUESTION**.
 
 ### C. Spans
 - `defer span.End()` immediately after `tracer.Start`; no code path leaves a span unclosed.
-- Span names follow OTel conventions (no spaces, dotted/namespaced); scope spans to bounded work, not
-  long-lived watches/streams.
-- Errors via `span.RecordError(err)` + error status, not as attributes.
+- Span names follow OTel conventions (no spaces, dotted/namespaced, see [OpenTelemetry Span Naming](https://opentelemetry.io/docs/specs/semconv/general/naming/)); scope spans to bounded work, not long-lived watches/streams.
+- Errors via `span.RecordError(err)` + error status, following [OpenTelemetry Error Recording guidelines](https://opentelemetry.io/docs/specs/semconv/general/recording-errors/) (set span status to `Error`, describe error details).
 
 ### D. Attributes
-- OTel semantic conventions: dotted, namespaced keys (`api_server.id`, `transformer.provider.name`);
-  prefer `semconv` constants over hand-rolled strings. Avoid unbounded-cardinality attribute values.
+- OTel semantic conventions: dotted, namespaced keys (`api_server.id`, `transformer.provider.name`); prefer [go.opentelemetry.io/otel/semconv](https://pkg.go.dev/go.opentelemetry.io/otel/semconv) constants over hand-rolled strings. Avoid unbounded-cardinality attribute values.
 
 ### E. Config & deps
 - Init/config functions take `TracingConfiguration`/`resourceOpts` for forward-compat; rely on OTel
@@ -56,8 +52,8 @@ For each finding cite file:line and tag **BLOCKER** / **NIT** / **QUESTION**.
   removal plan + tracking issue.
 
 ### F. Tests
-- New spans/attributes are asserted in `test/integration/apiserver/tracing/tracing_test.go` (or the
-  equivalent kubelet tracing test). A span with no test assertion is incomplete.
+- New spans/attributes are asserted in tracing integration/e2e tests (e.g. `test/integration/apiserver/tracing/tracing_test.go` or equivalent kubelet tests). A span with no test assertion is incomplete.
+- For tracing unit tests, use [go.opentelemetry.io/otel/sdk/trace/tracetest](https://pkg.go.dev/go.opentelemetry.io/otel/sdk/trace/tracetest) to collect and verify generated spans.
 
 ## Step 4 — Output
 ```
@@ -76,7 +72,7 @@ For each finding cite file:line and tag **BLOCKER** / **NIT** / **QUESTION**.
 - <question>
 
 ### Required before merge
-- assert new spans/attributes in test/integration/apiserver/tracing/tracing_test.go
+- assert new spans/attributes in tracing integration tests
 - confirm no global TracerProvider/propagator use; Noop when disabled; instrumentation after authz
 ```
 Be concrete, cite lines, explain the *why* (sampling-control security, span leaks, OTel semconv
@@ -87,6 +83,6 @@ interop, dependency-graph consistency) — not just the rule.
 - API Server tracing: KEP-647; kubelet tracing: KEP-2831.
 - Tracing helpers: `staging/src/k8s.io/component-base/tracing`; `TracingConfiguration` in
   `component-base/tracing/api/v1`. Slow-trace logging util: `k8s.io/utils/trace`.
-- OpenTelemetry semantic conventions (`go.opentelemetry.io/otel/semconv`).
+- OpenTelemetry semantic conventions (`go.opentelemetry.io/otel/semconv`) and [OTel Library Instrumentation Guidance](https://opentelemetry.io/docs/concepts/instrumentation/libraries/).
 - Integration test: `test/integration/apiserver/tracing/tracing_test.go`.
 
