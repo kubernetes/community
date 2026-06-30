@@ -2400,7 +2400,6 @@ sigs:
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/gwctl/main/OWNERS
-          - https://raw.githubusercontent.com/kubernetes-sigs/ingate/refs/heads/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/ingress2gateway/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
@@ -2421,9 +2420,6 @@ sigs:
           slack: gateway-api-inference-extension
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api-inference-extension/main/OWNERS
-      - name: ingate
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/ingate/refs/heads/main/OWNERS
       - name: ingress
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS

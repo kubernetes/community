@@ -97,7 +97,6 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 - **Owners:**
   - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
   - [kubernetes-sigs/gwctl](https://github.com/kubernetes-sigs/gwctl/blob/main/OWNERS)
-  - [kubernetes-sigs/ingate/heads/main](https://github.com/kubernetes-sigs/ingate/blob/refs/heads/main/OWNERS)
   - [kubernetes-sigs/ingress2gateway](https://github.com/kubernetes-sigs/ingress2gateway/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/controller/endpoint](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/endpoint/OWNERS)
   - [kubernetes/kubernetes/pkg/proxy](https://github.com/kubernetes/kubernetes/blob/master/pkg/proxy/OWNERS)
@@ -110,9 +109,6 @@ Gateway API Inference Extension
   - [kubernetes-sigs/gateway-api-inference-extension](https://github.com/kubernetes-sigs/gateway-api-inference-extension/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#gateway-api-inference-extension](https://kubernetes.slack.com/messages/gateway-api-inference-extension)
-### ingate
-- **Owners:**
-  - [kubernetes-sigs/ingate/heads/main](https://github.com/kubernetes-sigs/ingate/blob/refs/heads/main/OWNERS)
 ### ingress
 - **Owners:**
   - [kubernetes-sigs/ingress-controller-conformance](https://github.com/kubernetes-sigs/ingress-controller-conformance/blob/master/OWNERS)
