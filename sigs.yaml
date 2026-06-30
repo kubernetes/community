@@ -3844,6 +3844,47 @@ workinggroups:
       liaison:
         github: soltysh
         name: Maciej Szulik
+  - dir: wg-node-identity
+    name: Node Identity
+    mission_statement: >
+      To define “node attestation” and propose deliverables that need to be adopted to deploy, secure, cloud–provider/hardware-backed node identity and attestation with a common model across environments.
+
+    charter_link: charter.md
+    stakeholder_sigs:
+      - Autoscaling
+      - Cluster Lifecycle
+    label: node-identity
+    leadership:
+      chairs:
+        - github: elmiko
+          name: Michael McCune
+          company: Red Hat
+          email: msm@opbstudios.com
+        - github: hakman
+          name: Ciprian Hacman
+          company: Microsoft
+          email: chacman@microsoft.com
+        - github: pfeifferj
+          name: Josephine Pfeiffer
+          company: Red Hat
+          email: hi@josie.lol
+        - github: randomvariable
+          name: Naadir Jeewa
+          company: Broadcom
+          email: naadir@randomvariable.co.uk
+        - github: rata
+          name: Rodrigo Campos Catelin
+          company: Amutable
+          email: rodrigo@sdfg.com.ar
+    meetings:
+      - description: Regular WG Meeting
+        day: TBD
+        time: TBD
+        tz: UTC
+        frequency: monthly
+        url: TBD
+    contact:
+      slack: wg-node-identity
   - dir: wg-node-lifecycle
     name: Node Lifecycle
     mission_statement: >
