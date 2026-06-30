@@ -95,6 +95,7 @@ The following [subprojects][subproject-definition] are owned by sig-network:
   - Rob Scott (**[@robscott](https://github.com/robscott)**), Google
   - Nick Young (**[@youngnick](https://github.com/youngnick)**), Isovalent
 - **Owners:**
+  - [kubernetes-sigs/gateway-api-conformance-images](https://github.com/kubernetes-sigs/gateway-api-conformance-images/blob/main/OWNERS)
   - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
   - [kubernetes-sigs/gwctl](https://github.com/kubernetes-sigs/gwctl/blob/main/OWNERS)
   - [kubernetes-sigs/ingress2gateway](https://github.com/kubernetes-sigs/ingress2gateway/blob/main/OWNERS)
