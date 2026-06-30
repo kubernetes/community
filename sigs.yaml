@@ -2398,6 +2398,7 @@ sigs:
         contact:
           slack: sig-network-gateway-api
         owners:
+          - https://github.com/kubernetes-sigs/gateway-api-conformance-images/blob/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/gwctl/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/ingress2gateway/main/OWNERS
