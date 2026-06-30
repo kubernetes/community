@@ -32,7 +32,7 @@ The [charter](charter.md) defines the scope and governance of the Node Lifecycle
 ## Organizers
 
 * Filip Křepinský (**[@atiratree](https://github.com/atiratree)**), Red Hat
-* Lucy Sweet (**[@intUnderflow](https://github.com/intUnderflow)**), Uber
+* Lucy Sweet (**[@intUnderflow](https://github.com/intUnderflow)**), Anthropic
 * Ryan Hallisey (**[@rthallisey](https://github.com/rthallisey)**), NVIDIA
 
 ## Contact
