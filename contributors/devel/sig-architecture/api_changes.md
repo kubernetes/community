@@ -647,34 +647,22 @@ Of course, code needs tests - `pkg/apis/<group>/validation/validation_test.go`.
 
 ### Declarative Validation
 
-For new APIs, developers should use declarative validation for all validation rules that declarative validation supports.
-See the [declarative validation tag catalog](https://kubernetes.io/docs/reference/using-api/declarative-validation/) for the list of supported validation rules.
-This allows you to define validation rules directly on the API types using special Go comment tags.
-These validation rules are easier to write, review, and maintain as they live alongside the type and field definitions.
+Validation can be implemented declaratively, using `+k8s:` tags on the Go type
+definitions, or manually, by writing functions in `validation.go`. Prefer
+declarative validation for every rule it supports, and fall back to
+`validation.go` only for rules it cannot yet express. A code generator,
+`validation-gen`, turns the tags into validation code. See the
+[declarative validation documentation](https://kubernetes.io/docs/reference/using-api/declarative-validation/)
+for the catalog of supported tags.
 
-A new code generator, `validation-gen`, processes these tags to produce the validation logic automatically, reducing the need to write manual validation code in `validation.go`.
+Declarative validation is already wired for the in-tree API groups, so for an
+existing resource you do not need to touch `doc.go` or `strategy.go`. You only
+need to add tags to the versioned `types.go` files, regenerate, and add tests.
+(A new API group inherits the `+k8s:validation-gen` marker in `doc.go` and the
+`rest.DeclarativeValidation` strategy by copying an existing group; see
+[Making a new API Group](#making-a-new-api-group).)
 
-
-Setting up validation code generation involves the following steps.
-For APIs already using declarative validation, the first 2 plumbing steps can be skipped:
-- Register the desired API group with validation-gen, similar to other code generators([Example PR doc.go change](https://github.com/kubernetes/kubernetes/pull/130724))
-- Wire up the `strategy.go` for the desired API group to use declarative validation ([Example PR strategy.go change](https://github.com/kubernetes/kubernetes/pull/130724))
-- Add declarative validation tags to the types and fields of the registered package ([Example PR types.go change](https://github.com/kubernetes/kubernetes/pull/130725))
-- Run the validation-gen code generator (see below)
-
-Below is an example of how to register an API group with validation-gen:
-
-`pkg/apis/core/v1/doc.go`
-```go
-...
-// +k8s:validation-gen=TypeMeta
-// +k8s:validation-gen-input=k8s.io/api/core/v1
-
-// Package v1 is the v1 version of the API.
-package v1
-```
-
-Below is an example of how to use declarative validation tags in a `types.go` file:
+Add each rule as a tag on the field it constrains:
 
 ```go
 // ReplicationControllerSpec is the specification of a replication controller.
@@ -693,18 +681,93 @@ type ReplicationControllerSpec struct {
 }
 ```
 
-In this example, the `+k8s:optional` and `+k8s:minimum=0` tags specify that the `Replicas` and `MinReadySeconds` fields are optional and must have a value of at least 0 if present.
+Here `+k8s:optional` marks the field optional and `+k8s:minimum=0` requires a
+value of at least 0 when set.
 
-After adding these tags to your types, you will need to run the code generator to create or update the validation functions.
-This is typically done by running `make update` or `hack/update-codegen.sh`.
-To only run the declarative validation code generator, use `hack/update-codegen.sh validation`.
-Running the validation-gen code generator will create a `zz_generated.validations.go` file for the declarative validations of the associated tagged API types and fields.
-The generated validation methods in this file are then called via the modified `strategy.go` file in the above steps.
+Then regenerate with `hack/update-codegen.sh validation` (or `make update`),
+which writes a `zz_generated.validations.go` file in each tagged package. Finally,
+add Go unit tests just as you would for hand-written validation, asserting which
+inputs are accepted and which are rejected. A coverage check requires each
+generated rule to be exercised by a test, or listed with a reason in
+[`test/declarative_validation/coverage-allowlist.yaml`](https://git.k8s.io/kubernetes/test/declarative_validation/coverage-allowlist.yaml).
 
-Testing the validation logic for the behaviour of a type is identical to the testing that would be done for hand-written validation code.
-Users will need to write go unit tests similar to what is done for hand-written validation logic that verify specific cases are allowed, disallowed, etc and the validation behaviour is as expected.
+#### Choosing how to add a rule
 
-While the goal is to express as much validation declaratively as possible, some complex or validation rules might still require manual implementation in `validation.go`.
+Two independent questions decide how a tag is written:
+
+1. **Is this rule already enforced by hand-written validation?**
+   - Yes — you are migrating. Stage the tag with `+k8s:alpha` so it runs in
+     shadow mode until it is proven equivalent, then promote it and delete the
+     hand-written check (see
+     [Migrating hand-written validation to tags](#migrating-hand-written-validation-to-tags)).
+   - No — a new field, or a rule with no hand-written equivalent. Add the tag
+     unprefixed so it is enforced immediately.
+2. **Does the rule apply only when a feature gate is on?**
+   - Yes — gate it with `+k8s:ifEnabled(<Option>)` / `+k8s:ifDisabled(<Option>)`
+     and supply the option from the strategy (see
+     [Gating a rule on a feature gate](#gating-a-rule-on-a-feature-gate)). A new
+     rule that tightens validation on an existing field must be gated this way so
+     it does not reject objects that are already stored.
+   - No — write the plain tag.
+
+The two compose: a hand-written rule being migrated that is also feature-gated is
+both staged and gated, e.g.
+`+k8s:alpha(since: "1.36")=+k8s:ifEnabled(HPAScaleToZero)=+k8s:minimum=0`.
+
+#### Gating a rule on a feature gate
+
+When a rule's *behavior* depends on a feature gate, wrap it with
+`+k8s:ifEnabled(<Option>)` or `+k8s:ifDisabled(<Option>)`, where `<Option>` is a
+name the strategy supplies at request time. For example, to allow
+`minReplicas: 0` only when `HPAScaleToZero` is enabled:
+
+```go
+// +k8s:ifDisabled(HPAScaleToZero)=+k8s:minimum=1
+// +k8s:ifEnabled(HPAScaleToZero)=+k8s:minimum=0
+MinReplicas *int32 `json:"minReplicas,omitempty"`
+```
+
+Supply `<Option>` from the strategy by implementing `DeclarativeValidationConfig`,
+mapping each option the type's tags reference to its current gate state:
+
+```go
+func (autoscalerStrategy) DeclarativeValidationConfig(ctx context.Context, obj, oldObj runtime.Object) rest.DeclarativeValidationConfig {
+	return rest.DeclarativeValidationConfig{Options: map[string]bool{
+		string(features.HPAScaleToZero): utilfeature.DefaultFeatureGate.Enabled(features.HPAScaleToZero),
+	}}
+}
+```
+
+The option name in the tag and the map key must match exactly, and every option a
+tag references must be declared — an undeclared option is rejected as an error, so
+a forgotten option fails loudly rather than silently mis-validating. You do not
+need to relax the gate for existing objects — declarative validation skips
+re-validating a field whose value is unchanged on update, so objects written
+while the gate was enabled keep validating after it is disabled.
+
+#### Migrating hand-written validation to tags
+
+Staging with a lifecycle prefix runs the new tag in *shadow mode* (executed and
+compared against the hand-written result, but not used to reject requests) until
+it is proven equivalent.
+
+- `+k8s:alpha` — always shadowed;
+- `+k8s:beta` — enforced by default;
+- no prefix — always enforced.
+
+Record the version the rule reached a stage as an argument, e.g.
+`+k8s:alpha(since: "1.36")=+k8s:minimum=1`. Migrate one rule at a time:
+
+1. Add the equivalent tag(s) marked `+k8s:alpha`, leaving the hand-written check
+   in place.
+2. Regenerate, run the tests, and resolve any reported mismatches until the tag
+   matches the hand-written behavior.
+3. Promote the tag (`+k8s:alpha` → `+k8s:beta` → unprefixed) so it becomes
+   enforced.
+4. Remove the now-redundant hand-written check.
+
+While the goal is to express as much validation declaratively as possible, some
+complex rules might still require manual implementation in `validation.go`.
 
 ## Edit version conversions
 
