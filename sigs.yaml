@@ -3870,8 +3870,8 @@ workinggroups:
           email: atiratree@gmail.com
         - github: intUnderflow
           name: Lucy Sweet
-          company: Uber
-          email: lucysweet@uber.com
+          company: Anthropic
+          email: k8s@lucy.sh
         - github: rthallisey
           name: Ryan Hallisey
           company: NVIDIA
