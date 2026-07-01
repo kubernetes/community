@@ -2386,15 +2386,15 @@ sigs:
       - name: cluster-proportional-autoscaler
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/cluster-proportional-autoscaler/master/OWNERS
-      - name: cluster-proportional-vertical-autoscaler
-        owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/cluster-proportional-vertical-autoscaler/master/OWNERS
       - name: external-dns
+        description: Configures external DNS servers (like AWS Route53, Google Cloud DNS) based on Kubernetes Services and Ingresses.
         contact:
           slack: external-dns
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/external-dns/master/OWNERS
       - name: gateway-api
+        description: APIS for Service networking in Kubernetes.
         contact:
           slack: sig-network-gateway-api
         owners:
@@ -2422,34 +2422,25 @@ sigs:
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api-inference-extension/main/OWNERS
       - name: ingress
+        description: Ingress controllers and conformance test suites.
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/ingress-controller-conformance/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes/ingress-gce/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/OWNERS
-      - name: iptables-wrappers
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/iptables-wrappers/master/OWNERS
-      - name: kindnet
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/kindnet/main/OWNERS
-      - name: knftables
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/knftables/master/OWNERS
       - name: kube-agentic-networking
+        description: Sandbox for exploring agentic networking and AI capabilities in Kubernetes.
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/kube-agentic-networking/main/OWNERS
-      - name: kube-dns
-        description: kube-dns was the original implementation of Kubernetes Service DNS. It is now deprecated, though there may be new releases to fix CVEs up until Kubernetes 1.40. Most Kubernetes clusters now use [CoreDNS](https://coredns.io) for Service DNS.
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/node-local-dns/master/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
       - name: kubernetes-network-drivers
+        description: Dynamic Resource Allocation (DRA) network drivers and related plugins.
         contact:
           slack: sig-network-dranet
         owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/cni-dra-driver/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/dranet/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/kubernetes-network-drivers/main/OWNERS
       - name: multi-network
+        description: API definitions and implementations for supporting multiple networks per Pod.
         contact:
           slack: sig-network-multi-network
         owners:
@@ -2462,7 +2453,13 @@ sigs:
           - github: mskrocki
             name: Maciej Skrocki
             company: Google
+      - name: netfilter-tooling
+        description: Libraries and utility tools for interacting with Linux netfilter (iptables, nftables).
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/iptables-wrappers/master/OWNERS
+          - https://raw.githubusercontent.com/kubernetes-sigs/knftables/master/OWNERS
       - name: network-policy
+        description: Kubernetes Network Policy API and evolution.
         contact:
           slack: sig-network-policy-api
         owners:
@@ -2480,17 +2477,15 @@ sigs:
           - github: tssurya
             name: Surya Seetharaman
             company: Red Hat
-      - name: node-ipam-controller
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/node-ipam-controller/main/OWNERS
-      - name: node-local-dns
-        owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/node-local-dns/master/OWNERS
       - name: pod-networking
+        description: Components and utilities for managing pod-to-pod networking, CNI plugins, node local DNS services, and IPAM.
         owners:
-          - https://raw.githubusercontent.com/kubernetes-sigs/cni-dra-driver/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/ip-masq-agent/master/OWNERS
+          - https://raw.githubusercontent.com/kubernetes-sigs/kindnet/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/nat64/main/OWNERS
+          - https://raw.githubusercontent.com/kubernetes-sigs/node-ipam-controller/main/OWNERS
+          - https://raw.githubusercontent.com/kubernetes-sigs/node-local-dns/master/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
       - name: wg-ai-gateway
         description: Proposals and discussions for the AI Gateway Working Group

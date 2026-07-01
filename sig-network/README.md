@@ -81,15 +81,15 @@ The following [subprojects][subproject-definition] are owned by sig-network:
 ### cluster-proportional-autoscaler
 - **Owners:**
   - [kubernetes-sigs/cluster-proportional-autoscaler](https://github.com/kubernetes-sigs/cluster-proportional-autoscaler/blob/master/OWNERS)
-### cluster-proportional-vertical-autoscaler
-- **Owners:**
   - [kubernetes-sigs/cluster-proportional-vertical-autoscaler](https://github.com/kubernetes-sigs/cluster-proportional-vertical-autoscaler/blob/master/OWNERS)
 ### external-dns
+Configures external DNS servers (like AWS Route53, Google Cloud DNS) based on Kubernetes Services and Ingresses.
 - **Owners:**
   - [kubernetes-sigs/external-dns](https://github.com/kubernetes-sigs/external-dns/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#external-dns](https://kubernetes.slack.com/messages/external-dns)
 ### gateway-api
+APIS for Service networking in Kubernetes.
 - **Leads:**
   - Ricardo Katz (**[@rikatz](https://github.com/rikatz)**), Red Hat
   - Rob Scott (**[@robscott](https://github.com/robscott)**), Google
@@ -111,34 +111,25 @@ Gateway API Inference Extension
 - **Contact:**
   - Slack: [#gateway-api-inference-extension](https://kubernetes.slack.com/messages/gateway-api-inference-extension)
 ### ingress
+Ingress controllers and conformance test suites.
 - **Owners:**
   - [kubernetes-sigs/ingress-controller-conformance](https://github.com/kubernetes-sigs/ingress-controller-conformance/blob/master/OWNERS)
   - [kubernetes/ingress-gce](https://github.com/kubernetes/ingress-gce/blob/master/OWNERS)
   - [kubernetes/ingress-nginx](https://github.com/kubernetes/ingress-nginx/blob/master/OWNERS)
-### iptables-wrappers
-- **Owners:**
-  - [kubernetes-sigs/iptables-wrappers](https://github.com/kubernetes-sigs/iptables-wrappers/blob/master/OWNERS)
-### kindnet
-- **Owners:**
-  - [kubernetes-sigs/kindnet](https://github.com/kubernetes-sigs/kindnet/blob/main/OWNERS)
-### knftables
-- **Owners:**
-  - [kubernetes-sigs/knftables](https://github.com/kubernetes-sigs/knftables/blob/master/OWNERS)
 ### kube-agentic-networking
+Sandbox for exploring agentic networking and AI capabilities in Kubernetes.
 - **Owners:**
   - [kubernetes-sigs/kube-agentic-networking](https://github.com/kubernetes-sigs/kube-agentic-networking/blob/main/OWNERS)
-### kube-dns
-kube-dns was the original implementation of Kubernetes Service DNS. It is now deprecated, though there may be new releases to fix CVEs up until Kubernetes 1.40. Most Kubernetes clusters now use [CoreDNS](https://coredns.io) for Service DNS.
-- **Owners:**
-  - [kubernetes-sigs/node-local-dns](https://github.com/kubernetes-sigs/node-local-dns/blob/master/OWNERS)
-  - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
 ### kubernetes-network-drivers
+Dynamic Resource Allocation (DRA) network drivers and related plugins.
 - **Owners:**
+  - [kubernetes-sigs/cni-dra-driver](https://github.com/kubernetes-sigs/cni-dra-driver/blob/main/OWNERS)
   - [kubernetes-sigs/dranet](https://github.com/kubernetes-sigs/dranet/blob/main/OWNERS)
   - [kubernetes-sigs/kubernetes-network-drivers](https://github.com/kubernetes-sigs/kubernetes-network-drivers/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#sig-network-dranet](https://kubernetes.slack.com/messages/sig-network-dranet)
 ### multi-network
+API definitions and implementations for supporting multiple networks per Pod.
 - **Leads:**
   - Lionel Jouin (**[@LionelJouin](https://github.com/LionelJouin)**), Red Hat
   - Maciej Skrocki (**[@mskrocki](https://github.com/mskrocki)**), Google
@@ -147,7 +138,13 @@ kube-dns was the original implementation of Kubernetes Service DNS. It is now de
   - [kubernetes-sigs/multi-network](https://github.com/kubernetes-sigs/multi-network/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#sig-network-multi-network](https://kubernetes.slack.com/messages/sig-network-multi-network)
+### netfilter-tooling
+Libraries and utility tools for interacting with Linux netfilter (iptables, nftables).
+- **Owners:**
+  - [kubernetes-sigs/iptables-wrappers](https://github.com/kubernetes-sigs/iptables-wrappers/blob/master/OWNERS)
+  - [kubernetes-sigs/knftables](https://github.com/kubernetes-sigs/knftables/blob/master/OWNERS)
 ### network-policy
+Kubernetes Network Policy API and evolution.
 - **Leads:**
   - Dan Winship (**[@danwinship](https://github.com/danwinship)**), Red Hat
   - Nadia Pinaeva (**[@npinaeva](https://github.com/npinaeva)**), NVIDIA
@@ -159,17 +156,15 @@ kube-dns was the original implementation of Kubernetes Service DNS. It is now de
   - [kubernetes/api/networking](https://github.com/kubernetes/api/blob/master/networking/OWNERS)
 - **Contact:**
   - Slack: [#sig-network-policy-api](https://kubernetes.slack.com/messages/sig-network-policy-api)
-### node-ipam-controller
-- **Owners:**
-  - [kubernetes-sigs/node-ipam-controller](https://github.com/kubernetes-sigs/node-ipam-controller/blob/main/OWNERS)
-### node-local-dns
-- **Owners:**
-  - [kubernetes-sigs/node-local-dns](https://github.com/kubernetes-sigs/node-local-dns/blob/master/OWNERS)
 ### pod-networking
+Components and utilities for managing pod-to-pod networking, CNI plugins, node local DNS services, and IPAM.
 - **Owners:**
-  - [kubernetes-sigs/cni-dra-driver](https://github.com/kubernetes-sigs/cni-dra-driver/blob/main/OWNERS)
   - [kubernetes-sigs/ip-masq-agent](https://github.com/kubernetes-sigs/ip-masq-agent/blob/master/OWNERS)
+  - [kubernetes-sigs/kindnet](https://github.com/kubernetes-sigs/kindnet/blob/main/OWNERS)
   - [kubernetes-sigs/nat64](https://github.com/kubernetes-sigs/nat64/blob/main/OWNERS)
+  - [kubernetes-sigs/node-ipam-controller](https://github.com/kubernetes-sigs/node-ipam-controller/blob/main/OWNERS)
+  - [kubernetes-sigs/node-local-dns](https://github.com/kubernetes-sigs/node-local-dns/blob/master/OWNERS)
+  - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
   - [kubernetes/kubernetes/pkg/kubelet/network](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/network/OWNERS)
 ### wg-ai-gateway
 Proposals and discussions for the AI Gateway Working Group
