@@ -306,9 +306,9 @@ Nominees may be found in the [election app].
 [Elekto]: https://elekto.dev
 [election app]: https://elections.k8s.io
 [Elekto voting documentation]: https://elekto.dev/docs/voting/
-[voters.yaml]: https://github.com/kubernetes/community/blob/master/elections/steering/2025/voters.yaml
-[election page]: https://elections.k8s.io/app/elections/steering---2025
-[voter exception form]: https://elections.k8s.io/app/elections/steering---2025/exception
+[voters.yaml]: https://github.com/kubernetes/community/blob/master/elections/steering/2026/voters.yaml
+[election page]: https://elections.k8s.io/app/elections/steering---2026
+[voter exception form]: https://elections.k8s.io/app/elections/steering---2026/exception
 [public Steering Committee Meeting]: https://github.com/kubernetes/steering/#meetings
-[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2025#eligibility
+[Eligible voters]: https://github.com/kubernetes/community/tree/master/elections/steering/2026#eligibility
 [SIGs.yaml]: https://github.com/kubernetes/community/tree/master/sigs.yaml
