@@ -2402,9 +2402,6 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/gateway-api/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/gwctl/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/ingress2gateway/main/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/controller/endpoint/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/proxy/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cloud-provider/controllers/service/OWNERS
         leads:
           - github: rikatz
             name: Ricardo Katz
@@ -2466,7 +2463,6 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/kube-network-policies/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-api/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/network-policy-finalizer/main/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/api/master/networking/OWNERS
         leads:
           - github: danwinship
             name: Dan Winship
@@ -2486,7 +2482,6 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/node-ipam-controller/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/node-local-dns/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes/dns/master/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/pkg/kubelet/network/OWNERS
       - name: wg-ai-gateway
         description: Proposals and discussions for the AI Gateway Working Group
         owners:

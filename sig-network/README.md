@@ -99,9 +99,6 @@ APIS for Service networking in Kubernetes.
   - [kubernetes-sigs/gateway-api](https://github.com/kubernetes-sigs/gateway-api/blob/master/OWNERS)
   - [kubernetes-sigs/gwctl](https://github.com/kubernetes-sigs/gwctl/blob/main/OWNERS)
   - [kubernetes-sigs/ingress2gateway](https://github.com/kubernetes-sigs/ingress2gateway/blob/main/OWNERS)
-  - [kubernetes/kubernetes/pkg/controller/endpoint](https://github.com/kubernetes/kubernetes/blob/master/pkg/controller/endpoint/OWNERS)
-  - [kubernetes/kubernetes/pkg/proxy](https://github.com/kubernetes/kubernetes/blob/master/pkg/proxy/OWNERS)
-  - [kubernetes/kubernetes/staging/src/k8s.io/cloud-provider/controllers/service](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cloud-provider/controllers/service/OWNERS)
 - **Contact:**
   - Slack: [#sig-network-gateway-api](https://kubernetes.slack.com/messages/sig-network-gateway-api)
 ### gateway-api-inference-extension
@@ -153,7 +150,6 @@ Kubernetes Network Policy API and evolution.
   - [kubernetes-sigs/kube-network-policies](https://github.com/kubernetes-sigs/kube-network-policies/blob/master/OWNERS)
   - [kubernetes-sigs/network-policy-api](https://github.com/kubernetes-sigs/network-policy-api/blob/master/OWNERS)
   - [kubernetes-sigs/network-policy-finalizer](https://github.com/kubernetes-sigs/network-policy-finalizer/blob/main/OWNERS)
-  - [kubernetes/api/networking](https://github.com/kubernetes/api/blob/master/networking/OWNERS)
 - **Contact:**
   - Slack: [#sig-network-policy-api](https://kubernetes.slack.com/messages/sig-network-policy-api)
 ### pod-networking
@@ -165,7 +161,6 @@ Components and utilities for managing pod-to-pod networking, CNI plugins, node l
   - [kubernetes-sigs/node-ipam-controller](https://github.com/kubernetes-sigs/node-ipam-controller/blob/main/OWNERS)
   - [kubernetes-sigs/node-local-dns](https://github.com/kubernetes-sigs/node-local-dns/blob/master/OWNERS)
   - [kubernetes/dns](https://github.com/kubernetes/dns/blob/master/OWNERS)
-  - [kubernetes/kubernetes/pkg/kubelet/network](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/network/OWNERS)
 ### wg-ai-gateway
 Proposals and discussions for the AI Gateway Working Group
 - **Owners:**
