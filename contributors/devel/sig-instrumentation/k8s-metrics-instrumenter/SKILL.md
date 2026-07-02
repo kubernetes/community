@@ -58,11 +58,15 @@ want and add a slice of the label names to the definition.
 	)
    ```
 
-3. Register the metric so that prometheus will know to export it. This can be done in manually or through an init function.
+3. Register the metric so that prometheus will know to export it. This should be done via an explicit registration function called during component startup.
+
+   **Avoid registering metrics inside `init()` blocks.** Registering in `init()` runs before feature gates are initialized, which makes it impossible to dynamically enable/disable metrics using feature flags.
 
    [Example](https://github.com/kubernetes/kubernetes/blob/v1.21.1-rc.0/staging/src/k8s.io/apiserver/pkg/endpoints/metrics/metrics.go#L280)
    ```go
-	legacyregistry.MustRegister(metric)
+   func Register() {
+       legacyregistry.MustRegister(metric)
+   }
    ```
 
 4. Use the metric by calling the appropriate method for your metric type (Set,
@@ -234,7 +238,7 @@ A common error that often causes performance issues in the ingesting metric
 system is considering dimensions that inhibit or eliminate time aggregation
 by being too specific. Typically those are user IDs or error messages.
 More generally: one should know a comprehensive list of all possible values
-for a label at instrumentation time.
+for a label at instrumentation time. If a label value is unbounded, consider enforcing allowlists via [KEP 2305](https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/2305-metrics-cardinality-enforcement).
 
 Notable exceptions are exporters like kube-state-metrics, which expose per-pod
 or per-deployment metrics, which are theoretically unbound over time as one could
@@ -323,4 +327,4 @@ kube_pod_restarts and on(namespace, pod) kube_pod_info{uuid=”ABC”}
 
 ## Deprecating Metrics
 
-The process of metric deprecation is outlined in the official [Kubernetes Deprecation Policy](https://kubernetes.io/docs/reference/using-api/deprecation-policy/). When deprecating a metric, one must set the deprecated version for a version which is in the future from which point that metric will be considered deprecated. If there is a replacement metric, please note that in the help text of the deprecated metric as well as in the corresponding release note of the relevant pull request. 
+The process of metric deprecation is outlined in the official [Kubernetes Deprecation Policy](https://kubernetes.io/docs/reference/using-api/deprecation-policy/#deprecating-a-metric). When deprecating a metric, one must set the deprecated version for a version which is in the future from which point that metric will be considered deprecated. If there is a replacement metric, please note that in the help text of the deprecated metric as well as in the corresponding release note of the relevant pull request. 

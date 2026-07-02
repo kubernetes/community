@@ -25,8 +25,8 @@ Confirm the change is in-scope. In-scope signals (any of):
 - Touches `k8s.io/component-base/metrics` or imports it.
 - Adds/changes a `metrics.NewCounterVec / NewGauge / NewHistogram / NewSummary` (the
   **component-base** wrappers, not raw `prometheus.NewX`).
-- Edits `test/instrumentation/testdata/stable-metrics-list.yaml` (the generated stable-metrics snapshot)
-  or `test/instrumentation/documentation/...`.
+- Edits `hack/tools/instrumentation/testdata/stable-metrics-list.yaml` (the generated stable-metrics snapshot)
+  or `hack/tools/instrumentation/documentation/...`.
 - Changes `StabilityLevel`, `DeprecatedVersion`, metric `Name`/`Subsystem`/`Namespace`, `Help`, `Buckets`, or labels.
 
 If none apply, report "not a metrics change — out of SIG-Instrumentation scope" and stop.
@@ -42,8 +42,10 @@ Go through each item. For every finding, cite the file:line and classify severit
   and static analysis work. Raw client_golang metrics bypass all of it.
 - Metrics must be registered through a `metrics.KubeRegistry` (e.g. `legacyregistry.MustRegister`),
   not `prometheus.MustRegister`.
+- **BLOCKER** if a metric is registered inside an `init()` block. Registrations must happen dynamically during component initialization/startup (e.g. via an explicit `Register()` function called after feature gates have been initialized) so that metrics can be gated behind feature flags.
 
 ### B. Naming conventions (`hack/verify-metrics-naming.sh`)
+- Follow the [Prometheus metric naming best practices](https://prometheus.io/docs/practices/naming/).
 - snake_case, all lowercase.
 - **Base units only**: `seconds` not `ms`/`milliseconds`, `bytes` not `kilobytes`. Append the unit.
 - Counters MUST end in `_total`.
@@ -56,7 +58,7 @@ Go through each item. For every finding, cite the file:line and classify severit
 - **BLOCKER/QUESTION** on unbounded label values: user IDs, full request paths, pod/namespace names,
   IPs, error strings, resource UIDs, full URLs. These explode series count and can OOM Prometheus.
 - Prefer a bounded set. If a label must be bounded, require `metrics.ConstrainedLabels` /
-  a label-value allowlist, or bucket the values.
+  a [label-value allowlist](https://github.com/kubernetes/enhancements/tree/master/keps/sig-instrumentation/2305-metrics-cardinality-enforcement), or bucket the values.
 - Sanity-check: `cardinality ≈ Π(distinct values per label)`. Flag anything that can grow with
   cluster size, request volume, or user input.
 
@@ -77,19 +79,18 @@ Go through each item. For every finding, cite the file:line and classify severit
 
 ### E. Stable metrics list must be regenerated
 - Any change affecting a STABLE/BETA metric must be reflected in
-  `test/instrumentation/testdata/stable-metrics-list.yaml`.
+  `hack/tools/instrumentation/testdata/stable-metrics-list.yaml`.
 - The author must run `hack/update-generated-stable-metrics.sh`; CI runs
   `hack/verify-generated-stable-metrics.sh`. **BLOCKER** if the metric changed but the snapshot didn't
   (or vice-versa) — the diff should be internally consistent.
 
 ### F. Deprecation / removal policy
 - You cannot just delete or rename a STABLE/BETA metric. Lifecycle is
-  **Stable → Deprecated (`DeprecatedVersion: "1.x"`) → Hidden → Deleted**.
+  **Stable → Deprecated (`DeprecatedVersion: "1.x"`) → Hidden → Deleted**. Refer to the [Kubernetes metric deprecation policy](https://kubernetes.io/docs/reference/using-api/deprecation-policy/#deprecating-a-metric) for full details.
 - Minimum bake times before hiding/removal:
   - STABLE: ≥ 3 releases or 9 months after deprecation.
   - BETA: ≥ 1 release or 4 months.
   - ALPHA: same release is fine.
-- Renames = deprecate old + add new (both for a transition period), not an in-place rename.
 - Confirm `DeprecatedVersion` matches the actual target release.
 
 ### G. Instrument type (gauge vs counter vs histogram)
@@ -102,6 +103,7 @@ Go through each item. For every finding, cite the file:line and classify severit
 - Buckets should match the realistic value range and be powered/spaced sensibly (often
   `prometheus.ExponentialBuckets` / `DefBuckets`). Flag too-few buckets, buckets in the wrong unit,
   or buckets that don't cover the expected range.
+- **Limit the number of buckets:** A classic histogram should have a reasonable number of buckets (typically ≤ 30-50 buckets). If a metric defines too many manual buckets, flag it as a **BLOCKER/QUESTION** to protect against memory explosion.
 - **Bound the top bucket by a real limit.** If the measured operation has a known timeout/cap, use that
   variable as the max bucket rather than an arbitrary number.
 - **If a unit changed (e.g. ms→s), the buckets MUST be re-scaled** (ms→s is ×1000). Leaving buckets
@@ -134,6 +136,14 @@ Go through each item. For every finding, cite the file:line and classify severit
 - **New metrics package** must add an `OWNERS` assigning SIG-Instrumentation, and be placed to avoid odd
   cross-component imports.
 - Watch for **data races** introduced in hot-path label/metric construction.
+
+### L. Metric Renaming (including Subsystem/Namespace changes)
+- **BLOCKER** if a metric is renamed in-place (i.e. changing the metric name, subsystem, or namespace) without going through the deprecation cycle.
+- Renaming a metric is a breaking change and requires:
+  1. Deprecating the old metric signature (keeping it registered but marking it as deprecated with `DeprecatedVersion`).
+  2. Adding the new metric signature as a separate metric.
+  3. Maintaining both metrics during the required transition period (based on stability level guarantees) to avoid breaking user dashboards and alerts.
+
 
 ## Step 4 — Output
 

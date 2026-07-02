@@ -1,0 +1,23 @@
+diff --git a/pkg/kubelet/metrics/metrics.go b/pkg/kubelet/metrics/metrics.go
+index 1234567..89abcde 100644
+--- a/pkg/kubelet/metrics/metrics.go
++++ b/pkg/kubelet/metrics/metrics.go
+@@ -10,6 +10,16 @@ import (
+ 	compbasemetrics "k8s.io/component-base/metrics"
+ )
+ 
++var (
++	PodSyncDuration = compbasemetrics.NewHistogramVec(
++		&compbasemetrics.HistogramOpts{
++			Name:           "kubelet_pod_sync_duration_seconds",
++			Help:           "Duration of pod sync operations.",
++			StabilityLevel: compbasemetrics.ALPHA,
++		},
++		[]string{"pod_name", "namespace", "error_message"},
++	)
++)
++
+ func Register() {
+-	// legacyregistry.MustRegister(SomeMetric)
++	legacyregistry.MustRegister(PodSyncDuration)
+ }
