@@ -19,7 +19,7 @@ The copy editor is the expert in spelling, grammar, and flow to ensure that all 
 
 ## Activities
 
-* Attending and participating in biweekly editorial meetings
+* Attending and participating in [SIG Docs meetings](https://github.com/kubernetes/community/tree/master/sig-docs#meetings).
 * Providing a copy review on all blog posts.
 
 ## Time Commitments
