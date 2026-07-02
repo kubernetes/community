@@ -24,14 +24,15 @@ The [charter](charter.md) defines the scope and governance of the AI Gateway Wor
 
 ## Organizers
 
+* Lior Lieberman (**[@LiorLieberman](https://github.com/LiorLieberman)**), Google
 * Keith Mattix (**[@keithmattix](https://github.com/keithmattix)**), Microsoft
 * Flynn (**[@kflynn](https://github.com/kflynn)**), Buoyant
-* Kellen Swain (**[@kfswain](https://github.com/kfswain)**), Google
 * Nir Rozenbaum (**[@nirrozenbaum](https://github.com/nirrozenbaum)**), IBM
 * Morgan Foster (**[@usize](https://github.com/usize)**), Red Hat
 
 ## Emeritus Organizers
 
+* Kellen Swain (**[@kfswain](https://github.com/kfswain)**)
 * Shane Utt (**[@shaneutt](https://github.com/shaneutt)**)
 * Xunzhuo (**[@xunzhuo](https://github.com/xunzhuo)**)
 
