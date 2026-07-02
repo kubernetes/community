@@ -31,7 +31,7 @@ For each finding cite file:line and tag **BLOCKER** / **NIT** / **QUESTION**.
 
 ### A. Structured form
 - **BLOCKER**: new unstructured `klog.Info/Infof/Errorf/Warningf` in a migrated package — use
-  `InfoS`/`ErrorS`. `ErrorS(err, msg, kv...)` takes the error **first** (may be nil only when there's
+  `InfoS`/`ErrorS`. `ErrorS(err, msg, kv...)` takes the error **first**. Use it for log output that needs admin attention,  otherwise prefer `InfoS`. `ErrorS` may be called with nil error. `InfoS` may be called with `"err": err` to log an error.
   genuinely no error).
 - Message must be a **constant string** (no `fmt.Sprintf`), capitalized, no trailing punctuation/newline.
 - Keys are **lowerCamelCase**, stable, and reused (don't invent a new key for an existing concept).
