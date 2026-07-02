@@ -84,8 +84,7 @@ The following tools have completed the evaluation process and are approved for
 use in the Kubernetes project. Subprojects may request enablement on their
 repositories without repeating the privacy and security assessment.
 
-No tools have completed the evaluation process yet. This section will be
-updated as tools are approved.
+- coderabbit
 
 ## Removal
 
