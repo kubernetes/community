@@ -40,8 +40,7 @@ For each finding cite file:line and tag **BLOCKER** / **NIT** / **QUESTION**.
 ### B. Contextual logging (KEP-3077)
 - Obtain the logger from context: `logger := klog.FromContext(ctx)`; libraries receive a logger via
   ctx rather than calling `klog.Background()`.
-- New public functions that log should accept `ctx`/`logger`; prefer extending an unreleased signature
-  over adding a `…WithLogger` twin. Carry the convention comment.
+- New public functions that log should accept `ctx`/`logger`. A `ctx` is preferred if the function supports cancellation, otherwise a `logger`.
 - `WithValues` for repeated key/value pairs; `WithName` to scope a component's logger.
 - **QUESTION/BLOCKER** on `context.Background()`/`context.TODO()` in new code without a justifying
   comment + tracking issue.
