@@ -1,4 +1,4 @@
-# Changing the API
+f# Changing the API
 
 This document is oriented at developers who want to change existing APIs.
 A set of API conventions, which applies to new APIs and to changes, can be
@@ -22,6 +22,7 @@ found at [API Conventions](api-conventions.md).
 - [Changing the internal structures](#changing-the-internal-structures)
   - [Edit types.go](#edit-typesgo-1)
 - [Edit validation.go](#edit-validationgo)
+  - [Adding a new API field with Declarative Validation](#adding-a-new-api-field-with-declarative-validation)
 - [Edit version conversions](#edit-version-conversions)
 - [Generate Code](#generate-code)
   - [Generate protobuf objects](#generate-protobuf-objects)
@@ -705,6 +706,705 @@ Testing the validation logic for the behaviour of a type is identical to the tes
 Users will need to write go unit tests similar to what is done for hand-written validation logic that verify specific cases are allowed, disallowed, etc and the validation behaviour is as expected.
 
 While the goal is to express as much validation declaratively as possible, some complex or validation rules might still require manual implementation in `validation.go`.
+
+#### Adding a new API field with Declarative Validation
+
+This section covers one specific user journey:
+
+* add a new field to an existing API type
+* express that field's validation with DV tags
+* make DV authoritative for that field
+
+For a new field, use either declarative validation (DV) or handwritten validation
+for that field's validation logic, but not both (do not mix for a single field).
+
+This guidance assumes the API type is plumbed for declarative
+validation. If the type already has existing DV migrated/shadowed fields (`+k8s:alpha`/`+k8s:beta`) and still relies on fields w/ handwritten validation and/or shadowed DV, those older fields can continue to
+exist as-is, but do not introduce that split for the new field covered by this
+section.
+
+Note: for this new-field DV-native flow, use direct tags with no prefix. Do
+not use `+k8s:alpha(...)` or `+k8s:beta(...)` here. Those tags are for
+shadowing or migration flows where DV runs alongside handwritten validation,
+which is not the case in this section.
+
+##### Feature gate field wiping
+
+The validation logic makes assumptions based on feature gate field wiping in several places, so it is worth understanding the mechanism before working through the steps.
+
+When a new field is behind a feature gate, the apiserver should behave as if the field does not exist when the gate is off. This is implemented at the storage strategy layer, not at the validation layer. Every API group with gated fields has a drop helper that the strategy calls from `PrepareForCreate` and `PrepareForUpdate` before validation runs. For pods this is `DropDisabledPodFields` in `pkg/api/pod/util.go`, called from `pkg/registry/core/pod/strategy.go`. The helper has one block per gated field with the shape:
+
+```go
+if !utilfeature.DefaultFeatureGate.Enabled(features.Frobber2D) && !frobber2DInUse(oldObj) {
+    obj.Spec.Width = nil
+}
+```
+
+Two things to notice:
+
+* The `InUse(oldObj)` check is the ratcheting mechanism. If the old object already has a value in the gated field, the wipe is skipped so the user can keep updating the object. This is how the K8s update policy "gate off plus value present on UPDATE is still modifiable" is implemented.
+* Validation runs after the wipe. By the time any DV tag or handwritten check looks at the object, the gated field has already been cleared or ratcheted. Validation does not need to know about the feature gate, and DV tags on the field do not need to be made conditional on it.
+
+Practical consequences for the rest of this section:
+
+* For a whole new field, you do not need `+k8s:ifDisabled(...)` tags or `rest.WithOptions(...)`. The wipe handles gate-off behavior and validation stays gate-agnostic.
+* Tests for "gate off, field set on CREATE" should expect the field to be silently dropped, not rejected with an error.
+* Tests for "gate off, field present on UPDATE, other fields changed" should expect the update to be allowed via the `InUse` check.
+* The enum-value sub-case is the one place this model breaks down, because there is no sensible wipe target for an individual enum value. That case is covered in "Adding a new enum value behind a feature gate" below.
+
+##### What to change
+
+Make the change in this order:
+
+0. Confirm the API type already participates in DV.
+1. Add the feature gate.
+2. Add the field and DV tags to the external API type.
+3. Add the field to the internal API type.
+4. If the field is under `status`, add the status-specific wiring.
+5. Update the REST strategy to pass DV options.
+6. Run code generation, update fuzzing if needed, and inspect generated output.
+7. Add tests.
+
+##### Step 0: confirm the type is already DV-enabled
+
+Before adding any tags to the new field, confirm all of the following:
+
+* the internal API package `doc.go` already contains
+  `+k8s:validation-gen=TypeMeta`
+* the internal API package `doc.go` already contains
+  `+k8s:validation-gen-input=...`
+* the type already generates `zz_generated.validations.go`
+* the strategy already calls
+  `rest.ValidateDeclarativelyWithMigrationChecks(...)`
+
+If these are not already true, stop here and do the DV plumbing first. The
+rest of this workflow assumes the type already participates in declarative
+validation.
+
+##### Step 1: add the feature gate
+
+Add the feature gate in `pkg/features/kube_features.go`.
+
+```go
+// owner: @you
+//
+// Enables width-related behavior for Frobber.
+Frobber2D featuregate.Feature = "Frobber2D"
+```
+
+```go
+Frobber2D: {
+  {Version: version.MustParse("1.36"), Default: false, PreRelease: featuregate.Alpha},
+},
+```
+
+##### Step 2: add the field to the external API type
+
+Add the new field to
+`staging/src/k8s.io/api/<group>/<version>/types.go`. Put the DV tags on the
+external field.
+
+For the common new-field gated pattern, use:
+
+```go
+type Frobber struct {
+  // Width indicates how wide the object is.
+  // This field is alpha-level and is only honored when the Frobber2D feature is enabled.
+  //
+  // +featureGate=Frobber2D
+  // +optional
+  // +k8s:optional
+  // +k8s:maximum=128
+  Width *int32 `json:"width,omitempty" protobuf:"varint,3,opt,name=width"`
+}
+```
+
+
+This gives the intended semantics:
+
+* when the feature gate is off, the field is wiped (or forbidden) before validation
+* when the feature gate is on, the field is allowed to be set and the normal validation
+  applies
+* on update, unchanged stored values can ratchet correctly
+
+
+Declarative validation is not made conditional on the feature gate. If there is data in the field, we validate it. The feature-gate-informed wipe (or forbid) pass is done before getting to validation. 
+
+Replace `+k8s:maximum=128` with the real validation for your field.
+If the field is required when enabled, change `+k8s:optional` to
+`+k8s:required`.
+
+**NOTE:** the most common mistake is to stop after only adding DV tags. Tags alone are not
+enough. The strategy wiring and tests are part of the process for adding a new API fields w/ DV tags.
+
+
+###### Matching a pre-feature apiserver
+
+The guiding principle for feature-gate behavior is that an apiserver with the gate disabled should behave the same as an apiserver that pre-dates the feature. What "the same" means depends on whether the new thing is a field or an enum value:
+
+* For a new field, a pre-feature apiserver ignored the field entirely even if sent. The gate-off behavior simulates this via field wiping: the strategy prep drops the field before validation runs.
+* For a new enum value, a pre-feature apiserver returned an unsupported-symbol error for that value. The gate-off behavior simulates this by reporting the same error even though the new binary knows about the value. This is why the enum-value sub-case below uses `+k8s:ifDisabled(...)=+k8s:enumExclude` rather than wipe.
+
+###### Adding a new enum value behind a feature gate
+
+A common sub-case is adding a single new value to an existing enum field behind a feature gate. Core validation already does this today for several enums, all via handwritten `validation.go` logic that branches on a feature-gate-derived option:
+
+* `Toleration.Operator` (rejects `Lt`/`Gt`) gated on `TaintTolerationComparisonOperators` (`pkg/apis/core/validation/validation.go:4395`)
+* `PodSELinuxChangePolicy` (rejects everything except `Recursive`) gated on `SELinuxMount` (`pkg/apis/core/validation/validation.go:5515`)
+* `Container.RestartPolicy` gated on `ContainerRestartRules` (`pkg/apis/core/validation/validation.go:3343`)
+* `ContainerRestartRuleAction` gated on `RestartAllContainersOnContainerExits` (`pkg/apis/core/validation/validation.go:3706`)
+* `Service.TrafficDistribution` (rejects `PreferSameZone`/`PreferSameNode`) gated on `PreferSameTrafficDistribution` (`pkg/apis/core/validation/validation.go:6940`)
+
+Use `+k8s:ifDisabled(Feature)=+k8s:enumExclude`. This is the direct declarative equivalent of the handwritten pattern above. Tag the individual constant to exclude it when the feature gate is off:
+
+```go
+// +enum
+// +k8s:enum
+type WidthMode string
+
+const (
+  WidthModeFixed    WidthMode = "Fixed"
+  WidthModeFlexible WidthMode = "Flexible"
+
+  // +k8s:ifDisabled(Frobber2D)=+k8s:enumExclude
+  WidthModeAuto WidthMode = "Auto"
+)
+```
+
+With `Frobber2D` off, this request is rejected:
+
+```yaml
+apiVersion: example.k8s.io/v1alpha1
+kind: Frobber
+metadata:
+  name: foo
+spec:
+  mode: Auto   # NotSupported: supported values: "Fixed", "Flexible"
+```
+
+With the gate on, `mode: Auto` is accepted. The symmetric `+k8s:ifEnabled(...)` form is also supported, and multiple exclusion rules on one value are OR'd.
+
+Practical notes:
+
+* `rest.WithOptions(...)` is mandatory. The strategy must pass `rest.WithOptions(declarativeValidationOptions())` into `rest.ValidateDeclarativelyWithMigrationChecks` or the exclusion silently does nothing. See the wiring example in the "Strict Forbidden Semantics" section below.
+* Ratcheting is handled by the framework. An update that leaves the stored excluded value unchanged is allowed; any write that touches the field with the gate off is rejected. This matches the K8s update policy for the unchanged-value case.
+* Test coverage should include both ratcheting shapes. Beyond the usual gate-on-valid, gate-off-set-rejected, and gate-off-omitted-allowed cases, add one update case that leaves the stored excluded value unchanged (allowed) and one that rewrites it with the gate off (rejected).
+
+###### Strict "Forbidden" Semantics via Declarative Validation (escape hatch)
+
+This is not the standard pattern. Per sig-architecture guidance, validation should not branch on feature gate state. The preferred way to gate a new field is the wipe pass shown in Step 2, which drops the field before validation runs. That keeps the validator gate-agnostic and satisfies the K8s update policy automatically: on UPDATE with the gate off and the value present, the user can still modify the object.
+
+Reach for `+k8s:ifDisabled(...)=+k8s:forbidden` only when stricter semantics than wipe are needed. The motivating example is the workload-API case where the field's value materially impacts the running system, and silently wiping a user's request would be misleading. If the underlying concern is "once set, cannot safely change", prefer `+k8s:immutable` or `+k8s:update=[NoSet|NoUnset|NoModify]` instead.
+
+If you still want strict "forbidden" semantics when the feature gate is disabled, the `+k8s:ifDisabled` tag is supported:
+
+```go
+type Frobber struct {
+  // ...
+  // +featureGate=Frobber2D
+  // +optional
+  // +k8s:optional
+  // +k8s:ifDisabled("Frobber2D")=+k8s:forbidden
+  // +k8s:maximum=128
+  Width *int32 `json:"width,omitempty" protobuf:"varint,3,opt,name=width"`
+}
+```
+
+When using `+k8s:ifDisabled("...")=+k8s:forbidden`, you **must** also ensure that the REST strategy passes the declarative validation options to the validation function (so it knows whether the gate is enabled or disabled). You would do this by passing `rest.WithOptions(declarativeValidationOptions())` to `rest.ValidateDeclarativelyWithMigrationChecks` in your `strategy.go` file.
+
+```go
+func declarativeValidationOptions() []string {
+  var opts []string
+  if feature.DefaultFeatureGate.Enabled(features.Frobber2D) {
+    opts = append(opts, string(features.Frobber2D))
+  }
+  return opts
+}
+
+func (frobberStrategy) Validate(ctx context.Context, obj runtime.Object) field.ErrorList {
+  // ...
+  return rest.ValidateDeclarativelyWithMigrationChecks(
+    // ...
+    rest.WithDeclarativeEnforcement(),
+    rest.WithOptions(declarativeValidationOptions()),
+  )
+}
+```
+
+**UPDATE Behavior:**
+It is important to understand how `+k8s:forbidden` interacts with object updates. Because declarative validation supports ratcheting, if a field is already set in the old object, and it is **not modified** during an `UPDATE` request, the `+k8s:forbidden` rule will **not** fail.
+* On `CREATE`: Setting the field will be denied.
+* On `UPDATE`: Modifying the field will be denied. Unchanged existing values will be allowed due to ratcheting.
+
+The gated-enum-value form `+k8s:ifDisabled(...)=+k8s:enumExclude` ratchets the same way: an update that leaves the stored excluded value unchanged is allowed, but any write that touches the field with the gate off is rejected.
+
+###### Defaulted fields
+
+If the new field has a default value, add the associated declarative `+default` tag and mark the feature gated field as `+k8s:optional`.
+
+```go
+  // +featureGate=Frobber2D
+  // +optional
+  // +k8s:optional
+  // +default=8
+  // +k8s:maximum=128
+  Width *int32 `json:"width,omitempty" protobuf:"varint,3,opt,name=width"`
+```
+
+Declarative validation has some logic where `+k8s:optional` and `+default` get treated as +k8s:required (which we don't want for this case) BUT there is additional logic in DV whereif +k8s:optional, +default, and +featureGate are on a field (as it is in this case) then it is treated as +k8s:optional (which is correcT) so be sure all of those tags are on the defaulted & feature-gated field.
+
+
+##### Step 3: add the field to the internal API type
+
+Mirror the field into `pkg/apis/<group>/types.go`.
+
+```go
+type FrobberSpec struct {
+  // ...
+  Width *int32
+}
+```
+
+##### Step 4: if the field is under `status`, add the status-specific wiring
+
+If the new field lives under `status`, add the status-specific tags and
+strategy wiring before code generation.
+
+At the package level (above the top level k8s objects for the associated field):
+
+```go
+// +k8s:supportsSubresource="/status"
+```
+
+Then on the status field:
+
+```go
+// +k8s:validation-gen-nolint
+type FrobberStatus struct {
+  // Phase indicates the scheduler's coarse-grained view of this object.
+  //
+  // +featureGate=Frobber2D
+  // +optional
+  // +k8s:optional
+  // +k8s:maxLength=256
+  Phase *string `json:"phase,omitempty" protobuf:"bytes,1,opt,name=phase"`
+}
+```
+
+And in the status strategy (ie: `frobberStatusStrategy`). See Step #5 below for more information:
+
+```go
+func (r *frobberStatusStrategy) ValidateUpdate(ctx context.Context, obj, old runtime.Object) field.ErrorList {
+  newFrobber := obj.(*api.Frobber)
+  oldFrobber := old.(*api.Frobber)
+  errs := validation.ValidateFrobberStatusUpdate(newFrobber, oldFrobber)
+  return rest.ValidateDeclarativelyWithMigrationChecks(
+    ctx,
+    legacyscheme.Scheme,
+    newFrobber,
+    oldFrobber,
+    errs,
+    operation.Update,
+    rest.WithDeclarativeEnforcement(),
+  )
+}
+```
+
+For same-package status fields on a root type, `+k8s:supportsSubresource="/status"`
+is sufficient. A separate `+k8s:isSubresource="/status"` package is not
+required unless you want dedicated subresource-specific validation code.
+
+##### Step 5: wire the REST strategy
+
+Field tags alone are not enough. The REST strategy (`strategy.go`) must call `rest.ValidateDeclarativelyWithMigrationChecks(...)` to invoke declarative validation. Example below:
+
+```go
+func (frobberStrategy) Validate(ctx context.Context, obj runtime.Object) field.ErrorList {
+  frobber := obj.(*api.Frobber)
+  allErrs := validation.ValidateFrobber(frobber)
+  return rest.ValidateDeclarativelyWithMigrationChecks(
+    ctx,
+    legacyscheme.Scheme,
+    obj,
+    nil,
+    allErrs,
+    operation.Create,
+    rest.WithDeclarativeEnforcement(),
+  )
+}
+
+func (frobberStrategy) ValidateUpdate(ctx context.Context, obj, old runtime.Object) field.ErrorList {
+  newFrobber := obj.(*api.Frobber)
+  oldFrobber := old.(*api.Frobber)
+  allErrs := validation.ValidateFrobberUpdate(newFrobber, oldFrobber)
+  return rest.ValidateDeclarativelyWithMigrationChecks(
+    ctx,
+    legacyscheme.Scheme,
+    newFrobber,
+    oldFrobber,
+    allErrs,
+    operation.Update,
+    rest.WithDeclarativeEnforcement(),
+  )
+}
+```
+
+##### Step 6: run codegen and inspect the generated validation
+
+After running `hack/update-codegen.sh`, inspect
+`pkg/apis/<group>/<version>/zz_generated.validations.go`.
+
+For a validated field, you should see the corresponding validation functions being called.
+
+For enum fields, you should also see an enum check, for example:
+
+```go
+validate.Enum(ctx, op, fldPath, obj, oldObj, symbolsForWidthMode, nil)
+```
+
+If this pattern is not present, check:
+
+* the feature gate name in the tag matches exactly
+* the type's `doc.go` already participates in validation generation
+* the field tags are attached to the external versioned API type, not only the
+  internal type
+
+##### Step 7: add tests for the new field
+
+For this CUJ, use `declarative_validation_test.go`.
+
+Call `strategy.Validate(...)`, `strategy.ValidateUpdate(...)`, or the status
+strategy from that file so the tests still exercise the real strategy path,
+including `rest.WithOptions(...)`, ratcheting, and `/status`, while keeping the
+guidance to one test file.
+
+###### What to cover
+
+For a new feature-gated spec field, cover at least:
+
+
+| Case | Expected result |
+| --- | --- |
+| gate on, field specified | Allowed if the value is valid. |
+| gate on, field omitted | Allowed. |
+| gate on, invalid value specified | Rejected with the field's normal validation error, such as `NotSupported`, `Invalid`, `TooLong`, or `TooMany`. |
+| gate off, field specified | Allowed (but wiped by wipe-pass prior to validation) or rejected (if explicitly forbidden in wipe-pass). |
+| gate off, field omitted | Allowed. |
+| gate off, old value unchanged on update | Allowed due to ratcheting. |
+| gate off, old value changed on update | Allowed (but wiped prior to validation) or rejected (if explicitly forbidden). |
+
+Cases to consider for testing:
+
+* include negative input, not only positive input
+* include nil/omitted input, not only specified input
+* if the same logical field shape appears in more than one place, test all of
+  those places
+
+For a status field, also cover:
+
+* root create ignoring status writes
+* root update ignoring status writes
+* `/status` update with gate off rejecting new writes
+* `/status` update with gate on allowing valid writes
+* `/status` update with gate off ratcheting an unchanged stored value
+* `/status` update with gate off rejecting a changed stored value
+* `/status` update with gate on rejecting an invalid value
+
+If the new field is nested under an already-immutable parent, add at least one
+update case that proves where the error is reported. In practice, immutable
+parent fields have errors that short-circuit so need to account for any immutable parent in tests accordingly (ie: if Parent is immutable and child has a validation you will get Parent immutable error only if you mutate).
+
+###### declarative_validation_test.go example
+
+Use the tweak pattern and exact `field.ErrorList` expectations from a single
+`declarative_validation_test.go` file:
+
+```go
+package frobber
+
+import (
+  "strings"
+  "testing"
+
+  metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+  "k8s.io/apimachinery/pkg/util/validation/field"
+  "k8s.io/apimachinery/pkg/util/version"
+  genericapirequest "k8s.io/apiserver/pkg/endpoints/request"
+  "k8s.io/apiserver/pkg/util/feature"
+  featuregatetesting "k8s.io/component-base/featuregate/testing"
+  apitesting "k8s.io/kubernetes/pkg/api/testing"
+  "k8s.io/kubernetes/pkg/apis/example"
+  "k8s.io/kubernetes/pkg/features"
+)
+
+func widthModePtr(mode example.WidthMode) *example.WidthMode {
+  return &mode
+}
+
+func phasePtr(phase string) *string {
+  return &phase
+}
+
+func tweakFrobber(tweaks ...func(*example.Frobber)) example.Frobber {
+  obj := example.Frobber{
+    ObjectMeta: metav1.ObjectMeta{
+      Name:      "foo",
+      Namespace: metav1.NamespaceDefault,
+    },
+    Spec: example.FrobberSpec{
+      Shape: "round",
+    },
+  }
+  for _, tweak := range tweaks {
+    tweak(&obj)
+  }
+  return obj
+}
+
+func setWidthMode(mode example.WidthMode) func(*example.Frobber) {
+  return func(obj *example.Frobber) {
+    obj.Spec.Mode = widthModePtr(mode)
+  }
+}
+
+func setStatusPhase(phase string) func(*example.Frobber) {
+  return func(obj *example.Frobber) {
+    obj.Status.Phase = phasePtr(phase)
+  }
+}
+
+func TestDeclarativeValidate(t *testing.T) {
+  ctx := genericapirequest.WithRequestInfo(genericapirequest.NewDefaultContext(), &genericapirequest.RequestInfo{
+    APIGroup:          "example.k8s.io",
+    APIVersion:        "v1alpha1",
+    Resource:          "frobbers",
+    IsResourceRequest: true,
+    Verb:              "create",
+  })
+  strategy := NewStrategy()
+
+  testCases := map[string]struct {
+    input           example.Frobber
+    expectedErrs    field.ErrorList
+    enableFrobber2D bool
+  }{
+    "gate off, omitted field allowed": {
+      input: tweakFrobber(),
+    },
+    "gate off, specified field rejected": {
+      input: tweakFrobber(setWidthMode(example.WidthModeFixed)),
+      expectedErrs: field.ErrorList{
+        field.Forbidden(field.NewPath("spec", "mode"), ""),
+      },
+    },
+    "gate on, specified field allowed": {
+      input:           tweakFrobber(setWidthMode(example.WidthModeFixed)),
+      enableFrobber2D: true,
+    },
+    "gate on, invalid value rejected": {
+      input:           tweakFrobber(setWidthMode(example.WidthMode("Invalid"))),
+      enableFrobber2D: true,
+      expectedErrs: field.ErrorList{
+        field.NotSupported(field.NewPath("spec", "mode"), "Invalid", []string{"Fixed", "Flexible"}),
+      },
+    },
+  }
+
+  for name, tc := range testCases {
+    t.Run(name, func(t *testing.T) {
+      featuregatetesting.SetFeatureGatesDuringTest(t, feature.DefaultFeatureGate, featuregatetesting.FeatureOverrides{
+        features.Frobber2D: tc.enableFrobber2D,
+      })
+      apitesting.VerifyValidationEquivalence(
+        t,
+        ctx,
+        &tc.input,
+        strategy.Validate,
+        tc.expectedErrs,
+        apitesting.WithMinEmulationVersion(version.MustParse("1.36")),
+      )
+    })
+  }
+}
+
+func TestDeclarativeValidateUpdate(t *testing.T) {
+  ctx := genericapirequest.WithRequestInfo(genericapirequest.NewDefaultContext(), &genericapirequest.RequestInfo{
+    APIPrefix:         "apis",
+    APIGroup:          "example.k8s.io",
+    APIVersion:        "v1alpha1",
+    Resource:          "frobbers",
+    Name:              "foo",
+    IsResourceRequest: true,
+    Verb:              "update",
+  })
+  strategy := NewStrategy()
+  testCases := map[string]struct {
+    oldObj          example.Frobber
+    updateObj       example.Frobber
+    expectedErrs    field.ErrorList
+    enableFrobber2D bool
+  }{
+    "gate off, unchanged stored field ratchets": {
+      oldObj:    tweakFrobber(setWidthMode(example.WidthModeFixed)),
+      updateObj: tweakFrobber(setWidthMode(example.WidthModeFixed)),
+    },
+    "gate off, changed stored field rejected": {
+      oldObj:    tweakFrobber(setWidthMode(example.WidthModeFixed)),
+      updateObj: tweakFrobber(setWidthMode(example.WidthModeFlexible)),
+      expectedErrs: field.ErrorList{
+        field.Forbidden(field.NewPath("spec", "mode"), ""),
+      },
+    },
+    "gate on, immutable field change rejected": {
+      oldObj:          tweakFrobber(setWidthMode(example.WidthModeFixed)),
+      updateObj:       tweakFrobber(setWidthMode(example.WidthModeFlexible)),
+      enableFrobber2D: true,
+      expectedErrs: field.ErrorList{
+        field.Invalid(field.NewPath("spec", "mode"), nil, "field is immutable").WithOrigin("immutable"),
+      },
+    },
+  }
+
+  for name, tc := range testCases {
+    t.Run(name, func(t *testing.T) {
+      featuregatetesting.SetFeatureGatesDuringTest(t, feature.DefaultFeatureGate, featuregatetesting.FeatureOverrides{
+        features.Frobber2D: tc.enableFrobber2D,
+      })
+      apitesting.VerifyUpdateValidationEquivalence(
+        t,
+        ctx,
+        &tc.updateObj,
+        &tc.oldObj,
+        strategy.ValidateUpdate,
+        tc.expectedErrs,
+        apitesting.WithMinEmulationVersion(version.MustParse("1.36")),
+      )
+    })
+  }
+}
+
+func TestDeclarativeValidateStatusUpdate(t *testing.T) {
+  ctx := genericapirequest.WithRequestInfo(genericapirequest.NewDefaultContext(), &genericapirequest.RequestInfo{
+    APIGroup:    "example.k8s.io",
+    APIVersion:  "v1alpha1",
+    Resource:    "frobbers",
+    Subresource: "status",
+    Verb:        "update",
+  })
+  strategy := NewStatusStrategy(NewStrategy())
+  testCases := map[string]struct {
+    oldObj          example.Frobber
+    updateObj       example.Frobber
+    expectedErrs    field.ErrorList
+    enableFrobber2D bool
+  }{
+    "gate off, new status write rejected": {
+      oldObj:    tweakFrobber(),
+      updateObj: tweakFrobber(setStatusPhase("Pending")),
+      expectedErrs: field.ErrorList{
+        field.Forbidden(field.NewPath("status", "phase"), ""),
+      },
+    },
+    "gate on, valid status write allowed": {
+      oldObj:          tweakFrobber(),
+      updateObj:       tweakFrobber(setStatusPhase("Pending")),
+      enableFrobber2D: true,
+    },
+    "gate off, unchanged stored status ratchets": {
+      oldObj:    tweakFrobber(setStatusPhase("Pending")),
+      updateObj: tweakFrobber(setStatusPhase("Pending")),
+    },
+    "gate off, changed stored status rejected": {
+      oldObj:    tweakFrobber(setStatusPhase("Pending")),
+      updateObj: tweakFrobber(setStatusPhase("Admitted")),
+      expectedErrs: field.ErrorList{
+        field.Forbidden(field.NewPath("status", "phase"), ""),
+      },
+    },
+  }
+
+  for name, tc := range testCases {
+    t.Run(name, func(t *testing.T) {
+      featuregatetesting.SetFeatureGatesDuringTest(t, feature.DefaultFeatureGate, featuregatetesting.FeatureOverrides{
+        features.Frobber2D: tc.enableFrobber2D,
+      })
+      apitesting.VerifyUpdateValidationEquivalence(
+        t,
+        ctx,
+        &tc.updateObj,
+        &tc.oldObj,
+        strategy.ValidateUpdate,
+        tc.expectedErrs,
+        apitesting.WithMinEmulationVersion(version.MustParse("1.36")),
+      )
+    })
+  }
+}
+```
+
+Best practices to consider for the test:
+
+* use tweak helper to keeps tests easier to read and avoid drift between cases
+* use exact `field.ErrorList` expectations for error checking
+* if the field exists on both a root type and a nested template type, add the
+  same positive, omitted, and negative cases to both sites
+* for nested fields under immutable parents, expect the parent immutable error
+  path to dominate some update cases
+
+###### Common friction and current solutions
+
+Here are some common friction users while attempting these steps:
+
+* `[WORKAROUND]` defaulted gated fields still have rough edges
+  `+default` can interact poorly with `+k8s:optional` and may
+  require omitting a root-level `+k8s:optional` and adding
+  `+k8s:validation-gen-nolint`
+* `rest.WithOptions(...)` is required for any tag that reads gate state.
+  If you use `+k8s:ifDisabled(...)=+k8s:forbidden` or
+  `+k8s:ifDisabled(...)=+k8s:enumExclude` and omit `rest.WithOptions(...)`, the
+  gated rules silently behave as though the gate state was never provided.
+  The whole-field wipe-pass pattern does not require it, since validation is
+  gate-agnostic in that case.
+* for whole fields, prefer "wipe on gate off" over "reject on gate off".
+  The preferred pattern for whole-field gating is the wipe pass, which clears
+  the field in strategy prep when the gate is off. This is what the K8s
+  update policy expects. Reach for reject-on-write
+  (`+k8s:ifDisabled(...)=+k8s:forbidden`) only when wipe would be misleading,
+  as described in the "Strict Forbidden Semantics" escape-hatch section.
+  Per-enum-value gating is a separate sub-case: see "Adding a new enum value
+  behind a feature gate" above, where `+k8s:ifDisabled(...)=+k8s:enumExclude`
+  is the recommended default.
+* nested immutable parents can mask child-field failures
+  When the field lives under an already-immutable parent, update failures may be
+  reported at the parent path rather than the child field path.
+
+Before sending the PR, confirm all of the following:
+
+* the field is present in both external and internal API types
+* the external field has the intended DV tags
+* there is no overlapping new handwritten validation for the same simple check
+* the strategy passes `rest.WithDeclarativeEnforcement()`
+* the strategy prep or generated wipe drops the field when the gate is off,
+  and validation itself is gate-agnostic
+* if using `+k8s:ifDisabled(...)=+k8s:forbidden` (whole-field escape hatch) or
+  `+k8s:ifDisabled(...)=+k8s:enumExclude` (recommended for per-enum-value
+  gating), the strategy also passes `rest.WithOptions(...)`
+* `zz_generated.validations.go` contains the expected validation and enum
+  calls
+* the new field has declarative validation tests for the required
+  gate-on/gate-off cases
+* if the field is under `status`, both root-path and `/status` tests exist
+
+After code generation, run the unit tests for the resource you changed.
+
+##### Do not add new handwritten validation for the same field
+
+If declarative validation covers the new field correctly, do not also add new
+checks for that field in `pkg/apis/<group>/validation/validation.go`.
+
+If DV can cover some of the new field's checks but cannot cover all of them,
+prefer handwritten validation for that field rather than splitting one field's
+checks between DV and handwritten validation.
 
 ## Edit version conversions
 
