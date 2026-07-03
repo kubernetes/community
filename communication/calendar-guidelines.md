@@ -15,6 +15,10 @@ practices.
 
 Please feel free to PR in your favorite tips and tricks that may help others.
 
+Calendar events and meeting invites are covered by the community-wide
+[No Solicitation] policy: do not use them to promote commercial products
+or services.
+
 - [Calendar Guidelines](#calendar-guidelines)
   - [Establishing a New Meeting](#establishing-a-new-meeting)
     - [Testing Permissions](#testing-permissions)
@@ -176,6 +180,7 @@ to refresh invites sent to the group.
 
 
 [gsuite]: https://github.com/kubernetes/community/issues/3362
+[No Solicitation]: ./README.md#no-solicitation
 [doodle]: https://doodle.com
 [testing permissions]: #testing-permissions
 [new shared calendar]: https://support.google.com/calendar/answer/37095?hl=en

@@ -132,7 +132,9 @@ Moderators _MUST_:
     appropriately.
 - Become familiar with the [Kubernetes Community Values].
 - Take care of spam as soon as possible, which may mean taking action by
-  removing a member from that resource.
+  removing a member from that resource. The community-wide
+  [No Solicitation] policy is the reference for what counts as
+  unsolicited commercial content.
 - Foster a safe and productive environment by being aware of potential multiple
   cultural differences between Kubernetes community members.
 - Understand that you might be contacted by moderators, community managers, and
@@ -282,6 +284,7 @@ guidelines:
 [charter]: /sig-contributor-experience/charter.md#code-binaries-and-services
 [moderators]: ./moderators.md
 [Code of Conduct]: /code-of-conduct.md
+[No Solicitation]: ./README.md#no-solicitation
 [Kubernetes Community Values]: /values.md
 [stages of burnout]: https://opensource.com/business/15/12/avoid-burnout-live-happy
 [Code of Conduct Committee]: /committee-code-of-conduct/README.md

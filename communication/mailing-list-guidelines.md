@@ -63,7 +63,8 @@ Moderation of the SIG/WG/subproject lists is up to that individual
 SIG/WG/subproject. The admins are there to help facilitate leadership changes, 
 or various other administrative functions.
 
-Users who are violating the [Code of Conduct] or other negative activities
+Users who are violating the [Code of Conduct], the community-wide
+[No Solicitation] policy, or engaging in other negative activities
 (like spamming) should be moderated.
 - [Lock the thread immediately] so that people cannot reply to the thread.
 - [Delete the post].
@@ -283,6 +284,7 @@ To archive a mailing list, use the below procedure.
 [moderation queue]: #create-moderation-queue
 [sig-list]: /sig-list.md
 [Code of Conduct]: /code-of-conduct.md
+[No Solicitation]: ./README.md#no-solicitation
 [admins]: ./moderators.md#mailing-lists
 [sig contributor experience mailing list]: https://groups.google.com/forum/#!forum/kubernetes-sig-contribex
 [moderation guidelines]: ./moderation.md

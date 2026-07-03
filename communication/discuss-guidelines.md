@@ -63,6 +63,9 @@ If there is an issue with the platform itself, please use the
 
 ## General communication guidelines
 
+The community-wide [No Solicitation] policy applies on Discuss: do not post
+unsolicited commercial or promotional content, in topics or in private messages.
+
 ### PM (Private Message) conversations
 
 Please do not engage in proprietary company specific conversations in the
@@ -201,6 +204,7 @@ list with the new region, the moderators and their timezone.
 
 
 [Discourse]: https://discourse.org
+[No Solicitation]: ./README.md#no-solicitation
 [A community forum for Kubernetes KEP]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-contributor-experience/0000-community-forum
 [archive k-users]: https://github.com/kubernetes/community/issues/2492
 [Kubernetes Code of Conduct]: /code-of-conduct.md

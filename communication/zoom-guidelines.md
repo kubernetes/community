@@ -23,6 +23,9 @@ and general moderation guidelines.
 The Kubernetes project adheres to the [Kubernetes Code of Conduct]
 throughout all platforms and includes all communication mediums.
 
+The community-wide [No Solicitation] policy also applies: unsolicited
+pitching of commercial products has no place in community meetings.
+
 ## Zoom license management
 
 Zoom licenses are managed by the [CNCF Service Desk] through the
@@ -194,6 +197,7 @@ Thanks for making Kubernetes meetings work great!
 [SIG/WG meetings]: /sig-list.md
 [Kubernetes code of conduct]: /code-of-conduct.md
 [moderation]: ./moderation.md
+[No Solicitation]: ./README.md#no-solicitation
 [CNCF Service Desk]: https://github.com/cncf/servicedesk
 [Zoom Admins]: ./moderators.md#zoom
 [centralized list of administrators]: ./moderators.md

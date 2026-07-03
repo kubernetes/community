@@ -63,6 +63,8 @@ in warnings, deletion of posts, restrictions on posting, temporary or
 permanent deactivation of user accounts, and even restrictions on entire
 organizations.  We rely on our community to report prohibited behavior to
 the Slack admins; if you see any of the below, please use the [Message Reporter].
+These rules implement the community-wide [No Solicitation] policy, which
+applies to all Kubernetes communication platforms.
 
 * Violations of the **[Code of Conduct][coc]**
 * Posting **Spam**: you may not post commercial, promotional messages anywhere in
@@ -368,3 +370,4 @@ discussed in Slack itself.
 [GitHub Issue]: https://github.com/kubernetes/community/issues/new/choose
 [Slack's policy on inactivated accounts]: https://get.slack.help/hc/en-us/articles/204475027-Deactivate-a-member-s-account
 [Message Reporter]: #reporting-a-problem
+[No Solicitation]: ./README.md#no-solicitation

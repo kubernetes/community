@@ -36,7 +36,7 @@ devoted to the Kubernetes project. Please check the guidelines and any relevant
 chat/conversation history before posting. Spam and sales pitches are not tolerated
 on these platforms.
 
-### Appropriate Content for Community Resources
+### No Solicitation
 
 All communications properties are under the [Kubernetes code of conduct].
 Additionally, these resources are for the contributors and users of Kubernetes; commercial usage of these properties is heavily moderated.
@@ -51,6 +51,10 @@ Examples of appropriate content:
 - Asking about commercial products in an appropriate channel. For example most clouds have a channel in Slack, asking how to use GKE on the GKE channel or AKS on the Azure channels is fine.
 - "Does anyone have experience with project foo?" is fine
 - Some OSS projects are also hosted on the Kubernetes Slack that also have a commercial offering, these are allowed.
+
+This policy applies to every platform listed on this page; the platform-specific
+guidelines below implement and extend it. Report violations to that platform's
+[moderators], who enforce it per the [moderation guidelines].
 
 ## Decisions Are Made Here
 
@@ -214,6 +218,7 @@ place!
 [submit a blog post]: https://kubernetes.io/docs/contribute/start/#write-a-blog-post
 [zoom guidelines]: ./zoom-guidelines.md
 [moderators]: ./moderators.md
+[moderation guidelines]: ./moderation.md
 [slack moderators]: ./moderators.md#slack
 [#kubernetes-contributors]: https://app.slack.com/client/T09NY5SBT/C09R23FHP
 [#sig-contribex]: https://app.slack.com/client/T09NY5SBT/C1TU9EB9S
