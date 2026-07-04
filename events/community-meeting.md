@@ -1,5 +1,5 @@
 ---
-title: Monthly Community Meeting
+title: Monthly Community Meeting [currently inactive]
 weight: 1
 description: |
   The Kubernetes community meeting is intended to provide a holistic overview of
@@ -11,6 +11,8 @@ description: |
 > **⚠️ DEPRECATED**: This meeting is deprecated and no longer active. If you're an org member, consider joining the [#kubernetes-org-members](https://kubernetes.slack.com/archives/C05PWRWPZSQ) Slack channel and if you're a SIG Chair/TL, WG Organizer or a Committee Member, consider joining the [#chairs-and-techleads](https://kubernetes.slack.com/archives/CD6LAC15M) Slack channel.
 
 # Kubernetes Monthly Community Meeting
+
+**Note:** The Kubernetes Monthly Community Meetings are currently inactive.
 
 We have PUBLIC and RECORDED [monthly meeting][community-meeting] the third
 Thursday of the month at [10am PT]; with the exception of December, or in the
