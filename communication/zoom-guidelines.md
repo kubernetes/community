@@ -95,28 +95,11 @@ guidance and training.
 
 ### AI notetakers
 
-AI notetaker bots — such as Otter.ai, Fireflies.ai, Fathom, and Read.ai —
+Any AI notetaker bots (A few examples are Otter.ai, Fireflies.ai, Fathom, or Read.ai)
 should not be permitted on Kubernetes Zoom calls. Unauthorized third-party
-recording poses risks around consent, privacy, and moderation.
+recording poses risks around consent, privacy, and moderation, and the meeting host should remove the participant immediately.
 
-The most effective defense is preventing these bots from joining in the first
-place. Hosts should configure these settings before the meeting starts:
-
-- **Set up the waiting room.** [Turn it on](https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0063329)
-  at zoom.us / Settings / Meeting / Security / Waiting Room. Participants
-  wait in the lobby until you let them in.
-
-- **Enforce authentication.** Enable "Only authenticated users can join
-  meetings" and restrict to Zoom sign-in. AI notetaker bots nearly always
-  join as anonymous guests, so this stops them cold.
-
-- **Enable CAPTCHA for guest users.** Provides a human-only barrier for the
-  rare case where guest access is needed.
-
-If an AI notetaker bot still gets through despite these safeguards, the host
-should remove the participant immediately using the **Remove** function and
-then **lock the meeting**. Report the incident to `@zoom-admins` in the
-`#sig-contribex` Slack channel.
+If there's an incident, report it to `@zoom-admins` in the `#sig-contribex` Slack channel.
 
 ### Escalating and Reporting a Problem
 
