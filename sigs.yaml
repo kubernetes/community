@@ -4066,6 +4066,8 @@ committees:
           company: Google
           email: vinayakankugoyal@gmail.com
       emeritus_leads:
+        - github: SaranBalaji90
+          name: Sri Saran Balaji
         - github: cji
           name: Craig Ingram
         - github: lukehinds

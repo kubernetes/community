@@ -26,6 +26,7 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 
 ## Emeritus Members
 
+* Sri Saran Balaji (**[@SaranBalaji90](https://github.com/SaranBalaji90)**)
 * Craig Ingram (**[@cji](https://github.com/cji)**)
 * Luke Hinds (**[@lukehinds](https://github.com/lukehinds)**)
 * Rita Zhang (**[@ritazh](https://github.com/ritazh)**)
