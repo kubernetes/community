@@ -139,10 +139,10 @@ Examples of contributions that would NOT be considered:
 | Date                    | Event                                                                 |
 |:------------------------|:----------------------------------------------------------------------|
 | Wednesday, May 20       | Steering Committee selects Election Committee                         |
-| Monday, June 15         | Announcement of Election and publication of voters.yaml                 |
-| Wednesday, July 29      | Steering Committee Q+A for the candidates (to be confirmed)           |
+| Monday, June 15         | Announcement of Election and publication of voters.yaml               |
 | Monday, August 3        | Candidate nominations due at the end of the day in AoE time           |
 | Tuesday, August 4       | All candidate bios due at the end of the day in AoE time              |
+| Wednesday, August 5     | Steering Committee Q+A for the candidates                             |
 | Friday, August 14       | Election Begins                                                       |
 | Tuesday, September 29   | Deadline to submit voter exception requests                           |
 | Thursday, October 1     | Election Closes at the end of the day in AoE time                     |
