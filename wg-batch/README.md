@@ -28,7 +28,7 @@ The [charter](charter.md) defines the scope and governance of the Batch Working 
 
 * Amy Chen (**[@amy](https://github.com/amy)**), CoreWeave
 * Marcin Wielgus (**[@mwielgus](https://github.com/mwielgus)**), Google
-* Yuki Iwai (**[@tenzen-y](https://github.com/tenzen-y)**), CyberAgent, Inc.
+* Yuki Iwai (**[@tenzen-y](https://github.com/tenzen-y)**), Preferred Networks, Inc.
 
 ## Emeritus Organizers
 

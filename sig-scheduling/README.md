@@ -90,7 +90,7 @@ The following [subprojects][subproject-definition] are owned by sig-scheduling:
 ### kueue
 - **Leads:**
   - Michał Woźniak (**[@mimowo](https://github.com/mimowo)**), Google
-  - Yuki Iwai (**[@tenzen-y](https://github.com/tenzen-y)**), CyberAgent, Inc.
+  - Yuki Iwai (**[@tenzen-y](https://github.com/tenzen-y)**), Preferred Networks, Inc.
 - **Owners:**
   - [kubernetes-sigs/kueue](https://github.com/kubernetes-sigs/kueue/blob/main/OWNERS)
 ### kwok
