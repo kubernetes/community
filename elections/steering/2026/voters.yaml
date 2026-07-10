@@ -11,6 +11,8 @@
 # History:
 # Log of changes to the file
 # 2026-06-15 - Initial generation of eligible voters from devstats + org members, CoCC, and SRC
+# 2026-06-30 - Add eligible voters since initial voters.yaml generation
+# 2026-07-06 - Add voters from approved exception requests
 #
 eligible_voters:
 - 08volt
@@ -78,6 +80,7 @@ eligible_voters:
 - bowei
 - brejman
 - brendandburns
+- bridgetkromhout
 - bryantbiggs
 - bschaatsbergen
 - Bslabe123
@@ -93,6 +96,7 @@ eligible_voters:
 - cheftako
 - chethanv28
 - chrischdi
+- chris-short
 - chw120
 - cici37
 - cjcullen
@@ -186,6 +190,7 @@ eligible_voters:
 - iholder101
 - illume
 - ingvagabund
+- intUnderflow
 - iomarsayed
 - irapandey
 - IrvingMg
