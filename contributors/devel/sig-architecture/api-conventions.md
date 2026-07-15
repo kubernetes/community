@@ -2009,12 +2009,14 @@ the future, an HTTP/2 implementation will be exposed that deprecates SPDY.
 
 ## Validation
 
-API objects are validated upon receipt by the apiserver. 
-Validation can be implemented in two ways: declaratively, using tags on the Go
-type definitions, or manually, by writing validation functions. For all new
-APIs, declarative validation is the preferred approach for the validation rules
-it supports.  For more information see the
-[declarative validation documentation](api_changes.md#declarative-validation).
+API objects are validated upon receipt by the apiserver.
+Validation can be implemented in two ways: declaratively, using `+k8s:` tags on
+the Go type definitions (processed by the `validation-gen` code generator), or
+manually, by writing validation functions in `validation.go`. For all new APIs,
+declarative validation is the preferred approach for the validation rules it
+supports. For the supported tags and how to apply them, see the
+[declarative validation section of the API changes guide](api_changes.md#declarative-validation)
+and the [declarative validation documentation](https://kubernetes.io/docs/reference/using-api/declarative-validation/).
 Validation errors are flagged and returned to the caller in a `Failure` status,
 usually with `reason` set to `Invalid`.
 
