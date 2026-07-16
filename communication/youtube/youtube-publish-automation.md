@@ -15,10 +15,18 @@ Automates the flow of Zoom cloud recordings into Google Drive for backup, and th
 [@youtube-admins](https://github.com/kubernetes/community/blob/master/communication/moderators.md#owners)
 
 **Last Updated:**  
-Oct 29, 2025, 09:15 AM CET
+Feb 06, 2026, 22:32 CET
+
+## 2. Prerequisites
+
+**Important:** Before setting up this Zapier workflow, the Zapier app must be added to your Zoom Marketplace. This is required for Zapier to access Zoom cloud recordings and trigger the automation workflow.
+
+To add the Zapier app to the Zoom Marketplace, reach out to [@zoom-admins](https://github.com/kubernetes/community/blob/master/communication/moderators.md#zoom) on Slack. They have access the the admin account to complete this setup.
+
+![zapier-app-for-zoom-marketplace](zapier-access-for-zoom.png)
 
 
-## 2. Workflow Diagram
+## 3. Workflow Diagram
 
 **High-level visual sequence:**
 
@@ -31,7 +39,7 @@ Oct 29, 2025, 09:15 AM CET
 ![Zapier Workflow Diagram](zapier-workflow-for-k8s-community-youtube.png)
 
 
-## 3. Step-by-Step Breakdown & Rebuild
+## 4. Step-by-Step Breakdown & Rebuild
 
 **Template:**  
 https://zapier.com/shared/1cf48789b958c3e2bf8cae14ed25c6943f193a7f
@@ -39,7 +47,7 @@ https://zapier.com/shared/1cf48789b958c3e2bf8cae14ed25c6943f193a7f
 **Zap Name:**  
 [SIG-NAME]-Integration: Zoom Recording → Google Drive → YouTube
 
-### 3.1 Trigger – Zoom
+### 4.1 Trigger – Zoom
 
 - **App:** Zoom (v2.24.7)
 - **Event:** New Cloud Recording
@@ -55,7 +63,7 @@ https://zapier.com/shared/1cf48789b958c3e2bf8cae14ed25c6943f193a7f
 - Download URL → used later for file upload
 
 
-### 3.2 Action – Formatter by Zapier (Date/Time)
+### 4.2 Action – Formatter by Zapier (Date/Time)
 
 - **App:** Formatter by Zapier
 - **Event:** Date/Time → Format
@@ -70,7 +78,7 @@ https://zapier.com/shared/1cf48789b958c3e2bf8cae14ed25c6943f193a7f
 (This clean date string will be inserted into file names and YouTube titles.)
 
 
-### 3.3 Action – Google Drive (Upload File)
+### 4.3 Action – Google Drive (Upload File)
 
 - **App:** Google Drive
 - **Event:** Upload File
@@ -83,7 +91,7 @@ https://zapier.com/shared/1cf48789b958c3e2bf8cae14ed25c6943f193a7f
 - Test: Zapier should upload a sample file into your Drive folder
 
 
-### 3.4 Action – YouTube (Upload Video)
+### 4.4 Action – YouTube (Upload Video)
 
 - **App:** YouTube
 - **Event:** Upload Video
@@ -103,7 +111,7 @@ https://zapier.com/shared/1cf48789b958c3e2bf8cae14ed25c6943f193a7f
 - Tags: (Optional, e.g., Kubernetes, Working Group, Node Lifecycle)
 
 
-### 3.5 Action – YouTube (Add Video to Playlist)
+### 4.5 Action – YouTube (Add Video to Playlist)
 
 - **App:** YouTube
 - **Event:** Add Video to Playlist
@@ -113,7 +121,7 @@ https://zapier.com/shared/1cf48789b958c3e2bf8cae14ed25c6943f193a7f
 - Video: Map video ID from Step 4 (YouTube Upload)
 
 
-## 4. Testing the Zap
+## 5. Testing the Zap
 
 - Run the Zap manually with a sample Zoom recording
 - Confirm:
@@ -122,7 +130,7 @@ https://zapier.com/shared/1cf48789b958c3e2bf8cae14ed25c6943f193a7f
     - Video appears in the right playlist
 
 
-## 5. Error Handling
+## 6. Error Handling
 
 - **Large files:** If file upload fails, check Zoom → Drive connection limits
 - **Retries:** Zapier retries failed steps automatically; confirm retry settings
@@ -131,7 +139,7 @@ https://zapier.com/shared/1cf48789b958c3e2bf8cae14ed25c6943f193a7f
 - **Email Notifications:** Set up email notifications for failed runs
 
 
-## 6. Accounts & Connections
+## 7. Accounts & Connections
 
 This section details the accounts and connections used within our Zapier integrations.  
 Maintaining accurate and secure connections is vital for uninterrupted workflows.
@@ -143,20 +151,20 @@ Maintaining accurate and secure connections is vital for uninterrupted workflows
 | YouTube Account    | Person       | Person       | Date         |
 
 
-## 7. Change Management Note
+## 8. Change Management Note
 
 Any edits to this Zap must be documented in this SOP and reviewed by [@youtube-admins](https://github.com/kubernetes/community/blob/master/communication/moderators.md#owners).  
 Export a new PNG of the flow when changes are made.
 
 
-## 8. Team Implementation Notes
+## 9. Team Implementation Notes
 
 - All team members should have access to the Google Drive destination folder and YouTube playlist
 - Test workflow with a small sample recording before enabling full automation
 - Keep a version history: save screenshots or JSON export of Zap for version tracking
 
 
-## 9. Testing Checklist
+## 10. Testing Checklist
 
 - Trigger fires when a new Zoom recording is created
 - File uploads to correct Google Drive folder
