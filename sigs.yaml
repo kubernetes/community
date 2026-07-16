@@ -3848,7 +3848,6 @@ workinggroups:
 
     charter_link: charter.md
     stakeholder_sigs:
-      - Autoscaling
       - Cluster Lifecycle
     label: node-identity
     leadership:
