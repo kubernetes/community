@@ -80,5 +80,5 @@ This WG will disband when its deliverables are complete
 ### Progress Reporting
 
 - Annual reports to the steering committee (due by 1 March)
-- Quarterly updates to sponsoring SIG mailing lists (sig-node@, sig-cluster-lifecycle@, @sig-cloud-provider)
+- Quarterly updates to sponsoring and participating SIG mailing lists (sig-cluster-lifecycle@, sig-node@, sig-cloud-provider@, sig-autoscaling@)
 - Monthly WG meetings open to the community
