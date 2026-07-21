@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # Autoscaling Special Interest Group
 
-Covers development and maintenance of components for automated scaling in Kubernetes. This includes automated vertical and horizontal pod autoscaling, initial resource estimation, cluster-proportional system component autoscaling, and autoscaling of Kubernetes clusters themselves.
+Covers development and maintenance of components for automated workload and node scaling in Kubernetes. This includes automated vertical and horizontal pod autoscaling (workload autoscaling), initial workload resource estimation, cluster-proportional system component autoscaling, and autoscaling of Kubernetes clusters themselves (node autoscaling).
 
 The [charter](charter.md) defines the scope and governance of the Autoscaling Special Interest Group.
 
@@ -93,11 +93,32 @@ The following [subprojects][subproject-definition] are owned by sig-autoscaling:
 [subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
 <!-- BEGIN CUSTOM CONTENT -->
-## Concerns
-* autoscaling of clusters,
-* horizontal and vertical autoscaling of pods,
-* setting initial resources for pods,
-* topics related to monitoring pods and gathering their metrics (e.g.: Heapster)
+
+## How To Contribute a Sub-Project to the SIG
+
+SIG Autoscaling welcomes project candidates (either new or existing) for official sponsorship, with the following requirements:
+
+- Any project proposed for donation must address an unsolved problem that falls under SIG [charter](charter.md).
+- Project must demonstrate that the problem is worth solving:
+  - Addresses real, demonstrated user concerns
+  - Unblocks other projects or efforts in the Kubernetes ecosystem
+  - Reduces the overall problem space, i.e., doesn't introduce more problems
+- Solutions from a project proposed for donation should not intersect with the published roadmap of one or more existing SIG-sponsored projects. (Default is to prefer addressing well-known, scoped problems within existing community projects.)
+  - SIG-sponsored project owners *may* advocate for exploring such problems independently; that blessing should be documented publicly.
+- Any project proposed for donation should include stakeholders from more than one company.
+  - An exception can be made if demonstrated outreach to the larger community can be proven: sometimes general solutions can intersect with a single entity stakeholder/investor.
+- Any project proposed for donation should have at least three active Kubernetes org members who will maintain the project, expressed in an OWNERS file.
+- Does the project proposed for donation include existing APIs?
+  - If so, are there existing users? If no users, generally: High level API review is part of acceptance criteria, to ensure that SIG-sponsored projects express Kubernetes-compatible APIs.
+
+In addition to the above, any project proposed for donation will adhere to the general requirements for [Kubernetes SIG repositories](../github-management/kubernetes-repositories.md#sig-repositories).
+
+If your project meets the above criteria, please attend a weekly [SIG meeting](#meetings) to announce your intent, and to take community feedback. In addition, after the public announcement of intent in the SIG meeting, please broadcast a public message to the [SIG Autoscaling user group](https://groups.google.com/g/kubernetes-sig-autoscaling), and include the following:
+
+- Brief overview of your project, its intended scope, and the reasons why SIG Autoscaling sponsorship will deliver maximum value to the Kubernetes customer and developer communities.
+- Any existing project references, existing GitHub repositories, design docs
+- Evidence of user value proposition (e.g., open issues in Kubernetes development ecosystem, slack threads)
+- State concrete, time-bound goals for your project with SIG Autoscaling (e.g., a user-informed beta API within 18 months) so that the SIG can deterministically wind down the project effort if goals are not met (the SIG can't host infinite sub-projects forever).
 
 ## Demo and Presentation Guidelines
 
