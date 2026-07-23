@@ -104,12 +104,12 @@ SIG Autoscaling welcomes project candidates (either new or existing) for officia
   - Unblocks other projects or efforts in the Kubernetes ecosystem
   - Reduces the overall problem space, i.e., doesn't introduce more problems
 - Solutions from a project proposed for donation should not intersect with the published roadmap of one or more existing SIG-sponsored projects. (Default is to prefer addressing well-known, scoped problems within existing community projects.)
-  - SIG-sponsored project owners *may* advocate for exploring such problems independently; that blessing should be documented publicly.
-- Any project proposed for donation should include stakeholders from more than one company.
+  - SIG-sponsored project owners *may* advocate for exploring problems that intersect with existing projects' problem spaces independently; that blessing should be documented publicly.
+- Any project proposed for donation should include stakeholders (code contributor and/or project maintainer) from more than one company.
   - An exception can be made if demonstrated outreach to the larger community can be proven: sometimes general solutions can intersect with a single entity stakeholder/investor.
 - Any project proposed for donation should have at least three active Kubernetes org members who will maintain the project, expressed in an OWNERS file.
 - Does the project proposed for donation include existing APIs?
-  - If so, are there existing users? If no users, generally: High level API review is part of acceptance criteria, to ensure that SIG-sponsored projects express Kubernetes-compatible APIs.
+  - If so, are there existing users? If no users, generally: High level API review from SIG Autoscaling Leads is part of acceptance criteria, to ensure that SIG-sponsored projects express Kubernetes-compatible APIs.
 
 In addition to the above, any project proposed for donation will adhere to the general requirements for [Kubernetes SIG repositories](../github-management/kubernetes-repositories.md#sig-repositories).
 
