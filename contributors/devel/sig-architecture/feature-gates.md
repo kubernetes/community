@@ -308,6 +308,27 @@ DeprecatedFeature: {
 
 NOTE: We do not remove GA fields from the API.
 
+#### Deprecating behavior that has no feature gate
+
+Some behavior is on by default with no gate, either because it predates feature
+gates or because its gate was removed after the feature went GA. To deprecate it,
+add a gate anchored at `1.0` recording the current default, then the
+`Deprecated` transition. The `1.0` entry is
+not a real release where the gate existed. It tells [compatibility
+version](#compatibility-versions) what the behavior was before deprecation, so
+emulating an older release still reproduces it. The anchor's default matches the
+old behavior: `true` if it was on, `false` if off.
+
+```go
+AllowLegacyBehavior: {
+  {Version: version.MustParse("1.0"), Default: true, PreRelease: featuregate.GA}, // on since the start, no gate.
+  {Version: version.MustParse("1.31"), Default: false, PreRelease: featuregate.Deprecated}, // gate added, deprecated and off. LockToDefault unset to give users time to transition.
+  {Version: version.MustParse("1.33"), Default: false, LockToDefault: true, PreRelease: featuregate.Deprecated}, // off and locked. remove in v1.36.
+},
+```
+
+From there the lifecycle is the same as any other deprecation.
+
 ### Other scenarios
 
 Sometimes we use `{Default: true, PreRelease: featuregate.Beta}` for keeping
