@@ -93,7 +93,9 @@ git rebase upstream/master
 Please don't use `git pull` instead of the above `fetch` and
 `rebase`. Since `git pull` executes a merge, it creates merge commits. These make the commit history messy
 and violate the principle that commits ought to be individually understandable
-and useful (see below). 
+and useful (see below). However, once your PR has been created, merge commits
+become preferable to rebasing to [help your
+reviewers](./pull-requests.md#resolving-merge-conflicts).
 
 You might also consider changing your `.git/config` file via
 `git config branch.autoSetupRebase always` to change the behavior of `git pull`, or another non-merge option such as `git pull --rebase`.
