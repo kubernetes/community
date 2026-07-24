@@ -62,13 +62,6 @@ flowchart TB
     z4 --> b4 --> s4
     z5 --> b5 --> s5
     z6 --> b6 --> s6
-
-    classDef plain fill:transparent,stroke:#888,stroke-width:1px,color:inherit
-    class f1,f2,f3,z1,z2,z3,z4,z5,z6,b1,b2,b3,b4,b5,b6,s1,s2,s3,s4,s5,s6 plain
-    style feeds fill:transparent,stroke:#888
-    style zaps fill:transparent,stroke:#888
-    style buffer fill:transparent,stroke:#888
-    style social fill:transparent,stroke:#888
 ```
 
 ## Stages
