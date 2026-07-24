@@ -108,3 +108,17 @@ usergroups:
       - tabbysable # Product Security Committee
       - xmudrii # Release Manager
       - Verolop # subproject owner / Release Manager
+  - name: release-comms
+    long_name: Release Communications
+    description: >-
+      Release Communications team for the current Kubernetes release cycle.
+      Members are updated each cycle by the Comms Lead.
+      Has access to the slack-post-message bot for broadcasting to SIG channels.
+    channels:
+      - release-comms
+      - sig-release
+    members:
+      - SwathiR03
+      - dipesh-rawat
+      - fsmunzo
+
