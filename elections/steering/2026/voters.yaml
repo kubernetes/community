@@ -13,6 +13,7 @@
 # 2026-06-15 - Initial generation of eligible voters from devstats + org members, CoCC, and SRC
 # 2026-06-30 - Add eligible voters since initial voters.yaml generation
 # 2026-07-06 - Add voters from approved exception requests
+# 2026-07-23 - Add voter from approved exception requests
 #
 eligible_voters:
 - 08volt
@@ -255,6 +256,7 @@ eligible_voters:
 - koksay
 - kolluria
 - kshalot
+- lachie83
 - lalitc375
 - landreasyan
 - laoj2
