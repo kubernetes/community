@@ -27,7 +27,7 @@ sigs:
           email: jpbetz@google.com
         - github: sttts
           name: Stefan Schimanski
-          company: Upbound
+          company: NVIDIA
           email: stefan.schimanski@gmail.com
     meetings:
       - description: Declarative APIs and Linters Meeting
