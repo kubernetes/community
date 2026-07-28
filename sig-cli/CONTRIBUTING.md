@@ -81,8 +81,11 @@ work.
 - Familiarize yourself with the code:
   - [kubernetes/cmd/kubectl] is the entry point
   - [kubernetes/staging/src/k8s.io/kubectl/pkg] is the implementation
-  - Look at how some of the other commands are implemented
-  - [Codebase Tour]
+  - Look at how some of the other commands are implemented:
+    - [Almost new style (`apiresources`)](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubectl/pkg/cmd/apiresources/apiresources.go)
+    - [Latest style (`wait`)](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubectl/pkg/cmd/wait/wait.go)
+  - [Codebase Tour(old)]
+  - [Codebase Tour(new)]
 - Try adding a new command to do something simple:
   - Add `kubectl hello-world`: print "Hello World"
   - Add `kubectl hello-kubernetes -f file`: Print "Hello \<kind of resource\> \<name of resource\>"
@@ -413,7 +416,8 @@ See the sig-cli [community page] for points of contact and meeting times:
 [kubectl docs]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
 [kubernetes/cmd/kubectl]: https://git.k8s.io/kubernetes/cmd/kubectl
 [kubernetes/staging/src/k8s.io/kubectl/pkg]: https://git.k8s.io/kubernetes/staging/src/k8s.io/kubectl/pkg
-[Codebase Tour]:  https://youtu.be/eZeCFRh2uGg?t=538
+[Codebase Tour(old)]:  https://youtu.be/eZeCFRh2uGg?t=538
+[Codebase Tour(new)]:  https://youtu.be/Un9N9UNiO5w?t=21
 [leads]: /sig-cli/README.md#leadership
 [management overview]: https://kubernetes.io/docs/concepts/tools/kubectl/object-management-overview
 [meeting]: /sig-cli/README.md#meetings
