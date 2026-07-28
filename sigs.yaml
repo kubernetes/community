@@ -903,7 +903,7 @@ sigs:
         leads:
           - github: koba1t
             name: Yugo Kobayashi
-            company: LY Corporation
+            company: SB Intuitions Corp
   - dir: sig-cloud-provider
     name: Cloud Provider
     mission_statement: >

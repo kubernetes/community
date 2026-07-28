@@ -101,7 +101,7 @@ by server. Supports core resources, CRDs, CEL validations, and more!
   - [kubernetes-sigs/kubectl-validate](https://github.com/kubernetes-sigs/kubectl-validate/blob/main/OWNERS)
 ### kustomize
 - **Leads:**
-  - Yugo Kobayashi (**[@koba1t](https://github.com/koba1t)**), LY Corporation
+  - Yugo Kobayashi (**[@koba1t](https://github.com/koba1t)**), SB Intuitions Corp
 - **Owners:**
   - [kubernetes-sigs/kustomize](https://github.com/kubernetes-sigs/kustomize/blob/master/OWNERS)
 - **Contact:**
