@@ -108,10 +108,8 @@ SIG Autoscaling welcomes project candidates (either new or existing) for officia
 - Any project proposed for donation should include stakeholders (code contributor and/or project maintainer) from more than one company.
   - An exception can be made if demonstrated outreach to the larger community can be proven: sometimes general solutions can intersect with a single entity stakeholder/investor.
 - Any project proposed for donation should have at least three active Kubernetes org members who will maintain the project, expressed in an OWNERS file.
-- Does the project proposed for donation include existing APIs?
-  - If so, are there existing users? If no users, generally: High level API review from SIG Autoscaling Leads is part of acceptance criteria, to ensure that SIG-sponsored projects express Kubernetes-compatible APIs.
 
-In addition to the above, any project proposed for donation will adhere to the general requirements for [Kubernetes SIG repositories](../github-management/kubernetes-repositories.md#sig-repositories).
+In addition to the above, any project proposed for donation will adhere to the general requirements for [Kubernetes SIG repositories](../github-management/kubernetes-repositories.md#sig-repositories), and is subject to final acceptance review and approval by SIG Autoscaling Leads.
 
 If your project meets the above criteria, please attend a weekly [SIG meeting](#meetings) to announce your intent, and to take community feedback. In addition, after the public announcement of intent in the SIG meeting, please broadcast a public message to the [SIG Autoscaling user group](https://groups.google.com/g/kubernetes-sig-autoscaling), and include the following:
 
