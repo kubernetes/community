@@ -159,6 +159,7 @@ channels:
   - name: github
     archived: true
   - name: github-management
+  - name: github-status
   - name: gitkube
   - name: gitops
   - name: gke
