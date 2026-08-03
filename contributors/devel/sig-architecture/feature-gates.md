@@ -130,6 +130,12 @@ While some exceptions may happen, approvers should use the following guidance:
 
 [API changes]: https://github.com/kubernetes/community/blob/master/sig-architecture/api-review-process.md#what-parts-of-a-pr-are-api-changes
 
+### Node Declared Features
+
+When adding new features that control node-level behavior (e.g., implemented in the kubelet), the control plane (such as the scheduler or admission webhooks) may need to be aware of the feature's enablement state to correctly schedule or update pods. In such cases, the **Node Declared Feature** framework can be used for version-skew management as the feature graduates from `Alpha` to `GA`.
+
+See the [Node Declared Features guide](../sig-node/node-declared-features.md) for more details.
+
 ### Compatibility versions
 
 The Kubernetes "compatibility version" feature promises that control-plane
