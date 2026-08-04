@@ -41,6 +41,6 @@ I’m running for Steering to help lead the community toward a sustainable futur
 
 ## Resources About Me
 
-- [kaslin.rocks](https://kaslin.rocks)
+- [Kaslin on Linkedin](https://www.linkedin.com/in/kaslinfields/)
 - [kaslin.rocks/talks](https://kaslin.rocks/talks)
 - [CNCF Ambassador bio](https://www.cncf.io/people/ambassadors/?p=kaslin-fields&_sf_s=kaslin+fields)
