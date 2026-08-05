@@ -3568,7 +3568,7 @@ workinggroups:
           email: kfswain@google.com
         - github: nirrozenbaum
           name: Nir Rozenbaum
-          company: IBM
+          company: NVIDIA
           email: nir.rozenbaum@gmail.com
         - github: usize
           name: Morgan Foster
