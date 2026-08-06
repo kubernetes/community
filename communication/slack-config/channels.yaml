@@ -425,6 +425,7 @@ channels:
   - name: openebs
   - name: openebs-dev
   - name: openkruise
+  - name: openperouter
   - name: openshift-dev
     archived: true
   - name: openshift-users
