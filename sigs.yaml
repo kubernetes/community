@@ -3219,10 +3219,6 @@ sigs:
           name: Michelle Shepardson
           company: Google
           email: amerai@google.com
-        - github: xmcqueen
-          name: Brian McQueen
-          company: LinkedIn
-          email: mcqueenorama@gmail.com
       tech_leads:
         - github: BenTheElder
           name: Benjamin Elder
@@ -3249,6 +3245,8 @@ sigs:
           name: Steve Kuznetsov
         - github: timothysc
           name: Timothy St. Clair
+        - github: xmcqueen
+          name: Brian McQueen
     meetings:
       - description: Hydrophone Office Hours
         day: Tuesday

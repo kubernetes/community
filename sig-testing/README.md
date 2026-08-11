@@ -26,7 +26,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Brady Pratt (**[@jbpratt](https://github.com/jbpratt)**), Red Hat
 * Michelle Shepardson (**[@michelle192837](https://github.com/michelle192837)**), Google
-* Brian McQueen (**[@xmcqueen](https://github.com/xmcqueen)**), LinkedIn
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -44,6 +43,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Aaron Crickenberger (**[@spiffxp](https://github.com/spiffxp)**)
 * Steve Kuznetsov (**[@stevekuznetsov](https://github.com/stevekuznetsov)**)
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**)
+* Brian McQueen (**[@xmcqueen](https://github.com/xmcqueen)**)
 
 ## Contact
 - Slack: [#sig-testing](https://kubernetes.slack.com/messages/sig-testing)
