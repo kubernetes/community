@@ -635,3 +635,4 @@ channels:
   - name: zarf-dev
     archived: true
   - name: krkn
+  - name: kueue-release-management
