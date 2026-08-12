@@ -15,6 +15,7 @@
 # 2026-07-06 - Add voters from approved exception requests
 # 2026-07-23 - Add voter from approved exception requests
 # 2026-08-11 - Add voters from approved exception requests
+# 2026-08-12 - Add eligible voters from CHAOSS CollectOSS Database
 #
 eligible_voters:
 - 08volt
@@ -56,7 +57,9 @@ eligible_voters:
 - ania-borowiec
 - anshuman-agarwala
 - AnshumanTripathi
+- aoi1
 - aojea
+- apullo777
 - aramase
 - ArangoGutierrez
 - ardaguclu
@@ -65,6 +68,7 @@ eligible_voters:
 - arkodg
 - aroradaman
 - arshadd-b
+- asa3311
 - asem-hamid
 - atiratree
 - AutuSnow
@@ -73,15 +77,18 @@ eligible_voters:
 - barney-s
 - bart0sh
 - BenjaminBraunDev
+- benluddy
 - BenTheElder
 - bexxmodd
 - bhope
+- BigDarkClown
 - bitoku
 - BlaineEXE
 - bnallapeta
 - bowei
 - brejman
 - brendandburns
+- brianpursley
 - bridgetkromhout
 - bryantbiggs
 - bschaatsbergen
@@ -93,11 +100,15 @@ eligible_voters:
 - capri-xiyue
 - carlory
 - CatherineF-dev
+- cartermckinnon
 - cblecker
 - chadmcrowell
+- Champbreed
 - cheftako
 - chethanv28
+- Choraden
 - chrischdi
+- chrishenzie
 - chris-short
 - chw120
 - cici37
@@ -105,11 +116,13 @@ eligible_voters:
 - cji
 - cjihrig
 - clebs
+- codeurluce
 - ComradeProgrammer
 - ConnorJC3
 - cpanato
 - damdo
 - DamianSawicki
+- DanielXiao
 - danehans
 - dankova22
 - danwinship
@@ -135,7 +148,9 @@ eligible_voters:
 - drewhagen
 - droslean
 - Edwinhr716
+- ekam-walia
 - elevran
+- elieserr
 - ElijahQuinones
 - ellistarn
 - elmiko
@@ -156,10 +171,12 @@ eligible_voters:
 - FelipeYepez
 - ffromani
 - fmuyassarov
+- fsmunoz
 - furkatgofurov7
 - gabesaba
 - Gacko
 - gauravkghildiyal
+- gavinkflam
 - GiuseppeTT
 - gjkim42
 - GnatorX
@@ -173,6 +190,7 @@ eligible_voters:
 - haiyanmeng
 - hakman
 - hakuna-matatah
+- hana-boy
 - harche
 - hdp617
 - helayoty
@@ -208,13 +226,17 @@ eligible_voters:
 - jberkus
 - jbpratt
 - jbtk
+- jdzikowski
 - JeffLuoo
 - Jefftree
 - jenshu
 - jeremyrickard
 - jigisha620
 - jjk-g
+- jklaw90
+- jlamillan
 - jmdeal
+- jm-franc
 - jmickey
 - joaquimrocha
 - joelsmith
@@ -227,6 +249,7 @@ eligible_voters:
 - joshjms
 - jpbetz
 - Jpsassine
+- jrvaldes
 - jsafrane
 - justaugustus
 - justinsb
@@ -257,6 +280,7 @@ eligible_voters:
 - koksay
 - kolluria
 - kshalot
+- KunWuLuan
 - lachie83
 - lalitc375
 - landreasyan
@@ -301,6 +325,7 @@ eligible_voters:
 - michaelhtm
 - michelle192837
 - michellengnx
+- mikebrow
 - mikemorris
 - mimowo
 - mjudeikis
@@ -308,8 +333,10 @@ eligible_voters:
 - mloiseleur
 - mm4tt
 - mmamczur
+- mochizuki875
 - Moh0ps
 - mortent
+- moshevayner
 - mowangdk
 - mrbobbytables
 - MrFreezeex
@@ -319,6 +346,7 @@ eligible_voters:
 - mstruebing
 - mszadkow
 - mtardy
+- mtrqq
 - mtulio
 - my-git9
 - mykysha
@@ -362,8 +390,10 @@ eligible_voters:
 - Prajyot-Parab
 - pravk03
 - prezha
+- princepereira
 - Priyankasaggu11929
 - puerco
+- PushkarJ
 - qiujian16
 - Qqkyu
 - rahulgurnani
@@ -373,6 +403,7 @@ eligible_voters:
 - rata
 - rayandas
 - raywainman
+- remyleone
 - rexagod
 - reylejano
 - ricardomaraschini
@@ -382,15 +413,18 @@ eligible_voters:
 - rikatz
 - ritazh
 - robscott
+- RomanBednar
 - ronaldngounou
 - rostislavbobo
 - roycaihw
 - rschalo
 - rst0git
 - rvanderp3
+- rxinui
 - ryan-mist
 - ryanzhang-oss
 - rytswd
+- rzlink
 - S0okJu
 - SachinVarghese
 - sairameshv
@@ -399,6 +433,7 @@ eligible_voters:
 - samzong
 - sanposhiho
 - saschagrunert
+- SataQiu
 - sats-23
 - savirg
 - SayakMukhopadhyay
@@ -410,6 +445,8 @@ eligible_voters:
 - serathius
 - SergeyKanzhelev
 - serngawy
+- ShaanveerS
+- shaikenov
 - shanduur
 - shaneutt
 - shannonxtreme
@@ -444,21 +481,28 @@ eligible_voters:
 - stormqueen1990
 - strongjz
 - sttts
+- sudharshanibm
 - sunnylovestiramisu
 - sunya-ch
+- SwathiR03
 - swatisehgal
 - swetharepakula
 - szuecs
 - t-inu
 - tabbysable
+- tallaxes
 - tallclair
+- tao12345666333
 - tchap
 - tengqm
 - tenzen-y
+- terrytangyuan
 - tg123
+- thc1006
 - thockin
 - tico88612
 - TineoC
+- tkashem
 - togettoyou
 - tomergee
 - TomerNewman
@@ -468,6 +512,7 @@ eligible_voters:
 - toVersus
 - towca
 - tpantelis
+- troychiu
 - tssurya
 - u-kai
 - upodroid
@@ -487,7 +532,9 @@ eligible_voters:
 - vshkrabkov
 - vyncent-t
 - Vyom-Yadav
+- wangzhen127
 - wendy-ha18
+- whtssub
 - willie-yao
 - windsonsea
 - wojtek-t
@@ -500,6 +547,7 @@ eligible_voters:
 - xirehat
 - xmudrii
 - yangjunmyfm192085
+- yashsingh74
 - yankay
 - ybettan
 - yevgeny-shnaidman
@@ -515,5 +563,6 @@ eligible_voters:
 - zac-nixon
 - zetxqx
 - zhanggbj
+- zhifei92
 - ziyue-101
 - zylxjtu
