@@ -3639,7 +3639,7 @@ workinggroups:
         day: Thursdays (starting February 15th 2024)
         time: 4PM
         tz: CET (Central European Time)
-        frequency: monthly
+        frequency: weekly
         url: https://zoom.us/j/98329676612?pwd=c0N2bVV1aTh2VzltckdXSitaZXBKQT09
         archive_url: https://docs.google.com/document/d/1XOeUN-K0aKmJJNq7H07r74n-mGgSFyiEDQ3ecwsGhec/edit
         recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1U1eU1NPyflIGmwzcXPsev
