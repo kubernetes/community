@@ -2,8 +2,8 @@
 name: Sean McGinnis
 ID: stmcginnis
 info:
-  employer: Lambda
-  slack: Sean McGinnis
+  - employer: Lambda
+  - slack: Sean McGinnis
 -------------------------------------------------------------
 
 ## SIGS

@@ -2,8 +2,8 @@
 name: Janet Kuo
 ID: janetkuo
 info:
-  employer: Google
-  slack: janetkuo
+  - employer: Google
+  - slack: janetkuo
 -------------------------------------------------------------
 
 ## SIGS

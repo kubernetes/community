@@ -2,8 +2,8 @@
 name: Jack Francis
 ID: jackfrancis
 info:
-  employer: Microsoft
-  slack: jackfrancis
+  - employer: Microsoft
+  - slack: jackfrancis
 -------------------------------------------------------------
 
 ## SIGS

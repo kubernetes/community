@@ -2,8 +2,8 @@
 name: Priyanka Saggu
 ID: priyankasaggu11929
 info:
-  employer: SUSE
-  slack: psaggu
+  - employer: SUSE
+  - slack: psaggu
 -------------------------------------------------------------
 
 ## SIGS

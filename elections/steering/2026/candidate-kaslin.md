@@ -2,8 +2,8 @@
 name: Kaslin Fields
 ID: kaslin
 info:
-  employer: Google
-  slack: kaslin
+  - employer: Google
+  - slack: kaslin
 -------------------------------------------------------------
 
 ## SIGS
