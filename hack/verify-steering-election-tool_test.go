@@ -121,6 +121,18 @@ func TestCountWords(t *testing.T) {
 			content: "Hello, world! This is a test.",
 			want:    6,
 		},
+		{
+			name: "YAML header is excluded",
+			content: strings.Repeat("-", 61) + "\n" +
+				"name: Test User\n" +
+				"ID: testuser\n" +
+				"info:\n" +
+				"  - employer: Test Corp\n" +
+				"  - slack: '@testuser'\n" +
+				strings.Repeat("-", 61) + "\n" +
+				"Biography has four words.\n",
+			want: 4,
+		},
 	}
 
 	for _, tt := range tests {
@@ -236,6 +248,7 @@ func TestValidateFileNameAndGitHubID(t *testing.T) {
 }
 
 func TestValidateTemplateCompliance(t *testing.T) {
+	candidateFields := []string{"employer", "slack"}
 	validContent := strings.Repeat("-", 61) + "\n" +
 		"name: Test User\n" +
 		"ID: testuser\n" +
@@ -253,15 +266,52 @@ func TestValidateTemplateCompliance(t *testing.T) {
 		"Links and info\n"
 
 	tests := []struct {
-		name        string
-		content     string
-		wantErr     bool
-		errContains string
+		name            string
+		content         string
+		candidateFields []string
+		wantErr         bool
+		errContains     string
 	}{
 		{
 			name:    "valid template compliance",
 			content: validContent,
 			wantErr: false,
+		},
+		{
+			name: "valid template compliance with list info",
+			content: strings.Repeat("-", 61) + "\n" +
+				"name: Test User\n" +
+				"ID: testuser\n" +
+				"info:\n" +
+				"  - employer: Test Corp\n" +
+				"  - slack: '@testuser'\n" +
+				strings.Repeat("-", 61) + "\n" +
+				"## What I have done\n## What I'll do\n## SIGS\n## Resources About Me\n",
+			wantErr: false,
+		},
+		{
+			name: "valid configurable candidate fields",
+			content: strings.Repeat("-", 61) + "\n" +
+				"name: Test User\n" +
+				"ID: testuser\n" +
+				"info:\n" +
+				"  organization: Test Foundation\n" +
+				"  matrix: '@testuser:example.org'\n" +
+				strings.Repeat("-", 61) + "\n" +
+				"## What I have done\n## What I'll do\n## SIGS\n## Resources About Me\n",
+			candidateFields: []string{"organization", "matrix"},
+			wantErr:         false,
+		},
+		{
+			name: "invalid info type",
+			content: strings.Repeat("-", 61) + "\n" +
+				"name: Test User\n" +
+				"ID: testuser\n" +
+				"info: invalid\n" +
+				strings.Repeat("-", 61) + "\n" +
+				"## What I have done\n## What I'll do\n## SIGS\n## Resources About Me\n",
+			wantErr:     true,
+			errContains: "info must be a mapping or sequence",
 		},
 		{
 			name: "missing required field - name",
@@ -300,6 +350,18 @@ func TestValidateTemplateCompliance(t *testing.T) {
 				"## What I have done\n## What I'll do\n## SIGs\n## Resources About Me\n",
 			wantErr: false,
 		},
+		{
+			name: "missing configured candidate field",
+			content: strings.Repeat("-", 61) + "\n" +
+				"name: Test User\n" +
+				"ID: testuser\n" +
+				"info:\n" +
+				"  employer: Test Corp\n" +
+				strings.Repeat("-", 61) + "\n" +
+				"## What I have done\n## What I'll do\n## SIGS\n## Resources About Me\n",
+			wantErr:     true,
+			errContains: "missing required field: info.slack",
+		},
 	}
 
 	for _, tt := range tests {
@@ -315,7 +377,11 @@ func TestValidateTemplateCompliance(t *testing.T) {
 				t.Fatal(err)
 			}
 
-			err = validateTemplateCompliance(tmpfile.Name())
+			fields := tt.candidateFields
+			if fields == nil {
+				fields = candidateFields
+			}
+			err = validateTemplateCompliance(tmpfile.Name(), fields)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("validateTemplateCompliance() error = %v, wantErr %v", err, tt.wantErr)
 				return
@@ -324,6 +390,35 @@ func TestValidateTemplateCompliance(t *testing.T) {
 				t.Errorf("validateTemplateCompliance() error = %v, should contain %q", err, tt.errContains)
 			}
 		})
+	}
+}
+
+func TestLoadShowCandidateFields(t *testing.T) {
+	tmpDir := t.TempDir()
+	bioPath := filepath.Join(tmpDir, "candidate-testuser.md")
+	if err := os.WriteFile(bioPath, []byte("candidate"), 0644); err != nil {
+		t.Fatal(err)
+	}
+	if err := os.WriteFile(
+		filepath.Join(tmpDir, "election.yaml"),
+		[]byte("show_candidate_fields:\n  - organization\n  - matrix\n"),
+		0644,
+	); err != nil {
+		t.Fatal(err)
+	}
+
+	fields, err := loadShowCandidateFields(bioPath)
+	if err != nil {
+		t.Fatalf("loadShowCandidateFields() error = %v", err)
+	}
+	want := []string{"organization", "matrix"}
+	if len(fields) != len(want) {
+		t.Fatalf("loadShowCandidateFields() = %v, want %v", fields, want)
+	}
+	for index := range want {
+		if fields[index] != want[index] {
+			t.Errorf("loadShowCandidateFields() = %v, want %v", fields, want)
+		}
 	}
 }
 
@@ -344,14 +439,14 @@ func TestFindBioFiles(t *testing.T) {
 	// Create test files
 	currentYear := time.Now().Year()
 	testFiles := []struct {
-		path      string
+		path       string
 		shouldFind bool
 	}{
-		{filepath.Join(steeringDir, "2025", "candidate-user1.md"), false}, // Before startYear (2026)
-		{filepath.Join(steeringDir, "2026", "candidate-user2.md"), true},  // At startYear
-		{filepath.Join(steeringDir, fmt.Sprintf("%d", currentYear+1), "candidate-user3.md"), true}, // Future year
-		{filepath.Join(steeringDir, "2026", "not-candidate.md"), false},     // Wrong filename format
-		{filepath.Join(steeringDir, "2026", "candidate-user4.txt"), false},  // Wrong extension
+		{filepath.Join(steeringDir, "2025", "candidate-user1.md"), false},                            // Before startYear (2026)
+		{filepath.Join(steeringDir, "2026", "candidate-user2.md"), true},                             // At startYear
+		{filepath.Join(steeringDir, fmt.Sprintf("%d", currentYear+1), "candidate-user3.md"), true},   // Future year
+		{filepath.Join(steeringDir, "2026", "not-candidate.md"), false},                              // Wrong filename format
+		{filepath.Join(steeringDir, "2026", "candidate-user4.txt"), false},                           // Wrong extension
 		{filepath.Join(steeringDir, fmt.Sprintf("%d", currentYear+10), "candidate-user5.md"), false}, // Too far in future
 	}
 

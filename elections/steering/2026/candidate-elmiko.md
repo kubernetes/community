@@ -2,8 +2,8 @@
 name: Michael McCune
 ID: elmiko
 info:
-  employer: Red Hat
-  slack: elmiko
+  - employer: Red Hat
+  - slack: elmiko
 -------------------------------------------------------------
 
 ## SIGS

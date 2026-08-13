@@ -33,6 +33,8 @@ const (
 	startYear            = 2026
 )
 
+var yamlHeaderRegex = regexp.MustCompile(`(?s)^-{61}\s*\n(.*?)\n-{61}\s*\n`)
+
 type ValidationError struct {
 	File    string
 	Message string
@@ -44,11 +46,40 @@ type CandidateHeader struct {
 	Info InfoData `yaml:"info"`
 }
 
-type InfoData struct {
-	Employer string `yaml:"employer"`
-	Slack    string `yaml:"slack"`
+type ElectionConfig struct {
+	ShowCandidateFields []string `yaml:"show_candidate_fields"`
 }
 
+// TODO: Have Elekto accept both mapping and sequence forms for candidate info
+// so compatibility is enforced at the application boundary as well as here.
+type InfoData map[string]string
+
+func (i *InfoData) UnmarshalYAML(value *yaml.Node) error {
+	switch value.Kind {
+	case yaml.MappingNode:
+		var info map[string]string
+		if err := value.Decode(&info); err != nil {
+			return err
+		}
+		*i = InfoData(info)
+		return nil
+	case yaml.SequenceNode:
+		var entries []map[string]string
+		if err := value.Decode(&entries); err != nil {
+			return err
+		}
+		info := make(InfoData)
+		for _, entry := range entries {
+			for field, fieldValue := range entry {
+				info[field] = fieldValue
+			}
+		}
+		*i = info
+		return nil
+	default:
+		return fmt.Errorf("info must be a mapping or sequence")
+	}
+}
 
 func main() {
 	if len(os.Args) < 2 {
@@ -89,8 +120,17 @@ func main() {
 			})
 		}
 
+		candidateFields, err := loadShowCandidateFields(bioFile)
+		if err != nil {
+			errors = append(errors, ValidationError{
+				File:    bioFile,
+				Message: err.Error(),
+			})
+			continue
+		}
+
 		// Check template compliance
-		if err := validateTemplateCompliance(bioFile); err != nil {
+		if err := validateTemplateCompliance(bioFile, candidateFields); err != nil {
 			errors = append(errors, ValidationError{
 				File:    bioFile,
 				Message: err.Error(),
@@ -111,6 +151,21 @@ func main() {
 		fmt.Printf("%s\n", separator)
 		os.Exit(1)
 	}
+}
+
+func loadShowCandidateFields(filename string) ([]string, error) {
+	electionPath := filepath.Join(filepath.Dir(filename), "election.yaml")
+	content, err := os.ReadFile(electionPath)
+	if err != nil {
+		return nil, fmt.Errorf("error reading election configuration: %v", err)
+	}
+
+	var config ElectionConfig
+	if err := yaml.Unmarshal(content, &config); err != nil {
+		return nil, fmt.Errorf("error parsing election configuration: %v", err)
+	}
+
+	return config.ShowCandidateFields, nil
 }
 
 // findBioFiles finds all steering committee candidate bio files from 2025 forward
@@ -165,6 +220,8 @@ func countWords(filename string) (int, error) {
 	if err != nil {
 		return 0, err
 	}
+
+	content = yamlHeaderRegex.ReplaceAll(content, nil)
 
 	// Split by whitespace and count non-empty strings
 	words := regexp.MustCompile(`\s+`).Split(string(content), -1)
@@ -230,7 +287,7 @@ func validateFileNameAndGitHubID(filename string) error {
 }
 
 // validateTemplateCompliance checks if the bio follows the required template structure
-func validateTemplateCompliance(filename string) error {
+func validateTemplateCompliance(filename string, candidateFields []string) error {
 	content, err := os.ReadFile(filename)
 	if err != nil {
 		return fmt.Errorf("error reading file: %v", err)
@@ -257,11 +314,10 @@ func validateTemplateCompliance(filename string) error {
 	if header.ID == "" {
 		return fmt.Errorf("missing required field: ID")
 	}
-	if header.Info.Employer == "" {
-		return fmt.Errorf("missing required field: info.employer")
-	}
-	if header.Info.Slack == "" {
-		return fmt.Errorf("missing required field: info.slack")
+	for _, field := range candidateFields {
+		if header.Info[field] == "" {
+			return fmt.Errorf("missing required field: info.%s", field)
+		}
 	}
 
 	// Check for required sections
@@ -292,8 +348,7 @@ func validateTemplateCompliance(filename string) error {
 // The format requires exactly 61 dashes for consistency
 func extractYAMLHeader(content string) (string, error) {
 	// Find the YAML header between exactly 61 dashes
-	dashRegex := regexp.MustCompile(`(?s)^-{61}\s*\n(.*?)\n-{61}\s*\n`)
-	matches := dashRegex.FindStringSubmatch(content)
+	matches := yamlHeaderRegex.FindStringSubmatch(content)
 	if len(matches) != 2 {
 		return "", fmt.Errorf("could not find YAML header between dashes")
 	}
