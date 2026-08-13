@@ -16,7 +16,7 @@ info:
 
 ## What I have done
 
-I began my open source journey in 2018 with [DGPLUG](https://dgplug.org/) summer training, a program run over IRC, designed for people in areas with limited internet connectivity. I learnt from sessions conducted by maintainers from many important open source projects (like PSF, Debian, Fedora, Ansible, Tor Project, and others) which would have been almost impossible for us otherwise. It *is* the foundation of my open source ethos.
+I began contributing in 2018 with [DGPLUG](https://dgplug.org/) summer training, a program run over IRC, designed for people in areas with limited internet connectivity. I learnt from sessions conducted by maintainers from many important open source projects (like PSF, Debian, Fedora, Ansible, Tor Project, and others) which would have been almost impossible for us otherwise. It *is* the foundation of my open source ethos.
 
 I'm a contributor to the Kubernetes project since 2020, starting with the Python-Client.
 
