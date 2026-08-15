@@ -15,7 +15,8 @@
 # 2026-07-06 - Add voters from approved exception requests
 # 2026-07-23 - Add voter from approved exception requests
 # 2026-08-11 - Add voters from approved exception requests
-# 2026-08-12 - Add Kubernetes org members (kubernetes, kubernetes-sigs, kubernetes-client, kubernetes-csi) as eligible voters as a followup to https://github.com/kubernetes/steering/issues/314
+# 2026-08-12 - Add Kubernetes org members (kubernetes, kubernetes-sigs, kubernetes-client, kubernetes-csi, etcd) as eligible voters as a followup to https://github.com/kubernetes/steering/issues/314
+# 2026-08-14 - Update serenity611 to Serenity611
 #
 eligible_voters:
 - 08volt
@@ -1206,7 +1207,7 @@ eligible_voters:
 - seokho-son
 - serathius
 - serbrech
-- serenity611
+- Serenity611
 - SergeyKanzhelev
 - sergeyshevch
 - serngawy
