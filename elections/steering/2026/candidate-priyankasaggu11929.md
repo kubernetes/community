@@ -16,7 +16,7 @@ info:
 
 ## What I have done
 
-I began my open source journey in 2018 with [DGPLUG](https://dgplug.org/) summer training, a program run over IRC, designed for people in areas with limited internet connectivity. I learnt from sessions conducted by maintainers from many important open source projects (like PSF, Debian, Fedora, Ansible, Tor Project, and others) which would have been almost impossible for us otherwise. It *is* the foundation of my open source ethos.
+I began my open-source journey in 2018 with [DGPLUG](https://dgplug.org/) summer training, a program run over IRC, designed for people in areas with limited internet connectivity. I learnt from sessions conducted by maintainers from many important open-source projects (like PSF, Debian, Fedora, Ansible, Tor Project, and others) which would have been almost impossible for us otherwise. It *is* the foundation of my open source ethos.
 
 I'm a contributor to the Kubernetes project since 2020, starting with the Python-Client.
 
@@ -32,9 +32,9 @@ SIG-Architecture: I served as Production-Readiness-Reviewer shadow in v1.37.
 SIG-API-Machinery: I co-authored [KEP-4595 (CEL-for-CRD-AdditionalPrinterColumns)](https://github.com/kubernetes/enhancements/tree/master/keps/sig-api-machinery/4595-cel-crd-additionalprintercolumns).
 
 Within broader-CNCF:
-I co-chaired the first-ever [CNCF-Maintainer-Summit-2024](https://youtu.be/HzuuRwvaU90?feature=shared&t=236).  
-I contributed to charter-development of [WG-Special-Purpose-Operating-System](https://tag-runtime.cncf.io/wgs/spos/charter/#document-reviewed-and-contributed-by).  
-I reviewed [CNCF-Sandbox-Reports](https://docs.google.com/document/d/14KObDX-ybKzgZ6sjpfFXNyNOmeWIoIdfd7tCtzwVNhk/edit?tab=t.0#heading=h.3ff1v7xs75xa) under TAG-Runtime.
+- I co-chaired the first-ever [CNCF-Maintainer-Summit-2024](https://youtu.be/HzuuRwvaU90?feature=shared&t=236).  
+- I contributed to charter-development of [WG-Special-Purpose-Operating-System](https://tag-runtime.cncf.io/wgs/spos/charter/#document-reviewed-and-contributed-by).  
+- I reviewed [CNCF-Sandbox-Reports](https://docs.google.com/document/d/14KObDX-ybKzgZ6sjpfFXNyNOmeWIoIdfd7tCtzwVNhk/edit?tab=t.0#heading=h.3ff1v7xs75xa) under TAG-Runtime.
 
 Beyond Kubernetes-core, I'm a [maintainer of various cloud-native packages](https://build.opensuse.org/users/psaggu) on openSUSE-Tumbleweed/Leap.
 
@@ -53,7 +53,6 @@ I am of the firm belief that: [***Inclusion isn't complete, until leadership is 
 I want to take this principle (equity over equality) to the level where it shapes policy, not just individual SIGs. I'd like to help global regions with strong presence but thinner leadership pipelines, grow more maintainers and decision-makers in their own timezones.
 
 I want Steering to be able to support that with real data and existing SIG/WG processes. One of my first goals would be to push for a metric(s) in the annual SIG/WG report giving real insight into global representation.
-
 
 ## Resources About Me
 
