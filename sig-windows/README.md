@@ -26,7 +26,6 @@ The [charter](charter.md) defines the scope and governance of the Windows Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Aravindh Puthiyaparambil (**[@aravindhp](https://github.com/aravindhp)**), Softdrive Technologies Group Inc.
 * Mark Rossetti (**[@marosset](https://github.com/marosset)**), Microsoft
 
 ### Technical Leads
@@ -40,6 +39,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Emeritus Leads
 
 * Patrick Lang (**[@PatrickLang](https://github.com/PatrickLang)**)
+* Aravindh Puthiyaparambil (**[@aravindhp](https://github.com/aravindhp)**)
 * Ben Moss (**[@benmoss](https://github.com/benmoss)**)
 * Deep Debroy (**[@ddebroy](https://github.com/ddebroy)**)
 * Jay Vyas (**[@jayunit100](https://github.com/jayunit100)**)
