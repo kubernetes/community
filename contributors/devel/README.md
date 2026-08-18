@@ -175,5 +175,7 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 * **Container Runtime Interface: Testing Policy** [cri-testing-policy.md](sig-node/cri-testing-policy.md)
 
+* **Node Declared Features** [node-declared-features.md](sig-node/node-declared-features.md)
+
 ### SIG CLI
 * **Kubectl Conventions** [kubectl-conventions.md](sig-cli/kubectl-conventions.md)
