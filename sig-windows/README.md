@@ -26,6 +26,7 @@ The [charter](charter.md) defines the scope and governance of the Windows Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* JR Valdes (**[@jrvaldes](https://github.com/jrvaldes)**), Red Hat
 * Mark Rossetti (**[@marosset](https://github.com/marosset)**), Microsoft
 
 ### Technical Leads

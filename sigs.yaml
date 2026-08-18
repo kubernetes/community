@@ -3446,6 +3446,10 @@ sigs:
     label: windows
     leadership:
       chairs:
+        - github: jrvaldes
+          name: JR Valdes
+          company: Red Hat
+          email: jvaldes@redhat.com
         - github: marosset
           name: Mark Rossetti
           company: Microsoft
