@@ -338,6 +338,7 @@ channels:
   - name: kubewarden-dev
   - name: kubicorn
   - name: kudo
+  - name: kueue-release-management
   - name: kurl
   - name: kustomize
   - name: kwok
@@ -635,4 +636,3 @@ channels:
   - name: zarf-dev
     archived: true
   - name: krkn
-  - name: kueue-release-management
