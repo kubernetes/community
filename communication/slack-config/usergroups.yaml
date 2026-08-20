@@ -342,10 +342,11 @@ usergroups:
     channels:
       - gophercloud
     members:
-      - EmilienM
       - kayrus
       - mandre
-      - pierreprinetti
+      - Sharpz7
+      - stephenfin
+      - winiciusallan
 
   - name: kubetail-maintainers
     long_name: kubetail Maintainers
