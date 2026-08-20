@@ -25,7 +25,7 @@ throughout all platforms and includes all communication mediums.
 ## Zoom license management
 
 Zoom licenses are managed by the [CNCF Service Desk] through the
-[Zoom Admins] listed in the  [centralized list of administrators].
+[SIG Contributor Experience] Chairs.
 
 ### Obtaining a Zoom license
 
@@ -203,7 +203,6 @@ Thanks for making Kubernetes meetings work great!
 [Kubernetes code of conduct]: /code-of-conduct.md
 [moderation]: ./moderation.md
 [CNCF Service Desk]: https://github.com/cncf/servicedesk
-[Zoom Admins]: ./moderators.md#zoom
 [centralized list of administrators]: ./moderators.md
 [sig creation procedure]: /sig-wg-lifecycle.md#communicate
 [latest version]: https://zoom.us/download
