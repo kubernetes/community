@@ -339,6 +339,7 @@ channels:
   - name: kubewarden-dev
   - name: kubicorn
   - name: kudo
+  - name: kueue-release-management
   - name: kurl
   - name: kustomize
   - name: kwok
