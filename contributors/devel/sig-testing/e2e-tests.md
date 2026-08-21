@@ -544,13 +544,6 @@ stragglers to finish.
 takes too many resources or restarts nodes), it is labeled `[Serial]`, and
 should be run in serial as part of a separate suite.
 
-  - `[Disruptive]`: If a test may impact workloads that it didn't create,
- it should be marked as `[Disruptive]`. Examples of disruptive behavior
-include, but are not limited to, restarting components or tainting nodes. Any
-`[Disruptive]` test is also assumed to qualify for the `[Serial]` label, but
-need not be labeled as both. These tests are not run against soak clusters to
-avoid restarting components.
-
   - `[Flaky]`: If a test is found to be flaky and we have decided that it's too
 hard to fix in the short term (e.g. it's going to take a full engineer-week), it
 receives the `[Flaky]` label until it is fixed. The `[Flaky]` label should be
@@ -760,12 +753,12 @@ against GCE and GKE. To minimize the time from regression-to-green-run, we
 partition tests across different jobs:
 
   - `kubernetes-e2e-<provider>` runs all non-`[Slow]`, non-`[Serial]`,
-non-`[Disruptive]`, non-`[Flaky]`, non-`[Feature:.+]` tests in parallel.
+non-`[Flaky]`, non-`[Feature:.+]` tests in parallel.
 
   - `kubernetes-e2e-<provider>-slow` runs all `[Slow]`, non-`[Serial]`,
-non-`[Disruptive]`, non-`[Flaky]`, non-`[Feature:.+]` tests in parallel.
+non-`[Flaky]`, non-`[Feature:.+]` tests in parallel.
 
-  - `kubernetes-e2e-<provider>-serial` runs all `[Serial]` and `[Disruptive]`,
+  - `kubernetes-e2e-<provider>-serial` runs all `[Serial]`,
 non-`[Flaky]`, non-`[Feature:.+]` tests in serial.
 
   - `ci-kubernetes-e2e-kind-alpha-features` runs all tests without any special
@@ -791,7 +784,7 @@ default.
 
 We also run a battery of tests against every PR before we merge it. These tests
 are equivalent to `kubernetes-gce`: it runs all non-`[Slow]`, non-`[Serial]`,
-non-`[Disruptive]`, non-`[Flaky]`, non-`[Feature:.+]` tests in parallel. These
+non-`[Flaky]`, non-`[Feature:.+]` tests in parallel. These
 tests are considered "smoke tests" to give a decent signal that the PR doesn't
 break most functionality. Results for your PR can be found at
 [pr-test.k8s.io](http://pr-test.k8s.io), e.g.
