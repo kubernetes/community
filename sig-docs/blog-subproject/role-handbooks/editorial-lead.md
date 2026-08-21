@@ -23,7 +23,7 @@ The Editorial Lead is responsible for the day-to-day management of the Kubernete
 
 ## Activities
 
-* Scheduling and running biweekly editorial meetings.
+* Participating in [SIG Docs meetings](https://github.com/kubernetes/community/tree/master/sig-docs#meetings).
 * Reviewing, assigning, and scheduling blog posts.
 * Final approval on blog posts.
 * Maintain blog documentation and process guidelines.
