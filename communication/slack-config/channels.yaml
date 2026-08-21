@@ -287,6 +287,7 @@ channels:
   - name: kube-spawn
   - name: kube-state-metrics
   - name: kube-vip
+  - name: kube-vm-operator
   - name: kubeadm
   - name: kubeadm-cn
   - name: kubeaid
