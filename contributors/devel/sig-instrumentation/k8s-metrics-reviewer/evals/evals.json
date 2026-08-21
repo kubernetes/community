@@ -1,0 +1,37 @@
+{
+  "skill_name": "k8s-metrics-reviewer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Review the metrics changes in the provided diff.",
+      "expected_output": "Identify and block raw Prometheus metric usage (e.g. prometheus.NewCounter instead of compbasemetrics.NewCounterVec). Must report a BLOCKER.",
+      "files": [
+        "evals/files/raw_prometheus.diff"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review the metrics changes in the provided diff.",
+      "expected_output": "Identify unbounded label cardinality (specifically 'namespace' and 'pod' name labels which explode series count). Must report a BLOCKER/QUESTION.",
+      "files": [
+        "evals/files/unbounded_cardinality.diff"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Review the metrics changes in the provided diff.",
+      "expected_output": "Identify change/mutation to an existing STABLE metric's signature (e.g. changing labels). Must report a BLOCKER since stable metrics are frozen.",
+      "files": [
+        "evals/files/stable_metric_change.diff"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Review the metrics changes in the provided diff.",
+      "expected_output": "Identify metric registration happening inside an init() block. Must report a BLOCKER or warning to avoid init() registration to allow feature gating.",
+      "files": [
+        "evals/files/init_registration.diff"
+      ]
+    }
+  ]
+}
