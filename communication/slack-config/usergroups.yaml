@@ -50,6 +50,7 @@ usergroups:
       - sandeepkanabar
       - sandipanpanda
       - sreeram-venkitesh
+      - TineoC
 
   - name: k8s-infra-leads
     long_name: SIG K8S Infra leads
