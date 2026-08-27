@@ -235,6 +235,8 @@ channels:
   - name: k8spin
   - name: kamaji
   - name: kapitan
+  - name: kbind-dev
+    id: C046PRXNJ4W
   - name: kcp-dev
   - name: kcp-users
     id: C021U8WSAFK
@@ -276,7 +278,6 @@ channels:
   - name: kuadrant
   - name: kubara
   - name: kube-aws
-  - name: kube-bind
   - name: kube-burner
   - name: kube-deploy
     archived: true
