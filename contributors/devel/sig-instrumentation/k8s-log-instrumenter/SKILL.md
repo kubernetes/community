@@ -1,3 +1,9 @@
+---
+name: k8s-log-instrumenter
+description: Update a kubernetes/kubernetes pull request that changes kubernetes log code. Use when asked to write a k8s PR/diff that touches logs. Trigger phrases: "write this log in the PR".
+---
+
+
 ## Logging
 
 This document provides an overview of  the recommended way to develop and implement
