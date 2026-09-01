@@ -27,7 +27,7 @@ The [charter](charter.md) defines the scope and governance of the Storage Specia
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Saad Ali (**[@saad-ali](https://github.com/saad-ali)**), Google
+* Hemant Kumar (**[@gnufied](https://github.com/gnufied)**), Red Hat
 * Xing Yang (**[@xing-yang](https://github.com/xing-yang)**), VMware
 
 ### Technical Leads
@@ -40,6 +40,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Emeritus Leads
 
 * Bradley Childs (**[@childsb](https://github.com/childsb)**)
+* Saad Ali (**[@saad-ali](https://github.com/saad-ali)**)
 
 ## Contact
 - Slack: [#sig-storage](https://kubernetes.slack.com/messages/sig-storage)
