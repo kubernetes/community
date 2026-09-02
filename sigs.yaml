@@ -3079,10 +3079,10 @@ sigs:
     label: storage
     leadership:
       chairs:
-        - github: saad-ali
-          name: Saad Ali
-          company: Google
-          email: saadali@google.com
+        - github: gnufied
+          name: Hemant Kumar
+          company: Red Hat
+          email: hekumar@redhat.com
         - github: xing-yang
           name: Xing Yang
           company: VMware
@@ -3099,6 +3099,8 @@ sigs:
       emeritus_leads:
         - github: childsb
           name: Bradley Childs
+        - github: saad-ali
+          name: Saad Ali
     meetings:
       - description: Regular CSI Implementation Meeting
         day: Monday
