@@ -14,7 +14,7 @@ covered consult the older documents in each election folder.
 
 ### The Elections Subproject
 
-Members of the [Elections Subproject](elections/README.md) have three
+Members of the [Elections Subproject](/elections/README.md) have three
 responsibilities around steering elections:
 
 1. Recommending Election Officers to the Steering Committee
