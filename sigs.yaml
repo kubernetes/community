@@ -909,7 +909,7 @@ sigs:
     mission_statement: >
       Ensures that the Kubernetes ecosystem is evolving in a way that is neutral to all (public and private) cloud providers. It will be responsible for establishing standards and requirements that must be met by all providers to ensure optimal integration with Kubernetes.
 
-    charter_link: CHARTER.md
+    charter_link: charter.md
     label: cloud-provider
     leadership:
       chairs:

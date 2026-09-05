@@ -10,7 +10,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 
 Ensures that the Kubernetes ecosystem is evolving in a way that is neutral to all (public and private) cloud providers. It will be responsible for establishing standards and requirements that must be met by all providers to ensure optimal integration with Kubernetes.
 
-The [charter](CHARTER.md) defines the scope and governance of the Cloud Provider Special Interest Group.
+The [charter](charter.md) defines the scope and governance of the Cloud Provider Special Interest Group.
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/forum/#!forum/kubernetes-sig-cloud-provider) for the group will typically add invites for the following meetings to your calendar.*
