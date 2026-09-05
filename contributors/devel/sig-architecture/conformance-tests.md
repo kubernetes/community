@@ -260,7 +260,7 @@ kubetest --provider=skeleton --test --test_args="--ginkgo.focus=\[Serial\].*\[Co
 
 For each Kubernetes release, a Conformance Document will be generated that lists
 all of the tests that comprise the conformance test suite, along with the formal
-specification of each test. For an example, see the [v1.9 conformance doc].
+specification of each test. For an example, see the [most recent conformance doc].
 This document will help people understand what features are being tested without
 having to look through the testcase's code directly.
 
@@ -369,7 +369,7 @@ for your provider, please see the [testgrid conformance README]
 [conformance test version skew policy]: #conformance-test-version-skew-policy
 [testgrid conformance dashboard]: https://testgrid.k8s.io/conformance-all
 [testgrid conformance README]: https://github.com/kubernetes/test-infra/blob/master/testgrid/conformance/README.md
-[v1.9 conformance doc]: https://github.com/cncf/k8s-conformance/blob/master/docs/KubeConformance-1.9.md
+[most recent conformance doc]: https://github.com/cncf/k8s-conformance/tree/master/docs
 [conformance.yaml]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.yaml
 
 ## Demoting Conformance Tests
