@@ -195,6 +195,6 @@ and opts-in to updates and modifications to [wg-governance].
 ## Timelines and Disbanding
 
 The working group will disband once the features (KEPs) and core APIs mentioned
-[above]((#prioritization)) have reached a stable state (GA), and ongoing maintenance ownership is
+[above](#prioritization) have reached a stable state (GA), and ongoing maintenance ownership is
 established within the relevant SIGs. We will review whether the working group should disband if
 appropriate SIG ownership can't be reached or no additional coordination is needed.
