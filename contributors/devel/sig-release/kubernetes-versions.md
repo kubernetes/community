@@ -281,7 +281,7 @@ gs://k8s-release-dev/ci/v1.22.0-beta.2.39+33aba7ee025dfd/bin/
 </details>
 
 A general, non-exhaustive list of the expected artifacts of a Kubernetes build
-can be found [here](https://git.k8s.io/sig-release/release-engineering/artifacts.md).
+can be found [here](https://git.k8s.io/sig-release/release-engineering/reference/artifacts.md).
 
 ## Marker types
 
