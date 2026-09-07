@@ -145,7 +145,7 @@ while opening an issue. Check the [issue triage guide] for more information.
 [sl]: /sig-list.md
 [video meetings]: https://kubernetes.io/community/
 [sig-contributor-experience]: /sig-contributor-experience/README.md
-[weekly meetings]: https://docs.google.com/document/d/1qf-02B7EOrItQgwXFxgqZ5qjW0mtfu5qkYIF1Hl4ZLI/edit
+[weekly meetings]: /sig-contributor-experience/README.md#meetings
 [container networking interface]: https://github.com/containernetworking/cni
 [network SIG]: https://git.k8s.io/community/sig-network
 [ask in Slack]: http://slack.k8s.io/
