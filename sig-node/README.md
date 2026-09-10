@@ -133,6 +133,10 @@ The following [subprojects][subproject-definition] are owned by sig-node:
   - [kubernetes/kubernetes/staging/src/k8s.io/kubelet/pkg/apis/dra](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/kubelet/pkg/apis/dra/OWNERS)
   - [kubernetes/kubernetes/test/e2e/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/dra/OWNERS)
   - [kubernetes/kubernetes/test/e2e/testing-manifests/dra](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/testing-manifests/dra/OWNERS)
+### security profiles merger
+Security profile merge library for Kubernetes CRI runtimes
+- **Owners:**
+  - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/main/OWNERS)
 ### security-profiles-operator
 - **Owners:**
   - [kubernetes-sigs/security-profiles-operator](https://github.com/kubernetes-sigs/security-profiles-operator/blob/main/OWNERS)
