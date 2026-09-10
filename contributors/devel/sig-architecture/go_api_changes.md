@@ -2,7 +2,7 @@
 
 The term "Kubernetes API" usually refers to the externally visible behavior of
 components in a Kubernetes release. For a full definition what this includes see
-the [API review process](./../../sig-architecture/api-review-process.md#what-apis-need-to-be-reviewed).
+the [API review process](./../../../sig-architecture/api-review-process.md#what-apis-need-to-be-reviewed).
 The [deprecation policy](https://kubernetes.io/docs/reference/using-api/deprecation-policy/)
 explains under which circumstances and how it is possible to break that API.
 
