@@ -2641,6 +2641,10 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/kubelet/pkg/apis/dra/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/dra/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/testing-manifests/dra/OWNERS
+      - name: security profiles merger
+        description: Security profile merge library for Kubernetes CRI runtimes
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/security-profiles-operator/main/OWNERS
       - name: security-profiles-operator
         contact:
           slack: security-profiles-operator
