@@ -151,6 +151,8 @@ Administrators seats: 5
 | Nabarun Pal   | @palnabarun         | Americas | [IST - Indian Standard Time](https://time.is/India)     |
 | Nigel Brown   | @nigel              | Americas | [CT - Central Time (US Central)](https://time.is/CT)    |
 | Paris Pittman | @paris              | Americas | [PT - Pacific Time (US West Coast)](https://time.is/PT) |
+| Arpit Agrawal | @Arpit Agrawal      | India    | [IST - Indian Standard Timezone (Kolkata)](https://time.is/IST)) |
+
 
 - License and main account controlled by the CNCF
 
