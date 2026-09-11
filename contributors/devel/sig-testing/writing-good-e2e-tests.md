@@ -386,7 +386,7 @@ or upgrading cluster software as part of your test is likely to
 violate the assumptions that other tests might have made about a
 reasonably stable cluster environment.  If you need to write such
 tests, please label them as
-["\[Disruptive\]"](e2e-tests.md#kinds-of-tests) so that it's easy to
+["\[Serial\]"](e2e-tests.md#kinds-of-tests) so that it's easy to
 identify them, and not run them in parallel with other tests.
 1. You should avoid making assumptions about the Kubernetes API that
 are not part of the API specification, as your tests will break as
@@ -526,7 +526,7 @@ descriptors:
 and
 
 ```
-Nodes [Disruptive] Network when a node becomes unreachable
+Nodes [Serial] Network when a node becomes unreachable
 [replication controller] recreates pods scheduled on the
 unreachable node AND allows scheduling of pods on a node after
 it rejoins the cluster
@@ -535,7 +535,7 @@ it rejoins the cluster
 An improvement might be
 
 ```
-Unreachable nodes are evacuated and then repopulated upon rejoining [Disruptive]
+Unreachable nodes are evacuated and then repopulated upon rejoining [Serial]
 ```
 
 Note that opening issues for specific better tooling is welcome, and
