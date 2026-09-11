@@ -108,7 +108,7 @@ usergroups:
       - tabbysable # Product Security Committee
       - xmudrii # Release Manager
       - Verolop # subproject owner / Release Manager
-  - name: release-comms
+  - name: release-comms-team
     long_name: Release Communications
     description: >-
       Release Communications team for the current release cycle. Members
