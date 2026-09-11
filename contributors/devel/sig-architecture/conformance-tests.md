@@ -178,8 +178,8 @@ following branches:
 ## Running Conformance Tests
 
 Conformance tests are designed to be run even when there is no cloud provider
-configured. Conformance tests must be able to be run against clusters that have
-not been created with `test-infra/kubetest`, just provide a kubeconfig with the
+configured. Conformance tests must be able to be run against any cluster,
+regardless of how it was created, just provide a kubeconfig with the
 appropriate endpoint and credentials.
 
 ### Running Conformance Tests With [KinD](https://kind.sigs.k8s.io/)
@@ -229,31 +229,6 @@ make WHAT="test/e2e/e2e.test"
 
 ```sh
 ./_output/bin/e2e.test -context kind-kind -ginkgo.focus="\[sig-network\].*Conformance" -num-nodes 2
-```
-
-### Running Conformance Tests With kubetest
-
-These commands are intended to be run within a kubernetes directory, either
-cloned from source, or extracted from release artifacts such as
-`kubernetes.tar.gz`. They assume you have a valid golang installation.
-
-```sh
-# ensure kubetest is installed
-go get -u k8s.io/test-infra/kubetest
-
-# build test binaries, ginkgo, and kubectl first:
-make WHAT="test/e2e/e2e.test vendor/github.com/onsi/ginkgo/ginkgo cmd/kubectl"
-
-# setup for conformance tests
-export KUBECONFIG=/path/to/kubeconfig
-export KUBERNETES_CONFORMANCE_TEST=y
-
-# Option A: run all conformance tests serially
-kubetest --provider=skeleton --test --test_args="--ginkgo.focus=\[Conformance\]"
-
-# Option B: run parallel conformance tests first, then serial conformance tests serially
-kubetest --ginkgo-parallel --provider=skeleton --test --test_args="--ginkgo.focus=\[Conformance\] --ginkgo.skip=\[Serial\]"
-kubetest --provider=skeleton --test --test_args="--ginkgo.focus=\[Serial\].*\[Conformance\]"
 ```
 
 ## Kubernetes Conformance Document
