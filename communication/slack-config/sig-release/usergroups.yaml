@@ -111,9 +111,8 @@ usergroups:
   - name: release-comms
     long_name: Release Communications
     description: >-
-      Release Communications team for the current Kubernetes release cycle.
-      Members are updated each cycle by the Comms Lead.
-      Has access to the slack-post-message bot for broadcasting to SIG channels.
+      Release Communications team for the current release cycle. Members
+      updated each cycle by the Comms Lead. Has slack-post-message bot access.
     channels:
       - release-comms
       - sig-release
