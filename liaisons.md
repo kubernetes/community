@@ -60,6 +60,7 @@ members will assume one of the departing members groups.
 | [WG Data Protection](wg-data-protection/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
 | [WG Device Management](wg-device-management/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [WG etcd Operator](wg-etcd-operator/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
+| [WG Node Identity](wg-node-identity/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [WG Node Lifecycle](wg-node-lifecycle/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
 | [WG Workload-aware Scheduling](wg-workload-aware-scheduling/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
 | [Committee Code of Conduct](committee-code-of-conduct/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
