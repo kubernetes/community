@@ -39,7 +39,7 @@ APIs).
   - Guidance on what should be instrumented as well as dimensions of the same. (see [Instrumenting Kubernetes Guide][instrumenting-kubernetes])
   - Creating, adding and maintaining the Kubernetes instrumentation guidelines.
   - Coordinate cross SIG-Instrumentation efforts.
-  - The interface of log files and their directory structure written out by container runtimes to be processed by other systems further, is shared responsibility between [SIG Node](sig-node) and SIG Instrumentation.
+  - The interface of log files and their directory structure written out by container runtimes to be processed by other systems further, is shared responsibility between [SIG Node][sig-node] and SIG Instrumentation.
 
 ### Out of scope
 
