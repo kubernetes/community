@@ -1,6 +1,6 @@
 # List of annual activities to be performed by SIG Docs leadership
 
-This document lists and details the activities to be performed annually by [SIG Docs leadership](./sig-docs/README.md#leadership)
+This document lists and details the activities to be performed annually by [SIG Docs leadership](./README.md#leadership)
 
 The recommended timeline for these activities is usually November - January due to lower levels of activity.
 
