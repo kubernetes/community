@@ -109,7 +109,7 @@ usergroups:
       - xmudrii # Release Manager
       - Verolop # subproject owner / Release Manager
   - name: release-comms-team
-    long_name: Release Communications
+    long_name: Release Communications Team
     description: >-
       Release Communications team for the current release cycle. Members
       updated each cycle by the Comms Lead. Has slack-post-message bot access.
