@@ -1,6 +1,6 @@
 # Contributor Comms Blog Guidelines
 
-This initiative falls under the [Contributor Comms Charter](./CHARTER.md).
+This initiative falls under the [Contributor Comms Charter](../CHARTER.md).
 
 We are looking for Kubernetes-curious community members who are
 **interested in writing** and **care about getting the word out** to
