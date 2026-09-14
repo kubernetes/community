@@ -231,31 +231,6 @@ make WHAT="test/e2e/e2e.test"
 ./_output/bin/e2e.test -context kind-kind -ginkgo.focus="\[sig-network\].*Conformance" -num-nodes 2
 ```
 
-### Running Conformance Tests With kubetest
-
-These commands are intended to be run within a kubernetes directory, either
-cloned from source, or extracted from release artifacts such as
-`kubernetes.tar.gz`. They assume you have a valid golang installation.
-
-```sh
-# ensure kubetest is installed
-go get -u k8s.io/test-infra/kubetest
-
-# build test binaries, ginkgo, and kubectl first:
-make WHAT="test/e2e/e2e.test vendor/github.com/onsi/ginkgo/ginkgo cmd/kubectl"
-
-# setup for conformance tests
-export KUBECONFIG=/path/to/kubeconfig
-export KUBERNETES_CONFORMANCE_TEST=y
-
-# Option A: run all conformance tests serially
-kubetest --provider=skeleton --test --test_args="--ginkgo.focus=\[Conformance\]"
-
-# Option B: run parallel conformance tests first, then serial conformance tests serially
-kubetest --ginkgo-parallel --provider=skeleton --test --test_args="--ginkgo.focus=\[Conformance\] --ginkgo.skip=\[Serial\]"
-kubetest --provider=skeleton --test --test_args="--ginkgo.focus=\[Serial\].*\[Conformance\]"
-```
-
 ## Kubernetes Conformance Document
 
 For each Kubernetes release, a Conformance Document will be generated that lists

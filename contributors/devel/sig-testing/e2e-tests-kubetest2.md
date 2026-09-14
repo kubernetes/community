@@ -58,20 +58,16 @@ The first step is to install the Ginkgo testing framework and
 Gomega. Run these commands:
 
 ```sh
-go get github.com/onsi/ginkgo/ginkgo
+go install github.com/onsi/ginkgo/v2/ginkgo@latest
 go get github.com/onsi/gomega/...
 ```
-
-In order to successfully build Kubernetes tests, you will need to
-install Bazel.
-[Follow the instructions for your development environment.](https://docs.bazel.build/versions/3.4.0/install.html)
 
 Next, you need to install the `kubetest2` binary and plugins. Run
 these commands to do that:
 
 ```sh
 cd
-GO111MODULE=on go get sigs.k8s.io/kubetest2/...@latest
+go install sigs.k8s.io/kubetest2/...@latest
 ```
 
 The currently available plugins for cloud providers are:
