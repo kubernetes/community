@@ -43,7 +43,7 @@ You’ll need to be:
 
 Mentees will be asked to take responsibility for their growth and improvement as it's a semi-structured self-paced program; however, you are there to help guide them by sharing your methodologies, resources, tips, and experiences.
 
-*[The 1:1 Hour](the1-on-1hour.md)*
+*[The 1:1 Hour](../programs/the1-on-1hour.md)*
 * Participate in a one hour a month session via zoom video conference; no more than 3 hours/times and that is opt-in.
 * Depending on the activities that you’ve selected as comfortable in helping with, the mentee may ask:
   * To pair program with you.
@@ -65,7 +65,7 @@ Mentees will be asked to take responsibility for their growth and improvement as
 
 CNCF will financially support one Outreachy intern for Kubernetes per semester; if you would like to participate and we already have one, assistance with securing a corporate sponsor for the additional budget ($6.5k) may be needed.
 
-*[Google Summer of Code](google-summer-of-code.md)*
+*[Google Summer of Code](../programs/google-summer-of-code.md)*
 * Being a mentor can take anywhere from 2-10 hours a week of your time depending on the student. In most cases, you will have a secondary/backup mentor to distribute the workload.
 * Before the Program:
   * Read the official GSOC mentors manual to get an overview.
@@ -89,7 +89,7 @@ CNCF will financially support one Outreachy intern for Kubernetes per semester; 
 
 A former GSoC intern for Kubernetes is now leading this for us - mentoring works! Thanks @nikhita!
 
-*[Pod Mentoring](mentoring-events.md)*
+*[Pod Mentoring](../programs/mentoring-events.md)*
 * Short group sessions with other mentors during KubeCon/CloudNativeCon events answering mentee questions
   * Designed to eliminate the awkwardness of 1:1s and ensure a wider breadth of knowledge to reduce pressure of having to provide an answer
   * Requires one of the mentors to be an "anchor" who is responsible for facilitating the conversation
