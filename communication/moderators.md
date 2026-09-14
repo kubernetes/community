@@ -21,7 +21,6 @@ communication channels and their home time zone. See our
 - [GitHub](#github)
 - [Discuss](#discuss)
   - [Administrators](#administrators-1)
-  - [Regional Category Moderators](#regional-category-moderators)
 - [YouTube Channel](#youtube-channel)
   - [Owners](#owners)
   - [Primary Moderators](#primary-moderators-1)
