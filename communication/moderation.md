@@ -215,13 +215,12 @@ umbrella.
 ### Discuss
 
 - [Discuss Guidelines](./discuss-guidelines.md)
-- [Moderators](./moderators.md#discuss.kubernetes.io)
-- [Regional Moderators](./moderators.md#regional-category-moderators)
+- [Moderators](./moderators.md#discuss)
 
 ### Mailing List
 
 - [Mailing List Guidelines](./mailing-list-guidelines.md)
-- [Moderators](./moderators.md#mailing-list)
+- [Moderators](./moderators.md#mailing-lists)
 
 ### Slack
 
