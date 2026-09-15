@@ -357,3 +357,14 @@ usergroups:
     members:
       - amorey
       - rxinui
+
+  - name: cloud-provider-openstack-maintainers
+    long_name: Cloud Provider OpenStack Maintainers
+    description: The maintainers of the OpenStack CCM and CSI drivers.
+    channels:
+      - provider-openstack
+    members:
+      - kayrus
+      - mandre
+      - stephen
+      - zetaab
