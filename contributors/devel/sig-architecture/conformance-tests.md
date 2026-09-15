@@ -178,8 +178,8 @@ following branches:
 ## Running Conformance Tests
 
 Conformance tests are designed to be run even when there is no cloud provider
-configured. Conformance tests must be able to be run against clusters that have
-not been created with `test-infra/kubetest`, just provide a kubeconfig with the
+configured. Conformance tests must be able to be run against any cluster,
+regardless of how it was created, just provide a kubeconfig with the
 appropriate endpoint and credentials.
 
 ### Running Conformance Tests With [KinD](https://kind.sigs.k8s.io/)
