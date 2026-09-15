@@ -1,3 +1,9 @@
+---
+name: k8s-events-instrumenter
+description: Update a kubernetes/kubernetes pull request that changes kubernetes events code. Use when asked to write a k8s PR/diff that touches events. Trigger phrases: "add this event in the PR".
+---
+
+
 # Event style guide
 
 Status: During Review
