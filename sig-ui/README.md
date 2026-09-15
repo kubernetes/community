@@ -25,9 +25,9 @@ The Chairs of the SIG run operations and processes governing the SIG.
 ## Emeritus Leads
 
 * Dan Romlein (**[@danielromlein](https://github.com/danielromlein)**)
+* Sebastian Florek (**[@floreks](https://github.com/floreks)**)
 * Jeffrey Sica (**[@jeefy](https://github.com/jeefy)**)
 * Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**)
-* Sebastian Florek (**[@floreks](https://github.com/floreks)**)
 
 ## Contact
 - Slack: [#sig-ui](https://kubernetes.slack.com/messages/sig-ui)

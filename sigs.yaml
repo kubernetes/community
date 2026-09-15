@@ -3428,12 +3428,12 @@ sigs:
       emeritus_leads:
         - github: danielromlein
           name: Dan Romlein
+        - github: floreks
+          name: Sebastian Florek
         - github: jeefy
           name: Jeffrey Sica
         - github: maciaszczykm
           name: Marcin Maciaszczyk
-        - github: floreks
-          name: Sebastian Florek
     meetings: []
     contact:
       slack: sig-ui
