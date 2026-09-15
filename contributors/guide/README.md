@@ -63,7 +63,7 @@ easier:
 
 ### Create a GitHub account
 
-Before you get started, you will need to [sign up](http://github.com/signup) for a GitHub user account.
+Before you get started, you will need to [sign up](https://github.com/signup) for a GitHub user account.
 
 ### Sign the CLA
 

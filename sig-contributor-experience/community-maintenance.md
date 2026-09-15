@@ -35,7 +35,7 @@ not assigned to one sole person.
 ## Calendars
 
 - [ ] Check that the calendar works
-  - Go to http://k8s.io/community and follow the flow
+  - Go to https://k8s.io/community and follow the flow
 - [ ] Make sure all SIG, WG, and other community meetings are showing - especially
       check new groups that were created in the last quarter
 - [ ] Make sure that invites have more than one owner, shared with the mailing
