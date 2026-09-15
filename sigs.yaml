@@ -3417,10 +3417,6 @@ sigs:
     label: ui
     leadership:
       chairs:
-        - github: floreks
-          name: Sebastian Florek
-          company: Plural
-          email: sebastian@plural.sh
         - github: joaquimrocha
           name: Joaquim Rocha
           company: Amutable
@@ -3432,6 +3428,8 @@ sigs:
       emeritus_leads:
         - github: danielromlein
           name: Dan Romlein
+        - github: floreks
+          name: Sebastian Florek
         - github: jeefy
           name: Jeffrey Sica
         - github: maciaszczykm
