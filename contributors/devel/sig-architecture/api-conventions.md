@@ -2001,10 +2001,10 @@ a unidirectional channel from the server to the client and chunks data as binary
 WebSocket frames. An optional WebSocket subprotocol is exposed that base64
 encodes the stream before returning it to the client.
 
-Clients should use the SPDY protocols if their clients have native support, or
-WebSockets as a fallback. Note that WebSockets is susceptible to Head-of-Line
-blocking and so clients must read and process each message sequentially. In
-the future, an HTTP/2 implementation will be exposed that deprecates SPDY.
+Clients should use the WebSocket protocols if their clients have native
+support, or SPDY as a fallback. Note that WebSockets is susceptible to
+Head-of-Line blocking and so clients must read and process each message
+sequentially.
 
 
 ## Validation
