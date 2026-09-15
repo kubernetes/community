@@ -349,6 +349,16 @@ usergroups:
       - stephenfin
       - winiciusallan
 
+  - name: orc-maintainers
+    long_name: ORC Maintainers
+    description: ORC Maintainers group.
+    channels:
+      - gophercloud
+    members:
+      - dlaw4608
+      - mandre
+      - winiciusallan
+
   - name: kubetail-maintainers
     long_name: kubetail Maintainers
     description: kubetail Maintainers group of kubetail.com
