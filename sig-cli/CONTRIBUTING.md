@@ -98,62 +98,34 @@ work.
 ### Adopt an issue
 
 Pick up an [issue] from the backlog by commenting on the issue that you would like to work on it.
-Be sure to mention the author of the issue as well as the SIG cli members `@mpuckett159` and `@ardaguclu`.
+Optionally mention the author of the issue and the [leads].
 
 Using the following comment will make it easier for us to search for issues folks want to have
 assigned to them:
 
-`cc @mpuckett159 @ardaguclu I would like to take this`
+`@{author} I would like to take this` or `I would like to take this`
 
 **Note:** Don't do this unless you will start work on the issue within a few days of being assigned.
-
-**Note:** GitHub only allows issues to be assigned to GitHub accounts that are part
-of the organization.
 
 **Picking your first issue**
 
 For your first issue, we recommend picking an issue labeled with "good first issue" from the [issue] backlog.
 
-**Picking the right size of issue**
-
-Be sure to pick up an issue that is appropriate to the time you are able to commit.
-We recommend first time contributors start with small or medium issues.
-
-Following are very rough estimates, but are best effort only.  They assume you have a
-development environment already set up and are able to build a kubectl binary and
-use it against a cluster.  These estimates assume some knowledge of Go.
-
-- `size/S`
-  - 4-10 hours
-- `size/M`
-  - 10-20 hours
-- `size/L`
-  - 20+ hours
-- `size/XL`
-  - 40-80 hours
-
-Meta/Umbrella issues may have multiple components.  By signing up for a Meta/Umbrella issue,
-you are only committing to one piece of it.  Let the issue author know when you have completed
-some piece of it, and if you would like to continue working on it, or have it unassigned.
-
 **Picking the right kind of issue**
 
-Guided issues have a *type* defining the type of work to be done.  Pick up an
+Guided issues have a *kind* label defining the kind of work to be done.  Pick up an
 issue that fits your experience level and interest.  Documentation and
 test-coverage issues typically are smaller in scope and easier to complete than
 features and cleanup issues.
 
-- `type/code-cleanup`
+- `kind/cleanup`
   - Usually some refactoring or small rewrites of code.
-- `type/code-documentation`
+- `kind/documentation`
   - Write `doc.go` with package overview and examples or add code comments to document
     existing types and functions.
-- `type/code-feature`
+- `kind/feature`
   - Usually a new go package / library for some functionality that is requested.
     Should be encapsulated in its own interfaces with thorough unit tests for the new library.
-- `type/code-test-coverage`
-  - Audit tests for a package.  Run coverage tools and also manually look at what functions
-    are missing unit or integration tests.  Write tests for these functions.
 
 **Provide periodic status updates**
 
@@ -162,6 +134,8 @@ to provide periodic updates to it.  Do update the issue with your status at leas
 week, and publish your work to a fork so the community can see your progress and
 provide early feedback.
 
+Check out the [Report Progress](#report-progress) section to know when to provide an update
+
 If you find the issue is too challenging, time consuming, or you are no longer able to work on it,
 this is perfectly acceptable and please let the issue author know.
 If you like, you may pick up a different issue immediately or sometime in the future.
@@ -169,7 +143,7 @@ If you like, you may pick up a different issue immediately or sometime in the fu
 **Summary**:
 
 - Don't pick up an issue until you are ready to start working on it
-- When you want to pick up an issue, be sure to comment `@mpuckett159` and `@ardaguclu`.
+- When you want to pick up an issue add a comment, and mention a [lead][leads].
   Expect a response within 2 days.
 - Update the issue every week with your progress so we know it is being actively worked on.
 - There is an expectation that some time will be committed to working on the issue each
@@ -178,9 +152,6 @@ If you like, you may pick up a different issue immediately or sometime in the fu
 ### Meet the community
 
 Engage with the SIG cli community!  Let us know who you are and how things are going!
-
-- Fill out the [about me form] so we know a bit about you and can direct your work accordingly.
-  - **Note:** After filling out the form, reach out via slack or the googlegroup and let us know.
 
 - In [slack][slack-messages] (signup [here][slack-signup]),
   @mention a [lead][leads] and ask if there are any issues you could pick up, or
@@ -201,7 +172,7 @@ features and get them accepted.
 
 __New contributors:__ Please start by adopting an [existing issue].
 
-A feature request is an [issue] mentioning `@kubernetes/sig-cli-feature-requests`.
+A feature request is an [issue] mentioning `@kubernetes/sig-cli-feature-requests`. // XXX -> GROUP_REPLACE_WITH_LABEL
 
 To encourage readership, the issue description should _concisely_ (2-4 sentence) describe
 the problem that the feature addresses.
@@ -217,8 +188,8 @@ To minimize wasted work and improve communication across efforts,
 the user experience and software design must be agreed upon before
 any PRs are sent for code review.
 
-1. Identify a problem by filing an [issue] (mention `@kubernetes/sig-cli-feature-requests`).
-2. Submit a [design proposal] and get it approved by a lead.
+1. Identify a problem by filing an [issue] (mention `@kubernetes/sig-cli-feature-requests`). // XXX -> GROUP_REPLACE_WITH_LABEL
+2. Submit a [KEP] and get it approved.
 3. Announce the proposal as an [agenda] item for the sig-cli [meeting].
   - Ensures awareness and feedback.
   - Should be included in meeting notes sent to the sig-cli [group].
@@ -229,63 +200,33 @@ any PRs are sent for code review.
    - testing is completed,
    - docs are completed,
    - feature is designated _alpha_, _beta_ or _GA_.
-6. Implement the code per discussion in [bug lifecycle][bug].
-7. Update [kubectl docs].
+6. Implement the code per discussion in [bug lifecycle][bug]. // XXX -> BROKEN_LINK Maybe outdated process?
+7. Update [kubectl docs]. // XXX -> ENRICH Maybe need to add a link to the process on how to update the docs? It's not clear how to properly link PRs between the 2 repos.
 8. Wait for your feature to appear in the next Kubernetes release!
 
 
-## Design Proposals
+## Kubernetes Enhancement Proposals
 
 __New contributors:__ Please start by adopting an [existing issue].
 
-A design proposal is a single markdown document in the [design repo]
-that follows the [design template].
+A Kubernetes Enhancement Proposal ([KEP]) is a design document proposing and
+tracking a significant change to Kubernetes. It describes the changes
+motivation, implementation, risks, testing, and path from alpha to stable.
 
-To make one,
-- Prepare the markdown document as a PR to that repo.
-  - Avoid _Work In Progress_ (WIP) PRs (send it only after
-    you consider it complete).
-  - For early feedback, use the email discussion [group].
-- Mention `@kubernetes/sig-cli-proposals` in the description.
-- Mention the related [feature request].
-
-Expect feedback from 2-3 different sig-cli community members.
-
-Incorporate feedback and comment [`PTAL`].
-
-Once a [lead][leads] has agreed (via review commentary) that design
-and code review resources can be allocated to tackle the proposal, the
-details of the user experience and design should be discussed in the
-community.
-
-This step is _important_; it prevents code churn and thrashing around
-issues like flag names, command names, etc.
-
-It is normal for sig-cli community members to push back on feature
-proposals. sig-cli development and review resources are extremely
-constrained. Community members are free to say
-
-- No, not this release (or year).
-- This is desirable but we need help on these other existing issues before tackling this.
-- No, this problem should be solved in another way.
-
-The proposal can be merged into the [design repo] after [leads][leads]
-approval and discussion as a meeting [agenda] item.
-
-Then coding can begin.
+Please follow the [KEP README] for more details on the lifecycle of KEPs.
 
 ## Implementation
 
 Contributors can begin implementing a feature before any of the above
 steps have been completed, but _should not send a PR until
-the [design proposal] has been merged_.
+the [KEP][KEP README] has been merged_.
 
 See the [development guide] for instructions on setting up the
 Kubernetes development environment.
 
 Implementation PRs should
-- mention the issue of the associated design proposal,
-- mention `@kubernetes/sig-cli-pr-reviews`,
+- mention the issue of the associated [KEP][KEP README],
+- mention `@kubernetes/sig-cli-pr-reviews`, // XXX -> GROUP_REPLACE_WITH_LABEL
 - __include tests__.
 
 Small features and flag changes require only unit/integration tests,
@@ -339,7 +280,7 @@ to wait until the next release.
 ### If your bug issue is stuck
 
 If an issue isn't getting any attention and is unresolved, mention
-`@kubernetes/sig-cli-bugs`.
+`@kubernetes/sig-cli-bugs`. // XXX -> DECISION_WHO_TO_MENTION
 
 Highlight the severity and urgency of the issue.  For severe issues
 escalate by contacting sig [leads] and attending the [meeting].
@@ -347,7 +288,7 @@ escalate by contacting sig [leads] and attending the [meeting].
 ### If your feature request issue is stuck
 
 If an issue isn't getting any attention and is unresolved, mention
-`@kubernetes/sig-cli-feature-requests`.
+`@kubernetes/sig-cli-feature-requests`. // XXX -> DECISION_WHO_TO_MENTION
 
 If a particular issue has a high impact for you or your business,
 make sure this is clear on the bug, and reach out to the sig leads
@@ -363,7 +304,7 @@ proposal_ is much less likely to be stuck than a dangling PR.
 However, if it happens do the following:
 
 - If your PR is stuck for a week or more because it has never gotten any
-  comments, mention `@kubernetes/sig-cli-pr-reviews` and ask for attention.
+  comments, mention `@kubernetes/sig-cli-pr-reviews` and ask for attention. // XXX -> DECISION_WHO_TO_MENTION
 - If your PR is stuck for a week or more _after_ it got comments, but
   the attention has died down.  Mention the reviewer and comment with
   [`PTAL`].
@@ -371,9 +312,9 @@ However, if it happens do the following:
 If you are still not able to get any attention after a couple days,
 escalate to sig [leads] by mentioning them.
 
-### If your design proposal issue is stuck
+### If your [KEP] issue is stuck
 
-It may happen that your design doc gets stuck without getting merged
+It may happen that your [KEP] gets stuck without getting merged
 or additional feedback. If you believe that your design is important
 and has been dropped, or it is not moving forward, please add it to
 the sig cli bi-weekly meeting [agenda] and mail the [group] saying
@@ -389,6 +330,8 @@ See the sig-cli [community page] for points of contact and meeting times:
 
 ## Use of [@mentions]
 
+// XXX -> DECISION_WHO_TO_MENTION
+
 - `@{any lead}` solicit opinion or advice from [leads].
 - `@kubernetes/sig-cli-bugs` sig-cli centric bugs.
 - `@kubernetes/sig-cli-pr-reviews` triggers review of code fix PR.
@@ -399,20 +342,19 @@ See the sig-cli [community page] for points of contact and meeting times:
 [Kubernetes Basics Tutorial]: https://kubernetes.io/docs/tutorials/kubernetes-basics
 [PR]: https://help.github.com/articles/creating-a-pull-request
 [`PTAL`]: https://en.wiktionary.org/wiki/PTAL
-[agenda]: https://docs.google.com/document/d/1r0YElcXt6G5mOWxwZiXgGu_X6he3F--wKwg-9UBc29I/edit
+[agenda]: https://docs.google.com/document/d/1I1UFGHMDO7mMbDbioQp52DEJXEhk1qymch3qL5-EN10/edit
 [bug]: #bug-lifecycle
 [communication]:  /sig-cli/README.md#contact
 [community page]: /sig-cli
-[design proposal]: #design-proposals
-[design repo]: https://git.k8s.io/design-proposals-archive/cli
-[design template]: https://git.k8s.io/design-proposals-archive/Design_Proposal_TEMPLATE.md
+[KEP]: https://github.com/kubernetes/enhancements/tree/master/keps/sig-cli
+[KEP README]: https://github.com/kubernetes/enhancements/blob/master/README.md
 [development guide]: /contributors/devel/development.md
 [existing issue]: #adopt-an-issue
 [feature repo]: https://github.com/kubernetes/features
 [feature request]: #feature-requests
 [feature]: https://github.com/kubernetes/features
 [group]: https://groups.google.com/a/kubernetes.io/g/sig-cli
-[issue]: https://github.com/kubernetes/kubectl/issues?q=is%3Aissue%20state%3Aopen%20label%3Apriority%2Fbacklog
+[issue]: https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue%20state%3Aopen%20label%3Asig%2Fcli
 [kubectl docs]: https://kubernetes.io/docs/tutorials/object-management-kubectl/object-management/
 [kubernetes/cmd/kubectl]: https://git.k8s.io/kubernetes/cmd/kubectl
 [kubernetes/staging/src/k8s.io/kubectl/pkg]: https://git.k8s.io/kubernetes/staging/src/k8s.io/kubectl/pkg
