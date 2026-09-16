@@ -111,6 +111,28 @@ assigned to them:
 
 For your first issue, we recommend picking an issue labeled with "good first issue" from the [issue] backlog.
 
+**Picking the right size of issue**
+
+Be sure to pick up an issue that is appropriate to the time you are able to commit.
+We recommend first time contributors start with small or medium issues.
+
+Following are very rough estimates, but are best effort only.  They assume you have a
+development environment already set up and are able to build a kubectl binary and
+use it against a cluster.  These estimates assume some knowledge of Go.
+
+- `size/S`
+  - 4-10 hours
+- `size/M`
+  - 10-20 hours
+- `size/L`
+  - 20+ hours
+- `size/XL`
+  - 40-80 hours
+
+Meta/Umbrella issues may have multiple components.  By signing up for a Meta/Umbrella issue,
+you are only committing to one piece of it.  Let the issue author know when you have completed
+some piece of it, and if you would like to continue working on it, or have it unassigned.
+
 **Picking the right kind of issue**
 
 Guided issues have a *kind* label defining the kind of work to be done.  Pick up an
