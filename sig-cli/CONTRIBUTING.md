@@ -109,7 +109,8 @@ assigned to them:
 
 **Picking your first issue**
 
-For your first issue, we recommend picking an issue labeled with "good first issue" from the [issue] backlog.
+In order to find your first issue, the best way is to attend the sig-cli calls, especially the bug scrubs.
+Check out the [Meet the Community](#meet-the-community) section for more information.
 
 **Picking the right size of issue**
 
@@ -194,10 +195,11 @@ features and get them accepted.
 
 __New contributors:__ Please start by adopting an [existing issue].
 
-A feature request is an [issue] mentioning `@kubernetes/sig-cli-feature-requests`. // XXX -> GROUP_REPLACE_WITH_LABEL
+For feature requests please check out the [KEP README]
+Starting a discussion with sig-cli is the best way to forward your KEP.
 
-To encourage readership, the issue description should _concisely_ (2-4 sentence) describe
-the problem that the feature addresses.
+Check out the [If your KEP issue is stuck](#if-your-kep-issue-is-stuck) section
+to learn how to start a discussion about your KEP.
 
 ### Feature lifecycle
 
