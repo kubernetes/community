@@ -349,6 +349,16 @@ usergroups:
       - stephenfin
       - winiciusallan
 
+  - name: orc-maintainers
+    long_name: ORC Maintainers
+    description: The maintainers of the OpenStack Resource Controller (ORC) project at k-orc.cloud
+    channels:
+      - gophercloud
+    members:
+      - dlaw4608
+      - mandre
+      - winiciusallan
+
   - name: kubetail-maintainers
     long_name: kubetail Maintainers
     description: kubetail Maintainers group of kubetail.com
