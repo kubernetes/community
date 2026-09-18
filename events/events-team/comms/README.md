@@ -11,7 +11,7 @@ Volunteers are expected to assist with comms during the current KCS cycle, as di
 
 An emeritus comms lead is a past lead who provides mentorship to the current comms lead. Should have [Kubernetes Org Membership].
 
-The Website Manager is responsible for ensuring updates to the [Kubernetes Contributor Website](k8s.dev) happen. Requires [Kubernetes Org Membership]
+The Website Manager is responsible for ensuring updates to the [Kubernetes Contributor Website](http://k8s.dev) happen. Requires [Kubernetes Org Membership]
 
 - [KCS Comms Lead Overview](#kcs-comms-lead-overview)
 - [Shadow to the KCS Comms Lead Role](#shadow-to-the-kcs-comms-lead-role)
