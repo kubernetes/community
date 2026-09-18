@@ -138,7 +138,7 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 * **Using Go Modules to Manage Dependencies** [vendor.md](sig-architecture/vendor.md)
   This document only applies to Kubernetes development after 1.14.x. See [previous godep documentation for working with dependencies](sig-architecture/godep.md) for Kubernetes 1.14.x and earlier.
 
-* **Using Go Modules to Manage Dependencies (for Kubernetes 1.14.x and earlier)** [godep.md](sig-architecture/godep.md)
+* **Using godep to Manage Dependencies (for Kubernetes 1.14.x and earlier)** [godep.md](sig-architecture/godep.md)
   See [current documentation for working with dependencies](sig-architecture/vendor.md) for master branch development.
 
 * **Conformance Testing in Kubernetes** [conformance-tests.md](sig-architecture/conformance-tests.md)
