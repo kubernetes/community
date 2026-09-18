@@ -104,6 +104,9 @@ assigned to them:
 
 **Note:** Don't do this unless you will start work on the issue within a few days of being assigned.
 
+**Note:** GitHub only allows issues to be assigned to GitHub accounts that are part
+of the organization.
+
 **Picking your first issue**
 
 In order to find your first issue, the best way is to attend the SIG CLI calls, especially the bug scrubs.
