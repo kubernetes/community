@@ -176,9 +176,7 @@ If you like, you may pick up a different issue immediately or sometime in the fu
 
 Engage with the SIG cli community!  Let us know who you are and how things are going!
 
-- In [slack][slack-messages] (signup [here][slack-signup]),
-  @mention a [lead][leads] and ask if there are any issues you could pick up, or
-  let them know what you are working on.
+- In [slack][slack-messages] (signup [here][slack-signup]) ask if there are any issues you could pick up, or let everyone know what you are working on.
 
 - Attend a sig-cli [meeting] and introduce yourself and what you are working on.
 
