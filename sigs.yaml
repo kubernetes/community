@@ -1937,10 +1937,6 @@ sigs:
     label: instrumentation
     leadership:
       chairs:
-        - github: rexagod
-          name: Pranshu Srivastava
-          company: Red Hat
-          email: rexagod@gmail.com
         - github: richabanker
           name: Richa Banker
           company: Google
@@ -1967,6 +1963,9 @@ sigs:
           name: Han Kang
         - github: piosz
           name: Piotr Szczesniak
+        - github: rexagod
+          name: Pranshu Srivastava
+          email: rexagod@gmail.com
     meetings:
       - description: Regular SIG Meeting
         day: Friday
