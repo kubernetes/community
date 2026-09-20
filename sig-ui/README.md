@@ -20,6 +20,7 @@ The [charter](charter.md) defines the scope and governance of the UI Special Int
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Joaquim Rocha (**[@joaquimrocha](https://github.com/joaquimrocha)**), Amutable
+* Kahiro Okina (**[@kahirokunn](https://github.com/kahirokunn)**), Craftsman Software, Inc.
 * Shu Muto (**[@shu-mutou](https://github.com/shu-mutou)**), NEC
 
 ## Emeritus Leads
