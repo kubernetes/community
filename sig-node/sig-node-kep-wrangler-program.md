@@ -11,7 +11,7 @@ SIG Node is frequently the front-runner on completed KEP numbers in a given rele
 ## Important deadlines 
 
 As a KEP wrangler you should make sure that the KEPs assigned to you are abiding the following deadlines, as set by the release team:
-- PRR Freeze
+- KEP Readiness Deadline
 - Enhancements Freeze
 - Code/Test Freeze
 - Docs Freeze
@@ -52,7 +52,7 @@ In order to assess the status of KEPs throughout the release, we plan to post re
 
 ### Status Update Templates
 
-Use this template for updates before each major deadline (PRR Freeze, Enhancements Freeze, Code Freeze, Docs Freeze):
+Use this template for updates before each major deadline (KEP Readiness Deadline, Enhancements Freeze, Code Freeze, Docs Freeze):
 
 > **Status of my assigned KEPs to wrangle - [Deadline Name]:**
 > 

@@ -91,6 +91,9 @@ The general labeling process should be consistent across artifact types.
 
 - *enhancement*: see "[Is My Thing an Enhancement?](https://git.k8s.io/enhancements/README.md#is-my-thing-an-enhancement)"
 
+- *[KEP Readiness Deadline][kep-readiness-deadline]*:
+  the deadline by which [KEPs][keps] have to be opted into the release with production readiness reviewers identified
+
 - *[Enhancements Freeze][enhancements-freeze]*:
   the deadline by which [KEPs][keps] have to be completed in order for
   enhancements to be part of the current release
@@ -345,6 +348,7 @@ issue kind labels must be set:
 
 [cherry-picks]: /contributors/devel/sig-release/cherry-picks.md
 [code-freeze]: https://git.k8s.io/sig-release/releases/release_phases.md#code-freeze
+[kep-readiness-deadline]: https://git.k8s.io/sig-release/releases/release_phases.md#kep-readiness-deadline
 [enhancements-freeze]: https://git.k8s.io/sig-release/releases/release_phases.md#enhancements-freeze
 [exceptions]: https://git.k8s.io/sig-release/releases/release_phases.md#exceptions
 [keps]: https://git.k8s.io/enhancements/keps

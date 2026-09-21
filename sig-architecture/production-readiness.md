@@ -20,11 +20,11 @@ As of 1.21, PRRs are now blocking. PRR _approval_ is required for the enhancemen
 to be part of the release. This means that any KEPs targeting the release for any
 stage will require production readiness approval by the *Enhancements Freeze Date*.
 
-Introduced in 1.23, *Product Readiness Freeze* happens a week before *Enhancements 
-Freeze Date*. All KEPs must be opted in by this date to help PRR reviewers provision 
-their workload. KEPs opted in after the *Product Readiness Freeze* are at risk of not 
-being reviewed by the PRR team, depending on bandwidth. KEP owners can file an 
-[Exception request](https://github.com/kubernetes/sig-release/blob/master/releases/EXCEPTIONS.md) if the PRR has not been completed post Enhancements Freeze.
+Introduced in 1.23, the *KEP Readiness Deadline* (previously referred to as *PRR Freeze*)
+happens a week before the *Enhancements Freeze Date*. All KEPs must be opted in by this date
+to help PRR reviewers provision their workload, and to allow for release team tracking. KEP
+owners can file an [Exception request](https://github.com/kubernetes/sig-release/blob/master/releases/EXCEPTIONS.md)
+if they anticipate missing the KEP Readiness or Enhancements Freeze deadlines.
 
 Note that some of the questions in the [KEP template] should be answered in both
 the KEP's README.md and the `kep.yaml`, in order to support automated checks on
@@ -37,8 +37,9 @@ KEP authors, and reviewed by the SIG leads. Once the leads are satisfied with
 both the overall KEP (i.e., it is ready to move to `implementable` state) and
 the PRR answers, the authors may request PRR approval:
 
-* Make sure the Enhancement KEP is labeled `lead-opted-in` before PRR Freeze. This is required so that the Enhancements 
-  release team and PRR team are aware the KEP is targeting the release.
+* Make sure the Enhancement KEP is labeled `lead-opted-in` before the KEP Readiness Deadline.
+  This is required so that the Enhancements release team and PRR team are aware the KEP is
+  targeting the release.
 * Assign a PRR approver from the `prod-readiness-approvers` list in the
   [OWNERS_ALIASES] file. This may be done earlier as well, to get early feedback
   or just to let the approver know. Reach out on the `#prod-readiness` Slack
@@ -125,8 +126,8 @@ specific to the current Kubernetes release. The board typically follows
 naming scheme `[1.XX] Enhancements Tracking`, where `1.XX` represents the current
 Kubernetes release version.
 
-* \[PRR KEP\]: https://git.k8s.io/enhancements/keps/sig-architecture/1194-prod-readiness
-* \[KEP template\]: https://git.k8s.io/enhancements/keps/NNNN-kep-template
-* \[OWNERS_ALIASES\]: https://git.k8s.io/enhancements/OWNERS_ALIASES
-* \[example PRR approval request PR\]: https://github.com/kubernetes/enhancements/pull/2179/files
-* \[example metrics PR\]: https://github.com/kubernetes/kubernetes/pull/97814
+[PRR KEP]: https://git.k8s.io/enhancements/keps/sig-architecture/1194-prod-readiness
+[KEP template]: https://git.k8s.io/enhancements/keps/NNNN-kep-template
+[OWNERS_ALIASES]: https://git.k8s.io/enhancements/OWNERS_ALIASES
+[example PRR approval request PR]: https://github.com/kubernetes/enhancements/pull/2179/files
+[example metrics PR]: https://github.com/kubernetes/kubernetes/pull/97814
