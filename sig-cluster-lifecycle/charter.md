@@ -51,14 +51,70 @@ and opts-in to updates and modifications to [sig-governance].
 
 ### Deviations from [sig-governance]
 
-- As SIG Cluster Lifecycle contains a number of subprojects, the SIG has empowered subproject leads with a number of additional responsibilities, including but not limited to:
-   * Releases: The subproject owners are responsible for determining the subproject release cadence, producing releases, and communicating releases with SIG Release and SIG Cluster Lifecycle.
-   * Backlog grooming: The subproject owners are responsible for ensuring that the issues for the subproject are correctly associated with milestones and that bugs are triaged in a timely manner.
-   * PR timeliness: The subproject owners are responsible for ensuring that active pull requests for the subproject are addressed in a timely manner.
+As SIG Cluster Lifecycle contains a number of subprojects, the SIG has empowered subproject leads and/or maintainers 
+with a number of additional responsibilities, including but not limited to:
 
-### Subproject Creation
+- A subproject must have one or more dedicated OWNERS files. These files define the exact repositories 
+  or subdirectories controlled by that subproject's maintainers.
+- Subproject maintainers must register security contacts with the Kubernetes Security Response Committee (SRC) 
+  and maintain an active SECURITY.md or OWNERS security alias.
+- Subprojects should run their own focused meetings and maintain separate agendas. Etc.
+- The subproject owners are responsible for ensuring that the issues and bugs are triaged in a timely manner.
+- The subproject owners are responsible for ensuring that pull requests are reviewed in a timely manner.
+- The subproject owners are responsible for determining the subproject release cadence and producing releases.
+- A subproject is responsible for ensuring that release artifacts and documentation are at the highest quality standard
+  and up-to-date with the rest of the ecosystem.
 
-- Federation of Subprojects
+Please note that, despite a certain degree of operational autonomy, SIG Cluster Lifecycle subprojects are still 
+expected to be continuously engaged and active in the broader SIG activities. As such:
+
+- Subproject leads or members are expected to show up periodically at the SIG meetings, share milestones, 
+  new ideas as well as issues or problems the subproject team is facing.
+- Subproject leads should actively contribute to the preparation of the SIG the annual report.
+
+### Subproject creation
+
+SIG Cluster Lifecycle will consider the creation of a new subproject when a group of people actively engaged 
+in the SIG will propose an innovative idea in scope of the SIG charter, ideally filling some of the void in 
+the SIG vision or extending it in a meaningful way.
+
+Like any significant change in Kubernetes, new subprojects should be backed by a KEP detailing 
+the subprojects goals, non goals, and the initial roadmap.
+
+The KEP should be signed by a group of contributors volunteering for the subprojects initial work as well as 
+for future maintenance; in the best interest of the new subproject, this group is expected to be adequate 
+to the effort and heterogeneous.
+
+When considering submitting a new subproject proposal, please be aware that:
+
+- KEP process for new subprojects should follow well established practices:
+  - preliminary discussion in the SIG meetings
+  - [optional] draft in a google doc for easier collaboration
+  - PR to https://github.com/kubernetes/enhancements
+  - Review
+  - Approval by SIG leads
+- Subprojects that don't bring contributors into the SIG Cluster Lifecycle make the SIG sustainability problem worse, not better.
+- SIG Cluster Lifecycle is not obligated to host every project in its technical space, and "there is nowhere else to put it" 
+  is usually not a good reason to create a new subproject.
+- If your need is: "we need a neutral home for project XX and want to build a community", CNCF Sandbox is the right path for you.
+
+Also, the SIG is committed to be a good citizen in the Kubernetes community, and as such before accepting a new subproject 
+we should always consider that hosting is not free: CI and infra cost, org membership, security response, release duties, GitHub administration.
+
+### Subprojects Archival
+
+Subprojects not active anymore will be archived.
+
+Similarly, archival will be considered if a subproject team drifts away significantly from the broader SIG activity.
+
+While SIG leads will have the ultimate word on archival decisions, please be aware that following signals might be considered:
+- Subprojects not showing up in the SIG meeting in the last 6 months or answering to SIG surveys.
+- Subprojects failing to contribute to the SIG the annual report.
+- Subprojects not actively maintaining the OWNER files, not hosting project meetings, not actively triaging issues or PRs.
+- Subprojects failing to keep up with Kubernetes releases or with Cluster API releases.
+- Subprojects without a release in the last 6 months.
+- Subprojects without a commit in the last 6 months (bots excluded).
+- Subprojects failing to ensure quality of deliverables and documentation.
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
