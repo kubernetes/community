@@ -56,9 +56,8 @@ with a number of additional responsibilities, including but not limited to:
 
 - A subproject must have one or more dedicated OWNERS files. These files define the exact repositories 
   or subdirectories controlled by that subproject's maintainers.
-- Subproject maintainers must register security contacts with the Kubernetes Security Response Committee (SRC) 
-  and maintain an active SECURITY.md or OWNERS security alias.
-- Subprojects should run their own focused meetings and maintain separate agendas. Etc.
+- Subproject must define security contacts, see [sig-governance][security contact].
+- Subprojects should run their own focused meetings and maintain separate agendas. 
 - The subproject owners are responsible for ensuring that the issues and bugs are triaged in a timely manner.
 - The subproject owners are responsible for ensuring that pull requests are reviewed in a timely manner.
 - The subproject owners are responsible for determining the subproject release cadence and producing releases.
@@ -70,16 +69,20 @@ expected to be continuously engaged and active in the broader SIG activities. As
 
 - Subproject leads or members are expected to show up periodically at the SIG meetings, share milestones, 
   new ideas as well as issues or problems the subproject team is facing.
-- Subproject leads should actively contribute to the preparation of the SIG the annual report.
+- Subproject leads should actively contribute to the preparation of the SIG annual report.
 
 ### Subproject creation
+
+Federation of Subprojects
+
+Please note that:
 
 SIG Cluster Lifecycle will consider the creation of a new subproject when a group of people actively engaged 
 in the SIG will propose an innovative idea in scope of the SIG charter, ideally filling some of the void in 
 the SIG vision or extending it in a meaningful way.
 
 Like any significant change in Kubernetes, new subprojects should be backed by a KEP detailing 
-the subprojects goals, non goals, and the initial roadmap.
+the subprojects goals, non-goals, and the initial roadmap.
 
 The KEP should be signed by a group of contributors volunteering for the subprojects initial work as well as 
 for future maintenance; in the best interest of the new subproject, this group is expected to be adequate 
@@ -89,10 +92,10 @@ When considering submitting a new subproject proposal, please be aware that:
 
 - KEP process for new subprojects should follow well established practices:
   - preliminary discussion in the SIG meetings
-  - [optional] draft in a google doc for easier collaboration
+  - [optional] draft in a Google doc for easier collaboration
   - PR to https://github.com/kubernetes/enhancements
   - Review
-  - Approval by SIG leads
+  - Approval by a [super-majority] of the active Leads
 - Subprojects that don't bring contributors into the SIG Cluster Lifecycle make the SIG sustainability problem worse, not better.
 - SIG Cluster Lifecycle is not obligated to host every project in its technical space, and "there is nowhere else to put it" 
   is usually not a good reason to create a new subproject.
@@ -107,15 +110,25 @@ Subprojects not active anymore will be archived.
 
 Similarly, archival will be considered if a subproject team drifts away significantly from the broader SIG activity.
 
-While SIG leads will have the ultimate word on archival decisions, please be aware that following signals might be considered:
+The following signals might be considered to determine if a subproject should be archived:
 - Subprojects not showing up in the SIG meeting in the last 6 months or answering to SIG surveys.
-- Subprojects failing to contribute to the SIG the annual report.
-- Subprojects not actively maintaining the OWNER files, not hosting project meetings, not actively triaging issues or PRs.
+- Subprojects failing to contribute to the SIG annual report.
+- Subprojects not actively maintaining the OWNERS files, not hosting project meetings, not actively triaging issues or PRs.
 - Subprojects failing to keep up with Kubernetes releases or with Cluster API releases.
 - Subprojects without a release in the last 6 months.
 - Subprojects without a commit in the last 6 months (bots excluded).
 - Subprojects failing to ensure quality of deliverables and documentation.
 
+If a subproject seems not active/eligbile for archival, SIG leads should perform a due diligence with subproject leads and maintainers.
+
+The decision of archiving a subproject a [super-majority] may be done through a super-majority vote of the active Leads.
+
+After the vote, an email should be sent to the SIG Cluster Lifecycle mailing list (sig-cluster-lifecycle@kubernetes.io) or
+to the developer mailing list (dev@kubernetes.io) outlining the decision. 
+
+Archival must start after one months grace period or more from the vote.
+
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
+[security contact]: [https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md](https://github.com/kubernetes/community/blob/main/committee-steering/governance/sig-governance.md#security-contact)
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
