@@ -50,7 +50,7 @@ None
 
 
 **Retired in 2025:**
-  - sigs-github-actions
+  - sigs-github-actions  
 **Continuing:**
   - community
   - community-management
