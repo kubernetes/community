@@ -16,7 +16,7 @@
 - LWKD:
   - 46 issues were published in the year
 - New Contributor Orientation
-  -
+  - Attendence of 180 people accross all NCO Meetings in 2025
 - Social Media Metrics
   -
 - Community Accounts
