@@ -26,7 +26,7 @@
 
 We have a few areas that need contributors:
 - [Slack Automation](https://github.com/kubernetes-sigs/slack-infra/)
-- [Elekto](https://github.com/elekto-io/elekto) **Note:** Elekto is soon moving to Kubernetes as a project under the SIG ContribEx Elections subproject
+- [Elekto](https://github.com/elekto-io/elekto) **Note:** Elekto is soon [moving to Kubernetes](https://github.com/kubernetes/community/issues/8850) as a project under the SIG ContribEx Elections subproject
   - [Help Wanted Issues](https://github.com/elekto-io/elekto/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22)
 - [Contributor Site](https://github.com/kubernetes/contributor-site/)
 - [Mentoring Programs](https://github.com/kubernetes/community/tree/master/mentoring)
