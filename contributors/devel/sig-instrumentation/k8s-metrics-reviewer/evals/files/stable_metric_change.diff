@@ -1,0 +1,20 @@
+diff --git a/staging/src/k8s.io/apiserver/pkg/endpoints/metrics/metrics.go b/staging/src/k8s.io/apiserver/pkg/endpoints/metrics/metrics.go
+index 1234567..89abcde 100644
+--- a/staging/src/k8s.io/apiserver/pkg/endpoints/metrics/metrics.go
++++ b/staging/src/k8s.io/apiserver/pkg/endpoints/metrics/metrics.go
+@@ -10,12 +10,13 @@ import (
+ 	compbasemetrics "k8s.io/component-base/metrics"
+ )
+ 
+ var (
+ 	requestCounter = compbasemetrics.NewCounterVec(
+ 		&compbasemetrics.CounterOpts{
+ 			Name:           "apiserver_request_total",
+ 			Help:           "Counter of apiserver requests.",
+ 			StabilityLevel: compbasemetrics.STABLE,
+ 		},
+-		[]string{"verb", "dry_run", "group", "version", "resource", "scope", "component", "code"},
++		// Modifying labels on STABLE metric (adding new label and removing verb) - frozen!
++		[]string{"http_method", "dry_run", "group", "version", "resource", "scope", "component", "code"},
+ 	)
+ )
