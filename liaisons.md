@@ -63,6 +63,7 @@ members will assume one of the departing members groups.
 | [WG Node Identity](wg-node-identity/README.md) | Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**) |
 | [WG Node Lifecycle](wg-node-lifecycle/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
 | [WG Workload-aware Scheduling](wg-workload-aware-scheduling/README.md) | Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**) |
+| [WG Workload Conformance](wg-workload-conformance/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
 | [Committee Code of Conduct](committee-code-of-conduct/README.md) | Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**) |
 | [Committee Security Response](committee-security-response/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
 <!-- BEGIN CUSTOM CONTENT -->
