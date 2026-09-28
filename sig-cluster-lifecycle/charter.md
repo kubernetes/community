@@ -94,6 +94,9 @@ When considering submitting a new subproject proposal, please be aware that:
   - preliminary discussion in the SIG meetings
   - [optional] draft in a Google doc for easier collaboration
   - PR to https://github.com/kubernetes/enhancements
+    - Official [KEP template](https://github.com/kubernetes/enhancements/tree/master/keps/NNNN-kep-template) should be used;
+      template's paragraphs that does not make sense for a new subproject should be dropped, e.g. "Upgrade / Downgrade Strategy"
+    - Prior art [KEP 2495 - Kubernetes Cluster Management API](https://github.com/kubernetes/enhancements/tree/master/keps/sig-cluster-lifecycle/clusterapi/2495-Kubernetes-Cluster-Management-API) (Cluster API)
   - Review
   - Approval by a [super-majority] of the active Leads
 - Subprojects that don't bring contributors into the SIG Cluster Lifecycle make the SIG sustainability problem worse, not better.
