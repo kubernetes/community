@@ -167,7 +167,6 @@ channels:
   - name: gophercloud
   - name: gpu-nvidia
   - name: grafana-operator
-  - name: haproxy-ingress
   - name: headlamp
     id: C01FXB5E8ER
   - name: headlamp-dev
@@ -406,6 +405,8 @@ channels:
   - name: multi-platform
   - name: myks
   - name: mysql-operator
+  - name: n42-gateway
+    id: C01D8GKKT5H
   - name: nais
   - name: nauticus
   - name: navigator
