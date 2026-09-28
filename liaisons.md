@@ -63,6 +63,7 @@ members will assume one of the departing members groups.
 | [WG Node Identity](wg-node-identity/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [WG Node Lifecycle](wg-node-lifecycle/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
 | [WG Workload-aware Scheduling](wg-workload-aware-scheduling/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
+| [WG Workload Conformance](wg-workload-conformance/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
 | [Committee Code of Conduct](committee-code-of-conduct/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
 | [Committee Security Response](committee-security-response/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
 <!-- BEGIN CUSTOM CONTENT -->
