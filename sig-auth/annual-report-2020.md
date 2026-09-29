@@ -18,7 +18,7 @@
 
  - Subproject meetings are smaller.
 
- - We take [meeting notes](https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#) during the meeting. Unfortunately we do not do a great job of keeping good meeting notes. We are discussing various ways to improve. 
+ - We take [meeting notes](https://docs.google.com/document/d/1BiW9kcQYDeMtaItFMz5qG1XdCd5jNeJcQMRdb3UORdI/edit) during the meeting. Unfortunately we do not do a great job of keeping good meeting notes. We are discussing various ways to improve. 
 
  - The recordings serve as a historical record for bi-weekly SIG meeting and special topics meetings. They are uploaded to YouTube automatically. Then SIG chairs add the video to the [SIG Auth playlist](https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw).
 
