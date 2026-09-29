@@ -1,0 +1,1445 @@
+# Kubernetes SIG-Auth Meeting Agenda
+
+## December 22nd \- CANCELLED
+
+[Winter holidays](https://groups.google.com/g/kubernetes-sig-auth/c/8ysKhMvdoh4)
+
+## December 14th, 9a (Pacific Time), KMS-plugin meeting \#1
+
+- [Recording](https://youtu.be/35WbKDZLyZY)  
+- Agenda:  
+  - Review outstanding issues raised in [KMS-Plugin: Improvements](https://docs.google.com/document/d/1YHzSzITSS3ZNpf63E-rseDo-ocpxexp3ttzjBU2P8Ck/edit?usp=sharing)   
+- Discussion notes:  
+  - \[Damien\] Add Security to the list of focus areas, e.g. trusted execution environments to store sensitive data such as kms config, DEKs, KEKs  
+  - \[Mo\] Not an attack vector since all secret data is stored in an in-memory cache in the apiserver  
+  - \[Mo\] Rita mentioned keeping a lease on keys for recovery purpose. In addition to recovery, what if we also track the lifecycle of the key? Eg. key rotation  
+    - For example, for automatic key rotation  
+    - \[Anish\] key metadata might be used for this purpose?  
+  - \[Rita\] Let’s focus on phase 1 first: observability and recovery  
+  - \[Anish\] observability  
+    - AuditID as correlation for encrypt/decrypt operations  
+    - Include KEP version as part of the encryptResponse  
+  - \[Mo\]   
+    - Audit id  
+      - AuditID is user generated, this is not the k8s audit id that is propagated from the request header.   
+      - Not just api server logs but well formatted kube audit logs  
+      - What about free form audit annotation field?  
+    - kekVersion  
+      - Provide examples of what the new fields in the schema look like would be useful.   
+      - For kekVersion schema change will be hard to introduce for a beta feature for backward compat. What if we create a new alpha api? Alex suggested a standard for storing the new schema in the other google doc.   
+    - Other new data returned can impact schema change: e.g. TTL, kekVersion  
+      - \[Anish\] For backward compat, all plugins will need to handle empty string  
+      - If we can achieve backward compat, we can update the beta api instead of creating a new api  
+      - We can also use feature flag to introduce alpha style update  
+  - \[Damien\] metrics library shareable across plugins for best practices  
+    - E.g delay for each operation  
+  - \[Mo\] similar to what client-go credential has done  
+  - \[Rita\] reference implementation that includes metrics library among other best practices  
+  - \[Damien\] recovery should be a manual operation  
+  - \[Mo\] force delete bypasses apiserver lifecycle management. This is a storage level problem that cannot be handled by this feature.   
+  - \[Damien\] could end up in a worse state to force delete  
+  - \[Rita\] we should focus on small KEPs. we can start with observability enhancements KEP first while we continue to discuss the rest of the topics
+
+## December 8th, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/BG_LbZOPfxg)  
+- Announcements  
+  - [SIG Auth work for the Kubernetes 1.24 release – we need you\!](https://groups.google.com/g/kubernetes-sig-auth/c/LgcTl-jWdxk/m/a02czFgSEwAJ)  
+    - \[mo\] do a quick overview of the KEPs listed and answer any questions  
+    - \[liggitt\] guess of 1.24 enhancements freeze date is \~late January; make sure these KEPs are at reviewable stage by early Jan if we want to meet the 1.24 deadlines.  
+- Demos  
+  -   
+- Pulls of note  
+  -   
+- Issues of note  
+  -   
+- Designs of note  
+  -   
+- Discussion topic  
+  - \[mo\] client-go TLS config for ciphers and min version  
+    - Already discussed with API machinery  
+      - Ability to set the default globally  
+      - Ability to override it explicitly via rest.Config  
+    - Probably does not need to flow all the way through to kubeconfig but could still be configurable for kubectl via CLI flags or env vars  
+    - @deads2k interested in reviewing a KEP for this.  
+  - \[Adam Kaplan\] [CSI Ephemeral Volume PodSecurityAdmission Control](https://docs.google.com/document/d/1FSHyYrb0_zWL3d1KZRA_6aXfhF8N-v9D-ggYAidHkwE)  
+    - Sig storage has agreed to own the new admission plugin  
+    - \[liggitt\] need to check with sig storage to understand when/if this is necessary for inline, as storageclass can address this  
+      - [sig-storage discussion](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit#bookmark=id.kd36ctz11qsl)  
+      - questions for sig-storage:  
+        - what are the known inline ephemeral CSI drivers that are unsafe? are there issues open for those driver owners highlighting the exposure for clusters using them?  
+          - @jsafrane: E.g. [Azure Disk CSI driver allows Pod authors to point to any CIFS server](https://github.com/kubernetes-sigs/azurefile-csi-driver/blob/dbe69dbe0129ccd9a7b68efbcd22046ccf597a05/deploy/example/nginx-pod-azurefile-inline-volume.yaml#L24). We don’t track all such CSI drivers.  
+            In general, CSI driver authors (even Kubernetes community ones) tend to allow using volumes directly in Pods, because that’s what in-tree volumes allow. See [https://github.com/kubernetes-csi/csi-driver-nfs/issues/148](https://github.com/kubernetes-csi/csi-driver-nfs/issues/148)
+
+        - did sig-storage [give guidance](https://docs.google.com/document/d/1-8KEG8AjAgKznS9NFm3qWqkGyCHmvU6HVl0sk5hwoAE/edit#bookmark=id.600xrita7lpr) on writing safe inline ephemeral drivers?  
+          - @jsafrane: [https://kubernetes-csi.github.io/docs/ephemeral-local-volumes.html](https://kubernetes-csi.github.io/docs/ephemeral-local-volumes.html)   
+            We definitely need to add stronger wording about security.  
+    - \[deads2k\] need a way to support these 3P csi drivers while moving to safe parameters  
+    - \[liggitt\] stopgaps for existing clusters using unsafe ephemeral volumes:  
+      - setting default quota for those drivers to 0, opening usage back up for specific namespaces with resourcequota  
+      - webhook admission that takes a list of unsafe driver names  
+    - \[liggitt\] don’t expose unsafe parameters to pod authors, don't want to build in CSI driver protections to incentivize new unsafe inline drivers  
+  - \[mo\] what is MVP for serving certs for all Kube services by default  
+  - \[mo\] what is MVP for client certs for all Kube service accounts by default  
+    - \[mo\] what about bindings?  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)
+
+## November 24th \- CANCELLED
+
+[Thanksgiving](https://groups.google.com/g/kubernetes-sig-auth/c/8ysKhMvdoh4)
+
+## November 10th \- CANCELLED
+
+[Code freeze](https://groups.google.com/g/kubernetes-sig-auth/c/qoy7voJw42s/m/e6byKFb4AAAJ)
+
+## October 27th, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/rhSx0s_hGrc)  
+- Announcements  
+  -   
+- Demos  
+  -   
+- Pulls of note  
+  -   
+- Issues of note  
+  -   
+- Designs of note  
+  - \[xingyang/RaunakShah\] \- VolumeSecurityStandards proposal \- [Snapshot Restore Security issue](https://docs.google.com/document/d/1d1KXKArMgEGMGw5Sos4lFVlg0-CtG-ESZsKXy18P-CQ/edit)  
+    - one clear use case for volume-related restrictions (block/filesystem mode change for pvc/snapshot/restore)  
+    - is there a more targeted way to address this use case than a generalized three-tier volume security mechanism?  
+    - if the problem to be solved is preventing untrusted users from accessing cross-mode volumes, but backup operations happen in the user's namespace, granting privileged access for the backup process will also grant privileged access to the untrusted user  
+    - alternatives  
+      - require opt-in on cluster-scoped object for cross-mode restore  
+      - require authz check for cross-mode restore  
+        - example for extra authorization checks for signing/approving Certificates: [docs](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/#authorization), [code](https://github.com/kubernetes/kubernetes/blob/master/plugin/pkg/admission/certificates/approval/admission.go#L93-L96)  
+- Discussion topic  
+  - \[mo\] how is PSP v2 stuff going?  
+    - [https://github.com/orgs/kubernetes/projects/57?card\_filter\_query=is%3Aopen](https://github.com/orgs/kubernetes/projects/57?card_filter_query=is%3Aopen#card-64644161)  
+    - Want people to try the webhook and give feedback (AI: jordan to email sig-auth list once [https://github.com/kubernetes/kubernetes/pull/105923](https://github.com/kubernetes/kubernetes/pull/105923) merges)  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)
+
+## October 13th \- CANCELLED
+
+[KubeCon](https://groups.google.com/g/kubernetes-sig-auth/c/Il0kyzDUCa0/m/wRsbP-CTDgAJ)\!
+
+## September 29th, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/HktC-rxd6X8)  
+- Announcements  
+  -   
+- Demos  
+  -   
+- Pulls of note  
+  - \[aramase\] [Secrets Store CSI Driver retroactive KEP](https://github.com/kubernetes/enhancements/pull/2939)  
+    - capturing state at various points in the project's lifecycle  
+    - \[mo\] refers to the core functionality of the driver, CRDs are still alpha  
+      - Do the APIs need to graduate for a 1.0 release?  
+    - \[liggitt\] is there a reason to have 1.0 release with alpha APIs?  
+      - Custom resources replaced pod based metadata  
+      - "Upgrade to get new features" is fine, "upgrade to avoid breaking because underlying API went to v1 and dropped alpha support" is not so okay  
+      - before the component is v1.0, the APIs it requires need to be stable  
+- Issues of note  
+  -   
+- Designs of note  
+  - \[zshihang\] [KEP-2799: Reduction of Secret-based Service Account Tokens](https://github.com/kubernetes/enhancements/pull/2800)  
+    - Only focus on auto-generated tokens  
+      - Stop generating new ones  
+      - Remove existing ones if not used in X time period  
+        - Based on annotation that is updated once a day when the token is used to authenticate  
+    - mo: is there appetite for an additional feature that allows requesting/injecting a bound token into a secret (useful when needing to support single manifest that works prior to bound service account tokens)?  
+      - jordan: adding features usable in 1.25 that are \~only useful for manifests skewed back to \<=1.20 doesn't seem great… would recommend multiple manifests instead  
+    - jordan: more interested in the question about removing support for unexpiring manually requested tokens, but that seems far more difficult to accomplish compatibly  
+      - mike: signing key rotation seems like the next important goal, and is held up by unexpiring tokens  
+      - mo: if rotation is the admin's call  
+- Discussion topic  
+  - \[mo\] next steps for KMS  
+    - considered what it would look like to implement KMS via a shim that mimics the etcd API for the subset of the etcd API used by k8s, but lack of guarantees about what etcd API k8s will use make that hard  
+    - hardest problems are failure modes when the backing KMS no longer has a key available, and what to do with the object lifecycle when data in etcd can't be read  
+    - mike: should we frame this as GA requirements, or are we too far away from that right now?  
+    - shihang: biggest issues in GKE experience: scalability with many secrets  
+      - possible solutions like adjusting how watch cache fills, or external changes to require fewer KMS round-trips  
+    - deads: biggest concern is story around undecryptable data  
+      - currently breaks list of all objects (blocking all reads/writes of the object)  
+      - possibilities previously discussed:  
+        - dropping undecryptable objects (\~data loss, violation of object lifecycle like finalizers)  
+        - Make the behavior on permanent decryption configurable?  
+        - storing metadata undecrypted so we can serve parts of objects no matter what (unclear how we'd serve valid objects based only on metadata, unclear if only metadata is sufficient for finalizer controllers that need the rest of the object to act)  
+        - Leverage kms locks to ensure key cannot be accidentally deleted  
+    - liggitt: life cycle of keys, rotation of keys  
+      - Storage migration works but is not well defined how to do this  
+      - Not necessarily k8s problem to solve, might be kms integrators' problem to solve, but we have to make sure those integrators have information or hooks from the k8s side needed to actually do this  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)
+
+## September 15th, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/FnMZkWkd_lA)  
+- Announcements  
+  -   
+- Demos  
+  -   
+- Pulls of note  
+  - \[aramase\] [Secrets Store CSI Driver retroactive KEP](https://github.com/kubernetes/enhancements/pull/2939)  
+- Issues of note  
+  -   
+- Designs of note  
+  - \[robscott\] Gateway API: Cross-Namespace ReferencePolicy  
+    - [Docs](https://gateway-api.sigs.k8s.io/v1alpha2/references/cross-namespace-references/)  
+      - Looks like a resource principal.  
+      - Mo: This could be experimented with in RBAC by encoding resource name as a username.  
+      - Clayton: ReferencePolicy is a little less crazy so maybe faster to get in.  
+      - Rob: Cross namespace is very common in networking applications.  
+      - Clayton: Need both sides of this. Resource owners want to protect resources, but subject owners want to constrain what resources they reference.  
+      - Clayton: Is it generic?  
+      - Mikedanese: Is it an authorization problem at all or domain specific?  
+      - Mike: When is it checked?  
+        - Rob: Implementation controllers check this as they are configured load balancers. If the reference policy is revoked, the controller is responsible for unconfiguring.  
+      - Clayton: What is the default policy? Is reject always the right default policy?  
+        - Rob: Default \= Same namespace accept, cross namespace reject  
+      - Clayton: What about something that’s referenced by everything? How does this policy get scoped?  
+      - Mo: Did you consider using namespace label selectors instead of namespaces?  
+        - Rob: We tried in v1alpha and it was confusing.  
+      - Clayton: You might want uid.  
+    - [Type](https://github.com/kubernetes-sigs/gateway-api/blob/master/apis/v1alpha2/referencepolicy_types.go)  
+    - Also potentially useful for [Bucket API](https://github.com/kubernetes/enhancements/pull/2813#issuecomment-915471426)  
+    - Any regrets for RBAC resources lacking spec/status?  
+      - Clayton: Secrets, ConfigMaps, RBAC, question gets asked occasionally.  
+      - Clayton: A reference policy doesn’t feel like an object that would need status.  
+      - Mo: There are many consumers of this policy.  
+      - Mike: It’s not a reconciled object.  
+      - Calyton: A) Do you need the complexity, B) Really?  
+    - \[sidhartha mani\] Sig storage needs cross namespace access  
+      - Bucket API  
+- Discussion topic  
+  - \[mo\] what to do with [https://github.com/kubernetes/kubernetes/pull/102523](https://github.com/kubernetes/kubernetes/pull/102523)  
+    - Can we drop this metric?  
+      - General consensus: Drop namespace label.  
+    - See [https://github.com/kubernetes/kubernetes/pull/98731/files\#r569761119](https://github.com/kubernetes/kubernetes/pull/98731/files#r569761119) for a more detailed discussions and suggestions  
+  - \[mo\] thoughts on formulizing etcd API used by Kube as a KMS replacement  
+    - Mo: Looking at the various improvements to get KMS to GA.   
+      - Alternatively work with sig apimachinery to scope etcd apis we rely on so we can build an etcd shim to allow KMS to be built out of tree to support various encryption optimizations and be more opinionated  
+      - Clayton: has there been interests in etcd encryption at rest? Have not seen anything recently  
+      - Mike: so far a lot of adoption of kms in beta; need to be careful about migration/deprecation  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)
+
+## September 1st, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/Nom6PsZsXT4)  
+- Announcements  
+  - 1.23 deadlines  
+    - PRR Sept 2  
+    - KEP Sept 9  
+- Demos  
+  -   
+- Pulls of note  
+  -   
+- Issues of note  
+  -   
+- Designs of note  
+  - \[mtaufen\] [\[Shared Externally\] Draft KEP: Image Pull Tokens](https://docs.google.com/document/d/1qX7FoXBxWrPfUD55IDQMyeDQMH-HzH8vSx6-WsLNr8o/edit?resourcekey=0-iLUGguVKXPeHMNDwEzBMbw)  
+    - Wants to address gap in regards to image pulling using SA tokens  
+      - Ambient authority of the VM  
+      - Exported long credentials  
+    - \[micah Hausler\]  
+      - this is similar to the service account feature for csi  
+        - [https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/1855-csi-driver-service-account-token/README.md](https://st1.zoom.us/web_client/in43ub/html/externalLinkPage.html?ref=https://github.com/kubernetes/enhancements/blob/master/keps/sig-storage/1855-csi-driver-service-account-token/README.md)  
+      - AWS has max of 5 auds per OIDC provider  
+    - \[clayton\] wants the functionality  
+      - Audience might be good enough for many use cases without further extension of SA  
+      - Delegated authority ?  
+    - \[taahir\]  
+      - End user has to opt-in or a webhook mutation  
+      - Credential provider plugin could be enhanced with “I always want a token with audience foo”  
+        - \[mike\] this could be a good starting point  
+        - \[clayton\] easier to fix mistakes from the “bottom”  
+          - CSI could be used as a approximation ?  
+      - Workload identities on clusters do not normally have IAM permissions to pull images  
+    - \[mtaufen\]  
+      - What should be the fallback if this is not provided? Should it use node level identity?  
+    - \[dmitry\]  
+      - Maybe this should be cluster level config and not per pod config?  
+      - Similar to taahir’s comment about injecting this information into the credential provider plugin config  
+      - Decouple user who is installing software vs admin who is configuring what the cluster can access  
+      - Would like to avoid mixing up this low level detail with dev use case  
+    - \[mtaufen\]  
+      - Specify defaults at the namespace level?  
+    - \[clayton\]  
+      - Always pull images is inefficient, need separation of authz for this  
+      - Goal is to get the secrets out of the core infrastructure, similar to how we did for SA tokens  
+    - \[Mo\]  
+      - We should make this easier for managed clusters to allow users to easily install without having cloud providers to install it  
+      - Could include extra metadata with SA tokens  
+      - Possibly allow a custom container hook to run a custom plugin for exchanging creds  
+    - \[mtaufen\] similar to csi drivers  
+    - \[deads\] kubelet credential plugin could have config for saying “for these registries fetch the SA token and pass it through”  
+    - \[mike\] for this KEP, should get sig-node involved to make sure it works well with the kubelet credential provider kep  
+- Discussion topic  
+  -   
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)
+
+## August 18th, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/Db_XrpgfQqY)  
+- Announcements  
+  - 1.23 deadlines  
+    - PRR Sept 2  
+    - KEP Sept 9  
+- Demos  
+  -   
+- Pulls of note  
+  -   
+- Issues of note  
+  - Next steps  
+    - [k/k\#104165](https://github.com/kubernetes/kubernetes/issues/104165)  
+      - First step is to fix the static configuration not being honored bug  
+      - Defer the dynamic configuration bit for now   
+    - [k/k\#101321](https://github.com/kubernetes/kubernetes/issues/101321)  
+      - Documentation needs to be updated with this behavior  
+    - [k/k\#100844](https://github.com/kubernetes/kubernetes/issues/100844)  
+      - Deads2k and Mike to comment on the issue, possibly close and add feature request for kubelet to perform authenticated probes instead  
+- Designs of note  
+  - [KEP: forward request metadata to authn/authz/admission webhooks](https://github.com/kubernetes/enhancements/pull/2843)1  
+    - Need to consider aggregated apis  
+    - Not targeting 1.23 but looking for feedback  
+- Discussion topic  
+  - \[yunhjiang\] [No-change-update](https://github.com/kubernetes/kubernetes/issues/100473)   
+    - Audit event for request received stage can be disabled. Another event for when request is completed would be the only time it can know no-op   
+    - Mo: try option 2, KEP?  
+    - Tallclair: annotations are not meant for external, it should be a field; KEP is a good next step  
+  - \[mattmoyer\] Any appetite for adding a more generic JWT authenticator?  
+    - New builtin token authenticator?  
+    - Can be done with webhook, not core  
+    - Mattmoyer: will write a KEP for this  
+  - \[mo\] thoughts on UDS for client-go exec proxy  
+    - [https://github.com/kubernetes/enhancements/pull/2693](https://github.com/kubernetes/enhancements/pull/2693)   
+    - Unix domain socket not avail for all OSes in ecosystem (windows 10 prior)  
+    - Concerns for making this change and impact?  
+    - Nick Turner: Secrets store csi driver already uses uds for windows and linux  
+    - Unique: client based, kubectl  
+    - Lubomir: UDS has been in Windows 10 since 2017ish, but users seem to be claiming they don't work so well:  
+      - [https://github.com/microsoft/WSL/issues/4240](https://github.com/microsoft/WSL/issues/4240)   
+      - [https://github.com/MisterDA/ocaml/commit/5855ce5ffd931a2802d5b9a5b2987ab0b276fd0a](https://github.com/MisterDA/ocaml/commit/5855ce5ffd931a2802d5b9a5b2987ab0b276fd0a)  
+      - [https://github.com/Azure/mio-uds-windows\#windows-support-for-unix-domain-sockets](https://github.com/Azure/mio-uds-windows#windows-support-for-unix-domain-sockets)  
+      - Go supports windows 7 and 8 still [https://github.com/golang/go/wiki/MinimumRequirements\#windows](https://github.com/golang/go/wiki/MinimumRequirements#windows) and thus so does kubectl / client-go  
+    - Ritazh: maybe reach out to kubedev mailing list to get more feedback  
+    - Mo: what about TLS  
+    - Lubomir: no need for TLS on localhost over UDS, IMO  
+    - Tallclair: Yeah, as long as abstract sockets aren't allowed I think it's probably OK to leave it unencrypted  
+      - Not going over the network  
+      - Need file permissions  
+    - Deads2k: TLS yes, mTLS prob not  
+    - Micah:  
+      - mTLS over UDS would provide another layer in case of overly permissive filesystem permissions  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)
+
+## August 4th, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/n0-m9zBDebM)  
+- Announcements  
+  - Code thaw  
+- Demos  
+  -   
+- Pulls of note  
+  -   
+- Issues of note  
+  -   
+- Designs of note  
+  -   
+- Discussion topic  
+  - \[ahmedtd,thahn\] [Fleshed out certificates proposal](https://docs.google.com/document/d/1a9Veu8r9bHjgouWhKaO-cOfhCkCtFBotOhiSy7Sqbd0/edit#heading=h.efy4gms1pwz5)  
+    - \[mo\] I will be on PTO but my response to this proposal is in [this comment](https://docs.google.com/document/d/1a9Veu8r9bHjgouWhKaO-cOfhCkCtFBotOhiSy7Sqbd0/edit?disco=AAAANjFiuVA)  
+    - Deads2k: Do we need SPIFFE? Why doesn’t the current encoding for client certs work here?  
+    - Deads2k: Can we break out SPIFFE support in kube-apiserver to a standalone KEP?  
+    - Liggitt: There are three mechanisms under discussion:  
+      - SPIFFE certs  
+      - Node infrastructure, today is CSI  
+      - Signer  
+    - Liggitt: It would help to describe those mechanisms and for each, enumerate mechanisms that could do this out of tree, and justify each. Right now, we’re considering all at once. We need to untangle the use cases and get ordering correct.  
+  - \[tallclair\] [Common approach for delegated pod admission & policy](https://github.com/kubernetes/kubernetes/issues/60001) (should we consider this decided with the addition of PodSecurity?)  
+    - scope has converged on namespace-scoped policy (avoid trying to subdivide namespaces)  
+    - https://github.com/kubernetes/website/tree/main/content/en/docs/reference/access-authn-authz  
+    - https://github.com/kubernetes/website/tree/main/content/en/docs/concepts/policy  
+    -   
+  - \[micahhausler\] client authentication API migration pain  
+    - [https://github.com/aws/aws-cli/issues/6308](https://github.com/aws/aws-cli/issues/6308)  
+    - Liggitt: There should be a env var with API versions.  
+    - [https://kubernetes.io/docs/reference/access-authn-authz/authentication/\#input-and-output-formats](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#input-and-output-formats)   
+    - \$KUBERNETES\_EXEC\_INFO contains {"apiVersion": "client.authentication.k8s.io/\$VERSION", "kind": "ExecCredential", …}  
+    - The plugin is expected to respond with the same version  
+  -   
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)
+
+## July 21st, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/51IGM8zh46g)  
+- Announcements  
+  -   
+- Demos  
+  - \[mo\] client-go exec proxy [POC](https://docs.google.com/document/d/1L34vxu-cFsf53vEyZqBRwGknFfrULdgN5HOD8adMu4E)  
+    - KEP: [kubernetes/enhancements\#2693](https://github.com/kubernetes/enhancements/pull/2693)  
+    - AI(mo+nick): work on KEP  
+- Discussion topic  
+  - \[mo\] client-go exec credential plugin APIs, thoughts on:  
+    - Strawperson timeline:  
+      - Remove alpha in 1.23  
+      - Deprecate beta in 1.23  
+      - Remove beta in ~~1.26~~ 1.29 (6 releases, 2 years, plugin authors should move to v1 by 1.28 \- 6 releases after v1 came out in v1.22)  
+    - Webhook Admission is a good analog. Integrations written out of tree that use pre-GA API versions are a lot slower to migrate.  
+    - Beta version has been around for a lot longer.  
+    - \[micah\]: Pretty sure the AWS CLI still uses v1alpha1.... [https://github.com/aws/aws-cli/blob/45b0063b2d0b245b17a57fd9eebd9fcc87c4426a/awscli/customizations/eks/get\_token.py\#L77](https://github.com/aws/aws-cli/blob/45b0063b2d0b245b17a57fd9eebd9fcc87c4426a/awscli/customizations/eks/get_token.py#L77) and same for aws-iam-authenticator [https://github.com/kubernetes-sigs/aws-iam-authenticator/blob/master/pkg/token/token.go\#L341](https://github.com/kubernetes-sigs/aws-iam-authenticator/blob/master/pkg/token/token.go#L341)  
+    - \[liggitt\]: [https://kubernetes.io/docs/reference/using-api/deprecation-guide/\#removed-apis-by-release](https://kubernetes.io/docs/reference/using-api/deprecation-guide/#removed-apis-by-release)  
+      - Enumerating the delta between v1 and beta  
+      - Cost of leaving beta around  
+      - Poll what kubectl versions are being supported in the ecosystem and poll for version usage  
+  - \[aramase\] Followup: Secrets-store-csi subproject discussion: Syncing as Kubernetes secret without mount: [https://github.com/kubernetes-sigs/secrets-store-csi-driver/issues/298](https://github.com/kubernetes-sigs/secrets-store-csi-driver/issues/298)  
+    - [Secrets Store CSI Driver Sync Secrets](https://docs.google.com/document/d/1Ylwpg-YXNw6kC9-kdHNYD3ZKskj9TTIopwIxz5VUOW4/edit?usp=sharing)  
+    - AI: API review, code review, doc review before creation of new sub project  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)
+
+## July 7th \- CANCELLED
+
+[https://groups.google.com/g/kubernetes-sig-auth/c/Nw4X\_vMAfag](https://groups.google.com/g/kubernetes-sig-auth/c/Nw4X_vMAfag)
+
+## June 23th, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/iBahEbgnZUs)  
+- Announcements  
+  -   
+- Demos  
+  -   
+- Pulls of note  
+  - PodSecurity initial PR: [https://github.com/kubernetes/kubernetes/pull/103099](https://github.com/kubernetes/kubernetes/pull/103099)   
+- Issues of note  
+  - What is the status of [Service Account Key Rotation \#20165](https://github.com/kubernetes/kubernetes/issues/20165) ?  
+- Designs of note  
+  -   
+- Discussion topic  
+  - [KEP-2763](https://github.com/kubernetes/enhancements/pull/2757) \- ambient capabilities support.  
+    - Could someone from sig-auth volunteer to be the reviewer/approver of this KEP?  
+  - Secrets-store-csi subproject discussion: Syncing as Kubernetes secret without mount: [https://github.com/kubernetes-sigs/secrets-store-csi-driver/issues/298](https://github.com/kubernetes-sigs/secrets-store-csi-driver/issues/298)  
+    - [Secrets Store CSI Driver Sync Secrets](https://docs.google.com/document/d/1Ylwpg-YXNw6kC9-kdHNYD3ZKskj9TTIopwIxz5VUOW4/edit?usp=sharing)  
+  - mTLS Continued/ ServiceAccount Client Certificates Proposal \- [https://github.com/GauntletWizard/enhancements/tree/ted/mtls-cert/keps/sig-auth/NNNN-client-cert](https://github.com/GauntletWizard/enhancements/tree/ted/mtls-cert/keps/sig-auth/NNNN-client-cert)  
+    - See also [Service Account Certificates for Serving](https://docs.google.com/document/d/1MP8FKpupC9iHeSOV1O9iOUiXemroABAQuuxpekAlL68) that discusses how and why to use certificates that encode a service account (rather than a DNS name) as serving certificates.  This was a topic of discussion a few weeks back, and a few people expressed interest in hearing more about the approach.  
+  -   
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)
+
+## June 9th \- CANCELLED
+
+[https://groups.google.com/g/kubernetes-sig-auth/c/KCDx67lBRbY](https://groups.google.com/g/kubernetes-sig-auth/c/KCDx67lBRbY)
+
+## May 26th, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/wtm_sAGeHqc)  
+- Announcements  
+  -   
+- Demos  
+  -   
+- Pulls of note  
+  - CSR duration hint field  
+    - [\#99412](https://github.com/kubernetes/kubernetes/pull/99412)  
+    - [\#99494](https://github.com/kubernetes/kubernetes/pull/99494)  
+    - [enhancements \#2759](https://github.com/kubernetes/enhancements/pull/2759)  
+    - [website \#28070](https://github.com/kubernetes/website/pull/28070)  
+      - Clayton to review KEP for naming consistency  
+      - Mo to file exception request and address Mike’s comments  
+      - Mike deferred to Jordan for naming review  
+      - Mike will review PR once comments addressed  
+  -   
+- Issues of note  
+  -   
+- Designs of note  
+  -   
+- Discussion topic  
+  - [Draft KEP: Native mTLS Issuance](https://docs.google.com/document/d/1a9Veu8r9bHjgouWhKaO-cOfhCkCtFBotOhiSy7Sqbd0)  
+    - Arguments for:  
+      - Bearer tokens can be stolen  
+      - Certs cannot be stolen because the private key never leaves your client  
+    - Covers both client and server certs as “one thing”  
+    - David: disputes that these should be signed by the same thing, i.e. David wants to use different signers, Clayton agrees  
+    - Clayton: does this have CSI implementation  
+      - Taahir: has example coming after service mesh review  
+    - Taahir: want a convention that matches the bearer token for SAs but with certs (i.e. known location on disk)  
+    - Clayton: agrees \+ in favor with the idea, worried about the complexity  
+    - Mike: TLS for aggregated API servers \+ webhooks  
+      - Too challenging to do securely?  
+      - Gatekeeper approves its own webhook CSR: [https://github.com/open-policy-agent/cert-controller](https://github.com/open-policy-agent/cert-controller)   
+      - Wants to do bette as sig-auth  
+    - Clayton: service and DNS are easy to name  
+      - OpenShift’s service CA matches on service (does serving cert injection to api server and admission webhooks), not pod identity  
+    - Mike:  
+      - Suggested service account  
+    - David:  
+      - Creating a new way to verify a server, we can just use the regular TLS verification flow (via annotation on a server based on the service’s author's intent)  
+    - Clayton:  
+      - Client certs are better than bearer tokens (I think he was referring to this having a clear use case, maybe for SAs?)  
+      - API service \+ webhook connection is to the service (a set of pods), not the service account  
+    - Ted  
+      - Wants to bind to identities (instead of name?) based on history in Google  
+    - Marc  
+      - How is this different from cert-manager?  
+      - Can use internal CA to manage this style of functionality  
+    - Mike  
+      - Can do out of band mapping to service account  
+      - Go all in on mapping to services  
+    - Marc  
+      - Existing service name based mechanism via cert-manager has all pods running with the same cert  
+    - Clayton  
+      - Pod identity via client cert \-\> original pod identity proposal  
+      - Should this pod be able to identity itself when serving in a verifiable way  
+      - When client has local and global name …  
+    - Clayton:  
+      - /heatlthz, monitoring, etc.. all would like TLS certs bound to infrastructure components (pods, nodes, service accounts)  
+      - Could be done out of tree  
+        - Mo: not sure how you get the custom checks on the service account certs without KAS changes  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)
+
+## May 12th, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/xkbNELyD7Zg)  
+- Announcements  
+  - PSP replacement discussions   
+    - KEP merged\! YAY\!\! [https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/2579-psp-replacement](https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/2579-psp-replacement)   
+    - Targeting alpha in 1.22.  
+  - 3 sig-auth KEPs for 1.22 enhancement freeze  
+    - Bound Service Account Token Volumes, GA, [https://github.com/kubernetes/enhancements/issues/542](https://github.com/kubernetes/enhancements/issues/542)   
+    - External client-go credential providers, GA, [https://github.com/kubernetes/enhancements/issues/541](https://github.com/kubernetes/enhancements/issues/541)   
+    - Pod Security Policy replacement, Alpha [https://github.com/kubernetes/enhancements/issues/2579](https://github.com/kubernetes/enhancements/issues/2579)   
+  -   
+- Demos  
+  -   
+- Pulls of note  
+  -   
+- Issues of note  
+  -   
+- Designs of note  
+  -   
+- Discussion topic  
+  - Is there an ordering dependency of PSP removal and Pod Security stage?  
+    - liggitt: We should target at least beta by 1.24 for the new mechanism with some tooling for administrators (e.g. a namespace labeller command or controller). beta+migration tool by 1.24 allows for migration from one beta thing to another.  
+    - Mikedanese: If we slip, would we delay the removal of PSP?  
+      - We need PS to be beta for 1 release before PSP is removed.  
+      - We have a lot of buffer to get PS to beta before 1.24. It feels very achievable.  
+    - Liggitt: Alpha 1.22, beta 1.23, 1.24 can be the overlap release for PSP and PS migration, should not impact removal of PSP in 1.25. Prioritize this work over other work for this sig.  
+    - Mikedanese: Anything else we can do to help with migration in 1.24?  
+      - Recommender: Evaluate a PSP and give an upper and lower bound of Pod Security Standard levels.  
+      - We can enforce upper bound, warn lower bound.  
+      - If you want to do X, then run this controller/oneshot and it’ll do it for you.  
+      - Liggitt: We can hash this out in the KEP Migration section after the 1.22 Alpha implementation is landed.  
+      - Tallclair: Doesn’t need to be in core or tied to the k8s release. We can stick this in kubernetes-sigs.  
+      - Tallclair: Document best practices to make migration easier/seamless.  
+        - [https://github.com/kubernetes/website/issues/27336](https://github.com/kubernetes/website/issues/27336)   
+      - Create a project board for PS KEP and track issues/PRs  
+        - [https://github.com/orgs/kubernetes/projects/57](https://github.com/orgs/kubernetes/projects/57)   
+      - One more replacement meeting to close out remaining work items and next steps  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)  
+- Moving these to Triage meeting  
+  - [unprioritized+unassigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [unprioritized+assigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+-no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [open bugs](https://github.com/kubernetes/kubernetes/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+label%3Akind%2Fbug)
+
+## \[PSP Breakout Session\] May 5th, 1pm \- 2pm (Pacific Time)
+
+- [Recording](https://youtu.be/8rgHvdalCTw)  
+- Agenda  
+  - Tim:  
+    - last meeting before KEP deadline for 1.22  
+    - would like to focus on blockers for alpha  
+  - Windows  
+    - Tim: things Windows pods can currently express would be allowed by baseline policy  
+    - David: is this all Windows pods in the future, or just current Windows capabilities  
+    - Mark: hostProcess proposal is in progress, intended for alpha in 1.22  
+    - Jordan: hostProcess would be treated like hostNetwork/hostIPC, disallowed in baseline/restricted  
+    - Tabitha: do windows pods have visibility/ability to affect each other beyond what we would expect from a baseline pod, even if their manifest doesn't explicitly opt into host-level access  
+    - Mark: current implementation of windows process-isolated containers are not considered a security boundary, hypervisor-isolated containers in the future would actually be more of a security boundary  
+    - Tabitha: sounds like windows containers are more limited than complete access to the host; in the future, as hypervisor-isolated containers become possible in the future, that might make sense to fold into baseline  
+    - Mark: specific linux-specific areas:  
+      - "run as user" is pretty different for Windows  
+        - linux uids either don't do anything for Windows or maybe break some paths (most issues have been resolved in the kubelet to ignore linux uids)  
+        - restricted policy requiring that to be set would not   
+      - AppArmor? SELinux?  
+    - Jordan:  
+      - interaction of enabling this feature in currently defined state with windows pods  
+        - default level / privileged \- no impact to windows pods  
+        - baseline \- no impact to current windows pods  
+        - restricted \- would require setting linuxisms like runAsUser that are either ignored or maybe problematic on windows  
+      - in the future, once we have a way to distinguish OS of a pod in the API, we can look at exempting OS-specific field requirements in the restricted policy for pods that are definitely not targeting that OS  
+    - AI:  
+      - clarify API-time vs runtime policy philosophies, loop in sig-node  
+      - add hostProcess to be forbidden in baseline+restricted pod security standards  
+  - capabilities  
+    - allowed to add  
+      - baseline: default docker set minus NET\_RAW?  
+      - restricted:   
+        - is the same set as baseline reasonable for restricted?  
+    - required to drop  
+      - baseline: no required drops  
+      - restricted: NET\_RAW?  
+  - naming:  
+    - current leaders from straw poll in slack  
+      - Pod Isolation Policy  
+      - Pod Security Standards  
+        - Tabitha: not a fan of naming our implementation the same as the standards  
+        - Tim (sig-docs) raised concern about confusion if the identical term was used for the implementation and the spec  
+        - Jordan: it is weird to talk about "enabling Pod Security Standards" when you really want to "enforce Pod Security Standards"  
+    - what about "PodSecurity"?  
+      - maps well to a label prefix ("pod-security.kubernetes.io/…")  
+      - maps well to the Pod Security Standards docs  
+      - distinguishes the admission plugin from the standards  
+  - \[ritazh\] What was the rationale for including username exemption? What are the drawbacks?  
+    - A trusted user allowed to create pods running known content, visible to a namespace-constrained user and attributed to the namespace's quota.   
+    - example: pods running builds  
+    - Q: could you get in a state where a privileged writer could create a thing that couldn't be cleaned up?  
+      - A: this policy doesn't prevent updates removing finalizers or deletes as long as the updates don't touch fields this policy cares about like images  
+    - AI: clarify documentation  
+      - intended use-cases  
+      - why an authorization check was not used (PSP lessons learned)  
+      - intent is not for frequently changing punch-through users  
+      - expectation is that admin configuring the user exception puts additional protections in place if needed to protect against misuse by things like exec/attach
+
+## April 28th, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/6V8p8s8JVic)  
+- Announcements  
+  - PSP replacement discussions [PR](https://github.com/kubernetes/enhancements/pull/2582)  
+  - SIG Auth 2020 annual report [PR](https://github.com/kubernetes/community/pull/5740), please review and provide feedback  
+- Demos  
+  -   
+- Pulls of note  
+  -   
+- Issues of note  
+  -   
+- Designs of note  
+  -   
+- Discussion topic  
+  - \[nckturner\]: request signing  
+    - Early feedback on [KEP](https://github.com/nckturner/enhancements/tree/request-signing/keps/sig-auth/NNNN-20201209-client-request-signing)  
+    - [Feedback document](https://docs.google.com/document/d/1IGyMKD0pH-ZT8ZqJcPfO6KCUW2ZDAZyAfLDmfx1I3Ac/edit#)  
+      - Open questions  
+        - Full proxy, proxy handles request  
+        - New exec mechanism vs existing client-go exec plugin  
+      - External TLS authenticator: [https://github.com/kubernetes/enhancements/pull/1749](https://github.com/kubernetes/enhancements/pull/1749)  
+      - Old kubectl UDS KEP [https://github.com/kubernetes/enhancements/pull/1616](https://github.com/kubernetes/enhancements/pull/1616)  
+      - Mo:  
+        - would it make sense to augment the exec plugin with the ability to be invoked and return a proxy endpoint to use? could potentially improve the "set up the proxy" flow, and the invocation gets the kubectl environment, so it could honor any existing proxy settings.  
+        - unsure if unix domain socket support is uniform across platforms; Windows has named pipe  
+      - Nick: domain sockets had the advantage of leaning of file permissions  
+      - Mike  
+        - Lots of authentication protocols, we cannot support all protocols in tree  
+        - Does this solve the general problem?  
+        - Is the problem worth solving?  
+      - tallclair  
+        - also has a use case for this; would like to see the UDS support added  
+      - liggitt  
+        - UDS proposal seems orthogonal, independently useful, and could be a useful building block for this  
+        - [https://github.com/kubernetes/enhancements/pull/1616](https://github.com/kubernetes/enhancements/pull/1616)   
+      - Taahir: what about using Envoy xDS format to mutate the request  
+      - Mo: wants to use existing proxy pattern  
+      - Moyer:  
+        - Proxy approach sounds good, but would like shared libraries to make it easier to write the client side  
+      - Liggitt: make sure the privileged proxy isnt running all the time  
+      - Proxy process lifetime could be bound to the caller or forked  
+  - \[gauntletwizard,taahm\]: workload-certificates  
+    - Early feedback on [KEP](https://docs.google.com/document/d/1a9Veu8r9bHjgouWhKaO-cOfhCkCtFBotOhiSy7Sqbd0/edit#heading=h.8nppn6d17c5n)  
+      - Mike  
+        - Can we tease this out into what cannot be done out of tree today, need rationalization for being in core  
+        - TLS/PKI for webhooks/extensions is hard today  
+      - Taahir  
+        - Value here is the standardization of x509 certs similar to how SA tokens work today  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)  
+  - [unprioritized+unassigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [unprioritized+assigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+-no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [open bugs](https://github.com/kubernetes/kubernetes/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+label%3Akind%2Fbug)
+
+## \[PSP Breakout Session\] April 21, 1pm \- 2pm (Pacific Time)
+
+- [Recording](https://youtu.be/BzyYYGaGmYI)  
+- Agenda  
+  - \[tallclair\] presenting KEP [https://github.com/kubernetes/enhancements/pull/2582](https://github.com/kubernetes/enhancements/pull/2582) to this group  
+  -   
+- Notes  
+  - Selinux  
+    - Unset options are allowed. \-- the container runtime will choose a value for you  
+    - Type  
+      - We constrain ourselves to a list of four well known options  
+      - container\_t \- ok for baseline and restricted  
+        - Jordan \- constraining just to this helps  
+        - Jordan/Mrunal \- we need to be able to set this to allow namespace assignment by a cluster manager   
+      - Container\_logreader\_t \- not in baseline and restricted  
+        - Tim \- does it require a hostmount?  
+        - Mrunal \- yes  
+        - Jordan \- why would a baseline pod need this?  
+        - Mrunal \- see if we need to allow it baseline.  
+      - container\_kvm\_t \- ok for baseline and restricted  
+        - Tim \- leave in baseline  
+      - Container\_init\_t \- ok for baseline and restricted  
+        - Required for containerized systemd  
+    - Level  
+      - level is defaulted randomly by the container runtime if unset  
+      - Level is non-escalating? Doesn't escalate beyond container level stuff, but control over level lets you set a level to access/cooperate with data/ipc from another container process  
+      - By allowing these specific types, we limit risk and another admission plugin to further restrict.  
+    - User and role don’t have well-known values  
+      - Without a well known reason for using them, it’s safer to restrict them  
+      - The defaults are good enough.  
+    - What do the values for type mean?  
+    -   
+  - Volumes  
+    - [https://kubernetes.io/docs/concepts/security/pod-security-standards/\#baseline](https://kubernetes.io/docs/concepts/security/pod-security-standards/#baseline)  
+    - Baseline allows a lot of volume types  
+      - Only restriction is that you cannot have host mounts  
+      - Any CSI driver is allowed  
+        - You can add an admission plugin to restrict sensitive ones.  
+    - Restricted limits volumes a lot  
+      - Allowed to use..  
+        - Empty dir  
+        - Secrets  
+        - Configmaps  
+        - Downward  
+        - Projected  
+        - PVCs  
+      - Does \*not\* allow CSI use  
+        - makes sense for CSI drivers replicating cloud storage out of tree (azure/gce/aws/etc)  
+        - unfortunate for CSI drivers more akin to mounted secrets  
+        - deads \-Can we provide a way for a cluster-admin adding a csidriver a way to indicate that driver is ok for restricted users.  
+        - would this be usable via PV or EphemeralVolumeSource in pod, or would lack of control over the CSI parameters break usability?  
+        - examples  
+          - [https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/b7f82cda94672f902e305055a37bc0aee3862f57/pkg/providers/vault/examples/pv-vault-csi.yaml](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/b7f82cda94672f902e305055a37bc0aee3862f57/pkg/providers/vault/examples/pv-vault-csi.yaml)   
+          - [https://gist.github.com/deads2k/7af98f9a64294635fc4409a28741e345](https://gist.github.com/deads2k/7af98f9a64294635fc4409a28741e345)  shows [https://github.com/openshift/csi-driver-projected-resource/](https://github.com/openshift/csi-driver-projected-resource/) \-- sample usage now [https://www.openshift.com/blog/the-path-to-improving-the-experience-with-rhel-entitlements-on-openshift](https://www.openshift.com/blog/the-path-to-improving-the-experience-with-rhel-entitlements-on-openshift) and you can see future usage.  
+        - Do we have a use-case?  Deads \- Yes, we do.  See the example linked.    
+        - options to allow \*some\* CSI drivers  
+          - annotation on CSIDriver object (makes evaluation of a given policy level on an object depend on cluster state, which is not ideal)  
+          - cluster configuration (goes against goal of not having configuration beyond bypassing certain dimensions)  
+          - …  
+        - AI: tallclair to add unresolved section. blocking to resolve for alpha or beta?  
+    -   
+  - Capabilities   
+    - Baseline  
+      - Additions beyond baseline a default set are disallowed, but kube doesn’t explicitly list a default set  
+      - Do we want to hardcode a default set or say you cannot add any?  
+      - Setting some is nice if you want to be explicit, but remove-all and add back a few is considered uncommon.  
+      - Jordan: allowing addition of “the most widely used set of default” work?  
+      - Jordan: take an expansive list and allowing additional admission to restrict for baseline works  
+    - Restricted  
+      - Tim: forbidding add capabilities and leaving the container runtime default makes sense  
+    - Does the Docker list of defaults include all capabilities from other runtimes defaults?  
+      - NET\_RAW is one tim/mrunal wish we could disallow adding in baseline  
+      - rita: service mesh solutions need NET\_RAW and NET\_ADMIN  
+  - Windows  
+    - How to enforce on windows  
+    - Tim: for alpha, make a runtimeclass for it and punt on it  
+    - James: some inspection was done.  There is a need for configuration and a well-known runtime-class.  
+    - James: wants to double check with Mark about the configuration required for runtimeclass.  
+    - Tim: concern about a hybrid cluster with windows and linux nodes ande everything runs dockershim.  I’d have the windows runtimeclass and that that class would use the docker default handler set and some scheduling constraints.  If windows is exempt from this policy, then I can create a windows pod in the windows runtimeclass and explicitly set a node name for a linux node.  Because it uses the docker default handler, it gets to run without constraints.  
+      - To handle this, a second admission plugin could be built to check that no linux security context bits were set.  
+      - This happens because the runtime handler name is shared among multiple runtime classes.  
+    -   
+  - Instrumentation question  
+    - Cardinality of metrics \- no one present from instrumentation.  Deferred from blocking implementable.  
+    - Cardinality of metrics will be considered a blocker to assess before beta.
+
+## April 14th, 11a \- Noon (Pacific Time)
+
+- [Recording](https://www.youtube.com/watch?v=rs8YLQVll4o)  
+- Announcements  
+  - PSP replacement discussions  
+    - We need to decide on a name  
+    - Tim is going to update the PR to highlight unresolved issues  
+  - [2021 Annual Report](https://docs.google.com/document/d/1umVyUtv2SqpmVRRnzkJSc44byg_PFQo_Js2XHctIXz0/edit?usp=sharing)  
+    - [https://github.com/kubernetes/community/issues/5497](https://github.com/kubernetes/community/issues/5497)  
+  - SIG auth chair update: s/tallclair/ritazh/ (over the next month) \- see [https://groups.google.com/g/kubernetes-sig-auth/c/9CFSHk4HEt0](https://groups.google.com/g/kubernetes-sig-auth/c/9CFSHk4HEt0)  
+- Demos  
+  - \[gauntletwizard\] [KubeTLS](https://gitlab.com/gauntletwizard_net/kubetls) \- Controller for managing cluster-generated mTLS certificates  
+    - v1.22 removal of legacy signer disrupts current implementation.  
+    - Related:  
+      - [https://github.com/kubernetes/kubernetes/issues/63732](https://github.com/kubernetes/kubernetes/issues/63732)  
+      - Bundle distribution feature request: [https://github.com/kubernetes/kubernetes/issues/63726](https://github.com/kubernetes/kubernetes/issues/63726)  
+      - Istio has a similar open issue re 1.22 deprecation: [https://github.com/istio/istio/issues/22161](https://github.com/istio/istio/issues/22161)  
+        - Notes:  
+          - Made the incorrect assumption that the SA CA is meant for anything but verification of KAS service certificates  
+          - Strong desire to make it easy to have mTLS certs for SAs over tokens  
+          - Possible KEP to enhance built in signers to include new signers for SAs, serving certs, etc  
+          - Distribution of trust is currently unclear  
+- Pulls of note  
+  -   
+- Issues of note  
+  -   
+- Designs of note  
+  - \[zshihang\]: token controller deprecation [KEP](https://github.com/zshihang/enhancements/blob/bbcf8f4dbd87077fd463d148830dc2a5108e603b/keps/sig-auth/0000-token-controller-deprecation/README.md#proposal)  
+  - \[tallclair\]: PSP replacement [KEP](https://github.com/kubernetes/enhancements/pull/2582)  
+- Discussion topic  
+  - \[zshihang\]: add a new variable \`MaxNumPerKey\` to EncryptionConfig to allow sharing of DEK between secrets. Related issue: [https://github.com/kubernetes/kubernetes/issues/90856](https://github.com/kubernetes/kubernetes/issues/90856)   
+    - Currently, MaxNumPerKey=1  
+    - How to deal with rotation after sharing?  
+1. Extends \`Encrypt\` call to return key identifier from KMS provider. The kms health check would notify us to rotate the shared DEK if key version rotation happens even if the current shared DEK hasn’t encrypted MaxNumPerKey secrets .  
+2. Provides a mechanism for users to re-encrypt secrets that could be understood by kube-apiserver.  
+   1. Notes:  
+      1. Could do hierarchical KMS with a local KMS to cache a DEK to address the performance implications of Cloud KMS request latency  
+      2. Main issue with rotation is that the storage transformer interface was designed to be opaque to the Kubernetes API  
+      3. Storage version hash could be updated to include the encryption config but you really do not want to drive your rotation and key deletion by side effect  
+- \[zshihang\]: token controller deprecation [KEP](https://github.com/zshihang/enhancements/blob/bbcf8f4dbd87077fd463d148830dc2a5108e603b/keps/sig-auth/0000-token-controller-deprecation/README.md#proposal)  
+  - We can let admins opt-out explicitly of legacy SA tokens per ns/SA  
+  - We should start warning of usage of the legacy SA tokens, especially the annotation based secret injection  
+  - Annotation based approach needs to be preserved for a long time, at least 1 year deprecation period  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)  
+  - [unprioritized+unassigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [unprioritized+assigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+-no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [open bugs](https://github.com/kubernetes/kubernetes/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+label%3Akind%2Fbug)
+
+## \[PSP Breakout Session\] April 7, 1pm \- 2pm (Pacific Time)
+
+- [Recording](https://youtu.be/mS-IxG59Qls)  
+- Agenda  
+  - \[tallclair\] presenting KEP [https://github.com/kubernetes/enhancements/pull/2582](https://github.com/kubernetes/enhancements/pull/2582) to this group  
+- Notes  
+  - \[tallclair\] Updates section \- should updates to a subset of fields be allowed for an out-of-compliance pod created by an exempt user?  
+    - \[Oren\] \- Q: Should toleration changes be allowed?  
+    - \[tallclair\]- A: Pod security standards do not include scheduling concerns. Use namespaces and different policies to bind subset of nodes to more privileged pods.  
+    - \[Tabitha\] \- Given the precedent of simple pod enforcement policies in-tree, should we consider expanding policies to cover scheduling concerns in the future?  
+    - \[tallclair\] \- Maybe, but node scheduling as a security boundary is a highly-sophisticated use case, easy to get wrong. So it may still not be a good fit for upstream. See also [Walls Within Walls](https://www.youtube.com/watch?v=6rMGRvcjvKc) from KubeCon NA 2019  
+  - \[tallclair\] \- Ephemeral containers only receive a subset of pod spec. Should we validate only fields that are applicable? Don’t include securityContext but it is planned to be added soon.  
+    - \[Oren\] \- If we needed the full pod spec, would there be any races to worry about given that it would need to be resolved as a separate call?  
+    - \[tallclair\] A: In webhook mode, there \_may\_ be a problem unless the admission interface is changed to include the full podspec. Note ephemeral containers are in alpha.  
+    - \[tallclair\] A common use case for ephemeral containers is for debugging, for example packet capture. The primary containers would not need elevated privileges. A future feature should consider letting ephemeral containers run with a separate security profile.  
+    - \[Tabitha\] \- Could we leverage RBAC for this instead? You could create a system:debuggers group with policy exemption, and allow them to create ephemeral containers but not pods?  
+    - \[tallclair\] \- Group exemptions are explicitly not allowed, but you could use impersonation RBAC to work around that.  
+    - \[tallclair\] \- Use a wellknown name as a static exempt user. When impersonating to that user, they could create privileged ephemeral containers, but not regular pods. Will update the document.  
+    - \[tallclair\] \- Need input on sensible SELinux defaults for baseline policy. Are there defaults that would span different Linux distributions?  
+    - \[John Kinsella\] \- If SELinux is too distribution specific and would require customization, should it be out of scope for this KEP?  
+    - \[tallclair\] \- It is common (OpenShift?) to have mutating admission controllers setting custom labels for shared volumes?  
+      - Is there an equivalent to “unconfined” from AppArmor? We could deny that  
+      - There’s not the same level of validation in SELinux that we have for AppArmor  
+    - \[Tabitha\] Get input from Openshift folks \- are there de-facto standard labels that are meaningful to ban?  
+    - \[tallclair\] Given the above, it’s probably safest to declare SELinux as “unenforced” and point to more customizable solutions if there is a need to constrain them. Will enumerate possible options in the doc.  
+      - Disallow setting selinux labels at all, require unset/default  
+      - No opinion  
+      - Introduce configuration knob (allow-list) \- but this is beyond the scope we have been shooting for.  
+    - \--Monitoring--  
+    - \[Tabitha\] \- Should metrics be per-namespace?  
+      - \[tallclair\] User-defined labels would be high-cardinality, are discouraged.  
+    - \[Oren\] Would counters get run up by replicaset controllers retrying the same configuration? A: Yes, you would need to   
+    - Tallclair\] \- Add proposal in KEP around per-field granularity for deny metrics. Should we separate create and update requests? That might help with the replicaset case.  
+    - \[Oren\] \- We might want to add exemption counters?  
+      - Yes, perhaps label by type of exemption: user, namespace, runtime.class exemptions.  
+      - \[Tabitha\] \- Should we log / audit when a pod was \_admitted\_ using an exemption and would otherwise have been denied? \[Yes.\]  
+    - \[tallclair\] \- Should we label enforcement mode (warning/audit/deny)? Does anyone care how many warnings were issued?  
+      - \[Tabitha\] Might be useful when trying to tune a policy given existing workloads  
+    - \[Oren\] \- Cardinality of policy versions might be more manageable if they were validated?  
+      - \[tallclair\] We might bucket versions but it might be getting complex, can go to logs.  
+    - \----Future Extensions----  
+    - Rollout baseline by default for unlabeled namespaces  
+      - \[Tabitha\] Leave up to distributions?  
+    - PSP Migration \- leave out of scope for core KEP at this time  
+    - Statically configured custom profiles extension mechanism  
+      - Allows being more explicit than just “privileged” in that a third party controller will enforce  
+    - Custom Warning Messages  
+      - Communications channel between security admin and users, utilizing k8s warning mechanism  
+    - Windows Support  
+      - No standard identification for windows pods at this time (runtime.class or separate spec?)  
+      - Need to write separate Pod Security Standards document to define profiles for Windows. Valuable regardless.  
+      - \[ritazh\] started thread: [https://kubernetes.slack.com/archives/C0SJ4AFB7/p1617830466145800](https://kubernetes.slack.com/archives/C0SJ4AFB7/p1617830466145800) 
+
+## \[PSP Breakout Session\] March 24, 1pm \- 2pm (Pacific Time)
+
+- [Recording](https://youtu.be/JqrX48_iy5M)  
+- Agenda  
+  - \[tallclair\] presenting KEP [https://github.com/kubernetes/enhancements/pull/2582](https://github.com/kubernetes/enhancements/pull/2582) to this group  
+- Notes  
+  - \[all\] Conformance and CRD related concerns   
+    - One of the intent of this would be to break conformance.  
+    - This may not be needed to be on by default  
+    - Reasonable goal would be to pass conformance with this ON. Might require adding policy level labels  
+  - \[Tim/ Tabitha\]  
+    - Audit *enforce* may be a better choice than *allow*  
+    - If enforce baseline, we are holding that level  
+    - Jordan: We could have yak shaving meeting on naming (kidding)  
+  - \[David / Tim\]: Validation section can be enabled / disabled. In terms of data integrity, we need to define that at namespace validation or admission validation path. Good to clarify that validation is best effort.   
+  - \[Oren / Tabitha\]: Whether use labels or create a new resource object APIs. Calling out why labels are selected v/s new resource object would be useful  
+  - \[Jordan/Tim\] Typo in labels could be worse if the labels are difficult and longer with hyphens  
+  - \[Tim\] Labels can allow queries. Adding a field to namespace is another option.   
+  - \[Jordan\] ability to do things atomically was one of the reasons to have namespace object. Dry runs could be harder in some situations. Labels when used the atomicity is granted because labels and ns can be created together.  
+  - \[ Tabitha\] Race conditions are inevitable. Labels preferred because it makes it clear that admission controller is not part and parcel of k8s.   
+  - \[Tim\] Versioning: Can this be run as a webhook in an older version as a backport. The case where cluster 1.26 and policy applied is from 1.28. A newer version profile may have fields, that do not exist in older versions.   
+  - \[Jordan\] When running as webhook, there should be a way to tell what does latest mean.   
+  - \[Mo\] If webhook is shared across multiple clusters, it might be hard to know what latest is in different contexts.   
+  - \[Jordan\] If version is not specified, webhook decides what latest is. Is the concern on webhook based versioning?  
+  - \[Tabitha/ Jordan\] Hosted API server flags can not be changed. Custom policy generation from the defaults could be good usecases for a webhook. If baseline is restricted with a given runtime class is a good example.   
+  - \[Tim\] Why run 1.18 policy on 1.17 cluster, best practices may change. Another usecase, allow patched versions, CVE that exploits fields that were not restricted earlier.   
+  - \[Tim\] What happens when someone fails to upgrade the policy in webhook and results in using older policies for newer clusters. Might be part of the operational overhead of managing webhooks  
+  - \[Tim / Tabitha / Jordan\] Backwards compatibility means pods allowed in previous version are still allowed. E.g. A new resource field is added. Policy controllers do not have an opinion about? Or do we ignore it because the old policy does not understand it. When additional privileges are allowed in the newer version, the older pinned policy would not be able to use new fields. New fields can be enforced, if they can be unset or have default values? What if every pod was allowed by old version it must be continued to be allowed. If new field, we decide if we have an opinion about it, if it is a new field and it is unset or and default value, all old client will be whole and not broken.   
+  - \[Tim / Tabitha / David\] The core logic is implemented as a library in a separate repo, we will also have a containerized webhook implementation and import that as a core admission controller. Open for debate. Maintenance overhead? Minimal because samples provided.   
+  - \[Jordan\] Tests could be run against reference implementation or other implementation and could be used as a building block. This is why locating the code in a repo where it can be consumed is attractive.   
+  - \[Tabitha\] Runtime class security impact is unclear. Adding another volume type is another example for versioning.   
+  - \[Jordan\] I think allow absence of the field. Allow default value for baseline case. Writing litmus tests would be useful   
+  - \[Jordan\] User or admin having an opinion about user set fields is a good reason for to be not mutable.   
+  - \[Tim / Tabitha\] kube-system ns be exempted or punting the decision to distributions? Not all clusters need to run privileged containers in kube-system.   
+  - \[Tabitha\] Another breakout may be useful two weeks from now, unless we think we do not need it at that time. 
+
+## March 17, 11a \- Noon (Pacific Time)
+
+- [Recording](https://www.youtube.com/watch?v=DYfDiWgjiSE)  
+- Announcements  
+  - \[tallclair\] PSP replacement update: moving forward to KEP with the [“3-Tier Pod Security”](https://docs.google.com/document/d/1dpfDF3Dk4HhbQe74AyCpzUYMjp4ZhiEgGXSMpVWLlqQ/edit?ts=604b85df#heading=h.l73fmga838cb) approach  
+- Demos  
+  -   
+- Pulls of note  
+  -   
+- Issues of note  
+  -   
+- Designs of note  
+  -   
+- Discussion topic  
+  - \[mo\] CSR notAfterHint field [\#99412](https://github.com/kubernetes/kubernetes/pull/99412) [\#99494](https://github.com/kubernetes/kubernetes/pull/99494), need consensus on:  
+    - What does it mean to backdate a cert?  
+      - No one knows.  
+      - We need to be careful of restrictions like “don’t authenticate certs signed for over 1 year”.  
+      - Do clients implement leeway? Look at openssl, crypto/tls. If so, do they implement leeway on NotAfter, NotBefore or both?  
+      - Mo: We definitely need leeway on short lived certs.  
+      - Liggitt: We should cap min TTL so clients don’t request a massive amount of certs.  
+    - Do we want a notAfterHint field or a duration TTL field?  
+      - Liggitt: I like duration for two reasons.  
+        - Client doesn’t need a synchronized clock.  
+        - For short TTLs (e.g. 5 minutes), if it takes 2 minutes to get a cert, the cert is valid for a useful amount of time.  
+  - [track the rename of the "system:masters" group · Issue \#2322](https://github.com/kubernetes/kubeadm/issues/2322)  
+    - \[mo\] chair/TL meeting suggestion was to start discussion with wg-naming but I wanted to ask the sig itself first  
+      - We can alias this for requests coming into kube-apiserver.  
+      - People sign certs with CN:system:master with the expectation that they will work for \~decade. This is used for break glass, disaster recovery.  
+      - Upstream servers (audit log analysis? aggregated apiservers? Authorization webhook servers? Dynamic admission control? Kubelet? RBAC policies (and things that interpret RBAC policies)?) need to handle the new name which is the long poll.  
+      - Supporting an alternative, understanding how to do that safely gives adjacent systems time to migrate. 1 year is the minimum for GA features, but in practice, that has often not been long enough.  
+      - AI(mo): start with an issue in k/k, send to list for visibility and to gather folks to write a KEP to describe changes and rollout considerations   
+  - \[micahhausler\] x-topic from [cluster-api today](https://docs.google.com/document/d/1LdooNTbb9PZMFWy3_F-XAsl7Og5F2lvG3tCgQvoB5e4/edit#heading=h.75fc26ssrfqj) \- [kubernetes-sigs/cluster-api\#4325](https://github.com/kubernetes-sigs/cluster-api/issues/4325), donation of [brancz/kube-rbac-proxy](https://github.com/brancz/kube-rbac-proxy) to sig-auth  
+    - Deads: I am willing to champion but it will be something I get to next quarter.  
+    - Separate question: Why is kubebuilder depending on this? Shouldn’t we just be using the delegated authorizer?  
+      - Liggitt: It’s possible that wasn’t clean to wire when kube-rbac-proxy was introduced. Needs further investigation (no volunteers, but we can open an issue and ask).  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)  
+  - [unprioritized+unassigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [unprioritized+assigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+-no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [open bugs](https://github.com/kubernetes/kubernetes/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+label%3Akind%2Fbug)
+
+## \[PSP Breakout Session\] March 10, 1pm \- 2pm (Pacific Time)
+
+- [Recording](https://youtu.be/b0JpRb7-8jE)  
+- Agenda  
+  - \[liggitt\] demo proof of concept admission based on pod security standards levels  
+- Notes  
+  - \[tabitha\]  
+    - Reaction to demo  
+      - Admission plugin that re-examines code on server dry run is super great from an ops perspective  
+  - \[mrunal\]  
+    - Question about the pod security standards policy buckets  
+  - \[liggitt\]  
+    - We need feedback on how to handle SELinux in the different buckets  
+  - \[john-kinsella\]  
+    - Unconfigurable causes concern  
+  - \[liggitt\]  
+    - Proposing not being to express every detail in a Policy API  
+  - \[tabitha\]  
+    - Use a different tool when you don’t fit into the 3 buckets  
+  - \[liggitt\]  
+    - We want to cohabitate with the other tools  
+  - \[tim\]  
+    - Make it easy to a wholesale replacement by providing it as a library  
+    - We would publish the policy definitions as a spec and test cases to make it easy for you to test your other tool’s policies  
+    - Key distinction between PSP++ and this proposal is that it's more constrained and thus we can do dry-run and versioning  
+  - \[liggitt\]  
+    - The smaller the surface area of the built-in thing, the easier it is for an external thing to cover its functionality and layer on behavior on top  
+  - \[deads\]  
+    - Likes the hard-coded aspect  
+    - Likes the coexistence and on-ramp  
+    - Runtime classes  
+      - Exemption from runtime classes via labels?  
+  - \[tim\]  
+    - Want to make exemptions as explicit as possible  
+    - Want to do it on the runtime class *name* so that you can look at just the pod spec  
+  - \[deads\]  
+    - Does not want mismatch between disk based and API based config  
+  - \[sertac\]  
+    - Audit annotations size limit?  
+  - \[liggitt\]  
+    - Does not modify the pod spec at all, just goes to the audit sink or warnings to the client  
+  - \[mo\]  
+    - Question about CRDs that control pods like Deployment  
+  - \[liggitt\]  
+    - Reference a pod template in your CRD so that you can get warnings (so you create both resources in the API)  
+    - Helps with schema size and validation  
+  - \[tim\]  
+    - What are the next steps?  
+    - Concerns?  
+  - \[liggitt\]  
+    - Transition from PSPs, especially mutating PSPs  
+    - A ceiling and floor function for PSP policy to map to the 3 buckets  
+    - Could have 1 off tool to look at PSPs and help you decide  
+  - \[oren\]  
+    - Labels on namespaces could be privilege escalation if you can create namespaces  
+  - \[tabitha\]  
+    - If you can create namespaces, probably other bad things you can do on the cluster  
+  - \[tim\]  
+    - This is related to the [network policy discussion](https://groups.google.com/g/kubernetes-sig-architecture/c/RB7yl8nJPk0/m/vA48owNcBQAJ)  
+    - We need to solve the “labels on namespaces” authz problem  
+  - \[ryan-bezdicek\]  
+    - Security people will say just use restricted only  
+  - \[kirsten-newcomer\]  
+    - Customers say use SCC restricted  
+    - How limited is the access to the host?  
+      - Baseline policy prevents most things on the host  
+  - \[tim\]  
+    - Restricted requires running as non-root  
+    - Prevents volume types that are not built-in, need to use PV  
+  - \[oren\]  
+    - Mutating PSPs interacting with built-in 3 buckets?  
+  - \[liggitt\]  
+    - Mutation happens before validation, and you should use admission webhooks to do that  
+    - Validation just sees the final mutated state  
+  - \[mrunal\]  
+    - Kata, runtime classes, you can be privileged in the VM  
+  - \[deads\]  
+    - Different admission plugin that looks at the same labels could handle your runtime class specifically based on what it means  
+  - \[liggitt\]  
+    - Coarse grained APIs are easier to map to different domains like Kata instead of PSP which was all about specific field restrictions  
+  - \[tabitha\]  
+    - Like this proposal better than the first 2 (PSP++ and bare minimum)  
+    - PSP++ makes it harder to know when to move off of it  
+    - Bare min felt too limited for a lot of users  
+    - This proposal has more flexibility but has obvious edges to the upper bounds  
+    - Less complexity for developers and end users and Kube distributors  
+  - \[ian\]  
+    - Likes it as well, thinks its a good happy medium  
+  - \[tim\]  
+    - Going to move forward with KEP  
+    - Going to send survey to sig-auth and sig-security to see if others have concerns
+
+## March 3, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/FQd0TbBxY40)  
+- Announcements  
+  -   
+- Demos  
+  - \[mvladev\] [Dynamic OIDC Webhook Authenticator](https://github.com/gardener/oidc-webhook-authenticator) \- out of tree implementation of [Dynamic Authentication Configuration KEP](https://github.com/kubernetes/enhancements/pull/1689).  
+- Pulls of note  
+  -   
+- Issues of note  
+  - [portforward audit logs do not include target port information \#98440](https://github.com/kubernetes/kubernetes/issues/98440)  
+    - agreement that this info would be good to expose in audit logs  
+    - AI: liggitt to link to similar work done to specially handle connect options in admission  
+- Designs of note  
+  -   
+- Discussion topic  
+  - \[micahhausler\] Continued discussion on private claims for SA tokens [\#61795](https://github.com/kubernetes/kubernetes/issues/61795)  
+    - Exposes API surface in the token that clients may try to parse / understand / do something with  
+    - Makes token granting path more complex for all users even when only a small number of callers may need that functionality  
+    - AI: micah to get a better answer on the difficulty of token exchange service approach?  
+  - \[liggitt\] thoughts on user request to support populating envvars with projected service account tokens? ([\#99311](https://github.com/kubernetes/kubernetes/issues/99311))  
+    - general agreement not to support injecting projected tokens as envvars  
+    - also seen as requests for CSI secret driver, not possible to add special API support there  
+    - there is a need for documentation on recommended approaches to handle applications that require envs (e.g. wrapper script, or runner in distroless image)  
+    - AI: liggitt to summarize in feature request issue  
+  - \[benhxy\] Thoughts on webhook client AuthenticationSource ([\#2512](https://github.com/kubernetes/enhancements/pull/2512))?  
+    - AI: research on how extension apiserver’s service account can be used as client identity for token request  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)  
+  - [unprioritized+unassigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [unprioritized+assigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+-no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [open bugs](https://github.com/kubernetes/kubernetes/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+label%3Akind%2Fbug)
+
+## \[PSP Breakout Session\] February 24, 1pm \- 2pm (Pacific Time)
+
+- [Recording](https://youtu.be/AMWBI2p9b40)  
+- Announcements  
+- Discussion topic  
+- Goals and requirements summary  
+  - [https://docs.google.com/document/d/1CFBiCS2vdqlVRTMm\_0NUCK5v0yJG9aT4FcEc8DBqHto/edit](https://docs.google.com/document/d/1CFBiCS2vdqlVRTMm_0NUCK5v0yJG9aT4FcEc8DBqHto/edit)  
+  - Clarification about "handling API evolution" meaning "ability to be responsive to Pod API evolution"  
+  - request from sig-windows to explicitly call out not putting policies in place that automatically break windows  
+  - runtimeclass questions  
+    - deads: would like to be able to have a mix of runtimeclasses in a single namespace and allow some other enforcement mechanism to control pods with a particular runtimeclass  
+    - tim: allowing things to punch through based on runtimeclass could make sense; worry about scope creep about complexity/configurability  
+    - tabitha: opinions on runtimeclass make sense to show up in policy;   
+      - Could be out of scope for the bare minimum policy proposal  
+      - PSP++ could have multiple policies, some with opinions about runtimeclass, some without, could bind multiple into a namespace  
+    - Jordan:  
+      - user/namespace/runtimeclass could be simple enumerated punchouts, up to the person running the cluster who has more specific knowledge of other policy mechanisms they have in place  
+    - Ian:  
+      - End users simplicity may be more about “tell me what to do so I don’t have to think about it”  
+    - Kirsten:  
+      - We have customers who want to allow pods with different levels of privilege in the same namespace and customers who want to allow different levels of privilege by user.  
+    - Tabitha  
+      - Turn off the simple built-in mechanism and use the other tool instead of mix and matching both tools  
+    - Jordan:  
+      - We know that users have challenges with the complexity of multiple PSPs; part of the complexity is due to the current authorization mechanism; but having multiple policies apply to a namespace and a pod being allowed by one of them confuses users (usually if they had explicitly bound one and weren't aware of the others)  
+    - Kirsten  
+      - Have we already determined that we can’t support the mixed privs in namespace or by user use cases that are being used today without replicating the complexity that confuses users today?   
+      - Would more audit and informational messages help reduce confusion?  
+      - Still agree that we want to reduce confusion  
+    - David  
+      - If you carefully construct the API a simple implementation could be that everything that wants to honors the namespace privs setting; runtimes (e.g. kata) may be able to opt out  
+    - Mo  
+      - Do we expect implementers of runtime classes to jump on board?  
+      - As a user, how do I know that the runtime will honor the settings?  
+    - David  
+      - It may follow a pattern like RBAC and take about a year for all runtimes to onboard  
+    - Mo  
+      - Hearing that the initial API has to be incredibly crisp  
+    - David  
+      - Or intent based  
+      - As soon as you add …  
+    - Tim  
+      - Intent needs to be crisply defined. Not sure we’ve done that  
+    - Jordan  
+      - Like Tim’s idea of labeling namespaces  
+      - Tabitha called out two classes of users  
+        - Those who want everything to continue to work when upgrading  
+        - Those who are willing to adapt to changes at upgrade and will pre-test in CI or dev  
+        - If we add a version, e.g. "restricted as of 1.7" or "restricted as of latest"  
+      - Don’t think we need to go all the way to an API that exposes every individual control to get version-compatible policy  
+      - Ask user whether you want to be pinned to current version or float to latest version  
+    - Tabitha  
+      - Smaller surface encourages folks to turn the whole thing off when they move to something more complex  
+    - Tim  
+      - Simpler makes it easier for an external policy mechanism to support in addition to their special sauce  
+      - Implementation details  
+    - Jordan  
+      - Look at the existing 2 proposals with an eye towards the aspects discussed today:  
+        - Punching a hole through the policy to fall through to an external policy  
+        - How hard would it be for an external policy implementer to honor expressed user intent by each of the proposals (e.g. a custom runtimeclass policy webhook to honor a given enforcement level translated into specifics that make sense for the runtimeclass)  
+      - Would like to share a proof of concept demo next time
+
+## February 17, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/ah_1mAhw_3E)  
+- Announcements  
+  - PSP breakout session: Wednesdays 1-2pm PT on sig-auth off-week, next: Feb 24  
+- Demos  
+  -   
+- Pulls of note  
+  -   
+- Issues of note  
+  -   
+- Designs of note  
+  -   
+- Discussion topic  
+  - \[Riaankl\] HEAD & OPTIONS http verbs don’t seem to show up in the apiserver audit logs when we hit proxy endpoints. [\#95966](https://github.com/kubernetes/kubernetes/issues/95966)  
+    - Pushed from Feb 3 meeting, sent to [mailing-list 4th of Feb](https://groups.google.com/g/kubernetes-sig-auth/c/k-1xNWS9BdA/m/uZ3FArc2AwAJ) for further conversation / feedback.  
+    - TLDR: In AuditSinks\&Logs HEAD gets turned into GET, OPTIONS is dropped and makes mapping these log entries back to API operationIds impossible.  
+    - SIG-Architecture / CNCF Conformance program depends on these audit logs to calculate coverage  
+    - These transformations seem to occur due to code governed by SIG-Auth  
+    - guidance requested  
+      - co-owned by apimachinery and auth (used for routing, audit, authz)  
+    - AuditLog doesn’t include the necessary details for mapping back to operationId  
+      - Are the proxy subresource endpoints outliers? yes, HEAD and OPTIONS aren't published in openapi spec for any other endpoints  
+    - Another option is to look at adding operationId to the audit logs.  
+      - Another email to the mailing list:  
+      - [https://groups.google.com/g/kubernetes-sig-auth/c/k-1xNWS9BdA/m/fw2tCuM4AwAJ](https://groups.google.com/g/kubernetes-sig-auth/c/k-1xNWS9BdA/m/fw2tCuM4AwAJ)  
+  - Ephemeral containers security context & admission  
+    - came up during pod security discussion  
+    - ephemeral containers are working to [add security context control](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/277-ephemeral-containers#configurable-security-policy) and [move to beta](https://github.com/kubernetes/enhancements/tree/master/keps/sig-node/277-ephemeral-containers#alpha---beta-graduation) in 1.21  
+      - allows making production containers unprivileged and restricted, while retaining ability to inject a higher-privileged ephemeral container for debugging  
+    - question about admission security enforcement on ephemeral containers  
+      - admission often needs to know info from the rest of the pod to be able to make policy decisions (runtimeClass can inform whether runAsUser, pod-level security context needed to know effective container-level security context)  
+      - admission contract is that the object sent to admission matches the object that came in (David wanted to maintain this contract)  
+      - /ephemeralcontainers subresource accepts a list of ephemeral containers, not the full pod  
+      - Tim: could have relatedObjects in admission like the namespace of an object  
+    - Possible solutions:  
+      - wait for solution to API machinery issue about admission not being able to effectively intercept all changes to an object with full context no matter the source (e.g. "show me all changes to a replicaset with the old replicaset, made via spec/status/scale/whatever endpoint") \- [https://github.com/kubernetes/kubernetes/issues/84530](https://github.com/kubernetes/kubernetes/issues/84530)   
+      - prevent ephemeral containers from modifying security context  
+      - let admission look up existing pod out of band if needed for context  
+      - change ephemeral container API to send full pod (so admission gets the full existing pod as context), similar to status  
+        - do via different endpoint? old clients would 404 on missing /ephemeralcontainers endpoint  
+        - change type of pods/ephemeralcontainers? old clients would fail to deserialize  
+      -   
+  - \[micahhausler\] Resurrecting private claims for SA tokens [\#61795](https://github.com/kubernetes/kubernetes/issues/61795)  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)  
+  - [unprioritized+unassigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [unprioritized+assigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+-no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [open bugs](https://github.com/kubernetes/kubernetes/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+label%3Akind%2Fbug)
+
+## \[Breakout Session\] February 10, 1pm \- 2pm (Pacific Time)
+
+- [Recording](https://youtu.be/i7xTYorJ4Y0)  
+- Discussion topic: [PodSecurityPolicy Replacement Design](https://groups.google.com/g/kubernetes-sig-auth/c/a7zPYU-IRAA)  
+- Initial discussion of goals to help evaluate whether proposals meet agreed-on goals  
+  - deads2k \- allow co-existing with other enforcement mechanisms  
+    - tabitha \- both proposals have modes that are non-enforcing to allow passthrough to other enforcement mechanisms  
+    - deads2k \- both the namespace dimension and the user dimension seem important  
+      - deads2k: slicing by user is valuable; allow creation of a pod quotaed to a namespace but with higher power than a normal user would be allowed to have  
+    - tabitha \- does bypassing a policy by marking a namespace as inert satisfy?  
+    - deads2k: namespace-level doesn't allow for bypassing by trusted users  
+    - Jordan \- enforcement of policy by requesting user is problematic; (Mo called it a bug); slicing by user without delegation mechanisms for controllers is unreasonable  
+    - Jordan: if we had mechanisms where the user id could be carried through, or delegation methods then user enforcement might be more reasonable h  
+    - Tabitha: most common complaint is that there is no way to mix privs within a namespace. The way that PSP does it by a user is an exception  
+    - deads2k : depends on what you’re creating. Example…. Where shape of the pods is tightly controlled. Power of the user is constrained. Controller creates carefully constructed pods; pods that a service account does not have the privs to create. Looking for a way to co-exist; specific user isn’t bound at all. A way to have multiple possible engines run with two different sets of capabilities.   
+    - Amit: Why add exceptions by user?  
+    - deads2k: in the case of builds, you want to charge a particular user for his builds and constrain them using quota.  This means that the pods needs to be created in a user's namespace  
+    - Max: Is there a way to verify that pods were created by user with appropriate privs…  
+    - Jordan: right now, mutation of existing pods is very rare; is considered an anti-pattern. Nothing in Kube periodically sweeps to check that current user has privs they had when pod was created  
+    - Tim: for PCI compliance we need to have a way to state that a priv’d pod was created by a priv’d user  
+    - Deads2k: even without that we wouldn’t expect a policy that allowed us to select a specific config of a running deployment  
+  - Goals (Jordan)  
+    - Validating only, no changing pods to make them comply with policy  
+    - safe to enable in new AND upgraded clusters  
+  - Tabitha (with Ian \+1)  
+    - Policy engine in tree  
+    - Create pod \!= root on cluster (tim \+1, but there is fuzzyness here...some fields are clearly escalating; other fields significantly weaken isolation / increase attack surface, but )  
+  - Ian  
+    - Needs to be in-tree so everyone can be secure  
+  - Is windows in scope?  
+    - tabitha: don't think windows should be in scope for now because the privilege model for windows is so different and is still evolving  
+    - mark rossetti: would be useful to consider where windows would fit into this in the future  
+  - Compatibility of enforcement modes over releases (Jordan)  
+    - handling future evolution of API over time is hard  
+    - Windows is a good example... if the windows privilege model is clarified in the future and it becomes clear that the current defaults are effectively privileged, wouldn't we want to change the baseline pod security standards to exclude that? unless we version, that isn't possible to do compatibly.  
+    - Adding new fields can add new surface area.  Those fields make it hard/impossible to be perfectly compatible.  
+    - Tabitha: thinks the containerboundarypolicy addresses this problem by having versioned names for default profiles, but no bindings.  Enforcement on upgrade would miss the new field.  
+    - David: missing that field would be a problem for people choosing green policy  
+    - Jordan: bare minimum policy would want to change to keep things safe  
+    - Tim: we would change defaults in that case to follow the intent even with new fields  
+    - Jordan: like the idea of red/yellow/green, with optional versions (red-v1.15, yellow-v1.16, etc). Consumers can pin to a particular version and be guaranteed identical behavior in the future at the cost of picking up improvements (or can control transition to the improved versions at their own pace). Or can use unversioned red/yellow/green and always have the current best practices for that level.  
+  - Dimensions of coexistence matter (deads2k)  
+    - Who you are  
+    - Where you are trying to affect things, e.g. namespace  
+    - Jordan: a policy mechanism that isn’t easy to predict is not a goal; tying to authz checks is problematic; other explicit opt-in user bypass by cluster admin could be done in a less confusing way  
+    - deads2K: coexistence based on the dimensions we know are used today  
+    - Greg: having more than one policy enforcement mechanism makes debugging challenging. I really just want to be able to look at a pod and be able to reason about whether it would pass policy  
+  - Kirsten \- trying to picture how the current set of proposals will address a specific known use case in deployed clusters today.   
+    - Cluster admin wants to by default, have all pods run with the most restrictive policy. However, they have specific pods that require specific privileges (e.g. NET\_ADMIN). They want to control which pods are allowed those privs and in which namespaces and which users are allowed to deploy those privileged pods.   
+    - If the red/yellow/green options aren’t sufficient, what are their alternatives? Do they use something like OPA Gatekeeper in combination with red/yellow/green?   
+    - ??: Suggested we provide OPA Gatekeeper policies that map to the red/yellow/green options so that end-users can choose to replace the in-tree solution with the OPA Gatekeeper option and do so easily.  
+    - Tim: k8s doesn't really have sufficient controls to make strong boundaries between pods with different privilege levels (pod exec, ephemeral containers, etc all become risks)  
+  - Goals  
+    - Create pod \!= root on nodes, upstream out of the box  
+    - 2 other goals (that were missed by the note-takers)  
+  - Requirements  
+    - must be able to maintain/evolve over time  
+      - from a maintainer perspective (clear way to incorporate new fields in pods, clear way to improve over time while preserving compatibility)  
+      - from a consumer perspective (clear way to apply a policy in a way that expresses "don't break me on upgrade", and a way to opt into improved versions over time)  
+      -   
+  - Tim: unbounded nature of PSP API has been a concern. We need to define scope, short of going to full blown policy engine  
+  - Jordan: Confidentiality, Integrity, Availability. Would not necessarily include availability. But consider confidentiality and integrity to be key.   
+  - Tim: host ports, http probes  
+    - Kirsten: host ports are considered serious attack vectors by the customers I speak with. They definitely want to control access.   
+  - deads2k: small set of choices (5 or fewer); evolution over time (intent-based) rather than precise "everything must work exactly the same way". Litmus test: how to handle runtime-class? coexistence, controlled enablement, controlled disablement to migrate to something else.  
+  - Amit Bismut: open-sourced rego implementations of pod security standards. is that being considered for PSP replacement?  
+    - tim: haven't considered building rego into kubeapiserver, that doesn't seem likely  
+    - tabitha: would like to preserve consumer's ability to choose between different policy providers if the in-tree one is insufficient for them
+
+## February 3, 11a \- Noon (Pacific Time)
+
+- [Recording](https://youtu.be/1JdYu8FlVc8)  
+- Announcements  
+  - Enhancements freeze 2/9, 1.21 features must have implementable KEPs merged by then and be tracked in the enhancements spreadsheet  
+- Demos  
+  -   
+- Pulls of note  
+  - \[MaRosset\] [KEP 1981: Windows privileged container KEP updates for alpha](https://github.com/kubernetes/enhancements/pull/2288)  
+    - Looking for guidance / approval here for new API fields related to Windows privileged containers  
+    - moving away from existing securityContext.privileged field in favor of a windows-specific field  
+      - This has implications on existing constraint policies that look at the “linux” privileged fields.  
+    - AI: review changes to give feedback this week before enhancements freeze  
+  - \[Aravindh/MaRosset\] [KEP 2258: Node service log viewer](https://github.com/kubernetes/enhancements/pull/2271/)  
+    - Looking for guidance here since we are adding a feature to expose /var/log and journals using kubectl logs  
+    -   
+- Issues of note  
+  -   
+- Designs of note  
+  -   
+- Discussion topic  
+  - [PodSecurityPolicy Replacement Design](https://groups.google.com/g/kubernetes-sig-auth/c/a7zPYU-IRAA)  
+    - Two proposals:  
+      - [PSP++](https://docs.google.com/document/d/1F7flSlNTTb7YrzHof-n2JjXbRaOhbJTzvHjlhKTYaD4/edit#)  
+        - As close to previous PSP as possible while still addressing all the problems of the original PSP  
+      - [Bare Minimum Pod Security](https://docs.google.com/document/d/10dXwQ7hnf3-3uLqUuXuXGBo8z7eRM9ZjlTeS1y_7Bak/edit?usp=sharing)  
+        - …  
+        - Not configurable beyond the “bare minimum”  
+        - Expectation is that when users need more knobs, they jump to OPA+gatekeeper or Kyverno  
+      - Goal of both of these is to have an “out of the box” solution. The distinction between them is how sophisticated should the out of the box solution be? At what point should k8s require external to the project solutions?  
+      - There’s overhead to using an external policy engine. There is a desire to provide safe/easy security configuration for users that don’t want to take on that overhead.  
+      - Tallclair: The more advanced we make the “out of the box” solution, the longer users will be able to sit on it. But the counter to that is, the harder the eventual transition it will be if/once migration is required.  
+      - Tallclair: what are the problems with running third party admission controllers?  
+        - Mo: is this apimachinery?  
+        - Migration to external policy engine:  
+          - Deads: sig-auth should care about the on ramp to the full featured solution. E.g. per-namespace? Gradual migration?  
+          - Tabitha: to make advanced use of “out of the box” requires fundamental understanding of your workloads and what security controls you want to have in place, maybe you’ve already done the hard work. Migration may be only operationally challenging?  
+          - Tabitha: External policy engine maintainers are free to build the translation tools to ease migration. Is that the “on-ramp” our responsibility?  
+          - Deads: Our design can make “on-ramp” scarier or less scary.  
+          - Tabitha: both proposals (can?) have the capability of running cooperatively with an external policy engine in a single cluster.  
+        - Performance?  
+        - Operation?  
+      - Liggitt: PSP++ kept more than what I was expecting of old PSP. The old binding system was scrapped, which is good. The API surface was kept pretty much as-is. If we were going to keep spec compatible, I could actually see deprecating mutating fields and introducing a second admission plugin that looked at the same PSP API but used different binding logic.  
+      - Tabitha: PodSpec is huge and growing. Anything that enforces policy over the PodSpec must be huge and grow. This seems like an inevitability.  
+      - Liggitt: What is the philosophy of PSP? When does PSP care about a field? PSP doesn’t affect scheduling constraints (nodeName, tolerations). There was no coherent philosophy when the old PSP was conceived, and it didn’t come organically. We struggled with “a policy must not get more permissive or less permissive” between releases.   
+      - Clayton: We can’t define a scope that closes over all things possibly related to “security”.  
+      - Liggitt: With size of the API surface being bigger and more expressive, we are inviting people to write policy all across the spectrum. It’s hard to know what the intent of the policy author was when we consider adding a field to podspec. E.g. projected volumes and secrets. Can we evolve “out of the box” policies along the “intent” of the policy while still having some sort of “close to compatible” between releases?  
+      - Clayton: Flip side of a more focused model, there has to be a way for e.g. CSI driver authors can assess the impact of the plugins they are adding.  
+      - Ian: If the issue was that no one came up with a coherent philosophy for PSP in the first place, would it not help for us to take a few steps back and come up with a philosophy? That might help us figure out what we want to do here. Let’s do that.  
+    - AI:  
+      - Let's take the alternate weeks slot? Conflicts with API machinery.  
+      - AI(?): Time poll for one off meeting in the off week.  
+      - AI(everyone): come with your perspective of what a PSP replacement's scope/philosophy should be (to help clarify how to treat new podspec fields, existing policies, default policies, etc)  
+  - \[deads2k\]  [k/k 98382: add a mechanism for delegated authorization to have a few hardcoded rules](https://github.com/kubernetes/kubernetes/pull/98382)   
+    - Many SARs inside of a cluster verify rules for scrapers like metrics  
+    - Longer authz caches would affect every endpoint and we want to be selective  
+    - What options do we have and like?    
+      - Use abac \- designed for this purpose  
+        - Everyone: ABAC has a bunch of known problems (TODO: list them).  
+      - Add an arg \- easy, constrained, not expressive, ugly  
+      - Read rbac from disk and an evaluator \- uses well known API, excessive for the task, designed for change.  
+        - Liggitt: confusing to have refs to only local roles. Plus side is you can try it out using regular RBAC. Mixing two scopes is weird.  
+      - Longer authz cache \- affects every access and this change should be selective, still times out eventually on unavailability  
+        - Also suggested: Per SAR TTLs pushed down from kube-apiserver.  
+      - Do nothing \- given number of requests and interaction with p\&f, this seems like a bad idea for cases where actors and URLs are known  
+      - Read RBAC from the k8s API and evaluate locally (library and/or sidecar)  
+        - Delegation doesn’t actually require RBAC today.  Many deployments include webhooks.  While a particular rule like the one we desire to hardcode may not require more than RBAC, the actual delegation endpoint may be more restrictive than RBAC.  
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)  
+  - [unprioritized+unassigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [unprioritized+assigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+-no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [open bugs](https://github.com/kubernetes/kubernetes/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+label%3Akind%2Fbug)
+
+## January 20, 11am PST \- CANCELLED
+
+[https://groups.google.com/g/kubernetes-sig-auth/c/ti8Pfgo6wEk](https://groups.google.com/g/kubernetes-sig-auth/c/ti8Pfgo6wEk)
+
+## January 6, 11am PST
+
+- [Recording](https://youtu.be/ZfxGetz17BE)  
+- Announcements  
+  - HNC sig repo.  
+    - [API Review](https://docs.google.com/document/d/1Tcghp0MezOL28HbWxtYm9vp92b7zsSJNJdbo-tpbkQA/edit?usp=sharing)  
+    - [Code Review](https://docs.google.com/document/d/1DoXEoOjBBFqWIJHh-pab8nPixYEb-md4MwZPrqlE4mo/edit?usp=sharing)  
+- Demos  
+  - \[10m\] [Kyverno pod security standards](https://kyverno.io/policies/pod-security/) \[Jim Bugwadia\]  
+  -   
+- Pulls of note  
+  -   
+- Issues of note  
+  -   
+- Designs of note  
+  -   
+- Discussion topic  
+  - Open KEP review & 1.21 planning  
+    - [Open KEP PRs](https://github.com/kubernetes/enhancements/pulls?q=is%3Aopen+is%3Apr+label%3Asig%2Fauth)  
+    - [Open enhancement issues](https://github.com/kubernetes/enhancements/issues?q=is%3Aopen+is%3Aissue+label%3Asig%2Fauth)  
+    - What else?  
+  - Kick off 2021 year goals & planning  
+    - client-go exec plugin GA, deprecate gcp and azure plugins  
+      - andrew keesler driving exec client to GA  
+    - tokenrequest progress to GA (CA configmap in 1.21, projected token in 1.22)  
+      - zshihang driving  
+  - AI  
+    - API server auth to webhooks  
+      - [https://github.com/kubernetes/enhancements/pull/658](https://github.com/kubernetes/enhancements/pull/658)  
+      - original motivation was for dynamic audit.  
+      - AI(Mo): send email to sig-auth and sig-api-machinery to see if there's an interested owner to take this forward.  
+    - service account x509 credentials  
+      - [https://github.com/kubernetes/enhancements/pull/1388](https://github.com/kubernetes/enhancements/pull/1388)  
+      - Deprioritize for 1.21, focus on bound service account tokens  
+      - building blocks are present (CSRs, CSI volume plugins) but wouldn't be seamless  
+      - bound service account tokens are the priority  
+      - serving certificate aspect is not covered by bound service accounts and could be useful to split out (though what it means to give a service account a serving certificate is not clear)  
+      - AI(who?): Further discussion on ML if serving certificate aspect should be split out and taken forward  
+    - PSP  
+      - [https://github.com/kubernetes/enhancements/issues/5](https://github.com/kubernetes/enhancements/issues/5)  
+      - 1 month left for deadline for KEP in 1.21  
+      - AI(tabitha, ian, tim?): Aim for 1.21 KEP deadline, even if very hard to do so  
+    - Skipping TLS validation for API server \-\> Node  
+      - [https://github.com/kubernetes/enhancements/issues/1295](https://github.com/kubernetes/enhancements/issues/1295)  
+      - AI(deads2k): follow up, GA in 1.21  
+    - Extended NodeRestriction  
+      - [https://github.com/kubernetes/enhancements/issues/1314](https://github.com/kubernetes/enhancements/issues/1314)  
+      - AI(tallclair): follow up  
+    - OIDC Discovery  
+      - [https://github.com/kubernetes/enhancements/issues/1393](https://github.com/kubernetes/enhancements/issues/1393)  
+      - AI(Mike): follow up with mtaufen to GA in 1.21  
+    - Kubelet serving certificate  
+      - [https://github.com/kubernetes/enhancements/issues/267](https://github.com/kubernetes/enhancements/issues/267)  
+      - AI(liggitt): summarize open questions for GA  
+        - [https://github.com/kubernetes/enhancements/issues/267\#issuecomment-755765107](https://github.com/kubernetes/enhancements/issues/267#issuecomment-755765107)   
+    - [https://github.com/kubernetes/enhancements/issues/1687](https://github.com/kubernetes/enhancements/issues/1687)  
+      - Per Mike, Approve repo for HNC  
+      - API reviewed by Jordan, Code reviewed by Mike  
+      - k8s.io group vs x-k8s.io  
+      - AI(ryan, hnc team): follow up with David \+ Jordan  
+    - External TLS certificate authentication  
+      - [https://github.com/kubernetes/enhancements/pull/1749](https://github.com/kubernetes/enhancements/pull/1749)  
+      - decline calling out to TLS signers in favor of using a proxy mechanism which can externalize TLS any way it wants.  
+      - AI(liggitt): summarize and close. Request feedback on gaps in proxy.  
+        - [https://github.com/kubernetes/enhancements/pull/1749\#issuecomment-755738311](https://github.com/kubernetes/enhancements/pull/1749#issuecomment-755738311)   
+  - Discussion around linking to implementations of Pod Security Standards  
+    - website content guidelines: [https://kubernetes.io/docs/contribute/style/content-guide/\#third-party-content](https://kubernetes.io/docs/contribute/style/content-guide/#third-party-content)  
+    - would be good to have a test that an implementation actually enforces the pod security standards  
+  - Follow up on next sig auth to see what folks are looking to do in 2021  
+  -   
+- Action Items  
+  -   
+- Sweep issues with leftover time  
+  - [CI flakes](https://storage.googleapis.com/k8s-gubernator/triage/index.html?sig=auth)  
+  - [CI testgrids](https://testgrid.k8s.io/sig-auth)  
+  - [unprioritized+unassigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [unprioritized+assigned (-needs-information) issues](https://github.com/kubernetes/kubernetes/issues?q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+-label%3Apriority%2Fawaiting-more-evidence+-label%3Apriority%2Fimportant-longterm+-label%3Apriority%2Fimportant-soon+-label%3Apriority%2Fcritical-urgent+-label%3Apriority%2Fbacklog+-no%3Aassignee+-label%3Atriage%2Fneeds-information)  
+  - [open bugs](https://github.com/kubernetes/kubernetes/issues?utf8=✓&q=is%3Aissue+is%3Aopen+label%3Asig%2Fauth+label%3Akind%2Fbug)
+
+## SIG-Auth Archives
+
+The notes for meetings prior to 2021 have been moved to the sig-auth archives on github: [https://github.com/kubernetes/community/tree/master/sig-auth/archive](https://github.com/kubernetes/community/tree/master/sig-auth/archive)
