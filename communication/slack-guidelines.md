@@ -110,6 +110,14 @@ include:
     established contributors.
 -   `#surveys` - Cloud native community wide surveys. Posts must be ecosystem
     related.
+-   `#announcements` - The community's largest-distribution channel. Posts are
+    expected to be infrequent, major news, such as releases, security advisories,
+    elections, worldwide community events, Slack admin notices, and high-impact
+    deprecations. `#announcements` uses a moderated queue: submissions are made
+    through a Slack workflow and reviewed in a private triage channel, where moderators
+    can approve, request more information, or reject them based on the acceptance
+    criteria. Direct posting is restricted to Slack admins. For full moderation
+    criteria see the [Announcement Vetting Criteria](./slack-announcement-policy.md).
 -   `#kubernetes-careers` - Job openings for positions working with/on/around
     Kubernetes. These must be postings for specific jobs, not "cattle calls"
     for general tech hiring. To maintain community safety and combat fraudulent
