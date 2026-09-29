@@ -2001,7 +2001,7 @@ a unidirectional channel from the server to the client and chunks data as binary
 WebSocket frames. An optional WebSocket subprotocol is exposed that base64
 encodes the stream before returning it to the client.
 
-Clients should use the WebSocket protocols if their clients have native
+Clients should use the latest WebSocket protocols if their clients have native
 support, or SPDY as a fallback. Note that WebSockets is susceptible to
 Head-of-Line blocking and so clients must read and process each message
 sequentially.
