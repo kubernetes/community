@@ -21,7 +21,6 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Joaquim Rocha (**[@joaquimrocha](https://github.com/joaquimrocha)**), Amutable
 * Kahiro Okina (**[@kahirokunn](https://github.com/kahirokunn)**), Craftsman Software, Inc.
-* Shu Muto (**[@shu-mutou](https://github.com/shu-mutou)**), NEC
 
 ## Emeritus Leads
 
@@ -29,6 +28,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Sebastian Florek (**[@floreks](https://github.com/floreks)**)
 * Jeffrey Sica (**[@jeefy](https://github.com/jeefy)**)
 * Marcin Maciaszczyk (**[@maciaszczykm](https://github.com/maciaszczykm)**)
+* Shu Muto (**[@shu-mutou](https://github.com/shu-mutou)**)
 
 ## Contact
 - Slack: [#sig-ui](https://kubernetes.slack.com/messages/sig-ui)
