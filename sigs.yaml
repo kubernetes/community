@@ -533,7 +533,7 @@ sigs:
         tz: PT (Pacific Time)
         frequency: biweekly, you must be signed into a free zoom account to join
         url: https://zoom.us/j/264572674?pwd=NHVXTm14VktMRi8zRmU0aUt1NE9uQT09
-        archive_url: https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#
+        archive_url: https://docs.google.com/document/d/1BiW9kcQYDeMtaItFMz5qG1XdCd5jNeJcQMRdb3UORdI/edit
         recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP0VMOZ-V7-5AchXTHAQFzJw
       - description: Secrets Store CSI Meeting
         day: Thursday

@@ -13,7 +13,7 @@ Covers improvements to Kubernetes authorization, authentication, and cluster sec
 ## Meetings
 * [Wednesdays at 18:00 UTC](https://zoom.us/my/k8s.sig.auth) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=18:00&tz=UTC).
 
-Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#).
+Meeting notes and Agenda can be found [here](https://docs.google.com/document/d/1BiW9kcQYDeMtaItFMz5qG1XdCd5jNeJcQMRdb3UORdI/edit).
 
 ## Leads
 * [Eric Chiang](https://github.com/ericchiang), CoreOS

@@ -21,8 +21,7 @@ Operational tasks in [wg-governance.md]:
 - [x] Meeting notes and recordings for 2023 are linked from [README.md] and updated/uploaded if needed
 - [x] Updates provided to sponsoring SIGs in 2023
       - [sig-auth](https://git.k8s.io/community/sig-auth/)
-        - June 21st, 11a - Noon (Pacific Time) 2023
-          - https://docs.google.com/document/d/1woLGRoONE3EBVx-wTb4pvp4CI7tmLZ6lS26VTbosLKM/edit#bookmark=id.ml6bpv5ek0gp
+        - [June 21st, 11a - Noon (Pacific Time) 2023](/sig-auth/archive/meeting-notes-2023.md#june-21st-11a---noon-pacific-time)
 
 [wg-governance.md]: https://git.k8s.io/community/committee-steering/governance/wg-governance.md
 [README.md]: https://git.k8s.io/community/wg-policy/README.md
