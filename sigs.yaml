@@ -4004,6 +4004,41 @@ workinggroups:
       liaison:
         github: saschagrunert
         name: Sascha Grunert
+  - dir: wg-workload-conformance
+    name: Workload Conformance
+    mission_statement: >
+      Define an open, objectively verifiable standard for how a workload should behave at runtime on Kubernetes, and deliver the tooling that verifies it.
+
+    charter_link: charter.md
+    stakeholder_sigs:
+      - Apps
+      - Architecture
+    label: workload-conformance
+    leadership:
+      chairs:
+        - github: palnabarun
+          name: Nabarun Pal
+          company: Broadcom
+          email: pal.nabarun95@gmail.com
+        - github: soltysh
+          name: Maciej Szulik
+          company: Defense Unicorns
+          email: soltysh@gmail.com
+    meetings:
+      - description: WG Workload Conformance (bi-weekly meeting)
+        day: '[TBD]'
+        time: '[TBD]'
+        tz: '[TBD]'
+        frequency: bi-weekly
+        url: '[TBD]'
+        archive_url: '[TBD]'
+        recordings_url: '[TBD]'
+    contact:
+      slack: wg-workload-conformance
+      mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-workload-conformance
+      liaison:
+        github: saschagrunert
+        name: Sascha Grunert
 usergroups: []
 committees:
   - dir: committee-code-of-conduct
