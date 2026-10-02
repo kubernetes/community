@@ -43,6 +43,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Benjamin Wang (**[@ahrtr](https://github.com/ahrtr)**), VMware
+* Wei Fu (**[@fuweid](https://github.com/fuweid)**), Google
 * Marek Siarkowicz (**[@serathius](https://github.com/serathius)**), Google
 
 ## Emeritus Leads
