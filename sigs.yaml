@@ -714,6 +714,10 @@ sigs:
           name: Adrian Moisey
           company: Independent
           email: adrian@changeover.za.net
+        - github: jmdeal
+          name: Jason Deal
+          company: Amazon
+          email: jmdeal@amazon.com
         - github: omerap12
           name: Omer Aplatony
           company: Red Hat
