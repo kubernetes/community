@@ -3710,7 +3710,7 @@ workinggroups:
         archive_url: https://docs.google.com/document/d/1ZMtHBibXfTw4cQerM4O4DJonzVs3W7Hp2K5ml6pTufs/edit
         recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1P7F40IMVL3NsNiIm5AGos
       - description: Regular WG Meeting (Europe/America)
-        day: Thursday
+        day: Monday
         time: "17:00"
         tz: UTC
         frequency: weekly
