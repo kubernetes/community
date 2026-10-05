@@ -99,6 +99,10 @@ Application metadata descriptor CRD
   - [kubernetes/kompose](https://github.com/kubernetes/kompose/blob/master/OWNERS)
 - **Contact:**
   - Slack: [#kompose](https://kubernetes.slack.com/messages/kompose)
+### workload-class
+A high-level Kubernetes control layer for managing workload outcomes and disruption guardrails during maintenance.
+- **Owners:**
+  - [kubernetes-sigs/workload-class](https://github.com/kubernetes-sigs/workload-class/blob/main/OWNERS)
 ### workloads-api
 The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, PodDisruptionBudget and StatefulSet kinds
 - **Owners:**
