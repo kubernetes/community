@@ -23,9 +23,9 @@ The [charter](charter.md) defines the scope and governance of the Cluster Lifecy
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
+* Fabrizio Pandini (**[@fabriziopandini](https://github.com/fabriziopandini)**), VMware
 * Justin Santa Barbara (**[@justinsb](https://github.com/justinsb)**), Google
 * Lubomir Ivanov (**[@neolit123](https://github.com/neolit123)**), Independent
-* Vince Prignano (**[@vincepri](https://github.com/vincepri)**), Red Hat
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -39,6 +39,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Lucas Käldström (**[@luxas](https://github.com/luxas)**)
 * Robert Bailey (**[@roberthbailey](https://github.com/roberthbailey)**)
 * Timothy St. Clair (**[@timothysc](https://github.com/timothysc)**)
+* Vince Prignano (**[@vincepri](https://github.com/vincepri)**)
 
 ## Contact
 - Slack: [#sig-cluster-lifecycle](https://kubernetes.slack.com/messages/sig-cluster-lifecycle)
