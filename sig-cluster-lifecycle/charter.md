@@ -67,8 +67,8 @@ with a number of additional responsibilities, including but not limited to:
 Please note that, despite a certain degree of operational autonomy, SIG Cluster Lifecycle subprojects are still 
 expected to be continuously engaged and active in the broader SIG activities. As such:
 
-- Subproject leads or members are expected to show up periodically at the SIG meetings, share milestones, 
-  new ideas as well as issues or problems the subproject team is facing.
+- Subproject leads or members are expected to show up periodically at the SIG meetings, celebrate achievements, 
+  share new ideas as well as issues or problems the subproject team is facing.
 - Subproject leads should actively contribute to the preparation of the SIG annual report.
 
 ### Subproject creation
@@ -80,6 +80,8 @@ Please note that:
 SIG Cluster Lifecycle will consider the creation of a new subproject when a group of people actively engaged 
 in the SIG will propose an innovative idea in scope of the SIG charter, ideally filling some of the void in 
 the SIG vision or extending it in a meaningful way.
+
+The SIG also welcomes discussion about  innovative ideas originated from other SIGs as well as from other contributors.
 
 Like any significant change in Kubernetes, new subprojects should be backed by a KEP detailing 
 the subprojects goals, non-goals, and the initial roadmap.
@@ -114,12 +116,15 @@ Subprojects not active anymore will be archived.
 Similarly, archival will be considered if a subproject team drifts away significantly from the broader SIG activity.
 
 The following signals might be considered to determine if a subproject should be archived:
-- Subprojects not showing up in the SIG meeting in the last 6 months or answering to SIG surveys.
+- Subprojects not showing up in the SIG meetings periodically. 
+- Subprojects repeatedly not answering to SIG surveys, or to call-to-actions when the SIGs needs to discuss specif topics 
+  or is asking for subprojects status updates.
 - Subprojects failing to contribute to the SIG annual report.
-- Subprojects not actively maintaining the OWNERS files, not hosting project meetings, not actively triaging issues or PRs.
-- Subprojects failing to keep up with Kubernetes releases or with Cluster API releases.
+- Subprojects not actively maintaining the OWNERS files, SECURITY_CONTACTS.
+- Subprojects not actively engaging contributors and users e.g. in office hours, slack channels, etc. 
+- Subprojects not actively triaging issues, not actively reviewing and merging PRs.
 - Subprojects without a release in the last 6 months.
-- Subprojects without a commit in the last 6 months (bots excluded).
+- Subprojects failing to keep up with Kubernetes releases (or with Cluster API releases if applicable).
 - Subprojects failing to ensure quality of deliverables and documentation.
 
 If a subproject seems not active/eligbile for archival, SIG leads should perform a due diligence with subproject leads and maintainers.
@@ -132,6 +137,6 @@ to the developer mailing list (dev@kubernetes.io) outlining the decision.
 Archival must start after one months grace period or more from the vote.
 
 [sig-governance]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md
-[security contact]: [https://github.com/kubernetes/community/blob/master/committee-steering/governance/sig-governance.md](https://github.com/kubernetes/community/blob/main/committee-steering/governance/sig-governance.md#security-contact)
+[security contact]: https://github.com/kubernetes/community/blob/main/committee-steering/governance/sig-governance.md#security-contact
 [sigs.yaml]: https://github.com/kubernetes/community/blob/master/sigs.yaml
 [Kubernetes Charter README]: https://github.com/kubernetes/community/blob/master/committee-steering/governance/README.md
