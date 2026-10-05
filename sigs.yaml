@@ -779,6 +779,9 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/karpenter-provider-cluster-api/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/karpenter-provider-ibm-cloud/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/karpenter/main/OWNERS
+      - name: model-serving-signals
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/model-serving-signals/main/OWNERS
       - name: vertical-pod-autoscaler
         contact:
           slack: vertical-pod-autoscaler
