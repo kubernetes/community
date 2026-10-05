@@ -1,458 +1,532 @@
 # Kubectl Conventions
 
-Updated: 3/23/2017
-
 **Table of Contents**
 
 - [Kubectl Conventions](#kubectl-conventions)
   - [Principles](#principles)
   - [Command conventions](#command-conventions)
     - [Create commands](#create-commands)
-    - [Rules for extending special resource alias - "all"](#rules-for-extending-special-resource-alias---all)
+    - [Plugins](#plugins)
   - [Flag conventions](#flag-conventions)
   - [Output conventions](#output-conventions)
   - [Documentation conventions](#documentation-conventions)
-  - [kubectl Factory conventions](#kubectl-Factory-conventions)
+  - [kubectl client conventions](#kubectl-client-conventions)
   - [Command implementation conventions](#command-implementation-conventions)
   - [Exit code conventions](#exit-code-conventions)
-  - [Generators](#generators)
+  - [Verification](#verification)
 
 
 ## Principles
 
-* Strive for consistency across commands
+* Strive for consistency across commands.
 
-* Explicit should always override implicit
+* Explicit should always override implicit.
 
-  * Environment variables should override default values
+  * User preferences from `kuberc` should override default values.
 
-  * Command-line flags should override default values and environment variables
+  * Environment variables should override default values.
 
-    * `--namespace` should also override the value specified in a specified
-resource
+  * Command-line flags should override default values, `kuberc` preferences,
+    and environment variables.
 
-* Most kubectl commands should be able to operate in bulk on resources, of mixed types.
+  * The namespace set in a resource (e.g., in a file passed via `-f`) overrides
+    the default namespace from kubeconfig. An explicit `--namespace` that
+    conflicts with the namespace set in a resource is an error, rather than
+    an override, to guard against accidentally operating outside the intended
+    namespace.
 
-* Kubectl should not make any decisions based on its nor the server's release version string. Instead, API
-  discovery and/or OpenAPI should be used to determine available features.
+* Most kubectl commands should be able to operate in bulk on resources of mixed types.
 
-* We currently only guarantee one release of version skew is supported, but we strive to make old releases of kubectl 
-  continue to work with newer servers in compliance with our API compatibility guarantees. This means, for instance, that
-  kubectl should not fully parse objects returned by the server into full Go types and then re-encode them, since that
-  would drop newly added fields. ([#3955](https://github.com/kubernetes/kubernetes/issues/3955))
-  
-* General-purpose kubectl commands (e.g., get, delete, create -f, replace, patch, apply) should work for all resource types,
-  even those not present when that release of kubectl was built, such as APIs added in newer releases, aggregated APIs,
-  and third-party resources.
+* Kubectl should not make any decisions based on its own or the server's release version
+  string. Instead, API discovery and/or OpenAPI should be used to determine available features.
 
-* While functionality may be added to kubectl out of expedience, commonly needed functionality should be provided by
-  the server to make it easily accessible to all API clients. ([#12143](https://github.com/kubernetes/kubernetes/issues/12143))
-  
-* Remaining non-trivial functionality remaining in kubectl should be made available to other clients via libraries
-  ([#7311](https://github.com/kubernetes/kubernetes/issues/7311))
-  
+* We currently only guarantee support for [one release of version skew](https://kubernetes.io/releases/version-skew-policy/#kubectl),
+  but we strive to make old releases of kubectl continue to work with newer servers
+  in compliance with our API compatibility guarantees. This means, for instance,
+  that kubectl should not fully parse objects returned by the server into full Go
+  types and then re-encode them, since that would drop newly added fields.
+
+* General-purpose kubectl commands (e.g., `get`, `delete`, `create`, `replace`,
+  `patch`, `apply`) should work for all resource types, even those not present
+  when that release of kubectl was built, such as APIs added in newer releases,
+  aggregated APIs, and custom resources.
+
+* While functionality may be added to kubectl out of expedience, commonly needed
+  functionality should be provided by the server to make it easily accessible
+  to all API clients. Examples of functionality that moved server-side: `get` table
+  output, `apply` (server-side apply), dry-run, field validation, and resource
+  categories.
+
+* Remaining non-trivial functionality in kubectl should be made available to other
+  clients via libraries. Code lives in `staging/src/k8s.io/kubectl` (published as
+  `k8s.io/kubectl`) and the reusable CLI building blocks (config flags, print flags,
+  resource builder, printers) live in `staging/src/k8s.io/cli-runtime` (published
+  as `k8s.io/cli-runtime`).
+
+* Experimental client-side behavior is gated behind `KUBECTL_*` environment variables
+  (see `FeatureGate` in `staging/src/k8s.io/kubectl/pkg/cmd/util/helpers.go`,
+  e.g., `KUBECTL_KUBERC`, `KUBECTL_APPLYSET`). Gates that are disabled by default
+  (usually at alpha stage) are turned on by setting the variable to `true`; gates
+  that are enabled by default (usually at beta stage) can be turned off by setting
+  the variable to `false`.
+
+
 ## Command conventions
 
 * Command names are all lowercase, and hyphenated if multiple words.
 
-* kubectl VERB NOUNs for commands that apply to multiple resource types.
+* Use `kubectl <VERB> <NOUNs>` for commands that apply to multiple resource types.
 
-* Command itself should not have built-in aliases.
+* Commands should not have built-in aliases. Users who want aliases can
+  define them in `kuberc`. The exception is subcommands named after a resource
+  type (e.g., `kubectl create deployment`, `kubectl top pod`), which accept that
+  resource's other names as aliases (`deploy`, `pods`, `po`).
 
-* NOUNs may be specified as `TYPE name1 name2` or `TYPE/name1 TYPE/name2` or
-`TYPE1,TYPE2,TYPE3/name1`; TYPE is omitted when only a single type is expected.
+* `<NOUNs>` may be specified as `TYPE name1 name2` or `TYPE/name1 TYPE/name2`.
 
 * Resource types are all lowercase, with no hyphens; both singular and plural
-forms are accepted.
+  forms are accepted. Types may be fully qualified as `resource.version.group`
+  or `resource.group` to disambiguate.
 
-* NOUNs may also be specified by one or more file arguments: `-f file1 -f file2
-...`
+* `<NOUNs>` may also be specified by one or more file arguments: `-f file1 -f file2
+  ...`, a directory (`-f dir/`, optionally with `-R`), a URL, or a kustomization
+  directory (`-k dir/`).
 
-* Resource types may have 2- or 3-letter aliases.
+* Resource types may have 2- or 3-letter short names. Short names are served by
+  the API server through discovery, not hard-coded in kubectl.
 
 * Business logic should be decoupled from the command framework, so that it can
-be reused independently of kubectl, cobra, etc.
+  be reused independently of `kubectl`, `cobra` library, etc.
+
   * Ideally, commonly needed functionality would be implemented server-side in
-order to avoid problems typical of "fat" clients and to make it readily
-available to non-Go clients.
+    order to avoid problems typical of "fat" clients and to make it readily
+    available to non-Go clients.
 
-* Commands that generate resources, such as `run` or `expose`, should obey
-specific conventions, see [generators](#generators).
+* A command group (e.g., `kubectl config`, `kubectl set`, `kubectl rollout`,
+  `kubectl create`) may be used to group related non-standard commands, such as
+  object construction, mutations, and computations.
 
-* A command group (e.g., `kubectl config`) may be used to group related
-non-standard commands, such as custom generators, mutations, and computations.
-
+* Top-level commands are registered in `staging/src/k8s.io/kubectl/pkg/cmd/cmd.go`.
+  Most belong to one of the `templates.CommandGroups`, shown in help as
+  "Basic Commands (Beginner)", "Basic Commands (Intermediate)", "Deploy Commands",
+  "Cluster Management Commands", "Troubleshooting and Debugging Commands",
+  "Advanced Commands", and "Settings Commands". A few (`config`, `plugin`,
+  `version`, `api-resources`, `api-versions`, `options`, `kuberc`) are added
+  outside the groups and listed under "Other Commands" in help; installed plugins
+  get their own help group. Commands that are not ready for general use go under
+  `kubectl alpha` (`staging/src/k8s.io/kubectl/pkg/cmd/alpha.go`), which is hidden
+  when empty.
 
 ### Create commands
 
 `kubectl create <resource>` commands fill the gap between "I want to try
-Kubernetes, but I don't know or care what gets created" (`kubectl run`) and "I
-want to create exactly this" (author yaml and run `kubectl create -f`). They
-provide an easy way to create a valid object without having to know the vagaries
-of particular kinds, nested fields, and object key typos that are ignored by the
-yaml/json parser. Because editing an already created object is easier than
-authoring one from scratch, these commands only need to have enough parameters
-to create a valid object and set common immutable fields.  It should default as
-much as is reasonably possible. Once that valid object is created, it can be
-further manipulated using `kubectl edit` or the eventual `kubectl set` commands.
+Kubernetes, but I don't know or care what gets created" (`kubectl run`, which
+creates a single pod) and "I want to create exactly this" (write YAML and run
+`kubectl create -f`). They provide an easy way to create a valid object without
+having to know the vagaries of particular kinds, nested fields, and object key
+typos that are ignored by the YAML/JSON parser. Because editing an already
+created object is easier than authoring one from scratch, these commands only
+need to have enough parameters to create a valid object and set common
+immutable fields. They should default as much as is reasonably possible. Once
+that valid object is created, it can be further manipulated using `kubectl
+edit` or `kubectl set` commands.
 
 `kubectl create <resource> <special-case>` commands help in cases where you need
 to perform non-trivial configuration generation/transformation tailored for a
-common use case. `kubectl create secret` is a good example, there's a `generic`
+common use case. `kubectl create secret` is a good example: there's a `generic`
 flavor with keys mapping to files, then there's a `docker-registry` flavor that
 is tailored for creating an image pull secret, and there's a `tls` flavor for
-creating tls secrets. You create these as separate commands to get distinct
-flags and separate help that is tailored for the particular usage.
+creating TLS secrets. `kubectl create service` follows the same pattern with
+`clusterip`, `nodeport`, `loadbalancer`, and `externalname`. These are separate
+commands so that each gets its own flags and help tailored to its use.
 
+### Plugins
 
-### Rules for extending special resource alias - "all"
+* Any executable on `PATH` named `kubectl-<name>` is invoked for `kubectl <name>`,
+  with dashes in the filename mapping to subcommands (`kubectl-foo-bar` -> `kubectl foo bar`)
+  and underscores mapping to dashes in the command name.
 
-Here are the rules to add a new resource to the `kubectl get all` output.
+* Plugins can never override a built-in command. The only built-in command that
+  accepts plugin subcommands is `create` (`kubectl-create-foo` -> `kubectl create foo`),
+  and only for subcommands that don't exist as built-ins.
 
-* No cluster scoped resources
-
-* No namespace admin level resources (limits, quota, policy, authorization
-rules)
-
-* No resources that are potentially unrecoverable (secrets and pvc)
-
-* Resources that are considered "similar" to #3 should be grouped
-the same (configmaps)
+* Functionality that is useful to a subset of users, or that is still being
+  iterated on, is a good candidate for a plugin rather than a built-in command.
 
 
 ## Flag conventions
 
-* Flags are all lowercase, with words separated by hyphens
+* Flags are all lowercase, with words separated by hyphens. This is enforced by
+  `hack/verify-cli-conventions.sh`. Flags using `_` are normalized to `-` with a
+  warning.
 
-* Flag names and single-character aliases should have the same meaning across
-all commands
+* Flag names and short (single-character) flags should have the same meaning across all commands.
 
-* Flag descriptions should start with an uppercase letter and not have a
-period at the end of a sentence
+* Flag descriptions should start with an uppercase letter. Full sentences
+  should end with a period; most existing flags do, but a short phrase without
+  one is acceptable.
 
 * Command-line flags corresponding to API fields should accept API enums
-exactly (e.g., `--restart=Always`)
+  exactly (e.g., `--restart=Always`).
 
 * Do not reuse flags for different semantic purposes, and do not use different
-flag names for the same semantic purpose -- grep for `"Flags()"` before adding a
-new flag
+  flag names for the same semantic purpose. Check `staging/src/k8s.io/kubectl/pkg/cmd/util/helpers.go`
+  (`Add*Flag*` helpers) and `staging/src/k8s.io/cli-runtime/pkg/genericclioptions`
+  (`*Flags` structs) for an existing flag before adding a new one, and use the
+  shared helper rather than redefining the flag.
 
 * Use short flags sparingly, only for the most frequently used options, prefer
-lowercase over uppercase for the most common cases, try to stick to well known
-conventions for UNIX commands and/or Docker, where they exist, and update this
-list when adding new short flags
+  lowercase over uppercase for the most common cases, try to stick to well-known
+  conventions for UNIX commands, where they exist, and update this list when
+  adding new short flags.
 
+  * `-A`: All namespaces
+  * `-c`: Container
+    * also used for `--containers` in `set env` and `set resources`
+  * `-e`: Environment variable, in `set env`
   * `-f`: Resource file
     * also used for `--follow` in `logs`, but should be deprecated in favor of `-F`
-  * `-n`: Namespace scope
-  * `-l`: Label selector
-    * also used for `--labels` in `expose`, but should be deprecated
-  * `-L`: Label columns
-  * `-c`: Container
-    * also used for `--client` in `version`, but should be deprecated
+  * `-h`: Help
   * `-i`: Attach stdin
-  * `-t`: Allocate TTY
-  * `-w`: Watch (currently also used for `--www` in `proxy`, but should be deprecated)
-  * `-p`: Previous
-    * also used for `--pod` in `exec`, but deprecated
+    * also used for `--interactive` in `delete`
+  * `-k`: Kustomization directory
+  * `-l`: Label selector
+    * also used for `--labels` in `expose` and `run`, but should be deprecated
+  * `-L`: Label columns
+  * `-n`: Namespace scope
+  * `-o`: Output format
+  * `-p`: Previous, in `logs`
     * also used for `--patch` in `patch`, but should be deprecated
     * also used for `--port` in `proxy`, but should be deprecated
-  * `-P`: Static file prefix in `proxy`, but should be deprecated
-  * `-r`: Replicas
-  * `-u`: Unix socket
+  * `-P`: Static file prefix (`--www-prefix`) in `proxy`, but should be deprecated
+  * `-q`: Quiet
+  * `-r`: Replicas, in `create deployment`
+  * `-R`: Recursive
+  * `-s`: API server address
+  * `-t`: Allocate TTY
+  * `-u`: Unix socket, in `proxy`
   * `-v`: Verbose logging level
+  * `-w`: Watch
+    * also used for `--www` in `proxy`, but should be deprecated
 
+* `--dry-run=none|client|server`: Don't modify the live state. `client` only
+  prints the object that would be sent; `server` submits the request without
+  persisting it. All mutations should support it via `cmdutil.AddDryRunFlag`
+  and `cmdutil.GetDryRunStrategy`.
 
-* `--dry-run`: Don't modify the live state; simulate the mutation and display
-the output. All mutations should support it.
+* `--local`: Don't contact the server; perform only local reads, transformations,
+  generation, etc., and display the output.
 
-* `--local`: Don't contact the server; just do local read, transformation,
-generation, etc., and display the output
+* `--field-manager`: Name of the manager used to track field ownership, added
+  via `cmdutil.AddFieldManagerFlagVar`. Defaults to `kubectl-<verb>` (e.g.,
+  `kubectl-create`, `kubectl-set`, `kubectl-rollout`). All mutations should support it.
 
-* `--output-version=...`: Convert the output to a different API group/version
+* `--validate=strict|warn|ignore`: Schema validation of the input, added via
+  `cmdutil.AddValidateFlags`. `true` and `false` are accepted as aliases for
+  `strict` and `ignore`. Validation is performed server-side when the server
+  supports field validation; otherwise, kubectl falls back to client-side
+  validation for `strict`. Defaults to `strict`.
 
-* `--short`: Output a compact summary of normal output; the format is subject
-to change and is optimized for reading not parsing.
+* `--record` is deprecated; don't add it to new commands.
 
-* `--validate`: Validate the resource schema
 
 ## Output conventions
 
-* By default, output is intended for humans rather than programs
-  * However, affordances are made for simple parsing of `get` output
+* By default, output is intended for humans rather than programs.
 
-* Only errors should be directed to stderr
+  * However, affordances are made for simple parsing of `get` output.
 
-* `get` commands should output one row per resource, and one resource per row
+* stdout carries the result of the command; everything else (errors, warnings,
+  and status messages such as `No resources found in default namespace.`)
+  goes to stderr, so that stdout stays safe to pipe into other programs. Warnings
+  returned by the server are printed to stderr (deduplicated), and
+  `--warnings-as-errors` turns them into a non-zero exit code.
 
-  * Column titles and values should not contain spaces in order to facilitate
-commands that break lines into fields: cut, awk, etc. Instead, use `-` as the
-word separator.
+* `get` commands should output one row per resource, and one resource per row.
 
-  * By default, `get` output should fit within about 80 columns
+  * Columns for built-in types are defined server-side as `Table` column
+    definitions (`pkg/printers/internalversion` in the main repo); custom resources
+    use `additionalPrinterColumns`. `kubectl` does not hard-code per-type columns.
 
-    * Eventually we could perhaps auto-detect width
-    * `-o wide` may be used to display additional columns
+  * New column titles and values should not contain spaces, so that lines can be
+    split into fields with `cut`, `awk`, etc. Instead, use `-` as the word
+    separator.
 
+  * By default, `get` output should fit within about 80 columns.
 
-  * The first column should be the resource name, titled `NAME` (may change this
-to an abbreviation of resource type)
+    * `-o wide` may be used to display additional columns.
 
-  * NAMESPACE should be displayed as the first column when --all-namespaces is
-specified
+  * The first column should be the resource name, titled `NAME`.
 
-  * The last default column should be time since creation, titled `AGE`
+  * `NAMESPACE` should be displayed as the first column when `--all-namespaces`
+    is specified.
 
-  * `-Lkey` should append a column containing the value of label with key `key`,
-with `<none>` if not present
+  * The last default column should be time since creation, titled `AGE`.
 
-  * json, yaml, Go template, and jsonpath template formats should be supported
-and encouraged for subsequent processing
+  * `-L <key>` appends a column containing the value of the label with key `key`,
+    left empty if not present. The column title is the uppercased key without
+    its prefix (`-L app.kubernetes.io/name` produces `NAME`).
 
-      * Users should use --api-version or --output-version to ensure the output
-uses the version they expect
-
+  * The `json`, `yaml`, `kyaml`, `name`, Go template (`go-template`, `go-template-file`),
+    and jsonpath (`jsonpath`, `jsonpath-file`, `jsonpath-as-json`) formats should
+    be supported and encouraged for subsequent processing. Commands get these
+    through `genericclioptions.PrintFlags` rather than wiring printers by hand.
+    `get` additionally supports `wide`, custom columns (`custom-columns`,
+    `custom-columns-file`), and `-L` through its own `PrintFlags`
+    (`staging/src/k8s.io/kubectl/pkg/cmd/get/get_flags.go`).
 
 * `describe` commands may output on multiple lines and may include information
-from related resources, such as events. Describe should add additional
-information from related resources that a normal user may need to know - if a
-user would always run "describe resource1" and the immediately want to run a
-"get type2" or "describe resource2", consider including that info. Examples,
-persistent volume claims for pods that reference claims, events for most
-resources, nodes and the pods scheduled on them. When fetching related
-resources, a targeted field selector should be used in favor of client side
-filtering of related resources.
+  from related resources, such as events. Describe should include information
+  from related resources that a typical user may need to know. If a user would
+  always run "describe resource1" and then immediately want to run a "get type2"
+  or "describe resource2", consider including that info. Examples: persistent
+  volume claims for pods that reference claims, events for most resources, and
+  nodes and the pods scheduled on them. When fetching related resources, a
+  targeted field selector should be used instead of client-side filtering of
+  related resources.
 
-* For fields that can be explicitly unset (booleans, integers, structs), the
-output should say `<unset>`. Likewise, for arrays `<none>` should be used; for
-external IP, `<nodes>` should be used; for load balancer, `<pending>` should be
-used.  Lastly `<unknown>` should be used where unrecognized field type was
-specified.
+* In `describe` output, fields that can be explicitly unset (booleans, integers,
+  structs) should show `<unset>`. Likewise, arrays should show `<none>`. Finally,
+  `<unknown>` should be used where an unrecognized value was specified.
+  Server-side `get` columns follow the same placeholders and add `<pending>` for
+  a load balancer address that has not been assigned yet.
 
-* Mutations should output TYPE/name verbed by default, where TYPE is singular;
-`-o name` may be used to just display TYPE/name, which may be used to specify
-resources in other commands
+* Mutations should output `TYPE/name verbed` by default, where `TYPE` is the
+  lowercase singular kind, qualified with the group for non-core types (e.g.,
+  `pod/nginx created`, `deployment.apps/nginx scaled`). `-o name` prints only
+  `TYPE/name`, which other commands accept as input.
+
 
 ## Documentation conventions
 
-* Commands are documented using Cobra; docs are then auto-generated by
-`hack/update-generated-docs.sh`.
+* Commands are documented using `cobra`; docs are then auto-generated by
+  `hack/update-generated-docs.sh`.
 
-  * Use should contain a short usage string for the most common use case(s), not
-an exhaustive specification
+  * `Use` should contain a short usage string for the most common use case(s), not
+    an exhaustive specification. Set `DisableFlagsInUseLine: true` and list the
+    relevant flags in `Use` explicitly.
 
-  * Short should contain a one-line explanation of what the command does
-    * Short descriptions should start with an uppercase case letter and not
-    have a period at the end of a sentence
-    * Short descriptions should (if possible) start with a first person
-    (singular present tense) verb
+  * `Short` should contain a one-line explanation of what the command does.
 
-  * Long may contain multiple lines, including additional information about
-input, output, commonly used flags, etc.
+    * Short descriptions should start with an uppercase letter and not end
+      with a period.
+
+    * Short descriptions should (if possible) start with a verb in the
+      imperative mood.
+
+  * `Long` may contain multiple lines, including additional information about
+    input, output, commonly used flags, etc.
+
     * Long descriptions should use proper grammar, start with an uppercase
-    letter and have a period at the end of a sentence
+      letter, and end sentences with a period.
+
+    * `Long` must be wrapped in `templates.LongDesc(...)` (enforced by
+      `hack/verify-cli-conventions.sh`).
+
+  * `Example` should contain usage examples covering the common cases.
+
+    * `Example` must be wrapped in `templates.Examples(...)` (enforced by
+      `hack/verify-cli-conventions.sh`).
+
+    * A comment should precede each example command. Comments use `#`, not
+      `//` (enforced), and should start with an uppercase letter.
+
+    * Command examples should not include a `$` prefix.
+
+  * `Short`, `Long`, and `Example` strings should be wrapped in `i18n.T(...)` so
+    they can be translated (`hack/update-translations.sh`).
+
+* Use `FILENAME` for filenames.
+
+* Use `TYPE` for the particular flavor of resource type accepted by kubectl,
+  rather than `RESOURCE` or `KIND`.
+
+* Use `NAME` for resource names.
 
 
-  * Example should contain examples
-    * A comment should precede each example command. Comment should start with
-      an uppercase letter
-    * Command examples should not include a `$` prefix
+## kubectl client conventions
 
-* Use "FILENAME" for filenames
+The kubectl `Factory` (`staging/src/k8s.io/kubectl/pkg/cmd/util/factory.go`) is
+an interface that provides access to clients (`DynamicClient`, `KubernetesClientSet`,
+`RESTClient`, `ClientForMapping`, `UnstructuredClientForMapping`), the resource
+builder (`NewBuilder`), schema validation (`Validator`), and OpenAPI v2/v3 schemas.
+It embeds `genericclioptions.RESTClientGetter`, which provides the REST config,
+discovery client, REST mapper, and kubeconfig loader.
 
-* Use "TYPE" for the particular flavor of resource type accepted by kubectl,
-rather than "RESOURCE" or "KIND"
-
-* Use "NAME" for resource names
-
-## kubectl Factory conventions
-
-The kubectl `Factory` is a large interface which is used to provide access to clients,
-polymorphic inspection, and polymorphic mutation.  The `Factory` is layered in
-"rings" in which one ring may reference inner rings, but not peers or outer rings.
-This is done to allow composition by extenders.
-
-In order for composers to be able to provide alternative factory implementations
-they need to provide low level pieces of *certain* functions so that when the factory
-calls back into itself it uses the custom version of the function.  Rather than try
-to enumerate everything that someone would want to override we split the factory into
-rings, where each ring can depend on methods an earlier ring, but cannot depend upon
-peer methods in its own ring.
+Commands should depend on the narrowest interface that works. Commands that only
+need config, discovery, or a REST mapper should accept a `genericclioptions.RESTClientGetter`
+instead of the full `Factory` (e.g., `events`, `wait`, `debug`).
 
 
 ## Command implementation conventions
 
 For every command there should be a `NewCmd<CommandName>` function that creates
 the command and returns a pointer to a `cobra.Command`, which can later be added
-to other parent commands to compose the structure tree. There should also be a
-`<CommandName>Options` struct with a variable to every flag and argument
-declared by the command (and any other variable required for the command to
-run). This makes tests and mocking easier. The struct ideally exposes three
-methods:
+to other parent commands to compose the structure tree. It takes a `genericclioptions.RESTClientGetter`
+and a `genericiooptions.IOStreams`. Commands never write to `os.Stdout`/`os.Stderr`
+directly.
 
-* `Complete`: Completes the struct fields with values that may or may not be
-directly provided by the user, for example, by flags pointers, by the `args`
-slice, by using the Factory, etc.
+There should be a `<CommandName>Flags` struct with a field for every flag and
+argument declared by the command, created by a `New<CommandName>Flags(restClientGetter, streams)`
+constructor. The `<CommandName>Flags` struct should define two member methods:
+
+* `AddFlags`: responsible for wiring flags using the `cobra` library.
+
+* `ToOptions`: responsible for translating flags into a `<CommandName>Options`
+  struct and setting all other required values.
+
+The `<CommandName>Options` struct contains a field for every flag and argument
+declared by the command, and any other field required for the command to run.
+This makes tests and mocking easier. The `<CommandName>Options` struct ideally
+exposes two methods:
 
 * `Validate`: performs validation on the struct fields and returns appropriate
-errors.
+  errors.
 
-* `Run<CommandName>`: runs the actual logic of the command, taking as assumption
-that the struct is complete with all required values to run, and they are valid.
+* `Run`: runs the actual logic of the command, assuming the struct is complete
+  and has been validated. It takes a `context.Context`, so that cancellation
+  propagates from `cmd.Context()`. Some commands might use `Run<CommandName>`,
+  but just `Run` is preferred.
+
+The `cobra.Command`'s `Run` function calls `ToOptions`, `Validate`, and `Run` in that order.
 
 Sample command skeleton:
 
 ```go
-// MineRecommendedName is the recommended command name for kubectl mine.
-const MineRecommendedName = "mine"
-
-// Long command description and examples.
 var (
-  mineLong = templates.LongDesc(`
-    mine which is described here
-    with lots of details.`)
+	mineLong = templates.LongDesc(i18n.T(`
+		Mine which is described here
+		with lots of details.`))
 
-  mineExample = templates.Examples(`
-    # Run my command's first action
-    kubectl mine first_action
+	mineExample = templates.Examples(i18n.T(`
+		# Run my command's first action
+		kubectl mine first_action
 
-    # Run my command's second action on latest stuff
-    kubectl mine second_action --flag`)
+		# Run my command's second action on latest stuff
+		kubectl mine second_action --latest`))
 )
 
-// MineOptions contains all the options for running the mine cli command.
-type MineOptions struct {
-  mineLatest bool
+// MineFlags contains all the flags and arguments for the mine CLI command.
+type MineFlags struct {
+	RESTClientGetter genericclioptions.RESTClientGetter
+
+	Latest bool
+
+	genericiooptions.IOStreams
+}
+
+// NewMineFlags returns a default MineFlags.
+func NewMineFlags(restClientGetter genericclioptions.RESTClientGetter, streams genericiooptions.IOStreams) *MineFlags {
+	return &MineFlags{
+		RESTClientGetter: restClientGetter,
+		IOStreams:        streams,
+	}
 }
 
 // NewCmdMine implements the kubectl mine command.
-func NewCmdMine(parent, name string, f *cmdutil.Factory, out io.Writer) *cobra.Command {
-  opts := &MineOptions{}
+func NewCmdMine(restClientGetter genericclioptions.RESTClientGetter, streams genericiooptions.IOStreams) *cobra.Command {
+	flags := NewMineFlags(restClientGetter, streams)
 
-  cmd := &cobra.Command{
-    Use:     fmt.Sprintf("%s [--latest]", name),
-    Short:   "Run my command",
-    Long:    mineLong,
-    Example: fmt.Sprintf(mineExample, parent+" "+name),
-    Run: func(cmd *cobra.Command, args []string) {
-      if err := opts.Complete(f, cmd, args, out); err != nil {
-        cmdutil.CheckErr(err)
-      }
-      if err := opts.Validate(); err != nil {
-        cmdutil.CheckErr(cmdutil.UsageError(cmd, err.Error()))
-      }
-      if err := opts.RunMine(); err != nil {
-        cmdutil.CheckErr(err)
-      }
-    },
-  }
+	cmd := &cobra.Command{
+		Use:                   "mine ACTION [--latest]",
+		DisableFlagsInUseLine: true,
+		Short:                 i18n.T("Run my command"),
+		Long:                  mineLong,
+		Example:               mineExample,
+		Run: func(cmd *cobra.Command, args []string) {
+			o, err := flags.ToOptions(args)
+			cmdutil.CheckErr(err)
+			cmdutil.CheckErr(o.Validate())
+			cmdutil.CheckErr(o.Run(cmd.Context()))
+		},
+	}
 
-  cmd.Flags().BoolVar(&options.mineLatest, "latest", false, "Use latest stuff")
-  return cmd
+	flags.AddFlags(cmd)
+
+	return cmd
 }
 
-// Complete completes all the required options for mine.
-func (o *MineOptions) Complete(f *cmdutil.Factory, cmd *cobra.Command, args []string, out io.Writer) error {
-  return nil
+// AddFlags registers flags for the mine command.
+func (flags *MineFlags) AddFlags(cmd *cobra.Command) {
+	cmd.Flags().BoolVar(&flags.Latest, "latest", flags.Latest, "Use latest stuff.")
+}
+
+// ToOptions converts from CLI inputs to runtime inputs.
+func (flags *MineFlags) ToOptions(args []string) (*MineOptions, error) {
+	if len(args) != 1 {
+		return nil, fmt.Errorf("exactly one ACTION is required, got %d", len(args))
+	}
+
+	namespace, _, err := flags.RESTClientGetter.ToRawKubeConfigLoader().Namespace()
+	if err != nil {
+		return nil, err
+	}
+
+	return &MineOptions{
+		Action:    args[0],
+		Latest:    flags.Latest,
+		Namespace: namespace,
+		IOStreams: flags.IOStreams,
+	}, nil
+}
+
+// MineOptions contains all the options for running the mine CLI command.
+type MineOptions struct {
+	Action    string
+	Latest    bool
+	Namespace string
+
+	genericiooptions.IOStreams
 }
 
 // Validate validates all the required options for mine.
-func (o MineOptions) Validate() error {
-  return nil
+func (o *MineOptions) Validate() error {
+	return nil
 }
 
-// RunMine implements all the necessary functionality for mine.
-func (o MineOptions) RunMine() error {
-  return nil
+// Run implements all the necessary functionality for mine.
+func (o *MineOptions) Run(ctx context.Context) error {
+	return nil
 }
 ```
 
-The `Run<CommandName>` method should contain the business logic of the command
-and as noted in [command conventions](#command-conventions), ideally that logic
-should exist server-side so any client could take advantage of it. Notice that
-this is not a mandatory structure and not every command is implemented this way,
-but this is a nice convention so try to be compliant with it. As an example,
-have a look at how [kubectl logs](https://git.k8s.io/kubernetes/pkg/kubectl/cmd/logs/logs.go) is implemented.
+Most existing commands predate this pattern and have no `<CommandName>Flags`, only
+`<CommandName>Options` with three methods: `Complete` (which acts similarly to
+`ToOptions`), `Validate`, and `Run`. The downside of this approach is that it
+tightly couples commands to the `cobra` library. New commands should use
+`<CommandName>Flags`; `wait` and `events` are good references.
+
 
 ## Exit code conventions
 
-Generally, for all the command exit code, result of `zero` means success and `non-zero` means errors.
+In general, an exit code of `0` means success and any non-zero exit code means failure.
 
-For idempotent ("make-it-so") commands, we should return `zero` when success even if no changes were provided, user can request treating "make-it-so" as "already-so" via flag `--error-unchanged` to make it return `non-zero` exit code.
+| Exit code | Meaning |
+| :---      | :---    |
+| 0         | Success |
+| 1         | General error |
+| other     | Propagated from a remote process, e.g., the container exit code for `kubectl exec` and attached `kubectl run` |
 
-For non-idempotent ("already-so") commands, we should return `non-zero` by default, user can request treating "already-so" as "make-it-so" via flag `--ignore-unchanged` to make it return `zero` exit code.
+Commands may define their own exit code contract when it mirrors a well-known
+tool; such commands must document it in `Long`. `kubectl diff` follows `diff(1)`:
+`0` when no differences were found, `1` when differences were found, and `>1`
+when kubectl or diff failed. It uses `cmdutil.CheckDiffErr` so that kubectl errors
+(including flag parsing errors) never exit with `1`.
 
 
-| Exit Code Number | Meaning | Enable |
-| :---             | :---    | :---    |
-| 0                | Command exited success  | By default, By flag `--ignore-unchanged` |
-| 1                | Command exited for general errors  | By default |
-| 3                | Command was successful, but the user requested a distinct exit code when no change was made | By flag `--error-unchanged`|
+## Verification
 
-## Generators
+* `hack/verify-cli-conventions.sh` checks that every command's `Long` and `Example`
+  are normalized through `templates`, that examples use `#` comments, that long
+  flag names contain only lowercase letters and dashes, and that no flags are
+  registered on the global `flag.CommandLine`.
 
-Generators are kubectl commands that generate resources based on a set of inputs
-(other resources, flags, or a combination of both).
+* `hack/verify-generated-docs.sh` checks that generated docs are up to date.
 
-The point of generators is:
+* Unit tests live next to the command
+  (`staging/src/k8s.io/kubectl/pkg/cmd/<name>/<name>_test.go`).
 
-* to enable users using kubectl in a scripted fashion to pin to a particular
-behavior which may change in the future. Explicit use of a generator will always
-guarantee that the expected behavior stays the same.
+* Integration tests for kubectl live in `test/cmd` (shell-based, running against
+  an API server without a kubelet).
 
-* to enable potential expansion of the generated resources for scenarios other
-than just creation, similar to how -f is supported for most general-purpose
-commands.
-
-Generator commands should obey the following conventions:
-
-* A `--generator` flag should be defined. Users then can choose between
-different generators, if the command supports them (for example, `kubectl run`
-currently supports generators for pods, jobs, replication controllers, and
-deployments), or between different versions of a generator so that users
-depending on a specific behavior may pin to that version (for example, `kubectl
-expose` currently supports two different versions of a service generator).
-
-* Generation should be decoupled from creation. A generator should implement the
-`kubectl.StructuredGenerator` interface and have no dependencies on cobra or the
-Factory. See, for example, how the first version of the namespace generator is
-defined:
-
-```go
-// NamespaceGeneratorV1 supports stable generation of a namespace
-type NamespaceGeneratorV1 struct {
-  // Name of namespace
-  Name string
-}
-
-// Ensure it supports the generator pattern that uses parameters specified during construction
-var _ StructuredGenerator = &NamespaceGeneratorV1{}
-
-// StructuredGenerate outputs a namespace object using the configured fields
-func (g *NamespaceGeneratorV1) StructuredGenerate() (runtime.Object, error) {
-  if err := g.validate(); err != nil {
-    return nil, err
-  }
-  namespace := &api.Namespace{}
-  namespace.Name = g.Name
-  return namespace, nil
-}
-
-// validate validates required fields are set to support structured generation
-func (g *NamespaceGeneratorV1) validate() error {
-  if len(g.Name) == 0 {
-    return fmt.Errorf("name must be specified")
-  }
-  return nil
-}
-```
-
-The generator struct (`NamespaceGeneratorV1`) holds the necessary fields for
-namespace generation. It also satisfies the `kubectl.StructuredGenerator`
-interface by implementing the `StructuredGenerate() (runtime.Object, error)`
-method which configures the generated namespace that callers of the generator
-(`kubectl create namespace` in our case) need to create.
-
-* `--dry-run` should output the resource that would be created, without
-creating it.
-
+* Full end-to-end tests for kubectl live in `test/e2e/kubectl`.
