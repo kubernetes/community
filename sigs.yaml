@@ -277,6 +277,10 @@ sigs:
           slack: kompose
         owners:
           - https://raw.githubusercontent.com/kubernetes/kompose/master/OWNERS
+      - name: workload-class
+        description: A high-level Kubernetes control layer for managing workload outcomes and disruption guardrails during maintenance.
+        owners:
+          - https://raw.githubusercontent.com/kubernetes-sigs/workload-class/main/OWNERS
       - name: workloads-api
         description: The core workloads API, which is composed of the CronJob, DaemonSet, Deployment, Job, ReplicaSet, ReplicationController, PodDisruptionBudget and StatefulSet kinds
         owners:
