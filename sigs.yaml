@@ -1125,6 +1125,10 @@ sigs:
     label: cluster-lifecycle
     leadership:
       chairs:
+        - github: fabriziopandini
+          name: Fabrizio Pandini
+          company: VMware
+          email: fabrizio.pandini@gmail.com
         - github: justinsb
           name: Justin Santa Barbara
           company: Google
@@ -1133,10 +1137,6 @@ sigs:
           name: Lubomir Ivanov
           company: Independent
           email: neolit123@gmail.com
-        - github: vincepri
-          name: Vince Prignano
-          company: Red Hat
-          email: hi@vincepri.com
       tech_leads:
         - github: fabriziopandini
           name: Fabrizio Pandini
@@ -1151,6 +1151,8 @@ sigs:
           name: Robert Bailey
         - github: timothysc
           name: Timothy St. Clair
+        - github: vincepri
+          name: Vince Prignano
     meetings:
       - description: Regular SIG Meeting
         day: Tuesday
