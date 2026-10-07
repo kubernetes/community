@@ -3237,7 +3237,7 @@ sigs:
         - github: michelle192837
           name: Michelle Shepardson
           company: Google
-          email: amerai@google.com
+          email: michelle.192837@gmail.com
       tech_leads:
         - github: BenTheElder
           name: Benjamin Elder
@@ -3411,7 +3411,7 @@ sigs:
           - github: michelle192837
             name: Michelle Shepardson
             company: Google
-            email: amerai@google.com
+            email: michelle.192837@gmail.com
       - name: testing-commons
         description: |
           **[best-effort]** The testing-commons subproject focuses on matters of code structure, layout, and execution of kubernetes/kubernetes test code. It is currently staffed on a best-effort basis; please bring discussions to the sig-testing slack channel or meeting. For historical context, please see the [former testing-commons meeting agenda](https://docs.google.com/document/d/1TOC8vnmlkWw6HRNHoe5xSv5-qv7LelX6XK3UVCHuwb0/edit) and [archived testing-commons slack channel](https://kubernetes.slack.com/archives/C9NK9KFFW)
