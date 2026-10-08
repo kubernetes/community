@@ -34,7 +34,7 @@ The [charter](charter.md) defines the scope and governance of the Node Identity 
 - Slack: [#wg-node-identity](https://kubernetes.slack.com/messages/wg-node-identity)
 - [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-node-identity)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fnode-identity)
-- Steering Committee Liaison: Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**)
+- Steering Committee Liaison: Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

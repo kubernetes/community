@@ -71,8 +71,8 @@ sigs:
         - name: sig-api-machinery-test-failures
           description: Test Failures and Triage
       liaison:
-        github: saschagrunert
-        name: Sascha Grunert
+        github: elmiko
+        name: Michael McCune
     subprojects:
       - name: cel-admission-webhook
         owners:
@@ -245,8 +245,8 @@ sigs:
         - name: sig-apps-test-failures
           description: Test Failures and Triage
       liaison:
-        github: aojea
-        name: Antonio Ojea
+        github: pacoxu
+        name: Paco Xu 徐俊杰
     subprojects:
       - name: agent-devops
         owners:
@@ -398,8 +398,8 @@ sigs:
         - name: sig-architecture-test-failures
           description: Test Failures and Triage
       liaison:
-        github: BenTheElder
-        name: Benjamin Elder
+        github: katcosgrove
+        name: Kat Cosgrove
     subprojects:
       - name: admission-policies
         description: Mutating and Validating Admission Policies published by the Kubernetes project.
@@ -572,8 +572,8 @@ sigs:
         - name: sig-auth-test-failures
           description: Test Failures and Triage
       liaison:
-        github: katcosgrove
-        name: Kat Cosgrove
+        github: janetkuo
+        name: Janet Kuo
     subprojects:
       - name: audit-logging
         description: |
@@ -868,8 +868,8 @@ sigs:
         - name: sig-cli-test-failures
           description: Test Failures and Triage
       liaison:
-        github: pacoxu
-        name: Paco Xu 徐俊杰
+        github: katcosgrove
+        name: Kat Cosgrove
     subprojects:
       - name: cli-experimental
         owners:
@@ -980,8 +980,8 @@ sigs:
         - name: sig-cloud-providers-misc
           description: General Discussion
       liaison:
-        github: soltysh
-        name: Maciej Szulik
+        github: janetkuo
+        name: Janet Kuo
     subprojects:
       - name: cloud-provider-extraction-migration
         owners:
@@ -1170,8 +1170,8 @@ sigs:
         - name: sig-cluster-lifecycle
           description: SIG Cluster Lifecycle mailing list
       liaison:
-        github: saschagrunert
-        name: Sascha Grunert
+        github: ritazh
+        name: Rita Zhang
     subprojects:
       - name: cluster-addons
         description: A project for figuring out the best way to install, manage and deliver cluster addons
@@ -1530,8 +1530,8 @@ sigs:
         - name: sig-contributor-experience-pr-reviews
           description: PR Reviews
       liaison:
-        github: ritazh
-        name: Rita Zhang
+        github: katcosgrove
+        name: Kat Cosgrove
     subprojects:
       - name: community
         description: Owns and manages overall community repo, including community group documentation and operations.
@@ -1764,8 +1764,8 @@ sigs:
         - name: sig-docs-zh-owners
           description: Chinese language content
       liaison:
-        github: katcosgrove
-        name: Kat Cosgrove
+        github: ritazh
+        name: Rita Zhang
     subprojects:
       - name: kubernetes-blog
         owners:
@@ -1862,8 +1862,8 @@ sigs:
         - name: sig-etcd-leads
           description: SIG Chairs and Tech Leads
       liaison:
-        github: aojea
-        name: Antonio Ojea
+        github: soltysh
+        name: Maciej Szulik
     subprojects:
       - name: auger
         description: Directly access data objects stored in etcd by kubernetes.
@@ -2007,8 +2007,8 @@ sigs:
         - name: sig-instrumentation-members
           description: SIG Membership Roster
       liaison:
-        github: ritazh
-        name: Rita Zhang
+        github: elmiko
+        name: Michael McCune
     subprojects:
       - name: custom-metrics-apiserver
         owners:
@@ -2122,8 +2122,8 @@ sigs:
         - name: sig-k8s-infra-leads
           description: sig-k8s-infra chairs and tech leads
       liaison:
-        github: ritazh
-        name: Rita Zhang
+        github: soltysh
+        name: Maciej Szulik
     subprojects:
       - name: community-images
         description: kubectl plugin used to highlight images pulled from community-owned registries
@@ -2270,8 +2270,8 @@ sigs:
         - name: sig-multicluster-test-failures
           description: Test Failures and Triage
       liaison:
-        github: aojea
-        name: Antonio Ojea
+        github: pacoxu
+        name: Paco Xu 徐俊杰
     subprojects:
       - name: about-api
         owners:
@@ -2581,8 +2581,8 @@ sigs:
         - name: sig-node-test-failures
           description: Test Failures and Triage
       liaison:
-        github: pacoxu
-        name: Paco Xu 徐俊杰
+        github: elmiko
+        name: Michael McCune
     subprojects:
       - name: ci-testing
         contact:
@@ -2735,8 +2735,8 @@ sigs:
         - name: sig-release-leads
           description: Chairs, Technical Leads, and Program Managers for SIG Release
       liaison:
-        github: ritazh
-        name: Rita Zhang
+        github: Priyankasaggu11929
+        name: Priyanka Saggu
     subprojects:
       - name: Release Engineering
         description: |
@@ -2864,8 +2864,8 @@ sigs:
         - name: sig-scalability-pr-reviews
           description: PR Reviews
       liaison:
-        github: aojea
-        name: Antonio Ojea
+        github: Priyankasaggu11929
+        name: Priyanka Saggu
     subprojects:
       - name: inference-perf
         description: '[Described below](#inference-perf)'
@@ -2977,8 +2977,8 @@ sigs:
         - name: sig-scheduling-misc
           description: General Discussion
       liaison:
-        github: BenTheElder
-        name: Benjamin Elder
+        github: ritazh
+        name: Rita Zhang
     subprojects:
       - name: cluster-capacity
         owners:
@@ -3164,8 +3164,8 @@ sigs:
         - name: sig-storage-test-failures
           description: Test Failures and Triage
       liaison:
-        github: pacoxu
-        name: Paco Xu 徐俊杰
+        github: Priyankasaggu11929
+        name: Priyanka Saggu
     subprojects:
       - name: external-snapshot-metadata
         owners:
@@ -3294,8 +3294,8 @@ sigs:
         - name: sig-testing-pr-reviews
           description: PR Reviews
       liaison:
-        github: pacoxu
-        name: Paco Xu 徐俊杰
+        github: janetkuo
+        name: Janet Kuo
     subprojects:
       - name: Cloud Provider for KIND
         description: |
@@ -3454,8 +3454,8 @@ sigs:
       slack: sig-ui
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-ui
       liaison:
-        github: soltysh
-        name: Maciej Szulik
+        github: pacoxu
+        name: Paco Xu 徐俊杰
     subprojects:
       - name: headlamp
         owners:
@@ -3543,8 +3543,8 @@ sigs:
         - name: sig-windows-misc
           description: General Discussion
       liaison:
-        github: BenTheElder
-        name: Benjamin Elder
+        github: janetkuo
+        name: Janet Kuo
     subprojects:
       - name: windows-gmsa
         owners:
@@ -3617,8 +3617,8 @@ workinggroups:
       slack: wg-ai-gateway
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-ai-gateway
       liaison:
-        github: katcosgrove
-        name: Kat Cosgrove
+        github: elmiko
+        name: Michael McCune
   - dir: wg-batch
     name: Batch
     mission_statement: >
@@ -3674,8 +3674,8 @@ workinggroups:
       slack: wg-batch
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-batch
       liaison:
-        github: aojea
-        name: Antonio Ojea
+        github: soltysh
+        name: Maciej Szulik
   - dir: wg-checkpoint-restore
     name: Checkpoint Restore
     mission_statement: >
@@ -3727,8 +3727,8 @@ workinggroups:
       slack: wg-checkpoint-restore
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-checkpoint-restore
       liaison:
-        github: BenTheElder
-        name: Benjamin Elder
+        github: ritazh
+        name: Rita Zhang
   - dir: wg-data-protection
     name: Data Protection
     mission_statement: >
@@ -3764,8 +3764,8 @@ workinggroups:
       slack: wg-data-protection
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-data-protection
       liaison:
-        github: ritazh
-        name: Rita Zhang
+        github: elmiko
+        name: Michael McCune
   - dir: wg-device-management
     name: Device Management
     mission_statement: >
@@ -3816,8 +3816,8 @@ workinggroups:
       slack: wg-device-management
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-device-management
       liaison:
-        github: BenTheElder
-        name: Benjamin Elder
+        github: pacoxu
+        name: Paco Xu 徐俊杰
   - dir: wg-etcd-operator
     name: etcd Operator
     mission_statement: >
@@ -3867,8 +3867,8 @@ workinggroups:
       slack: wg-etcd-operator
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-etcd-operator
       liaison:
-        github: soltysh
-        name: Maciej Szulik
+        github: pacoxu
+        name: Paco Xu 徐俊杰
   - dir: wg-node-identity
     name: Node Identity
     mission_statement: >
@@ -3917,8 +3917,8 @@ workinggroups:
       slack: wg-node-identity
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-node-identity
       liaison:
-        github: pacoxu
-        name: Paco Xu 徐俊杰
+        github: Priyankasaggu11929
+        name: Priyanka Saggu
   - dir: wg-node-lifecycle
     name: Node Lifecycle
     mission_statement: >
@@ -3963,8 +3963,8 @@ workinggroups:
       slack: wg-node-lifecycle
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-node-lifecycle
       liaison:
-        github: saschagrunert
-        name: Sascha Grunert
+        github: ritazh
+        name: Rita Zhang
   - dir: wg-workload-aware-scheduling
     name: Workload-aware Scheduling
     mission_statement: >
@@ -4015,8 +4015,8 @@ workinggroups:
       slack: wg-workload-aware-scheduling
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-workload-aware-scheduling
       liaison:
-        github: saschagrunert
-        name: Sascha Grunert
+        github: janetkuo
+        name: Janet Kuo
 usergroups: []
 committees:
   - dir: committee-code-of-conduct
@@ -4089,8 +4089,8 @@ committees:
         - name: code-of-conduct-committee
           description: General Discussion
       liaison:
-        github: BenTheElder
-        name: Benjamin Elder
+        github: Priyankasaggu11929
+        name: Priyanka Saggu
   - dir: committee-security-response
     name: Security Response
     mission_statement: >
