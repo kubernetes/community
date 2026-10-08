@@ -21,12 +21,12 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 
 ## Members
 
-* Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**), Google
-* Antonio Ojea (**[@aojea](https://github.com/aojea)**), Google
+* Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**), SUSE
+* Michael McCune (**[@elmiko](https://github.com/elmiko)**), Red Hat
+* Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
 * Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Minimus
 * Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**), DaoCloud
 * Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
-* Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**), Red Hat
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
 
 ## Contact

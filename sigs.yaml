@@ -4171,14 +4171,18 @@ committees:
     label: steering
     leadership:
       chairs:
-        - github: BenTheElder
-          name: Benjamin Elder
+        - github: Priyankasaggu11929
+          name: Priyanka Saggu
+          company: SUSE
+          email: priyankasaggu11929@gmail.com
+        - github: elmiko
+          name: Michael McCune
+          company: Red Hat
+          email: msm@opbstudios.com
+        - github: janetkuo
+          name: Janet Kuo
           company: Google
-          email: bentheelder@google.com
-        - github: aojea
-          name: Antonio Ojea
-          company: Google
-          email: aojea@google.com
+          email: chiachenk@google.com
         - github: katcosgrove
           name: Kat Cosgrove
           company: Minimus
@@ -4191,10 +4195,6 @@ committees:
           name: Rita Zhang
           company: Microsoft
           email: ritazh@microsoft.com
-        - github: saschagrunert
-          name: Sascha Grunert
-          company: Red Hat
-          email: saschagrunert@gmail.com
         - github: soltysh
           name: Maciej Szulik
           company: Defense Unicorns

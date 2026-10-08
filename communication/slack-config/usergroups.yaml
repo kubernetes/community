@@ -217,12 +217,12 @@ usergroups:
     channels:
       - steering-committee
     members:
-      - aojea
-      - bentheelder
+      - elmiko
+      - janetkuo
       - katcosgrove
       - pacoxu
+      - Priyankasaggu11929
       - ritazh
-      - saschagrunert
       - soltysh
 
   - name: grafana-operator-maintainers
