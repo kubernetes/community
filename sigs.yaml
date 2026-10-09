@@ -1809,6 +1809,10 @@ sigs:
           name: Benjamin Wang
           company: VMware
           email: benjamin.ahrtr@gmail.com
+        - github: fuweid
+          name: Wei Fu
+          company: Google
+          email: fuweid89@gmail.com
         - github: serathius
           name: Marek Siarkowicz
           company: Google

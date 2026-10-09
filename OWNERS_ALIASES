@@ -54,6 +54,7 @@ aliases:
     - tengqm
   sig-etcd-leads:
     - ahrtr
+    - fuweid
     - ivanvc
     - jberkus
     - serathius
