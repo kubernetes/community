@@ -26,7 +26,7 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
 * Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Minimus
 * Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**), DaoCloud
-* Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
+* Rita Zhang (**[@ritazh](https://github.com/ritazh)**), CoreWeave
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns
 
 ## Contact
