@@ -8,39 +8,33 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # LTS Working Group
 
-Answer the question: Does Kubernetes need a longer support term? If yes, figure out what that looks like for Kubernetes and propose this to the rest of the project. If no, figure out how to help end users cope with this and propose that to the rest of the project. If a proposal is accepted, the working group's mission will change to implement it.
-The working group is sponsored by SIG Release, but has the potential to span almost all SIGs.  For more background see the [WG formation proposal](https://docs.google.com/presentation/d/1-Z-mUNIs3mUi7AdP1KwoAVNviwKrCoo3lxMb5wzCWbk/edit?usp=sharing).
-
-The [charter](charter.md) defines the scope and governance of the LTS Working Group.
+The working group is organized with the goal of developing a better understanding of what "Long Term Support" might mean for Kubernetes, those who support Kubernetes, and end users. The working group will investigate changes the Kubernetes project could make related to the better understanding of what long term support might mean. The working group will also determine the feasibility, benefits, **cost**, and prerequisites of any such changes.
 
 ## Stakeholder SIGs
-* SIG API Machinery
-* SIG CLI
-* SIG Node
+* [SIG Architecture](/sig-architecture)
+* [SIG Cluster Lifecycle](/sig-cluster-lifecycle)
+* [SIG K8s Infra](/sig-k8s-infra)
+* [SIG Release](/sig-release)
+* [SIG Security](/sig-security)
+* [SIG Testing](/sig-testing)
 
 ## Meetings
-* Regular WG Meeting: [Tuesdays at 09:00 PT (Pacific Time)](https://zoom.us/j/473177294) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=09:00&tz=PT%20%28Pacific%20Time%29).
-  * [Meeting notes and Agenda](https://docs.google.com/document/d/1J2CJ-q9WlvCnIVkoEo9tAo19h08kOgUJAS3HxaSMsLA/edit?usp=sharing).
+*Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-lts) for the group will typically add invites for the following meetings to your calendar.*
+* Regular WG Meeting: [Tuesdays at 07:00 PT (Pacific Time)](https://zoom.us/j/92480197536?pwd=dmtSMGJRQmNYYTIyZkFlQ25JRngrdz09) (biweekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=07%3A00&tz=PT%20%28Pacific%20Time%29).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/1RI_EL35MwQxrHqlWvtQNINhOSWergL3hmOSgC5PeZss/edit).
+  * [Meeting recordings](https://www.youtube.com/playlist?list=PL69nYSiGNLP13_zDqYfUjfLZ2Lu9a3pv-).
 
 ## Organizers
 
-* Dhawal Yogesh Bhanusali (**[@imkin](https://github.com/imkin)**), VMware
-* Quinton Hoole (**[@quinton-hoole](https://github.com/quinton-hoole)**), Huawei
-* Tim Pepper (**[@tpepper](https://github.com/tpepper)**), VMware
-* Nick Young (**[@youngnick](https://github.com/youngnick)**), VMware
+* Jeremy Rickard (**[@jeremyrickard](https://github.com/jeremyrickard)**), Microsoft
+* Jordan Liggitt (**[@liggitt](https://github.com/liggitt)**), Google
+* Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
 
 ## Contact
 - Slack: [#wg-lts](https://kubernetes.slack.com/messages/wg-lts)
-- [Mailing list](https://groups.google.com/forum/#!forum/kubernetes-wg-lts)
+- [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-lts)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Flts)
+- Steering Committee Liaison: Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**)
 <!-- BEGIN CUSTOM CONTENT -->
-
-## Goals
-* Evaluate user/operator sentiment and support requirements.
-* Foster cross-vendor, subject matter expert led bug and security fixes for support streams.  The project is more sustainable when this work is done once authoritatively in shared support branch(es), versus in parallel at all vendors.
-* Increase developer visibility on cross-release compatibility and stability issues.
-* If appropriate based on analysis, draft LTS KEP for SIG Release to operationalize.
-
-We are an open and active working group, and we always welcome new additions!
 
 <!-- END CUSTOM CONTENT -->
