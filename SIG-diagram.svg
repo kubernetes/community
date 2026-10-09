@@ -104,28 +104,13 @@
   <rect x="160" y="250" width="90" height="40" class="sig"/>
   <text x="205" y="270" class="box-text">Windows</text>
 
-  <!-- Horizontal WGs Row 1 -->
+  <!-- Horizontal WGs -->
   <rect x="60" y="310" width="90" height="40" class="wg"/>
-  <text x="105" y="325" class="box-text">Structured</text>
-  <text x="105" y="340" class="box-text">Logging</text>
+  <text x="105" y="330" class="box-text">AI Gateway</text>
 
   <rect x="160" y="310" width="90" height="40" class="wg"/>
-  <text x="205" y="325" class="box-text">AI</text>
-  <text x="205" y="340" class="box-text">Conformance</text>
-
-  <rect x="260" y="310" width="90" height="40" class="wg"/>
-  <text x="305" y="330" class="box-text">AI Gateway</text>
-
-  <rect x="360" y="310" width="90" height="40" class="wg"/>
-  <text x="405" y="325" class="box-text">AI</text>
-  <text x="405" y="340" class="box-text">Integration</text>
-
-  <rect x="460" y="310" width="90" height="40" class="wg"/>
-  <text x="505" y="330" class="box-text">LTS</text>
-
-  <rect x="560" y="310" width="90" height="40" class="wg"/>
-  <text x="605" y="325" class="box-text">etcd</text>
-  <text x="605" y="340" class="box-text">Operator</text>
+  <text x="205" y="325" class="box-text">etcd</text>
+  <text x="205" y="340" class="box-text">Operator</text>
 
   <!-- ==================== -->
   <!-- VERTICAL             -->
@@ -139,9 +124,6 @@
 
   <rect x="60" y="460" width="90" height="40" class="wg"/>
   <text x="105" y="480" class="box-text">Batch</text>
-
-  <rect x="160" y="460" width="90" height="40" class="wg"/>
-  <text x="205" y="480" class="box-text">Serving</text>
 
   <!-- Section: Resource Management -->
   <text x="280" y="395" class="subsection-label">Resource Management</text>
@@ -173,6 +155,10 @@
   <text x="525" y="475" class="box-text-small">Checkpoint</text>
   <text x="525" y="488" class="box-text-small">Restore</text>
 
+  <rect x="580" y="460" width="90" height="40" class="wg"/>
+  <text x="625" y="475" class="box-text-small">Workload-aware</text>
+  <text x="625" y="488" class="box-text-small">Scheduling</text>
+
   <rect x="680" y="460" width="90" height="40" class="wg"/>
   <text x="725" y="475" class="box-text">Data</text>
   <text x="725" y="488" class="box-text">Protection</text>
@@ -188,6 +174,10 @@
   <text x="945" y="425" class="box-text">Cluster</text>
   <text x="945" y="440" class="box-text">Lifecycle</text>
 
+  <rect x="800" y="460" width="90" height="40" class="wg"/>
+  <text x="845" y="475" class="box-text">Node</text>
+  <text x="845" y="488" class="box-text">Identity</text>
+
   <!-- Footer note -->
-  <text x="550" y="560" style="font-size: 10px; fill: #666; text-anchor: middle;">Updated February 2026 - See sig-list.md for complete details</text>
+  <text x="550" y="560" style="font-size: 10px; fill: #666; text-anchor: middle;">Updated October 2026 - See sig-list.md for complete details</text>
 </svg>
