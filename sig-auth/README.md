@@ -31,7 +31,7 @@ The Chairs of the SIG run operations and processes governing the SIG.
 
 * Anish Ramasekar (**[@aramase](https://github.com/aramase)**), Microsoft
 * Micah Hausler (**[@micahhausler](https://github.com/micahhausler)**), Amazon
-* Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
+* Rita Zhang (**[@ritazh](https://github.com/ritazh)**), CoreWeave
 
 ### Technical Leads
 The Technical Leads of the SIG establish new subprojects, decommission existing
@@ -144,7 +144,7 @@ API validation and policies enforced during admission, such as PodSecurityPolicy
 Integrates secrets stores with Kubernetes via a CSI volume.
 - **Leads:**
   - Anish Ramasekar (**[@aramase](https://github.com/aramase)**), Microsoft
-  - Rita Zhang (**[@ritazh](https://github.com/ritazh)**), Microsoft
+  - Rita Zhang (**[@ritazh](https://github.com/ritazh)**), CoreWeave
 - **Owners:**
   - [kubernetes-sigs/secrets-store-csi-driver](https://github.com/kubernetes-sigs/secrets-store-csi-driver/blob/master/OWNERS)
 - **Contact:**

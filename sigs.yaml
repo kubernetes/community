@@ -422,8 +422,8 @@ sigs:
             email: mfahlandt@pixel-haufen.de
           - github: ritazh
             name: Rita Zhang
-            company: Microsoft
-            email: ritazh@microsoft.com
+            company: CoreWeave
+            email: rita.zhang@coreweave.com
           - github: terrytangyuan
             name: Yuan Tang
             company: Red Hat
@@ -506,8 +506,8 @@ sigs:
           email: mhausler@amazon.com
         - github: ritazh
           name: Rita Zhang
-          company: Microsoft
-          email: ritazh@microsoft.com
+          company: CoreWeave
+          email: rita.zhang@coreweave.com
       tech_leads:
         - github: deads2k
           name: David Eads
@@ -666,8 +666,8 @@ sigs:
             email: anish.ramasekar@gmail.com
           - github: ritazh
             name: Rita Zhang
-            company: Microsoft
-            email: ritazh@microsoft.com
+            company: CoreWeave
+            email: rita.zhang@coreweave.com
       - name: secrets-store-sync-controller
         description: |
           This is a Kubernetes controller that watches for changes to a custom resource and syncs the secrets from external secrets-store as Kubernetes secret.
@@ -4193,8 +4193,8 @@ committees:
           email: roollingstone@gmail.com
         - github: ritazh
           name: Rita Zhang
-          company: Microsoft
-          email: ritazh@microsoft.com
+          company: CoreWeave
+          email: rita.zhang@coreweave.com
         - github: soltysh
           name: Maciej Szulik
           company: Defense Unicorns
