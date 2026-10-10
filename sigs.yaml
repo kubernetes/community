@@ -3358,6 +3358,15 @@ sigs:
             name: Antonio Ojea
             company: Google
             email: aojea@google.com
+      - name: ktesting
+        description: |
+          A set of packages with the same "ktesting" name which are meant to simplify writing tests.
+        owners:
+          - https://raw.githubusercontent.com/kubernetes/ktesting/master/OWNERS
+        leads:
+          - github: pohly
+            name: Patrick Ohly
+            email: patrick.ohly@intel.com
       - name: kubetest2
         description: |
           Kubetest2 is the framework for launching and running end-to-end tests on kubernetes.
