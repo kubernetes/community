@@ -37,7 +37,7 @@ The [charter](charter.md) defines the scope and governance of the Workload-aware
 - Slack: [#wg-workload-aware-scheduling](https://kubernetes.slack.com/messages/wg-workload-aware-scheduling)
 - [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-workload-aware-scheduling)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fworkload-aware-scheduling)
-- Steering Committee Liaison: Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**)
+- Steering Committee Liaison: Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

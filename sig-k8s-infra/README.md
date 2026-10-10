@@ -51,7 +51,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - GitHub Teams:
     - [@kubernetes/sig-k8s-infra](https://github.com/orgs/kubernetes/teams/sig-k8s-infra) - active contributors in sig-k8s-infra
     - [@kubernetes/sig-k8s-infra-leads](https://github.com/orgs/kubernetes/teams/sig-k8s-infra-leads) - sig-k8s-infra chairs and tech leads
-- Steering Committee Liaison: Rita Zhang (**[@ritazh](https://github.com/ritazh)**)
+- Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
 
 ## Subprojects
 
