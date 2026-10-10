@@ -30,6 +30,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Adrian Moisey (**[@adrianmoisey](https://github.com/adrianmoisey)**), Independent
+* Jason Deal (**[@jmdeal](https://github.com/jmdeal)**), Amazon
 * Omer Aplatony (**[@omerap12](https://github.com/omerap12)**), Red Hat
 * Kuba Tużnik (**[@towca](https://github.com/towca)**), Google
 
