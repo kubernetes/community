@@ -30,7 +30,7 @@ The Technical Leads of the SIG establish new subprojects, decommission existing
 subprojects, and resolve cross-subproject technical issues and decisions.
 
 * Adrian Moisey (**[@adrianmoisey](https://github.com/adrianmoisey)**), Independent
-* Omer Aplatony (**[@omerap12](https://github.com/omerap12)**), Red Hat
+* Omer Aplatony (**[@omerap12](https://github.com/omerap12)**), NVIDIA
 * Kuba Tużnik (**[@towca](https://github.com/towca)**), Google
 
 ## Emeritus Leads
