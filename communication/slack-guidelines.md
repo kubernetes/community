@@ -110,31 +110,40 @@ include:
     established contributors.
 -   `#surveys` - Cloud native community wide surveys. Posts must be ecosystem
     related.
--   `#announcements` - The community's largest-distribution channel. Posts are
-    expected to be infrequent, major news, such as releases, security advisories,
-    elections, worldwide community events, Slack admin notices, and high-impact
-    deprecations. `#announcements` uses a moderated queue: submissions are made
-    through a Slack workflow and reviewed in a private triage channel, where moderators
-    can approve, request more information, or reject them based on the acceptance
-    criteria. Direct posting is restricted to Slack admins. For full moderation
-    criteria see the [Announcement Vetting Criteria](./slack-announcement-policy.md).
--   `#kubernetes-careers` - Job openings for positions working with/on/around
-    Kubernetes. These must be postings for specific jobs, not "cattle calls"
-    for general tech hiring. To maintain community safety and combat fraudulent
-    listings, all posts now require a structured form submission and pass through
-    a moderated triage queue before becoming visible to the community.
-    -   **Form Submission**: Complete either the `Job Posting Form`
-        or the `Resume Form` inside Slack based on your intent.
-    -   **Triage Queue**: Submissions do not appear instantly. They are
-        routed to a private administrative review space.
-    -   **Manual Vetting**: Channel moderators review submissions to
-        screen out malicious links, fake profiles, and scams.
-    -   **Need More Information**: If a job listing is missing mandatory fields,
-        additional information will be needed for approval.
 
-Job opening submissions require a direct corporate portal, official ATS, or accessible portfolio URL; a matching corporate domain email (public domains such as @gmail.com will be rejected); explicit geographic constraints for `Hybrid` or `On-site` roles and direct, unshortened resume links. Third-party URL shorteners are not permitted.
+#### Posting to Announcements
 
-Job posting will be rejected for missing, broken, or permission-locked links; mismatched business email domains; anonymous or unverified recruitment agency postings; or any content related to cryptocurrency, investment schemes, or unrelated topics. If your post does not appear within 48 hours reach out in `#slack-admins` for a status update.
+`#announcements` is the community's largest-distribution channel. Posts are
+expected to be infrequent, major news, such as releases, security advisories,
+elections, worldwide community events, Slack admin notices, and high-impact
+deprecations. Submitters should be submitting based on an official role with the project, such as SRC member, Release Team Comms, or Steering Committee member.
+
+`#announcements` uses a moderated queue: submissions are made
+through a Slack workflow and reviewed in a private triage channel, where moderators
+can approve, request more information, or reject them based on the acceptance
+criteria. Direct posting is restricted to Slack admins. For full moderation
+criteria used by the Admins, see the [Announcement Vetting Criteria](./slack-announcement-policy.md).
+
+This means that contributors outside the Slack Admins team will no longer be given direct posting rights on `#announcements`.  It also means that if postings need specific timing (such as for a release), add that in the Notes field.
+
+#### Posting to kubernetes-careers
+
+`kubernetes-careers` contains job openings for positions working with/on/around
+Kubernetes and resumes for kubernetes professionals. 
+
+To maintain community safety and combat fraudulent
+listings, all posts now require a structured form submission and pass through
+a moderated triage queue before becoming visible to the community. Complete either the `Job Posting Form` or the `Resume Form` inside Slack based on your intent. Submissions do not appear instantly. They are routed to a private administrative review space. Channel moderators review submissions to screen out malicious links, fake profiles, and scams. If a job listing is missing mandatory data, the Slack Admins will require additional information, or will reject the posting.
+
+**Job Openings**:  These must be postings for specific jobs, not "cattle calls"
+for general tech hiring. Job opening submissions require:
+
+- A direct corporate portal, official ATS, or accessible portfolio URL
+- A matching corporate domain email (public domains such as @gmail.com will be rejected)
+- Explicit geographic constraints for `Hybrid` or `On-site` roles 
+- Direct, unshortened job listing links. Third-party URL shorteners are not permitted, as they can be redirected to malware sites
+
+Job posting will be rejected for: missing, broken, or permission-locked links; mismatched business email domains; anonymous or unverified recruitment agency postings; or any content related to cryptocurrency, investment schemes, or unrelated topics. If your post does not appear within 48 hours reach out in `#slack-admins` for a status update.
 
 **Resume Submission:** Provide your full name, professional contact information,
 and a direct resume link (Google Drive, GitHub, or personal website), along with
@@ -142,7 +151,6 @@ a brief description of your background. Direct, unshortened links only; URL shor
 will result in immediate rejection. Resume submissions are reviewed for basic safety and legitimacy,
 following the same community standards as job postings. For full moderation criteria, see the
 [Job Posting Vetting Policy](./slack-job-posting-policy.md).
-
 
 ### Reporting a Problem
 
@@ -171,7 +179,7 @@ issue can be documented, please take a screenshot to include in your message.
 
 Send a DM to another [listed admin][admins] and describe the situation. If it's
 a [code of conduct][coc] issue, please send an email to <conduct@kubernetes.io>
-and describe the situation.
+and describe the situation.  If you want to propose a change to Slack policies, raise the issue with SIG Contributor Experience.
 
 ## Channel Management
 
