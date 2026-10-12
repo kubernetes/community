@@ -54,7 +54,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
     - [@kubernetes/sig-cloud-provider-proposals](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-proposals) - Design Proposals
     - [@kubernetes/sig-cloud-provider-test-failures](https://github.com/orgs/kubernetes/teams/sig-cloud-provider-test-failures) - Test Failures and Triage
     - [@kubernetes/sig-cloud-providers-misc](https://github.com/orgs/kubernetes/teams/sig-cloud-providers-misc) - General Discussion
-- Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
+- Steering Committee Liaison: Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**)
 
 ## Working Groups
 

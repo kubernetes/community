@@ -30,40 +30,40 @@ members will assume one of the departing members groups.
 
 | Community Group            | Steering Committee Liaison |
 | -------------------------- | -------------------------- |
-| [SIG API Machinery](sig-api-machinery/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
-| [SIG Apps](sig-apps/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
-| [SIG Architecture](sig-architecture/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
-| [SIG Auth](sig-auth/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
+| [SIG API Machinery](sig-api-machinery/README.md) | Michael McCune (**[@elmiko](https://github.com/elmiko)**) |
+| [SIG Apps](sig-apps/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
+| [SIG Architecture](sig-architecture/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
+| [SIG Auth](sig-auth/README.md) | Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**) |
 | [SIG Autoscaling](sig-autoscaling/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
-| [SIG CLI](sig-cli/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
-| [SIG Cloud Provider](sig-cloud-provider/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
-| [SIG Cluster Lifecycle](sig-cluster-lifecycle/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
-| [SIG Contributor Experience](sig-contributor-experience/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
-| [SIG Docs](sig-docs/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
-| [SIG etcd](sig-etcd/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
-| [SIG Instrumentation](sig-instrumentation/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
-| [SIG K8s Infra](sig-k8s-infra/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
-| [SIG Multicluster](sig-multicluster/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
+| [SIG CLI](sig-cli/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
+| [SIG Cloud Provider](sig-cloud-provider/README.md) | Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**) |
+| [SIG Cluster Lifecycle](sig-cluster-lifecycle/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
+| [SIG Contributor Experience](sig-contributor-experience/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
+| [SIG Docs](sig-docs/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
+| [SIG etcd](sig-etcd/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
+| [SIG Instrumentation](sig-instrumentation/README.md) | Michael McCune (**[@elmiko](https://github.com/elmiko)**) |
+| [SIG K8s Infra](sig-k8s-infra/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
+| [SIG Multicluster](sig-multicluster/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG Network](sig-network/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
-| [SIG Node](sig-node/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
-| [SIG Release](sig-release/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
-| [SIG Scalability](sig-scalability/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
-| [SIG Scheduling](sig-scheduling/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
+| [SIG Node](sig-node/README.md) | Michael McCune (**[@elmiko](https://github.com/elmiko)**) |
+| [SIG Release](sig-release/README.md) | Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**) |
+| [SIG Scalability](sig-scalability/README.md) | Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**) |
+| [SIG Scheduling](sig-scheduling/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
 | [SIG Security](sig-security/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
-| [SIG Storage](sig-storage/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
-| [SIG Testing](sig-testing/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
-| [SIG UI](sig-ui/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
-| [SIG Windows](sig-windows/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
-| [WG AI Gateway](wg-ai-gateway/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
-| [WG Batch](wg-batch/README.md) | Antonio Ojea (**[@aojea](https://github.com/aojea)**) |
-| [WG Checkpoint Restore](wg-checkpoint-restore/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
-| [WG Data Protection](wg-data-protection/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
-| [WG Device Management](wg-device-management/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
-| [WG etcd Operator](wg-etcd-operator/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
-| [WG Node Identity](wg-node-identity/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
-| [WG Node Lifecycle](wg-node-lifecycle/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
-| [WG Workload-aware Scheduling](wg-workload-aware-scheduling/README.md) | Sascha Grunert (**[@saschagrunert](https://github.com/saschagrunert)**) |
-| [Committee Code of Conduct](committee-code-of-conduct/README.md) | Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**) |
+| [SIG Storage](sig-storage/README.md) | Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**) |
+| [SIG Testing](sig-testing/README.md) | Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**) |
+| [SIG UI](sig-ui/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
+| [SIG Windows](sig-windows/README.md) | Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**) |
+| [WG AI Gateway](wg-ai-gateway/README.md) | Michael McCune (**[@elmiko](https://github.com/elmiko)**) |
+| [WG Batch](wg-batch/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
+| [WG Checkpoint Restore](wg-checkpoint-restore/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
+| [WG Data Protection](wg-data-protection/README.md) | Michael McCune (**[@elmiko](https://github.com/elmiko)**) |
+| [WG Device Management](wg-device-management/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
+| [WG etcd Operator](wg-etcd-operator/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
+| [WG Node Identity](wg-node-identity/README.md) | Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**) |
+| [WG Node Lifecycle](wg-node-lifecycle/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
+| [WG Workload-aware Scheduling](wg-workload-aware-scheduling/README.md) | Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**) |
+| [Committee Code of Conduct](committee-code-of-conduct/README.md) | Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**) |
 | [Committee Security Response](committee-security-response/README.md) | Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**) |
 <!-- BEGIN CUSTOM CONTENT -->
 ## Expectations

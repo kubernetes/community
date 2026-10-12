@@ -36,7 +36,7 @@ The [charter](charter.md) defines the scope and governance of the etcd Operator 
 - Slack: [#wg-etcd-operator](https://kubernetes.slack.com/messages/wg-etcd-operator)
 - [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-etcd-operator)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fetcd-operator)
-- Steering Committee Liaison: Maciej Szulik (**[@soltysh](https://github.com/soltysh)**)
+- Steering Committee Liaison: Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->

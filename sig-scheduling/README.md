@@ -57,7 +57,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 - GitHub Teams:
     - [@kubernetes/sig-scheduling-leads](https://github.com/orgs/kubernetes/teams/sig-scheduling-leads) - SIG Scheduling leads
     - [@kubernetes/sig-scheduling-misc](https://github.com/orgs/kubernetes/teams/sig-scheduling-misc) - General Discussion
-- Steering Committee Liaison: Benjamin Elder (**[@BenTheElder](https://github.com/BenTheElder)**)
+- Steering Committee Liaison: Rita Zhang (**[@ritazh](https://github.com/ritazh)**)
 
 ## Working Groups
 

@@ -39,7 +39,7 @@ The [charter](charter.md) defines the scope and governance of the AI Gateway Wor
 - Slack: [#wg-ai-gateway](https://kubernetes.slack.com/messages/wg-ai-gateway)
 - [Mailing list](https://groups.google.com/a/kubernetes.io/g/wg-ai-gateway)
 - [Open Community Issues/PRs](https://github.com/kubernetes/community/labels/wg%2Fai-gateway)
-- Steering Committee Liaison: Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**)
+- Steering Committee Liaison: Michael McCune (**[@elmiko](https://github.com/elmiko)**)
 <!-- BEGIN CUSTOM CONTENT -->
 
 <!-- END CUSTOM CONTENT -->
