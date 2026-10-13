@@ -19,7 +19,7 @@ The [charter](charter.md) defines the scope and governance of the Node Identity 
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-node-identity) for the group will typically add invites for the following meetings to your calendar.*
-* Regular WG Meeting: [TBDs at TBD UTC](TBD) (monthly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=TBD&tz=UTC).
+* Regular WG Meeting: [Wednesdays at 16:00 CET (Central European Time)](https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09) (biweekly starting Wednesday Oct 14, 2026). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=16%3A00&tz=CET%20%28Central%20European%20Time%29).
 
 ## Organizers
 

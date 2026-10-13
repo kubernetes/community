@@ -3908,11 +3908,11 @@ workinggroups:
           email: rodrigo@sdfg.com.ar
     meetings:
       - description: Regular WG Meeting
-        day: TBD
-        time: TBD
-        tz: UTC
-        frequency: monthly
-        url: TBD
+        day: Wednesday
+        time: "16:00"
+        tz: CET (Central European Time)
+        frequency: biweekly starting Wednesday Oct 14, 2026
+        url: https://zoom.us/j/916523531?pwd=eVhPNU5IQWtBYWhmT1N4T0V6bHZFZz09
     contact:
       slack: wg-node-identity
       mailing_list: https://groups.google.com/a/kubernetes.io/g/wg-node-identity
