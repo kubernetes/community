@@ -125,6 +125,10 @@
   <rect x="60" y="460" width="90" height="40" class="wg"/>
   <text x="105" y="480" class="box-text">Batch</text>
 
+  <rect x="160" y="460" width="90" height="40" class="wg"/>
+  <text x="205" y="475" class="box-text">Workload</text>
+  <text x="205" y="488" class="box-text">Conformance</text>
+
   <!-- Section: Resource Management -->
   <text x="280" y="395" class="subsection-label">Resource Management</text>
 
