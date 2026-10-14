@@ -91,6 +91,12 @@ Kubernetes IN Docker. Run Kubernetes test clusters on your local machine using D
   - [kubernetes-sigs/kind](https://github.com/kubernetes-sigs/kind/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#kind](https://kubernetes.slack.com/messages/kind)
+### ktesting
+A set of packages with the same "ktesting" name which are meant to simplify writing tests.
+- **Leads:**
+  - Patrick Ohly (**[@pohly](https://github.com/pohly)**)
+- **Owners:**
+  - [kubernetes/ktesting](https://github.com/kubernetes/ktesting/blob/master/OWNERS)
 ### kubetest2
 Kubetest2 is the framework for launching and running end-to-end tests on kubernetes.
 It is the next significant iteration of kubetest. We will be deprecating kubetest going forward.
