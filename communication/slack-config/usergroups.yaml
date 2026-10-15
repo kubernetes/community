@@ -368,3 +368,12 @@ usergroups:
     members:
       - amorey
       - rxinui
+
+  - name: wg-workload-conformance-organizers
+    long_name: WG Workload Conformance Organizers
+    description: Organizers of WG Workload Conformance
+    channels:
+      - wg-workload-conformance
+    members:
+      - palnabarun
+      - soltysh
