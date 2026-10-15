@@ -1,0 +1,20 @@
+diff --git a/pkg/kubelet/metrics/metrics.go b/pkg/kubelet/metrics/metrics.go
+index 1234567..89abcde 100644
+--- a/pkg/kubelet/metrics/metrics.go
++++ b/pkg/kubelet/metrics/metrics.go
+@@ -10,6 +10,12 @@ import (
+ 	"github.com/prometheus/client_golang/prometheus"
+ )
+ 
++var (
++	// Raw prometheus metric bypasses stability framework
++	EvictionCount = prometheus.NewCounter(prometheus.CounterOpts{
++		Name: "kubelet_eviction_count_total",
++		Help: "Total number of evictions by the kubelet.",
++	})
++)
++
+ func Register() {
+-	// legacyregistry.MustRegister(SomeMetric)
++	prometheus.MustRegister(EvictionCount)
+ }
