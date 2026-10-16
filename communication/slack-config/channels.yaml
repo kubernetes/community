@@ -637,6 +637,7 @@ channels:
     archived: true
   - name: wg-workload-aware-scheduling
     id: C0AHLJ0EAEL
+  - name: wg-workload-conformance
   - name: windows-containerd
   - name: workshop-chat
   - name: yaml-overlay-tool
