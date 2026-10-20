@@ -70,6 +70,11 @@ Examples of features which are not currently eligible for conformance tests:
 - features that are pending deprecation, eg: componentstatus
 - any endpoints that are operational tools, rather than application-oriented, should not be part of conformance, eg: apiserver logs. 
 
+Note that the requirement that conformance tests cover "non-optional features" does not
+mean that they only cover in-tree features. In particular, pod-to-pod networking and
+service DNS are always implemented by out-of-tree components, and service proxying is
+sometimes as well.
+
 Conformance tests are intended to be stable and backwards compatible according to
 the standard API deprecation policies. Therefore any test that relies on specific
 output that is not subject to the deprecation policy cannot be promoted to conformance.
