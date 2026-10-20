@@ -377,6 +377,45 @@ for your provider, please see the [testgrid conformance README]
 [v1.9 conformance doc]: https://github.com/cncf/k8s-conformance/blob/master/docs/KubeConformance-1.9.md
 [conformance.yaml]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.yaml
 
+## Future Conformance
+
+In some cases, immediately promoting a test to Conformance might cause
+problems for downstreams. For example, promoting a test for a
+newly-added `Service` feature might break clusters running network
+plugins that haven't yet released a version implementing that feature.
+
+To avoid this sort of problem, you can promote the test to "Future
+Conformance", signaling that it will become a conformance requirement
+in a future release, and alerting users, developers, and distributors
+in the Kubernetes ecosystem about the upcoming requirement.
+
+A test being promoted to future conformance must already meet all
+[conformance test requirements] at the time it is promoted to future
+conformance. However, instead of indicating the current release in the
+`Release` tag of its conformance comment, it should indicate a future
+release, and then also indicate that same version in a
+`framework.WithFutureConformance()` call in the test definition. For
+example:
+
+```
+/*
+  Release: v1.45
+  Testname: Service: trafficDistribution
+  Description: Services implement trafficDistribution
+*/
+framework.ConformanceIt("it should implement trafficDistribution", framework.WithConformanceVersion("1.45"), func() {
+  ...
+})
+```
+
+In general, tests promoted to future conformance should target a
+release at least one year after the test is first promoted. [KEP-5922]
+has some additional suggestions about [picking the version for future
+conformance].
+
+[KEP-5922]: https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/5922-networking-conformance/README.md
+[picking the version for future conformance]: https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/5922-networking-conformance/README.md#picking-the-version-for-future-conformance
+
 ## Demoting Conformance Tests
 
 Occasionally it may be necessary to remove a test that was added to conformance. Reasons may include but are not limited to:
