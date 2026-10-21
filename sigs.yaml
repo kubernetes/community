@@ -426,7 +426,7 @@ sigs:
             email: rita.zhang@coreweave.com
           - github: terrytangyuan
             name: Yuan Tang
-            company: Red Hat
+            company: TensorScale
             email: terrytangyuan@gmail.com
       - name: apisnoop
         description: Snooping on the Kubernetes OpenAPI communications
