@@ -75,7 +75,7 @@ Proposals and tests for AI Conformance
   - Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
   - Mario Fahlandt (**[@mfahlandt](https://github.com/mfahlandt)**), Kubermatic GmbH
   - Rita Zhang (**[@ritazh](https://github.com/ritazh)**), CoreWeave
-  - Yuan Tang (**[@terrytangyuan](https://github.com/terrytangyuan)**), Red Hat
+  - Yuan Tang (**[@terrytangyuan](https://github.com/terrytangyuan)**), TensorScale
 - **Owners:**
   - [kubernetes-sigs/ai-conformance](https://github.com/kubernetes-sigs/ai-conformance/blob/main/OWNERS)
 - **Contact:**
