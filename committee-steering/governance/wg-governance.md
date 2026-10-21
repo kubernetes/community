@@ -50,7 +50,7 @@ Updates
 Working Group Organizers are required to give updates to their respective sponsoring SIG Chairs. Organizers are responsible for presenting the Steering Committee with the yearly [annual report].
 
 ## Is it a Working Group? Yes, if...
-- It does not own any code
+- It does not own any code, artifacts, or repositories. These must be owned by a sponsoring SIG.
 - It has a clear goal measured through a specific deliverable or deliverables
 - It is temporary in nature and will be disbanded after reaching its stated goal(s)
 
