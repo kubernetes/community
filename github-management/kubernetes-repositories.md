@@ -69,6 +69,10 @@ from a central body (e.g. steering committee or sig-architecture)
 
    * For now all repos will live in `github.com/kubernetes-sigs/\<project-name\>`.
       * For project names: see [project-naming](./../committee-steering/governance/project-naming.md)
+   * Repositories cannot be owned by a Working Group alone, so names such as
+     `wg-*` or `working-group-*`, or any name implying WG ownership, are not
+     allowed. See the [WG governance](./../committee-steering/governance/wg-governance.md#is-it-a-working-group-yes-if)
+     guidelines.
    * Must contain the topic for the sponsoring SIG - e.g.
      `k8s-sig-api-machinery`.  (Added through the *Manage topics* link on the
 repo page.)
