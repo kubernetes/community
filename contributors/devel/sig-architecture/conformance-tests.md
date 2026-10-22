@@ -70,6 +70,11 @@ Examples of features which are not currently eligible for conformance tests:
 - features that are pending deprecation, eg: componentstatus
 - any endpoints that are operational tools, rather than application-oriented, should not be part of conformance, eg: apiserver logs. 
 
+Note that the requirement that conformance tests cover "non-optional features" does not
+mean that they only cover in-tree features. In particular, pod-to-pod networking and
+service DNS are always implemented by out-of-tree components, and service proxying is
+sometimes as well.
+
 Conformance tests are intended to be stable and backwards compatible according to
 the standard API deprecation policies. Therefore any test that relies on specific
 output that is not subject to the deprecation policy cannot be promoted to conformance.
@@ -346,6 +351,45 @@ for your provider, please see the [testgrid conformance README]
 [testgrid conformance README]: https://github.com/kubernetes/test-infra/blob/master/testgrid/conformance/README.md
 [most recent conformance doc]: https://github.com/cncf/k8s-conformance/tree/master/docs
 [conformance.yaml]: https://github.com/kubernetes/kubernetes/blob/master/test/conformance/testdata/conformance.yaml
+
+## Future Conformance
+
+In some cases, immediately promoting a test to Conformance might cause
+problems for downstreams. For example, promoting a test for a
+newly-added `Service` feature might break clusters running network
+plugins that haven't yet released a version implementing that feature.
+
+To avoid this sort of problem, you can promote the test to "Future
+Conformance", signaling that it will become a conformance requirement
+in a future release, and alerting users, developers, and distributors
+in the Kubernetes ecosystem about the upcoming requirement.
+
+A test being promoted to future conformance must already meet all
+[conformance test requirements] at the time it is promoted to future
+conformance. However, instead of indicating the current release in the
+`Release` tag of its conformance comment, it should indicate a future
+release, and then also indicate that same version in a
+`framework.WithFutureConformance()` call in the test definition. For
+example:
+
+```
+/*
+  Release: v1.45
+  Testname: Service: trafficDistribution
+  Description: Services implement trafficDistribution
+*/
+framework.ConformanceIt("it should implement trafficDistribution", framework.WithConformanceVersion("1.45"), func() {
+  ...
+})
+```
+
+In general, tests promoted to future conformance should target a
+release at least one year after the test is first promoted. [KEP-5922]
+has some additional suggestions about [picking the version for future
+conformance].
+
+[KEP-5922]: https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/5922-networking-conformance/README.md
+[picking the version for future conformance]: https://github.com/kubernetes/enhancements/blob/master/keps/sig-architecture/5922-networking-conformance/README.md#picking-the-version-for-future-conformance
 
 ## Demoting Conformance Tests
 
