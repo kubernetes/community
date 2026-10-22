@@ -360,6 +360,17 @@ usergroups:
       - mandre
       - winiciusallan
 
+  - name: cloud-provider-openstack-maintainers
+    long_name: Cloud Provider OpenStack Maintainers
+    description: The maintainers of the OpenStack CCM and CSI drivers.
+    channels:
+      - provider-openstack
+    members:
+      - kayrus
+      - mandre
+      - stephenfin
+      - zetaab
+
   - name: kubetail-maintainers
     long_name: kubetail Maintainers
     description: kubetail Maintainers group of kubetail.com
