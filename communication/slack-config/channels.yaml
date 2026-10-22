@@ -98,6 +98,7 @@ channels:
   - name: compliance-hipaa
   - name: contour
   - name: contributor-summit
+    archived: true  
   - name: controller-runtime
   - name: cozystack
   - name: craft
@@ -555,6 +556,7 @@ channels:
   - name: submariner
   - name: surveys
   - name: summit-staff
+    archived: true  
   - name: suse-caasp
   - name: syself
   - name: talk-proposals
