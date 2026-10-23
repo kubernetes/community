@@ -1138,10 +1138,14 @@ sigs:
           company: Independent
           email: neolit123@gmail.com
       tech_leads:
-        - github: fabriziopandini
-          name: Fabrizio Pandini
+        - github: hakman
+          name: Ciprian Hacman
+          company: Microsoft
+          email: chacman@microsoft.com
+        - github: sbueringer
+          name: Stefan Büringer
           company: VMware
-          email: fabrizio.pandini@gmail.com
+          email: sbueringer@gmail.com
       emeritus_leads:
         - github: CecileRobertMichon
           name: Cecile Robert-Michon
