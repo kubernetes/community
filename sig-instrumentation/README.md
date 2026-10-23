@@ -25,7 +25,6 @@ The [charter](charter.md) defines the scope and governance of the Instrumentatio
 ### Chairs
 The Chairs of the SIG run operations and processes governing the SIG.
 
-* Pranshu Srivastava (**[@rexagod](https://github.com/rexagod)**), Red Hat
 * Richa Banker (**[@richabanker](https://github.com/richabanker)**), Google
 
 ### Technical Leads
@@ -42,6 +41,7 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 * Elana Hashman (**[@ehashman](https://github.com/ehashman)**)
 * Han Kang (**[@logicalhan](https://github.com/logicalhan)**)
 * Piotr Szczesniak (**[@piosz](https://github.com/piosz)**)
+* Pranshu Srivastava (**[@rexagod](https://github.com/rexagod)**)
 
 ## Contact
 - Slack: [#sig-instrumentation](https://kubernetes.slack.com/messages/sig-instrumentation)
