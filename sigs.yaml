@@ -138,7 +138,9 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/controller-manager/OWNERS
       - name: server-crd
         owners:
+          - https://raw.githubusercontent.com/kubernetes/apiextensions-api/master/OWNERS
           - https://raw.githubusercontent.com/kubernetes/apiextensions-apiserver/master/OWNERS
+          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiextensions-api/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/apiextensions-apiserver/OWNERS
       - name: server-frameworks
         owners:
