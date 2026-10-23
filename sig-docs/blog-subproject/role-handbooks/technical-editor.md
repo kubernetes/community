@@ -18,7 +18,7 @@ The technical editor is the subject matter expert to ensure the technical accura
 
 ## Activities
 
-* Attending and participating in biweekly editorial meetings.
+* Attending and participating in [SIG Docs meetings](https://github.com/kubernetes/community/tree/master/sig-docs#meetings).
 * Providing a technical review on all blog posts.
 
 ## Time Commitments

@@ -19,7 +19,7 @@ The Blog Community Manager ensures that the editorial process is transparent, co
 
 ## Activities
 
-* Attending and participating in biweekly editorial meetings.
+* Attending and participating in [SIG Docs meetings](https://github.com/kubernetes/community/tree/master/sig-docs#meetings).
 * Providing a review of all blog posts to ensure they meet the content guidelines and best interests of the community.
 * Work with the editorial leads to maintain transparency in the review process and proposing any necessary updates to the blog guidelines.
 * Advocating for the blog as a place for contributors to get involved and share educational content with the community. 
