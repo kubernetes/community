@@ -18,8 +18,8 @@ The [charter](charter.md) defines the scope and governance of the Workload Confo
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-workload-conformance) for the group will typically add invites for the following meetings to your calendar.*
-* WG Workload Conformance (bi-weekly meeting): [[TBD]s at [TBD] [TBD]]([TBD]) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=%5BTBD%5D&tz=%5BTBD%5D).
-  * [Meeting notes and Agenda]([TBD]).
+* WG Workload Conformance (bi-weekly meeting): [Wednesdays at 15:00 UTC](https://zoom.us/j/93906232217?pwd=FfCtaEI4lJGtDa19bv51qui1xGaT68.1) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15%3A00&tz=UTC).
+  * [Meeting notes and Agenda](https://docs.google.com/document/d/16GPnmukPqbTkauWb3CtXzA3aEDUXoVKY34gA41YQmPk/edit).
   * [Meeting recordings]([TBD]).
 
 ## Organizers

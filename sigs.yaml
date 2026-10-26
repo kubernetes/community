@@ -4052,12 +4052,12 @@ workinggroups:
           email: soltysh@gmail.com
     meetings:
       - description: WG Workload Conformance (bi-weekly meeting)
-        day: '[TBD]'
-        time: '[TBD]'
-        tz: '[TBD]'
+        day: Wednesday
+        time: "15:00"
+        tz: UTC
         frequency: bi-weekly
-        url: '[TBD]'
-        archive_url: '[TBD]'
+        url: https://zoom.us/j/93906232217?pwd=FfCtaEI4lJGtDa19bv51qui1xGaT68.1
+        archive_url: https://docs.google.com/document/d/16GPnmukPqbTkauWb3CtXzA3aEDUXoVKY34gA41YQmPk/edit
         recordings_url: '[TBD]'
     contact:
       slack: wg-workload-conformance
