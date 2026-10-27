@@ -24,7 +24,7 @@ The [charter](https://git.k8s.io/steering/charter.md) defines the scope and gove
 * Priyanka Saggu (**[@Priyankasaggu11929](https://github.com/Priyankasaggu11929)**), SUSE
 * Michael McCune (**[@elmiko](https://github.com/elmiko)**), Red Hat
 * Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**), Google
-* Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), Minimus
+* Kat Cosgrove (**[@katcosgrove](https://github.com/katcosgrove)**), VillageSQL
 * Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**), DaoCloud
 * Rita Zhang (**[@ritazh](https://github.com/ritazh)**), CoreWeave
 * Maciej Szulik (**[@soltysh](https://github.com/soltysh)**), Defense Unicorns

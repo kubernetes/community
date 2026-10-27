@@ -1645,7 +1645,7 @@ sigs:
           email: rawat.dipesh@gmail.com
         - github: katcosgrove
           name: Kat Cosgrove
-          company: Minimus
+          company: VillageSQL
           email: kat.cosgrove@gmail.com
         - github: reylejano
           name: Rey Lejano
@@ -2812,7 +2812,7 @@ sigs:
             email: fsmunoz@gmail.com
           - github: katcosgrove
             name: Kat Cosgrove
-            company: Minimus
+            company: VillageSQL
             email: kat.cosgrove@gmail.com
       - name: SIG Release Process Documentation
         description: |
@@ -4237,7 +4237,7 @@ committees:
           email: chiachenk@google.com
         - github: katcosgrove
           name: Kat Cosgrove
-          company: Minimus
+          company: VillageSQL
           email: kat.cosgrove@gmail.com
         - github: pacoxu
           name: Paco Xu 徐俊杰
