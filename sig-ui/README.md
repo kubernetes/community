@@ -8,7 +8,7 @@ To understand how this file is generated, see https://git.k8s.io/community/gener
 --->
 # UI Special Interest Group
 
-Covers all things UI related. Efforts are centered around Kubernetes Dashboard: a general purpose, web-based UI for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
+Covers all things UI related. Efforts are centered around Headlamp: an easy-to-use and extensible Kubernetes web UI. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
 
 The [charter](charter.md) defines the scope and governance of the UI Special Interest Group.
 
