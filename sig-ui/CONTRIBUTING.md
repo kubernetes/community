@@ -6,10 +6,10 @@ _As contributors and maintainers of this project, and in the interest of fosteri
 
 ## Getting Started
 
-To learn more about the project, please read through the following documents:
+To get started contributing to Headlamp, please read the following documents:
 
-- https://github.com/kubernetes/dashboard/tree/master/docs
-- https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+- [Headlamp Contribution Guidelines](https://headlamp.dev/docs/latest/contributing/)
+- [Headlamp Development Guide](https://headlamp.dev/docs/latest/development/)
 
 All the contributions are done via GitHub.
 More documentation on contributing can be found here:
