@@ -2913,19 +2913,23 @@ sigs:
     label: scheduling
     leadership:
       chairs:
+        - github: helayoty
+          name: Heba Elayoty
+          company: Microsoft
+          email: hebaelayoty@gmail.com
         - github: macsko
           name: Maciej Skoczeń
           company: Google
           email: mskoczen@google.com
-        - github: sanposhiho
-          name: Kensei Nakada
-          company: Independent
-          email: handbomusic@gmail.com
       tech_leads:
         - github: dom4ha
           name: Dominik Marciński
           company: Google
           email: dmarcinski@google.com
+        - github: mm4tt
+          name: Matt Matejczyk
+          company: Google
+          email: mmatejczyk@google.com
         - github: sanposhiho
           name: Kensei Nakada
           company: Independent
