@@ -2235,6 +2235,11 @@ sigs:
           name: Stephen Kitt
           company: Red Hat
           email: skitt@redhat.com
+      tech_leads:
+        - github: kahirokunn
+          name: Kahiro Okina
+          company: Craftsman Software, Inc.
+          email: okinakahiro@gmail.com
       emeritus_leads:
         - github: pmorie
           name: Paul Morie
