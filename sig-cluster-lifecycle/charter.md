@@ -51,11 +51,11 @@ and opts-in to updates and modifications to [sig-governance].
 
 ### Deviations from [sig-governance]
 
-As SIG Cluster Lifecycle contains a number of subprojects, following deviations from [sig-governance] exists:
+As SIG Cluster Lifecycle contains a number of subprojects, the following deviations from [sig-governance] exists:
 
 - Subproject creation follow the process described in [Subproject creation](#subproject-creation).
 - Each subproject can nominate subproject leads by a simple majority vote of subproject top-level maintainers, SIG Chairs and TLs.
-- In there is not a formally appointed subproject lead, the top-level OWNERS defines the maintainers that 
+- If there is not a formally appointed subproject lead, the top-level OWNERS defines the maintainers that 
   are responsible in front of the SIG for the project (in this document, we are using subproject leads for both).
 - Subproject leads must be subscribed to the SIG mailing list and watch out for our announcement emails.
 - The SIG has empowered subproject leads with a number of additional responsibilities, 
@@ -75,7 +75,8 @@ SIG Cluster Lifecycle will consider the creation of a new subproject when a grou
 in the SIG will propose an innovative idea in scope of the SIG charter, ideally filling some of the void in 
 the SIG vision or extending it in a meaningful way.
 
-The SIG also welcomes discussion about  innovative ideas originated from other SIGs as well as from other contributors.
+The SIG also welcomes discussion about innovative ideas originating from other SIGs as well as from other contributors, 
+but will evaluate each request for a subproject on its own merits in the scope of SIG Cluster Lifecycle.
 
 Like any significant change in Kubernetes, new subprojects should be backed by a KEP detailing 
 the subprojects goals, non-goals, and the initial roadmap.
@@ -127,8 +128,8 @@ In alternative to archival, also [maintenance mode], should be considered.
 Similarly, archival will be considered if a subproject team drifts away significantly from the broader SIG activity.
 
 The following signals might be considered to determine if a subproject should be archived:
-- Subprojects not engaging in SIG activities such as filling up surveys, not following the SIG ML announcements, SIS slack
-  discussions, office hours meetings etc.
+- Subprojects not engaging in SIG activities such as filling up surveys, not following the SIG ML announcements, slack
+  discussions about the SIG, SIG office hours meetings etc.
 - Subprojects failing to contribute to the SIG annual report.
 - Subprojects not actively maintaining the OWNERS files, SECURITY_CONTACTS.
 - Subprojects not actively engaging contributors and users e.g. in office hours, slack channels, etc. 
