@@ -337,7 +337,7 @@ sigs:
         day: Thursday
         time: "10:00"
         tz: PT (Pacific Time)
-        frequency: biweekly
+        frequency: First Thursday of the month
         url: https://zoom.us/j/97008974781?pwd=1Y54XO1EoV4AUYTE9QEAeNzCaas4Yb.1
         archive_url: https://docs.google.com/document/d/1qlW1LkibOoiMio-hbJucRjOYeKT8mNaQ4awwzf0bi8M/edit
         calendar_url: https://calendar.google.com/calendar/embed?src=ot1d7dd3tfjg4dpd5qf216qeq8%40group.calendar.google.com
