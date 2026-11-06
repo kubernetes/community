@@ -79,7 +79,7 @@ In your message, please note the time that the embargo will be lifted.
 
 ### SLA
 
-Blog posts can take up to **4 weeks** to review. If you’d like to request an expedited review, please get in touch via [#sig-docs-blog](https://app.slack.com/client/T09NY5SBT/CJDHVD54J) on the Kubernetes Slack workspace.
+Blog posts can take up to **2 weeks** to review. If you’d like to request an expedited review, please get in touch via [#sig-docs-blog](https://app.slack.com/client/T09NY5SBT/CJDHVD54J) on the Kubernetes Slack workspace.
 
 ## Ongoing blog maintenance
 
