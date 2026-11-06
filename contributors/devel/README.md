@@ -99,6 +99,8 @@ See the [kubernetes/release](https://github.com/kubernetes/release) repository f
 
 * **Structured Logging migration instructions** [migration-to-structured-logging.md](sig-instrumentation/migration-to-structured-logging.md)
 
+* **Metrics APIs graduation guide** [metrics-api-graduation.md](sig-instrumentation/metrics-api-graduation.md)
+
 ### SIG Storage
 * **NOTE** Flexvolume is deprecated. Out-of-tree CSI driver is the recommended way to write volume drivers in Kubernetes. See this doc [here]( https://github.com/kubernetes/community/blob/master/sig-storage/volume-plugin-faq.md) for more information.
 
