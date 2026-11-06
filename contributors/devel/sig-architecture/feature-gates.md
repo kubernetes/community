@@ -379,6 +379,10 @@ if disabled(gate) && !newFieldInUse(oldObj) {
 }
 ```
 
+Checking whether a field is in use does not by itself handle incompatible changes
+to its type or meaning. See [New field in existing API version](api_changes.md#new-field-in-existing-api-version)
+for guidance on changing or removing alpha fields.
+
 NOTE: Field wiping is still required even when using declarative validation.
 Field wiping and validation serve different purposes — wiping ensures the field
 is not persisted when the gate is off, while validation ensures the field value
