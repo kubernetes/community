@@ -772,8 +772,7 @@ Note: Due to inconsistent behavior when categories collide with resource types,
 and difficulties knowing when it is safe to add new resources to an existing category,
 do not add new categories to built-in resources unless specifically allowed by API reviewers.
 See issues [#7547](https://github.com/kubernetes/kubernetes/issues/7547#issuecomment-355835279)
-[#42885](https://github.com/kubernetes/kubernetes/issues/42885#issuecomment-531265679),
-and [considerations for adding to the "all" category](https://github.com/kubernetes/community/blob/master/contributors/devel/sig-cli/kubectl-conventions.md#rules-for-extending-special-resource-alias---all)
+and [#42885](https://github.com/kubernetes/kubernetes/issues/42885#issuecomment-531265679),
 for examples of the difficulties encountered.
 
 Categories listed in discovery may be used by clients as hints to resolve user invocations to multiple resources.
@@ -798,7 +797,7 @@ Examples of built-in categories and the resources they map to include:
   * `batch/v* cronjobs`
   * `batch/v* jobs`
 
-With the above categories, and only built-in API types served, `kubectl get all` would be equivalent to 
+With the above categories, and only built-in API types served, `kubectl get all` would be equivalent to
 `kubectl get pods.v1.,replicationcontrollers.v1.,services.v1.,daemonsets.v1.apps,deployments.v1.apps,replicasets.v1.apps,statefulsets.v1.apps,horizontalpodautoscalers.v2.autoscaling,cronjobs.v1.batch,jobs.v1.batch,`.
 
 ## Idempotency
@@ -888,13 +887,13 @@ graph TD;
     A[Field Definition Start] --> I[Is the zero value a valid user choice?];
     I -- Yes --> L["USE: Pointer + omitempty <br/> (*int, *bool - Essential for intent)"];
     I -- No --> M[Is the field Optional?];
-    
+
     M -- No --> J["USE: Regular Type <br/> (Field must be present)"];
     M -- Yes --> K[Does type have native nil? <br/> map or slice];
-    
+
     K -- No --> N["USE: Pointer + omitempty <br/>"];
     K -- Yes --> O[Need to distinguish <br/> Unset from Empty?];
-    
+
     O -- Yes --> P["USE: Pointer to slice/map <br/> (*[]T or *map[K]V)"];
     O -- No --> J;
 ```
@@ -906,7 +905,7 @@ graph TD;
     A[Field Definition Start] --> C[Is the zero value a valid user choice?];
     C -- Yes --> D["USE: Pointer + omitempty <br/> (*int, *bool - Essential for intent)"];
     C -- No --> E["USE: Regular Type <br/> (int, bool)"];
-    
+
     E --> F[Is the field Optional or Required?];
     F -- Required --> G["Logic: Field always has valid data <br/> (API Server blocks missing/zero)"];
     F -- Optional --> H["Logic: 0 means 'Unset' <br/> (Safe because API blocks explicit 0)"];
