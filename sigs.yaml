@@ -3297,8 +3297,8 @@ sigs:
         tz: PT (Pacific Time)
         frequency: bi-weekly starting Tuesday August 13, 2019
         url: https://zoom.us/j/135450138?pwd=WGJyaVZzekJCWFBTMGJGTXVjUFJaUT09
-        archive_url: https://bit.ly/k8s-sig-testing-notes
-        recordings_url: https://bit.ly/k8s-sig-testing-videos
+        archive_url: https://docs.google.com/document/d/1ILdzqS49G_6kqWMn_sLtKrI45eqDhiXYpKq-zWMz6oU/edit
+        recordings_url: https://docs.google.com/document/d/1ILdzqS49G_6kqWMn_sLtKrI45eqDhiXYpKq-zWMz6oU/edit
     contact:
       slack: sig-testing
       mailing_list: https://groups.google.com/forum/#!forum/kubernetes-sig-testing
