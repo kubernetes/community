@@ -2235,6 +2235,10 @@ sigs:
           name: Jeremy Olmsted-Thompson
           company: Google
           email: jeremyot@google.com
+        - github: lauralorenz
+          name: Laura Lorenz
+          company: Independent
+          email: me@lauralorenz.dev
         - github: skitt
           name: Stephen Kitt
           company: Red Hat
