@@ -86,6 +86,11 @@ The following [subprojects][subproject-definition] are owned by sig-autoscaling:
   - [kubernetes-sigs/karpenter](https://github.com/kubernetes-sigs/karpenter/blob/main/OWNERS)
 - **Contact:**
   - Slack: [#karpenter](https://kubernetes.slack.com/messages/karpenter)
+- **Meetings:**
+  - Karpenter Working Group (Americas/APAC) ([calendar](https://calendar.google.com/calendar/embed?src=7qfdeof5hebdf6i2rk2jeg5jbk%40group.calendar.google.com)): [Thursdays at 15:00 PT (Pacific Time)](https://zoom.us/j/95618088729) (every four weeks, alternating biweekly with the EMEA slot). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15%3A00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/18BT0AIMugpNpiSPJNlcAL2rv69yAE6Z06gUVj7v_clg/edit).
+  - Karpenter Working Group (Americas/EMEA) ([calendar](https://calendar.google.com/calendar/embed?src=7qfdeof5hebdf6i2rk2jeg5jbk%40group.calendar.google.com)): [Thursdays at 9:00 PT (Pacific Time)](https://zoom.us/j/95618088729) (every four weeks, alternating biweekly with the APAC slot). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=9%3A00&tz=PT%20%28Pacific%20Time%29).
+    - [Meeting notes and Agenda](https://docs.google.com/document/d/18BT0AIMugpNpiSPJNlcAL2rv69yAE6Z06gUVj7v_clg/edit).
 ### model-serving-signals
 - **Owners:**
   - [kubernetes-sigs/model-serving-signals](https://github.com/kubernetes-sigs/model-serving-signals/blob/main/OWNERS)
