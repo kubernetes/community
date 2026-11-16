@@ -134,6 +134,11 @@ subrepository. For example, a documentation issue should be opened in
 [kubernetes/website]. Make sure to adhere to the prompted submission guidelines 
 while opening an issue. Check the [issue triage guide] for more information.
 
+## AI Guidance
+
+Please see the [AI Guidance](/contributors/guide/contributing.md#ai-guidance)
+on the [Contributing to Kubernetes](/contributors/guide/contrubting.md) page.
+
 [issues labeled as a good first issue]: https://go.k8s.io/good-first-issue
 [k8s-ci-robot]: https://github.com/k8s-ci-robot
 [Non-Code Contributions Guide]: ./non-code-contributions.md
