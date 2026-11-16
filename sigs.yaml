@@ -4194,14 +4194,14 @@ committees:
           company: Google
           email: vinayakankugoyal@gmail.com
       emeritus_leads:
-        - github: puerco
-          name: Adolfo García Veytia
         - github: SaranBalaji90
           name: Sri Saran Balaji
         - github: cji
           name: Craig Ingram
         - github: lukehinds
           name: Luke Hinds
+        - github: puerco
+          name: Adolfo García Veytia
         - github: ritazh
           name: Rita Zhang
         - github: swamymsft

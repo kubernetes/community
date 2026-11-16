@@ -28,10 +28,10 @@ The Kubernetes Security Response Committee is the body that is responsible for r
 * Sri Saran Balaji (**[@SaranBalaji90](https://github.com/SaranBalaji90)**)
 * Craig Ingram (**[@cji](https://github.com/cji)**)
 * Luke Hinds (**[@lukehinds](https://github.com/lukehinds)**)
+* Adolfo García Veytia (**[@puerco](https://github.com/puerco)**)
 * Rita Zhang (**[@ritazh](https://github.com/ritazh)**)
 * Swamy Shivaganga Nagaraju (**[@swamymsft](https://github.com/swamymsft)**)
 * Tim Allclair (**[@tallclair](https://github.com/tallclair)**)
-* Adolfo García Veytia (**[@puerco](https://github.com/puerco)**)
 
 ## Contact
 - Private Mailing List: security@kubernetes.io
