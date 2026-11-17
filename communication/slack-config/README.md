@@ -37,6 +37,10 @@ Usergroups are pingable Slack groups. All members of a usergroup can be
 automatically added to certain channels. A usergroup must have at least one
 member. A usergroup can be removed by deleting it from the configuration.
 
+SIG lead usergroups are generated from `sigs.yaml` into `sigslackleads.yaml`.
+Do not edit that file directly; run `make generate` after leadership or contact
+changes.
+
 Some usergroups (e.g. `@test-infra-oncall`) are managed by other tooling. To
 prevent Tempelis from trying to deactivate these usergroups, they can be included
 on the list and marked as `external: true`. Other usergroups should look like

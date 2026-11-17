@@ -36,6 +36,8 @@ import (
 
 	"k8s.io/enhancements/api"
 
+	"k8s.io/community/generator/sigslackleads"
+
 	"github.com/google/go-github/v32/github"
 
 	"github.com/go-git/go-git/v5"
@@ -249,11 +251,14 @@ type Meeting struct {
 
 // Contact represents the various contact points for a group.
 type Contact struct {
-	Slack              string       `yaml:",omitempty"`
-	MailingList        string       `yaml:"mailing_list,omitempty"`
-	PrivateMailingList string       `yaml:"private_mailing_list,omitempty"`
-	GithubTeams        []GithubTeam `yaml:"teams,omitempty"`
-	Liaison            Person       `yaml:"liaison,omitempty"`
+	Slack                     string       `yaml:",omitempty"`
+	SlackUsergroup            string       `yaml:"slack_usergroup,omitempty"`
+	SlackUsergroupDescription string       `yaml:"slack_usergroup_description,omitempty"`
+	SlackUsergroupChannels    []string     `yaml:"slack_usergroup_channels,omitempty"`
+	MailingList               string       `yaml:"mailing_list,omitempty"`
+	PrivateMailingList        string       `yaml:"private_mailing_list,omitempty"`
+	GithubTeams               []GithubTeam `yaml:"teams,omitempty"`
+	Liaison                   Person       `yaml:"liaison,omitempty"`
 }
 
 // GithubTeam represents a specific Github Team.
@@ -1202,6 +1207,10 @@ func main() {
 		os.Exit(1)
 	}
 
+	if err := sigslackleads.Generate(baseGeneratorDir, true); err != nil {
+		log.Fatal(err)
+	}
+
 	// Write the Context struct back to yaml to enforce formatting
 	err = writeYaml(&ctx, yamlPath)
 	if err != nil {
@@ -1256,6 +1265,11 @@ func main() {
 	outputPath = filepath.Join(baseGeneratorDir, liaisonsFilename)
 	err = writeTemplate(filepath.Join(baseGeneratorDir, templateDir, liaisonsTemplate), outputPath, "markdown", ctx)
 	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Generating SIG Slack leads")
+	if err := sigslackleads.Generate(baseGeneratorDir, false); err != nil {
 		log.Fatal(err)
 	}
 
