@@ -13,7 +13,7 @@ The Kubernetes New Contributor Orientation (NCO) meetings are an initiative owne
 Anyone is welcome to attend the Kubernetes New Contributor Orientation.
 
 
-Anyone with [org membership](https://github.com/kubernetes/community/blob/master/community-membership.md#member) and an interest in helping new contributors is encouraged to participate in the meeting as a host or lead. "Hosts" are active contributor participants who help answer questions from their unique perspectives during the Q&A segment of the meeting. A "Lead" is a contributor who takes on the responsibility of organizing and running the meeting, generally including giving the presentation. Check out the [NCO Host handbook](nco-host-handbook.md) for guidance on acting as a host during the meeting, and check out the [NCO Lead Handbook](nco-lead-handbook.md) for more details on how to lead an NCO meeting.
+Anyone with [org membership](https://github.com/kubernetes/community/blob/main/community-membership.md#member) and an interest in helping new contributors is encouraged to participate in the meeting as a host or lead. "Hosts" are active contributor participants who help answer questions from their unique perspectives during the Q&A segment of the meeting. A "Lead" is a contributor who takes on the responsibility of organizing and running the meeting, generally including giving the presentation. Check out the [NCO Host handbook](nco-host-handbook.md) for guidance on acting as a host during the meeting, and check out the [NCO Lead Handbook](nco-lead-handbook.md) for more details on how to lead an NCO meeting.
 
 
 ## Meetings
