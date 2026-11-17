@@ -4181,10 +4181,6 @@ committees:
           name: Nathan Herz
           company: Amazon
           email: nathan.herz97@gmail.com
-        - github: puerco
-          name: Adolfo García Veytia
-          company: Carabiner Systems, Inc
-          email: adolfo.garcia@uservers.net
         - github: stlaz
           name: Standa Láznička
           company: Microsoft
@@ -4204,6 +4200,8 @@ committees:
           name: Craig Ingram
         - github: lukehinds
           name: Luke Hinds
+        - github: puerco
+          name: Adolfo García Veytia
         - github: ritazh
           name: Rita Zhang
         - github: swamymsft
