@@ -27,6 +27,7 @@ The [charter](charter.md) defines the scope and governance of the Multicluster S
 The Chairs of the SIG run operations and processes governing the SIG.
 
 * Jeremy Olmsted-Thompson (**[@jeremyot](https://github.com/jeremyot)**), Google
+* Laura Lorenz (**[@lauralorenz](https://github.com/lauralorenz)**), Independent
 * Stephen Kitt (**[@skitt](https://github.com/skitt)**), Red Hat
 
 ## Emeritus Leads
