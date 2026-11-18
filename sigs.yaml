@@ -789,6 +789,23 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes-sigs/karpenter-provider-cluster-api/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/karpenter-provider-ibm-cloud/main/OWNERS
           - https://raw.githubusercontent.com/kubernetes-sigs/karpenter/main/OWNERS
+        meetings:
+          - description: Karpenter Working Group (Americas/APAC)
+            day: Thursday
+            time: "15:00"
+            tz: PT (Pacific Time)
+            frequency: every four weeks, alternating biweekly with the EMEA slot
+            url: https://zoom.us/j/95618088729
+            archive_url: https://docs.google.com/document/d/18BT0AIMugpNpiSPJNlcAL2rv69yAE6Z06gUVj7v_clg/edit
+            calendar_url: https://calendar.google.com/calendar/embed?src=7qfdeof5hebdf6i2rk2jeg5jbk%40group.calendar.google.com
+          - description: Karpenter Working Group (Americas/EMEA)
+            day: Thursday
+            time: "9:00"
+            tz: PT (Pacific Time)
+            frequency: every four weeks, alternating biweekly with the APAC slot
+            url: https://zoom.us/j/95618088729
+            archive_url: https://docs.google.com/document/d/18BT0AIMugpNpiSPJNlcAL2rv69yAE6Z06gUVj7v_clg/edit
+            calendar_url: https://calendar.google.com/calendar/embed?src=7qfdeof5hebdf6i2rk2jeg5jbk%40group.calendar.google.com
       - name: model-serving-signals
         owners:
           - https://raw.githubusercontent.com/kubernetes-sigs/model-serving-signals/main/OWNERS
