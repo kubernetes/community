@@ -56,6 +56,7 @@ There are 2 types of icons: labeled and unlabeled.
 ![](./png/infrastructure_components/labeled/control-plane-128.png)
 ![](./png/infrastructure_components/labeled/node-128.png)
 ![](./png/infrastructure_components/labeled/etcd-128.png)
+![](./png/infrastructure_components/labeled/ca-128.png)
 
 ## Kubernetes Resources icons
 ![](./png/resources/labeled/c-role-128.png)
@@ -88,6 +89,7 @@ There are 2 types of icons: labeled and unlabeled.
 ![](./png/resources/labeled/svc-128.png)
 ![](./png/resources/labeled/user-128.png)
 ![](./png/resources/labeled/vol-128.png)
+![](./png/resources/labeled/vpa-128.png)
 
 ## Usage Example
 
