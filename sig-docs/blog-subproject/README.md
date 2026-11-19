@@ -21,6 +21,8 @@ See [meetings](https://github.com/kubernetes/community/tree/master/sig-docs#meet
 
 - **Blog shadow editors:** _no contributors_
 
+- **Blog writing buddies:** _open role :  see [Helping as a blog writing buddy](https://kubernetes.io/docs/contribute/blog/writing-buddy/) to get involved_
+
 ✨ Could **you** join the blog editorial team?
 
 ## Contact
