@@ -224,6 +224,11 @@ These fields are required for proper decoding of the object. They may be
 populated by the server by default from the specified URL path, but the client
 likely needs to know the values in order to construct the URL path.
 
+An object may be accessed through multiple API versions. The `apiVersion` returned
+by the server identifies the representation being returned, not the API version
+used to create the object. For custom resources, it also does not identify the
+release of the CRD that defined the schema.
+
 ### Objects
 
 #### Metadata
