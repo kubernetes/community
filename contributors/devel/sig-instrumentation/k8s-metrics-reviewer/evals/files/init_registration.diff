@@ -1,0 +1,20 @@
+diff --git a/pkg/kubelet/metrics/metrics.go b/pkg/kubelet/metrics/metrics.go
+index 1234567..89abcde 100644
+--- b/pkg/kubelet/metrics/metrics.go
++++ b/pkg/kubelet/metrics/metrics.go
+@@ -10,10 +10,16 @@ import (
+ 	compbasemetrics "k8s.io/component-base/metrics"
+ )
+ 
++var (
++	SyncLoopCount = compbasemetrics.NewCounter(&compbasemetrics.CounterOpts{
++		Name:           "kubelet_sync_loop_iterations_total",
++		Help:           "Total number of sync loop iterations.",
++		StabilityLevel: compbasemetrics.ALPHA,
++	})
++)
++
++func init() {
++	// Metric registration in init() block
++	legacyregistry.MustRegister(SyncLoopCount)
++}
