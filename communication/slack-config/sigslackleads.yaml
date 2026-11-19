@@ -1,0 +1,259 @@
+# This file is generated from sigs.yaml.
+# Update leadership or Slack usergroup fields in sigs.yaml, then run make generate.
+
+usergroups:
+  - name: sig-api-machinery-leads
+    long_name: SIG API Machinery Leads
+    description: Active chairs and technical leads for SIG API Machinery.
+    channels:
+      - sig-api-machinery
+    members:
+      - deads2k
+      - fedebongio
+      - jpbetz
+      - sttts
+  - name: sig-apps-leads
+    long_name: SIG Apps Leads
+    description: Active chairs and technical leads for SIG Apps.
+    channels:
+      - sig-apps
+    members:
+      - janetkuo
+      - kow3ns
+      - soltysh
+  - name: sig-architecture-leads
+    long_name: SIG Architecture Leads
+    description: Active chairs and technical leads for SIG Architecture.
+    channels:
+      - sig-architecture
+    members:
+      - derekwaynecarr
+      - dims
+      - johnbelamaric
+  - name: sig-auth-leads
+    long_name: SIG Auth Leads
+    description: Active chairs and technical leads for SIG Auth.
+    channels:
+      - sig-auth
+    members:
+      - aramase
+      - deads2k
+      - enj
+      - liggitt
+      - micahhausler
+      - ritazh
+  - name: sig-autoscaling-leads
+    long_name: SIG Autoscaling Leads
+    description: Active chairs and technical leads for SIG Autoscaling.
+    channels:
+      - sig-autoscaling
+    members:
+      - adrianmoisey
+      - jackfrancis
+      - jmdeal
+      - omerap12
+      - towca
+  - name: sig-cli-leads
+    long_name: SIG CLI Leads
+    description: Active chairs and technical leads for SIG CLI.
+    channels:
+      - sig-cli
+    members:
+      - ardaguclu
+      - eddiezane
+      - mpuckett159
+      - soltysh
+  - name: sig-cloud-provider-leads
+    long_name: SIG Cloud Provider Leads
+    description: Active chairs and technical leads for SIG Cloud Provider.
+    channels:
+      - sig-cloud-provider
+    members:
+      - bridgetkromhout
+      - cheftako
+      - elmiko
+      - joelspeed
+  - name: sig-cluster-lifecycle-leads
+    long_name: SIG Cluster Lifecycle Leads
+    description: Active chairs and technical leads for SIG Cluster Lifecycle.
+    channels:
+      - sig-cluster-lifecycle
+    members:
+      - fabriziopandini
+      - hakman
+      - justinsb
+      - neolit123
+      - sbueringer
+  - name: contribex-leads
+    long_name: SIG Contributor Experience Leads
+    description: SIG Contributor Experience Leads group.
+    channels:
+      - sig-contribex
+    members:
+      - kaslin
+      - MadhavJivrajani
+      - mfahlandt
+      - palnabarun
+      - Priyankasaggu11929
+  - name: sig-docs-leads
+    long_name: SIG Docs Leads
+    description: Active chairs and technical leads for SIG Docs.
+    channels:
+      - sig-docs
+    members:
+      - dipesh-rawat
+      - divya-mohan0209
+      - katcosgrove
+      - natalisucks
+      - reylejano
+      - salaxander
+      - tengqm
+  - name: sig-etcd-leads
+    long_name: SIG etcd Leads
+    description: Active chairs and technical leads for SIG etcd.
+    channels:
+      - sig-etcd
+    members:
+      - ahrtr
+      - fuweid
+      - ivanvc
+      - jberkus
+      - serathius
+      - siyuanfoundation
+  - name: sig-instrumentation-leads
+    long_name: SIG Instrumentation Leads
+    description: Active chairs and technical leads for SIG Instrumentation.
+    channels:
+      - sig-instrumentation
+    members:
+      - dashpole
+      - dgrisonnet
+      - pohly
+      - rexagod
+      - richabanker
+  - name: k8s-infra-leads
+    long_name: SIG K8s Infra Leads
+    description: Leads of the Infrastructure SIG. Ping for a community-owned infrastructure problem.
+    channels:
+      - k8s-infra-alerts
+      - sig-k8s-infra
+    members:
+      - ameukam
+      - genpage
+      - hakman
+      - upodroid
+      - xmudrii
+  - name: sig-multicluster-leads
+    long_name: SIG Multicluster Leads
+    description: Active chairs and technical leads for SIG Multicluster.
+    channels:
+      - sig-multicluster
+    members:
+      - jeremyot
+      - skitt
+  - name: sig-network-leads
+    long_name: SIG Network Leads
+    description: Active chairs and technical leads for SIG Network.
+    channels:
+      - sig-network
+    members:
+      - aojea
+      - bowei
+      - danwinship
+      - guicassolato
+      - mikezappa87
+      - thockin
+  - name: sig-node-leads
+    long_name: SIG Node Leads
+    description: Active chairs and technical leads for SIG Node.
+    channels:
+      - sig-node
+    members:
+      - dchen1107
+      - derekwaynecarr
+      - haircommander
+      - mrunalp
+      - SergeyKanzhelev
+  - name: sig-release-leads
+    long_name: SIG Release Leads
+    description: SIG Release Leads. Ping for questions on SIG Release process and escalations.
+    channels:
+      - release-ci-signal
+      - release-management
+      - sig-release
+    members:
+      - cpanato
+      - jeremyrickard
+      - justaugustus
+      - puerco
+      - saschagrunert
+      - Verolop
+  - name: sig-scalability-leads
+    long_name: SIG Scalability Leads
+    description: Active chairs and technical leads for SIG Scalability.
+    channels:
+      - sig-scalability
+    members:
+      - marseel
+      - mengqiy
+      - shyamjvs
+      - wojtek-t
+  - name: sig-scheduling-leads
+    long_name: SIG Scheduling Leads
+    description: Active chairs and technical leads for SIG Scheduling.
+    channels:
+      - sig-scheduling
+    members:
+      - dom4ha
+      - helayoty
+      - macsko
+      - mm4tt
+      - sanposhiho
+  - name: sig-security-leads
+    long_name: SIG Security Leads
+    description: Active chairs and technical leads for SIG Security.
+    channels:
+      - sig-security
+    members:
+      - cailyn-codes
+      - iancoldwater
+      - tabbysable
+  - name: sig-storage-leads
+    long_name: SIG Storage Leads
+    description: Active chairs and technical leads for SIG Storage.
+    channels:
+      - sig-storage
+    members:
+      - gnufied
+      - jsafrane
+      - msau42
+      - xing-yang
+  - name: sig-testing-leads
+    long_name: SIG Testing Leads
+    description: Active chairs and technical leads for SIG Testing.
+    channels:
+      - sig-testing
+    members:
+      - aojea
+      - bentheelder
+      - jbpratt
+      - michelle192837
+      - pohly
+  - name: sig-ui-leads
+    long_name: SIG UI Leads
+    description: Active chairs and technical leads for SIG UI.
+    channels:
+      - sig-ui
+    members:
+      - joaquimrocha
+      - kahirokunn
+  - name: sig-windows-leads-group
+    long_name: SIG Windows Leads
+    description: Active chairs and technical leads for SIG Windows.
+    channels:
+      - sig-windows
+    members:
+      - claudiubelu
+      - jrvaldes
+      - marosset
+      - zylxjtu

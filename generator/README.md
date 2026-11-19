@@ -4,7 +4,8 @@ This folder contains scripts to automatically generate documentation about the
 different Special Interest Groups (SIGs), Working Groups (WGs)
 and Committees of Kubernetes. The authoritative
 source for SIG information is the [`sigs.yaml`](/sigs.yaml) file in the project root.
-All updates must be done there.
+All updates must be done there. `make generate` also updates the SIG lead Slack
+usergroups in `communication/slack-config/sigslackleads.yaml`.
 
 The schema for this file should be self explanatory. However, if you need to see all the options, check out the generator code in `app.go`.
 

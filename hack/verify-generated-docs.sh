@@ -30,14 +30,14 @@ trap cleanup EXIT
 
 function get_interesting_files() {
   local dir=$1
-  local files=$(ls ${dir}/sigs.yaml ${dir}/sig-*/README.md ${dir}/wg-*/README.md ${dir}/committee-*/README.md ${dir}/sig-list.md ${dir}/OWNERS_ALIASES)
+  local files=$(ls ${dir}/sigs.yaml ${dir}/sig-*/README.md ${dir}/wg-*/README.md ${dir}/committee-*/README.md ${dir}/sig-list.md ${dir}/OWNERS_ALIASES ${dir}/communication/slack-config/sigslackleads.yaml)
   echo "$files"
 }
 
 git archive --format=tar "$(git write-tree)" | (cd "${WORKING_DIR}" && tar xf -)
 
 cd "${WORKING_DIR}"
-make 1>/dev/null
+make WHAT= 1>/dev/null
 
 mismatches=0
 break=$(printf "=%.0s" $(seq 1 68))
@@ -68,9 +68,9 @@ if [[ ${mismatches} -gt "0" ]]; then
     noun="mismatches were"
   fi
   echo "${mismatches} ${noun} detected."
-  echo "Do not manually edit sig-list.md or README.md files inside the sig folders."
+  echo "Do not manually edit generated SIG docs or managed Slack usergroup members."
   echo "Instead make your changes to sigs.yaml, then run \`make\`, and then"
-  echo "commit your changes to sigs.yaml and any generated docs.";
+  echo "commit your changes to sigs.yaml and any generated files.";
   echo "${break}"
   exit 1;
 fi

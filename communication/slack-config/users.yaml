@@ -1,12 +1,16 @@
-# This file contains an alphabetically sorted mapping of lowercase GitHub
-# usernames to Kubernetes Slack user IDs.
+# This file contains an alphabetically sorted mapping of GitHub usernames to
+# Kubernetes Slack user IDs.
 users:
   adheipsingh: U02HS73S804
   adilGhaffarDev: U038BLZPX1S
   adisky: U9YRVLTEH
   adityabhatia: U04N6JTDK39
+  adrianmoisey: U1QC4EFPT
+  ahg-g: UJD88PZSS
+  ahrtr: U03JM6J7Y9L
   aibarbetta: U02GQ3GEQV8
   akshay196: U0254QBGAAY
+  alculquicondor: UDJDFF069
   alejandrox1: U6AS37R50
   aleksandra-malinowska: U357LUPHS
   alexander-demicev: UR7UCR7RV
@@ -21,8 +25,10 @@ users:
   ankeesler: UBAA1KQ4A
   annajung: U8SLB1P2Q
   aojea: U7CK9A960
+  aramase: U24PUKC4S
+  aravindhp: UHX473K4G
   aravindputrevu: U1G27SDU6
-  RinkiyaKeDad: U01K5P7MYUF
+  ardaguclu: U01C73E2H98
   asmacdo: UNVH7RY9J
   Atharva-Shinde: U028J67T478
   AttyXY: U07KSK513NW
@@ -35,37 +41,48 @@ users:
   bentheelder: U1P7T516X
   bhumijgupta: U022JUBM3B4
   blind3dd: UC7GPBQB1
+  bowei: U2EUCSP8B
   briandealwis: UAZKM38JV
+  bridgetkromhout: U7H5BJUMC
   bubblemelon: U7K9C643G
   byako: U03GZBD4J4C
+  Caesarsage: U040FHFJR8W
   cahillsf: U04TNKBE92R
+  cailyn-codes: U03GG7R4QLA
   calebamiles: U1ZDD4CUR
   camilamacedo86: U042UFD8LQK
   castrojo: U1W1Q6PRQ
   catblade: URCV5RDSB
   cblecker: U3EDWR9FV
   cdrage: U2TU9NPH9
-  Caesarsage: U040FHFJR8W
   CecileRobertMichon: U98JPHB2M
   cfryanr: U0188B6J42H
   chadmcrowell: UC4J73YCR
   chandankumar4: U01QKVBNMSL
   chanieljdan: U04BYV58N87
+  cheftako: U3J5DCXKL
   chiukapoor: U045T4QQUE6
   chrischdi: UBVL9Q4TB
   chrisshort: U2YGXSD9B
   cici37: UTY5J12L9
   CIPHERTron: U024FK4NLAH
   cjcullen: U0ALJAVMF
+  cji: U5YSRC21J
+  claudiubelu: U971NTFNC
   clubanderson: U0462LN24QJ
   cpanato: U8DFY4TTK
   cprivitere: UEXCRF7EK
   csams: U02B6A9GF55
+  danwinship: U3FSU4LDB
+  dashpole: U2A66TRQQ
   Dave Smith-Uchida: UDZDED8G2
   david-martin: ULMJ41U73
   davidfestal: U014B06SVJ9
+  dchen1107: U09R2LQ8Y
+  deads2k: U0FRN7L13
   Debanitrkl: U02149V23EU
   derekwaynecarr: U0A69N5GQ
+  dgrisonnet: UV30723CG
   Dhairya-Arora01: U04TXBEMJU9
   dharmit: U0APPPEKE
   dhij: U03JKSTHALT
@@ -74,8 +91,10 @@ users:
   divya-mohan0209: UV4J7K97Z
   dlaw4608: U06D23A8162
   dntosas: UKT4D74F3
+  dom4ha: U07PUQ1R8JE
   dougm: U8GG20UE9
   drewhagen: U01NTKZDPLK
+  eddiezane: UB1ELGMGE
   elezar: ULV21K3CH
   elmiko: U11HJAX1S
   elsony: UCW8323KL
@@ -87,22 +106,30 @@ users:
   estroz: UKSEANEC9
   ezra: U8UN4DC4T
   fabianvf: UAJ3UH29F
+  fabriziopandini: U3LBAU3LN
+  fedebongio: UA9FLMUBG
   Fedosin: U9Q7EGB7Y
   feiskyer: U0ASA4398
   feloy: UFG7CN85U
+  floreks: U0YMWACG3
   fsmunoz: U03DL8UAEMQ
   furkatgofurov7: UV31DL3CG
+  fuweid: UPR9GFV7S
   fykaa: U04RHLECJGZ
   g-gaston: U01SS3GFELV
   genpage: U05QE3Y5UBF
   gianarb: U0FSCELCR
   girishramnani: U9M4K75EU
+  gjtempleton: UASG3HWHM
+  gnufied: U27CG7YKE
   gracenng: U01GX18N6H3
   graz-dev: U071WP8D3JB
   grdryn: U017628HJL8
   gsquared94: U0131C0PJBU
+  guicassolato: U02N147E5AQ
   guineveresaenger: U4H2QU3DW
   hackeramitkumar: U045992D532
+  haircommander: UGM1CJ73L
   hakman: UQ2FC9405
   hardys: UFMADFMS4
   hasheddan: ULLQEF30C
@@ -112,6 +139,7 @@ users:
   hjoshi123: U08EEJK95Q9
   hoegaarden: U7VA4RZS9
   hosseinsalahi: U7SR0QJP8
+  Huang-Wei: U6FE4BLH2
   hubertstefanski: U01941KQ2UT
   iancoldwater: U9VL5SZPX
   idealhack: U5NJ3DQM9
@@ -120,39 +148,54 @@ users:
   imran: U03K4862X7U
   inteon: U03RG8315NW
   IsaacPD: U01B0C1R9NZ
+  ivanvc: U064QR9SR43
+  jackfrancis: U0AAHKLFN
   jakexks: U0AKBM9EC
   JamesLaverack: U9MK7274Y
   janetkuo: U0AJE8XM0
-  jasonbraganza: U03ADRCSW23
   Jason: UB272379N
+  jasonbraganza: U03ADRCSW23
   jasperchui: U01DRL00ES3
   jayesh-srivastava: U023B885W9M
   jayeshmahajan: U07M127JW72
   jberkhahn: U7Q21LH2S
+  jberkus: U0UKM380M
+  jbpratt: U02NPG024BD
   Jdubrick: U068JS25A03
   jdumars: U0YJS6LHL
   jeefy: U5MCFK468
   jenshu: U07FYLCQD40
+  jeremyot: URTDYFS3F
   jeremyrickard: U72ESU398
   jiangd: UFS2C9JEA
   jimangel: U4HSVFA5U
   jlbutler: U0122V3T932
   jmccormick2001: UMPLV0G0H
+  jmdeal: U03M5UDF6LE
+  jmhbnz: U04MPH82P43
   jmickey: UFD7FJ18Q
   jmprusi: U014TN4HTPB
   jmrodri: U4KATPQ48
+  joaquimrocha: U010WU7EJTV
   joekr: U02MUT273GA
   Joel Barker: U014AHSTBPA
   joelanford: U1R6NQD8W
   joelsmith: U5SLG8T8F
+  joelspeed: U9D0X16M8
   johannesfrey: U7GFDAF8A
   johnbelamaric: U246A1A0N
   johnmcollier: UCVS4TNMQ
   jonasrosland: U0A4G34S2
   joshvanl: U9M09KHHQ
+  jpbetz: U5XMSLZK3
   jrsapi: U0DS2L6E8
+  jrvaldes: U04HJ4QV3EF
+  jsafrane: U0F49KUHE
+  jsturtevant: U8UD61AEL
   justaugustus: U0E0E78AK
+  justinsb: U0A6A01FG
   kadel: U0DE6E8JY
+  kahirokunn: UMU9J3T4Y
   kaslin: U5ENKU0AE
   katcosgrove: U01GDERGEHF
   katharine: UBTBNJ6GL
@@ -164,6 +207,8 @@ users:
   kim-tsao: U02U1LDH4T1
   klihub: U9856A799
   klueska: UF3ARH55Y
+  knabben: U1UP4807N
+  kow3ns: U2LF3NQ93
   kperath: U03GWQJU539
   kranurag7: U02MRK4FY8N
   Kunal Kushwaha: UQ14U3NAY
@@ -173,6 +218,8 @@ users:
   liggitt: U0BGPQ6DS
   listx: UFCU8S8P3
   lukehinds: UN2P2M4F4
+  maciaszczykm: U4GKJBB40
+  macsko: U073TN2JQMD
   MadhavJivrajani: U01L7R0JGCE
   maelvls: UKYB4CKNJ
   mandre: UHG9XEUU8
@@ -182,6 +229,7 @@ users:
   markyjackson-taulia: U19TKJ64E
   MarlonGamez: U016N1XK06R
   marosset: ULAUQ1KFZ
+  marseel: U01AHMZ5TJP
   mattmoyer: U0DRP8H42
   maysunfaisal: U01DEHK2YUB
   mbbroberg: U18JTHMDY
@@ -191,20 +239,27 @@ users:
   mcbenjemaa: UF111SQ4U
   meatballhat: U01QEKCBTBM
   mehabhalodiya: U024HPAQDC1
+  mengqiy: U045G78JR7X
   mfahlandt: U01RR6BFC9Y
   micahhausler: U1WJ1BZA5
   michael-valdron: U03LXKVS0SX
+  michelle192837: U3TRY5WV7
   michellengnx: U06AE3PKP37
   mickeyboxell: UH0K0EC6S
   microwavables: UAF606ESE
   mik-dass: UCUULSG1W
+  mikezappa87: U01K5QCGBEE
   ming-qiu: U02JVSL5550
   mjlshen: UN08SUPPD
   mjudeikis: U36J4T2JC
   mkorbi: UEBLUUA0P
+  mm4tt: U0A8A4ANCBF
   mohammedzee1000: U3PFFE8CD
   MonzElmasry: U018U96HYDQ
+  mpuckett159: UTLUWD8J1
   mrbobbytables: U511ZSKHD
+  mrunalp: U1A24MU2Z
+  msau42: U3CB0SFMF
   mspreitz: U0E40F05R
   munnerz: U0EC03FTN
   nataliefisher: U09T8V000MU
@@ -215,6 +270,7 @@ users:
   nawazkh: U03HJN1C81W
   ncdc: U0A4MJ62V
   neoaggelos: U02GE88D3SQ
+  neolit123: U83J4CS3S
   nikhita: U2PQHGMLN
   nitishfy: U03AB2YFVGV
   Nivedita-coder: U01H4FQJ3RP
@@ -224,6 +280,7 @@ users:
   nrb: U7S597E00
   nzoueidi: UBU72MWP2
   obiTrinobiIntel: U02UNAXF74H
+  omerap12: U06LEMRR2NT
   onlydole: U1DD4AZND
   oscr: U0183J37JUQ
   p0lyn0mial: U1Q8CER5M
@@ -256,9 +313,13 @@ users:
   rashansmith: U054U4V3A3V
   rashmigottipati: U013T1DD3PW
   rayandas: UPLGYMV6D
+  raywainman: U05RQLWA0QM
   razashahid107: U05FB1L2YM8
+  rexagod: U0265JFG400
   reylejano: U01GDNJL5MW
+  richabanker: U03THD997UJ
   Rin Oliver: USF4LMDCN
+  RinkiyaKeDad: U01K5P7MYUF
   ritazh: U5CMBA9RD
   rm3l: U034AQUV7PB
   rnapoles-rh: U01KDAMSWJD
@@ -267,6 +328,7 @@ users:
   rxinui: U08G3DBHXSA
   rytswd: ULUBQ9DFA
   s-urbaniak: U0DT660QM
+  saad-ali: U0CD5E3QF
   sadysnaat: UNQPKAQHE
   salaxander: UDHV1RXB2
   salehsedghpour: U02GM9ZLELB
@@ -274,6 +336,7 @@ users:
   sanchita-07: U04BT49MD5W
   sandeepkanabar: U042H6CU0BW
   sandipanpanda: U02A47HJ517
+  sanposhiho: U01T8DWLBC2
   SaranBalaji90: U6PNPSULW
   saschagrunert: U53SUDBD4
   satyampsoni: U04DUM62MDY
@@ -281,19 +344,26 @@ users:
   sayanchowdhury: U6ERE5YQL
   sayantani11: U028S6XNVSN
   sbueringer: U48TE1L75
-  scott-seago: UHGD79E78
   scheeles: U0DT4RJ72
+  scott-seago: UHGD79E78
   SD-13: U03KA77JSHF
+  serathius: U8Q4C16A1
+  SergeyKanzhelev: U013U7PFRA5
   serngawy: U42969L5P
   sethmccombs: U92LLUZ8A
   sgtcodfish: U01PQ8N3PM1
   shamus: US7EUUBK8
+  shaneutt: U85RZDQCQ
   Sharpz7: U04LFLVUKDF
   shecodesmagic: U0592U4JQA3
   shipra101: U06MJ9TT031
+  shu-mutou: UD76Y0273
   shubham-pampattiwar: U01QW84HBBN
+  shyamjvs: U0BEA5V1278
   simplytunde: UAY1NBYHE
   sivchari: U02PERJF469
+  siyuanfoundation: U05RE2N47MG
+  skitt: UK1TNDJ8Y
   Sladyn Nunes: UQ9J177Q8
   smoshiur1237: UULFDSURY
   soltysh: U0B4CS1GF
@@ -315,15 +385,18 @@ users:
   TaoBeier: UCLDV6MN1
   tasdikrahman: U65NQJWAF
   tejal29: UACD7R316
+  tengqm: U0113L84AER
   ThatsMrTalbot: U7QBP08LR
   theishshah: U01891A4TRS
   thejoycekung: U01AY4VHX25
   thepetk: U04NW4PPY8N
+  thockin: U0AH4GABW
   tico88612: U03M6SD7CLE
   TineoC: U07D9Q86ZFZ
   tjons: U05H23DAZTP
   tobiasgiese: U01C1NM8D8F
   tormath1: U03F0AG61JM
+  towca: U010P4BRR3P
   tpepper: U6UB5V4TX
   troy0820: U3D457W7M
   tstromberg: UCSL5SJ8Z
@@ -345,12 +418,16 @@ users:
   vzhukovs: U030TR1FG85
   wallrj: U1ZMERJF7
   wendy-ha18: U072Q1ZPVA7
+  wenjiaswe: U8MAHN3NV
   whtssub: U01Q16YA35J
   willie-yao: U024EME7SQK
   wilsonehusin: U0100068GF2
   winiciusallan: U082QVDPKJN
+  wojtek-t: U09R30ANQ
   wurbanski: URX7CMK97
   Xander: UDHV1RXB2
+  xing-yang: U67QQ0A2Y
+  xmcqueen: UEQ9W45GA
   xmudrii: U4Q2TNGVD
   xrstf: UNP602J64
   xun-jiang: U02J0QC1VKJ
@@ -360,3 +437,4 @@ users:
   yrs147: U04CCE1160N
   zetaab: U257J9MQ8
   zubron: U7G0KNS86
+  zylxjtu: U07GPC1L3HT
