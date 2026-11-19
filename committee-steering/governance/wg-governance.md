@@ -78,7 +78,12 @@ should eventually be reflected in a pull request on sigs.yaml:
 Please note that all working group organizers and holders of other leadership
 roles must be [community members].
 
-Once the above questions have been answered, complete the rest of the checklist in the [SIG / WG Lifecycle] document
+Once the above questions have been answered, complete the rest of the checklist in the [SIG / WG Lifecycle] document.
+
+Working Group creation pull requests are approved by the sponsoring SIG Chairs/Tech Leads and the
+Steering Committee as described in the [SIG / WG Lifecycle] document. While community support and
+feedback are welcome, soliciting `+1` or supporting comments is discouraged and carries no weight in
+the approval decision.
 
 Once merged, the Working Group is officially chartered until it either completes its stated goal, or disbands
 voluntarily (e.g. due to new facts, member attrition, change in direction, etc). Working groups should strive to
