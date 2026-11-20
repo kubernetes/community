@@ -30,6 +30,12 @@ The Chairs of the SIG run operations and processes governing the SIG.
 * Laura Lorenz (**[@lauralorenz](https://github.com/lauralorenz)**), Independent
 * Stephen Kitt (**[@skitt](https://github.com/skitt)**), Red Hat
 
+### Technical Leads
+The Technical Leads of the SIG establish new subprojects, decommission existing
+subprojects, and resolve cross-subproject technical issues and decisions.
+
+* Kahiro Okina (**[@kahirokunn](https://github.com/kahirokunn)**), Craftsman Software, Inc.
+
 ## Emeritus Leads
 
 * Paul Morie (**[@pmorie](https://github.com/pmorie)**)
