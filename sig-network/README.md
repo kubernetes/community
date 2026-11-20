@@ -72,7 +72,6 @@ subprojects, and resolve cross-subproject technical issues and decisions.
 ## Working Groups
 
 The following [working groups][working-group-definition] are sponsored by sig-network:
-* [WG AI Gateway](/wg-ai-gateway)
 * [WG Device Management](/wg-device-management)
 * [WG Node Lifecycle](/wg-node-lifecycle)
 
@@ -173,10 +172,6 @@ kube-dns was the original implementation of Kubernetes Service DNS. It is now de
   - [kubernetes-sigs/ip-masq-agent](https://github.com/kubernetes-sigs/ip-masq-agent/blob/master/OWNERS)
   - [kubernetes-sigs/nat64](https://github.com/kubernetes-sigs/nat64/blob/main/OWNERS)
   - [kubernetes/kubernetes/pkg/kubelet/network](https://github.com/kubernetes/kubernetes/blob/master/pkg/kubelet/network/OWNERS)
-### wg-ai-gateway
-Proposals and discussions for the AI Gateway Working Group
-- **Owners:**
-  - [kubernetes-sigs/wg-ai-gateway](https://github.com/kubernetes-sigs/wg-ai-gateway/blob/main/OWNERS)
 
 [subproject-definition]: https://github.com/kubernetes/community/blob/main/governance.md#subprojects
 [working-group-definition]: https://github.com/kubernetes/community/blob/main/governance.md#working-groups
