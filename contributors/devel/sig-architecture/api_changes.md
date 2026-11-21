@@ -409,8 +409,8 @@ type Frobber struct {
 
 You convert all of the fields to pointers in order to distinguish between unset
 and set to 0, and then set each corresponding field from the other in the
-defaulting logic (e.g. `heightInInches` from `height`, and vice versa).  That
-works fine when the user creates a sends a hand-written configuration --
+defaulting logic (e.g. `heightInInches` from `height`, and vice versa). That
+works fine when the user creates and sends a hand-written configuration --
 clients can write either field and read either field.
 
 But what about creation or update from the output of a GET, or update via PATCH
