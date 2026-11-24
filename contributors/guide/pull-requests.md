@@ -586,7 +586,7 @@ Each incoming Pull Request needs to be reviewed, checked, and then merged.
 
 While automation helps with this, each contribution also has an engineering cost.
 Therefore it is appreciated if you do NOT make trivial edits and fixes, but
-instead focus on giving the entire file a review.
+instead focus on giving the entire file a review. Pull Requests that include trivial edits to multiple files are still trivial edits subject to this policy.
 
 If you find one grammatical or spelling error, it is likely there are more in
 that file, you can really make your Pull Request count by checking the formatting,
@@ -597,6 +597,8 @@ at once to that file.
 
 * Can the file be improved further?
 * Does the trivial edit greatly improve the quality of the content?
+
+Trivial edit Pull Requests may be closed without warning.
 
 ## Large or Automatic Edits
 
