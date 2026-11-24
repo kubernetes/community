@@ -51,7 +51,7 @@ Thresholds related to API server and etcd storage for **builtin resource types**
 | Number of objects (non Event) | 150'000                       | TBD                      |
 | Number of objects (Event)     | 1'000'000                     | n/a                      |
 | Size per object               | 1.5MB                         | 1.5MB                    |
-| Total size                    | 1.5GB                         | TBD                      |
+| Total size                    | 3GB                           | TBD                      |
 
 List of thresholds relating per resource types:
 
