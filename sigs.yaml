@@ -3761,7 +3761,7 @@ workinggroups:
         recordings_url: https://www.youtube.com/playlist?list=PL69nYSiGNLP1P7F40IMVL3NsNiIm5AGos
       - description: Regular WG Meeting (Europe/America)
         day: Monday
-        time: "17:00"
+        time: "18:00"
         tz: UTC
         frequency: weekly
         url: https://zoom.us/j/95866823079
