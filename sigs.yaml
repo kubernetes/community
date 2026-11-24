@@ -1443,7 +1443,6 @@ sigs:
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/cluster-bootstrap/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/configz/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/staging/src/k8s.io/component-base/featuregate/OWNERS
-          - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e/lifecycle/OWNERS
           - https://raw.githubusercontent.com/kubernetes/kubernetes/master/test/e2e_kubeadm/OWNERS
           - https://raw.githubusercontent.com/kubernetes/system-validators/master/OWNERS
         meetings:

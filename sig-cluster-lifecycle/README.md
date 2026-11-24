@@ -236,7 +236,6 @@ A tool that performs the actions necessary to get a minimum viable, secure clust
   - [kubernetes/kubernetes/staging/src/k8s.io/cluster-bootstrap](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/cluster-bootstrap/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/component-base/configz](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/configz/OWNERS)
   - [kubernetes/kubernetes/staging/src/k8s.io/component-base/featuregate](https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/component-base/featuregate/OWNERS)
-  - [kubernetes/kubernetes/test/e2e/lifecycle](https://github.com/kubernetes/kubernetes/blob/master/test/e2e/lifecycle/OWNERS)
   - [kubernetes/kubernetes/test/e2e_kubeadm](https://github.com/kubernetes/kubernetes/blob/master/test/e2e_kubeadm/OWNERS)
   - [kubernetes/system-validators](https://github.com/kubernetes/system-validators/blob/master/OWNERS)
 - **Contact:**
