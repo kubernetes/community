@@ -54,7 +54,6 @@ members will assume one of the departing members groups.
 | [SIG Testing](sig-testing/README.md) | Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**) |
 | [SIG UI](sig-ui/README.md) | Paco Xu 徐俊杰 (**[@pacoxu](https://github.com/pacoxu)**) |
 | [SIG Windows](sig-windows/README.md) | Janet Kuo (**[@janetkuo](https://github.com/janetkuo)**) |
-| [WG AI Gateway](wg-ai-gateway/README.md) | Michael McCune (**[@elmiko](https://github.com/elmiko)**) |
 | [WG Batch](wg-batch/README.md) | Maciej Szulik (**[@soltysh](https://github.com/soltysh)**) |
 | [WG Checkpoint Restore](wg-checkpoint-restore/README.md) | Rita Zhang (**[@ritazh](https://github.com/ritazh)**) |
 | [WG Data Protection](wg-data-protection/README.md) | Michael McCune (**[@elmiko](https://github.com/elmiko)**) |
