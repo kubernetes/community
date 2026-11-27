@@ -16,6 +16,7 @@ description: |
 - [Security](#security)
 - [Documentation](#documentation)
 - [Issues Management or Triage](#issues-management-or-triage)
+- [AI Guidance](#ai-guidance)
 
 Kubernetes is open source, but many of the people working on it do so as their day job.
 In order to avoid forcing people to be "at work" effectively 24/7, we want to establish some semi-formal protocols around development.
@@ -135,3 +136,29 @@ Have you ever noticed the total number of [open issues](https://issues.k8s.io)?
 Helping to manage or triage these open issues can be a great contribution and a great opportunity to learn about the various areas of the project.
 Triaging is the word we use to describe the process of adding multiple types of descriptive labels to GitHub issues, in order to speed up routing issues to the right folks.
 Refer to the [Issue Triage Guidelines](/contributors/guide/issue-triage.md) for more information.
+
+## AI Guidance
+
+Using AI tools to help write your pull request or issue is acceptable, but as the author, you are
+responsible for understanding and explaining your changes and interacting with reviewers. If you
+used AI tools in preparing your PR or issue, you must disclose this in the description of your PR
+or issue. For example, including "This PR was written in part with the assistance of generative AI," or
+"This issue was prepared with the assistance of generative AI," in the PR or issue description
+is sufficient.
+
+Listing AI tooling as a co-author, co-signing commits using an AI tool, or using 
+the `assisted-by`, `co-developed` or similar commit trailer is not allowed.
+
+All contributions must follow the [contributions policies](/contributors/guide/contributing.md) and use 
+commit messages that align with [the policy](/contributors/guide/pull-requests.md#commit-message-guidelines).
+
+[Large AI generated](/contributors/guide/pull-requests.md#large-or-automatic-edits)
+PRs and AI generated commit messages are not allowed.
+
+Do not leave the first review of AI generated changes to the reviewers. Verify the changes (code review, 
+testing, etc.) before submitting your PR. Reviewers may ask questions about your AI-assisted code, and if 
+you cannot explain why a change was made, the PR will be closed.
+
+When responding to review or issue comments, you must do so without relying solely on AI tools. Reviewers
+want to engage directly with you, not with generated responses. If you do not engage directly with
+reviewers, the PR or issue will be closed.

@@ -300,3 +300,8 @@ support, try to redirect them to Discuss. Here is an example response:
 > Again, thanks for using Kubernetes.
 >
 > The Kubernetes Team
+
+### AI Guidance
+
+Please see the [AI Guidance](/contributors/guide/contributing.md#ai-guidance)
+on the [Contributing to Kubernetes](/contributors/guide/contrubting.md) page.
