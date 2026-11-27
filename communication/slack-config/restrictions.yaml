@@ -8,6 +8,9 @@ restrictions:
   - path: usergroups.yaml
     usergroups:
       - ".*"
+  - path: sigslackleads.yaml
+    usergroups:
+      - ".*"
   - path: template.yaml
     template: true
   - path: "sig-architecture/*.yaml"

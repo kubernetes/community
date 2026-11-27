@@ -20,18 +20,6 @@ usergroups:
       - "Sujay Pillai"
       - TaoBeier
 
-  - name: contribex-leads
-    long_name: SIG Contributor Experience Leads
-    description: SIG Contributor Experience Leads group.
-    channels:
-      - sig-contribex
-    members:
-      - kaslin
-      - MadhavJivrajani
-      - mfahlandt
-      - palnabarun
-      - Priyankasaggu11929
-
   - name: contributor-comms
     long_name: Contributor Communications
     description: Contributor Communications group.
@@ -52,20 +40,6 @@ usergroups:
       - sandipanpanda
       - sreeram-venkitesh
       - TineoC
-
-  - name: k8s-infra-leads
-    long_name: SIG K8S Infra leads
-    description: |-
-      Leads of the Infrastructure SIG. Ping for a community-owned infrastructure problem.
-    channels:
-      - k8s-infra-alerts
-      - sig-k8s-infra
-    members:
-      - ameukam
-      - genpage
-      - hakman
-      - upodroid
-      - xmudrii
 
   # Should match the membership of the following teams at all times:
   # - https://git.k8s.io/security/#product-security-committee-psc
