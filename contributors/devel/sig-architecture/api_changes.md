@@ -515,6 +515,10 @@ required, but breaking compatibility should not be done lightly, as it disrupts
 all users of the feature. Alpha and beta API versions may be deprecated and
 eventually removed wholesale, as described in the [deprecation policy](https://kubernetes.io/docs/reference/deprecation-policy/).
 
+A stable API version may contain alpha-level fields, as described in
+[Adding Unstable Features to Stable Versions](#adding-unstable-features-to-stable-versions).
+The API version alone does not indicate whether an object uses alpha-level features.
+
 If your change is going to be backward incompatible or might be a breaking
 change for API consumers, please send an announcement to
 `dev@kubernetes.io` before the change gets in. If you are unsure,
@@ -1219,6 +1223,9 @@ Previously, annotations were used for experimental alpha features, but are no lo
 
 * They expose the cluster to "time-bomb" data added as unstructured annotations against an earlier API server (https://issue.k8s.io/30819)
 * They cannot be migrated to first-class fields in the same API version (see the issues with representing a single value in multiple places in [backward compatibility gotchas](#backward-compatibility-gotchas))
+
+The following example uses the API server's feature gates and REST storage
+strategies, which are not defined by a CRD.
 
 The preferred approach adds an alpha field to the existing object, and ensures it is disabled by default:
 
