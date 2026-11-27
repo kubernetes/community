@@ -20,7 +20,8 @@ The [charter](charter.md) defines the scope and governance of the etcd Operator 
 
 ## Meetings
 *Joining the [mailing list](https://groups.google.com/a/kubernetes.io/g/wg-etcd-operator) for the group will typically add invites for the following meetings to your calendar.*
-* Regular WG Meeting: [Tuesdays at 11:00 PT (Pacific Time)](https://zoom.us/j/93758419981?pwd=k9KO6einmnEfbaL9GZPCdLwM342qbf.1) (bi-weekly). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=11%3A00&tz=PT%20%28Pacific%20Time%29).
+* Regular WG Meeting (APAC friendly): [Wednesdays at 15:00 UTC](https://zoom.us/j/97001696797?pwd=2ob0X3xjAS3VlBN8dvayr2EEhZyUOk.1) (every 4 weeks, alternating with the other meeting so there is one meeting every 2 weeks overall). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=15%3A00&tz=UTC).
+* Regular WG Meeting (US friendly): [Tuesdays at 19:00 UTC](https://zoom.us/j/97307667834?pwd=zsusbY3pF3ihNxvAY6H9x5comVagj9.1) (every 4 weeks, alternating with the other meeting so there is one meeting every 2 weeks overall). [Convert to your timezone](http://www.thetimezoneconverter.com/?t=19%3A00&tz=UTC).
   * [Meeting notes and Agenda](https://docs.google.com/document/d/1ey4zTTRvtCVJJP2vjF95VjG-sAKlNTcqB2HdmC18Lfc/edit).
   * [Meeting recordings](https://www.youtube.com/playlist?list=PLRGL688DpO9pLz5aCOPHLvASXACZrvD8D).
 
